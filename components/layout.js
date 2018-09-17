@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from './head'
 import Nav from './nav'
+import Footer from './footer'
 import { string } from 'prop-types'
 
 const Layout = props => {
@@ -11,6 +12,7 @@ const Layout = props => {
     <Nav />
 
     {children}
+    <Footer />
   </div>
 }
 

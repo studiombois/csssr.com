@@ -2,7 +2,7 @@ module.exports = {
   webpack: (config, { dev }) => {
     // Fixes npm packages that depend on `fs` module
     config.node = {
-      fs: 'empty'
+      fs: 'empty',
     }
 
     if (dev) {
@@ -20,5 +20,5 @@ module.exports = {
     }
 
     return config
-  }
+  },
 }

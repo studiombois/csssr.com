@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "eslint-fix": "eslint --fix components/ pages/ next.config.js"
   },
   "dependencies": {
     "next": "^6.1.2",

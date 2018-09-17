@@ -1,7 +1,9 @@
 import React from 'react'
-import Head from './head'
-import Nav from './nav'
-import Footer from './footer'
+import Head from './Head'
+import Nav from './Nav'
+import Fonts from './Fonts'
+import Settings from './Settings'
+import Footer from './Footer'
 import { string } from 'prop-types'
 
 const Layout = props => {
@@ -10,6 +12,8 @@ const Layout = props => {
   return <div className='layout'>
     <Head />
     <Nav />
+    <Fonts />
+    <Settings />
 
     {children}
     <Footer />

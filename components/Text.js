@@ -118,7 +118,8 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_footer-link {
+    .font_footer-link,
+    .font_footer-text {
       margin-top: -6px;
       padding-bottom: 6px;
       font-family: Roboto;
@@ -129,12 +130,7 @@ const Text = () =>
     }
 
     .font_footer-text {
-      margin-top: -6px;
-      padding-bottom: 6px;
-      font-family: Roboto;
-      font-size: 1.25rem;
       font-weight: 300;
-      line-height: 3rem;
       color: #000000;
     }
 

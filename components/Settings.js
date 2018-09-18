@@ -23,10 +23,7 @@ export default class Settings extends PureComponent {
         if ((event.ctrlKey || event.metaKey) && event.which === keyCode) {
           event.preventDefault()
 
-          // eslint-disable-next-line
-          event.which !== 80
-            ? document.getElementById('header').classList.toggle(className)
-            : document.body.classList.toggle(className)
+          document.body.classList.toggle(className)
         }
       })
     })
@@ -35,7 +32,7 @@ export default class Settings extends PureComponent {
   render() {
     return <style jsx>{`
       .pixel-perfect {
-        background-position: 0px calc(6rem + 5px);
+        background-position: 0 0;
         background-size: 1920px;
         background-image: url('http://s.csssr.ru/U31J879TR/1920__....png');
         background-repeat: no-repeat;
@@ -55,13 +52,12 @@ export default class Settings extends PureComponent {
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         .pixel-perfect {
-          background-position: 0 calc(6rem + 5px);
           background-size: 1360px;
           background-image: url('http://s.csssr.ru/U31J879TR/1360__1920.png');
         }
 
         .layout-columns-on {
-           background-position: 2rem;
+          background-position: 2rem;
           background-size: 14rem;
           background-image: linear-gradient(90deg, #F6D3C3 12rem, #fff 12rem, #fff 2rem);
         }
@@ -69,7 +65,6 @@ export default class Settings extends PureComponent {
 
       @media (max-width: 1359px) {
         .pixel-perfect {
-          background-position: 0 calc(6rem + 5px);
           background-size: 1280px;
           background-image: url('http://s.csssr.ru/U31J879TR/1280_1365.png');
         }

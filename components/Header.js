@@ -11,26 +11,28 @@ const links = [
 
 const Header = ({ router: { pathname }, section }) =>
   <header className='grid-container'>
-    <nav>
-      {pathname === '/'
-        ? <span>
-          <CSSSRLogoIcon width='12rem' height='3rem' color='black'/>
-        </span>
+    {pathname === '/'
+      ? <span className='logo-wrapper'>
+        <CSSSRLogoIcon width='12rem' height='3rem' color='black'/>
+      </span>
 
-        : <Link prefetch href={'/'}>
-          <a>
+      : <span>
+        <Link prefetch href={'/'}>
+          <a className='logo-wrapper'>
             <CSSSRLogoIcon width='12rem' height='3rem' color='black'/>
           </a>
         </Link>
-      }
-      <div className='topMenu'>dasdasdasda</div>
+      </span>
+    }
+
+    <nav className='nav'>
       <ul>
         {links.map(({ href, label }) => (
-          <li
+          <li className='nav-item'
             key={`nav-link-${href}-${label}`}
             className={href === pathname && 'active' }>
             <Link prefetch href={href}>
-              <a className='topMenu'>{label}</a>
+              <a className='font_top-menu'>{label}</a>
             </Link>
           </li>
         ))}
@@ -53,12 +55,29 @@ const Header = ({ router: { pathname }, section }) =>
         padding-right: 8rem;
         height: 8rem;
         width: 1920px;
+        align-items: center;
 
         outline: 1px solid red;
       }
 
-      nav {
-        padding-left: 11rem;
+      .logo {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: 5rem;
+        grid-column: 1 / span 2;
+        outline: 1px solid blue;
+        text-align: center;
+      }
+
+      .nav {
+        height: 4rem;
+        grid-column: 3 / span 6;
+
+        outline: 1px solid green;
+      }
+
+      .nav-item {
+        display: inline-block;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {

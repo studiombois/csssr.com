@@ -2,12 +2,22 @@ import React from 'react'
 
 const Common = () =>
   <style jsx global>{`
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html {
       font-size: 8px;
     }
 
     body {
       margin: 0;
+    }
+
+    ul {
+      list-style: none;
     }
 
     .grid-container {

@@ -2,7 +2,19 @@ import React from 'react'
 
 const Text = () =>
   <style jsx global>{`
-    .h1Slab {
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .font_h1-slab {
       font-family: Roboto Slab;
       font-size: 8rem;
       font-weight: 300;
@@ -10,7 +22,7 @@ const Text = () =>
       color: #000000;
     }
 
-    .h1Regular {
+    .font_h1-regular {
       font-family: Roboto;
       font-size: 5rem;
       font-weight: 900;
@@ -18,7 +30,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .h2Slab {
+    .font_h2-slab {
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto Slab;
@@ -27,7 +39,7 @@ const Text = () =>
       color: #000000;
     }
 
-    .h2Regular {
+    .font_h2-regular {
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
@@ -37,7 +49,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .h3Regular {
+    .font_h3-regular {
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 900;
@@ -45,7 +57,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .subheadSlab {
+    .font_subhead-slab {
       margin-top: -3px;
       padding-bottom: 3px;
       font-family: Roboto Slab;
@@ -55,7 +67,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .subheadRegular {
+    .font_subhead-regular {
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto;
@@ -65,7 +77,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .buttonLabel {
+    .font_button-label {
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 900;
@@ -75,7 +87,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .linkList16 {
+    .font_link-list_16 {
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 300;
@@ -84,7 +96,7 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .linkList24 {
+    .font_link_list-24 {
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
@@ -95,7 +107,7 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .linkList28 {
+    .font_link-list_28 {
       margin-top: -4px;
       padding-bottom: 4px;
       font-family: Roboto;
@@ -106,7 +118,7 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .footerLink {
+    .font_footer-link {
       margin-top: -6px;
       padding-bottom: 6px;
       font-family: Roboto;
@@ -116,7 +128,7 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .footerText {
+    .font_footer-text {
       margin-top: -6px;
       padding-bottom: 6px;
       font-family: Roboto;
@@ -126,8 +138,8 @@ const Text = () =>
       color: #000000;
     }
 
-    .basicInputLabe),
-    .errorInputLabel {
+    .font_input-basic-label,
+    .font_input-error-label {
       font-family: Roboto;
       font-size: 1.75rem;
       line-height: 2rem;
@@ -136,12 +148,12 @@ const Text = () =>
       color: #c5c5c5;
     }
 
-    .errorInputLabel {
+    .font_input-error-label {
       color: #d0021b;
     }
 
-    .smallInputLabe),
-    .focusInputLabel {
+    .font_input-small-Label,
+    .font_input-focus-label {
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto;
@@ -152,22 +164,22 @@ const Text = () =>
       color: #9b9b9b;
     }
 
-    .focusInputLabel {
+    .font_input-focus-label {
       color: #0076ff;
     }
 
-    .inputPlaceholder {
+    .font_input-placeholder {
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
       font-size: 3rem;
       font-weight: 100;
-      line-height: 6rem;
+      line-height: 4rem;
       color: #c0c0c0;
     }
 
-    .inputtedTextRegula),
-    .inputtedTextError {
+    .font_inputted-text-regular,
+    .font_inputted-text-error {
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
@@ -177,11 +189,11 @@ const Text = () =>
       color: #000000;
     }
 
-    .inputtedTextError {
+    .font_inputted-text-error {
       color: #d0021b;
     }
 
-    .burgerMenu {
+    .font_burger-menu {
       margin-top: -4px;
       padding-bottom: 4px;
       font-family: Roboto;
@@ -193,7 +205,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .topMenu {
+    .font_top-menu {
       margin-top: -3px;
       padding-bottom: 3px;
       font-family: Roboto;
@@ -205,7 +217,7 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .p16Regular {
+    .font_p16-regular {
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 300;
@@ -213,7 +225,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .p24Strong {
+    .font_p24-strong {
       margin-top: -3px;
       padding-bottom: 3px;
       font-family: Roboto;
@@ -222,7 +234,7 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .perforator16black {
+    .font_perforator-16-black {
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 900;
@@ -232,7 +244,7 @@ const Text = () =>
       color: #9b9b9b;
     }
 
-    .perforator10regular {
+    .font_perforator-10-regular {
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto;

@@ -1,17 +1,43 @@
 import React from 'react'
 
-const Fonts = () =>
+const Common = () =>
   <style jsx global>{`
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html {
       font-size: 8px;
     }
 
-    h1 {
+    body {
       margin: 0;
     }
 
-    p {
-      margin: 0;
+    ul {
+      list-style: none;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 15rem);
+      column-gap: 4rem;
+    }
+
+    @media (min-width: 1360px) and (max-width: 1919px) {
+      .grid-container {
+        grid-template-columns: repeat(12, 12rem);
+        column-gap: 2rem;
+      }
+    }
+
+    @media (max-width: 1359px) {
+      .grid-container {
+        grid-template-columns: repeat(12, 11rem);
+        column-gap: 2rem;
+      }
     }
 
     @font-face {
@@ -208,4 +234,4 @@ const Fonts = () =>
     }
   `}</style>
 
-export default Fonts
+export default Common

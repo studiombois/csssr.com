@@ -5,7 +5,7 @@ const Example = () =>
   <div>
     <Head title='Example' />
 
-    <header className='header' id='header'>
+    {/* <header className='header' id='header'>
       <div className='tagline'>
         <h1 className='title'>
           We make the&nbsp;world more logical with JS
@@ -33,7 +33,7 @@ const Example = () =>
           Dmitriy Chekin, CEO
         </p>
       </div>
-    </header>
+    </header> */}
 
     <style jsx>{`
       .header {
@@ -120,10 +120,6 @@ const Example = () =>
           padding-left: 3rem;
           padding-right: 3rem;
           width: 1280px;
-        }
-
-        .tagline {
-          grid-column: 3 / span 5;
         }
       }
 

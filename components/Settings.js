@@ -32,7 +32,7 @@ export default class Settings extends PureComponent {
   render() {
     return <style jsx>{`
       .pixel-perfect {
-        background-position: 0 0;
+        background-position: 50% 0;
         background-size: 1920px;
         background-image: url('http://s.csssr.ru/U31J879TR/1920__....png');
         background-repeat: no-repeat;
@@ -66,7 +66,7 @@ export default class Settings extends PureComponent {
       @media (max-width: 1359px) {
         .pixel-perfect {
           background-size: 1280px;
-          background-image: url('http://s.csssr.ru/U31J879TR/1280_1365.png');
+          background-image: url('http://s.csssr.ru/U31J879TR/1280_1360.png');
         }
 
         .layout-columns-on {

@@ -27,6 +27,7 @@ const Footer = ({ router: { pathname } }) =>
 
     <ul className='social-links'>
       <li className='social-link'>
+        {/* TODO: поставить правильную ссылку */}
         <a
           href='https://ru-ru.facebook.com/'
           target='_blank'
@@ -36,6 +37,7 @@ const Footer = ({ router: { pathname } }) =>
       </li>
 
       <li className='social-link'>
+        {/* TODO: поставить правильную ссылку */}
         <a
           href='https://ru.linkedin.com/'
           target='_blank'
@@ -47,6 +49,7 @@ const Footer = ({ router: { pathname } }) =>
 
     <ul className='footer-links'>
       <li className='footer-link'>
+        {/* TODO: поставить правильную ссылку */}
         <a
           href='https://en.wikipedia.org/wiki/Privacy_policy'
           className='font_footer-link'
@@ -57,6 +60,7 @@ const Footer = ({ router: { pathname } }) =>
       </li>
 
       <li className='footer-link'>
+        {/* TODO: поставить правильную ссылку */}
         <a
           href='https://en.wikipedia.org/wiki/HTTP_cookie'
           className='font_footer-link'
@@ -72,7 +76,7 @@ const Footer = ({ router: { pathname } }) =>
         </span>
 
         {' '}
-
+        {/* TODO: поставить правильную ссылку */}
         <a
           href='https://en.wikipedia.org/wiki/Front-end_web_development'
           className='font_footer-link'

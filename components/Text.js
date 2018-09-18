@@ -2,6 +2,18 @@ import React from 'react'
 
 const Text = () =>
   <style jsx global>{`
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
     .h1Slab {
       font-family: Roboto Slab;
       font-size: 8rem;
@@ -126,7 +138,7 @@ const Text = () =>
       color: #000000;
     }
 
-    .basicInputLabe),
+    .basicInputLabel,
     .errorInputLabel {
       font-family: Roboto;
       font-size: 1.75rem;
@@ -140,7 +152,7 @@ const Text = () =>
       color: #d0021b;
     }
 
-    .smallInputLabe),
+    .smallInputLabel,
     .focusInputLabel {
       margin-top: -2px;
       padding-bottom: 2px;
@@ -162,11 +174,11 @@ const Text = () =>
       font-family: Roboto;
       font-size: 3rem;
       font-weight: 100;
-      line-height: 6rem;
+      line-height: 4rem;
       color: #c0c0c0;
     }
 
-    .inputtedTextRegula),
+    .inputtedTextRegular,
     .inputtedTextError {
       margin-top: -7px;
       padding-bottom: 7px;

@@ -121,10 +121,6 @@ const Example = () =>
           padding-right: 3rem;
           width: 1280px;
         }
-
-        .tagline {
-          grid-column: 3 / span 5;
-        }
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {

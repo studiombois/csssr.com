@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 
 const links = [
-  { href: '/example', label: 'Example' },
+  { href: '/', label: 'Example' },
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link

@@ -1260,6 +1260,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+
 cli-cursor@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
@@ -2058,6 +2062,10 @@ fill-range@^4.0.0:
     is-number "^3.0.0"
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
+
+final-form@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.10.0.tgz#6179bca7676925202510e9877eb1ad2ad1cd3460"
 
 find-cache-dir@^0.1.1:
   version "0.1.1"
@@ -3695,6 +3703,10 @@ react-dom@^16.5.1:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     schedule "^0.4.0"
+
+react-final-form@^3.6.5:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-3.6.5.tgz#191324bc686b20e9e49c929a79949f34b38ba8e5"
 
 react-lifecycles-compat@3.0.4:
   version "3.0.4"

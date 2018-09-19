@@ -1,9 +1,11 @@
 import React from 'react'
 import Head from '../components/Head'
+import Form from '../components/Form'
 
 const Example = () =>
   <div>
     <Head title='Example' />
+    <Form />
 
     {/* <header className='header' id='header'>
       <div className='tagline'>

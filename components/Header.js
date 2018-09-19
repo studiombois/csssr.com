@@ -62,6 +62,7 @@ const Header = ({ router: { pathname }, sectionName }) =>
         height: 8rem;
         width: 1920px;
         align-items: center;
+        align-content: center;
         background-color: rgba(255, 255, 255, 0.9);
       }
 

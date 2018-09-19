@@ -85,7 +85,6 @@ const Text = () =>
       line-height: 3rem;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
-      color: #4a4a4a;
     }
 
     .font_button-label_custom_color {

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Head from '../components/Head'
+import Form from '../components/FormContainer'
 import Hire from '../components/dev/Hire'
 import Feature1 from '../components/dev/Feature1'
 import Feature2 from '../components/dev/Feature2'
@@ -29,4 +30,5 @@ export default () =>
       images={images}
     />
     <h1 id='hire-us'>FORM</h1>
+    <Form />
   </Fragment>

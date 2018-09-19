@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from '../components/Head'
-import Form from '../components/Form'
+import Form from '../components/FormContainer'
 
 const Example = () =>
   <div>

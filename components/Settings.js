@@ -11,10 +11,6 @@ export default class Settings extends PureComponent {
         className: 'layout-columns-on',
         keyCode: 76,
       },
-      {
-        className: 'pixel-perfect',
-        keyCode: 80,
-      },
     ]
 
     window.addEventListener('keydown', function (event) {
@@ -31,13 +27,6 @@ export default class Settings extends PureComponent {
 
   render() {
     return <Fragment><style jsx global>{`
-      .pixel-perfect {
-        background-position: 50% 0;
-        background-size: 1920px;
-        background-image: url('http://s.csssr.ru/U31J879TR/1920__....png');
-        background-repeat: no-repeat;
-      }
-
       .grid {
         background-size: 1rem 1rem;
         background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
@@ -51,13 +40,6 @@ export default class Settings extends PureComponent {
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
-        .pixel-perfect {
-          background-position: 0 0;
-          background-size: 1920px;
-          background-image: url('http://s.csssr.ru/U31J879TR/1920__....png');
-          background-repeat: no-repeat;
-        }
-
         .grid {
           background-size: 1rem 1rem;
           background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
@@ -72,11 +54,6 @@ export default class Settings extends PureComponent {
       }
 
       @media (max-width: 1359px) {
-        .pixel-perfect {
-          background-size: 1280px;
-          background-image: url('http://s.csssr.ru/U31J879TR/1280_1360.png');
-        }
-
         .layout-columns-on {
           background-position: 3rem;
           background-size: 13rem;

@@ -20,8 +20,13 @@ const Common = () =>
       list-style: none;
     }
 
+    picture {
+      font-size: 0;
+    }
+
     .grid-container {
       display: grid;
+      align-content: start;
       grid-template-columns: repeat(12, 15rem);
       column-gap: 4rem;
     }

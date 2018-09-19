@@ -194,8 +194,6 @@ const Text = () =>
     }
 
     .font_burger-menu {
-      margin-top: -4px;
-      padding-bottom: 4px;
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 900;

@@ -77,13 +77,18 @@ const Text = () =>
       color: #4a4a4a;
     }
 
-    .font_button-label {
+    .font_button-label,
+    .font_button-label_custom_color {
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 900;
       line-height: 3rem;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
+    }
+
+    .font_button-label_custom_color {
+      color: inherit;
     }
 
     .font_link-list_16 {
@@ -244,7 +249,6 @@ const Text = () =>
       padding-bottom: 2px;
       font-family: Roboto;
       font-size: 1.25rem;
-      font-weight: 900;
       line-height: 2rem;
       letter-spacing: 0.1625rem;
       text-transform: uppercase;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Head from './Head'
 import Header from './Header'
 import Common from './Common'
@@ -10,16 +10,17 @@ import { string } from 'prop-types'
 const Layout = props => {
   const { children } = props
 
-  return <div className='layout'>
+  return <Fragment>
     <Head />
     <Common />
     <Settings />
     <Text />
     <Header />
-
-    {children}
+    <main>
+      {children}
+    </main>
     <Footer />
-  </div>
+  </Fragment>
 }
 
 Layout.propTypes = {

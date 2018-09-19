@@ -5,9 +5,9 @@ import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import BurgerIcon from '../static/icons/burger.svg'
 
 const links = [
-  { href: '/competence_and_services', label: 'Competence & Services' },
-  { href: '/customers', label: 'Customers' },
-  { href: '/hire_us', label: 'Hire us' },
+  { href: '#competence-and-services', label: 'Competence & Services' },
+  { href: '#customers', label: 'Customers' },
+  { href: '#hire-us', label: 'Hire us' },
 ]
 
 const csssrLogoIcon = <CSSSRLogoIcon width='12rem' height='3rem' color='black'/>
@@ -62,6 +62,7 @@ const Header = ({ router: { pathname }, sectionName }) =>
         height: 8rem;
         width: 1920px;
         align-items: center;
+        align-content: center;
         background-color: rgba(255, 255, 255, 0.9);
       }
 

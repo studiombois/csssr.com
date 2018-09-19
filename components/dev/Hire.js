@@ -22,7 +22,7 @@ export default () =>
           Я хотел избавится от лишних оберток, так что можно оставить пока так,
           ну или делать эти обертки.
       */}
-      <Button style={{ 'grid-column': '3 / span 2' }}>
+      <Button style={{ gridColumn: '3 / span 2' }}>
         HIRE&nbsp;US
       </Button>
 
@@ -47,11 +47,11 @@ export default () =>
         margin-right: auto;
         padding-left: 8rem;
         padding-right: 8rem;
-        padding-top: 16rem;
+        padding-top: 24rem;
         width: 1920px;
-        height: 112rem;
+        height: 120rem;
         background-image: url('https://via.placeholder.com/1792x640');
-        background-position: 50% 32rem;
+        background-position: 50% 40rem;
         background-repeat: no-repeat;
       }
 

@@ -35,7 +35,7 @@ export default class Settings extends PureComponent {
       .layout-columns-on {
         background-position: 8rem;
         background-size: 19rem;
-        background-image: linear-gradient(90deg, #F6D3C3 15rem, #fff 15rem, #fff 4rem);
+        background-image: linear-gradient(90deg, #F6D3C3 15rem, transparent 15rem, transparent 4rem);
         opacity: 0.5;
       }
 
@@ -48,7 +48,7 @@ export default class Settings extends PureComponent {
         .layout-columns-on {
           background-position: 2rem;
           background-size: 14rem;
-          background-image: linear-gradient(90deg, #F6D3C3 12rem, #fff 12rem, #fff 2rem);
+          background-image: linear-gradient(90deg, #F6D3C3 12rem, transparent 12rem, transparent 2rem);
           opacity: 0.5;
         }
       }
@@ -57,7 +57,7 @@ export default class Settings extends PureComponent {
         .layout-columns-on {
           background-position: 3rem;
           background-size: 13rem;
-          background-image: linear-gradient(90deg, #F6D3C3 11rem, #fff 11rem, #fff 2rem);
+          background-image: linear-gradient(90deg, #F6D3C3 11rem, transparent 11rem, transparent 2rem);
         }
       }
     `}</style></Fragment>

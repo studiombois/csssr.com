@@ -13,7 +13,8 @@
     "next": "^7.0.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-final-form": "^3.6.5"
+    "react-final-form": "^3.6.5",
+    "smoothscroll": "^0.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

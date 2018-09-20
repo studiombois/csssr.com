@@ -10,7 +10,8 @@ export default class ContactForm extends PureComponent {
     const { handleSubmit, submitting, pristine } = this.props
 
     return (
-      <form id='hire-us' className='grid-container' onSubmit={handleSubmit}>
+      <form className='grid-container' onSubmit={handleSubmit}>
+        <h2 id='hire-us' className='font_h2-slab headline'>Talk to us</h2>
         <div className='field'>
           <Field
             id='name'
@@ -41,28 +42,45 @@ export default class ContactForm extends PureComponent {
             label='E-mail'
           />
         </div>
+        <div className='field'>
+          <Field
+            id='telegram'
+            name='telegram'
+            component={TextField}
+            type='text'
+            placeholder='lenin'
+            label='Telegram login'
+          />
+        </div>
         <div className='field field_type_textarea'>
           <Field
             id='message'
             name='message'
             component={TextareaField}
-            placeholder='Message'
+            placeholder='Tell something about you'
           />
         </div>
         <div className='button'>
           <Button type='submit' disabled={submitting || pristine}>
             Submit
           </Button>
-        </div>
-        <style jsx>{`
+        </div><style jsx>{`
           form {
             margin-right: auto;
             margin-left: auto;
+            padding-top: 17rem;
             padding-left:  8rem;
             padding-right: 8rem;
             width: 1920px;
             align-items: center;
             border: none;
+          }
+
+          .headline {
+            position: relative;
+            margin-bottom: 10.625rem;
+            grid-column: 4 / span 6;
+            text-align: center;
           }
 
           .field {

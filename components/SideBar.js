@@ -1,23 +1,23 @@
 import React, { PureComponent } from 'react'
+import { withRouter } from 'next/router'
 import { bool, func } from 'prop-types'
 import cn from 'classnames'
 import CrossIcon from '../static/icons/cross.svg'
 
 const items = [{
-  href: '/',
+  href: '/en/software',
   text: 'Software Engeniring',
 }, {
-  href: '/',
+  href: '/en/recruitment',
   text: 'Recruitment',
 }, {
-  href: '/',
+  href: '/en/companys',
   text: 'Company',
-  isActive: true,
 }, {
-  href: '/',
+  href: '/en/products',
   text: 'Products',
 }, {
-  href: '/',
+  href: '/en/education',
   text: 'Education',
 }]
 
@@ -30,32 +30,37 @@ export class SideBar extends PureComponent {
     onToggle: func,
   }
 
-  renderNavItem = ({ href, text, isActive }) => (
-    <li key={text} className='item'>
-      <a
-        href={href}
-        className={cn('font_burger-menu link', {
-          link_active: isActive,
-        })}
-      >
-        {text}
-      </a>
-      <style jsx>{`
-        .link {
-          padding-right: 11rem;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          height: 6rem;
-        }
+  renderNavItem = ({ href, text }) => {
+    const { router: { pathname } } = this.props
+    console.log(pathname)
 
-        .link_active {
-          background-color: #7b7b7b;
-          color: #fff;
-        }
-      `}</style>
-    </li>
-  )
+    return (
+      <li key={text} className='item'>
+        <a
+          href={href}
+          className={cn('font_burger-menu link', {
+            link_active: pathname === href,
+          })}
+        >
+          {text}
+        </a>
+        <style jsx>{`
+          .link {
+            padding-right: 11rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 6rem;
+          }
+
+          .link_active {
+            background-color: #7b7b7b;
+            color: #fff;
+          }
+        `}</style>
+      </li>
+    )
+  }
 
   render() {
     const { isOpened, onToggle } = this.props
@@ -189,4 +194,4 @@ export class SideBar extends PureComponent {
   }
 }
 
-export default SideBar
+export default withRouter(SideBar)

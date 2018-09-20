@@ -10,7 +10,7 @@ const links = [
 })
 
 const Nav = ({ router: { pathname } }) => (
-  <nav>
+  <nav>/c
     <ul>
       {links.map(({ key, href, label }) => (
         <li key={key} className={href === pathname && 'active' }>

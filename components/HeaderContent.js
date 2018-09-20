@@ -6,9 +6,9 @@ import BurgerIcon from '../static/icons/burger.svg'
 import cn from 'classnames'
 
 const links = [
-  { href: '/competence_and_services', label: 'Competence & Services' },
-  { href: '/customers', label: 'Customers' },
-  { href: '/hire_us', label: 'Hire us' },
+  { href: '#competence-and-services', label: 'Competence & Services' },
+  { href: '#customers', label: 'Customers' },
+  { href: '#hire-us', label: 'Hire us' },
 ]
 
 const csssrLogoIcon = <CSSSRLogoIcon width='12rem' height='3rem' color='black'/>

@@ -1,28 +1,27 @@
 import React, { PureComponent, Fragment } from 'react'
-import { node, oneOf, bool, func } from 'prop-types'
+import { node, oneOf, bool, string } from 'prop-types'
 import cn from 'classnames'
 
 export default class Button extends PureComponent {
   static propTypes = {
-    disabled: bool,
-    type: oneOf(['button', 'submit']),
     theme: oneOf(['primary', 'secondary']),
     children: node,
-    onClick: func,
+    href: string,
+    external: bool,
+    disabled: bool,
   }
 
   static defaultProps = {
-    type: 'button',
     theme: 'primary',
   }
 
   render() {
     const {
-      disabled,
-      type,
       theme,
       children,
-      onClick,
+      external,
+      disabled,
+      href,
     } = this.props
 
     const classNames = cn('button', {
@@ -34,14 +33,14 @@ export default class Button extends PureComponent {
 
     return (
       <Fragment>
-        <button
-          type={type}
+        <a
           className={classNames}
-          onClick={onClick}
+          target={external ? '_blank' : null}
           disabled={disabled}
+          href={href}
         >
           {children}
-        </button>
+        </a>
         <style jsx>{`
           .button {
             display: flex;

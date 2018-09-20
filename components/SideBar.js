@@ -37,6 +37,7 @@ export class SideBar extends PureComponent {
   static propTypes = {
     isOpened: bool,
     onToggle: func,
+    onClose: func,
   }
 
   renderNavItem = ({ href, text }) => {
@@ -51,8 +52,7 @@ export class SideBar extends PureComponent {
           })}
         >
           {text}
-        </a>
-        <style jsx>{`
+        </a><style jsx>{`
           .link {
             padding-right: 11rem;
             display: flex;
@@ -106,9 +106,9 @@ export class SideBar extends PureComponent {
             position: fixed;
             top: 0;
             right: 0;
+            bottom: 0;
             z-index: 10;
             width: 53rem;
-            height: 100vh;
             background-color: #fff;
             transform: translateX(100%);
             transition: transform 0.3s ease-out;

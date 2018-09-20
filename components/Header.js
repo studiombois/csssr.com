@@ -68,7 +68,7 @@ export class Header extends PureComponent {
           {sectionName || 'Software Engeniring'}
         </span>
 
-        <button className='burger' onClick={this.handleSideBarToggle}>
+        <button type='button' aria-label='Open menu' className='burger' onClick={this.handleSideBarToggle}>
           {burgerIcon}
         </button>
 

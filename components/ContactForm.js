@@ -13,6 +13,7 @@ export default class ContactForm extends PureComponent {
       <form id='hire-us' className='grid-container' onSubmit={handleSubmit}>
         <div className='field'>
           <Field
+            id='name'
             name='name'
             component={TextField}
             type='text'
@@ -22,6 +23,7 @@ export default class ContactForm extends PureComponent {
         </div>
         <div className='field'>
           <Field
+            id='phone'
             name='phone'
             component={TextField}
             type='text'
@@ -31,6 +33,7 @@ export default class ContactForm extends PureComponent {
         </div>
         <div className='field'>
           <Field
+            id='email'
             name='email'
             component={TextField}
             type='email'
@@ -40,6 +43,7 @@ export default class ContactForm extends PureComponent {
         </div>
         <div className='field field_type_textarea'>
           <Field
+            id='message'
             name='message'
             component={TextareaField}
             placeholder='Message'

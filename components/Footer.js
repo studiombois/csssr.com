@@ -28,6 +28,7 @@ const Footer = ({ router: { pathname } }) =>
     <ul className='social-links'>
       {/* <li className='social-link'>
         <a
+          aria-label='VK link'
           href='https://vk.com/csssr'
           target='_blank'
         >
@@ -37,6 +38,7 @@ const Footer = ({ router: { pathname } }) =>
 
       <li className='social-link'>
         <a
+          aria-label='Facebook link'
           href='https://www.facebook.com/csssr/'
           target='_blank'
         >
@@ -46,6 +48,7 @@ const Footer = ({ router: { pathname } }) =>
 
       <li className='social-link'>
         <a
+          aria-label='LinkedIn link'
           href='https://www.linkedin.com/company/csssr'
           target='_blank'
         >

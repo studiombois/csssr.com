@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Head from './Head'
 import Header from './Header'
 import Common from './Common'
 import Settings from './Settings'
@@ -11,7 +10,6 @@ const Layout = props => {
   const { children } = props
 
   return <Fragment>
-    <Head />
     <Common />
     <Settings />
     <Text />

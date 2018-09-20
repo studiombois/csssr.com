@@ -109,7 +109,7 @@ export default class TextField extends PureComponent {
             height: 1px;
             width: 0;
             background-color: #0076ff;
-            transition: width 0.2s ease-out;
+            transition: width 0.3s ease-out;
             content: '';
           }
 

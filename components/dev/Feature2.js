@@ -5,7 +5,7 @@ export default ({ title, text, images, style }) =>
     <section className='grid-container' style={style}>
       <h2 className='font_subhead-slab'>
         {title}
-      </h2>z
+      </h2>
 
       <p className='font_p16-regular'>
         {text}

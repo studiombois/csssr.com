@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Link from 'next/link'
 import Button from '../ui-kit/Button'
 import smoothScroll from 'smoothscroll'
 

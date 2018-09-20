@@ -3,6 +3,7 @@ import { withRouter } from 'next/router'
 import { bool, func } from 'prop-types'
 import cn from 'classnames'
 import CrossIcon from '../static/icons/cross.svg'
+import ClickOutside from './ui-kit/ClickOutside'
 
 const items = [{
   href: '/en/software',
@@ -11,7 +12,7 @@ const items = [{
   href: '/en/recruitment',
   text: 'Recruitment',
 }, {
-  href: '/en/companys',
+  href: '/en/company',
   text: 'Company',
 }, {
   href: '/en/products',
@@ -22,12 +23,21 @@ const items = [{
 }]
 
 const crossIcon = <CrossIcon width='3rem' height='3rem'/>
+const clickOutsideStyles = {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  left: 0,
+  bottom: 0,
+  height: '100%',
+}
 
 
 export class SideBar extends PureComponent {
   static propTypes = {
     isOpened: bool,
     onToggle: func,
+    onClose: func,
   }
 
   renderNavItem = ({ href, text }) => {
@@ -42,8 +52,7 @@ export class SideBar extends PureComponent {
           })}
         >
           {text}
-        </a>
-        <style jsx>{`
+        </a><style jsx>{`
           .link {
             padding-right: 11rem;
             display: flex;
@@ -62,33 +71,37 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { isOpened, onToggle } = this.props
+    const { isOpened, onToggle, onClose } = this.props
 
     return (
       <aside className={cn('sidebar', {
         sidebar_opened: isOpened,
       })}>
-        <button type='button' aria-label='Close menu' className='close' onClick={onToggle}>
-          {crossIcon}
-        </button>
-        <div className='body'>
-          <div className='top'>
-            <div className='font_perforator-16-black active'>Company</div>
-            <ul className='list'>
-              {items.map(this.renderNavItem)}
-            </ul>
+        <ClickOutside
+          onOutsideClick={onClose}
+          style={clickOutsideStyles}
+        >
+          <button type='button' aria-label='Close menu' className='close' onClick={onToggle}>
+            {crossIcon}
+          </button>
+          <div className='body'>
+            <div className='top'>
+              <div className='font_perforator-16-black active'>Company</div>
+              <ul className='list'>
+                {items.map(this.renderNavItem)}
+              </ul>
+            </div>
+            <div className='bottom'>
+              <a
+                href='/ru'
+                className='font_footer-link'
+                target='_blank'
+              >
+                Доступно на русском языке
+              </a>
+            </div>
           </div>
-          <div className='bottom'>
-            <a
-              href='/ru'
-              className='font_footer-link'
-              target='_blank'
-            >
-              Доступно на русском языке
-            </a>
-          </div>
-        </div>
-        <style jsx>{`
+        </ClickOutside><style jsx>{`
           .sidebar {
             position: fixed;
             top: 0;
@@ -99,6 +112,15 @@ export class SideBar extends PureComponent {
             background-color: #fff;
             transform: translateX(100%);
             transition: transform 0.3s ease-out;
+          }
+
+          .data {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
           }
 
           .sidebar:before {

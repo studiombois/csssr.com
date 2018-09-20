@@ -68,7 +68,7 @@ export class SideBar extends PureComponent {
       <aside className={cn('sidebar', {
         sidebar_opened: isOpened,
       })}>
-        <button className='close' onClick={onToggle}>
+        <button type='button' aria-label='Close menu' className='close' onClick={onToggle}>
           {crossIcon}
         </button>
         <div className='body'>

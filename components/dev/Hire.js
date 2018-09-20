@@ -1,6 +1,12 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
-import ButtonLink from '../ui-kit/ButtonLink'
+import Button from '../ui-kit/Button'
+import smoothScroll from 'smoothscroll'
+
+const handleClick = href => event => {
+  event.preventDefault()
+  smoothScroll(document.querySelector(href))
+}
 
 export default () =>
   <Fragment>
@@ -24,11 +30,9 @@ export default () =>
           ну или делать эти обертки.
       */}
       <div className='button-wrapper'>
-        <Link prefetch href={'#hire-us'} passHref>
-          <ButtonLink>
-            HIRE&nbsp;US
-          </ButtonLink>
-        </Link>
+        <Button onClick={handleClick('#hire-us')}>
+          HIRE&nbsp;US
+        </Button>
       </div>
 
       <blockquote>

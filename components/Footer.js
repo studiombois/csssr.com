@@ -26,7 +26,7 @@ const Footer = ({ router: { pathname } }) =>
     }
 
     <ul className='social-links'>
-      {/*<li className='social-link'>
+      {/* <li className='social-link'>
         <a
           href='https://vk.com/csssr'
           target='_blank'

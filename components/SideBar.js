@@ -32,7 +32,6 @@ export class SideBar extends PureComponent {
 
   renderNavItem = ({ href, text }) => {
     const { router: { pathname } } = this.props
-    console.log(pathname)
 
     return (
       <li key={text} className='item'>

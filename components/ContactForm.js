@@ -10,7 +10,7 @@ export default class ContactForm extends PureComponent {
     const { handleSubmit, submitting, pristine } = this.props
 
     return (
-      <form className='grid-container' onSubmit={handleSubmit}>
+      <form id='hire-us' className='grid-container' onSubmit={handleSubmit}>
         <div className='field'>
           <Field
             name='name'

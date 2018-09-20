@@ -36,7 +36,7 @@ export default () =>
   <Fragment>
     <section className='grid-container'>
       <h2 id='customers' className='font_h2-slab'>
-        More than 450 completed projects in&nbsp;different industries
+        More than 450 completed projects in&nbsp;different industries
       </h2>
 
       <div className='column'>

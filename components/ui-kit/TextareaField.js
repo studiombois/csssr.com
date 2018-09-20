@@ -54,9 +54,8 @@ export default class TextField extends PureComponent {
           autoFocus={autoFocus}
           type={type}
           disabled={disabled}
-        >
-          {value}
-        </textarea>
+          value={value}
+        />
         <style jsx>{`
           .field.error .input {
             color: #d0021b;

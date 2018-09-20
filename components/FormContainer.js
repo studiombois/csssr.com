@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import ContactForm from './ContactForm'
 
-
 const onSubmit = values => {
   console.log(values)
 }

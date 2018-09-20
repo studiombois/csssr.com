@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Head from '../components/Head'
+import Form from '../components/FormContainer'
 import Hire from '../components/dev/Hire'
 import Feature1 from '../components/dev/Feature1'
 import Feature2 from '../components/dev/Feature2'
@@ -28,4 +29,5 @@ export default () =>
       text='Most of&nbsp;us are perfectionists. Perfectionism is&nbsp;far more dangerous than procrastination&nbsp;&mdash; and we&nbsp;have tamed&nbsp;it. That is&nbsp;why our code is&nbsp;architecturally complex yet elegant, and our attention to&nbsp;detail is&nbsp;almost maniacal&nbsp;&mdash; but only if&nbsp;justified by&nbsp;the business requirements. In&nbsp;our opinion, it&nbsp;is&nbsp;focus on&nbsp;details that makes the difference between average and successful projects.'
       images={images}
     />
+    <Form />
   </Fragment>

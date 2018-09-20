@@ -3,8 +3,8 @@ import React, { Fragment } from 'react'
 export default () =>
   <Fragment>
     <section className='grid-container'>
-      <h2 className='font_h2-slab'>
-        We&nbsp;create web services  for&nbsp;millions to&nbsp;use
+      <h2 id='competence-and-services' className='font_h2-slab'>
+        We&nbsp;create web services for&nbsp;millions to&nbsp;use
       </h2>
 
       <p className='font_p24-strong'>

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import Button from '../Button'
+import Link from 'next/link'
+import ButtonLink from '../ui-kit/ButtonLink'
 
 export default () =>
   <Fragment>
@@ -22,9 +23,13 @@ export default () =>
           Я хотел избавится от лишних оберток, так что можно оставить пока так,
           ну или делать эти обертки.
       */}
-      <Button style={{ gridColumn: '3 / span 2' }}>
-        HIRE&nbsp;US
-      </Button>
+      <div className='button-wrapper'>
+        <Link prefetch href={'#hire-us'} passHref>
+          <ButtonLink>
+            HIRE&nbsp;US
+          </ButtonLink>
+        </Link>
+      </div>
 
       <blockquote>
         <p className='font_p16-regular'>
@@ -78,6 +83,10 @@ export default () =>
 
       footer {
         font-weight: bold;
+      }
+
+      .button-wrapper {
+        grid-column: 3 / span 2;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {

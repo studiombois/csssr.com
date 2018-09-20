@@ -26,10 +26,18 @@ const Footer = ({ router: { pathname } }) =>
     }
 
     <ul className='social-links'>
-      <li className='social-link'>
-        {/* TODO: поставить правильную ссылку */}
+      {/* <li className='social-link'>
         <a
-          href='https://ru-ru.facebook.com/'
+          href='https://vk.com/csssr'
+          target='_blank'
+        >
+          {vkIcon}
+        </a>
+      </li>*/}
+
+      <li className='social-link'>
+        <a
+          href='https://www.facebook.com/csssr/'
           target='_blank'
         >
           {facebookIcon}
@@ -37,9 +45,8 @@ const Footer = ({ router: { pathname } }) =>
       </li>
 
       <li className='social-link'>
-        {/* TODO: поставить правильную ссылку */}
         <a
-          href='https://ru.linkedin.com/'
+          href='https://www.linkedin.com/company/csssr'
           target='_blank'
         >
           {linkedInIcon}
@@ -76,9 +83,8 @@ const Footer = ({ router: { pathname } }) =>
         </span>
 
         {' '}
-        {/* TODO: поставить правильную ссылку */}
         <a
-          href='https://en.wikipedia.org/wiki/Front-end_web_development'
+          href='https://frontend.digital/'
           className='font_footer-link'
           target='_blank'
         >

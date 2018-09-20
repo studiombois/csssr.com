@@ -3,15 +3,17 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "eslint-fix": "eslint --fix components/ pages/ next.config.js"
   },
   "dependencies": {
     "babel-plugin-inline-react-svg": "^0.5.4",
     "classnames": "^2.2.6",
-    "next": "^6.1.2",
+    "final-form": "^4.10.0",
+    "next": "^7.0.0",
     "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "react-dom": "^16.5.1",
+    "react-final-form": "^3.6.5"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

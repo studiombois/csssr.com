@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import BurgerIcon from '../static/icons/burger.svg'
+import SideBar from './SideBar'
 import cn from 'classnames'
 
 const links = [
@@ -25,6 +26,7 @@ class Header extends PureComponent {
     showHeader: true,
     pinHeader: true,
     toggleHeaderAnimations: false,
+    isSideBarOpened: false,
   }
 
   lastScrollTop = 0
@@ -35,6 +37,36 @@ class Header extends PureComponent {
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { isSideBarOpened } = this.state
+
+    if (isSideBarOpened === prevState.isSideBarOpened) {
+      return
+    }
+
+    if (isSideBarOpened) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'initial'
+    }
+  }
+
+  handleSideBarToggle = () => {
+    this.setState(previousState => ({
+      isSideBarOpened: !previousState.isSideBarOpened,
+    }))
+  }
+
+  handleSideBarClose = e => {
+    const isSideBar = e.target.classList.toString().match(/sidebar/)
+
+    if (this.state.isSideBarOpened && isSideBar) {
+      this.setState({
+        isSideBarOpened: false,
+      })
+    }
   }
 
   handleScroll = event => {
@@ -80,6 +112,11 @@ class Header extends PureComponent {
           header_animations_on: toggleHeaderAnimations,
         })}
       >
+        <SideBar
+          onToggle={this.handleSideBarToggle}
+          isOpened={this.state.isSideBarOpened}
+          onClose={this.handleSideBarClose}
+        />
         <div
           className='grid-container header-content'
         >
@@ -117,9 +154,10 @@ class Header extends PureComponent {
             {sectionName || 'Software Engeniring'}
           </span>
 
-          <button className='burger'>
+          <button className='burger' onClick={this.handleSideBarToggle}>
             {burgerIcon}
           </button>
+
         </div>
         <style jsx>{`
           .header {

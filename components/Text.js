@@ -85,7 +85,6 @@ const Text = () =>
       line-height: 3rem;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
-      color: #4a4a4a;
     }
 
     .font_button-label_custom_color {
@@ -195,8 +194,6 @@ const Text = () =>
     }
 
     .font_burger-menu {
-      margin-top: -4px;
-      padding-bottom: 4px;
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 900;

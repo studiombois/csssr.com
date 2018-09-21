@@ -1,11 +1,7 @@
 import React, { Fragment } from 'react'
 import Button from '../ui-kit/Button'
-import smoothScroll from 'smoothscroll'
-
-const handleClick = href => event => {
-  event.preventDefault()
-  smoothScroll(document.querySelector(href))
-}
+import Link from 'next/link'
+import scrollIntoView from '../../utils/scrollIntoView'
 
 export default () =>
   <Fragment>
@@ -29,9 +25,11 @@ export default () =>
           ну или делать эти обертки.
       */}
       <div className='button-wrapper'>
-        <Button onClick={handleClick('#hire-us')}>
-          HIRE&nbsp;US
-        </Button>
+        <Link href='#hire-us'>
+          <Button onClick={scrollIntoView('#hire-us')}>
+            HIRE&nbsp;US
+          </Button>
+        </Link>
       </div>
 
       <blockquote>

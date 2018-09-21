@@ -42,22 +42,12 @@ export default class ContactForm extends PureComponent {
             label='E-mail'
           />
         </div>
-        <div className='field'>
-          <Field
-            id='telegram'
-            name='telegram'
-            component={TextField}
-            type='text'
-            placeholder='lenin'
-            label='Telegram login'
-          />
-        </div>
         <div className='field field_type_textarea'>
           <Field
             id='message'
             name='message'
             component={TextareaField}
-            placeholder='Tell something about you'
+            placeholder='Tell us about your product or service'
           />
         </div>
         <div className='button'>

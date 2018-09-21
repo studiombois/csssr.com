@@ -4,7 +4,7 @@ import Link from 'next/link'
 import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import BurgerIcon from '../static/icons/burger.svg'
 import cn from 'classnames'
-import smoothScroll from 'smoothscroll'
+import scrollIntoView from '../utils/scrollIntoView'
 
 const links = [
   { href: '#competence-and-services', label: 'Competence & Services' },
@@ -23,11 +23,6 @@ class HeaderContent extends PureComponent {
     pinHeader: bool,
     toggleHeaderAnimations: bool,
     onSideBarToggle: func,
-  }
-
-  handleClick = href => event => {
-    event.preventDefault()
-    smoothScroll(document.querySelector(href))
   }
 
   render() {
@@ -74,7 +69,9 @@ class HeaderContent extends PureComponent {
                   className='nav-list-item'
                   key={`nav-link-${href}-${label}`}
                 >
-                  <a className='nav-list-link font_top-menu' onClick={this.handleClick(href)}>{label}</a>
+                  <Link href={href}>
+                    <a className='nav-list-link font_top-menu' onClick={scrollIntoView(href)}>{label}</a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -4,10 +4,9 @@ import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import Button from './ui-kit/Button'
 
-
 export default class ContactForm extends PureComponent {
   render() {
-    const { handleSubmit, submitting, pristine } = this.props
+    const { handleSubmit, submitting, valid } = this.props
 
     return (
       <form id='hire-us' className='grid-container' onSubmit={handleSubmit}>
@@ -50,7 +49,7 @@ export default class ContactForm extends PureComponent {
           />
         </div>
         <div className='button'>
-          <Button type='submit' disabled={submitting || pristine}>
+          <Button type='submit' disabled={submitting || !valid}>
             Submit
           </Button>
         </div>

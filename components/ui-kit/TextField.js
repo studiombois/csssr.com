@@ -25,7 +25,6 @@ export default class TextField extends PureComponent {
   render() {
     const {
       id,
-      state,
       placeholder,
       label,
       autoFocus,
@@ -37,11 +36,12 @@ export default class TextField extends PureComponent {
         onBlur,
         onFocus,
       },
+      meta,
     } = this.props
 
     return (
       <div className={cn('field', {
-        error: state === 'error',
+        error: meta.error && meta.touched,
       })}>
         <input
           className='input'

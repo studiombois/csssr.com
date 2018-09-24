@@ -6,11 +6,17 @@ const Common = () =>
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      outline: none;
     }
 
     html {
       font-size: 8px;
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
 
     body {

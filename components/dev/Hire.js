@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
-import Button from '../ui-kit/Button'
-import Link from 'next/link'
-import scrollIntoView from '../../utils/scrollIntoView'
+import ButtonLink from '../ui-kit/ButtonLink'
 
 export default () =>
   <Fragment>
@@ -24,12 +22,11 @@ export default () =>
           Я хотел избавится от лишних оберток, так что можно оставить пока так,
           ну или делать эти обертки.
       */}
+
       <div className='button-wrapper'>
-        <Link href='#hire-us'>
-          <Button onClick={scrollIntoView('#hire-us')}>
-            HIRE&nbsp;US
-          </Button>
-        </Link>
+        <ButtonLink href={'#hire-us'}>
+          HIRE&nbsp;US
+        </ButtonLink>
       </div>
 
       <blockquote>

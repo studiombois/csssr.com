@@ -28,20 +28,20 @@ const Common = () =>
       display: grid;
       align-content: start;
       grid-template-columns: repeat(12, 15rem);
-      column-gap: 4rem;
+      grid-gap: 0 4rem;
     }
 
     @media (min-width: 1360px) and (max-width: 1919px) {
       .grid-container {
         grid-template-columns: repeat(12, 12rem);
-        column-gap: 2rem;
+        grid-gap: 0 2rem;
       }
     }
 
     @media (max-width: 1359px) {
       .grid-container {
         grid-template-columns: repeat(12, 11rem);
-        column-gap: 2rem;
+        grid-gap: 0 2rem;
       }
     }
 

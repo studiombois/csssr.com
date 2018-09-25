@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Link from 'next/link'
 import ButtonLink from '../ui-kit/ButtonLink'
 
 export default () =>
@@ -23,12 +22,11 @@ export default () =>
           Я хотел избавится от лишних оберток, так что можно оставить пока так,
           ну или делать эти обертки.
       */}
+
       <div className='button-wrapper'>
-        <Link prefetch href={'#hire-us'} passHref>
-          <ButtonLink>
-            HIRE&nbsp;US
-          </ButtonLink>
-        </Link>
+        <ButtonLink href={'#hire-us'}>
+          HIRE&nbsp;US
+        </ButtonLink>
       </div>
 
       <blockquote>

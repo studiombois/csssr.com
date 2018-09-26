@@ -4,22 +4,24 @@ import { bool, func } from 'prop-types'
 import cn from 'classnames'
 import CrossIcon from '../static/icons/cross.svg'
 import ClickOutside from './ui-kit/ClickOutside'
+import Link from 'next/link'
+import withI18next from '../utils/withI18next'
 
 const items = [{
-  href: '/en/software',
-  text: 'Software Engeniring',
+  path: '',
+  key: 'softwareEngineering',
 }, {
-  href: '/en/recruitment',
-  text: 'Recruitment',
+  path: '/recruitment',
+  key: 'recruitment',
 }, {
-  href: '/en/company',
-  text: 'Company',
+  path: '/company',
+  key: 'company',
 }, {
-  href: '/en/products',
-  text: 'Products',
+  path: '/products',
+  key: 'products',
 }, {
-  href: '/en/education',
-  text: 'Education',
+  path: '/education',
+  key: 'education',
 }]
 
 const crossIcon = <CrossIcon width='3rem' height='3rem'/>
@@ -40,19 +42,20 @@ export class SideBar extends PureComponent {
     onClose: func,
   }
 
-  renderNavItem = ({ href, text }) => {
-    const { router: { pathname } } = this.props
+  renderNavItem = ({ path, key }) => {
+    const { router: { pathname }, t, lng } = this.props
+    const languageHref = `/${lng}${path}`
 
     return (
-      <li key={text} className='item'>
-        <a
-          href={href}
-          className={cn('font_burger-menu link', {
-            link_active: pathname === href,
-          })}
-        >
-          {text}
-        </a><style jsx>{`
+      <li key={key} className='item'>
+        <Link prefetch href={languageHref}>
+          <a className={cn('font_burger-menu link', {
+            link_active: pathname === languageHref,
+          })}>
+            {t(key)}
+          </a>
+        </Link>
+        <style jsx>{`
           .link {
             padding-right: 11rem;
             display: flex;
@@ -95,9 +98,20 @@ export class SideBar extends PureComponent {
               <a
                 href='/ru'
                 className='font_footer-link'
-                target='_blank'
               >
                 Доступно на русском языке
+              </a>
+              <a
+                href='/en'
+                className='font_footer-link'
+              >
+                EN
+              </a>
+              <a
+                href='/de'
+                className='font_footer-link'
+              >
+                DE
               </a>
             </div>
           </div>
@@ -209,10 +223,14 @@ export class SideBar extends PureComponent {
             background-color: #ff0000;
             // content: '';
           }
+
+          .bottom a {
+            margin-right: 2px
+          }
         `}</style>
       </aside>
     )
   }
 }
 
-export default withRouter(SideBar)
+export default withRouter(withI18next(['menu'])(SideBar))

@@ -1,74 +1,62 @@
-// const express = require('express')
-// const path = require('path')
-// const next = require('next')
-//
-// const port = parseInt(process.env.PORT, 10) || 3000
-// const dev = process.env.NODE_ENV !== 'production'
-// const app = next({ dev })
-// const handle = app.getRequestHandler()
-//
-// const i18nextMiddleware = require('i18next-express-middleware')
-// const Backend = require('i18next-node-fs-backend')
-// const i18n = require('./i18n')
-//
-// // init i18next with serverside settings
-// // using i18next-express-middleware
-// i18n
-//   .use(Backend)
-//   .use(i18nextMiddleware.LanguageDetector)
-//   .init({
-//     fallbackLng: 'en',
-//     preload: ['en', 'de'], // preload all langages
-//     ns: ['common', 'home', 'page2'], // need to preload all the namespaces
-//     backend: {
-//       loadPath: path.join(__dirname, '/locales/{{lng}}/{{ns}}.json'),
-//       addPath: path.join(__dirname, '/locales/{{lng}}/{{ns}}.missing.json')
-//     }
-//   }, () => {
-//     // loaded translations we can bootstrap our routes
-//     app.prepare()
-//       .then(() => {
-//         const server = express()
-//
-//         // enable middleware for i18next
-//         server.use(i18nextMiddleware.handle(i18n))
-//
-//         // serve locales for client
-//         server.use('/locales', express.static(path.join(__dirname, '/locales')))
-//
-//         // missing keys
-//         server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n))
-//
-//         // use next.js
-//         server.get('*', (req, res) => handle(req, res))
-//
-//         server.listen(port, (err) => {
-//           if (err) throw err
-//           console.log(`> Ready on http://localhost:${port}`)
-//         })
-//       })
-//   })
-
-
+import path from 'path'
 import express from 'express'
 import next from 'next'
 
+import i18nextMiddleware from 'i18next-express-middleware'
+import i18nextNodeFsBackend from 'i18next-node-fs-backend'
+import i18n from '../common/i18n'
+
 const port = parseInt(process.env.PORT, 10) || 3000
-const dev = process.env.NODE_ENV !== 'production'
+const dev = process.env.NODE_ENV === 'development'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-app
-  .prepare()
-  .then(() => {
-    const server = express()
+i18n
+  .use(i18nextMiddleware.LanguageDetector)
+  .use(i18nextNodeFsBackend)
+  .init({
+    fallbackLng: 'en',
+    load: 'languageOnly',
+    whitelist: ['en', 'ru', 'de'],
+    preload: ['en', 'ru', 'de'],
+    ns: ['common', 'dev', 'recruitment', 'menu'],
+    detection: {
+      order: ['path', 'cookie', 'header'],
+      lookupCookie: 'language',
+      lookupFromPathIndex: 0,
+      caches: ['cookie'],
+    },
+    backend: {
+      loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
+      adath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.missing.json'),
+    },
+  }, () => {
+    app.prepare()
+      .then(() => {
+        const server = express()
 
-    server.get('*', (req, res) => {
-      return handle(req, res)
-    })
+        // TODO
+        // Добавить раздачу статики из static
+        // Добавить favicon
 
-    server.listen(port, (err) => {
-      if (err) throw err
-      console.log(`> Ready on http://localhost:${port}`)
-    })
+        server.use(i18nextMiddleware.handle(i18n))
+
+        server.get('/', function (req, res) {
+          const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
+          res.redirect(`/${language}`)
+        })
+
+        server.use('/locales', express.static(path.join(__dirname, '../locales')))
+
+        server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n))
+
+        server.get('*', (req, res) => {
+          return handle(req, res)
+        })
+
+        server.listen(port, err => {
+          if (err) throw err
+          console.log(`> Ready on http://localhost:${port}`)
+        })
+      })
   })

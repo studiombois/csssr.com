@@ -17,7 +17,7 @@ const Footer = ({ router: { pathname } }) =>
       </span>
 
       : <span className='logo-wrapper'>
-        <Link prefetch href={'/'}>
+        <Link prefetch href='/'>
           <a>
             {csssrLogoIcon}
           </a>

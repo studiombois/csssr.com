@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
-import Head from '../components/Head'
-import Form from '../components/FormContainer'
-import Hire from '../components/dev/Hire'
-import Feature1 from '../components/dev/Feature1'
-import Feature2 from '../components/dev/Feature2'
-import Partners from '../components/dev/Partners'
+import Head from '../../components/Head'
+import Form from '../../components/FormContainer'
+import Hire from '../../components/dev/Hire'
+import Feature1 from '../../components/dev/Feature1'
+import Feature2 from '../../components/dev/Feature2'
+import Partners from '../../components/dev/Partners'
+import withI18next from '../../utils/withI18next'
 
 const images = {
   w1920: 'https://via.placeholder.com/1184x568',
@@ -12,9 +13,9 @@ const images = {
   w1280: 'https://via.placeholder.com/816x568',
 }
 
-export default () =>
+export default withI18next(['dev'])(({ t }) =>
   <Fragment>
-    <Head title='CSSSR.COM DEV' />
+    <Head title={t('title')} />
     <Hire />
     <Feature1 />
     <Feature2
@@ -31,3 +32,4 @@ export default () =>
     />
     <Form />
   </Fragment>
+)

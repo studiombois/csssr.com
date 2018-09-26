@@ -13,7 +13,7 @@ module.exports = {
       config.plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: 'server',
         analyzerPort: isServer ? 8888 : 8889,
-        openAnalyzer: true
+        openAnalyzer: true,
       }))
     }
 
@@ -24,7 +24,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
-          emitWarning: dev,
+          emitWarning: true,
         },
       })
     }

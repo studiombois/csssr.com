@@ -25,7 +25,6 @@ export default class TextField extends PureComponent {
   render() {
     const {
       id,
-      state,
       placeholder,
       label,
       autoFocus,
@@ -37,11 +36,12 @@ export default class TextField extends PureComponent {
         onBlur,
         onFocus,
       },
+      meta,
     } = this.props
 
     return (
       <div className={cn('field', {
-        error: state === 'error',
+        error: meta.error && meta.touched,
       })}>
         <input
           className='input'
@@ -61,8 +61,7 @@ export default class TextField extends PureComponent {
           htmlFor={id}
         >
           {label}
-        </label>}
-        <style jsx>{`
+        </label>}<style jsx>{`
           .field.error .input {
             color: #d0021b;
             border-color: #d0021b;
@@ -73,6 +72,7 @@ export default class TextField extends PureComponent {
           }
 
           .input {
+            padding-bottom: 1rem;
             display: block;
             width: 100%;
             height: 5rem;
@@ -109,7 +109,7 @@ export default class TextField extends PureComponent {
             height: 1px;
             width: 0;
             background-color: #0076ff;
-            transition: width 0.2s ease-out;
+            transition: width 0.3s ease-out;
             content: '';
           }
 

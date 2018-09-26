@@ -4,13 +4,13 @@ import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import Button from './ui-kit/Button'
 
-
 export default class ContactForm extends PureComponent {
   render() {
-    const { handleSubmit, submitting, pristine } = this.props
+    const { handleSubmit, submitting, valid } = this.props
 
     return (
-      <form id='hire-us' className='grid-container' onSubmit={handleSubmit}>
+      <form className='grid-container' onSubmit={handleSubmit}>
+        <h2 id='hire-us' className='font_h2-slab headline'>Talk to us</h2>
         <div className='field'>
           <Field
             id='name'
@@ -46,23 +46,30 @@ export default class ContactForm extends PureComponent {
             id='message'
             name='message'
             component={TextareaField}
-            placeholder='Message'
+            placeholder='Tell us about your product or service'
           />
         </div>
         <div className='button'>
-          <Button type='submit' disabled={submitting || pristine}>
+          <Button type='submit' disabled={submitting || !valid}>
             Submit
           </Button>
-        </div>
-        <style jsx>{`
+        </div><style jsx>{`
           form {
             margin-right: auto;
             margin-left: auto;
+            padding-top: 17rem;
             padding-left:  8rem;
             padding-right: 8rem;
             width: 1920px;
             align-items: center;
             border: none;
+          }
+
+          .headline {
+            position: relative;
+            margin-bottom: 10.625rem;
+            grid-column: 4 / span 6;
+            text-align: center;
           }
 
           .field {

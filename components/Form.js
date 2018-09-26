@@ -1,15 +1,13 @@
 import React, { PureComponent } from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import ContactForm from './ContactForm'
+import contactFormValidationRules from '../utils/contactFormValidationRules'
 
 const onSubmit = values => {
   console.log(values)
 }
 
 export default class Form extends PureComponent {
-  static propTypes = {
-
-  }
 
   renderForm = props => <ContactForm {...props} />
 
@@ -17,6 +15,7 @@ export default class Form extends PureComponent {
     return (
       <ReactFinalForm
         onSubmit={onSubmit}
+        validate={contactFormValidationRules}
         render={this.renderForm}
       />
     )

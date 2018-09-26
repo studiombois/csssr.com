@@ -68,9 +68,7 @@ class HeaderContent extends PureComponent {
                   className='nav-list-item'
                   key={`nav-link-${href}-${label}`}
                 >
-                  <Link prefetch href={href}>
-                    <a className='nav-list-link font_top-menu'>{label}</a>
-                  </Link>
+                  <a className='nav-list-link font_top-menu' href={href}>{label}</a>
                 </li>
               ))}
             </ul>
@@ -146,6 +144,7 @@ class HeaderContent extends PureComponent {
 
           .nav-list-link {
             height: 4rem;
+            cursor: pointer;
           }
 
           .section-name {

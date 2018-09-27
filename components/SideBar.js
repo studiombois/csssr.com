@@ -22,7 +22,7 @@ const items = [{
   text: 'Education',
 }]
 
-const crossIcon = <CrossIcon width='3rem' height='3rem'/>
+const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
 const clickOutsideStyles = {
   position: 'absolute',
   top: 0,
@@ -54,11 +54,11 @@ export class SideBar extends PureComponent {
           {text}
         </a><style jsx>{`
           .link {
-            padding-right: 11rem;
+            padding-right: 5.5rem;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            height: 6rem;
+            height: 3rem;
           }
 
           .link_active {
@@ -108,7 +108,7 @@ export class SideBar extends PureComponent {
             right: 0;
             bottom: 0;
             z-index: 10;
-            width: 53rem;
+            width: 26.5rem;
             background-color: #fff;
             transform: translateX(100%);
             transition: transform 0.3s ease-out;
@@ -149,10 +149,10 @@ export class SideBar extends PureComponent {
           .close {
             position: absolute;
             z-index: 1;
-            top: 2.5rem;
-            right: 8rem;
-            height: 3rem;
-            width: 3rem;
+            top: 1.25rem;
+            right: 4rem;
+            height: 1.5rem;
+            width: 1.5rem;
             border: none;
             background: none;
             cursor: pointer;
@@ -160,25 +160,14 @@ export class SideBar extends PureComponent {
 
           .active {
             position: relative;
-            margin-bottom: 8.25rem;
-            padding-right: 16rem;
-            line-height: 2rem;
+            margin-bottom: 4.125rem;
+            padding-right: 8rem;
+            line-height: 1rem;
             text-align: right;
           }
 
-          .active::before {
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            height: 96px;
-            width: 64px;
-            opacity: 0.3;
-            background-color: #ff0000;
-            // content: '';
-          }
-
           .body {
-            padding-bottom: 8rem;
+            padding-bottom: 4rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -186,28 +175,17 @@ export class SideBar extends PureComponent {
           }
 
           .top {
-            margin-top: 3rem;
+            margin-top: 1.5rem;
           }
 
           .bottom {
             position: relative;
-            margin-top: 2rem;
+            margin-top: 1rem;
             margin-bottom: -6px;
-            padding-right: 11rem;
+            padding-right: 5.5rem;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-          }
-
-          .bottom::before {
-            position: absolute;
-            top: 18px;
-            left: 78%;
-            height: 64px;
-            width: 64px;
-            opacity: 0.3;
-            background-color: #ff0000;
-            // content: '';
           }
         `}</style>
       </aside>

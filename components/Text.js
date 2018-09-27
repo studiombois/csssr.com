@@ -16,17 +16,17 @@ const Text = () =>
 
     .font_h1-slab {
       font-family: Roboto Slab;
-      font-size: 8rem;
+      font-size: 4rem;
       font-weight: 300;
-      line-height: 10rem;
+      line-height: 5rem;
       color: #000000;
     }
 
     .font_h1-regular {
       font-family: Roboto;
-      font-size: 5rem;
+      font-size: 2.5rem;
       font-weight: 900;
-      line-height: 7rem;
+      line-height: 3.5rem;
       color: #4a4a4a;
     }
 
@@ -34,8 +34,8 @@ const Text = () =>
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto Slab;
-      font-size: 6rem;
-      line-height: 8rem;
+      font-size: 3rem;
+      line-height: 4rem;
       color: #000000;
     }
 
@@ -43,17 +43,17 @@ const Text = () =>
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
-      font-size: 3rem;
+      font-size: 1.5rem;
       font-weight: 900;
-      line-height: 4rem;
+      line-height: 2rem;
       color: #4a4a4a;
     }
 
     .font_h3-regular {
       font-family: Roboto;
-      font-size: 2rem;
+      font-size: 1rem;
       font-weight: 900;
-      line-height: 3rem;
+      line-height: 1.5rem;
       color: #4a4a4a;
     }
 
@@ -61,9 +61,9 @@ const Text = () =>
       margin-top: -3px;
       padding-bottom: 3px;
       font-family: Roboto Slab;
-      font-size: 4rem;
+      font-size: 2rem;
       font-weight: 300;
-      line-height: 6rem;
+      line-height: 3rem;
       color: #4a4a4a;
     }
 
@@ -71,19 +71,19 @@ const Text = () =>
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto;
-      font-size: 4rem;
+      font-size: 2rem;
       font-weight: 100;
-      line-height: 6rem;
+      line-height: 3rem;
       color: #4a4a4a;
     }
 
     .font_button-label,
     .font_button-label_custom_color {
       font-family: Roboto;
-      font-size: 2rem;
+      font-size: 1rem;
       font-weight: 900;
-      line-height: 3rem;
-      letter-spacing: 0.2rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.1rem;
       text-transform: uppercase;
     }
 
@@ -93,9 +93,9 @@ const Text = () =>
 
     .font_link-list_16 {
       font-family: Roboto;
-      font-size: 2rem;
+      font-size: 1rem;
       font-weight: 300;
-      line-height: 3rem;
+      line-height: 1.5rem;
       text-decoration: underline;
       color: #0076ff;
     }
@@ -104,9 +104,9 @@ const Text = () =>
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
-      font-size: 3rem;
+      font-size: 1.5rem;
       font-weight: 300;
-      line-height: 4rem;
+      line-height: 2rem;
       text-decoration: underline;
       color: #0076ff;
     }
@@ -115,9 +115,9 @@ const Text = () =>
       margin-top: -4px;
       padding-bottom: 4px;
       font-family: Roboto;
-      font-size: 3.5rem;
+      font-size: 1.75rem;
       font-weight: 300;
-      line-height: 5rem;
+      line-height: 2.5rem;
       text-decoration: underline;
       color: #0076ff;
     }
@@ -127,9 +127,9 @@ const Text = () =>
       margin-top: -6px;
       padding-bottom: 6px;
       font-family: Roboto;
-      font-size: 1.25rem;
+      font-size: 0.625rem;
       font-weight: 500;
-      line-height: 3rem;
+      line-height: 1.5rem;
       color: #0076ff;
     }
 
@@ -141,9 +141,9 @@ const Text = () =>
     .font_input-basic-label,
     .font_input-error-label {
       font-family: Roboto;
-      font-size: 1.75rem;
-      line-height: 2rem;
-      letter-spacing: 0.1rem;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      letter-spacing: 0.05rem;
       text-transform: uppercase;
       color: #c5c5c5;
     }
@@ -157,9 +157,9 @@ const Text = () =>
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto;
-      font-size: 1.25rem;
-      line-height: 2rem;
-      letter-spacing: 0.1625rem;
+      font-size: 0.625rem;
+      line-height: 1rem;
+      letter-spacing: 0.08125rem;
       text-transform: uppercase;
       color: #9b9b9b;
     }
@@ -172,9 +172,9 @@ const Text = () =>
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
-      font-size: 3rem;
+      font-size: 1.5rem;
       font-weight: 100;
-      line-height: 4rem;
+      line-height: 2rem;
       color: #c0c0c0;
     }
 
@@ -183,9 +183,9 @@ const Text = () =>
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
-      font-size: 3rem;
+      font-size: 1.5rem;
       font-weight: 300;
-      line-height: 4rem;
+      line-height: 2rem;
       color: #000000;
     }
 
@@ -195,10 +195,10 @@ const Text = () =>
 
     .font_burger-menu {
       font-family: Roboto;
-      font-size: 2rem;
+      font-size: 1rem;
       font-weight: 900;
-      line-height: 6rem;
-      letter-spacing: 0.1rem;
+      line-height: 3rem;
+      letter-spacing: 0.05rem;
       text-transform: uppercase;
       color: #4a4a4a;
     }
@@ -207,19 +207,19 @@ const Text = () =>
       margin-top: -3px;
       padding-bottom: 3px;
       font-family: Roboto;
-      font-size: 1.5rem;
+      font-size: 0.75rem;
       font-weight: bold;
-      line-height: 4rem;
-      letter-spacing: 0.1rem;
+      line-height: 2rem;
+      letter-spacing: 0.05rem;
       text-transform: uppercase;
       color: #0076ff;
     }
 
     .font_p16-regular {
       font-family: Roboto;
-      font-size: 2rem;
+      font-size: 1rem;
       font-weight: 300;
-      line-height: 3rem;
+      line-height: 1.5rem;
       color: #4a4a4a;
     }
 
@@ -227,17 +227,17 @@ const Text = () =>
       margin-top: -3px;
       padding-bottom: 3px;
       font-family: Roboto;
-      font-size: 3rem;
-      line-height: 5rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
       color: #4a4a4a;
     }
 
     .font_perforator-16-black {
       font-family: Roboto;
-      font-size: 2rem;
+      font-size: 1rem;
       font-weight: 900;
-      line-height: 3rem;
-      letter-spacing: 0.125rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.0625rem;
       text-transform: uppercase;
       color: #9b9b9b;
     }
@@ -246,9 +246,9 @@ const Text = () =>
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto;
-      font-size: 1.25rem;
-      line-height: 2rem;
-      letter-spacing: 0.1625rem;
+      font-size: 0.625rem;
+      line-height: 1rem;
+      letter-spacing: 0.08125rem;
       text-transform: uppercase;
       color: #4a4a4a;
     }

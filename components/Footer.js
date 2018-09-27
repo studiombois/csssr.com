@@ -5,9 +5,9 @@ import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import FacebookIcon from '../static/icons/facebook.svg'
 import LinkedInIcon from '../static/icons/linkedin.svg'
 
-const csssrLogoIcon = <CSSSRLogoIcon width='12rem' height='3rem' color='black'/>
-const facebookIcon = <FacebookIcon width='3rem' height='3rem' />
-const linkedInIcon = <LinkedInIcon width='3rem' height='3rem' />
+const csssrLogoIcon = <CSSSRLogoIcon width='6rem' height='1.5rem' color='black'/>
+const facebookIcon = <FacebookIcon width='1.5rem' height='1.5rem' />
+const linkedInIcon = <LinkedInIcon width='1.5rem' height='1.5rem' />
 
 const Footer = ({ router: { pathname } }) =>
   <footer className='grid-container'>
@@ -101,19 +101,19 @@ const Footer = ({ router: { pathname } }) =>
       footer {
         margin-right: auto;
         margin-left: auto;
-        padding-right: 8rem;
-        padding-left:  8rem;
-        padding-top: 64rem;
-        padding-bottom: 8rem;
+        padding-right: 4rem;
+        padding-left: 4rem;
+        padding-top: 32rem;
+        padding-bottom: 4rem;
         width: 1920px;
         align-items: center;
       }
 
       .logo-wrapper {
         grid-column: 1 / span 2;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        height: 5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        height: 2.5rem;
         text-align: center;
       }
 
@@ -124,32 +124,32 @@ const Footer = ({ router: { pathname } }) =>
       }
 
       .social-link:not(:last-child) {
-        margin-right: 3rem;
+        margin-right: 1.5rem;
       }
 
       .footer-links {
         grid-column: 8 / span 4;
         display: flex;
         justify-content: flex-end;
-        height: 3rem;
+        height: 1.5rem;
       }
 
       .footer-link:not(:last-child) {
-        margin-right: 2rem;
+        margin-right: 1rem;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
-          padding-left:  2rem;
-          padding-right: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
           width: 1360px
         }
       }
 
       @media (max-width: 1359px) {
         footer {
-          padding-left:  3rem;
-          padding-right: 3rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
           width: 1280px
         }
       }

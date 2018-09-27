@@ -67,17 +67,17 @@ export default class TextField extends PureComponent {
           }
 
           .input {
-            padding-top: 1rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            padding-bottom: 3rem;
+            padding-top: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1.5rem;
             display: block;
             width: 100%;
-            height: 20rem;
-            line-height: 1.33;
+            height: 10rem;
+            line-height: 2rem;
             text-align: center;
             font-family: Roboto;
-            font-size: 3rem;
+            font-size: 1.5rem;
             font-weight: 300;
             border: none;
             border: solid 1px #9b9b9b;

@@ -23,12 +23,12 @@ const LinksList = ({ title, links }) =>
 
     <style jsx>{`
       span {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         display: block;
       }
 
       li:not(:last-child) {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
 
       a {

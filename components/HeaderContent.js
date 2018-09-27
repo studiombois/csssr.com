@@ -11,8 +11,8 @@ const links = [
   { href: '#hire-us', label: 'Hire us' },
 ]
 
-const csssrLogoIcon = <CSSSRLogoIcon width='12rem' height='3rem' color='black'/>
-const burgerIcon = <BurgerIcon width='3rem' height='2.25rem'/>
+const csssrLogoIcon = <CSSSRLogoIcon width='6rem' height='1.5rem' color='black'/>
+const burgerIcon = <BurgerIcon width='1.5rem' height='1.125rem'/>
 
 class HeaderContent extends PureComponent {
   static propTypes = {
@@ -110,9 +110,9 @@ class HeaderContent extends PureComponent {
           .header-content {
             margin-right: auto;
             margin-left: auto;
-            padding-left:  8rem;
-            padding-right: 8rem;
-            height: 8rem;
+            padding-left: 4rem;
+            padding-right: 4rem;
+            height: 4rem;
             width: 1920px;
             align-items: center;
             align-content: center;
@@ -120,15 +120,15 @@ class HeaderContent extends PureComponent {
 
           .logo-wrapper {
             grid-column: 1 / span 2;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            height: 5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            height: 2.5rem;
             text-align: center;
           }
 
           .nav {
             grid-column: 3 / span 6;
-            height: 4rem;
+            height: 2rem;
           }
 
           .nav-list {
@@ -139,17 +139,17 @@ class HeaderContent extends PureComponent {
 
           .nav-list-item:not(:last-child) {
             height: 100%;
-            margin-right: 3rem;
+            margin-right: 1.5rem;
           }
 
           .nav-list-link {
-            height: 4rem;
+            height: 2rem;
             cursor: pointer;
           }
 
           .section-name {
             grid-column: 9 / span 3;
-            height: 3rem;
+            height: 1.5rem;
             text-align: right;
           }
 
@@ -157,8 +157,8 @@ class HeaderContent extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             display: block;
-            width: 4rem;
-            height: 4rem;
+            width: 2rem;
+            height: 2rem;
             border: none;
             font-size: 0;
             background: none;
@@ -166,16 +166,16 @@ class HeaderContent extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             .header-content {
-              padding-left:  2rem;
-              padding-right: 2rem;
+              padding-left: 1rem;
+              padding-right: 1rem;
               width: 1360px
             }
           }
 
           @media (max-width: 1359px) {
             .header-content {
-              padding-left:  3rem;
-              padding-right: 3rem;
+              padding-left:  1.5rem;
+              padding-right: 1.5rem;
               width: 1280px
             }
           }

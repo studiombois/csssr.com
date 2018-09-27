@@ -57,9 +57,9 @@ export default class ContactForm extends PureComponent {
           form {
             margin-right: auto;
             margin-left: auto;
-            padding-top: 17rem;
-            padding-left:  8rem;
-            padding-right: 8rem;
+            padding-top: 8.5rem;
+            padding-left: 4rem;
+            padding-right: 4rem;
             width: 1920px;
             align-items: center;
             border: none;
@@ -67,19 +67,19 @@ export default class ContactForm extends PureComponent {
 
           .headline {
             position: relative;
-            margin-bottom: 10.625rem;
+            margin-bottom: 5.3125rem;
             grid-column: 4 / span 6;
             text-align: center;
           }
 
           .field {
             grid-column: 4 / span 6;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
           }
 
           .field_type_textarea {
-            margin-top: 7rem;
-            margin-bottom: 8rem;
+            margin-top: 3.5rem;
+            margin-bottom: 4rem;
           }
 
           .button {
@@ -88,16 +88,16 @@ export default class ContactForm extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
-              padding-left: 2rem;
-              padding-right: 2rem;
+              padding-left: 1rem;
+              padding-right: 1rem;
               width: 1360px
             }
           }
       
           @media (max-width: 1359px) {
             form {
-              padding-left: 3rem;
-              padding-right: 3rem;
+              padding-left: 1.5rem;
+              padding-right: 1.5rem;
               width: 1280px
             }
           }

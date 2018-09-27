@@ -48,7 +48,7 @@ export default class Button extends PureComponent {
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 6rem;
+            height: 3rem;
             background: none;
             border: none;
             cursor: pointer;

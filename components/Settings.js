@@ -28,36 +28,36 @@ export default class Settings extends PureComponent {
   render() {
     return <Fragment><style jsx global>{`
       .grid {
-        background-size: 1rem 1rem;
+        background-size: 0.5rem 0.5rem;
         background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
       }
 
       .layout-columns-on {
-        background-position: 8rem;
-        background-size: 19rem;
-        background-image: linear-gradient(90deg, #F6D3C3 15rem, transparent 15rem, transparent 4rem);
+        background-position: 4rem;
+        background-size: 9.5rem;
+        background-image: linear-gradient(90deg, #F6D3C3 7.5rem, transparent 7.5rem, transparent 2rem);
         opacity: 0.5;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         .grid {
-          background-size: 1rem 1rem;
+          background-size: 0.5rem 0.5rem;
           background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
         }
 
         .layout-columns-on {
-          background-position: 2rem;
-          background-size: 14rem;
-          background-image: linear-gradient(90deg, #F6D3C3 12rem, transparent 12rem, transparent 2rem);
+          background-position: 1rem;
+          background-size: 7rem;
+          background-image: linear-gradient(90deg, #F6D3C3 6rem, transparent 6rem, transparent 1rem);
           opacity: 0.5;
         }
       }
 
       @media (max-width: 1359px) {
         .layout-columns-on {
-          background-position: 3rem;
-          background-size: 13rem;
-          background-image: linear-gradient(90deg, #F6D3C3 11rem, transparent 11rem, transparent 2rem);
+          background-position: 1.5rem;
+          background-size: 6.5rem;
+          background-image: linear-gradient(90deg, #F6D3C3 5.5rem, transparent 5.5rem, transparent 1rem);
         }
       }
     `}</style></Fragment>

@@ -48,34 +48,34 @@ export default () =>
       article {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 8rem;
-        padding-right: 8rem;
-        padding-top: 24rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-top: 12rem;
         width: 1920px;
-        height: 120rem;
+        height: 60rem;
         background-image: url('https://via.placeholder.com/1792x640');
-        background-position: 50% 40rem;
+        background-position: 50% 20rem;
         background-repeat: no-repeat;
       }
 
       blockquote {
         grid-column: 9 / span 3;
         grid-row: 1;
-        margin-top: 6rem;
+        margin-top: 3rem;
       }
 
       h1 {
         grid-column: 3 / span 6;
         grid-row: 1;
-        margin-bottom: 6rem;
+        margin-bottom: 3rem;
       }
 
       p {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
 
       span {
-        padding-top: 10rem;
+        padding-top: 5rem;
         display: block;
       }
 
@@ -90,16 +90,16 @@ export default () =>
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
           width: 1360px;
-          padding-left: 2rem;
-          padding-right: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
           background-image: url('https://via.placeholder.com/1328x640')
         }
       }
 
       @media (max-width: 1359px) {
         article {
-          padding-left: 3rem;
-          padding-right: 3rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
           width: 1280px;
           background-image: url('https://via.placeholder.com/1232x640')
         }

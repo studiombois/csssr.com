@@ -72,13 +72,13 @@ export default class TextField extends PureComponent {
           }
 
           .input {
-            padding-bottom: 1rem;
+            padding-bottom: 0.5rem;
             display: block;
             width: 100%;
-            height: 5rem;
+            height: 2.5rem;
             text-align: center;
             font-family: Roboto;
-            font-size: 3rem;
+            font-size: 1.5rem;
             font-weight: 300;
             border: none;
             border-bottom: solid 1px #9b9b9b;
@@ -96,9 +96,9 @@ export default class TextField extends PureComponent {
             align-items: center;
             font-family: Roboto;
             text-transform: uppercase;
-            height: 3rem;
-            font-size: 1.25rem;
-            letter-spacing: 1.3px;
+            height: 1.5rem;
+            font-size: 0.625rem;
+            letter-spacing: 0.08125rem;
             color: #4a4a4a;
           }
 

@@ -5,6 +5,9 @@ import contactFormValidationRules from '../utils/contactFormValidationRules'
 
 const onSubmit = values => {
   console.log(values)
+  if (window.dataLayer) {
+    window.dataLayer.push({ event: 'form_success' })
+  }
 }
 
 export default class Form extends PureComponent {

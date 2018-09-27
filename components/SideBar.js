@@ -166,6 +166,17 @@ export class SideBar extends PureComponent {
             text-align: right;
           }
 
+          /*.active::before {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            height: 96px;
+            width: 64px;
+            opacity: 0.3;
+            background-color: #ff0000;
+            content: '';
+          }*/
+
           .body {
             padding-bottom: 4rem;
             display: flex;
@@ -187,6 +198,17 @@ export class SideBar extends PureComponent {
             justify-content: flex-end;
             align-items: center;
           }
+
+          /*.bottom::before {
+            position: absolute;
+            top: 18px;
+            left: 78%;
+            height: 64px;
+            width: 64px;
+            opacity: 0.3;
+            background-color: #ff0000;
+            content: '';
+          }*/
         `}</style>
       </aside>
     )

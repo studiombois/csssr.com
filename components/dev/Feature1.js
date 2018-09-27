@@ -33,16 +33,16 @@ export default () =>
       section {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 8rem;
-        padding-right: 8rem;
-        padding-top: 18rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-top: 9rem;
         width: 1920px;
       }
 
       h2 {
         grid-column: 5 / span 4;
         grid-row: 1;
-        margin-bottom: 11rem;
+        margin-bottom: 5.5rem;
         text-align: center;
       }
 
@@ -55,13 +55,13 @@ export default () =>
         grid-column: 2 / span 10;
         grid-row: 2;
         z-index: -1;
-        margin-top: 11rem;
+        margin-top: 5.5rem;
       }
 
       footer {
         grid-row: 3;
         grid-column: 1 / span 12;
-        margin-top: 14rem;
+        margin-top: 7rem;
       }
 
       footer h2,
@@ -71,14 +71,14 @@ export default () =>
 
       footer h2 {
         text-align: left;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
           width: 1360px;
-          padding-left: 2rem;
-          padding-right: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
         }
 
         h2 {
@@ -88,8 +88,8 @@ export default () =>
 
       @media (max-width: 1359px) {
         section {
-          padding-left: 3rem;
-          padding-right: 3rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
           width: 1280px;
         }
 

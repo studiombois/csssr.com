@@ -23,9 +23,9 @@ export default ({ title, text, images, style }) =>
       section {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 8rem;
-        padding-right: 8rem;
-        padding-top: 19rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-top: 9.5rem;
         width: 1920px;
       }
 
@@ -38,20 +38,20 @@ export default ({ title, text, images, style }) =>
         grid-column: 3 / span 8;
         grid-row: 1;
         z-index: -1;
-        margin-top: 4rem;
+        margin-top: 2rem;
       }
 
       p {
         grid-column: 5 / span 6;
         grid-row: 2;
-        margin-top: 6rem;
+        margin-top: 3rem;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
           width: 1360px;
-          padding-left: 2rem;
-          padding-right: 2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
         }
 
         h2 {
@@ -61,8 +61,8 @@ export default ({ title, text, images, style }) =>
 
       @media (max-width: 1359px) {
         section {
-          padding-left: 3rem;
-          padding-right: 3rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
           width: 1280px;
         }
 

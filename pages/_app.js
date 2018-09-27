@@ -1,5 +1,5 @@
-import App, { Container } from 'next/app'
 import React from 'react'
+import App, { Container } from 'next/app'
 import { I18n as I18nR, I18nextProvider } from 'react-i18next'
 import initialI18nInstance from '../common/i18n'
 import Layout from '../components/Layout'

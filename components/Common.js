@@ -9,7 +9,6 @@ const Common = () =>
     }
 
     html {
-      font-size: 8px;
       scroll-behavior: smooth;
     }
 

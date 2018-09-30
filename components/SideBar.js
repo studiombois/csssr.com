@@ -2,26 +2,26 @@ import React, { PureComponent } from 'react'
 import { withRouter } from 'next/router'
 import { bool, func } from 'prop-types'
 import cn from 'classnames'
+import { translate } from 'react-i18next'
 import CrossIcon from '../static/icons/cross.svg'
 import ClickOutside from './ui-kit/ClickOutside'
 import Link from 'next/link'
-import withI18next from '../utils/withI18next'
 
 const items = [{
   path: '',
-  key: 'softwareEngineering',
+  key: 'common:menu.softwareEngineering',
 }, {
   path: '/recruitment',
-  key: 'recruitment',
+  key: 'common:menu.recruitment',
 }, {
   path: '/company',
-  key: 'company',
+  key: 'common:menu.company',
 }, {
   path: '/products',
-  key: 'products',
+  key: 'common:menu.products',
 }, {
   path: '/education',
-  key: 'education',
+  key: 'common:menu.education',
 }]
 
 const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
@@ -233,4 +233,4 @@ export class SideBar extends PureComponent {
   }
 }
 
-export default withRouter(withI18next(['menu'])(SideBar))
+export default withRouter(translate()(SideBar))

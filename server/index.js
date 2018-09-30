@@ -19,7 +19,7 @@ i18n
     load: 'languageOnly',
     whitelist: ['en', 'ru', 'de'],
     preload: ['en', 'ru', 'de'],
-    ns: ['common', 'dev', 'recruitment', 'menu'],
+    ns: ['common', 'dev', 'recruitment'],
     detection: {
       order: ['path', 'cookie', 'header'],
       lookupCookie: 'language',
@@ -28,7 +28,6 @@ i18n
     },
     backend: {
       loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
-      adath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.missing.json'),
     },
   }, () => {
     app.prepare()
@@ -47,8 +46,6 @@ i18n
         })
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))
-
-        server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n))
 
         server.get('*', (req, res) => {
           return handle(req, res)

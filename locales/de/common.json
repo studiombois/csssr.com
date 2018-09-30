@@ -1,3 +1,10 @@
 {
-  "hello": "Hello DE!"
+  "hello": "Hello DE!",
+  "menu": {
+    "softwareEngineering": "Software Engineering DE",
+    "recruitment": "Recruitment DE",
+    "company": "Company DE",
+    "products": "Products DE",
+    "education": "Education DE"
+  }
 }

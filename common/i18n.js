@@ -5,10 +5,9 @@ const options = {
   fallbackLng: 'en',
   load: 'languageOnly',
   whitelist: ['en', 'ru', 'de'],
-  ns: ['common', 'dev', 'recruitment', 'menu'],
+  ns: ['common'],
   defaultNS: 'common',
   debug: process.env.NODE_ENV === 'development',
-  saveMissing: true,
   interpolation: {
     escapeValue: false,
     formatSeparator: ',',

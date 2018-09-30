@@ -15,11 +15,11 @@ const images = {
 
 export default withI18next(['dev'])(({ t }) =>
   <Fragment>
-    <Head title={t('title')} />
+    <Head title={t('dev:title')} />
     <Hire />
     <Feature1 />
     <Feature2
-      title='We&nbsp;care about time to&nbsp;market metrics'
+      title={t('dev:weCareAboutTimeToMarket')}
       text='Our methodology is&nbsp;similar to&nbsp;Scrum and involves working with sprints. Our sprints generally last one or&nbsp;two weeks. At&nbsp;the end of&nbsp;each sprint, we&nbsp;release a&nbsp;new build version and plan product features that will be&nbsp;developed in&nbsp;the next sprint.'
       images={images}
     />

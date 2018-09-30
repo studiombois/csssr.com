@@ -1,8 +1,10 @@
 import { translate } from 'react-i18next'
 import i18n from '../common/i18n'
 
-export default (namespaces = ['common']) => ComposedComponent => {
-  const Extended = translate(namespaces, { wait: process.browser })(
+export default namespaces => ComposedComponent => {
+  const namespacesWithCommon = ['common'].concat(namespaces)
+
+  const Extended = translate(namespacesWithCommon, { wait: process.browser })(
     ComposedComponent
   )
 
@@ -12,7 +14,7 @@ export default (namespaces = ['common']) => ComposedComponent => {
       : {}
 
     const i18nInitialProps = ctx.req
-      ? i18n.getInitialProps(ctx.req, namespaces)
+      ? i18n.getInitialProps(ctx.req, namespacesWithCommon)
       : {}
 
     return {

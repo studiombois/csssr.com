@@ -4,7 +4,7 @@ import Head from '../../components/Head'
 
 export default withI18next(['recruitment'])(({ t }) => (
   <div>
-    <Head title={t('title')} />
+    <Head title={t('recruitment:title')} />
     <h1 className='font_h1-slab'>Eng recruitment</h1>
   </div>
 ))

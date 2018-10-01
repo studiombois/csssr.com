@@ -48,7 +48,8 @@ export class SideBar extends PureComponent {
 
     return (
       <li key={key} className='item'>
-        <Link prefetch href={languageHref}>
+        {/* Добавить prefetch когда будут готовы страницы */}
+        <Link href={languageHref}>
           <a className={cn('font_burger-menu link', {
             link_active: pathname === languageHref,
           })}>

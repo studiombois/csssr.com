@@ -1,10 +1,9 @@
-import path from 'path'
-import express from 'express'
-import next from 'next'
-
-import i18nextMiddleware from 'i18next-express-middleware'
-import i18nextNodeFsBackend from 'i18next-node-fs-backend'
-import i18n from '../common/i18n'
+const path = require('path')
+const express = require('express')
+const next = require('next')
+const i18nextMiddleware = require('i18next-express-middleware')
+const i18nextNodeFsBackend = require('i18next-node-fs-backend')
+const i18n = require('../common/i18n')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV === 'development'

@@ -1,5 +1,5 @@
-import i18n from 'i18next'
-import XHR from 'i18next-xhr-backend'
+const i18n = require('i18next')
+const XHR = require('i18next-xhr-backend')
 
 const options = {
   fallbackLng: 'en',
@@ -51,4 +51,4 @@ i18n.getInitialProps = (req, namespaces) => {
   }
 }
 
-export default i18n
+module.exports = i18n

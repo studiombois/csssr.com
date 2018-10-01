@@ -1,10 +1,10 @@
 {
   "hello": "Hello!",
   "menu": {
-    "softwareEngineering": "Software Engineering EN",
-    "recruitment": "Recruitment EN",
-    "company": "Company EN",
-    "products": "Products EN",
-    "education": "Education EN"
+    "softwareEngineering": "Software Engineering",
+    "recruitment": "Recruitment",
+    "company": "Company",
+    "products": "Products",
+    "education": "Education"
   }
 }

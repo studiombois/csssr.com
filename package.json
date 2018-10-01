@@ -1,25 +1,35 @@
 {
   "name": "csssr.com",
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon --exec node $NODE_DEBUG_OPTION ./server/index.js",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "eslint-fix": "eslint --fix components/ pages/ next.config.js"
+    "start": "cross-env NODE_ENV=production node ./server/index.js",
+    "eslint-fix": "eslint --fix .",
+    "analyze": "cross-env ANALYZE=1 next build"
   },
   "dependencies": {
     "babel-plugin-inline-react-svg": "^0.5.4",
     "classnames": "^2.2.6",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.3",
     "final-form": "^4.10.0",
-    "next": "^7.0.0",
+    "i18next": "^11.9.0",
+    "i18next-express-middleware": "^1.4.0",
+    "i18next-node-fs-backend": "^2.1.0",
+    "i18next-xhr-backend": "^1.5.1",
+    "next": "^7.0.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-final-form": "^3.6.5",
-    "react-gtm-components": "^0.5.0"
+    "react-gtm-components": "^0.5.0",
+    "react-i18next": "^7.13.0"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.6.0",
-    "eslint-loader": "^2.1.0",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "nodemon": "^1.18.4",
+    "webpack-bundle-analyzer": "^3.0.2"
   }
 }

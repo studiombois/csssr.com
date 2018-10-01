@@ -2,24 +2,26 @@ import React, { PureComponent } from 'react'
 import { withRouter } from 'next/router'
 import { bool, func } from 'prop-types'
 import cn from 'classnames'
+import { translate } from 'react-i18next'
 import CrossIcon from '../static/icons/cross.svg'
 import ClickOutside from './ui-kit/ClickOutside'
+import Link from 'next/link'
 
 const items = [{
-  href: '/en/software',
-  text: 'Software Engeniring',
+  path: '',
+  key: 'common:menu.softwareEngineering',
 }, {
-  href: '/en/recruitment',
-  text: 'Recruitment',
+  path: '/recruitment',
+  key: 'common:menu.recruitment',
 }, {
-  href: '/en/company',
-  text: 'Company',
+  path: '/company',
+  key: 'common:menu.company',
 }, {
-  href: '/en/products',
-  text: 'Products',
+  path: '/products',
+  key: 'common:menu.products',
 }, {
-  href: '/en/education',
-  text: 'Education',
+  path: '/education',
+  key: 'common:menu.education',
 }]
 
 const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
@@ -40,19 +42,21 @@ export class SideBar extends PureComponent {
     onClose: func,
   }
 
-  renderNavItem = ({ href, text }) => {
-    const { router: { pathname } } = this.props
+  renderNavItem = ({ path, key }) => {
+    const { router: { pathname }, t, lng } = this.props
+    const languageHref = `/${lng}${path}`
 
     return (
-      <li key={text} className='item'>
-        <a
-          href={href}
-          className={cn('font_burger-menu link', {
-            link_active: pathname === href,
-          })}
-        >
-          {text}
-        </a><style jsx>{`
+      <li key={key} className='item'>
+        {/* Добавить prefetch когда будут готовы страницы */}
+        <Link href={languageHref}>
+          <a className={cn('font_burger-menu link', {
+            link_active: pathname === languageHref,
+          })}>
+            {t(key)}
+          </a>
+        </Link>
+        <style jsx>{`
           .link {
             padding-right: 5.5rem;
             display: flex;
@@ -95,9 +99,20 @@ export class SideBar extends PureComponent {
               <a
                 href='/ru'
                 className='font_footer-link'
-                target='_blank'
               >
                 Доступно на русском языке
+              </a>
+              <a
+                href='/en'
+                className='font_footer-link'
+              >
+                EN
+              </a>
+              <a
+                href='/de'
+                className='font_footer-link'
+              >
+                DE
               </a>
             </div>
           </div>
@@ -209,10 +224,14 @@ export class SideBar extends PureComponent {
             background-color: #ff0000;
             content: '';
           }*/
+
+          .bottom a {
+            margin-right: 2px
+          }
         `}</style>
       </aside>
     )
   }
 }
 
-export default withRouter(SideBar)
+export default withRouter(translate()(SideBar))

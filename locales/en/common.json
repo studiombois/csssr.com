@@ -1,0 +1,10 @@
+{
+  "hello": "Hello!",
+  "menu": {
+    "softwareEngineering": "Software Engineering",
+    "recruitment": "Recruitment",
+    "company": "Company",
+    "products": "Products",
+    "education": "Education"
+  }
+}

@@ -7,13 +7,16 @@ const gtmId = 'GTM-TDG7X5G'
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+
+    return {
+      ...initialProps,
+      language: ctx.req.i18n.language,
+    }
   }
 
   render() {
     return (
-      // TODO проставлять здесь правильный lang
-      <html lang='en'>
+      <html lang={this.props.language}>
         <Head>
           <GtmScript gtmId={gtmId} />
         </Head>

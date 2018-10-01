@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
 import { bool, object, string, func } from 'prop-types'
 import Link from 'next/link'
+import cn from 'classnames'
+import { translate } from 'react-i18next'
 import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import BurgerIcon from '../static/icons/burger.svg'
-import cn from 'classnames'
 
 const links = [
   { href: '#competence-and-services', label: 'Competence & Services' },
@@ -27,12 +28,15 @@ class HeaderContent extends PureComponent {
   render() {
     const {
       pathname,
+      lng,
       sectionName,
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
       onSideBarToggle,
     } = this.props
+
+    const rootUrl = `/${lng}`
 
     return (
       <header
@@ -47,13 +51,13 @@ class HeaderContent extends PureComponent {
         <div
           className='grid-container header-content'
         >
-          {pathname === '/'
+          {pathname === rootUrl
             ? <span className='logo-wrapper'>
               {csssrLogoIcon}
             </span>
 
             : <span className='logo-wrapper'>
-              <Link prefetch href={'/'}>
+              <Link prefetch href={rootUrl}>
                 <a>
                   {csssrLogoIcon}
                 </a>
@@ -186,4 +190,4 @@ class HeaderContent extends PureComponent {
   }
 }
 
-export default HeaderContent
+export default translate()(HeaderContent)

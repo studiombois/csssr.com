@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
+import { translate } from 'react-i18next'
 import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import FacebookIcon from '../static/icons/facebook.svg'
 import LinkedInIcon from '../static/icons/linkedin.svg'
@@ -9,15 +10,17 @@ const csssrLogoIcon = <CSSSRLogoIcon width='6rem' height='1.5rem' color='black'/
 const facebookIcon = <FacebookIcon width='1.5rem' height='1.5rem' />
 const linkedInIcon = <LinkedInIcon width='1.5rem' height='1.5rem' />
 
-const Footer = ({ router: { pathname } }) =>
-  <footer className='grid-container'>
-    {pathname === '/'
+const Footer = ({ router: { pathname }, lng }) => {
+  const rootUrl = `/${lng}`
+
+  return <footer className='grid-container'>
+    {pathname === rootUrl
       ? <span className='logo-wrapper'>
         {csssrLogoIcon}
       </span>
 
       : <span className='logo-wrapper'>
-        <Link prefetch href={'/'}>
+        <Link prefetch href={rootUrl}>
           <a>
             {csssrLogoIcon}
           </a>
@@ -155,5 +158,6 @@ const Footer = ({ router: { pathname } }) =>
       }
     `}</style>
   </footer>
+}
 
-export default withRouter(Footer)
+export default withRouter(translate()(Footer))

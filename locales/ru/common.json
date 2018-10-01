@@ -1,0 +1,10 @@
+{
+  "hello": "Привет!",
+  "menu": {
+    "softwareEngineering": "Софт",
+    "recruitment": "Рекрутинг",
+    "company": "Компания",
+    "products": "Продукты",
+    "education": "Образование"
+  }
+}

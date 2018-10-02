@@ -22,6 +22,10 @@ const Common = () =>
       margin: 0;
     }
 
+    body:not(.outline) * {
+      outline: none;
+    }
+
     ul {
       list-style: none;
     }

@@ -14,9 +14,7 @@ export default ({ title, text, images, style }) =>
         <source media='(max-width: 1359px)' srcSet={images.w1280} />
         <img src={images.w1920} alt='' />
       </picture>
-    </section>
-
-    <style jsx>{`
+    </section><style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
@@ -36,6 +34,11 @@ export default ({ title, text, images, style }) =>
         grid-row: 1;
         z-index: -1;
         margin-top: 2rem;
+        height: 568px;
+      }
+
+      img {
+        height: 100%;
       }
 
       p {

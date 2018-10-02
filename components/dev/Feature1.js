@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-export default () =>
+export default ({ images }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 id='competence-and-services' className='font_h2-slab'>
@@ -13,9 +13,9 @@ export default () =>
 
       {/* TODO: вставить правильную ссылку на картинку и нормальный alt */}
       <picture>
-        <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet='https://via.placeholder.com/1104x768' />
-        <source media='(max-width: 1359px)' srcSet='https://via.placeholder.com/1024x768' />
-        <img src='https://via.placeholder.com/1488x768' alt='' />
+        <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
+        <source media='(max-width: 1359px)' srcSet={images.w1280} />
+        <img src={images.w1920} alt='' />
       </picture>
 
       <footer className='grid-container'>
@@ -27,9 +27,7 @@ export default () =>
           We&nbsp;are the part of&nbsp;the global community of&nbsp;developers who use popular open source technologies and frameworks, such as&nbsp;React, Angular, Vue, Node and many others.
         </p>
       </footer>
-    </section>
-
-    <style jsx>{`
+    </section><style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
@@ -56,6 +54,11 @@ export default () =>
         grid-row: 2;
         z-index: -1;
         margin-top: 5.5rem;
+        height: 768px;
+      }
+
+      img {
+        height: 100%;
       }
 
       footer {

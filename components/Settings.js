@@ -23,16 +23,6 @@ export default class Settings extends PureComponent {
         }
       })
     })
-
-    window.addEventListener('keydown', function (event) {
-      if (event.which === 9) {
-        document.body.classList.add('outline')
-      }
-    })
-
-    window.addEventListener('click', function () {
-      document.body.classList.remove('outline')
-    })
   }
 
   render() {

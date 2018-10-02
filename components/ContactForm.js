@@ -90,6 +90,12 @@ export default class ContactForm extends PureComponent {
             grid-column: 6 / span 2;
           }
 
+          @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+            form {
+              background-image: url('../../static/images/letter_retina.jpg');
+            }
+          }
+
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
               padding-left: 1rem;

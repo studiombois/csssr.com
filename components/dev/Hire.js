@@ -42,9 +42,7 @@ export default () =>
           Dmitriy Chekin, CEO
         </footer>
       </blockquote>
-    </article>
-
-    <style jsx>{`
+    </article><style jsx>{`
       article {
         margin-left: auto;
         margin-right: auto;
@@ -53,7 +51,8 @@ export default () =>
         padding-top: 12rem;
         width: 1920px;
         height: 60rem;
-        background-image: url('https://via.placeholder.com/1792x640');
+        background-image: url('../../static/images/dog_1920.jpg');
+        background-size: auto 640px;
         background-position: 50% 20rem;
         background-repeat: no-repeat;
       }
@@ -87,12 +86,30 @@ export default () =>
         grid-column: 3 / span 2;
       }
 
+      @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+        article {
+          background-image: url('../../static/images/dog_1920_retina.jpg');
+        }
+
+        @media (min-width: 1360px) and (max-width: 1919px) {
+          article {
+            background-image: url('../../static/images/dog_1360_retina.jpg');
+          }
+        }
+
+        @media (max-width: 1359px) {
+          article {
+            background-image: url('../../static/images/dog_1280_retina.jpg');
+          }
+        }
+      }
+
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
           width: 1360px;
           padding-left: 1rem;
           padding-right: 1rem;
-          background-image: url('https://via.placeholder.com/1328x640')
+          background-image: url('../../static/images/dog_1360.jpg');
         }
       }
 
@@ -101,7 +118,7 @@ export default () =>
           padding-left: 1.5rem;
           padding-right: 1.5rem;
           width: 1280px;
-          background-image: url('https://via.placeholder.com/1232x640')
+          background-image: url('../../static/images/dog_1280.jpg');
         }
       }
     `}</style>

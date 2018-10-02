@@ -59,14 +59,18 @@ export default class ContactForm extends PureComponent {
             margin-left: auto;
             padding-top: 8.5rem;
             padding-left: 4rem;
+            padding-bottom: 32rem;
             padding-right: 4rem;
             width: 1920px;
             align-items: center;
             border: none;
+            background-image: url('../../static/images/letter.jpg');
+            background-size: auto 221px;
+            background-position: 50% calc(100% - 11.75rem);
+            background-repeat: no-repeat;
           }
 
           .headline {
-            position: relative;
             margin-bottom: 5.3125rem;
             grid-column: 4 / span 6;
             text-align: center;
@@ -84,6 +88,12 @@ export default class ContactForm extends PureComponent {
 
           .button {
             grid-column: 6 / span 2;
+          }
+
+          @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+            form {
+              background-image: url('../../static/images/letter_retina.jpg');
+            }
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {

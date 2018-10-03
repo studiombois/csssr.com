@@ -32,6 +32,7 @@ export default class Settings extends PureComponent {
       <style jsx global>{`
       #background-for-layout,
       #background-for-grid {
+        display: none;
         position: absolute;
         z-index: 99999;
         top: 0;
@@ -65,13 +66,15 @@ export default class Settings extends PureComponent {
         right: 0;
       }
 
-      .grid {
+      #background-for-grid.grid {
+        display: block;
         background-size: 0.5rem 0.5rem;
         background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
         opacity: 0.5;
       }
 
-      .layout-columns-on {
+      #background-for-layout.layout-columns-on {
+        display: block;
         background-position: 4rem;
         background-size: 9.5rem;
         background-image: linear-gradient(90deg, #F6D3C3 7.5rem, transparent 7.5rem, transparent 2rem);

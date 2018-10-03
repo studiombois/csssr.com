@@ -71,7 +71,7 @@ export default class ContactForm extends PureComponent {
           }
 
           .headline {
-            margin-bottom: 5.3125rem;
+            margin-bottom: 5.5rem;
             grid-column: 4 / span 6;
             text-align: center;
           }
@@ -82,12 +82,19 @@ export default class ContactForm extends PureComponent {
           }
 
           .field_type_textarea {
-            margin-top: 3.5rem;
+            position: relative;
+            margin-top: 1.425rem;
             margin-bottom: 4rem;
           }
 
           .button {
             grid-column: 6 / span 2;
+          }
+
+          @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+            form {
+              background-image: url('../../static/images/letter_retina.jpg');
+            }
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {

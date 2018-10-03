@@ -8,21 +8,21 @@ import Partners from '../../components/dev/Partners'
 import withI18next from '../../utils/withI18next'
 
 const devImages = {
-  w1920: '../../static/images/geometry_1920.jpg',
-  w1360: '../../static/images/geometry_1360.jpg',
-  w1280: '../../static/images/geometry_1280.jpg',
+  w1920: '../../static/images/geometry_1920.jpg, ../../static/images/geometry_1920_retina.jpg 2x',
+  w1360: '../../static/images/geometry_1360.jpg, ../../static/images/geometry_1360_retina.jpg 2x',
+  w1280: '../../static/images/geometry_1280.jpg, ../../static/images/geometry_1280_retina.jpg 2x',
 }
 
 const timeImages = {
-  w1920: '../../static/images/time_1920.jpg',
-  w1360: '../../static/images/time_1360.jpg',
-  w1280: '../../static/images/time_1280.jpg',
+  w1920: '../../static/images/time_1920.jpg, ../../static/images/time_1920_retina.jpg 2x',
+  w1360: '../../static/images/time_1360.jpg, ../../static/images/time_1360_retina.jpg 2x',
+  w1280: '../../static/images/time_1280.jpg, ../../static/images/time_1280_retina.jpg 2x',
 }
 
 const perfectImages = {
-  w1920: '../../static/images/perfect_1920.jpg',
-  w1360: '../../static/images/perfect_1360.jpg',
-  w1280: '../../static/images/perfect_1280.jpg',
+  w1920: '../../static/images/perfect_1920.jpg, ../../static/images/perfect_1920_retina.jpg 2x',
+  w1360: '../../static/images/perfect_1360.jpg, ../../static/images/perfect_1360_retina.jpg 2x',
+  w1280: '../../static/images/perfect_1280.jpg, ../../static/images/perfect_1280_retina.jpg 2x',
 }
 export default withI18next(['dev'])(({ t }) =>
   <Fragment>

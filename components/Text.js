@@ -252,6 +252,34 @@ const Text = () =>
       text-transform: uppercase;
       color: #4a4a4a;
     }
+
+    .font_feature_1 {
+      margin-top: -3px;
+      padding-bottom: 3px;
+      font-family: Roboto;
+      font-size: 4.0625rem;
+      line-height: 4.875rem;
+      font-weight: 900;
+      color: #000000;
+    }
+
+    .font_feature_2 {
+      font-family: Roboto;
+      font-size: 2.8125rem;
+      font-style: italic;
+      line-height: 3.75rem;
+      color: #000000;
+    }
+
+    .font_feature_3 {
+      margin-top: -6px;
+      padding-bottom: 6px;
+      font-family: Roboto;
+      font-size: 3.75rem;
+      font-weight: 100;
+      line-height: 4.375rem;
+      color: #000000;
+    }
   `}</style>
 
 export default Text

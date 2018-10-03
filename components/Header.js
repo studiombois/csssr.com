@@ -61,7 +61,7 @@ class Header extends PureComponent {
     const { target: { scrollingElement } } = event
     const { showHeader } = this.state
     const headerHeight = 65
-    const scrollTop = scrollingElement === document.body.parentNode && scrollingElement.scrollTop
+    const scrollTop = (scrollingElement === document.body.parentNode || scrollingElement === document.body) && scrollingElement.scrollTop
 
     if (scrollTop > this.lastScrollTop && scrollTop > headerHeight) {
       // eslint-disable-next-line
@@ -92,11 +92,11 @@ class Header extends PureComponent {
 
     return (
       <Fragment>
-        {/*<SideBar*/}
-          {/*onToggle={this.handleSideBarToggle}*/}
-          {/*isOpened={this.state.isSideBarOpened}*/}
-          {/*onClose={this.handleSideBarClose}*/}
-        {/*/>*/}
+        {/* <SideBar
+          onToggle={this.handleSideBarToggle}
+          isOpened={this.state.isSideBarOpened}
+          onClose={this.handleSideBarClose}
+        /> */}
         <HeaderContent
           pathname={pathname}
           sectionName={sectionName}

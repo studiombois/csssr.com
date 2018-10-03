@@ -91,6 +91,7 @@ class HeaderContent extends PureComponent {
           .header {
             position: absolute;
             top: 0;
+            z-index: 9999;
             left: 50%;
             width: 100%;
             transform: translateX(-50%);

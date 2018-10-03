@@ -83,9 +83,9 @@ class HeaderContent extends PureComponent {
             {sectionName || 'Software Engeniring'}
           </span>
 
-          {/*<button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>*/}
-            {/*{burgerIcon}*/}
-          {/*</button>*/}
+          {/* <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
+            {burgerIcon}
+          </button> */}
 
         </div><style jsx>{`
           .header {

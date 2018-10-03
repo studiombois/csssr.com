@@ -24,9 +24,10 @@ const perfectImages = {
   w1360: '../../static/images/perfect_1360.jpg, ../../static/images/perfect_1360_retina.jpg 2x',
   w1280: '../../static/images/perfect_1280.jpg, ../../static/images/perfect_1280_retina.jpg 2x',
 }
+
 export default withI18next(['dev'])(({ t }) =>
   <Fragment>
-    <Head title={t('dev:title')} />
+    <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
     <Hire />
     <Feature1 images={devImages} />
     <Feature2

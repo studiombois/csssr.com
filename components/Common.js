@@ -20,6 +20,8 @@ const Common = () =>
 
     body {
       margin: 0;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     body:not(.outline) * {
@@ -32,6 +34,10 @@ const Common = () =>
 
     picture {
       font-size: 0;
+    }
+
+    #__next {
+      position: relative;
     }
 
     .grid-container {
@@ -49,6 +55,10 @@ const Common = () =>
     */
 
     @media (min-width: 1360px) and (max-width: 1919px) {
+      body {
+        min-width: 1360px;
+      }
+
       .grid-container {
         grid-template-columns: repeat(12, 96px);
         grid-gap: 0 16px;
@@ -56,6 +66,10 @@ const Common = () =>
     }
 
     @media (max-width: 1359px) {
+      body {
+        min-width: 1280px;
+      }
+
       .grid-container {
         grid-template-columns: repeat(12, 88px);
         grid-gap: 0 16px;

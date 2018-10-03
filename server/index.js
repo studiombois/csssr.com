@@ -36,7 +36,6 @@ i18n
         const server = express()
 
         // TODO
-        // Добавить раздачу статики из static
         // Добавить favicon
 
         server.use(bodyParser.json())
@@ -51,6 +50,8 @@ i18n
         })
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))
+
+        server.use('/privacy_policy', express.static(path.join(__dirname, '../privacy_policy.pdf')))
 
         server.get('*', (req, res) => {
           return handle(req, res)

@@ -3,8 +3,11 @@ const fetch = require('isomorphic-unfetch')
 const AMO_CRM_BASE_URL = 'https://csssr.amocrm.ru'
 
 const tags = ['csssr.com']
-if (process.env.NODE_ENV !== 'production') {
-  tags.push('ТЕСТ')
+const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
+if (tagFromEnv) {
+  tags.push(tagFromEnv)
+} else if (process.env.NODE_ENV !== 'production') {
+  tags.push('TEST')
 }
 
 module.exports = (req, res) => {
@@ -15,7 +18,7 @@ module.exports = (req, res) => {
     message,
   } = req.body
 
-  const authQueryParams = `USER_LOGIN=${process.env.USER_LOGIN}&USER_HASH=${process.env.USER_HASH}`
+  const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_USER_HASH}`
 
   return fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {
     method: 'POST',

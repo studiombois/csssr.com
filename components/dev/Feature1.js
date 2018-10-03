@@ -16,7 +16,7 @@ export default ({ images }) =>
       </p>
 
       <p className='font_feature_2'>
-        Support and development&shy; of&nbsp;high load web applications
+        Support and development of&nbsp;high load web applications
       </p>
 
       <p className='font_feature_3'>

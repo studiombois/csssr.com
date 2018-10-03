@@ -88,7 +88,6 @@ export default class AnimatedButton extends PureComponent {
           type={type}
           className={classNames}
           disabled={disabled}
-          // onClick={this.handleClick}
         >
           <span>{children}</span>
         </button>
@@ -133,6 +132,10 @@ export default class AnimatedButton extends PureComponent {
             -webkit-tap-highlight-color: transparent;
             -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s, border-radius 0.3s;
             transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s, border-radius 0.3s;
+          }
+
+          .progress-button .button_state_disabled {
+            opacity: 0.3;
           }
 
           .progress-button button:hover {
@@ -198,6 +201,10 @@ export default class AnimatedButton extends PureComponent {
             border-radius: 1.5rem;
             background-color: transparent;
             color: #fff;
+          }
+
+          .loading.progress-button button.button_state_disabled {
+            opacity: 1;
           }
           
           .loading.progress-button span {

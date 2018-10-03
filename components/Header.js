@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import { object, string } from 'prop-types'
 import { withRouter } from 'next/router'
-import SideBar from './SideBar'
+// import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
 class Header extends PureComponent {

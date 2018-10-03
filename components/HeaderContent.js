@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
-import { bool, object, string, func } from 'prop-types'
+import { bool, object, string } from 'prop-types'
 import Link from 'next/link'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
 import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
-import BurgerIcon from '../static/icons/burger.svg'
+// import BurgerIcon from '../static/icons/burger.svg'
 
 const links = [
   { href: '#competence-and-services', label: 'Competence & Services' },
@@ -13,7 +13,7 @@ const links = [
 ]
 
 const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.25rem', height: '1.5rem' }} color='black'/>
-const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
+// const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
   static propTypes = {
@@ -22,7 +22,7 @@ class HeaderContent extends PureComponent {
     showHeader: bool,
     pinHeader: bool,
     toggleHeaderAnimations: bool,
-    onSideBarToggle: func,
+    // onSideBarToggle: func,
   }
 
   render() {
@@ -33,7 +33,7 @@ class HeaderContent extends PureComponent {
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
-      onSideBarToggle,
+      // onSideBarToggle,
     } = this.props
 
     const rootUrl = `/${lng}`

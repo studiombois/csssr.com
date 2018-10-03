@@ -11,11 +11,22 @@ export default ({ images }) =>
         We&rsquo;re engineers, and our true calling is&nbsp;to&nbsp;find the most elegant and economical solutions for business challenges. We&nbsp;use a&nbsp;variety of&nbsp;tools, technologies and programming languages, but more often than not, we&nbsp;use JavaScript.
       </p>
 
-      {/* TODO: вставить правильную ссылку на картинку и нормальный alt */}
+      <p className='font_feature_1'>
+        MVP
+      </p>
+
+      <p className='font_feature_2'>
+        Support and development of&nbsp;high load web applications
+      </p>
+
+      <p className='font_feature_3'>
+        Stack migration
+      </p>
+
       <picture>
         <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
         <source media='(max-width: 1359px)' srcSet={images.w1280} />
-        <img src={images.w1920} alt='' />
+        <img srcSet={images.w1920} alt={images.alt} />
       </picture>
 
       <footer className='grid-container'>
@@ -29,6 +40,7 @@ export default ({ images }) =>
       </footer>
     </section><style jsx>{`
       section {
+        position: relative;
         margin-left: auto;
         margin-right: auto;
         padding-left: 4rem;
@@ -77,6 +89,32 @@ export default ({ images }) =>
         margin-bottom: 0.5rem;
       }
 
+      .font_feature_1,
+      .font_feature_2,
+      .font_feature_3 {
+        position: absolute;
+      }
+
+      .font_feature_1 {
+        top: 36.875rem;
+        left: 11.5rem;
+      }
+
+      .font_feature_2 {
+        width: 21rem;
+        height: 15rem;
+        top: 27.375rem;
+        left: 28.5rem;
+      }
+
+      .font_feature_3 {
+        width: 18rem;
+        height: 10rem;
+        top: 9.875rem;
+        left: 47.875rem;
+        text-align: right;
+      }
+
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
           width: 1360px;
@@ -86,6 +124,18 @@ export default ({ images }) =>
 
         h2 {
           grid-column: 4 / span 6;
+        }
+
+        .font_feature_1 {
+          left: 2.1875rem;
+        }
+
+        .font_feature_2 {
+          left: 19.1875rem;
+        }
+
+        .font_feature_3 {
+          left: 38.5rem;
         }
       }
 
@@ -98,6 +148,18 @@ export default ({ images }) =>
 
         h2 {
           grid-column: 4 / span 6;
+        }
+
+        .font_feature_1 {
+          left: 0.1875rem;
+        }
+
+        .font_feature_2 {
+          left: 16.875rem;
+        }
+
+        .font_feature_3 {
+          left: 36.5rem;
         }
       }
     `}</style>

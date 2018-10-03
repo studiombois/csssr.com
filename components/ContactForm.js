@@ -6,10 +6,10 @@ import Button from './ui-kit/Button'
 
 export default class ContactForm extends PureComponent {
   render() {
-    const { handleSubmit, submitting, valid } = this.props
+    const { handleSubmit, reset, submitting, valid } = this.props
 
     return (
-      <form className='grid-container' onSubmit={handleSubmit}>
+      <form className='grid-container' onSubmit={e => handleSubmit(e).then(reset)}>
         <h2 id='hire-us' className='font_h2-slab headline'>Talk to us</h2>
         <div className='field'>
           <Field
@@ -17,7 +17,7 @@ export default class ContactForm extends PureComponent {
             name='name'
             component={TextField}
             type='text'
-            placeholder='Jhon Lenin'
+            placeholder='Timothy John Berners-Lee'
             label='Your Name'
           />
         </div>
@@ -37,7 +37,7 @@ export default class ContactForm extends PureComponent {
             name='email'
             component={TextField}
             type='email'
-            placeholder='lenin@gmail.com'
+            placeholder='name@example.com'
             label='E-mail'
           />
         </div>
@@ -47,6 +47,8 @@ export default class ContactForm extends PureComponent {
             name='message'
             component={TextareaField}
             placeholder='Tell us about your product or service'
+            label='Tell us about your product or service'
+            labelHidden
           />
         </div>
         <div className='button'>

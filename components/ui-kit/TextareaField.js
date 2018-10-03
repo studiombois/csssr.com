@@ -8,6 +8,8 @@ export default class TextField extends PureComponent {
     id: string,
     state: oneOf(['error', null]),
     placeholder: string,
+    label: string,
+    labelHidden: bool,
     autoFocus: bool,
     type: string,
     disabled: bool,
@@ -27,6 +29,8 @@ export default class TextField extends PureComponent {
       id,
       state,
       placeholder,
+      label,
+      labelHidden,
       autoFocus,
       type,
       disabled,
@@ -56,6 +60,14 @@ export default class TextField extends PureComponent {
           disabled={disabled}
           value={value}
         />
+        {label && <label
+          className={cn({
+            visuallyHidden: labelHidden,
+          })}
+          htmlFor={id}
+        >
+          {label}
+        </label>}
         <style jsx>{`
           .field.error .input {
             color: #d0021b;
@@ -86,6 +98,17 @@ export default class TextField extends PureComponent {
           .input::placeholder {
             font-weight: 100;
             color: #c0c0c0;
+          }
+
+          label.visuallyHidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
           }
         `}</style>
       </div>

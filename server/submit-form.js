@@ -65,9 +65,9 @@ module.exports = (req, res) => {
     }),
   })
     .then(response => response.json())
-    .then(data => {
-      if (data.response && data.response.error) {
-        console.log(JSON.stringify(data))
+    .then(createContactData => {
+      if (createContactData.response && createContactData.response.error) {
+        console.log(JSON.stringify(createContactData))
         return res.status(400).send('Произошла ошибка')
       }
 
@@ -83,16 +83,17 @@ module.exports = (req, res) => {
               name: `${name} | Первичный запрос с csssr.com`,
               status_id: 21946756,
               pipeline_id: 938752,
-              contacts_id: data._embedded.items[0].id,
+              // eslint-disable-next-line no-underscore-dangle
+              contacts_id: createContactData._embedded.items[0].id,
               tags,
-            }
-          ]
+            },
+          ],
         }),
       })
         .then(response => response.json())
-        .then(data => {
-          if (data.response && data.response.error) {
-            console.log(JSON.stringify(data))
+        .then(createLeadData => {
+          if (createLeadData.response && createLeadData.response.error) {
+            console.log(JSON.stringify(createLeadData))
             return res.status(400).send('Произошла ошибка')
           }
           return res.sendStatus(201)

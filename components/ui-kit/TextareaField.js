@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { string, oneOf, bool } from 'prop-types'
 import cn from 'classnames'
 
-export default class TextField extends PureComponent {
+export default class TextareaField extends PureComponent {
   static propTypes = {
     tag: string,
     id: string,

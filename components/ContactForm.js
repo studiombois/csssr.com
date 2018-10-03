@@ -2,11 +2,30 @@ import React, { PureComponent } from 'react'
 import { Field } from 'react-final-form'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
-import Button from './ui-kit/Button'
+// import Button from './ui-kit/Button'
+import AnimatedButton from './ui-kit/AnimatedButton'
 
 export default class ContactForm extends PureComponent {
+  state = {
+    formSubmitStatus: null,
+  }
+
+  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded }) {
+    if (submitting) {
+      this.setState({ formSubmitStatus: 'submitting' })
+    } else if (submitFailed) {
+      this.setState({ formSubmitStatus: 'fail' })
+    } else if (submitSucceeded) {
+      this.setState({ formSubmitStatus: 'success' })
+    }
+  }
+
+  handleStateClear = () => {
+    this.setState({ formSubmitStatus: null })
+  }
+
   render() {
-    const { handleSubmit, reset, submitting, valid } = this.props
+    const { handleSubmit, form: { reset }, submitting, valid } = this.props
 
     return (
       <form className='grid-container' onSubmit={e => handleSubmit(e).then(reset)}>
@@ -52,9 +71,17 @@ export default class ContactForm extends PureComponent {
           />
         </div>
         <div className='button'>
-          <Button type='submit' disabled={submitting || !valid}>
+          <AnimatedButton
+            type='submit'
+            disabled={submitting || !valid}
+            status={this.state.formSubmitStatus}
+            onAinimationEnd={this.handleStateClear}
+          >
             Submit
-          </Button>
+          </AnimatedButton>
+          {/* <Button type='submit' disabled={submitting || !valid}>
+            Submit
+          </Button> */}
         </div><style jsx>{`
           form {
             margin-right: auto;

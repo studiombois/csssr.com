@@ -14,8 +14,6 @@ export default class Settings extends PureComponent {
     ]
 
     window.addEventListener('keydown', function (event) {
-      console.log((event.ctrlKey || event.metaKey) && event.which === 71)
-
       if ((event.ctrlKey || event.metaKey) && event.which === 71) {
         event.preventDefault()
         document.getElementById('background-for-grid').classList.toggle('grid')
@@ -25,11 +23,7 @@ export default class Settings extends PureComponent {
       }
     })
   }
-
-  // backgroundLayoutRef = React.createRef()
-
-  handleBackgroundLayoutRef = ref => { this.backgroundLayoutRef = ref }
-
+  
   render() {
     return <Fragment>
       <div id='background-for-layout' />

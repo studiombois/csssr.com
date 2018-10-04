@@ -49,8 +49,8 @@ export default class AnimatedButton extends PureComponent {
     }, 2000)
   }
 
-  draw(loc) {
-    const paths = document.querySelectorAll(loc)
+  draw(selector) {
+    const paths = document.querySelectorAll(selector)
     paths.forEach(path => {
       path.style.strokeDashoffset = '0'
     })
@@ -129,7 +129,6 @@ export default class AnimatedButton extends PureComponent {
             color: #fff;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
-            -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s, border-radius 0.3s;
             transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s, border-radius 0.3s;
           }
 
@@ -152,7 +151,6 @@ export default class AnimatedButton extends PureComponent {
           
           /* Text (transition for when returning to initial state) */
           .progress-button button span {
-            -webkit-transition: opacity 0.3s 0.1s;
             transition: opacity 0.3s 0.1s;
           }
           
@@ -163,7 +161,6 @@ export default class AnimatedButton extends PureComponent {
             left: 50%;
             width: 3rem;
             height: 3rem;
-            -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
             pointer-events: none;
           }
@@ -188,7 +185,6 @@ export default class AnimatedButton extends PureComponent {
             stroke: #fff;
             stroke-linecap: round;
             stroke-width: 4;
-            -webkit-transition: opacity 0.1s;
             transition: opacity 0.1s;
           }
           
@@ -207,7 +203,6 @@ export default class AnimatedButton extends PureComponent {
           }
           
           .loading.progress-button span {
-            -webkit-transition: opacity 0.15s;
             transition: opacity 0.15s;
           }
           
@@ -219,7 +214,6 @@ export default class AnimatedButton extends PureComponent {
           
           .success.progress-button button,
           .error.progress-button button {
-            -webkit-transition: background-color 0.3s, width 0.3s, border-width 0.3s;
             transition: background-color 0.3s, width 0.3s, border-width 0.3s;
           }
           
@@ -235,27 +229,21 @@ export default class AnimatedButton extends PureComponent {
           
           .loading.progress-button svg.progress-circle path {
             opacity: 1;
-            -webkit-transition: stroke-dashoffset 2s;
             transition: stroke-dashoffset 2s;
           }
           
           .success.progress-button svg.checkmark path,
           .error.progress-button svg.cross path {
             opacity: 1;
-            -webkit-transition: stroke-dashoffset 0.5s;
             transition: stroke-dashoffset 0.5s;
           }
           
           /* Optional elastic effect for the width of the button */
           .elastic.progress-button button {
-            -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1), border-width 0.3s, border-color 0.3s;
-            -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
             transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
           }
           
           .loading.elastic.progress-button button {
-            -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, 0, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
-            -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
             transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
           }
         `}</style>

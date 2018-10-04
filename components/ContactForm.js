@@ -32,7 +32,7 @@ export default class ContactForm extends PureComponent {
     this.setState({ formSubmitStatus: null })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     const { handleSubmit, form: { reset } } = this.props
 
     return handleSubmit(e).then(() => {
@@ -113,19 +113,19 @@ export default class ContactForm extends PureComponent {
             margin-left: auto;
             padding-top: 8.5rem;
             padding-left: 4rem;
-            padding-bottom: 32rem;
+            padding-bottom: 31.5rem;
             padding-right: 4rem;
             width: 1920px;
             align-items: center;
             border: none;
             background-image: url('../../static/images/letter.jpg');
             background-size: auto 221px;
-            background-position: 50% calc(100% - 11.75rem);
+            background-position: 50% calc(100% - 11.2rem);
             background-repeat: no-repeat;
           }
 
           .headline {
-            margin-bottom: 5.5rem;
+            margin-bottom: 89px;
             grid-column: 4 / span 6;
             text-align: center;
           }
@@ -158,7 +158,7 @@ export default class ContactForm extends PureComponent {
               width: 1360px
             }
           }
-      
+
           @media (max-width: 1359px) {
             form {
               padding-left: 1.5rem;

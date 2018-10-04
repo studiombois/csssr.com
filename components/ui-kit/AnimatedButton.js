@@ -106,7 +106,7 @@ export default class AnimatedButton extends PureComponent {
           button {
             cursor: pointer;
           }
-          
+
           /* Button container */
           .progress-button {
             position: relative;
@@ -114,7 +114,7 @@ export default class AnimatedButton extends PureComponent {
             text-align: center;
             width: 100%;
           }
-          
+
           /* Button style */
           .progress-button button {
             display: block;
@@ -144,12 +144,12 @@ export default class AnimatedButton extends PureComponent {
             // opacity: 0.3;
             pointer-events: none;
           }
-          
+
           /* Text (transition for when returning to initial state) */
           .progress-button button span {
             transition: opacity 0.3s 0.1s;
           }
-          
+
           /* Common style of SVGs */
           .progress-button svg {
             position: absolute;
@@ -160,22 +160,22 @@ export default class AnimatedButton extends PureComponent {
             transform: translateX(-50%);
             pointer-events: none;
           }
-          
+
           .progress-button svg path {
             opacity: 0;
             fill: none;
           }
-          
+
           .progress-button svg.progress-circle path {
             stroke: #0076ff;
             stroke-width: 5;
           }
-          
+
           .error.progress-button svg.progress-circle path {
             stroke: #FB797E;
             stroke-width: 5;
           }
-          
+
           .progress-button svg.checkmark path,
           .progress-button svg.cross path {
             stroke: #fff;
@@ -183,7 +183,7 @@ export default class AnimatedButton extends PureComponent {
             stroke-width: 4;
             transition: opacity 0.1s;
           }
-          
+
           /* Loading, success and error effects */
           .loading.progress-button button {
             width: 3rem; /* make a circle */
@@ -197,48 +197,48 @@ export default class AnimatedButton extends PureComponent {
           .loading.progress-button button.button_state_disabled {
             opacity: 1;
           }
-          
+
           .loading.progress-button span {
             transition: opacity 0.15s;
           }
-          
+
           .loading.progress-button span,
           .success.progress-button span,
           .error.progress-button span {
             opacity: 0; /* keep it hidden in all states */
           }
-          
+
           .success.progress-button button,
           .error.progress-button button {
             transition: background-color 0.3s, width 0.3s, border-width 0.3s;
           }
-          
+
           .success.progress-button button {
             border-color: #0076ff;
             background-color: #0076ff;
           }
-          
+
           .error.progress-button button {
             border-color: #FB797E;
             background-color: #FB797E;
           }
-          
+
           .loading.progress-button svg.progress-circle path {
             opacity: 1;
             transition: stroke-dashoffset 2s;
           }
-          
+
           .success.progress-button svg.checkmark path,
           .error.progress-button svg.cross path {
             opacity: 1;
             transition: stroke-dashoffset 0.5s;
           }
-          
+
           /* Optional elastic effect for the width of the button */
           .elastic.progress-button button {
             transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
           }
-          
+
           .loading.elastic.progress-button button {
             transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
           }

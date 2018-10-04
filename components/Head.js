@@ -22,7 +22,7 @@ const Head = props => (
     <meta property='og:title' content={props.title || ''} />
     <meta
       property='og:description'
-      content={props.description || defaultDescription}
+      content={props.description /* || defaultDescription */ }
     />
     <meta name='twitter:site' content={props.url || defaultOGURL} />
     <meta name='twitter:card' content='summary_large_image' />

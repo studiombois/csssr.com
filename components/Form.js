@@ -21,7 +21,7 @@ const onSubmit = async values => {
     }
   } else if (res.status === 400) {
     const error = await res.json()
-    return { [FORM_ERROR]: error.error };
+    return { [FORM_ERROR]: error.error }
   }
 }
 

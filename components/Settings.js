@@ -2,17 +2,6 @@ import React, { Fragment, PureComponent } from 'react'
 
 export default class Settings extends PureComponent {
   componentDidMount() {
-    const keyCodes = [
-      {
-        className: 'grid',
-        keyCode: 71,
-      },
-      {
-        className: 'layout-columns-on',
-        keyCode: 76,
-      },
-    ]
-
     window.addEventListener('keydown', function (event) {
       if ((event.ctrlKey || event.metaKey) && event.which === 71) {
         event.preventDefault()
@@ -23,7 +12,7 @@ export default class Settings extends PureComponent {
       }
     })
   }
-  
+
   render() {
     return <Fragment>
       <div id='background-for-layout' />

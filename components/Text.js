@@ -36,6 +36,7 @@ const Text = () =>
       font-family: Roboto Slab;
       font-size: 3rem;
       line-height: 4rem;
+      font-weight: normal;
       color: #000000;
     }
 

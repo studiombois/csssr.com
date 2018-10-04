@@ -14,10 +14,10 @@ const RuDev = ({ t }) => (
     article {
       margin-left: auto;
       margin-right: auto;
-      padding-left: 8rem;
-      padding-right: 8rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
       padding-top: 24rem;
-      width: 1920px;
+      width: 1888px;
       height: 120rem;
     }
 

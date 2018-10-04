@@ -46,10 +46,10 @@ export default () =>
       article {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 4rem;
-        padding-right: 4rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
         padding-top: 12rem;
-        width: 1920px;
+        width: 1888px;
         height: 60rem;
         background-image: url('../../static/images/dog_1920.jpg');
         background-size: auto 640px;
@@ -88,18 +88,18 @@ export default () =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
-          width: 1360px;
-          padding-left: 1rem;
-          padding-right: 1rem;
+          width: 1344px;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
           background-image: url('../../static/images/dog_1360.jpg');
         }
       }
 
       @media (max-width: 1359px) {
         article {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-          width: 1280px;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          width: 1248px;
           background-image: url('../../static/images/dog_1280.jpg');
         }
       }

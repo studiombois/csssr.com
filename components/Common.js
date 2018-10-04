@@ -56,7 +56,7 @@ const Common = () =>
 
     @media (min-width: 1360px) and (max-width: 1919px) {
       body {
-        min-width: 1360px;
+        min-width: 1344px;
       }
 
       .grid-container {
@@ -67,7 +67,7 @@ const Common = () =>
 
     @media (max-width: 1359px) {
       body {
-        min-width: 1280px;
+        min-width: 1248px;
       }
 
       .grid-container {

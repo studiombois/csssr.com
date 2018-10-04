@@ -140,10 +140,6 @@ export default class AnimatedButton extends PureComponent {
             background-color: #0254d8;
           }
 
-          .progress-button button:focus {
-            outline: none;
-          }
-
           .progress-button .button_state_disabled {
             // opacity: 0.3;
             pointer-events: none;

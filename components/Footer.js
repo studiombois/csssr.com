@@ -6,9 +6,9 @@ import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import FacebookIcon from '../static/icons/facebook.svg'
 import LinkedInIcon from '../static/icons/linkedin.svg'
 
-const csssrLogoIcon = <CSSSRLogoIcon width='6rem' height='1.5rem' color='black'/>
-const facebookIcon = <FacebookIcon width='1.5rem' height='1.5rem' />
-const linkedInIcon = <LinkedInIcon width='1.5rem' height='1.5rem' />
+const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.0625rem', height: '1.5rem', color: 'black' }}/>
+const facebookIcon = <FacebookIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
+const linkedInIcon = <LinkedInIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
 
 const Footer = ({ router: { pathname }, lng }) => {
   const rootUrl = `/${lng}`
@@ -103,10 +103,10 @@ const Footer = ({ router: { pathname }, lng }) => {
       footer {
         margin-right: auto;
         margin-left: auto;
-        padding-right: 4rem;
-        padding-left: 4rem;
+        padding-right: 3rem;
+        padding-left: 3rem;
         padding-bottom: 4rem;
-        width: 1920px;
+        width: 1888px;
         align-items: center;
       }
 
@@ -141,17 +141,17 @@ const Footer = ({ router: { pathname }, lng }) => {
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
-          padding-left: 1rem;
-          padding-right: 1rem;
-          width: 1360px
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          width: 1344px
         }
       }
 
       @media (max-width: 1359px) {
         footer {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-          width: 1280px
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          width: 1248px
         }
       }
     `}</style>

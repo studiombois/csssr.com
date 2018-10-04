@@ -103,10 +103,10 @@ const Footer = ({ router: { pathname }, lng }) => {
       footer {
         margin-right: auto;
         margin-left: auto;
-        padding-right: 4rem;
-        padding-left: 4rem;
+        padding-right: 3rem;
+        padding-left: 3rem;
         padding-bottom: 4rem;
-        width: 1920px;
+        width: 1888px;
         align-items: center;
       }
 
@@ -141,17 +141,17 @@ const Footer = ({ router: { pathname }, lng }) => {
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
-          padding-left: 1rem;
-          padding-right: 1rem;
-          width: 1360px
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          width: 1344px
         }
       }
 
       @media (max-width: 1359px) {
         footer {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-          width: 1280px
+          padding-left: 1rem;
+          padding-right: 1rem;
+          width: 1264px
         }
       }
     `}</style>

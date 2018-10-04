@@ -115,10 +115,10 @@ class HeaderContent extends PureComponent {
           .header-content {
             margin-right: auto;
             margin-left: auto;
-            padding-left: 4rem;
-            padding-right: 4rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
             height: 4rem;
-            width: 1920px;
+            width: 1888px;
             align-items: center;
             align-content: center;
           }
@@ -171,17 +171,17 @@ class HeaderContent extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             .header-content {
-              padding-left: 1rem;
-              padding-right: 1rem;
-              width: 1360px
+              padding-left: 0.5rem;
+              padding-right: 0.5rem;
+              width: 1344px
             }
           }
 
           @media (max-width: 1359px) {
             .header-content {
-              padding-left:  1.5rem;
-              padding-right: 1.5rem;
-              width: 1280px
+              padding-left:  1rem;
+              padding-right: 1rem;
+              width: 1264px
             }
           }
 

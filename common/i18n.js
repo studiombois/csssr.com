@@ -4,7 +4,7 @@ const XHR = require('i18next-xhr-backend')
 const options = {
   fallbackLng: 'en',
   load: 'languageOnly',
-  whitelist: ['en', 'ru', 'de'],
+  whitelist: ['en'/*, 'ru', 'de'*/],
   ns: ['common'],
   defaultNS: 'common',
   debug: process.env.NODE_ENV === 'development',

@@ -18,8 +18,8 @@ i18n
   .init({
     fallbackLng: 'en',
     load: 'languageOnly',
-    whitelist: ['en', 'ru', 'de'],
-    preload: ['en', 'ru', 'de'],
+    whitelist: ['en'/*, 'ru', 'de'*/],
+    preload: ['en'/*, 'ru', 'de'*/],
     ns: ['common', 'dev', 'recruitment'],
     detection: {
       order: ['path', 'cookie', 'header'],

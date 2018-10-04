@@ -130,9 +130,9 @@ export default () =>
 
       @media (max-width: 1359px) {
         section {
-          padding-left: 1rem;
-          padding-right: 1rem;
-          width: 1264px;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          width: 1248px;
         }
 
         h2 {

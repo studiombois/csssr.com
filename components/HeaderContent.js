@@ -12,7 +12,7 @@ const links = [
   { href: '#hire-us', label: 'Hire us' },
 ]
 
-const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.25rem', height: '1.5rem' }} color='black'/>
+const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.0625rem', height: '1.5rem' }} color='black'/>
 // const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {

@@ -6,9 +6,9 @@ import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 import FacebookIcon from '../static/icons/facebook.svg'
 import LinkedInIcon from '../static/icons/linkedin.svg'
 
-const csssrLogoIcon = <CSSSRLogoIcon width='6rem' height='1.5rem' color='black'/>
-const facebookIcon = <FacebookIcon width='1.5rem' height='1.5rem' />
-const linkedInIcon = <LinkedInIcon width='1.5rem' height='1.5rem' />
+const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.0625rem', height: '1.5rem', color: 'black' }}/>
+const facebookIcon = <FacebookIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
+const linkedInIcon = <LinkedInIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
 
 const Footer = ({ router: { pathname }, lng }) => {
   const rootUrl = `/${lng}`

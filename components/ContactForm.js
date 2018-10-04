@@ -112,10 +112,10 @@ export default class ContactForm extends PureComponent {
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;
-            padding-left: 4rem;
+            padding-left: 3rem;
             padding-bottom: 32rem;
-            padding-right: 4rem;
-            width: 1920px;
+            padding-right: 3rem;
+            width: 1888px;
             align-items: center;
             border: none;
             background-image: url('../../static/images/letter.jpg');
@@ -153,17 +153,17 @@ export default class ContactForm extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
-              padding-left: 1rem;
-              padding-right: 1rem;
-              width: 1360px
+              padding-left: 0.5rem;
+              padding-right: 0.5rem;
+              width: 1344px
             }
           }
       
           @media (max-width: 1359px) {
             form {
-              padding-left: 1.5rem;
-              padding-right: 1.5rem;
-              width: 1280px
+              padding-left: 0.5rem;
+              padding-right: 0.5rem;
+              width: 1248px
             }
           }
         `}</style>

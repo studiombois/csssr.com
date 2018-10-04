@@ -43,10 +43,10 @@ export default ({ images }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 4rem;
-        padding-right: 4rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
         padding-top: 9rem;
-        width: 1920px;
+        width: 1888px;
       }
 
       h2 {
@@ -117,9 +117,9 @@ export default ({ images }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1360px;
-          padding-left: 1rem;
-          padding-right: 1rem;
+          width: 1344px;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
         }
 
         h2 {
@@ -141,9 +141,9 @@ export default ({ images }) =>
 
       @media (max-width: 1359px) {
         section {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-          width: 1280px;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          width: 1248px;
         }
 
         h2 {

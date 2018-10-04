@@ -105,7 +105,7 @@ const Footer = ({ router: { pathname }, lng }) => {
         margin-left: auto;
         padding-right: 3rem;
         padding-left: 3rem;
-        padding-bottom: 4rem;
+        padding-bottom: 3.5rem;
         width: 1888px;
         align-items: center;
       }

@@ -84,7 +84,7 @@ const Footer = ({ router: { pathname }, lng }) => {
 
       <li className='footer-link'>
         <span className='font_footer-text'>
-          CSSSR is a part off
+          CSSSR is a part of
         </span>
 
         {' '}

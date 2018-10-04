@@ -8,11 +8,10 @@ export default ({ title, text, images, style }) =>
         {text}
       </p>
 
-      {/* TODO: вставить правильную ссылку на картинку и нормальный alt */}
       <picture>
         <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
         <source media='(max-width: 1359px)' srcSet={images.w1280} />
-        <img src={images.w1920} alt='' />
+        <img srcSet={images.w1920} alt={images.alt} />
       </picture>
     </section><style jsx>{`
       section {

@@ -71,16 +71,16 @@ const Footer = ({ router: { pathname }, lng }) => {
         </a>
       </li>
 
-      {/*<li className='footer-link'>*/}
-        {/*/!* TODO: поставить правильную ссылку *!/*/}
-        {/*<a*/}
-          {/*href='https://en.wikipedia.org/wiki/HTTP_cookie'*/}
-          {/*className='font_footer-link'*/}
-          {/*target='_blank'*/}
-        {/*>*/}
-          {/*Website cookie policy*/}
-        {/*</a>*/}
-      {/*</li>*/}
+      {/* <li className='footer-link'>
+      /!* TODO: поставить правильную ссылку *!/
+        <a
+          href='https://en.wikipedia.org/wiki/HTTP_cookie'
+          className='font_footer-link'
+          target='_blank'
+        >
+          Website cookie policy
+        </a>
+      </li> */}
 
       <li className='footer-link'>
         <span className='font_footer-text'>

@@ -34,7 +34,7 @@ export default class AnimatedButton extends PureComponent {
       this.buttonRef.current.classList.remove('loading')
       this.buttonRef.current.classList.remove('success')
       this.resetDashes()
-      this.props.onAinimationEnd()
+      this.props.onAnimationEnd()
     }, 2000)
   }
 
@@ -45,7 +45,7 @@ export default class AnimatedButton extends PureComponent {
       this.buttonRef.current.classList.remove('loading')
       this.buttonRef.current.classList.remove('error')
       this.resetDashes()
-      this.props.onAinimationEnd()
+      this.props.onAnimationEnd()
     }, 2000)
   }
 

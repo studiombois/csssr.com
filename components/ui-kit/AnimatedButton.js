@@ -8,6 +8,7 @@ export default class AnimatedButton extends PureComponent {
     type: oneOf(['button', 'submit']),
     children: node,
     onClick: func,
+    onAinimationEnd: func,
   }
 
   static defaultProps = {
@@ -50,23 +51,21 @@ export default class AnimatedButton extends PureComponent {
 
   draw(loc) {
     const paths = document.querySelectorAll(loc)
-    console.log(paths)
-    for ( let i = 0; i < paths.length; i++ ) {
-      paths[i].style.strokeDashoffset = '0'
-    }
+    paths.forEach(path => {
+      path.style.strokeDashoffset = '0'
+    })
   }
 
   resetDashes() {
     const paths = this.buttonRef.current.querySelectorAll('path')
-    for ( let i = 0; i < paths.length; i++ ) {
-      const path = paths[i]
+    paths.forEach(path => {
       const length = path.getTotalLength()
       path.style.strokeDasharray = length + ' ' + length
       path.style.strokeDashoffset = length
-    }
+    })
   }
 
-  handleLoaderProgerss = e => {
+  handleLoaderProgerss = () => {
     this.buttonRef.current.classList.add('loading')
     this.draw('.progress-circle path')
   }

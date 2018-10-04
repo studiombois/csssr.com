@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import { Field } from 'react-final-form'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
-// import Button from './ui-kit/Button'
 import AnimatedButton from './ui-kit/AnimatedButton'
 
 export default class ContactForm extends PureComponent {
@@ -79,9 +78,6 @@ export default class ContactForm extends PureComponent {
           >
             Submit
           </AnimatedButton>
-          {/* <Button type='submit' disabled={submitting || !valid}>
-            Submit
-          </Button> */}
         </div><style jsx>{`
           form {
             margin-right: auto;

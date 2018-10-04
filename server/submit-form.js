@@ -68,7 +68,7 @@ module.exports = (req, res) => {
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
         console.log(JSON.stringify(createContactData))
-        return res.status(400).send('Произошла ошибка')
+        return res.status(400).send({error: 'Произошла ошибка'})
       }
 
       return fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?${authQueryParams}`, {
@@ -94,7 +94,7 @@ module.exports = (req, res) => {
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
             console.log(JSON.stringify(createLeadData))
-            return res.status(400).send('Произошла ошибка')
+            return res.status(400).send({error: 'Произошла ошибка'})
           }
           return res.sendStatus(201)
         })

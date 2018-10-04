@@ -44,9 +44,18 @@ i18n
 
         server.use(i18nextMiddleware.handle(i18n))
 
+        // server.get('/', function (req, res) {
+        //   const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
+        //   res.redirect(`/${language}`)
+        // })
         server.get('/', function (req, res) {
-          const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
-          res.redirect(`/${language}`)
+          res.redirect(`/en`)
+        })
+        server.get('/ru', function (req, res) {
+          res.redirect(`/en`)
+        })
+        server.get('/de', function (req, res) {
+          res.redirect(`/en`)
         })
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))

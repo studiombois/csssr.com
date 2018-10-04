@@ -2,14 +2,61 @@ import React, { PureComponent } from 'react'
 import { Field } from 'react-final-form'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
-import Button from './ui-kit/Button'
+import AnimatedButton from './ui-kit/AnimatedButton'
 
 export default class ContactForm extends PureComponent {
+  state = {
+    formSubmitStatus: null,
+  }
+
+  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
+    if (
+      this.props.submitting !== submitting ||
+      this.props.submitFailed !== submitFailed ||
+      this.props.submitSucceeded !== submitSucceeded ||
+      this.props.dirtySinceLastSubmit !== dirtySinceLastSubmit
+    ) {
+      if (submitting) {
+        this.setState({ formSubmitStatus: 'submitting' })
+      } else if (submitFailed && !dirtySinceLastSubmit) {
+        this.setState({ formSubmitStatus: 'fail' })
+      } else if (submitSucceeded) {
+        this.setState({ formSubmitStatus: 'success' })
+      } else {
+        this.setState({ formSubmitStatus: null })
+      }
+    }
+  }
+
+  handleStateClear = () => {
+    this.setState({ formSubmitStatus: null })
+  }
+
+  handleSubmit = (e) => {
+    const { handleSubmit, form: { reset } } = this.props
+
+    return handleSubmit(e).then(() => {
+      if (!this.props.hasSubmitErrors) {
+        reset()
+      }
+    })
+  }
+
   render() {
-    const { handleSubmit, reset, submitting, valid } = this.props
+    const {
+      submitting,
+      hasValidationErrors,
+      hasSubmitErrors,
+      dirtySinceLastSubmit,
+    } = this.props
+
+    const isSubmitButtonDisabled =
+      submitting ||
+      hasValidationErrors ||
+      (hasSubmitErrors && !dirtySinceLastSubmit)
 
     return (
-      <form className='grid-container' onSubmit={e => handleSubmit(e).then(reset)}>
+      <form className='grid-container' onSubmit={this.handleSubmit}>
         <h2 id='hire-us' className='font_h2-slab headline'>Talk to us</h2>
         <div className='field'>
           <Field
@@ -52,9 +99,14 @@ export default class ContactForm extends PureComponent {
           />
         </div>
         <div className='button'>
-          <Button type='submit' disabled={submitting || !valid}>
+          <AnimatedButton
+            type='submit'
+            disabled={isSubmitButtonDisabled}
+            status={this.state.formSubmitStatus}
+            onAnimationEnd={this.handleStateClear}
+          >
             Submit
-          </Button>
+          </AnimatedButton>
         </div><style jsx>{`
           form {
             margin-right: auto;

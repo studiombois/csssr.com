@@ -41,8 +41,7 @@ export default class Button extends PureComponent {
           disabled={disabled}
         >
           {children}
-        </button>
-        <style jsx>{`
+        </button><style jsx>{`
           .button {
             display: flex;
             align-items: center;

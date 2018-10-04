@@ -84,7 +84,7 @@ const Footer = ({ router: { pathname }, lng }) => {
 
       <li className='footer-link'>
         <span className='font_footer-text'>
-          CSSSR is a part off
+          CSSSR is a part of
         </span>
 
         {' '}
@@ -105,7 +105,7 @@ const Footer = ({ router: { pathname }, lng }) => {
         margin-left: auto;
         padding-right: 3rem;
         padding-left: 3rem;
-        padding-bottom: 4rem;
+        padding-bottom: 3.5rem;
         width: 1888px;
         align-items: center;
       }

@@ -6,12 +6,6 @@ import { translate } from 'react-i18next'
 import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 // import BurgerIcon from '../static/icons/burger.svg'
 
-const links = [
-  { href: '#competence-and-services', label: 'Competence & Services' },
-  { href: '#customers', label: 'Customers' },
-  { href: '#hire-us', label: 'Hire us' },
-]
-
 const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.0625rem', height: '1.5rem' }} color='black'/>
 // const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
@@ -29,6 +23,7 @@ class HeaderContent extends PureComponent {
     const {
       pathname,
       lng,
+      links,
       sectionName,
       showHeader,
       pinHeader,

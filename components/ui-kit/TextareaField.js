@@ -67,8 +67,7 @@ export default class TextareaField extends PureComponent {
           htmlFor={id}
         >
           {label}
-        </label>}
-        <style jsx>{`
+        </label>}<style jsx>{`
           .field.error .input {
             color: #d0021b;
             border-color: #d0021b;
@@ -93,6 +92,7 @@ export default class TextareaField extends PureComponent {
             font-weight: 300;
             border: none;
             border: solid 1px #9b9b9b;
+            caret-color: #4a4a4a;
           }
 
           .input::placeholder {

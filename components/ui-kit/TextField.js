@@ -82,6 +82,7 @@ export default class TextField extends PureComponent {
             font-weight: 300;
             border: none;
             border-bottom: solid 1px #9b9b9b;
+            caret-color: #4a4a4a;
           }
 
           .input::placeholder {

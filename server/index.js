@@ -62,6 +62,8 @@ i18n
 
         server.use('/privacy_policy', express.static(path.join(__dirname, '../privacy_policy.pdf')))
 
+        server.use('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
+
         server.get('*', (req, res) => {
           return handle(req, res)
         })

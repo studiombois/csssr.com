@@ -38,6 +38,30 @@ i18n
         // TODO
         // Добавить favicon
 
+        const redirectToHomePage =
+        [
+          '/jobs/index.html',
+          '/jobs/pixel-perfectionist/index.html',
+          '/jobs/technical-manager/index.html',
+          '/thanks/index.html',
+          '/company.html',
+          '/confidential.html',
+          '/de-index.html',
+          '/de-thanks.html',
+          '/en-index.html',
+          '/en-thanks.html',
+          '/index.html',
+          '/offert.html',
+          '/order.html',
+          '/outsource.html',
+          '/portfolio.html',
+          '/thanks.html',
+          '/timeline.html',
+          '/view-project.html',
+        ].forEach(url =>
+          server.get(url, (req, res) => res.redirect(301, '/'))
+        );
+
         server.use(bodyParser.json())
 
         server.post('/api/submit-form', submitForm)

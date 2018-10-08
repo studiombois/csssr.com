@@ -81,7 +81,7 @@ export default class TextField extends PureComponent {
             font-size: 1.5rem;
             font-weight: 300;
             border: none;
-            border-bottom: solid 1px #9b9b9b;
+            border-bottom: solid 1px #e1e1e1;
             caret-color: #4a4a4a;
           }
 
@@ -110,7 +110,7 @@ export default class TextField extends PureComponent {
             height: 1px;
             width: 0;
             background-color: #0076ff;
-            transition: width 0.3s ease-out;
+            transition: width 0.1s ease-out;
             content: '';
           }
 

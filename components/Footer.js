@@ -63,9 +63,8 @@ const Footer = ({ router: { pathname }, lng }) => {
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
-          href='/privacy_policy'
+          href='#private-policy'
           className='font_footer-link'
-          target='_blank'
         >
           Privacy policy
         </a>

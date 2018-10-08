@@ -4,20 +4,39 @@ import Common from './Common'
 import Settings from './Settings'
 import Text from './Text'
 import Footer from './Footer'
+import PrivatePolicyEn from './PrivatePolicyEn'
+import { withRouter } from 'next/router'
 import { string } from 'prop-types'
 
 const Layout = props => {
-  const { children } = props
+  const { children, router } = props
+
+  console.log(router)
 
   return <Fragment>
     <Common />
     <Settings />
     <Text />
     <Header />
-    <main>
+    <PrivatePolicyEn />
+    <main id='main'>
       {children}
     </main>
     <Footer />
+
+    <style jsx global>{`
+      #private-policy {
+        display: none;
+      }
+
+      #private-policy:target {
+        display: grid;
+      }
+
+      #private-policy:target + #main {
+        display: none;
+      }
+    `}</style>
   </Fragment>
 }
 
@@ -28,4 +47,4 @@ Layout.propTypes = {
   ogImage: string,
 }
 
-export default Layout
+export default withRouter(Layout)

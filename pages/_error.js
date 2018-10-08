@@ -4,7 +4,7 @@ import withI18next from '../utils/withI18next'
 
 class MyError extends React.Component {
   static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null
     return { statusCode }
   }
 

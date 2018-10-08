@@ -75,7 +75,7 @@ class HeaderContent extends PureComponent {
 
           <span className='section-name font_perforator-16-black'>
             {/* //TODO: заглушка для теста, убрать при деплое на прод */}
-            {sectionName || 'Software Engeniring'}
+            {sectionName || 'Software Engineering'}
           </span>
 
           {/* <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>

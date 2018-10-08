@@ -1,0 +1,14 @@
+{
+	"en": {
+		"dev": [{ 
+			"href": "#competence-and-services",
+			"label": "Competence & Services"
+		}, { 
+			"href": "#customers",
+			"label": "Customers"
+		}, {
+			"href": "#hire-us",
+			"label": "Hire us"
+		}]
+	}
+}

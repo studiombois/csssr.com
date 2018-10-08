@@ -91,7 +91,7 @@ export default class TextareaField extends PureComponent {
             font-size: 1.5rem;
             font-weight: 300;
             border: none;
-            border: solid 1px #9b9b9b;
+            border: solid 1px #e1e1e1;
             caret-color: #4a4a4a;
           }
 

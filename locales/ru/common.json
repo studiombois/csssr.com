@@ -6,5 +6,9 @@
     "company": "Компания",
     "products": "Продукты",
     "education": "Образование"
+  },
+  "footer": {
+    "privacyPolicy": "Политика конфиденциальности",
+    "alliancePartText": "CSSSR является частью"
   }
 }

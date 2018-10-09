@@ -18,8 +18,8 @@ i18n
   .init({
     fallbackLng: 'en',
     load: 'languageOnly',
-    whitelist: ['en'/* , 'ru', 'de'*/],
-    preload: ['en'/* , 'ru', 'de'*/],
+    whitelist: ['en', 'ru', 'de'],
+    preload: ['en', 'ru', 'de'],
     ns: ['common', 'dev', 'recruitment'],
     detection: {
       order: ['path', 'cookie', 'header'],
@@ -60,7 +60,7 @@ i18n
           '/view-project.html',
         ].forEach(url =>
           server.get(url, (req, res) => res.redirect(301, '/'))
-        );
+        )
 
         server.use(bodyParser.json())
 
@@ -68,18 +68,9 @@ i18n
 
         server.use(i18nextMiddleware.handle(i18n))
 
-        // server.get('/', function (req, res) {
-        //   const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
-        //   res.redirect(`/${language}`)
-        // })
         server.get('/', function (req, res) {
-          res.redirect(`/en`)
-        })
-        server.get('/ru', function (req, res) {
-          res.redirect(`/en`)
-        })
-        server.get('/de', function (req, res) {
-          res.redirect(`/en`)
+          const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
+          res.redirect(`/${language}`)
         })
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))

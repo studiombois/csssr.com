@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react'
 import { Field } from 'react-final-form'
+import { translate } from 'react-i18next'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
 
-export default class ContactForm extends PureComponent {
+class ContactForm extends PureComponent {
   state = {
     formSubmitStatus: null,
   }
@@ -48,6 +49,7 @@ export default class ContactForm extends PureComponent {
       hasValidationErrors,
       hasSubmitErrors,
       dirtySinceLastSubmit,
+      t,
     } = this.props
 
     const isSubmitButtonDisabled =
@@ -57,15 +59,15 @@ export default class ContactForm extends PureComponent {
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
-        <h2 id='hire-us' className='font_h2-slab headline'>Talk to us</h2>
+        <h2 id='hire-us' className='font_h2-slab headline' dangerouslySetInnerHTML={{ __html: t('dev:formTitle') }} />
         <div className='field'>
           <Field
             id='name'
             name='name'
             component={TextField}
             type='text'
-            placeholder='Timothy John Berners-Lee'
-            label='Your Name'
+            placeholder={t('dev:formNamePlaceholder')}
+            label={t('dev:formNameLabel')}
           />
         </div>
         <div className='field'>
@@ -74,8 +76,8 @@ export default class ContactForm extends PureComponent {
             name='phone'
             component={TextField}
             type='text'
-            placeholder='+1-612-566-34-43'
-            label='Phone'
+            placeholder={t('dev:formPhonePlaceholder')}
+            label={t('dev:formPhoneLabel')}
           />
         </div>
         <div className='field'>
@@ -84,8 +86,8 @@ export default class ContactForm extends PureComponent {
             name='email'
             component={TextField}
             type='email'
-            placeholder='name@example.com'
-            label='E-mail'
+            placeholder={t('dev:formEmailPlaceholder')}
+            label={t('dev:formEmailLabel')}
           />
         </div>
         <div className='field field_type_textarea'>
@@ -93,8 +95,8 @@ export default class ContactForm extends PureComponent {
             id='message'
             name='message'
             component={TextareaField}
-            placeholder='Tell us about your product or service'
-            label='Tell us about your product or service'
+            placeholder={t('dev:formMessagePlaceholder')}
+            label={t('dev:formMessageLabel')}
             labelHidden
           />
         </div>
@@ -105,7 +107,7 @@ export default class ContactForm extends PureComponent {
             status={this.state.formSubmitStatus}
             onAnimationEnd={this.handleStateClear}
           >
-            Submit
+            {t('dev:formSubmitText')}
           </AnimatedButton>
         </div><style jsx>{`
           form {
@@ -171,3 +173,5 @@ export default class ContactForm extends PureComponent {
     )
   }
 }
+
+export default translate()(ContactForm)

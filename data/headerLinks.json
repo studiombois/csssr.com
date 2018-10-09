@@ -10,5 +10,17 @@
 			"href": "#hire-us",
 			"label": "Hire us"
 		}]
+	},
+	"ru": {
+		"dev": [{ 
+			"href": "#competence-and-services",
+			"label": "Компетенция и услуги"
+		}, { 
+			"href": "#customers",
+			"label": "Клиенты"
+		}, {
+			"href": "#hire-us",
+			"label": "Сотрудничество"
+		}]
 	}
 }

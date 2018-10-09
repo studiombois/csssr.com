@@ -4,9 +4,7 @@ export default ({ title, text, images, style }) =>
   <Fragment>
     <section className='grid-container' style={style}>
       <h2 className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: title }} />
-      <p className='font_p16-regular'>
-        {text}
-      </p>
+      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
 
       <picture>
         <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />

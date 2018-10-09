@@ -15,13 +15,15 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const shouldIncludeGTM = process.env.NODE_ENV === 'production' && !process.env.EXCLUDE_GTM
+
     return (
       <html lang={this.props.language}>
         <Head>
-          <GtmScript gtmId={gtmId} />
+          { shouldIncludeGTM && <GtmScript gtmId={gtmId} /> }
         </Head>
         <body>
-          <GtmNoScript gtmId={gtmId} />
+          { shouldIncludeGTM && <GtmNoScript gtmId={gtmId} /> }
           <Main />
           <NextScript />
         </body>

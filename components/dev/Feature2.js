@@ -9,9 +9,33 @@ export default ({ title, text, images, style }) =>
       </p>
 
       <picture>
-        <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
-        <source media='(max-width: 1359px)' srcSet={images.w1280} />
-        <img srcSet={images.w1920} alt={images.alt} />
+        <source media='(max-width: 1359px)'
+                type='image/webp'
+                srcset='../../static/images/1280/time@1x.webp,
+                    ../../static/images/1280/time@2x.webp 2x,
+                    ../../static/images/1280/time@3x.webp 3x'/>
+        <source media='(max-width: 1359px)'
+                srcset='../../static/images/1280/time@1x.png,
+                    ../../static/images/1280/time@2x.png 2x,
+                    ../../static/images/1280/time@3x.png 3x'/>
+        <source media='(max-width: 1919px)'
+                type='image/webp'
+                srcset='../../static/images/1360/time@1x.webp,
+                    ../../static/images/1360/time@2x.webp 2x,
+                    ../../static/images/1920/time@3x.webp 3x'/>
+        <source media='(max-width: 1919px)'
+                srcset='../../static/images/1360/time@1x.png,
+                    ../../static/images/1360/time@2x.png 2x,
+                    ../../static/images/1360/time@3x.png 3x'/>
+        <source type='image/webp'
+                srcset='../../static/images/1920/time@1x.webp,
+                    ../../static/images/1920/time@2x.webp 2x,
+                    ../../static/images/1920/time@3x.webp 3x'/>
+        <img srcset='../../static/images/1920/time@1x.png,
+                 ../../static/images/1920/time@2x.png 2x,
+                 ../../static/images/1920/time@3x.png 3x'
+             src='../../static/images/1920/time@1x.png'
+             alt={images.alt} />
       </picture>
     </section><style jsx>{`
       section {

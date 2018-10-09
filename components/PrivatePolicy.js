@@ -277,7 +277,7 @@ const PrivatePolicy = () => (
 
     <style jsx>{`
       #private-policy {
-        margin-bottom: 31rem
+        margin-bottom: 31rem;
         margin-right: auto;
         margin-left: auto;
         padding-left: 3rem;

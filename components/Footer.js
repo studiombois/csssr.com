@@ -10,6 +10,16 @@ const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.0625rem', height: '1.5re
 const facebookIcon = <FacebookIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
 const linkedInIcon = <LinkedInIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
 
+const handleLinkClick = () => {
+  document.documentElement.style.scrollBehavior = 'auto'
+
+  const scrollStylesTimer = setTimeout(() => {
+    document.documentElement.style.scrollBehavior = 'smooth'
+
+    clearTimeout(scrollStylesTimer)
+  }, 0)
+}
+
 const Footer = ({ router: { pathname }, lng }) => {
   const rootUrl = `/${lng}`
 
@@ -65,6 +75,7 @@ const Footer = ({ router: { pathname }, lng }) => {
         <a
           href='#private-policy'
           className='font_footer-link'
+          onClick={handleLinkClick}
         >
           Privacy policy
         </a>

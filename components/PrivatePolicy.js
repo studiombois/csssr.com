@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PrivatePolicyEn = () => (
+const PrivatePolicy = () => (
   <article className='grid-container' id='private-policy'>
     <header>
       <h2 className='font_h1-regular'>
@@ -276,13 +276,14 @@ const PrivatePolicyEn = () => (
 
 
     <style jsx>{`
-      article {
+      #private-policy {
+        margin-bottom: 31rem
         margin-right: auto;
         margin-left: auto;
-        margin-bottom: 31rem;
         padding-left: 3rem;
         padding-right: 3rem;
         width: 1888px;
+        background-color: white;
       }
 
       header {
@@ -337,7 +338,7 @@ const PrivatePolicyEn = () => (
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
-        article {
+        #private-policy {
           padding-left: 0.5rem;
           padding-right: 0.5rem;
           width: 1344px
@@ -345,7 +346,7 @@ const PrivatePolicyEn = () => (
       }
 
       @media (max-width: 1359px) {
-        article {
+        #private-policy {
           padding-left: 0.5rem;
           padding-right: 0.5rem;
           width: 1248px
@@ -355,4 +356,4 @@ const PrivatePolicyEn = () => (
   </article>
 )
 
-export default PrivatePolicyEn
+export default PrivatePolicy

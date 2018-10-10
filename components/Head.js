@@ -16,7 +16,7 @@ const Head = props => (
             return canvas.toDataURL && canvas.toDataURL('image/webp').indexOf('image/webp') === 5
         }
 
-        if (canUseWebP) {
+        if (canUseWebP()) {
             document.documentElement.classList.add('webp')
         }
     ` }} />

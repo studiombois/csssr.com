@@ -141,9 +141,9 @@ export class SideBar extends PureComponent {
           .sidebar:before {
             position: absolute;
             top: 0;
-            right: 10000px;
+            right: 625rem;
             bottom: 0;
-            width: 10000px;
+            width: 625rem;
             opacity: 0;
             background-color: #000;
             content: '';
@@ -183,10 +183,10 @@ export class SideBar extends PureComponent {
 
           /*.active::before {
             position: absolute;
-            top: 15px;
+            top: 0.9375rem;
             left: 50%;
-            height: 96px;
-            width: 64px;
+            height: 6rem;
+            width: 4rem;
             opacity: 0.3;
             background-color: #ff0000;
             content: '';
@@ -207,7 +207,7 @@ export class SideBar extends PureComponent {
           .bottom {
             position: relative;
             margin-top: 1rem;
-            margin-bottom: -6px;
+            margin-bottom: -0.375rem;
             padding-right: 5.5rem;
             display: flex;
             justify-content: flex-end;
@@ -216,17 +216,17 @@ export class SideBar extends PureComponent {
 
           /*.bottom::before {
             position: absolute;
-            top: 18px;
+            top: 1.125rem;
             left: 78%;
-            height: 64px;
-            width: 64px;
+            height: 4rem;
+            width: 4rem;
             opacity: 0.3;
             background-color: #ff0000;
             content: '';
           }*/
 
           .bottom a {
-            margin-right: 2px
+            margin-right: 0.125rem;
           }
         `}</style>
       </aside>

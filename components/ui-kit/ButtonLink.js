@@ -72,7 +72,7 @@ export default class Button extends PureComponent {
 
           .button_theme_secondary {
             color: #4a4a4a;
-            border: solid 1px #000000;
+            border: solid 0.0625rem #000000;
             transition: color 0.3s ease-out;
           }
 
@@ -81,9 +81,9 @@ export default class Button extends PureComponent {
             color: #000;
           }
 
-          @media (min-width: 1024px) and (max-width: 1279px) {
+          @media (min-width: 368px) and (max-width: 1279px) {
             .button {
-              padding-top: 7px;
+              padding-top: 0.4375rem;
               height: 2.5rem;
             }
           }

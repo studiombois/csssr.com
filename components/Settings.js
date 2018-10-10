@@ -30,13 +30,14 @@ export default class Settings extends PureComponent {
         height: 100%;
       }
 
-      #background-for-grid {
+      /* #background-for-grid {
         right: 0;
         bottom: 0;
-      }
+      } */
 
-      #background-for-layout {
-        width: 1920px;
+      #background-for-layout,
+      #background-for-grid {
+        width: 120rem;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -58,7 +59,7 @@ export default class Settings extends PureComponent {
       #background-for-grid.grid {
         display: block;
         background-size: 0.5rem 0.5rem;
-        background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
+        background-image: linear-gradient(to right, lightgrey 0.0625rem, transparent 0.0625rem), linear-gradient(to bottom, lightgrey 0.0625rem, transparent 0.0625rem);
         opacity: 0.5;
       }
 
@@ -71,18 +72,14 @@ export default class Settings extends PureComponent {
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
-        #background-for-layout {
-          width: 1360px;
+        #background-for-layout,
+        #background-for-grid {
+          width: 85rem;
         }
 
         #background-for-layout:before,
         #background-for-layout:after {
           width: 0;
-        }
-
-        .grid {
-          background-size: 0.5rem 0.5rem;
-          background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
         }
 
         #background-for-layout.layout-columns-on {
@@ -94,8 +91,9 @@ export default class Settings extends PureComponent {
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
-        #background-for-layout {
-          width: 1280px;
+        #background-for-layout,
+        #background-for-grid {
+          width: 80rem;
         }
 
         #background-for-layout:before,
@@ -110,18 +108,23 @@ export default class Settings extends PureComponent {
         }
       }
 
-      @media (min-width: 1024px) and (max-width: 1279px) {
+      @media (min-width: 368px) and (max-width: 1279px) {
+        #background-for-grid,
         #background-for-layout {
-          width: 1024px;
+          width: 59rem;
         }
+
+        /* #background-for-layout {
+          width: 62rem;
+        } */
 
         #background-for-layout:before,
         #background-for-layout:after {
-          width: 2.5rem;
+          width: 0;
         }
 
         #background-for-layout.layout-columns-on {
-          background-position: 2.5rem;
+          background-position: 0;
           background-size: 5rem;
           background-image: linear-gradient(90deg, #F6D3C3 4rem, transparent 4rem, transparent 1rem);
         }

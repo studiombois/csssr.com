@@ -36,10 +36,10 @@ export default () =>
         margin-left: auto;
         margin-right: auto;
         padding-top: 12rem;
-        width: 1792px;
+        width: 112rem;
         height: 60rem;
         background-image: url('../../static/images/dog_1920.jpg');
-        background-size: auto 640px;
+        background-size: auto 40rem;
         background-position: 50% 20rem;
         background-repeat: no-repeat;
       }
@@ -75,21 +75,21 @@ export default () =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
-          width: 1328px;
+          width: 83rem;
           background-image: url('../../static/images/dog_1360.jpg');
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article {
-          width: 1232px;
+          width: 77rem;
           background-image: url('../../static/images/dog_1280.jpg');
         }
       }
 
-      @media (min-width: 1024px) and (max-width: 1279px) {
+      @media (min-width: 368px) and (max-width: 1279px) {
         article {
-          width: 944px;
+          width: 59rem;
           background-image: url('../../static/images/dog_1024.jpg');
         }
       }
@@ -111,7 +111,7 @@ export default () =>
           }
         }
 
-        @media (min-width: 1024px) and (max-width: 1279px) {
+        @media (min-width: 368px) and (max-width: 1279px) {
           h1 {
             grid-column: 3 / span 4;
             margin-bottom: 3.8125rem;
@@ -119,7 +119,7 @@ export default () =>
 
           article {
             padding-top: 10rem;
-            width: 944px;
+            width: 59rem;
             height: 28.5rem;
             background-image: url('../../static/images/dog_1024_retina.jpg');
           }

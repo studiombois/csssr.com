@@ -113,7 +113,7 @@ const Footer = ({ router: { pathname }, lng }) => {
         margin-right: auto;
         margin-left: auto;
         padding-bottom: 3.5rem;
-        width: 1792px;
+        width: 112rem;
         align-items: center;
       }
 
@@ -158,23 +158,23 @@ const Footer = ({ router: { pathname }, lng }) => {
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
-          width: 1328px;
+          width: 83rem;
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         footer {
-          width: 1232px;
+          width: 77rem;
         }
       }
 
-      @media (min-width: 1024px) and (max-width: 1279px) {
+      @media (min-width: 368px) and (max-width: 1279px) {
         footer {
-          width: 944px;
+          width: 59rem;
         }
 
         .header-content {
-          width: 944px;
+          width: 59rem;
         }
 
         .logo-wrapper {

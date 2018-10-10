@@ -36,11 +36,11 @@ const LinksList = ({ title, links }) =>
 
       a::after {
         position: absolute;
-        top: 9px;
-        right: -8px;
+        top: 0.5625rem;
+        right: -0.5rem;
         display: none;
-        width: 4px;
-        height: 4px;
+        width: 0.25rem;
+        height: 0.25rem;
         background-color: #0076ff;
         content: ''
       }
@@ -49,7 +49,7 @@ const LinksList = ({ title, links }) =>
         display: block;
       }
 
-      @media (min-width: 1024px) and (max-width: 1279px) {
+      @media (min-width: 368px) and (max-width: 1279px) {
         span {
           margin-bottom: 0.5rem;
         }

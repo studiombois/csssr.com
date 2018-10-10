@@ -11,7 +11,7 @@ export default ({ title, text, images, style }) =>
       <picture>
         <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
         <source media='(min-width: 1280px) and (max-width: 1359px)' srcSet={images.w1280} />
-        <source media='(min-width: 1024px) and (max-width: 1279px)' srcSet={images.w1024} />
+        <source media='(min-width: 368px) and (max-width: 1279px)' srcSet={images.w1024} />
         <img srcSet={images.w1920} alt={images.alt} />
       </picture>
     </section><style jsx>{`
@@ -19,7 +19,7 @@ export default ({ title, text, images, style }) =>
         margin-left: auto;
         margin-right: auto;
         padding-top: 9.5rem;
-        width: 1792px;
+        width: 112rem;
       }
 
       h2 {
@@ -32,7 +32,7 @@ export default ({ title, text, images, style }) =>
         grid-row: 1;
         z-index: -1;
         margin-top: 2rem;
-        height: 568px;
+        height: 35.5rem;
       }
 
       img {
@@ -47,7 +47,7 @@ export default ({ title, text, images, style }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1328px;
+          width: 83rem;
         }
 
         h2 {
@@ -57,7 +57,7 @@ export default ({ title, text, images, style }) =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          width: 1232px;
+          width: 77rem;
         }
 
         h2 {
@@ -65,15 +65,15 @@ export default ({ title, text, images, style }) =>
         }
       }
 
-      @media (min-width: 1024px) and (max-width: 1279px) {
+      @media (min-width: 368px) and (max-width: 1279px) {
         section {
           padding-top: 6.1875rem;
-          width: 944px;
+          width: 59rem;
         }
 
         picture {
           margin-top: 1.5625rem;
-          height: 432px;
+          height: 27rem;
         }
 
         p {

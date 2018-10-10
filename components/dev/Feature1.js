@@ -26,7 +26,7 @@ export default ({ images }) =>
       <picture>
         <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
         <source media='(min-width: 1280px) and (max-width: 1359px)' srcSet={images.w1280} />
-        <source media='(min-width: 1024px) and (max-width: 1279px)' srcSet={images.w1024} />
+        <source media='(min-width: 368px) and (max-width: 1279px)' srcSet={images.w1024} />
         <img srcSet={images.w1920} alt={images.alt} />
       </picture>
 
@@ -45,7 +45,7 @@ export default ({ images }) =>
         margin-left: auto;
         margin-right: auto;
         padding-top: 9rem;
-        width: 1792px;
+        width: 112rem;
       }
 
       h2 {
@@ -65,7 +65,7 @@ export default ({ images }) =>
         grid-row: 2;
         z-index: -1;
         margin-top: 5.5rem;
-        height: 768px;
+        height: 48rem;
       }
 
       img {
@@ -116,7 +116,7 @@ export default ({ images }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1328px;
+          width: 83rem;
         }
 
         h2 {
@@ -138,7 +138,7 @@ export default ({ images }) =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          width: 1232px;
+          width: 77rem;
         }
 
         h2 {
@@ -158,10 +158,10 @@ export default ({ images }) =>
         }
       }
 
-      @media (min-width: 1024px) and (max-width: 1279px) {
+      @media (min-width: 368px) and (max-width: 1279px) {
         section {
           padding-top: 30rem;
-          width: 944px;
+          width: 59rem;
         }
 
         h2 {
@@ -170,7 +170,7 @@ export default ({ images }) =>
 
         picture {
           margin-top: 5rem;
-          height: 512px;
+          height: 32rem;
         }
 
         /* TODO: переписать как появятся картинки */

@@ -98,7 +98,7 @@ class HeaderContent extends PureComponent {
 
           .header_invisible {
             position: fixed;
-            top: -64px;
+            top: -4rem;
           }
 
           .header_animations_on {
@@ -114,7 +114,7 @@ class HeaderContent extends PureComponent {
             margin-right: auto;
             margin-left: auto;
             height: 4rem;
-            width: 1792px;
+            width: 112rem;
             align-items: center;
             align-content: center;
           }
@@ -154,7 +154,7 @@ class HeaderContent extends PureComponent {
           }
 
           .nav-list-link {
-            padding-top: 2px;
+            padding-top: 0.125rem;
             height: 2rem;
             cursor: pointer;
           }
@@ -178,19 +178,19 @@ class HeaderContent extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             .header-content {
-              width: 1328px;
+              width: 83rem;
             }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             .header-content {
-              width: 1232px;
+              width: 77rem;
             }
           }
 
-          @media (min-width: 1024px) and (max-width: 1279px) {
+          @media (min-width: 368px) and (max-width: 1279px) {
             .header-content {
-              width: 944px;
+              width: 59rem;
             }
 
             .section-name,

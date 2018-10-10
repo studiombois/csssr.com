@@ -78,7 +78,7 @@ export default class TextareaField extends PureComponent {
             height: 10rem;
             text-align: center;
             border: none;
-            border: solid 1px #e1e1e1;
+            border: solid 0.0625rem #e1e1e1;
             caret-color: #4a4a4a;
           }
 
@@ -94,15 +94,15 @@ export default class TextareaField extends PureComponent {
           label {
             border: 0;
             clip: rect(0 0 0 0);
-            height: 1px;
-            margin: -1px;
+            height: 0.0625rem;
+            margin: -0.0625rem;
             overflow: hidden;
             padding: 0;
             position: absolute;
-            width: 1px;
+            width: 0.0625rem;
           }
 
-          @media (min-width: 1024px) and (max-width: 1279px) {
+          @media (min-width: 368px) and (max-width: 1279px) {
             textarea {
               padding-top: 0.875rem;
             }

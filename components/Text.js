@@ -31,8 +31,8 @@ const Text = () =>
     }
 
     .font_h2-slab {
-      margin-top: -2px;
-      padding-bottom: 2px;
+      margin-top: -0.125rem;
+      padding-bottom: 0.125rem;
       font-family: Roboto Slab;
       font-size: 3rem;
       line-height: 4rem;
@@ -41,8 +41,8 @@ const Text = () =>
     }
 
     .font_h2-regular {
-      margin-top: -7px;
-      padding-bottom: 7px;
+      margin-top: -0.4375rem;
+      padding-bottom: 0.4375rem;
       font-family: Roboto;
       font-size: 1.5rem;
       font-weight: 900;
@@ -59,8 +59,8 @@ const Text = () =>
     }
 
     .font_subhead-slab {
-      margin-top: -3px;
-      padding-bottom: 3px;
+      margin-top: -0.1875rem;
+      padding-bottom: 0.1875rem;
       font-family: Roboto Slab;
       font-size: 2rem;
       font-weight: 300;
@@ -69,8 +69,8 @@ const Text = () =>
     }
 
     .font_subhead-regular {
-      margin-top: -2px;
-      padding-bottom: 2px;
+      margin-top: -0.125rem;
+      padding-bottom: 0.125rem;
       font-family: Roboto;
       font-size: 2rem;
       font-weight: 100;
@@ -102,8 +102,8 @@ const Text = () =>
     }
 
     .font_link_list-24 {
-      margin-top: -7px;
-      padding-bottom: 7px;
+      margin-top: -0.4375rem;
+      padding-bottom: 0.4375rem;
       font-family: Roboto;
       font-size: 1.5rem;
       font-weight: 300;
@@ -113,8 +113,8 @@ const Text = () =>
     }
 
     .font_link-list_28 {
-      margin-top: -4px;
-      padding-bottom: 4px;
+      margin-top: -0.25rem;
+      padding-bottom: 0.25rem;
       font-family: Roboto;
       font-size: 1.75rem;
       font-weight: 300;
@@ -125,8 +125,8 @@ const Text = () =>
 
     .font_footer-link,
     .font_footer-text {
-      margin-top: -6px;
-      padding-bottom: 6px;
+      margin-top: -0.375rem;
+      padding-bottom: 0.375rem;
       font-family: Roboto;
       font-size: 0.625rem;
       font-weight: 500;
@@ -151,8 +151,8 @@ const Text = () =>
     .font_input-small-label,
     .font_input-small-focus-label,
     .font_input-small-error-label  {
-      margin-top: -2px;
-      padding-bottom: 2px;
+      margin-top: -0.125rem;
+      padding-bottom: 0.125rem;
       font-family: Roboto;
       font-size: 0.625rem;
       line-height: 1rem;
@@ -179,8 +179,8 @@ const Text = () =>
     }
 
     .font_input-placeholder {
-      margin-top: -7px;
-      padding-bottom: 7px;
+      margin-top: -0.4375rem;
+      padding-bottom: 0.4375rem;
       font-family: Roboto;
       font-size: 1.5rem;
       font-weight: 100;
@@ -190,8 +190,8 @@ const Text = () =>
 
     .font_inputted-text-regular,
     .font_inputted-text-error {
-      margin-top: -7px;
-      padding-bottom: 7px;
+      margin-top: -0.4375rem;
+      padding-bottom: 0.4375rem;
       font-family: Roboto;
       font-size: 1.5rem;
       font-weight: 300;
@@ -217,8 +217,8 @@ const Text = () =>
     }
 
     .font_top-menu {
-      margin-top: -3px;
-      padding-bottom: 3px;
+      margin-top: -0.1875rem;
+      padding-bottom: 0.1875rem;
       font-family: Roboto;
       font-size: 0.75rem;
       font-weight: bold;
@@ -237,8 +237,8 @@ const Text = () =>
     }
 
     .font_p24-strong {
-      margin-top: -3px;
-      padding-bottom: 3px;
+      margin-top: -0.1875rem;
+      padding-bottom: 0.1875rem;
       font-family: Roboto;
       font-size: 1.5rem;
       line-height: 2.5rem;
@@ -256,8 +256,8 @@ const Text = () =>
     }
 
     .font_perforator-10-regular {
-      margin-top: -2px;
-      padding-bottom: 2px;
+      margin-top: -0.125rem;
+      padding-bottom: 0.125rem;
       font-family: Roboto;
       font-size: 0.625rem;
       line-height: 1rem;
@@ -267,8 +267,8 @@ const Text = () =>
     }
 
     .font_feature_1 {
-      margin-top: -3px;
-      padding-bottom: 3px;
+      margin-top: -0.1875rem;
+      padding-bottom: 0.1875rem;
       font-family: Roboto;
       font-size: 4.0625rem;
       line-height: 4.875rem;
@@ -285,8 +285,8 @@ const Text = () =>
     }
 
     .font_feature_3 {
-      margin-top: -6px;
-      padding-bottom: 6px;
+      margin-top: -0.375rem;
+      padding-bottom: 0.375rem;
       font-family: Roboto;
       font-size: 3.75rem;
       font-weight: 100;
@@ -296,8 +296,8 @@ const Text = () =>
 
     @media (max-width: 1279px) {
       .font_h1-slab {
-        margin-top: -3px;
-        padding-bottom: 3px;
+        margin-top: -0.1875rem;
+        padding-bottom: 0.1875rem;
         font-size: 2rem;
         line-height: 3rem;
       }
@@ -312,8 +312,8 @@ const Text = () =>
       }
 
       .font_h2-regular {
-        margin-top: -4px;
-        padding-bottom: 4px;
+        margin-top: -0.25rem;
+        padding-bottom: 0.25rem;
         font-size: 0.875rem;
         line-height: 1rem;
       }
@@ -326,8 +326,8 @@ const Text = () =>
       }
 
       .font_top-menu {
-        margin-top: -2px;
-        padding-bottom: 2px;
+        margin-top: -0.125rem;
+        padding-bottom: 0.125rem;
         font-size: 0.625rem;
       }
 
@@ -344,8 +344,8 @@ const Text = () =>
       }
 
       .font_perforator-16-black {
-        margin-top: -7px;
-        padding-bottom: 7px;
+        margin-top: -0.4375rem;
+        padding-bottom: 0.4375rem;
         font-size: 0.75rem;
         line-height: 1.5rem;
         letter-spacing: 0.05rem;
@@ -360,8 +360,8 @@ const Text = () =>
 
       .font_button-label,
       .font_button-label_custom_color {
-        margin-top: -7px;
-        padding-bottom: 7px;
+        margin-top: -0.4375rem;
+        padding-bottom: 0.4375rem;
         font-size: 0.75rem;
         letter-spacing: 0.075rem;
       }
@@ -369,8 +369,8 @@ const Text = () =>
       .font_input-placeholder,
       .font_inputted-text-regular,
       .font_inputted-text-error {
-        margin-top: -4px;
-        padding-bottom: 4px;
+        margin-top: -0.25rem;
+        padding-bottom: 0.25rem;
         font-size: 1rem;
         font-weight: 300;
         line-height: 1.5rem;

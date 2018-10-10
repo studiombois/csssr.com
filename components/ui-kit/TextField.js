@@ -84,7 +84,7 @@ export default class TextField extends PureComponent {
             height: 2.5rem;
             text-align: center;
             border: none;
-            border-bottom: solid 1px #e1e1e1;
+            border-bottom: solid 0.0625rem #e1e1e1;
             caret-color: #4a4a4a;
           }
 
@@ -104,9 +104,9 @@ export default class TextField extends PureComponent {
           label::before {
             content: '';
             position absolute;
-            top: 1px;
+            top: 0.0625rem;
             left: 0;
-            height: 1px;
+            height: 0.0625rem;
             width: 0;
             background-color: #0076ff;
             transition: width 0.1s ease-out;
@@ -121,7 +121,7 @@ export default class TextField extends PureComponent {
             width: 100%;
           }
 
-          @media (min-width: 1024px) and (max-width: 1279px) {
+          @media (min-width: 368px) and (max-width: 1279px) {
             input {
               padding-bottom: 0.1875rem;
             }

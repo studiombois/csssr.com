@@ -12,17 +12,6 @@ export default () =>
         </span>
       </h1>
 
-      {/* TODO:
-          Next js похоже не очень умеет в nested стили, хотя библиотека внутри неё
-          может, — https://www.npmjs.com/package/styled-jsx#external-styles
-
-          Попробовал применить, но не получилось, тсили всё равно не передались, а у
-          всех элементов начал дублироваться хеш в названии класса. Пока оставлю так.
-
-          Я хотел избавится от лишних оберток, так что можно оставить пока так,
-          ну или делать эти обертки.
-      */}
-
       <div className='button-wrapper'>
         <ButtonLink href={'#hire-us'}>
           HIRE&nbsp;US
@@ -46,10 +35,8 @@ export default () =>
       article {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
         padding-top: 12rem;
-        width: 1888px;
+        width: 1792px;
         height: 60rem;
         background-image: url('../../static/images/dog_1920.jpg');
         background-size: auto 640px;
@@ -88,19 +75,22 @@ export default () =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
-          width: 1344px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          width: 1328px;
           background-image: url('../../static/images/dog_1360.jpg');
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         article {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px;
+          width: 1232px;
           background-image: url('../../static/images/dog_1280.jpg');
+        }
+      }
+
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        article {
+          width: 944px;
+          background-image: url('../../static/images/dog_1024.jpg');
         }
       }
 
@@ -115,9 +105,31 @@ export default () =>
           }
         }
 
-        @media (max-width: 1359px) {
+        @media (min-width: 1280px) and (max-width: 1359px) {
           article {
             background-image: url('../../static/images/dog_1280_retina.jpg');
+          }
+        }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          h1 {
+            grid-column: 3 / span 4;
+            margin-bottom: 3.8125rem;
+          }
+
+          article {
+            padding-top: 10rem;
+            width: 944px;
+            height: 28.5rem;
+            background-image: url('../../static/images/dog_1024_retina.jpg');
+          }
+
+          span {
+            padding-top: 1.6875rem;
+          }
+
+          blockquote {
+            margin-top: 1.3125rem;
           }
         }
       }

@@ -95,7 +95,6 @@ export default class ContactForm extends PureComponent {
             component={TextareaField}
             placeholder='Tell us about your product or service'
             label='Tell us about your product or service'
-            labelHidden
           />
         </div>
         <div className='button'>
@@ -112,10 +111,8 @@ export default class ContactForm extends PureComponent {
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;
-            padding-left: 3rem;
             padding-bottom: 31.5rem;
-            padding-right: 3rem;
-            width: 1888px;
+            width: 1792px;
             align-items: center;
             border: none;
             background-image: url('../../static/images/letter.jpg');
@@ -125,19 +122,19 @@ export default class ContactForm extends PureComponent {
           }
 
           .headline {
-            margin-bottom: 89px;
+            margin-bottom: 6rem;
             grid-column: 4 / span 6;
             text-align: center;
           }
 
           .field {
             grid-column: 4 / span 6;
-            margin-bottom: 2rem;
+            margin-bottom: 2.0625rem;
           }
 
           .field_type_textarea {
             position: relative;
-            margin-top: 1.425rem;
+            margin-top: 1.5rem;
             margin-bottom: 4rem;
           }
 
@@ -153,17 +150,36 @@ export default class ContactForm extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
-              padding-left: 0.5rem;
-              padding-right: 0.5rem;
-              width: 1344px
+              width: 1328px;
             }
           }
 
-          @media (max-width: 1359px) {
+          @media (min-width: 1280px) and (max-width: 1359px) {
             form {
-              padding-left: 0.5rem;
-              padding-right: 0.5rem;
-              width: 1248px
+              width: 1232px;
+            }
+          }
+
+          @media (min-width: 1024px) and (max-width: 1279px) {
+            form {
+              padding-top: 6.1875rem;
+              /* padding-bottom: 34.25rem; */
+              padding-bottom: 31.5rem;
+              background-position: 50% calc(100% - 8.45rem);
+              width: 944px;
+            }
+
+            .headline {
+              margin-bottom: 2.3125rem;
+            }
+
+            .field {
+              grid-column: 4 / span 6;
+              margin-bottom: 1.875rem;
+            }
+
+            .field_type_textarea {
+              margin-bottom: 3.75rem;
             }
           }
         `}</style>

@@ -85,7 +85,7 @@ export default class Settings extends PureComponent {
           background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
         }
 
-        .layout-columns-on {
+        #background-for-layout.layout-columns-on {
           background-position: 1rem;
           background-size: 7rem;
           background-image: linear-gradient(90deg, #F6D3C3 6rem, transparent 6rem, transparent 1rem);
@@ -93,7 +93,7 @@ export default class Settings extends PureComponent {
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         #background-for-layout {
           width: 1280px;
         }
@@ -103,10 +103,27 @@ export default class Settings extends PureComponent {
           width: 1rem;
         }
 
-        .layout-columns-on {
+        #background-for-layout.layout-columns-on {
           background-position: 1.5rem;
           background-size: 6.5rem;
           background-image: linear-gradient(90deg, #F6D3C3 5.5rem, transparent 5.5rem, transparent 1rem);
+        }
+      }
+
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        #background-for-layout {
+          width: 1024px;
+        }
+
+        #background-for-layout:before,
+        #background-for-layout:after {
+          width: 2.5rem;
+        }
+
+        #background-for-layout.layout-columns-on {
+          background-position: 2.5rem;
+          background-size: 5rem;
+          background-image: linear-gradient(90deg, #F6D3C3 4rem, transparent 4rem, transparent 1rem);
         }
       }
     `}</style>

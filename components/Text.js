@@ -146,15 +146,11 @@ const Text = () =>
       line-height: 1rem;
       letter-spacing: 0.05rem;
       text-transform: uppercase;
-      color: #c5c5c5;
     }
 
-    .font_input-error-label {
-      color: #d0021b;
-    }
-
-    .font_input-small-Label,
-    .font_input-focus-label {
+    .font_input-small-label,
+    .font_input-small-focus-label,
+    .font_input-small-error-label  {
       margin-top: -2px;
       padding-bottom: 2px;
       font-family: Roboto;
@@ -162,11 +158,24 @@ const Text = () =>
       line-height: 1rem;
       letter-spacing: 0.08125rem;
       text-transform: uppercase;
+    }
+
+    .font_input-basic-label,
+    .font_input-small-label {
       color: #9b9b9b;
     }
 
-    .font_input-focus-label {
+    .font_input-small-label {
+      color: #4a4a4a;
+    }
+
+    .font_input-small-focus-label {
       color: #0076ff;
+    }
+
+    .font_input-error-label,
+    .font_input-small-error-label {
+      color: #d0021b;
     }
 
     .font_input-placeholder {
@@ -187,7 +196,10 @@ const Text = () =>
       font-size: 1.5rem;
       font-weight: 300;
       line-height: 2rem;
-      color: #000000;
+    }
+
+    .font_inputted-text-regular {
+      color: #4a4a4a;
     }
 
     .font_inputted-text-error {
@@ -280,6 +292,89 @@ const Text = () =>
       font-weight: 100;
       line-height: 4.375rem;
       color: #000000;
+    }
+
+    @media (max-width: 1279px) {
+      .font_h1-slab {
+        margin-top: -3px;
+        padding-bottom: 3px;
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+
+      .font_h2-slab {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1.5rem;
+        font-weight: normal;
+        line-height: 2rem;
+        color: #000000;
+      }
+
+      .font_h2-regular {
+        margin-top: -4px;
+        padding-bottom: 4px;
+        font-size: 0.875rem;
+        line-height: 1rem;
+      }
+
+      .font_subhead-slab {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .font_top-menu {
+        margin-top: -2px;
+        padding-bottom: 2px;
+        font-size: 0.625rem;
+      }
+
+      .font_p16-regular {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .font_p24-strong {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
+      .font_perforator-16-black {
+        margin-top: -7px;
+        padding-bottom: 7px;
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.05rem;
+      }
+
+      .font_link-list_28 {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1rem;
+        line-height: 2.5rem;
+      }
+
+      .font_button-label,
+      .font_button-label_custom_color {
+        margin-top: -7px;
+        padding-bottom: 7px;
+        font-size: 0.75rem;
+        letter-spacing: 0.075rem;
+      }
+
+      .font_input-placeholder,
+      .font_inputted-text-regular,
+      .font_inputted-text-error {
+        margin-top: -4px;
+        padding-bottom: 4px;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.5rem;
+      }
     }
   `}</style>
 

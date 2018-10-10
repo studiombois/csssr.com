@@ -25,7 +25,8 @@ export default ({ images }) =>
 
       <picture>
         <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
-        <source media='(max-width: 1359px)' srcSet={images.w1280} />
+        <source media='(min-width: 1280px) and (max-width: 1359px)' srcSet={images.w1280} />
+        <source media='(min-width: 1024px) and (max-width: 1279px)' srcSet={images.w1024} />
         <img srcSet={images.w1920} alt={images.alt} />
       </picture>
 
@@ -43,10 +44,8 @@ export default ({ images }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
         padding-top: 9rem;
-        width: 1888px;
+        width: 1792px;
       }
 
       h2 {
@@ -117,9 +116,7 @@ export default ({ images }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1344px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          width: 1328px;
         }
 
         h2 {
@@ -139,11 +136,9 @@ export default ({ images }) =>
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px;
+          width: 1232px;
         }
 
         h2 {
@@ -160,6 +155,37 @@ export default ({ images }) =>
 
         .font_feature_3 {
           left: 36.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        section {
+          padding-top: 30rem;
+          width: 944px;
+        }
+
+        h2 {
+          margin-bottom: 2.5rem;
+        }
+
+        picture {
+          margin-top: 5rem;
+          height: 512px;
+        }
+
+        /* TODO: переписать как появятся картинки */
+        .font_feature_1,
+        .font_feature_2,
+        .font_feature_3 {
+          display: none;
+        }
+
+        footer {
+          margin-top: 3.5rem;
+        }
+
+         footer h2 {
+          margin-bottom: 0.8125rem;
         }
       }
     `}</style>

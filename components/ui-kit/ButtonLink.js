@@ -80,6 +80,13 @@ export default class Button extends PureComponent {
           .button_theme_secondary:active {
             color: #000;
           }
+
+          @media (min-width: 1024px) and (max-width: 1279px) {
+            .button {
+              padding-top: 7px;
+              height: 2.5rem;
+            }
+          }
         `}</style>
       </Fragment>
     )

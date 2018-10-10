@@ -79,10 +79,8 @@ export default () =>
       section {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
         padding-top: 8.5rem;
-        width: 1888px;
+        width: 1792px;
       }
 
       h2 {
@@ -114,9 +112,7 @@ export default () =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1344px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          width: 1328px;
         }
 
         h2 {
@@ -128,11 +124,9 @@ export default () =>
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px;
+          width: 1232px;
         }
 
         h2 {
@@ -141,6 +135,23 @@ export default () =>
 
         .link-list-wrapper {
           margin-bottom: 4.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        section {
+          margin-bottom: -11px;
+          padding-top: 6.1875rem;
+          width: 944px;
+        }
+
+        h2 {
+          margin-bottom: 3rem;
+          text-align: center;
+        }
+
+        .link-list-wrapper {
+          margin-bottom: 2.5rem;
         }
       }
     `}</style>

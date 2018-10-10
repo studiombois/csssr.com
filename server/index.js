@@ -38,8 +38,7 @@ i18n
         // TODO
         // Добавить favicon
 
-        const redirectToHomePage =
-        [
+        const oldPaths = [
           '/jobs/index.html',
           '/jobs/pixel-perfectionist/index.html',
           '/jobs/technical-manager/index.html',
@@ -58,9 +57,10 @@ i18n
           '/thanks.html',
           '/timeline.html',
           '/view-project.html',
-        ].forEach(url =>
+        ]
+        oldPaths.forEach(url =>
           server.get(url, (req, res) => res.redirect(301, '/'))
-        );
+        )
 
         server.use(bodyParser.json())
 
@@ -73,13 +73,13 @@ i18n
         //   res.redirect(`/${language}`)
         // })
         server.get('/', function (req, res) {
-          res.redirect(`/en`)
+          res.redirect('/en')
         })
         server.get('/ru', function (req, res) {
-          res.redirect(`/en`)
+          res.redirect('/en')
         })
         server.get('/de', function (req, res) {
-          res.redirect(`/en`)
+          res.redirect('/en')
         })
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))

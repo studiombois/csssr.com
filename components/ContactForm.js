@@ -149,7 +149,10 @@ export default class ContactForm extends PureComponent {
             grid-column: 6 / span 2;
           }
 
-          @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+          @media
+          only screen and (-webkit-min-device-pixel-ratio: 1.5),
+          only screen and (min-device-pixel-ratio: 1.5),
+          only screen and (min-resolution: 144dpi)  {
             form {
               background-image: url('../../static/images/letter@2x.png');
             }

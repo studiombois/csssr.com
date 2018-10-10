@@ -116,7 +116,10 @@ export default () =>
         }
       }
 
-      @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 1.5),
+      only screen and (min-device-pixel-ratio: 1.5),
+      only screen and (min-resolution: 144dpi) {
         article {
           background-image: url('../../static/images/1920/dog@2x.png');
         }

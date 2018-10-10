@@ -1,6 +1,22 @@
 import React, { Fragment } from 'react'
+import css from 'styled-jsx/css'
+import Picture from '../Picture'
 
-export default ({ images }) =>
+const { className, styles } = css.resolve`
+  picture {
+    grid-column: 2 / span 10;
+    grid-row: 2;
+    z-index: -1;
+    margin-top: 5.5rem;
+    height: 768px;
+  }
+  
+  img {
+    height: 100%;
+  }
+`
+
+export default ({ imagesKey }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 id='competence-and-services' className='font_h2-slab'>
@@ -23,35 +39,7 @@ export default ({ images }) =>
         Stack migration
       </p>
 
-      <picture>
-        <source media='(max-width: 1359px)'
-                type='image/webp'
-                srcset='../../static/images/1280/geometry@1x.webp,
-                    ../../static/images/1280/geometry@2x.webp 2x,
-                    ../../static/images/1280/geometry@3x.webp 3x'/>
-        <source media='(max-width: 1359px)'
-                srcset='../../static/images/1280/geometry@1x.png,
-                    ../../static/images/1280/geometry@2x.png 2x,
-                    ../../static/images/1280/geometry@3x.png 3x'/>
-        <source media='(max-width: 1919px)'
-                type='image/webp'
-                srcset='../../static/images/1360/geometry@1x.webp,
-                    ../../static/images/1360/geometry@2x.webp 2x,
-                    ../../static/images/1920/geometry@3x.webp 3x'/>
-        <source media='(max-width: 1919px)'
-                srcset='../../static/images/1360/geometry@1x.png,
-                    ../../static/images/1360/geometry@2x.png 2x,
-                    ../../static/images/1360/geometry@3x.png 3x'/>
-        <source type='image/webp'
-                srcset='../../static/images/1920/geometry@1x.webp,
-                    ../../static/images/1920/geometry@2x.webp 2x,
-                    ../../static/images/1920/geometry@3x.webp 3x'/>
-        <img srcset='../../static/images/1920/geometry@1x.png,
-                 ../../static/images/1920/geometry@2x.png 2x,
-                 ../../static/images/1920/geometry@3x.png 3x'
-             src='../../static/images/1920/geometry@1x.png'
-             alt={images.alt} />
-      </picture>
+      <Picture className={className} imagesKey={imagesKey}/>
 
       <footer className='grid-container'>
         <h2 className='font_h2-regular'>
@@ -62,7 +50,9 @@ export default ({ images }) =>
           We&nbsp;are the part of&nbsp;the global community of&nbsp;developers who use popular open source technologies and frameworks, such as&nbsp;React, Angular, Vue, Node and many others.
         </p>
       </footer>
-    </section><style jsx>{`
+    </section>
+    {styles}
+    <style jsx>{`
       section {
         position: relative;
         margin-left: auto;
@@ -83,18 +73,6 @@ export default ({ images }) =>
       p {
         grid-column: 3 / span 4;
         grid-row: 2;
-      }
-
-      picture {
-        grid-column: 2 / span 10;
-        grid-row: 2;
-        z-index: -1;
-        margin-top: 5.5rem;
-        height: 768px;
-      }
-
-      img {
-        height: 100%;
       }
 
       footer {

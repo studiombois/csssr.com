@@ -1,7 +1,23 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
+import css from 'styled-jsx/css'
+import Picture from '../Picture'
 
-const Feature1 = ({ images, t }) =>
+const { className, styles } = css.resolve`
+  picture {
+    grid-column: 2 / span 10;
+    grid-row: 2;
+    z-index: -1;
+    margin-top: 5.5rem;
+    height: 768px;
+  }
+  
+  img {
+    height: 100%;
+  }
+`
+
+const Feature1 = ({ t, imagesKey }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 id='competence-and-services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:serviceTitle') }} />
@@ -14,17 +30,15 @@ const Feature1 = ({ images, t }) =>
       <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:serviceApp') }} />
       <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:serviceStack') }} />
 
-      <picture>
-        <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
-        <source media='(max-width: 1359px)' srcSet={images.w1280} />
-        <img srcSet={images.w1920} alt={images.alt} />
-      </picture>
+      <Picture className={className} imagesKey={imagesKey}/>
 
       <footer className='grid-container'>
         <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSourceTitle') }} />
         <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSourceText') }} />
       </footer>
-    </section><style jsx>{`
+    </section>
+    {styles}
+    <style jsx>{`
       section {
         position: relative;
         margin-left: auto;
@@ -45,18 +59,6 @@ const Feature1 = ({ images, t }) =>
       p {
         grid-column: 3 / span 4;
         grid-row: 2;
-      }
-
-      picture {
-        grid-column: 2 / span 10;
-        grid-row: 2;
-        z-index: -1;
-        margin-top: 5.5rem;
-        height: 768px;
-      }
-
-      img {
-        height: 100%;
       }
 
       footer {

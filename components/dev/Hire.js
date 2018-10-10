@@ -42,10 +42,14 @@ const Hire = ({ t }) =>
         padding-top: 12rem;
         width: 1888px;
         height: 60rem;
-        background-image: url('../../static/images/dog_1920.jpg');
+        background-image: url('../../static/images/1920/dog@1x.png');
         background-size: auto 640px;
         background-position: 50% 20rem;
         background-repeat: no-repeat;
+      }
+
+      :global(html.webp) article {
+        background-image: url('../../static/images/1920/dog@1x.webp');
       }
 
       blockquote {
@@ -82,7 +86,11 @@ const Hire = ({ t }) =>
           width: 1344px;
           padding-left: 0.5rem;
           padding-right: 0.5rem;
-          background-image: url('../../static/images/dog_1360.jpg');
+          background-image: url('../../static/images/1360/dog@1x.png');
+        }
+
+        :global(html.webp) article {
+          background-image:  url('../../static/images/1360/dog@1x.webp');
         }
       }
 
@@ -91,24 +99,43 @@ const Hire = ({ t }) =>
           padding-left: 0.5rem;
           padding-right: 0.5rem;
           width: 1248px;
-          background-image: url('../../static/images/dog_1280.jpg');
+          background-image: url('../../static/images/1280/dog@1x.png');
+        }
+
+        :global(html.webp) article {
+          background-image:  url('../../static/images/1280/dog@1x.webp');
         }
       }
 
-      @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 1.5),
+      only screen and (min-device-pixel-ratio: 1.5),
+      only screen and (min-resolution: 144dpi) {
         article {
-          background-image: url('../../static/images/dog_1920_retina.jpg');
+          background-image: url('../../static/images/1920/dog@2x.png');
+        }
+
+        :global(html.webp) article {
+          background-image: url('../../static/images/1920/dog@2x.webp');
         }
 
         @media (min-width: 1360px) and (max-width: 1919px) {
           article {
-            background-image: url('../../static/images/dog_1360_retina.jpg');
+            background-image: url('../../static/images/1360/dog@2x.png');
+          }
+
+          :global(html.webp) article {
+            background-image: url('../../static/images/1360/dog@2x.webp');
           }
         }
 
         @media (max-width: 1359px) {
           article {
-            background-image: url('../../static/images/dog_1280_retina.jpg');
+            background-image: url('../../static/images/1280/dog@2x.png');
+          }
+
+          :global(html.webp) article {
+            background-image: url('../../static/images/1280/dog@2x.webp');
           }
         }
       }

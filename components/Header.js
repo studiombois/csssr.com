@@ -3,7 +3,7 @@ import { object, string } from 'prop-types'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
 import headerLinks from '../data/headerLinks'
-// import SideBar from './SideBar'
+import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
 class Header extends PureComponent {
@@ -95,11 +95,11 @@ class Header extends PureComponent {
 
     return (
       <Fragment>
-        {/* <SideBar
+        <SideBar
           onToggle={this.handleSideBarToggle}
           isOpened={this.state.isSideBarOpened}
           onClose={this.handleSideBarClose}
-        /> */}
+        />
         <HeaderContent
           links={links}
           pathname={pathname}

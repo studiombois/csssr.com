@@ -24,7 +24,7 @@ const Hire = ({ t }) =>
 
       <div className='button-wrapper'>
         <ButtonLink href={'#hire-us'}>
-          HIRE&nbsp;US
+          {t('dev:hireButtonText')}
         </ButtonLink>
       </div>
 

@@ -93,6 +93,7 @@ const Text = () =>
     }
 
     .font_link-list_16 {
+      position: relative;
       font-family: Roboto;
       font-size: 1rem;
       font-weight: 300;
@@ -101,7 +102,20 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link_list-24 {
+    .font_link-list_16::after {
+      position: absolute;
+      top: 5px;
+      right: -5px;
+      display: none;
+      width: 4px;
+      height: 4px;
+      border: 2px solid #0076ff;
+      box-sizing: border-box;
+      content: ''
+    }
+
+    .font_link-list_24 {
+      position: relative;
       margin-top: -7px;
       padding-bottom: 7px;
       font-family: Roboto;
@@ -112,7 +126,20 @@ const Text = () =>
       color: #0076ff;
     }
 
+    .font_link-list_24::after {
+      position: absolute;
+      top: 7px;
+      right: -10px;
+      display: none;
+      width: 6px;
+      height: 6px;
+      border: 1px solid #0076ff;
+      box-sizing: border-box;
+      content: ''
+    }
+
     .font_link-list_28 {
+      position: relative;
       margin-top: -4px;
       padding-bottom: 4px;
       font-family: Roboto;
@@ -121,6 +148,24 @@ const Text = () =>
       line-height: 2.5rem;
       text-decoration: underline;
       color: #0076ff;
+    }
+
+    .font_link-list_28::after {
+      position: absolute;
+      top: 9px;
+      right: -10px;
+      display: none;
+      width: 8px;
+      height: 8px;
+      border: 2px solid #0076ff;
+      box-sizing: border-box;
+      content: ''
+    }
+
+    .font_link-list_16:hover::after,
+    .font_link-list_24:hover::after,
+    .font_link-list_28:hover::after {
+      display: block;
     }
 
     .font_footer-link,

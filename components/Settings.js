@@ -30,25 +30,11 @@ export default class Settings extends PureComponent {
         height: 100%;
       }
 
-      /* #background-for-grid {
-        right: 0;
-        bottom: 0;
-      } */
-
       #background-for-layout,
       #background-for-grid {
-        width: 120rem;
+        width: 1824px;
         left: 50%;
         transform: translateX(-50%);
-      }
-
-      #background-for-layout:before,
-      #background-for-layout:after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 4rem;
-        background-color: white;
       }
 
       #background-for-layout:after {
@@ -58,34 +44,27 @@ export default class Settings extends PureComponent {
 
       #background-for-grid.grid {
         display: block;
-        background-size: 0.5rem 0.5rem;
-        background-image: linear-gradient(to right, lightgrey 0.0625rem, transparent 0.0625rem), linear-gradient(to bottom, lightgrey 0.0625rem, transparent 0.0625rem);
+        background-size: 8px 8px;
+        background-image: linear-gradient(to right, lightgrey 1px, transparent 1px), linear-gradient(to bottom, lightgrey 1px, transparent 1px);
         opacity: 0.5;
       }
 
       #background-for-layout.layout-columns-on {
         display: block;
-        background-position: 4rem;
-        background-size: 9.5rem;
-        background-image: linear-gradient(90deg, #F6D3C3 7.5rem, transparent 7.5rem, transparent 2rem);
+        background-size: 152px;
+        background-image: linear-gradient(90deg, #F6D3C3 120px, transparent 120px, transparent 16px);
         opacity: 0.5;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         #background-for-layout,
         #background-for-grid {
-          width: 85rem;
-        }
-
-        #background-for-layout:before,
-        #background-for-layout:after {
-          width: 0;
+          width: 1344px;
         }
 
         #background-for-layout.layout-columns-on {
-          background-position: 1rem;
-          background-size: 7rem;
-          background-image: linear-gradient(90deg, #F6D3C3 6rem, transparent 6rem, transparent 1rem);
+          background-size: 112px;
+          background-image: linear-gradient(90deg, #F6D3C3 96px, transparent 96px, transparent 16px);
           opacity: 0.5;
         }
       }
@@ -93,40 +72,41 @@ export default class Settings extends PureComponent {
       @media (min-width: 1280px) and (max-width: 1359px) {
         #background-for-layout,
         #background-for-grid {
-          width: 80rem;
-        }
-
-        #background-for-layout:before,
-        #background-for-layout:after {
-          width: 1rem;
+          width: 1248px;
         }
 
         #background-for-layout.layout-columns-on {
-          background-position: 1.5rem;
-          background-size: 6.5rem;
-          background-image: linear-gradient(90deg, #F6D3C3 5.5rem, transparent 5.5rem, transparent 1rem);
+          background-size: 104px;
+          background-image: linear-gradient(90deg, #F6D3C3 88px, transparent 88px, transparent 16px);
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1279px) {
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        #background-for-grid,
+        #background-for-layout {
+          width: 944px;
+        }
+
+        #background-for-layout.layout-columns-on {
+          background-size: 80px;
+          background-image: linear-gradient(90deg, #F6D3C3 64px, transparent 64px, transparent 16px);
+        }
+      }
+
+      @media (min-width: 368px) and (max-width: 1023px) {
         #background-for-grid,
         #background-for-layout {
           width: 59rem;
         }
 
-        /* #background-for-layout {
-          width: 62rem;
-        } */
-
-        #background-for-layout:before,
-        #background-for-layout:after {
-          width: 0;
-        }
-
         #background-for-layout.layout-columns-on {
-          background-position: 0;
           background-size: 5rem;
           background-image: linear-gradient(90deg, #F6D3C3 4rem, transparent 4rem, transparent 1rem);
+        }
+
+        #background-for-grid.grid {
+          background-size: 0.5rem 0.5rem;
+          background-image: linear-gradient(to right, lightgrey 0.0625rem, transparent 0.0625rem), linear-gradient(to bottom, lightgrey 0.0625rem, transparent 0.0625rem);
         }
       }
     `}</style>

@@ -36,7 +36,7 @@ export default () =>
         margin-left: auto;
         margin-right: auto;
         padding-top: 12rem;
-        width: 112rem;
+        width: 1792px;
         height: 60rem;
         background-image: url('../../static/images/1920/dog@1x.png');
         background-size: auto 40rem;
@@ -79,7 +79,7 @@ export default () =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
-          width: 83rem;
+          width: 1328px;
           background-image: url('../../static/images/1360/dog@1x.png');
         }
 
@@ -90,7 +90,7 @@ export default () =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article {
-          width: 77rem;
+          width: 1232px;
           background-image: url('../../static/images/1280/dog@1x.png');
         }
 
@@ -100,9 +100,31 @@ export default () =>
       }
 
       @media (min-width: 368px) and (max-width: 1279px) {
+        h1 {
+          grid-column: 3 / span 4;
+          margin-bottom: 3.8125rem;
+        }
+
         article {
-          width: 59rem;
-          /* background-image: url('../../static/images/dog_1024.jpg'); */
+          padding-top: 10rem;
+          width: 944px;
+          height: 28.5rem;
+          /* background-image: url('../../static/images/dog_1024_retina.jpg'); */
+        }
+
+        span {
+          padding-top: 1.6875rem;
+        }
+
+        blockquote {
+          margin-top: 1.3125rem;
+        }
+
+        @media (max-width: 1023px) {
+          article {
+            width: 59rem;
+            /* background-image: url('../../static/images/dog_1024.jpg'); */
+          }
         }
       }
 
@@ -135,28 +157,6 @@ export default () =>
 
           :global(html.webp) article {
             background-image: url('../../static/images/1280/dog@2x.webp');
-          }
-        }
-
-        @media (min-width: 368px) and (max-width: 1279px) {
-          h1 {
-            grid-column: 3 / span 4;
-            margin-bottom: 3.8125rem;
-          }
-
-          article {
-            padding-top: 10rem;
-            width: 59rem;
-            height: 28.5rem;
-            background-image: url('../../static/images/dog_1024_retina.jpg');
-          }
-
-          span {
-            padding-top: 1.6875rem;
-          }
-
-          blockquote {
-            margin-top: 1.3125rem;
           }
         }
       }

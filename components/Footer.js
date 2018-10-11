@@ -113,7 +113,7 @@ const Footer = ({ router: { pathname }, lng }) => {
         margin-right: auto;
         margin-left: auto;
         padding-bottom: 3.5rem;
-        width: 112rem;
+        width: 1792px;
         align-items: center;
       }
 
@@ -158,23 +158,19 @@ const Footer = ({ router: { pathname }, lng }) => {
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
-          width: 83rem;
+          width: 1328px;
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         footer {
-          width: 77rem;
+          width: 1232px;
         }
       }
 
       @media (min-width: 368px) and (max-width: 1279px) {
         footer {
-          width: 59rem;
-        }
-
-        .header-content {
-          width: 59rem;
+          width: 944px;
         }
 
         .logo-wrapper {
@@ -197,6 +193,12 @@ const Footer = ({ router: { pathname }, lng }) => {
 
         .footer-links {
           grid-column: 6 / span 7;
+        }
+
+        @media (max-width: 1023px) {
+          footer {
+            width: 59rem;
+          }
         }
       }
     `}</style>

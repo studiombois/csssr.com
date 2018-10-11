@@ -80,7 +80,7 @@ export default () =>
         margin-left: auto;
         margin-right: auto;
         padding-top: 8.5rem;
-        width: 112rem;
+        width: 1792px;
       }
 
       h2 {
@@ -112,7 +112,7 @@ export default () =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 83rem;
+          width: 1328px;
         }
 
         h2 {
@@ -126,7 +126,7 @@ export default () =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          width: 77rem;
+          width: 1232px;
         }
 
         h2 {
@@ -142,7 +142,7 @@ export default () =>
         section {
           margin-bottom: 0.6875rem;
           padding-top: 6.1875rem;
-          width: 59rem;
+          width: 944px;
         }
 
         h2 {
@@ -152,6 +152,12 @@ export default () =>
 
         .link-list-wrapper {
           margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 1023px) {
+          section {
+            width: 59rem;
+          }
         }
       }
     `}</style>

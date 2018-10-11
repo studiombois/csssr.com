@@ -15,7 +15,7 @@ const RuDev = ({ t }) => (
       margin-left: auto;
       margin-right: auto;
       padding-top: 24rem;
-      width: 112rem;
+      width: 1792px;
       height: 120rem;
     }
 

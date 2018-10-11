@@ -114,7 +114,7 @@ class HeaderContent extends PureComponent {
             margin-right: auto;
             margin-left: auto;
             height: 4rem;
-            width: 112rem;
+            width: 1792px;
             align-items: center;
             align-content: center;
           }
@@ -178,19 +178,19 @@ class HeaderContent extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             .header-content {
-              width: 83rem;
+              width: 1328px;
             }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             .header-content {
-              width: 77rem;
+              width: 1232px;
             }
           }
 
           @media (min-width: 368px) and (max-width: 1279px) {
             .header-content {
-              width: 59rem;
+              width: 944px;
             }
 
             .section-name,
@@ -212,6 +212,12 @@ class HeaderContent extends PureComponent {
             .logo {
               width: 4rem;
               height: 1rem;
+            }
+
+            @media (max-width: 1023px) {
+              .header-content {
+                width: 59rem;
+              }
             }
           }
 

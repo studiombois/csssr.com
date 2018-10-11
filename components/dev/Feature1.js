@@ -8,7 +8,7 @@ const { className, styles } = css.resolve`
     grid-row: 2;
     z-index: -1;
     margin-top: 5.5rem;
-    height: 48rem;
+    height: 768px;
   }
 
   img {
@@ -18,7 +18,13 @@ const { className, styles } = css.resolve`
   @media (min-width: 368px) and (max-width: 1279px) {
     picture {
       margin-top: 5rem;
-      height: 32rem;
+      height: 512px;
+    }
+
+    @media (max-width: 1023px) {
+      picture {
+        height: 32rem;
+      }
     }
   }
 `
@@ -65,7 +71,7 @@ export default ({ imagesKey }) =>
         margin-left: auto;
         margin-right: auto;
         padding-top: 9rem;
-        width: 112rem;
+        width: 1792px;
       }
 
       h2 {
@@ -124,7 +130,7 @@ export default ({ imagesKey }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 83rem;
+          width: 1328px;
         }
 
         h2 {
@@ -146,7 +152,7 @@ export default ({ imagesKey }) =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          width: 77rem;
+          width: 1232px;
         }
 
         h2 {
@@ -169,7 +175,7 @@ export default ({ imagesKey }) =>
       @media (min-width: 368px) and (max-width: 1279px) {
         section {
           padding-top: 30rem;
-          width: 59rem;
+          width: 944px;
         }
 
         h2 {
@@ -194,6 +200,12 @@ export default ({ imagesKey }) =>
 
          footer h2 {
           margin-bottom: 0.8125rem;
+        }
+
+        @media (max-width: 1023px) {
+          section {
+            width: 59rem;
+          }
         }
       }
     `}</style>

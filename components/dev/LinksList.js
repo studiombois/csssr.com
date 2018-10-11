@@ -13,7 +13,7 @@ const LinksList = ({ title, links }) =>
           <a
             href={href}
             target='_blank'
-            className='font_link-list_28'
+            className='font_link-list_24'
           >
             {label}
           </a>
@@ -30,24 +30,7 @@ const LinksList = ({ title, links }) =>
       }
 
       a {
-        position: relative;
         display: inline-block;
-      }
-
-      a::after {
-        position: absolute;
-        top: 9px;
-        right: -10px;
-        display: none;
-        width: 8px;
-        height: 8px;
-        border: 2px solid #0076ff;
-        box-sizing: border-box;
-        content: ''
-      }
-
-      a:hover::after {
-        display: block;
       }
     `}</style>
   </Fragment>

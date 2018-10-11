@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
-import Picture from "../Picture";
+import Picture from '../Picture'
 
 const { className, styles } = css.resolve`
   picture {

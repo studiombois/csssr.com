@@ -20,7 +20,7 @@ export default ({ className, imagesKey }) => <picture className={className}>
           type='image/webp'
           srcSet={`../static/images/1360/${imagesKey}@1x.webp,
                   ../static/images/1360/${imagesKey}@2x.webp 2x,
-                  ../static/images/1920/${imagesKey}@3x.webp 3x`}/>
+                  ../static/images/1360/${imagesKey}@3x.webp 3x`}/>
   <source media='(max-width: 1919px)'
           srcSet={`../static/images/1360/${imagesKey}@1x.png,
                   ../static/images/1360/${imagesKey}@2x.png 2x,

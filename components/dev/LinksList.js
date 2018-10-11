@@ -37,11 +37,12 @@ const LinksList = ({ title, links }) =>
       a::after {
         position: absolute;
         top: 9px;
-        right: -8px;
+        right: -10px;
         display: none;
-        width: 4px;
-        height: 4px;
-        background-color: #0076ff;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #0076ff;
+        box-sizing: border-box;
         content: ''
       }
 

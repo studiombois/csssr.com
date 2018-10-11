@@ -6,7 +6,7 @@ const altTextByImageKey = {
   perfect: 'a man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly with the text "We born with a gene of perfectionism"',
 }
 
-export default ({ className, imagesKey }) => console.log(className, imagesKey) ||
+export default ({ className, imagesKey }) =>
   <Fragment>
     <picture className={className}>
       <source

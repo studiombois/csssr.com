@@ -97,6 +97,7 @@ export default class ContactForm extends PureComponent {
             label='Tell us about your product or service'
           />
         </div>
+
         <div className='button'>
           <AnimatedButton
             type='submit'
@@ -106,8 +107,26 @@ export default class ContactForm extends PureComponent {
           >
             Submit
           </AnimatedButton>
-        </div><style jsx>{`
+        </div>
+
+        <picture>
+          <source
+            type='image/webp'
+            srcSet='../static/images/letter@1x.webp,
+                    ../static/images/letter@2x.webp 2x,
+                    ../static/images/letter@3x.webp 3x'/>
+
+          <img
+            srcSet='../static/images/letter@1x.png,
+                      ../static/images/letter@2x.png 2x,
+                      ../static/images/letter@3x.png 3x'
+            src='../static/images/1920/letter@1x.png'
+            alt='letter' />
+        </picture>
+
+        <style jsx>{`
           form {
+            position: relative;
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;
@@ -115,14 +134,20 @@ export default class ContactForm extends PureComponent {
             width: 1792px;
             align-items: center;
             border: none;
-            background-image: url('../../static/images/letter@1x.png');
-            background-size: auto 13.8125rem;
-            background-position: 50% calc(100% - 11.2rem);
-            background-repeat: no-repeat;
           }
 
-          :global(html.webp) form {
-            background-image: url('../../static/images/letter@1x.webp');
+          picture {
+            position: absolute;
+            bottom: 10.75rem;
+            left: 50%;
+            z-index: -1;
+            width: 340px;
+            height: 220px;
+            transform: translateX(-50%);
+          }
+
+          img {
+            width: 100%;
           }
 
           .headline {
@@ -139,24 +164,11 @@ export default class ContactForm extends PureComponent {
           .field_type_textarea {
             position: relative;
             margin-top: 1.5rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
           }
 
           .button {
             grid-column: 6 / span 2;
-          }
-
-          @media
-          only screen and (-webkit-min-device-pixel-ratio: 1.5),
-          only screen and (min-device-pixel-ratio: 1.5),
-          only screen and (min-resolution: 144dpi) {
-            form {
-              background-image: url('../../static/images/letter@2x.png');
-            }
-
-            :global(html.webp) form {
-              background-image: url('../../static/images/letter@2x.webp');
-            }
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
@@ -179,6 +191,11 @@ export default class ContactForm extends PureComponent {
               width: 944px;
             }
 
+            picture {
+              position: absolute;
+              bottom: 8rem;
+            }
+
             .headline {
               margin-bottom: 2.3125rem;
             }
@@ -195,6 +212,11 @@ export default class ContactForm extends PureComponent {
             @media (max-width: 1023px) {
               form {
                 width: 59rem;
+              }
+
+              picture {
+                width: 21.25rem;
+                height: 13.75rem;
               }
             }
           }

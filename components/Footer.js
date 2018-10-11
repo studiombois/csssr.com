@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
 
-const Footer = ({ router: { pathname }, lng }) => {
+const Footer = ({ router: { pathname }, lng, t }) => {
   const rootUrl = `/${lng}`
 
   return <footer className='grid-container'>
@@ -75,9 +75,8 @@ const Footer = ({ router: { pathname }, lng }) => {
           href='/privacy_policy'
           className='font_footer-link'
           target='_blank'
-        >
-          Privacy policy
-        </a>
+          dangerouslySetInnerHTML={{ __html: t('common:footer.privacyPolicy') }}
+        />
       </li>
 
       {/* <li className='footer-link'>
@@ -92,9 +91,7 @@ const Footer = ({ router: { pathname }, lng }) => {
       </li> */}
 
       <li className='footer-link'>
-        <span className='font_footer-text'>
-          CSSSR is a part of
-        </span>
+        <span className='font_footer-text' dangerouslySetInnerHTML={{ __html: t('common:footer.alliancePartText') }} />
 
         {' '}
         <a

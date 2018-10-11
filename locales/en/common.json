@@ -6,5 +6,12 @@
     "company": "Company",
     "products": "Products",
     "education": "Education"
+  },
+  "footer": {
+    "privacyPolicy": "Privacy policy",
+    "alliancePartText": "CSSSR is a part of"
+  },
+  "sectionName": {
+    "en": "Software Engineering"
   }
 }

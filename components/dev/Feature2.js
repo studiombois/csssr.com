@@ -1,6 +1,29 @@
 import React, { Fragment } from 'react'
+import css from 'styled-jsx/css'
+import Picture from '../Picture'
 
-export default ({ title, text, images, style }) =>
+const { className, styles } = css.resolve`
+  picture {
+    grid-column: 3 / span 8;
+    grid-row: 1;
+    z-index: -1;
+    margin-top: 2rem;
+    height: 35.5rem;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  @media (min-width: 368px) and (max-width: 1279px) {
+    picture {
+      margin-top: 1.5625rem;
+      height: 27rem;
+    }
+  }
+`
+
+export default ({ title, text, imagesKey, style }) =>
   <Fragment>
     <section className='grid-container' style={style}>
       <h2 className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: title }} />
@@ -8,13 +31,10 @@ export default ({ title, text, images, style }) =>
         {text}
       </p>
 
-      <picture>
-        <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
-        <source media='(min-width: 1280px) and (max-width: 1359px)' srcSet={images.w1280} />
-        <source media='(min-width: 368px) and (max-width: 1279px)' srcSet={images.w1024} />
-        <img srcSet={images.w1920} alt={images.alt} />
-      </picture>
-    </section><style jsx>{`
+      <Picture className={className} imagesKey={imagesKey}/>
+    </section>
+    {styles}
+    <style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
@@ -25,18 +45,6 @@ export default ({ title, text, images, style }) =>
       h2 {
         grid-column: 3 / span 2;
         grid-row: 1;
-      }
-
-      picture {
-        grid-column: 3 / span 8;
-        grid-row: 1;
-        z-index: -1;
-        margin-top: 2rem;
-        height: 35.5rem;
-      }
-
-      img {
-        height: 100%;
       }
 
       p {

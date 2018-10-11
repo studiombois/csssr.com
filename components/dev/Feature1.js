@@ -1,6 +1,29 @@
 import React, { Fragment } from 'react'
+import css from 'styled-jsx/css'
+import Picture from '../Picture'
 
-export default ({ images }) =>
+const { className, styles } = css.resolve`
+  picture {
+    grid-column: 2 / span 10;
+    grid-row: 2;
+    z-index: -1;
+    margin-top: 5.5rem;
+    height: 48rem;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  @media (min-width: 368px) and (max-width: 1279px) {
+    picture {
+      margin-top: 5rem;
+      height: 32rem;
+    }
+  }
+`
+
+export default ({ imagesKey }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 id='competence-and-services' className='font_h2-slab'>
@@ -23,12 +46,7 @@ export default ({ images }) =>
         Stack migration
       </p>
 
-      <picture>
-        <source media='(min-width: 1360px) and (max-width: 1919px)' srcSet={images.w1360} />
-        <source media='(min-width: 1280px) and (max-width: 1359px)' srcSet={images.w1280} />
-        <source media='(min-width: 368px) and (max-width: 1279px)' srcSet={images.w1024} />
-        <img srcSet={images.w1920} alt={images.alt} />
-      </picture>
+      <Picture className={className} imagesKey={imagesKey}/>
 
       <footer className='grid-container'>
         <h2 className='font_h2-regular'>
@@ -39,7 +57,9 @@ export default ({ images }) =>
           We&nbsp;are the part of&nbsp;the global community of&nbsp;developers who use popular open source technologies and frameworks, such as&nbsp;React, Angular, Vue, Node and many others.
         </p>
       </footer>
-    </section><style jsx>{`
+    </section>
+    {styles}
+    <style jsx>{`
       section {
         position: relative;
         margin-left: auto;
@@ -58,18 +78,6 @@ export default ({ images }) =>
       p {
         grid-column: 3 / span 4;
         grid-row: 2;
-      }
-
-      picture {
-        grid-column: 2 / span 10;
-        grid-row: 2;
-        z-index: -1;
-        margin-top: 5.5rem;
-        height: 48rem;
-      }
-
-      img {
-        height: 100%;
       }
 
       footer {

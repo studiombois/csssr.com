@@ -13,7 +13,7 @@ const LinksList = ({ title, links }) =>
           <a
             href={href}
             target='_blank'
-            className='font_link-list_24'
+            className='font_link-list_28'
           >
             {label}
           </a>

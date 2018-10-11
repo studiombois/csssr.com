@@ -108,8 +108,14 @@ export default () =>
         article {
           padding-top: 10rem;
           width: 944px;
-          height: 28.5rem;
-          /* background-image: url('../../static/images/dog_1024_retina.jpg'); */
+          height: 52rem;
+          background-image: url('../../static/images/1024/dog@1x.png');
+          background-size: auto 32rem;
+          background-position: 50% 20rem;
+        }
+
+        :global(html.webp) article {
+          background-image:  url('../../static/images/1024/dog@1x.webp');
         }
 
         span {
@@ -123,7 +129,6 @@ export default () =>
         @media (max-width: 1023px) {
           article {
             width: 59rem;
-            /* background-image: url('../../static/images/dog_1024.jpg'); */
           }
         }
       }
@@ -157,6 +162,16 @@ export default () =>
 
           :global(html.webp) article {
             background-image: url('../../static/images/1280/dog@2x.webp');
+          }
+        }
+
+        @media (min-width: 368px) and (max-width: 1279px) {
+          article {
+            background-image: url('../../static/images/1024/dog@2x.png');
+          }
+
+          :global(html.webp) article {
+            background-image:  url('../../static/images/1024/dog@2x.webp');
           }
         }
       }

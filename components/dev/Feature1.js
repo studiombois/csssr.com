@@ -11,10 +11,6 @@ const { className, styles } = css.resolve`
     height: 768px;
   }
 
-  img {
-    height: 100%;
-  }
-
   @media (min-width: 368px) and (max-width: 1279px) {
     picture {
       margin-top: 5rem;
@@ -64,7 +60,6 @@ export default ({ imagesKey }) =>
         </p>
       </footer>
     </section>
-    {styles}
     <style jsx>{`
       section {
         position: relative;
@@ -174,7 +169,7 @@ export default ({ imagesKey }) =>
 
       @media (min-width: 368px) and (max-width: 1279px) {
         section {
-          padding-top: 30rem;
+          padding-top: 6.5rem;
           width: 944px;
         }
 
@@ -182,23 +177,31 @@ export default ({ imagesKey }) =>
           margin-bottom: 2.5rem;
         }
 
-        picture {
-          margin-top: 5rem;
-          height: 32rem;
+        .font_feature_1 {
+          top: 26rem;
+          left: -0.875rem;
         }
 
-        /* TODO: переписать как появятся картинки */
-        .font_feature_1,
-        .font_feature_2,
+        .font_feature_2 {
+          top: 17.875rem;
+          left: 10.875rem;
+          width: 16rem;
+          height: 17rem;
+
+        }
+
         .font_feature_3 {
-          display: none;
+          width: 13rem;
+          height: 7rem;
+          top: 7.875rem;
+          left: 22.875rem;
         }
 
         footer {
           margin-top: 3.5rem;
         }
 
-         footer h2 {
+        footer h2 {
           margin-bottom: 0.8125rem;
         }
 
@@ -206,7 +209,20 @@ export default ({ imagesKey }) =>
           section {
             width: 59rem;
           }
+
+          .font_feature_1 {
+            left: 1.875rem;
+          }
+
+          .font_feature_2 {
+            left: 12.875rem;
+          }
+
+          .font_feature_3 {
+            left: 25.875rem;
+          }
         }
       }
     `}</style>
+    {styles}
   </Fragment>

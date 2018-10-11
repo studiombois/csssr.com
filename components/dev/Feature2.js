@@ -11,10 +11,6 @@ const { className, styles } = css.resolve`
     height: 568px;
   }
 
-  img {
-    height: 100%;
-  }
-
   @media (min-width: 368px) and (max-width: 1279px) {
     picture {
       margin-top: 1.5625rem;
@@ -39,7 +35,6 @@ export default ({ title, text, imagesKey, style }) =>
 
       <Picture className={className} imagesKey={imagesKey}/>
     </section>
-    {styles}
     <style jsx>{`
       section {
         margin-left: auto;
@@ -85,11 +80,6 @@ export default ({ title, text, imagesKey, style }) =>
           width: 944px;
         }
 
-        picture {
-          margin-top: 1.5625rem;
-          height: 432px;
-        }
-
         p {
           grid-column: 5 / span 6;
           grid-row: 2;
@@ -100,11 +90,8 @@ export default ({ title, text, imagesKey, style }) =>
           section {
             width: 59rem;
           }
-
-          picture {
-            height: 27rem;
-          }
         }
       }
     `}</style>
+    {styles}
   </Fragment>

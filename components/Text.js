@@ -375,6 +375,22 @@ const Text = () =>
         font-weight: 300;
         line-height: 1.5rem;
       }
+
+      .font_feature_1 {
+        font-size: 3.0625rem;
+        line-height: 3.875rem;
+      }
+
+      .font_feature_2 {
+        font-size: 1.8125rem;
+        line-height: 2.75rem;
+      }
+
+      .font_feature_3 {
+        font-size: 2.75rem;
+        line-height: 3.375rem;
+        color: #000000;
+      }
     }
   `}</style>
 

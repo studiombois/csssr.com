@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import LinksList from './LinksList'
+import { translate } from 'react-i18next'
 
 // TODO: Не забыть заменить ссылки перед деплоем, удалить это сообщение после
 const iTcompaniesLinks = [
@@ -32,23 +33,21 @@ const telecomLinks = [
   { href: 'https://www.qtech.ru/', label: 'Qtech' },
 ]
 
-export default () =>
+const Partners = ({ t }) =>
   <Fragment>
     <section className='grid-container'>
-      <h2 id='customers' className='font_h2-slab'>
-        More than 450 completed projects in&nbsp;different industries
-      </h2>
+      <h2 id='customers' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:partnersTitle') }} />
 
       <div className='column'>
         <div className='link-list-wrapper'>
           <LinksList
-            title='IT companies'
+            title={t('dev:partnersITTitle')}
             links={iTcompaniesLinks}
           />
         </div>
 
         <LinksList
-          title='Real Estate'
+          title={t('dev:partnersEstateTitle')}
           links={realEstateLinks}
         />
       </div>
@@ -56,26 +55,24 @@ export default () =>
       <div className='column'>
         <div className='link-list-wrapper'>
           <LinksList
-            title='Finance & banking'
+            title={t('dev:partnersFinanceTitle')}
             links={financeAndBankingLinks}
           />
         </div>
 
         <LinksList
-          title='Others'
+          title={t('dev:partnersOthersTitle')}
           links={othersLinks}
         />
       </div>
 
       <div className='column'>
         <LinksList
-          title='Telecom'
+          title={t('dev:partnersTelecomTitle')}
           links={telecomLinks}
         />
       </div>
-    </section>
-
-    <style jsx>{`
+    </section><style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
@@ -145,3 +142,5 @@ export default () =>
       }
     `}</style>
   </Fragment>
+
+export default translate()(Partners)

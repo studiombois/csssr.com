@@ -20,9 +20,7 @@ export default ({ title, text, imagesKey, style }) =>
   <Fragment>
     <section className='grid-container' style={style}>
       <h2 className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: title }} />
-      <p className='font_p16-regular'>
-        {text}
-      </p>
+      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
 
       <Picture className={className} imagesKey={imagesKey}/>
     </section>

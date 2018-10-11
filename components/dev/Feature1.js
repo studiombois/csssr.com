@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { translate } from 'react-i18next'
 import css from 'styled-jsx/css'
 import Picture from '../Picture'
 
@@ -16,39 +17,24 @@ const { className, styles } = css.resolve`
   }
 `
 
-export default ({ imagesKey }) =>
+const Feature1 = ({ t, imagesKey }) =>
   <Fragment>
     <section className='grid-container'>
-      <h2 id='competence-and-services' className='font_h2-slab'>
-        We&nbsp;create web services for&nbsp;millions to&nbsp;use
-      </h2>
+      <h2 id='competence-and-services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
 
-      <p className='font_p24-strong'>
-        We&rsquo;re engineers, and our true calling is&nbsp;to&nbsp;find the most elegant and economical solutions for business challenges. We&nbsp;use a&nbsp;variety of&nbsp;tools, technologies and programming languages, but more often than not, we&nbsp;use JavaScript.
-      </p>
+      <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} />
 
       <p className='font_feature_1'>
         MVP
       </p>
-
-      <p className='font_feature_2'>
-        Support and development of&nbsp;high load web applications
-      </p>
-
-      <p className='font_feature_3'>
-        Stack migration
-      </p>
+      <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
+      <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
 
       <Picture className={className} imagesKey={imagesKey}/>
 
       <footer className='grid-container'>
-        <h2 className='font_h2-regular'>
-          Open source technologies only
-        </h2>
-
-        <p className='font_p16-regular'>
-          We&nbsp;are the part of&nbsp;the global community of&nbsp;developers who use popular open source technologies and frameworks, such as&nbsp;React, Angular, Vue, Node and many others.
-        </p>
+        <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.title') }} />
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.text') }} />
       </footer>
     </section>
     {styles}
@@ -166,3 +152,5 @@ export default ({ imagesKey }) =>
       }
     `}</style>
   </Fragment>
+
+export default translate()(Feature1)

@@ -30,23 +30,7 @@ const LinksList = ({ title, links }) =>
       }
 
       a {
-        position: relative;
         display: inline-block;
-      }
-
-      a::after {
-        position: absolute;
-        top: 0.5625rem;
-        right: -0.5rem;
-        display: none;
-        width: 0.25rem;
-        height: 0.25rem;
-        background-color: #0076ff;
-        content: ''
-      }
-
-      a:hover::after {
-        display: block;
       }
 
       @media (min-width: 368px) and (max-width: 1279px) {

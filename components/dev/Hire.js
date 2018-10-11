@@ -6,9 +6,9 @@ const Hire = ({ t }) =>
   <Fragment>
     <article className='grid-container'>
       <h1 className='font_h1-slab'>
-        {t('dev:hireTitle')}
+        {t('dev:hire.title')}
 
-        <span className='font_subhead-slab'>{t('dev:hireSubTitle')}</span>
+        <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
       </h1>
 
       {/* TODO:
@@ -24,14 +24,14 @@ const Hire = ({ t }) =>
 
       <div className='button-wrapper'>
         <ButtonLink href={'#hire-us'}>
-          {t('dev:hireButtonText')}
+          {t('dev:hire.buttonText')}
         </ButtonLink>
       </div>
 
       <blockquote>
-        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hireParagraph1') }} />
-        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hireParagraph2') }} />
-        <footer className='font_p16-regular' rel='author' dangerouslySetInnerHTML={{ __html: t('dev:hireAuthor') }} />
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph1') }} />
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph2') }} />
+        <footer className='font_p16-regular' rel='author' dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }} />
       </blockquote>
     </article><style jsx>{`
       article {

@@ -59,15 +59,15 @@ class ContactForm extends PureComponent {
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
-        <h2 id='hire-us' className='font_h2-slab headline' dangerouslySetInnerHTML={{ __html: t('dev:formTitle') }} />
+        <h2 id='hire-us' className='font_h2-slab headline' dangerouslySetInnerHTML={{ __html: t('dev:form.title') }} />
         <div className='field'>
           <Field
             id='name'
             name='name'
             component={TextField}
             type='text'
-            placeholder={t('dev:formNamePlaceholder')}
-            label={t('dev:formNameLabel')}
+            placeholder={t('dev:form.namePlaceholder')}
+            label={t('dev:form.nameLabel')}
           />
         </div>
         <div className='field'>
@@ -76,8 +76,8 @@ class ContactForm extends PureComponent {
             name='phone'
             component={TextField}
             type='text'
-            placeholder={t('dev:formPhonePlaceholder')}
-            label={t('dev:formPhoneLabel')}
+            placeholder={t('dev:form.phonePlaceholder')}
+            label={t('dev:form.phoneLabel')}
           />
         </div>
         <div className='field'>
@@ -86,8 +86,8 @@ class ContactForm extends PureComponent {
             name='email'
             component={TextField}
             type='email'
-            placeholder={t('dev:formEmailPlaceholder')}
-            label={t('dev:formEmailLabel')}
+            placeholder={t('dev:form.emailPlaceholder')}
+            label={t('dev:form.emailLabel')}
           />
         </div>
         <div className='field field_type_textarea'>
@@ -95,8 +95,8 @@ class ContactForm extends PureComponent {
             id='message'
             name='message'
             component={TextareaField}
-            placeholder={t('dev:formMessagePlaceholder')}
-            label={t('dev:formMessageLabel')}
+            placeholder={t('dev:form.messagePlaceholder')}
+            label={t('dev:form.messageLabel')}
             labelHidden
           />
         </div>
@@ -107,7 +107,7 @@ class ContactForm extends PureComponent {
             status={this.state.formSubmitStatus}
             onAnimationEnd={this.handleStateClear}
           >
-            {t('dev:formSubmitText')}
+            {t('dev:form.submitText')}
           </AnimatedButton>
         </div><style jsx>{`
           form {

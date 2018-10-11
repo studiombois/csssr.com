@@ -13,15 +13,15 @@ export default withI18next(['dev'])(({ t }) =>
     <Hire />
     <Feature1 imagesKey='geometry' />
     <Feature2
-      title={t('dev:timeTitle')}
-      text={t('dev:timeText')}
+      title={t('dev:time.title')}
+      text={t('dev:time.text')}
       imagesKey='time'
     />
     <Partners />
     <Feature2
       style={{ marginTop: '-0.5rem' }}
-      title={t('dev:perfectTitle')}
-      text={t('dev:perfectText')}
+      title={t('dev:perfect.title')}
+      text={t('dev:perfect.text')}
       imagesKey='perfect'
     />
     <Form />

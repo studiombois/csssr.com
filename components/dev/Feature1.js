@@ -20,21 +20,21 @@ const { className, styles } = css.resolve`
 const Feature1 = ({ t, imagesKey }) =>
   <Fragment>
     <section className='grid-container'>
-      <h2 id='competence-and-services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:serviceTitle') }} />
+      <h2 id='competence-and-services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
 
-      <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:serviceText') }} />
+      <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} />
 
       <p className='font_feature_1'>
         MVP
       </p>
-      <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:serviceApp') }} />
-      <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:serviceStack') }} />
+      <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
+      <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
 
       <Picture className={className} imagesKey={imagesKey}/>
 
       <footer className='grid-container'>
-        <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSourceTitle') }} />
-        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSourceText') }} />
+        <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.title') }} />
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.text') }} />
       </footer>
     </section>
     {styles}

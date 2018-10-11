@@ -89,9 +89,9 @@ class Header extends PureComponent {
   }
 
   render() {
-    const { router: { pathname }, sectionName, lng } = this.props
+    const { router: { pathname }, sectionName } = this.props
     const { showHeader, pinHeader, toggleHeaderAnimations } = this.state
-    const links = headerLinks[lng].dev // TODO: переписать получение массива в зависимости от типа страницы что-то наподобие links = headerLinks[lang][router.path]
+    const links = headerLinks.dev // TODO: переписать получение массива в зависимости от типа страницы что-то наподобие links = headerLinks[lang][router.path]
 
     return (
       <Fragment>

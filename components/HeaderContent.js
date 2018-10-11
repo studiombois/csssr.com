@@ -29,6 +29,7 @@ class HeaderContent extends PureComponent {
       pinHeader,
       toggleHeaderAnimations,
       onSideBarToggle,
+      t,
     } = this.props
 
     const rootUrl = `/${lng}`
@@ -67,7 +68,7 @@ class HeaderContent extends PureComponent {
                   className='nav-list-item'
                   key={`nav-link-${href}-${label}`}
                 >
-                  <a className='nav-list-link font_top-menu' href={href}>{label}</a>
+                  <a className='nav-list-link font_top-menu' href={href}>{t(label)}</a>
                 </li>
               ))}
             </ul>

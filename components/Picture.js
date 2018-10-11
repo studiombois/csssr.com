@@ -2,9 +2,9 @@ import React from 'react'
 import { translate } from 'react-i18next'
 
 const altTextByImageKey = {
-  geometry: 'dev:imgAltGeometry',
-  time: 'dev:imgAltTime',
-  perfect: 'dev:imgAltPerfect',
+  geometry: 'dev:imgAlt.geometry',
+  time: 'dev:imgAlt.time',
+  perfect: 'dev:imgAlt.perfect',
 }
 
 const Picture = ({ className, imagesKey, t }) => <picture className={className}>

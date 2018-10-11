@@ -1,26 +1,12 @@
 {
-	"en": {
-		"dev": [{ 
-			"href": "#competence-and-services",
-			"label": "Competence & Services"
-		}, { 
-			"href": "#customers",
-			"label": "Customers"
-		}, {
-			"href": "#hire-us",
-			"label": "Hire us"
-		}]
-	},
-	"ru": {
-		"dev": [{ 
-			"href": "#competence-and-services",
-			"label": "Компетенция и услуги"
-		}, { 
-			"href": "#customers",
-			"label": "Клиенты"
-		}, {
-			"href": "#hire-us",
-			"label": "Сотрудничество"
-		}]
-	}
+	"dev": [{ 
+		"href": "#competence-and-services",
+		"label": "dev:headerNav.services"
+	}, { 
+		"href": "#customers",
+		"label": "dev:headerNav.customers"
+	}, {
+		"href": "#hire-us",
+		"label": "dev:headerNav.hireUs"
+	}]
 }

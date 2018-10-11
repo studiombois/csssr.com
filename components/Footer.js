@@ -17,7 +17,7 @@ const handleLinkClick = () => {
     document.documentElement.style.scrollBehavior = 'smooth'
 
     clearTimeout(scrollStylesTimer)
-  }, 0)
+  })
 }
 
 const Footer = ({ router: { pathname }, lng }) => {

@@ -9,9 +9,7 @@ import { withRouter } from 'next/router'
 import { string } from 'prop-types'
 
 const Layout = props => {
-  const { children, router } = props
-
-  console.log(router)
+  const { children } = props
 
   return <Fragment>
     <Common />

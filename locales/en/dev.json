@@ -35,12 +35,15 @@
     "title": "We&nbsp;care about time to&nbsp;market metrics",
     "text": "Our methodology is&nbsp;similar to&nbsp;Scrum and involves working with sprints. Our sprints generally last one or&nbsp;two weeks. At&nbsp;the end of&nbsp;each sprint, we&nbsp;release a&nbsp;new build version and plan product features that will be&nbsp;developed in&nbsp;the next sprint."
   },
-  "partnersTitle": "More than 450 completed projects in&nbsp;different industries",
-  "partnersITTitle": "IT companies",
-  "partnersEstateTitle": "Real Estate",
-  "partnersFinanceTitle": "Finance & banking",
-  "partnersOthersTitle": "Others",
-  "partnersTelecomTitle": "Telecom",
+  "partners": {
+    "title": "More than 450 completed projects in&nbsp;different industries",
+    "iTTitle": "IT companies",
+    "estateTitle": "Real Estate",
+    "financeTitle": "Finance & banking",
+    "healthTitle": "Health",
+    "othersTitle": "Others",
+    "telecomTitle": "Telecom"
+  },
   "perfect": {
     "title": "We&nbsp;were&nbsp;born with a&nbsp;gene of&nbsp;perfectionism",
     "text": "Most of&nbsp;us are perfectionists. Perfectionism is&nbsp;far more dangerous than procrastination&nbsp;&mdash; and we&nbsp;have tamed&nbsp;it. That is&nbsp;why our code is&nbsp;architecturally complex yet elegant, and our attention to&nbsp;detail is&nbsp;almost maniacal&nbsp;&mdash; but only if&nbsp;justified by&nbsp;the business requirements. In&nbsp;our opinion, it&nbsp;is&nbsp;focus on&nbsp;details that makes the difference between average and successful projects."

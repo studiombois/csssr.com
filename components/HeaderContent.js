@@ -3,6 +3,9 @@ import { bool, object, string } from 'prop-types'
 import Link from 'next/link'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
+import BurgerIcon from '../static/icons/burger.svg'
+
+const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
   static propTypes = {
@@ -23,7 +26,8 @@ class HeaderContent extends PureComponent {
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
-      // onSideBarToggle,
+      onSideBarToggle,
+      t,
     } = this.props
 
     const rootUrl = `/${lng}`
@@ -70,7 +74,7 @@ class HeaderContent extends PureComponent {
                   className='nav-list-item'
                   key={`nav-link-${href}-${label}`}
                 >
-                  <a className='nav-list-link font_top-menu' href={href}>{label}</a>
+                  <a className='nav-list-link font_top-menu' href={href}>{t(label)}</a>
                 </li>
               ))}
             </ul>
@@ -78,12 +82,12 @@ class HeaderContent extends PureComponent {
 
           <span className='section-name font_perforator-16-black'>
             {/* //TODO: заглушка для теста, убрать при деплое на прод */}
-            {sectionName || 'Software Engineering'}
+            {/* sectionName || 'Software Engineering' */}
           </span>
 
-          {/* <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
+          <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
             {burgerIcon}
-          </button> */}
+          </button>
 
         </div><style jsx>{`
           .header {

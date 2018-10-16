@@ -1,14 +1,12 @@
 {
-	"en": {
-		"dev": [{ 
-			"href": "#competence-and-services",
-			"label": "Competence & Services"
-		}, { 
-			"href": "#customers",
-			"label": "Customers"
-		}, {
-			"href": "#hire-us",
-			"label": "Hire us"
-		}]
-	}
+	"dev": [{ 
+		"href": "#competence-and-services",
+		"label": "dev:headerNav.services"
+	}, { 
+		"href": "#customers",
+		"label": "dev:headerNav.customers"
+	}, {
+		"href": "#hire-us",
+		"label": "dev:headerNav.hireUs"
+	}]
 }

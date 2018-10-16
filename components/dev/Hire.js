@@ -1,35 +1,26 @@
 import React, { Fragment } from 'react'
 import ButtonLink from '../ui-kit/ButtonLink'
+import { translate } from 'react-i18next'
 
-export default () =>
+const Hire = ({ t }) =>
   <Fragment>
     <article className='grid-container'>
       <h1 className='font_h1-slab'>
-        We make the&nbsp;world more logical with&nbsp;JS
+        {t('dev:hire.title')}
 
-        <span className='font_subhead-slab'>
-          and dream about space
-        </span>
+        <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
       </h1>
 
       <div className='button-wrapper'>
         <ButtonLink href={'#hire-us'}>
-          HIRE&nbsp;US
+          {t('dev:hire.buttonText')}
         </ButtonLink>
       </div>
 
       <blockquote>
-        <p className='font_p16-regular'>
-          We&nbsp;specialize in&nbsp;developing data-intensive web applications, including online banking systems, payment interfaces, sales and brokerage platforms, customer portals for airline companies, and websites for mobile network operators.
-        </p>
-
-        <p className='font_p16-regular'>
-          However, our services are not just for large companies&nbsp;&mdash; we&rsquo;re open to&nbsp;startups who are just at&nbsp;the beginning of&nbsp;their journey.
-        </p>
-
-        <footer className='font_p16-regular' rel='author'>
-          Dmitriy Chekin, CEO
-        </footer>
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph1') }} />
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph2') }} />
+        <footer className='font_p16-regular' rel='author' dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }} />
       </blockquote>
     </article><style jsx>{`
       article {
@@ -177,3 +168,5 @@ export default () =>
       }
     `}</style>
   </Fragment>
+
+export default translate()(Hire)

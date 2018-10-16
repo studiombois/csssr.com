@@ -75,7 +75,7 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { isOpened, onToggle, onClose } = this.props
+    const { isOpened, onToggle, onClose, t } = this.props
 
     return (
       <aside className={cn('sidebar', {
@@ -90,7 +90,7 @@ export class SideBar extends PureComponent {
           </button>
           <div className='body'>
             <div className='top'>
-              <div className='font_perforator-16-black active'>Company</div>
+              <div className='font_perforator-16-black active'>{t('common:menu.softwareEngineering')}</div>
               <ul className='list'>
                 {items.map(this.renderNavItem)}
               </ul>
@@ -122,7 +122,7 @@ export class SideBar extends PureComponent {
             top: 0;
             right: 0;
             bottom: 0;
-            z-index: 10;
+            z-index: 10000;
             width: 26.5rem;
             background-color: #fff;
             transform: translateX(100%);

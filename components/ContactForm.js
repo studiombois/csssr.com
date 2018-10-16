@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react'
 import { Field } from 'react-final-form'
+import { translate } from 'react-i18next'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
 
-export default class ContactForm extends PureComponent {
+class ContactForm extends PureComponent {
   state = {
     formSubmitStatus: null,
   }
@@ -48,6 +49,7 @@ export default class ContactForm extends PureComponent {
       hasValidationErrors,
       hasSubmitErrors,
       dirtySinceLastSubmit,
+      t,
     } = this.props
 
     const isSubmitButtonDisabled =
@@ -57,15 +59,15 @@ export default class ContactForm extends PureComponent {
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
-        <h2 id='hire-us' className='font_h2-slab headline'>Talk to us</h2>
+        <h2 id='hire-us' className='font_h2-slab headline' dangerouslySetInnerHTML={{ __html: t('dev:form.title') }} />
         <div className='field'>
           <Field
             id='name'
             name='name'
             component={TextField}
             type='text'
-            placeholder='Timothy John Berners-Lee'
-            label='Your Name'
+            placeholder={t('dev:form.namePlaceholder')}
+            label={t('dev:form.nameLabel')}
           />
         </div>
         <div className='field'>
@@ -74,8 +76,8 @@ export default class ContactForm extends PureComponent {
             name='phone'
             component={TextField}
             type='text'
-            placeholder='+1-612-566-34-43'
-            label='Phone'
+            placeholder={t('dev:form.phonePlaceholder')}
+            label={t('dev:form.phoneLabel')}
           />
         </div>
         <div className='field'>
@@ -84,8 +86,8 @@ export default class ContactForm extends PureComponent {
             name='email'
             component={TextField}
             type='email'
-            placeholder='name@example.com'
-            label='E-mail'
+            placeholder={t('dev:form.emailPlaceholder')}
+            label={t('dev:form.emailLabel')}
           />
         </div>
         <div className='field field_type_textarea'>
@@ -93,11 +95,11 @@ export default class ContactForm extends PureComponent {
             id='message'
             name='message'
             component={TextareaField}
-            placeholder='Tell us about your product or service'
-            label='Tell us about your product or service'
-            labelHidden
+            placeholder={t('dev:form.messagePlaceholder')}
+            label={t('dev:form.messageLabel')}
           />
         </div>
+
         <div className='button'>
           <AnimatedButton
             type='submit'
@@ -105,65 +107,119 @@ export default class ContactForm extends PureComponent {
             status={this.state.formSubmitStatus}
             onAnimationEnd={this.handleStateClear}
           >
-            Submit
+            {t('dev:form.submitText')}
           </AnimatedButton>
-        </div><style jsx>{`
+        </div>
+
+        <picture>
+          <source
+            type='image/webp'
+            srcSet='../static/images/letter@1x.webp,
+                    ../static/images/letter@2x.webp 2x,
+                    ../static/images/letter@3x.webp 3x'/>
+
+          <img
+            srcSet='../static/images/letter@1x.png,
+                      ../static/images/letter@2x.png 2x,
+                      ../static/images/letter@3x.png 3x'
+            src='../static/images/letter@1x.png'
+            alt='letter' />
+        </picture>
+
+        <style jsx>{`
           form {
+            position: relative;
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;
-            padding-left: 3rem;
             padding-bottom: 31.5rem;
-            padding-right: 3rem;
-            width: 1888px;
+            width: 1792px;
             align-items: center;
             border: none;
-            background-image: url('../../static/images/letter.jpg');
-            background-size: auto 221px;
-            background-position: 50% calc(100% - 11.2rem);
-            background-repeat: no-repeat;
+          }
+
+          picture {
+            position: absolute;
+            bottom: 10.75rem;
+            left: 50%;
+            z-index: -1;
+            width: 340px;
+            height: 220px;
+            transform: translateX(-50%);
+          }
+
+          img {
+            width: 100%;
           }
 
           .headline {
-            margin-bottom: 89px;
+            margin-bottom: 6rem;
             grid-column: 4 / span 6;
             text-align: center;
           }
 
           .field {
             grid-column: 4 / span 6;
-            margin-bottom: 2rem;
+            margin-bottom: 2.0625rem;
           }
 
           .field_type_textarea {
             position: relative;
-            margin-top: 1.425rem;
-            margin-bottom: 4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 3.5rem;
           }
 
           .button {
             grid-column: 6 / span 2;
           }
 
-          @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-            form {
-              background-image: url('../../static/images/letter_retina.jpg');
-            }
-          }
-
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
-              padding-left: 0.5rem;
-              padding-right: 0.5rem;
-              width: 1344px
+              width: 1328px;
             }
           }
 
-          @media (max-width: 1359px) {
+          @media (min-width: 1280px) and (max-width: 1359px) {
             form {
-              padding-left: 0.5rem;
-              padding-right: 0.5rem;
-              width: 1248px
+              width: 1232px;
+            }
+          }
+
+          @media (min-width: 368px) and (max-width: 1279px) {
+            form {
+              padding-top: 6.1875rem;
+              padding-bottom: 31.5rem;
+              background-position: 50% calc(100% - 8.45rem);
+              width: 944px;
+            }
+
+            picture {
+              position: absolute;
+              bottom: 8rem;
+            }
+
+            .headline {
+              margin-bottom: 2.3125rem;
+            }
+
+            .field {
+              grid-column: 4 / span 6;
+              margin-bottom: 1.875rem;
+            }
+
+            .field_type_textarea {
+              margin-bottom: 3.75rem;
+            }
+
+            @media (max-width: 1023px) {
+              form {
+                width: 59rem;
+              }
+
+              picture {
+                width: 21.25rem;
+                height: 13.75rem;
+              }
             }
           }
         `}</style>
@@ -171,3 +227,5 @@ export default class ContactForm extends PureComponent {
     )
   }
 }
+
+export default translate()(ContactForm)

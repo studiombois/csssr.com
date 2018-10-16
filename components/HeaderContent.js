@@ -3,16 +3,8 @@ import { bool, object, string } from 'prop-types'
 import Link from 'next/link'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
-import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
 // import BurgerIcon from '../static/icons/burger.svg'
-
-const links = [
-  { href: '#competence-and-services', label: 'Competence & Services' },
-  { href: '#customers', label: 'Customers' },
-  { href: '#hire-us', label: 'Hire us' },
-]
-
-const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.0625rem', height: '1.5rem' }} color='black'/>
+//
 // const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
@@ -29,11 +21,13 @@ class HeaderContent extends PureComponent {
     const {
       pathname,
       lng,
-      sectionName,
+      links,
+      // sectionName,
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
       // onSideBarToggle,
+      t,
     } = this.props
 
     const rootUrl = `/${lng}`
@@ -53,13 +47,21 @@ class HeaderContent extends PureComponent {
         >
           {pathname === rootUrl
             ? <span className='logo-wrapper'>
-              {csssrLogoIcon}
+              <img
+                className='logo'
+                src='../static/icons/csssr_logo.svg'
+                alt='CSSSR Logo'
+              />
             </span>
 
             : <span className='logo-wrapper'>
               <Link prefetch href={rootUrl}>
                 <a>
-                  {csssrLogoIcon}
+                  <img
+                    className='logo'
+                    src='../static/icons/csssr_logo.svg'
+                    alt='CSSSR Logo'
+                  />
                 </a>
               </Link>
             </span>
@@ -72,15 +74,14 @@ class HeaderContent extends PureComponent {
                   className='nav-list-item'
                   key={`nav-link-${href}-${label}`}
                 >
-                  <a className='nav-list-link font_top-menu' href={href}>{label}</a>
+                  <a className='nav-list-link font_top-menu' href={href}>{t(label)}</a>
                 </li>
               ))}
             </ul>
           </nav>
 
           <span className='section-name font_perforator-16-black'>
-            {/* //TODO: заглушка для теста, убрать при деплое на прод */}
-            {sectionName || 'Software Engeniring'}
+            {t(`common:sectionName.${pathname.slice(1)}`)}
           </span>
 
           {/* <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
@@ -100,7 +101,7 @@ class HeaderContent extends PureComponent {
 
           .header_invisible {
             position: fixed;
-            top: -64px;
+            top: -4rem;
           }
 
           .header_animations_on {
@@ -115,10 +116,8 @@ class HeaderContent extends PureComponent {
           .header-content {
             margin-right: auto;
             margin-left: auto;
-            padding-left: 3rem;
-            padding-right: 3rem;
             height: 4rem;
-            width: 1888px;
+            width: 1792px;
             align-items: center;
             align-content: center;
           }
@@ -129,6 +128,11 @@ class HeaderContent extends PureComponent {
             padding-bottom: 0.5rem;
             height: 2.5rem;
             text-align: center;
+          }
+
+          .logo {
+            width: 6.0625rem;
+            height: 1.5rem;
           }
 
           .nav {
@@ -142,12 +146,18 @@ class HeaderContent extends PureComponent {
             height: 100%;
           }
 
-          .nav-list-item:not(:last-child) {
+          .nav-list-item {
+            display: flex;
             height: 100%;
+            align-items: center;
+          }
+
+          .nav-list-item:not(:last-child) {
             margin-right: 1.5rem;
           }
 
           .nav-list-link {
+            padding-top: 0.125rem;
             height: 2rem;
             cursor: pointer;
           }
@@ -171,17 +181,46 @@ class HeaderContent extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             .header-content {
-              padding-left: 0.5rem;
-              padding-right: 0.5rem;
-              width: 1344px
+              width: 1328px;
             }
           }
 
-          @media (max-width: 1359px) {
+          @media (min-width: 1280px) and (max-width: 1359px) {
             .header-content {
-              padding-left:  0.5rem;
-              padding-right: 0.5rem;
-              width: 1248px
+              width: 1232px;
+            }
+          }
+
+          @media (min-width: 368px) and (max-width: 1279px) {
+            .header-content {
+              width: 944px;
+            }
+
+            .section-name,
+            .nav-list-link {
+              height: 1rem;
+            }
+
+            .nav-list-link {
+              display: inline-block;
+              line-height: 1rem;
+              height: 1rem;
+            }
+
+            .logo-wrapper {
+              padding-top: 0.5625rem;
+              height: 2rem;
+            }
+
+            .logo {
+              width: 4rem;
+              height: 1rem;
+            }
+
+            @media (max-width: 1023px) {
+              .header-content {
+                width: 59rem;
+              }
             }
           }
 

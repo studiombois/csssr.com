@@ -123,7 +123,7 @@ export default class AnimatedButton extends PureComponent {
             width: 100%;
             height: 3rem;
             border: none;
-            border: 2px solid transparent;
+            border: 0.125rem solid transparent;
             background-color: #0076ff;
             border-radius: 0;
             color: #fff;
@@ -134,15 +134,11 @@ export default class AnimatedButton extends PureComponent {
 
           .progress-button .button_state_disabled {
             opacity: 0.3;
+            pointer-events: none;
           }
 
           .progress-button button:hover {
             background-color: #0254d8;
-          }
-
-          .progress-button .button_state_disabled {
-            // opacity: 0.3;
-            pointer-events: none;
           }
 
           /* Text (transition for when returning to initial state) */
@@ -187,7 +183,7 @@ export default class AnimatedButton extends PureComponent {
           /* Loading, success and error effects */
           .loading.progress-button button {
             width: 3rem; /* make a circle */
-            border-width: 3px;
+            border-width: 0.1875rem;
             border-color: #ddd;
             border-radius: 1.5rem;
             background-color: transparent;
@@ -241,6 +237,21 @@ export default class AnimatedButton extends PureComponent {
 
           .loading.elastic.progress-button button {
             transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
+          }
+
+          @media (min-width: 368px) and (max-width: 1279px) {
+            .progress-button button {
+              height: 2.5rem;
+            }
+
+            .loading.progress-button button {
+              width: 2.5rem;
+            }
+
+            .progress-button svg {
+              width: 2.5rem;
+              height: 2.5rem;
+            }
           }
         `}</style>
       </div>

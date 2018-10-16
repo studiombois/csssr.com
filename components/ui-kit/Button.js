@@ -72,7 +72,7 @@ export default class Button extends PureComponent {
 
           .button_theme_secondary {
             color: #4a4a4a;
-            border: solid 1px #000000;
+            border: solid 0.0625rem #000000;
             transition: color 0.3s ease-out;
           }
 

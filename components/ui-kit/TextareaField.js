@@ -9,7 +9,6 @@ export default class TextareaField extends PureComponent {
     state: oneOf(['error', null]),
     placeholder: string,
     label: string,
-    labelHidden: bool,
     autoFocus: bool,
     type: string,
     disabled: bool,
@@ -30,7 +29,6 @@ export default class TextareaField extends PureComponent {
       state,
       placeholder,
       label,
-      labelHidden,
       autoFocus,
       type,
       disabled,
@@ -43,12 +41,12 @@ export default class TextareaField extends PureComponent {
     } = this.props
 
     return (
-      <div className={cn('field', {
+      <div className={cn('font_inputted-text-regular', {
         error: state === 'error',
       })}>
         <textarea
-          className='input'
           id={id}
+          className='font_inputted-text-regular'
           name={name}
           placeholder={placeholder}
           onChange={this.handleChange}
@@ -61,24 +59,16 @@ export default class TextareaField extends PureComponent {
           value={value}
         />
         {label && <label
-          className={cn({
-            visuallyHidden: labelHidden,
-          })}
           htmlFor={id}
         >
           {label}
-        </label>}
-        <style jsx>{`
-          .field.error .input {
+        </label>}<style jsx>{`
+          div.error textarea {
             color: #d0021b;
             border-color: #d0021b;
           }
 
-          .field.error .label {
-            color: #d0021b;
-          }
-
-          .input {
+          textarea {
             padding-top: 0.5rem;
             padding-left: 1rem;
             padding-right: 1rem;
@@ -86,29 +76,36 @@ export default class TextareaField extends PureComponent {
             display: block;
             width: 100%;
             height: 10rem;
-            line-height: 2rem;
             text-align: center;
-            font-family: Roboto;
-            font-size: 1.5rem;
-            font-weight: 300;
             border: none;
-            border: solid 1px #9b9b9b;
+            border: solid 0.0625rem #e1e1e1;
+            caret-color: #4a4a4a;
           }
 
-          .input::placeholder {
+          textarea::placeholder {
             font-weight: 100;
             color: #c0c0c0;
           }
 
-          label.visuallyHidden {
+          textarea:focus {
+            border-color: #0076ff;
+          }
+
+          label {
             border: 0;
             clip: rect(0 0 0 0);
-            height: 1px;
-            margin: -1px;
+            height: 0.0625rem;
+            margin: -0.0625rem;
             overflow: hidden;
             padding: 0;
             position: absolute;
-            width: 1px;
+            width: 0.0625rem;
+          }
+
+          @media (min-width: 368px) and (max-width: 1279px) {
+            textarea {
+              padding-top: 0.875rem;
+            }
           }
         `}</style>
       </div>

@@ -10,21 +10,35 @@ const LinksList = ({ title, links }) =>
     <ul>
       {links.map(({ href, label }) =>
         <li key={`nav-link-${href}-${label}`}>
-          <a
+          {href && <a
             href={href}
             target='_blank'
             className='font_link-list_28'
           >
             {label}
-          </a>
+          </a>}
+          {!href && <span
+            className='font_link-list_28'
+          >
+            {label}
+          </span>}
         </li>
       )}
-    </ul>
-
-    <style jsx>{`
+    </ul><style jsx>{`
       span {
         margin-bottom: 2rem;
         display: block;
+      }
+
+      span.font_link-list_28 {
+        margin-bottom: 0;
+        display: inline-block;
+        color: #4a4a4a;
+        text-decoration: none;
+      }
+
+      span.font_link-list_28:hover::after {
+        display: none;
       }
 
       li:not(:last-child) {
@@ -32,7 +46,17 @@ const LinksList = ({ title, links }) =>
       }
 
       a {
-        display: block;
+        display: inline-block;
+      }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        span {
+          margin-bottom: 0.5rem;
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 0;
+        }
       }
     `}</style>
   </Fragment>

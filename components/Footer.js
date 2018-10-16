@@ -2,13 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
-import CSSSRLogoIcon from '../static/icons/csssr_logo.svg'
-import FacebookIcon from '../static/icons/facebook.svg'
-import LinkedInIcon from '../static/icons/linkedin.svg'
-
-const csssrLogoIcon = <CSSSRLogoIcon style={{ width: '6.0625rem', height: '1.5rem', color: 'black' }}/>
-const facebookIcon = <FacebookIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
-const linkedInIcon = <LinkedInIcon style={{ width: '1.5rem', height: '1.5rem' }}/>
 
 const Footer = ({ router: { pathname }, lng, t }) => {
   const rootUrl = `/${lng}`
@@ -16,13 +9,21 @@ const Footer = ({ router: { pathname }, lng, t }) => {
   return <footer className='grid-container'>
     {pathname === rootUrl
       ? <span className='logo-wrapper'>
-        {csssrLogoIcon}
+        <img
+          className='logo'
+          src='../static/icons/csssr_logo.svg'
+          alt='CSSSR Logo'
+        />
       </span>
 
       : <span className='logo-wrapper'>
         <Link prefetch href={rootUrl}>
           <a>
-            {csssrLogoIcon}
+            <img
+              className='logo'
+              src='../static/icons/csssr_logo.svg'
+              alt='CSSSR Logo'
+            />
           </a>
         </Link>
       </span>
@@ -45,7 +46,11 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           href='https://www.facebook.com/csssr/'
           target='_blank'
         >
-          {facebookIcon}
+          <img
+            className='social-logo'
+            src='../static/icons/facebook.svg'
+            alt='CSSSR Logo'
+          />
         </a>
       </li>
 
@@ -55,7 +60,11 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           href='https://www.linkedin.com/company/csssr'
           target='_blank'
         >
-          {linkedInIcon}
+          <img
+            className='social-logo'
+            src='../static/icons/linkedin.svg'
+            alt='CSSSR Logo'
+          />
         </a>
       </li>
     </ul>
@@ -100,10 +109,8 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       footer {
         margin-right: auto;
         margin-left: auto;
-        padding-right: 3rem;
-        padding-left: 3rem;
         padding-bottom: 3.5rem;
-        width: 1888px;
+        width: 1792px;
         align-items: center;
       }
 
@@ -115,6 +122,11 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         text-align: center;
       }
 
+      .logo {
+        width: 6.0625rem;
+        height: 1.5rem;
+      }
+
       .social-links {
         grid-column: 4 / span 2;
         display: flex;
@@ -123,6 +135,11 @@ const Footer = ({ router: { pathname }, lng, t }) => {
 
       .social-link:not(:last-child) {
         margin-right: 1.5rem;
+      }
+
+      .social-logo {
+        width: 1.5rem;
+        height: 1.5rem;
       }
 
       .footer-links {
@@ -138,17 +155,47 @@ const Footer = ({ router: { pathname }, lng, t }) => {
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1344px
+          width: 1328px;
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         footer {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px
+          width: 1232px;
+        }
+      }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        footer {
+          width: 944px;
+        }
+
+        .logo-wrapper {
+          height: 2rem;
+        }
+
+        .logo {
+          width: 4rem;
+          height: 1rem;
+        }
+
+        .social-link:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        .social-logo {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .footer-links {
+          grid-column: 6 / span 7;
+        }
+
+        @media (max-width: 1023px) {
+          footer {
+            width: 59rem;
+          }
         }
       }
     `}</style>

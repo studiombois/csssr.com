@@ -48,6 +48,16 @@ const LinksList = ({ title, links }) =>
       a {
         display: inline-block;
       }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        span {
+          margin-bottom: 0.5rem;
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
     `}</style>
   </Fragment>
 

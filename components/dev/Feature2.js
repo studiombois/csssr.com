@@ -11,8 +11,17 @@ const { className, styles } = css.resolve`
     height: 568px;
   }
 
-  img {
-    height: 100%;
+  @media (min-width: 368px) and (max-width: 1279px) {
+    picture {
+      margin-top: 1.5625rem;
+      height: 432px;
+    }
+
+    @media (max-width: 1023px) {
+      picture {
+        height: 27rem;
+      }
+    }
   }
 `
 
@@ -24,15 +33,12 @@ export default ({ title, text, imagesKey, style }) =>
 
       <Picture className={className} imagesKey={imagesKey}/>
     </section>
-    {styles}
     <style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
         padding-top: 9.5rem;
-        width: 1888px;
+        width: 1792px;
       }
 
       h2 {
@@ -48,9 +54,7 @@ export default ({ title, text, imagesKey, style }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1344px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          width: 1328px;
         }
 
         h2 {
@@ -58,16 +62,34 @@ export default ({ title, text, imagesKey, style }) =>
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px;
+          width: 1232px;
         }
 
         h2 {
           grid-column: 3 / span 3;
+        }
+      }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        section {
+          padding-top: 6.1875rem;
+          width: 944px;
+        }
+
+        p {
+          grid-column: 5 / span 6;
+          grid-row: 2;
+          margin-top: 3.25rem;
+        }
+
+        @media (max-width: 1023px) {
+          section {
+            width: 59rem;
+          }
         }
       }
     `}</style>
+    {styles}
   </Fragment>

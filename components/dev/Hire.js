@@ -11,17 +11,6 @@ const Hire = ({ t }) =>
         <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
       </h1>
 
-      {/* TODO:
-          Next js похоже не очень умеет в nested стили, хотя библиотека внутри неё
-          может, — https://www.npmjs.com/package/styled-jsx#external-styles
-
-          Попробовал применить, но не получилось, тсили всё равно не передались, а у
-          всех элементов начал дублироваться хеш в названии класса. Пока оставлю так.
-
-          Я хотел избавится от лишних оберток, так что можно оставить пока так,
-          ну или делать эти обертки.
-      */}
-
       <div className='button-wrapper'>
         <ButtonLink href={'#hire-us'}>
           {t('dev:hire.buttonText')}
@@ -37,13 +26,11 @@ const Hire = ({ t }) =>
       article {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
         padding-top: 12rem;
-        width: 1888px;
+        width: 1792px;
         height: 60rem;
         background-image: url('../../static/images/1920/dog@1x.png');
-        background-size: auto 640px;
+        background-size: auto 40rem;
         background-position: 50% 20rem;
         background-repeat: no-repeat;
       }
@@ -83,9 +70,7 @@ const Hire = ({ t }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
-          width: 1344px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          width: 1328px;
           background-image: url('../../static/images/1360/dog@1x.png');
         }
 
@@ -94,16 +79,48 @@ const Hire = ({ t }) =>
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         article {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px;
+          width: 1232px;
           background-image: url('../../static/images/1280/dog@1x.png');
         }
 
         :global(html.webp) article {
           background-image:  url('../../static/images/1280/dog@1x.webp');
+        }
+      }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        h1 {
+          grid-column: 3 / span 4;
+          margin-bottom: 3.8125rem;
+        }
+
+        article {
+          padding-top: 10rem;
+          width: 944px;
+          height: 52rem;
+          background-image: url('../../static/images/1024/dog@1x.png');
+          background-size: auto 32rem;
+          background-position: 50% 20rem;
+        }
+
+        :global(html.webp) article {
+          background-image:  url('../../static/images/1024/dog@1x.webp');
+        }
+
+        span {
+          padding-top: 1.6875rem;
+        }
+
+        blockquote {
+          margin-top: 1.3125rem;
+        }
+
+        @media (max-width: 1023px) {
+          article {
+            width: 59rem;
+          }
         }
       }
 
@@ -129,13 +146,23 @@ const Hire = ({ t }) =>
           }
         }
 
-        @media (max-width: 1359px) {
+        @media (min-width: 1280px) and (max-width: 1359px) {
           article {
             background-image: url('../../static/images/1280/dog@2x.png');
           }
 
           :global(html.webp) article {
             background-image: url('../../static/images/1280/dog@2x.webp');
+          }
+        }
+
+        @media (min-width: 368px) and (max-width: 1279px) {
+          article {
+            background-image: url('../../static/images/1024/dog@2x.png');
+          }
+
+          :global(html.webp) article {
+            background-image:  url('../../static/images/1024/dog@2x.webp');
           }
         }
       }

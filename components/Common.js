@@ -56,7 +56,7 @@ const Common = () =>
 
     @media (min-width: 1360px) and (max-width: 1919px) {
       body {
-        min-width: 1344px;
+        min-width: 1328px;
       }
 
       .grid-container {
@@ -65,14 +65,46 @@ const Common = () =>
       }
     }
 
-    @media (max-width: 1359px) {
+    @media (min-width: 1280px) and (max-width: 1359px) {
       body {
-        min-width: 1248px;
+        min-width: 1232px;
       }
 
       .grid-container {
         grid-template-columns: repeat(12, 88px);
         grid-gap: 0 16px;
+      }
+    }
+
+    @media (min-width: 368px) and (max-width: 1279px) {
+      body {
+        min-width: 944px;
+      }
+
+      .grid-container {
+        grid-template-columns: repeat(12, 64px);
+        grid-gap: 0 16px;
+      }
+
+      @media (max-width: 1023px) {
+        html {
+          font-size: 1.5625vw;
+        }
+
+        body {
+          min-width: 59rem;
+        }
+
+        .grid-container {
+          grid-template-columns: repeat(12, 4rem);
+          grid-gap: 0 1rem;
+        }
+      }
+    }
+
+    @media (max-width: 367px) {
+      * {
+        display: none;
       }
     }
 

@@ -11,9 +11,18 @@ const { className, styles } = css.resolve`
     margin-top: 5.5rem;
     height: 768px;
   }
-  
-  img {
-    height: 100%;
+
+  @media (min-width: 368px) and (max-width: 1279px) {
+    picture {
+      margin-top: 5rem;
+      height: 512px;
+    }
+
+    @media (max-width: 1023px) {
+      picture {
+        height: 32rem;
+      }
+    }
   }
 `
 
@@ -37,16 +46,13 @@ const Feature1 = ({ t, imagesKey }) =>
         <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.text') }} />
       </footer>
     </section>
-    {styles}
     <style jsx>{`
       section {
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
         padding-top: 9rem;
-        width: 1888px;
+        width: 1792px;
       }
 
       h2 {
@@ -105,9 +111,7 @@ const Feature1 = ({ t, imagesKey }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1344px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          width: 1328px;
         }
 
         h2 {
@@ -127,11 +131,9 @@ const Feature1 = ({ t, imagesKey }) =>
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px;
+          width: 1232px;
         }
 
         h2 {
@@ -150,7 +152,65 @@ const Feature1 = ({ t, imagesKey }) =>
           left: 36.5rem;
         }
       }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        section {
+          padding-top: 6.5rem;
+          width: 944px;
+        }
+
+        h2 {
+          margin-bottom: 2.5rem;
+        }
+
+        .font_feature_1 {
+          top: 26rem;
+          left: -0.875rem;
+        }
+
+        .font_feature_2 {
+          top: 17.875rem;
+          left: 10.875rem;
+          width: 16rem;
+          height: 17rem;
+
+        }
+
+        .font_feature_3 {
+          width: 13rem;
+          height: 7rem;
+          top: 7.875rem;
+          left: 22.875rem;
+        }
+
+        footer {
+          margin-top: 3.5rem;
+        }
+
+        footer h2 {
+          margin-bottom: 0.8125rem;
+        }
+
+        @media (max-width: 1023px) {
+          section {
+            width: 59rem;
+          }
+
+          .font_feature_1 {
+            left: 1.875rem;
+          }
+
+          .font_feature_2 {
+            left: 12.875rem;
+          }
+
+          .font_feature_3 {
+            left: 25.875rem;
+          }
+        }
+      }
     `}</style>
+    {styles}
   </Fragment>
 
 export default translate()(Feature1)

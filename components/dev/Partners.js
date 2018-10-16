@@ -138,10 +138,8 @@ const Partners = ({ t, lng }) =>
       section {
         margin-left: auto;
         margin-right: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
         padding-top: 8.5rem;
-        width: 1888px;
+        width: 1792px;
       }
 
       h2 {
@@ -173,9 +171,7 @@ const Partners = ({ t, lng }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
-          width: 1344px;
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
+          width: 1328px;
         }
 
         h2 {
@@ -187,11 +183,9 @@ const Partners = ({ t, lng }) =>
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         section {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px;
+          width: 1232px;
         }
 
         h2 {
@@ -200,6 +194,29 @@ const Partners = ({ t, lng }) =>
 
         .link-list-wrapper {
           margin-bottom: 4.5rem;
+        }
+      }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        section {
+          margin-bottom: 0.6875rem;
+          padding-top: 6.1875rem;
+          width: 944px;
+        }
+
+        h2 {
+          margin-bottom: 3rem;
+          text-align: center;
+        }
+
+        .link-list-wrapper {
+          margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 1023px) {
+          section {
+            width: 59rem;
+          }
         }
       }
     `}</style>

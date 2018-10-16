@@ -3,9 +3,9 @@ import { bool, object, string } from 'prop-types'
 import Link from 'next/link'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
-import BurgerIcon from '../static/icons/burger.svg'
-
-const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
+// import BurgerIcon from '../static/icons/burger.svg'
+//
+// const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
   static propTypes = {
@@ -22,11 +22,11 @@ class HeaderContent extends PureComponent {
       pathname,
       lng,
       links,
-      sectionName,
+      // sectionName,
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
-      onSideBarToggle,
+      // onSideBarToggle,
       t,
     } = this.props
 
@@ -81,13 +81,12 @@ class HeaderContent extends PureComponent {
           </nav>
 
           <span className='section-name font_perforator-16-black'>
-            {/* //TODO: заглушка для теста, убрать при деплое на прод */}
-            {/* sectionName || 'Software Engineering' */}
+            {t(`common:sectionName.${pathname.slice(1)}`)}
           </span>
 
-          <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
+          {/* <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
             {burgerIcon}
-          </button>
+          </button> */}
 
         </div><style jsx>{`
           .header {

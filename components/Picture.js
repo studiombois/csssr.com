@@ -61,7 +61,7 @@ const Picture = ({ className, imagesKey, t }) =>
                  ../static/images/1920/${imagesKey}@2x.png 2x,
                  ../static/images/1920/${imagesKey}@3x.png 3x`}
         src={`../static/images/1920/${imagesKey}@1x.png`}
-        alt={t(altTextByImageKey[imagesKey]})/>
+        alt={t(altTextByImageKey[imagesKey])} />
     </picture>
     <style jsx>{`
       img {

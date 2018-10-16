@@ -10,5 +10,8 @@
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
     "alliancePartText": "CSSSR является частью"
+  },
+  "sectionName": {
+    "ru": "Разработка софта"
   }
 }

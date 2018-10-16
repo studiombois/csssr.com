@@ -122,7 +122,7 @@ class ContactForm extends PureComponent {
             srcSet='../static/images/letter@1x.png,
                       ../static/images/letter@2x.png 2x,
                       ../static/images/letter@3x.png 3x'
-            src='../static/images/1920/letter@1x.png'
+            src='../static/images/letter@1x.png'
             alt='letter' />
         </picture>
 

@@ -8,7 +8,7 @@ const altTextByImageKey = {
   perfect: 'dev:imgAlt.perfect',
 }
 
-export default ({ className, imagesKey, t }) =>
+const Picture = ({ className, imagesKey, t }) =>
   <Fragment>
     <picture className={className}>
       <source

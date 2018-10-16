@@ -3,7 +3,7 @@ import { object, string } from 'prop-types'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
 import headerLinks from '../data/headerLinks'
-// import SideBar from './SideBar'
+import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
 class Header extends PureComponent {
@@ -89,17 +89,17 @@ class Header extends PureComponent {
   }
 
   render() {
-    const { router: { pathname }, sectionName, lng } = this.props
+    const { router: { pathname }, sectionName } = this.props
     const { showHeader, pinHeader, toggleHeaderAnimations } = this.state
-    const links = headerLinks[lng].dev // TODO: переписать получение массива в зависимости от типа страницы что-то наподобие links = headerLinks[lang][router.path]
+    const links = headerLinks.dev // TODO: переписать получение массива в зависимости от типа страницы что-то наподобие links = headerLinks[lang][router.path]
 
     return (
       <Fragment>
-        {/* <SideBar
+        <SideBar
           onToggle={this.handleSideBarToggle}
           isOpened={this.state.isSideBarOpened}
           onClose={this.handleSideBarClose}
-        /> */}
+        />
         <HeaderContent
           links={links}
           pathname={pathname}

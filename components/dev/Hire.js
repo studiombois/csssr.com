@@ -1,36 +1,54 @@
 import React, { Fragment } from 'react'
+import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
+import { translate } from 'react-i18next'
+import Picture from '../Picture'
 
-export default () =>
+const { className, styles } = css.resolve`
+  picture {
+    grid-column: 1 / span 12;
+    grid-row: 3;
+    z-index: -1;
+    margin-top: -16rem;
+    height: 640px;
+  }
+
+  @media (min-width: 368px) and (max-width: 1279px) {
+    picture {
+      margin-top: -6.5rem;
+      height: 480px;
+    }
+
+    @media (max-width: 1023px) {
+      picture {
+        height: 30rem;
+      }
+    }
+  }
+`
+
+const Hire = ({ t }) =>
   <Fragment>
     <article className='grid-container'>
       <h1 className='font_h1-slab'>
-        We make the&nbsp;world more logical with&nbsp;JS
+        {t('dev:hire.title')}
 
-        <span className='font_subhead-slab'>
-          and dream about space
-        </span>
+        <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
       </h1>
 
       <div className='button-wrapper'>
         <ButtonLink href={'#hire-us'}>
-          HIRE&nbsp;US
+          {t('dev:hire.buttonText')}
         </ButtonLink>
       </div>
 
       <blockquote>
-        <p className='font_p16-regular'>
-          We&nbsp;specialize in&nbsp;developing data-intensive web applications, including online banking systems, payment interfaces, sales and brokerage platforms, customer portals for airline companies, and websites for mobile network operators.
-        </p>
-
-        <p className='font_p16-regular'>
-          However, our services are not just for large companies&nbsp;&mdash; we&rsquo;re open to&nbsp;startups who are just at&nbsp;the beginning of&nbsp;their journey.
-        </p>
-
-        <footer className='font_p16-regular' rel='author'>
-          Dmitriy Chekin, CEO
-        </footer>
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph1') }} />
+        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph2') }} />
+        <footer className='font_p16-regular' rel='author' dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }} />
       </blockquote>
+
+      <Picture className={className} imagesKey='dog'/>
     </article><style jsx>{`
       article {
         margin-left: auto;
@@ -38,14 +56,6 @@ export default () =>
         padding-top: 12rem;
         width: 1792px;
         height: 60rem;
-        background-image: url('../../static/images/1920/dog@1x.png');
-        background-size: auto 40rem;
-        background-position: 50% 20rem;
-        background-repeat: no-repeat;
-      }
-
-      :global(html.webp) article {
-        background-image: url('../../static/images/1920/dog@1x.webp');
       }
 
       blockquote {
@@ -75,27 +85,18 @@ export default () =>
 
       .button-wrapper {
         grid-column: 3 / span 2;
+        grid-row: 2;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
           width: 1328px;
-          background-image: url('../../static/images/1360/dog@1x.png');
-        }
-
-        :global(html.webp) article {
-          background-image:  url('../../static/images/1360/dog@1x.webp');
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article {
           width: 1232px;
-          background-image: url('../../static/images/1280/dog@1x.png');
-        }
-
-        :global(html.webp) article {
-          background-image:  url('../../static/images/1280/dog@1x.webp');
         }
       }
 
@@ -109,13 +110,6 @@ export default () =>
           padding-top: 10rem;
           width: 944px;
           height: 52rem;
-          background-image: url('../../static/images/1024/dog@1x.png');
-          background-size: auto 32rem;
-          background-position: 50% 20rem;
-        }
-
-        :global(html.webp) article {
-          background-image:  url('../../static/images/1024/dog@1x.webp');
         }
 
         span {
@@ -132,48 +126,8 @@ export default () =>
           }
         }
       }
-
-      @media
-      only screen and (-webkit-min-device-pixel-ratio: 1.5),
-      only screen and (min-device-pixel-ratio: 1.5),
-      only screen and (min-resolution: 144dpi) {
-        article {
-          background-image: url('../../static/images/1920/dog@2x.png');
-        }
-
-        :global(html.webp) article {
-          background-image: url('../../static/images/1920/dog@2x.webp');
-        }
-
-        @media (min-width: 1360px) and (max-width: 1919px) {
-          article {
-            background-image: url('../../static/images/1360/dog@2x.png');
-          }
-
-          :global(html.webp) article {
-            background-image: url('../../static/images/1360/dog@2x.webp');
-          }
-        }
-
-        @media (min-width: 1280px) and (max-width: 1359px) {
-          article {
-            background-image: url('../../static/images/1280/dog@2x.png');
-          }
-
-          :global(html.webp) article {
-            background-image: url('../../static/images/1280/dog@2x.webp');
-          }
-        }
-
-        @media (min-width: 368px) and (max-width: 1279px) {
-          article {
-            background-image: url('../../static/images/1024/dog@2x.png');
-          }
-
-          :global(html.webp) article {
-            background-image:  url('../../static/images/1024/dog@2x.webp');
-          }
-        }
-      }
     `}</style>
+    {styles}
   </Fragment>
+
+export default translate()(Hire)

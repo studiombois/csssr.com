@@ -78,7 +78,7 @@ i18n
 
         server.use('/privacy_policy', express.static(path.join(__dirname, '../privacy_policy.pdf')))
 
-        server.get('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
+        server.use('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
 
         server.get('/sitemap.xml', (req, res) => {
           sitemap.toXML((err, xml) => {

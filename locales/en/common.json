@@ -9,7 +9,11 @@
   },
   "footer": {
     "privacyPolicy": "Privacy policy",
-    "alliancePartText": "CSSSR is a part of"
+    "alliancePartText": "CSSSR is a part of",
+    "languageRedirect": {
+      "link": "/ru",
+      "text": "Available in russian"
+    }
   },
   "sectionName": {
     "en": "Software Engineering"

@@ -9,7 +9,11 @@
   },
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
-    "alliancePartText": "CSSSR является частью"
+    "alliancePartText": "CSSSR является частью",
+    "languageRedirect": {
+      "link": "/en",
+      "text": "Доступно на английском"
+    }
   },
   "sectionName": {
     "ru": "Разработка софта"

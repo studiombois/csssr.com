@@ -71,10 +71,10 @@ const Footer = ({ router: { pathname }, lng, t }) => {
 
     <div className='change-language-link-wrapper'>
       <a
-        href='/ru'
+        href={t('common:footer.languageRedirect.link')}
         className='font_footer-link'
       >
-        Available in russian
+        {t('common:footer.languageRedirect.text')}
       </a>
     </div>
 

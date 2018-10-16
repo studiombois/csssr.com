@@ -6,6 +6,7 @@ const i18nextMiddleware = require('i18next-express-middleware')
 const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
+const sitemap = require('./sitemap')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV === 'development'
@@ -77,7 +78,17 @@ i18n
 
         server.use('/privacy_policy', express.static(path.join(__dirname, '../privacy_policy.pdf')))
 
-        server.use('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
+        server.get('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
+
+        server.get('/sitemap.xml', (req, res) => {
+          sitemap.toXML((err, xml) => {
+            if (err) {
+              return res.status(500).send(err);
+            }
+            res.header('Content-Type', 'application/xml');
+            res.send(xml);
+          });
+        });
 
         server.get('*', (req, res) => {
           return handle(req, res)

@@ -3,6 +3,16 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
 
+const handleLinkClick = () => {
+  document.documentElement.style.scrollBehavior = 'auto'
+
+  const scrollStylesTimer = setTimeout(() => {
+    document.documentElement.style.scrollBehavior = 'smooth'
+
+    clearTimeout(scrollStylesTimer)
+  })
+}
+
 const Footer = ({ router: { pathname }, lng, t }) => {
   const rootUrl = `/${lng}`
 
@@ -82,11 +92,12 @@ const Footer = ({ router: { pathname }, lng, t }) => {
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
-          href='/privacy_policy'
+          href='#private-policy'
           className='font_footer-link'
-          target='_blank'
-          dangerouslySetInnerHTML={{ __html: t('common:footer.privacyPolicy') }}
-        />
+          onClick={handleLinkClick}
+        >
+          Privacy policy
+        </a>
       </li>
 
       {/* <li className='footer-link'>

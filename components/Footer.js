@@ -69,6 +69,16 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       </li>
     </ul>
 
+    <div className='change-language-link-wrapper'>
+      <a
+        href={t('common:footer.languageRedirect.link')}
+        className='font_footer-link'
+      >
+        {t('common:footer.languageRedirect.text')}
+      </a>
+    </div>
+
+
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
@@ -143,7 +153,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       }
 
       .footer-links {
-        grid-column: 8 / span 4;
+        grid-column: 9 / span 4;
         display: flex;
         justify-content: flex-end;
         height: 1.5rem;
@@ -153,15 +163,30 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         margin-right: 1rem;
       }
 
+      .change-language-link-wrapper {
+        grid-column: 6 / span 3;
+        height: 1.5rem;
+        text-align: right;
+        align-self: center;
+      }
+
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
           width: 1328px;
+        }
+
+        .change-language-link-wrapper {
+          grid-column: 6 / span 2;
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         footer {
           width: 1232px;
+        }
+
+        .footer-links {
+          grid-column: 9 / span 4;
         }
       }
 
@@ -189,7 +214,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         }
 
         .footer-links {
-          grid-column: 6 / span 7;
+          grid-column: 9 / span 4;
         }
 
         @media (max-width: 1023px) {

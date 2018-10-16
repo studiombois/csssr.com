@@ -8,7 +8,7 @@ const altTextByImageKey = {
   perfect: 'dev:imgAlt.perfect',
 }
 
-const Picture = ({ className, imagesKey }) =>
+const Picture = ({ className, imagesKey, t }) =>
   <Fragment>
     <picture className={className}>
       <source
@@ -61,7 +61,7 @@ const Picture = ({ className, imagesKey }) =>
                  ../static/images/1920/${imagesKey}@2x.png 2x,
                  ../static/images/1920/${imagesKey}@3x.png 3x`}
         src={`../static/images/1920/${imagesKey}@1x.png`}
-        alt={altTextByImageKey[imagesKey]}/>
+        alt={t(altTextByImageKey[imagesKey])} />
     </picture>
     <style jsx>{`
       img {

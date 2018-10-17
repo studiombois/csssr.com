@@ -14,6 +14,7 @@ const LinksList = ({ title, links }) =>
             href={href}
             target='_blank'
             className='font_link-list_28'
+            rel='nofollow noopener'
           >
             {label}
           </a>}

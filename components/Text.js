@@ -271,6 +271,11 @@ const Text = () =>
       letter-spacing: 0.05rem;
       text-transform: uppercase;
       color: #0076ff;
+      transition: color 0.3s ease-out;
+    }
+
+    .font_top-menu:hover {
+      color: #0254d8;
     }
 
     .font_p16-regular {

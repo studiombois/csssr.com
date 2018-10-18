@@ -347,6 +347,11 @@ const Text = () =>
         line-height: 3rem;
       }
 
+      .font_h1-regular {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+      }
+
       .font_h2-slab {
         margin-top: 0;
         padding-bottom: 0;
@@ -368,6 +373,13 @@ const Text = () =>
         padding-bottom: 0;
         font-size: 1.5rem;
         line-height: 2rem;
+      }
+
+      .font_subhead-regular {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
       }
 
       .font_top-menu {
@@ -396,6 +408,18 @@ const Text = () =>
         letter-spacing: 0.05rem;
       }
 
+      .font_link-list_16 {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .font_link-list_24 {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+      
       .font_link-list_28 {
         margin-top: 0;
         padding-bottom: 0;

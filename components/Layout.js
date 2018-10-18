@@ -35,8 +35,8 @@ const Layout = props => {
         display: grid;
       }
 
-      #cookies-policy:target + #privacy-policy + #main,
-      #privacy-policy:target + #main {
+      #cookies-policy:target ~ #main,
+      #privacy-policy:target ~ #main {
         display: none;
       }
 
@@ -67,8 +67,8 @@ const Layout = props => {
         opacity: 1;
       }
 
-      #cookies-policy:target + #privacy-policy + #main,
-      #privacy-policy:target + #main {
+      #cookies-policy:target ~ #main,
+      #privacy-policy:target ~ #main {
         display: none;
       } */
     `}</style>

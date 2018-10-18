@@ -2,10 +2,10 @@ import React from 'react'
 import { translate } from 'react-i18next'
 import dynamic from 'next/dynamic'
 
-const PrivacyPolicyEn = dynamic(() => import('./en/PrivacyPolicy'))
-const PrivacyPolicyRu = dynamic(() => import('./ru/PrivacyPolicy'))
+const En = dynamic(() => import('./en'))
+const Ru = dynamic(() => import('./ru'))
 
-const PrivacyPolicy = ({className, lng, t }) => (
+const PrivacyPolicy = ({ className, lng, t }) => (
   <article className={`${className} grid-container`} id='privacy-policy'>
     <header>
       <h1 className='font_h1-regular'>
@@ -15,9 +15,9 @@ const PrivacyPolicy = ({className, lng, t }) => (
         {t('common:privacyPolicy.date')}
       </p>
     </header>
-    {lng !== 'ru' && <PrivacyPolicyEn />}
+    {lng !== 'ru' && <En />}
 
-    {lng === 'ru' && <PrivacyPolicyRu />}<style jsx>{`
+    {lng === 'ru' && <Ru />}<style jsx>{`
       #privacy-policy {
         margin-bottom: 31rem;
         margin-right: auto;

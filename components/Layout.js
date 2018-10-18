@@ -5,7 +5,7 @@ import Settings from './Settings'
 import Text from './Text'
 import Footer from './Footer'
 import CookiesPolicy from './CookiesPolicy'
-import PrivacyPolicy from './PrivacyPolicy'
+import PrivacyPolicy from './privacy-policy/index'
 import { withRouter } from 'next/router'
 import { string } from 'prop-types'
 

@@ -344,6 +344,19 @@ const Text = () =>
       color: #000000;
     }
 
+    .font_roboto-slab-light {
+      margin-top: -4px;
+      padding-bottom: 4px;
+      font-family: Roboto Slab;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 3.125rem;
+      letter-spacing: 0.03125rem;
+      color: #000000;
+    }
+
     @media (max-width: 1279px) {
       .font_h1-slab {
         margin-top: -0.1875rem;

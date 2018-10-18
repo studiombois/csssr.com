@@ -6,7 +6,7 @@ import Text from './Text'
 import Footer from './Footer'
 import PrivatePolicy from './PrivatePolicy'
 import { withRouter } from 'next/router'
-import { string } from 'prop-types'
+import { string, shape, bool } from 'prop-types'
 
 const Layout = props => {
   const { children } = props
@@ -15,12 +15,14 @@ const Layout = props => {
     <Common />
     <Settings />
     <Text />
-    <Header />
     <PrivatePolicy />
+    <Header {...props.headerProps} />
     <main id='main'>
       {children}
     </main>
-    <Footer />
+    {!props.footerProps.noFooter &&
+      <Footer {...props.footerProps}/>
+    }
 
     <style jsx global>{`
       #private-policy {
@@ -31,7 +33,7 @@ const Layout = props => {
         display: grid;
       }
 
-      #private-policy:target + #main {
+      #private-policy:target ~ #main {
         display: none;
       }
 
@@ -72,6 +74,28 @@ Layout.propTypes = {
   description: string,
   url: string,
   ogImage: string,
+  headerProps: shape({
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    isHalfed: bool,
+    isLogoLink: bool,
+    isBurgerVisible: bool,
+  }),
+  footerProps: shape({
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    noFooter: bool,
+    isHalfed: bool,
+    isLogoLink: bool,
+  }),
+}
+
+Layout.defaultProps = {
+  footerProps: {
+    noFooter: false,
+  },
 }
 
 export default withRouter(Layout)

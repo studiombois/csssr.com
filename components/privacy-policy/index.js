@@ -5,8 +5,8 @@ import dynamic from 'next/dynamic'
 const En = dynamic(() => import('./en'))
 const Ru = dynamic(() => import('./ru'))
 
-const PrivacyPolicy = ({ className, lng, t }) => (
-  <article className={`${className} grid-container`} id='privacy-policy'>
+const PrivacyPolicy = ({ lng, t }) => (
+  <article className='grid-container' id='privacy-policy'>
     <header>
       <h1 className='font_h1-regular'>
         {t('common:privacyPolicy.title')}
@@ -29,11 +29,6 @@ const PrivacyPolicy = ({ className, lng, t }) => (
       header {
         grid-column: 2 / span 3;
         padding-top: 13.4375rem;
-      }
-
-      div {
-        grid-column: 6 / span 6;
-        padding-top: 14.4375rem;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {

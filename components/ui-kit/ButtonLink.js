@@ -38,7 +38,7 @@ export default class Button extends PureComponent {
           target={external ? '_blank' : null}
           disabled={disabled}
           href={href}
-          rel='nofollow noopener'
+          rel='noreferrer noopener'
         >
           {children}
         </a>

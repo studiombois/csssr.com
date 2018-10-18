@@ -45,7 +45,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           aria-label='VK link'
           href='https://vk.com/csssr'
           target='_blank'
-          rel='nofollow noopener'
+          rel='noreferrer noopener'
         >
           {vkIcon}
         </a>
@@ -56,7 +56,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           aria-label='Facebook link'
           href='https://www.facebook.com/csssr/'
           target='_blank'
-          rel='nofollow noopener'
+          rel='noreferrer noopener'
         >
           <img
             className='social-logo'
@@ -71,7 +71,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           aria-label='LinkedIn link'
           href='https://www.linkedin.com/company/csssr'
           target='_blank'
-          rel='nofollow noopener'
+          rel='noreferrer noopener'
         >
           <img
             className='social-logo'
@@ -121,7 +121,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           href='https://frontend.digital/'
           className='font_footer-link'
           target='_blank'
-          rel='nofollow noopener'
+          rel='noreferrer noopener'
         >
           Frontend.Digital alliance
         </a>

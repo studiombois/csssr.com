@@ -1,11 +1,8 @@
 {
   "hello": "Привет!",
   "menu": {
-    "softwareEngineering": "Софт",
-    "recruitment": "Рекрутинг",
-    "company": "Компания",
-    "products": "Продукты",
-    "education": "Образование"
+    "dev": "Разработка",
+    "jobs": "Работа в CSSSR"
   },
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
@@ -16,6 +13,7 @@
     }
   },
   "sectionName": {
-    "ru": "Разработка софта"
+    "ru": "Разработка",
+    "ru/jobs": "Работа в CSSSR"
   }
 }

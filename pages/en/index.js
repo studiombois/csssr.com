@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Head from '../../components/Head'
 import Form from '../../components/Form'
 import Hire from '../../components/dev/Hire'
 import Feature1 from '../../components/dev/Feature1'
 import Feature2 from '../../components/dev/Feature2'
 import Partners from '../../components/dev/Partners'
+import Layout from '../../components/Layout'
 import withI18next from '../../utils/withI18next'
 
 export default withI18next(['dev'])(({ t }) =>
-  <Fragment>
+  <Layout headerProps={{ logoHref: '/en', isBurgerVisible: true }} footerProps={{ logoHref: '/en' }}>
     <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
     <Hire />
     <Feature1 imagesKey='geometry' />
@@ -25,5 +26,5 @@ export default withI18next(['dev'])(({ t }) =>
       imagesKey='perfect'
     />
     <Form />
-  </Fragment>
+  </Layout>
 )

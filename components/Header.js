@@ -1,8 +1,8 @@
 import React, { PureComponent, Fragment } from 'react'
-import { object, string } from 'prop-types'
+import { object, string, bool } from 'prop-types'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
-import headerLinks from '../data/headerLinks'
+import getHeaderLinks from '../utils/getHeaderLinks'
 import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
@@ -10,13 +10,23 @@ class Header extends PureComponent {
   static propTypes = {
     router: object,
     sectionName: string,
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    isHalfed: bool,
+    isLogoLink: bool,
+    isBurgerVisible: bool,
   }
 
   state = {
+    logoAlt: 'CSSSR logo',
     showHeader: true,
     pinHeader: true,
     toggleHeaderAnimations: false,
     isSideBarOpened: false,
+    isHalfed: false,
+    isLogoLink: false,
+    isBurgerVisible: false,
   }
 
   lastScrollTop = 0
@@ -27,6 +37,8 @@ class Header extends PureComponent {
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
+
+    document.body.style.overflow = 'initial'
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -89,9 +101,18 @@ class Header extends PureComponent {
   }
 
   render() {
-    const { router: { pathname }, sectionName } = this.props
+    const {
+      router: { pathname },
+      sectionName,
+      logoHref,
+      logoAlt,
+      logoSup,
+      isHalfed,
+      isLogoLink,
+      isBurgerVisible,
+    } = this.props
     const { showHeader, pinHeader, toggleHeaderAnimations } = this.state
-    const links = headerLinks.dev // TODO: переписать получение массива в зависимости от типа страницы что-то наподобие links = headerLinks[lang][router.path]
+    const links = getHeaderLinks(pathname)
 
     return (
       <Fragment>
@@ -106,6 +127,12 @@ class Header extends PureComponent {
           sectionName={sectionName}
           showHeader={showHeader}
           pinHeader={pinHeader}
+          logoHref={logoHref}
+          logoAlt={logoAlt}
+          logoSup={logoSup}
+          isHalfed={isHalfed}
+          isLogoLink={isLogoLink}
+          isBurgerVisible={isBurgerVisible}
           toggleHeaderAnimations={toggleHeaderAnimations}
           onSideBarToggle={this.handleSideBarToggle}
         />

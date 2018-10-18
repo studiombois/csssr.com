@@ -20,7 +20,7 @@ class Jobs extends PureComponent {
         <Layout
           headerProps={{
             isHalfed: true,
-            logoHref: '/ru/jobs#main',
+            logoHref: '/ru/jobs#',
             logoAlt: 'CSSSR jobs logo',
             logoSup: '.jobs',
             isLogoLink: true,

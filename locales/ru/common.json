@@ -1,21 +1,27 @@
 {
   "hello": "Привет!",
   "menu": {
-    "softwareEngineering": "Софт",
-    "recruitment": "Рекрутинг",
-    "company": "Компания",
-    "products": "Продукты",
-    "education": "Образование"
+    "dev": "Разработка",
+    "jobs": "Работа в CSSSR"
   },
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
     "alliancePartText": "CSSSR является частью",
     "languageRedirect": {
       "link": "/en",
-      "text": "Доступно на английском"
+      "text": "Switch to English"
     }
   },
   "sectionName": {
-    "ru": "Разработка софта"
+    "ru": "Разработка",
+    "ru/jobs": "Работа в CSSSR"
+  },
+  "privacyPolicy": {
+    "title": "Политика конфиденциальности",
+    "date": "25 мая 2018 года"
+  },
+  "cookiesPolicy": {
+    "title": "Website Cookie Policy",
+    "date": "May 25, 2018"
   }
 }

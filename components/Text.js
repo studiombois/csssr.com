@@ -1,5 +1,19 @@
 import React from 'react'
 
+/** Как добавлять новые стили
+
+Нам нужно соблюдать вертикальный ритм, для этого
+бейзлан текста должен соприкасаться с нижней границей сетки — http://s.csssr.ru/U31J879TR/20181018201845.png
+Что бы этого достич, нужно:
+
+1. Открыть пен — https://codepen.ioa/Reshnaut/pen/vzrRMX
+2. Добавить новый стиль и убедится что он соприкасается с нижней границей сетки
+3. Скопировать новые стили в проект.
+4. В проекте 1rem === 16px, но так как в начале проекта он равнялся 8px,
+то если вы пишете в пене стили в rem, то не забудьте потом относительные величины
+поделить на два.
+*/
+
 const Text = () =>
   <style jsx global>{`
     h1 {
@@ -102,9 +116,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_16::after {
+    .font_link-list_16[target='_blank']::after {
       position: absolute;
-      top: 5px;
+      bottom: 19px;
       right: -5px;
       display: none;
       width: 4px;
@@ -126,9 +140,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_24::after {
+    .font_link-list_24[target='_blank']::after {
       position: absolute;
-      top: 7px;
+      bottom: 25px;
       right: -10px;
       display: none;
       width: 6px;
@@ -150,9 +164,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_28::after {
+    .font_link-list_28[target='_blank']::after {
       position: absolute;
-      top: 9px;
+      bottom: 31px;
       right: -10px;
       display: none;
       width: 8px;
@@ -344,12 +358,30 @@ const Text = () =>
       color: #000000;
     }
 
+    .font_roboto-slab-light {
+      margin-top: -4px;
+      padding-bottom: 4px;
+      font-family: Roboto Slab;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 3.125rem;
+      letter-spacing: 0.03125rem;
+      color: #000000;
+    }
+
     @media (max-width: 1279px) {
       .font_h1-slab {
         margin-top: -0.1875rem;
         padding-bottom: 0.1875rem;
         font-size: 2rem;
         line-height: 3rem;
+      }
+
+      .font_h1-regular {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
       }
 
       .font_h2-slab {
@@ -373,6 +405,13 @@ const Text = () =>
         padding-bottom: 0;
         font-size: 1.5rem;
         line-height: 2rem;
+      }
+
+      .font_subhead-regular {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
       }
 
       .font_top-menu {
@@ -399,6 +438,18 @@ const Text = () =>
         font-size: 0.75rem;
         line-height: 1.5rem;
         letter-spacing: 0.05rem;
+      }
+
+      .font_link-list_16 {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .font_link-list_24 {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1rem;
+        line-height: 1.5rem;
       }
 
       .font_link-list_28 {

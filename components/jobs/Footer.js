@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
+import footerLinks from '../../data/jobs/footerLinks'
 
 const handleLinkClick = () => {
   document.documentElement.style.scrollBehavior = 'auto'
@@ -13,10 +14,10 @@ const handleLinkClick = () => {
   })
 }
 
-const Footer = ({ router: { pathname }, lng, t }) => {
+const Footer = ({ router: { pathname }, className, lng, t }) => {
   const rootUrl = `/${lng}`
 
-  return <footer className='grid-container'>
+  return <footer className={`${className} grid-container`}>
     {pathname === rootUrl
       ? <span className='logo-wrapper'>
         <img
@@ -40,57 +41,23 @@ const Footer = ({ router: { pathname }, lng, t }) => {
     }
 
     <ul className='social-links'>
-      {/* <li className='social-link'>
-        <a
-          aria-label='VK link'
-          href='https://vk.com/csssr'
-          target='_blank'
-          rel='noreferrer noopener'
-        >
-          {vkIcon}
-        </a>
-      </li>*/}
-
-      <li className='social-link'>
-        <a
-          aria-label='Facebook link'
-          href='https://www.facebook.com/csssr/'
-          target='_blank'
-          rel='noreferrer noopener'
-        >
-          <img
-            className='social-logo'
-            src='../static/icons/facebook.svg'
-            alt='CSSSR Logo'
-          />
-        </a>
-      </li>
-
-      <li className='social-link'>
-        <a
-          aria-label='LinkedIn link'
-          href='https://www.linkedin.com/company/csssr'
-          target='_blank'
-          rel='noreferrer noopener'
-        >
-          <img
-            className='social-logo'
-            src='../static/icons/linkedin.svg'
-            alt='CSSSR Logo'
-          />
-        </a>
-      </li>
+      {footerLinks.map(({ href, label }) =>
+        <li key={label} className='social-link'>
+          <a
+            aria-label={`${label} link`}
+            href={href}
+            target='_blank'
+            rel='noopener'
+          >
+            <img
+              className='social-logo'
+              src={`../static/icons/${label.toLowerCase()}.svg`}
+              alt={`${label} logo`}
+            />
+          </a>
+        </li>
+      )}
     </ul>
-
-    <div className='change-language-link-wrapper'>
-      <a
-        href={t('common:footer.languageRedirect.link')}
-        className='font_footer-link'
-      >
-        {t('common:footer.languageRedirect.text')}
-      </a>
-    </div>
-
 
     <ul className='footer-links'>
       <li className='footer-link'>
@@ -99,41 +66,29 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           className='font_footer-link'
           onClick={handleLinkClick}
         >
-          {t('common:footer.privacyPolicy')}
+          Политика конфеденциальности
         </a>
       </li>
 
-      {lng !== 'ru' && <li className='footer-link'>
-        <a
-          href='#cookies-policy'
-          className='font_footer-link'
-          onClick={handleLinkClick}
-        >
-          Website cookie policy
-        </a>
-      </li>}
-
       <li className='footer-link'>
         <span className='font_footer-text' dangerouslySetInnerHTML={{ __html: t('common:footer.alliancePartText') }} />
-
         {' '}
         <a
           href='https://frontend.digital/'
           className='font_footer-link'
           target='_blank'
-          rel='noreferrer noopener'
+          rel='noopener'
         >
           Frontend.Digital alliance
         </a>
       </li>
-
     </ul>
 
     <style jsx>{`
       footer {
         margin-right: auto;
         margin-left: auto;
-        padding-bottom: 3.5rem;
+        padding-bottom: 5.4375em;
         width: 1792px;
         align-items: center;
       }
@@ -152,7 +107,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       }
 
       .social-links {
-        grid-column: 4 / span 2;
+        grid-column: 8 / span 5;
         display: flex;
         font-size: 0;
       }
@@ -167,9 +122,13 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       }
 
       .footer-links {
-        grid-column: 9 / span 4;
+        grid-row: 15;
+        padding-top: 33px;
+
+
+        grid-column: 8 / span 5;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         height: 1.5rem;
       }
 
@@ -188,47 +147,17 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         footer {
           width: 1328px;
         }
-
-        .change-language-link-wrapper {
-          grid-column: 6 / span 2;
-        }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         footer {
           width: 1232px;
         }
-
-        .footer-links {
-          grid-column: 9 / span 4;
-        }
       }
 
       @media (min-width: 368px) and (max-width: 1279px) {
         footer {
           width: 944px;
-        }
-
-        .logo-wrapper {
-          height: 2rem;
-        }
-
-        .logo {
-          width: 4rem;
-          height: 1rem;
-        }
-
-        .social-link:not(:last-child) {
-          margin-right: 1rem;
-        }
-
-        .social-logo {
-          width: 1rem;
-          height: 1rem;
-        }
-
-        .footer-links {
-          grid-column: 9 / span 4;
         }
 
         @media (max-width: 1023px) {

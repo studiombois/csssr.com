@@ -56,8 +56,8 @@
     "phoneLabel": "Phone",
     "emailPlaceholder": "name@example.com",
     "emailLabel": "E-mail",
-    "messagePlaceholder": "Tell us about your product or service",
-    "messageLabel": "Tell us about your product or service",
+    "messagePlaceholder": "How can we be of help to you?",
+    "messageLabel": "How can we be of help to you?",
     "submitText": "Submit"
   }
 }

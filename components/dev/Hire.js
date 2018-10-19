@@ -44,7 +44,6 @@ class Hire extends PureComponent {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
-
   handleScroll = () => {
     if (this.rafId) {
       cancelAnimationFrame(this.rafId)
@@ -126,7 +125,7 @@ class Hire extends PureComponent {
           }
 
           span {
-            padding-top: 5rem;
+            padding-top: 1rem;
             display: block;
           }
 

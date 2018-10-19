@@ -4,9 +4,10 @@ import Common from './Common'
 import Settings from './Settings'
 import Text from './Text'
 import Footer from './Footer'
-import PrivatePolicy from './PrivatePolicy'
+import CookiesPolicy from './CookiesPolicy'
+import PrivacyPolicy from './privacy-policy/index'
 import { withRouter } from 'next/router'
-import { string } from 'prop-types'
+import { string, shape, bool } from 'prop-types'
 
 const Layout = props => {
   const { children } = props
@@ -15,30 +16,37 @@ const Layout = props => {
     <Common />
     <Settings />
     <Text />
-    <Header />
-    <PrivatePolicy />
+    <CookiesPolicy />
+    <PrivacyPolicy />
+    <Header {...props.headerProps} />
     <main id='main'>
       {children}
     </main>
-    <Footer />
+    {!props.footerProps.noFooter &&
+      <Footer {...props.footerProps}/>
+    }
 
     <style jsx global>{`
-      #private-policy {
+      #cookies-policy,
+      #privacy-policy {
         display: none;
       }
 
-      #private-policy:target {
+      #cookies-policy:target,
+      #privacy-policy:target {
         display: grid;
       }
 
-      #private-policy:target + #main {
+      #cookies-policy:target ~ #main,
+      #privacy-policy:target ~ #main {
         display: none;
       }
 
       /*
-        TODO: Стили для анимации изчезновения private-policy
+        TODO: Стили для анимации изчезновения privacy-policy
       */
-      /* #private-policy:not(:target) {
+      /* #cookies-policy:not(:target),
+      #privacy-policy:not(:target) {
         position: absolute;
         z-index: -1;
         top: 0;
@@ -51,16 +59,18 @@ const Layout = props => {
         transition: opacity 300ms ease-out;
       }
 
-      #private-policy:target {
+      #cookies-policy:target,
+      #privacy-policy:target {
         //TODO: если оставлять эти стили, то убрать из PrivatePolicy margin-bottom
-                у private-policy
+                у privacy-policy
         margin-bottom: 31rem;
         height: auto;
         position: relative;
         opacity: 1;
       }
 
-      #private-policy:target + #main {
+      #cookies-policy:target ~ #main,
+      #privacy-policy:target ~ #main {
         display: none;
       } */
     `}</style>
@@ -72,6 +82,28 @@ Layout.propTypes = {
   description: string,
   url: string,
   ogImage: string,
+  headerProps: shape({
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    isHalfed: bool,
+    isLogoLink: bool,
+    isBurgerVisible: bool,
+  }),
+  footerProps: shape({
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    noFooter: bool,
+    isHalfed: bool,
+    isLogoLink: bool,
+  }),
+}
+
+Layout.defaultProps = {
+  footerProps: {
+    noFooter: false,
+  },
 }
 
 export default withRouter(Layout)

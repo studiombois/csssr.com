@@ -56,8 +56,8 @@
     "phoneLabel": "Телефон",
     "emailPlaceholder": "name@example.com",
     "emailLabel": "E-mail",
-    "messagePlaceholder": "Расскажите нам о своем товаре или услуге",
-    "messageLabel": "Расскажите нам о своем товаре или услуге",
+    "messagePlaceholder": "Чем мы могли бы помочь вам?",
+    "messageLabel": "Чем мы могли бы помочь вам?",
     "submitText": "Отправить"
   }
 }

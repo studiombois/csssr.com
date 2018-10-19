@@ -1,7 +1,8 @@
 {
   "hello": "Hello!",
   "menu": {
-    "softwareEngineering": "Software Engineering",
+    "dev": "Software Engineering",
+    "jobs": "Jobs",
     "recruitment": "Recruitment",
     "company": "Company",
     "products": "Products",
@@ -16,7 +17,8 @@
     }
   },
   "sectionName": {
-    "en": "Software Engineering"
+    "en": "Software Engineering",
+    "en/jobs": "Jobs"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

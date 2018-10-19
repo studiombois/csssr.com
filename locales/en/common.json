@@ -12,10 +12,18 @@
     "alliancePartText": "CSSSR is a part of",
     "languageRedirect": {
       "link": "/ru",
-      "text": "Available in Russian"
+      "text": "Доступно на русском"
     }
   },
   "sectionName": {
     "en": "Software Engineering"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "date": "May 25, 2018"
+  },
+  "cookiesPolicy": {
+    "title": "Website Cookie Policy",
+    "date": "May 25, 2018"
   }
 }

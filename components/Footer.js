@@ -45,6 +45,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           aria-label='VK link'
           href='https://vk.com/csssr'
           target='_blank'
+          rel='noreferrer noopener'
         >
           {vkIcon}
         </a>
@@ -55,6 +56,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           aria-label='Facebook link'
           href='https://www.facebook.com/csssr/'
           target='_blank'
+          rel='noreferrer noopener'
         >
           <img
             className='social-logo'
@@ -69,6 +71,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           aria-label='LinkedIn link'
           href='https://www.linkedin.com/company/csssr'
           target='_blank'
+          rel='noreferrer noopener'
         >
           <img
             className='social-logo'
@@ -92,24 +95,23 @@ const Footer = ({ router: { pathname }, lng, t }) => {
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
-          href='#private-policy'
+          href='#privacy-policy'
           className='font_footer-link'
           onClick={handleLinkClick}
         >
-          Privacy policy
+          {t('common:footer.privacyPolicy')}
         </a>
       </li>
 
-      {/* <li className='footer-link'>
-      /!* TODO: поставить правильную ссылку *!/
+      {lng !== 'ru' && <li className='footer-link'>
         <a
-          href='https://en.wikipedia.org/wiki/HTTP_cookie'
+          href='#cookies-policy'
           className='font_footer-link'
-          target='_blank'
+          onClick={handleLinkClick}
         >
           Website cookie policy
         </a>
-      </li> */}
+      </li>}
 
       <li className='footer-link'>
         <span className='font_footer-text' dangerouslySetInnerHTML={{ __html: t('common:footer.alliancePartText') }} />
@@ -119,6 +121,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           href='https://frontend.digital/'
           className='font_footer-link'
           target='_blank'
+          rel='noreferrer noopener'
         >
           Frontend.Digital alliance
         </a>

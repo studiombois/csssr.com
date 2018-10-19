@@ -78,9 +78,11 @@ export default ({ title, text, imagesKey, style }) =>
           width: 944px;
         }
 
+        h2 {
+          grid-column: 3 / span 3;
+        }
+
         p {
-          grid-column: 5 / span 6;
-          grid-row: 2;
           margin-top: 3.25rem;
         }
 

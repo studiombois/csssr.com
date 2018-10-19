@@ -9,11 +9,19 @@
     "alliancePartText": "CSSSR является частью",
     "languageRedirect": {
       "link": "/en",
-      "text": "Доступно на английском"
+      "text": "Switch to English"
     }
   },
   "sectionName": {
     "ru": "Разработка",
     "ru/jobs": "Работа в CSSSR"
+  },
+  "privacyPolicy": {
+    "title": "Политика конфиденциальности",
+    "date": "25 мая 2018 года"
+  },
+  "cookiesPolicy": {
+    "title": "Website Cookie Policy",
+    "date": "May 25, 2018"
   }
 }

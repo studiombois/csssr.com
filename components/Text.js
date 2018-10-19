@@ -1,5 +1,19 @@
 import React from 'react'
 
+/** Как добавлять новые стили
+
+Нам нужно соблюдать вертикальный ритм, для этого
+бейзлан текста должен соприкасаться с нижней границей сетки — http://s.csssr.ru/U31J879TR/20181018201845.png
+Что бы этого достич, нужно:
+
+1. Открыть пен — https://codepen.ioa/Reshnaut/pen/vzrRMX
+2. Добавить новый стиль и убедится что он соприкасается с нижней границей сетки
+3. Скопировать новые стили в проект.
+4. В проекте 1rem === 16px, но так как в начале проекта он равнялся 8px,
+то если вы пишете в пене стили в rem, то не забудьте потом относительные величины
+поделить на два.
+*/
+
 const Text = () =>
   <style jsx global>{`
     h1 {
@@ -271,6 +285,11 @@ const Text = () =>
       letter-spacing: 0.05rem;
       text-transform: uppercase;
       color: #0076ff;
+      transition: color 0.3s ease-out;
+    }
+
+    .font_top-menu:hover {
+      color: #0254d8;
     }
 
     .font_p16-regular {
@@ -360,6 +379,11 @@ const Text = () =>
         line-height: 3rem;
       }
 
+      .font_h1-regular {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+      }
+
       .font_h2-slab {
         margin-top: 0;
         padding-bottom: 0;
@@ -381,6 +405,13 @@ const Text = () =>
         padding-bottom: 0;
         font-size: 1.5rem;
         line-height: 2rem;
+      }
+
+      .font_subhead-regular {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
       }
 
       .font_top-menu {
@@ -407,6 +438,18 @@ const Text = () =>
         font-size: 0.75rem;
         line-height: 1.5rem;
         letter-spacing: 0.05rem;
+      }
+
+      .font_link-list_16 {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .font_link-list_24 {
+        margin-top: 0;
+        padding-bottom: 0;
+        font-size: 1rem;
+        line-height: 1.5rem;
       }
 
       .font_link-list_28 {

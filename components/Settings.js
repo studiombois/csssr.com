@@ -72,7 +72,7 @@ export default class Settings extends PureComponent {
       @media (min-width: 1280px) and (max-width: 1359px) {
         #background-for-layout,
         #background-for-grid {
-          width: 1248px;
+          width: 1232px;
         }
 
         #background-for-layout.layout-columns-on {

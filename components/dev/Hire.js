@@ -81,6 +81,7 @@ class Hire extends PureComponent {
           </h1>
 
           <div
+            id='hire-us-button'
             className={cn({
               'button-wrapper': true,
               'button-wrapper-invisible': !this.state.showScrollButton,
@@ -139,12 +140,12 @@ class Hire extends PureComponent {
             right: 4rem;
             width: 272px;
             z-index: 8999;
-            transform: translateX(0);
+            transform: translateY(0);
             transition: transform 0.3s ease-out;
           }
 
           .button-wrapper-invisible {
-            transform: translateX(calc(100% + 4rem));
+            transform: translateY(calc(100% + 15rem));
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {

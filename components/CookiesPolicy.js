@@ -91,9 +91,7 @@ const CookiesPolicy = ({ className, t }) => (
         margin-bottom: 31rem;
         margin-right: auto;
         margin-left: auto;
-        padding-left: 3rem;
-        padding-right: 3rem;
-        width: 1888px;
+        width: 1792px;
         background-color: white;
       }
 
@@ -150,18 +148,25 @@ const CookiesPolicy = ({ className, t }) => (
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         #cookies-policy {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1344px
+          width: 1328px;
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         #cookies-policy {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-          width: 1248px
+          width: 1248px;
         }
+      }
+
+      @media (min-width: 368px) and (max-width: 1279px) {
+        #cookies-policy {
+          width: 944px;
+        }
+
+        @media (max-width: 1023px) {
+          #cookies-policy {
+            width: 59rem;
+          }
       }
     `}</style>
   </article>

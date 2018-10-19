@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 export default css`
   div {
     grid-column: 6 / span 6;
-    padding-top: 14.4375rem;
+    padding-top: 14.5rem;
   }
 
   h2,

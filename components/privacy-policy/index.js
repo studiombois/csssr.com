@@ -28,7 +28,7 @@ const PrivacyPolicy = ({ lng, t }) => (
 
       header {
         grid-column: 2 / span 3;
-        padding-top: 13.4375rem;
+        padding-top: 13.5rem;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
@@ -37,7 +37,7 @@ const PrivacyPolicy = ({ lng, t }) => (
         }
       }
 
-      @media (max-width: 1359px) {
+      @media (min-width: 1280px) and (max-width: 1359px) {
         #privacy-policy {
           width: 1232px;
         }
@@ -47,6 +47,11 @@ const PrivacyPolicy = ({ lng, t }) => (
         #privacy-policy {
           width: 944px;
         }
+
+        @media (max-width: 1023px) {
+          #privacy-policy {
+            width: 59rem;
+          }
       }
     `}</style>
   </article>

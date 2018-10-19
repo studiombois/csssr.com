@@ -102,9 +102,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_16::after {
+    .font_link-list_16[target='_blank']::after {
       position: absolute;
-      top: 5px;
+      bottom: 19px;
       right: -5px;
       display: none;
       width: 4px;
@@ -126,9 +126,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_24::after {
+    .font_link-list_24[target='_blank']::after {
       position: absolute;
-      top: 7px;
+      bottom: 25px;
       right: -10px;
       display: none;
       width: 6px;
@@ -150,9 +150,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_28::after {
+    .font_link-list_28[target='_blank']::after {
       position: absolute;
-      top: 9px;
+      bottom: 31px;
       right: -10px;
       display: none;
       width: 8px;

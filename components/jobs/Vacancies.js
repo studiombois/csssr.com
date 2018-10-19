@@ -178,10 +178,11 @@ const Vacancies = props =>
       }
 
       .half-page-picture {
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         width: 50%;
+
         height: 100vh;
       }
 

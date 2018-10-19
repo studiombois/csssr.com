@@ -1,41 +1,49 @@
 import React, { PureComponent } from 'react'
-import { bool, object, string } from 'prop-types'
-import Link from 'next/link'
+import { bool, object, string, func } from 'prop-types'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
-// import BurgerIcon from '../static/icons/burger.svg'
+import BurgerIcon from '../static/icons/burger.svg'
 //
-// const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
+const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
   static propTypes = {
     router: object,
     sectionName: string,
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    isHalfed: bool,
+    isLogoLink: bool,
+    isBurgerVisible: bool,
     showHeader: bool,
     pinHeader: bool,
     toggleHeaderAnimations: bool,
-    // onSideBarToggle: func,
+    onSideBarToggle: func,
   }
 
   render() {
     const {
       pathname,
-      lng,
       links,
-      // sectionName,
+      logoHref,
+      logoAlt,
+      logoSup,
+      isHalfed,
+      isLogoLink,
+      isBurgerVisible,
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
-      // onSideBarToggle,
+      onSideBarToggle,
       t,
     } = this.props
-
-    const rootUrl = `/${lng}`
 
     return (
       <header
         className={cn({
           header: true,
+          header_is_halfed: isHalfed,
           header_pinned: pinHeader,
           header_visible: !pinHeader && showHeader,
           header_invisible: !pinHeader && !showHeader,
@@ -45,25 +53,34 @@ class HeaderContent extends PureComponent {
         <div
           className='grid-container header-content'
         >
-          {pathname === rootUrl
+          {isLogoLink
             ? <span className='logo-wrapper'>
-              <img
-                className='logo'
-                src='../static/icons/csssr_logo.svg'
-                alt='CSSSR Logo'
-              />
+              <a href={logoHref} >
+                <img
+                  className='logo'
+                  src='../static/icons/csssr_logo.svg'
+                  alt={logoAlt}
+                />
+
+                {logoSup &&
+                  <sup className='font_roboto-slab-light'>
+                    {logoSup}
+                  </sup>
+                }
+              </a>
             </span>
 
             : <span className='logo-wrapper'>
-              <Link prefetch href={rootUrl}>
-                <a>
-                  <img
-                    className='logo'
-                    src='../static/icons/csssr_logo.svg'
-                    alt='CSSSR Logo'
-                  />
-                </a>
-              </Link>
+              <img
+                className='logo'
+                src='../static/icons/csssr_logo.svg'
+                alt={logoAlt}
+              />
+              {logoSup &&
+                <sup className='font_roboto-slab-light'>
+                  {logoSup}
+                </sup>
+              }
             </span>
           }
 
@@ -84,11 +101,19 @@ class HeaderContent extends PureComponent {
             {t(`common:sectionName.${pathname.slice(1)}`)}
           </span>
 
-          {/* <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
-            {burgerIcon}
-          </button> */}
+          {isBurgerVisible &&
+            <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
+              {burgerIcon}
+            </button>
+          }
 
         </div><style jsx>{`
+          sup {
+            position: absolute;
+            top: -0.5625rem;
+            right: 0.25rem;
+          }
+
           .header {
             position: absolute;
             top: 0;
@@ -96,7 +121,11 @@ class HeaderContent extends PureComponent {
             left: 50%;
             width: 100%;
             transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+          }
+
+          :global(#privacy-policy:not(:target)) ~ .header_is_halfed {
+            background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 100%);
           }
 
           .header_invisible {
@@ -123,6 +152,7 @@ class HeaderContent extends PureComponent {
           }
 
           .logo-wrapper {
+            position: relative;
             grid-column: 1 / span 2;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;

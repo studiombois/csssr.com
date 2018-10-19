@@ -75,7 +75,7 @@ const Hire = ({ t }) =>
       }
 
       span {
-        padding-top: 5rem;
+        padding-top: 1rem;
         display: block;
       }
 

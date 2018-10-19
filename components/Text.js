@@ -116,9 +116,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_16::after {
+    .font_link-list_16[target='_blank']::after {
       position: absolute;
-      top: 5px;
+      bottom: 19px;
       right: -5px;
       display: none;
       width: 4px;
@@ -140,9 +140,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_24::after {
+    .font_link-list_24[target='_blank']::after {
       position: absolute;
-      top: 7px;
+      bottom: 25px;
       right: -10px;
       display: none;
       width: 6px;
@@ -164,9 +164,9 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_28::after {
+    .font_link-list_28[target='_blank']::after {
       position: absolute;
-      top: 9px;
+      bottom: 31px;
       right: -10px;
       display: none;
       width: 8px;
@@ -355,6 +355,19 @@ const Text = () =>
       font-size: 3.75rem;
       font-weight: 100;
       line-height: 4.375rem;
+      color: #000000;
+    }
+
+    .font_roboto-slab-light {
+      margin-top: -4px;
+      padding-bottom: 4px;
+      font-family: Roboto Slab;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 3.125rem;
+      letter-spacing: 0.03125rem;
       color: #000000;
     }
 

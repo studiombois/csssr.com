@@ -4,7 +4,8 @@
     "description": "We specialize in developing high load web applications, using JavaScript. And dream about space."
   },
   "headerNav": {
-    "services": "Competence & Services",
+    "сompetence": "Competence",
+    "services": "Services",
     "customers": "Customers",
     "hireUs": "Hire us"
   },

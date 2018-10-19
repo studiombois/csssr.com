@@ -1,7 +1,7 @@
 const headerLinks = {
   dev: [{
-    href: '#сompetences',
-    label: 'dev:headerNav.сompetences',
+    href: '#сompetence',
+    label: 'dev:headerNav.сompetence',
   }, {
     href: '#services',
     label: 'dev:headerNav.services',

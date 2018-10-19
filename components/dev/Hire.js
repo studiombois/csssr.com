@@ -29,7 +29,7 @@ const { className, styles } = css.resolve`
 
 const Hire = ({ t }) =>
   <Fragment>
-    <article id='сompetences' className='grid-container'>
+    <article id='сompetence' className='grid-container'>
       <h1 className='font_h1-slab'>
         {t('dev:hire.title')}
 

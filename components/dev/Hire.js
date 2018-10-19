@@ -72,7 +72,7 @@ class Hire extends PureComponent {
 
     return (
       <Fragment>
-        <article className='grid-container'>
+        <article id='сompetence' className='grid-container'>
           <h1 className='font_h1-slab'>
             {t('dev:hire.title')}
 

@@ -30,7 +30,7 @@ const Vacancies = props =>
     <article className='grid-container'>
       <header>
         <h1 className='font_h1-regular'>
-          Вакансии
+          Работа в&nbsp;CSSSR
           <span className='font_subhead-regular'>
             CSSSR&nbsp;&mdash; островок здравого смысла в&nbsp;корпоративном океане зла.
           </span>

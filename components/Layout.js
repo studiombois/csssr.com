@@ -43,7 +43,7 @@ const Layout = props => {
       }
 
       /*
-        TODO: Стили для анимации изчезновения private-policy
+        TODO: Стили для анимации изчезновения privacy-policy
       */
       /* #cookies-policy:not(:target),
       #privacy-policy:not(:target) {
@@ -62,7 +62,7 @@ const Layout = props => {
       #cookies-policy:target,
       #privacy-policy:target {
         //TODO: если оставлять эти стили, то убрать из PrivatePolicy margin-bottom
-                у private-policy
+                у privacy-policy
         margin-bottom: 31rem;
         height: auto;
         position: relative;

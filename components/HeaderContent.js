@@ -124,7 +124,7 @@ class HeaderContent extends PureComponent {
             background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
           }
 
-          :global(#private-policy:not(:target)) ~ .header_is_halfed {
+          :global(#privacy-policy:not(:target)) ~ .header_is_halfed {
             background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 100%);
           }
 

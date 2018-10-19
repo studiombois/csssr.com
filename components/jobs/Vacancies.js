@@ -160,7 +160,11 @@ const Vacancies = props =>
         grid-column: 8 / span 1;
         grid-row: 13;
         margin-top: 13.0625rem;
-        height: 5.5rem;
+        height: 7.5rem;
+      }
+
+      img {
+        height: 100%;
       }
 
       picture + p {
@@ -189,17 +193,29 @@ const Vacancies = props =>
         article {
           width: 1328px;
         }
+
+        picture {
+          height: 6rem;
+        }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article {
           width: 1232px;
         }
+
+        picture {
+          height: 5.5rem;
+        }
       }
 
       @media (min-width: 368px) and (max-width: 1279px) {
         article {
           width: 944px;
+        }
+
+        picture {
+          height: 4rem;
         }
 
         @media (max-width: 1023px) {

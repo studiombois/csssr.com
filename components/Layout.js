@@ -7,7 +7,7 @@ import Footer from './Footer'
 import CookiesPolicy from './CookiesPolicy'
 import PrivacyPolicy from './privacy-policy/index'
 import { withRouter } from 'next/router'
-import { string } from 'prop-types'
+import { string, shape, bool } from 'prop-types'
 
 const Layout = props => {
   const { children } = props
@@ -16,13 +16,15 @@ const Layout = props => {
     <Common />
     <Settings />
     <Text />
-    <Header />
     <CookiesPolicy />
     <PrivacyPolicy />
+    <Header {...props.headerProps} />
     <main id='main'>
       {children}
     </main>
-    <Footer />
+    {!props.footerProps.noFooter &&
+      <Footer {...props.footerProps}/>
+    }
 
     <style jsx global>{`
       #cookies-policy,
@@ -41,7 +43,7 @@ const Layout = props => {
       }
 
       /*
-        TODO: Стили для анимации изчезновения private-policy
+        TODO: Стили для анимации изчезновения privacy-policy
       */
       /* #cookies-policy:not(:target),
       #privacy-policy:not(:target) {
@@ -60,7 +62,7 @@ const Layout = props => {
       #cookies-policy:target,
       #privacy-policy:target {
         //TODO: если оставлять эти стили, то убрать из PrivatePolicy margin-bottom
-                у private-policy
+                у privacy-policy
         margin-bottom: 31rem;
         height: auto;
         position: relative;
@@ -80,6 +82,28 @@ Layout.propTypes = {
   description: string,
   url: string,
   ogImage: string,
+  headerProps: shape({
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    isHalfed: bool,
+    isLogoLink: bool,
+    isBurgerVisible: bool,
+  }),
+  footerProps: shape({
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    noFooter: bool,
+    isHalfed: bool,
+    isLogoLink: bool,
+  }),
+}
+
+Layout.defaultProps = {
+  footerProps: {
+    noFooter: false,
+  },
 }
 
 export default withRouter(Layout)

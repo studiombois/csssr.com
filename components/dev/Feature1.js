@@ -28,8 +28,8 @@ const { className, styles } = css.resolve`
 
 const Feature1 = ({ t, imagesKey }) =>
   <Fragment>
-    <section className='grid-container'>
-      <h2 id='competence-and-services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
+    <section className='grid-container' id='feature1'>
+      <h2 id='services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
 
       <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} />
 

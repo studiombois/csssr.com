@@ -4,6 +4,7 @@
     "dev": "nodemon --exec node $NODE_DEBUG_OPTION ./server/index.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node ./server/index.js",
+    "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
     "eslint-fix": "eslint --fix .",
     "analyze": "cross-env ANALYZE=1 next build"
   },
@@ -30,9 +31,14 @@
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.6.0",
-    "eslint-loader": "^2.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
     "nodemon": "^1.18.4",
     "webpack-bundle-analyzer": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:js"
+    }
   }
 }

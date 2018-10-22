@@ -14,6 +14,6 @@ module.exports = sitemap.createSitemap({
         lang: 'ru',
         url: 'https://csssr.com/ru/',
       },
-    ]
-  },]
+    ],
+  }],
 })

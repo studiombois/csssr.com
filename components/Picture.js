@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
 
 const altTextByImageKey = {
+  dog: 'dev:imgAlt.dog',
   geometry: 'dev:imgAlt.geometry',
   time: 'dev:imgAlt.time',
   perfect: 'dev:imgAlt.perfect',

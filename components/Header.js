@@ -3,6 +3,7 @@ import { object, string, bool } from 'prop-types'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
 import getHeaderLinks from '../utils/getHeaderLinks'
+import getScrollbarWidth from '../utils/getScrollbarWidth'
 import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
@@ -33,12 +34,15 @@ class Header extends PureComponent {
 
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll)
+
+    this.scrollbarWidth = getScrollbarWidth()
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
 
     document.body.style.overflow = 'initial'
+    document.body.style.paddingRight = 0
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -48,11 +52,8 @@ class Header extends PureComponent {
       return
     }
 
-    if (isSideBarOpened) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'initial'
-    }
+    document.body.style.overflow = isSideBarOpened ? 'hidden' : 'initial'
+    document.body.style.paddingRight = isSideBarOpened ? `${this.scrollbarWidth}px` : 0
   }
 
   handleSideBarToggle = () => {
@@ -111,14 +112,14 @@ class Header extends PureComponent {
       isLogoLink,
       isBurgerVisible,
     } = this.props
-    const { showHeader, pinHeader, toggleHeaderAnimations } = this.state
+    const { showHeader, pinHeader, isSideBarOpened, toggleHeaderAnimations } = this.state
     const links = getHeaderLinks(pathname)
 
     return (
       <Fragment>
         <SideBar
           onToggle={this.handleSideBarToggle}
-          isOpened={this.state.isSideBarOpened}
+          isOpened={isSideBarOpened}
           onClose={this.handleSideBarClose}
         />
         <HeaderContent
@@ -130,9 +131,11 @@ class Header extends PureComponent {
           logoHref={logoHref}
           logoAlt={logoAlt}
           logoSup={logoSup}
+          scrollbarWidth={this.scrollbarWidth}
           isHalfed={isHalfed}
           isLogoLink={isLogoLink}
           isBurgerVisible={isBurgerVisible}
+          isSideBarOpened={isSideBarOpened}
           toggleHeaderAnimations={toggleHeaderAnimations}
           onSideBarToggle={this.handleSideBarToggle}
         />

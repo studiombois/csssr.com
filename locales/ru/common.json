@@ -1,19 +1,27 @@
 {
   "hello": "Привет!",
   "menu": {
-    "dev": "Разработка",
-    "jobs": "Работа в CSSSR"
+    "dev": "Фронтенд разработка",
+    "jobs": "Вакансии"
   },
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
     "alliancePartText": "CSSSR является частью",
     "languageRedirect": {
       "link": "/en",
-      "text": "Доступно на английском"
+      "text": "Switch to English"
     }
   },
   "sectionName": {
-    "ru": "Разработка",
-    "ru/jobs": "Работа в CSSSR"
+    "ru": "Фронтенд разработка",
+    "ru/jobs": "Вакансии"
+  },
+  "privacyPolicy": {
+    "title": "Политика конфиденциальности",
+    "date": "25 мая 2018 года"
+  },
+  "cookiesPolicy": {
+    "title": "Website Cookie Policy",
+    "date": "May 25, 2018"
   }
 }

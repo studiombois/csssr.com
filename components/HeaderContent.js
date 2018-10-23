@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
-import { bool, object, string, func } from 'prop-types'
+import { bool, object, string, number, func } from 'prop-types'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
 import BurgerIcon from '../static/icons/burger.svg'
-//
+
 const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
@@ -13,9 +13,11 @@ class HeaderContent extends PureComponent {
     logoHref: string,
     logoAlt: string,
     logoSup: string,
+    scrollbarWidth: number,
     isHalfed: bool,
     isLogoLink: bool,
     isBurgerVisible: bool,
+    isSideBarOpened: bool,
     showHeader: bool,
     pinHeader: bool,
     toggleHeaderAnimations: bool,
@@ -29,9 +31,11 @@ class HeaderContent extends PureComponent {
       logoHref,
       logoAlt,
       logoSup,
+      scrollbarWidth,
       isHalfed,
       isLogoLink,
       isBurgerVisible,
+      isSideBarOpened,
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
@@ -48,6 +52,7 @@ class HeaderContent extends PureComponent {
           header_visible: !pinHeader && showHeader,
           header_invisible: !pinHeader && !showHeader,
           header_animations_on: toggleHeaderAnimations,
+          'header_padding-right_equals_scroll-width': isSideBarOpened,
         })}
       >
         <div
@@ -124,7 +129,7 @@ class HeaderContent extends PureComponent {
             background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
           }
 
-          :global(#private-policy:not(:target)) ~ .header_is_halfed {
+          :global(#privacy-policy:not(:target)) ~ .header_is_halfed {
             background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 100%);
           }
 
@@ -140,6 +145,10 @@ class HeaderContent extends PureComponent {
           .header_visible {
             position: fixed;
             top: 0;
+          }
+
+          .header_visible.header_padding-right_equals_scroll-width {
+            transform: translateX(-50%) translateX(-${scrollbarWidth / 2 }px);
           }
 
           .header-content {

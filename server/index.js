@@ -76,19 +76,17 @@ i18n
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))
 
-        server.use('/privacy_policy', express.static(path.join(__dirname, '../privacy_policy.pdf')))
-
         server.use('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
 
         server.get('/sitemap.xml', (req, res) => {
           sitemap.toXML((err, xml) => {
             if (err) {
-              return res.status(500).send(err);
+              return res.status(500).send(err)
             }
-            res.header('Content-Type', 'application/xml');
-            res.send(xml);
-          });
-        });
+            res.header('Content-Type', 'application/xml')
+            res.send(xml)
+          })
+        })
 
         server.get('*', (req, res) => {
           return handle(req, res)

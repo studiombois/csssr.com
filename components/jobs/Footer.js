@@ -47,6 +47,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
             aria-label={`${label} link`}
             href={href}
             target='_blank'
+            rel='noopener'
           >
             <img
               className='social-logo'
@@ -61,7 +62,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
-          href='#private-policy'
+          href='#privacy-policy'
           className='font_footer-link'
           onClick={handleLinkClick}
         >
@@ -76,6 +77,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
           href='https://frontend.digital/'
           className='font_footer-link'
           target='_blank'
+          rel='noopener'
         >
           Frontend.Digital alliance
         </a>

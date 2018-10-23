@@ -1,7 +1,8 @@
 {
   "hello": "Hello!",
   "menu": {
-    "softwareEngineering": "Software Engineering",
+    "dev": "Software Engineering",
+    "jobs": "Jobs",
     "recruitment": "Recruitment",
     "company": "Company",
     "products": "Products",
@@ -12,10 +13,19 @@
     "alliancePartText": "CSSSR is a part of",
     "languageRedirect": {
       "link": "/ru",
-      "text": "Available in Russian"
+      "text": "Доступно на русском"
     }
   },
   "sectionName": {
-    "en": "Software Engineering"
+    "en": "Software Engineering",
+    "en/jobs": "Jobs"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "date": "May 25, 2018"
+  },
+  "cookiesPolicy": {
+    "title": "Website Cookie Policy",
+    "date": "May 25, 2018"
   }
 }

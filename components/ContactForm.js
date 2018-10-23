@@ -123,7 +123,7 @@ class ContactForm extends PureComponent {
                       ../static/images/letter@2x.png 2x,
                       ../static/images/letter@3x.png 3x'
             src='../static/images/letter@1x.png'
-            alt='letter' />
+            alt={t('dev:imgAlt.letter')} />
         </picture>
 
         <style jsx>{`

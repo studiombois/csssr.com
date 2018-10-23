@@ -14,6 +14,7 @@ const items = [{
 }, {
   path: '/jobs',
   key: 'common:menu.jobs',
+  regularLink: true,
 }]
 
 const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
@@ -34,19 +35,27 @@ export class SideBar extends PureComponent {
     onClose: func,
   }
 
-  renderNavItem = ({ path, key }) => {
+  renderNavItem = ({ path, key, regularLink }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
 
     return (
       <li key={key} className='item'>
-        <Link href={languageHref}>
-          <a className={cn('font_burger-menu link', {
+        {regularLink && lng === 'en'
+          ? <a href={languageHref} className={cn('font_burger-menu link', {
             link_active: pathname === languageHref,
           })}>
             {t(key)}
           </a>
-        </Link>
+
+          : <Link href={languageHref}>
+            <a className={cn('font_burger-menu link', {
+              link_active: pathname === languageHref,
+            })}>
+              {t(key)}
+            </a>
+          </Link>
+        }
         <style jsx>{`
           .link {
             padding-right: 5.5rem;

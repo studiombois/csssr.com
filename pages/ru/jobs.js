@@ -13,8 +13,8 @@ class Jobs extends PureComponent {
   }
 
   render() {
-    const { t, vacancies } = this.props
-
+    const { t } = this.props
+    const vacancies = []
     return (
       <Fragment>
         <Layout
@@ -28,17 +28,9 @@ class Jobs extends PureComponent {
           }}
           footerProps={{ noFooter: true }}
         >
-          <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
+          <Head title={t('jobs:meta.title')} description={t('dev:jobs.description')} />
           <Vacancies vacancies={vacancies} />
         </Layout>
-
-        <style jsx>{`
-          img {
-            display: block;
-            width: 50vw;
-            height: 100vh;
-          }
-        `}</style>
       </Fragment>
     )
   }

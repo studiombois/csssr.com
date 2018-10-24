@@ -41,11 +41,12 @@ export class SideBar extends PureComponent {
   renderNavItem = ({ path, key, redirect }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
-    const href = redirect && redirect.from === languageHref ? redirect.to : languageHref
+    const shouldBeRedirected = redirect && redirect.from === languageHref
+    const href = shouldBeRedirected ? redirect.to : languageHref
 
     return (
       <li key={key} className='item'>
-        {redirect
+        {shouldBeRedirected
           ? <a href={href} className={cn('font_burger-menu link', {
             link_active: pathname === languageHref,
           })}>

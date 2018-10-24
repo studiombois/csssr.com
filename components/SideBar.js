@@ -14,7 +14,10 @@ const items = [{
 }, {
   path: '/jobs',
   key: 'common:menu.jobs',
-  regularLink: true,
+  redirect: {
+    from: '/en/jobs',
+    to: '/ru/jobs',
+  },
 }]
 
 const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
@@ -35,20 +38,21 @@ export class SideBar extends PureComponent {
     onClose: func,
   }
 
-  renderNavItem = ({ path, key, regularLink }) => {
+  renderNavItem = ({ path, key, redirect }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
+    const href = redirect && redirect.from === languageHref ? redirect.to : languageHref
 
     return (
       <li key={key} className='item'>
-        {regularLink && lng === 'en'
-          ? <a href={languageHref} className={cn('font_burger-menu link', {
+        {redirect
+          ? <a href={href} className={cn('font_burger-menu link', {
             link_active: pathname === languageHref,
           })}>
             {t(key)}
           </a>
 
-          : <Link href={languageHref}>
+          : <Link href={href}>
             <a className={cn('font_burger-menu link', {
               link_active: pathname === languageHref,
             })}>

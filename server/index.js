@@ -88,6 +88,11 @@ i18n
           })
         })
 
+        server.get('/:language/jobs/:jobPathName', (req, res) => {
+          const params = { jobPathName: req.params.jobPathName }
+          return app.render(req, res, `/${req.params.language}/job`, params)
+        })
+
         server.get('*', (req, res) => {
           return handle(req, res)
         })

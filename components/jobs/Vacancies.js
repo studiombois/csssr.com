@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
+import Link from 'next/link'
 import Picture from '../Picture'
 import Footer from './Footer'
 
@@ -40,12 +41,15 @@ const Vacancies = props =>
       <ul>
         {props.vacancies.map(vacancy =>
           <li key={vacancy.id}>
-            <a
-              className='font_link-list_24'
-              href={`jobs/${vacancy.pathName}`}
+            <Link
+              prefetch
+              href={{pathname: '/ru/job', query: { jobPathName: vacancy.pathName }}}
+              as={`/ru/jobs/${vacancy.pathName}`}
             >
-              {vacancy.name}
-            </a>
+              <a className='font_link-list_24'>
+                {vacancy.name}
+              </a>
+            </Link>
           </li>
         )}
       </ul>

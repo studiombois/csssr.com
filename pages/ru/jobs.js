@@ -13,8 +13,7 @@ class Jobs extends PureComponent {
   }
 
   render() {
-    const { t } = this.props
-    const vacancies = []
+    const { t, vacancies } = this.props
     return (
       <Fragment>
         <Layout

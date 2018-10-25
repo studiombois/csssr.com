@@ -106,11 +106,11 @@ class HeaderContent extends PureComponent {
             {t(`common:sectionName.${pathname.slice(1)}`)}
           </span>
 
-          {isBurgerVisible &&
-            <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
-              {burgerIcon}
-            </button>
-          }
+          {/*{isBurgerVisible &&*/}
+            {/*<button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>*/}
+              {/*{burgerIcon}*/}
+            {/*</button>*/}
+          {/*}*/}
 
         </div><style jsx>{`
           sup {

@@ -61,6 +61,8 @@
     "emailLabel": "E-mail",
     "messagePlaceholder": "How can we be of help to you?",
     "messageLabel": "How can we be of help to you?",
+    "privacyPolicy": "I agree to my personal data being stored and used to <a href='#privacy-policy'>Privacy Policy</a> proposes",
+    "newsletter": "I agree to recieve information and commercial offers",
     "submitText": "Submit"
   }
 }

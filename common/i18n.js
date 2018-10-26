@@ -2,7 +2,6 @@ const i18n = require('i18next')
 const XHR = require('i18next-xhr-backend')
 
 const options = {
-  fallbackLng: 'en',
   load: 'languageOnly',
   whitelist: ['en', 'ru', 'de'],
   ns: ['common'],

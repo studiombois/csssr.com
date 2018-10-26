@@ -111,7 +111,6 @@ class HeaderContent extends PureComponent {
               {burgerIcon}
             </button>
           }
-
         </div><style jsx>{`
           sup {
             position: absolute;
@@ -130,7 +129,7 @@ class HeaderContent extends PureComponent {
           }
 
           :global(#privacy-policy:not(:target)) ~ .header_is_halfed {
-            background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 100%);
+            background-image: linear-gradient(90deg, transparent 50vw , rgba(255, 255, 255, 0.9) 50vw, rgba(255, 255, 255, 0.9) 100%);
           }
 
           .header_invisible {
@@ -148,7 +147,7 @@ class HeaderContent extends PureComponent {
           }
 
           .header_visible.header_padding-right_equals_scroll-width {
-            transform: translateX(-50%) translateX(-${scrollbarWidth / 2 }px);
+            padding-right: ${scrollbarWidth}px;
           }
 
           .header-content {

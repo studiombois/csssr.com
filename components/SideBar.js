@@ -14,6 +14,10 @@ const items = [{
 }, {
   path: '/jobs',
   key: 'common:menu.jobs',
+  redirect: {
+    from: '/en/jobs',
+    to: '/ru/jobs',
+  },
 }]
 
 const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
@@ -34,19 +38,29 @@ export class SideBar extends PureComponent {
     onClose: func,
   }
 
-  renderNavItem = ({ path, key }) => {
+  renderNavItem = ({ path, key, redirect }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
+    const shouldBeRedirected = redirect && redirect.from === languageHref
+    const href = shouldBeRedirected ? redirect.to : languageHref
 
     return (
       <li key={key} className='item'>
-        <Link href={languageHref}>
-          <a className={cn('font_burger-menu link', {
+        {shouldBeRedirected
+          ? <a href={href} className={cn('font_burger-menu link', {
             link_active: pathname === languageHref,
           })}>
             {t(key)}
           </a>
-        </Link>
+
+          : <Link href={href}>
+            <a className={cn('font_burger-menu link', {
+              link_active: pathname === languageHref,
+            })}>
+              {t(key)}
+            </a>
+          </Link>
+        }
         <style jsx>{`
           .link {
             padding-right: 5.5rem;

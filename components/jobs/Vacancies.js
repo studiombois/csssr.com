@@ -178,12 +178,11 @@ const Vacancies = props =>
       }
 
       .half-page-picture {
-        position: sticky;
+        position: fixed;
         top: 0;
         left: 0;
-        width: 50%;
-
         height: 100vh;
+        width: 50vw;
       }
 
       .font_link-list_16 {

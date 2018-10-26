@@ -43,7 +43,7 @@ const Vacancies = props =>
           <li key={vacancy.id}>
             <Link
               prefetch
-              href={{pathname: '/ru/job', query: { jobPathName: vacancy.pathName }}}
+              href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
               as={`/ru/jobs/${vacancy.pathName}`}
             >
               <a className='font_link-list_24'>

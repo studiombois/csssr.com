@@ -18,14 +18,14 @@ const QuestionAndAnswer = ({ index, linkText, taskLink, taskText, time, title })
     {/* TODO plural форма через i18next*/}
     {time} минут
     <Field
-      name={`quests[].text`}
+      name={'quests[].text'}
       component={TextareaField}
       placeholder={taskText}
       label={taskText}
     />
     {linkText}
     <Field
-      name={`quests[].link`}
+      name={'quests[].link'}
       component={TextField}
       placeholder={linkText}
       label={linkText}

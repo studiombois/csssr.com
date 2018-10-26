@@ -1,7 +1,9 @@
 import React, { Fragment, PureComponent } from 'react'
+import { Form as ReactFinalForm } from 'react-final-form'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
+import CandidateForm from '../../components/job/CandidateForm'
 import withI18next from '../../utils/withI18next'
 
 import Section from '../../components/job/Section'
@@ -13,35 +15,34 @@ class Jobs extends PureComponent {
 
     // TODO 404 если вакансия недоступна
     return {
+      vacancies,
       vacancy: vacancies.find(v => v.pathName === query.jobPathName),
     }
   }
 
-  render() {
-    const { t, vacancy } = this.props
+  renderForm = props => <CandidateForm {...props} />
 
+  render() {
+    const { t, vacancy, vacancies } = this.props
     return (
       <Fragment>
-        <Layout>
+        <Layout
+          headerProps={{
+            isHalfed: true,
+            logoHref: '/ru/jobs#',
+            logoAlt: 'CSSSR jobs logo',
+            logoSup: '.jobs',
+            isLogoLink: true,
+            isBurgerVisible: true,
+          }}
+        >
           <Head title={t('job:meta.title')} description={vacancy.description} />
-          <h1>{ vacancy.name }</h1>
-          <h2>Дистанционно, и на фуллтайм</h2>
-          <div>{ vacancy.description }</div>
-          <form noValidate>
-            { vacancy.sections.map(section => <Section {...section} />) }
-
-            {/* {vacancy.hasComment && <label>*/}
-            {/* Хотите добавить что-то о себе?*/}
-            {/* <textarea name="comment" required="vacancy.isCommentRequired"/>*/}
-            {/* </label>}*/}
-
-            <label>
-              Политике конфиденциальности
-              <input type='checkbox'/>
-            </label>
-
-            <button>Отправить</button>
-          </form>
+          <ReactFinalForm
+            vacancy={vacancy}
+            vacancies={vacancies}
+            onSubmit={() => {}}
+            render={this.renderForm}
+          />
         </Layout>
       </Fragment>
     )

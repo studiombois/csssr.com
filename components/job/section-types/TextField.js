@@ -7,7 +7,7 @@ const JobSectionTextField = ({ index, title, maxLength, required }) =>
   <div>
     {required && '*'} {title}
     <Field
-      name={`quests[].text`}
+      name={'quests[].text'}
       maxLength={maxLength}
       required={required}
       component={TextareaField}

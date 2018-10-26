@@ -1,8 +1,10 @@
-import React, {Fragment, PureComponent} from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
 import withI18next from '../../utils/withI18next'
+
+import Section from '../../components/job/Section'
 
 class Jobs extends PureComponent {
   static async getInitialProps({ query }) {
@@ -25,17 +27,17 @@ class Jobs extends PureComponent {
           <h1>{ vacancy.name }</h1>
           <h2>Дистанционно, и на фуллтайм</h2>
           <div>{ vacancy.description }</div>
-          <form novalidate>
-            { JSON.stringify(vacancy.sections) }
+          <form noValidate>
+            { vacancy.sections.map(section => <Section {...section} />) }
 
-            {/*{vacancy.hasComment && <label>*/}
-              {/*Хотите добавить что-то о себе?*/}
-              {/*<textarea name="comment" required="vacancy.isCommentRequired"/>*/}
-            {/*</label>}*/}
+            {/* {vacancy.hasComment && <label>*/}
+            {/* Хотите добавить что-то о себе?*/}
+            {/* <textarea name="comment" required="vacancy.isCommentRequired"/>*/}
+            {/* </label>}*/}
 
             <label>
               Политике конфиденциальности
-              <input type="checkbox"/>
+              <input type='checkbox'/>
             </label>
 
             <button>Отправить</button>

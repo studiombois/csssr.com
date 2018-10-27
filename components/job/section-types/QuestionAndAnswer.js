@@ -3,9 +3,12 @@ import { number, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import TextareaField from '../../ui-kit/TextareaField'
 import TextField from '../../ui-kit/TextField'
+import FormRow from '../FormRow'
 
 const QuestionAndAnswer = ({ index, linkText, taskLink, taskText, time, title }) =>
-  <div>
+  <FormRow
+    rightSideContent={`${time} минут`}
+  >
     {title}
     <a
       href={taskLink}
@@ -13,29 +16,27 @@ const QuestionAndAnswer = ({ index, linkText, taskLink, taskText, time, title })
     >
       {taskLink}
     </a>
+    <p dangerouslySetInnerHTML={{ __html: taskText }}/>
 
-    {taskText}
     {/* TODO plural форма через i18next*/}
-    {time} минут
     <Field
       name={'quests[].text'}
       component={TextareaField}
-      placeholder={taskText}
-      label={taskText}
+      theme='regular'
+      label='КОММЕНТАРИЙ'
     />
-    {linkText}
+    <p dangerouslySetInnerHTML={{ __html: linkText }}/>
     <Field
       name={'quests[].link'}
       component={TextField}
-      placeholder={linkText}
-      label={linkText}
+      theme='regular'
     />
     <style jsx>{`
     	div:before {
     	  content: 'q&a '
     	}
     `}</style>
-  </div>
+  </FormRow>
 
 QuestionAndAnswer.propTypes = {
   index: number,

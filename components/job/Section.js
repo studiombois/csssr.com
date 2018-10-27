@@ -1,6 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 
+import FormRow from './FormRow'
 import BoldText from './section-types/BoldText'
 import Quest from './section-types/Quest'
 import QuestBox from './section-types/QuestBox'
@@ -21,8 +22,15 @@ const typeToComponent = {
   titleAndText: TitleAndText,
 }
 
-const Section = ({ type, ...others }) => {
+const Section = ({ type, asRow, ...others }) => {
   const Component = typeToComponent[type]
+  if (asRow && type !== 'questionAndAnswer' && type !== 'questBox') {
+    return (
+      <FormRow>
+        <Component {...others}/>
+      </FormRow>
+    )
+  }
   return <Component {...others}/>
 
 }

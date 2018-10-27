@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import { Field } from 'react-final-form'
 import Link from 'next/link'
+import FormRow from './FormRow'
 import Checkbox from '../ui-kit/Checkbox'
 import Radio from '../ui-kit/Radio'
 import TextField from '../ui-kit/TextField'
@@ -32,6 +33,25 @@ class CandidateForm extends PureComponent {
     }
   }
 
+  divideSections = () => {
+    const { sections } = this.props.vacancy
+    let isBeforeQuest = true
+    return sections.reduce((memo, section) => {
+      const { type } = section
+      if (type === 'quest' || type === 'questBox') {
+        isBeforeQuest = false
+      }
+
+      return isBeforeQuest ? {
+        ...memo,
+        beforeQuestSections: [ ...memo.beforeQuestSections, section ],
+      } : {
+        ...memo,
+        otherSections: [ ...memo.otherSections, section ],
+      }
+    }, { beforeQuestSections: [], otherSections: [] })
+  }
+
   handleStateClear = () => {
     this.setState({ formSubmitStatus: null })
   }
@@ -46,15 +66,140 @@ class CandidateForm extends PureComponent {
     })
   }
 
+  renderVacancyImageAndLinks = () => {
+    const { vacancies } = this.props
+
+    return (
+      <Fragment>
+        <div>
+          {vacancies.map(vacancy =>
+            <li key={vacancy.id}>
+              <Link
+                prefetch
+                href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
+                as={`/ru/jobs/${vacancy.pathName}`}
+              >
+                <a className='font_link-list_16'>
+                  {vacancy.name}
+                </a>
+              </Link>
+            </li>
+          )}
+        </div>
+      </Fragment>
+    )
+  }
+
+  renderConnectionSelection = () => {
+    const { values: { connection } } = this.props
+
+    return (
+      <Fragment>
+        <div className='field field_type_radio'>
+          <Field
+            id='telegramRadio'
+            name='connection'
+            value='telegram'
+            type='radio'
+            component={Radio}
+          >
+            Telegram
+          </Field>
+        </div>
+        {connection === 'telegram' && <div className='field field_type_connection'>
+          <Field
+            id='telegramField'
+            name='telegram'
+            component={TextField}
+            type='text'
+            theme='regular'
+            label='Логин или номер'
+          />
+        </div>}
+        <div className='field field_type_radio'>
+          <Field
+            id='whatsappRadio'
+            name='connection'
+            value='whatsapp'
+            type='radio'
+            component={Radio}
+          >
+            WhatsApp
+          </Field>
+        </div>
+        {connection === 'whatsapp' && <div className='field field_type_connection'>
+          <Field
+            id='whatsappField'
+            name='whatsapp'
+            component={TextField}
+            type='text'
+            theme='regular'
+            label='Номер'
+          />
+        </div>}
+        <div className='field field_type_radio'>
+          <Field
+            id='emailRadio'
+            name='connection'
+            value='email'
+            type='radio'
+            component={Radio}
+          >
+            E-mail
+          </Field>
+        </div>
+        {connection === 'email' && <div className='field field_type_connection'>
+          <Field
+            id='emailField'
+            name='email'
+            component={TextField}
+            type='email'
+            theme='regular'
+            label='E-mail'
+          />
+        </div>}
+        <div className='field field_type_radio'>
+          <Field
+            id='phoneRadio'
+            name='connection'
+            value='phone'
+            type='radio'
+            component={Radio}
+          >
+            Телефон
+          </Field>
+        </div>
+        {connection === 'phone' && <div className='field field_type_connection'>
+          <Field
+            id='phoneField'
+            name='phone'
+            component={TextField}
+            type='text'
+            theme='regular'
+            label='Номер'
+          />
+        </div>}
+        <div className='field field_type_radio'>
+          <Field
+            id='otherRadio'
+            name='connection'
+            value='other'
+            type='radio'
+            component={Radio}
+          >
+            Указан в резюме
+          </Field>
+        </div>
+      </Fragment>
+    )
+  }
+
   render() {
     const {
       submitting,
       hasValidationErrors,
       hasSubmitErrors,
       dirtySinceLastSubmit,
-      values: {
-        connection,
-      },
       vacancy,
     } = this.props
 
@@ -63,38 +208,28 @@ class CandidateForm extends PureComponent {
       hasValidationErrors ||
       (hasSubmitErrors && !dirtySinceLastSubmit)
 
+    const dividedSections = this.divideSections()
+
     const { hasComment, hasFile, hasGithub, hasPortfolio, hasResume } = vacancy
+
+    console.log(vacancy)
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className='grid-container row'>
-          <div className='cell'>
-            <h1>{ vacancy.name }</h1>
-            <h2>Дистанционно, и на фуллтайм</h2>
-            <div>{ vacancy.description }</div>
-          </div>
-          <div className='cell'>
-            {this.props.vacancies.map(item =>
-              <li key={item.id}>
-                <Link
-                  prefetch
-                  href={{ pathname: '/ru/job', query: { jobPathName: item.pathName } }}
-                  as={`/ru/jobs/${item.pathName}`}
-                >
-                  <a className='font_link-list_16'>
-                    {item.name}
-                  </a>
-                </Link>
-              </li>
-            )}
-          </div>
-        </div>
-        <div className='grid-container row'>
-          <div className='cell'>{ vacancy.sections.map(section => <Section {...section} />) }</div>
-          <div className='cell' />
-        </div>
-        <div className='grid-container row'>
-          <div className='cell'>
+        <FormRow
+          rightSideContent={this.renderVacancyImageAndLinks()}
+          rightSideWidth='wide'
+        >
+          <h1>{ vacancy.name }</h1>
+          <h2>Дистанционно, и на фуллтайм</h2>
+          <div>{ vacancy.description }</div>
+          {dividedSections.beforeQuestSections.map(section => <Section {...section} />)}
+        </FormRow>
+        {dividedSections.otherSections.map(section => <Section {...section} asRow />)}
+        <FormRow
+          rightSideContent={this.renderConnectionSelection()}
+        >
+          <div>
             <div className='fieldset'>
               <div className='field'>
                 <Field
@@ -199,111 +334,13 @@ class CandidateForm extends PureComponent {
               </AnimatedButton>
             </div>
           </div>
-          <div className='cell'>
-            <div className='field field_type_radio'>
-              <Field
-                id='telegramRadio'
-                name='connection'
-                value='telegram'
-                type='radio'
-                component={Radio}
-              >
-                Telegram
-              </Field>
-            </div>
-            {connection === 'telegram' && <div className='field field_type_connection'>
-              <Field
-                id='telegramField'
-                name='telegram'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Логин или номер'
-              />
-            </div>}
-            <div className='field field_type_radio'>
-              <Field
-                id='whatsappRadio'
-                name='connection'
-                value='whatsapp'
-                type='radio'
-                component={Radio}
-              >
-                WhatsApp
-              </Field>
-            </div>
-            {connection === 'whatsapp' && <div className='field field_type_connection'>
-              <Field
-                id='whatsappField'
-                name='whatsapp'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Номер'
-              />
-            </div>}
-            <div className='field field_type_radio'>
-              <Field
-                id='emailRadio'
-                name='connection'
-                value='email'
-                type='radio'
-                component={Radio}
-              >
-                E-mail
-              </Field>
-            </div>
-            {connection === 'email' && <div className='field field_type_connection'>
-              <Field
-                id='emailField'
-                name='email'
-                component={TextField}
-                type='email'
-                theme='regular'
-                label='E-mail'
-              />
-            </div>}
-            <div className='field field_type_radio'>
-              <Field
-                id='phoneRadio'
-                name='connection'
-                value='phone'
-                type='radio'
-                component={Radio}
-              >
-                Телефон
-              </Field>
-            </div>
-            {connection === 'phone' && <div className='field field_type_connection'>
-              <Field
-                id='phoneField'
-                name='phone'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Номер'
-              />
-            </div>}
-            <div className='field field_type_radio'>
-              <Field
-                id='otherRadio'
-                name='connection'
-                value='other'
-                type='radio'
-                component={Radio}
-              >
-                Указан в резюме
-              </Field>
-            </div>
-          </div>
-        </div><style jsx>{`
+        </FormRow><style jsx>{`
           form {
             position: relative;
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;
             padding-bottom: 31.5rem;
-            width: 1792px;
             align-items: center;
             border: none;
           }
@@ -384,31 +421,7 @@ class CandidateForm extends PureComponent {
             width: 12rem;
           }
 
-          @media (min-width: 1360px) and (max-width: 1919px) {
-            form {
-              width: 1328px;
-            }
-          }
-
-          @media (min-width: 1280px) and (max-width: 1359px) {
-            form {
-              width: 1232px;
-            }
-          }
-
           @media (min-width: 368px) and (max-width: 1279px) {
-            form {
-              padding-top: 6.1875rem;
-              padding-bottom: 31.5rem;
-              background-position: 50% calc(100% - 8.45rem);
-              width: 944px;
-            }
-
-            picture {
-              position: absolute;
-              bottom: 8rem;
-            }
-
             .headline {
               margin-bottom: 2.3125rem;
             }
@@ -420,17 +433,6 @@ class CandidateForm extends PureComponent {
 
             .field_type_textarea {
               margin-bottom: 3.75rem;
-            }
-
-            @media (max-width: 1023px) {
-              form {
-                width: 59rem;
-              }
-
-              picture {
-                width: 21.25rem;
-                height: 13.75rem;
-              }
             }
           }
         `}</style>

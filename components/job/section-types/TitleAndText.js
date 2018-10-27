@@ -3,8 +3,8 @@ import { string } from 'prop-types'
 
 const TitleAndList = ({ text, title }) =>
   <div>
-    {title}
-    {text}
+    <h4 dangerouslySetInnerHTML={{ __html: title }} />
+    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
 
     <style jsx>{`
     	div:before {

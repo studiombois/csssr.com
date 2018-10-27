@@ -3,7 +3,7 @@ import { string } from 'prop-types'
 
 const BoldText = ({ text }) =>
   <div>
-    {text}
+    <p dangerouslySetInnerHTML={{ __html: text }} />
     <style jsx>{`
       div {
         font-weight: 800;

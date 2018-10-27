@@ -3,12 +3,10 @@ import { string, arrayOf } from 'prop-types'
 
 const TitleAndList = ({ list, title }) =>
   <div>
-    {title}
-    <ul>
+    <h4 dangerouslySetInnerHTML={{ __html: title }} />
+    <ul className='ul'>
       {list.map((item, index) => (
-        <li key={index}>
-          {item}
-        </li>
+        <li className='li font_p16-regular' key={index} dangerouslySetInnerHTML={{ __html: item }} />
       ))}
     </ul>
     <style jsx>{`

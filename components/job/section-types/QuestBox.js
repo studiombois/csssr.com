@@ -6,8 +6,8 @@ import Section from '../Section'
 const QuestBox = ({ text, title, sections }) =>
   <div>
     <FormRow>
-      <h3>{title}</h3>
-      {text}
+      <h3 className='font_h2-regular'>{title}</h3>
+      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }}/>
     </FormRow>
 
     {sections.map(section => <Section {...section} asRow />)}

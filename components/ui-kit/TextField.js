@@ -15,7 +15,7 @@ export default class TextField extends PureComponent {
   }
 
   static defaultProps = {
-    state: null,
+    state: 'error',
     theme: 'light',
   }
 
@@ -33,6 +33,7 @@ export default class TextField extends PureComponent {
       type,
       disabled,
       theme,
+      state,
       input: {
         name,
         value,
@@ -82,6 +83,10 @@ export default class TextField extends PureComponent {
 
           div.font_inputted-text-error label:not(:focus) {
             color: #d0021b;
+          }
+
+          div.font_inputted-text-error.textfield_regular input:not(:focus) {
+            border-width: 2px;
           }
 
           div.font_inputted-text-error input:focus {
@@ -137,12 +142,14 @@ export default class TextField extends PureComponent {
           div.textfield_regular label {
             position: absolute;
             margin: auto;
-            top: 0;
+            top: 1.875rem;
             left: 1rem;
-            bottom: 0;
             height: 1rem;
+            line-height: 1rem;
             font-size: 0.875rem;
             color: #9b9b9b;
+            pointer-events: none;
+            user-select: none;
           }
 
           div.font_inputted-text-error input:focus + label,
@@ -154,9 +161,9 @@ export default class TextField extends PureComponent {
             width: 100%;
           }
 
-          div.textfield_filled label,
+          div.textfield_filled.textfield_regular label,
           div.textfield_regular input:focus + label {
-            bottom: 2.5rem;
+            top: 0.375rem;
             font-size: 0.625rem;
           }
 

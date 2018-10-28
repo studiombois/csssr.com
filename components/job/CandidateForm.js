@@ -71,7 +71,11 @@ class CandidateForm extends PureComponent {
 
     return (
       <Fragment>
-        <div>
+        <div claccName='picture'>
+          <img claccName='picture' src='https://via.placeholder.com/400' />
+        </div>
+
+        <ul>
           {vacancies.map(vacancy =>
             <li key={vacancy.id}>
               <Link
@@ -85,7 +89,26 @@ class CandidateForm extends PureComponent {
               </Link>
             </li>
           )}
-        </div>
+        </ul><style jsx>{`
+        div.picture {
+          width: 100%;
+        }
+
+        div.picture img {
+          width: 100%;
+        }
+
+        ul {
+          margin-top: 2.25rem;
+          margin-left: auto;
+          margin-right: auto;
+          width: 12rem;
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      `}</style>
       </Fragment>
     )
   }
@@ -95,6 +118,9 @@ class CandidateForm extends PureComponent {
 
     return (
       <Fragment>
+        <h3 className='font_h3-regular headline'>
+          Желаемый способ связи:
+        </h3>
         <div className='field field_type_radio'>
           <Field
             id='telegramRadio'
@@ -189,7 +215,16 @@ class CandidateForm extends PureComponent {
           >
             Указан в резюме
           </Field>
-        </div>
+        </div><style jsx>{`
+        .field_type_radio {
+          margin-bottom: 1rem;
+        }
+
+        .field_type_connection {
+          margin-top: 2rem;
+          margin-bottom: 3rem;
+        }
+      `}</style>
       </Fragment>
     )
   }
@@ -212,17 +247,15 @@ class CandidateForm extends PureComponent {
 
     const { hasComment, hasFile, hasGithub, hasPortfolio, hasResume } = vacancy
 
-    console.log(vacancy)
-
     return (
       <form onSubmit={this.handleSubmit}>
         <FormRow
           rightSideContent={this.renderVacancyImageAndLinks()}
           rightSideWidth='wide'
         >
-          <h1>{ vacancy.name }</h1>
-          <h2>Дистанционно, и на фуллтайм</h2>
-          <div>{ vacancy.description }</div>
+          <h1 className='font_h1-regular'>{ vacancy.name }</h1>
+          <h2 className='font_subhead-regular'>Дистанционно, и на фуллтайм</h2>
+          <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />
           {dividedSections.beforeQuestSections.map(section => <Section {...section} />)}
         </FormRow>
         {dividedSections.otherSections.map(section => <Section {...section} asRow />)}
@@ -230,6 +263,7 @@ class CandidateForm extends PureComponent {
           rightSideContent={this.renderConnectionSelection()}
         >
           <div>
+            <h2 className='font_h2-regular'>Расскажите о себе</h2>
             <div className='fieldset'>
               <div className='field'>
                 <Field
@@ -343,29 +377,6 @@ class CandidateForm extends PureComponent {
             padding-bottom: 31.5rem;
             align-items: center;
             border: none;
-          }
-
-          .cell:first-child {
-            grid-column: 2 / span 6;
-          }
-
-          .cell:last-child {
-            grid-column: 10 / span 2;
-            height: 100%;
-          }
-
-          picture {
-            position: absolute;
-            bottom: 10.75rem;
-            left: 50%;
-            z-index: -1;
-            width: 340px;
-            height: 220px;
-            transform: translateX(-50%);
-          }
-
-          img {
-            width: 100%;
           }
 
           .headline {

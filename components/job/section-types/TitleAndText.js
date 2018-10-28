@@ -3,7 +3,7 @@ import { string } from 'prop-types'
 
 const TitleAndList = ({ text, title }) =>
   <div>
-    <h4 dangerouslySetInnerHTML={{ __html: title }} />
+    <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
     <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
 
     <style jsx>{`

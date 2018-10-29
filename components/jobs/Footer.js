@@ -22,7 +22,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
       ? <span className='logo-wrapper'>
         <img
           className='logo'
-          src='../static/icons/csssr_logo.svg'
+          src='/static/icons/csssr_logo.svg'
           alt='CSSSR Logo'
         />
       </span>
@@ -32,7 +32,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
           <a>
             <img
               className='logo'
-              src='../static/icons/csssr_logo.svg'
+              src='/static/icons/csssr_logo.svg'
               alt='CSSSR Logo'
             />
           </a>
@@ -51,7 +51,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
           >
             <img
               className='social-logo'
-              src={`../static/icons/${label.toLowerCase()}.svg`}
+              src={`/static/icons/${label.toLowerCase()}.svg`}
               alt={`${label} logo`}
             />
           </a>
@@ -66,7 +66,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
           className='font_footer-link'
           onClick={handleLinkClick}
         >
-          Политика конфеденциальности
+          Политика конфиденциальности
         </a>
       </li>
 

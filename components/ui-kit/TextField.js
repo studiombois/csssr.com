@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react'
+import cn from 'classnames'
 import { string, oneOf, bool } from 'prop-types'
 
 export default class TextField extends PureComponent {
   static propTypes = {
     id: string,
+    theme: oneOf(['regular', 'light']),
     state: oneOf(['error', null]),
     placeholder: string,
     label: string,
@@ -13,7 +15,8 @@ export default class TextField extends PureComponent {
   }
 
   static defaultProps = {
-    state: null,
+    state: 'error',
+    theme: 'light',
   }
 
   handleChange = event => {
@@ -29,6 +32,8 @@ export default class TextField extends PureComponent {
       autoFocus,
       type,
       disabled,
+      theme,
+      state,
       input: {
         name,
         value,
@@ -39,7 +44,14 @@ export default class TextField extends PureComponent {
     } = this.props
 
     return (
-      <div className={value && meta.error && meta.touched ? 'font_inputted-text-error' : 'font_input-basic-label'}>
+      <div
+        className={cn({
+          'font_inputted-text-error': (value && meta.error && meta.touched),
+          'font_input-basic-label': !(value && meta.error && meta.touched),
+          [`textfield_${theme}`]: theme,
+          textfield_filled: value,
+        })}
+      >
         <input
           id={id}
           className={value && meta.error && meta.touched ? 'font_inputted-text-error' : 'font_inputted-text-regular'}
@@ -61,6 +73,7 @@ export default class TextField extends PureComponent {
           {label}
         </label>}<style jsx>{`
           div {
+            position: relative;
             height: 4.375rem;
           }
 
@@ -72,6 +85,10 @@ export default class TextField extends PureComponent {
             color: #d0021b;
           }
 
+          div.font_inputted-text-error.textfield_regular input:not(:focus) {
+            border-width: 2px;
+          }
+
           div.font_inputted-text-error input:focus {
             color: #4a4a4a;
             border-color: #e1e1e1;
@@ -79,6 +96,8 @@ export default class TextField extends PureComponent {
 
           input {
             padding-bottom: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
             display: block;
             width: 100%;
             height: 2.5rem;
@@ -93,6 +112,14 @@ export default class TextField extends PureComponent {
             color: #c0c0c0;
           }
 
+          div.textfield_regular input {
+            padding-top: 1rem;
+            padding-bottom: 0;
+            height: 100%;
+            text-align: left;
+            border: solid 0.0625rem #e1e1e1;
+          }
+
           label {
             position: relative;
             display: flex;
@@ -101,7 +128,7 @@ export default class TextField extends PureComponent {
             height: 2rem;
           }
 
-          label::before {
+          div.textfield_light label::before {
             content: '';
             position absolute;
             top: 0.0625rem;
@@ -112,13 +139,32 @@ export default class TextField extends PureComponent {
             transition: width 0.1s ease-out;
           }
 
+          div.textfield_regular label {
+            position: absolute;
+            margin: auto;
+            top: 1.875rem;
+            left: 1rem;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.875rem;
+            color: #9b9b9b;
+            pointer-events: none;
+            user-select: none;
+          }
+
           div.font_inputted-text-error input:focus + label,
           input:focus + label {
             color: #0076ff;
           }
 
-          input:focus + label::before {
+          div.textfield_light input:focus + label::before {
             width: 100%;
+          }
+
+          div.textfield_filled.textfield_regular label,
+          div.textfield_regular input:focus + label {
+            top: 0.375rem;
+            font-size: 0.625rem;
           }
 
           @media (min-width: 368px) and (max-width: 1279px) {

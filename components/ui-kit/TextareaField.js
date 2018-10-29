@@ -6,6 +6,7 @@ export default class TextareaField extends PureComponent {
   static propTypes = {
     tag: string,
     id: string,
+    theme: oneOf(['regular', 'light']),
     state: oneOf(['error', null]),
     placeholder: string,
     label: string,
@@ -16,6 +17,7 @@ export default class TextareaField extends PureComponent {
 
   static defaultProps = {
     state: null,
+    theme: 'light',
   }
 
   handleChange = event => {
@@ -31,6 +33,7 @@ export default class TextareaField extends PureComponent {
       label,
       autoFocus,
       type,
+      theme,
       disabled,
       input: {
         name,
@@ -38,11 +41,14 @@ export default class TextareaField extends PureComponent {
         onBlur,
         onFocus,
       },
+      meta,
     } = this.props
 
     return (
       <div className={cn('font_inputted-text-regular', {
         error: state === 'error',
+        [`textfield_${theme}`]: theme,
+        textfield_filled: value,
       })}>
         <textarea
           id={id}
@@ -59,10 +65,14 @@ export default class TextareaField extends PureComponent {
           value={value}
         />
         {label && <label
+          className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
           htmlFor={id}
         >
           {label}
         </label>}<style jsx>{`
+          div.textfield_regular {
+            position: relative;
+          }
           div.error textarea {
             color: #d0021b;
             border-color: #d0021b;
@@ -91,7 +101,11 @@ export default class TextareaField extends PureComponent {
             border-color: #0076ff;
           }
 
-          label {
+          div.textfield_regular textarea:focus + label {
+            color: #0076ff;
+          }
+
+          div.textfield_light label {
             border: 0;
             clip: rect(0 0 0 0);
             height: 0.0625rem;
@@ -100,6 +114,30 @@ export default class TextareaField extends PureComponent {
             padding: 0;
             position: absolute;
             width: 0.0625rem;
+          }
+
+          div.textfield_regular textarea {
+            padding-top: 1.5rem;
+            text-align: left;
+          }
+
+          div.textfield_regular label {
+            position: absolute;
+            margin: auto;
+            top: 1.875rem;
+            left: 1rem;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.875rem;
+            color: #9b9b9b;
+            pointer-events: none;
+            user-select: none;
+          }
+
+          div.textfield_filled.textfield_regular label,
+          div.textfield_regular textarea:focus + label {
+            top: 0.375rem;
+            font-size: 0.625rem;
           }
 
           @media (min-width: 368px) and (max-width: 1279px) {

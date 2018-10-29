@@ -1,8 +1,8 @@
 import React from 'react'
 import { translate } from 'react-i18next'
 
-const CookiesPolicy = ({ className, t }) => (
-  <article className={`${className} grid-container`} id='cookies-policy'>
+const CookiesPolicy = ({ t }) => (
+  <article className='grid-container' id='cookies-policy'>
     <header>
       <h2 className='font_h1-regular'>
         {t('common:cookiesPolicy.title')}

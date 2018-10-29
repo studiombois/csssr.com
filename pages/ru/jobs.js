@@ -1,4 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
+import fetch from 'isomorphic-unfetch'
 import Head from '../../components/Head'
 import withI18next from '../../utils/withI18next'
 import Layout from '../../components/Layout'

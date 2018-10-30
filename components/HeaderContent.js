@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
-import { bool, object, string, number/* , func*/ } from 'prop-types'
+import { bool, object, string, number, func } from 'prop-types'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
-// import BurgerIcon from '../static/icons/burger.svg'
+import BurgerIcon from '../static/icons/burger.svg'
 
-// const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
+const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
   static propTypes = {
@@ -16,12 +16,12 @@ class HeaderContent extends PureComponent {
     scrollbarWidth: number,
     isHalfed: bool,
     isLogoLink: bool,
-    // isBurgerVisible: bool,
+    isBurgerVisible: bool,
     isSideBarOpened: bool,
     showHeader: bool,
     pinHeader: bool,
     toggleHeaderAnimations: bool,
-    // onSideBarToggle: func,
+    onSideBarToggle: func,
   }
 
   render() {
@@ -34,12 +34,12 @@ class HeaderContent extends PureComponent {
       scrollbarWidth,
       isHalfed,
       isLogoLink,
-      // isBurgerVisible,
+      isBurgerVisible,
       isSideBarOpened,
       showHeader,
       pinHeader,
       toggleHeaderAnimations,
-      // onSideBarToggle,
+      onSideBarToggle,
       t,
     } = this.props
 
@@ -106,11 +106,11 @@ class HeaderContent extends PureComponent {
             {t(`common:sectionName.${pathname.slice(1)}`)}
           </span>
 
-          {/* {isBurgerVisible &&
+          {isBurgerVisible &&
             <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
               {burgerIcon}
             </button>
-          } */}
+          }
         </div><style jsx>{`
           sup {
             position: absolute;

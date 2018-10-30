@@ -1,23 +1,23 @@
 import React from 'react'
 import { number, string } from 'prop-types'
 import { Field } from 'react-final-form'
+import { translate } from 'react-i18next'
 import TextareaField from '../../ui-kit/TextareaField'
 import TextField from '../../ui-kit/TextField'
 import FormRow from '../FormRow'
-import noun from '../../../utils/noun'
 
-const renderTime = time => (
+const renderTime = (time, t) => (
   <div>
-    <div className='font_subhead-regular value'>{`~ ${time} ${noun(time)}`}</div>
+    <div className='font_subhead-regular value'>{t('job:minutes', { count: Number(time) })}</div>
     <div className='font_p16-regular hint'>
       потребуется на решение
     </div>
   </div>
 )
 
-const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title/* , index*/ }) =>
+const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t/* , index*/ }) =>
   <FormRow
-    rightSideContent={renderTime(time)}
+    rightSideContent={renderTime(time, t)}
   >
     <h3 className='font_h3-regular headline'>
       {/* TODO: передавать реальный индекс задания */ }
@@ -74,4 +74,4 @@ QuestionAndAnswer.propTypes = {
   title: string,
 }
 
-export default QuestionAndAnswer
+export default translate()(QuestionAndAnswer)

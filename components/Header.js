@@ -4,7 +4,7 @@ import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
 import getHeaderLinks from '../utils/getHeaderLinks'
 import getScrollbarWidth from '../utils/getScrollbarWidth'
-import SideBar from './SideBar'
+// import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
 class Header extends PureComponent {
@@ -117,11 +117,11 @@ class Header extends PureComponent {
 
     return (
       <Fragment>
-        <SideBar
+        {/* <SideBar
           onToggle={this.handleSideBarToggle}
           isOpened={isSideBarOpened}
           onClose={this.handleSideBarClose}
-        />
+        /> */}
         <HeaderContent
           links={links}
           pathname={pathname}

@@ -5,23 +5,15 @@ import cn from 'classnames'
 import { translate } from 'react-i18next'
 import CrossIcon from '../static/icons/cross.svg'
 import ClickOutside from './ui-kit/ClickOutside'
+import getSectionName from '../utils/getSectionName'
 import Link from 'next/link'
 
 const items = [{
   path: '',
-  key: 'common:menu.softwareEngineering',
+  key: 'common:menu.dev',
 }, {
-  path: '/recruitment',
-  key: 'common:menu.recruitment',
-}, {
-  path: '/company',
-  key: 'common:menu.company',
-}, {
-  path: '/products',
-  key: 'common:menu.products',
-}, {
-  path: '/education',
-  key: 'common:menu.education',
+  path: '/jobs',
+  key: 'common:menu.jobs',
 }]
 
 const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
@@ -48,7 +40,6 @@ export class SideBar extends PureComponent {
 
     return (
       <li key={key} className='item'>
-        {/* Добавить prefetch когда будут готовы страницы */}
         <Link href={languageHref}>
           <a className={cn('font_burger-menu link', {
             link_active: pathname === languageHref,
@@ -75,7 +66,7 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { isOpened, onToggle, onClose, t } = this.props
+    const { router: { pathname }, isOpened, onToggle, onClose, t } = this.props
 
     return (
       <aside className={cn('sidebar', {
@@ -90,30 +81,10 @@ export class SideBar extends PureComponent {
           </button>
           <div className='body'>
             <div className='top'>
-              <div className='font_perforator-16-black active'>{t('common:menu.softwareEngineering')}</div>
+              <div className='font_perforator-16-black active'>{t(getSectionName(pathname))}</div>
               <ul className='list'>
                 {items.map(this.renderNavItem)}
               </ul>
-            </div>
-            <div className='bottom'>
-              <a
-                href='/ru'
-                className='font_footer-link'
-              >
-                Доступно на русском языке
-              </a>
-              <a
-                href='/en'
-                className='font_footer-link'
-              >
-                EN
-              </a>
-              <a
-                href='/de'
-                className='font_footer-link'
-              >
-                DE
-              </a>
             </div>
           </div>
         </ClickOutside><style jsx>{`
@@ -181,17 +152,6 @@ export class SideBar extends PureComponent {
             text-align: right;
           }
 
-          /*.active::before {
-            position: absolute;
-            top: 0.9375rem;
-            left: 50%;
-            height: 6rem;
-            width: 4rem;
-            opacity: 0.3;
-            background-color: #ff0000;
-            content: '';
-          }*/
-
           .body {
             padding-bottom: 4rem;
             display: flex;
@@ -203,27 +163,6 @@ export class SideBar extends PureComponent {
           .top {
             margin-top: 1.5rem;
           }
-
-          .bottom {
-            position: relative;
-            margin-top: 1rem;
-            margin-bottom: -0.375rem;
-            padding-right: 5.5rem;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-          }
-
-          /*.bottom::before {
-            position: absolute;
-            top: 1.125rem;
-            left: 78%;
-            height: 4rem;
-            width: 4rem;
-            opacity: 0.3;
-            background-color: #ff0000;
-            content: '';
-          }*/
 
           .bottom a {
             margin-right: 0.125rem;

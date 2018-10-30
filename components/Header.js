@@ -1,32 +1,48 @@
 import React, { PureComponent, Fragment } from 'react'
-import { object, string } from 'prop-types'
+import { object, string, bool } from 'prop-types'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
-import headerLinks from '../data/headerLinks'
-import SideBar from './SideBar'
+import getHeaderLinks from '../utils/getHeaderLinks'
+import getScrollbarWidth from '../utils/getScrollbarWidth'
+// import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
 class Header extends PureComponent {
   static propTypes = {
     router: object,
     sectionName: string,
+    logoHref: string,
+    logoAlt: string,
+    logoSup: string,
+    isHalfed: bool,
+    isLogoLink: bool,
+    isBurgerVisible: bool,
   }
 
   state = {
+    logoAlt: 'CSSSR logo',
     showHeader: true,
     pinHeader: true,
     toggleHeaderAnimations: false,
     isSideBarOpened: false,
+    isHalfed: false,
+    isLogoLink: false,
+    isBurgerVisible: false,
   }
 
   lastScrollTop = 0
 
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll)
+
+    this.scrollbarWidth = getScrollbarWidth()
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
+
+    document.body.style.overflow = 'initial'
+    document.body.style.paddingRight = 0
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -36,11 +52,8 @@ class Header extends PureComponent {
       return
     }
 
-    if (isSideBarOpened) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'initial'
-    }
+    document.body.style.overflow = isSideBarOpened ? 'hidden' : 'initial'
+    document.body.style.paddingRight = isSideBarOpened ? `${this.scrollbarWidth}px` : 0
   }
 
   handleSideBarToggle = () => {
@@ -89,23 +102,40 @@ class Header extends PureComponent {
   }
 
   render() {
-    const { router: { pathname }, sectionName } = this.props
-    const { showHeader, pinHeader, toggleHeaderAnimations } = this.state
-    const links = headerLinks.dev // TODO: переписать получение массива в зависимости от типа страницы что-то наподобие links = headerLinks[lang][router.path]
+    const {
+      router: { pathname },
+      sectionName,
+      logoHref,
+      logoAlt,
+      logoSup,
+      isHalfed,
+      isLogoLink,
+      isBurgerVisible,
+    } = this.props
+    const { showHeader, pinHeader, isSideBarOpened, toggleHeaderAnimations } = this.state
+    const links = getHeaderLinks(pathname)
 
     return (
       <Fragment>
-        <SideBar
+        {/* <SideBar
           onToggle={this.handleSideBarToggle}
-          isOpened={this.state.isSideBarOpened}
+          isOpened={isSideBarOpened}
           onClose={this.handleSideBarClose}
-        />
+        /> */}
         <HeaderContent
           links={links}
           pathname={pathname}
           sectionName={sectionName}
           showHeader={showHeader}
           pinHeader={pinHeader}
+          logoHref={logoHref}
+          logoAlt={logoAlt}
+          logoSup={logoSup}
+          scrollbarWidth={this.scrollbarWidth}
+          isHalfed={isHalfed}
+          isLogoLink={isLogoLink}
+          isBurgerVisible={isBurgerVisible}
+          isSideBarOpened={isSideBarOpened}
           toggleHeaderAnimations={toggleHeaderAnimations}
           onSideBarToggle={this.handleSideBarToggle}
         />

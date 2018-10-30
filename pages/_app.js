@@ -2,7 +2,7 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import initialI18nInstance from '../common/i18n'
-import Layout from '../components/Layout'
+// import Layout from '../components/Layout'
 
 export default class MyApp extends App {
   componentDidMount() {
@@ -29,9 +29,9 @@ export default class MyApp extends App {
           initialLanguage={initialLanguage}
         >
           <React.Fragment>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
+            {/* <Layout> */}
+            <Component {...pageProps} />
+            {/* </Layout> */}
           </React.Fragment>
         </I18nextProvider>
       </Container>

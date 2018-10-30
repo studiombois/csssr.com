@@ -4,14 +4,17 @@
     "description": "We specialize in developing high load web applications, using JavaScript. And dream about space."
   },
   "headerNav": {
-    "services": "Competence & Services",
+    "competence": "Competence",
+    "services": "Services",
     "customers": "Customers",
     "hireUs": "Hire us"
   },
   "imgAlt": {
+    "dog": "a dog flying through the open space, on a space ship called “MVP”, symbolizing our successfully launched projects",
     "geometry": "geometric figures showing the range of our services: a triangle with the text “MVP”, a circle with the text “Support the development of high load web applications” and a square with the text “Stack migration”",
     "time": "a woman on a bike with a jet pack, showing how quickly we do our job, with the text “We care about time-to-market metrics”",
-    "perfect": "a man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly, with the text “We born with a gene of perfectionism”"
+    "perfect": "a man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly, with the text “We born with a gene of perfectionism”",
+    "letter": "a letter — hang-glider on which a man is flying"
   },
   "hire": {
     "title": "We make the\u00A0world more logical with\u00A0JS",

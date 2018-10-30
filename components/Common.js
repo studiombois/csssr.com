@@ -47,6 +47,22 @@ const Common = () =>
       grid-gap: 0 32px;
     }
 
+    ul .squareItem {
+      position: relative;
+      padding-left: 1rem;
+    }
+  
+    ul .squareItem:before {
+      content: '';
+      position: absolute;
+      top: 0.5625rem;
+      left: 0;
+      box-sizing: border-box;
+      width: 0.5rem;
+      height: 0.5rem;
+      border: 0.125rem solid black;
+    }
+
     /* TODO:
       1. получить ссылку на шрифты с google fonts
       2. вставить в браузер и скопировать нужные @font-face, удалив из url local шрифты

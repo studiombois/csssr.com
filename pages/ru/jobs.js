@@ -15,7 +15,6 @@ class Jobs extends PureComponent {
 
   render() {
     const { t, vacancies } = this.props
-
     return (
       <Fragment>
         <Layout
@@ -32,14 +31,6 @@ class Jobs extends PureComponent {
           <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
           <Vacancies vacancies={vacancies} />
         </Layout>
-
-        <style jsx>{`
-          img {
-            display: block;
-            width: 50vw;
-            height: 100vh;
-          }
-        `}</style>
       </Fragment>
     )
   }

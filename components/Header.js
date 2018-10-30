@@ -117,11 +117,11 @@ class Header extends PureComponent {
 
     return (
       <Fragment>
-        {/*<SideBar*/}
-          {/*onToggle={this.handleSideBarToggle}*/}
-          {/*isOpened={isSideBarOpened}*/}
-          {/*onClose={this.handleSideBarClose}*/}
-        {/*/>*/}
+        {/* <SideBar
+          onToggle={this.handleSideBarToggle}
+          isOpened={isSideBarOpened}
+          onClose={this.handleSideBarClose}
+        /> */}
         <HeaderContent
           links={links}
           pathname={pathname}

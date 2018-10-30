@@ -15,7 +15,7 @@ const renderTime = time => (
   </div>
 )
 
-const QuestionAndAnswer = ({ index, linkText, taskLink, taskText, time, title }) =>
+const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title/* , index*/ }) =>
   <FormRow
     rightSideContent={renderTime(time)}
   >

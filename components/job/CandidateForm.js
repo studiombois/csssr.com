@@ -2,8 +2,8 @@ import React, { PureComponent, Fragment } from 'react'
 import { Field } from 'react-final-form'
 import Link from 'next/link'
 import FormRow from './FormRow'
+import ContactOptions from './ContactOptions'
 import Checkbox from '../ui-kit/Checkbox'
-import Radio from '../ui-kit/Radio'
 import TextField from '../ui-kit/TextField'
 import TextareaField from '../ui-kit/TextareaField'
 import Section from '../job/Section'
@@ -71,8 +71,8 @@ class CandidateForm extends PureComponent {
 
     return (
       <Fragment>
-        <div claccName='picture'>
-          <img claccName='picture' src='https://via.placeholder.com/400' />
+        <div className='picture'>
+          <img className='picture' src='https://via.placeholder.com/400' />
         </div>
 
         <ul>
@@ -113,120 +113,10 @@ class CandidateForm extends PureComponent {
     )
   }
 
-  renderConnectionSelection = () => {
+  renderContactOptions = () => {
     const { values: { connection } } = this.props
 
-    return (
-      <Fragment>
-        <h3 className='font_h3-regular headline'>
-          Желаемый способ связи:
-        </h3>
-        <div className='field field_type_radio'>
-          <Field
-            id='telegramRadio'
-            name='connection'
-            value='telegram'
-            type='radio'
-            component={Radio}
-          >
-            Telegram
-          </Field>
-        </div>
-        {connection === 'telegram' && <div className='field field_type_connection'>
-          <Field
-            id='telegramField'
-            name='telegram'
-            component={TextField}
-            type='text'
-            theme='regular'
-            label='Логин или номер'
-          />
-        </div>}
-        <div className='field field_type_radio'>
-          <Field
-            id='whatsappRadio'
-            name='connection'
-            value='whatsapp'
-            type='radio'
-            component={Radio}
-          >
-            WhatsApp
-          </Field>
-        </div>
-        {connection === 'whatsapp' && <div className='field field_type_connection'>
-          <Field
-            id='whatsappField'
-            name='whatsapp'
-            component={TextField}
-            type='text'
-            theme='regular'
-            label='Номер'
-          />
-        </div>}
-        <div className='field field_type_radio'>
-          <Field
-            id='emailRadio'
-            name='connection'
-            value='email'
-            type='radio'
-            component={Radio}
-          >
-            E-mail
-          </Field>
-        </div>
-        {connection === 'email' && <div className='field field_type_connection'>
-          <Field
-            id='emailField'
-            name='email'
-            component={TextField}
-            type='email'
-            theme='regular'
-            label='E-mail'
-          />
-        </div>}
-        <div className='field field_type_radio'>
-          <Field
-            id='phoneRadio'
-            name='connection'
-            value='phone'
-            type='radio'
-            component={Radio}
-          >
-            Телефон
-          </Field>
-        </div>
-        {connection === 'phone' && <div className='field field_type_connection'>
-          <Field
-            id='phoneField'
-            name='phone'
-            component={TextField}
-            type='text'
-            theme='regular'
-            label='Номер'
-          />
-        </div>}
-        <div className='field field_type_radio'>
-          <Field
-            id='otherRadio'
-            name='connection'
-            value='other'
-            type='radio'
-            component={Radio}
-          >
-            Указан в резюме
-          </Field>
-        </div><style jsx>{`
-        .field_type_radio {
-          margin-bottom: 1rem;
-        }
-
-        .field_type_connection {
-          margin-top: 2rem;
-          margin-bottom: 3rem;
-        }
-      `}</style>
-      </Fragment>
-    )
+    return <ContactOptions connection={connection}/>
   }
 
   render() {
@@ -245,7 +135,7 @@ class CandidateForm extends PureComponent {
 
     const dividedSections = this.divideSections()
 
-    const { hasComment, hasFile, hasGithub, hasPortfolio, hasResume } = vacancy
+    const { hasComment, hasGithub, hasPortfolio, hasResume/* , hasFile*/ } = vacancy
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -260,7 +150,7 @@ class CandidateForm extends PureComponent {
         </FormRow>
         {dividedSections.otherSections.map(section => <Section {...section} asRow />)}
         <FormRow
-          rightSideContent={this.renderConnectionSelection()}
+          rightSideContent={this.renderContactOptions()}
         >
           <div>
             <h2 className='font_h2-regular'>Расскажите о себе</h2>
@@ -379,26 +269,12 @@ class CandidateForm extends PureComponent {
             border: none;
           }
 
-          .headline {
-            margin-bottom: 6rem;
-            text-align: center;
-          }
-
           .field {
             margin-bottom: 2.0625rem;
           }
 
           .field_type_checkbox {
             margin-bottom: 3.57125rem;
-          }
-
-          .field_type_radio {
-            margin-bottom: 1rem;
-          }
-
-          .field_type_connection {
-            margin-top: 2rem;
-            margin-bottom: 3rem;
           }
 
           .fieldset {
@@ -433,10 +309,6 @@ class CandidateForm extends PureComponent {
           }
 
           @media (min-width: 368px) and (max-width: 1279px) {
-            .headline {
-              margin-bottom: 2.3125rem;
-            }
-
             .field {
               grid-column: 4 / span 6;
               margin-bottom: 1.875rem;

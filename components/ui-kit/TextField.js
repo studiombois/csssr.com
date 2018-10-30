@@ -33,7 +33,7 @@ export default class TextField extends PureComponent {
       type,
       disabled,
       theme,
-      state,
+      // state,
       input: {
         name,
         value,

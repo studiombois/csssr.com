@@ -3,7 +3,7 @@ import { string, number, bool } from 'prop-types'
 import { Field } from 'react-final-form'
 import TextareaField from '../../ui-kit/TextareaField'
 
-const JobSectionTextField = ({ index, title, maxLength, required }) =>
+const JobSectionTextField = ({ title, maxLength, required/* , index*/ }) =>
   <div>
     <h3 className='font_h3-regular' dangerouslySetInnerHTML={{ __html: `${required && '* '}${title}` }} />
     <Field

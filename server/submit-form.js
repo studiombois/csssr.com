@@ -67,7 +67,7 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
-        console.log(JSON.stringify(createContactData))
+        console.log('server/submit-form.js ERROR', JSON.stringify(createContactData))
         return res.status(400).send({ error: 'Произошла ошибка' })
       }
 
@@ -93,9 +93,11 @@ module.exports = (req, res) => {
         .then(response => response.json())
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
-            console.log(JSON.stringify(createLeadData))
+            console.log('server/submit-form.js ERROR', JSON.stringify(createLeadData))
             return res.status(400).send({ error: 'Произошла ошибка' })
           }
+
+          console.log('server/submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))
           return res.sendStatus(201)
         })
     })

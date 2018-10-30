@@ -6,8 +6,6 @@ import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
 import withI18next from '../../utils/withI18next'
 
-import Section from '../../components/job/Section'
-
 class Jobs extends PureComponent {
   static async getInitialProps({ query }) {
     const res = await fetch('https://hr.csssr.ru/api/public/vacancies/active')
@@ -19,8 +17,6 @@ class Jobs extends PureComponent {
       vacancy: vacancies.find(v => v.pathName === query.jobPathName),
     }
   }
-
-  renderForm = props => <CandidateForm {...props} />
 
   render() {
     const { t, vacancy, vacancies } = this.props
@@ -41,7 +37,7 @@ class Jobs extends PureComponent {
             vacancy={vacancy}
             vacancies={vacancies}
             onSubmit={() => {}}
-            render={this.renderForm}
+            component={CandidateForm}
           />
         </Layout>
       </Fragment>

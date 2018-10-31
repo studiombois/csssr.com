@@ -30,18 +30,6 @@ const options = [{
   },
 }, {
   radio: {
-    id: 'emailRadio',
-    value: 'email',
-    text: 'E-mail',
-  },
-  input: {
-    id: 'emailField',
-    value: 'email',
-    text: 'E-mail',
-    type: 'email',
-  },
-}, {
-  radio: {
     id: 'phoneRadio',
     value: 'phone',
     text: 'Телефон',
@@ -63,7 +51,7 @@ const options = [{
 const ContactOptions = ({ connection }) =>
   <>
     <h3 className='font_h3-regular headline'>
-      Желаемый способ связи:
+      Дополнительный способ связи:
     </h3>
     {options.map(option =>
       <>

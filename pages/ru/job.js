@@ -5,10 +5,11 @@ import Layout from '../../components/Layout'
 import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
 import withI18next from '../../utils/withI18next'
+import hrOrigin from '../../utils/hrOrigin'
 
 class Job extends PureComponent {
   static async getInitialProps({ query }) {
-    const res = await fetch('https://hr.csssr.ru/api/public/vacancies/active')
+    const res = await fetch(`${hrOrigin}/api/public/vacancies/active`)
     const vacancies = await res.json()
 
     // TODO 404 если вакансия недоступна

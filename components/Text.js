@@ -371,22 +371,6 @@ const Text = () =>
       color: #000000;
     }
 
-    .ul .li {
-      position: relative;
-      padding-left: 1rem;
-    }
-  
-    .ul .li:before {
-      content: '';
-      position: absolute;
-      top: 0.5625rem;
-      left: 0;
-      box-sizing: border-box;
-      width: 0.5rem;
-      height: 0.5rem;
-      border: 0.125rem solid black;
-    }
-
     @media (max-width: 1279px) {
       .font_h1-slab {
         margin-top: -0.1875rem;

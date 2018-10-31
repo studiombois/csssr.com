@@ -8,6 +8,7 @@ export default class TextareaField extends PureComponent {
     id: string,
     theme: oneOf(['regular', 'light']),
     state: oneOf(['error', null]),
+    className: string,
     placeholder: string,
     label: string,
     autoFocus: bool,
@@ -35,6 +36,7 @@ export default class TextareaField extends PureComponent {
       type,
       theme,
       disabled,
+      className,
       input: {
         name,
         value,
@@ -49,6 +51,7 @@ export default class TextareaField extends PureComponent {
         error: state === 'error',
         [`textfield_${theme}`]: theme,
         textfield_filled: value,
+        [`${className}`]: !!className,
       })}>
         <textarea
           id={id}

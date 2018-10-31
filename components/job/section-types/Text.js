@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 
 const Text = ({ text }) =>
-  <div>
+  <Fragment>
     <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
     <style jsx>{`
-    	div:before {
-    	  content: 'text '
-    	}
+      :global(ul) + p {
+        margin-top: 2.5rem;
+      }
+
+      p {
+        margin-top: 0.5rem;
+      }
     `}</style>
-  </div>
+  </Fragment>
 
 Text.propTypes = {
   text: string,

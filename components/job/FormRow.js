@@ -10,16 +10,23 @@ const FormRow = ({ children, rightSideContent, rightSideWidth = 'narrow', fullWi
         cell_primary: !fullWidth,
         cell_fullWidth: fullWidth,
       })}
-    >{children}</div>
-    {!fullWidth && <div
-      className={cn({
-        cell: true,
-        cell_narrow: rightSideWidth === 'narrow',
-        cell_wide: rightSideWidth === 'wide',
-      })}
     >
-      {rightSideContent}
-    </div>}<style jsx>{`
+      {children}
+    </div>
+
+    {!fullWidth &&
+      <div
+        className={cn({
+          cell: true,
+          cell_narrow: rightSideWidth === 'narrow',
+          cell_wide: rightSideWidth === 'wide',
+        })}
+      >
+        {rightSideContent}
+      </div>
+    }
+
+    <style jsx>{`
       div.row {
         position: relative;
         margin-right: auto;

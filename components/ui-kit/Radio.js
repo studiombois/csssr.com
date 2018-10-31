@@ -17,6 +17,7 @@ export default class Radio extends PureComponent {
       string,
       number,
     ]),
+    className: string,
     tabIndex: number,
     checked: bool,
     disabled: bool,
@@ -38,14 +39,13 @@ export default class Radio extends PureComponent {
     const {
       id,
       input,
+      className,
       disabled,
       children,
     } = this.props
 
     return (
-      <span
-        className='radio'
-      >
+      <span className={className}>
         <input
           id={id}
           name={input.name}
@@ -60,27 +60,24 @@ export default class Radio extends PureComponent {
           className='font_p16-regular'
           htmlFor={id}
         >
-          {children && <span className='content'>{children}</span>}
-        </label><style jsx>{`
-          span.radio {
-            display: inline-block;
-          }
-
-          span.radio:hover label::before {
+          {children}
+        </label>
+        <style jsx>{`
+          span:hover label::before {
             border-color: rgba(155, 155, 155, 1);
           }
 
-          span.radio:hover input:checked + label::before {
+          span:hover input:checked + label::before {
             border-color: #0254d8;
           }
 
-          span.radio:hover input:checked + label::after {
+          span:hover input:checked + label::after {
             background-color: #0254d8;
           }
 
           label {
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 2rem;
             display: flex;
             align-items: center;
             min-height: 1.5rem;
@@ -115,24 +112,6 @@ export default class Radio extends PureComponent {
             transform: rotate(45deg);
           }
 
-          label span.content {
-            padding-left: 0.5rem;
-            font-size: inherit;
-            line-height: inherit;
-          }
-
-          span.border {
-            position: absolute;
-            display: none;
-            top: 1px;
-            left: 1px;
-            display: none;
-            box-sizing: border-box;
-            width: calc(1.5rem - 2px);
-            height: calc(1.5rem - 2px);
-            border: 1px solid #fff;
-          }
-
           input {
             position: absolute;
             margin: 0;
@@ -155,7 +134,7 @@ export default class Radio extends PureComponent {
             display: block;
             background-color: #0076ff;
           }
-   
+
         `}</style>
       </span>
     )

@@ -1,125 +1,114 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import css from 'styled-jsx/css'
 import { string } from 'prop-types'
 import { Field } from 'react-final-form'
 import Radio from '../ui-kit/Radio'
 import TextField from '../ui-kit/TextField'
 
 const options = [{
+  id: 'telegram',
   radio: {
-    id: 'telegramRadio',
-    value: 'telegram',
     text: 'Telegram',
   },
   input: {
-    id: 'telegramField',
-    value: 'telegram',
     text: 'Логин или номер',
     type: 'text',
   },
 }, {
+  id: 'whatsapp',
   radio: {
-    id: 'whatsappRadio',
-    value: 'whatsapp',
     text: 'WhatsApp',
   },
   input: {
-    id: 'whatsappField',
-    value: 'whatsapp',
     text: 'Номер',
     type: 'text',
   },
 }, {
+  id: 'email',
   radio: {
-    id: 'emailRadio',
-    value: 'email',
     text: 'E-mail',
   },
   input: {
-    id: 'emailField',
-    value: 'email',
     text: 'E-mail',
     type: 'email',
   },
 }, {
+  id: 'phone',
   radio: {
-    id: 'phoneRadio',
-    value: 'phone',
     text: 'Телефон',
   },
   input: {
-    id: 'phoneField',
-    value: 'phone',
     text: 'Номер',
     type: 'tel',
   },
 }, {
+  id: 'other',
   radio: {
-    id: 'otherRadio',
-    value: 'other',
     text: 'Указан в резюме',
   },
 }]
 
+const stylesForRadio = css.resolve`
+  span {
+    margin-bottom: 1rem;
+    display: block;
+  }
+`
+
+const stylesForInput = css.resolve`
+  div {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+`
+
 const ContactOptions = ({ connection }) =>
-  <>
-    <h3 className='font_h3-regular headline'>
+  <fieldset>
+    <legend className='font_h3-regular'>
       Желаемый способ связи:
-    </h3>
+    </legend>
+
     {options.map(option =>
-      <>
-        <div className='field field_type_radio'>
+      <Fragment>
+        <Field
+          className={stylesForRadio.className}
+          id={`${option.id}OptionalContactRadio`}
+          name='connection'
+          value={option.id}
+          type='radio'
+          component={Radio}
+        >
+          {option.radio.text}
+        </Field>
+
+        {option.input && connection === option.id &&
           <Field
-            id={option.radio.id}
-            name='connection'
-            value={option.radio.value}
-            type='radio'
-            component={Radio}
-          >
-            {option.radio.text}
-          </Field>
-        </div>
-        {option.input && connection === option.input.value && <div className='field field_type_connection'>
-          <Field
-            id={option.input.id}
-            name={option.input.value}
+            className={stylesForInput.className}
+            id={`${option.id}OptionalContactField`}
+            name={option.id}
             component={TextField}
             type={option.input.type}
             theme='regular'
             label={option.input.text}
           />
-        </div>}
-      </>
-    )}<style jsx>{`
-      .headline {
-        margin-bottom: 6rem;
-        text-align: center;
+        }
+      </Fragment>
+    )}
+    <style jsx>{`
+      fieldset {
+        margin-top: 6.5rem;
+        white-space: nowrap;
+        border: none;
       }
 
-      .field {
-        margin-bottom: 2.0625rem;
-      }
-
-      .field_type_radio {
+      legend {
+        white-space: nowrap;
         margin-bottom: 1rem;
       }
-
-      .field_type_connection {
-        margin-top: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      @media (min-width: 368px) and (max-width: 1279px) {
-        .headline {
-          margin-bottom: 2.3125rem;
-        }
-
-        .field {
-          grid-column: 4 / span 6;
-          margin-bottom: 1.875rem;
-        }
-      }
     `}</style>
-  </>
+    {stylesForRadio.styles}
+    {stylesForInput.styles}
+  </fieldset>
 
 ContactOptions.propTypes = {
   connection: string,

@@ -1,28 +1,40 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { number, string } from 'prop-types'
 import { Field } from 'react-final-form'
+import css from 'styled-jsx/css'
 import TextareaField from '../../ui-kit/TextareaField'
 import TextField from '../../ui-kit/TextField'
 import FormRow from '../FormRow'
 import noun from '../../../utils/noun'
 
 const renderTime = time => (
-  <div>
+  <Fragment>
     <div className='font_subhead-regular value'>{`~ ${time} ${noun(time)}`}</div>
     <div className='font_p16-regular hint'>
       потребуется на решение
     </div>
-  </div>
+    <style jsx>{`
+      .value {
+        margin-top: 1.375rem;
+      }
+
+      .hint {
+        margin-top: 0.5rem;
+      }
+    `}</style>
+  </Fragment>
 )
 
-const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title/* , index*/ }) =>
-  <FormRow
-    rightSideContent={renderTime(time)}
-  >
-    <h3 className='font_h3-regular headline'>
-      {/* TODO: передавать реальный индекс задания */ }
-      <span className='index'>2</span>
-      <span className='title'>{title}</span>
+const { className, styles } = css.resolve`
+  div {
+    margin-top: 2.5rem;
+  }
+`
+
+const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, sectionIndex }) =>
+  <FormRow rightSideContent={renderTime(time)}>
+    <h3 className='font_h3-regular'>
+      {title}
     </h3>
     <a
       className='font_link-list_16'
@@ -31,38 +43,54 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title/* , index
     >
       {taskLink}
     </a>
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskText }}/>
-
+    {taskText.split('\n').map(taskTextString =>
+      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskTextString }}/>
+    )}
     {/* TODO plural форма через i18next*/}
     <Field
+      className={className}
       name={'quests[].text'}
       component={TextareaField}
       theme='regular'
-      label='КОММЕНТАРИЙ'
+      label='Комментарий'
     />
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: linkText }}/>
     <Field
+      className={className}
       name={'quests[].link'}
       component={TextField}
       theme='regular'
-      label='Ссылка на исправленный вариант'
+      label={linkText}
     /><style jsx>{`
-      .headline {
-        padding-top: 1rem;
+      h3 {
+        margin-top: 2.5rem;
       }
-      .index {
+
+      h3::before {
+        content: '${sectionIndex}';
         margin-right: 1rem;
         width: 1.5rem;
         height: 1.5rem;
+        box-sizing: border-box;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         border: solid 2px #000000;
       }
-      div:before {
-        content: 'q&a '
+
+      a {
+        margin-top: 1rem;
+        display: block;
+      }
+
+      p {
+        margin-top: 1rem;
+      }
+
+      .value {
+        margin-top: 2.5rem;
       }
     `}</style>
+    {styles}
   </FormRow>
 
 QuestionAndAnswer.propTypes = {

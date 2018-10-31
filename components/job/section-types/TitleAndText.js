@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 
 const TitleAndList = ({ text, title }) =>
-  <div>
+  <Fragment>
     <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
     <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
 
     <style jsx>{`
-    	div:before {
-    	  content: 'titleAndText '
-    	}
+      h2 {
+        margin-top: 2.0625rem;
+      }
+
+      p {
+        margin-top: 0.5rem;
+      }
     `}</style>
-  </div>
+  </Fragment>
 
 TitleAndList.propTypes = {
   text: string,

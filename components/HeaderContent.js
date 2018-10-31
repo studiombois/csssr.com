@@ -63,7 +63,7 @@ class HeaderContent extends PureComponent {
               <a href={logoHref} >
                 <img
                   className='logo'
-                  src='../static/icons/csssr_logo.svg'
+                  src='/static/icons/csssr_logo.svg'
                   alt={logoAlt}
                 />
 
@@ -78,7 +78,7 @@ class HeaderContent extends PureComponent {
             : <span className='logo-wrapper'>
               <img
                 className='logo'
-                src='../static/icons/csssr_logo.svg'
+                src='/static/icons/csssr_logo.svg'
                 alt={logoAlt}
               />
               {logoSup &&

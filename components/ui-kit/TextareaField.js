@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react'
 import { string, oneOf, bool } from 'prop-types'
 import cn from 'classnames'
+import TextareaFieldLightStyles from './styles/TextareaFieldLight'
+import TextareaFieldRegularStyles from './styles/TextareaFieldRegular'
 
 export default class TextareaField extends PureComponent {
   static propTypes = {
     tag: string,
     id: string,
+    theme: oneOf(['regular', 'light']),
     state: oneOf(['error', null]),
     placeholder: string,
     label: string,
@@ -16,6 +19,7 @@ export default class TextareaField extends PureComponent {
 
   static defaultProps = {
     state: null,
+    theme: 'light',
   }
 
   handleChange = event => {
@@ -31,6 +35,7 @@ export default class TextareaField extends PureComponent {
       label,
       autoFocus,
       type,
+      theme,
       disabled,
       input: {
         name,
@@ -38,11 +43,16 @@ export default class TextareaField extends PureComponent {
         onBlur,
         onFocus,
       },
+      meta,
     } = this.props
+
+    const styles = theme === 'light' ? TextareaFieldLightStyles : TextareaFieldRegularStyles
 
     return (
       <div className={cn('font_inputted-text-regular', {
         error: state === 'error',
+        [`textfield_${theme}`]: theme,
+        textfield_filled: value,
       })}>
         <textarea
           id={id}
@@ -59,55 +69,11 @@ export default class TextareaField extends PureComponent {
           value={value}
         />
         {label && <label
+          className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
           htmlFor={id}
         >
           {label}
-        </label>}<style jsx>{`
-          div.error textarea {
-            color: #d0021b;
-            border-color: #d0021b;
-          }
-
-          textarea {
-            padding-top: 0.5rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-bottom: 1.5rem;
-            display: block;
-            width: 100%;
-            height: 10rem;
-            text-align: center;
-            border: none;
-            border: solid 0.0625rem #e1e1e1;
-            caret-color: #4a4a4a;
-          }
-
-          textarea::placeholder {
-            font-weight: 100;
-            color: #c0c0c0;
-          }
-
-          textarea:focus {
-            border-color: #0076ff;
-          }
-
-          label {
-            border: 0;
-            clip: rect(0 0 0 0);
-            height: 0.0625rem;
-            margin: -0.0625rem;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            width: 0.0625rem;
-          }
-
-          @media (min-width: 368px) and (max-width: 1279px) {
-            textarea {
-              padding-top: 0.875rem;
-            }
-          }
-        `}</style>
+        </label>}<style jsx>{styles}</style>
       </div>
     )
   }

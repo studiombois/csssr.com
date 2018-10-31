@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
+import Checkbox from './ui-kit/Checkbox'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
@@ -100,6 +101,31 @@ class ContactForm extends PureComponent {
           />
         </div>
 
+        <div className='field field_type_checkbox'>
+          <Field
+            id='privacyPolicyCheckbox'
+            name='consents'
+            value='privacyPolicy'
+            type='checkbox'
+            component={Checkbox}
+          >
+            <span dangerouslySetInnerHTML={{ __html: t('dev:form.privacyPolicy') }}/>
+          </Field>
+        </div>
+
+        <div className='field field_type_noMargin'>
+          <Field
+            id='newsletterCheckbox'
+            name='consents'
+            type='checkbox'
+            value='newsletter'
+            component={Checkbox}
+          >
+            {t('dev:form.newsletter')}
+          </Field>
+        </div>
+
+
         <div className='button'>
           <AnimatedButton
             type='submit'
@@ -124,9 +150,7 @@ class ContactForm extends PureComponent {
                       ../static/images/letter@3x.png 3x'
             src='../static/images/letter@1x.png'
             alt={t('dev:imgAlt.letter')} />
-        </picture>
-
-        <style jsx>{`
+        </picture><style jsx>{`
           form {
             position: relative;
             margin-right: auto;
@@ -169,7 +193,12 @@ class ContactForm extends PureComponent {
             margin-bottom: 3.5rem;
           }
 
+          .field_type_noMargin {
+            margin: 0;
+          }
+
           .button {
+            margin-top: 4rem;
             grid-column: 6 / span 2;
           }
 

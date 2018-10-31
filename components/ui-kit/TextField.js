@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react'
+import cn from 'classnames'
 import { string, oneOf, bool } from 'prop-types'
+import TextFieldLightStyles from './styles/TextFieldLight'
+import TextFieldRegularStyles from './styles/TextFieldRegular'
 
 export default class TextField extends PureComponent {
   static propTypes = {
     id: string,
+    theme: oneOf(['regular', 'light']),
     state: oneOf(['error', null]),
     placeholder: string,
     label: string,
@@ -13,7 +17,8 @@ export default class TextField extends PureComponent {
   }
 
   static defaultProps = {
-    state: null,
+    state: 'error',
+    theme: 'light',
   }
 
   handleChange = event => {
@@ -29,6 +34,8 @@ export default class TextField extends PureComponent {
       autoFocus,
       type,
       disabled,
+      theme,
+      // state,
       input: {
         name,
         value,
@@ -38,8 +45,17 @@ export default class TextField extends PureComponent {
       meta,
     } = this.props
 
+    const styles = theme === 'light' ? TextFieldLightStyles : TextFieldRegularStyles
+
     return (
-      <div className={value && meta.error && meta.touched ? 'font_inputted-text-error' : 'font_input-basic-label'}>
+      <div
+        className={cn({
+          'font_inputted-text-error': (value && meta.error && meta.touched),
+          'font_input-basic-label': !(value && meta.error && meta.touched),
+          [`textfield_${theme}`]: theme,
+          textfield_filled: value,
+        })}
+      >
         <input
           id={id}
           className={value && meta.error && meta.touched ? 'font_inputted-text-error' : 'font_inputted-text-regular'}
@@ -59,74 +75,7 @@ export default class TextField extends PureComponent {
           htmlFor={id}
         >
           {label}
-        </label>}<style jsx>{`
-          div {
-            height: 4.375rem;
-          }
-
-          div.font_inputted-text-error input:not(:focus) {
-            border-color: #d0021b;
-          }
-
-          div.font_inputted-text-error label:not(:focus) {
-            color: #d0021b;
-          }
-
-          div.font_inputted-text-error input:focus {
-            color: #4a4a4a;
-            border-color: #e1e1e1;
-          }
-
-          input {
-            padding-bottom: 0.5rem;
-            display: block;
-            width: 100%;
-            height: 2.5rem;
-            text-align: center;
-            border: none;
-            border-bottom: solid 0.0625rem #e1e1e1;
-            caret-color: #4a4a4a;
-          }
-
-          input::placeholder {
-            font-weight: 100;
-            color: #c0c0c0;
-          }
-
-          label {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 2rem;
-          }
-
-          label::before {
-            content: '';
-            position absolute;
-            top: 0.0625rem;
-            left: 0;
-            height: 0.0625rem;
-            width: 0;
-            background-color: #0076ff;
-            transition: width 0.1s ease-out;
-          }
-
-          div.font_inputted-text-error input:focus + label,
-          input:focus + label {
-            color: #0076ff;
-          }
-
-          input:focus + label::before {
-            width: 100%;
-          }
-
-          @media (min-width: 368px) and (max-width: 1279px) {
-            input {
-              padding-bottom: 0.1875rem;
-            }
-          }
-        `}</style>
+        </label>}<style jsx>{styles}</style>
       </div>
     )
   }

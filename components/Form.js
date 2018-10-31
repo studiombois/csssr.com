@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
@@ -25,17 +25,8 @@ const onSubmit = async values => {
   }
 }
 
-export default class Form extends PureComponent {
-
-  renderForm = props => <ContactForm {...props} />
-
-  render() {
-    return (
-      <ReactFinalForm
-        onSubmit={onSubmit}
-        validate={contactFormValidationRules}
-        render={this.renderForm}
-      />
-    )
-  }
-}
+export default () => <ReactFinalForm
+  onSubmit={onSubmit}
+  validate={contactFormValidationRules}
+  component={ContactForm}
+/>

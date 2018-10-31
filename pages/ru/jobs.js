@@ -4,10 +4,11 @@ import Head from '../../components/Head'
 import withI18next from '../../utils/withI18next'
 import Layout from '../../components/Layout'
 import Vacancies from '../../components/jobs/Vacancies'
+import hrOrigin from '../../utils/hrOrigin'
 
 class Jobs extends PureComponent {
   static async getInitialProps() {
-    const res = await fetch('https://hr.csssr.ru/api/public/vacancies/active')
+    const res = await fetch(`${hrOrigin}/api/public/vacancies/active`)
     const vacancies = await res.json()
 
     return { vacancies }

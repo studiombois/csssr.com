@@ -1,5 +1,5 @@
 import React from 'react'
-import { number, string, oneOfType } from 'prop-types'
+import { number, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
 import TextareaField from '../../ui-kit/TextareaField'
@@ -15,13 +15,12 @@ const renderTime = (time, t) => (
   </div>
 )
 
-const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t/* , index*/ }) =>
+const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, inputIndex, displayIndex }) =>
   <FormRow
-    rightSideContent={renderTime(Number(time), t)}
+    rightSideContent={renderTime(time, t)}
   >
     <h3 className='font_h3-regular headline'>
-      {/* TODO: передавать реальный индекс задания */ }
-      <span className='index'>2</span>
+      <span className='index'>{displayIndex}</span>
       <span className='title'>{title}</span>
     </h3>
     <a
@@ -34,14 +33,14 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t/* , in
     <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskText }}/>
 
     <Field
-      name={'quests[].text'}
+      name={`quests[${inputIndex}].text`}
       component={TextareaField}
       theme='regular'
       label='КОММЕНТАРИЙ'
     />
     <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: linkText }}/>
     <Field
-      name={'quests[].link'}
+      name={`quests[${inputIndex}].link`}
       component={TextField}
       theme='regular'
       label='Ссылка на исправленный вариант'
@@ -69,8 +68,7 @@ QuestionAndAnswer.propTypes = {
   linkText: string,
   taskLink: string,
   taskText: string,
-  // В базе как попало хранятся
-  time: oneOfType([string, number]),
+  time: number,
   title: string,
 }
 

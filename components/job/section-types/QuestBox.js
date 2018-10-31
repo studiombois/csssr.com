@@ -10,7 +10,7 @@ const QuestBox = ({ text, title, sections }) =>
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }}/>
     </FormRow>
 
-    {sections.map(section => <Section {...section} asRow />)}
+    {sections.map((section, index) => <Section key={index} {...section} asRow />)}
     <style jsx>{`
       div {
         border: 1px solid red;

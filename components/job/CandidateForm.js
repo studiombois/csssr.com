@@ -146,9 +146,9 @@ class CandidateForm extends PureComponent {
           <h1 className='font_h1-regular'>{ vacancy.name }</h1>
           <h2 className='font_subhead-regular'>Дистанционно, и на фуллтайм</h2>
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />
-          {dividedSections.beforeQuestSections.map(section => <Section {...section} />)}
+          {dividedSections.beforeQuestSections.map((section, index) => <Section key={index} {...section} />)}
         </FormRow>
-        {dividedSections.otherSections.map(section => <Section {...section} asRow />)}
+        {dividedSections.otherSections.map((section, index) => <Section key={index} {...section} asRow />)}
         <FormRow
           rightSideContent={this.renderContactOptions()}
         >

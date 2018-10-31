@@ -15,11 +15,6 @@ const options = [{
   inputText: 'Номер',
   inputType: 'text',
 }, {
-  id: 'email',
-  radioText: 'E-mail',
-  inputText: 'E-mail',
-  inputType: 'email',
-}, {
   id: 'phone',
   radioText: 'Телефон',
   inputText: 'Номер',
@@ -32,7 +27,7 @@ const options = [{
 const ContactOptions = ({ connection }) =>
   <Fragment>
     <h3 className='font_h3-regular headline'>
-      Желаемый способ связи:
+      Дополнительный способ связи:
     </h3>
     {options.map(option =>
       <Fragment key={option.id}>

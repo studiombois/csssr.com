@@ -18,6 +18,7 @@ const QuestBox = ({ text, title, sections }) =>
 
       p {
         margin-top: 0.5rem;
+        margin-bottom: -0.4375rem;
       }
     `}</style>
   </Fragment>

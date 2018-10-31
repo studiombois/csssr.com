@@ -15,7 +15,7 @@ const renderTime = time => (
     </div>
     <style jsx>{`
       .value {
-        margin-top: 1.375rem;
+        margin-top: 1.8125rem;
       }
 
       .hint {
@@ -62,7 +62,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, sectionI
       label={linkText}
     /><style jsx>{`
       h3 {
-        margin-top: 2.5rem;
+        margin-top: 2.9375rem;
       }
 
       h3::before {

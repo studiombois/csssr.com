@@ -48,8 +48,8 @@ const stylesForRadio = css.resolve`
 
 const stylesForInput = css.resolve`
   div {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.9375rem;
   }
 `
 
@@ -87,7 +87,8 @@ const ContactOptions = ({ connection }) =>
     )}
     <style jsx>{`
       fieldset {
-        margin-top: 6.5rem;
+        margin-top: 6.9375rem;
+        grid-column: 10 / span 3;
         white-space: nowrap;
         border: none;
       }

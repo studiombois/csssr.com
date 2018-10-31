@@ -75,10 +75,9 @@ export default class TextField extends PureComponent {
         />
         {label && <label
           className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
+          dangerouslySetInnerHTML={{ __html: label }}
           htmlFor={id}
-        >
-          {label}
-        </label>}<style jsx>{styles}</style>
+        />}<style jsx>{styles}</style>
       </div>
     )
   }

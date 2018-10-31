@@ -154,6 +154,7 @@ class CandidateForm extends PureComponent {
         {dividedSections.otherSections.map(section => <Section {...section} asRow />)}
         <FormRow
           rightSideContent={this.renderContactOptions()}
+          customStylesForRightSideContent
         >
           <h2 className='font_h2-regular'>Расскажите о себе</h2>
           <div className='fieldset'>
@@ -293,11 +294,11 @@ class CandidateForm extends PureComponent {
           }
 
           h2 {
-            margin-top: 6.0625rem;
+            margin-top: 6.375rem;
           }
 
           .field {
-            margin-bottom: 2.0625rem;
+            margin-bottom: 2.9375rem;
           }
 
           .field_type_checkbox {
@@ -305,7 +306,7 @@ class CandidateForm extends PureComponent {
           }
 
           .fieldset {
-            margin-top: 3.5rem; 
+            margin-top: 3.625rem;
             margin-left: -0.5rem;
             margin-right: -0.5rem;
             display: flex;

@@ -1,18 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 
 const BoldText = ({ text }) =>
-  <div>
-    <p dangerouslySetInnerHTML={{ __html: text }} />
+  <Fragment>
+    <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: text }} />
     <style jsx>{`
-      div {
-        font-weight: 800;
+      p {
+        margin-top: 1.3125rem;
+        margin-bottom: 2rem;
       }
-    	div:before {
-    	  content: 'bold '
-    	}
     `}</style>
-  </div>
+  </Fragment>
 
 BoldText.propTypes = {
   text: string,

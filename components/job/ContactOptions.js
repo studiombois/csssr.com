@@ -24,15 +24,6 @@ const options = [{
     type: 'text',
   },
 }, {
-  id: 'email',
-  radio: {
-    text: 'E-mail',
-  },
-  input: {
-    text: 'E-mail',
-    type: 'email',
-  },
-}, {
   id: 'phone',
   radio: {
     text: 'Телефон',
@@ -65,7 +56,7 @@ const stylesForInput = css.resolve`
 const ContactOptions = ({ connection }) =>
   <fieldset>
     <legend className='font_h3-regular'>
-      Желаемый способ связи:
+      Дополнительный способ связи:
     </legend>
 
     {options.map(option =>

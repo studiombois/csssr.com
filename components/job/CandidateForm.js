@@ -155,115 +155,122 @@ class CandidateForm extends PureComponent {
         <FormRow
           rightSideContent={this.renderContactOptions()}
         >
-          <div>
-            <h2 className='font_h2-regular'>Расскажите о себе</h2>
-            <div className='fieldset'>
-              <div className='field'>
-                <Field
-                  id='firstname'
-                  name='firstname'
-                  component={TextField}
-                  type='text'
-                  theme='regular'
-                  label='Имя'
-                />
-              </div>
-              <div className='field'>
-                <Field
-                  id='lastname'
-                  name='lastname'
-                  component={TextField}
-                  type='text'
-                  theme='regular'
-                  label='Фамилия'
-                />
-              </div>
-            </div>
+          <h2 className='font_h2-regular'>Расскажите о себе</h2>
+          <div className='fieldset'>
             <div className='field'>
               <Field
-                id='age'
-                name='age'
+                id='firstname'
+                name='firstname'
                 component={TextField}
                 type='text'
                 theme='regular'
-                label='Возраст'
+                label='Имя'
               />
             </div>
             <div className='field'>
               <Field
-                id='location'
-                name='location'
+                id='lastname'
+                name='lastname'
                 component={TextField}
                 type='text'
                 theme='regular'
-                label='Город'
+                label='Фамилия'
               />
             </div>
-            {hasResume && <div className='field'>
-              <Field
-                id='resume'
-                name='resume'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Ссылка на резюме'
-              />
-            </div>}
-            {hasPortfolio && <div className='field'>
-              <Field
-                id='portfolio'
-                name='portfolio'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Ссылка на портфолио'
-              />
-            </div>}
-            {hasGithub && <div className='field'>
-              <Field
-                id='github'
-                name='github'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Ссылка на github'
-              />
-            </div>}
-            {hasComment && <p className='font_p16-regular about'>Хотите добавить что-то о себе?</p>}
-            {hasComment && <div className='field field_type_textarea'>
-              <Field
-                id='message'
-                name='message'
-                component={TextareaField}
-                theme='regular'
-              />
-            </div>}
-            <div className='field field_type_checkbox'>
-              <Field
-                id='privacyPolicyCheckbox'
-                name='consents'
-                value='privacyPolicy'
-                type='checkbox'
-                component={Checkbox}
-              >
-                Я даю CSSSR своё согласие на обработку введённых мною персональных данных на условиях, изложенных политике конфиденциальности
-              </Field>
-            </div>
+          </div>
+          <div className='field'>
+            <Field
+              id='age'
+              name='age'
+              component={TextField}
+              type='text'
+              theme='regular'
+              label='Возраст'
+            />
+          </div>
+          <div className='field'>
+            <Field
+              id='location'
+              name='location'
+              component={TextField}
+              type='text'
+              theme='regular'
+              label='Город'
+            />
+          </div>
+          <div className='field'>
+            <Field
+              id='email'
+              name='email'
+              component={TextField}
+              type='email'
+              theme='regular'
+              label='E-mail'
+            />
+          </div>
+          {hasResume && <div className='field'>
+            <Field
+              id='resume'
+              name='resume'
+              component={TextField}
+              type='text'
+              theme='regular'
+              label='Ссылка на резюме'
+            />
+          </div>}
+          {hasPortfolio && <div className='field'>
+            <Field
+              id='portfolio'
+              name='portfolio'
+              component={TextField}
+              type='text'
+              theme='regular'
+              label='Ссылка на портфолио'
+            />
+          </div>}
+          {hasGithub && <div className='field'>
+            <Field
+              id='github'
+              name='github'
+              component={TextField}
+              type='text'
+              theme='regular'
+              label='Ссылка на github'
+            />
+          </div>}
+          {hasComment && <p className='font_p16-regular about'>Хотите добавить что-то о себе?</p>}
+          {hasComment && <div className='field field_type_textarea'>
+            <Field
+              id='message'
+              name='message'
+              component={TextareaField}
+              theme='regular'
+            />
+          </div>}
+          <div className='field field_type_checkbox'>
+            <Field
+              id='privacyPolicyCheckbox'
+              name='consents'
+              value='privacyPolicy'
+              type='checkbox'
+              component={Checkbox}
+            >
+              Я даю CSSSR своё согласие на обработку введённых мною персональных данных на условиях, изложенных политике конфиденциальности
+            </Field>
+          </div>
 
-            <div className='button'>
-              <AnimatedButton
-                type='submit'
-                disabled={isSubmitButtonDisabled}
-                status={this.state.formSubmitStatus}
-                onAnimationEnd={this.handleStateClear}
-              >
-                Отправить
-              </AnimatedButton>
-            </div>
+          <div className='button'>
+            <AnimatedButton
+              type='submit'
+              disabled={isSubmitButtonDisabled}
+              status={this.state.formSubmitStatus}
+              onAnimationEnd={this.handleStateClear}
+            >
+              Отправить
+            </AnimatedButton>
           </div>
         </FormRow><style jsx>{`
           form {
-            position: relative;
             margin-right: auto;
             margin-left: auto;
             padding-top: 13.5625rem;
@@ -312,13 +319,11 @@ class CandidateForm extends PureComponent {
           }
 
           .field_type_textarea {
-            position: relative;
             margin-top: 1.5rem;
             margin-bottom: 3.5rem;
           }
 
           .about {
-            position: relative;
             margin-top: 2.875rem;
             margin-bottom: 2.5rem;
           }

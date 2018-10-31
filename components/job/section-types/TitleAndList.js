@@ -4,9 +4,9 @@ import { string, arrayOf } from 'prop-types'
 const TitleAndList = ({ list, title }) =>
   <Fragment>
     <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
-    <ul className='ul'>
+    <ul>
       {list.map((item, index) => (
-        <li className='li font_p16-regular' key={index} dangerouslySetInnerHTML={{ __html: item }} />
+        <li className='squareItem font_p16-regular' key={index} dangerouslySetInnerHTML={{ __html: item }} />
       ))}
     </ul><style jsx>{`
       h2 {

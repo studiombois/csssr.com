@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
+import cn from 'classnames'
 import Link from 'next/link'
 import Picture from '../Picture'
 import Footer from './Footer'
@@ -46,7 +47,12 @@ const Vacancies = props =>
               href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
               as={`/ru/jobs/${vacancy.pathName}`}
             >
-              <a className='font_link-list_24'>
+              <a
+                className={cn({
+                  'font_link-list_24': true,
+                  'hot-vacancy': vacancy.isHot,
+                })}
+              >
                 {vacancy.name}
               </a>
             </Link>
@@ -193,6 +199,17 @@ const Vacancies = props =>
         text-decoration: none;
       }
 
+      .hot-vacancy {
+        position: relative;
+      }
+
+      .hot-vacancy::before {
+        content: '🔥';
+        position: absolute;
+        top: 0.125rem;
+        left: -2rem;
+      }
+
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
           width: 1328px;
@@ -220,6 +237,11 @@ const Vacancies = props =>
 
         picture {
           height: 4rem;
+        }
+
+        .hot-vacancy::before {
+          top: 0;
+          left: -1.5rem;
         }
 
         @media (max-width: 1023px) {

@@ -55,7 +55,7 @@ const ContactOptions = ({ connection }) =>
           type='radio'
           component={Radio}
         >
-          {option.radio.text}
+          {option.radioText}
         </Field>
 
         {option.input && connection === option.id &&

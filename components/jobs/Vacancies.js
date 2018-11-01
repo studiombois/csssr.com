@@ -240,8 +240,6 @@ const Vacancies = props =>
         }
 
         .hot-vacancy::before {
-          content: '🔥';
-          position: absolute;
           top: 0;
           left: -1.5rem;
         }

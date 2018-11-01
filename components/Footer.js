@@ -82,16 +82,6 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       </li>
     </ul>
 
-    <div className='change-language-link-wrapper'>
-      <a
-        href={t('common:footer.languageRedirect.link')}
-        className='font_footer-link'
-      >
-        {t('common:footer.languageRedirect.text')}
-      </a>
-    </div>
-
-
     <ul className='footer-links'>
       <li className='footer-link'>
         <a

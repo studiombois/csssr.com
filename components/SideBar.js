@@ -100,6 +100,14 @@ export class SideBar extends PureComponent {
                 {items.map(this.renderNavItem)}
               </ul>
             </div>
+            <div className='bottom'>
+              <a
+                href={t('common:languageRedirect.link')}
+                className='font_footer-link'
+              >
+                {t('common:languageRedirect.text')}
+              </a>
+            </div>
           </div>
         </ClickOutside><style jsx>{`
           .sidebar {
@@ -178,9 +186,11 @@ export class SideBar extends PureComponent {
             margin-top: 1.5rem;
           }
 
-          .bottom a {
-            margin-right: 0.125rem;
+          .bottom {
+            padding-right: 5.5rem;
+            text-align: right;
           }
+
         `}</style>
       </aside>
     )

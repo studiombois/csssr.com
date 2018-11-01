@@ -46,7 +46,6 @@ const ContactOptions = ({ connection = [] }) =>
     <legend className='font_h3-regular'>
       Дополнительные способы связи:
     </legend>
-    {console.log(connection)}
 
     {options.map(option =>
       <Fragment key={option.id}>

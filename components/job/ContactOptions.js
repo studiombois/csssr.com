@@ -7,36 +7,22 @@ import TextField from '../ui-kit/TextField'
 
 const options = [{
   id: 'telegram',
-  radio: {
-    text: 'Telegram',
-  },
-  input: {
-    text: 'Логин или номер',
-    type: 'text',
-  },
+  radioText: 'Telegram',
+  inputText: 'Логин или номер',
+  inputType: 'text',
 }, {
   id: 'whatsapp',
-  radio: {
-    text: 'WhatsApp',
-  },
-  input: {
-    text: 'Номер',
-    type: 'text',
-  },
+  radioText: 'WhatsApp',
+  inputText: 'Номер',
+  inputType: 'text',
 }, {
   id: 'phone',
-  radio: {
-    text: 'Телефон',
-  },
-  input: {
-    text: 'Номер',
-    type: 'tel',
-  },
+  radioText: 'Телефон',
+  inputText: 'Номер',
+  inputType: 'tel',
 }, {
   id: 'other',
-  radio: {
-    text: 'Указан в резюме',
-  },
+  radioText: 'Указан в резюме',
 }]
 
 const stylesForRadio = css.resolve`
@@ -60,7 +46,7 @@ const ContactOptions = ({ connection }) =>
     </legend>
 
     {options.map(option =>
-      <Fragment>
+      <Fragment key={option.id}>
         <Field
           className={stylesForRadio.className}
           id={`${option.id}OptionalContactRadio`}
@@ -78,9 +64,9 @@ const ContactOptions = ({ connection }) =>
             id={`${option.id}OptionalContactField`}
             name={option.id}
             component={TextField}
-            type={option.input.type}
+            type={option.inputType}
             theme='regular'
-            label={option.input.text}
+            label={option.inputText}
           />
         }
       </Fragment>

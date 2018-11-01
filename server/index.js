@@ -21,7 +21,7 @@ i18n
     load: 'languageOnly',
     whitelist: ['en', 'ru', 'de'],
     preload: ['en', 'ru', 'de'],
-    ns: ['common', 'dev', 'jobs'],
+    ns: ['common', 'dev', 'jobs', 'job'],
     detection: {
       order: ['path', 'cookie', 'header'],
       lookupCookie: 'language',

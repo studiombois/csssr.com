@@ -10,11 +10,11 @@ const { className, styles } = css.resolve`
   }
 `
 
-const JobSectionTextField = ({ title, maxLength, required/* , index*/ }) =>
+const JobSectionTextField = ({ title, maxLength, required, inputIndex }) =>
   <Fragment>
     <Field
       className={className}
-      name={'quests[].text'}
+      name={`quests[${inputIndex}].text`}
       maxLength={maxLength}
       required={required}
       component={TextareaField}

@@ -2,14 +2,14 @@ import React, { Fragment } from 'react'
 import { number, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import css from 'styled-jsx/css'
+import { translate } from 'react-i18next'
 import TextareaField from '../../ui-kit/TextareaField'
 import TextField from '../../ui-kit/TextField'
 import FormRow from '../FormRow'
-import noun from '../../../utils/noun'
 
-const renderTime = time => (
+const renderTime = (time, t) => (
   <Fragment>
-    <div className='font_subhead-regular value'>{`~ ${time} ${noun(time)}`}</div>
+    <div className='font_subhead-regular value'>{t('job:minutes', { count: time })}</div>
     <div className='font_p16-regular hint'>
       потребуется на решение
     </div>
@@ -31,8 +31,8 @@ const { className, styles } = css.resolve`
   }
 `
 
-const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, sectionIndex }) =>
-  <FormRow rightSideContent={renderTime(time)}>
+const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, inputIndex, displayIndex }) =>
+  <FormRow rightSideContent={renderTime(time, t)}>
     <h3 className='font_h3-regular'>
       {title}
     </h3>
@@ -49,14 +49,14 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, sectionI
     {/* TODO plural форма через i18next*/}
     <Field
       className={className}
-      name={'quests[].text'}
+      name={`quests[${inputIndex}].text`}
       component={TextareaField}
       theme='regular'
       label='Комментарий'
     />
     <Field
       className={className}
-      name={'quests[].link'}
+      name={`quests[${inputIndex}].link`}
       component={TextField}
       theme='regular'
       label={linkText}
@@ -66,7 +66,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, sectionI
       }
 
       h3::before {
-        content: '${sectionIndex}';
+        content: '${displayIndex}';
         margin-right: 1rem;
         width: 1.5rem;
         height: 1.5rem;
@@ -98,8 +98,8 @@ QuestionAndAnswer.propTypes = {
   linkText: string,
   taskLink: string,
   taskText: string,
-  time: string,
+  time: number,
   title: string,
 }
 
-export default QuestionAndAnswer
+export default translate()(QuestionAndAnswer)

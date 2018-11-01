@@ -9,6 +9,7 @@ export default class TextField extends PureComponent {
     id: string,
     theme: oneOf(['regular', 'light']),
     state: oneOf(['error', null]),
+    className: string,
     placeholder: string,
     label: string,
     autoFocus: bool,
@@ -36,6 +37,7 @@ export default class TextField extends PureComponent {
       disabled,
       theme,
       // state,
+      className,
       input: {
         name,
         value,
@@ -54,6 +56,7 @@ export default class TextField extends PureComponent {
           'font_input-basic-label': !(value && meta.error && meta.touched),
           [`textfield_${theme}`]: theme,
           textfield_filled: value,
+          [`${className}`]: !!className,
         })}
       >
         <input
@@ -72,10 +75,9 @@ export default class TextField extends PureComponent {
         />
         {label && <label
           className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
+          dangerouslySetInnerHTML={{ __html: label }}
           htmlFor={id}
-        >
-          {label}
-        </label>}<style jsx>{styles}</style>
+        />}<style jsx>{styles}</style>
       </div>
     )
   }

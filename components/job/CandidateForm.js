@@ -34,8 +34,9 @@ class CandidateForm extends PureComponent {
   }
 
   divideSections = () => {
-    const { sections } = this.props.vacancy
     let isBeforeQuest = true
+    const { sections } = this.props.vacancy
+
     return sections.reduce((memo, section) => {
       const { type } = section
       if (type === 'quest' || type === 'questBox') {
@@ -71,9 +72,7 @@ class CandidateForm extends PureComponent {
 
     return (
       <Fragment>
-        <div className='picture'>
-          <img className='picture' src='https://via.placeholder.com/400' />
-        </div>
+        <img className='picture' src='https://via.placeholder.com/400' />
 
         <ul>
           {vacancies.map(vacancy =>
@@ -90,16 +89,16 @@ class CandidateForm extends PureComponent {
             </li>
           )}
         </ul><style jsx>{`
-        div.picture {
+        picture {
           width: 100%;
         }
 
-        div.picture img {
+        img {
           width: 100%;
         }
 
         ul {
-          margin-top: 2.25rem;
+          margin-top: 3.6875rem;
           margin-left: auto;
           margin-right: auto;
           width: 12rem;
@@ -143,14 +142,18 @@ class CandidateForm extends PureComponent {
           rightSideContent={this.renderVacancyImageAndLinks()}
           rightSideWidth='wide'
         >
-          <h1 className='font_h1-regular'>{ vacancy.name }</h1>
-          <h2 className='font_subhead-regular'>Дистанционно, и на фуллтайм</h2>
+          <h1 className='font_h1-regular'>
+            {vacancy.name }
+            <span className='font_subhead-regular'>Дистанционно, и на фуллтайм</span>
+          </h1>
+
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />
           {dividedSections.beforeQuestSections.map((section, index) => <Section key={index} {...section} />)}
         </FormRow>
         {dividedSections.otherSections.map((section, index) => <Section key={index} {...section} asRow />)}
         <FormRow
           rightSideContent={this.renderContactOptions()}
+          customStylesForRightSideContent
         >
           <h2 className='font_h2-regular'>Расскажите о себе</h2>
           <div className='fieldset'>
@@ -270,14 +273,31 @@ class CandidateForm extends PureComponent {
           form {
             margin-right: auto;
             margin-left: auto;
-            padding-top: 8.5rem;
+            padding-top: 13.5625rem;
             padding-bottom: 31.5rem;
             align-items: center;
             border: none;
           }
 
+          h1 {
+            margin-top: -0.0625rem;
+          }
+
+          h1 span {
+            margin-top: 0.875rem;
+            display: block;
+          }
+
+          h1 + p {
+            margin-top: 1.3125rem;
+          }
+
+          h2 {
+            margin-top: 6.375rem;
+          }
+
           .field {
-            margin-bottom: 2.0625rem;
+            margin-bottom: 2.9375rem;
           }
 
           .field_type_checkbox {
@@ -285,6 +305,7 @@ class CandidateForm extends PureComponent {
           }
 
           .fieldset {
+            margin-top: 3.625rem;
             margin-left: -0.5rem;
             margin-right: -0.5rem;
             display: flex;

@@ -1,32 +1,70 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { array, string } from 'prop-types'
+import FormRow from '../FormRow'
 import Section from '../Section'
 
-const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections }) =>
-  <div>
-    <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: fileSize }} />
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: fileExt }} />
+const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
+  <Fragment>
+    <div className='icon-wrapper'>
+      <img
+        src={`/static/icons/${fileExt}.svg`}
+        alt={`${fileExt} file extension logo`}
+      />
+    </div>
 
-    <a
-      href={fileLink}
-      target='_blank'
-      className='font_link-list_16'
+    <div className='file-info'>
+      <a
+        href={fileLink}
+        target='_blank'
+        className='font_link-list_16'
+      >
+        {fileName}
+      </a>
+      <span className='font_perforator-10-regular' dangerouslySetInnerHTML={{ __html: fileSize }} />
+    </div>
+
+
+    <style jsx>{`
+      .icon-wrapper {
+        margin-top: 8.5rem;
+        grid-column: 10 / span 1;
+        text-align: center;
+      }
+
+      .file-info {
+        margin-top: 9rem;
+        grid-column: 11 / span 1;
+      }
+
+      span {
+        margin-top: 0.375rem;
+        display block;
+      }
+
+    `}</style>
+  </Fragment>
+
+const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections }) =>
+  <Fragment>
+    <FormRow
+      rightSideContent={renderFileInfo(fileSize, fileExt, fileName, fileLink)}
+      customStylesForRightSideContent
     >
-      {fileName}
-    </a>
+      <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
+      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
+    </FormRow>
 
     {sections.map((section, index) => <Section key={index} {...section} asRow />)}
     <style jsx>{`
-			div {
-				border: 1px solid black;
-			}
-    	div:before {
-    	  content: 'quest '
-    	}
+      h2 {
+        margin-top: 6.0625rem;
+      }
+
+      p {
+        margin-top: 0.5rem;
+      }
     `}</style>
-  </div>
+  </Fragment>
 
 Quest.propTypes = {
   fileSize: string,

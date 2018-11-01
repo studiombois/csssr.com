@@ -2,19 +2,25 @@ import React from 'react'
 import cn from 'classnames'
 
 
-const FormRow = ({ children, rightSideContent, rightSideWidth = 'narrow' }) =>
+const FormRow = ({ children, rightSideContent, rightSideWidth = 'narrow', customStylesForRightSideContent }) =>
   <div className='grid-container row'>
     <div
-      className='cell cell_primary'>{children}</div>
-    <div
-      className={cn({
-        cell: true,
-        cell_narrow: rightSideWidth === 'narrow',
-        cell_wide: rightSideWidth === 'wide',
-      })}
-    >
-      {rightSideContent}
-    </div><style jsx>{`
+      className='cell cell_primary'>{children}
+    </div>
+    { customStylesForRightSideContent
+      ? rightSideContent
+      : <div
+        className={cn({
+          cell: true,
+          cell_narrow: rightSideWidth === 'narrow',
+          cell_wide: rightSideWidth === 'wide',
+        })}
+      >
+        {rightSideContent}
+      </div>
+    }
+
+    <style jsx>{`
       .row {
         margin-right: auto;
         margin-left: auto;

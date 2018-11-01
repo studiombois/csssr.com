@@ -167,13 +167,6 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         margin-right: 1rem;
       }
 
-      .change-language-link-wrapper {
-        grid-column: 6 / span 3;
-        height: 1.5rem;
-        text-align: right;
-        align-self: center;
-      }
-
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
           width: 1328px;

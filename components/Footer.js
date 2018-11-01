@@ -82,16 +82,6 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       </li>
     </ul>
 
-    <div className='change-language-link-wrapper'>
-      <a
-        href={t('common:footer.languageRedirect.link')}
-        className='font_footer-link'
-      >
-        {t('common:footer.languageRedirect.text')}
-      </a>
-    </div>
-
-
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
@@ -175,13 +165,6 @@ const Footer = ({ router: { pathname }, lng, t }) => {
 
       .footer-link:not(:last-child) {
         margin-right: 1rem;
-      }
-
-      .change-language-link-wrapper {
-        grid-column: 6 / span 3;
-        height: 1.5rem;
-        text-align: right;
-        align-self: center;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {

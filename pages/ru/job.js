@@ -9,7 +9,7 @@ import withI18next from '../../utils/withI18next'
 class Jobs extends PureComponent {
   static async getInitialProps({ query }) {
     // TODO Поменять на нормальный адресс перед финальным пушем
-    const res = await fetch('http://release-hr-19.preprod-hr.csssr.ru/api/public/vacancies/active')
+    const res = await fetch('https://hr.csssr.ru/api/public/vacancies/active')
     const vacancies = await res.json()
 
     // TODO 404 если вакансия недоступна

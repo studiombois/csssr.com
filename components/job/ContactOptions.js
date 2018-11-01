@@ -1,82 +1,58 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 import { Field } from 'react-final-form'
 import Radio from '../ui-kit/Radio'
 import TextField from '../ui-kit/TextField'
 
 const options = [{
-  radio: {
-    id: 'telegramRadio',
-    value: 'telegram',
-    text: 'Telegram',
-  },
-  input: {
-    id: 'telegramField',
-    value: 'telegram',
-    text: 'Логин или номер',
-    type: 'text',
-  },
+  id: 'telegram',
+  radioText: 'Telegram',
+  inputText: 'Логин или номер',
+  inputType: 'text',
 }, {
-  radio: {
-    id: 'whatsappRadio',
-    value: 'whatsapp',
-    text: 'WhatsApp',
-  },
-  input: {
-    id: 'whatsappField',
-    value: 'whatsapp',
-    text: 'Номер',
-    type: 'text',
-  },
+  id: 'whatsapp',
+  radioText: 'WhatsApp',
+  inputText: 'Номер',
+  inputType: 'text',
 }, {
-  radio: {
-    id: 'phoneRadio',
-    value: 'phone',
-    text: 'Телефон',
-  },
-  input: {
-    id: 'phoneField',
-    value: 'phone',
-    text: 'Номер',
-    type: 'tel',
-  },
+  id: 'phone',
+  radioText: 'Телефон',
+  inputText: 'Номер',
+  inputType: 'tel',
 }, {
-  radio: {
-    id: 'otherRadio',
-    value: 'other',
-    text: 'Указан в резюме',
-  },
+  id: 'other',
+  radioText: 'Указан в резюме',
 }]
 
 const ContactOptions = ({ connection }) =>
-  <>
+  <Fragment>
     <h3 className='font_h3-regular headline'>
       Дополнительный способ связи:
     </h3>
     {options.map(option =>
-      <>
+      <Fragment key={option.id}>
         <div className='field field_type_radio'>
           <Field
-            id={option.radio.id}
+            id={`${option.id}Radio`}
             name='connection'
-            value={option.radio.value}
+            value={option.id}
             type='radio'
             component={Radio}
           >
-            {option.radio.text}
+            {option.radioText}
           </Field>
         </div>
-        {option.input && connection === option.input.value && <div className='field field_type_connection'>
+        {option.inputText && connection === option.id && <div className='field field_type_connection'>
           <Field
-            id={option.input.id}
-            name={option.input.value}
+            id={`${option.id}Input`}
+            name={option.id}
             component={TextField}
-            type={option.input.type}
+            type={option.inputType}
             theme='regular'
-            label={option.input.text}
+            label={option.inputText}
           />
         </div>}
-      </>
+      </Fragment>
     )}<style jsx>{`
       .headline {
         margin-bottom: 6rem;
@@ -107,7 +83,7 @@ const ContactOptions = ({ connection }) =>
         }
       }
     `}</style>
-  </>
+  </Fragment>
 
 ContactOptions.propTypes = {
   connection: string,

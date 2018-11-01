@@ -1,23 +1,23 @@
 import React from 'react'
-import { number, string } from 'prop-types'
+import { number, string, oneOfType } from 'prop-types'
 import { Field } from 'react-final-form'
+import { translate } from 'react-i18next'
 import TextareaField from '../../ui-kit/TextareaField'
 import TextField from '../../ui-kit/TextField'
 import FormRow from '../FormRow'
-import noun from '../../../utils/noun'
 
-const renderTime = time => (
+const renderTime = (time, t) => (
   <div>
-    <div className='font_subhead-regular value'>{`~ ${time} ${noun(time)}`}</div>
+    <div className='font_subhead-regular value'>{t('job:minutes', { count: time })}</div>
     <div className='font_p16-regular hint'>
       потребуется на решение
     </div>
   </div>
 )
 
-const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title/* , index*/ }) =>
+const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t/* , index*/ }) =>
   <FormRow
-    rightSideContent={renderTime(time)}
+    rightSideContent={renderTime(Number(time), t)}
   >
     <h3 className='font_h3-regular headline'>
       {/* TODO: передавать реальный индекс задания */ }
@@ -33,7 +33,6 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title/* , index
     </a>
     <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskText }}/>
 
-    {/* TODO plural форма через i18next*/}
     <Field
       name={'quests[].text'}
       component={TextareaField}
@@ -70,8 +69,9 @@ QuestionAndAnswer.propTypes = {
   linkText: string,
   taskLink: string,
   taskText: string,
-  time: string,
+  // В базе как попало хранятся
+  time: oneOfType([string, number]),
   title: string,
 }
 
-export default QuestionAndAnswer
+export default translate()(QuestionAndAnswer)

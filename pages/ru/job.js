@@ -6,7 +6,7 @@ import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
 import withI18next from '../../utils/withI18next'
 
-class Jobs extends PureComponent {
+class Job extends PureComponent {
   static async getInitialProps({ query }) {
     const res = await fetch('https://hr.csssr.ru/api/public/vacancies/active')
     const vacancies = await res.json()
@@ -60,4 +60,4 @@ class Jobs extends PureComponent {
 // fileExt: String,
 // uploadedFiles: [String],
 
-export default withI18next(['job'])(Jobs)
+export default withI18next(['job'])(Job)

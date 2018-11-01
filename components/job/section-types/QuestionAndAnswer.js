@@ -46,7 +46,6 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
     {taskText.split('\n').map(taskTextString =>
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskTextString }}/>
     )}
-    {/* TODO plural форма через i18next*/}
     <Field
       className={className}
       name={`quests[${inputIndex}].text`}

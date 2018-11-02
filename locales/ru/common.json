@@ -5,13 +5,13 @@
     "jobs": "Работа в CSSSR",
     "job": "Работа в CSSSR"
   },
+  "languageRedirect": {
+    "link": "/en",
+    "text": "Switch to English"
+  },
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
-    "alliancePartText": "CSSSR является частью",
-    "languageRedirect": {
-      "link": "/en",
-      "text": "Switch to English"
-    }
+    "alliancePartText": "CSSSR является частью"
   },
   "sectionName": {
     "ru": "Фронтенд разработка",
@@ -25,5 +25,11 @@
   "cookiesPolicy": {
     "title": "Website Cookie Policy",
     "date": "May 25, 2018"
+  },
+  "noPage": "Данная страница не доступна на русском языке.",
+  "checkBoxesText": {
+    "privacyPolicyText": "я согласен на обработку моих персональных данных в соответствии с ",
+    "privacyPolicyLinkText": "Политикой конфиденциальности",
+    "newsletterText": "я согласен получать информацию об акциях и коммерческих спецпредложениях"
   }
 }

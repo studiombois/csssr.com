@@ -1,23 +1,27 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { string, arrayOf } from 'prop-types'
 
 const TitleAndList = ({ list, title }) =>
-  <div>
+  <Fragment>
     <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
     <ul>
       {list.map((item, index) => (
         <li className='squareItem font_p16-regular' key={index} dangerouslySetInnerHTML={{ __html: item }} />
       ))}
     </ul><style jsx>{`
-      li:not(:last-child) {
-        margin-bottom: 1rem;
+      h2 {
+        margin-top: 2.0625rem;
       }
 
-    	div:before {
-    	  content: 'list '
-    	}
+      ul {
+        margin-top: 0.5rem;
+      }
+
+      li:not(:first-child) {
+        margin-top: 1rem;
+      }
     `}</style>
-  </div>
+  </Fragment>
 
 TitleAndList.propTypes = {
   title: string,

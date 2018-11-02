@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { array, string } from 'prop-types'
 import FormRow from '../FormRow'
 import Section from '../Section'
 
 const QuestBox = ({ text, title, sections }) =>
-  <div>
+  <Fragment>
     <FormRow>
       <h3 className='font_h2-regular'>{title}</h3>
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }}/>
@@ -12,14 +12,16 @@ const QuestBox = ({ text, title, sections }) =>
 
     {sections.map((section, index) => <Section key={index} {...section} asRow />)}
     <style jsx>{`
-      div {
-        border: 1px solid red;
+      h3 {
+        margin-top: 6.0625rem;
       }
-      div:before {
-        content: 'questbox '
+
+      p {
+        margin-top: 0.5rem;
+        margin-bottom: -0.4375rem;
       }
     `}</style>
-  </div>
+  </Fragment>
 
 QuestBox.propTypes = {
   text: string,

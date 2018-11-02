@@ -39,7 +39,7 @@ export default css`
   label {
     position: absolute;
     margin: auto;
-    top: 1.875rem;
+    top: 1.4375rem;
     left: 1rem;
     height: 1rem;
     line-height: 1rem;

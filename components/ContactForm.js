@@ -5,6 +5,7 @@ import Checkbox from './ui-kit/Checkbox'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
+import PrivacyPolicyCheckbox from '../components/PrivacyPolicyCheckbox'
 
 class ContactForm extends PureComponent {
   state = {
@@ -102,15 +103,7 @@ class ContactForm extends PureComponent {
         </div>
 
         <div className='field field_type_checkbox'>
-          <Field
-            id='privacyPolicyCheckbox'
-            name='consents'
-            value='privacyPolicy'
-            type='checkbox'
-            component={Checkbox}
-          >
-            <span dangerouslySetInnerHTML={{ __html: t('dev:form.privacyPolicy') }}/>
-          </Field>
+          <PrivacyPolicyCheckbox />
         </div>
 
         <div className='field field_type_noMargin'>
@@ -121,7 +114,7 @@ class ContactForm extends PureComponent {
             value='newsletter'
             component={Checkbox}
           >
-            {t('dev:form.newsletter')}
+            {t('common:checkBoxesText.newsletterText')}
           </Field>
         </div>
 

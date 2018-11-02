@@ -24,7 +24,7 @@ const typeToComponent = {
 
 const Section = ({ type, asRow, ...others }) => {
   const Component = typeToComponent[type]
-  if (asRow && type !== 'questionAndAnswer' && type !== 'questBox') {
+  if (asRow && type !== 'questionAndAnswer' && type !== 'questBox' && type !== 'quest') {
     return (
       <FormRow>
         <Component {...others}/>

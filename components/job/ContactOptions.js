@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
-import { string } from 'prop-types'
+import css from 'styled-jsx/css'
+import { arrayOf, string } from 'prop-types'
 import { Field } from 'react-final-form'
-import Radio from '../ui-kit/Radio'
+import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 
 const options = [{
@@ -15,78 +16,82 @@ const options = [{
   inputText: 'Номер',
   inputType: 'text',
 }, {
+  id: 'skype',
+  radioText: 'Skype',
+  inputText: 'Логин',
+  inputType: 'text',
+}, {
   id: 'phone',
   radioText: 'Телефон',
   inputText: 'Номер',
   inputType: 'tel',
-}, {
-  id: 'other',
-  radioText: 'Указан в резюме',
 }]
 
-const ContactOptions = ({ connection }) =>
-  <Fragment>
-    <h3 className='font_h3-regular headline'>
-      Дополнительный способ связи:
-    </h3>
+const stylesForCheckbox = css.resolve`
+  span {
+    margin-bottom: 1rem;
+    display: block;
+  }
+`
+
+const stylesForInput = css.resolve`
+  div {
+    margin-top: 2.5rem;
+    margin-bottom: 2.9375rem;
+  }
+`
+
+const ContactOptions = ({ connection = [] }) =>
+  <fieldset>
+    <legend className='font_h3-regular'>
+      Дополнительные способы связи:
+    </legend>
+
     {options.map(option =>
       <Fragment key={option.id}>
-        <div className='field field_type_radio'>
+        <Field
+          className={stylesForCheckbox.className}
+          id={`${option.id}OptionalContactRadio`}
+          name='connection'
+          value={option.id}
+          type='checkbox'
+          component={Checkbox}
+        >
+          {option.radioText}
+        </Field>
+
+        {connection.includes(option.id) &&
           <Field
-            id={`${option.id}Radio`}
-            name='connection'
-            value={option.id}
-            type='radio'
-            component={Radio}
-          >
-            {option.radioText}
-          </Field>
-        </div>
-        {option.inputText && connection === option.id && <div className='field field_type_connection'>
-          <Field
-            id={`${option.id}Input`}
+            className={stylesForInput.className}
+            id={`${option.id}OptionalContactField`}
             name={option.id}
             component={TextField}
             type={option.inputType}
             theme='regular'
             label={option.inputText}
           />
-        </div>}
+        }
       </Fragment>
-    )}<style jsx>{`
-      .headline {
-        margin-bottom: 6rem;
-        text-align: center;
+    )}
+    <style jsx>{`
+      fieldset {
+        margin-top: 6.9375rem;
+        grid-column: 10 / span 3;
+        white-space: nowrap;
+        border: none;
       }
 
-      .field {
-        margin-bottom: 2.0625rem;
-      }
-
-      .field_type_radio {
+      legend {
+        white-space: nowrap;
         margin-bottom: 1rem;
       }
-
-      .field_type_connection {
-        margin-top: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      @media (min-width: 368px) and (max-width: 1279px) {
-        .headline {
-          margin-bottom: 2.3125rem;
-        }
-
-        .field {
-          grid-column: 4 / span 6;
-          margin-bottom: 1.875rem;
-        }
-      }
     `}</style>
-  </Fragment>
+    {stylesForCheckbox.styles}
+    {stylesForInput.styles}
+  </fieldset>
 
 ContactOptions.propTypes = {
-  connection: string,
+  connection: arrayOf(string),
 }
 
 export default ContactOptions

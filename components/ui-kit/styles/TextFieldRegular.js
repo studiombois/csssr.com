@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 export default css`
   div {
     position: relative;
-    height: 4.375rem;
+    height: 4rem;
   }
 
   div.font_inputted-text-error input:not(:focus) {
@@ -42,7 +42,7 @@ export default css`
   label {
     position: absolute;
     margin: auto;
-    top: 1.875rem;
+    top: 1.4375rem;
     left: 1rem;
     height: 1rem;
     line-height: 1rem;

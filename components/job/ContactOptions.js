@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
-import { array } from 'prop-types'
+import { arrayOf, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
@@ -91,7 +91,7 @@ const ContactOptions = ({ connection = [] }) =>
   </fieldset>
 
 ContactOptions.propTypes = {
-  connection: array,
+  connection: arrayOf(string),
 }
 
 export default ContactOptions

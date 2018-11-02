@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
-import { string } from 'prop-types'
+import { arrayOf, string } from 'prop-types'
 import { Field } from 'react-final-form'
-import Radio from '../ui-kit/Radio'
+import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 
 const options = [{
@@ -16,16 +16,18 @@ const options = [{
   inputText: 'Номер',
   inputType: 'text',
 }, {
+  id: 'skype',
+  radioText: 'Skype',
+  inputText: 'Логин',
+  inputType: 'text',
+}, {
   id: 'phone',
   radioText: 'Телефон',
   inputText: 'Номер',
   inputType: 'tel',
-}, {
-  id: 'other',
-  radioText: 'Указан в резюме',
 }]
 
-const stylesForRadio = css.resolve`
+const stylesForCheckbox = css.resolve`
   span {
     margin-bottom: 1rem;
     display: block;
@@ -39,26 +41,26 @@ const stylesForInput = css.resolve`
   }
 `
 
-const ContactOptions = ({ connection }) =>
+const ContactOptions = ({ connection = [] }) =>
   <fieldset>
     <legend className='font_h3-regular'>
-      Дополнительный способ связи:
+      Дополнительные способы связи:
     </legend>
 
     {options.map(option =>
       <Fragment key={option.id}>
         <Field
-          className={stylesForRadio.className}
+          className={stylesForCheckbox.className}
           id={`${option.id}OptionalContactRadio`}
           name='connection'
           value={option.id}
-          type='radio'
-          component={Radio}
+          type='checkbox'
+          component={Checkbox}
         >
           {option.radioText}
         </Field>
 
-        {option.input && connection === option.id &&
+        {connection.includes(option.id) &&
           <Field
             className={stylesForInput.className}
             id={`${option.id}OptionalContactField`}
@@ -84,12 +86,12 @@ const ContactOptions = ({ connection }) =>
         margin-bottom: 1rem;
       }
     `}</style>
-    {stylesForRadio.styles}
+    {stylesForCheckbox.styles}
     {stylesForInput.styles}
   </fieldset>
 
 ContactOptions.propTypes = {
-  connection: string,
+  connection: arrayOf(string),
 }
 
 export default ContactOptions

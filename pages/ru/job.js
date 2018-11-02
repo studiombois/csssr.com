@@ -1,6 +1,6 @@
-import React, {Fragment, PureComponent} from 'react'
-import {FORM_ERROR} from 'final-form'
-import {Form as ReactFinalForm} from 'react-final-form'
+import React, { Fragment, PureComponent } from 'react'
+import { FORM_ERROR } from 'final-form'
+import { Form as ReactFinalForm } from 'react-final-form'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
@@ -9,7 +9,7 @@ import withI18next from '../../utils/withI18next'
 import hrOrigin from '../../utils/hrOrigin'
 import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
-import {contactOptions} from '../../components/job/ContactOptions'
+import { contactOptions } from '../../components/job/ContactOptions'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -82,7 +82,7 @@ const filterUnckeckedContactOptions = values => {
     .filter(key => !filteredContactOptions[key])
     .reduce((memo, key) => ({
       ...memo,
-      [key]: values[key]
+      [key]: values[key],
     }), {})
 }
 
@@ -110,7 +110,7 @@ const onSubmit = async values => {
       error = 'Something went wrong. Please try again later.'
     }
 
-    return {[FORM_ERROR]: error}
+    return { [FORM_ERROR]: error }
   }
 }
 

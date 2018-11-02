@@ -27,7 +27,24 @@ const footer = css.resolve`
 
 const Vacancies = props =>
   <Fragment>
-    <img className='half-page-picture' src='https://via.placeholder.com/600x600' alt='Работа мечты CSSSR'/>
+    <div className='half-page-picture'>
+      <picture>
+        <source
+          type='image/webp'
+          srcSet='/static/images/jobs/cover@1x.webp,
+                  /static/images/jobs/cover@2x.webp 2x,
+                  /static/images/jobs/cover@3x.webp 3x'
+        />
+
+        <img
+          srcSet='/static/images/jobs/cover@1x.jpg,
+                    /static/images/jobs/cover@2x.jpg 2x,
+                    /static/images/jobs/cover@3x.jpg 3x'
+          src='/static/images/jobs/cover@1x.jpg'
+          alt='Работа мечты CSSSR'
+        />
+      </picture>
+    </div>
 
     <article className='grid-container'>
       <header>
@@ -166,15 +183,11 @@ const Vacancies = props =>
         margin-bottom: 1rem;
       }
 
-      picture {
-        grid-column: 8 / span 1;
-        grid-row: 13;
-        margin-top: 13.0625rem;
-        height: 7.5rem;
-      }
-
+      picture,
       img {
-        height: 100%;
+        min-height: 100%;
+        min-width: 100%;
+        max-width: 100%;
       }
 
       picture + p {
@@ -214,29 +227,17 @@ const Vacancies = props =>
         article {
           width: 1328px;
         }
-
-        picture {
-          height: 6rem;
-        }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article {
           width: 1232px;
         }
-
-        picture {
-          height: 5.5rem;
-        }
       }
 
       @media (min-width: 368px) and (max-width: 1279px) {
         article {
           width: 944px;
-        }
-
-        picture {
-          height: 4rem;
         }
 
         .hot-vacancy::before {

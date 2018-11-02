@@ -9,6 +9,16 @@ import Section from '../job/Section'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import AnimatedButton from '../ui-kit/AnimatedButton'
 
+const picturesMap = {
+  'project-manager': 'project_manager',
+  'middle-js-developer': 'developer_2',
+  'senior-js-developer': 'developer_2',
+  'qa-engineer': 'qa_1',
+  'ui-ux-designer': 'designer',
+  'pixel-perfectionist': 'developer_1',
+  'head-of-web-development-team': 'manager',
+  'sales-assistant': '',
+}
 class CandidateForm extends PureComponent {
   state = {
     formSubmitStatus: null,
@@ -68,11 +78,26 @@ class CandidateForm extends PureComponent {
   }
 
   renderVacancyImageAndLinks = () => {
-    const { vacancies } = this.props
+    const { vacancies, vacancy: { pathName, name } } = this.props
 
     return (
       <Fragment>
-        <img className='picture' src='https://via.placeholder.com/400' />
+        {picturesMap[pathName] && <picture>
+          <source
+            type='image/webp'
+            srcSet={`/static/images/jobs/${picturesMap[pathName]}@1x.webp,
+                    /static/images/jobs/${picturesMap[pathName]}@2x.webp 2x,
+                    /static/images/jobs/${picturesMap[pathName]}@3x.webp 3x`}
+          />
+
+          <img
+            srcSet={`/static/images/jobs/${picturesMap[pathName]}@1x.png,
+                      /static/images/jobs/${picturesMap[pathName]}@2x.png 2x,
+                      /static/images/jobs/${picturesMap[pathName]}@3x.png 3x`}
+            src={`/static/images/jobs/${picturesMap[pathName]}@1x.png`}
+            alt={name}
+          />
+        </picture>}
 
         <ul>
           {vacancies.map(vacancy =>

@@ -1,13 +1,15 @@
-import React, { Fragment, PureComponent } from 'react'
-import { Form as ReactFinalForm } from 'react-final-form'
+import React, {Fragment, PureComponent} from 'react'
+import {FORM_ERROR} from 'final-form'
+import {Form as ReactFinalForm} from 'react-final-form'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
 import withI18next from '../../utils/withI18next'
 import hrOrigin from '../../utils/hrOrigin'
-import candidateFormValidationRules from '../../utils/candidateFormValidationRules'
+import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
+import {contactOptions} from '../../components/job/ContactOptions'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -67,27 +69,50 @@ const processVacancy = vacancy => {
   }
 }
 
+const filterUnckeckedContactOptions = values => {
+  const filteredContactOptions = contactOptions.reduce((acc, option) => {
+    const optionId = option.id
+    if (!values.connection.includes(optionId)) {
+      acc[optionId] = true
+    }
+    return acc
+  }, {})
 
-// TODO
-// const onSubmit = async values => {
-// const res = await fetch('/api/submit-form', {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify(values),
-// })
-//
-// if (res.status === 201) {
-//   if (window.dataLayer) {
-//     window.dataLayer.push({ event: 'form_success' })
-//   }
-// } else if (res.status === 400) {
-//   const error = await res.json()
-//   return { [FORM_ERROR]: error.error }
-// }
-// }
+  return Object.keys(values)
+    .filter(key => !filteredContactOptions[key])
+    .reduce((memo, key) => ({
+      ...memo,
+      [key]: values[key]
+    }), {})
+}
+
+const onSubmit = async values => {
+  const res = await fetch(`${hrOrigin}/api/candidates`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(filterUnckeckedContactOptions(values)),
+  })
+
+  if (res.status === 200) {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'job_form' })
+    }
+  } else {
+    let error
+    await res.json()
+    try {
+      const response = await res.json()
+      error = response.error
+    } catch {
+      error = 'Something went wrong. Please try again later.'
+    }
+
+    return {[FORM_ERROR]: error}
+  }
+}
 
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
@@ -128,8 +153,8 @@ class Job extends PureComponent {
             vacancy={vacancy}
             vacancies={vacancies}
             initialValues={initialValues}
-            validate={candidateFormValidationRules}
-            onSubmit={values => { console.log(values) }}
+            validate={candidateFormValidationRules(vacancy)}
+            onSubmit={onSubmit}
             component={CandidateForm}
           />
         </Layout>
@@ -137,15 +162,6 @@ class Job extends PureComponent {
     )
   }
 }
-
-// sections
-
-// hasResume,
-// hasPortfolio,
-// hasGithub,
-// hasComment,
-// isCommentRequired,
-// commentMaxLength,
 
 // TODO загрузка файлов
 // hasFile,

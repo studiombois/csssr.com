@@ -43,8 +43,8 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
     >
       {taskLink}
     </a>
-    {taskText.split('\n').map(taskTextString =>
-      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskTextString }}/>
+    {taskText.split('\n').map((taskTextString, index) =>
+      <p key={index} className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskTextString }}/>
     )}
     <Field
       className={className}

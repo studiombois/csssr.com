@@ -3,10 +3,10 @@ import { Field } from 'react-final-form'
 import Link from 'next/link'
 import FormRow from './FormRow'
 import ContactOptions from './ContactOptions'
-import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 import TextareaField from '../ui-kit/TextareaField'
 import Section from '../job/Section'
+import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import AnimatedButton from '../ui-kit/AnimatedButton'
 
 class CandidateForm extends PureComponent {
@@ -248,15 +248,7 @@ class CandidateForm extends PureComponent {
             />
           </div>}
           <div className='field field_type_checkbox'>
-            <Field
-              id='privacyPolicyCheckbox'
-              name='consents'
-              value='privacyPolicy'
-              type='checkbox'
-              component={Checkbox}
-            >
-              Я даю CSSSR своё согласие на обработку введённых мною персональных данных на условиях, изложенных политике конфиденциальности
-            </Field>
+            <PrivacyPolicyCheckbox />
           </div>
 
           <div className='button'>

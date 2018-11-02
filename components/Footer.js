@@ -2,16 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
+import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 
-const handleLinkClick = () => {
-  document.documentElement.style.scrollBehavior = 'auto'
-
-  const scrollStylesTimer = setTimeout(() => {
-    document.documentElement.style.scrollBehavior = 'smooth'
-
-    clearTimeout(scrollStylesTimer)
-  })
-}
 
 const Footer = ({ router: { pathname }, lng, t }) => {
   const rootUrl = `/${lng}`
@@ -87,7 +79,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         <a
           href='#privacy-policy'
           className='font_footer-link'
-          onClick={handleLinkClick}
+          onClick={privacyPolicyLinkClick}
         >
           {t('common:footer.privacyPolicy')}
         </a>
@@ -97,7 +89,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         <a
           href='#cookies-policy'
           className='font_footer-link'
-          onClick={handleLinkClick}
+          onClick={privacyPolicyLinkClick}
         >
           Website cookie policy
         </a>

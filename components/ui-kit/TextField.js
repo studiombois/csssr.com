@@ -56,7 +56,7 @@ export default class TextField extends PureComponent {
           'font_input-basic-label': !(value && meta.error && meta.touched),
           [`textfield_${theme}`]: theme,
           textfield_filled: value,
-          [`${className}`]: !!className,
+          [className]: !!className,
         })}
       >
         <input

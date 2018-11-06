@@ -27,7 +27,7 @@ const renderTime = (time, t) => (
 
 const { className, styles } = css.resolve`
   div {
-    margin-top: 2.5rem;
+    margin-top: 2.0625rem;
   }
 `
 
@@ -43,8 +43,12 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
     >
       {taskLink}
     </a>
-    {taskText.split('\n').map(taskTextString =>
-      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: taskTextString }}/>
+    {taskText.split('\n').map((taskTextString, index) =>
+      <p
+        key={index}
+        className='font_p16-regular'
+        dangerouslySetInnerHTML={{ __html: taskTextString }}
+      />
     )}
     <Field
       className={className}

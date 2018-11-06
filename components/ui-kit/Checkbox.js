@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import cn from 'classnames'
 import {
   string,
   number,
@@ -18,6 +19,7 @@ export default class Checkbox extends PureComponent {
       number,
     ]),
     tabIndex: number,
+    className: string,
     checked: bool,
     disabled: bool,
     crossed: bool,
@@ -39,12 +41,16 @@ export default class Checkbox extends PureComponent {
       id,
       input,
       disabled,
+      className,
       children,
     } = this.props
 
     return (
       <span
-        className='checkbox'
+        className={cn({
+          checkbox: true,
+          [className]: !!className,
+        })}
       >
         <input
           id={id}
@@ -156,7 +162,7 @@ export default class Checkbox extends PureComponent {
           input:checked + label span.border {
             display: block;
           }
-    
+
         `}</style>
       </span>
     )

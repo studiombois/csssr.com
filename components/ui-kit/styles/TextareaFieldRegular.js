@@ -11,6 +11,7 @@ export default css`
   }
 
   textarea {
+    margin-top: 0;
     padding-top: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;

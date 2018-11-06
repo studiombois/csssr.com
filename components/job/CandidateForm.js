@@ -1,12 +1,8 @@
 import React, { PureComponent, Fragment } from 'react'
-import { Field } from 'react-final-form'
 import Link from 'next/link'
 import FormRow from './FormRow'
-import ContactOptions from './ContactOptions'
-import Checkbox from '../ui-kit/Checkbox'
-import TextField from '../ui-kit/TextField'
-import TextareaField from '../ui-kit/TextareaField'
 import Section from '../job/Section'
+import CandidateInfoSection from './CandidateInfoSection'
 import AnimatedButton from '../ui-kit/AnimatedButton'
 
 class CandidateForm extends PureComponent {
@@ -112,18 +108,13 @@ class CandidateForm extends PureComponent {
     )
   }
 
-  renderContactOptions = () => {
-    const { values: { connection } } = this.props
-
-    return <ContactOptions connection={connection}/>
-  }
-
   render() {
     const {
       submitting,
       hasValidationErrors,
       hasSubmitErrors,
       dirtySinceLastSubmit,
+      connection,
       vacancy,
     } = this.props
 
@@ -134,10 +125,8 @@ class CandidateForm extends PureComponent {
 
     const dividedSections = this.divideSections()
 
-    const { hasComment, hasGithub, hasPortfolio, hasResume/* , hasFile*/ } = vacancy
-
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.props.handleSubmit}>
         <FormRow
           rightSideContent={this.renderVacancyImageAndLinks()}
           rightSideWidth='wide'
@@ -151,114 +140,14 @@ class CandidateForm extends PureComponent {
           {dividedSections.beforeQuestSections.map((section, index) => <Section key={index} {...section} />)}
         </FormRow>
         {dividedSections.otherSections.map((section, index) => <Section key={index} {...section} asRow />)}
-        <FormRow
-          rightSideContent={this.renderContactOptions()}
-          customStylesForRightSideContent
-        >
-          <h2 className='font_h2-regular'>Расскажите о себе</h2>
-          <div className='fieldset'>
-            <div className='field'>
-              <Field
-                id='firstname'
-                name='firstname'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Имя'
-              />
-            </div>
-            <div className='field'>
-              <Field
-                id='lastname'
-                name='lastname'
-                component={TextField}
-                type='text'
-                theme='regular'
-                label='Фамилия'
-              />
-            </div>
-          </div>
-          <div className='field'>
-            <Field
-              id='age'
-              name='age'
-              component={TextField}
-              type='text'
-              theme='regular'
-              label='Возраст'
-            />
-          </div>
-          <div className='field'>
-            <Field
-              id='location'
-              name='location'
-              component={TextField}
-              type='text'
-              theme='regular'
-              label='Город'
-            />
-          </div>
-          <div className='field'>
-            <Field
-              id='email'
-              name='email'
-              component={TextField}
-              type='email'
-              theme='regular'
-              label='E-mail'
-            />
-          </div>
-          {hasResume && <div className='field'>
-            <Field
-              id='resume'
-              name='resume'
-              component={TextField}
-              type='text'
-              theme='regular'
-              label='Ссылка на резюме'
-            />
-          </div>}
-          {hasPortfolio && <div className='field'>
-            <Field
-              id='portfolio'
-              name='portfolio'
-              component={TextField}
-              type='text'
-              theme='regular'
-              label='Ссылка на портфолио'
-            />
-          </div>}
-          {hasGithub && <div className='field'>
-            <Field
-              id='github'
-              name='github'
-              component={TextField}
-              type='text'
-              theme='regular'
-              label='Ссылка на github'
-            />
-          </div>}
-          {hasComment && <p className='font_p16-regular about'>Хотите добавить что-то о себе?</p>}
-          {hasComment && <div className='field field_type_textarea'>
-            <Field
-              id='message'
-              name='message'
-              component={TextareaField}
-              theme='regular'
-            />
-          </div>}
-          <div className='field field_type_checkbox'>
-            <Field
-              id='privacyPolicyCheckbox'
-              name='consents'
-              value='privacyPolicy'
-              type='checkbox'
-              component={Checkbox}
-            >
-              Я даю CSSSR своё согласие на обработку введённых мною персональных данных на условиях, изложенных политике конфиденциальности
-            </Field>
-          </div>
 
+        <CandidateInfoSection
+          connection={connection}
+          vacancy={vacancy}
+          onFileFieldChange={this.props.form.change} /* eslint-disable-line */
+        />
+
+        <FormRow>
           <div className='button'>
             <AnimatedButton
               type='submit'
@@ -269,7 +158,9 @@ class CandidateForm extends PureComponent {
               Отправить
             </AnimatedButton>
           </div>
-        </FormRow><style jsx>{`
+        </FormRow>
+
+        <style jsx>{`
           form {
             margin-right: auto;
             margin-left: auto;
@@ -292,57 +183,11 @@ class CandidateForm extends PureComponent {
             margin-top: 1.3125rem;
           }
 
-          h2 {
-            margin-top: 6.375rem;
-          }
-
-          .field {
-            margin-bottom: 2.9375rem;
-          }
-
-          .field_type_checkbox {
-            margin-bottom: 3.57125rem;
-          }
-
-          .fieldset {
-            margin-top: 3.625rem;
-            margin-left: -0.5rem;
-            margin-right: -0.5rem;
-            display: flex;
-            justify-content: space-between;
-          }
-
-          .fieldset .field {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            width: 50%;
-          }
-
-          .field_type_textarea {
-            margin-top: 1.5rem;
-            margin-bottom: 3.5rem;
-          }
-
-          .about {
-            margin-top: 2.875rem;
-            margin-bottom: 2.5rem;
-          }
-
           .button {
+            margin-top: 3.5625rem;
             margin-left: auto;
             margin-right: auto;
             width: 12rem;
-          }
-
-          @media (min-width: 368px) and (max-width: 1279px) {
-            .field {
-              grid-column: 4 / span 6;
-              margin-bottom: 1.875rem;
-            }
-
-            .field_type_textarea {
-              margin-bottom: 3.75rem;
-            }
           }
         `}</style>
       </form>

@@ -1,5 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
+import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
@@ -67,28 +68,6 @@ const processVacancy = vacancy => {
   }
 }
 
-
-// TODO
-// const onSubmit = async values => {
-// const res = await fetch('/api/submit-form', {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify(values),
-// })
-//
-// if (res.status === 201) {
-//   if (window.dataLayer) {
-//     window.dataLayer.push({ event: 'form_success' })
-//   }
-// } else if (res.status === 400) {
-//   const error = await res.json()
-//   return { [FORM_ERROR]: error.error }
-// }
-// }
-
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
     const response = await fetch(`${hrOrigin}/api/public/vacancies/active`)
@@ -106,6 +85,41 @@ class Job extends PureComponent {
       vacancies,
       vacancy: processedVacancy,
       initialValues,
+    }
+  }
+
+  handleSubmit = async values => {
+    const formData = new FormData()
+
+    Object.keys(values).forEach(key => formData.append(key, values[key]))
+    formData.append('vacancy', this.props.vacancy.pathName)
+
+    const res = await fetch(`${hrOrigin}/api/hiring/candidates`, {
+      method: 'POST',
+      // headers: {
+      //   Accept: 'multipart/form-data',
+      //   // 'Content-Type': 'application/json',
+      //   'Content-Type': 'multipart/form-data',
+      // },
+      // body: JSON.stringify(values),
+      body: formData,
+    })
+
+    if (res.status === 200) {
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'job_form' })
+      }
+    } else {
+      let error
+      await res.json()
+      try {
+        const response = await res.json()
+        error = response.error
+      } catch {
+        error = 'Something went wrong. Please try again later.'
+      }
+
+      return { [FORM_ERROR]: error }
     }
   }
 
@@ -129,7 +143,7 @@ class Job extends PureComponent {
             vacancies={vacancies}
             initialValues={initialValues}
             validate={candidateFormValidationRules}
-            onSubmit={values => { console.log(values) }}
+            onSubmit={this.handleSubmit}
             component={CandidateForm}
           />
         </Layout>

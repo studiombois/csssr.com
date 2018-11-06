@@ -11,6 +11,7 @@ export default css`
   }
 
   textarea {
+    margin-top: 0;
     padding-top: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -21,6 +22,7 @@ export default css`
     border: none;
     border: solid 0.0625rem #e1e1e1;
     caret-color: #4a4a4a;
+    resize: vertical;
   }
 
   textarea::placeholder {

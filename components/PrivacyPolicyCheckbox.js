@@ -9,12 +9,14 @@ import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 function PrivacyPolicyCheckbox({
   id = 'privacyPolicyCheckbox',
   name = 'consents',
+  className,
   t,
 }) {
   return (
     <Field
       id={id}
       name={name}
+      className={className}
       value='privacyPolicy'
       type='checkbox'
       component={Checkbox}

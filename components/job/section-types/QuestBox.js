@@ -2,12 +2,13 @@ import React, { Fragment } from 'react'
 import { array, string } from 'prop-types'
 import FormRow from '../FormRow'
 import Section from '../Section'
+import formatText from '../../../utils/formatText'
 
 const QuestBox = ({ text, title, sections }) =>
   <Fragment>
     <FormRow>
-      <h3 className='font_h2-regular'>{title}</h3>
-      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }}/>
+      <h2 className='font_h2-regular'>{title}</h2>
+      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: formatText(text) }}/>
     </FormRow>
 
     {sections.map((section, index) => <Section key={index} {...section} asRow />)}

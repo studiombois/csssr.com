@@ -5,7 +5,7 @@ import { Field } from 'react-final-form'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 
-const options = [{
+export const contactOptions = [{
   id: 'telegram',
   radioText: 'Telegram',
   inputText: 'Логин или номер',
@@ -47,7 +47,7 @@ const ContactOptions = ({ connection = [] }) =>
       Дополнительные способы связи:
     </legend>
 
-    {options.map(option =>
+    {contactOptions.map(option =>
       <Fragment key={option.id}>
         <Field
           className={stylesForCheckbox.className}
@@ -75,8 +75,8 @@ const ContactOptions = ({ connection = [] }) =>
     )}
     <style jsx>{`
       fieldset {
-        margin-top: 6.9375rem;
         grid-column: 10 / span 3;
+        grid-row: 1 / span 10;
         white-space: nowrap;
         border: none;
       }

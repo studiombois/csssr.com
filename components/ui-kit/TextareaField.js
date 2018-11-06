@@ -55,7 +55,7 @@ export default class TextareaField extends PureComponent {
         error: state === 'error',
         [`textfield_${theme}`]: theme,
         textfield_filled: value,
-        [`${className}`]: !!className,
+        [className]: !!className,
       })}>
         <textarea
           id={id}

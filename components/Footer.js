@@ -67,7 +67,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         >
           <img
             className='social-logo'
-            src='../static/icons/linkedin.svg'
+            src='/static/icons/linkedin.svg'
             alt='CSSSR Logo'
           />
         </a>

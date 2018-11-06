@@ -5,8 +5,7 @@ import ButtonLink from '../ui-kit/ButtonLink'
 import { translate } from 'react-i18next'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
-
-const { className, styles } = css.resolve`
+const picture = css.resolve`
   picture {
     grid-column: 1 / span 12;
     grid-row: 3;
@@ -97,7 +96,10 @@ class Hire extends PureComponent {
             <footer className='font_p16-regular' rel='author' dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }} />
           </blockquote>
 
-          <PictureForAllResolutions className={className} namespace='dev' imagesKey='dog' alt={t('dev:imgAlt.dog')}/>
+          <PictureForAllResolutions
+            className={picture.className}
+            image={{ namespace: 'dev', key: 'dog', alt: t('dev:imgAlt.dog') }}
+          />
         }
 
         </article><style jsx>{`
@@ -204,7 +206,7 @@ class Hire extends PureComponent {
             }
           }
         `}</style>
-        {styles}
+        {picture.styles}
       </Fragment>
     )
   }

@@ -3,6 +3,16 @@ import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
 import Footer from './Footer'
+import Picture from '../Picture'
+
+const picture = css.resolve`
+  picture,
+  img {
+    min-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+`
 
 const footer = css.resolve`
   footer {
@@ -14,22 +24,10 @@ const footer = css.resolve`
 const Vacancies = props =>
   <Fragment>
     <div className='half-page-picture'>
-      <picture>
-        <source
-          type='image/webp'
-          srcSet='/static/images/jobs/cover@1x.webp,
-                  /static/images/jobs/cover@2x.webp 2x,
-                  /static/images/jobs/cover@3x.webp 3x'
-        />
-
-        <img
-          srcSet='/static/images/jobs/cover@1x.jpg,
-                    /static/images/jobs/cover@2x.jpg 2x,
-                    /static/images/jobs/cover@3x.jpg 3x'
-          src='/static/images/jobs/cover@1x.jpg'
-          alt='Работа мечты CSSSR'
-        />
-      </picture>
+      <Picture
+        className={picture.className}
+        image={{ namespace: 'jobs', key: 'cover', alt: 'Работа мечты CSSSR' }}
+      />
     </div>
 
     <article className='grid-container'>
@@ -64,22 +62,7 @@ const Vacancies = props =>
       </ul>
 
       <div className='picture'>
-        <picture>
-          <source
-            type='image/webp'
-            srcSet='/static/images/jobs/how@1x.webp,
-                    /static/images/jobs/how@2x.webp 2x,
-                    /static/images/jobs/how@3x.webp 3x'
-          />
-
-          <img
-            srcSet='/static/images/jobs/how@1x.jpg,
-                      /static/images/jobs/how@2x.jpg 2x,
-                      /static/images/jobs/how@3x.jpg 3x'
-            src='/static/images/jobs/how@1x.jpg'
-            alt='Работа мечты CSSSR'
-          />
-        </picture>
+        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}/>
       </div>
 
       <h2 className='font_h2-regular'>
@@ -94,22 +77,7 @@ const Vacancies = props =>
       </p>
 
       <div className='picture'>
-        <picture>
-          <source
-            type='image/webp'
-            srcSet='/static/images/jobs/who@1x.webp,
-                    /static/images/jobs/who@2x.webp 2x,
-                    /static/images/jobs/who@3x.webp 3x'
-          />
-
-          <img
-            srcSet='/static/images/jobs/who@1x.jpg,
-                      /static/images/jobs/who@2x.jpg 2x,
-                      /static/images/jobs/who@3x.jpg 3x'
-            src='/static/images/jobs/who@1x.jpg'
-            alt='Работа мечты CSSSR'
-          />
-        </picture>
+        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}/>
       </div>
       <h2 className='font_h2-regular'>
         <span style={{ color: '#f8585c' }}>
@@ -123,22 +91,7 @@ const Vacancies = props =>
       </p>
 
       <div className='picture'>
-        <picture>
-          <source
-            type='image/webp'
-            srcSet='/static/images/jobs/distance@1x.webp,
-                    /static/images/jobs/distance@2x.webp 2x,
-                    /static/images/jobs/distance@3x.webp 3x'
-          />
-
-          <img
-            srcSet='/static/images/jobs/distance@1x.jpg,
-                      /static/images/jobs/distance@2x.jpg 2x,
-                      /static/images/jobs/distance@3x.jpg 3x'
-            src='/static/images/jobs/distance@1x.jpg'
-            alt='Работа мечты CSSSR'
-          />
-        </picture>
+        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}/>
       </div>
       <h2 className='font_h2-regular'>
         О&nbsp;дистанционной работе
@@ -151,20 +104,7 @@ const Vacancies = props =>
       </p>
 
       <div className='hunter'>
-        <picture>
-          <source
-            type='image/webp'
-            srcSet='../static/images/jobs/jobs-hunter@1x.webp,
-                    ../static/images/jobs/jobs-hunter@2x.webp 2x,
-                    ../static/images/jobs/jobs-hunter@3x.webp 3x'/>
-
-          <img
-            srcSet='../static/images/jobs/jobs-hunter@1x.png,
-                      ../static/images/jobs/jobs-hunter@2x.png 2x,
-                      ../static/images/jobs/jobs-hunter@3x.png 3x'
-            src='../static/images/jobs/jobs-hunter@1x.png'
-            alt='jobs-hunter' />
-        </picture>
+        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
       </div>
 
       <p className='font_p16-regular'>
@@ -215,13 +155,6 @@ const Vacancies = props =>
 
       li {
         margin-bottom: 1rem;
-      }
-
-      picture,
-      img {
-        min-height: 100%;
-        min-width: 100%;
-        max-width: 100%;
       }
 
       .picture {
@@ -309,6 +242,7 @@ const Vacancies = props =>
       }
     `}</style>
     {footer.styles}
+    {picture.styles}
   </Fragment>
 
 export default Vacancies

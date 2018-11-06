@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react'
+import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import Link from 'next/link'
 import FormRow from './FormRow'
@@ -8,6 +9,17 @@ import TextareaField from '../ui-kit/TextareaField'
 import Section from '../job/Section'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import AnimatedButton from '../ui-kit/AnimatedButton'
+import Picture from '../Picture'
+
+const picture = css.resolve`
+  picture {
+    width: 100%;
+  }
+  
+  img {
+    width: 100%;
+  }
+`
 
 const picturesMap = {
   'project-manager': 'project_manager',
@@ -19,6 +31,7 @@ const picturesMap = {
   'head-of-web-development-team': 'manager',
   'sales-assistant': '',
 }
+
 class CandidateForm extends PureComponent {
   state = {
     formSubmitStatus: null,
@@ -84,22 +97,10 @@ class CandidateForm extends PureComponent {
 
     return (
       <Fragment>
-        {pictureName && <picture>
-          <source
-            type='image/webp'
-            srcSet={`/static/images/jobs/${pictureName}@1x.webp,
-                    /static/images/jobs/${pictureName}@2x.webp 2x,
-                    /static/images/jobs/${pictureName}@3x.webp 3x`}
-          />
-
-          <img
-            srcSet={`/static/images/jobs/${pictureName}@1x.png,
-                      /static/images/jobs/${pictureName}@2x.png 2x,
-                      /static/images/jobs/${pictureName}@3x.png 3x`}
-            src={`/static/images/jobs/${pictureName}@1x.png`}
-            alt={name}
-          />
-        </picture>}
+        {pictureName && <Picture
+          className={picture.className}
+          image={{ namespace: 'jobs', key: `job/${pictureName}`, alt: name }}
+        />}
 
         <ul>
           {vacancies.map(vacancy =>
@@ -116,14 +117,6 @@ class CandidateForm extends PureComponent {
             </li>
           )}
         </ul><style jsx>{`
-        picture {
-          width: 100%;
-        }
-
-        img {
-          width: 100%;
-        }
-
         ul {
           margin-top: 3.6875rem;
           margin-left: auto;
@@ -364,6 +357,7 @@ class CandidateForm extends PureComponent {
             }
           }
         `}</style>
+        {picture.styles}
       </form>
     )
   }

@@ -3,7 +3,7 @@ import { translate } from 'react-i18next'
 import css from 'styled-jsx/css'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
-const { className, styles } = css.resolve`
+const picture = css.resolve`
   picture {
     grid-column: 2 / span 10;
     grid-row: 2;
@@ -40,10 +40,8 @@ const Feature1 = ({ t, image }) =>
       <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
 
       <PictureForAllResolutions
-        className={className}
-        namespace={image.namespace}
-        imagesKey={image.key}
-        alt={image.alt}
+        className={picture.className}
+        image={image}
       />
 
       <footer className='grid-container'>
@@ -215,7 +213,7 @@ const Feature1 = ({ t, image }) =>
         }
       }
     `}</style>
-    {styles}
+    {picture.styles}
   </Fragment>
 
 export default translate()(Feature1)

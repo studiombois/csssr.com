@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
-const { className, styles } = css.resolve`
+const picture = css.resolve`
   picture {
     grid-column: 3 / span 8;
     grid-row: 1;
@@ -32,10 +32,8 @@ export default ({ title, text, image, style }) =>
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
 
       <PictureForAllResolutions
-        className={className}
-        namespace={image.namespace}
-        imagesKey={image.key}
-        alt={image.alt}
+        className={picture.className}
+        image={image}
       />
     </section>
     <style jsx>{`
@@ -98,5 +96,5 @@ export default ({ title, text, image, style }) =>
         }
       }
     `}</style>
-    {styles}
+    {picture.styles}
   </Fragment>

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
 import Checkbox from './ui-kit/Checkbox'
@@ -6,6 +7,36 @@ import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
 import PrivacyPolicyCheckbox from '../components/PrivacyPolicyCheckbox'
+import Picture from './Picture'
+
+const picture = css.resolve`
+  picture {
+    position: absolute;
+    bottom: 10.75rem;
+    left: 50%;
+    z-index: -1;
+    width: 340px;
+    height: 220px;
+    transform: translateX(-50%);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @media (min-width: 368px) and (max-width: 1279px) {
+    picture {
+      margin-top: -6.5rem;
+      height: 480px;
+    }
+
+    @media (max-width: 1023px) {
+      picture {
+        height: 30rem;
+      }
+    }
+  }
+`
 
 class ContactForm extends PureComponent {
   state = {
@@ -130,20 +161,9 @@ class ContactForm extends PureComponent {
           </AnimatedButton>
         </div>
 
-        <picture>
-          <source
-            type='image/webp'
-            srcSet='../static/images/dev/letter@1x.webp,
-                    ../static/images/dev/letter@2x.webp 2x,
-                    ../static/images/dev/letter@3x.webp 3x'/>
-
-          <img
-            srcSet='../static/images/dev/letter@1x.png,
-                      ../static/images/dev/letter@2x.png 2x,
-                      ../static/images/dev/letter@3x.png 3x'
-            src='../static/images/dev/letter@1x.png'
-            alt={t('dev:imgAlt.letter')} />
-        </picture><style jsx>{`
+        <Picture
+          className={picture.className}
+          image={{ namespace: 'dev', key: 'letter', alt: t('dev:imgAlt.letter') }} /><style jsx>{`
           form {
             position: relative;
             margin-right: auto;
@@ -153,20 +173,6 @@ class ContactForm extends PureComponent {
             width: 1792px;
             align-items: center;
             border: none;
-          }
-
-          picture {
-            position: absolute;
-            bottom: 10.75rem;
-            left: 50%;
-            z-index: -1;
-            width: 340px;
-            height: 220px;
-            transform: translateX(-50%);
-          }
-
-          img {
-            width: 100%;
           }
 
           .headline {
@@ -215,11 +221,6 @@ class ContactForm extends PureComponent {
               width: 944px;
             }
 
-            picture {
-              position: absolute;
-              bottom: 8rem;
-            }
-
             .headline {
               margin-bottom: 2.3125rem;
             }
@@ -237,14 +238,10 @@ class ContactForm extends PureComponent {
               form {
                 width: 59rem;
               }
-
-              picture {
-                width: 21.25rem;
-                height: 13.75rem;
-              }
             }
           }
         `}</style>
+        {picture.styles}
       </form>
     )
   }

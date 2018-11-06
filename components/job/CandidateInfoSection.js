@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import css from 'styled-jsx/css'
 import ContactOptions from './ContactOptions'
-import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 import FileField from '../ui-kit/FileField'
 import TextareaField from '../ui-kit/TextareaField'
+import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import getFileFieldText from '../../utils/getFileFieldText'
 
 const stylesForFullWidthField = css.resolve`
@@ -136,16 +136,8 @@ const CandidateInfoSection = props => {
         </Fragment>
       }
 
-      <Field
-        id='privacyPolicyCheckbox'
-        name='consents'
-        className={stylesForCheckboxField.className}
-        value='privacyPolicy'
-        type='checkbox'
-        component={Checkbox}
-      >
-        Я даю CSSSR своё согласие на обработку введённых мною персональных данных на условиях, изложенных политике конфиденциальности
-      </Field>
+      <PrivacyPolicyCheckbox className={stylesForCheckboxField.className} />
+
       <style jsx>{`
         div {
           margin-top: 6.5rem;

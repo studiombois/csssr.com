@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
-import Checkbox from './ui-kit/Checkbox'
-import TextField from './ui-kit/TextField'
-import TextareaField from './ui-kit/TextareaField'
-import AnimatedButton from './ui-kit/AnimatedButton'
+import Checkbox from '../ui-kit/Checkbox'
+import TextField from '../ui-kit/TextField'
+import TextareaField from '../ui-kit/TextareaField'
+import AnimatedButton from '../ui-kit/AnimatedButton'
+import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 
 class ContactForm extends PureComponent {
   state = {
@@ -102,15 +103,7 @@ class ContactForm extends PureComponent {
         </div>
 
         <div className='field field_type_checkbox'>
-          <Field
-            id='privacyPolicyCheckbox'
-            name='consents'
-            value='privacyPolicy'
-            type='checkbox'
-            component={Checkbox}
-          >
-            <span dangerouslySetInnerHTML={{ __html: t('dev:form.privacyPolicy') }}/>
-          </Field>
+          <PrivacyPolicyCheckbox />
         </div>
 
         <div className='field field_type_noMargin'>
@@ -121,7 +114,7 @@ class ContactForm extends PureComponent {
             value='newsletter'
             component={Checkbox}
           >
-            {t('dev:form.newsletter')}
+            {t('common:checkBoxesText.newsletterText')}
           </Field>
         </div>
 
@@ -140,15 +133,15 @@ class ContactForm extends PureComponent {
         <picture>
           <source
             type='image/webp'
-            srcSet='../static/images/letter@1x.webp,
+            srcSet='../../static/images/letter@1x.webp,
                     ../static/images/letter@2x.webp 2x,
                     ../static/images/letter@3x.webp 3x'/>
 
           <img
-            srcSet='../static/images/letter@1x.png,
+            srcSet='../../static/images/letter@1x.png,
                       ../static/images/letter@2x.png 2x,
                       ../static/images/letter@3x.png 3x'
-            src='../static/images/letter@1x.png'
+            src='../../static/images/letter@1x.png'
             alt={t('dev:imgAlt.letter')} />
         </picture><style jsx>{`
           form {

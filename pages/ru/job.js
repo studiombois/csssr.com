@@ -7,8 +7,9 @@ import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
 import withI18next from '../../utils/withI18next'
 import hrOrigin from '../../utils/hrOrigin'
-import candidateFormValidationRules from '../../utils/candidateFormValidationRules'
+import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
+import { contactOptions } from '../../components/job/ContactOptions'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -68,6 +69,24 @@ const processVacancy = vacancy => {
   }
 }
 
+const filterUnckeckedContactOptions = values => {
+  const filteredContactOptions = contactOptions.reduce((acc, option) => {
+    const optionId = option.id
+
+    if (values.connection && !values.connection.includes(optionId)) {
+      acc[optionId] = true
+    }
+    return acc
+  }, {})
+
+  return Object.keys(values)
+    .filter(key => !filteredContactOptions[key])
+    .reduce((memo, key) => ({
+      ...memo,
+      [key]: values[key],
+    }), {})
+}
+
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
     const response = await fetch(`${hrOrigin}/api/public/vacancies/active`)
@@ -91,7 +110,8 @@ class Job extends PureComponent {
   handleSubmit = async values => {
     const formData = new FormData()
 
-    Object.keys(values).forEach(key => formData.append(key, values[key]))
+    Object.keys(filterUnckeckedContactOptions(values)).forEach(key => formData.append(key, values[key]))
+
     formData.append('vacancy', this.props.vacancy.pathName)
     formData.set('file', values.files[0])
 
@@ -136,7 +156,7 @@ class Job extends PureComponent {
             vacancy={vacancy}
             vacancies={vacancies}
             initialValues={initialValues}
-            validate={candidateFormValidationRules}
+            validate={candidateFormValidationRules(vacancy)}
             onSubmit={this.handleSubmit}
             component={CandidateForm}
           />
@@ -145,20 +165,5 @@ class Job extends PureComponent {
     )
   }
 }
-
-// sections
-
-// hasResume,
-// hasPortfolio,
-// hasGithub,
-// hasComment,
-// isCommentRequired,
-// commentMaxLength,
-
-// TODO загрузка файлов
-// hasFile,
-// maxFileSize: Number,
-// fileExt: String,
-// uploadedFiles: [String],
 
 export default withError(withI18next(['job'])(Job))

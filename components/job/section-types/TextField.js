@@ -3,6 +3,11 @@ import { string, number, bool } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import TextareaField from '../../ui-kit/TextareaField'
+import {
+  composeValidators,
+  maxLength as maxLengthValidator,
+  required as requiredValidator,
+} from '../../../utils/validators'
 
 const { className, styles } = css.resolve`
   div {
@@ -10,13 +15,17 @@ const { className, styles } = css.resolve`
   }
 `
 
-const JobSectionTextField = ({ title, maxLength, required, inputIndex }) =>
-  <Fragment>
+const JobSectionTextField = ({ title, maxLength, required, inputIndex }) => {
+  const validate = composeValidators(
+    required && requiredValidator,
+    maxLengthValidator(maxLength)
+  )
+  return <Fragment>
     <Field
       className={className}
       name={`quests[${inputIndex}].text`}
       maxLength={maxLength}
-      required={required}
+      validate={validate}
       component={TextareaField}
       label={title}
       theme='regular'
@@ -29,6 +38,7 @@ const JobSectionTextField = ({ title, maxLength, required, inputIndex }) =>
     `}</style>
     {styles}
   </Fragment>
+}
 
 JobSectionTextField.propTypes = {
   index: number,

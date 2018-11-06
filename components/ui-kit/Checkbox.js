@@ -69,10 +69,6 @@ export default class Checkbox extends PureComponent {
           <span className='border' />
           {children && <span className='content'>{children}</span>}
         </label><style jsx>{`
-          span.checkbox {
-            display: inline-block;
-          }
-
           span.checkbox:hover label::before {
             border-color: rgba(155, 155, 155, 1);
           }

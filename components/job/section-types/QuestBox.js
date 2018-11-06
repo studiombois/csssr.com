@@ -6,7 +6,7 @@ import Section from '../Section'
 const QuestBox = ({ text, title, sections }) =>
   <Fragment>
     <FormRow>
-      <h3 className='font_h2-regular'>{title}</h3>
+      <h2 className='font_h2-regular'>{title}</h2>
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }}/>
     </FormRow>
 

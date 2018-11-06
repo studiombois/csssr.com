@@ -9,6 +9,14 @@ import Section from '../job/Section'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import AnimatedButton from '../ui-kit/AnimatedButton'
 
+const divideSections = sections => {
+  const firstQuestIndex = sections.findIndex(section => ['quest', 'questBox'].includes(section.type))
+  return [
+    sections.slice(0, firstQuestIndex),
+    sections.slice(firstQuestIndex),
+  ]
+}
+
 class CandidateForm extends PureComponent {
   state = {
     formSubmitStatus: null,
@@ -31,26 +39,6 @@ class CandidateForm extends PureComponent {
         this.setState({ formSubmitStatus: null })
       }
     }
-  }
-
-  divideSections = () => {
-    let isBeforeQuest = true
-    const { sections } = this.props.vacancy
-
-    return sections.reduce((memo, section) => {
-      const { type } = section
-      if (type === 'quest' || type === 'questBox') {
-        isBeforeQuest = false
-      }
-
-      return isBeforeQuest ? {
-        ...memo,
-        beforeQuestSections: [ ...memo.beforeQuestSections, section ],
-      } : {
-        ...memo,
-        otherSections: [ ...memo.otherSections, section ],
-      }
-    }, { beforeQuestSections: [], otherSections: [] })
   }
 
   handleStateClear = () => {
@@ -132,7 +120,7 @@ class CandidateForm extends PureComponent {
       hasValidationErrors ||
       (hasSubmitErrors && !dirtySinceLastSubmit)
 
-    const dividedSections = this.divideSections()
+    const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
 
     const { hasComment, hasGithub, hasPortfolio, hasResume/* , hasFile*/ } = vacancy
 
@@ -148,9 +136,9 @@ class CandidateForm extends PureComponent {
           </h1>
 
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />
-          {dividedSections.beforeQuestSections.map((section, index) => <Section key={index} {...section} />)}
+          {beforeQuestSections.map((section, index) => <Section key={index} {...section} />)}
         </FormRow>
-        {dividedSections.otherSections.map((section, index) => <Section key={index} {...section} asRow />)}
+        {otherSections.map((section, index) => <Section key={index} {...section} asRow />)}
         <FormRow
           rightSideContent={this.renderContactOptions()}
           customStylesForRightSideContent

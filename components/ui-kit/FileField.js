@@ -26,8 +26,6 @@ export default class FileField extends PureComponent {
     this.setState({
       value,
     })
-
-    console.log('handleChange', files)
   }
 
   render() {

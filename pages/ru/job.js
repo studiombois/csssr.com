@@ -93,15 +93,10 @@ class Job extends PureComponent {
 
     Object.keys(values).forEach(key => formData.append(key, values[key]))
     formData.append('vacancy', this.props.vacancy.pathName)
+    formData.set('file', values.files[0])
 
-    const res = await fetch(`${hrOrigin}/api/hiring/candidates`, {
+    const res = await fetch(`${hrOrigin}/api/candidates`, {
       method: 'POST',
-      // headers: {
-      //   Accept: 'multipart/form-data',
-      //   // 'Content-Type': 'application/json',
-      //   'Content-Type': 'multipart/form-data',
-      // },
-      // body: JSON.stringify(values),
       body: formData,
     })
 
@@ -129,7 +124,6 @@ class Job extends PureComponent {
       <Fragment>
         <Layout
           headerProps={{
-            isHalfed: true,
             logoHref: '/ru/jobs#',
             logoAlt: 'CSSSR jobs logo',
             logoSup: '.jobs',

@@ -6,6 +6,8 @@ import { translate } from 'react-i18next'
 import TextareaField from '../../ui-kit/TextareaField'
 import TextField from '../../ui-kit/TextField'
 import FormRow from '../FormRow'
+import formatText from '../../../utils/formatText'
+
 
 const renderTime = (time, t) => (
   <Fragment>
@@ -47,7 +49,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
       <p
         key={index}
         className='font_p16-regular'
-        dangerouslySetInnerHTML={{ __html: taskTextString }}
+        dangerouslySetInnerHTML={{ __html: formatText(taskTextString) }}
       />
     )}
     <Field

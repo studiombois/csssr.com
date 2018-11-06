@@ -7,7 +7,7 @@ import TextField from '../ui-kit/TextField'
 import TextareaField from '../ui-kit/TextareaField'
 import AnimatedButton from '../ui-kit/AnimatedButton'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
-import Picture from './Picture'
+import Picture from '../Picture'
 
 const picture = css.resolve`
   picture {

@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import { string } from 'prop-types'
+import formatText from '../../../utils/formatText'
 
 const TitleAndList = ({ text, title }) =>
   <Fragment>
     <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
+    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: formatText(text) }} />
 
     <style jsx>{`
       h2 {

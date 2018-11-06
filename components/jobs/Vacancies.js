@@ -154,15 +154,15 @@ const Vacancies = props =>
         <picture>
           <source
             type='image/webp'
-            srcSet='../static/images/jobs-hunter@1x.webp,
-                    ../static/images/jobs-hunter@2x.webp 2x,
-                    ../static/images/jobs-hunter@3x.webp 3x'/>
+            srcSet='../static/images/jobs/jobs-hunter@1x.webp,
+                    ../static/images/jobs/jobs-hunter@2x.webp 2x,
+                    ../static/images/jobs/jobs-hunter@3x.webp 3x'/>
 
           <img
-            srcSet='../static/images/jobs-hunter@1x.png,
-                      ../static/images/jobs-hunter@2x.png 2x,
-                      ../static/images/jobs-hunter@3x.png 3x'
-            src='../static/images/jobs-hunter@1x.png'
+            srcSet='../static/images/jobs/jobs-hunter@1x.png,
+                      ../static/images/jobs/jobs-hunter@2x.png 2x,
+                      ../static/images/jobs/jobs-hunter@3x.png 3x'
+            src='../static/images/jobs/jobs-hunter@1x.png'
             alt='jobs-hunter' />
         </picture>
       </div>

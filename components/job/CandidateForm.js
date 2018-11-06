@@ -80,21 +80,23 @@ class CandidateForm extends PureComponent {
   renderVacancyImageAndLinks = () => {
     const { vacancies, vacancy: { pathName, name } } = this.props
 
+    const pictureName = picturesMap[pathName]
+
     return (
       <Fragment>
-        {picturesMap[pathName] && <picture>
+        {pictureName && <picture>
           <source
             type='image/webp'
-            srcSet={`/static/images/jobs/${picturesMap[pathName]}@1x.webp,
-                    /static/images/jobs/${picturesMap[pathName]}@2x.webp 2x,
-                    /static/images/jobs/${picturesMap[pathName]}@3x.webp 3x`}
+            srcSet={`/static/images/jobs/${pictureName}@1x.webp,
+                    /static/images/jobs/${pictureName}@2x.webp 2x,
+                    /static/images/jobs/${pictureName}@3x.webp 3x`}
           />
 
           <img
-            srcSet={`/static/images/jobs/${picturesMap[pathName]}@1x.png,
-                      /static/images/jobs/${picturesMap[pathName]}@2x.png 2x,
-                      /static/images/jobs/${picturesMap[pathName]}@3x.png 3x`}
-            src={`/static/images/jobs/${picturesMap[pathName]}@1x.png`}
+            srcSet={`/static/images/jobs/${pictureName}@1x.png,
+                      /static/images/jobs/${pictureName}@2x.png 2x,
+                      /static/images/jobs/${pictureName}@3x.png 3x`}
+            src={`/static/images/jobs/${pictureName}@1x.png`}
             alt={name}
           />
         </picture>}

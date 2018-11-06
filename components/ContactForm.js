@@ -133,15 +133,15 @@ class ContactForm extends PureComponent {
         <picture>
           <source
             type='image/webp'
-            srcSet='../static/images/letter@1x.webp,
-                    ../static/images/letter@2x.webp 2x,
-                    ../static/images/letter@3x.webp 3x'/>
+            srcSet='../static/images/dev/letter@1x.webp,
+                    ../static/images/dev/letter@2x.webp 2x,
+                    ../static/images/dev/letter@3x.webp 3x'/>
 
           <img
-            srcSet='../static/images/letter@1x.png,
-                      ../static/images/letter@2x.png 2x,
-                      ../static/images/letter@3x.png 3x'
-            src='../static/images/letter@1x.png'
+            srcSet='../static/images/dev/letter@1x.png,
+                      ../static/images/dev/letter@2x.png 2x,
+                      ../static/images/dev/letter@3x.png 3x'
+            src='../static/images/dev/letter@1x.png'
             alt={t('dev:imgAlt.letter')} />
         </picture><style jsx>{`
           form {

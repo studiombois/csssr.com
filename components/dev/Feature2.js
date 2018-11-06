@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
-import Picture from '../Picture'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const { className, styles } = css.resolve`
   picture {
@@ -25,13 +25,18 @@ const { className, styles } = css.resolve`
   }
 `
 
-export default ({ title, text, imagesKey, style }) =>
+export default ({ title, text, image, style }) =>
   <Fragment>
     <section className='grid-container' style={style}>
       <h2 className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: title }} />
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
 
-      <Picture className={className} imagesKey={imagesKey}/>
+      <PictureForAllResolutions
+        className={className}
+        namespace={image.namespace}
+        imagesKey={image.key}
+        alt={image.alt}
+      />
     </section>
     <style jsx>{`
       section {

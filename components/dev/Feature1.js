@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
 import css from 'styled-jsx/css'
-import Picture from '../Picture'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const { className, styles } = css.resolve`
   picture {
@@ -26,7 +26,7 @@ const { className, styles } = css.resolve`
   }
 `
 
-const Feature1 = ({ t, imagesKey }) =>
+const Feature1 = ({ t, image }) =>
   <Fragment>
     <section className='grid-container' id='feature1'>
       <h2 id='services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
@@ -39,7 +39,12 @@ const Feature1 = ({ t, imagesKey }) =>
       <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
       <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
 
-      <Picture className={className} imagesKey={imagesKey}/>
+      <PictureForAllResolutions
+        className={className}
+        namespace={image.namespace}
+        imagesKey={image.key}
+        alt={image.alt}
+      />
 
       <footer className='grid-container'>
         <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.title') }} />

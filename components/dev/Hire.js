@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 import cn from 'classnames'
 import ButtonLink from '../ui-kit/ButtonLink'
 import { translate } from 'react-i18next'
-import Picture from '../Picture'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
 
 const { className, styles } = css.resolve`
@@ -97,7 +97,9 @@ class Hire extends PureComponent {
             <footer className='font_p16-regular' rel='author' dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }} />
           </blockquote>
 
-          <Picture className={className} imagesKey='dog'/>
+          <PictureForAllResolutions className={className} namespace='dev' imagesKey='dog' alt={t('dev:imgAlt.dog')}/>
+        }
+
         </article><style jsx>{`
           article {
             position: relative;

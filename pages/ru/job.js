@@ -87,6 +87,36 @@ const filterUnckeckedContactOptions = values => {
     }), {})
 }
 
+const onSubmit = async values => {
+  const formData = new FormData()
+
+  Object.keys(filterUnckeckedContactOptions(values)).forEach(key => formData.append(key, values[key]))
+
+  formData.set('file', values.files[0])
+
+  const res = await fetch(`${hrOrigin}/api/candidates`, {
+    method: 'POST',
+    body: formData,
+  })
+
+  if (res.status === 200) {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'job_form' })
+    }
+  } else {
+    let error
+    await res.json()
+    try {
+      const response = await res.json()
+      error = response.error
+    } catch {
+      error = 'Something went wrong. Please try again later.'
+    }
+
+    return { [FORM_ERROR]: error }
+  }
+}
+
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
     const response = await fetch(`${hrOrigin}/api/public/vacancies/active`)
@@ -104,37 +134,6 @@ class Job extends PureComponent {
       vacancies,
       vacancy: processedVacancy,
       initialValues,
-    }
-  }
-
-  handleSubmit = async values => {
-    const formData = new FormData()
-
-    Object.keys(filterUnckeckedContactOptions(values)).forEach(key => formData.append(key, values[key]))
-
-    formData.append('vacancy', this.props.vacancy.pathName)
-    formData.set('file', values.files[0])
-
-    const res = await fetch(`${hrOrigin}/api/candidates`, {
-      method: 'POST',
-      body: formData,
-    })
-
-    if (res.status === 200) {
-      if (window.dataLayer) {
-        window.dataLayer.push({ event: 'job_form' })
-      }
-    } else {
-      let error
-      await res.json()
-      try {
-        const response = await res.json()
-        error = response.error
-      } catch {
-        error = 'Something went wrong. Please try again later.'
-      }
-
-      return { [FORM_ERROR]: error }
     }
   }
 
@@ -157,7 +156,7 @@ class Job extends PureComponent {
             vacancies={vacancies}
             initialValues={initialValues}
             validate={candidateFormValidationRules(vacancy)}
-            onSubmit={this.handleSubmit}
+            onSubmit={onSubmit}
             component={CandidateForm}
           />
         </Layout>

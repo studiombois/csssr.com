@@ -10,6 +10,7 @@ const Picture = ({ className, image: { namespace, key, alt } }) =>
                 /static/images/${namespace}/${key}@2x.webp 2x,
                 /static/images/${namespace}/${key}@3x.webp 3x`}/>
       <img
+        className={className}
         srcSet={`/static/images/${namespace}/${key}@1x.png,
                 /static/images/${namespace}/${key}@2x.png 2x,
                 /static/images/${namespace}/${key}@3x.png 3x`}

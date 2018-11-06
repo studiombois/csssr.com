@@ -24,6 +24,7 @@ export default css`
   }
 
   input {
+    margin-top: 0;
     padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;

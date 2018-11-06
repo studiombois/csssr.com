@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
-import { FORM_ERROR } from 'final-form'
 import { Form as ReactFinalForm } from 'react-final-form'
+import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
@@ -72,7 +72,8 @@ const processVacancy = vacancy => {
 const filterUnckeckedContactOptions = values => {
   const filteredContactOptions = contactOptions.reduce((acc, option) => {
     const optionId = option.id
-    if (!values.connection.includes(optionId)) {
+
+    if (values.connection && !values.connection.includes(optionId)) {
       acc[optionId] = true
     }
     return acc
@@ -87,13 +88,15 @@ const filterUnckeckedContactOptions = values => {
 }
 
 const onSubmit = async values => {
+  const formData = new FormData()
+
+  Object.keys(filterUnckeckedContactOptions(values)).forEach(key => formData.append(key, values[key]))
+
+  formData.set('file', values.files[0])
+
   const res = await fetch(`${hrOrigin}/api/candidates`, {
     method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(filterUnckeckedContactOptions(values)),
+    body: formData,
   })
 
   if (res.status === 200) {
@@ -140,7 +143,6 @@ class Job extends PureComponent {
       <Fragment>
         <Layout
           headerProps={{
-            isHalfed: true,
             logoHref: '/ru/jobs#',
             logoAlt: 'CSSSR jobs logo',
             logoSup: '.jobs',
@@ -162,11 +164,5 @@ class Job extends PureComponent {
     )
   }
 }
-
-// TODO загрузка файлов
-// hasFile,
-// maxFileSize: Number,
-// fileExt: String,
-// uploadedFiles: [String],
 
 export default withError(withI18next(['job'])(Job))

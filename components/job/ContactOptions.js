@@ -75,8 +75,8 @@ const ContactOptions = ({ connection = [] }) =>
     )}
     <style jsx>{`
       fieldset {
-        margin-top: 6.9375rem;
         grid-column: 10 / span 3;
+        grid-row: 1 / span 10;
         white-space: nowrap;
         border: none;
       }

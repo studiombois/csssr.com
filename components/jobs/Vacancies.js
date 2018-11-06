@@ -3,12 +3,27 @@ import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
 import Footer from './Footer'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 import Picture from '../Picture'
 
 const picture = css.resolve`
   picture,
   img {
-    min-height: 100%;
+    min-width: 100%;
+  }
+
+  @media (max-width: 1023px) {
+    picture,
+    img {
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+`
+
+const pictureHunter = css.resolve`
+  picture,
+  img {
     min-width: 100%;
     max-width: 100%;
   }
@@ -24,9 +39,9 @@ const footer = css.resolve`
 const Vacancies = props =>
   <Fragment>
     <div className='half-page-picture'>
-      <Picture
+      <PictureForAllResolutions
         className={picture.className}
-        image={{ namespace: 'jobs', key: 'cover', alt: 'Работа мечты CSSSR' }}
+        image={{ namespace: 'jobs', key: 'cover', alt: 'Работа мечты CSSSR', extension: 'jpg' }}
       />
     </div>
 
@@ -104,7 +119,7 @@ const Vacancies = props =>
       </p>
 
       <div className='hunter'>
-        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
+        <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
       </div>
 
       <p className='font_p16-regular'>
@@ -161,7 +176,6 @@ const Vacancies = props =>
         grid-column: 8 / span 2;
         margin-top: 7.5625rem;
         height: 10.5rem;
-        background-color: red;
       }
 
       .picture:first-of-type {
@@ -191,6 +205,7 @@ const Vacancies = props =>
         left: 0;
         height: 100vh;
         width: 50vw;
+        overflow: hidden;
       }
 
       .font_link-list_16 {
@@ -238,11 +253,20 @@ const Vacancies = props =>
           article {
             width: 59rem;
           }
+
+          h2 {
+            margin-top: 1rem;
+          }
+
+          .picture {
+            height: 8rem;
+          }
         }
       }
     `}</style>
     {footer.styles}
     {picture.styles}
+    {pictureHunter.styles}
   </Fragment>
 
 export default Vacancies

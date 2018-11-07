@@ -47,7 +47,9 @@ const footer = css.resolve`
 
 const Vacancies = props =>
   <Fragment>
-    <div className='half-page-picture' />
+    <div className='half-page-picture'>
+      <span>Работай где хочешь!</span>
+    </div>
 
     <article className='grid-container'>
       <header>
@@ -177,16 +179,31 @@ const Vacancies = props =>
         z-index: 10000;
         top: 0;
         left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
         width: 50vw;
         background-image: url(/static/images/jobs/cover@1x.jpg);
         background-position: 50%;
-        background-size: cover;
+        background-size: auto 100%;
         overflow: hidden;
       }
 
       :global(html.webp) .half-page-picture {
         background-image: url(/static/images/jobs/cover@1x.webp);
+      }
+
+      .half-page-picture span {
+        margin-bottom: 4.8vh;
+        height: 8.8vh;
+        width: 100%;
+        text-align: center;
+        font-size: 3.6vh;
+        font-family: Roboto Slab;
+        line-height: 8.8vh;
+        border-top: 1px solid #979797;
+        border-bottom: 1px solid #979797;
       }
 
       .hunter {
@@ -278,6 +295,10 @@ const Vacancies = props =>
 
           .picture {
             height: 8rem;
+          }
+
+          .half-page-picture span { // Убрать после начала верстки мобильных вариантов страницы
+            font-size: 1.8vh;
           }
         }
       }

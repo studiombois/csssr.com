@@ -102,7 +102,9 @@ class CandidateForm extends PureComponent {
       hasValidationErrors,
       hasSubmitErrors,
       dirtySinceLastSubmit,
-      connection,
+      values: {
+        connection,
+      },
       vacancy,
     } = this.props
 

@@ -3,7 +3,6 @@ import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
 import Footer from './Footer'
-import PictureForAllResolutions from '../PictureForAllResolutions'
 import Picture from '../Picture'
 
 const picture = css.resolve`
@@ -31,17 +30,6 @@ const picture = css.resolve`
   }
 `
 
-const pictureHalfPage = css.resolve`
-  picture {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 50vw;
-    overflow: hidden;
-  }
-`
-
 const pictureHunter = css.resolve`
   picture,
   img {
@@ -59,10 +47,9 @@ const footer = css.resolve`
 
 const Vacancies = props =>
   <Fragment>
-    <PictureForAllResolutions
-      className={pictureHalfPage.className}
-      image={{ namespace: 'jobs', key: 'cover', alt: 'Работа мечты CSSSR', extension: 'jpg' }}
-    />
+    <div className='half-page-picture'>
+      <span>Работай где хочешь!</span>
+    </div>
 
     <article className='grid-container'>
       <header>
@@ -187,6 +174,38 @@ const Vacancies = props =>
         margin-bottom: 1rem;
       }
 
+      .half-page-picture {
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 50vw;
+        background-image: url(/static/images/jobs/cover@1x.jpg);
+        background-position: 50%;
+        background-size: auto 100%;
+        overflow: hidden;
+      }
+
+      :global(html.webp) .half-page-picture {
+        background-image: url(/static/images/jobs/cover@1x.webp);
+      }
+
+      .half-page-picture span {
+        margin-bottom: 4.8vh;
+        height: 8.8vh;
+        width: 100%;
+        text-align: center;
+        font-size: 3.6vh;
+        font-family: Roboto Slab;
+        line-height: 8.8vh;
+        border-top: 1px solid #979797;
+        border-bottom: 1px solid #979797;
+      }
+
       .hunter {
         grid-column: 8 / span 1;
         grid-row: 13;
@@ -217,6 +236,26 @@ const Vacancies = props =>
         position: absolute;
         top: 0.125rem;
         left: -2rem;
+      }
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+        .half-page-picture {
+          background-image: url(/static/images/jobs/cover@2x.jpg);
+        }
+
+        :global(html.webp) .half-page-picture {
+          background-image: url(/static/images/jobs/cover@2x.webp);
+        }
+      }
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx) {
+        .half-page-picture {
+          background-image: url(/static/images/jobs/cover@3x.jpg);
+        }
+
+        :global(html.webp) .half-page-picture {
+          background-image: url(/static/images/jobs/cover@3x.webp);
+        }
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
@@ -257,13 +296,16 @@ const Vacancies = props =>
           .picture {
             height: 8rem;
           }
+
+          .half-page-picture span { // Убрать после начала верстки мобильных вариантов страницы
+            font-size: 1.8vh;
+          }
         }
       }
     `}</style>
     {footer.styles}
     {picture.styles}
     {pictureHunter.styles}
-    {pictureHalfPage.styles}
   </Fragment>
 
 export default Vacancies

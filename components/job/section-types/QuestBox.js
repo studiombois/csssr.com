@@ -13,7 +13,7 @@ const QuestBox = ({ text, title, sections }) =>
 
     {sections.map((section, index) => <Section key={index} {...section} asRow />)}
     <style jsx>{`
-      h3 {
+      h2 {
         margin-top: 6.0625rem;
       }
 

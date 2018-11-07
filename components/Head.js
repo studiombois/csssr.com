@@ -7,6 +7,18 @@ const defaultOGImage = ''
 
 const Head = props => (
   <NextHead>
+    <script dangerouslySetInnerHTML={{ __html: `
+      // https://stackoverflow.com/a/27232658
+      // https://github.com/bfred-it/supports-webp/blob/master/index.js
+      function canUseWebP() {
+          const canvas = document.createElement('canvas')
+          canvas.width = canvas.height = 1;
+          return canvas.toDataURL && canvas.toDataURL('image/webp').indexOf('image/webp') === 5
+      }
+      if (canUseWebP()) {
+          document.documentElement.classList.add('webp')
+      }
+    ` }} />
     <meta charSet='UTF-8' />
     <title>{`${props.title} | CSSSR`}</title>
     <meta

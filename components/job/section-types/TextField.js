@@ -30,7 +30,6 @@ const JobSectionTextField = ({ title, maxLength, required, inputIndex }) => {
       label={title}
       theme='regular'
     />
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: `${required && '* '}${title}` }} />
     <style jsx>{`
       p {
         margin-top: 0.5rem;

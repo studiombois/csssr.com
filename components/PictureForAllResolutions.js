@@ -33,9 +33,9 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
       <source
         media='(max-width: 1919px)'
         type='image/webp'
-        srcSet={`/static/images/${namespace}/1360/${key}@1x.${extension},
-                 /static/images/${namespace}/1360/${key}@2x.${extension} 2x,
-                 /static/images/${namespace}/1360/${key}@3x.${extension} 3x`}/>
+        srcSet={`/static/images/${namespace}/1360/${key}@1x.webp,
+                 /static/images/${namespace}/1360/${key}@2x.webp 2x,
+                 /static/images/${namespace}/1360/${key}@3x.webp 3x`}/>
 
       <source
         media='(max-width: 1919px)'
@@ -69,6 +69,7 @@ PictureForAllResolutions.propTypes = {
     namespace: string,
     key: string,
     alt: string,
+    extension: string,
   }),
 }
 

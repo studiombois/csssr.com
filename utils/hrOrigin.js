@@ -5,5 +5,4 @@ export default (() => {
     return 'http://localhost:3030'
   }
   return 'https://hr.csssr.ru'
-
 })()

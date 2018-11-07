@@ -7,6 +7,16 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 import Picture from '../Picture'
 
 const picture = css.resolve`
+  picture {
+    grid-column: 8 / span 2;
+    margin-top: 7.5625rem;
+    height: 10.5rem;
+  }
+
+  picture:first-of-type {
+    margin-top: 10.5rem;
+  }
+
   picture,
   img {
     min-width: 100%;
@@ -18,6 +28,17 @@ const picture = css.resolve`
       min-width: 100%;
       max-width: 100%;
     }
+  }
+`
+
+const pictureHalfPage = css.resolve`
+  picture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
+    overflow: hidden;
   }
 `
 
@@ -38,12 +59,10 @@ const footer = css.resolve`
 
 const Vacancies = props =>
   <Fragment>
-    <div className='half-page-picture'>
-      <PictureForAllResolutions
-        className={picture.className}
-        image={{ namespace: 'jobs', key: 'cover', alt: 'Работа мечты CSSSR', extension: 'jpg' }}
-      />
-    </div>
+    <PictureForAllResolutions
+      className={pictureHalfPage.className}
+      image={{ namespace: 'jobs', key: 'cover', alt: 'Работа мечты CSSSR', extension: 'jpg' }}
+    />
 
     <article className='grid-container'>
       <header>
@@ -76,9 +95,7 @@ const Vacancies = props =>
         )}
       </ul>
 
-      <div className='picture'>
-        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}/>
-      </div>
+      <Picture className={picture.className} image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}/>
 
       <h2 className='font_h2-regular'>
         <span style={{ color: '#0054d8' }}>
@@ -91,9 +108,8 @@ const Vacancies = props =>
         Процесс найма в&nbsp;CSSSR состоит из&nbsp;нескольких этапов. Как правило, необходимо выполнить тестовое задание, пройти интервью c&nbsp;командой рекрутеров, поразить интервьюера на&nbsp;техническом собеседовании и&nbsp;подружиться с&nbsp;потенциальным начальником. Процесс занимает от&nbsp;одной до&nbsp;двух недель, но, как показывает практика, результат стоит того.
       </p>
 
-      <div className='picture'>
-        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}/>
-      </div>
+      <Picture className={picture.className} image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}/>
+
       <h2 className='font_h2-regular'>
         <span style={{ color: '#f8585c' }}>
           Кого
@@ -105,9 +121,8 @@ const Vacancies = props =>
         В&nbsp;CSSSR работают необыкновенные люди&nbsp;&mdash; нас всех объединяет стремление создавать безупречное. В&nbsp;команию попадают только самые талантливые, амбициозные, стойкие, напористые, умные люди с&nbsp;хорошим чувством юмора. Мы&nbsp;не&nbsp;скрываем, что даём зеленый свет прежде всего тем, кто хочет работать именно с&nbsp;нами, тем, кому нравится наша концепция, кто проникся нашими ценностями.
       </p>
 
-      <div className='picture'>
-        <Picture className={picture.className} image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}/>
-      </div>
+      <Picture className={picture.className} image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}/>
+
       <h2 className='font_h2-regular'>
         О&nbsp;дистанционной работе
       </h2>
@@ -172,16 +187,6 @@ const Vacancies = props =>
         margin-bottom: 1rem;
       }
 
-      .picture {
-        grid-column: 8 / span 2;
-        margin-top: 7.5625rem;
-        height: 10.5rem;
-      }
-
-      .picture:first-of-type {
-        margin-top: 10.5rem;
-      }
-
       .hunter {
         grid-column: 8 / span 1;
         grid-row: 13;
@@ -197,15 +202,6 @@ const Vacancies = props =>
 
       :global(#main) {
         position: relative;
-      }
-
-      .half-page-picture {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 50vw;
-        overflow: hidden;
       }
 
       .font_link-list_16 {
@@ -267,6 +263,7 @@ const Vacancies = props =>
     {footer.styles}
     {picture.styles}
     {pictureHunter.styles}
+    {pictureHalfPage.styles}
   </Fragment>
 
 export default Vacancies

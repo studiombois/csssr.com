@@ -102,7 +102,8 @@ export default class AnimatedButton extends PureComponent {
           <path d='m35,35l9.3,9.3'/>
           <path d='m35,35l-9.3,9.3'/>
           <path d='m35,35l9.3,-9.3'/>
-        </svg><style jsx>{`
+        </svg>
+        <style jsx>{`
           button {
             cursor: pointer;
           }
@@ -232,11 +233,11 @@ export default class AnimatedButton extends PureComponent {
 
           /* Optional elastic effect for the width of the button */
           .elastic.progress-button button {
-            transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
           }
 
           .loading.elastic.progress-button button {
-            transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
           }
 
           @media (min-width: 368px) and (max-width: 1279px) {

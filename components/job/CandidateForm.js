@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react'
 import css from 'styled-jsx/css'
+import cn from 'classnames'
 import Link from 'next/link'
 import FormRow from './FormRow'
 import Section from '../job/Section'
@@ -94,7 +95,12 @@ class CandidateForm extends PureComponent {
                 href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
                 as={`/ru/jobs/${vacancy.pathName}`}
               >
-                <a className='font_link-list_16'>
+                <a
+                  className={cn({
+                    'font_link-list_16': true,
+                    'hot-vacancy': vacancy.isHot,
+                  })}
+                >
                   {vacancy.name}
                 </a>
               </Link>
@@ -110,6 +116,18 @@ class CandidateForm extends PureComponent {
 
         li:not(:last-child) {
           margin-bottom: 1rem;
+        }
+
+        .hot-vacancy {
+          position: relative;
+        }
+  
+        .hot-vacancy::before {
+          content: '🔥';
+          position: absolute;
+          top: -0.125rem;
+          left: -1.25rem;
+          font-size: 0.75rem;
         }
       `}</style>
       </Fragment>

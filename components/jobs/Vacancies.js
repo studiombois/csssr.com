@@ -51,6 +51,22 @@ const Vacancies = props =>
       <span>Работай где хочешь!</span>
     </div>
 
+    <div className='logo-container'>
+      <div className='logo-wrapper'>
+        <span>
+          <img
+            className='logo'
+            src='/static/icons/csssr_logo.svg'
+            alt='CSSSR jobs logo'
+          />
+
+          <sup className='font_roboto-slab-light'>
+            .jobs
+          </sup>
+        </span>
+      </div>
+    </div>
+
     <article className='grid-container'>
       <header>
         <h1 className='font_h1-regular'>
@@ -132,6 +148,7 @@ const Vacancies = props =>
     </article>
     <style jsx>{`
       article {
+        position: relative;
         margin-left: auto;
         margin-right: auto;
         padding-top: 13.5rem;
@@ -206,6 +223,42 @@ const Vacancies = props =>
         border-bottom: 1px solid #979797;
       }
 
+      .logo-container {
+        position: fixed;
+        left: 50%;
+        z-index: 10001;
+        padding-top: 1.25rem;
+        transform: translateX(-50%);
+        width: 1792px;
+      }
+
+      .logo-wrapper {
+        position: relative;
+        width: 17rem;
+        height: 1.5rem;
+        text-align: center;
+      }
+
+      .logo-wrapper img {
+        height: 100%;
+      }
+
+      .logo-wrapper span {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+      }
+
+      .logo-wrapper sup {
+        position: absolute;
+        top: -4px;
+        left: calc(100% + 7px);
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        line-height: 1;
+      }
+
       .hunter {
         grid-column: 8 / span 1;
         grid-row: 13;
@@ -259,23 +312,34 @@ const Vacancies = props =>
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
-        article {
+        article,
+        .logo-container {
           width: 1328px;
         }
 
         .hunter {
           height: 6rem;
         }
+
+        .logo-wrapper {
+          width: 13rem;
+        }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
-        article {
+        article,
+        .logo-container {
           width: 1232px;
+        }
+
+        .logo-wrapper {
+          width: 12rem;
         }
       }
 
       @media (min-width: 368px) and (max-width: 1279px) {
-        article {
+        article,
+        .logo-container {
           width: 944px;
         }
 
@@ -284,8 +348,24 @@ const Vacancies = props =>
           left: -1.5rem;
         }
 
+        .logo-container {
+          padding-top: 1.5rem;
+        }
+
+        .logo-wrapper {
+          width: 9rem;
+          height: 1rem;
+        }
+
+        .logo-wrapper sup {
+          top: -4px;
+          left: calc(100% + 2px);
+          font-size: 0.625rem
+        }
+
         @media (max-width: 1023px) {
-          article {
+          article,
+          .logo-container {
             width: 59rem;
           }
 

@@ -32,7 +32,7 @@ export default class Settings extends PureComponent {
 
       #background-for-layout,
       #background-for-grid {
-        width: 1824px;
+        width: 1792px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -52,7 +52,7 @@ export default class Settings extends PureComponent {
       #background-for-layout.layout-columns-on {
         display: block;
         background-size: 152px;
-        background-image: linear-gradient(90deg, #F6D3C3 120px, transparent 120px, transparent 16px);
+        background-image: linear-gradient(90deg, #F6D3C3 120px, transparent 120px, transparent 32px);
         opacity: 0.5;
       }
 

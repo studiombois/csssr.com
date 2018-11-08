@@ -76,16 +76,18 @@ class HeaderContent extends PureComponent {
             </span>
 
             : <span className='logo-wrapper'>
-              <img
-                className='logo'
-                src='/static/icons/csssr_logo.svg'
-                alt={logoAlt}
-              />
-              {logoSup &&
-                <sup className='font_roboto-slab-light'>
-                  {logoSup}
-                </sup>
-              }
+              <span>
+                <img
+                  className='logo'
+                  src='/static/icons/csssr_logo.svg'
+                  alt={logoAlt}
+                />
+                {logoSup &&
+                  <sup className='font_roboto-slab-light'>
+                    {logoSup}
+                  </sup>
+                }
+              </span>
             </span>
           }
 
@@ -114,8 +116,12 @@ class HeaderContent extends PureComponent {
         </div><style jsx>{`
           sup {
             position: absolute;
-            top: -0.5625rem;
-            right: 0.25rem;
+            top: -4px;
+            left: calc(100% + 7px);
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            line-height: 1;
           }
 
           .header {
@@ -160,12 +166,18 @@ class HeaderContent extends PureComponent {
           }
 
           .logo-wrapper {
-            position: relative;
             grid-column: 1 / span 2;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
             height: 2.5rem;
             text-align: center;
+          }
+
+          .logo-wrapper a,
+          .logo-wrapper span {
+            position: relative;
+            display: inline-block;
+            height: 100%;
           }
 
           .logo {
@@ -230,6 +242,12 @@ class HeaderContent extends PureComponent {
           }
 
           @media (min-width: 368px) and (max-width: 1279px) {
+            sup {
+              top: -4px;
+              left: calc(100% + 2px);
+              font-size: 0.625rem
+            }
+
             .header-content {
               width: 944px;
             }

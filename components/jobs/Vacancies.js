@@ -51,7 +51,7 @@ const Vacancies = props =>
       <span>Работай где хочешь!</span>
     </div>
 
-    <div className='logo-container'>
+    <div className='jobs-header-logo-container'>
       <div className='logo-wrapper'>
         <span>
           <img
@@ -223,13 +223,14 @@ const Vacancies = props =>
         border-bottom: 1px solid #979797;
       }
 
-      .logo-container {
+      .jobs-header-logo-container {
         position: fixed;
         left: 50%;
         z-index: 10001;
         padding-top: 1.25rem;
         transform: translateX(-50%);
         width: 1792px;
+        pointer-events: none;
       }
 
       .logo-wrapper {
@@ -313,7 +314,7 @@ const Vacancies = props =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article,
-        .logo-container {
+        .jobs-header-logo-container {
           width: 1328px;
         }
 
@@ -328,7 +329,7 @@ const Vacancies = props =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article,
-        .logo-container {
+        .jobs-header-logo-container {
           width: 1232px;
         }
 
@@ -339,7 +340,7 @@ const Vacancies = props =>
 
       @media (min-width: 368px) and (max-width: 1279px) {
         article,
-        .logo-container {
+        .jobs-header-logo-container {
           width: 944px;
         }
 
@@ -348,7 +349,7 @@ const Vacancies = props =>
           left: -1.5rem;
         }
 
-        .logo-container {
+        .jobs-header-logo-container {
           padding-top: 1.5rem;
         }
 
@@ -365,7 +366,7 @@ const Vacancies = props =>
 
         @media (max-width: 1023px) {
           article,
-          .logo-container {
+          .jobs-header-logo-container {
             width: 59rem;
           }
 

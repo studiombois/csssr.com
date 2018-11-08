@@ -4,6 +4,7 @@ import {
   link,
   maxLength,
   required,
+  file,
 } from '../../utils/validators/index'
 
 export default vacancy => values => {
@@ -29,6 +30,10 @@ export default vacancy => values => {
 
   if (vacancy.hasResume) {
     errors.resume = composeValidators(required, link)(values.resume)
+  }
+
+  if (vacancy.hasFile && vacancy.fileExt) {
+    errors.file = composeValidators(required, file(vacancy.fileExt))(values.file)
   }
 
   return errors

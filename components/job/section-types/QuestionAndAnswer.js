@@ -38,13 +38,15 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
     <h3 className='font_h3-regular'>
       {title}
     </h3>
-    <a
-      className='font_link-list_16'
-      href={taskLink}
-      target='_blank'
-    >
-      {taskLink}
-    </a>
+    <div className='link'>
+      <a
+        className='font_link-list_16'
+        href={taskLink}
+        target='_blank'
+      >
+        {taskLink}
+      </a>
+    </div>
     {taskText.split('\n').map((taskTextString, index) =>
       <p
         key={index}
@@ -82,9 +84,8 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
         border: solid 2px #000000;
       }
 
-      a {
+      .link {
         margin-top: 1rem;
-        display: block;
       }
 
       p {

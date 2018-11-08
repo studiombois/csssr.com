@@ -25,6 +25,7 @@ function PrivacyPolicyCheckbox({
       <a
         href='#privacy-policy'
         onClick={privacyPolicyLinkClick}
+        className='font_link-list_16'
       >
         {t('common:checkBoxesText.privacyPolicyLinkText')}
       </a>

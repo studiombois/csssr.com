@@ -4,27 +4,28 @@ export default [
     label: 'Facebook',
   },
   {
-    href: 'https://www.linkedin.com/company/csssr',
+    href: 'https://www.linkedin.com/company/csssr/',
     label: 'LinkedIn',
   },
   {
-    href: '#',
+    href: 'https://twitter.com/csssr_dev',
     label: 'Twitter',
   },
-  {
-    href: '#',
-    label: 'Telegram',
-  },
+  // TODO телеграм пока не готов
+  // {
+  //   href: '#',
+  //   label: 'Telegram',
+  // },
   {
     href: 'https://vk.com/csssr',
     label: 'VK',
   },
   {
-    href: '#',
+    href: 'https://www.youtube.com/c/CSSSR_dev',
     label: 'Youtube',
   },
   {
-    href: '#',
+    href: 'https://soundcloud.com/csssr',
     label: 'SoundCloud',
   },
 ]

@@ -3,6 +3,7 @@ import css from 'styled-jsx/css'
 export default css`
   div {
     position: relative;
+    padding-bottom: 0;
     height: 4rem;
   }
 
@@ -16,6 +17,7 @@ export default css`
 
   div.font_inputted-text-error.textfield_regular input:not(:focus) {
     border-width: 2px;
+    padding-left: 0.9375rem;
   }
 
   div.font_inputted-text-error input:focus {

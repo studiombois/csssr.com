@@ -4,6 +4,7 @@ export default pathname => {
   case ('/en'):
     return 'common:menu.dev'
   case ('/ru/jobs'):
+  case ('/en/jobs'):
     return 'common:menu.jobs'
   case ('/ru/job'):
     return 'common:menu.job'

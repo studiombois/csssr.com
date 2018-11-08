@@ -138,7 +138,7 @@ class Job extends PureComponent {
   }
 
   render() {
-    const { t, vacancy, vacancies, initialValues } = this.props
+    const { vacancy, vacancies, initialValues } = this.props
     return (
       <Fragment>
         <Layout
@@ -150,7 +150,7 @@ class Job extends PureComponent {
             isBurgerVisible: true,
           }}
         >
-          <Head title={t('job:meta.title')} description={vacancy.description} />
+          <Head title={vacancy.name} description={vacancy.description} />
           <ReactFinalForm
             vacancy={vacancy}
             vacancies={vacancies}

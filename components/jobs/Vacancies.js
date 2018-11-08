@@ -72,26 +72,28 @@ const Vacancies = props =>
         </h1>
       </header>
 
-      <ul>
-        {props.vacancies.map(vacancy =>
-          <li key={vacancy.id}>
-            <Link
-              prefetch
-              href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
-              as={`/ru/jobs/${vacancy.pathName}`}
-            >
-              <a
-                className={cn({
-                  'font_link-list_24': true,
-                  'hot-vacancy': vacancy.isHot,
-                })}
+      {props.vacancies.length > 0 &&
+        <ul>
+          {props.vacancies.map(vacancy =>
+            <li key={vacancy.id}>
+              <Link
+                prefetch
+                href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
+                as={`/ru/jobs/${vacancy.pathName}`}
               >
-                {vacancy.name}
-              </a>
-            </Link>
-          </li>
-        )}
-      </ul>
+                <a
+                  className={cn({
+                    'font_link-list_24': true,
+                    'hot-vacancy': vacancy.isHot,
+                  })}
+                >
+                  {vacancy.name}
+                </a>
+              </Link>
+            </li>
+          )}
+        </ul>
+      }
 
       <Picture className={picture.className} image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}/>
 
@@ -148,6 +150,10 @@ const Vacancies = props =>
         width: 1792px;
       }
 
+      header {
+        margin-bottom: 0.5rem;
+      }
+
       header,
       h2,
       p {
@@ -176,7 +182,7 @@ const Vacancies = props =>
       }
 
       ul {
-        margin-top: 1.5625rem;
+        margin-top: 1.0625rem;
         grid-column: 8 / span 5;
       }
 

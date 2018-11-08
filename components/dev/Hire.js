@@ -100,7 +100,6 @@ class Hire extends PureComponent {
             className={picture.className}
             image={{ namespace: 'dev', key: 'dog', alt: t('dev:imgAlt.dog') }}
           />
-        }
 
         </article><style jsx>{`
           article {

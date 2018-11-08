@@ -46,7 +46,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       <li className='social-link'>
         <a
           aria-label='Facebook link'
-          href='https://www.facebook.com/csssr/'
+          href='https://www.facebook.com/csssr'
           target='_blank'
           rel='noopener'
         >
@@ -61,7 +61,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       <li className='social-link'>
         <a
           aria-label='LinkedIn link'
-          href='https://www.linkedin.com/company/csssr'
+          href='https://www.linkedin.com/company/csssr/'
           target='_blank'
           rel='noopener'
         >

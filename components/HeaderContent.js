@@ -156,6 +156,10 @@ class HeaderContent extends PureComponent {
             padding-right: ${scrollbarWidth}px;
           }
 
+          .header_padding-right_equals_scroll-width ~ :global(main .jobs-header-logo-container) {
+            transform: translateX(calc(-50% - ${scrollbarWidth / 2}px));
+          }
+
           .header-content {
             margin-right: auto;
             margin-left: auto;

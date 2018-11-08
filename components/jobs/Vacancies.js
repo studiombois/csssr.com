@@ -9,32 +9,27 @@ const picture = css.resolve`
   picture {
     grid-column: 8 / span 2;
     margin-top: 7.5625rem;
-    height: 10.5rem;
   }
 
   picture:first-of-type {
     margin-top: 10.5rem;
   }
 
-  picture,
   img {
-    min-width: 100%;
-  }
-
-  @media (max-width: 1023px) {
-    picture,
-    img {
-      min-width: 100%;
-      max-width: 100%;
-    }
+    min-height: 100%;
+    max-width: 100%;
   }
 `
 
 const pictureHunter = css.resolve`
-  picture,
+  picture {
+    grid-column: 8 / span 1;
+    grid-row: 13;
+    margin-top: 13.0625rem;
+  }
+
   img {
-    min-width: 100%;
-    max-width: 100%;
+    width: 100%;
   }
 `
 
@@ -51,7 +46,7 @@ const Vacancies = props =>
       <span>Работай где хочешь!</span>
     </div>
 
-    <div className='logo-container'>
+    <div className='jobs-header-logo-container'>
       <div className='logo-wrapper'>
         <span>
           <img
@@ -77,26 +72,28 @@ const Vacancies = props =>
         </h1>
       </header>
 
-      <ul>
-        {props.vacancies.map(vacancy =>
-          <li key={vacancy.id}>
-            <Link
-              prefetch
-              href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
-              as={`/ru/jobs/${vacancy.pathName}`}
-            >
-              <a
-                className={cn({
-                  'font_link-list_24': true,
-                  'hot-vacancy': vacancy.isHot,
-                })}
+      {props.vacancies.length > 0 &&
+        <ul>
+          {props.vacancies.map(vacancy =>
+            <li key={vacancy.id}>
+              <Link
+                prefetch
+                href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
+                as={`/ru/jobs/${vacancy.pathName}`}
               >
-                {vacancy.name}
-              </a>
-            </Link>
-          </li>
-        )}
-      </ul>
+                <a
+                  className={cn({
+                    'font_link-list_24': true,
+                    'hot-vacancy': vacancy.isHot,
+                  })}
+                >
+                  {vacancy.name}
+                </a>
+              </Link>
+            </li>
+          )}
+        </ul>
+      }
 
       <Picture className={picture.className} image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}/>
 
@@ -136,11 +133,9 @@ const Vacancies = props =>
         Однако не&nbsp;стоит думать, что отсутствие необходимости ходить в&nbsp;офис предполагает меньше ответственности и&nbsp;больше свободного времени. Обязательными условиями удалённой работы являются способность самостоятельно организовывать свой рабочий процесс и&nbsp;возможность без всяких &ldquo;но&rdquo; трудиться полный рабочий день.
       </p>
 
-      <div className='hunter'>
-        <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
-      </div>
+      <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
 
-      <p className='font_p16-regular'>
+      <p className='hunter-text font_p16-regular'>
         Также наши вакансии можно найти на&nbsp;<a href='' className='font_link-list_16'>Моём Круге</a> и&nbsp;на&nbsp;<a href='' className='font_link-list_16'>Head Hunter</a>.
       </p>
 
@@ -153,6 +148,10 @@ const Vacancies = props =>
         margin-right: auto;
         padding-top: 13.5rem;
         width: 1792px;
+      }
+
+      header {
+        margin-bottom: 0.5rem;
       }
 
       header,
@@ -183,7 +182,7 @@ const Vacancies = props =>
       }
 
       ul {
-        margin-top: 1.5625rem;
+        margin-top: 1.0625rem;
         grid-column: 8 / span 5;
       }
 
@@ -223,13 +222,14 @@ const Vacancies = props =>
         border-bottom: 1px solid #979797;
       }
 
-      .logo-container {
+      .jobs-header-logo-container {
         position: fixed;
         left: 50%;
         z-index: 10001;
         padding-top: 1.25rem;
         transform: translateX(-50%);
         width: 1792px;
+        pointer-events: none;
       }
 
       .logo-wrapper {
@@ -259,15 +259,8 @@ const Vacancies = props =>
         line-height: 1;
       }
 
-      .hunter {
-        grid-column: 8 / span 1;
-        grid-row: 13;
-        margin-top: 13.0625rem;
-        height: 7.5rem;
-      }
-
-      .hunter + p {
-        margin-top: 14.25rem;
+      .hunter-text {
+        margin-top: 14.5rem;
         grid-column: 9 / span 4;
         grid-row: 13;
       }
@@ -313,12 +306,8 @@ const Vacancies = props =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article,
-        .logo-container {
+        .jobs-header-logo-container {
           width: 1328px;
-        }
-
-        .hunter {
-          height: 6rem;
         }
 
         .logo-wrapper {
@@ -328,7 +317,7 @@ const Vacancies = props =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article,
-        .logo-container {
+        .jobs-header-logo-container {
           width: 1232px;
         }
 
@@ -339,7 +328,7 @@ const Vacancies = props =>
 
       @media (min-width: 368px) and (max-width: 1279px) {
         article,
-        .logo-container {
+        .jobs-header-logo-container {
           width: 944px;
         }
 
@@ -348,7 +337,7 @@ const Vacancies = props =>
           left: -1.5rem;
         }
 
-        .logo-container {
+        .jobs-header-logo-container {
           padding-top: 1.5rem;
         }
 
@@ -365,16 +354,8 @@ const Vacancies = props =>
 
         @media (max-width: 1023px) {
           article,
-          .logo-container {
+          .jobs-header-logo-container {
             width: 59rem;
-          }
-
-          h2 {
-            margin-top: 1rem;
-          }
-
-          .picture {
-            height: 8rem;
           }
 
           .half-page-picture span { // Убрать после начала верстки мобильных вариантов страницы

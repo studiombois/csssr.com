@@ -9,32 +9,27 @@ const picture = css.resolve`
   picture {
     grid-column: 8 / span 2;
     margin-top: 7.5625rem;
-    height: 10.5rem;
   }
 
   picture:first-of-type {
     margin-top: 10.5rem;
   }
 
-  picture,
   img {
-    min-width: 100%;
-  }
-
-  @media (max-width: 1023px) {
-    picture,
-    img {
-      min-width: 100%;
-      max-width: 100%;
-    }
+    min-height: 100%;
+    max-width: 100%;
   }
 `
 
 const pictureHunter = css.resolve`
-  picture,
+  picture {
+    grid-column: 8 / span 1;
+    grid-row: 13;
+    margin-top: 13.0625rem;
+  }
+
   img {
-    min-width: 100%;
-    max-width: 100%;
+    width: 100%;
   }
 `
 
@@ -136,11 +131,9 @@ const Vacancies = props =>
         Однако не&nbsp;стоит думать, что отсутствие необходимости ходить в&nbsp;офис предполагает меньше ответственности и&nbsp;больше свободного времени. Обязательными условиями удалённой работы являются способность самостоятельно организовывать свой рабочий процесс и&nbsp;возможность без всяких &ldquo;но&rdquo; трудиться полный рабочий день.
       </p>
 
-      <div className='hunter'>
-        <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
-      </div>
+      <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
 
-      <p className='font_p16-regular'>
+      <p className='hunter-text font_p16-regular'>
         Также наши вакансии можно найти на&nbsp;<a href='' className='font_link-list_16'>Моём Круге</a> и&nbsp;на&nbsp;<a href='' className='font_link-list_16'>Head Hunter</a>.
       </p>
 
@@ -260,15 +253,8 @@ const Vacancies = props =>
         line-height: 1;
       }
 
-      .hunter {
-        grid-column: 8 / span 1;
-        grid-row: 13;
-        margin-top: 13.0625rem;
-        height: 7.5rem;
-      }
-
-      .hunter + p {
-        margin-top: 14.25rem;
+      .hunter-text {
+        margin-top: 14.5rem;
         grid-column: 9 / span 4;
         grid-row: 13;
       }
@@ -318,10 +304,6 @@ const Vacancies = props =>
           width: 1328px;
         }
 
-        .hunter {
-          height: 6rem;
-        }
-
         .logo-wrapper {
           width: 13rem;
         }
@@ -368,14 +350,6 @@ const Vacancies = props =>
           article,
           .jobs-header-logo-container {
             width: 59rem;
-          }
-
-          h2 {
-            margin-top: 1rem;
-          }
-
-          .picture {
-            height: 8rem;
           }
 
           .half-page-picture span { // Убрать после начала верстки мобильных вариантов страницы

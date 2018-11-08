@@ -41,6 +41,9 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
         display block;
       }
 
+      img {
+        width: 100%;
+      }
     `}</style>
   </Fragment>
 

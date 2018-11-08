@@ -36,7 +36,7 @@ const stylesForCheckbox = css.resolve`
 
 const stylesForInput = css.resolve`
   div {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     margin-bottom: 2.9375rem;
   }
 `

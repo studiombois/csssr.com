@@ -31,7 +31,8 @@ const picture = css.resolve`
 
     @media (max-width: 1023px) {
       picture {
-        height: 30rem;
+        width: 21.25rem;
+        height: 13.75rem;
       }
     }
   }

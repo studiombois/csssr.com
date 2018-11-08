@@ -42,7 +42,7 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
       }
 
       img {
-        width: 100%;
+        max-width: 100%;
       }
     `}</style>
   </Fragment>

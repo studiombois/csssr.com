@@ -118,7 +118,7 @@ const Text = () =>
 
     .font_link-list_16[target='_blank']::after {
       position: absolute;
-      bottom: 19px;
+      bottom: 12px;
       right: -5px;
       display: none;
       width: 4px;

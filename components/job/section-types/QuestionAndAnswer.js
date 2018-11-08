@@ -38,7 +38,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
     <h3 className='font_h3-regular'>
       {title}
     </h3>
-    <div className='link'>
+    <div className='link-wrapper'>
       <a
         className='font_link-list_16'
         href={taskLink}
@@ -84,7 +84,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
         border: solid 2px #000000;
       }
 
-      .link {
+      .link-wrapper {
         margin-top: 1rem;
       }
 

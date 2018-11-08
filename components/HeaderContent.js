@@ -215,6 +215,7 @@ class HeaderContent extends PureComponent {
             border: none;
             font-size: 0;
             background: none;
+            cursor: pointer;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {

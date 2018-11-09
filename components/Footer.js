@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
+import footerLinks from '../data/jobs/footerLinks'
 import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 
 
@@ -32,46 +33,22 @@ const Footer = ({ router: { pathname }, lng, t }) => {
     }
 
     <ul className='social-links'>
-      {/* <li className='social-link'>
-        <a
-          aria-label='VK link'
-          href='https://vk.com/csssr'
-          target='_blank'
-          rel='noopener'
-        >
-          {vkIcon}
-        </a>
-      </li>*/}
-
-      <li className='social-link'>
-        <a
-          aria-label='Facebook link'
-          href='https://www.facebook.com/csssr'
-          target='_blank'
-          rel='noopener'
-        >
-          <img
-            className='social-logo'
-            src='/static/icons/facebook.svg'
-            alt='CSSSR Logo'
-          />
-        </a>
-      </li>
-
-      <li className='social-link'>
-        <a
-          aria-label='LinkedIn link'
-          href='https://www.linkedin.com/company/csssr/'
-          target='_blank'
-          rel='noopener'
-        >
-          <img
-            className='social-logo'
-            src='/static/icons/linkedin.svg'
-            alt='CSSSR Logo'
-          />
-        </a>
-      </li>
+      {footerLinks.map(({ href, label }) =>
+        <li key={label} className='social-link'>
+          <a
+            aria-label={`${label} link`}
+            href={href}
+            target='_blank'
+            rel='noopener'
+          >
+            <img
+              className='social-logo'
+              src={`/static/icons/${label.toLowerCase()}.svg`}
+              alt={`${label} logo`}
+            />
+          </a>
+        </li>
+      )}
     </ul>
 
     <ul className='footer-links'>

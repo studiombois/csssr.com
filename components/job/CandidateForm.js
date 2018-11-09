@@ -154,7 +154,7 @@ class CandidateForm extends PureComponent {
     const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
 
     return (
-      <form onSubmit={this.props.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <FormRow
           rightSideContent={this.renderVacancyImageAndLinks()}
           rightSideWidth='wide'

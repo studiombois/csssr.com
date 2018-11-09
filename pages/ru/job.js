@@ -2,6 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
+import objectToFormData from 'object-to-formdata'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
@@ -88,11 +89,20 @@ const filterUnckeckedContactOptions = values => {
 }
 
 const onSubmit = async values => {
-  const formData = new FormData()
+  const filteredValues = filterUnckeckedContactOptions(values)
+  if (values.quests.length === 0) {
+    delete filteredValues.quests
+  }
+  delete filteredValues.file
+  delete filteredValues.files
 
-  Object.keys(filterUnckeckedContactOptions(values)).forEach(key => formData.append(key, values[key]))
+  const formData = objectToFormData(filteredValues, {
+    indices: true,
+  })
 
-  formData.set('file', values.files[0])
+  if (values.files) {
+    formData.set('file', values.files[0])
+  }
 
   const res = await fetch(`${hrOrigin}/api/candidates`, {
     method: 'POST',

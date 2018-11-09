@@ -21,7 +21,7 @@ const cache = (asyncFunc, time) => {
 }
 
 const getVacancies = () =>
-  fetch('http://localhost:3030/api/public/vacancies/active').then(res =>
+  fetch('http://hr.csssr.ru/api/public/vacancies/active').then(res =>
     res.json().then(vacancies =>
       vacancies.map(vacancy => ({
         url: `https://csssr.com/ru/jobs/${vacancy.pathName}`,

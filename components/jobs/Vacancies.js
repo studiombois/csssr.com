@@ -16,7 +16,6 @@ const picture = css.resolve`
   }
 
   img {
-    /* min-height: 100%; */
     max-width: 100%;
   }
 `

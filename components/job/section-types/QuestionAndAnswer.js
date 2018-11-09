@@ -43,6 +43,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
         className='font_link-list_16'
         href={taskLink}
         target='_blank'
+        rel='noopener'
       >
         {taskLink}
       </a>

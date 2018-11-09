@@ -14,9 +14,10 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
 
     <div className='file-info'>
       <a
+        className='font_link-list_16'
         href={fileLink}
         target='_blank'
-        className='font_link-list_16'
+        rel='noopener'
       >
         {fileName}
       </a>

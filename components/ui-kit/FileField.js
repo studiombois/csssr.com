@@ -68,7 +68,7 @@ export default class FileField extends PureComponent {
           })}
         >
           <span>
-            {this.state.value}
+            {value && this.state.value}
           </span>
 
           {label && <label

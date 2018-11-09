@@ -101,7 +101,7 @@ const onSubmit = async values => {
 
   if (res.status === 200) {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'job_form' })
+      window.dataLayer.push({ event: 'job_form_success' })
     }
   } else {
     let error
@@ -111,6 +111,9 @@ const onSubmit = async values => {
       error = response.error
     } catch {
       error = 'Something went wrong. Please try again later.'
+    }
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'job_form_fail' })
     }
 
     return { [FORM_ERROR]: error }

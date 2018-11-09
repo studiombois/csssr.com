@@ -301,7 +301,7 @@ const Vacancies = props =>
       @media
       only screen and (-webkit-min-device-pixel-ratio: 3),
       only screen and (min-resolution: 288dpi),
-      only screen and (min-resolution: 2dppx) {
+      only screen and (min-resolution: 3dppx) {
         .half-page-picture {
           background-image: url(/static/images/jobs/cover@3x.jpg);
         }

@@ -21,6 +21,8 @@ const cache = (asyncFunc, time) => {
 }
 
 const getVacancies = () =>
+  // TODO использовать HR_ORIGIN.
+  // Сейчас невозможно использовать, потому что этот код выполняется раньше, чем next/config инициализируется
   fetch('http://hr.csssr.ru/api/public/vacancies/active').then(res =>
     res.json().then(vacancies =>
       vacancies.map(vacancy => ({

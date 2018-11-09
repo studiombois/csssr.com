@@ -284,7 +284,10 @@ const Vacancies = props =>
         left: -2rem;
       }
 
-      @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
         .half-page-picture {
           background-image: url(/static/images/jobs/cover@2x.jpg);
         }
@@ -294,7 +297,10 @@ const Vacancies = props =>
         }
       }
 
-      @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx) {
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 3),
+      only screen and (min-resolution: 288dpi),
+      only screen and (min-resolution: 2dppx) {
         .half-page-picture {
           background-image: url(/static/images/jobs/cover@3x.jpg);
         }

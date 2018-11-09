@@ -3,6 +3,7 @@ import css from 'styled-jsx/css'
 export default css`
   div {
     position: relative;
+    padding-bottom: 0;
   }
 
   div.error textarea {
@@ -51,7 +52,7 @@ export default css`
     user-select: none;
   }
 
-  div.textfield_filled label,
+  div.textarea_filled label,
   div textarea:focus + label {
     top: 0.375rem;
     font-size: 0.625rem;

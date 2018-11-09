@@ -140,7 +140,7 @@ const CandidateInfoSection = props => {
 
       <style jsx>{`
         div {
-          margin-top: 6.5rem;
+          margin-top: 6.9375rem;
           margin-right: auto;
           margin-left: auto;
           width: 1792px;

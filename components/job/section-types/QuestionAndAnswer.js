@@ -28,7 +28,11 @@ const renderTime = (time, t) => (
 )
 
 const { className, styles } = css.resolve`
-  div {
+  div.textfield_regular {
+    margin-top: 2rem;
+  }
+
+  div.textarea_regular {
     margin-top: 2.0625rem;
   }
 `

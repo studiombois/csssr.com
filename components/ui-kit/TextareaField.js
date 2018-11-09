@@ -53,8 +53,8 @@ export default class TextareaField extends PureComponent {
     return (
       <div className={cn('font_inputted-text-regular', {
         error: state === 'error',
-        [`textfield_${theme}`]: theme,
-        textfield_filled: value,
+        [`textarea_${theme}`]: theme,
+        textarea_filled: value,
         [className]: !!className,
       })}>
         <textarea

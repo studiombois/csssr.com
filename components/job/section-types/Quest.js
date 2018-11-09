@@ -30,11 +30,13 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
         margin-top: 8.5rem;
         grid-column: 10 / span 1;
         text-align: center;
+        height: 0;
       }
 
       .file-info {
         margin-top: 9rem;
         grid-column: 11 / span 1;
+        height: 0;
       }
 
       span {

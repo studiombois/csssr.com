@@ -63,6 +63,8 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
       <li className='footer-link'>
         <a
           href='#privacy-policy'
+          target='_blank'
+          rel='noopener'
           className='font_footer-link'
           onClick={handleLinkClick}
         >

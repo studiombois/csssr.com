@@ -55,6 +55,8 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       <li className='footer-link'>
         <a
           href='#privacy-policy'
+          target='_blank'
+          rel='noopener'
           className='font_footer-link'
           onClick={privacyPolicyLinkClick}
         >
@@ -65,6 +67,8 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       {lng !== 'ru' && <li className='footer-link'>
         <a
           href='#cookies-policy'
+          target='_blank'
+          rel='noopener'
           className='font_footer-link'
           onClick={privacyPolicyLinkClick}
         >

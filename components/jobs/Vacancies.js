@@ -136,7 +136,7 @@ const Vacancies = props =>
       <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
 
       <p className='hunter-text font_p16-regular'>
-        Также наши вакансии можно найти на&nbsp;<a href='https://moikrug.ru/companies/csssr' className='font_link-list_16'>Моём Круге</a> и&nbsp;на&nbsp;<a href='https://spb.hh.ru/employer/1230690' className='font_link-list_16'>Head Hunter</a>.
+        Также наши вакансии можно найти на&nbsp;<a href='https://moikrug.ru/companies/csssr' target='_blank' rel='noopener' className='font_link-list_16'>Моём Круге</a> и&nbsp;на&nbsp;<a href='https://spb.hh.ru/employer/1230690' target='_blank' rel='noopener' className='font_link-list_16'>Head Hunter</a>.
       </p>
 
       <Footer className={footer.className}/>

@@ -27,12 +27,12 @@ const picture = css.resolve`
   @media (min-width: 368px) and (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
-      height: 480px;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 30rem;
+        width: 21.25rem;
+        height: 13.75rem;
       }
     }
   }
@@ -163,7 +163,9 @@ class ContactForm extends PureComponent {
 
         <Picture
           className={picture.className}
-          image={{ namespace: 'dev', key: 'letter', alt: t('dev:imgAlt.letter') }} /><style jsx>{`
+          image={{ namespace: 'dev', key: 'letter', alt: t('dev:imgAlt.letter') }}
+        />
+        <style jsx>{`
           form {
             position: relative;
             margin-right: auto;

@@ -281,6 +281,8 @@ const Vacancies = props =>
         position: absolute;
         top: 0.125rem;
         left: -2rem;
+        display: inline-block;
+        text-decoration: none;
       }
 
       @media

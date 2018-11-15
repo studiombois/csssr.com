@@ -21,6 +21,11 @@ const onSubmit = async values => {
     }
   } else if (res.status === 400) {
     const error = await res.json()
+
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'form_fail' })
+    }
+
     return { [FORM_ERROR]: error.error }
   }
 }

@@ -56,7 +56,7 @@ const PrivacyPolicyEn = () => (
       <p className='font_p16-regular'>
         Information collected from CSSSR Properties may be&nbsp;disclosed:
       </p>
-      <ul>
+      <ul className='have-square-bullets'>
         <li className='font_p16-regular'>
           To&nbsp;send administrative information. For example, to&nbsp;send information regarding our services and changes to&nbsp;our terms, conditions, and policies.
         </li>
@@ -103,7 +103,7 @@ const PrivacyPolicyEn = () => (
       <p className='font_p16-regular'>
         Information collected from CSSSR Properties may be&nbsp;disclosed:
       </p>
-      <ul>
+      <ul className='have-square-bullets'>
         <li className='font_p16-regular'>
           To&nbsp;our vendors, consultants, and other service providers: We&nbsp;may share your information with our third-party service providers, vendors, contractors, or&nbsp;agents who perform functions required for the operation of&nbsp;the business. Examples include: to&nbsp;provide data storage and processing services, lead management, campaign management, technical support for our Platform and CSSSR Properties and fraud prevention.
         </li>
@@ -132,7 +132,7 @@ const PrivacyPolicyEn = () => (
       <p className='font_p16-regular'>
         You have the following data protection rights:
       </p>
-      <ul>
+      <ul className='have-square-bullets'>
         <li className='font_p16-regular'>
           You have the right to&nbsp;request access to&nbsp;or&nbsp;that we&nbsp;change, update, or&nbsp;delete your personal information at&nbsp;any time.
         </li>
@@ -147,7 +147,7 @@ const PrivacyPolicyEn = () => (
       <p className='font_p16-regular'>
         If&nbsp;you are a&nbsp;resident of&nbsp;the European Economic Area (EEA), you also have the following rights:
       </p>
-      <ul>
+      <ul className='have-square-bullets'>
         <li className='font_p16-regular'>
           The right to&nbsp;object to&nbsp;processing of&nbsp;your personal information, restrict processing of&nbsp;your personal information, or&nbsp;request portability of&nbsp;your personal information. To&nbsp;exercise these rights email <a href='mailto:privacy@csssr.com' className='font_link-list_16'>privacy@csssr.com</a>;
         </li>

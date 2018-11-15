@@ -47,12 +47,12 @@ const Common = () =>
       grid-gap: 0 32px;
     }
 
-    ul .squareItem {
+    ul.have-square-bullets li {
       position: relative;
       padding-left: 1rem;
     }
-  
-    ul .squareItem:before {
+
+    ul.have-square-bullets li:before {
       content: '';
       position: absolute;
       top: 0.5625rem;
@@ -100,6 +100,10 @@ const Common = () =>
       .grid-container {
         grid-template-columns: repeat(12, 64px);
         grid-gap: 0 16px;
+      }
+
+      ul.have-square-bullets li:before {
+        top: 0.25rem;
       }
 
       @media (max-width: 1023px) {

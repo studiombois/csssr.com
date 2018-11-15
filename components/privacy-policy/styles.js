@@ -31,22 +31,6 @@ export default css`
     margin-top: 1rem;
   }
 
-  li {
-    position: relative;
-    padding-left: 1rem;
-  }
-
-  li:before {
-    content: '';
-    position: absolute;
-    top: 0.5625rem;
-    left: 0;
-    box-sizing: border-box;
-    width: 0.5rem;
-    height: 0.5rem;
-    border: 0.125rem solid black;
-  }
-
   .list-item {
     position: relative;
   }

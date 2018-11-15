@@ -64,6 +64,7 @@ export class SideBar extends PureComponent {
         <style jsx>{`
           .link {
             padding-right: 5.5rem;
+            padding-bottom: 0;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -168,7 +169,7 @@ export class SideBar extends PureComponent {
 
           .active {
             position: relative;
-            margin-bottom: 4.125rem;
+            margin-bottom: 4.4375rem;
             padding-right: 8rem;
             line-height: 1rem;
             text-align: right;
@@ -183,7 +184,7 @@ export class SideBar extends PureComponent {
           }
 
           .top {
-            margin-top: 1.5rem;
+            margin-top: 1.5625rem;
           }
 
           .bottom {

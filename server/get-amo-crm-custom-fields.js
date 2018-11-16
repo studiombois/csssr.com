@@ -72,7 +72,17 @@ fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {
     //   "editable": "Y"
     // }
     //
+    // И поле Google CID:
+    // {
+    //   "id": 582127,
+    //     "name": "Space Tools ID",
+    //     "values": [{
+    //       "value": *какое-то значение cid*,
+    //   }
+    // }
+    //     'Google CID': ,
+    //
     // Если эти поля поменяются, то их надо перезапросить от AmoCRM и поменять хард код в submit-form.js
 
-    console.log('Fields', JSON.stringify(data))
+    console.log('Fields', JSON.stringify(data, null, 2))
   })

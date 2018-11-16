@@ -7,6 +7,8 @@ const gtmIdByLanguage = {
   ru: 'GTM-K67FHB5',
 }
 
+const textGtmId = 'GTM-W23KLZB'
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -18,16 +20,26 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const shouldIncludeGTM = process.env.NODE_ENV === 'production' && !process.env.EXCLUDE_GTM
+    const shouldIncludeGTM = !process.env.EXCLUDE_GTM
     const language = this.props.language
 
     return (
       <html lang={language}>
         <Head>
-          { shouldIncludeGTM && <GtmScript gtmId={gtmIdByLanguage[language]} /> }
+          { shouldIncludeGTM &&
+            <GtmScript gtmId={process.env.NODE_ENV === 'production'
+              ? gtmIdByLanguage[language]
+              : textGtmId
+            }/>
+          }
         </Head>
         <body>
-          { shouldIncludeGTM && <GtmNoScript gtmId={gtmIdByLanguage[language]} /> }
+          { shouldIncludeGTM &&
+            <GtmNoScript gtmId={process.env.NODE_ENV === 'production'
+              ? gtmIdByLanguage[language]
+              : textGtmId
+            }/>
+          }
           <Main />
           <NextScript />
         </body>

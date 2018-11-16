@@ -6,6 +6,12 @@ import ContactForm from './ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
 
 const onSubmit = async values => {
+  const gaCookie = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)')
+  const rawGaCookieInfo = gaCookie ? decodeURIComponent(gaCookie[1]) : null
+  const gacid = rawGaCookieInfo ? rawGaCookieInfo.match(/(\d+\.\d+)$/)[1] : null
+
+  values.gacid = gacid
+
   const res = await fetch('/api/submit-form', {
     method: 'POST',
     headers: {

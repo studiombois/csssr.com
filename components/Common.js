@@ -102,10 +102,6 @@ const Common = () =>
         grid-gap: 0 16px;
       }
 
-      ul.have-square-bullets li:before {
-        top: 0.25rem;
-      }
-
       @media (max-width: 1023px) {
         html {
           font-size: 1.5625vw;
@@ -113,6 +109,10 @@ const Common = () =>
 
         body {
           min-width: 59rem;
+        }
+
+        ul.have-square-bullets li:before {
+          top: 0.5rem;
         }
 
         .grid-container {

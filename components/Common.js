@@ -47,12 +47,12 @@ const Common = () =>
       grid-gap: 0 32px;
     }
 
-    ul .squareItem {
+    ul.have-square-bullets li {
       position: relative;
       padding-left: 1rem;
     }
-  
-    ul .squareItem:before {
+
+    ul.have-square-bullets li:before {
       content: '';
       position: absolute;
       top: 0.5625rem;
@@ -92,7 +92,7 @@ const Common = () =>
       }
     }
 
-    @media (min-width: 368px) and (max-width: 1279px) {
+   @media (max-width: 1279px) {
       body {
         min-width: 944px;
       }
@@ -111,16 +111,14 @@ const Common = () =>
           min-width: 59rem;
         }
 
+        ul.have-square-bullets li:before {
+          top: 0.5rem;
+        }
+
         .grid-container {
           grid-template-columns: repeat(12, 4rem);
           grid-gap: 0 1rem;
         }
-      }
-    }
-
-    @media (max-width: 367px) {
-      * {
-        display: none;
       }
     }
 

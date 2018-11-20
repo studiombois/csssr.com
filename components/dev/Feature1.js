@@ -12,7 +12,7 @@ const picture = css.resolve`
     height: 768px;
   }
 
-  @media (min-width: 368px) and (max-width: 1279px) {
+ @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
       height: 512px;
@@ -156,7 +156,7 @@ const Feature1 = ({ t, image }) =>
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1279px) {
+     @media (max-width: 1279px) {
         section {
           padding-top: 6.5rem;
           width: 944px;

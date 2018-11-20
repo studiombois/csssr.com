@@ -14,7 +14,7 @@ const picture = css.resolve`
     height: 640px;
   }
 
-  @media (min-width: 368px) and (max-width: 1279px) {
+ @media (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
       height: 480px;
@@ -170,7 +170,7 @@ class Hire extends PureComponent {
             }
           }
 
-          @media (min-width: 368px) and (max-width: 1279px) {
+         @media (max-width: 1279px) {
             h1 {
               grid-column: 3 / span 4;
               margin-bottom: 3.8125rem;

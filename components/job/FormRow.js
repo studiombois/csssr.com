@@ -55,7 +55,7 @@ const FormRow = ({ children, rightSideContent, rightSideWidth = 'narrow', custom
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1279px) {
+     @media (max-width: 1279px) {
         .row {
           width: 944px;
         }

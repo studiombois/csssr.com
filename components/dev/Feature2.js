@@ -11,7 +11,7 @@ const picture = css.resolve`
     height: 568px;
   }
 
-  @media (min-width: 368px) and (max-width: 1279px) {
+ @media (max-width: 1279px) {
     picture {
       margin-top: 1.5625rem;
       height: 432px;
@@ -75,7 +75,7 @@ export default ({ title, text, image, style }) =>
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1279px) {
+     @media (max-width: 1279px) {
         section {
           padding-top: 6.1875rem;
           width: 944px;

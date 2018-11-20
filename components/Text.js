@@ -45,8 +45,8 @@ const Text = () =>
     }
 
     .font_h2-slab {
-      margin-top: -0.125rem;
-      padding-bottom: 0.125rem;
+      margin-top: -0.0625rem;
+      padding-bottom: 0.0625rem;
       font-family: Roboto Slab;
       font-size: 3rem;
       line-height: 4rem;
@@ -61,6 +61,19 @@ const Text = () =>
       font-size: 1.5rem;
       font-weight: 900;
       line-height: 2rem;
+      color: #4a4a4a;
+    }
+
+    .font_h3-slab {
+      margin-top: -0.3125rem;
+      padding-bottom: 0.3125rem;
+      font-family: Roboto Slab;
+      font-size: 1rem;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2rem;
+      letter-spacing: normal;
       color: #4a4a4a;
     }
 
@@ -266,6 +279,8 @@ const Text = () =>
     }
 
     .font_burger-menu {
+      margin-top: -0.4375rem;
+      padding-bottom: 0.4375rem;
       font-family: Roboto;
       font-size: 1rem;
       font-weight: 900;
@@ -380,8 +395,10 @@ const Text = () =>
       }
 
       .font_h1-regular {
-        font-size: 1.75rem;
-        line-height: 2.25rem;
+        margin-top: -0.375rem;
+        padding-bottom: 0.375rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
       }
 
       .font_h2-slab {
@@ -394,87 +411,42 @@ const Text = () =>
       }
 
       .font_h2-regular {
-        margin-top: -0.25rem;
-        padding-bottom: 0.25rem;
+        margin-top: -0.09375rem;
+        padding-bottom: 0.09375rem;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+      }
+
+      .font_h3-regular {
         font-size: 0.875rem;
-        line-height: 1rem;
+        line-height: 1.5rem;
       }
 
       .font_subhead-slab {
-        margin-top: 0;
-        padding-bottom: 0;
-        font-size: 1.5rem;
+        margin-top: -0.375rem;
+        padding-bottom: 0.375rem;
+        font-size: 1.125rem;
         line-height: 2rem;
       }
 
       .font_subhead-regular {
-        margin-top: 0;
-        padding-bottom: 0;
+        margin-top: -0.375rem;
+        padding-bottom: 0.375rem;
         font-size: 1.25rem;
-        line-height: 1.75rem;
-      }
-
-      .font_top-menu {
-        margin-top: -0.125rem;
-        padding-bottom: 0.125rem;
-        font-size: 0.625rem;
-      }
-
-      .font_p16-regular {
-        font-size: 0.75rem;
-        line-height: 1rem;
-      }
-
-      .font_p24-strong {
-        margin-top: 0;
-        padding-bottom: 0;
-        font-size: 1rem;
-        line-height: 1.5rem;
+        line-height: 2rem;
       }
 
       .font_perforator-16-black {
-        margin-top: -0.4375rem;
-        padding-bottom: 0.4375rem;
-        font-size: 0.75rem;
-        line-height: 1.5rem;
-        letter-spacing: 0.05rem;
-      }
-
-      .font_link-list_16 {
-        font-size: 0.75rem;
-        line-height: 1rem;
-      }
-
-      .font_link-list_24 {
-        margin-top: 0;
-        padding-bottom: 0;
-        font-size: 1rem;
+        font-size: 0.875rem;
         line-height: 1.5rem;
       }
 
-      .font_link-list_28 {
-        margin-top: 0;
-        padding-bottom: 0;
+      // Это временное решение, заменить потом стили для p24_strong на то что скажет Влад
+      .font_p24-strong {
+        font-family: Roboto;
         font-size: 1rem;
-        line-height: 2.5rem;
-      }
-
-      .font_button-label,
-      .font_button-label_custom_color {
-        margin-top: -0.4375rem;
-        padding-bottom: 0.4375rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.075rem;
-      }
-
-      .font_input-placeholder,
-      .font_inputted-text-regular,
-      .font_inputted-text-error {
-        margin-top: -0.25rem;
-        padding-bottom: 0.25rem;
-        font-size: 1rem;
-        font-weight: 300;
         line-height: 1.5rem;
+        color: #4a4a4a;
       }
 
       .font_feature_1 {

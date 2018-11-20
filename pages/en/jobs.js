@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import NextHead from 'next/head'
 import Head from '../../components/Head'
 import withI18next from '../../utils/withI18next'
 import Layout from '../../components/Layout'
@@ -19,6 +20,9 @@ function Jobs({ t }) {
         footerProps={{ noFooter: true }}
       >
         <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
+        <NextHead>
+          <meta name='robots' content='noindex'/>
+        </NextHead>
         <NoPage />
       </Layout>
     </Fragment>

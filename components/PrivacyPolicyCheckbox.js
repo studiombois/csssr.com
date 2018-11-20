@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { string, func } from 'prop-types'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
@@ -13,25 +13,31 @@ function PrivacyPolicyCheckbox({
   t,
 }) {
   return (
-    <Field
-      id={id}
-      name={name}
-      className={className}
-      value='privacyPolicy'
-      type='checkbox'
-      component={Checkbox}
-    >
-      {t('common:checkBoxesText.privacyPolicyText')}
-      <a
-        href='#privacy-policy'
-        target='_blank'
-        rel='noopener'
-        onClick={privacyPolicyLinkClick}
-        className='font_link-list_16'
+    <Fragment>
+      <Field
+        id={id}
+        name={name}
+        className={className}
+        value='privacyPolicy'
+        type='checkbox'
+        component={Checkbox}
       >
-        {t('common:checkBoxesText.privacyPolicyLinkText')}
-      </a>
-    </Field>
+        {t('common:checkBoxesText.privacyPolicyText')}
+        <a
+          href='#privacy-policy'
+          target='_blank'
+          rel='noopener'
+          onClick={privacyPolicyLinkClick}
+          className='font_link-list_16'
+        >
+          {t('common:checkBoxesText.privacyPolicyLinkText')}
+        </a>
+      </Field><style jsx>{`
+        a[target='_blank']::after {
+          display: none;
+        }
+      `}</style>
+    </Fragment>
   )
 }
 

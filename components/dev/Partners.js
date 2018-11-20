@@ -197,7 +197,7 @@ const Partners = ({ t, lng }) =>
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1279px) {
+     @media (max-width: 1279px) {
         section {
           margin-bottom: 0.6875rem;
           padding-top: 6.1875rem;

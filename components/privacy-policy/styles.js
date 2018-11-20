@@ -55,7 +55,7 @@ export default css`
     padding-left: 2rem;
   }
 
-  @media (min-width: 368px) and (max-width: 1279px) {
+ @media (max-width: 1279px) {
     div {
       padding-top: 13.875rem;
     }

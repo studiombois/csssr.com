@@ -441,6 +441,14 @@ const Text = () =>
         line-height: 1.5rem;
       }
 
+      // Это временное решение, заменить потом стили для p24_strong на то что скажет Влад
+      .font_p24-strong {
+        font-family: Roboto;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #4a4a4a;
+      }
+
       .font_feature_1 {
         font-size: 3.0625rem;
         line-height: 3.875rem;

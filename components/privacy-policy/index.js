@@ -8,9 +8,10 @@ const Ru = dynamic(() => import('./ru'))
 const PrivacyPolicy = ({ lng, t }) => (
   <article className='grid-container' id='privacy-policy'>
     <header>
-      <h1 className='font_h1-regular'>
-        {t('common:privacyPolicy.title')}
-      </h1>
+      <h1
+        className='font_h1-regular'
+        dangerouslySetInnerHTML={{ __html: t('common:privacyPolicy.title') }}
+      />
       <p className='font_subhead-regular'>
         {t('common:privacyPolicy.date')}
       </p>
@@ -31,6 +32,10 @@ const PrivacyPolicy = ({ lng, t }) => (
         padding-top: 13.5rem;
       }
 
+      h1 {
+        display: inline-block;
+      }
+
       @media (min-width: 1360px) and (max-width: 1919px) {
         #privacy-policy {
           width: 1328px;
@@ -43,7 +48,7 @@ const PrivacyPolicy = ({ lng, t }) => (
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1279px) {
+     @media (max-width: 1279px) {
         #privacy-policy {
           width: 944px;
         }

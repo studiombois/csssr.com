@@ -81,6 +81,7 @@ module.exports = (req, res) => {
           tid: GA_ID,
           cid: leadContactCid,
           cd1: leadStatusName,
+          cd2: leadContactCid,
           cd3: leadPrice,
         }
 

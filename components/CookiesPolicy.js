@@ -158,7 +158,7 @@ const CookiesPolicy = ({ t }) => (
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1279px) {
+     @media (max-width: 1279px) {
         #cookies-policy {
           width: 944px;
         }

@@ -24,7 +24,7 @@ const picture = css.resolve`
     width: 100%;
   }
 
-  @media (min-width: 368px) and (max-width: 1279px) {
+ @media (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
     }
@@ -215,7 +215,7 @@ class ContactForm extends PureComponent {
             }
           }
 
-          @media (min-width: 368px) and (max-width: 1279px) {
+         @media (max-width: 1279px) {
             form {
               padding-top: 6.1875rem;
               padding-bottom: 31.5rem;

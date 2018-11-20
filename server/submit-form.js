@@ -9,7 +9,6 @@ if (tagFromEnv) {
 } else if (process.env.NODE_ENV !== 'production') {
   tagsArray.push('TEST')
 }
-const tags = tagsArray.join(',')
 
 module.exports = (req, res) => {
   const {
@@ -18,8 +17,12 @@ module.exports = (req, res) => {
     email,
     message,
     gacid,
+    language,
   } = req.body
 
+  tagsArray.push(language)
+
+  const tags = tagsArray.join(',')
   const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_USER_HASH}`
 
   return fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {

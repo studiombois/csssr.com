@@ -8,7 +8,7 @@ import Partners from '../../components/dev/Partners'
 import Layout from '../../components/Layout'
 import withI18next from '../../utils/withI18next'
 
-export default withI18next(['dev'])(({ t }) =>
+export default withI18next(['dev'])(({ t, lng }) =>
   <Layout headerProps={{ logoHref: '/ru', isBurgerVisible: true }} footerProps={{ logoHref: '/ru' }}>
     <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
     <Hire />
@@ -27,6 +27,6 @@ export default withI18next(['dev'])(({ t }) =>
       text={t('dev:perfect.text')}
       image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
     />
-    <Form />
+    <Form language={lng} />
   </Layout>
 )

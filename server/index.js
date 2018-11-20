@@ -64,7 +64,11 @@ i18n
           server.get(url, (req, res) => res.redirect(301, '/'))
         )
 
-        server.use(bodyParser.json())
+        // eslint-disable-next-line
+        server.use(bodyParser.json())      // to support JSON-encoded bodies
+        server.use(bodyParser.urlencoded({ // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
+          extended: true,
+        }))
 
         server.post('/api/submit-form', submitForm)
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)

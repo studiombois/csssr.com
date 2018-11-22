@@ -36,6 +36,13 @@ function PrivacyPolicyCheckbox({
         a[target='_blank']::after {
           display: none;
         }
+
+        @media (max-width: 767px) {
+          .font_link-list_16 {
+            font-size: 0.75rem;
+            line-height: 1rem;
+          }
+        }
       `}</style>
     </Fragment>
   )

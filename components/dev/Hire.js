@@ -14,7 +14,7 @@ const picture = css.resolve`
     height: 640px;
   }
 
- @media (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
       height: 480px;
@@ -24,6 +24,15 @@ const picture = css.resolve`
       picture {
         height: 30rem;
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+      margin-top: 0;
+      height: 10.5rem;
     }
   }
 `
@@ -73,8 +82,7 @@ class Hire extends PureComponent {
       <Fragment>
         <article id='competence' className='grid-container'>
           <h1 className='font_h1-slab'>
-            {t('dev:hire.title')}
-
+            {t('dev:hire.title')}cript
             <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
           </h1>
 
@@ -170,7 +178,7 @@ class Hire extends PureComponent {
             }
           }
 
-         @media (max-width: 1279px) {
+          @media (min-width: 768px) and (max-width: 1279px) {
             h1 {
               grid-column: 3 / span 4;
               margin-bottom: 3.8125rem;
@@ -202,6 +210,36 @@ class Hire extends PureComponent {
               .button-wrapper {
                 width: 9rem;
               }
+            }
+          }
+
+          @media (max-width: 767px) {
+            article {
+              padding-top: 5rem;
+              width: 20.5rem;
+              height: auto;
+              min-height: 37rem;
+            }
+
+            h1 {
+              grid-column: 1 / span 6;
+              grid-row: 1;
+              margin-bottom: 1.375rem;
+              text-align: center;
+            }
+
+            span {
+              padding-top: 0.6875rem;
+            }
+
+            blockquote {
+              grid-column: 2 / span 5;
+              grid-row: 3;
+              margin-top: 1.9375rem;
+            }
+
+            p {
+              margin-bottom: 0.5rem;
             }
           }
         `}</style>

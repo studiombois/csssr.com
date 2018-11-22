@@ -5,6 +5,19 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
   <Fragment>
     <picture className={className}>
       <source
+        media='(max-width: 767px)'
+        type='image/webp'
+        srcSet={`/static/images/${namespace}/360/${key}@1x.webp,
+                 /static/images/${namespace}/360/${key}@2x.webp 2x,
+                 /static/images/${namespace}/360/${key}@3x.webp 3x`}/>
+
+      <source
+        media='(max-width: 767px)'
+        srcSet={`/static/images/${namespace}/360/${key}@1x.${extension},
+                 /static/images/${namespace}/360/${key}@2x.${extension} 2x,
+                 /static/images/${namespace}/360/${key}@3x.${extension} 3x`}/>
+
+      <source
         media='(max-width: 1023px)'
         type='image/webp'
         srcSet={`/static/images/${namespace}/1024/${key}@1x.webp,

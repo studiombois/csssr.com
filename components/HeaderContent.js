@@ -246,7 +246,7 @@ class HeaderContent extends PureComponent {
             }
           }
 
-         @media (max-width: 1279px) {
+          @media (min-width: 768px) and (max-width: 1279px) {
             sup {
               top: -4px;
               left: calc(100% + 2px);
@@ -282,6 +282,34 @@ class HeaderContent extends PureComponent {
               .header-content {
                 width: 59rem;
               }
+            }
+          }
+
+          @media (max-width: 767px) {
+            nav,
+            .section-name {
+              display: none;
+            }
+
+            .header-content {
+              width: 20.5rem;
+              height: 3rem;
+            }
+
+            .logo-wrapper {
+              padding-top: 1rem;
+              padding-bottom: 1rem;
+              height: 3rem;
+              text-align: left;
+            }
+
+            .logo {
+              width: 4rem;
+              height: 1rem;
+            }
+
+            .burger {
+              grid-column: 6 / span 1;
             }
           }
 

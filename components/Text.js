@@ -436,6 +436,13 @@ const Text = () =>
         line-height: 2rem;
       }
 
+      .font_p16-regular {
+        margin-top: -0.1875rem;
+        padding-bottom: 0.1875rem;
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
       .font_perforator-16-black {
         font-size: 0.875rem;
         line-height: 1.5rem;
@@ -463,6 +470,25 @@ const Text = () =>
         font-size: 2.75rem;
         line-height: 3.375rem;
         color: #000000;
+      }
+
+      @media (max-width: 767px) {
+        .font_feature_1 {
+          font-size: 4.0625rem;
+          line-height: 4.875rem;
+        }
+
+        .font_feature_2 {
+          font-size: 1.75rem;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 2.5rem;
+        }
+
+        .font_feature_3 {
+          font-size: 2rem;
+          line-height: 2.5rem;
+        }
       }
     }
   `}</style>

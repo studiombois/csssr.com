@@ -42,6 +42,12 @@ const Layout = props => {
         display: none;
       }
 
+      @media (max-width: 767px) {
+        #main {
+          overflow-x: hidden;
+        }
+      }
+
       /*
         TODO: Стили для анимации изчезновения privacy-policy
       */

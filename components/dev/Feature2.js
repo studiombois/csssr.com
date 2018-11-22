@@ -23,6 +23,14 @@ const picture = css.resolve`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    picture {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+      height: 10.5rem;
+    }
+  }
 `
 
 export default ({ title, text, image, style }) =>
@@ -75,7 +83,7 @@ export default ({ title, text, image, style }) =>
         }
       }
 
-     @media (max-width: 1279px) {
+     @media (min-width: 768px) and (max-width: 1279px) {
         section {
           padding-top: 6.1875rem;
           width: 944px;
@@ -93,6 +101,24 @@ export default ({ title, text, image, style }) =>
           section {
             width: 59rem;
           }
+        }
+      }
+
+      @media (max-width: 767px) {
+        section {
+          padding-top: 3.5rem;
+          width: 20.5rem;
+        }
+
+        h2 {
+          grid-column: 2 / span 4;
+          grid-row: 1;
+        }
+
+        p {
+          grid-column: 1 / span 6;
+          grid-row: 3;
+          margin-top: 1.75rem;
         }
       }
     `}</style>

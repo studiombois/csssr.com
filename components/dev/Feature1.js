@@ -24,6 +24,15 @@ const picture = css.resolve`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    picture {
+      grid-column: 1 / span 6;
+      grid-row: 3;
+      margin-top: 1.875rem;
+      height: 43.4375rem;
+    }
+  }
 `
 
 const Feature1 = ({ t, image }) =>
@@ -156,7 +165,7 @@ const Feature1 = ({ t, image }) =>
         }
       }
 
-     @media (max-width: 1279px) {
+      @media (min-width: 768px) and (max-width: 1279px) {
         section {
           padding-top: 6.5rem;
           width: 944px;
@@ -210,6 +219,60 @@ const Feature1 = ({ t, image }) =>
           .font_feature_3 {
             left: 25.875rem;
           }
+        }
+      }
+
+      @media (max-width: 767px) {
+        section {
+          padding-top: 3rem;
+          width: 20.5rem;
+        }
+
+        h2,
+        p,
+        footer {
+          grid-column: 1 / span 6;
+        }
+
+        h2 {
+          margin-bottom: 1.1875rem;
+        }
+
+        footer {
+          margin-top: 3.0625rem;
+          grid-row: 4;
+        }
+
+        footer h2,
+        footer p {
+          grid-column: 2 / span 5;
+        }
+
+        // Заголовок h2 в футере в мобильной версии меняет свои стили с
+        // font_h2-regular на font_h3-regular, что избежать использование
+        // JS Media Queries я просто продублирую стили font_h3-regular
+        footer h2 {
+          margin-bottom: 0.9375rem;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
+
+        .font_feature_1 {
+          top: 20.75rem;
+          left: 5.75rem;
+        }
+
+        .font_feature_2 {
+          top: 29.75rem;
+          left: 7.375rem;
+          width: 13.75rem;
+        }
+
+        .font_feature_3 {
+          width: 11.4375rem;
+          height: 7rem;
+          top: 43rem;
+          left: 0;
         }
       }
     `}</style>

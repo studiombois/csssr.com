@@ -240,7 +240,7 @@ export default class AnimatedButton extends PureComponent {
             transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
           }
 
-         @media (max-width: 1279px) {
+          @media (min-width: 768px) and (max-width: 1279px) {
             .progress-button button {
               height: 2.5rem;
             }

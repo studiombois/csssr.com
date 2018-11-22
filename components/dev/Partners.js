@@ -1,68 +1,18 @@
 import React, { Fragment } from 'react'
 import LinksList from './LinksList'
 import { translate } from 'react-i18next'
-
-// TODO: Не забыть заменить ссылки перед деплоем, удалить это сообщение после
-const iTcompaniesLinksEn = [
-  { href: 'https://www.kaspersky.com/', label: 'Kaspersky Lab' },
-  { href: 'https://yandex.com/', label: 'Yandex' },
-]
-
-const iTcompaniesLinksRu = [
-  { href: 'https://www.kaspersky.ru/', label: 'Kaspersky Lab' },
-  { href: 'https://yandex.ru/', label: 'Яндекс' },
-]
-
-const realEstateLinksEn = [
-  { href: 'https://urbangroup.ru/', label: 'Urban Group' },
-  { href: 'https://www.cian.ru/', label: 'CIAN' },
-]
-
-const financeAndBankingLinksEn = [
-  { href: 'https://www.tinkoff.ru/eng/', label: 'Tinkoff Bank' },
-  { href: 'http://bcsgm.com/en/', label: 'BCS Financial Group' },
-  { href: 'https://www.sberbank.ru/en/', label: 'Sberbank' },
-  { href: 'https://alfabank.com/', label: 'Alfa-Bank' },
-  { href: 'https://www.sravni.ru/', label: 'sravni.ru' },
-]
-
-const financeAndBankingLinksRu = [
-  { href: 'https://www.tinkoff.ru/', label: 'Тинькофф Банк' },
-  { href: 'https://bcs.ru/', label: 'БКС' },
-  { href: 'https://www.sberbank.ru/ru/person', label: 'Сбербанк' },
-  { href: 'https://alfabank.ru/', label: 'Альфа-Банк' },
-  { href: 'https://www.sravni.ru/', label: 'sravni.ru' },
-]
-
-const healthLinksRu = [
-  { href: 'http://nutrilogic.ru/', label: 'Nutrilogic' },
-  { href: 'https://ru.siberianhealth.com/', label: 'Сибирское здоровье' },
-]
-
-const othersLinksEn = [
-  { href: 'https://www.renins.com/', label: 'Renaissance Insurance' },
-  { href: 'https://www.s7.ru/en/', label: 'S7 Airlines' },
-  { href: 'https://www.mos.ru/', label: 'mos.ru' },
-]
-
-const othersLinksRu = [
-  { href: 'https://www.s7.ru/', label: 'S7 Airlines' },
-  { href: 'https://www.cian.ru', label: 'ЦИАН' },
-  { href: 'https://www.mos.ru/', label: 'mos.ru' },
-  { href: 'https://www.tsum.ru/', label: 'ЦУМ' },
-]
-
-const telecomLinksEn = [
-  { href: 'https://www.yota.ru/', label: 'Yota' },
-  { href: null, label: 'Yota Devices' },
-  { href: 'https://www.qtech.ru/en/', label: 'Qtech' },
-]
-
-const telecomLinksRu = [
-  { href: 'https://www.yota.ru/', label: 'Yota' },
-  { href: null, label: 'Yota Devices' },
-  { href: 'https://www.qtech.ru/', label: 'Qtech' },
-]
+import {
+  iTcompaniesLinksEn,
+  iTcompaniesLinksRu,
+  realEstateLinksEn,
+  telecomLinksEn,
+  telecomLinksRu,
+  financeAndBankingLinksEn,
+  financeAndBankingLinksRu,
+  othersLinksEn,
+  othersLinksRu,
+  healthLinksRu,
+} from '../../data/jobs/partnersLinks'
 
 const Partners = ({ t, lng }) =>
   <Fragment>

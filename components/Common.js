@@ -92,7 +92,7 @@ const Common = () =>
       }
     }
 
-   @media (max-width: 1279px) {
+   @media (min-width: 768px) and (max-width: 1279px) {
       body {
         min-width: 944px;
       }
@@ -118,6 +118,27 @@ const Common = () =>
         .grid-container {
           grid-template-columns: repeat(12, 4rem);
           grid-gap: 0 1rem;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      html {
+        font-size: 4.44444444444444444444444444444444vw;
+      }
+
+      body {
+        min-width: 20.5rem;
+      }
+
+      .grid-container {
+        grid-template-columns: repeat(6, 3rem);
+        grid-gap: 0 0.5rem;
+      }
+
+      @media (max-width: 319px) {
+        html {
+          font-size: 14px;
         }
       }
     }

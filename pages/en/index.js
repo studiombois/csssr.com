@@ -7,6 +7,7 @@ import Feature2 from '../../components/dev/Feature2'
 import Partners from '../../components/dev/Partners'
 import PartnersMobile from '../../components/dev/PartnersMobile'
 import Layout from '../../components/Layout'
+import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
 class Dev extends PureComponent {
@@ -30,7 +31,10 @@ class Dev extends PureComponent {
     const { t } = this.props
 
     return (
-      <Layout headerProps={{ logoHref: '/en', isBurgerVisible: true }} footerProps={{ logoHref: '/en' }}>
+      <Layout
+        headerProps={{ logoHref: '/en', isBurgerVisible: true }}
+        footerProps={{ logoHref: '/en', socialLinks: devSocialLinks }}
+      >
         <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
         <Hire />
         <Feature1

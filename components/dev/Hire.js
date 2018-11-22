@@ -241,6 +241,13 @@ class Hire extends PureComponent {
             p {
               margin-bottom: 0.5rem;
             }
+
+            .button-wrapper {
+              position: fixed;
+              bottom: 4rem;
+              width: 17rem;
+              right: calc(50% - 17rem / 2);
+            }
           }
         `}</style>
         {picture.styles}

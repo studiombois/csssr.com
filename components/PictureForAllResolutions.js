@@ -63,6 +63,7 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
                  /static/images/${namespace}/1920/${key}@3x.webp 3x`}/>
 
       <img
+        className={className}
         srcSet={`/static/images/${namespace}/1920/${key}@1x.${extension},
                  /static/images/${namespace}/1920/${key}@2x.${extension} 2x,
                  /static/images/${namespace}/1920/${key}@3x.${extension} 3x`}

@@ -244,7 +244,7 @@ class Hire extends PureComponent {
 
             .button-wrapper {
               position: fixed;
-              bottom: 4rem;
+              bottom: 2rem;
               width: 13.5rem;
               right: calc(50% - 13.5rem / 2);
             }

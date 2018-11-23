@@ -307,6 +307,17 @@ const Text = () =>
       color: #0254d8;
     }
 
+    .font_p14-regular {
+      font-family: Roboto;
+      font-size: 0.875rem;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5rem;
+      letter-spacing: normal;
+      color: #4a4a4a;
+    }
+
     .font_p16-regular {
       font-family: Roboto;
       font-size: 1rem;

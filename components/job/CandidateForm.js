@@ -15,7 +15,7 @@ const picture = css.resolve`
     display: block;
     max-width: 25rem;
   }
-  
+
   img {
     width: 100%;
   }
@@ -30,6 +30,7 @@ const picturesMap = {
   'pixel-perfectionist': 'developer_1',
   'head-of-web-development-team': 'manager',
   'sales-assistant': '',
+  'senior-apparel-developer': 'clothes',
 }
 
 const divideSections = sections => {
@@ -124,7 +125,7 @@ class CandidateForm extends PureComponent {
         .hot-vacancy {
           position: relative;
         }
-  
+
         .hot-vacancy::before {
           content: '🔥';
           position: absolute;

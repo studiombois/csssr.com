@@ -94,5 +94,19 @@ export default css`
     .font_p16-regular:not(:last-child) {
       margin-bottom: 0.5rem;
     }
+
+    .font_link-list_16 {
+      margin-top: 0;
+      padding-bottom: 0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+
+    .font_link-list_24 {
+      margin-top: 0;
+      padding-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
 `

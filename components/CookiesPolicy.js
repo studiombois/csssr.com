@@ -148,13 +148,6 @@ const CookiesPolicy = ({ t }) => (
           margin-top: -0.3125rem;
         }
 
-        .font_link-list_24 {
-          margin-top: 0;
-          padding-bottom: 0;
-          font-size: 1rem;
-          line-height: 1.5rem;
-        }
-
         .font_p24-strong {
           margin-bottom: 1.3125rem !important;
         }

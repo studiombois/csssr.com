@@ -120,7 +120,7 @@ export default class LinksList extends PureComponent {
               top: 0;
               right: 0;
               display: block;
-              width: 3rem;
+              width: 20.5rem;
               height: 3.5rem;
               border: none;
               background: none;
@@ -138,26 +138,26 @@ export default class LinksList extends PureComponent {
             }
 
             button::before {
-              left: 0.875rem;
+              right: 1.3125rem;
               transform: rotate(45deg);
             }
             button::after {
-              left: 1.3125rem;
+              right: 0.875rem;
               transform: rotate(-45deg);
             }
 
             button.button_state_opened::before,
             button.button_state_opened::after {
               top: 50%;
-              left: 50%;
+              right: 1.3125rem;
               width: 1.375rem;
             }
 
             button.button_state_opened::before {
-              transform: translate(-50%) rotate(45deg);
+              transform: translate(50%) rotate(45deg);
             }
             button.button_state_opened::after {
-              transform: translate(-50%) rotate(-45deg);
+              transform: translate(50%) rotate(-45deg);
             }
 
             ul {

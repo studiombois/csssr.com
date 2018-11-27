@@ -1,4 +1,5 @@
 const path = require('path')
+const Sentry = require('@sentry/node')
 const express = require('express')
 const bodyParser = require('body-parser')
 const next = require('next')
@@ -8,8 +9,15 @@ const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const generateSitemap = require('./generate-sitemap')
 
-const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV === 'development'
+
+Sentry.init({
+  dsn: 'https://1f3577495b4f4a3aac74c16fece4bd41@sentry.io/1330750',
+  environment: process.env.NODE_ENV,
+  debug: dev,
+})
+
+const port = parseInt(process.env.PORT, 10) || 3000
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -63,6 +71,8 @@ i18n
           server.get(url, (req, res) => res.redirect(301, '/'))
         )
 
+        server.use(Sentry.Handlers.requestHandler())
+
         server.use(bodyParser.json())
 
         server.post('/api/submit-form', submitForm)
@@ -98,6 +108,8 @@ i18n
         server.get('*', (req, res) => {
           return handle(req, res)
         })
+
+        server.use(Sentry.Handlers.errorHandler())
 
         server.listen(port, err => {
           if (err) throw err

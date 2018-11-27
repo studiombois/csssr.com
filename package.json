@@ -9,6 +9,8 @@
     "analyze": "cross-env ANALYZE=1 next build"
   },
   "dependencies": {
+    "@sentry/browser": "^4.3.4",
+    "@sentry/node": "^4.3.4",
     "babel-plugin-inline-react-svg": "^0.5.4",
     "body-parser": "^1.18.3",
     "classnames": "^2.2.6",

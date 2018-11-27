@@ -215,6 +215,10 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
           margin-right: 2rem;
         }
 
+        .social-links {
+          justify-content: center;
+        }
+
         .footer-links {
           grid-row: 2;
           margin-top: 1.0625rem;

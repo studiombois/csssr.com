@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
-import footerLinks from '../../data/jobs/footerLinks'
+import { allSocialLinks } from '../../data/jobs/footerLinks'
 
 const handleLinkClick = () => {
   document.documentElement.style.scrollBehavior = 'auto'
@@ -14,7 +14,7 @@ const handleLinkClick = () => {
   })
 }
 
-const Footer = ({ router: { pathname }, className, lng, t }) => {
+const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className, lng, t }) => {
   const rootUrl = `/${lng}`
 
   return <footer className={`${className} grid-container`}>
@@ -41,7 +41,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
     }
 
     <ul className='social-links'>
-      {footerLinks.map(({ href, label }) =>
+      {socialLinks.map(({ href, label }) =>
         <li key={label} className='social-link'>
           <a
             aria-label={`${label} link`}

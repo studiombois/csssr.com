@@ -10,7 +10,7 @@ import withI18next from '../../utils/withI18next'
 import hrOrigin from '../../utils/hrOrigin'
 import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
-import { contactOptions } from '../../components/job/ContactOptions'
+import { contactOptions } from '../../data/job/contactOptions'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -95,6 +95,15 @@ const onSubmit = async values => {
   }
   delete filteredValues.file
   delete filteredValues.files
+
+  // В мобильной версии connection будет строкой, если приходит строка
+  // то мы удаляем поле connection и потом записываем его как массив
+  if (typeof values.connection === 'string') {
+    const connection = values.connection
+    delete filteredValues.connection
+
+    filteredValues.connection = [connection]
+  }
 
   const formData = objectToFormData(filteredValues, {
     indices: true,

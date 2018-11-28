@@ -1,69 +1,55 @@
 import React from 'react'
-import cn from 'classnames'
 
-
-const FormRow = ({ children, rightSideContent, rightSideWidth = 'narrow', customStylesForRightSideContent }) =>
-  <div className='grid-container row'>
-    <div
-      className='cell cell_primary'>{children}
+const FormRow = ({ children, rightSideContent }) =>
+  <div className='grid-container'>
+    <div className='cell'>
+      {children}
     </div>
-    { customStylesForRightSideContent
-      ? rightSideContent
-      : <div
-        className={cn({
-          cell: true,
-          cell_narrow: rightSideWidth === 'narrow',
-          cell_wide: rightSideWidth === 'wide',
-        })}
-      >
-        {rightSideContent}
-      </div>
-    }
+    {rightSideContent}
 
     <style jsx>{`
-      .row {
+      .grid-container {
         margin-right: auto;
         margin-left: auto;
         width: 1792px;
       }
 
       .cell {
+        grid-column: 2 / span 6;
         height: 100%;
       }
 
-      .cell_primary {
-        grid-column: 2 / span 6;
-      }
-
-      .cell_narrow {
-        grid-column: 10 / span 2;
-      }
-
-      .cell_wide {
-        grid-column: 9 / span 4;
-      }
-
       @media (min-width: 1360px) and (max-width: 1919px) {
-        .row {
+        .grid-container {
           width: 1328px;
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
-        .row {
+        .grid-container {
           width: 1232px;
         }
       }
 
-     @media (max-width: 1279px) {
-        .row {
+      @media (min-width: 768px) and (max-width: 1279px) {
+        .grid-container {
           width: 944px;
         }
 
         @media (max-width: 1023px) {
-          .row {
+          .grid-container {
             width: 59rem;
           }
+        }
+      }
+
+      @media (max-width: 767px) {
+        .grid-container {
+          width: 20.5rem;
+        }
+
+        .cell {
+          grid-column: 1 / span 6;
         }
       }
     `}</style>

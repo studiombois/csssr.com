@@ -7,6 +7,7 @@ export default css`
   }
 
   textarea {
+    appearance: none;
     padding-top: 0.4375rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -17,6 +18,7 @@ export default css`
     text-align: center;
     border: none;
     border: solid 0.0625rem #e1e1e1;
+    border-radius: 0;
     caret-color: #4a4a4a;
     resize: vertical;
   }

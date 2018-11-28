@@ -4,6 +4,7 @@ import cn from 'classnames'
 import Link from 'next/link'
 import Footer from './Footer'
 import Picture from '../Picture'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
@@ -17,6 +18,19 @@ const picture = css.resolve`
 
   img {
     max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      position: relative;
+      grid-column: 1 / span 3;
+      margin-top: 3.5625rem;
+    }
+
+    picture:first-of-type {
+      margin-top: 3.5625rem;
+    }
   }
 `
 
@@ -30,12 +44,32 @@ const pictureHunter = css.resolve`
   img {
     width: 100%;
   }
+
+  @media (max-width: 767px) {
+    picture {
+      position: relative;
+      margin-top: 4.5625rem;
+      grid-column: 1 / span 1;
+    }
+
+    img {
+      margin-left: -1rem;
+      width: 4rem;
+    }
+  }
 `
 
 const footer = css.resolve`
   footer {
     margin-top: 12.5rem;
     grid-row: 14;
+  }
+
+  @media (max-width: 767px) {
+    footer {
+      position: relative;
+      margin-top: 5rem;
+    }
   }
 `
 
@@ -94,7 +128,11 @@ const Vacancies = props =>
         </ul>
       }
 
-      <Picture className={picture.className} image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}/>
+      <PictureForAllResolutions
+        className={picture.className}
+        image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}
+        customResolutions={['360']}
+      />
 
       <h2 className='font_h2-regular'>
         <span style={{ color: '#0054d8' }}>
@@ -107,7 +145,11 @@ const Vacancies = props =>
         Процесс найма в&nbsp;CSSSR состоит из&nbsp;нескольких этапов. Как правило, необходимо выполнить тестовое задание, пройти интервью c&nbsp;командой рекрутеров, поразить интервьюера на&nbsp;техническом собеседовании и&nbsp;подружиться с&nbsp;потенциальным начальником. Процесс занимает от&nbsp;одной до&nbsp;двух недель, но, как показывает практика, результат стоит того.
       </p>
 
-      <Picture className={picture.className} image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}/>
+      <PictureForAllResolutions
+        className={picture.className}
+        image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}
+        customResolutions={['360']}
+      />
 
       <h2 className='font_h2-regular'>
         <span style={{ color: '#f8585c' }}>
@@ -120,7 +162,11 @@ const Vacancies = props =>
         В&nbsp;CSSSR работают необыкновенные люди&nbsp;&mdash; нас всех объединяет стремление создавать безупречное. В&nbsp;компанию попадают только самые талантливые, амбициозные, стойкие, напористые, умные люди с&nbsp;хорошим чувством юмора. Мы&nbsp;не&nbsp;скрываем, что даём зеленый свет прежде всего тем, кто хочет работать именно с&nbsp;нами, тем, кому нравится наша концепция, кто проникся нашими ценностями.
       </p>
 
-      <Picture className={picture.className} image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}/>
+      <PictureForAllResolutions
+        className={picture.className}
+        image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}
+        customResolutions={['360']}
+      />
 
       <h2 className='font_h2-regular'>
         О&nbsp;дистанционной работе
@@ -199,14 +245,14 @@ const Vacancies = props =>
         align-items: center;
         height: 100vh;
         width: 50vw;
-        background-image: url(/static/images/jobs/cover@1x.jpg);
+        background-image: url(/static/images/jobs/1920/cover@1x.jpg);
         background-position: 50%;
         background-size: auto 100%;
         overflow: hidden;
       }
 
       :global(html.webp) .half-page-picture {
-        background-image: url(/static/images/jobs/cover@1x.webp);
+        background-image: url(/static/images/jobs/1920/cover@1x.webp);
       }
 
       .half-page-picture span {
@@ -290,11 +336,11 @@ const Vacancies = props =>
       only screen and (min-resolution: 192dpi),
       only screen and (min-resolution: 2dppx) {
         .half-page-picture {
-          background-image: url(/static/images/jobs/cover@2x.jpg);
+          background-image: url(/static/images/jobs/1920/cover@2x.jpg);
         }
 
         :global(html.webp) .half-page-picture {
-          background-image: url(/static/images/jobs/cover@2x.webp);
+          background-image: url(/static/images/jobs/1920/cover@2x.webp);
         }
       }
 
@@ -303,11 +349,11 @@ const Vacancies = props =>
       only screen and (min-resolution: 288dpi),
       only screen and (min-resolution: 3dppx) {
         .half-page-picture {
-          background-image: url(/static/images/jobs/cover@3x.jpg);
+          background-image: url(/static/images/jobs/1920/cover@3x.jpg);
         }
 
         :global(html.webp) .half-page-picture {
-          background-image: url(/static/images/jobs/cover@3x.webp);
+          background-image: url(/static/images/jobs/1920/cover@3x.webp);
         }
       }
 
@@ -333,7 +379,7 @@ const Vacancies = props =>
         }
       }
 
-     @media (max-width: 1279px) {
+      @media (min-width: 768px) and (max-width: 1279px) {
         article,
         .jobs-header-logo-container {
           width: 944px;
@@ -365,8 +411,139 @@ const Vacancies = props =>
             width: 59rem;
           }
 
-          .half-page-picture span { // Убрать после начала верстки мобильных вариантов страницы
+          .half-page-picture span {
             font-size: 1.8vh;
+          }
+        }
+      }
+
+      @media (max-width: 767px) {
+        article {
+          position: relative;
+          margin-top: 15.5rem;
+          padding-top: 5.5rem;
+          width: 20.5rem;
+        }
+
+        article::before {
+          content: '';
+          position: absolute;
+          z-index: 0;
+          top: 0;
+          left: -1rem;
+          display: block;
+          width: 100vw;
+          height: 100%;
+          background-color: white;
+        }
+
+        h1 span {
+          padding-top: 2.375rem;
+          display: block;
+        }
+
+        header,
+        h2,
+        p,
+        ul {
+          position: relative;
+          grid-column: 1 / span 6;
+        }
+
+        header {
+          position: relative;
+        }
+
+        h2 {
+          margin-top: 1.375rem;
+          padding-bottom: 0;
+        }
+
+        h2 + p {
+          margin-top: 1.0625rem;
+          padding-bottom: 0;
+        }
+
+        p + p {
+          margin-top: 0.5rem;
+        }
+
+        ul {
+          margin-top: 1.125rem;
+          padding-left: 1.5rem;
+        }
+
+        .font_p16-regular {
+          margin-top: 0;
+          padding-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
+
+        .font_link-list_24 {
+          margin-top: 0rem;
+          padding-bottom: 0rem;
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+
+        .hot-vacancy::before {
+          top: 0;
+          left: -1.25rem;
+        }
+
+        .hunter-text {
+          margin-top: 4.5rem;
+          grid-column: 2 / span 5;
+        }
+
+        .jobs-header-logo-container {
+          display: none;
+        }
+
+        .half-page-picture {
+          z-index: -1;
+          width: 100vw;
+          height: 15.5rem;
+          background-image: url(/static/images/jobs/360/cover@1x.jpg);
+        }
+
+        :global(html.webp) .half-page-picture {
+          background-image: url(/static/images/jobs/360/cover@1x.webp);
+        }
+
+        .half-page-picture span {
+          margin-bottom: -0.3125rem;
+          width: 100%;
+          height: 5.5rem;
+          font-size: 1.5rem;
+          line-height: 5.5rem;
+          border-width: 0.0625rem
+        }
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+          .half-page-picture {
+            background-image: url(/static/images/jobs/360/cover@2x.jpg);
+          }
+
+          :global(html.webp) .half-page-picture {
+            background-image: url(/static/images/jobs/360/cover@2x.webp);
+          }
+        }
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and (min-resolution: 288dpi),
+        only screen and (min-resolution: 3dppx) {
+          .half-page-picture {
+            background-image: url(/static/images/jobs/360/cover@3x.jpg);
+          }
+
+          :global(html.webp) .half-page-picture {
+            background-image: url(/static/images/jobs/360/cover@3x.webp);
           }
         }
       }

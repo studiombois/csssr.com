@@ -1,60 +1,32 @@
 import React, { Fragment } from 'react'
 import { string, shape } from 'prop-types'
 
-const PictureForAllResolutions = ({ className, image: { namespace, key, alt, extension = 'png' } }) =>
+const defaultResolutions = ['360', '1024', '1280', '1360']
+const mediaRuleByResoluton = {
+  360: '(max-width: 767px)',
+  1024: '(max-width: 1023px)',
+  1280: '(max-width: 1359px)',
+  1360: '(max-width: 1919px)',
+}
+const PictureForAllResolutions = ({ className, image: { namespace, key, alt, extension = 'png' }, customResolutions = defaultResolutions }) =>
   <Fragment>
     <picture className={className}>
-      <source
-        media='(max-width: 767px)'
-        type='image/webp'
-        srcSet={`/static/images/${namespace}/360/${key}@1x.webp,
-                 /static/images/${namespace}/360/${key}@2x.webp 2x,
-                 /static/images/${namespace}/360/${key}@3x.webp 3x`}/>
+      {customResolutions.map(resolution =>
+        <Fragment>
+          <source
+            media={mediaRuleByResoluton[resolution]}
+            type='image/webp'
+            srcSet={`/static/images/${namespace}/${resolution}/${key}@1x.webp,
+                     /static/images/${namespace}/${resolution}/${key}@2x.webp 2x,
+                     /static/images/${namespace}/${resolution}/${key}@3x.webp 3x`}/>
 
-      <source
-        media='(max-width: 767px)'
-        srcSet={`/static/images/${namespace}/360/${key}@1x.${extension},
-                 /static/images/${namespace}/360/${key}@2x.${extension} 2x,
-                 /static/images/${namespace}/360/${key}@3x.${extension} 3x`}/>
-
-      <source
-        media='(max-width: 1023px)'
-        type='image/webp'
-        srcSet={`/static/images/${namespace}/1024/${key}@1x.webp,
-                 /static/images/${namespace}/1024/${key}@2x.webp 2x,
-                 /static/images/${namespace}/1024/${key}@3x.webp 3x`}/>
-
-      <source
-        media='(max-width: 1023px)'
-        srcSet={`/static/images/${namespace}/1024/${key}@1x.${extension},
-                 /static/images/${namespace}/1024/${key}@2x.${extension} 2x,
-                 /static/images/${namespace}/1024/${key}@3x.${extension} 3x`}/>
-
-      <source
-        media='(max-width: 1359px)'
-        type='image/webp'
-        srcSet={`/static/images/${namespace}/1280/${key}@1x.webp,
-                 /static/images/${namespace}/1280/${key}@2x.webp 2x,
-                 /static/images/${namespace}/1280/${key}@3x.webp 3x`}/>
-
-      <source
-        media='(max-width: 1359px)'
-        srcSet={`/static/images/${namespace}/1280/${key}@1x.${extension},
-                 /static/images/${namespace}/1280/${key}@2x.${extension} 2x,
-                 /static/images/${namespace}/1280/${key}@3x.${extension} 3x`}/>
-
-      <source
-        media='(max-width: 1919px)'
-        type='image/webp'
-        srcSet={`/static/images/${namespace}/1360/${key}@1x.webp,
-                 /static/images/${namespace}/1360/${key}@2x.webp 2x,
-                 /static/images/${namespace}/1360/${key}@3x.webp 3x`}/>
-
-      <source
-        media='(max-width: 1919px)'
-        srcSet={`/static/images/${namespace}/1360/${key}@1x.${extension},
-                 /static/images/${namespace}/1360/${key}@2x.${extension} 2x,
-                 /static/images/${namespace}/1360/${key}@3x.${extension} 3x`}/>
+          <source
+            media={mediaRuleByResoluton[resolution]}
+            srcSet={`/static/images/${namespace}/${resolution}/${key}@1x.${extension},
+                     /static/images/${namespace}/${resolution}/${key}@2x.${extension} 2x,
+                     /static/images/${namespace}/${resolution}/${key}@3x.${extension} 3x`}/>
+        </Fragment>
+      )}
 
       <source
         type='image/webp'
@@ -63,6 +35,7 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
                  /static/images/${namespace}/1920/${key}@3x.webp 3x`}/>
 
       <img
+        className={className}
         srcSet={`/static/images/${namespace}/1920/${key}@1x.${extension},
                  /static/images/${namespace}/1920/${key}@2x.${extension} 2x,
                  /static/images/${namespace}/1920/${key}@3x.${extension} 3x`}

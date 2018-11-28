@@ -128,7 +128,11 @@ const Vacancies = props =>
         </ul>
       }
 
-      <PictureForAllResolutions className={picture.className} image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}/>
+      <PictureForAllResolutions
+        className={picture.className}
+        image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}
+        customResolutions={['360']}
+      />
 
       <h2 className='font_h2-regular'>
         <span style={{ color: '#0054d8' }}>
@@ -141,7 +145,11 @@ const Vacancies = props =>
         Процесс найма в&nbsp;CSSSR состоит из&nbsp;нескольких этапов. Как правило, необходимо выполнить тестовое задание, пройти интервью c&nbsp;командой рекрутеров, поразить интервьюера на&nbsp;техническом собеседовании и&nbsp;подружиться с&nbsp;потенциальным начальником. Процесс занимает от&nbsp;одной до&nbsp;двух недель, но, как показывает практика, результат стоит того.
       </p>
 
-      <PictureForAllResolutions className={picture.className} image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}/>
+      <PictureForAllResolutions
+        className={picture.className}
+        image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}
+        customResolutions={['360']}
+      />
 
       <h2 className='font_h2-regular'>
         <span style={{ color: '#f8585c' }}>
@@ -154,7 +162,11 @@ const Vacancies = props =>
         В&nbsp;CSSSR работают необыкновенные люди&nbsp;&mdash; нас всех объединяет стремление создавать безупречное. В&nbsp;компанию попадают только самые талантливые, амбициозные, стойкие, напористые, умные люди с&nbsp;хорошим чувством юмора. Мы&nbsp;не&nbsp;скрываем, что даём зеленый свет прежде всего тем, кто хочет работать именно с&nbsp;нами, тем, кому нравится наша концепция, кто проникся нашими ценностями.
       </p>
 
-      <PictureForAllResolutions className={picture.className} image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}/>
+      <PictureForAllResolutions
+        className={picture.className}
+        image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}
+        customResolutions={['360']}
+      />
 
       <h2 className='font_h2-regular'>
         О&nbsp;дистанционной работе
@@ -166,7 +178,7 @@ const Vacancies = props =>
         Однако не&nbsp;стоит думать, что отсутствие необходимости ходить в&nbsp;офис предполагает меньше ответственности и&nbsp;больше свободного времени. Обязательными условиями удалённой работы являются способность самостоятельно организовывать свой рабочий процесс и&nbsp;возможность без всяких «но» трудиться полный рабочий день.
       </p>
 
-      <Picture className={pictureHunter.className} image={{ namespace: 'jobs/1920', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
+      <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
 
       <p className='hunter-text font_p16-regular'>
         Также наши вакансии можно найти на&nbsp;<a href='https://moikrug.ru/companies/csssr' target='_blank' rel='noopener' className='font_link-list_16'>Моём Круге</a> и&nbsp;на&nbsp;<a href='https://spb.hh.ru/employer/1230690' target='_blank' rel='noopener' className='font_link-list_16'>Head Hunter</a>.
@@ -399,7 +411,7 @@ const Vacancies = props =>
             width: 59rem;
           }
 
-          .half-page-picture span { // Убрать после начала верстки мобильных вариантов страницы
+          .half-page-picture span {
             font-size: 1.8vh;
           }
         }

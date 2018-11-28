@@ -15,7 +15,7 @@ const picture = css.resolve`
     display: block;
     max-width: 25rem;
   }
-  
+
   img {
     width: 100%;
   }
@@ -124,7 +124,7 @@ class CandidateForm extends PureComponent {
         .hot-vacancy {
           position: relative;
         }
-  
+
         .hot-vacancy::before {
           content: '🔥';
           position: absolute;
@@ -164,7 +164,7 @@ class CandidateForm extends PureComponent {
         >
           <h1 className='font_h1-regular'>
             {vacancy.name }
-            <span className='font_subhead-regular'>Дистанционно, и на фуллтайм</span>
+            <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
           </h1>
 
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />

@@ -97,7 +97,7 @@ i18n
         })
 
         server.get('/:language/jobs/:jobPathName', (req, res) => {
-          const params = { jobPathName: req.params.jobPathName }
+          const params = { jobPathName: req.params.jobPathName, preview: req.query.hasOwnProperty('preview') }
           return app.render(req, res, `/${req.params.language}/job`, params)
         })
 

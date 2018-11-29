@@ -132,14 +132,21 @@ const onSubmit = async values => {
 
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
-    const response = await fetch(`${hrOrigin}/api/public/vacancies/active`)
+    const response = await fetch(`${hrOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}`)
     const vacancies = await response.json()
 
     const vacancy = vacancies.find(v => v.pathName === query.jobPathName)
 
     if (!vacancy) {
-      res.statusCode = 404
-      return
+      // SSR
+      if (res) {
+        res.statusCode = 404
+      }
+
+      // Client-side
+      return {
+        statusCode: 404
+      }
     }
 
     const { processedVacancy, initialValues } = processVacancy(vacancy)

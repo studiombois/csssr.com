@@ -47,15 +47,29 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
       img {
         max-width: 100%;
       }
+
+      @media (max-width: 767px) {
+        .icon-wrapper {
+          margin-top: 1.5rem;
+          grid-column: 1 / span 1;
+        }
+
+        .file-info {
+          margin-top: 2rem;
+          grid-column: 2 / span 5;
+        }
+
+        span {
+          margin-top: 0.875rem;
+          font-weight: bold;
+        }
+      }
     `}</style>
   </Fragment>
 
 const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections }) =>
   <Fragment>
-    <FormRow
-      rightSideContent={renderFileInfo(fileSize, fileExt, fileName, fileLink)}
-      customStylesForRightSideContent
-    >
+    <FormRow rightSideContent={renderFileInfo(fileSize, fileExt, fileName, fileLink)}>
       <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
     </FormRow>
@@ -68,6 +82,18 @@ const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections })
 
       p {
         margin-top: 0.5rem;
+      }
+
+      @media (max-width: 767px) {
+        h2 {
+          margin-top: 3.875rem;
+        }
+
+        p {
+          padding-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
       }
     `}</style>
   </Fragment>

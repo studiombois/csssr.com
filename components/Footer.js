@@ -116,6 +116,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
       .social-links {
         grid-column: 4 / span 2;
         display: flex;
+        justify-content: center;
         font-size: 0;
       }
 

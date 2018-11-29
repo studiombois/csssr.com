@@ -20,6 +20,7 @@ export default css`
   }
 
   input {
+    appearance: none;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -29,6 +30,7 @@ export default css`
     text-align: center;
     border: none;
     border-bottom: solid 0.0625rem #e1e1e1;
+    border-radius: 0;
     caret-color: #4a4a4a;
   }
 

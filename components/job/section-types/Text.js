@@ -13,6 +13,15 @@ const Text = ({ text }) =>
       p {
         margin-top: 0.5rem;
       }
+
+      @media (max-width: 767px) {
+        p {
+          margin-top: 0;
+          padding-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
+      }
     `}</style>
   </Fragment>
 

@@ -145,7 +145,7 @@ class Job extends PureComponent {
 
       // Client-side
       return {
-        statusCode: 404
+        statusCode: 404,
       }
     }
 

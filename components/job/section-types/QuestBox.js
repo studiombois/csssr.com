@@ -21,6 +21,19 @@ const QuestBox = ({ text, title, sections }) =>
         margin-top: 0.5rem;
         margin-bottom: -0.4375rem;
       }
+
+      @media (max-width: 767px) {
+        h2 {
+          margin-top: 3.4375rem;
+        }
+
+        p {
+          margin-top: 0.4375rem;
+          padding-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
+      }
     `}</style>
   </Fragment>
 

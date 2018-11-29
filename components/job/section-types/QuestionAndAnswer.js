@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { number, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import css from 'styled-jsx/css'
+import cn from 'classnames'
 import { translate } from 'react-i18next'
 import TextareaField from '../../ui-kit/TextareaField'
 import TextField from '../../ui-kit/TextField'
@@ -9,23 +10,63 @@ import FormRow from '../FormRow'
 import formatText from '../../../utils/formatText'
 
 
-const renderTime = (time, t) => (
-  <Fragment>
-    <div className='font_subhead-regular value'>{t('job:minutes', { count: time })}</div>
-    <div className='font_p16-regular hint'>
-      потребуется на решение
-    </div>
-    <style jsx>{`
-      .value {
-        margin-top: 1.8125rem;
-      }
+const renderTime = (time, t, isVisibleOnMobile) => {
 
-      .hint {
-        margin-top: 0.5rem;
-      }
-    `}</style>
-  </Fragment>
-)
+  return (
+    <div
+      className={cn({
+        wrapper: true,
+        'wrapper_mobile-only': isVisibleOnMobile,
+      })}
+    >
+      <div className='font_subhead-regular value'>{t('job:minutes', { count: time })}</div>
+      <div className='font_p16-regular hint'>
+        потребуется на решение
+      </div>
+      <style jsx>{`
+        .wrapper {
+          grid-column: 10 / span 3;
+        }
+
+        .wrapper_mobile-only {
+          display: none;
+        }
+
+        .value {
+          margin-top: 1.8125rem;
+        }
+
+        .hint {
+          margin-top: 0.5rem;
+        }
+
+        @media (max-width: 767px) {
+          .wrapper {
+            display: none;
+          }
+
+          .wrapper_mobile-only {
+            display: block;
+            grid-column: 1 / span 6;
+          }
+
+          .hint,
+          .value {
+            display: inline-block;
+          }
+
+          .hint {
+            margin-left: 0.625rem;
+          }
+
+          .value {
+            margin-top: 1.125rem;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
 
 const { className, styles } = css.resolve`
   div.textfield_regular {
@@ -35,10 +76,16 @@ const { className, styles } = css.resolve`
   div.textarea_regular {
     margin-top: 2.0625rem;
   }
+
+  @media (max-width: 767px) {
+    div.textarea_regular {
+      margin-top: 1.0625rem;
+    }
+  }
 `
 
 const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, inputIndex, displayIndex }) =>
-  <FormRow rightSideContent={renderTime(time, t)}>
+  <FormRow rightSideContent={renderTime(time, t, false)}>
     <h3 className='font_h3-regular'>
       {title}
     </h3>
@@ -59,6 +106,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
         dangerouslySetInnerHTML={{ __html: formatText(taskTextString) }}
       />
     )}
+    {renderTime(time, t, true)}
     <Field
       className={className}
       name={`quests[${inputIndex}].text`}
@@ -89,16 +137,39 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
         border: solid 2px #000000;
       }
 
-      .link-wrapper {
-        margin-top: 1rem;
-      }
 
       p {
         margin-top: 1rem;
       }
 
+      .link-wrapper {
+        margin-top: 1rem;
+      }
+
       .value {
         margin-top: 2.5rem;
+      }
+
+      .time-wrapper {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        h3 {
+          margin-top: 2.4375rem;
+        }
+
+        p {
+          margin-top: 0.5rem;
+          padding-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
+
+        .time-wrapper {
+          grid-column: 1 / span 6;
+          display: block;
+        }
       }
     `}</style>
     {styles}

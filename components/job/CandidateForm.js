@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
@@ -15,9 +15,23 @@ const picture = css.resolve`
     display: block;
     max-width: 25rem;
   }
-  
+
   img {
     width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      margin-left: -1rem;
+      width: calc(100% + 2rem);
+      height: 15.5rem;
+      text-align: center;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
   }
 `
 
@@ -43,6 +57,14 @@ const divideSections = sections => {
 class CandidateForm extends PureComponent {
   state = {
     formSubmitStatus: null,
+    isMobile: false,
+  }
+
+  componentDidMount() {
+    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+
+    mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(mobileMediaQuery)
   }
 
   componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
@@ -64,6 +86,12 @@ class CandidateForm extends PureComponent {
     }
   }
 
+  handleMediaMatch = ({ matches }) =>
+    this.setState({
+      isMobile: matches,
+    })
+
+
   handleStateClear = () => {
     this.setState({ formSubmitStatus: null })
   }
@@ -84,8 +112,8 @@ class CandidateForm extends PureComponent {
     const pictureName = picturesMap[pathName]
 
     return (
-      <Fragment>
-        {pictureName && <Picture
+      <div>
+        { pictureName && <Picture
           className={picture.className}
           image={{ namespace: 'jobs', key: `job/${pictureName}`, alt: name }}
         />}
@@ -110,11 +138,15 @@ class CandidateForm extends PureComponent {
             </li>
           )}
         </ul><style jsx>{`
+        div {
+          grid-column: 9 / span 4;
+        }
+
         ul {
           margin-top: 3.6875rem;
           margin-left: auto;
           margin-right: auto;
-          width: 12rem;
+          width: 17rem;
         }
 
         li:not(:last-child) {
@@ -124,7 +156,7 @@ class CandidateForm extends PureComponent {
         .hot-vacancy {
           position: relative;
         }
-  
+
         .hot-vacancy::before {
           content: '🔥';
           position: absolute;
@@ -132,8 +164,31 @@ class CandidateForm extends PureComponent {
           left: -1.25rem;
           font-size: 0.75rem;
         }
+
+        @media (min-width: 1360px) and (max-width: 1919px) {
+          ul {
+            width: 13rem;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1359px) {
+          ul {
+            width: 12rem;
+          }
+        }
+
+        @media (max-width: 767px) {
+          div {
+            grid-column: 1 / span 6;
+            grid-row: 1;
+          }
+
+          ul {
+            display: none;
+          }
+        }
       `}</style>
-      </Fragment>
+      </div>
     )
   }
 
@@ -158,13 +213,10 @@ class CandidateForm extends PureComponent {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <FormRow
-          rightSideContent={this.renderVacancyImageAndLinks()}
-          rightSideWidth='wide'
-        >
+        <FormRow rightSideContent={this.renderVacancyImageAndLinks()}>
           <h1 className='font_h1-regular'>
             {vacancy.name }
-            <span className='font_subhead-regular'>Дистанционно, и на фуллтайм</span>
+            <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
           </h1>
 
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />
@@ -176,6 +228,7 @@ class CandidateForm extends PureComponent {
         <CandidateInfoSection
           connection={connection}
           vacancy={vacancy}
+          isMobile={this.state.isMobile}
           onFileFieldChange={this.props.form.change} /* eslint-disable-line */
         />
 
@@ -220,6 +273,32 @@ class CandidateForm extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             width: 12rem;
+          }
+
+          @media (max-width: 767px) {
+            form {
+              padding-bottom: 14rem;
+            }
+
+            h1 {
+              margin-top: 2.125rem;
+            }
+
+            h1 span {
+              margin-top: 0.5rem;
+            }
+
+            h1 + p {
+              margin-top: 0.125rem;
+            }
+
+            form {
+              padding-top: 0;
+            }
+
+            .button {
+              width: 13.5rem;
+            }
           }
         `}</style>
         {picture.styles}

@@ -14,7 +14,6 @@ class Header extends PureComponent {
     logoHref: string,
     logoAlt: string,
     logoSup: string,
-    isHalfed: bool,
     isLogoLink: bool,
     isBurgerVisible: bool,
   }
@@ -25,7 +24,6 @@ class Header extends PureComponent {
     pinHeader: true,
     toggleHeaderAnimations: false,
     isSideBarOpened: false,
-    isHalfed: false,
     isLogoLink: false,
     isBurgerVisible: false,
   }
@@ -108,7 +106,6 @@ class Header extends PureComponent {
       logoHref,
       logoAlt,
       logoSup,
-      isHalfed,
       isLogoLink,
       isBurgerVisible,
     } = this.props
@@ -132,7 +129,6 @@ class Header extends PureComponent {
           logoAlt={logoAlt}
           logoSup={logoSup}
           scrollbarWidth={this.scrollbarWidth}
-          isHalfed={isHalfed}
           isLogoLink={isLogoLink}
           isBurgerVisible={isBurgerVisible}
           isSideBarOpened={isSideBarOpened}

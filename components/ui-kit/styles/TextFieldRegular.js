@@ -26,6 +26,7 @@ export default css`
   }
 
   input {
+    appearance: none;
     margin-top: 0;
     padding-top: 1rem;
     padding-left: 1rem;
@@ -34,6 +35,7 @@ export default css`
     width: 100%;
     height: 100%;
     border: solid 0.0625rem #e1e1e1;
+    border-radius: 0;
     caret-color: #4a4a4a;
   }
 

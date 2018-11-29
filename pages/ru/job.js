@@ -21,6 +21,7 @@ const processVacancy = vacancy => {
   const initialValues = {
     vacancy: vacancy.pathName,
     quests: [],
+    connection: [],
   }
 
   let inputIndex = 0
@@ -95,15 +96,6 @@ const onSubmit = async values => {
   }
   delete filteredValues.file
   delete filteredValues.files
-
-  // В мобильной версии connection будет строкой, если приходит строка
-  // то мы удаляем поле connection и потом записываем его как массив
-  if (typeof values.connection === 'string') {
-    const connection = values.connection
-    delete filteredValues.connection
-
-    filteredValues.connection = [connection]
-  }
 
   const formData = objectToFormData(filteredValues, {
     indices: true,

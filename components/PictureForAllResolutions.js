@@ -12,7 +12,7 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
   <Fragment>
     <picture className={className}>
       {customResolutions.map(resolution =>
-        <Fragment>
+        <Fragment key={resolution}>
           <source
             media={mediaRuleByResoluton[resolution]}
             type='image/webp'

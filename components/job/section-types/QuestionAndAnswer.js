@@ -85,7 +85,7 @@ const { className, styles } = css.resolve`
 `
 
 const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, inputIndex, displayIndex }) =>
-  <FormRow rightSideContent={renderTime(time, t)}>
+  <FormRow rightSideContent={renderTime(time, t, false)}>
     <h3 className='font_h3-regular'>
       {title}
     </h3>

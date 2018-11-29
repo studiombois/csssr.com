@@ -50,7 +50,7 @@ export default class SelectField extends PureComponent {
           <option label=' ' />
           {options.map(option =>
             <option key={option.id} value={option.id}>
-              {option.radioText}
+              {option.checkboxText}
             </option>
           )}
         </select>

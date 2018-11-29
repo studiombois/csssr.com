@@ -10,7 +10,6 @@ function Jobs({ t }) {
     <Fragment>
       <Layout
         headerProps={{
-          isHalfed: true,
           logoHref: '/ru/jobs#',
           logoAlt: 'CSSSR jobs logo',
           logoSup: '.jobs',

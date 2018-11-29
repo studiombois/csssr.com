@@ -10,7 +10,7 @@ import withI18next from '../../utils/withI18next'
 import hrOrigin from '../../utils/hrOrigin'
 import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
-import { contactOptions } from '../../data/job/contactOptions'
+import contactOptions from '../../data/job/contactOptions'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе

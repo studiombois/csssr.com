@@ -35,7 +35,7 @@ const picture = css.resolve`
   }
 `
 
-const Manifest = ({ t, image }) =>
+const Manifest = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='manifest'>
       <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:manifest.title') }} />

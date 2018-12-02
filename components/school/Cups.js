@@ -68,7 +68,7 @@ const pictureBig = css.resolve`
   }
 `
 
-const Cups = ({ t, image }) =>
+const Cups = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='manifest'>
       <PictureForAllResolutions

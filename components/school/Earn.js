@@ -1,7 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
 import css from 'styled-jsx/css'
-import cn from 'classnames'
-import ButtonLink from '../ui-kit/ButtonLink'
 import { translate } from 'react-i18next'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 

@@ -27,7 +27,7 @@ const headerLinks = {
   }, {
     href: '#sign',
     label: 'school:headerNav.sign',
-  }]}
+  }] }
 
 export default pathname => {
   switch (pathname) {

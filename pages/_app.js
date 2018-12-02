@@ -7,6 +7,7 @@ import initialI18nInstance from '../common/i18n'
 export default class MyApp extends App {
   componentDidMount() {
     window.addEventListener('keydown', function (event) {
+      console.log(event.which)
       if (event.which === 9) {
         document.body.classList.add('outline')
       }

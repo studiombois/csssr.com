@@ -18,6 +18,13 @@ const items = [{
     from: '/en/jobs',
     to: '/ru/jobs',
   },
+}, {
+  path: '/school',
+  key: 'common:menu.school',
+  redirect: {
+    from: '/en/school',
+    to: '/ru/school',
+  },
 }]
 
 const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>

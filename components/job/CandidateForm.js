@@ -55,6 +55,49 @@ const divideSections = sections => {
   ]
 }
 
+const mapVacancies = vacancy =>
+  <li key={vacancy.id}>
+    <Link
+      prefetch
+      href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
+      as={`/ru/jobs/${vacancy.pathName}`}
+    >
+      <a
+        className={cn({
+          'font_link-list_16': true,
+          'hot-vacancy': vacancy.isHot,
+        })}
+      >
+        {vacancy.name}
+      </a>
+    </Link>
+    <style jsx>{`
+
+      li:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      .hot-vacancy {
+        position: relative;
+      }
+
+      .hot-vacancy::before {
+        content: '🔥';
+        position: absolute;
+        top: -0.125rem;
+        left: -1.25rem;
+        font-size: 0.75rem;
+      }
+
+      @media (max-width: 767px) {
+        .hot-vacancy::before {
+          left: -1.5rem;
+          font-size: 1.25rem;
+        }
+      }
+    `}</style>
+  </li>
+
 class CandidateForm extends PureComponent {
   state = {
     formSubmitStatus: null,
@@ -121,24 +164,7 @@ class CandidateForm extends PureComponent {
         />}
 
         <ul>
-          {vacancies.map(vacancy =>
-            <li key={vacancy.id}>
-              <Link
-                prefetch
-                href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
-                as={`/ru/jobs/${vacancy.pathName}`}
-              >
-                <a
-                  className={cn({
-                    'font_link-list_16': true,
-                    'hot-vacancy': vacancy.isHot,
-                  })}
-                >
-                  {vacancy.name}
-                </a>
-              </Link>
-            </li>
-          )}
+          {vacancies.map(mapVacancies)}
         </ul><style jsx>{`
         div {
           grid-column: 9 / span 4;
@@ -204,6 +230,7 @@ class CandidateForm extends PureComponent {
         connection,
       },
       vacancy,
+      vacancies,
       pathName,
     } = this.props
 
@@ -255,6 +282,10 @@ class CandidateForm extends PureComponent {
           </div>
         </FormRow>
 
+        <ul>
+          {vacancies.map(mapVacancies)}
+        </ul>
+
         <style jsx>{`
           form {
             margin-right: auto;
@@ -276,6 +307,10 @@ class CandidateForm extends PureComponent {
 
           h1 + p {
             margin-top: 1.3125rem;
+          }
+
+          ul {
+            display: none;
           }
 
           .button {
@@ -308,6 +343,14 @@ class CandidateForm extends PureComponent {
 
             form {
               padding-top: 0;
+            }
+
+            ul {
+              grid-column: 1 / span 6;
+              margin-top: 3.9375rem;
+              margin-left: 3rem;
+              display: block;
+              width: 18.5rem;
             }
 
             .button {

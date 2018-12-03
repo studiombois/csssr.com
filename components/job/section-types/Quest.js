@@ -52,6 +52,7 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
         .icon-wrapper {
           margin-top: 1.5rem;
           grid-column: 1 / span 1;
+          height: auto;
         }
 
         .file-info {

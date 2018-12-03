@@ -30,7 +30,7 @@ const stylesForFirstHalfWidthField = css.resolve`
 
   @media (max-width: 767px) {
     div {
-      margin-top: 1.5625rem;
+      margin-top: 1.5rem;
       grid-column: 1 / span 6;
     }
   }
@@ -94,7 +94,7 @@ const stylesForFileField = css.resolve`
     }
 
     .button {
-      margin-top: 1.9375rem;
+      margin-top: 2rem;
       grid-column: 2 / span 4;
     }
   }
@@ -218,7 +218,7 @@ const CandidateInfoSection = props => {
           }
         }
 
-        @media (min-width: 768px) and (max-width: 1359px) {
+        @media (min-width: 768px) and (max-width: 1280px) {
           div {
             width: 944px;
           }
@@ -232,7 +232,7 @@ const CandidateInfoSection = props => {
 
         @media (max-width: 767px) {
           div {
-            margin-top: 7.5rem;
+            margin-top: 3.5625rem;
             width: 20.5rem;
           }
 

@@ -43,7 +43,7 @@ const ContactOptionsMobile = ({ connection }) => {
 
       <style jsx>{`
         fieldset {
-          margin-top: 2.5rem;
+          margin-top: 2.625rem;
           grid-column: 1 / span 6;
           white-space: nowrap;
           border: none;

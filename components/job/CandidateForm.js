@@ -6,7 +6,7 @@ import FormRow from './FormRow'
 import Section from '../job/Section'
 import CandidateInfoSection from './CandidateInfoSection'
 import AnimatedButton from '../ui-kit/AnimatedButton'
-import Picture from '../Picture'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
@@ -36,13 +36,14 @@ const picture = css.resolve`
 `
 
 const picturesMap = {
-  'project-manager': 'project_manager',
-  'middle-js-developer': 'developer_2',
-  'senior-js-developer': 'developer_2',
-  'qa-engineer': 'qa_1',
-  'ui-ux-designer': 'designer',
-  'pixel-perfectionist': 'developer_1',
-  'head-of-web-development-team': 'manager',
+  'project-manager': 'Project_manager',
+  'middle-js-developer': 'Developer_2',
+  'senior-js-developer': 'JS_senior',
+  'qa-engineer': 'QA_1',
+  'ui-ux-designer': 'Designer',
+  'pixel-perfectionist': 'Developer_1',
+  'head-of-web-development-team': 'Manager',
+  'senior-apparel-developer': 'Clothes',
   'sales-assistant': '',
 }
 
@@ -113,9 +114,10 @@ class CandidateForm extends PureComponent {
 
     return (
       <div>
-        { pictureName && <Picture
+        { pictureName && <PictureForAllResolutions
           className={picture.className}
-          image={{ namespace: 'jobs', key: `job/${pictureName}`, alt: name }}
+          customResolutions={['360']}
+          image={{ namespace: 'job', key: `${pictureName}`, alt: name }}
         />}
 
         <ul>

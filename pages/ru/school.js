@@ -3,6 +3,9 @@ import Head from '../../components/Head'
 import Earn from '../../components/school/Earn'
 import Manifest from '../../components/school/Manifest'
 import Cups from '../../components/school/Cups'
+import Win from '../../components/school/Win'
+import Counter from '../../components/school/Counter'
+import Courses from '../../components/school/Courses'
 import Layout from '../../components/Layout'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
@@ -36,6 +39,9 @@ class School extends PureComponent {
         <Earn />
         <Manifest />
         <Cups />
+        <Win />
+        <Counter />
+        <Courses />
       </Layout>
     )
   }

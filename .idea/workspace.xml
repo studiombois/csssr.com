@@ -2,162 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66f2b6ea-76d9-42f8-9b51-48400889a982" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/csssr.com.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/school/Cups.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/school/Earn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/school/Manifest.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/locales/ru/school.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/ru/school.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/dog@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/dog@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/dog@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/dog@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/dog@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/dog@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/geometry@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/geometry@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/geometry@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/geometry@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/geometry@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/geometry@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/perfect@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/perfect@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/perfect@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/perfect@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/perfect@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/perfect@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/time@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/time@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/time@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/time@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/time@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1024/time@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/about_us@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/about_us@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/course1@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/course1@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/course2@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/course2@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/course3@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/course3@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup1@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup1@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup2@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup2@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup3@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup3@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup4@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup4@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup5@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/cup5@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/earn@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/earn@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/feature1@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/feature1@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/feature2@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/feature2@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/feature3@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/feature3@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/win1@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/win1@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/win2@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/win2@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/win3@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1280/win3@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/dog@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/dog@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/dog@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/dog@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/dog@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/dog@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/geometry@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/geometry@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/geometry@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/geometry@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/geometry@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/geometry@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/perfect@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/perfect@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/perfect@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/perfect@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/perfect@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/perfect@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/time@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/time@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/time@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/time@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/time@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1360/time@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/dog@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/dog@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/dog@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/dog@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/dog@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/dog@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/geometry@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/geometry@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/geometry@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/geometry@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/geometry@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/geometry@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/perfect@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/perfect@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/perfect@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/perfect@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/perfect@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/perfect@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/time@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/time@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/time@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/time@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/time@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/1920/time@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/dog@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/dog@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/dog@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/dog@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/dog@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/dog@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/geometry@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/geometry@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/geometry@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/geometry@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/geometry@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/geometry@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/perfect@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/perfect@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/perfect@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/perfect@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/perfect@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/perfect@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/time@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/time@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/time@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/time@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/time@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/360/time@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/letter@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/letter@1x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/letter@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/letter@2x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/letter@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/letter@3x.webp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/win1@1x 2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/win1@1x 3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/school/win1@1x.png" />
-      <change beforePath="$PROJECT_DIR$/components/SideBar.js" afterPath="$PROJECT_DIR$/components/SideBar.js" />
-      <change beforePath="$PROJECT_DIR$/components/Text.js" afterPath="$PROJECT_DIR$/components/Text.js" />
-      <change beforePath="$PROJECT_DIR$/locales/ru/common.json" afterPath="$PROJECT_DIR$/locales/ru/common.json" />
-      <change beforePath="$PROJECT_DIR$/locales/ru/dev.json" afterPath="$PROJECT_DIR$/locales/ru/dev.json" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" afterPath="$PROJECT_DIR$/pages/_app.js" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
-      <change beforePath="$PROJECT_DIR$/utils/getHeaderLinks.js" afterPath="$PROJECT_DIR$/utils/getHeaderLinks.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/components/school/Costs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/components/school/Counter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/components/school/Courses.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/components/school/Win.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/locales/ru/school.json" afterPath="$PROJECT_DIR$/locales/ru/school.json" />
+      <change beforePath="$PROJECT_DIR$/pages/ru/school.js" afterPath="$PROJECT_DIR$/pages/ru/school.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -170,96 +21,108 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6258675">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Manifest.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/school/Manifest.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="629">
-                  <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Cups.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/school/Cups.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Hire.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/components/dev/Hire.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1003">
-                  <caret line="108" column="12" lean-forward="false" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Feature1.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/dev/Feature1.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="203">
-                  <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="school.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/ru/school.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Earn.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/school/Earn.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CookiesPolicy.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/CookiesPolicy.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="school.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/locales/ru/school.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="177" lean-forward="false" selection-start-line="26" selection-start-column="177" selection-end-line="26" selection-end-column="177" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Manifest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/school/Manifest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Counter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/school/Counter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="742">
+              <caret line="77" column="7" lean-forward="false" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Costs.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/school/Costs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="15" lean-forward="false" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cups.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/school/Cups.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Courses.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/school/Courses.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="901">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vacancies.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/jobs/Vacancies.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="128" column="35" lean-forward="false" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Feature2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/dev/Feature2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="school.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locales/ru/school.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Win.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/school/Win.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="school.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/ru/school.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -274,6 +137,8 @@
       <find>p24-</find>
       <find>pict</find>
       <find>font_h2-regular</find>
+      <find>subhead-slab</find>
+      <find>roboto-slab</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -287,11 +152,15 @@
         <option value="$PROJECT_DIR$/utils/getHeaderLinks.js" />
         <option value="$PROJECT_DIR$/components/school/School.js" />
         <option value="$PROJECT_DIR$/locales/ru/dev.json" />
-        <option value="$PROJECT_DIR$/locales/ru/school.json" />
-        <option value="$PROJECT_DIR$/pages/ru/school.js" />
         <option value="$PROJECT_DIR$/components/school/Cups.js" />
         <option value="$PROJECT_DIR$/components/school/Earn.js" />
+        <option value="$PROJECT_DIR$/components/school/Win.js" />
         <option value="$PROJECT_DIR$/components/school/Manifest.js" />
+        <option value="$PROJECT_DIR$/locales/ru/school.json" />
+        <option value="$PROJECT_DIR$/components/school/Counter.js" />
+        <option value="$PROJECT_DIR$/pages/ru/school.js" />
+        <option value="$PROJECT_DIR$/components/school/Courses.js" />
+        <option value="$PROJECT_DIR$/components/school/Costs.js" />
       </list>
     </option>
   </component>
@@ -307,9 +176,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="718" />
-    <option name="y" value="1463" />
-    <option name="width" value="1280" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
     <option name="height" value="1177" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -529,7 +397,7 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="302" y="1463" width="1920" height="1177" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16535018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -563,62 +431,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/ru/school.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="6" lean-forward="false" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/school/School.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/dev/Hire.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/getHeaderLinks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_document.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/fonts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/_error.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -906,10 +718,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/school/Earn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/HeaderContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/dev/Hire.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/school/Win.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/school/Manifest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/dev/Feature2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/locales/ru/school.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="177" lean-forward="false" selection-start-line="26" selection-start-column="177" selection-end-line="26" selection-end-column="177" />
+        <state relative-caret-position="612">
+          <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/jobs/Vacancies.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="128" column="35" lean-forward="false" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -924,32 +792,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/ru/school.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        <state relative-caret-position="119">
+          <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/school/Earn.js">
+    <entry file="file://$PROJECT_DIR$/components/school/Courses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="901">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/school/Manifest.js">
+    <entry file="file://$PROJECT_DIR$/components/school/Counter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        <state relative-caret-position="742">
+          <caret line="77" column="7" lean-forward="false" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/dev/Hire.js">
+    <entry file="file://$PROJECT_DIR$/components/school/Costs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="108" column="12" lean-forward="false" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
+        <state relative-caret-position="697">
+          <caret line="41" column="15" lean-forward="false" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
           <folding />
         </state>
       </provider>

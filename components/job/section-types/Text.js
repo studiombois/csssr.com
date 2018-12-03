@@ -16,7 +16,7 @@ const Text = ({ text }) =>
 
       @media (max-width: 767px) {
         p {
-          margin-top: 0;
+          margin-top: 0.4375rem;
           padding-bottom: 0;
           font-size: 0.875rem;
           line-height: 1.5rem;

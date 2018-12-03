@@ -6,7 +6,7 @@ import FormRow from './FormRow'
 import Section from '../job/Section'
 import CandidateInfoSection from './CandidateInfoSection'
 import AnimatedButton from '../ui-kit/AnimatedButton'
-import Picture from '../Picture'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
@@ -36,13 +36,14 @@ const picture = css.resolve`
 `
 
 const picturesMap = {
-  'project-manager': 'project_manager',
-  'middle-js-developer': 'developer_2',
-  'senior-js-developer': 'developer_2',
-  'qa-engineer': 'qa_1',
-  'ui-ux-designer': 'designer',
-  'pixel-perfectionist': 'developer_1',
-  'head-of-web-development-team': 'manager',
+  'project-manager': 'Project_manager',
+  'middle-js-developer': 'Developer_2',
+  'senior-js-developer': 'JS_senior',
+  'qa-engineer': 'QA_1',
+  'ui-ux-designer': 'Designer',
+  'pixel-perfectionist': 'Developer_1',
+  'head-of-web-development-team': 'Manager',
+  'senior-apparel-developer': 'Clothes',
   'sales-assistant': '',
 }
 
@@ -156,9 +157,10 @@ class CandidateForm extends PureComponent {
 
     return (
       <div>
-        { pictureName && <Picture
+        { pictureName && <PictureForAllResolutions
           className={picture.className}
-          image={{ namespace: 'jobs', key: `job/${pictureName}`, alt: name }}
+          customResolutions={['360']}
+          image={{ namespace: 'job', key: `${pictureName}`, alt: name }}
         />}
 
         <ul>
@@ -173,6 +175,22 @@ class CandidateForm extends PureComponent {
           margin-left: auto;
           margin-right: auto;
           width: 17rem;
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        .hot-vacancy {
+          position: relative;
+        }
+
+        .hot-vacancy::before {
+          content: '🔥';
+          position: absolute;
+          top: -0.125rem;
+          left: -1.25rem;
+          font-size: 0.75rem;
         }
 
         @media (min-width: 1360px) and (max-width: 1919px) {
@@ -208,11 +226,12 @@ class CandidateForm extends PureComponent {
       hasValidationErrors,
       hasSubmitErrors,
       dirtySinceLastSubmit,
-      vacancies,
       values: {
         connection,
       },
       vacancy,
+      vacancies,
+      pathName,
     } = this.props
 
     const isSubmitButtonDisabled =
@@ -222,10 +241,17 @@ class CandidateForm extends PureComponent {
 
     const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
 
+    const pictureName = picturesMap[pathName]
+
     return (
       <form onSubmit={this.handleSubmit}>
         <FormRow rightSideContent={this.renderVacancyImageAndLinks()}>
-          <h1 className='font_h1-regular'>
+          <h1
+            className={cn({
+              'font_h1-regular': true,
+              'extra-margin': !pictureName,
+            })}
+          >
             {vacancy.name }
             <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
           </h1>
@@ -309,6 +335,10 @@ class CandidateForm extends PureComponent {
 
             h1 + p {
               margin-top: 0.125rem;
+            }
+
+            h1.extra-margin {
+              margin-top: 5.125rem;
             }
 
             form {

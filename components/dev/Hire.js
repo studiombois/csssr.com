@@ -9,19 +9,40 @@ const picture = css.resolve`
   picture {
     grid-column: 1 / span 12;
     grid-row: 3;
-    z-index: -1;
-    margin-top: -16rem;
+    z-index: 0;
+    margin-top: -5rem;
+    margin-left: -4rem;
     height: 640px;
+    width: 1920px;
+  }
+
+  @media (min-width: 1360px) and (max-width: 1919px) {
+    picture {
+      margin-top: -14rem;
+      margin-left: -1rem;
+      width: 1360px;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1359px) {
+    picture {
+      margin-top: -15rem;
+      margin-left: -1.5rem;
+      width: 1280px;
+    }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      margin-top: -6.5rem;
+      margin-top: -4.5rem;
+      margin-left: -2.5rem;
+      width: 1024px;
       height: 480px;
     }
 
     @media (max-width: 1023px) {
       picture {
+        width: 64rem;
         height: 30rem;
       }
     }
@@ -31,7 +52,9 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 2;
-      margin-top: 0;
+      margin-top: -4rem;
+      margin-left: -1rem;
+      width: 22.5rem;
       height: 10.5rem;
     }
   }
@@ -106,7 +129,7 @@ class Hire extends PureComponent {
 
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'dev', key: 'dog', alt: t('dev:imgAlt.dog') }}
+            image={{ namespace: 'dev', key: 'dev', alt: t('dev:imgAlt.dev') }}
           />
 
         </article><style jsx>{`
@@ -158,6 +181,43 @@ class Hire extends PureComponent {
             transform: translateY(calc(100% + 15rem));
           }
 
+          :global(#main) {
+            background-image: url(/static/images/dev/1920/dev_line@1x.png);
+            background-size: 1920px 640px;
+            background-position: 50% 24rem;
+            background-repeat: repeat-x;
+          }
+
+          :global(#main) {
+            background-image: url(/static/images/dev/1920/dev_line@1x.webp);
+          }
+
+          @media
+          only screen and (-webkit-min-device-pixel-ratio: 2),
+          only screen and (min-resolution: 192dpi),
+          only screen and (min-resolution: 2dppx) {
+            :global(#main) {
+              background-image: url(/static/images/dev/1920/dev_line@2x.png);
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/1920/dev_line@2x.webp);
+            }
+          }
+
+          @media
+          only screen and (-webkit-min-device-pixel-ratio: 3),
+          only screen and (min-resolution: 288dpi),
+          only screen and (min-resolution: 3dppx) {
+            :global(#main) {
+              background-image: url(/static/images/dev/1920/dev_line@3x.png);
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/1920/dev_line@3x.webp);
+            }
+          }
+
           @media (min-width: 1360px) and (max-width: 1919px) {
             article {
               width: 1328px;
@@ -165,6 +225,42 @@ class Hire extends PureComponent {
 
             .button-wrapper {
               width: 208px;
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/1360/dev_line@1x.png);
+              background-size: 1360px 640px;
+              background-position: 50% 20rem;
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/1360/dev_line@1x.webp);
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (min-resolution: 192dpi),
+            only screen and (min-resolution: 2dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/1360/dev_line@2x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/1360/dev_line@2x.webp);
+              }
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 3),
+            only screen and (min-resolution: 288dpi),
+            only screen and (min-resolution: 3dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/1360/dev_line@3x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/1360/dev_line@3x.webp);
+              }
             }
           }
 
@@ -175,6 +271,42 @@ class Hire extends PureComponent {
 
             .button-wrapper {
               width: 192px;
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/1280/dev_line@1x.png);
+              background-size: 1280px 640px;
+              background-position: 50% 20rem;
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/1280/dev_line@1x.webp);
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (min-resolution: 192dpi),
+            only screen and (min-resolution: 2dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/1280/dev_line@2x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/1280/dev_line@2x.webp);
+              }
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 3),
+            only screen and (min-resolution: 288dpi),
+            only screen and (min-resolution: 3dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/1280/dev_line@3x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/1280/dev_line@3x.webp);
+              }
             }
           }
 
@@ -202,6 +334,42 @@ class Hire extends PureComponent {
               width: 144px;
             }
 
+            :global(#main) {
+              background-image: url(/static/images/dev/1024/dev_line@1x.png);
+              background-size: 1024px 480px;
+              background-position: 50% 22rem;
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/1024/dev_line@1x.webp);
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (min-resolution: 192dpi),
+            only screen and (min-resolution: 2dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/1024/dev_line@2x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/1024/dev_line@2x.webp);
+              }
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 3),
+            only screen and (min-resolution: 288dpi),
+            only screen and (min-resolution: 3dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/1024/dev_line@3x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/1024/dev_line@3x.webp);
+              }
+            }
+
             @media (max-width: 1023px) {
               article {
                 width: 59rem;
@@ -209,6 +377,10 @@ class Hire extends PureComponent {
 
               .button-wrapper {
                 width: 9rem;
+              }
+
+              :global(#main) {
+                background-size: 80rem 30rem;
               }
             }
           }
@@ -247,6 +419,43 @@ class Hire extends PureComponent {
               bottom: 2rem;
               width: 13.5rem;
               right: calc(50% - 13.5rem / 2);
+            }
+
+
+            :global(#main) {
+              background-image: url(/static/images/dev/360/dev_line@1x.png);
+              background-size: 22.5rem 10.5rem;
+              background-position: 50% 14rem;
+            }
+
+            :global(#main) {
+              background-image: url(/static/images/dev/360/dev_line@1x.webp);
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (min-resolution: 192dpi),
+            only screen and (min-resolution: 2dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/360/dev_line@2x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/360/dev_line@2x.webp);
+              }
+            }
+
+            @media
+            only screen and (-webkit-min-device-pixel-ratio: 3),
+            only screen and (min-resolution: 288dpi),
+            only screen and (min-resolution: 3dppx) {
+              :global(#main) {
+                background-image: url(/static/images/dev/360/dev_line@3x.png);
+              }
+
+              :global(#main) {
+                background-image: url(/static/images/dev/360/dev_line@3x.webp);
+              }
             }
           }
         `}</style>

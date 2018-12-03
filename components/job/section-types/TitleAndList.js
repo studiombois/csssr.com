@@ -12,6 +12,7 @@ const TitleAndList = ({ list, title }) =>
     </ul><style jsx>{`
       h2 {
         margin-top: 2.0625rem;
+        padding: 0;
       }
 
       ul {
@@ -28,7 +29,7 @@ const TitleAndList = ({ list, title }) =>
         }
 
         ul {
-          margin-top: 0.5rem;
+          margin-top: 0.5625rem;
         }
 
         li {

@@ -166,6 +166,12 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
           line-height: 1.5rem;
         }
 
+        .font_link-list_16 {
+          padding-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
+
         .time-wrapper {
           grid-column: 1 / span 6;
           display: block;

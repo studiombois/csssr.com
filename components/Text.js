@@ -119,7 +119,8 @@ const Text = () =>
       color: inherit;
     }
 
-    .font_link-list_16 {
+    .font_link-list_16,
+    .font_link-list_16_desktop_14_mobile {
       position: relative;
       font-family: Roboto;
       font-size: 1rem;
@@ -129,7 +130,8 @@ const Text = () =>
       color: #0076ff;
     }
 
-    .font_link-list_16[target='_blank']::after {
+    .font_link-list_16[target='_blank']::after,
+    .font_link-list_16_desktop_14_mobile[target='_blank']::after {
       position: absolute;
       bottom: 12px;
       right: -5px;
@@ -190,6 +192,7 @@ const Text = () =>
     }
 
     .font_link-list_16:hover::after,
+    .font_link-list_16_desktop_14_mobile:hover::after,
     .font_link-list_24:hover::after,
     .font_link-list_28:hover::after {
       display: block;
@@ -499,6 +502,13 @@ const Text = () =>
         .font_feature_3 {
           font-size: 2rem;
           line-height: 2.5rem;
+        }
+
+        .font_link-list_16_desktop_14_mobile {
+          padding: 0;
+          margin: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
         }
       }
     }

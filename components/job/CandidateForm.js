@@ -204,6 +204,7 @@ class CandidateForm extends PureComponent {
         connection,
       },
       vacancy,
+      pathName,
     } = this.props
 
     const isSubmitButtonDisabled =
@@ -213,10 +214,17 @@ class CandidateForm extends PureComponent {
 
     const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
 
+    const pictureName = picturesMap[pathName]
+
     return (
       <form onSubmit={this.handleSubmit}>
         <FormRow rightSideContent={this.renderVacancyImageAndLinks()}>
-          <h1 className='font_h1-regular'>
+          <h1
+            className={cn({
+              'font_h1-regular': true,
+              'extra-margin': !pictureName,
+            })}
+          >
             {vacancy.name }
             <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
           </h1>
@@ -292,6 +300,10 @@ class CandidateForm extends PureComponent {
 
             h1 + p {
               margin-top: 0.125rem;
+            }
+
+            h1.extra-margin {
+              margin-top: 5.125rem;
             }
 
             form {

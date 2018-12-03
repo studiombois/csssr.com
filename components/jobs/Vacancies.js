@@ -53,8 +53,7 @@ const pictureHunter = css.resolve`
     }
 
     img {
-      margin-left: -1rem;
-      width: 4rem;
+      width: 3rem;
     }
   }
 `
@@ -514,7 +513,8 @@ export default class Vacancies extends PureComponent {
               padding-left: 1.5rem;
             }
 
-            .font_p16-regular {
+            .font_p16-regular,
+            .font_link-list_16 {
               margin-top: 0;
               padding-bottom: 0;
               font-size: 0.875rem;

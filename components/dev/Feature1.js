@@ -77,8 +77,6 @@ const Feature1 = ({ t, image }) =>
         z-index: -1;
         margin-top: 5.5rem;
         height: 768px;
-
-        outline: 1px solid red;
       }
 
       .font_feature_1,

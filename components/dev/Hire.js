@@ -52,7 +52,7 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 2;
-      margin-top: -4rem;
+      margin-top: 0;
       margin-left: -1rem;
       width: 22.5rem;
       height: 10.5rem;
@@ -188,7 +188,7 @@ class Hire extends PureComponent {
             background-repeat: repeat-x;
           }
 
-          :global(#main) {
+          :global(html.webp #main) {
             background-image: url(/static/images/dev/1920/dev_line@1x.webp);
           }
 
@@ -200,7 +200,7 @@ class Hire extends PureComponent {
               background-image: url(/static/images/dev/1920/dev_line@2x.png);
             }
 
-            :global(#main) {
+            :global(html.webp #main) {
               background-image: url(/static/images/dev/1920/dev_line@2x.webp);
             }
           }
@@ -213,7 +213,7 @@ class Hire extends PureComponent {
               background-image: url(/static/images/dev/1920/dev_line@3x.png);
             }
 
-            :global(#main) {
+            :global(html.webp #main) {
               background-image: url(/static/images/dev/1920/dev_line@3x.webp);
             }
           }
@@ -233,7 +233,7 @@ class Hire extends PureComponent {
               background-position: 50% 20rem;
             }
 
-            :global(#main) {
+            :global(html.webp #main) {
               background-image: url(/static/images/dev/1360/dev_line@1x.webp);
             }
 
@@ -245,7 +245,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/1360/dev_line@2x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/1360/dev_line@2x.webp);
               }
             }
@@ -258,7 +258,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/1360/dev_line@3x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/1360/dev_line@3x.webp);
               }
             }
@@ -279,7 +279,7 @@ class Hire extends PureComponent {
               background-position: 50% 20rem;
             }
 
-            :global(#main) {
+            :global(html.webp #main) {
               background-image: url(/static/images/dev/1280/dev_line@1x.webp);
             }
 
@@ -291,7 +291,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/1280/dev_line@2x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/1280/dev_line@2x.webp);
               }
             }
@@ -304,7 +304,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/1280/dev_line@3x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/1280/dev_line@3x.webp);
               }
             }
@@ -331,7 +331,7 @@ class Hire extends PureComponent {
             }
 
             .button-wrapper {
-              width: 144px;
+              width: 192px;
             }
 
             :global(#main) {
@@ -340,7 +340,7 @@ class Hire extends PureComponent {
               background-position: 50% 22rem;
             }
 
-            :global(#main) {
+            :global(html.webp #main) {
               background-image: url(/static/images/dev/1024/dev_line@1x.webp);
             }
 
@@ -352,7 +352,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/1024/dev_line@2x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/1024/dev_line@2x.webp);
               }
             }
@@ -365,7 +365,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/1024/dev_line@3x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/1024/dev_line@3x.webp);
               }
             }
@@ -376,7 +376,7 @@ class Hire extends PureComponent {
               }
 
               .button-wrapper {
-                width: 9rem;
+                width: 12rem;
               }
 
               :global(#main) {
@@ -425,10 +425,10 @@ class Hire extends PureComponent {
             :global(#main) {
               background-image: url(/static/images/dev/360/dev_line@1x.png);
               background-size: 22.5rem 10.5rem;
-              background-position: 50% 14rem;
+              background-position: 50% 18rem;
             }
 
-            :global(#main) {
+            :global(html.webp #main) {
               background-image: url(/static/images/dev/360/dev_line@1x.webp);
             }
 
@@ -440,7 +440,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/360/dev_line@2x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/360/dev_line@2x.webp);
               }
             }
@@ -453,7 +453,7 @@ class Hire extends PureComponent {
                 background-image: url(/static/images/dev/360/dev_line@3x.png);
               }
 
-              :global(#main) {
+              :global(html.webp #main) {
                 background-image: url(/static/images/dev/360/dev_line@3x.webp);
               }
             }

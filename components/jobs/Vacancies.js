@@ -355,6 +355,7 @@ export default class Vacancies extends PureComponent {
           }
 
           .font_link-list_16 {
+            display: inline-block;
             text-decoration: none;
           }
 
@@ -442,7 +443,12 @@ export default class Vacancies extends PureComponent {
             .logo-wrapper sup {
               top: -4px;
               left: calc(100% + 2px);
-              font-size: 0.625rem
+              font-size: 0.625rem;
+            }
+
+            .font_link-list_16 {
+              font-size: 0.75rem;
+              line-height: 1rem;
             }
 
             @media (max-width: 1023px) {

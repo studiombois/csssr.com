@@ -28,6 +28,12 @@ const picture = css.resolve`
   }
 `
 
+const trackHireUsButtonClick = () => {
+  if (window.dataLayer) {
+    window.dataLayer.push({ event: 'floating_button' })
+  }
+}
+
 class Hire extends PureComponent {
   state = {
     showScrollButton: false,
@@ -85,7 +91,7 @@ class Hire extends PureComponent {
               'button-wrapper-invisible': !this.state.showScrollButton,
             })}
           >
-            <ButtonLink href={'#hire-us'}>
+            <ButtonLink href={'#hire-us'} onClick={trackHireUsButtonClick}>
               {t('dev:hire.buttonText')}
             </ButtonLink>
           </div>

@@ -99,10 +99,12 @@ export default class Vacancies extends PureComponent {
     if (articleNode.offsetTop - window.scrollY < 0) {
       if (headerBackgroundNode.style.zIndex !== '1') {
         headerBackgroundNode.style.zIndex = '1'
+        articleNode.classList.add('hide-fixed-image')
       }
     } else if (articleNode.offsetTop - window.scrollY > 0) {
       if (headerBackgroundNode.style.zIndex === '1') {
         headerBackgroundNode.style.zIndex = '-3'
+        articleNode.classList.remove('hide-fixed-image')
       }
     }
   }
@@ -481,6 +483,22 @@ export default class Vacancies extends PureComponent {
               width: 100vw;
               height: 100%;
               background-color: white;
+            }
+
+            article::after {
+              position: fixed;
+              left: 0;
+              right: 0;
+              z-index: -2;
+              bottom: 0;
+              content: '';
+              display: block;
+              height: 80vh;
+              background-color: white;
+            }
+
+            article.hide-fixed-image::after {
+              z-index: -1;
             }
 
             h1 span {

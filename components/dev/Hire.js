@@ -331,7 +331,7 @@ class Hire extends PureComponent {
             }
 
             .button-wrapper {
-              width: 144px;
+              width: 192px;
             }
 
             :global(#main) {
@@ -376,7 +376,7 @@ class Hire extends PureComponent {
               }
 
               .button-wrapper {
-                width: 9rem;
+                width: 12rem;
               }
 
               :global(#main) {

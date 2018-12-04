@@ -52,7 +52,7 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 2;
-      margin-top: -4rem;
+      margin-top: 0;
       margin-left: -1rem;
       width: 22.5rem;
       height: 10.5rem;
@@ -425,7 +425,7 @@ class Hire extends PureComponent {
             :global(#main) {
               background-image: url(/static/images/dev/360/dev_line@1x.png);
               background-size: 22.5rem 10.5rem;
-              background-position: 50% 14rem;
+              background-position: 50% 18rem;
             }
 
             :global(html.webp #main) {

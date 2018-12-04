@@ -7,6 +7,7 @@ const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const generateSitemap = require('./generate-sitemap')
+const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV === 'development'
@@ -63,9 +64,14 @@ i18n
           server.get(url, (req, res) => res.redirect(301, '/'))
         )
 
-        server.use(bodyParser.json())
+        // eslint-disable-next-line
+        server.use(bodyParser.json())      // to support JSON-encoded bodies
+        server.use(bodyParser.urlencoded({ // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
+          extended: true,
+        }))
 
         server.post('/api/submit-form', submitForm)
+        server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
         server.use(i18nextMiddleware.handle(i18n))
 

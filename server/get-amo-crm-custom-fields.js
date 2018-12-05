@@ -1,5 +1,4 @@
-import { AMO_CRM_BASE_URL, AUTH_QUERY_PARAMS } from '../constants/amocrm'
-
+const { AMO_CRM_BASE_URL, AUTH_QUERY_PARAMS } = require('../constants/amocrm')
 const fetch = require('isomorphic-unfetch')
 
 fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${AUTH_QUERY_PARAMS}`, {

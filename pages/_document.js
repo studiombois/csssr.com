@@ -1,13 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { GtmScript, GtmNoScript } from 'react-gtm-components'
-
-const gtmIdByLanguage = {
-  en: 'GTM-TDG7X5G',
-  ru: 'GTM-K67FHB5',
-}
-
-const testGtmId = 'GTM-W23KLZB'
+import getGtmId from '../utils/getGtmId'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -16,25 +10,21 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       language: ctx.req.i18n.language,
+      path: ctx.asPath,
     }
   }
 
   render() {
     const language = this.props.language
+    const gtmId = getGtmId(process.env.NODE_ENV, language, this.props.path)
 
     return (
       <html lang={language}>
         <Head>
-          <GtmScript gtmId={process.env.NODE_ENV === 'production'
-            ? gtmIdByLanguage[language]
-            : testGtmId
-          }/>
+          <GtmScript gtmId={gtmId}/>
         </Head>
         <body>
-          <GtmNoScript gtmId={process.env.NODE_ENV === 'production'
-            ? gtmIdByLanguage[language]
-            : testGtmId
-          }/>
+          <GtmNoScript gtmId={gtmId}/>
           <Main />
           <NextScript />
         </body>

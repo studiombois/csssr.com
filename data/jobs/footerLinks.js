@@ -1,4 +1,4 @@
-export default [
+export const allSocialLinks = [
   {
     href: 'https://www.facebook.com/csssr/',
     label: 'Facebook',
@@ -27,5 +27,16 @@ export default [
   {
     href: 'https://soundcloud.com/csssr',
     label: 'SoundCloud',
+  },
+]
+
+export const devSocialLinks = [
+  {
+    href: 'https://www.facebook.com/csssr/',
+    label: 'Facebook',
+  },
+  {
+    href: 'https://www.linkedin.com/company/csssr/',
+    label: 'LinkedIn',
   },
 ]

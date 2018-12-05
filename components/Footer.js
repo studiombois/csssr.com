@@ -2,11 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
-import footerLinks from '../data/jobs/footerLinks'
+import { allSocialLinks } from '../data/jobs/footerLinks'
 import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 
 
-const Footer = ({ router: { pathname }, lng, t }) => {
+const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) => {
   const rootUrl = `/${lng}`
 
   return <footer className='grid-container'>
@@ -33,7 +33,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
     }
 
     <ul className='social-links'>
-      {footerLinks.map(({ href, label }) =>
+      {socialLinks.map(({ href, label }) =>
         <li key={label} className='social-link'>
           <a
             aria-label={`${label} link`}
@@ -57,7 +57,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           href='#privacy-policy'
           target='_blank'
           rel='noopener'
-          className='font_footer-link'
+          className={lng !== 'ru' ? 'font_footer-link' : 'font_footer-link font_footer-link_without-margin'}
           onClick={privacyPolicyLinkClick}
         >
           {t('common:footer.privacyPolicy')}
@@ -89,7 +89,6 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           Frontend.Digital alliance
         </a>
       </li>
-
     </ul>
 
     <style jsx>{`
@@ -117,6 +116,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
       .social-links {
         grid-column: 4 / span 2;
         display: flex;
+        justify-content: center;
         font-size: 0;
       }
 
@@ -160,7 +160,7 @@ const Footer = ({ router: { pathname }, lng, t }) => {
         }
       }
 
-     @media (max-width: 1279px) {
+      @media (min-width: 768px) and (max-width: 1279px) {
         footer {
           width: 944px;
         }
@@ -191,6 +191,52 @@ const Footer = ({ router: { pathname }, lng, t }) => {
           footer {
             width: 59rem;
           }
+        }
+      }
+
+      @media (max-width: 767px) {
+        footer {
+          width: 20.5rem;
+        }
+
+        .logo-wrapper {
+          display: none;
+        }
+
+        .social-links,
+        .footer-links {
+          grid-column: 1 / span 6;
+        }
+
+        .footer-links {
+          grid-row: 1;
+        }
+
+        .social-link:not(:last-child) {
+          margin-right: 2rem;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+
+        .footer-links {
+          grid-row: 2;
+          margin-top: 1.0625rem;
+          justify-content: center;
+          flex-wrap: wrap;
+          height: auto;
+        }
+
+        .footer-link:not(:first-child),
+        .font_footer-link_without-margin {
+          margin-right: 0;
+        }
+
+        .footer-link:last-child {
+          margin-top: 8px;
+          width: 100%;
+          text-align: center;
         }
       }
     `}</style>

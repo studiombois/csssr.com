@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './privacy-policy/styles'
 import { translate } from 'react-i18next'
 
 const CookiesPolicy = ({ t }) => (
@@ -87,7 +88,7 @@ const CookiesPolicy = ({ t }) => (
         </p>
       </section>
     </div><style jsx>{`
-      #cookies-policy {
+      article {
         margin-bottom: 31rem;
         margin-right: auto;
         margin-left: auto;
@@ -97,78 +98,62 @@ const CookiesPolicy = ({ t }) => (
 
       header {
         grid-column: 2 / span 3;
-        padding-top: 13.4375rem;
+        padding-top: 13.5rem;
       }
 
-      div {
-        grid-column: 6 / span 6;
-        padding-top: 14.4375rem;
-      }
-
-      h2,
-      .font_p16-regular:not(:last-of-type) {
-        margin-bottom: 1rem;
-      }
-
-      div > p:not(:last-of-type) {
-        margin-bottom: 1.5rem;
-      }
-
-      section {
-        padding-top: 2rem;
-      }
-
-      h3 + h4,
-      h3 + p,
-      section + section {
-        margin-top: 0.5rem;
-      }
-
-      h4 + p,
-      p + ul,
-      ul + p {
-        margin-top: 1rem;
-      }
-
-      li {
-        position: relative;
-        padding-left: 1rem;
-      }
-
-      li:before {
-        content: '';
-        position: absolute;
-        top: 0.5625rem;
-        left: 0;
-        box-sizing: border-box;
-        width: 0.5rem;
-        height: 0.5rem;
-        border: 0.125rem solid black;
+      h1 {
+        display: inline-block;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
-        #cookies-policy {
+        article {
           width: 1328px;
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
-        #cookies-policy {
+        article {
           width: 1248px;
         }
       }
 
-     @media (max-width: 1279px) {
-        #cookies-policy {
+      @media (min-width: 768px) and (max-width: 1023px) {
+        article {
           width: 944px;
         }
 
         @media (max-width: 1023px) {
-          #cookies-policy {
+          article {
             width: 59rem;
           }
+        }
+      }
+
+      @media (max-width: 767px) {
+        article {
+          margin-bottom: 13.5rem;
+          width: 20.5rem;
+        }
+
+        header {
+          grid-column: 1 / span 6;
+          padding-top: 5.5rem;
+        }
+
+        p:not(.font_p24-strong) {
+          margin-top: 0.125rem;
+        }
+
+        p.font_p16-regular + section {
+          margin-top: -0.3125rem;
+        }
+
+        .font_p24-strong {
+          margin-bottom: 1.3125rem !important;
+        }
       }
     `}</style>
+    <style jsx>{styles}</style>
   </article>
 )
 

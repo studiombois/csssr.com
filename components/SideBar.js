@@ -20,7 +20,7 @@ const items = [{
   },
 }]
 
-const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
+const crossIcon = <CrossIcon width='100%' height='100%' />
 const clickOutsideStyles = {
   position: 'absolute',
   top: 0,
@@ -63,8 +63,9 @@ export class SideBar extends PureComponent {
         }
         <style jsx>{`
           .link {
-            padding-right: 5.5rem;
+            margin-top: 0;
             padding-bottom: 0;
+            padding-right: 5.5rem;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -75,6 +76,12 @@ export class SideBar extends PureComponent {
             background-color: #7b7b7b;
             color: #fff;
           }
+
+          @media (max-width: 767px) {
+            .link {
+              padding-right: 3.125rem;
+            }
+          }
         `}</style>
       </li>
     )
@@ -84,19 +91,18 @@ export class SideBar extends PureComponent {
     const { router: { pathname }, isOpened, onToggle, onClose, t } = this.props
 
     return (
-      <aside className={cn('sidebar', {
-        sidebar_opened: isOpened,
-      })}>
+      <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
         <ClickOutside
           onOutsideClick={onClose}
           style={clickOutsideStyles}
         >
-          <button type='button' aria-label='Close menu' className='close' onClick={onToggle}>
+          <button type='button' aria-label='Close menu' onClick={onToggle}>
             {crossIcon}
           </button>
+
           <div className='body'>
             <div className='top'>
-              <div className='font_perforator-16-black active'>{t(getSectionName(pathname))}</div>
+              <div className='font_perforator-16-black section-name'>{t(getSectionName(pathname))}</div>
               <ul className='list'>
                 {items.map(this.renderNavItem)}
               </ul>
@@ -111,12 +117,24 @@ export class SideBar extends PureComponent {
             </div>
           </div>
         </ClickOutside><style jsx>{`
+          button {
+            position: absolute;
+            z-index: 1;
+            top: 1.25rem;
+            right: 4rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+          }
+
           .sidebar {
             position: fixed;
             top: 0;
             right: 0;
             bottom: 0;
-            z-index: 10000;
+            z-index: 10001;
             width: 26.5rem;
             background-color: #fff;
             transform: translateX(100%);
@@ -149,25 +167,13 @@ export class SideBar extends PureComponent {
           }
 
           .sidebar_opened:before {
+            position: fixed;
             right: 100%;
-            z-index: 0;
             opacity: 0.3;
             transition: right 0s ease-out 0s, opacity 0.3s ease-out;
           }
 
-          .close {
-            position: absolute;
-            z-index: 1;
-            top: 1.25rem;
-            right: 4rem;
-            height: 1.5rem;
-            width: 1.5rem;
-            border: none;
-            background: none;
-            cursor: pointer;
-          }
-
-          .active {
+          .section-name {
             position: relative;
             margin-bottom: 4.4375rem;
             padding-right: 8rem;
@@ -179,7 +185,7 @@ export class SideBar extends PureComponent {
             padding-bottom: 4rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
             height: 100%;
           }
 
@@ -188,8 +194,39 @@ export class SideBar extends PureComponent {
           }
 
           .bottom {
+            margin-top: auto;
             padding-right: 5.5rem;
             text-align: right;
+          }
+
+          @media (max-width: 767px) {
+            .sidebar {
+              width: 20rem;
+            }
+
+            button {
+              top: 0.75rem;
+              right: 1.75rem;
+            }
+
+            .section-name {
+              margin-bottom: 3.9375rem;
+              padding-right: 4.4375rem;
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+
+            .body {
+              padding-bottom: 4.0625rem;
+            }
+
+            .top {
+              margin-top: 0.8125rem;
+            }
+
+            .bottom {
+              padding-right: 3.125rem;
+            }
           }
 
         `}</style>

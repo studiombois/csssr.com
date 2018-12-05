@@ -82,9 +82,8 @@ export default class Button extends PureComponent {
             color: #000;
           }
 
-         @media (max-width: 1279px) {
+         @media (min-width: 768px) and (max-width: 1279px) {
             .button {
-              padding-top: 0.4375rem;
               height: 2.5rem;
             }
           }

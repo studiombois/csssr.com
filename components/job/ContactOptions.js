@@ -4,28 +4,7 @@ import { arrayOf, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
-
-export const contactOptions = [{
-  id: 'telegram',
-  radioText: 'Telegram',
-  inputText: 'Логин или номер',
-  inputType: 'text',
-}, {
-  id: 'whatsapp',
-  radioText: 'WhatsApp',
-  inputText: 'Номер',
-  inputType: 'text',
-}, {
-  id: 'skype',
-  radioText: 'Skype',
-  inputText: 'Логин',
-  inputType: 'text',
-}, {
-  id: 'phone',
-  radioText: 'Телефон',
-  inputText: 'Номер',
-  inputType: 'tel',
-}]
+import contactOptions from '../../data/job/contactOptions'
 
 const stylesForCheckbox = css.resolve`
   span {
@@ -51,13 +30,13 @@ const ContactOptions = ({ connection = [] }) =>
       <Fragment key={option.id}>
         <Field
           className={stylesForCheckbox.className}
-          id={`${option.id}OptionalContactRadio`}
+          id={`${option.id}OptionalContactCheckbox`}
           name='connection'
           value={option.id}
           type='checkbox'
           component={Checkbox}
         >
-          {option.radioText}
+          {option.checkboxText}
         </Field>
 
         {connection.includes(option.id) &&

@@ -93,7 +93,7 @@ export default class Settings extends PureComponent {
         }
       }
 
-      @media (min-width: 368px) and (max-width: 1023px) {
+      @media (min-width: 768px) and (max-width: 1023px) {
         #background-for-grid,
         #background-for-layout {
           width: 59rem;
@@ -103,10 +103,24 @@ export default class Settings extends PureComponent {
           background-size: 5rem;
           background-image: linear-gradient(90deg, #F6D3C3 4rem, transparent 4rem, transparent 1rem);
         }
+      }
 
+      @media (max-width: 1023px) {
         #background-for-grid.grid {
           background-size: 0.5rem 0.5rem;
           background-image: linear-gradient(to right, lightgrey 0.0625rem, transparent 0.0625rem), linear-gradient(to bottom, lightgrey 0.0625rem, transparent 0.0625rem);
+        }
+      }
+
+      @media (max-width: 767px) {
+        #background-for-grid,
+        #background-for-layout {
+          width: 20.5rem;
+        }
+
+        #background-for-layout.layout-columns-on {
+          background-size: 3.5rem;
+          background-image: linear-gradient(90deg, #F6D3C3 3rem, transparent 3rem, transparent 0.5rem);
         }
       }
     `}</style>

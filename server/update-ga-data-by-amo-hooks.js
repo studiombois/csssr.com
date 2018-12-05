@@ -1,8 +1,6 @@
+import { AMO_CRM_BASE_URL, AUTH_QUERY_PARAMS } from '../constants/amocrm'
+
 const fetch = require('isomorphic-unfetch')
-
-const AMO_CRM_BASE_URL = 'https://csssr.amocrm.ru'
-
-const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_USER_HASH}`
 const frontendSalesPipelineId = '938752'
 const googleCidFieldId = 582127
 const gaIdByLanguage = {
@@ -30,7 +28,7 @@ module.exports = (req, res) => {
 
   if (leads.update) {
     // Получаем информацию о сделке
-    fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?id=${leads.update[0].id}&${authQueryParams}`, {
+    fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?id=${leads.update[0].id}&${AUTH_QUERY_PARAMS}`, {
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -40,7 +38,7 @@ module.exports = (req, res) => {
       .then(response => response.json())
       .then(leadData => Promise.all([
         // Получаем инфу о цифрофых воронках
-        fetch(`${AMO_CRM_BASE_URL}/api/v2/pipelines/?id=${leads.update[0].pipeline_id}&${authQueryParams}`, {
+        fetch(`${AMO_CRM_BASE_URL}/api/v2/pipelines/?id=${leads.update[0].pipeline_id}&${AUTH_QUERY_PARAMS}`, {
           method: 'GET',
           headers: {
             Accept: 'application/json',
@@ -50,7 +48,7 @@ module.exports = (req, res) => {
         // Получаем инфу о главном контакте сделки по его id
         //
         // eslint-disable-next-line
-        fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?id=${leadData._embedded.items[0].main_contact.id}&${authQueryParams}`, {
+        fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?id=${leadData._embedded.items[0].main_contact.id}&${AUTH_QUERY_PARAMS}`, {
           method: 'GET',
           headers: {
             Accept: 'application/json',

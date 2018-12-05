@@ -1,11 +1,12 @@
 import React from 'react'
+import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
 import ContactForm from './ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
 
-const onSubmit = ({ language }) => async values => {
+const onSubmit = language => async values => {
   const gaCookie = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)')
   const rawGaCookieInfo = gaCookie ? decodeURIComponent(gaCookie[1]) : null
   const gacid = rawGaCookieInfo ? rawGaCookieInfo.match(/(\d+\.\d+)$/)[1] : null
@@ -37,8 +38,14 @@ const onSubmit = ({ language }) => async values => {
   }
 }
 
-export default props => <ReactFinalForm
-  onSubmit={onSubmit(props)}
+const Form = ({ language }) => <ReactFinalForm
+  onSubmit={onSubmit(language)}
   validate={contactFormValidationRules}
   component={ContactForm}
 />
+
+Form.propTypes = {
+  language: string,
+}
+
+export default Form

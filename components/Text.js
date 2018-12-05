@@ -120,6 +120,12 @@ const Text = () =>
     }
 
     .font_link-list_16,
+    .font_link-list_24,
+    .font_link-list_28 {
+      display: inline-block;
+    }
+
+    .font_link-list_16,
     .font_link-list_16_desktop_14_mobile {
       position: relative;
       font-family: Roboto;
@@ -133,12 +139,12 @@ const Text = () =>
     .font_link-list_16[target='_blank']::after,
     .font_link-list_16_desktop_14_mobile[target='_blank']::after {
       position: absolute;
-      bottom: 12px;
-      right: -5px;
+      bottom: 1rem;
+      right: -0.3125rem;
       display: none;
-      width: 4px;
-      height: 4px;
-      border: 2px solid #0076ff;
+      width: 0.25rem;
+      height: 0.25rem;
+      border: 0.125rem solid #0076ff;
       box-sizing: border-box;
       content: ''
     }
@@ -157,12 +163,12 @@ const Text = () =>
 
     .font_link-list_24[target='_blank']::after {
       position: absolute;
-      bottom: 25px;
-      right: -10px;
+      bottom: 1.5625rem;
+      right: -0.625rem;
       display: none;
-      width: 6px;
-      height: 6px;
-      border: 1px solid #0076ff;
+      width: 0.375rem;
+      height: 0.375rem;
+      border: 0.0625rem solid #0076ff;
       box-sizing: border-box;
       content: ''
     }
@@ -181,12 +187,12 @@ const Text = () =>
 
     .font_link-list_28[target='_blank']::after {
       position: absolute;
-      bottom: 31px;
-      right: -10px;
+      bottom: 1.9375rem;
+      right: -0.625rem;
       display: none;
-      width: 8px;
-      height: 8px;
-      border: 2px solid #0076ff;
+      width: 0.5rem;
+      height: 0.5rem;
+      border: 0.125rem solid #0076ff;
       box-sizing: border-box;
       content: ''
     }
@@ -510,26 +516,26 @@ const Text = () =>
           font-size: 0.875rem;
           line-height: 1.5rem;
         }
-      }
 
-      // Если что-то отображать при ховере, то iOS сначала покажет что показывает ховер
-      // и только потом даст возможность произвести какой-то евент на действие.
-      //
-      // У нас внешние ссылки показывают квадратик при ховере, поэтому требуется даблтапнуть
-      // их что бы получить переход, как временное решение (не самое лучшее), я убираю этот ховер
-      // с мобильных разрешений, но лучше сами ссылки переработать и убрать эту квадратную фиглипигли
-      //
-      // В интернетах так же писали что любытие другие способы вскрытия/прятания элемента aka opacity,
-      // scale могу помочь, но не помогли, остается только JSить, а я вводить новые JS хаки
-      //
-      // Ознакомится с сутью проблемы можно тут:
-      // https://css-tricks.com/annoying-mobile-double-tap-link-issue/
-      // https://davidwalsh.name/ios-hover-menu-fix
-      .font_link-list_16:hover::after,
-      .font_link-list_16_desktop_14_mobile:hover::after,
-      .font_link-list_24:hover::after,
-      .font_link-list_28:hover::after {
-        display: none;
+        // Если что-то отображать при ховере, то iOS сначала покажет что показывает ховер
+        // и только потом даст возможность произвести какой-то евент на действие.
+        //
+        // У нас внешние ссылки показывают квадратик при ховере, поэтому требуется даблтапнуть
+        // их что бы получить переход, как временное решение (не самое лучшее), я убираю этот ховер
+        // с мобильных разрешений, но лучше сами ссылки переработать и убрать эту квадратную фиглипигли
+        //
+        // В интернетах так же писали что любытие другие способы вскрытия/прятания элемента aka opacity,
+        // scale могу помочь, но не помогли, остается только JSить, а я вводить новые JS хаки
+        //
+        // Ознакомится с сутью проблемы можно тут:
+        // https://css-tricks.com/annoying-mobile-double-tap-link-issue/
+        // https://davidwalsh.name/ios-hover-menu-fix
+        .font_link-list_16:hover::after,
+        .font_link-list_16_desktop_14_mobile:hover::after,
+        .font_link-list_24:hover::after,
+        .font_link-list_28:hover::after {
+          display: none;
+        }
       }
     }
   `}</style>

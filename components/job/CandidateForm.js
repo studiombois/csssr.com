@@ -44,6 +44,8 @@ const picturesMap = {
   'pixel-perfectionist': 'Developer_1',
   'head-of-web-development-team': 'Manager',
   'senior-apparel-developer': 'Clothes',
+  'product-manager': 'Product_manager',
+  'devops-engineer': 'Developer_2',
   'sales-assistant': '',
 }
 

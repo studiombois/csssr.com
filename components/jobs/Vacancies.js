@@ -453,6 +453,11 @@ export default class Vacancies extends PureComponent {
               line-height: 1rem;
             }
 
+            .font_link-list_16::after {
+              bottom: 0.625rem;
+              right: -0.375rem;
+            }
+
             @media (max-width: 1023px) {
               article,
               .jobs-header-logo-container {

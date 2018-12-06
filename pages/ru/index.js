@@ -54,6 +54,11 @@ class Dev extends PureComponent {
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
         />
         <Form />
+        <style jsx>{`
+          :global(#header-background) {
+            z-index: 1;
+          }
+        `}</style>
       </Layout>
     )
   }

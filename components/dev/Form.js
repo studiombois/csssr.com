@@ -7,9 +7,7 @@ import ContactForm from './ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
 
 const onSubmit = language => async values => {
-  const gaCookie = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)')
-  const rawGaCookieInfo = gaCookie ? decodeURIComponent(gaCookie[1]) : null
-  const gacid = rawGaCookieInfo ? rawGaCookieInfo.match(/(\d+\.\d+)$/)[1] : null
+  const gacid = window.ga.getAll()[0].get('clientId')
 
   values.gacid = gacid
   values.language = language

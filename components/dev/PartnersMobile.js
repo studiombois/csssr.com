@@ -32,7 +32,7 @@ const Partners = ({ t, lng }) =>
         links={lng === 'ru' ? telecomLinksRu : telecomLinksEn}
       />
       <LinksList
-        title={t('dev:partners.estateTitle')}
+        title={lng === 'ru' ? t('dev:partners.healthTitle') : t('dev:partners.estateTitle')}
         links={lng === 'ru' ? healthLinksRu : realEstateLinksEn}
       />
       <LinksList

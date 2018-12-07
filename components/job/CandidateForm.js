@@ -22,6 +22,8 @@ const picture = css.resolve`
 
   @media (max-width: 767px) {
     picture {
+      position: relative;
+      z-index: 2;
       margin-left: -1rem;
       width: calc(100% + 2rem);
       height: 15.5rem;
@@ -44,6 +46,8 @@ const picturesMap = {
   'pixel-perfectionist': 'Developer_1',
   'head-of-web-development-team': 'Manager',
   'senior-apparel-developer': 'Clothes',
+  'product-manager': 'Product_manager',
+  'devops-engineer': 'Developer_2',
   'sales-assistant': '',
 }
 
@@ -287,6 +291,10 @@ class CandidateForm extends PureComponent {
         </ul>
 
         <style jsx>{`
+          :global(#header-background) {
+            z-index: 1;
+          }
+
           form {
             margin-right: auto;
             margin-left: auto;

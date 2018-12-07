@@ -31,7 +31,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 43.4375rem;
+      height: 48px;
     }
   }
 `
@@ -48,7 +48,7 @@ const pictureBig = css.resolve`
  @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
-      height: 512px;
+      height: 144px;
     }
 
     @media (max-width: 1023px) {
@@ -63,7 +63,7 @@ const pictureBig = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 43.4375rem;
+      height: 144px;
     }
   }
 `

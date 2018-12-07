@@ -36,7 +36,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 43.4375rem;
+      height: 43px;
     }
   }
 `
@@ -153,6 +153,16 @@ const Win = ({ t }) =>
         section {
           padding-top: 3rem;
           width: 20.5rem;
+        }
+
+        .right {
+          grid-column: 1 / span 12;
+          text-align: center;
+        }
+
+        .left {
+          grid-column: 1 / span 12;
+          text-align: center;
         }
 
         h2,

@@ -30,7 +30,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 43.4375rem;
+      height: 43.4375px;
     }
   }
 `

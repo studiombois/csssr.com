@@ -6,6 +6,10 @@ import Cups from '../../components/school/Cups'
 import Win from '../../components/school/Win'
 import Counter from '../../components/school/Counter'
 import Courses from '../../components/school/Courses'
+import Costs from '../../components/school/Costs'
+import Bonus from '../../components/school/Bonus'
+import About from '../../components/school/About'
+import Form from '../../components/school/Form'
 import Layout from '../../components/Layout'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
@@ -42,6 +46,10 @@ class School extends PureComponent {
         <Win />
         <Counter />
         <Courses />
+        <Costs />
+        <Bonus />
+        <About />
+        <Form />
       </Layout>
     )
   }

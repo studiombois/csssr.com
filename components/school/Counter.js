@@ -48,7 +48,6 @@ const Manifest = ({ t }) =>
         margin-right: auto;
         padding-top: 0rem;
         width: 1792px;
-        margin-bottom: 22rem;
       }
 
       p {
@@ -136,6 +135,31 @@ const Manifest = ({ t }) =>
 
         h2 {
           margin-bottom: 1.1875rem;
+        }
+
+        .font_h2-slab {
+          grid-column: 1 / span 12;
+          grid-row: 2;
+          text-align: left;
+          margin-top: 8.9rem;
+          margin-left: 1.6rem;
+        }
+
+        .big_counter {
+          font-size: 6.2rem;
+          grid-column: 1 / span 12;
+          grid-row: 3;
+          text-align: left;
+          margin-top: 7.1rem;
+          justify-self: center;
+        }
+
+        .free_places {
+          grid-column: 1 / span 12;
+          grid-row: 3;
+          text-align: left;
+          margin-top: 13.8rem;
+          justify-self: center;
         }
 
        }

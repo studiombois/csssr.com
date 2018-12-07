@@ -14,8 +14,9 @@ const picture = css.resolve`
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      margin-top: -6.5rem;
-      height: 480px;
+      margin-top: -2rem;
+      grid-column: 8 / span 6;
+      height: 368px;
     }
 
     @media (max-width: 1023px) {
@@ -48,7 +49,7 @@ class Earn extends PureComponent {
         <article id='competence' className='grid-container'>
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'school', key: 'earn', alt: t('school:imgAlt.school') }}
+            image={{ namespace: 'school', key: 'cover', alt: t('school:imgAlt.school') }}
           />
           <h1 className='font_h1-slab'>
             {t('school:school.title')}
@@ -114,6 +115,10 @@ class Earn extends PureComponent {
               width: 1328px;
             }
 
+            h1 {
+              line-height: 1rem;
+            }
+
             .button-wrapper {
               width: 208px;
             }
@@ -131,14 +136,19 @@ class Earn extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             h1 {
-              grid-column: 3 / span 5;
+              grid-column: 2 / span 5;
               margin-bottom: 3.8125rem;
+            }
+
+            .font_subhead-slab {
+              margin-top: -2.5rem;
+              line-height: 2rem;
             }
 
             article {
               padding-top: 10rem;
               width: 944px;
-              height: 52rem;
+              height: 31rem;
             }
 
             span {
@@ -173,7 +183,7 @@ class Earn extends PureComponent {
             }
 
             h1 {
-              grid-column: 1 / span 6;
+              grid-column: 2 / span 6;
               grid-row: 1;
               margin-bottom: 1.375rem;
               text-align: center;

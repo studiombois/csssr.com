@@ -37,35 +37,48 @@ const picture = css.resolve`
 const Manifest = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='manifest'>
-      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:cost.now_title') }} />
-      <sup className='font_roboto-slab-light big_counter'>48</sup>
-      <h2 className='font_subhead-slab free_places' dangerouslySetInnerHTML={{ __html: `${t('school:cost.cost')} ${50}` }} />
+      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:costs.title') }} />
+      <sup className='font_roboto-slab-light big_counter'>
+        {t('school:costs.cost')}
+        <span className='currency'>₽</span>
+      </sup>
+
+      <h2 className='font_subhead-slab free_places' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
+      <p className='font_p16-regular under_costs_text' dangerouslySetInnerHTML={{ __html: t('school:costs.under_costs_text') }}/>
     </section>
     <style jsx>{`
       section {
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 0rem;
+        padding-top: 1.1rem;
         width: 1792px;
-        margin-bottom: 22rem;
+        margin-bottom: 0.44rem;
       }
 
       p {
-        grid-column: 3 / span 8;
-        text-align: center;
-        grid-row: 2;
+        grid-column: 2 / span 8;
+        text-align: left;
+        margin-top: 4.5rem;
+        grid-row: 4;
+      }
+      .currency {
+        position: absolute;
+        right: -1rem;
+        top: -2.9rem;
+        font-size: 2rem;
+        line-height: 6.2rem;
       }
 
       .font_h2-slab {
         grid-column: 4 / span 6;
         grid-row: 2;
-        text-align: left;
-        margin-top: 8.9rem;
-        margin-left: 1.6rem;
+        text-align: center;
+        margin-top: 7.4rem;
       }
 
       .big_counter {
+        position: relative;
         font-size: 6.2rem;
         grid-column: 6 / span 2;
         grid-row: 3;
@@ -136,6 +149,31 @@ const Manifest = ({ t }) =>
 
         h2 {
           margin-bottom: 1.1875rem;
+        }
+
+        .font_h2-slab {
+          grid-column: 1 / span 12;
+          grid-row: 2;
+          text-align: center;
+          margin-top: 7.4rem;
+        }
+
+        .big_counter {
+          position: relative;
+          font-size: 6.2rem;
+          grid-column: 1 / span 12;
+          grid-row: 3;
+          text-align: left;
+          margin-top: 7.1rem;
+          justify-self: center;
+        }
+
+        .free_places {
+          grid-column: 1 / span 12;
+          grid-row: 3;
+          text-align: left;
+          margin-top: 13.8rem;
+          justify-self: center;
         }
 
        }

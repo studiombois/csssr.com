@@ -32,6 +32,7 @@ const headerLinks = {
 export default pathname => {
   switch (pathname) {
   case ('/ru'):
+    return headerLinks.dev
   case ('/ru/school'):
     return headerLinks.school
   case ('/en'):

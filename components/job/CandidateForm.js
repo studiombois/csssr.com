@@ -22,6 +22,8 @@ const picture = css.resolve`
 
   @media (max-width: 767px) {
     picture {
+      position: relative;
+      z-index: 2;
       margin-left: -1rem;
       width: calc(100% + 2rem);
       height: 15.5rem;
@@ -289,6 +291,10 @@ class CandidateForm extends PureComponent {
         </ul>
 
         <style jsx>{`
+          :global(#header-background) {
+            z-index: 1;
+          }
+
           form {
             margin-right: auto;
             margin-left: auto;

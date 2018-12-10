@@ -9,7 +9,6 @@ if (tagFromEnv) {
 } else if (process.env.NODE_ENV !== 'production') {
   tagsArray.push('TEST')
 }
-const tags = tagsArray.join(',')
 
 module.exports = (req, res) => {
   const {
@@ -17,8 +16,13 @@ module.exports = (req, res) => {
     phone,
     email,
     message,
+    gacid,
+    language,
   } = req.body
 
+  tagsArray.push(language)
+
+  const tags = tagsArray.join(',')
   const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_USER_HASH}`
 
   return fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {
@@ -59,6 +63,14 @@ module.exports = (req, res) => {
                 },
               ],
             },
+            {
+              id: 582127,
+              values: [
+                {
+                  value: gacid,
+                },
+              ],
+            },
           ],
         },
       ],
@@ -67,8 +79,8 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
-        console.log('server/submit-form.js ERROR', JSON.stringify(createContactData))
-        return res.status(400).send({ error: 'Произошла ошибка' })
+        console.log('x1b[31m', 'server/submit-form.js ERROR', JSON.stringify(createContactData), 'x1b[0m')
+        return res.status(400).send({ error: 'Произошла ошибка x' })
       }
 
       return fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?${authQueryParams}`, {
@@ -94,7 +106,7 @@ module.exports = (req, res) => {
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
             console.log('server/submit-form.js ERROR', JSON.stringify(createLeadData))
-            return res.status(400).send({ error: 'Произошла ошибка' })
+            return res.status(400).send({ error: 'Произошла ошибка y' })
           }
 
           console.log('server/submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))

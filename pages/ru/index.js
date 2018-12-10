@@ -28,7 +28,7 @@ class Dev extends PureComponent {
     })
 
   render() {
-    const { t } = this.props
+    const { t, lng } = this.props
 
     return (
       <Layout
@@ -53,7 +53,7 @@ class Dev extends PureComponent {
           text={t('dev:perfect.text')}
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
         />
-        <Form />
+        <Form language={lng} />
         <style jsx>{`
           :global(#header-background) {
             z-index: 1;

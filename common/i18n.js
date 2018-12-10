@@ -6,7 +6,7 @@ const options = {
   whitelist: ['en', 'ru', 'de'],
   ns: ['common'],
   defaultNS: 'common',
-  debug: process.env.NODE_ENV === 'development',
+  // debug: process.env.NODE_ENV === 'development', // Потому что ег сообщения в терминал мешали работать
   interpolation: {
     escapeValue: false,
     formatSeparator: ',',

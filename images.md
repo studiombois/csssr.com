@@ -9,5 +9,5 @@ https://compressor.io/compress
 https://tinypng.com/
 
 Баш скрипт для создания webp файлов из png в директории:
-`for file in *; do cwebp -q 80 "$file" -o "$file.webp"; done`
+`for file in *; do cwebp -q 80 "$file" -o "${file%.png}.webp"; done`
 

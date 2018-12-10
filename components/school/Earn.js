@@ -14,14 +14,13 @@ const picture = css.resolve`
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      margin-top: -2rem;
       grid-column: 8 / span 6;
       height: 368px;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 30rem;
+        height: 268px;
       }
     }
   }
@@ -30,8 +29,9 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 2;
-      margin-top: 0;
-      height: 10.5rem;
+      text-align: center;
+      margin-top: 1.4rem;
+      height: 216px;
     }
   }
 `
@@ -66,20 +66,10 @@ class Earn extends PureComponent {
             height: 57rem;
           }
 
-          blockquote {
-            grid-column: 9 / span 3;
-            grid-row: 1;
-            margin-top: 3rem;
-          }
-
           h1 {
             grid-column: 2 / span 7;
             grid-row: 1;
             margin-bottom: 5rem;
-          }
-
-          p {
-            margin-bottom: 1rem;
           }
 
           .font_subhead-slab {
@@ -92,35 +82,9 @@ class Earn extends PureComponent {
             display: block;
           }
 
-          footer {
-            font-weight: bold;
-          }
-
-          .button-wrapper {
-            position: fixed;
-            bottom: 4rem;
-            right: 4rem;
-            width: 272px;
-            z-index: 8999;
-            transform: translateY(0);
-            transition: transform 0.3s ease-out;
-          }
-
-          .button-wrapper-invisible {
-            transform: translateY(calc(100% + 15rem));
-          }
-
           @media (min-width: 1360px) and (max-width: 1919px) {
             article {
               width: 1328px;
-            }
-
-            h1 {
-              line-height: 1rem;
-            }
-
-            .button-wrapper {
-              width: 208px;
             }
           }
 
@@ -128,48 +92,31 @@ class Earn extends PureComponent {
             article {
               width: 1232px;
             }
-
-            .button-wrapper {
-              width: 192px;
-            }
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
+            article {
+              width: 1024px;
+              height: 31rem;
+            }
             h1 {
-              grid-column: 2 / span 5;
+              grid-column: 2 / span 7;
               margin-bottom: 3.8125rem;
             }
 
             .font_subhead-slab {
-              margin-top: -2.5rem;
+              margin-top: 0rem;
               line-height: 2rem;
             }
 
-            article {
-              padding-top: 10rem;
-              width: 944px;
-              height: 31rem;
-            }
-
-            span {
+            .font_subhead-slab {
               padding-top: 1.6875rem;
-            }
-
-            blockquote {
-              margin-top: 1.3125rem;
-            }
-
-            .button-wrapper {
-              width: 144px;
+              line-height: 2rem;
             }
 
             @media (max-width: 1023px) {
               article {
                 width: 59rem;
-              }
-
-              .button-wrapper {
-                width: 9rem;
               }
             }
           }
@@ -183,33 +130,19 @@ class Earn extends PureComponent {
             }
 
             h1 {
-              grid-column: 2 / span 6;
+              grid-column: 1 / span 6;
               grid-row: 1;
               margin-bottom: 1.375rem;
               text-align: center;
             }
 
-            span {
+            .font_subhead-slab {
               padding-top: 0.6875rem;
+              line-height: 2rem;
             }
 
-            blockquote {
-              grid-column: 2 / span 5;
-              grid-row: 3;
-              margin-top: 1.9375rem;
-            }
-
-            p {
-              margin-bottom: 0.5rem;
-            }
-
-            .button-wrapper {
-              position: fixed;
-              bottom: 2rem;
-              width: 13.5rem;
-              right: calc(50% - 13.5rem / 2);
-            }
           }
+
         `}</style>
         {picture.styles}
       </Fragment>

@@ -43,10 +43,18 @@ const picture = css.resolve`
 
 const Win = ({ t }) =>
   <Fragment>
+    <section className='grid-container second' id='manifest'>
+      <PictureForAllResolutions
+        className={cn(picture.className, 'left')}
+        image={{ namespace: 'school', key: 'manifest_1', alt: t('school:imgAlt.school') }}
+      />
+      <h2 id='manifest' className='font_h2-regular right' dangerouslySetInnerHTML={{ __html: t('school:manifest.full_title') }} />
+      <p className='font_p16-regular right' dangerouslySetInnerHTML={{ __html: t('school:manifest.full_text') }} />
+    </section>
     <section className='grid-container' id='manifest'>
       <PictureForAllResolutions
         className={picture.className}
-        image={{ namespace: 'school', key: 'win2', alt: t('school:imgAlt.school') }}
+        image={{ namespace: 'school', key: 'manifest_2', alt: t('school:imgAlt.school') }}
       />
       <h2 id='manifest' className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('school:manifest.win_title') }} />
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('school:manifest.win_text') }} />
@@ -54,7 +62,7 @@ const Win = ({ t }) =>
     <section className='grid-container second' id='manifest'>
       <PictureForAllResolutions
         className={cn(picture.className, 'left')}
-        image={{ namespace: 'school', key: 'win3', alt: t('school:imgAlt.school') }}
+        image={{ namespace: 'school', key: 'manifest_3', alt: t('school:imgAlt.school') }}
       />
       <h2 id='manifest' className='font_h2-regular right' dangerouslySetInnerHTML={{ __html: t('school:manifest.full_title') }} />
       <p className='font_p16-regular right' dangerouslySetInnerHTML={{ __html: t('school:manifest.full_text') }} />

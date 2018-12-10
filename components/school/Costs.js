@@ -82,15 +82,15 @@ const Manifest = ({ t }) =>
         font-size: 6.2rem;
         grid-column: 6 / span 2;
         grid-row: 3;
-        text-align: left;
-        margin-top: 7.1rem;
+        text-align: center;
+        margin-top: 6.1rem;
         justify-self: center;
       }
 
       .free_places {
         grid-column: 5 / span 4;
         grid-row: 3;
-        text-align: left;
+        text-align: center;
         margin-top: 13.8rem;
         justify-self: center;
       }
@@ -152,7 +152,7 @@ const Manifest = ({ t }) =>
         }
 
         .font_h2-slab {
-          grid-column: 1 / span 12;
+          grid-column: 1 / span 6;
           grid-row: 2;
           text-align: center;
           margin-top: 7.4rem;
@@ -161,17 +161,15 @@ const Manifest = ({ t }) =>
         .big_counter {
           position: relative;
           font-size: 6.2rem;
-          grid-column: 1 / span 12;
+          grid-column: 1 / span 6;
           grid-row: 3;
-          text-align: left;
           margin-top: 7.1rem;
           justify-self: center;
         }
 
         .free_places {
-          grid-column: 1 / span 12;
+          grid-column: 1 / span 6;
           grid-row: 3;
-          text-align: left;
           margin-top: 13.8rem;
           justify-self: center;
         }

@@ -17,13 +17,14 @@ const picture = css.resolve`
 
  @media (max-width: 1279px) {
     picture {
+      grid-column: 1 / span 6;
       margin-top: 5rem;
-      height: 512px;
+      height: 208px;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 32rem;
+        height: 208px;
       }
     }
   }
@@ -33,7 +34,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 160px;
+      height: 140px;
     }
   }
 `
@@ -78,7 +79,9 @@ class Courses extends PureComponent {
                   {duration}
                 </p>
                 <div className='button_register'>
-                  <ButtonLink href={'#hire-us'}>
+                  <ButtonLink
+                    href={'#register'}
+                  >
                     {t('school:course.register')}
                   </ButtonLink>
                 </div>
@@ -144,8 +147,27 @@ class Courses extends PureComponent {
             margin-top: 3.6rem;
           }
 
+          .courseWrapper:nth-of-type(1) {
+            grid-column: 1 / span 4;
+          }
+          .courseWrapper:nth-of-type(2) {
+            grid-column: 5 / span 4;
+          }
+          .courseWrapper:nth-of-type(3) {
+            grid-column: 9 / span 4;
+          }
+          .courseWrapper.active {
+            padding: 0;
+          }
+          .courseWrapper.margin-0 {
+            margin-top: 19.5rem;
+          }
+          .courseWrapper.margin-1 {
+            margin-top: 10.5rem;
+          }
 
-         @media (max-width: 1279px) {
+
+          @media (max-width: 1279px) {
             picture {
               margin-top: 5rem;
               height: 512px;
@@ -153,8 +175,15 @@ class Courses extends PureComponent {
 
             @media (max-width: 1023px) {
               picture {
-                height: 32rem;
+                height: 208px;
               }
+            }
+
+            .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
+              grid-column: 1 / span 12;
+              grid-row: auto;
+              text-align: center;
+              padding: 0 1rem;
             }
           }
 
@@ -171,6 +200,21 @@ class Courses extends PureComponent {
               text-align: center;
               margin-top: 1.4rem;
               padding: 0 2rem;
+            }
+            .courseWrapper:nth-of-type(1) {
+              grid-column: 1 / span 6;
+            }
+            .courseWrapper:nth-of-type(2) {
+              grid-column: 1 / span 6;
+            }
+            .courseWrapper:nth-of-type(3) {
+              grid-column: 1 / span 6;
+            }
+            .courseWrapper.margin-0 {
+              margin-top: 0;
+            }
+            .courseWrapper.margin-1 {
+              margin-top: 0;
             }
           }
         `}

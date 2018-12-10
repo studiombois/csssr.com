@@ -14,12 +14,12 @@ const picture = css.resolve`
  @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
-      height: 512px;
+      height: 304px;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 32rem;
+        height: 304px;
       }
     }
   }
@@ -29,7 +29,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 43.4375px;
+      height: 160px;
     }
   }
 `
@@ -143,19 +143,25 @@ class Bonus extends PureComponent {
               height: 160px;
             }
             .courseWrapper {
-              grid-column: 1 / span 12;
+              grid-column: 1 / span 6;
               grid-row: auto;
               text-align: center;
               margin-top: 1.5rem;
             }
             .courseWrapper:nth-of-type(1) {
-              grid-column: 1 / span 12;
+              grid-column: 1 / span 6;
             }
             .courseWrapper:nth-of-type(2) {
-              grid-column: 1 / span 12;
+              grid-column: 1 / span 6;
             }
             .courseWrapper:nth-of-type(3) {
-              grid-column: 1 / span 12;
+              grid-column: 1 / span 6;
+            }
+            .courseWrapper.margin-0 {
+              margin-top: 0;
+            }
+            .courseWrapper.margin-1 {
+              margin-top: 0;
             }
           }
         `}

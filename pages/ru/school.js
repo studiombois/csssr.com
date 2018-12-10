@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import Head from '../../components/Head'
 import Earn from '../../components/school/Earn'
 import Manifest from '../../components/school/Manifest'
-import Cups from '../../components/school/Cups'
 import Win from '../../components/school/Win'
 import Counter from '../../components/school/Counter'
 import Courses from '../../components/school/Courses'
@@ -42,8 +41,6 @@ class School extends PureComponent {
         <Head title={t('school:meta.title')} description={t('school:meta.description')} />
         <Earn />
         <Manifest />
-        <Cups />
-        <Win />
         <Counter />
         <Courses />
         <Costs />

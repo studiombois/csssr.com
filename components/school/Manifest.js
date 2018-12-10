@@ -55,8 +55,6 @@ class Manifest extends PureComponent {
     description,
     description_second,
     isCups,
-    info,
-    duration,
     image,
   }, index) => {
     const { t } = this.props

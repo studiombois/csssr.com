@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
-import css from 'styled-jsx/css'
 
 const Counter = ({ t }) =>
   <Fragment>

@@ -61,7 +61,7 @@ class Cups extends PureComponent {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
-  handleScroll = (event) => {
+  handleScroll = () => {
     if (this.rafId) {
       cancelAnimationFrame(this.rafId)
     }
@@ -98,7 +98,6 @@ class Cups extends PureComponent {
   }
 
   render() {
-    const { t } = this.props
     const active = cupMock.items[this.state.active - 1]
     return (
       <Fragment>

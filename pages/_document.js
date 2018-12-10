@@ -15,21 +15,16 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const shouldIncludeGTM = !process.env.EXCLUDE_GTM
     const language = this.props.language
     const gtmId = getGtmId(process.env.NODE_ENV, language, this.props.path)
 
     return (
       <html lang={language}>
         <Head>
-          { shouldIncludeGTM &&
-            <GtmScript gtmId={gtmId}/>
-          }
+          <GtmScript gtmId={gtmId}/>
         </Head>
         <body>
-          { shouldIncludeGTM &&
-            <GtmNoScript gtmId={gtmId}/>
-          }
+          <GtmNoScript gtmId={gtmId}/>
           <Main />
           <NextScript />
         </body>

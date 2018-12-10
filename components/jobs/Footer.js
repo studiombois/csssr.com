@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { translate } from 'react-i18next'
-import footerLinks from '../../data/jobs/footerLinks'
+import { allSocialLinks } from '../../data/jobs/footerLinks'
 
 const handleLinkClick = () => {
   document.documentElement.style.scrollBehavior = 'auto'
@@ -14,7 +14,7 @@ const handleLinkClick = () => {
   })
 }
 
-const Footer = ({ router: { pathname }, className, lng, t }) => {
+const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className, lng, t }) => {
   const rootUrl = `/${lng}`
 
   return <footer className={`${className} grid-container`}>
@@ -41,7 +41,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
     }
 
     <ul className='social-links'>
-      {footerLinks.map(({ href, label }) =>
+      {socialLinks.map(({ href, label }) =>
         <li key={label} className='social-link'>
           <a
             aria-label={`${label} link`}
@@ -125,9 +125,7 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
 
       .footer-links {
         grid-row: 15;
-        padding-top: 33px;
-
-
+        margin-top: 2.0625rem;
         grid-column: 8 / span 5;
         display: flex;
         justify-content: flex-start;
@@ -157,15 +155,84 @@ const Footer = ({ router: { pathname }, className, lng, t }) => {
         }
       }
 
-     @media (max-width: 1279px) {
+      @media (min-width: 768px) and (max-width: 1279px) {
         footer {
           width: 944px;
+        }
+
+        .logo-wrapper {
+          height: 2rem;
+        }
+
+        .logo {
+          width: 4rem;
+          height: 1rem;
+        }
+
+        .social-link:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        .social-logo {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .footer-links {
+          grid-column: 8 / span 6;
         }
 
         @media (max-width: 1023px) {
           footer {
             width: 59rem;
           }
+        }
+      }
+
+      @media (max-width: 767px) {
+        footer {
+          padding-bottom: 3.4375em;
+          width: 20.5rem;
+        }
+
+        .logo-wrapper {
+          display: none;
+        }
+
+        .social-links,
+        .footer-links {
+          grid-column: 1 / span 6;
+        }
+
+        .footer-links {
+          grid-row: 1;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+
+        .social-link:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+
+        .footer-links {
+          grid-row: 2;
+          margin-top: 1.0625rem;
+          justify-content: center;
+          flex-wrap: wrap;
+          height: auto;
+        }
+
+        .footer-link:not(:first-child),
+        .font_footer-link_without-margin {
+          margin-right: 0;
+        }
+
+        .footer-link:last-child {
+          margin-top: 8px;
+          width: 100%;
+          text-align: center;
         }
       }
     `}</style>

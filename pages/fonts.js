@@ -32,6 +32,7 @@ export default class Fonts extends PureComponent {
         <div className='font_link-list_28'>28 Link List</div>
         <div className='font_burger-menu'>Burger Menu</div>
         <div className='font_top-menu'>Top Menu</div>
+        <div className='font_p14-regular'>p 14 Regular</div>
         <div className='font_p16-regular'>p 16 Regular</div>
         <div className='font_p24-strong'>p 24 Strong</div>
         <div className='font_perforator-16-black'>Perforator 16 black</div>

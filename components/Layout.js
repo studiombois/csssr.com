@@ -42,6 +42,10 @@ const Layout = props => {
         display: none;
       }
 
+      #main {
+        overflow-x: hidden;
+      }
+
       /*
         TODO: Стили для анимации изчезновения privacy-policy
       */
@@ -86,7 +90,6 @@ Layout.propTypes = {
     logoHref: string,
     logoAlt: string,
     logoSup: string,
-    isHalfed: bool,
     isLogoLink: bool,
     isBurgerVisible: bool,
   }),
@@ -95,7 +98,6 @@ Layout.propTypes = {
     logoAlt: string,
     logoSup: string,
     noFooter: bool,
-    isHalfed: bool,
     isLogoLink: bool,
   }),
 }

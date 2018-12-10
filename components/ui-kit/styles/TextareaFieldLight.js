@@ -7,7 +7,8 @@ export default css`
   }
 
   textarea {
-    padding-top: 0.5rem;
+    appearance: none;
+    padding-top: 0.4375rem;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1.5rem;
@@ -17,6 +18,7 @@ export default css`
     text-align: center;
     border: none;
     border: solid 0.0625rem #e1e1e1;
+    border-radius: 0;
     caret-color: #4a4a4a;
     resize: vertical;
   }
@@ -42,7 +44,7 @@ export default css`
     width: 0.0625rem;
   }
 
- @media (max-width: 1279px) {
+ @media (min-width: 768px) and (max-width: 1279px) {
     textarea {
       padding-top: 0.875rem;
     }

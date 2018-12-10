@@ -15,6 +15,19 @@ const TitleAndList = ({ text, title }) =>
       p {
         margin-top: 0.5rem;
       }
+
+      @media (max-width: 767px) {
+        h2 {
+          margin-top: 2.25rem;
+        }
+
+        p {
+          margin-top: 0.4375rem;
+          padding-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+        }
+      }
     `}</style>
   </Fragment>
 

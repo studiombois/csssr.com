@@ -24,7 +24,7 @@ const picture = css.resolve`
     width: 100%;
   }
 
- @media (max-width: 1279px) {
+ @media (min-width: 768px) and (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
     }
@@ -34,6 +34,14 @@ const picture = css.resolve`
         width: 21.25rem;
         height: 13.75rem;
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      bottom: 3.75rem;
+      width: 6.5rem;
+      height: 4.25rem;
     }
   }
 `
@@ -92,7 +100,7 @@ class ContactForm extends PureComponent {
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
-        <h2 id='hire-us' className='font_h2-slab headline' dangerouslySetInnerHTML={{ __html: t('dev:form.title') }} />
+        <h2 id='hire-us' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:form.title') }} />
         <div className='field'>
           <Field
             id='name'
@@ -137,7 +145,7 @@ class ContactForm extends PureComponent {
           <PrivacyPolicyCheckbox />
         </div>
 
-        <div className='field field_type_noMargin'>
+        <div className='field field_type_no-margin'>
           <Field
             id='newsletterCheckbox'
             name='consents'
@@ -177,7 +185,7 @@ class ContactForm extends PureComponent {
             border: none;
           }
 
-          .headline {
+          h2 {
             margin-bottom: 6rem;
             grid-column: 4 / span 6;
             text-align: center;
@@ -194,7 +202,7 @@ class ContactForm extends PureComponent {
             margin-bottom: 3.5rem;
           }
 
-          .field_type_noMargin {
+          .field_type_no-margin {
             margin: 0;
           }
 
@@ -215,7 +223,7 @@ class ContactForm extends PureComponent {
             }
           }
 
-         @media (max-width: 1279px) {
+          @media (min-width: 768px) and (max-width: 1279px) {
             form {
               padding-top: 6.1875rem;
               padding-bottom: 31.5rem;
@@ -223,7 +231,7 @@ class ContactForm extends PureComponent {
               width: 944px;
             }
 
-            .headline {
+            h2 {
               margin-bottom: 2.3125rem;
             }
 
@@ -242,6 +250,37 @@ class ContactForm extends PureComponent {
               }
             }
           }
+
+          @media (max-width: 767px) {
+            form {
+              padding-top: 3rem;
+              padding-bottom: 14rem;
+              width: 20.5rem;
+            }
+
+            h2 {
+              margin-bottom: 2.5rem;
+            }
+
+            h2,
+            .field {
+              grid-column: 1 / span 6;
+            }
+
+            .button {
+              margin-top: 3.4375rem;
+              grid-column: 2 / span 4;
+            }
+
+            .field_type_textarea {
+              margin-bottom: 1.5rem;
+            }
+
+            .field_type_checkbox {
+              margin-bottom: 21px;
+            }
+          }
+
         `}</style>
         {picture.styles}
       </form>

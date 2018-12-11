@@ -1,6 +1,8 @@
 import React, { Fragment, PureComponent } from 'react'
 import { translate } from 'react-i18next'
 import cn from 'classnames'
+import CrossIcon from '../../static/icons/cross_white.svg'
+import ClickOutside from '../ui-kit/ClickOutside'
 import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
 import Button from '../ui-kit/Button'
@@ -39,9 +41,21 @@ const picture = css.resolve`
   }
 `
 
+const crossIcon = <CrossIcon width='40px' height='40px'/>
+const clickOutsideStyles = {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  left: 0,
+  bottom: 0,
+  height: '100%',
+  overflow: 'auto',
+}
+
 class Courses extends PureComponent {
   state = {
-    activeCourse: 2,
+    activeCourse: 1,
+    modalActiveId: 1,
   }
 
   renderCourse = ({
@@ -51,6 +65,7 @@ class Courses extends PureComponent {
     info,
     duration,
     image,
+    showModal,
   }) => {
     const { t } = this.props
     const active = id === this.state.activeCourse
@@ -85,9 +100,26 @@ class Courses extends PureComponent {
                     {t('school:course.register')}
                   </ButtonLink>
                 </div>
-                <p className='font_p16-regular under_course_text'>
-                  {t('school:course.under_course_text')}
-                </p>
+                {
+                  showModal && (
+                    <p className='font_p16-regular under_course_text'>
+                      {t('school:course.text_1')}
+                      <a
+                        onClick={this.handleShowModal(id)}
+                        className={'font_link-list_16'}
+                      >
+                        {t('school:course.text_2')}
+                      </a>
+                      {t('school:course.text_3')}
+                      <a
+                        onClick={this.handleShowModal(id)}
+                        className={'font_link-list_16'}
+                      >
+                        {t('school:course.text_4')}
+                      </a>
+                    </p>
+                  )
+                }
               </div>
             ) : (
               <div className='button_register'>
@@ -113,9 +145,6 @@ class Courses extends PureComponent {
             text-align: center;
             margin-top: 1.4rem;
             padding: 0 2rem;
-          }
-          .courseWrapper.active {
-            padding: 0;
           }
           .description {
             margin-top: 1.4rem;
@@ -155,9 +184,6 @@ class Courses extends PureComponent {
           }
           .courseWrapper:nth-of-type(3) {
             grid-column: 9 / span 4;
-          }
-          .courseWrapper.active {
-            padding: 0;
           }
           .courseWrapper.margin-0 {
             margin-top: 19.5rem;
@@ -224,10 +250,178 @@ class Courses extends PureComponent {
     )
   }
 
-  render() {
-    const { t } = this.props
+  handleCloseModal = () => {
+    this.setState({
+      modalActiveId: -1,
+    })
+  }
+
+  handleShowModal = id => () => {
+    this.setState({
+      modalActiveId: id,
+    })
+  }
+
+  renderPoint = item => {
     return (
       <Fragment>
+        <li className='font_p16-regular'>{item}</li>
+        <style jsx>{`
+          li {
+            margin-bottom: 1.5rem;
+          }
+          @media (max-width: 767px) {
+            li {
+              margin-bottom: 0.5rem;
+            }
+          }
+        `}</style>
+      </Fragment>
+    )
+  }
+
+  renderModalContent = ({ title, study_items, study_items_title, need_know, need_know_title }) => {
+    return (
+      <Fragment>
+        <section className='wrapper'>
+          <h2 id='manifest' className='font_h2-regular title'>{title}</h2>
+          <div className='columnsWrapper'>
+            <div className='columnStudy'>
+              <h3 id='manifest' className='font_h3-regular'>{study_items_title}</h3>
+              {study_items && study_items.map(this.renderPoint)}
+            </div>
+            <div className='columnNeedKnow'>
+              <h3 id='manifest' className='font_h3-regular'>{need_know_title}</h3>
+              {need_know && need_know.map(this.renderPoint)}
+            </div>
+          </div>
+        </section>
+        <style jsx>{`
+          .wrapper {
+            min-height: 100%;
+          }
+          .title {
+            width: 100%;
+            text-align: center;
+            height: 127px;
+            background-color: #d8d8d8;
+            line-height: 142px;
+            vertical-align: middle;
+          }
+          .columnsWrapper {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 10rem;
+          }
+          .columnStudy, .columnNeedKnow {
+            display: inline-block;
+            width: 50%;
+            vertical-align: top;
+            padding-left: 6.5rem;
+          }
+          .columnNeedKnow {
+            padding-left: 0.5rem;
+            padding-right: 5rem;
+          }
+          h3 {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+          }
+          @media (max-width: 767px) {
+            .columnsWrapper {
+              width: 100%;
+              height: 100%;
+              padding-bottom: 10rem;
+            }
+            .columnStudy, .columnNeedKnow {
+              display: block;
+              width: 100%;
+              vertical-align: top;
+              padding-left: 1rem;
+            }
+          }
+        `}</style>
+      </Fragment>
+    )
+  }
+
+  renderModal = (modal) => {
+    return (
+      <Fragment>
+        <div className='modalWrapper'>
+          <button type='button' aria-label='Close menu' onClick={this.handleCloseModal}>
+            {crossIcon}
+          </button>
+          <div className='modalContent'>
+            <ClickOutside
+              onOutsideClick={this.handleCloseModal}
+              style={clickOutsideStyles}
+            >
+              {this.renderModalContent(modal)}
+            </ClickOutside>
+          </div>
+        </div>
+        <style jsx>{`
+          .modalWrapper {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+          }
+
+          .modalContent {
+            position: relative;
+            background: #FFF;
+            margin: 0 auto;
+            width: 1024px;
+            height: 100%;
+          }
+
+          button {
+            position: absolute;
+            color: #FFF;
+            z-index: 1;
+            top: 1.25rem;
+            right: 4rem;
+            height: 40px;
+            width: 40px;
+            border: none;
+            background: none;
+            cursor: pointer;
+          }
+          @media (max-width: 1023px) {
+            .modalContent {
+              width: 100%;
+            }
+            button {
+              position: absolute;
+              color: #000;
+              z-index: 1;
+              top: 1.25rem;
+              right: 1rem;
+              height: 40px;
+              width: 40px;
+              border: none;
+              background: none;
+              cursor: pointer;
+            }
+          }
+        `}</style>
+      </Fragment>
+    )
+  }
+
+  render() {
+    const { t } = this.props
+    const activeModal = coursesMock.modals[this.state.modalActiveId]
+    return (
+      <Fragment>
+        {
+          activeModal && this.renderModal(activeModal)
+        }
         <section className='grid-container' id='courses'>
           <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:course.title') }} />
           {

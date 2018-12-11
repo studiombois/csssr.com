@@ -345,7 +345,7 @@ class Courses extends PureComponent {
     )
   }
 
-  renderModal = (modal) => {
+  renderModal = modal => {
     return (
       <Fragment>
         <div className='modalWrapper'>

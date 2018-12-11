@@ -95,7 +95,7 @@ class Courses extends PureComponent {
                 </p>
                 <div className='button_register'>
                   <ButtonLink
-                    href={'#register'}
+                    href={'#sign'}
                   >
                     {t('school:course.register')}
                   </ButtonLink>
@@ -262,9 +262,9 @@ class Courses extends PureComponent {
     })
   }
 
-  renderPoint = item => {
+  renderPoint = (item, index) => {
     return (
-      <Fragment>
+      <Fragment key={index}>
         <li className='font_p16-regular'>{item}</li>
         <style jsx>{`
           li {
@@ -281,6 +281,7 @@ class Courses extends PureComponent {
   }
 
   renderModalContent = ({ title, study_items, study_items_title, need_know, need_know_title }) => {
+    const { t } = this.props
     return (
       <Fragment>
         <section className='wrapper'>
@@ -293,6 +294,18 @@ class Courses extends PureComponent {
             <div className='columnNeedKnow'>
               <h3 id='manifest' className='font_h3-regular'>{need_know_title}</h3>
               {need_know && need_know.map(this.renderPoint)}
+            </div>
+            <div className='buttonWrapper'>
+              <div
+                className='button_register'
+                onClick={this.handleCloseModal}
+              >
+                <ButtonLink
+                  href={'#sign'}
+                >
+                  {t('school:course.register')}
+                </ButtonLink>
+              </div>
             </div>
           </div>
         </section>
@@ -326,6 +339,14 @@ class Courses extends PureComponent {
           h3 {
             margin-top: 3rem;
             margin-bottom: 1rem;
+          }
+          .buttonWrapper {
+            text-align: center;
+          }
+          .button_register {
+            display: inline-block;
+            margin-top: 3.6rem;
+            width: 312px;
           }
           @media (max-width: 767px) {
             .columnsWrapper {

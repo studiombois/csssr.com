@@ -55,7 +55,7 @@ const clickOutsideStyles = {
 class Courses extends PureComponent {
   state = {
     activeCourse: 1,
-    modalActiveId: 1,
+    modalActiveId: -1,
   }
 
   renderCourse = ({

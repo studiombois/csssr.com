@@ -72,12 +72,12 @@ const footer = css.resolve`
   }
 `
 
+const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+
 export default class Vacancies extends PureComponent {
   articleRef = React.createRef()
 
   componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-
     mobileMediaQuery.addListener(this.handleMediaMatch)
     this.handleMediaMatch(mobileMediaQuery)
 
@@ -86,6 +86,7 @@ export default class Vacancies extends PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+    mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   // Выполняем handleScroll при переходе на мобильное разрешение

@@ -57,6 +57,12 @@ export default css`
     user-select: none;
   }
 
+  span.error {
+    margin-top: 0.625rem;
+    display: block;
+    color: #ff0000;
+  }
+
   div.font_inputted-text-error input:focus + label,
   input:focus + label {
     color: #0076ff;

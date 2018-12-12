@@ -67,7 +67,7 @@ export default class FileField extends PureComponent {
             [className]: !!className,
           })}
         >
-          <span>
+          <span className='value'>
             {value && this.state.value}
           </span>
 
@@ -86,6 +86,7 @@ export default class FileField extends PureComponent {
         >
           Обзор
         </label>
+        {(meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
         <style jsx>{`
           div {
             position: relative;
@@ -101,6 +102,7 @@ export default class FileField extends PureComponent {
 
           input:not(:focus) + div.font_inputted-text-error {
             border-color: #d0021b;
+            border-width: 0.125rem;
           }
 
           input:not(:focus) + div.font_inputted-text-error label {
@@ -129,12 +131,18 @@ export default class FileField extends PureComponent {
             overflow: hidden;
           }
 
-          span {
+          span.value {
             width: 100%;
             display: inline-block;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+          }
+
+          span.error {
+            margin-top: 0.625rem;
+            grid-column: 2 / span 6;
+            color: #ff0000;
           }
 
           label:not(.button) {

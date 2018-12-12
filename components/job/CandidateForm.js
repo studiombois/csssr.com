@@ -102,8 +102,6 @@ const mapVacancies = vacancy =>
     `}</style>
   </li>
 
-const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-
 class CandidateForm extends PureComponent {
   state = {
     formSubmitStatus: null,
@@ -111,8 +109,9 @@ class CandidateForm extends PureComponent {
   }
 
   componentDidMount() {
-    mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mobileMediaQuery)
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
   }
 
   componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
@@ -135,7 +134,7 @@ class CandidateForm extends PureComponent {
   }
 
   componentWillUnmount() {
-    mobileMediaQuery.removeListener(this.handleMediaMatch)
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   handleMediaMatch = ({ matches }) =>

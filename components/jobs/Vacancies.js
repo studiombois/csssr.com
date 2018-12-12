@@ -72,21 +72,20 @@ const footer = css.resolve`
   }
 `
 
-const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-
 export default class Vacancies extends PureComponent {
   articleRef = React.createRef()
 
   componentDidMount() {
-    mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mobileMediaQuery)
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
 
     window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
-    mobileMediaQuery.removeListener(this.handleMediaMatch)
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   // Выполняем handleScroll при переходе на мобильное разрешение

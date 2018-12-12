@@ -10,16 +10,20 @@ import Layout from '../../components/Layout'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
+const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+
 class Dev extends PureComponent {
   state = {
     isMobile: false,
   }
 
   componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-
     mobileMediaQuery.addListener(this.handleMediaMatch)
     this.handleMediaMatch(mobileMediaQuery)
+  }
+
+  componentWillUnmount() {
+    mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   handleMediaMatch = ({ matches }) =>

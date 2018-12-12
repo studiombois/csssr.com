@@ -102,6 +102,8 @@ const mapVacancies = vacancy =>
     `}</style>
   </li>
 
+const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+
 class CandidateForm extends PureComponent {
   state = {
     formSubmitStatus: null,
@@ -109,8 +111,6 @@ class CandidateForm extends PureComponent {
   }
 
   componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-
     mobileMediaQuery.addListener(this.handleMediaMatch)
     this.handleMediaMatch(mobileMediaQuery)
   }
@@ -132,6 +132,10 @@ class CandidateForm extends PureComponent {
         this.setState({ formSubmitStatus: null })
       }
     }
+  }
+
+  componentWillUnmount() {
+    mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   handleMediaMatch = ({ matches }) =>

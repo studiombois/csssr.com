@@ -5,7 +5,14 @@ import fetch from 'isomorphic-unfetch'
 import ContactForm from './ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
 
-const onSubmit = async values => {
+const onSubmit = ({ language }) => async values => {
+  const gaCookie = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)')
+  const rawGaCookieInfo = gaCookie ? decodeURIComponent(gaCookie[1]) : null
+  const gacid = rawGaCookieInfo ? rawGaCookieInfo.match(/(\d+\.\d+)$/)[1] : null
+
+  values.gacid = gacid
+  values.language = language
+
   const res = await fetch('/api/submit-form', {
     method: 'POST',
     headers: {
@@ -19,19 +26,25 @@ const onSubmit = async values => {
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'form_success' })
     }
-  } else if (res.status === 400) {
-    const error = await res.json()
+  } else {
+    let error
+    try {
+      const response = await res.json()
+      error = response.error
+    } catch {
+      error = 'Something went wrong. Please try again later.'
+    }
 
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'form_fail' })
     }
 
-    return { [FORM_ERROR]: error.error }
+    return { [FORM_ERROR]: error }
   }
 }
 
-export default () => <ReactFinalForm
-  onSubmit={onSubmit}
+export default props => <ReactFinalForm
+  onSubmit={onSubmit(props)}
   validate={contactFormValidationRules}
   component={ContactForm}
 />

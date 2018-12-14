@@ -109,10 +109,9 @@ class CandidateForm extends PureComponent {
   }
 
   componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-
-    mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mobileMediaQuery)
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
   }
 
   componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
@@ -132,6 +131,10 @@ class CandidateForm extends PureComponent {
         this.setState({ formSubmitStatus: null })
       }
     }
+  }
+
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   handleMediaMatch = ({ matches }) =>

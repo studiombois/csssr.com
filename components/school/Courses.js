@@ -54,23 +54,21 @@ const clickOutsideStyles = {
 
 class Courses extends PureComponent {
   state = {
-    activeCourse: 1,
     modalActiveId: -1,
   }
 
   renderCourse = ({
-    id,
+    active,
     title,
     description,
     info,
     duration,
     image,
     showModal,
-  }) => {
+  }, index) => {
     const { t } = this.props
-    const active = id === this.state.activeCourse
     return (
-      <Fragment key={id}>
+      <Fragment key={index}>
         <div className={cn('courseWrapper', {
           active,
         })}>
@@ -103,19 +101,12 @@ class Courses extends PureComponent {
                 {
                   showModal && (
                     <p className='font_p16-regular under_course_text'>
-                      {t('school:course.text_1')}
+                      {t('school:course.text-1')}
                       <a
-                        onClick={this.handleShowModal(id)}
+                        onClick={this.handleShowModal(index)}
                         className={'font_link-list_16'}
                       >
-                        {t('school:course.text_2')}
-                      </a>
-                      {t('school:course.text_3')}
-                      <a
-                        onClick={this.handleShowModal(id)}
-                        className={'font_link-list_16'}
-                      >
-                        {t('school:course.text_4')}
+                        {t('school:course.text-2')}
                       </a>
                     </p>
                   )
@@ -123,17 +114,12 @@ class Courses extends PureComponent {
               </div>
             ) : (
               <div className='button_register'>
-                <Button
-                  href={'#hire-us'}
+                <ButtonLink
+                  href={'#sign'}
                   theme={'secondary'}
-                  onClick={() => {
-                    this.setState({
-                      activeCourse: id,
-                    })
-                  }}
                 >
                   {t('school:course.send_request')}
-                </Button>
+                </ButtonLink>
               </div>
             )
           }
@@ -165,6 +151,7 @@ class Courses extends PureComponent {
             grid-row: 3;
             margin-top: 1.4rem;
             text-align: center;
+            cursor: pointer;
           }
 
           .button_wrapper {
@@ -256,9 +243,9 @@ class Courses extends PureComponent {
     })
   }
 
-  handleShowModal = id => () => {
+  handleShowModal = index => () => {
     this.setState({
-      modalActiveId: id,
+      modalActiveId: index,
     })
   }
 

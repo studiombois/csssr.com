@@ -6,6 +6,7 @@
     "recruitment": "Recruitment",
     "company": "Company",
     "products": "Products",
+    "school": "School",
     "education": "Education"
   },
   "languageRedirect": {
@@ -18,7 +19,9 @@
   },
   "sectionName": {
     "en": "Software Engineering",
-    "en/jobs": "Jobs"
+    "en/jobs": "Jobs",
+    "ru/school": "Школа",
+    "en/school": "School"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

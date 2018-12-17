@@ -19,13 +19,13 @@ const onSubmit = async values => {
 
   if (res.status === 201) {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_success' })
+      window.dataLayer.push({ event: 'school_form_success' })
     }
   } else if (res.status === 400) {
     const error = await res.json()
 
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_fail' })
+      window.dataLayer.push({ event: 'school_form_fail' })
     }
 
     return { [FORM_ERROR]: error.error }
@@ -79,7 +79,7 @@ const Form = ({ t }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 8.5rem;
+        padding-top: 10.1rem;
         width: 1792px;
       }
 

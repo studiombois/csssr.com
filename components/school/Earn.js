@@ -73,7 +73,7 @@ class Earn extends PureComponent {
           }
 
           .font_subhead-slab {
-            padding-top: 4.299rem;
+            padding-top: 4.5rem;
             line-height: 4rem;
           }
 

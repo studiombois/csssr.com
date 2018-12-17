@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
+import counterMock from './mock/counter-mock'
 
 const Counter = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='manifest'>
       <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:counter.now_title') }} />
-      <sup className='font_roboto-slab-light big_counter'>48</sup>
-      <h2 className='font_subhead-slab free_places' dangerouslySetInnerHTML={{ __html: `${t('school:counter.free_places')} ${50}` }} />
+      <sup className='font_roboto-slab-light big_counter'>{counterMock.free_places}</sup>
+      <h2
+        className='font_subhead-slab free_places'
+        dangerouslySetInnerHTML={{ __html: `${t('school:counter.free_places')} ${counterMock.all_places}` }}
+      />
     </section>
     <style jsx>{`
       section {
@@ -27,7 +31,7 @@ const Counter = ({ t }) =>
         grid-column: 1 / span 12;
         grid-row: 2;
         text-align: center;
-        margin-top: 8.9rem;
+        margin-top: 3.9rem;
       }
 
       .big_counter {
@@ -35,7 +39,7 @@ const Counter = ({ t }) =>
         grid-column: 1 / span 12;
         grid-row: 3;
         text-align: center;
-        margin-top: 6.1rem;
+        margin-top: 7.1rem;
         justify-self: center;
       }
 

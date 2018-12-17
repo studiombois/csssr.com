@@ -40,7 +40,6 @@ class HeaderContent extends PureComponent {
       onSideBarToggle,
       t,
     } = this.props
-
     return (
       <Fragment>
         <header
@@ -89,7 +88,9 @@ class HeaderContent extends PureComponent {
               </span>
             }
 
-            <nav className='nav'>
+            <nav className={cn('nav', {
+              'with-logo-sup': logoSup,
+            })}>
               <ul className='nav-list'>
                 {links.map(({ href, label }) => (
                   <li
@@ -197,6 +198,11 @@ class HeaderContent extends PureComponent {
 
             .nav {
               grid-column: 3 / span 6;
+              height: 2rem;
+            }
+
+            .nav.with-logo-sup {
+              grid-column: 4 / span 5;
               height: 2rem;
             }
 

@@ -51,7 +51,7 @@ const About = ({ t }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 8.5rem;
+        padding-top: 10rem;
         width: 1792px;
       }
 

@@ -56,9 +56,9 @@ class Bonus extends PureComponent {
             className={picture.className}
             image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
           />
-          <h2 className='font_h2-regular course-title'>
+          <h3 className='font_h2-regular bonus-title'>
             {title}
-          </h2>
+          </h3>
           <p className='font_p16-regular description'>
             {description}
           </p>
@@ -100,7 +100,7 @@ class Bonus extends PureComponent {
             margin-top: 2.0rem;
             text-align: left;
           }
-          .course-title {
+          .bonus-title {
             margin-top: 2.5rem;
             text-align: left;
           }

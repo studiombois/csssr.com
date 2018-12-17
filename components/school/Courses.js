@@ -78,9 +78,9 @@ class Courses extends PureComponent {
             className={picture.className}
             image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
           />
-          <h2 className='font_h2-regular course-title'>
+          <h3 className='font_h2-regular course-title'>
             {title}
-          </h2>
+          </h3>
           <p className='font_p24-strong description'>
             {description}
           </p>

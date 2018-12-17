@@ -73,13 +73,13 @@ class Manifest extends PureComponent {
             })}
             image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
           />
-          <h2 className={cn('font_h2-regular', {
+          <h3 className={cn('font_h2-regular', `h3-${index}`, {
             right,
             left,
           })}>
             {title}
-          </h2>
-          <p className={cn('font_p16-regular', 'description', {
+          </h3>
+          <p className={cn('font_p16-regular', `p-${index}`, 'description', {
             right,
             left,
           })}>
@@ -129,6 +129,16 @@ class Manifest extends PureComponent {
 
           .right {
             grid-column: 4 / span 5;
+          }
+
+          .h3-2 {
+            grid-column: 6 / span 5;
+            margin-top: 3.5rem;
+          }
+
+          .p-2 {
+            grid-column: 6 / span 5;
+            margin-top: 6.5rem;
           }
 
           .left {

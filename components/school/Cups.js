@@ -119,6 +119,7 @@ class Cups extends PureComponent {
             margin-right: auto;
             padding-top: 1.5rem;
             width: 1792px;
+            margin-bottom: 2rem;
           }
 
           h2 {
@@ -141,6 +142,7 @@ class Cups extends PureComponent {
             position: absolute;
             align-self: center;
             line-height: 1.60rem;
+            margin-top: -4rem;
           }
 
           .font_h2-regular {

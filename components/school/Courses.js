@@ -20,12 +20,12 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       margin-top: 5rem;
-      height: 208px;
+      height: 13rem;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 208px;
+        height: 13rem;
       }
     }
   }
@@ -35,7 +35,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 140px;
+      height: 8.75rem;
     }
   }
 `
@@ -180,17 +180,6 @@ class Courses extends PureComponent {
 
 
           @media (max-width: 1279px) {
-            picture {
-              margin-top: 5rem;
-              height: 512px;
-            }
-
-            @media (max-width: 1023px) {
-              picture {
-                height: 208px;
-              }
-            }
-
             .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
               grid-column: 1 / span 12;
               grid-row: auto;
@@ -200,12 +189,6 @@ class Courses extends PureComponent {
           }
 
           @media (max-width: 767px) {
-            picture {
-              grid-column: 1 / span 6;
-              grid-row: 3;
-              margin-top: 1.875rem;
-              height: 43.4375rem;
-            }
             .courseWrapper {
               grid-column: span 12;
               grid-row: auto;
@@ -302,9 +285,9 @@ class Courses extends PureComponent {
           .title {
             width: 100%;
             text-align: center;
-            height: 127px;
+            height: 7.9375rem;
             background-color: #d8d8d8;
-            line-height: 142px;
+            line-height: 8.875rem;
             vertical-align: middle;
           }
           .columnsWrapper {
@@ -332,7 +315,7 @@ class Courses extends PureComponent {
           .button_register {
             display: inline-block;
             margin-top: 3.6rem;
-            width: 312px;
+            width: 19.5rem;
           }
           @media (max-width: 767px) {
             .columnsWrapper {
@@ -393,8 +376,8 @@ class Courses extends PureComponent {
             z-index: 1;
             top: 1.25rem;
             right: 4rem;
-            height: 40px;
-            width: 40px;
+            height: 2.5rem;
+            width: 2.5rem;
             border: none;
             background: none;
             cursor: pointer;
@@ -409,8 +392,8 @@ class Courses extends PureComponent {
               z-index: 1;
               top: 1.25rem;
               right: 1rem;
-              height: 40px;
-              width: 40px;
+              height: 2.5rem;
+              width: 2.5rem;
               border: none;
               background: none;
               cursor: pointer;

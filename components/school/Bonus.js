@@ -14,12 +14,12 @@ const picture = css.resolve`
  @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
-      height: 304px;
+      height: 19rem;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 304px;
+        height: 19rem;
       }
     }
   }
@@ -29,7 +29,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 160px;
+      height: 10rem;
     }
   }
 `
@@ -123,25 +123,11 @@ class Bonus extends PureComponent {
 
 
          @media (max-width: 1279px) {
-            picture {
-              margin-top: 5rem;
-              height: 512px;
-            }
-
             @media (max-width: 1023px) {
-              picture {
-                height: 32rem;
-              }
             }
           }
 
           @media (max-width: 767px) {
-            picture {
-              grid-column: 1 / span 6;
-              grid-row: 3;
-              margin-top: 1.875rem;
-              height: 160px;
-            }
             .courseWrapper {
               grid-column: 1 / span 6;
               grid-row: auto;

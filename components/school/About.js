@@ -15,7 +15,7 @@ const picture = css.resolve`
  @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
-      height: 512px;
+      height: 32rem;
     }
 
     @media (max-width: 1023px) {
@@ -30,7 +30,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 264.5px;
+      height: 16.53125rem;
     }
   }
 `

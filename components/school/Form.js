@@ -44,7 +44,7 @@ const picture = css.resolve`
  @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
-      height: 512px;
+      height: 32rem;
     }
 
     @media (max-width: 1023px) {

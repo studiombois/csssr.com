@@ -23,12 +23,12 @@ const picture = css.resolve`
  @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
-      height: 248px;
+      height: 15.5rem;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 248px;
+        height: 15.5rem;
       }
     }
   }
@@ -38,7 +38,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 1;
       margin-top: 1.875rem;
-      height: 112px;
+      height: 7rem;
     }
     picture.left {
       grid-column: 1 / span 6;

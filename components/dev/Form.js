@@ -25,14 +25,20 @@ const onSubmit = language => async values => {
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'form_success' })
     }
-  } else if (res.status === 400) {
-    const error = await res.json()
+  } else {
+    let error
+    try {
+      const response = await res.json()
+      error = response.error
+    } catch {
+      error = 'Something went wrong. Please try again later.'
+    }
 
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'form_fail' })
     }
 
-    return { [FORM_ERROR]: error.error }
+    return { [FORM_ERROR]: error }
   }
 }
 

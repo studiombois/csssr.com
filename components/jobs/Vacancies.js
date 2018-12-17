@@ -73,22 +73,25 @@ const footer = css.resolve`
 `
 
 export default class Vacancies extends PureComponent {
-  componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+  articleRef = React.createRef()
 
-    mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mobileMediaQuery)
+  componentDidMount() {
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
 
     window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   // Выполняем handleScroll при переходе на мобильное разрешение
   // что бы спрятать header-background за картинку
-  handleMediaMatch = ({ matches }) => matches && this.handleScroll()
+  handleMediaMatch = ({ matches }) =>
+    matches && !!this.articleRef.current && this.handleScroll()
 
   // При скролле изменяем z-index header-background что бы он был, когда мы
   // скролим описание вакансии и что бы его не было, когда попадаем на картикну
@@ -108,8 +111,6 @@ export default class Vacancies extends PureComponent {
       }
     }
   }
-
-  articleRef = React.createRef()
 
   render() {
     return (

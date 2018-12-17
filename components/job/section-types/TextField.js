@@ -42,7 +42,7 @@ const JobSectionTextField = ({ title, maxLength, required, inputIndex }) => {
 JobSectionTextField.propTypes = {
   index: number,
   title: string,
-  maxLength: number,
+  maxLength: string,
   required: bool,
 }
 

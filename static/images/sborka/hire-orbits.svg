@@ -1,0 +1,19 @@
+<svg id="sborka_bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 5760 1710">
+  <style type="text/css">
+    #yellow,
+    #green,
+    #red {
+      fill:none;
+      stroke-width: 3;
+      stroke-miterlimit: 10;
+    }
+    #yellow { stroke: #FFD576 }
+    #green{ stroke: #87DCB7 }
+    #red{ stroke: #F9555A }
+  </style>
+
+  <path id="yellow" d="M0,1256.6c459.1,0,520.2-183.3,871.4-183.3s467.4,151.5,1053.8,151.5s772.4-306.4,1183.7-306.4
+  s821.6,287.1,1162,287.1s454.6-160.8,614.8-169.4c362.7-19.6,616,220.5,874.4,220.5"/>
+  <path id="red" d="M0,528.7c623.3,0,1306.8-24.1,2430.2,487c1572,715.2,2273.9-487,3329.8-487"/>
+  <path id="green" d="M0,904.5c1039.7-13.4,1686.1-358.1,3158-304.7c1196.3,43.4,1841.4,304.7,2602,304.7"/>
+</svg>

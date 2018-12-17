@@ -5,6 +5,8 @@ import fetch from 'isomorphic-unfetch'
 import ContactForm from './ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
 
+const ContactFormForDev = props => <ContactForm imageName='letter' {...props} />
+
 const onSubmit = async values => {
   const res = await fetch('/api/submit-form', {
     method: 'POST',
@@ -33,5 +35,5 @@ const onSubmit = async values => {
 export default () => <ReactFinalForm
   onSubmit={onSubmit}
   validate={contactFormValidationRules}
-  component={ContactForm}
+  component={ContactFormForDev}
 />

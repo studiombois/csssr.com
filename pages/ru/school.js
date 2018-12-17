@@ -36,8 +36,8 @@ class School extends PureComponent {
       <Layout
         headerProps={{
           logoHref: '/ru',
-          logoAlt: 'CSSSR jobs logo',
-          logoSup: '.jobs',
+          logoAlt: 'CSSSR school logo',
+          logoSup: '.school',
           isLogoLink: true,
           isBurgerVisible: true,
         }}

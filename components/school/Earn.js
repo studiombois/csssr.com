@@ -15,12 +15,12 @@ const picture = css.resolve`
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
       grid-column: 8 / span 6;
-      height: 368px;
+      height: 23rem;
     }
 
     @media (max-width: 1023px) {
       picture {
-        height: 268px;
+        height: 16.75rem;
       }
     }
   }
@@ -31,7 +31,7 @@ const picture = css.resolve`
       grid-row: 2;
       text-align: center;
       margin-top: 1.4rem;
-      height: 216px;
+      height: 13.5rem;
     }
   }
 `

@@ -103,7 +103,9 @@ class HeaderContent extends PureComponent {
               </ul>
             </nav>
 
-            <span className='section-name font_perforator-16-black'>
+            <span className={cn('section-name', 'font_perforator-16-black', {
+              'with-logo-sup': logoSup,
+            })}>
               {t(`common:sectionName.${pathname.slice(1)}`)}
             </span>
 
@@ -202,7 +204,7 @@ class HeaderContent extends PureComponent {
             }
 
             .nav.with-logo-sup {
-              grid-column: 4 / span 5;
+              grid-column: 4 / span 6;
               height: 2rem;
             }
 
@@ -232,6 +234,10 @@ class HeaderContent extends PureComponent {
               grid-column: 9 / span 3;
               height: 1.5rem;
               text-align: right;
+            }
+
+            .section-name.with-logo-sup {
+              grid-column: 10 / span 2;
             }
 
             .burger {

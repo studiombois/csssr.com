@@ -5,7 +5,6 @@ import CrossIcon from '../../static/icons/cross_white.svg'
 import ClickOutside from '../ui-kit/ClickOutside'
 import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
-import Button from '../ui-kit/Button'
 import coursesMock from './mock/courses-mock'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 

@@ -159,8 +159,8 @@ class Job extends PureComponent {
   }
 
   render() {
-    const { vacancy, vacancies, initialValues, t } = this.props
-    console.log(this.props)
+    const { vacancy, vacancies, initialValues } = this.props
+
     return (
       <Fragment>
         <Layout
@@ -177,7 +177,7 @@ class Job extends PureComponent {
             vacancy={vacancy}
             vacancies={vacancies}
             initialValues={initialValues}
-            validate={candidateFormValidationRules(vacancy, t)}
+            validate={candidateFormValidationRules(vacancy)}
             onSubmit={onSubmit}
             component={CandidateForm}
           />

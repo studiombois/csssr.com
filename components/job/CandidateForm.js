@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react'
 import css from 'styled-jsx/css'
+import { equals } from 'ramda'
 import cn from 'classnames'
 import Link from 'next/link'
 import FormRow from './FormRow'
 import Section from '../job/Section'
 import CandidateInfoSection from './CandidateInfoSection'
 import AnimatedButton from '../ui-kit/AnimatedButton'
+import FormStateMessage from '../ui-kit/FormStateMessage'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
@@ -114,12 +116,13 @@ class CandidateForm extends PureComponent {
     this.handleMediaMatch(this.mobileMediaQuery)
   }
 
-  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
+  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit, values }) {
+    const { formSubmitStatus } = this.state
+
     if (
       this.props.submitting !== submitting ||
       this.props.submitFailed !== submitFailed ||
-      this.props.submitSucceeded !== submitSucceeded ||
-      this.props.dirtySinceLastSubmit !== dirtySinceLastSubmit
+      this.props.submitSucceeded !== submitSucceeded
     ) {
       if (submitting) {
         this.setState({ formSubmitStatus: 'submitting' })
@@ -127,14 +130,30 @@ class CandidateForm extends PureComponent {
         this.setState({ formSubmitStatus: 'fail' })
       } else if (submitSucceeded) {
         this.setState({ formSubmitStatus: 'success' })
-      } else {
-        this.setState({ formSubmitStatus: null })
       }
+    }
+
+    if (formSubmitStatus && formSubmitStatus !== 'success' && !equals(values, this.props.values)) {
+      this.handleStateClear()
     }
   }
 
+
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMediaMatch)
+  }
+
+  getMessageStatus = () => {
+    const { formSubmitStatus } = this.state
+    if (formSubmitStatus === 'submitting') {
+      return null
+    }
+
+    return formSubmitStatus
+  }
+
+  handleStateClear = () => {
+    this.setState({ formSubmitStatus: null })
   }
 
   handleMediaMatch = ({ matches }) =>
@@ -153,6 +172,7 @@ class CandidateForm extends PureComponent {
     return handleSubmit(e).then(() => {
       if (!this.props.hasSubmitErrors) {
         reset()
+        this.setState({ formSubmitStatus: 'success' })
       }
     })
   }
@@ -282,10 +302,16 @@ class CandidateForm extends PureComponent {
               type='submit'
               disabled={isSubmitButtonDisabled}
               status={this.state.formSubmitStatus}
-              onAnimationEnd={this.handleStateClear}
             >
               Отправить
             </AnimatedButton>
+          </div>
+
+          <div className='message'>
+            <FormStateMessage
+              status={this.getMessageStatus()}
+              onReset={this.handleStateClear}
+            />
           </div>
         </FormRow>
 

@@ -2,12 +2,14 @@ import React, { PureComponent } from 'react'
 import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
+import { equals } from 'ramda'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 import TextareaField from '../ui-kit/TextareaField'
 import AnimatedButton from '../ui-kit/AnimatedButton'
+import FormStateMessage from '../ui-kit/FormStateMessage'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
-import Picture from '../Picture'
+
 
 const picture = css.resolve`
   picture {
@@ -51,12 +53,13 @@ class ContactForm extends PureComponent {
     formSubmitStatus: null,
   }
 
-  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
+  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit, values }) {
+    const { formSubmitStatus } = this.state
+
     if (
       this.props.submitting !== submitting ||
       this.props.submitFailed !== submitFailed ||
-      this.props.submitSucceeded !== submitSucceeded ||
-      this.props.dirtySinceLastSubmit !== dirtySinceLastSubmit
+      this.props.submitSucceeded !== submitSucceeded
     ) {
       if (submitting) {
         this.setState({ formSubmitStatus: 'submitting' })
@@ -64,10 +67,21 @@ class ContactForm extends PureComponent {
         this.setState({ formSubmitStatus: 'fail' })
       } else if (submitSucceeded) {
         this.setState({ formSubmitStatus: 'success' })
-      } else {
-        this.setState({ formSubmitStatus: null })
       }
     }
+
+    if (formSubmitStatus && formSubmitStatus !== 'success' && !equals(values, this.props.values)) {
+      this.handleStateClear()
+    }
+  }
+
+  getMessageStatus = () => {
+    const { formSubmitStatus } = this.state
+    if (formSubmitStatus === 'submitting') {
+      return null
+    }
+
+    return formSubmitStatus
   }
 
   handleStateClear = () => {
@@ -80,6 +94,7 @@ class ContactForm extends PureComponent {
     return handleSubmit(e).then(() => {
       if (!this.props.hasSubmitErrors) {
         reset()
+        this.setState({ formSubmitStatus: 'success' })
       }
     })
   }
@@ -88,15 +103,12 @@ class ContactForm extends PureComponent {
     const {
       submitting,
       hasValidationErrors,
-      hasSubmitErrors,
-      dirtySinceLastSubmit,
       t,
     } = this.props
 
     const isSubmitButtonDisabled =
       submitting ||
-      hasValidationErrors ||
-      (hasSubmitErrors && !dirtySinceLastSubmit)
+      hasValidationErrors
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
@@ -163,17 +175,17 @@ class ContactForm extends PureComponent {
             type='submit'
             disabled={isSubmitButtonDisabled}
             status={this.state.formSubmitStatus}
-            onAnimationEnd={this.handleStateClear}
           >
             {t('dev:form.submitText')}
           </AnimatedButton>
         </div>
 
-        <Picture
-          className={picture.className}
-          image={{ namespace: 'dev', key: 'letter', alt: t('dev:imgAlt.letter') }}
-        />
-        <style jsx>{`
+        <div className='message'>
+          <FormStateMessage
+            status={this.getMessageStatus()}
+            onReset={this.handleStateClear}
+          />
+        </div><style jsx>{`
           form {
             position: relative;
             margin-right: auto;
@@ -209,6 +221,11 @@ class ContactForm extends PureComponent {
           .button {
             margin-top: 4rem;
             grid-column: 6 / span 2;
+          }
+
+          .message {
+            margin-top: 4rem;
+            grid-column: 4 / span 6;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
@@ -270,6 +287,11 @@ class ContactForm extends PureComponent {
             .button {
               margin-top: 3.4375rem;
               grid-column: 2 / span 4;
+            }
+
+            .message {
+              margin-top: 3.4375rem;
+              grid-column: 1 / span 6;
             }
 
             .field_type_textarea {

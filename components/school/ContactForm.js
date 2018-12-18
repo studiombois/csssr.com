@@ -116,6 +116,16 @@ class ContactForm extends PureComponent {
             label={t('school:form.emailLabel')}
           />
         </div>
+        <div className='field'>
+          <Field
+            id='phone'
+            name='phone'
+            component={TextField}
+            type='text'
+            placeholder={t('dev:form.phonePlaceholder')}
+            label={t('dev:form.phoneLabel')}
+          />
+        </div>
 
         <div className='button'>
           <AnimatedButton

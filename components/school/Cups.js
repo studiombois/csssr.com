@@ -13,12 +13,12 @@ const picture = css.resolve`
     margin-left: 0rem;
     height: 48px;
     justify-self: center;
-    transition: height 0.2s ease;
+    transition: height 0.5s ease;
   }
   
   .active {
     height: 144px;
-    transition: height 0.2s ease;
+    transition: height 0.4s ease;
   }
   
 
@@ -101,16 +101,17 @@ class Cups extends PureComponent {
     const active = cupMock.items[this.state.active - 1]
     return (
       <Fragment>
-        <section className='grid-container' id='cups'>
-          {
-            cupMock.items.map(this.renderItem)
-          }
+        <section className='grid-container bg'>
           <h1 className='font_h1-slab'>
             <span className='font_subhead-slab'>
               { !!active && active.title}
             </span>
           </h1>
-
+        </section>
+        <section className='grid-container' id='cups'>
+          {
+            cupMock.items.map(this.renderItem)
+          }
         </section>
         <style jsx>{`
           section {
@@ -120,6 +121,18 @@ class Cups extends PureComponent {
             padding-top: 1.5rem;
             width: 1792px;
             margin-bottom: 2rem;
+            height: 27.5rem;
+          }
+
+          section.bg {
+            position: absolute;
+            z-index: -1;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 1.5rem;
+            width: 1792px;
+            margin-bottom: 2rem;
+            height: 27.5rem;
           }
 
           h2 {

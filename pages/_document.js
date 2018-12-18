@@ -10,13 +10,12 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       language: ctx.req.i18n.language,
-      path: ctx.asPath,
     }
   }
 
   render() {
     const language = this.props.language
-    const gtmId = getGtmId(process.env.NODE_ENV, language, this.props.path)
+    const gtmId = getGtmId(process.env.NODE_ENV, language)
 
     return (
       <html lang={language}>

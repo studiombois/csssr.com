@@ -3,7 +3,7 @@ import { translate } from 'react-i18next'
 import cn from 'classnames'
 import css from 'styled-jsx/css'
 import Cups from '../../components/school/Cups'
-import manifestMock from './mock/manifest-mock'
+import manifestMock from '../../data/school/manifest-mock'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`

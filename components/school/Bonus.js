@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import { translate } from 'react-i18next'
 import cn from 'classnames'
 import css from 'styled-jsx/css'
-import bonusesMock from './mock/bonuses-mock'
+import bonusesMock from '../../data/school/bonuses-mock'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`

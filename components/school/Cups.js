@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import { translate } from 'react-i18next'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
-import cupMock from './mock/cup-mock'
+import cupMock from '../../data/school/cup-mock'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`

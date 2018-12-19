@@ -6,7 +6,7 @@ import CrossIcon from '../../static/icons/cross_white.svg'
 import ClickOutside from '../ui-kit/ClickOutside'
 import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
-import coursesMock from './mock/courses-mock'
+import coursesMock from '../../data/school/courses-mock'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`

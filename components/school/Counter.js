@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
-import counterMock from './mock/counter-mock'
+import counterMock from '../../data/school/counter-mock'
 
 const Counter = ({ t }) =>
   <Fragment>

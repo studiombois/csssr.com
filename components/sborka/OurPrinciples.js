@@ -156,7 +156,7 @@ const OurPrinciples = ({ t }) => {
 
   return (
     <Fragment>
-      <article id='our-principles' className='grid-container'>
+      <article id='how-we-work' className='grid-container'>
         <h2 dangerouslySetInnerHTML={{ __html: t('sborka:howWeWork.title') }} />
         <p
           className='font_subhead-regular'

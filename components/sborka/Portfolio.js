@@ -54,23 +54,14 @@ class Portfolio extends PureComponent {
     activeScrollItemIndex: 0,
   }
 
-  handleShowPrevSlide = () => {
+  handleChangeSlide = step => () => {
     const { activeScrollItemIndex } = this.state
 
     this.setState({
-      activeScrollItemIndex: activeScrollItemIndex > 0
-        ? activeScrollItemIndex - 1
-        : 0,
-    })
-  }
-
-  handleShowNextSlide = () => {
-    const { activeScrollItemIndex } = this.state
-
-    this.setState({
-      activeScrollItemIndex: activeScrollItemIndex < portfolioProjects.length - 1
-        ? activeScrollItemIndex + 1
-        : portfolioProjects.length - 1,
+      activeScrollItemIndex: Math.min(
+        Math.max(activeScrollItemIndex + step, 0),
+        portfolioProjects.length - 1
+      ),
     })
   }
 
@@ -205,18 +196,14 @@ class Portfolio extends PureComponent {
 
             <div className='controlls'>
               <button
-                className={cn({
-                  is_invisible: activeScrollItemIndex === 0,
-                })}
-                onClick={this.handleShowPrevSlide}
+                className={cn({ is_invisible: activeScrollItemIndex === 0 })}
+                onClick={this.handleChangeSlide(-1)}
               >
                 <Arrow />
               </button>
               <button
-                className={cn({
-                  is_invisible: activeScrollItemIndex === portfolioProjects.length - 1,
-                })}
-                onClick={this.handleShowNextSlide}
+                className={cn({ is_invisible: activeScrollItemIndex === portfolioProjects.length - 1 })}
+                onClick={this.handleChangeSlide(1)}
               >
                 <Arrow />
               </button>

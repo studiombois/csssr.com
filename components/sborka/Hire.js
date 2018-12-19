@@ -4,6 +4,7 @@ import cn from 'classnames'
 import ButtonLink from '../ui-kit/ButtonLink'
 import { translate } from 'react-i18next'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+import HirePlanetsAndSatellites from '../../static/images/sborka/hire-planets-and-satellites.svg'
 
 const picture = css.resolve`
   picture {
@@ -17,6 +18,47 @@ const picture = css.resolve`
 
   img {
     object-fit: contain;
+  }
+`
+
+const planets = css.resolve`
+  svg {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
+    max-width: 1920px;
+  }
+
+  @media (min-width: 1360px) and (max-width: 1919px) {
+    svg {
+      min-height: 456px;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1359px) {
+    svg {
+      min-height: 456px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    svg {
+      min-height: 392px;
+    }
+
+    @media (max-width: 1023px) {
+      svg {
+        min-height: 24.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    svg {
+      width: 22.5rem;
+      min-height: 10.5rem;
+    }
   }
 `
 
@@ -65,7 +107,7 @@ class Hire extends PureComponent {
     const { t } = this.props
 
     return (
-      <Fragment>v
+      <Fragment>
         <article className='grid-container'>
           <h1 className='font_h1-slab'>
             {t('sborka:hire.title')}
@@ -98,10 +140,7 @@ class Hire extends PureComponent {
               alt: t('sborka:imgAlt.rocket'),
             }}
           />
-          <img
-            src='/static/images/sborka/hire-planets-and-satellites.svg'
-            alt={t('sborka:imgAlt.planets')}
-          />
+          <HirePlanetsAndSatellites className={planets.className}/>
         </div><style jsx>{`
           article {
             position: relative;
@@ -134,14 +173,6 @@ class Hire extends PureComponent {
             margin-top: 0.875rem;
             margin-bottom: 3rem;
             text-align: center;
-          }
-
-          img {
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-            width: 100%;
-            max-width: 1920px;
           }
 
           .image-wrapper {
@@ -181,10 +212,6 @@ class Hire extends PureComponent {
               margin-bottom: 0;
             }
 
-            img {
-              min-height: 456px;
-            }
-
             .image-wrapper {
               min-height: 456px;
               background-size: contain;
@@ -214,10 +241,6 @@ class Hire extends PureComponent {
               margin-bottom: 0;
             }
 
-            img {
-              min-height: 456px;
-            }
-
             .image-wrapper {
               min-height: 456px;
               background-size: contain;
@@ -245,10 +268,6 @@ class Hire extends PureComponent {
               margin-bottom: 0.5rem;
             }
 
-            img {
-              min-height: 392px;
-            }
-
             .image-wrapper {
               min-height: 392px;
               background-size: contain;
@@ -267,10 +286,6 @@ class Hire extends PureComponent {
                 left: 5rem;
                 width: 9rem;
                 height: 4rem;
-              }
-
-              img {
-                min-height: 24.5rem;
               }
 
               .image-wrapper {
@@ -312,14 +327,6 @@ class Hire extends PureComponent {
               padding-top: 0;
             }
 
-            img {
-              width: 22.5rem;
-            }
-
-            img {
-              min-height: 10.5rem;
-            }
-
             .image-wrapper {
               min-height: 10.5rem;
               background-size: contain;
@@ -334,6 +341,7 @@ class Hire extends PureComponent {
           }
         `}</style>
         {picture.styles}
+        {planets.styles}
       </Fragment>
     )
   }

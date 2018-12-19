@@ -58,7 +58,6 @@ class Manifest extends PureComponent {
     isCups,
     image,
   }, index) => {
-    const { t } = this.props
     const right = !(index % 2)
     const left = (index % 2)
     return (

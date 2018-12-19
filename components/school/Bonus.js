@@ -42,7 +42,6 @@ class Bonus extends PureComponent {
     description,
     image,
   }, index) => {
-    const { t } = this.props
     return (
       <Fragment key={id}>
         <div className={cn('courseWrapper', `margin-${index}`)}>

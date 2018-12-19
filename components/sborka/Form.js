@@ -6,8 +6,13 @@ import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 
 const pageName = 'sborka'
-const onSubmit = async values => {
+const onSubmit = language => async values => {
+  const gacid = window.ga.getAll()[0].get('clientId')
+
   values.pageName = pageName
+  values.gacid = gacid
+  values.language = language
+
   const res = await fetch('/api/submit-form', {
     method: 'POST',
     headers: {

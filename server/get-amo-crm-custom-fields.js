@@ -1,10 +1,7 @@
+const { AMO_CRM_BASE_URL, AUTH_QUERY_PARAMS } = require('../constants/amocrm')
 const fetch = require('isomorphic-unfetch')
 
-const AMO_CRM_BASE_URL = 'https://csssr.amocrm.ru'
-
-const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_USER_HASH}`
-
-fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {
+fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${AUTH_QUERY_PARAMS}`, {
   method: 'GET',
   headers: {
     Accept: 'application/json',
@@ -72,7 +69,17 @@ fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {
     //   "editable": "Y"
     // }
     //
+    // И поле Google CID:
+    // {
+    //   "id": 582127,
+    //     "name": "Google CID",
+    //     "values": [{
+    //       "value": *какое-то значение cid*,
+    //   }
+    // }
+    //     'Google CID': ,
+    //
     // Если эти поля поменяются, то их надо перезапросить от AmoCRM и поменять хард код в submit-form.js
 
-    console.log('Fields', JSON.stringify(data))
+    console.log('Fields', JSON.stringify(data, null, 2))
   })

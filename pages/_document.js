@@ -1,11 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { GtmScript, GtmNoScript } from 'react-gtm-components'
-
-const gtmIdByLanguage = {
-  en: 'GTM-TDG7X5G',
-  ru: 'GTM-K67FHB5',
-}
+import getGtmId from '../utils/getGtmId'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -18,16 +14,16 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const shouldIncludeGTM = process.env.NODE_ENV === 'production' && !process.env.EXCLUDE_GTM
     const language = this.props.language
+    const gtmId = getGtmId(process.env.NODE_ENV, language)
 
     return (
       <html lang={language}>
         <Head>
-          { shouldIncludeGTM && <GtmScript gtmId={gtmIdByLanguage[language]} /> }
+          <GtmScript gtmId={gtmId}/>
         </Head>
         <body>
-          { shouldIncludeGTM && <GtmNoScript gtmId={gtmIdByLanguage[language]} /> }
+          <GtmNoScript gtmId={gtmId}/>
           <Main />
           <NextScript />
         </body>

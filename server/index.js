@@ -1,4 +1,5 @@
 const path = require('path')
+const Sentry = require('@sentry/node')
 const express = require('express')
 const bodyParser = require('body-parser')
 const next = require('next')
@@ -7,9 +8,17 @@ const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const generateSitemap = require('./generate-sitemap')
+const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
+
+const dev = process.env.NODE_ENV === 'development'
+
+Sentry.init({
+  dsn: 'https://1f3577495b4f4a3aac74c16fece4bd41@sentry.io/1330750',
+  environment: process.env.NODE_ENV,
+  debug: dev,
+})
 
 const port = parseInt(process.env.PORT, 10) || 3000
-const dev = process.env.NODE_ENV === 'development'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -63,9 +72,16 @@ i18n
           server.get(url, (req, res) => res.redirect(301, '/'))
         )
 
-        server.use(bodyParser.json())
+        server.use(Sentry.Handlers.requestHandler())
+
+        // eslint-disable-next-line
+        server.use(bodyParser.json())      // to support JSON-encoded bodies
+        server.use(bodyParser.urlencoded({ // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
+          extended: true,
+        }))
 
         server.post('/api/submit-form', submitForm)
+        server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
         server.use(i18nextMiddleware.handle(i18n))
 
@@ -91,13 +107,15 @@ i18n
         })
 
         server.get('/:language/jobs/:jobPathName', (req, res) => {
-          const params = { jobPathName: req.params.jobPathName }
+          const params = { jobPathName: req.params.jobPathName, preview: req.query.hasOwnProperty('preview') }
           return app.render(req, res, `/${req.params.language}/job`, params)
         })
 
         server.get('*', (req, res) => {
           return handle(req, res)
         })
+
+        server.use(Sentry.Handlers.errorHandler())
 
         server.listen(port, err => {
           if (err) throw err

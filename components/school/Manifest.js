@@ -72,7 +72,7 @@ class Manifest extends PureComponent {
               right,
               left,
             })}
-            image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
+            image={{ namespace: 'school', key: image, alt: title }}
           />
           <h3 className={cn('font_h2-regular', `h3-${index}`, {
             right,

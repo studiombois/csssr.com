@@ -43,7 +43,7 @@ const About = ({ t }) =>
       <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:about.title') }} />
       <PictureForAllResolutions
         className={picture.className}
-        image={{ namespace: 'school', key: 'stat', alt: t('school:imgAlt.school') }}
+        image={{ namespace: 'school', key: 'stat', alt: t('school:imgAlt.about') }}
       />
       <p className='font_p16-regular text' dangerouslySetInnerHTML={{ __html: t('school:about.text') }} />
       <p className='font_p16-regular foot_text' dangerouslySetInnerHTML={{ __html: t('school:about.foot_text') }} />

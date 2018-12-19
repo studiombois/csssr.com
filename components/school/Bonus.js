@@ -48,7 +48,7 @@ class Bonus extends PureComponent {
         <div className={cn('courseWrapper', `margin-${index}`)}>
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
+            image={{ namespace: 'school', key: image, alt: title }}
           />
           <h3 className='font_h2-regular bonus-title'>
             {title}

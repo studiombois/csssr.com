@@ -81,7 +81,7 @@ class Courses extends PureComponent {
           <div className='imageColumn'>
             <PictureForAllResolutions
               className={picture.className}
-              image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
+              image={{ namespace: 'school', key: image, alt: title }}
             />
             {
               active && isMedium && (

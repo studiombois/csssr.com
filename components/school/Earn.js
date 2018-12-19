@@ -51,7 +51,7 @@ class Earn extends PureComponent {
         <article id='competence' className='grid-container'>
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'school', key: 'cover', alt: t('school:imgAlt.school') }}
+            image={{ namespace: 'school', key: 'cover', alt: t('school:imgAlt.earn') }}
           />
           <h1 className='font_h1-slab'>
             {t('school:school.title')}

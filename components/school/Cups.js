@@ -98,7 +98,7 @@ class Cups extends PureComponent {
         className={cn(picture.className, {
           active,
         })}
-        image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
+        image={{ namespace: 'school', key: image, alt: t('school:imgAlt.cup') }}
       />
     )
   }

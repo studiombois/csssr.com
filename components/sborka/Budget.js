@@ -12,6 +12,7 @@ const picture = css.resolve`
 
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
+      margin-top: 1.5rem;
       height: 192px;
     }
   }
@@ -44,7 +45,7 @@ const picture = css.resolve`
   }
 `
 
-const Budget = ({ t }) =>
+const Budget = ({ t, lng }) =>
   <Fragment>
     <article id='budget' className='grid-container'>
       <h2 dangerouslySetInnerHTML={{ __html: t('sborka:budget.title') }} />
@@ -55,10 +56,9 @@ const Budget = ({ t }) =>
       />
 
       <span dangerouslySetInnerHTML={{ __html: t('sborka:budget.postPricetext') }} />
-      <p
-        className='font_subhead-regular'
-        dangerouslySetInnerHTML={{ __html: t('sborka:budget.articleText') }}
-      />
+      <p className='font_subhead-regular'>
+        {t('sborka:budget.articleText')} <a href={lng === 'ru' ? '/ru' : '/en'}>{t('sborka:budget.articleLinkText')} </a>
+      </p>
 
     </article><style jsx>{`
       article {
@@ -93,14 +93,26 @@ const Budget = ({ t }) =>
         grid-column: 4 / span 7;
       }
 
+      p a {
+        color: #0076ff;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
+          margin-top: 8.9375rem;
           width: 1328px;
+        }
+
+        span {
+          margin-top: 1rem;
         }
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article {
+          margin-top: 8.9375rem;
           width: 1232px;
         }
 
@@ -111,7 +123,7 @@ const Budget = ({ t }) =>
 
       @media (min-width: 768px) and (max-width: 1279px) {
         article {
-          margin-top: 6.625rem;
+          margin-top: 6.5rem;
           width: 944px;
         }
 
@@ -121,7 +133,11 @@ const Budget = ({ t }) =>
         }
 
         span {
-          margin-top: 4.0625rem;
+          margin-top: 0.875rem;
+        }
+
+        p {
+          margin-top: 2.125rem;
         }
 
         @media (max-width: 1023px) {
@@ -133,7 +149,7 @@ const Budget = ({ t }) =>
 
       @media (max-width: 767px) {
         article {
-          margin-top: 6.5rem;
+          margin-top: 7rem;
           width: 20.5rem;
         }
 

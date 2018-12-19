@@ -22,7 +22,7 @@ const PostScriptum = ({ t }) =>
     <div />
     <style jsx>{`
       article {
-        margin-top: 8.9375rem;
+        margin-top: 9rem;
         margin-right: auto;
         margin-left: auto;
         width: 1792px;
@@ -241,7 +241,7 @@ const PostScriptum = ({ t }) =>
         }
 
         article {
-          margin-top: 3.3125rem;
+          margin-top: 3.365rem;
           width: 20.5rem;
         }
 

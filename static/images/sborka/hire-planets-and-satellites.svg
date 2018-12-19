@@ -41,12 +41,12 @@
 
   <animate attributeName="opacity"
            values="0;1" dur="1s"
-           begin="yellowPathAnimation.begin"
+           begin="yellowPathAnimation.begin + 0.5s"
            fill="freeze"
   />
   <animate attributeName="opacity"
            values="1;0" dur="1s"
-           begin="yellowPathAnimation.end - 1s"
+           begin="yellowPathAnimation.end - 1.5s"
            fill="freeze"
   />
   </image>
@@ -70,12 +70,12 @@
 
     <animate attributeName="opacity"
              values="0;1" dur="1s"
-             begin="redPathAnimation.begin"
+             begin="redPathAnimation.begin + 0.5s"
              fill="freeze"
     />
     <animate attributeName="opacity"
              values="1;0" dur="1s"
-             begin="redPathAnimation.end - 1s"
+             begin="redPathAnimation.end - 1.5s"
              fill="freeze"
     />
   </image>
@@ -100,12 +100,12 @@
     />
     <animate attributeName="opacity"
              values="0;1" dur="1s"
-             begin="9s;greenPathAnimation.begin"
+             begin="9s;greenPathAnimation.begin + 0.5s"
              fill="freeze"
     />
     <animate attributeName="opacity"
              values="1;0" dur="1s"
-             begin="greenPathAnimation.end - 1s"
+             begin="greenPathAnimation.end - 1.5s"
              fill="freeze"
     />
   </image>

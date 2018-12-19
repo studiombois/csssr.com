@@ -159,11 +159,11 @@ class Portfolio extends PureComponent {
 
               div {
                 grid-column: ${index * 4 + 1} / span 3;
-                margin-top: 0.5rem;
+                margin-top: 0.5625rem;
               }
 
               p {
-                margin-top: 1rem;
+                margin-top: 0.9375rem;
                 font-size: 0.875rem;
                 line-height: 1.5rem;
               }
@@ -244,7 +244,7 @@ class Portfolio extends PureComponent {
             border: none;
             text-align: left;
             background: none;
-            transition: transform 200ms
+            transition: transform 200ms;
             cursor: pointer;
           }
 

@@ -249,16 +249,20 @@ class ContactForm extends PureComponent {
             }
 
             h2 {
-              margin-bottom: 2.3125rem;
+              margin-bottom: 2.375rem;
             }
 
             .field {
               grid-column: 4 / span 6;
-              margin-bottom: 1.875rem;
+              margin-bottom: 1.5625rem;
             }
 
             .field_type_textarea {
-              margin-bottom: 3.75rem;
+              margin-bottom: 3.625rem;
+            }
+
+            .field_type_checkbox {
+              margin-bottom: 1.5rem;
             }
 
             @media (max-width: 1023px) {
@@ -276,7 +280,7 @@ class ContactForm extends PureComponent {
             }
 
             h2 {
-              margin-bottom: 2.5rem;
+              margin-bottom: 2.5625rem;
             }
 
             h2,
@@ -290,11 +294,12 @@ class ContactForm extends PureComponent {
             }
 
             .field_type_textarea {
-              margin-bottom: 1.5rem;
+              margin-top: 1.4375rem;
+              margin-bottom: 1.6875rem;
             }
 
             .field_type_checkbox {
-              margin-bottom: 1.3125rem;
+              margin-bottom: 1.1875rem;
             }
           }
 

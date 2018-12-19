@@ -1,60 +1,24 @@
 import React, { Fragment, PureComponent } from 'react'
-// import css from 'styled-jsx/css'
+import css from 'styled-jsx/css'
 import cn from 'classnames'
 import ButtonLink from '../ui-kit/ButtonLink'
 import { translate } from 'react-i18next'
-// import PictureForAllResolutions from '../PictureForAllResolutions'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
-// const picture = css.resolve`
-//   picture {
-//     grid-column: 1 / span 12;
-//     margin-top: 1rem;
-//     margin-left: -4rem;
-//     height: 570px;
-//     width: 1920px;
-//   }
-//
-//   @media (min-width: 1360px) and (max-width: 1919px) {
-//     picture {
-//       margin-left: -1rem;
-//       width: 1360px;
-//       height: 458px;
-//     }
-//   }
-//
-//   @media (min-width: 1280px) and (max-width: 1359px) {
-//     picture {
-//       margin-left: -1.5rem;
-//       width: 1280px;
-//       height: 458px;
-//     }
-//   }
-//
-//   @media (min-width: 768px) and (max-width: 1279px) {
-//     picture {
-//       margin-left: -2.5rem;
-//       width: 1024px;
-//       height: 390px;
-//     }
-//
-//     @media (max-width: 1023px) {
-//       picture {
-//         width: 64rem;
-//         height: 24.375rem;
-//       }
-//     }
-//   }
-//
-//   @media (max-width: 767px) {
-//     picture {
-//       grid-column: 1 / span 6;
-//       margin-top: 1.5rem;
-//       margin-left: -1rem;
-//       width: 22.5rem;
-//       height: 10.5rem;
-//     }
-//   }
-// `
+const picture = css.resolve`
+  picture {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    display: block;
+    width: 85%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  img {
+    object-fit: contain;
+  }
+`
 
 class Hire extends PureComponent {
   state = {
@@ -98,7 +62,7 @@ class Hire extends PureComponent {
     const { t } = this.props
 
     return (
-      <Fragment>
+      <Fragment>v
         <article className='grid-container'>
           <h1 className='font_h1-slab'>
             {t('sborka:hire.title')}
@@ -121,21 +85,16 @@ class Hire extends PureComponent {
             </ButtonLink>
           </div>
 
-          {/* <PictureForAllResolutions
-            className={picture.className}
-            image={{ namespace: 'sborka', key: 'sborka', alt: t('sborka:imgAlt.planets') }}
-          /> */}
-
-          {/*
-            Сюда потом вставить изображения ракет
-
-            <PictureForAllResolutions
-            className={picture.className}
-            image={{ namespace: 'sborka', key: 'sborka', alt: t('sborka:imgAlt.hire') }}
-          /> */}
-
         </article>
         <div className='image-wrapper'>
+          <PictureForAllResolutions
+            className={picture.className}
+            image={{
+              namespace: 'sborka',
+              key: 'rocket',
+              alt: t('sborka:imgAlt.rocket'),
+            }}
+          />
           <img
             src='/static/images/sborka/hire-planets-and-satellites.svg'
             alt={t('sborka:imgAlt.planets')}
@@ -143,19 +102,32 @@ class Hire extends PureComponent {
         </div><style jsx>{`
           article {
             position: relative;
+            margin-top: 10.85rem;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 12rem;
             width: 1792px;
           }
 
           h1 {
+            position: relative;
             grid-column: 4 / span 6;
             text-align: center;
           }
 
+          h1::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: calc(100% - 26px);
+            left: 240px;
+            display: block;
+            width: 180px;
+            height: 86px;
+            background-color: #ffee1f;
+          }
+
           span {
-            grid-column: 2 / span 9;
+            grid-column: 2 / span 10;
             margin-top: 0.875rem;
             margin-bottom: 3rem;
             text-align: center;
@@ -165,16 +137,14 @@ class Hire extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             display: block;
-            height: 100%;
-            width: 1920px;
+            width: 100%;
+            max-width: 1920px;
           }
 
           .image-wrapper {
+            position: relative;
             margin-top: 1rem;
-            height: 570px;
-          }
-
-          .image-wrapper {
+            max-height: 570px;
             background-image: url(/static/images/sborka/hire-orbits.svg);
             background-size: 1920px 570px;
             background-position: 50%;
@@ -200,17 +170,21 @@ class Hire extends PureComponent {
               width: 1328px;
             }
 
+            h1::after {
+              left: 120px;
+            }
+
             span {
               margin-bottom: 0;
             }
 
             img {
-              width: 1360px;
+              min-height: 456px;
             }
 
             .image-wrapper {
-              height: 456px;
-              background-size: 1360px 456px;
+              min-height: 456px;
+              background-size: contain;
             }
 
             .button-wrapper {
@@ -227,17 +201,23 @@ class Hire extends PureComponent {
               grid-column: 3 / span 8;
             }
 
+            h1::after {
+              left: 210px;
+              width: 192px;
+              height: 80px;
+            }
+
             span {
               margin-bottom: 0;
             }
 
             img {
-              width: 1280px;
+              min-height: 456px;
             }
 
             .image-wrapper {
-              height: 456px;
-              background-size: 1280px 456px;
+              min-height: 456px;
+              background-size: contain;
             }
 
             .button-wrapper {
@@ -247,8 +227,14 @@ class Hire extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             article {
-              padding-top: 10rem;
+              margin-top: 8.875rem;
               width: 944px;
+            }
+
+            h1::after {
+              left: 80px;
+              width: 144px;
+              height: 64px;
             }
 
             span {
@@ -257,12 +243,12 @@ class Hire extends PureComponent {
             }
 
             img {
-              width: 1024px;
+              min-height: 392px;
             }
 
             .image-wrapper {
-              height: 392px;
-              background-size: 1024px 392px;
+              min-height: 392px;
+              background-size: contain;
             }
 
             .button-wrapper {
@@ -274,13 +260,18 @@ class Hire extends PureComponent {
                 width: 59rem;
               }
 
+              h1::after {
+                left: 5rem;
+                width: 9rem;
+                height: 4rem;
+              }
+
               img {
-                width: 64rem;
+                min-height: 24.5rem;
               }
 
               .image-wrapper {
-                height: 24.5rem;
-                background-size: 64rem 24.5rem;
+                min-height: 24.5rem;
               }
 
               .button-wrapper {
@@ -295,7 +286,7 @@ class Hire extends PureComponent {
 
           @media (max-width: 767px) {
             article {
-              padding-top: 5rem;
+              margin-top: 3.875rem;
               width: 20.5rem;
             }
 
@@ -303,6 +294,12 @@ class Hire extends PureComponent {
               grid-column: 1 / span 6;
               margin-bottom: 0;
               text-align: center;
+            }
+
+            h1::after {
+              left: 5.625rem;
+              width: 8rem;
+              height: 3.5rem;
             }
 
             span {
@@ -316,10 +313,13 @@ class Hire extends PureComponent {
               width: 22.5rem;
             }
 
+            img {
+              min-height: 10.5rem;
+            }
+
             .image-wrapper {
-              margin-top: 1.5rem;
-              height: 10.5rem;
-              background-size: 22.5rem 10.5rem;
+              min-height: 10.5rem;
+              background-size: contain;
             }
 
             .button-wrapper {
@@ -330,6 +330,7 @@ class Hire extends PureComponent {
             }
           }
         `}</style>
+        {picture.styles}
       </Fragment>
     )
   }

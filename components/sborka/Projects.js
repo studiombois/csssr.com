@@ -88,11 +88,11 @@ const Projects = ({ t }) =>
         }
 
         span {
-          margin-top: -11.4375rem;
+          margin-top: -11.625rem;
         }
 
         p {
-          margin-top: -0.4375rem;
+          margin-top: -0.6875rem;
         }
       }
 
@@ -117,7 +117,7 @@ const Projects = ({ t }) =>
         }
 
         span {
-          margin-top: -7.625rem;
+          margin-top: -7.5625rem;
           font-size: 1.5rem;
           line-height: 2rem;
         }
@@ -136,20 +136,20 @@ const Projects = ({ t }) =>
       @media (max-width: 767px) {
         div {
           grid-column: 1 / span 6;
-          margin-top: 3.75rem;
+          margin-top: 3.25rem;
           width: 20.5rem;
         }
 
         span {
           grid-column: 4 / span 3;
-          margin-top: -2.8125rem;
+          margin-top: -2.2625rem;
           font-size: 1.5rem;
           line-height: 2rem;
         }
 
         p {
           grid-column: 1 / span 6;
-          margin-top: 2.1875rem;
+          margin-top: 2.125rem;
         }
       }
     `}</style>

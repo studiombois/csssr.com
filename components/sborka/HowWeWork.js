@@ -94,13 +94,13 @@ const HowWeWork = ({ t }) => {
 
         @media (min-width: 1360px) and (max-width: 1919px) {
           section {
-            margin-top: ${3.0625 + (2 - index) * 7.5 + 7.5}rem;
+            margin-top: ${3.125 + (2 - index) * 7.5 + 7.5}rem;
           }
         }
 
         @media (min-width: 1280px) and (max-width: 1359px) {
           section {
-            margin-top: ${3.0625 + (2 - index) * 7.5 + 7.5}rem;
+            margin-top: ${3.125 + (2 - index) * 7.5 + 7.5}rem;
           }
         }
 
@@ -194,14 +194,14 @@ const HowWeWork = ({ t }) => {
 
         @media (min-width: 1360px) and (max-width: 1919px) {
           article {
-            margin-top: 8.5rem;
+            margin-top: 8.4375rem;
             width: 1328px;
           }
         }
 
         @media (min-width: 1280px) and (max-width: 1359px) {
           article {
-            margin-top: 8.5rem;
+            margin-top: 8.4375rem;
             width: 1232px;
           }
         }

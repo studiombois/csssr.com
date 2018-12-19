@@ -14,23 +14,24 @@ import withI18next from '../../utils/withI18next'
 
 class School extends PureComponent {
   state = {
-    isMobile: false,
+    isMedium: false,
   }
 
   componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    const mediumMediaQuery = window.matchMedia('(min-width: 768px) and (max-width: 1279px)')
 
-    mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mobileMediaQuery)
+    mediumMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(mediumMediaQuery)
   }
 
   handleMediaMatch = ({ matches }) =>
     this.setState({
-      isMobile: matches,
+      isMedium: matches,
     })
 
   render() {
     const { t } = this.props
+    const { isMedium } = this.state
 
     return (
       <Layout
@@ -47,7 +48,7 @@ class School extends PureComponent {
         <Earn />
         <Manifest />
         <Counter />
-        <Courses />
+        <Courses isMedium={isMedium} />
         <Costs />
         <Bonus />
         <About />

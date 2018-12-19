@@ -1,4 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
+import { bool } from 'prop-types'
 import { translate } from 'react-i18next'
 import cn from 'classnames'
 import CrossIcon from '../../static/icons/cross_white.svg'
@@ -16,10 +17,10 @@ const picture = css.resolve`
     height: 208px;
   }
 
- @media (max-width: 1279px) {
+  @media (max-width: 1279px) {
     picture {
-      grid-column: 1 / span 6;
-      margin-top: 5rem;
+      grid-column: 2 / span 3;
+      margin-top: 1.8rem;
       height: 13rem;
     }
 
@@ -52,10 +53,15 @@ const clickOutsideStyles = {
 }
 
 class Courses extends PureComponent {
+  static propTypes = {
+    isMedium: bool,
+  }
+  static defaultProps = {
+    isMedium: false,
+  }
   state = {
     modalActiveId: -1,
   }
-
   renderCourse = ({
     active,
     title,
@@ -65,63 +71,86 @@ class Courses extends PureComponent {
     image,
     showModal,
   }, index) => {
-    const { t } = this.props
+    const { t, isMedium } = this.props
     return (
       <Fragment key={index}>
         <div className={cn('courseWrapper', {
           active,
+          'grid-container': isMedium,
         })}>
-          <PictureForAllResolutions
-            className={picture.className}
-            image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
-          />
-          <h3 className='font_h2-regular course-title'>
-            {title}
-          </h3>
-          <p className='font_p24-strong description'>
-            {description}
-          </p>
-          {
-            active ? (
-              <div className='button_wrapper'>
-                <p className='font_p16-regular info'>
-                  {info}
-                </p>
-                <p className='font_p16-regular duration'>
-                  {duration}
-                </p>
+          <div className='imageColumn'>
+            <PictureForAllResolutions
+              className={picture.className}
+              image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
+            />
+            {
+              active && isMedium && (
+                <Fragment>
+                  <p className='font_p16-regular info'>
+                    {info}
+                  </p>
+                  <p className='font_p16-regular duration'>
+                    {duration}
+                  </p>
+                </Fragment>
+              )
+            }
+          </div>
+          <div className='infoColumn'>
+            <h3 className='font_h2-regular course-title'>
+              {title}
+            </h3>
+            <p className='font_p24-strong description'>
+              {description}
+            </p>
+            {
+              active ? (
+                <div className='button_wrapper'>
+                  {
+                    !isMedium && (
+                      <Fragment>
+                        <p className='font_p16-regular info'>
+                          {info}
+                        </p>
+                        <p className='font_p16-regular duration'>
+                          {duration}
+                        </p>
+                      </Fragment>
+                    )
+                  }
+                  <div className='button_register'>
+                    <ButtonLink
+                      href={'#sign'}
+                    >
+                      {t('school:course.register')}
+                    </ButtonLink>
+                  </div>
+                  {
+                    showModal && (
+                      <p className='font_p16-regular under_course_text'>
+                        {t('school:course.text-1')}
+                        <a
+                          onClick={this.handleShowModal(index)}
+                          className={'font_link-list_16'}
+                        >
+                          {t('school:course.text-2')}
+                        </a>
+                      </p>
+                    )
+                  }
+                </div>
+              ) : (
                 <div className='button_register'>
                   <ButtonLink
                     href={'#sign'}
+                    theme={'secondary'}
                   >
-                    {t('school:course.register')}
+                    {t('school:course.send_request')}
                   </ButtonLink>
                 </div>
-                {
-                  showModal && (
-                    <p className='font_p16-regular under_course_text'>
-                      {t('school:course.text-1')}
-                      <a
-                        onClick={this.handleShowModal(index)}
-                        className={'font_link-list_16'}
-                      >
-                        {t('school:course.text-2')}
-                      </a>
-                    </p>
-                  )
-                }
-              </div>
-            ) : (
-              <div className='button_register'>
-                <ButtonLink
-                  href={'#sign'}
-                  theme={'secondary'}
-                >
-                  {t('school:course.send_request')}
-                </ButtonLink>
-              </div>
-            )
-          }
+              )
+            }
+          </div>
         </div>
         <style jsx>{`
           .courseWrapper {
@@ -183,13 +212,29 @@ class Courses extends PureComponent {
             .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
               grid-column: 1 / span 12;
               grid-row: auto;
+              text-align: left;
+              padding: 0 0rem;
+              margin-bottom: 0.5rem;
+            }
+            .info {
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+            .duration {
               text-align: center;
-              padding: 0 1rem;
+              padding: 0 5rem;
+              margin-top: 1.3rem;
+            }
+            .imageColumn {
+              grid-column: 2 / span 5;
+            }
+            .infoColumn {
+              grid-column: 8 / span 4;
             }
           }
 
           @media (max-width: 767px) {
-            .courseWrapper {
+            .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
               grid-column: span 12;
               grid-row: auto;
               text-align: center;
@@ -210,6 +255,10 @@ class Courses extends PureComponent {
             }
             .courseWrapper.margin-1 {
               margin-top: 0;
+            }
+            .under_course_text {
+              font-size: 1rem;
+              line-height: 1.5rem;
             }
           }
         `}
@@ -488,12 +537,13 @@ class Courses extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             section {
-              padding-top: 6.5rem;
+              padding-top: 5rem;
               width: 944px;
             }
 
             h2 {
-              margin-bottom: 2.5rem;
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
             }
 
             @media (max-width: 1023px) {

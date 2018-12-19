@@ -29,6 +29,7 @@ const picture = css.resolve`
     @media (max-width: 1023px) {
       picture {
         height: 15.5rem;
+        margin-top: 3.5rem;
       }
     }
   }
@@ -185,11 +186,40 @@ class Manifest extends PureComponent {
               margin-bottom: 1.5rem;
             }
 
-            @media (max-width: 1023px) {
+            @media (min-width: 1000px) and (max-width: 1023px) {
               section {
                 width: 59rem;
               }
+              .font_p16-regular {
+                font-size: 1rem;
+                line-height: 1.5rem;
+              }
+              .h3-0 {
+                grid-column: 5 / span 5;
+                margin-top: 9rem;
+              }
+              .p-0 {
+                grid-column: 5 / span 5;
+                margin-top: 11rem;
+              }
+              .h3-1 {
+                grid-column: 4 / span 5;
+                margin-top: 11.5rem;
+              }
+              .p-1 {
+                grid-column: 4 / span 5;
+                margin-top: 13.5rem;
+              }
 
+              .h3-2 {
+                grid-column: 7 / span 5;
+                margin-top: 7rem;
+              }
+
+              .p-2 {
+                grid-column: 7 / span 4;
+                margin-top: 9rem;
+              }
             }
           }
 
@@ -211,9 +241,18 @@ class Manifest extends PureComponent {
             }
 
             h2,
+            .h3-2,
+            .p-2,
             p,
             footer {
               grid-column: 1 / span 6;
+            }
+
+            .h3-2 {
+              margin-top: 9rem;
+            }
+            .p-2 {
+              margin-top: 12rem;
             }
 
             h2 {
@@ -318,7 +357,9 @@ class Manifest extends PureComponent {
               section {
                 width: 59rem;
               }
-
+              h2 {
+                margin-bottom: 1.8em;
+              }
             }
           }
 

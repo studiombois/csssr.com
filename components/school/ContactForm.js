@@ -122,8 +122,8 @@ class ContactForm extends PureComponent {
             name='phone'
             component={TextField}
             type='text'
-            placeholder={t('dev:form.phonePlaceholder')}
-            label={t('dev:form.phoneLabel')}
+            placeholder={t('school:form.phonePlaceholder')}
+            label={t('school:form.phoneLabel')}
           />
         </div>
 
@@ -212,6 +212,12 @@ class ContactForm extends PureComponent {
             @media (max-width: 1023px) {
               form {
                 width: 59rem;
+                padding-top: 4.6rem;
+                padding-bottom: 32.5rem;
+              }
+              .button {
+                margin-top: 1.3rem;
+                grid-column: 5 / span 4;
               }
             }
           }

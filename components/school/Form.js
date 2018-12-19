@@ -152,8 +152,8 @@ const Form = ({ t }) =>
         @media (max-width: 1023px) {
           section {
             width: 59rem;
+            margin-top: -0.8rem;
           }
-
         }
       }
 

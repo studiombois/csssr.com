@@ -1,13 +1,6 @@
 const courses = {
   items: [
     {
-      title: 'Middle React разработчик',
-      description: 'Помогаем повысить вашу профессиональную ценность.',
-      info: '7 частей / 8 заданий',
-      duration: 'Примерно месяц, если учиться по два часа в день после работы',
-      image: 'React_course_middle',
-    },
-    {
       title: 'Junior React разработчик',
       description: 'Сопровождаем вас до первой работы React разработчиком.',
       info: '10 частей / 11 заданий',
@@ -15,6 +8,13 @@ const courses = {
       image: 'React_course_junior',
       active: true,
       showModal: true,
+    },
+    {
+      title: 'Middle React разработчик',
+      description: 'Помогаем повысить вашу профессиональную ценность.',
+      info: '7 частей / 8 заданий',
+      duration: 'Примерно месяц, если учиться по два часа в день после работы',
+      image: 'React_course_middle',
     },
     {
       title: 'High Middle React разработчик',

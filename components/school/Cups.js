@@ -29,6 +29,11 @@ const picture = css.resolve`
 
     @media (max-width: 1023px) {
       picture {
+        grid-column: 11 / span 1;
+        margin-left: -2.5rem;
+        height: 48px;
+      }
+      picture.left {
         height: 48px;
       }
     }
@@ -38,6 +43,7 @@ const picture = css.resolve`
     picture {
       grid-column: span 1;
       grid-row: 1;
+      margin-left: 0;
       margin-top: 1.875rem;
       height: 48px;
     }
@@ -213,6 +219,21 @@ class Cups extends PureComponent {
             @media (max-width: 1023px) {
               section {
                 width: 59rem;
+                margin-top: 1.6rem;
+                margin-bottom: -4rem;
+              }
+              .font_h1-slab {
+                grid-column: 4 / span 5;
+                grid-row: 2 / span 5;
+                padding-top: 0.5rem;
+                position: absolute;
+                align-self: center;
+                line-height: 1.60rem;
+                margin-top: -0.5rem;
+                margin-left: 2.5rem;
+              }
+              .left {
+                margin-top: 2rem;
               }
 
             }

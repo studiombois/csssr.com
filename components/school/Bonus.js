@@ -20,6 +20,7 @@ const picture = css.resolve`
     @media (max-width: 1023px) {
       picture {
         height: 19rem;
+        margin-top: 3rem;
       }
     }
   }
@@ -35,10 +36,6 @@ const picture = css.resolve`
 `
 
 class Bonus extends PureComponent {
-  state = {
-    activeCourse: 2,
-  }
-
   renderCourse = ({
     id,
     title,
@@ -46,12 +43,9 @@ class Bonus extends PureComponent {
     image,
   }, index) => {
     const { t } = this.props
-    const active = id === this.state.activeCourse
     return (
       <Fragment key={id}>
-        <div className={cn('courseWrapper', `margin-${index}`, {
-          active,
-        })}>
+        <div className={cn('courseWrapper', `margin-${index}`)}>
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'school', key: image, alt: t('school:imgAlt.school') }}
@@ -79,9 +73,6 @@ class Bonus extends PureComponent {
           .courseWrapper:nth-of-type(3) {
             grid-column: 9 / span 2;
           }
-          .courseWrapper.active {
-            padding: 0;
-          }
           .courseWrapper.margin-0 {
             margin-top: 19.5rem;
           }
@@ -92,38 +83,40 @@ class Bonus extends PureComponent {
             margin-top: 0.5rem;
             text-align: left;
           }
-          .info {
-            margin-top: 1.4rem;
-            text-align: center;
-          }
-          .duration {
-            margin-top: 2.0rem;
-            text-align: left;
-          }
           .bonus-title {
             margin-top: 2.5rem;
             text-align: left;
           }
 
-          .under_course_text {
-            grid-column: 5 / span 4;
-            grid-row: 3;
-            margin-top: 1.4rem;
-            text-align: center;
-          }
-
-          .button_wrapper {
-            grid-column: 5 / span 4;
-            grid-row: 3;
-            text-align: center;
-          }
-          .button_register {
-            margin-top: 3.6rem;
-          }
-
-
-         @media (max-width: 1279px) {
+          @media (max-width: 1279px) {
             @media (max-width: 1023px) {
+              .bonus-title {
+                margin-top: 1.9rem;
+                text-align: left;
+              }
+              .description {
+                margin-top: 1rem;
+                text-align: left;
+              }
+              .courseWrapper {
+                margin-top: 0rem;
+              }
+              .courseWrapper.margin-0 {
+                margin-top: 9.2rem;
+              }
+              .courseWrapper.margin-1 {
+                margin-top: 4.5rem;
+              }
+              .courseWrapper:nth-of-type(1) {
+                grid-column: 2 / span 3;
+              }
+              .courseWrapper:nth-of-type(2) {
+                grid-column: 5 / span 4;
+                margin-left: 2.5rem;
+              }
+              .courseWrapper:nth-of-type(3) {
+                grid-column: 9 / span 3;
+              }
             }
           }
 
@@ -136,18 +129,23 @@ class Bonus extends PureComponent {
             }
             .courseWrapper:nth-of-type(1) {
               grid-column: 1 / span 6;
+              margin-left: 0;
             }
             .courseWrapper:nth-of-type(2) {
               grid-column: 1 / span 6;
+              margin-left: 0;
             }
             .courseWrapper:nth-of-type(3) {
               grid-column: 1 / span 6;
+              margin-left: 0;
             }
             .courseWrapper.margin-0 {
               margin-top: 0;
+              margin-left: 0;
             }
             .courseWrapper.margin-1 {
               margin-top: 0;
+              margin-left: 0;
             }
           }
         `}
@@ -248,6 +246,10 @@ class Bonus extends PureComponent {
             @media (max-width: 1023px) {
               section {
                 width: 59rem;
+                padding-top: 5.7rem;
+              }
+              h2 {
+                margin-bottom: 0;
               }
 
             }

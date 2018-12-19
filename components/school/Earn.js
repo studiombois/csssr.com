@@ -20,7 +20,9 @@ const picture = css.resolve`
 
     @media (max-width: 1023px) {
       picture {
-        height: 16.75rem;
+        grid-column: 7 / span 6;
+        height: 20.75rem;
+        margin-top: -2rem;
       }
     }
   }
@@ -53,6 +55,7 @@ class Earn extends PureComponent {
           />
           <h1 className='font_h1-slab'>
             {t('school:school.title')}
+            <span className='mark'>JavaScript</span>
             <span className='font_subhead-slab'>{t('school:school.subTitle')}</span>
           </h1>
 
@@ -81,6 +84,23 @@ class Earn extends PureComponent {
             padding-top: 1rem;
             display: block;
           }
+
+          .mark {
+            display: inline-block;
+            position: relative;
+            padding-top: 0;
+          }
+          .mark::before {
+            content: '';
+            position: absolute;
+            background: #ffee1f;
+            top: 55%;
+            bottom: -0.5rem;
+            left: 1rem;
+            right: -1rem;
+            z-index: -1;
+          }
+
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             article {
@@ -117,6 +137,21 @@ class Earn extends PureComponent {
             @media (max-width: 1023px) {
               article {
                 width: 59rem;
+                padding-top: 10rem;
+              }
+              h1 {
+                grid-column: 2 / span 5;
+                padding-top: 0rem;
+              }
+
+              .font_subhead-slab {
+                padding-top: 2rem;
+                line-height: 2rem;
+              }
+
+              span {
+                padding-top: 1rem;
+                display: block;
               }
             }
           }

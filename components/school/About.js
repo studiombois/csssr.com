@@ -20,7 +20,9 @@ const picture = css.resolve`
 
     @media (max-width: 1023px) {
       picture {
-        height: 32rem;
+        margin-top: 1.2rem;
+        grid-column: 2 / span 12;
+        height: 35.5rem;
       }
     }
   }
@@ -75,7 +77,7 @@ const About = ({ t }) =>
         margin-top: 14rem;
       }
 
-      .font_p16-regular {
+      .text {
         grid-column: 3 / span 4;
         grid-row: 2;
         text-align: left;
@@ -124,6 +126,25 @@ const About = ({ t }) =>
         @media (max-width: 1023px) {
           section {
             width: 59rem;
+            margin-top: 6rem;
+            padding-top: 0rem;
+          }
+          .text {
+            grid-column: 2 / span 5;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            grid-row: 2;
+            text-align: left;
+            margin-top: 0.4rem;
+          }
+
+          .foot_text {
+            margin-top: -0.7rem;
+            grid-column: 8 / span 4;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            grid-row: 3;
           }
 
         }

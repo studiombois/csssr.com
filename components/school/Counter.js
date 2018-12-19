@@ -73,6 +73,13 @@ const Counter = ({ t }) =>
         @media (max-width: 1023px) {
           section {
             width: 59rem;
+            padding-top: 3rem;
+          }
+          .big_counter {
+            margin-top: 3.8rem;
+          }
+          .free_places {
+            margin-top: 8.8rem;
           }
 
         }

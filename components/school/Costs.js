@@ -43,7 +43,7 @@ const Manifest = ({ t }) =>
         <span className='currency'>₽</span>
       </sup>
 
-      <h2 className='font_subhead-slab free_places' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
+      <h2 className='font_subhead-slab period' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
       <p className='font_p16-regular under_costs_text' dangerouslySetInnerHTML={{ __html: t('school:costs.under_costs_text') }}/>
     </section>
     <style jsx>{`
@@ -87,7 +87,7 @@ const Manifest = ({ t }) =>
         justify-self: center;
       }
 
-      .free_places {
+      .period {
         grid-column: 5 / span 4;
         grid-row: 3;
         text-align: center;
@@ -130,6 +130,22 @@ const Manifest = ({ t }) =>
         @media (max-width: 1023px) {
           section {
             width: 59rem;
+            padding-top: 1rem;
+          }
+          .font_h2-slab {
+            margin-top: 4.9rem;
+          }
+
+          .big_counter {
+            margin-top: 1rem;
+          }
+
+          .period {
+            margin-top: 6.1rem;
+          }
+
+          p {
+            margin-top: 0rem;
           }
 
         }

@@ -136,7 +136,7 @@ const pictureOfNumberThee = css.resolve`
 
 const WorkingProcess = ({ t }) =>
   <Fragment>
-    <article id='three-days-to-start' className='grid-container'>
+    <article className='grid-container'>
       <h2
         className='font_h1-slab'
         dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.title') }} />

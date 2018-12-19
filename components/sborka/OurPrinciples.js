@@ -56,7 +56,7 @@ const picture = css.resolve`
   }
 `
 
-const HowWeWork = ({ t }) => {
+const OurPrinciples = ({ t }) => {
   const renderHowWeWorkItems = (itemName, index) =>
     <section key={itemName} >
       <PictureForAllResolutions
@@ -156,7 +156,7 @@ const HowWeWork = ({ t }) => {
 
   return (
     <Fragment>
-      <article id='how-we-work' className='grid-container'>
+      <article id='our-principles' className='grid-container'>
         <h2 dangerouslySetInnerHTML={{ __html: t('sborka:howWeWork.title') }} />
         <p
           className='font_subhead-regular'
@@ -254,4 +254,4 @@ const HowWeWork = ({ t }) => {
   )
 }
 
-export default translate()(HowWeWork)
+export default translate()(OurPrinciples)

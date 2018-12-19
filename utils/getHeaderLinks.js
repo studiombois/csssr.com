@@ -19,11 +19,8 @@ const headerLinks = {
     href: '#projects',
     label: 'sborka:headerNav.projects',
   }, {
-    href: '#how-we-work',
-    label: 'sborka:headerNav.howWeWork',
-  }, {
-    href: '#three-days-to-start',
-    label: 'sborka:headerNav.threeDaysToStart',
+    href: '#our-principles',
+    label: 'sborka:headerNav.ourPrinciples',
   }, {
     href: '#hire-us',
     label: 'sborka:headerNav.hireUs',

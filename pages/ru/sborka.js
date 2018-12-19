@@ -4,7 +4,7 @@ import Hire from '../../components/sborka/Hire'
 import Budget from '../../components/sborka/Budget'
 import Projects from '../../components/sborka/Projects'
 import Portfolio from '../../components/sborka/Portfolio'
-import HowWeWork from '../../components/sborka/HowWeWork'
+import OurPrinciples from '../../components/sborka/OurPrinciples'
 import WorkingProcess from '../../components/sborka/WorkingProcess'
 import Form from '../../components/sborka/Form'
 import PostScriptum from '../../components/sborka/PostScriptum'
@@ -46,7 +46,7 @@ class Sborka extends PureComponent {
         <Budget />
         <Projects />
         <Portfolio isMobile={this.state.isMobile} />
-        <HowWeWork />
+        <OurPrinciples />
         <WorkingProcess />
         <Form />
         <PostScriptum />

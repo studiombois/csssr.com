@@ -2,10 +2,10 @@ import React from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
-import ContactForm from './ContactForm'
-import contactFormValidationRules from './contactFormValidationRules'
+import ContactForm from '../ContactForm'
+import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 
-const ContactFormForDev = props => <ContactForm imageName='letter' {...props} />
+const ContactFormForDev = props => <ContactForm imageName='letter' pageName='dev' {...props} />
 
 const onSubmit = async values => {
   const res = await fetch('/api/submit-form', {

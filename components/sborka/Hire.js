@@ -35,6 +35,9 @@ class Hire extends PureComponent {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
+  // Логика для этой кнопки уже есть в dev/Hire,
+  // если появится где-то ещё, то эту логику нужно будет вынести,
+  // что бы больше не дублировать
   handleScroll = () => {
     if (this.rafId) {
       cancelAnimationFrame(this.rafId)

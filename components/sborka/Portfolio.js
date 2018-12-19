@@ -101,7 +101,7 @@ class Portfolio extends PureComponent {
               className='font_link-list_16'
               href={project.href}
               target='_blank'
-              dangerouslySetInnerHTML={{ __html: t(`sborka:portfolio.portfolioProjects.${project.name}.link`) }}
+              dangerouslySetInnerHTML={{ __html: t('sborka:portfolio.linkText') }}
             />
           </div><style jsx>{`
             section {
@@ -153,12 +153,7 @@ class Portfolio extends PureComponent {
             }
 
             @media (max-width: 767px) {
-              section {
-                grid-column: ${index * 4 + 1} / span 3;
-              }
-
               div {
-                grid-column: ${index * 4 + 1} / span 3;
                 margin-top: 0.5625rem;
               }
 
@@ -170,6 +165,17 @@ class Portfolio extends PureComponent {
 
               a {
                 margin-top: 0.8125rem;
+              }
+            }
+          `}</style>
+          <style jsx>{`
+            @media (max-width: 767px) {
+              section {
+                grid-column: ${index * 4 + 1} / span 3;
+              }
+
+              div {
+                grid-column: ${index * 4 + 1} / span 3;
               }
             }
           `}</style>
@@ -339,16 +345,8 @@ class Portfolio extends PureComponent {
             }
 
             div.grid-container {
-              grid-template-columns: repeat(${gridColumns}, 3rem);
-              grid-column: 1 / span ${gridColumns};
               width: auto;
               padding-left: 1rem;
-
-              // 3rem занимает каждая колонка
-              // 0.5rem занимает расстояние между ними
-              // паддинги
-
-              width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 4}rem;
             }
 
             .scroller-wrapper {
@@ -361,6 +359,19 @@ class Portfolio extends PureComponent {
 
             .controlls {
               display: none;
+            }
+          }
+        `}</style>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div.grid-container {
+              grid-template-columns: repeat(${gridColumns}, 3rem);
+              grid-column: 1 / span ${gridColumns};
+
+              // 3rem занимает каждая колонка
+              // 0.5rem занимает расстояние между ними
+              // паддинги
+              width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 4}rem;
             }
           }
         `}</style>

@@ -2,8 +2,8 @@ import React from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
-import ContactForm from '../dev/ContactForm'
-import contactFormValidationRules from '../dev/contactFormValidationRules'
+import ContactForm from '../ContactForm'
+import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 
 const pageName = 'sborka'
 const onSubmit = async values => {
@@ -19,13 +19,13 @@ const onSubmit = async values => {
 
   if (res.status === 201) {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'sborka-form_success' })
+      window.dataLayer.push({ event: 'sborka_form_success' })
     }
   } else if (res.status === 400) {
     const error = await res.json()
 
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'sborka-form_fail' })
+      window.dataLayer.push({ event: 'sborka_form_fail' })
     }
 
     return { [FORM_ERROR]: error.error }

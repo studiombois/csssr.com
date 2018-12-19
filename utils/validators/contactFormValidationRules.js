@@ -1,4 +1,4 @@
-import simpleEmailRegexp from '../../utils/simpleEmailRegexp'
+import simpleEmailRegexp from '../simpleEmailRegexp'
 
 export default values => {
   const errors = {}

@@ -3,12 +3,12 @@ import { string } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
-import Checkbox from '../ui-kit/Checkbox'
-import TextField from '../ui-kit/TextField'
-import TextareaField from '../ui-kit/TextareaField'
-import AnimatedButton from '../ui-kit/AnimatedButton'
-import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
-import Picture from '../Picture'
+import Checkbox from './ui-kit/Checkbox'
+import TextField from './ui-kit/TextField'
+import TextareaField from './ui-kit/TextareaField'
+import AnimatedButton from './ui-kit/AnimatedButton'
+import PrivacyPolicyCheckbox from './PrivacyPolicyCheckbox'
+import Picture from './Picture'
 
 const picture = css.resolve`
   picture {
@@ -51,9 +51,6 @@ class ContactForm extends PureComponent {
   static proptypes = {
     pageName: string,
     imageName: string,
-  }
-  static defaultProps = {
-    pageName: 'dev',
   }
 
   state = {

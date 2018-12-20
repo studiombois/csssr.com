@@ -1,6 +1,5 @@
+const { AMO_CRM_BASE_URL, AUTH_QUERY_PARAMS } = require('../constants/amocrm')
 const fetch = require('isomorphic-unfetch')
-
-const AMO_CRM_BASE_URL = 'https://csssr.amocrm.ru'
 
 const tagsArray = ['csssr.com']
 const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
@@ -23,9 +22,8 @@ module.exports = (req, res) => {
   tagsArray.push(language)
 
   const tags = tagsArray.join(',')
-  const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_USER_HASH}`
 
-  return fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {
+  return fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${AUTH_QUERY_PARAMS}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -80,10 +78,10 @@ module.exports = (req, res) => {
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
         console.log('x1b[31m', 'server/submit-form.js ERROR', JSON.stringify(createContactData), 'x1b[0m')
-        return res.status(400).send({ error: 'Произошла ошибка x' })
+        return res.status(400).send({ error: 'server/submit-form.js ошибка при создании контакта' })
       }
 
-      return fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?${authQueryParams}`, {
+      return fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?${AUTH_QUERY_PARAMS}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -106,7 +104,7 @@ module.exports = (req, res) => {
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
             console.log('server/submit-form.js ERROR', JSON.stringify(createLeadData))
-            return res.status(400).send({ error: 'Произошла ошибка y' })
+            return res.status(400).send({ error: 'server/submit-form.js ошибка при создании лида' })
           }
 
           console.log('server/submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))

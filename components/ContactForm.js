@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react'
+import { string } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
-import Checkbox from '../ui-kit/Checkbox'
-import TextField from '../ui-kit/TextField'
-import TextareaField from '../ui-kit/TextareaField'
-import AnimatedButton from '../ui-kit/AnimatedButton'
-import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
-import Picture from '../Picture'
+import Checkbox from './ui-kit/Checkbox'
+import TextField from './ui-kit/TextField'
+import TextareaField from './ui-kit/TextareaField'
+import AnimatedButton from './ui-kit/AnimatedButton'
+import PrivacyPolicyCheckbox from './PrivacyPolicyCheckbox'
+import Picture from './Picture'
 
 const picture = css.resolve`
   picture {
@@ -47,6 +48,11 @@ const picture = css.resolve`
 `
 
 class ContactForm extends PureComponent {
+  static proptypes = {
+    pageName: string,
+    imageName: string,
+  }
+
   state = {
     formSubmitStatus: null,
   }
@@ -90,6 +96,8 @@ class ContactForm extends PureComponent {
       hasValidationErrors,
       hasSubmitErrors,
       dirtySinceLastSubmit,
+      imageName,
+      pageName,
       t,
     } = this.props
 
@@ -100,15 +108,15 @@ class ContactForm extends PureComponent {
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
-        <h2 id='hire-us' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:form.title') }} />
+        <h2 id='hire-us' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.title`) }} />
         <div className='field'>
           <Field
             id='name'
             name='name'
             component={TextField}
             type='text'
-            placeholder={t('dev:form.namePlaceholder')}
-            label={t('dev:form.nameLabel')}
+            placeholder={t(`${pageName}:form.namePlaceholder`)}
+            label={t(`${pageName}:form.nameLabel`)}
           />
         </div>
         <div className='field'>
@@ -117,8 +125,8 @@ class ContactForm extends PureComponent {
             name='phone'
             component={TextField}
             type='text'
-            placeholder={t('dev:form.phonePlaceholder')}
-            label={t('dev:form.phoneLabel')}
+            placeholder={t(`${pageName}:form.phonePlaceholder`)}
+            label={t(`${pageName}:form.phoneLabel`)}
           />
         </div>
         <div className='field'>
@@ -127,8 +135,8 @@ class ContactForm extends PureComponent {
             name='email'
             component={TextField}
             type='email'
-            placeholder={t('dev:form.emailPlaceholder')}
-            label={t('dev:form.emailLabel')}
+            placeholder={t(`${pageName}:form.emailPlaceholder`)}
+            label={t(`${pageName}:form.emailLabel`)}
           />
         </div>
         <div className='field field_type_textarea'>
@@ -136,8 +144,8 @@ class ContactForm extends PureComponent {
             id='message'
             name='message'
             component={TextareaField}
-            placeholder={t('dev:form.messagePlaceholder')}
-            label={t('dev:form.messageLabel')}
+            placeholder={t(`${pageName}:form.messagePlaceholder`)}
+            label={t(`${pageName}:form.messageLabel`)}
           />
         </div>
 
@@ -145,7 +153,7 @@ class ContactForm extends PureComponent {
           <PrivacyPolicyCheckbox />
         </div>
 
-        <div className='field field_type_no-margin'>
+        <div className='field field_type_checkbox'>
           <Field
             id='newsletterCheckbox'
             name='consents'
@@ -165,14 +173,16 @@ class ContactForm extends PureComponent {
             status={this.state.formSubmitStatus}
             onAnimationEnd={this.handleStateClear}
           >
-            {t('dev:form.submitText')}
+            {t(`${pageName}:form.submitText`)}
           </AnimatedButton>
         </div>
 
-        <Picture
-          className={picture.className}
-          image={{ namespace: 'dev', key: 'letter', alt: t('dev:imgAlt.letter') }}
-        />
+        { imageName &&
+            <Picture
+              className={picture.className}
+              image={{ namespace: 'dev', key: imageName, alt: t(`${pageName}:imgAlt.${imageName}`) }}
+            />
+        }
         <style jsx>{`
           form {
             position: relative;
@@ -206,14 +216,22 @@ class ContactForm extends PureComponent {
             margin: 0;
           }
 
+          .field_type_checkbox {
+            margin-bottom: 2rem;
+          }
+
           .button {
-            margin-top: 4rem;
+            margin-top: 1.5rem;
             grid-column: 6 / span 2;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
               width: 1328px;
+            }
+
+            .field_type_checkbox + .field_type_checkbox {
+              margin-bottom: 2.5rem;
             }
           }
 
@@ -232,16 +250,20 @@ class ContactForm extends PureComponent {
             }
 
             h2 {
-              margin-bottom: 2.3125rem;
+              margin-bottom: 2.375rem;
             }
 
             .field {
               grid-column: 4 / span 6;
-              margin-bottom: 1.875rem;
+              margin-bottom: 1.5625rem;
             }
 
             .field_type_textarea {
-              margin-bottom: 3.75rem;
+              margin-bottom: 3.625rem;
+            }
+
+            .field_type_checkbox {
+              margin-bottom: 1.5rem;
             }
 
             @media (max-width: 1023px) {
@@ -259,7 +281,7 @@ class ContactForm extends PureComponent {
             }
 
             h2 {
-              margin-bottom: 2.5rem;
+              margin-bottom: 2.5625rem;
             }
 
             h2,
@@ -273,11 +295,12 @@ class ContactForm extends PureComponent {
             }
 
             .field_type_textarea {
-              margin-bottom: 1.5rem;
+              margin-top: 1.4375rem;
+              margin-bottom: 1.6875rem;
             }
 
             .field_type_checkbox {
-              margin-bottom: 21px;
+              margin-bottom: 1.1875rem;
             }
           }
 

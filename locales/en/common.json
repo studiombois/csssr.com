@@ -6,7 +6,8 @@
     "recruitment": "Recruitment",
     "company": "Company",
     "products": "Products",
-    "education": "Education"
+    "education": "Education",
+    "sborka": "Sborka"
   },
   "languageRedirect": {
     "link": "/ru",
@@ -18,7 +19,8 @@
   },
   "sectionName": {
     "en": "Software Engineering",
-    "en/jobs": "Jobs"
+    "en/jobs": "Jobs",
+    "en/sborka": "Sborka"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

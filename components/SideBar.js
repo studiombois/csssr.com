@@ -18,6 +18,9 @@ const items = [{
     from: '/en/jobs',
     to: '/ru/jobs',
   },
+}, {
+  path: '/sborka',
+  key: 'common:menu.sborka',
 }]
 
 const crossIcon = <CrossIcon width='100%' height='100%' />
@@ -102,7 +105,9 @@ export class SideBar extends PureComponent {
 
           <div className='body'>
             <div className='top'>
-              <div className='font_perforator-16-black section-name'>{t(getSectionName(pathname))}</div>
+              <div className='font_perforator-16-black section-name'>
+                {t(getSectionName(pathname))}
+              </div>
               <ul className='list'>
                 {items.map(this.renderNavItem)}
               </ul>

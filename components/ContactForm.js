@@ -217,7 +217,7 @@ class ContactForm extends PureComponent {
           }
 
           .field_type_checkbox {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
           }
 
           .button {
@@ -228,6 +228,10 @@ class ContactForm extends PureComponent {
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
               width: 1328px;
+            }
+
+            .field_type_checkbox + .field_type_checkbox {
+              margin-bottom: 2.5rem;
             }
           }
 

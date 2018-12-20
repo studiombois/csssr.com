@@ -288,6 +288,7 @@ class Portfolio extends PureComponent {
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             article {
+              margin-top: 10.9375rem;
               width: 1232px;
             }
 

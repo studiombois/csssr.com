@@ -142,12 +142,12 @@ const OurPrinciples = ({ t }) => {
             line-height: 1.5rem;
           }
 
-          section:nth-of-type(2) {
-            margin-top: 5px;
+          section:nth-of-type(1) {
+            margin-top: 0.3125rem;
           }
 
-          section:nth-of-type(1) {
-            margin-top: 13px;
+          section:nth-of-type(2) {
+            margin-top: 0.8125rem;
           }
         }
       `}</style>

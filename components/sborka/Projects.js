@@ -58,7 +58,7 @@ const Projects = ({ t }) =>
 
     </div><style jsx>{`
       div {
-        margin-top: 8.8125rem;
+        margin-top: 5.8125rem;
         margin-right: auto;
         margin-left: auto;
         width: 1792px;
@@ -84,6 +84,7 @@ const Projects = ({ t }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         div {
+          margin-top: 8.8125rem;
           width: 1328px;
         }
 
@@ -98,6 +99,7 @@ const Projects = ({ t }) =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         div {
+          margin-top: 8.8125rem;
           width: 1232px;
         }
 

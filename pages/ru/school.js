@@ -18,10 +18,13 @@ class School extends PureComponent {
   }
 
   componentDidMount() {
-    const mediumMediaQuery = window.matchMedia('(min-width: 768px) and (max-width: 1279px)')
+    this.mediumMediaQuery = window.matchMedia('(min-width: 768px) and (max-width: 1279px)')
 
-    mediumMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mediumMediaQuery)
+    this.mediumMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mediumMediaQuery)
+  }
+  componentWillUnmount() {
+    this.mediumMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   handleMediaMatch = ({ matches }) =>

@@ -149,13 +149,6 @@ class Manifest extends PureComponent {
             grid-column: 3 / span 6;
           }
 
-          .point {
-            grid-column: 4 / span 5;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 17rem;
-          }
-
           @media (min-width: 1360px) and (max-width: 1919px) {
             section {
               width: 1328px;
@@ -310,13 +303,6 @@ class Manifest extends PureComponent {
             margin-top: 14rem;
           }
 
-          .point {
-            grid-column: 4 / span 5;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 17rem;
-          }
-
           .font_p16-regular {
             grid-column: 1 / span 12;
             grid-row: 1;
@@ -372,22 +358,9 @@ class Manifest extends PureComponent {
               width: 20.5rem;
             }
 
-            h2,
-            p,
-            footer {
-              grid-column: 1 / span 6;
-            }
-
-            .point {
-              grid-column: 1 / span 6;
-              text-align: left;
-              margin-top: 17rem;
-            }
-
             h2 {
               margin-bottom: 1.1875rem;
             }
-
            }
         `}</style>
         {picture.styles}

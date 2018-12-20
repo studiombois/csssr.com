@@ -38,10 +38,10 @@ const Manifest = ({ t }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:costs.title') }} />
-      <sup className='font_roboto-slab-light big_counter'>
+      <div className='font_roboto-slab-light big_counter'>
         {t('school:costs.cost')}
-        <span className='currency'>₽</span>
-      </sup>
+        <sup className='currency'>₽</sup>
+      </div>
 
       <h2 className='font_subhead-slab period' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
       <p className='font_p16-regular under_costs_text' dangerouslySetInnerHTML={{ __html: t('school:costs.underCostsText') }}/>

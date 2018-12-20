@@ -70,13 +70,6 @@ const About = ({ t }) =>
         grid-row: 2;
       }
 
-      .font_h2-regular {
-        grid-column: 4 / span 4;
-        grid-row: 2;
-        text-align: left;
-        margin-top: 14rem;
-      }
-
       .text {
         grid-column: 3 / span 4;
         grid-row: 2;

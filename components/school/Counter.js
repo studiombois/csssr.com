@@ -6,8 +6,8 @@ const Counter = ({ t }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:counter.nowTitle') }} />
-      <sup className='font_roboto-slab-light big_counter'>{counterMock.freePlaces}</sup>
-      <h2
+      <p className='font_roboto-slab-light big_counter'>{counterMock.freePlaces}</p>
+      <p
         className='font_subhead-slab free_places'
         dangerouslySetInnerHTML={{ __html: `${t('school:counter.freePlaces')} ${counterMock.allPlaces}` }}
       />
@@ -19,12 +19,6 @@ const Counter = ({ t }) =>
         margin-right: auto;
         padding-top: 0rem;
         width: 1792px;
-      }
-
-      p {
-        grid-column: 1 / span 12;
-        text-align: center;
-        grid-row: 2;
       }
 
       .font_h2-slab {
@@ -92,7 +86,6 @@ const Counter = ({ t }) =>
         }
 
         h2,
-        p,
         footer {
           grid-column: 1 / span 6;
         }

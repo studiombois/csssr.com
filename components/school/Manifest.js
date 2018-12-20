@@ -86,9 +86,9 @@ class Manifest extends PureComponent {
             {description}
             {!!descriptionSecond && (
               <Fragment>
-                <br />
-                <br />
-                {descriptionSecond}
+                <div className='secondDescription'>
+                  {descriptionSecond}
+                </div>
               </Fragment>
             )}
           </p>
@@ -104,6 +104,10 @@ class Manifest extends PureComponent {
             padding-top: 0rem;
             width: 1792px;
             margin-bottom: 4rem;
+          }
+
+          .secondDescription {
+            margin-top: 1rem;
           }
 
           h2 {

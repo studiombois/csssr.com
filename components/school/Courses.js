@@ -72,6 +72,13 @@ class Courses extends PureComponent {
               image={{ namespace: 'school', key: image, alt: title }}
             />
             {
+              !active && (
+                <div className='soon font_roboto-slab-light'>
+                  {t('school:course.soon')}
+                </div>
+              )
+            }
+            {
               active && isMedium && (
                 <Fragment>
                   <p className='font_p16-regular info'>
@@ -147,6 +154,25 @@ class Courses extends PureComponent {
             text-align: center;
             margin-top: 1rem;
             padding: 0 2rem;
+          }
+          .imageColumn {
+            position: relative;
+            overflow: hidden;
+          }
+          .soon {
+            background: #ffee1f;
+            text-align: center;
+            position: absolute;
+            left: -20%;
+            right: -20%;
+            bottom: 45%;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09375rem;
+            padding: 0 0;
+            line-height: 1.33rem;
+            font-weight: bold;
+            transform: rotate(12deg);
           }
           .description {
             margin-top: 1.4rem;

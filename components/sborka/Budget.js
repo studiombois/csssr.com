@@ -52,10 +52,13 @@ const Budget = ({ t, lng }) =>
 
       <PictureForAllResolutions
         className={picture.className}
-        image={{ namespace: 'sborka', key: 'prices', alt: t('sborka:imgAlt.budget') }}
+        image={{ namespace: 'sborka', key: lng === 'en' ? 'pricesEn' : 'prices', alt: t('sborka:imgAlt.budget') }}
       />
 
-      <span dangerouslySetInnerHTML={{ __html: t('sborka:budget.postPricetext') }} />
+      <span
+        className={lng === 'en' ? 'is_hidden' : ''}
+        dangerouslySetInnerHTML={{ __html: t('sborka:budget.postPricetext') }}
+      />
       <p className='font_subhead-regular'>
         {t('sborka:budget.articleText')} <a href={lng === 'ru' ? '/ru' : '/en'}>{t('sborka:budget.articleLinkText')} </a>
       </p>
@@ -97,6 +100,12 @@ const Budget = ({ t, lng }) =>
         color: #0076ff;
         cursor: pointer;
         text-decoration: underline;
+      }
+
+      span.is_hidden {
+        color: transparent;
+        user-select: none;
+        pointer-events: none;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {

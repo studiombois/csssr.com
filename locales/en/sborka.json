@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Get your code boosted!",
+    "description": "Turning mock-ups into HTML is our super power. If you need to build a solid, reliable HTML-layout for a website or e-mail newsletter based on your design, you came to the right place."
+  },
+  "headerNav": {
+    "budget": "Budget",
+    "projects": "Projects",
+    "howWeWork": "How we work",
+    "hireUs": "Hire us"
+  },
+  "imgAlt": {
+    "rocket": "a rocket pointed upward",
+    "budget": "price range depiction: 2000 — 6000 US dollars",
+    "projects": "number \"450\" made of sprockets and screws",
+    "howWeWork": {
+      "complexApproach": "three persons interacting with each other in order to solve the given problem",
+      "productionPotential": "a set of nesting wooden dolls, symbolizing our readiness to form a team of any size for any project",
+      "frontendIsOurSpecialty": "a person placing CSSSR flag on a planet, symbolizing our leading position in front-end development"
+    },
+    "workingProcess": {
+      "one": "number one in the form of a person holding a tape measure",
+      "two": "number two in the form of a hand holding a pile of documents",
+      "three": "number three in the form of two persons in the sprint start position"
+    },
+    "postScriptum": "planets and satellites moving along orbits"
+  },
+  "hire": {
+    "title": "Get your code boosted!",
+    "subTitle": "Turning mock-ups into HTML is our super power. If you need to build a solid, reliable HTML-layout for a website or e-mail newsletter based on your design, you came to the right place.",
+    "buttonText": "Hire us"
+  },
+  "budget": {
+    "title": "projects with a&nbsp;budget&nbsp;of",
+    "articleText": "We create HTML layouts, make blocks and elements animated, and web pages—adaptive. More technically complex services we perform",
+    "articleLinkText": "here."
+  },
+  "projects": {
+    "pictureText": "successfully completed projects",
+    "articleText": "We&nbsp;work with large companies for whom strong online presence is&nbsp;important. We&nbsp;share their business interests and help them to&nbsp;achieve their goals."
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "linkText": "Take a&nbsp;look",
+    "portfolioProjects": {
+      "relef": {
+        "title": "Relief-center",
+        "text": "Corporate web-site. Relief-center is&nbsp;a&nbsp;leading wholesaler on&nbsp;russian market of&nbsp;office and school supplies."
+      },
+      "investments": {
+        "title": "Investments101",
+        "text": "Online educational platform for traders and investors"
+      },
+      "houzz": {
+        "title": "Tinkoff &amp;&nbsp;Houzz",
+        "text": "Prize draw page for Tinkoff and houzz"
+      },
+      "nutrilogic": {
+        "title": "Nutrilogic",
+        "text": "Individual meal plan service"
+      }
+    }
+  },
+  "howWeWork": {
+    "title": "Our principles",
+    "text": "We&nbsp;have carefully calibrated processes, long experience and great sense of&nbsp;responsibility.",
+    "items": {
+      "complexApproach": {
+        "title": "Integrated approach",
+        "text": "Every project is&nbsp;covered by&nbsp;at&nbsp;least three specialists: manager, developer, QA-engineer."
+      },
+      "productionPotential": {
+        "title": "Production capacity",
+        "text": "Team size easily adapts to&nbsp;the project."
+      },
+      "frontendIsOurSpecialty": {
+        "title": "Front end is&nbsp;our specialization",
+        "text": "We&nbsp;had been intentionally developing in&nbsp;this field since 2012 and became the best."
+      }
+    }
+  },
+  "workingProcess": {
+    "title": "Three days<br/>to&nbsp;launch",
+    "items": {
+      "one": {
+        "title": "Mock-up estimation",
+        "text": "We&nbsp;create HTML from PSD, Sketch, Figma. It&nbsp;takes around one day after receiving all the mock-ups from a&nbsp;client to&nbsp;clarify the details and make an&nbsp;offer on&nbsp;price and terms."
+      },
+      "two": {
+        "title": "Contract and budget sheet negotiation",
+        "text": "We&nbsp;sign the contract and receive deposit (we&nbsp;work with prepayment of&nbsp;50%)."
+      },
+      "three": {
+        "title": "Forming the team",
+        "text": "We&nbsp;gather the team and start coding."
+      }
+    }
+  },
+  "form": {
+    "title": "Contact us",
+    "namePlaceholder": "Timothy John Berners-Lee",
+    "nameLabel": "Your Name",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "phoneLabel": "Phone",
+    "emailPlaceholder": "name@example.com",
+    "emailLabel": "E-mail",
+    "messagePlaceholder": "How can we be of help to you?",
+    "messageLabel": "How can we be of help to you?",
+    "submitText": "Submit"
+  },
+  "postScriptum": {
+    "title": "Cult of&nbsp;common sense",
+    "text": "We&nbsp;love what we&nbsp;do&nbsp;and we&nbsp;do&nbsp;it&nbsp;right. We&nbsp;pay meticulous attention to&nbsp;details, but only when it&rsquo;s appropriate to&nbsp;business requirements. Our documentation is&nbsp;tidy, and our clients&rsquo; needs are always taken care&nbsp;of.",
+    "tagline": "All in&nbsp;all, we&nbsp;are cool."
+  }
+}

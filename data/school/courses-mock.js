@@ -1,4 +1,4 @@
-const courses = {
+export default {
   items: [
     {
       title: 'Junior React разработчик',
@@ -11,8 +11,8 @@ const courses = {
       modal:
         {
           title: 'Junior React разработчик',
-          study_items_title: 'Мы расскажем про',
-          study_items: [
+          studyItemsTitle: 'Мы расскажем про',
+          studyItems: [
             'Введение в React',
             'Подключаем React',
             'PropTypes',
@@ -27,8 +27,8 @@ const courses = {
             'Webpack',
             'ESLint',
           ],
-          need_know_title: 'Вы должны знать',
-          need_know: [
+          needKnowTitle: 'Вы должны знать',
+          needKnow: [
             'Git / Mercurial. Умеете пользоваться системами контроля версий на уровне «сделай форк».',
             'Знает базовых конструкций языка (циклы, объявление переменных и функций, прототипы, структуры данных).',
             'Понимает this и принципы его работы (на что и в каком случае ссылается this, как можно поменять контекст функции).',
@@ -56,4 +56,3 @@ const courses = {
     },
   ],
 }
-export default courses

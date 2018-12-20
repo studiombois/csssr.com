@@ -44,7 +44,7 @@ const Manifest = ({ t }) =>
       </sup>
 
       <h2 className='font_subhead-slab period' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
-      <p className='font_p16-regular under_costs_text' dangerouslySetInnerHTML={{ __html: t('school:costs.under_costs_text') }}/>
+      <p className='font_p16-regular under_costs_text' dangerouslySetInnerHTML={{ __html: t('school:costs.underCostsText') }}/>
     </section>
     <style jsx>{`
       section {

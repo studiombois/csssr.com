@@ -1,4 +1,4 @@
-const cups = {
+export default {
   items: [
     {
       id: 1,
@@ -27,4 +27,3 @@ const cups = {
     },
   ],
 }
-export default cups

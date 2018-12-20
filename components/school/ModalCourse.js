@@ -33,10 +33,26 @@ class ModalCourse extends PureComponent {
         <style jsx>{`
           li {
             margin-bottom: 1.5rem;
+            position: relative;
+            margin-left: 1rem;
           }
-          @media (max-width: 767px) {
-            li {
-              margin-bottom: 0.5rem;
+          li::before {
+            position: absolute;
+            content: '';
+            width: 0.25rem;
+            height: 0.25rem;
+            top: 0.5rem;
+            left: -1rem;
+            border: 2px solid #000;
+          }
+          @media (max-width: 1023px) {
+            li::before {
+              top: 0.3rem;
+            }
+            @media (max-width: 767px) {
+              li {
+                margin-bottom: 0.5rem;
+              }
             }
           }
         `}</style>
@@ -44,7 +60,7 @@ class ModalCourse extends PureComponent {
     )
   }
 
-  renderModalContent = ({ title, study_items, study_items_title, need_know, need_know_title }) => {
+  renderModalContent = ({ title, studyItems, studyItemsTitle, needKnow, needKnowTitle }) => {
     const { t, onCloseModal } = this.props
     return (
       <Fragment>
@@ -52,12 +68,16 @@ class ModalCourse extends PureComponent {
           <h2 id='manifest' className='font_h2-regular title'>{title}</h2>
           <div className='columnsWrapper'>
             <div className='columnStudy'>
-              <h3 id='manifest' className='font_h3-regular'>{study_items_title}</h3>
-              {study_items && study_items.map(this.renderPoint)}
+              <h3 id='manifest' className='font_h3-regular'>{studyItemsTitle}</h3>
+              <ul>
+                {studyItems && studyItems.map(this.renderPoint)}
+              </ul>
             </div>
             <div className='columnNeedKnow'>
-              <h3 id='manifest' className='font_h3-regular'>{need_know_title}</h3>
-              {need_know && need_know.map(this.renderPoint)}
+              <h3 id='manifest' className='font_h3-regular'>{needKnowTitle}</h3>
+              <ul>
+                {needKnow && needKnow.map(this.renderPoint)}
+              </ul>
             </div>
             <div className='buttonWrapper'>
               <div
@@ -100,6 +120,14 @@ class ModalCourse extends PureComponent {
             padding-left: 0.5rem;
             padding-right: 5rem;
           }
+          ul {
+            list-style: none;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 0px;
+          }
           h3 {
             margin-top: 3rem;
             margin-bottom: 1rem;
@@ -131,6 +159,7 @@ class ModalCourse extends PureComponent {
   }
 
   renderModal = modal => {
+    const { onCloseModal } = this.props
     return (
       <Fragment>
         <div className='modalWrapper'>
@@ -139,7 +168,7 @@ class ModalCourse extends PureComponent {
           </button>
           <div className='modalContent'>
             <ClickOutside
-              onOutsideClick={this.handleCloseModal}
+              onOutsideClick={onCloseModal}
               style={clickOutsideStyles}
             >
               {this.renderModalContent(modal)}
@@ -149,6 +178,7 @@ class ModalCourse extends PureComponent {
         <style jsx>{`
           .modalWrapper {
             position: fixed;
+            overflow: hidden;
             background: rgba(0, 0, 0, 0.3);
             z-index: 10000;
             top: 0;

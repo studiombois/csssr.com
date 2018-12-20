@@ -5,11 +5,11 @@ import counterMock from '../../data/school/counter-mock'
 const Counter = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='manifest'>
-      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:counter.now_title') }} />
-      <sup className='font_roboto-slab-light big_counter'>{counterMock.free_places}</sup>
+      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:counter.nowTitle') }} />
+      <sup className='font_roboto-slab-light big_counter'>{counterMock.freePlaces}</sup>
       <h2
         className='font_subhead-slab free_places'
-        dangerouslySetInnerHTML={{ __html: `${t('school:counter.free_places')} ${counterMock.all_places}` }}
+        dangerouslySetInnerHTML={{ __html: `${t('school:counter.freePlaces')} ${counterMock.allPlaces}` }}
       />
     </section>
     <style jsx>{`

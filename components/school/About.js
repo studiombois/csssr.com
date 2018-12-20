@@ -46,7 +46,7 @@ const About = ({ t }) =>
         image={{ namespace: 'school', key: 'stat', alt: t('school:imgAlt.about') }}
       />
       <p className='font_p16-regular text' dangerouslySetInnerHTML={{ __html: t('school:about.text') }} />
-      <p className='font_p16-regular foot_text' dangerouslySetInnerHTML={{ __html: t('school:about.foot_text') }} />
+      <p className='font_p16-regular footText' dangerouslySetInnerHTML={{ __html: t('school:about.foot_text') }} />
     </section>
     <style jsx>{`
       section {

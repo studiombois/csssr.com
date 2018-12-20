@@ -1,10 +1,10 @@
-const courses = {
+export default {
   items: [
     {
       id: 1,
       title: 'Должна быть цель',
       description: 'Мы помогаем тем, кто ориенирован на конкретный результат. Мы ценим своё и ваше время и хотим работать с людьми, которые знают, куда идут.',
-      description_second: 'Вашей целью может быть:',
+      descriptionSecond: 'Вашей целью может быть:',
       image: 'manifest_1',
       isCups: true,
     },
@@ -22,4 +22,3 @@ const courses = {
     },
   ],
 }
-export default courses

@@ -133,7 +133,7 @@ class Courses extends PureComponent {
                     href={'#sign'}
                     theme={'secondary'}
                   >
-                    {t('school:course.send_request')}
+                    {t('school:course.sendRequest')}
                   </ButtonLink>
                 </div>
               )
@@ -257,12 +257,15 @@ class Courses extends PureComponent {
   }
 
   handleCloseModal = () => {
+    document.body.style.overflow = this.bodyOverflow || 'initial'
     this.setState({
       modalActiveId: -1,
     })
   }
 
   handleShowModal = index => () => {
+    this.bodyOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     this.setState({
       modalActiveId: index,
     })

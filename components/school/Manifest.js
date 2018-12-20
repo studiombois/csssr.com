@@ -54,7 +54,7 @@ class Manifest extends PureComponent {
     id,
     title,
     description,
-    description_second,
+    descriptionSecond,
     isCups,
     image,
   }, index) => {
@@ -84,11 +84,11 @@ class Manifest extends PureComponent {
             left,
           })}>
             {description}
-            {!!description_second && (
+            {!!descriptionSecond && (
               <Fragment>
                 <br />
                 <br />
-                {description_second}
+                {descriptionSecond}
               </Fragment>
             )}
           </p>

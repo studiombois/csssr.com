@@ -8,7 +8,7 @@ import ContactForm from './ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
 
 const onSubmit = async values => {
-  const res = await fetch('/api/submit-form-school', {
+  const res = await fetch('/api/school-submit-form', {
     method: 'POST',
     headers: {
       Accept: 'application/json',

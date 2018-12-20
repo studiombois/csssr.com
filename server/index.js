@@ -6,6 +6,7 @@ const i18nextMiddleware = require('i18next-express-middleware')
 const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
+const schoolSubmitForm = require('./school-submit-form')
 const generateSitemap = require('./generate-sitemap')
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -66,6 +67,7 @@ i18n
         server.use(bodyParser.json())
 
         server.post('/api/submit-form', submitForm)
+        server.post('/api/school-submit-form', schoolSubmitForm)
 
         server.use(i18nextMiddleware.handle(i18n))
 

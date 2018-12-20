@@ -27,7 +27,7 @@ const items = [{
   },
 }]
 
-const crossIcon = <CrossIcon width='1.5rem' height='1.5rem'/>
+const crossIcon = <CrossIcon width='100%' height='100%' />
 const clickOutsideStyles = {
   position: 'absolute',
   top: 0,
@@ -141,7 +141,7 @@ export class SideBar extends PureComponent {
             top: 0;
             right: 0;
             bottom: 0;
-            z-index: 10000;
+            z-index: 10001;
             width: 26.5rem;
             background-color: #fff;
             transform: translateX(100%);
@@ -174,8 +174,8 @@ export class SideBar extends PureComponent {
           }
 
           .sidebar_opened:before {
+            position: fixed;
             right: 100%;
-            z-index: 0;
             opacity: 0.3;
             transition: right 0s ease-out 0s, opacity 0.3s ease-out;
           }

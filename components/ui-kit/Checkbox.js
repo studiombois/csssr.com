@@ -103,13 +103,13 @@ export default class Checkbox extends PureComponent {
 
           label::after {
             position: absolute;
-            top: 4px;
-            left: 8px;
+            top: 0.25rem;
+            left: 0.5rem;
             display: none;
-            width: 5px;
-            height: 10px;
-            border-right: 3px solid #fff;
-            border-bottom: 3px solid #fff;
+            width: 0.3125rem;
+            height: 0.625rem;
+            border-right: 0.1875rem solid #fff;
+            border-bottom: 0.1875rem solid #fff;
             content: '';
             transform: rotate(45deg);
           }

@@ -53,8 +53,7 @@ const pictureHunter = css.resolve`
     }
 
     img {
-      margin-left: -1rem;
-      width: 4rem;
+      width: 3rem;
     }
   }
 `
@@ -100,10 +99,12 @@ export default class Vacancies extends PureComponent {
     if (articleNode.offsetTop - window.scrollY < 0) {
       if (headerBackgroundNode.style.zIndex !== '1') {
         headerBackgroundNode.style.zIndex = '1'
+        articleNode.classList.add('hide-fixed-image')
       }
     } else if (articleNode.offsetTop - window.scrollY > 0) {
       if (headerBackgroundNode.style.zIndex === '1') {
         headerBackgroundNode.style.zIndex = '-3'
+        articleNode.classList.remove('hide-fixed-image')
       }
     }
   }
@@ -356,6 +357,7 @@ export default class Vacancies extends PureComponent {
           }
 
           .font_link-list_16 {
+            display: inline-block;
             text-decoration: none;
           }
 
@@ -443,7 +445,17 @@ export default class Vacancies extends PureComponent {
             .logo-wrapper sup {
               top: -4px;
               left: calc(100% + 2px);
-              font-size: 0.625rem
+              font-size: 0.625rem;
+            }
+
+            .font_link-list_16 {
+              font-size: 0.75rem;
+              line-height: 1rem;
+            }
+
+            .font_link-list_16::after {
+              bottom: 0.625rem;
+              right: -0.375rem;
             }
 
             @media (max-width: 1023px) {
@@ -476,6 +488,22 @@ export default class Vacancies extends PureComponent {
               width: 100vw;
               height: 100%;
               background-color: white;
+            }
+
+            article::after {
+              position: fixed;
+              left: 0;
+              right: 0;
+              z-index: -2;
+              bottom: 0;
+              content: '';
+              display: block;
+              height: 80vh;
+              background-color: white;
+            }
+
+            article.hide-fixed-image::after {
+              z-index: -1;
             }
 
             h1 span {
@@ -514,7 +542,8 @@ export default class Vacancies extends PureComponent {
               padding-left: 1.5rem;
             }
 
-            .font_p16-regular {
+            .font_p16-regular,
+            .font_link-list_16 {
               margin-top: 0;
               padding-bottom: 0;
               font-size: 0.875rem;

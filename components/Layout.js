@@ -42,10 +42,8 @@ const Layout = props => {
         display: none;
       }
 
-      @media (max-width: 767px) {
-        #main {
-          overflow-x: hidden;
-        }
+      #main {
+        overflow-x: hidden;
       }
 
       /*

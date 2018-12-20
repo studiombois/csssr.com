@@ -11,7 +11,7 @@ const QuestBox = ({ text, title, sections }) =>
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: formatText(text) }}/>
     </FormRow>
 
-    {sections.map((section, index) => <Section key={index} {...section} asRow />)}
+    {sections.map((section, index) => <Section key={index} {...section} asRow isChild />)}
     <style jsx>{`
       h2 {
         margin-top: 6.0625rem;
@@ -28,7 +28,7 @@ const QuestBox = ({ text, title, sections }) =>
         }
 
         p {
-          margin-top: 0.4375rem;
+          margin-top: 0.5rem;
           padding-bottom: 0;
           font-size: 0.875rem;
           line-height: 1.5rem;

@@ -3,7 +3,15 @@ const strikeRegExp = /~/g
 
 const mdToHtmlLink = str =>
   str.replace(linkRegExp, (match, text, href, _, title) =>
-    `<a class="font_link-list_16" href="${href}" target="_blank"${title ? ' title="' + title + '"' : ''}>${text}</a>`
+    `<a
+      class="font_link-list_16_desktop_14_mobile"
+      href="${href}"
+      target="_blank"
+      ${title ? ' title="' + title + '"' : ''}
+    >
+      ${text}
+    </a>
+    `
   )
 
 

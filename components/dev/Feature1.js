@@ -5,33 +5,7 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
-    grid-column: 2 / span 10;
-    grid-row: 2;
-    z-index: -1;
-    margin-top: 5.5rem;
-    height: 768px;
-  }
-
- @media (max-width: 1279px) {
-    picture {
-      margin-top: 5rem;
-      height: 512px;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        height: 32rem;
-      }
-    }
-  }
-
-  @media (max-width: 767px) {
-    picture {
-      grid-column: 1 / span 6;
-      grid-row: 3;
-      margin-top: 1.875rem;
-      height: 43.4375rem;
-    }
+    height: 100%;
   }
 `
 
@@ -41,17 +15,18 @@ const Feature1 = ({ t, image }) =>
       <h2 id='services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
 
       <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} />
+      <div className='picture-wrapper'>
+        <PictureForAllResolutions
+          className={picture.className}
+          image={image}
+        />
 
-      <p className='font_feature_1'>
-        MVP
-      </p>
-      <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
-      <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
-
-      <PictureForAllResolutions
-        className={picture.className}
-        image={image}
-      />
+        <p className='font_feature_1'>
+          MVP
+        </p>
+        <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
+        <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
+      </div>
 
       <footer className='grid-container'>
         <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.title') }} />
@@ -95,6 +70,15 @@ const Feature1 = ({ t, image }) =>
         margin-bottom: 0.5rem;
       }
 
+      .picture-wrapper {
+        position: relative;
+        grid-column: 2 / span 10;
+        grid-row: 2;
+        z-index: -1;
+        margin-top: 5.5rem;
+        height: 768px;
+      }
+
       .font_feature_1,
       .font_feature_2,
       .font_feature_3 {
@@ -102,22 +86,22 @@ const Feature1 = ({ t, image }) =>
       }
 
       .font_feature_1 {
-        top: 36.875rem;
-        left: 11.5rem;
+        top: 30.875rem;
+        left: 20.5rem;
       }
 
       .font_feature_2 {
         width: 21rem;
         height: 15rem;
-        top: 27.375rem;
-        left: 28.5rem;
+        top: 21.375rem;
+        left: 37.5rem;
       }
 
       .font_feature_3 {
         width: 18rem;
         height: 10rem;
-        top: 9.875rem;
-        left: 47.875rem;
+        top: 3.875rem;
+        left: 58.875rem;
         text-align: right;
       }
 
@@ -131,15 +115,15 @@ const Feature1 = ({ t, image }) =>
         }
 
         .font_feature_1 {
-          left: 2.1875rem;
+          left: 9.1875rem;
         }
 
         .font_feature_2 {
-          left: 19.1875rem;
+          left: 25.1875rem;
         }
 
         .font_feature_3 {
-          left: 38.5rem;
+          left: 45.5rem;
         }
       }
 
@@ -153,15 +137,15 @@ const Feature1 = ({ t, image }) =>
         }
 
         .font_feature_1 {
-          left: 0.1875rem;
+          left: 7rem;
         }
 
         .font_feature_2 {
-          left: 16.875rem;
+          left: 23.875rem;
         }
 
         .font_feature_3 {
-          left: 36.5rem;
+          left: 42.5rem;
         }
       }
 
@@ -175,14 +159,19 @@ const Feature1 = ({ t, image }) =>
           margin-bottom: 2.5rem;
         }
 
+        .picture-wrapper {
+          margin-top: 5rem;
+          height: 512px;
+        }
+
         .font_feature_1 {
-          top: 26rem;
-          left: -0.875rem;
+          top: 20.5rem;
+          left: 6.5rem;
         }
 
         .font_feature_2 {
-          top: 17.875rem;
-          left: 10.875rem;
+          top: 12.875rem;
+          left: 18.875rem;
           width: 16rem;
           height: 17rem;
 
@@ -191,8 +180,8 @@ const Feature1 = ({ t, image }) =>
         .font_feature_3 {
           width: 13rem;
           height: 7rem;
-          top: 7.875rem;
-          left: 22.875rem;
+          top: 1.875rem;
+          left: 31.875rem;
         }
 
         footer {
@@ -208,16 +197,8 @@ const Feature1 = ({ t, image }) =>
             width: 59rem;
           }
 
-          .font_feature_1 {
-            left: 1.875rem;
-          }
-
-          .font_feature_2 {
-            left: 12.875rem;
-          }
-
-          .font_feature_3 {
-            left: 25.875rem;
+          .picture-wrapper {
+            height: 32rem;
           }
         }
       }
@@ -257,13 +238,20 @@ const Feature1 = ({ t, image }) =>
           line-height: 1.5rem;
         }
 
+        .picture-wrapper {
+          grid-column: 1 / span 6;
+          grid-row: 3;
+          margin-top: 1.875rem;
+          height: 43.4375rem;
+        }
+
         .font_feature_1 {
-          top: 20.75rem;
+          top: 8.75rem;
           left: 5.75rem;
         }
 
         .font_feature_2 {
-          top: 29.75rem;
+          top: 17.75rem;
           left: 7.375rem;
           width: 13.75rem;
         }
@@ -271,7 +259,7 @@ const Feature1 = ({ t, image }) =>
         .font_feature_3 {
           width: 11.4375rem;
           height: 7rem;
-          top: 44rem;
+          top: 32rem;
           left: 0;
         }
       }

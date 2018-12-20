@@ -4,7 +4,7 @@ import { string, shape } from 'prop-types'
 const defaultResolutions = ['360', '1024', '1280', '1360']
 const mediaRuleByResoluton = {
   360: '(max-width: 767px)',
-  1024: '(max-width: 1023px)',
+  1024: '(max-width: 1279px)',
   1280: '(max-width: 1359px)',
   1360: '(max-width: 1919px)',
 }

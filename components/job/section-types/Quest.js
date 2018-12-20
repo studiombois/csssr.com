@@ -52,6 +52,7 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
         .icon-wrapper {
           margin-top: 1.5rem;
           grid-column: 1 / span 1;
+          height: auto;
         }
 
         .file-info {
@@ -74,7 +75,7 @@ const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections })
       <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
     </FormRow>
 
-    {sections.map((section, index) => <Section key={index} {...section} asRow />)}
+    {sections.map((section, index) => <Section key={index} {...section} asRow isChild />)}
     <style jsx>{`
       h2 {
         margin-top: 6.0625rem;

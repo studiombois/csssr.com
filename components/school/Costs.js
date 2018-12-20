@@ -74,16 +74,16 @@ const Manifest = ({ t }) =>
         grid-column: 4 / span 6;
         grid-row: 2;
         text-align: center;
-        margin-top: 4.9rem;
+        margin-top: 5rem;
       }
 
       .big_counter {
         position: relative;
-        font-size: 6.2rem;
+        font-size: 6.3rem;
         grid-column: 6 / span 2;
         grid-row: 3;
         text-align: center;
-        margin-top: 7.1rem;
+        margin-top: 7rem;
         justify-self: center;
       }
 
@@ -91,7 +91,7 @@ const Manifest = ({ t }) =>
         grid-column: 5 / span 4;
         grid-row: 3;
         text-align: center;
-        margin-top: 13.8rem;
+        margin-top: 14rem;
         justify-self: center;
       }
 

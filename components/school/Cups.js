@@ -157,7 +157,7 @@ class Cups extends PureComponent {
           .font_h1-slab {
             grid-column: 5 / span 6;
             grid-row: 2 / span 5;
-            padding-top: 0.5rem;
+            padding-top: 1rem;
             position: absolute;
             align-self: center;
             line-height: 1.60rem;

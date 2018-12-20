@@ -105,6 +105,8 @@ const mapVacancies = vacancy =>
   </li>
 
 class CandidateForm extends PureComponent {
+  messageRef = React.createRef()
+
   state = {
     formSubmitStatus: null,
     isMobile: false,
@@ -166,8 +168,21 @@ class CandidateForm extends PureComponent {
     this.setState({ formSubmitStatus: null })
   }
 
+  handleScroll = () => {
+    const messageNode = this.messageRef.current
+    const bodyRect = document.body.getBoundingClientRect()
+    const elemRect = messageNode.getBoundingClientRect()
+    const offset = elemRect.top - bodyRect.top - 20
+
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    })
+  }
+
   handleSubmit = e => {
     const { handleSubmit, form: { reset } } = this.props
+    this.handleScroll()
 
     return handleSubmit(e).then(() => {
       if (!this.props.hasSubmitErrors) {
@@ -297,7 +312,7 @@ class CandidateForm extends PureComponent {
         />
 
         <FormRow>
-          <div className='button'>
+          <div className='button' ref={this.messageRef}>
             <AnimatedButton
               type='submit'
               disabled={isSubmitButtonDisabled}
@@ -328,7 +343,6 @@ class CandidateForm extends PureComponent {
             margin-right: auto;
             margin-left: auto;
             padding-top: 13.5625rem;
-            padding-bottom: 31.5rem;
             align-items: center;
             border: none;
           }
@@ -358,10 +372,6 @@ class CandidateForm extends PureComponent {
           }
 
           @media (max-width: 767px) {
-            form {
-              padding-bottom: 14rem;
-            }
-
             h1 {
               margin-top: 2.125rem;
             }

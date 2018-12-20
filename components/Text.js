@@ -456,6 +456,7 @@ const Text = () =>
         line-height: 2rem;
       }
 
+      .font_link-list_16,
       .font_p16-regular {
         margin-top: -0.1875rem;
         padding-bottom: 0.1875rem;

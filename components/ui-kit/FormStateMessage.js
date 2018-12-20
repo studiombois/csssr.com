@@ -2,8 +2,8 @@ import React, { PureComponent, Fragment } from 'react'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
-import { oneOf, bool } from 'prop-types'
-import Picture from '../Picture'
+import { oneOf, string } from 'prop-types'
+import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
@@ -20,7 +20,7 @@ const picture = css.resolve`
     width: 100%;
   }
 
- @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
     }
@@ -35,9 +35,10 @@ const picture = css.resolve`
 
   @media (max-width: 767px) {
     picture {
-      bottom: 3.75rem;
-      width: 6.5rem;
-      height: 4.25rem;
+      top: 0;
+      bottom: initial;
+      width: 13.5rem;
+      height: 10.5rem;
     }
   }
 `
@@ -50,12 +51,12 @@ class FormStateMessage extends PureComponent {
 
   static propTypes = {
     status: oneOf(['success', 'fail']),
-    isVisible: bool,
+    errorText: string,
   }
 
   static defaultProps = {
     status: 'success',
-    isVisible: false,
+    errorText: 'Что-то пошло не так.',
   }
 
   componentWillReceiveProps({ status }) {
@@ -76,7 +77,7 @@ class FormStateMessage extends PureComponent {
       }
     case 'fail':
       return {
-        intro: 'Что-то пошло не так.',
+        intro: this.props.errorText,
         message: <span>
           <span>Попробуйте </span>
           <button type='button' className='font_link-list_16' onClick={this.props.onReset}>еще раз</button>
@@ -103,7 +104,7 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { status, t } = this.props
+    const { status } = this.props
     const textData = this.getTextData()
 
     return (
@@ -121,33 +122,53 @@ class FormStateMessage extends PureComponent {
             </span>
           </div>
           <div className='picture'>
-            <Picture
+            <PictureForAllResolutions
               className={picture.className}
-              image={{ namespace: 'dev', key: 'letter', alt: t('dev:imgAlt.letter') }}
+              image={{ namespace: 'forms', key: `${this.state.innerStatus}`, alt: '' }}
+              customResolutions={['360']}
             />
           </div><style jsx>{`
-          .body {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 32rem;
-            transform: scale(0);
-            transition: transform 0.3s ease-out;
-          }
+            .body {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              height: 32rem;
+              transform: scale(0);
+              transition: transform 0.3s ease-out;
+            }
 
-          .body_state_visible {
-            transform: scale(1);
-          }
+            .body_state_visible {
+              transform: scale(1);
+            }
 
-          .text {
-            text-align: center;
-          }
+            .text {
+              position: relative;
+              margin-top: 1.4125rem;
+              text-align: center;
+            }
 
-          .picture {
-            flex-grow: 1;
-          }
-        `}</style>
+            .picture {
+              position: relative;
+              margin-top: 3.5rem;
+              flex-grow: 1;
+            }
+
+            @media (max-width: 767px) {
+              .body {
+                height: 28rem;
+              }
+
+              .text {
+                margin-top: 1.175rem;
+              }
+
+              .picture {
+                margin-top: 1.5rem;
+              }
+            }
+          `}</style>
+          {picture.styles}
         </div>
       </Fragment>
     )

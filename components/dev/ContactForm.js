@@ -49,6 +49,8 @@ const picture = css.resolve`
 `
 
 class ContactForm extends PureComponent {
+  messageRef = React.createRef()
+
   state = {
     formSubmitStatus: null,
   }
@@ -84,12 +86,25 @@ class ContactForm extends PureComponent {
     return formSubmitStatus
   }
 
+  handleScroll = () => {
+    const messageNode = this.messageRef.current
+    const bodyRect = document.body.getBoundingClientRect()
+    const elemRect = messageNode.getBoundingClientRect()
+    const offset = elemRect.top - bodyRect.top - 20
+
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    })
+  }
+
   handleStateClear = () => {
     this.setState({ formSubmitStatus: null })
   }
 
   handleSubmit = e => {
     const { handleSubmit, form: { reset } } = this.props
+    this.handleScroll()
 
     return handleSubmit(e).then(() => {
       if (!this.props.hasSubmitErrors) {
@@ -170,7 +185,7 @@ class ContactForm extends PureComponent {
         </div>
 
 
-        <div className='button'>
+        <div className='button' ref={this.messageRef}>
           <AnimatedButton
             type='submit'
             disabled={isSubmitButtonDisabled}
@@ -191,7 +206,6 @@ class ContactForm extends PureComponent {
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;
-            padding-bottom: 31.5rem;
             width: 1792px;
             align-items: center;
             border: none;
@@ -224,7 +238,6 @@ class ContactForm extends PureComponent {
           }
 
           .message {
-            margin-top: 4rem;
             grid-column: 4 / span 6;
           }
 
@@ -243,7 +256,6 @@ class ContactForm extends PureComponent {
           @media (min-width: 768px) and (max-width: 1279px) {
             form {
               padding-top: 6.1875rem;
-              padding-bottom: 31.5rem;
               background-position: 50% calc(100% - 8.45rem);
               width: 944px;
             }
@@ -271,7 +283,6 @@ class ContactForm extends PureComponent {
           @media (max-width: 767px) {
             form {
               padding-top: 3rem;
-              padding-bottom: 14rem;
               width: 20.5rem;
             }
 
@@ -290,7 +301,6 @@ class ContactForm extends PureComponent {
             }
 
             .message {
-              margin-top: 3.4375rem;
               grid-column: 1 / span 6;
             }
 

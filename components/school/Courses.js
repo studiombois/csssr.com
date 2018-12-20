@@ -285,7 +285,7 @@ class Courses extends PureComponent {
           )
         }
         <section className='grid-container' id='courses'>
-          <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:course.title') }} />
+          <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:course.title') }} />
           {
             coursesMock.items.map(this.renderCourse)
           }

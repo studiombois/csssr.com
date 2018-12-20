@@ -67,7 +67,7 @@ const picture = css.resolve`
 const Form = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='sign'>
-      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:form.title') }} />
+      <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:form.title') }} />
       <ReactFinalForm
         onSubmit={onSubmit}
         validate={contactFormValidationRules}

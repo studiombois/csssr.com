@@ -36,8 +36,8 @@ const picture = css.resolve`
 
 const Manifest = ({ t }) =>
   <Fragment>
-    <section className='grid-container' id='manifest'>
-      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:costs.title') }} />
+    <section className='grid-container'>
+      <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:costs.title') }} />
       <sup className='font_roboto-slab-light big_counter'>
         {t('school:costs.cost')}
         <span className='currency'>₽</span>

@@ -275,7 +275,7 @@ class Manifest extends PureComponent {
     return (
       <Fragment>
         <section className='grid-container' id='manifest'>
-          <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:manifest.title') }} />
+          <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:manifest.title') }} />
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('school:manifest.text') }} />
         </section>
         {

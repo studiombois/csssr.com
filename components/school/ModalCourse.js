@@ -65,16 +65,16 @@ class ModalCourse extends PureComponent {
     return (
       <Fragment>
         <section className='wrapper'>
-          <h2 id='manifest' className='font_h2-regular title'>{title}</h2>
+          <h2 className='font_h2-regular title'>{title}</h2>
           <div className='columnsWrapper'>
             <div className='columnStudy'>
-              <h3 id='manifest' className='font_h3-regular'>{studyItemsTitle}</h3>
+              <h3 className='font_h3-regular'>{studyItemsTitle}</h3>
               <ul>
                 {studyItems && studyItems.map(this.renderPoint)}
               </ul>
             </div>
             <div className='columnNeedKnow'>
-              <h3 id='manifest' className='font_h3-regular'>{needKnowTitle}</h3>
+              <h3 className='font_h3-regular'>{needKnowTitle}</h3>
               <ul>
                 {needKnow && needKnow.map(this.renderPoint)}
               </ul>

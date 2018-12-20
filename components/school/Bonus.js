@@ -159,7 +159,7 @@ class Bonus extends PureComponent {
     return (
       <Fragment>
         <section className='grid-container' id='services'>
-          <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:bonus.title') }} />
+          <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:bonus.title') }} />
           {
             bonusesMock.items.map(this.renderCourse)
           }

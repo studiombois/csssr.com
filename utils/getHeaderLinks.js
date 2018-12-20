@@ -13,7 +13,7 @@ const headerLinks = {
     label: 'dev:headerNav.hireUs',
   }],
   school: [{
-    href: '#competence',
+    href: '#manifest',
     label: 'school:headerNav.manifest',
   }, {
     href: '#courses',

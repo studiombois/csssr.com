@@ -40,7 +40,7 @@ const picture = css.resolve`
 const About = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='about'>
-      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:about.title') }} />
+      <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:about.title') }} />
       <PictureForAllResolutions
         className={picture.className}
         image={{ namespace: 'school', key: 'stat', alt: t('school:imgAlt.about') }}

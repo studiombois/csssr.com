@@ -4,8 +4,8 @@ import counterMock from '../../data/school/counter-mock'
 
 const Counter = ({ t }) =>
   <Fragment>
-    <section className='grid-container' id='manifest'>
-      <h2 id='manifest' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:counter.nowTitle') }} />
+    <section className='grid-container'>
+      <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:counter.nowTitle') }} />
       <sup className='font_roboto-slab-light big_counter'>{counterMock.freePlaces}</sup>
       <h2
         className='font_subhead-slab free_places'

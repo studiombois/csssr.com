@@ -20,11 +20,11 @@ const clickOutsideStyles = {
 class ModalCourse extends PureComponent {
   static propTypes = {
     modalActiveId: number,
-    handleCloseModal: func,
+    onCloseModal: func,
   }
   static defaultProps = {
     modalActiveId: -1,
-    handleCloseModal: () => {},
+    onCloseModal: () => {},
   }
   renderPoint = (item, index) => {
     return (
@@ -45,7 +45,7 @@ class ModalCourse extends PureComponent {
   }
 
   renderModalContent = ({ title, study_items, study_items_title, need_know, need_know_title }) => {
-    const { t, handleCloseModal } = this.props
+    const { t, onCloseModal } = this.props
     return (
       <Fragment>
         <section className='wrapper'>
@@ -62,7 +62,7 @@ class ModalCourse extends PureComponent {
             <div className='buttonWrapper'>
               <div
                 className='button_register'
-                onClick={handleCloseModal}
+                onClick={onCloseModal}
               >
                 <ButtonLink
                   href={'#sign'}

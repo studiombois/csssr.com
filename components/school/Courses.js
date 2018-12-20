@@ -277,7 +277,7 @@ class Courses extends PureComponent {
           modalActiveId !== -1 && (
             <ModalCourse
               modalActiveId={modalActiveId}
-              handleCloseModal={this.handleCloseModal}
+              onCloseModal={this.handleCloseModal}
             />
           )
         }

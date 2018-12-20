@@ -1,3 +1,12 @@
+## Используя пакет optimize-png-for-web
+
+`yarn optimize-images ./my-images-path`
+
+Выполнение этой команды приведёт к созданию папки optimized-images с оптимизированными кратинками из my-images-path
+
+
+## Устаревшая инфа
+
 Оригиналы изображений https://www.dropbox.com/sh/yh38qiijgvs4jxb/AABX-GoHfhLVVjw1lqiZ5YRua?dl=0
 
 Скрипт для создания webp из png `cwebp dog1x1280.png -q 80 -o dog80.webp`

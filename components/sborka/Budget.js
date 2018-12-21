@@ -181,6 +181,10 @@ const Budget = ({ t, lng }) =>
           margin-top: 0.625rem;
           letter-spacing: -0.0625rem;
         }
+
+        span.is_hidden {
+          display: none;
+        }
       }
     `}</style>
     {picture.styles}

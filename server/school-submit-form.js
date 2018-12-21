@@ -1,5 +1,5 @@
 const fetch = require('isomorphic-unfetch')
-const { SCHOOL: { ORIGIN, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL } } } = require('./amo-config')
+const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL } } } = require('./amo-config')
 
 const tagsArray = ['csssr.com']
 const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
@@ -17,9 +17,7 @@ module.exports = (req, res) => {
     email,
   } = req.body
 
-  const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_SCHOOL_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_SCHOOL_USER_HASH}`
-
-  return fetch(`${ORIGIN}/api/v2/contacts/?${authQueryParams}`, {
+  return fetch(`${ORIGIN}/api/v2/contacts/?${AUTH_QUERY}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -61,7 +59,7 @@ module.exports = (req, res) => {
         return res.status(400).send({ error: 'Произошла ошибка' })
       }
 
-      return fetch(`${ORIGIN}/api/v2/leads/?${authQueryParams}`, {
+      return fetch(`${ORIGIN}/api/v2/leads/?${AUTH_QUERY}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',

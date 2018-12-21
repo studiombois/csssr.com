@@ -20,3 +20,6 @@ yarn-error.log*
 
 # static build
 /out
+
+# result of optimize-images command
+/optimized-images

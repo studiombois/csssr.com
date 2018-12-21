@@ -10,16 +10,20 @@ import Layout from '../../components/Layout'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
+
 class Dev extends PureComponent {
   state = {
     isMobile: false,
   }
 
   componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
+  }
 
-    mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mobileMediaQuery)
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   handleMediaMatch = ({ matches }) =>
@@ -54,6 +58,11 @@ class Dev extends PureComponent {
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
         />
         <Form />
+        <style jsx>{`
+          :global(#header-background) {
+            z-index: 1;
+          }
+        `}</style>
       </Layout>
     )
   }

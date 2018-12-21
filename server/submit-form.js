@@ -1,5 +1,5 @@
 const fetch = require('isomorphic-unfetch')
-const { SALES: { ORIGIN, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT } } } = require('./amo-config')
+const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT, GOOGLE_CID } } } = require('./amo-config')
 
 const tagsArray = ['csssr.com']
 const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
@@ -8,7 +8,6 @@ if (tagFromEnv) {
 } else if (process.env.NODE_ENV !== 'production') {
   tagsArray.push('TEST')
 }
-const tags = tagsArray.join(',')
 
 module.exports = (req, res) => {
   const {
@@ -16,11 +15,15 @@ module.exports = (req, res) => {
     phone,
     email,
     message,
+    gacid,
+    language,
   } = req.body
 
-  const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_SALES_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_SALES_USER_HASH}`
+  tagsArray.push(language)
 
-  return fetch(`${ORIGIN}/api/v2/contacts/?${authQueryParams}`, {
+  const tags = tagsArray.join(',')
+
+  return fetch(`${ORIGIN}/api/v2/contacts/?${AUTH_QUERY}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -58,6 +61,14 @@ module.exports = (req, res) => {
                 },
               ],
             },
+            {
+              id: GOOGLE_CID.ID,
+              values: [
+                {
+                  value: gacid,
+                },
+              ],
+            },
           ],
         },
       ],
@@ -66,11 +77,11 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
-        console.log('server/submit-form.js ERROR', JSON.stringify(createContactData))
-        return res.status(400).send({ error: 'Произошла ошибка' })
+        console.log('x1b[31m', 'server/submit-form.js ERROR', JSON.stringify(createContactData), 'x1b[0m')
+        return res.status(400).send({ error: 'server/submit-form.js ошибка при создании контакта' })
       }
 
-      return fetch(`${ORIGIN}/api/v2/leads/?${authQueryParams}`, {
+      return fetch(`${ORIGIN}/api/v2/leads/?${AUTH_QUERY}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -93,7 +104,7 @@ module.exports = (req, res) => {
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
             console.log('server/submit-form.js ERROR', JSON.stringify(createLeadData))
-            return res.status(400).send({ error: 'Произошла ошибка' })
+            return res.status(400).send({ error: 'server/submit-form.js ошибка при создании лида' })
           }
 
           console.log('server/submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))

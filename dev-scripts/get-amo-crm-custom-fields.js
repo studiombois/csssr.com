@@ -2,12 +2,10 @@
 // мета информации об AmoCRM аккаунте (кастомные поля, воронки, что-то ещё).
 
 const fetch = require('isomorphic-unfetch')
-const { SCHOOL: { ORIGIN } } = require('../server/amo-config')
-
-const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_SCHOOL_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_SCHOOL_USER_HASH}`
+const { SALES: { ORIGIN, AUTH_QUERY } } = require('../server/amo-config')
 
 // Используется API https://www.amocrm.com/developers/content/api/account
-fetch(`${ORIGIN}/api/v2/account/?with=custom_fields,users,pipelines,groups,note_types,task_types&${authQueryParams}`, {
+fetch(`${ORIGIN}/api/v2/account/?with=custom_fields,users,pipelines,groups,note_types,task_types&${AUTH_QUERY}`, {
   method: 'GET',
   headers: {
     Accept: 'application/json',

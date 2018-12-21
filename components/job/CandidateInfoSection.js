@@ -178,8 +178,8 @@ const CandidateInfoSection = props => {
         <Fragment>
           <p className='font_p16-regular'>Хотите добавить что-то о себе?</p>
           <Field
-            id='message'
-            name='message'
+            id='comment'
+            name='comment'
             className={stylesForTextareaField.className}
             component={TextareaField}
             theme='regular'

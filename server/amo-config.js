@@ -1,6 +1,9 @@
+const getAuthQuery = (userLogin, userHash) => `USER_LOGIN=${userLogin}&USER_HASH=${userHash}`
+
 module.exports = {
   SALES: {
     ORIGIN: 'https://csssr.amocrm.ru',
+    AUTH_QUERY: getAuthQuery(process.env.AMO_CRM_SALES_USER_LOGIN, process.env.AMO_CRM_SALES_USER_HASH),
     PIPELINE_ID: 938752,
     FIRST_STATUS_ID: 21946756,
     FIELDS: {
@@ -15,10 +18,14 @@ module.exports = {
       COMMENT: {
         ID: 568629,
       },
+      GOOGLE_CID: {
+        ID: 582127,
+      },
     },
   },
   SCHOOL: {
     ORIGIN: 'https://csssrschool.amocrm.ru',
+    AUTH_QUERY: getAuthQuery(process.env.AMO_CRM_SCHOOL_USER_LOGIN, process.env.AMO_CRM_SCHOOL_USER_HASH),
     PIPELINE_ID: 1511002,
     FIRST_STATUS_ID: 23311747,
     FIELDS: {

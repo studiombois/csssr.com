@@ -22,6 +22,8 @@ const picture = css.resolve`
 
   @media (max-width: 767px) {
     picture {
+      position: relative;
+      z-index: 2;
       margin-left: -1rem;
       width: calc(100% + 2rem);
       height: 15.5rem;
@@ -44,6 +46,8 @@ const picturesMap = {
   'pixel-perfectionist': 'Developer_1',
   'head-of-web-development-team': 'Manager',
   'senior-apparel-developer': 'Clothes',
+  'product-manager': 'Product_manager',
+  'devops-engineer': 'Developer_2',
   'sales-assistant': '',
 }
 
@@ -105,10 +109,9 @@ class CandidateForm extends PureComponent {
   }
 
   componentDidMount() {
-    const mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-
-    mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(mobileMediaQuery)
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
   }
 
   componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
@@ -128,6 +131,10 @@ class CandidateForm extends PureComponent {
         this.setState({ formSubmitStatus: null })
       }
     }
+  }
+
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
 
   handleMediaMatch = ({ matches }) =>
@@ -287,6 +294,10 @@ class CandidateForm extends PureComponent {
         </ul>
 
         <style jsx>{`
+          :global(#header-background) {
+            z-index: 1;
+          }
+
           form {
             margin-right: auto;
             margin-left: auto;

@@ -1,6 +1,5 @@
 const fetch = require('isomorphic-unfetch')
-
-const AMO_CRM_BASE_URL = 'https://csssr.amocrm.ru'
+const { SALES: { ORIGIN, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT } } } = require('./amo-config')
 
 const tagsArray = ['csssr.com']
 const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
@@ -19,9 +18,9 @@ module.exports = (req, res) => {
     message,
   } = req.body
 
-  const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_USER_HASH}`
+  const authQueryParams = `USER_LOGIN=${process.env.AMO_CRM_SALES_USER_LOGIN}&USER_HASH=${process.env.AMO_CRM_SALES_USER_HASH}`
 
-  return fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${authQueryParams}`, {
+  return fetch(`${ORIGIN}/api/v2/contacts/?${authQueryParams}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -34,25 +33,25 @@ module.exports = (req, res) => {
           tags,
           custom_fields: [
             {
-              id: 143825,
+              id: PHONE.ID,
               values: [
                 {
                   value: phone,
-                  enum: '303513',
+                  enum: PHONE.ENUM,
                 },
               ],
             },
             {
-              id: 143827,
+              id: EMAIL.ID,
               values: [
                 {
                   value: email,
-                  enum: '303521',
+                  enum: EMAIL.ENUM,
                 },
               ],
             },
             {
-              id: 568629,
+              id: COMMENT.ID,
               values: [
                 {
                   value: message,
@@ -71,7 +70,7 @@ module.exports = (req, res) => {
         return res.status(400).send({ error: 'Произошла ошибка' })
       }
 
-      return fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?${authQueryParams}`, {
+      return fetch(`${ORIGIN}/api/v2/leads/?${authQueryParams}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -81,8 +80,8 @@ module.exports = (req, res) => {
           add: [
             {
               name: `${name} | Первичный запрос с csssr.com`,
-              status_id: 21946756,
-              pipeline_id: 938752,
+              pipeline_id: PIPELINE_ID,
+              status_id: FIRST_STATUS_ID,
               // eslint-disable-next-line no-underscore-dangle
               contacts_id: createContactData._embedded.items[0].id,
               tags,

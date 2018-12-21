@@ -8,7 +8,7 @@ const picture = css.resolve`
     grid-column: 3 / span 8;
     grid-row: 2;
     z-index: -1;
-    margin-top: 1.6rem;
+    margin-top: 1.625rem;
     height: 568px;
   }
 
@@ -32,7 +32,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 3;
       margin-top: 1.875rem;
-      height: 16.53125rem;
+      height: 16.5625rem;
     }
   }
 `
@@ -74,11 +74,11 @@ const About = ({ t }) =>
         grid-column: 3 / span 4;
         grid-row: 2;
         text-align: left;
-        margin-top: 0.4rem;
+        margin-top: 0.4375rem;
       }
 
       .footText {
-        margin-top: -1.2rem;
+        margin-top: -1.1875rem;
         grid-column: 8 / span 3;
         grid-row: 3;
       }

@@ -15,6 +15,11 @@ const picture = css.resolve`
     margin-left: 0;
     height: 208px;
   }
+  .gray {
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
 
   @media (max-width: 1279px) {
     picture {
@@ -50,6 +55,21 @@ class Courses extends PureComponent {
   state = {
     modalActiveId: -1,
   }
+  handleCloseModal = () => {
+    document.body.style.overflow = this.bodyOverflow || 'initial'
+    this.setState({
+      modalActiveId: -1,
+    })
+  }
+
+  handleShowModal = index => () => {
+    this.bodyOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    this.setState({
+      modalActiveId: index,
+    })
+  }
+
   renderCourse = ({
     active,
     title,
@@ -57,7 +77,7 @@ class Courses extends PureComponent {
     info,
     duration,
     image,
-    showModal,
+    modal,
   }, index) => {
     const { t, isMedium } = this.props
     return (
@@ -68,7 +88,9 @@ class Courses extends PureComponent {
         })}>
           <div className='imageColumn'>
             <PictureForAllResolutions
-              className={picture.className}
+              className={cn(picture.className, {
+                gray: !active,
+              })}
               image={{ namespace: 'school', key: image, alt: title }}
             />
             {
@@ -121,7 +143,7 @@ class Courses extends PureComponent {
                     </ButtonLink>
                   </div>
                   {
-                    showModal && (
+                    modal && (
                       <p className='font_p16-regular under_course_text'>
                         {t('school:course.text-1')}
                         <a
@@ -168,30 +190,30 @@ class Courses extends PureComponent {
             bottom: 45%;
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.09375rem;
+            letter-spacing: 0.0625rem;
             padding: 0 0;
-            line-height: 1.33rem;
+            line-height: 1.375rem;
             font-weight: bold;
             transform: rotate(12deg);
           }
           .description {
-            margin-top: 1.4rem;
+            margin-top: 1.4375rem;
           }
           .info {
-            margin-top: 1.4rem;
+            margin-top: 1.4375rem;
             text-align: center;
           }
           .duration {
             margin-top: 2.0rem;
           }
           .course-title {
-            margin-top: 2.95rem;
+            margin-top: 3rem;
           }
 
           .under_course_text {
             grid-column: 5 / span 4;
             grid-row: 3;
-            margin-top: 1.4rem;
+            margin-top: 1.4375rem;
             text-align: center;
             cursor: pointer;
           }
@@ -202,7 +224,7 @@ class Courses extends PureComponent {
             text-align: center;
           }
           .button_register {
-            margin-top: 3.6rem;
+            margin-top: 3.625rem;
           }
 
           .courseWrapper:nth-of-type(1) {
@@ -233,7 +255,7 @@ class Courses extends PureComponent {
             .duration {
               text-align: center;
               padding: 0 5rem;
-              margin-top: 1.3rem;
+              margin-top: 1.3125rem;
             }
             .imageColumn {
               grid-column: 2 / span 5;
@@ -259,24 +281,18 @@ class Courses extends PureComponent {
 
           @media (max-width: 767px) {
             .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
-              grid-column: span 12;
+              grid-column: 1 / span 6;
               grid-row: auto;
               text-align: center;
-              margin-top: 1.4rem;
+              margin-top: 1.4375rem;
               padding: 0 2rem;
-            }
-            .courseWrapper:nth-of-type(1) {
-              grid-column: 1 / span 6;
-            }
-            .courseWrapper:nth-of-type(2) {
-              grid-column: 1 / span 6;
-            }
-            .courseWrapper:nth-of-type(3) {
-              grid-column: 1 / span 6;
             }
             .under_course_text {
               font-size: 1rem;
               line-height: 1.5rem;
+            }
+            .duration {
+              padding: 0;
             }
           }
         `}
@@ -284,21 +300,6 @@ class Courses extends PureComponent {
         {picture.styles}
       </Fragment>
     )
-  }
-
-  handleCloseModal = () => {
-    document.body.style.overflow = this.bodyOverflow || 'initial'
-    this.setState({
-      modalActiveId: -1,
-    })
-  }
-
-  handleShowModal = index => () => {
-    this.bodyOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    this.setState({
-      modalActiveId: index,
-    })
   }
 
   render() {

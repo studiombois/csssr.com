@@ -90,7 +90,7 @@ class Bonus extends PureComponent {
           @media (max-width: 1279px) {
             @media (max-width: 1023px) {
               .bonus-title {
-                margin-top: 1.9rem;
+                margin-top: 1.9375rem;
                 text-align: left;
               }
               .description {
@@ -101,7 +101,7 @@ class Bonus extends PureComponent {
                 margin-top: 0rem;
               }
               .bonusWrapper.margin-0 {
-                margin-top: 9.2rem;
+                margin-top: 9.25rem;
               }
               .bonusWrapper.margin-1 {
                 margin-top: 4.5rem;
@@ -177,7 +177,7 @@ class Bonus extends PureComponent {
           h2 {
             grid-column: 5 / span 4;
             grid-row: 1;
-            margin-bottom: 5.6rem;
+            margin-bottom: 5.625rem;
             text-align: center;
           }
 
@@ -229,7 +229,7 @@ class Bonus extends PureComponent {
             @media (max-width: 1023px) {
               section {
                 width: 59rem;
-                padding-top: 5.7rem;
+                padding-top: 5.75rem;
               }
               h2 {
                 margin-bottom: 0;

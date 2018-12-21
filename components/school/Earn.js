@@ -32,7 +32,7 @@ const picture = css.resolve`
       grid-column: 1 / span 6;
       grid-row: 2;
       text-align: center;
-      margin-top: 1.4rem;
+      margin-top: 1.4375rem;
       height: 13.5rem;
     }
   }

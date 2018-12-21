@@ -7,7 +7,6 @@ export default {
       duration: 'Примерно месяц, если учиться по два часа в день после работы',
       image: 'React_course_junior',
       active: true,
-      showModal: true,
       modal:
         {
           title: 'Junior React разработчик',

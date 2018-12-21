@@ -25,7 +25,7 @@ const Counter = ({ t }) =>
         grid-column: 1 / span 12;
         grid-row: 2;
         text-align: center;
-        margin-top: 3.9rem;
+        margin-top: 3.9375rem;
       }
 
       .big_counter {
@@ -33,7 +33,7 @@ const Counter = ({ t }) =>
         grid-column: 1 / span 12;
         grid-row: 3;
         text-align: center;
-        margin-top: 7.1rem;
+        margin-top: 7.125rem;
         justify-self: center;
       }
 
@@ -41,7 +41,7 @@ const Counter = ({ t }) =>
         grid-column: 1 / span 12;
         grid-row: 3;
         text-align: center;
-        margin-top: 13.8rem;
+        margin-top: 13.8125rem;
         justify-self: center;
       }
 
@@ -70,10 +70,10 @@ const Counter = ({ t }) =>
             padding-top: 3rem;
           }
           .big_counter {
-            margin-top: 3.8rem;
+            margin-top: 3.8125rem;
           }
           .free_places {
-            margin-top: 8.8rem;
+            margin-top: 8.8125rem;
           }
 
         }
@@ -92,21 +92,21 @@ const Counter = ({ t }) =>
           grid-column: 1 / span 6;
           grid-row: 2;
           text-align: center;
-          margin-top: 8.9rem;
+          margin-top: 8.9375rem;
         }
 
         .big_counter {
-          font-size: 6.2rem;
+          font-size: 6.25rem;
           grid-column: 1 / span 6;
           grid-row: 3;
-          margin-top: 7.1rem;
+          margin-top: 7.125rem;
           justify-self: center;
         }
 
         .free_places {
           grid-column: 1 / span 6;
           grid-row: 3;
-          margin-top: 13.8rem;
+          margin-top: 13.8125rem;
           justify-self: center;
         }
 

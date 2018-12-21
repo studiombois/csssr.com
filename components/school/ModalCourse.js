@@ -6,7 +6,7 @@ import ClickOutside from '../ui-kit/ClickOutside'
 import ButtonLink from '../ui-kit/ButtonLink'
 import coursesMock from '../../data/school/courses-mock'
 
-const crossIcon = <CrossIcon width='40px' height='40px'/>
+const crossIcon = <CrossIcon width='2.5rem' height='2.5rem'/>
 const clickOutsideStyles = {
   position: 'absolute',
   top: 0,
@@ -108,7 +108,7 @@ class ModalCourse extends PureComponent {
           .columnsWrapper {
             width: 100%;
             height: 100%;
-            padding-bottom: 10rem;
+            padding-bottom: 2.5rem;
           }
           .columnStudy, .columnNeedKnow {
             display: inline-block;

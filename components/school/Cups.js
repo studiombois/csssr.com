@@ -31,10 +31,10 @@ const picture = css.resolve`
       picture {
         grid-column: 11 / span 1;
         margin-left: -2.5rem;
-        height: 48px;
+        height: 3rem;
       }
       picture.left {
-        height: 48px;
+        height: 3rem;
       }
     }
   }
@@ -45,11 +45,11 @@ const picture = css.resolve`
       grid-row: 1;
       margin-left: 0;
       margin-top: 1.875rem;
-      height: 48px;
+      height: 3rem;
     }
     .active {
-      height: 100px;
-      margin-top: -9px;
+      height: 6.25rem;
+      margin-top: -0.5625px;
     }
   }
 `
@@ -160,7 +160,7 @@ class Cups extends PureComponent {
             padding-top: 1rem;
             position: absolute;
             align-self: center;
-            line-height: 1.60rem;
+            line-height: 1.625rem;
             margin-top: -4rem;
           }
 
@@ -219,7 +219,7 @@ class Cups extends PureComponent {
             @media (max-width: 1023px) {
               section {
                 width: 59rem;
-                margin-top: 1.6rem;
+                margin-top: 1.625rem;
                 margin-bottom: -4rem;
               }
               .font_h1-slab {
@@ -228,7 +228,7 @@ class Cups extends PureComponent {
                 padding-top: 0.5rem;
                 position: absolute;
                 align-self: center;
-                line-height: 1.60rem;
+                line-height: 1.625rem;
                 margin-top: -0.5rem;
                 margin-left: 2.5rem;
               }
@@ -260,7 +260,7 @@ class Cups extends PureComponent {
               grid-row: 2 / span 5;
               padding-top: 0.5rem;
               align-self: center;
-              line-height: 1.60rem;
+              line-height: 1.625rem;
             }
 
             h2 {

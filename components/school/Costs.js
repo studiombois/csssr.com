@@ -18,9 +18,9 @@ const Costs = ({ t }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 1.1rem;
+        padding-top: 1.125rem;
         width: 1792px;
-        margin-bottom: 0.44rem;
+        margin-bottom: 0.4375rem;
       }
 
       p {
@@ -32,9 +32,9 @@ const Costs = ({ t }) =>
       .currency {
         position: absolute;
         right: -1rem;
-        top: -2.9rem;
+        top: -2.9375rem;
         font-size: 2rem;
-        line-height: 6.2rem;
+        line-height: 6.1875rem;
       }
 
       .font_h2-slab {
@@ -46,7 +46,7 @@ const Costs = ({ t }) =>
 
       .big_counter {
         position: relative;
-        font-size: 6.3rem;
+        font-size: 6.3125rem;
         grid-column: 6 / span 2;
         grid-row: 3;
         text-align: center;
@@ -100,7 +100,7 @@ const Costs = ({ t }) =>
             padding-top: 1rem;
           }
           .font_h2-slab {
-            margin-top: 4.9rem;
+            margin-top: 4.9375rem;
           }
 
           .big_counter {
@@ -108,7 +108,7 @@ const Costs = ({ t }) =>
           }
 
           .period {
-            margin-top: 6.1rem;
+            margin-top: 6.125rem;
           }
 
           p {
@@ -138,22 +138,22 @@ const Costs = ({ t }) =>
           grid-column: 1 / span 6;
           grid-row: 2;
           text-align: center;
-          margin-top: 7.4rem;
+          margin-top: 7.4375rem;
         }
 
         .big_counter {
           position: relative;
-          font-size: 6.2rem;
+          font-size: 6.25rem;
           grid-column: 1 / span 6;
           grid-row: 3;
-          margin-top: 7.1rem;
+          margin-top: 7.125rem;
           justify-self: center;
         }
 
         .free_places {
           grid-column: 1 / span 6;
           grid-row: 3;
-          margin-top: 13.8rem;
+          margin-top: 13.8125rem;
           justify-self: center;
         }
 

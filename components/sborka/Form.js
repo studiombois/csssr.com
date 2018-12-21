@@ -1,4 +1,5 @@
 import React from 'react'
+import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
@@ -66,8 +67,14 @@ const ContactFormForSborka = props =>
     `}</style>
   </div>
 
-export default () => <ReactFinalForm
-  onSubmit={onSubmit}
+const Form = ({ language }) => <ReactFinalForm
+  onSubmit={onSubmit(language)}
   validate={contactFormValidationRules}
   component={ContactFormForSborka}
 />
+
+Form.propTypes = {
+  language: string,
+}
+
+export default Form

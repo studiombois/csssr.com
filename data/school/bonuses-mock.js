@@ -1,4 +1,4 @@
-const bonuses = {
+export default {
   items: [
     {
       id: 1,
@@ -20,4 +20,3 @@ const bonuses = {
     },
   ],
 }
-export default bonuses

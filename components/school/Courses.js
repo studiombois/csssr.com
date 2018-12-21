@@ -47,10 +47,10 @@ const picture = css.resolve`
 
 class Courses extends PureComponent {
   static propTypes = {
-    isMedium: bool,
+    isTabletOrLowResDesktop: bool,
   }
   static defaultProps = {
-    isMedium: false,
+    isTabletOrLowResDesktop: false,
   }
   state = {
     modalActiveId: -1,
@@ -79,12 +79,12 @@ class Courses extends PureComponent {
     image,
     modal,
   }, index) => {
-    const { t, isMedium } = this.props
+    const { t, isTabletOrLowResDesktop } = this.props
     return (
       <Fragment key={index}>
         <div className={cn('courseWrapper', {
           active,
-          'grid-container': isMedium,
+          'grid-container': isTabletOrLowResDesktop,
         })}>
           <div className='imageColumn'>
             <PictureForAllResolutions
@@ -101,7 +101,7 @@ class Courses extends PureComponent {
               )
             }
             {
-              active && isMedium && (
+              active && isTabletOrLowResDesktop && (
                 <Fragment>
                   <p className='font_p16-regular info'>
                     {info}
@@ -124,7 +124,7 @@ class Courses extends PureComponent {
               active ? (
                 <div className='button_wrapper'>
                   {
-                    !isMedium && (
+                    !isTabletOrLowResDesktop && (
                       <Fragment>
                         <p className='font_p16-regular info'>
                           {info}

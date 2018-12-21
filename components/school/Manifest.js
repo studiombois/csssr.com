@@ -51,7 +51,6 @@ const picture = css.resolve`
 class Manifest extends PureComponent {
 
   renderItem = ({
-    id,
     title,
     description,
     descriptionSecond,
@@ -61,7 +60,7 @@ class Manifest extends PureComponent {
     const right = !(index % 2)
     const left = (index % 2)
     return (
-      <Fragment key={id}>
+      <Fragment key={index}>
         <section className={cn('grid-container', {
           right,
           left,

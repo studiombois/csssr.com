@@ -65,12 +65,19 @@ const planets = css.resolve`
 class Hire extends PureComponent {
   state = {
     showScrollButton: false,
+    isEdge: false,
   }
 
   rafId = null
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+
+    if (window.navigator && /Edge/.test(navigator.userAgent)) {
+      this.setState({
+        isEdge: true,
+      })
+    }
   }
 
   componentWillUnmount() {
@@ -140,7 +147,12 @@ class Hire extends PureComponent {
               alt: t('sborka:imgAlt.rocket'),
             }}
           />
-          <HirePlanetsAndSatellites className={planets.className}/>
+          {
+            this.state.isEdge
+              ? null
+              : <HirePlanetsAndSatellites className={planets.className} />
+          }
+
         </div><style jsx>{`
           article {
             position: relative;

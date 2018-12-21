@@ -238,8 +238,7 @@ class Manifest extends PureComponent {
             h2,
             .h3-2,
             .p-2,
-            p,
-            footer {
+            p {
               grid-column: 1 / span 6;
             }
 
@@ -358,7 +357,13 @@ class Manifest extends PureComponent {
             }
 
             h2 {
+              grid-column: 1 / span 6;
               margin-bottom: 1.1875rem;
+            }
+            p {
+              grid-column: 1 / span 6;
+              text-align: center;
+              grid-row: 2;
             }
            }
         `}</style>

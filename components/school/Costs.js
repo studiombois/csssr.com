@@ -125,13 +125,16 @@ const Costs = ({ t }) =>
         }
 
         h2,
-        p,
-        footer {
+        p {
           grid-column: 1 / span 6;
         }
 
         h2 {
           margin-bottom: 1.1875rem;
+        }
+
+        .period {
+          grid-column: 1 / span 6;
         }
 
         .font_h2-slab {

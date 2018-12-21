@@ -167,6 +167,11 @@ class ContactForm extends PureComponent {
               width: 20.5rem;
             }
 
+            .field {
+              grid-column: 1 / span 6;
+              margin-bottom: 2.0625rem;
+            }
+
             .button {
               margin-top: 3.4375rem;
               grid-column: 2 / span 4;

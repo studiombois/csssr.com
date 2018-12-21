@@ -130,6 +130,7 @@ export class SideBar extends PureComponent {
             height: 1.5rem;
             width: 1.5rem;
             border: none;
+            color: #4a4a4a;
             background: none;
             cursor: pointer;
           }

@@ -65,17 +65,12 @@ const planets = css.resolve`
 class Hire extends PureComponent {
   state = {
     showScrollButton: false,
-    isEdge: true,
   }
 
   rafId = null
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
-
-    this.setState({
-      isEdge: navigator.userAgent.includes('Edge'),
-    })
   }
 
   componentWillUnmount() {
@@ -109,7 +104,7 @@ class Hire extends PureComponent {
   }
 
   render() {
-    const { t } = this.props
+    const { t, isEdge } = this.props
 
     return (
       <Fragment>
@@ -145,10 +140,9 @@ class Hire extends PureComponent {
               alt: t('sborka:imgAlt.rocket'),
             }}
           />
-          {
-            this.state.isEdge
-              ? null
-              : <HirePlanetsAndSatellites className={planets.className} />
+          { isEdge
+            ? null
+            : <HirePlanetsAndSatellites className={planets.className} />
           }
 
         </div><style jsx>{`

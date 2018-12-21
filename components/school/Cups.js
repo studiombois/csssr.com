@@ -56,7 +56,7 @@ const picture = css.resolve`
 
 class Cups extends PureComponent {
   state = {
-    active: 2,
+    active: 1,
   }
   rafId = null
   componentDidMount() {
@@ -108,11 +108,11 @@ class Cups extends PureComponent {
     return (
       <Fragment>
         <section className='grid-container bg'>
-          <h1 className='font_h1-slab'>
+          <div className='font_h1-slab'>
             <span className='font_subhead-slab'>
               { !!active && active.title}
             </span>
-          </h1>
+          </div>
         </section>
         <section className='grid-container' id='cups'>
           {

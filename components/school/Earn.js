@@ -53,10 +53,10 @@ class Earn extends PureComponent {
             className={picture.className}
             image={{ namespace: 'school', key: 'cover', alt: t('school:imgAlt.earn') }}
           />
-          <h1 className='font_h1-slab'>
-            {t('school:school.title')}
+          <h1 className='font_h1-slab' >
+            <span dangerouslySetInnerHTML={{ __html: t('school:school.title') }} />
             <span className='mark'>JavaScript</span>
-            <span className='font_subhead-slab'>{t('school:school.subTitle')}</span>
+            <span className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: t('school:school.subTitle') }} />
           </h1>
 
         </article><style jsx>{`

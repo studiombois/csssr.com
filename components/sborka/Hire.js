@@ -104,7 +104,7 @@ class Hire extends PureComponent {
   }
 
   render() {
-    const { t } = this.props
+    const { t, isEdge } = this.props
 
     return (
       <Fragment>
@@ -140,7 +140,11 @@ class Hire extends PureComponent {
               alt: t('sborka:imgAlt.rocket'),
             }}
           />
-          <HirePlanetsAndSatellites className={planets.className}/>
+          { isEdge
+            ? null
+            : <HirePlanetsAndSatellites className={planets.className} />
+          }
+
         </div><style jsx>{`
           article {
             position: relative;

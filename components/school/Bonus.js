@@ -36,7 +36,7 @@ const picture = css.resolve`
 `
 
 class Bonus extends PureComponent {
-  renderCourse = ({
+  renderBonus = ({
     id,
     title,
     description,
@@ -44,7 +44,7 @@ class Bonus extends PureComponent {
   }, index) => {
     return (
       <Fragment key={id}>
-        <div className={cn('courseWrapper', `margin-${index}`)}>
+        <div className={cn('bonusWrapper', `margin-${index}`)}>
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'school', key: image, alt: title }}
@@ -57,25 +57,25 @@ class Bonus extends PureComponent {
           </p>
         </div>
         <style jsx>{`
-          .courseWrapper {
+          .bonusWrapper {
             grid-column: span 4;
             grid-row: 2;
             text-align: center;
             margin-top: 1.5rem;
           }
-          .courseWrapper:nth-of-type(1) {
+          .bonusWrapper:nth-of-type(1) {
             grid-column: 3 / span 2;
           }
-          .courseWrapper:nth-of-type(2) {
+          .bonusWrapper:nth-of-type(2) {
             grid-column: 6 / span 2;
           }
-          .courseWrapper:nth-of-type(3) {
+          .bonusWrapper:nth-of-type(3) {
             grid-column: 9 / span 2;
           }
-          .courseWrapper.margin-0 {
+          .bonusWrapper.margin-0 {
             margin-top: 19.5rem;
           }
-          .courseWrapper.margin-1 {
+          .bonusWrapper.margin-1 {
             margin-top: 10.5rem;
           }
           .description {
@@ -97,52 +97,52 @@ class Bonus extends PureComponent {
                 margin-top: 1rem;
                 text-align: left;
               }
-              .courseWrapper {
+              .bonusWrapper {
                 margin-top: 0rem;
               }
-              .courseWrapper.margin-0 {
+              .bonusWrapper.margin-0 {
                 margin-top: 9.2rem;
               }
-              .courseWrapper.margin-1 {
+              .bonusWrapper.margin-1 {
                 margin-top: 4.5rem;
               }
-              .courseWrapper:nth-of-type(1) {
+              .bonusWrapper:nth-of-type(1) {
                 grid-column: 2 / span 3;
               }
-              .courseWrapper:nth-of-type(2) {
+              .bonusWrapper:nth-of-type(2) {
                 grid-column: 5 / span 4;
                 margin-left: 2.5rem;
               }
-              .courseWrapper:nth-of-type(3) {
+              .bonusWrapper:nth-of-type(3) {
                 grid-column: 9 / span 3;
               }
             }
           }
 
           @media (max-width: 767px) {
-            .courseWrapper {
+            .bonusWrapper {
               grid-column: 1 / span 6;
               grid-row: auto;
               text-align: center;
               margin-top: 1.5rem;
             }
-            .courseWrapper:nth-of-type(1) {
+            .bonusWrapper:nth-of-type(1) {
               grid-column: 1 / span 6;
               margin-left: 0;
             }
-            .courseWrapper:nth-of-type(2) {
+            .bonusWrapper:nth-of-type(2) {
               grid-column: 1 / span 6;
               margin-left: 0;
             }
-            .courseWrapper:nth-of-type(3) {
+            .bonusWrapper:nth-of-type(3) {
               grid-column: 1 / span 6;
               margin-left: 0;
             }
-            .courseWrapper.margin-0 {
+            .bonusWrapper.margin-0 {
               margin-top: 0;
               margin-left: 0;
             }
-            .courseWrapper.margin-1 {
+            .bonusWrapper.margin-1 {
               margin-top: 0;
               margin-left: 0;
             }
@@ -161,7 +161,7 @@ class Bonus extends PureComponent {
         <section className='grid-container' id='services'>
           <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:bonus.title') }} />
           {
-            bonusesMock.items.map(this.renderCourse)
+            bonusesMock.items.map(this.renderBonus)
           }
         </section>
 
@@ -185,22 +185,6 @@ class Bonus extends PureComponent {
             grid-column: 3 / span 8;
             text-align: center;
             grid-row: 2;
-          }
-
-          .font_h1-slab {
-            grid-column: 5 / span 6;
-            grid-row: 1 / span 5;
-            padding-top: 0.5rem;
-            position: absolute;
-            align-self: center;
-            line-height: 1.60rem;
-          }
-
-          .font_h2-regular {
-            grid-column: 4 / span 4;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 14rem;
           }
 
           .point {

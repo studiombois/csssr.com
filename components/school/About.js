@@ -46,7 +46,7 @@ const About = ({ t }) =>
         image={{ namespace: 'school', key: 'stat', alt: t('school:imgAlt.about') }}
       />
       <p className='font_p16-regular text' dangerouslySetInnerHTML={{ __html: t('school:about.text') }} />
-      <p className='font_p16-regular footText' dangerouslySetInnerHTML={{ __html: t('school:about.foot_text') }} />
+      <p className='font_p16-regular footText' dangerouslySetInnerHTML={{ __html: t('school:about.footText') }} />
     </section>
     <style jsx>{`
       section {
@@ -77,7 +77,7 @@ const About = ({ t }) =>
         margin-top: 0.4rem;
       }
 
-      .foot_text {
+      .footText {
         margin-top: -1.2rem;
         grid-column: 8 / span 3;
         grid-row: 3;
@@ -128,15 +128,13 @@ const About = ({ t }) =>
             line-height: 1.5rem;
             grid-row: 2;
             text-align: left;
-            margin-top: 0.4rem;
+            margin-top: 0rem;
           }
 
-          .foot_text {
-            margin-top: -0.7rem;
+          .footText {
+            margin-top: -1rem;
             grid-column: 8 / span 4;
             text-align: left;
-            font-size: 1rem;
-            line-height: 1.5rem;
             grid-row: 3;
           }
 

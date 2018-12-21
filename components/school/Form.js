@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
-import css from 'styled-jsx/css'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
@@ -32,38 +31,6 @@ const onSubmit = async values => {
   }
 }
 
-const picture = css.resolve`
-  picture {
-    grid-column: 3 / span 8;
-    grid-row: 2;
-    z-index: -1;
-    margin-top: 1.6rem;
-    height: 568px;
-  }
-
- @media (max-width: 1279px) {
-    picture {
-      margin-top: 5rem;
-      height: 32rem;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        height: 32rem;
-      }
-    }
-  }
-
-  @media (max-width: 767px) {
-    picture {
-      grid-column: 1 / span 6;
-      grid-row: 3;
-      margin-top: 1.875rem;
-      height: 43.4375rem;
-    }
-  }
-`
-
 const Form = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='sign'>
@@ -79,7 +46,7 @@ const Form = ({ t }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 10.1rem;
+        padding-top: 10rem;
         width: 1792px;
       }
 
@@ -141,7 +108,7 @@ const Form = ({ t }) =>
 
       @media (min-width: 768px) and (max-width: 1279px) {
         section {
-          padding-top: 6.5rem;
+          padding-top: 7.5rem;
           width: 944px;
         }
 
@@ -175,7 +142,6 @@ const Form = ({ t }) =>
 
        }
     `}</style>
-    {picture.styles}
   </Fragment>
 
 export default translate()(Form)

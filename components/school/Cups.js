@@ -17,7 +17,7 @@ const picture = css.resolve`
   }
   
   .active {
-    height: 144px;
+    height: 9rem;
     transition: height 0.4s ease;
   }
   

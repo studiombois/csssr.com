@@ -1,46 +1,8 @@
 import React, { PureComponent } from 'react'
-import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
 import TextField from '../ui-kit/TextField'
 import AnimatedButton from '../ui-kit/AnimatedButton'
-
-const picture = css.resolve`
-  picture {
-    position: absolute;
-    bottom: 10.75rem;
-    left: 50%;
-    z-index: -1;
-    width: 340px;
-    height: 220px;
-    transform: translateX(-50%);
-  }
-
-  img {
-    width: 100%;
-  }
-
- @media (min-width: 768px) and (max-width: 1279px) {
-    picture {
-      margin-top: -6.5rem;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        width: 21.25rem;
-        height: 13.75rem;
-      }
-    }
-  }
-
-  @media (max-width: 767px) {
-    picture {
-      bottom: 3.75rem;
-      width: 6.5rem;
-      height: 4.25rem;
-    }
-  }
-`
 
 class ContactForm extends PureComponent {
   state = {
@@ -150,25 +112,9 @@ class ContactForm extends PureComponent {
             border: none;
           }
 
-          h2 {
-            margin-bottom: 6rem;
-            grid-column: 4 / span 6;
-            text-align: center;
-          }
-
           .field {
             grid-column: 4 / span 6;
             margin-bottom: 2.0625rem;
-          }
-
-          .field_type_textarea {
-            position: relative;
-            margin-top: 1.5rem;
-            margin-bottom: 3.5rem;
-          }
-
-          .field_type_no-margin {
-            margin: 0;
           }
 
           .button {
@@ -196,17 +142,9 @@ class ContactForm extends PureComponent {
               width: 944px;
             }
 
-            h2 {
-              margin-bottom: 2.3125rem;
-            }
-
             .field {
               grid-column: 4 / span 6;
               margin-bottom: 1.875rem;
-            }
-
-            .field_type_textarea {
-              margin-bottom: 3.75rem;
             }
 
             @media (max-width: 1023px) {
@@ -229,31 +167,14 @@ class ContactForm extends PureComponent {
               width: 20.5rem;
             }
 
-            h2 {
-              margin-bottom: 2.5rem;
-            }
-
-            h2,
-            .field {
-              grid-column: 1 / span 6;
-            }
-
             .button {
               margin-top: 3.4375rem;
               grid-column: 2 / span 4;
             }
 
-            .field_type_textarea {
-              margin-bottom: 1.5rem;
-            }
-
-            .field_type_checkbox {
-              margin-bottom: 21px;
-            }
           }
 
         `}</style>
-        {picture.styles}
       </form>
     )
   }

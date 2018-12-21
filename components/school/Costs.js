@@ -1,40 +1,7 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
-import css from 'styled-jsx/css'
 
-const picture = css.resolve`
-  picture {
-    grid-column: 2 / span 2;
-    grid-row: 2;
-    z-index: -1;
-    margin-top: 8rem;
-    height: 248px;
-  }
-
- @media (max-width: 1279px) {
-    picture {
-      margin-top: 5rem;
-      height: 512px;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        height: 32rem;
-      }
-    }
-  }
-
-  @media (max-width: 767px) {
-    picture {
-      grid-column: 1 / span 6;
-      grid-row: 3;
-      margin-top: 1.875rem;
-      height: 43.4375rem;
-    }
-  }
-`
-
-const Manifest = ({ t }) =>
+const Costs = ({ t }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:costs.title') }} />
@@ -44,7 +11,7 @@ const Manifest = ({ t }) =>
       </div>
 
       <h2 className='font_subhead-slab period' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
-      <p className='font_p16-regular under_costs_text' dangerouslySetInnerHTML={{ __html: t('school:costs.underCostsText') }}/>
+      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('school:costs.underCostsText') }}/>
     </section>
     <style jsx>{`
       section {
@@ -192,7 +159,6 @@ const Manifest = ({ t }) =>
 
        }
     `}</style>
-    {picture.styles}
   </Fragment>
 
-export default translate()(Manifest)
+export default translate()(Costs)

@@ -11,15 +11,15 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 const picture = css.resolve`
   picture {
     display: block;
-    margin-top: 0.1rem;
-    margin-left: 0rem;
+    margin-top: 0;
+    margin-left: 0;
     height: 208px;
   }
 
   @media (max-width: 1279px) {
     picture {
       grid-column: 2 / span 3;
-      margin-top: 1.8rem;
+      margin-top: 2rem;
       height: 13rem;
     }
 
@@ -34,7 +34,7 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 3;
-      margin-top: 1.875rem;
+      margin-top: 2rem;
       height: 8.75rem;
     }
   }
@@ -214,13 +214,6 @@ class Courses extends PureComponent {
           .courseWrapper:nth-of-type(3) {
             grid-column: 9 / span 4;
           }
-          .courseWrapper.margin-0 {
-            margin-top: 19.5rem;
-          }
-          .courseWrapper.margin-1 {
-            margin-top: 10.5rem;
-          }
-
 
           @media (max-width: 1279px) {
             .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
@@ -228,7 +221,10 @@ class Courses extends PureComponent {
               grid-row: auto;
               text-align: left;
               padding: 0 0rem;
-              margin-bottom: 0.5rem;
+              margin-bottom: 1rem;
+            }
+            .course-title {
+              margin-top: 3.25rem;
             }
             .info {
               font-size: 1rem;
@@ -244,6 +240,20 @@ class Courses extends PureComponent {
             }
             .infoColumn {
               grid-column: 8 / span 4;
+            }
+            .font_p16-regular {
+            }
+            .button_register {
+              margin-top: 2.5rem;
+            }
+            .font_link-list_16 {
+              display: inline;
+            }
+            .under_course_text {
+              grid-column: 3 / span 6;
+              text-align: left;
+              font-size: 1rem;
+              line-height: 1.5rem;
             }
           }
 
@@ -263,12 +273,6 @@ class Courses extends PureComponent {
             }
             .courseWrapper:nth-of-type(3) {
               grid-column: 1 / span 6;
-            }
-            .courseWrapper.margin-0 {
-              margin-top: 0;
-            }
-            .courseWrapper.margin-1 {
-              margin-top: 0;
             }
             .under_course_text {
               font-size: 1rem;
@@ -333,35 +337,6 @@ class Courses extends PureComponent {
             text-align: center;
           }
 
-          p {
-            grid-column: 3 / span 8;
-            text-align: center;
-            grid-row: 2;
-          }
-
-          .font_h1-slab {
-            grid-column: 5 / span 6;
-            grid-row: 1 / span 5;
-            padding-top: 0.5rem;
-            position: absolute;
-            align-self: center;
-            line-height: 1.60rem;
-          }
-
-          .font_h2-regular {
-            grid-column: 4 / span 4;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 14rem;
-          }
-
-          .point {
-            grid-column: 4 / span 5;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 17rem;
-          }
-
           @media (min-width: 1360px) and (max-width: 1919px) {
             section {
               width: 1328px;
@@ -409,9 +384,7 @@ class Courses extends PureComponent {
               width: 20.5rem;
             }
 
-            h2,
-            p,
-            footer {
+            h2 {
               grid-column: 1 / span 6;
             }
 

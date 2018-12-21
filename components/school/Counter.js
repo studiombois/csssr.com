@@ -85,8 +85,7 @@ const Counter = ({ t }) =>
           width: 20.5rem;
         }
 
-        h2,
-        footer {
+        h2 {
           grid-column: 1 / span 6;
         }
         .font_h2-slab {

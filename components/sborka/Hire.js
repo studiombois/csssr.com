@@ -65,7 +65,7 @@ const planets = css.resolve`
 class Hire extends PureComponent {
   state = {
     showScrollButton: false,
-    isEdge: false,
+    isEdge: true,
   }
 
   rafId = null
@@ -73,11 +73,9 @@ class Hire extends PureComponent {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
 
-    if (window.navigator && /Edge/.test(navigator.userAgent)) {
-      this.setState({
-        isEdge: true,
-      })
-    }
+    this.setState({
+      isEdge: navigator.userAgent.includes('Edge'),
+    })
   }
 
   componentWillUnmount() {

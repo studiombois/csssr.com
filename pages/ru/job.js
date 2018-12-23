@@ -160,6 +160,7 @@ class Job extends PureComponent {
 
   render() {
     const { vacancy, vacancies, initialValues } = this.props
+
     return (
       <Fragment>
         <Layout

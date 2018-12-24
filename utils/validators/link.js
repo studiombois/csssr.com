@@ -1,3 +1,3 @@
 import simpleLinkRegexp from '../simpleLinkRegexp'
 
-export default value => value.match(simpleLinkRegexp) ? undefined : 'Неверный формат ссылки'
+export default t => value => value.match(simpleLinkRegexp) ? undefined : t('common:formErrors.link')

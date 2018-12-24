@@ -63,6 +63,16 @@ export default css`
     color: #0076ff;
   }
 
+  span.error {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    margin-top: 0.625rem;
+    display: block;
+    text-align: center;
+  }
+
   div input:focus + label::before {
     width: 100%;
   }

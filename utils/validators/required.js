@@ -1,1 +1,1 @@
-export default value => value ? undefined : 'Обязательное поле'
+export default t => value => value ? undefined : t('common:formErrors.required')

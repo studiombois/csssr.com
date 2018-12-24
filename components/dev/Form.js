@@ -2,6 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
+import { translate } from 'react-i18next'
 import fetch from 'isomorphic-unfetch'
 import ContactForm from './ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
@@ -42,9 +43,9 @@ const onSubmit = language => async values => {
   }
 }
 
-const Form = ({ language }) => <ReactFinalForm
+const Form = ({ language, t }) => <ReactFinalForm
   onSubmit={onSubmit(language)}
-  validate={contactFormValidationRules}
+  validate={contactFormValidationRules(t)}
   component={ContactForm}
 />
 
@@ -52,4 +53,4 @@ Form.propTypes = {
   language: string,
 }
 
-export default Form
+export default translate()(Form)

@@ -136,6 +136,7 @@ class ContactForm extends PureComponent {
             type='text'
             placeholder={t('dev:form.namePlaceholder')}
             label={t('dev:form.nameLabel')}
+            errorShouldBeShown
           />
         </div>
         <div className='field'>
@@ -156,6 +157,7 @@ class ContactForm extends PureComponent {
             type='email'
             placeholder={t('dev:form.emailPlaceholder')}
             label={t('dev:form.emailLabel')}
+            errorShouldBeShown
           />
         </div>
         <div className='field field_type_textarea'>

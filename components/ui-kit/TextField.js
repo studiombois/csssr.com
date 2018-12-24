@@ -38,6 +38,7 @@ export default class TextField extends PureComponent {
       theme,
       // state,
       className,
+      errorShouldBeShown,
       input: {
         name,
         value,
@@ -73,7 +74,7 @@ export default class TextField extends PureComponent {
           type={type}
           disabled={disabled}
         />
-        {(theme === 'regular' && meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
+        {(errorShouldBeShown && meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
         {label && <label
           className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
           dangerouslySetInnerHTML={{ __html: label }}

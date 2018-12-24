@@ -1,3 +1,3 @@
 import simpleEmailRegexp from '../simpleEmailRegexp'
 
-export default value => value.match(simpleEmailRegexp) ? undefined : 'Неверный формат адреса'
+export default t => value => value.match(simpleEmailRegexp) ? undefined : t('common:formErrors.email')

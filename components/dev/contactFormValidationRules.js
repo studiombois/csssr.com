@@ -1,18 +1,16 @@
-import simpleEmailRegexp from '../../utils/simpleEmailRegexp'
+import {
+  composeValidators,
+  email,
+  required,
+} from '../../utils/validators/index'
 
-export default values => {
+export default t => values => {
   const errors = {}
+  errors.name = required(t)(values.name)
+  errors.email = composeValidators(required(t), email(t))(values.email)
 
-  if (!values.name) {
-    errors.name = 'Required'
-  }
-  if (!values.email) {
-    errors.email = 'Required'
-  } else if (!values.email.match(simpleEmailRegexp)) {
-    errors.email = 'Invalid email format'
-  }
   if (!values.consents || (values.consents && !values.consents.includes('privacyPolicy'))) {
-    errors.privacyPolicy = 'Required'
+    errors.privacyPolicy = t('common:formErrors.required')
   }
 
   return errors

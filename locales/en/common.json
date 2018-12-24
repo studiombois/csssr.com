@@ -7,7 +7,7 @@
     "company": "Company",
     "products": "Products",
     "education": "Education",
-    "sborka": "HTML—Sborka"
+    "sborka": "Mock&#x2010;ups to&nbsp;HTML"
   },
   "languageRedirect": {
     "link": "/ru",
@@ -20,7 +20,7 @@
   "sectionName": {
     "en": "Software Engineering",
     "en/jobs": "Jobs",
-    "en/sborka": "Sborka"
+    "en/html": "Mock&#x2010;ups to&nbsp;HTML"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

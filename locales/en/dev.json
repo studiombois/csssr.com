@@ -10,7 +10,7 @@
     "hireUs": "Hire us"
   },
   "imgAlt": {
-    "dev": "picture that represents our CSSSR team",
+    "dog": "a dog flying through the open space, on a spaceship called “MVP”, symbolizing our successfully launched projects",
     "geometry": "geometric figures showing the range of our services: a triangle with the text “MVP”, a circle with the text “Support the development of high load web applications” and a square with the text “Stack migration”",
     "time": "a woman on a bike with a jet pack, showing how quickly we do our job, with the text “We care about time-to-market metrics”",
     "perfect": "a man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly, with the text “We born with a gene of perfectionism”",
@@ -19,7 +19,7 @@
   "hire": {
     "title": "We make the\u00A0world more logical with\u00A0JS",
     "subTitle": "and dream about space",
-    "paragraph1": "We&nbsp;specialize in&nbsp;developing data-intensive web applications, including online banking systems, payment interfaces, sales and brokerage platforms, customer portals for airline companies, and websites for mobile network operators.",
+    "paragraph1": "We&nbsp;specialize in&nbsp;front-end outsourcing for banks, insurance companies, airlines companies and mobile network operators.",
     "paragraph2": "However, our services are not just for large companies&nbsp;&mdash; we&rsquo;re open to&nbsp;startups who are just at&nbsp;the beginning of&nbsp;their journey.",
     "author": "Dmitriy Chekin, CEO",
     "buttonText": "Hire us"

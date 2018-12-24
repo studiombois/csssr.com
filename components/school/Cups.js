@@ -4,6 +4,7 @@ import css from 'styled-jsx/css'
 import cn from 'classnames'
 import cupMock from '../../data/school/cup-mock'
 import Picture from '../Picture'
+import limit from '../../utils/limit'
 
 const picture = css.resolve`
   picture {
@@ -60,7 +61,7 @@ const picture = css.resolve`
 
 class Cups extends PureComponent {
   state = {
-    active: 1,
+    active: 0,
   }
   rafId = null
   componentDidMount() {
@@ -81,8 +82,12 @@ class Cups extends PureComponent {
       const windowHeight = window.innerHeight
       const cupsBoundings = document.getElementById('cups').getBoundingClientRect()
       const cupHeight = cupsBoundings.height < 400 ? 400 : cupsBoundings.height
-      const newActive = parseInt((windowHeight / 2 - cupsBoundings.top + padding) / (cupHeight / 5), 10)
-      if (active !== newActive && newActive >= 1 && newActive <= 5) {
+      const newActive = limit(
+        parseInt((windowHeight / 2 - cupsBoundings.top + padding) / (cupHeight / 5), 10),
+        0,
+        cupMock.items.length - 1
+      )
+      if (active !== newActive) {
         this.setState({
           active: newActive,
         })
@@ -91,14 +96,13 @@ class Cups extends PureComponent {
   }
 
   renderItem = ({
-    id,
     image,
-  }) => {
+  }, index) => {
     const { t } = this.props
-    const active = this.state.active === id
+    const active = this.state.active === index
     return (
       <Picture
-        key={id}
+        key={index}
         className={cn(picture.className, {
           active,
         })}
@@ -107,7 +111,7 @@ class Cups extends PureComponent {
   }
 
   render() {
-    const active = cupMock.items[this.state.active - 1]
+    const active = cupMock.items[this.state.active]
     return (
       <Fragment>
         <section className='grid-container bg'>

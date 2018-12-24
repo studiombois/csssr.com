@@ -52,8 +52,7 @@ class Manifest extends PureComponent {
 
   renderItem = ({
     title,
-    description,
-    descriptionSecond,
+    descriptionLines,
     isCups,
     image,
   }, index) => {
@@ -79,19 +78,12 @@ class Manifest extends PureComponent {
           })}>
             {title}
           </h3>
-          <p className={cn('font_p16-regular', `p-${index}`, 'description', {
+          <div className={cn('font_p16-regular', `p-${index}`, 'description', {
             right,
             left,
           })}>
-            {description}
-            {!!descriptionSecond && (
-              <Fragment>
-                <div className='secondDescription'>
-                  {descriptionSecond}
-                </div>
-              </Fragment>
-            )}
-          </p>
+            {descriptionLines.map((line, lineIndex) => <p key={lineIndex}>{line}</p>)}
+          </div>
         </section>
         {
           isCups && <Cups />
@@ -106,10 +98,6 @@ class Manifest extends PureComponent {
             margin-bottom: 4rem;
           }
 
-          .secondDescription {
-            margin-top: 1rem;
-          }
-
           h2 {
             grid-column: 2 / span 4;
             grid-row: 2;
@@ -118,10 +106,14 @@ class Manifest extends PureComponent {
             text-align: center;
           }
 
-          p {
+          .description {
             grid-column: 3 / span 5;
             grid-row: 1;
             margin-top: 12rem;
+          }
+
+          .description p + p {
+            margin-top: 1rem;
           }
 
           .font_h2-regular {

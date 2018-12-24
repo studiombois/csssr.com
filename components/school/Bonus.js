@@ -37,13 +37,12 @@ const picture = css.resolve`
 
 class Bonus extends PureComponent {
   renderBonus = ({
-    id,
     title,
     description,
     image,
   }, index) => {
     return (
-      <Fragment key={id}>
+      <Fragment key={index}>
         <div className={cn('bonusWrapper', `margin-${index}`)}>
           <PictureForAllResolutions
             className={picture.className}

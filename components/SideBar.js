@@ -12,15 +12,15 @@ const items = [{
   path: '',
   key: 'common:menu.dev',
 }, {
+  path: '/sborka',
+  key: 'common:menu.sborka',
+}, {
   path: '/jobs',
   key: 'common:menu.jobs',
   redirect: {
     from: '/en/jobs',
     to: '/ru/jobs',
   },
-}, {
-  path: '/sborka',
-  key: 'common:menu.sborka',
 }]
 
 const crossIcon = <CrossIcon width='100%' height='100%' />

@@ -33,5 +33,12 @@
     "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in ",
     "privacyPolicyLinkText": "Privacy Policy",
     "newsletterText": "I agree to recieve information and commercial offers"
+  },
+  "formErrors": {
+    "email": "Invalid email format",
+    "link": "Invalid link format",
+    "maxLength": "The quantity of characters should not exceed {{maxLength}}",
+    "required": "Required",
+    "file": "Invalid file format"
   }
 }

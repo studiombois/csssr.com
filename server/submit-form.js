@@ -1,23 +1,25 @@
 const fetch = require('isomorphic-unfetch')
 const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT, GOOGLE_CID } } } = require('./amo-config')
 
-const tagsArray = ['csssr.com']
-const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
-if (tagFromEnv) {
-  tagsArray.push(tagFromEnv)
-} else if (process.env.NODE_ENV !== 'production') {
-  tagsArray.push('TEST')
-}
-
 module.exports = (req, res) => {
   const {
     name,
     phone,
     email,
     message,
+    pageName,
     gacid,
     language,
   } = req.body
+
+  const tagsArray = ['csssr.com'].concat(pageName)
+  const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
+
+  if (tagFromEnv) {
+    tagsArray.push(tagFromEnv)
+  } else if (process.env.NODE_ENV !== 'production') {
+    tagsArray.push('TEST')
+  }
 
   tagsArray.push(language)
 

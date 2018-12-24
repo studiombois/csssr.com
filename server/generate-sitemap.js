@@ -65,6 +65,34 @@ const generateSitemap = () =>
           },
         ],
       }, {
+        url: 'https://csssr.com/ru/sborka',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/sborka',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/sborka',
+          },
+        ],
+      }, {
+        url: 'https://csssr.com/en/sborka',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/sborka',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/sborka',
+          },
+        ],
+      }, {
         url: 'https://csssr.com/ru/jobs',
         changefreq: 'weekly',
         priority: 1,

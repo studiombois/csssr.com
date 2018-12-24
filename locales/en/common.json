@@ -2,12 +2,9 @@
   "hello": "Hello!",
   "menu": {
     "dev": "Software Engineering",
+    "sborka": "HTML—Sborka",
     "jobs": "Jobs",
-    "recruitment": "Recruitment",
-    "company": "Company",
-    "products": "Products",
-    "school": "School",
-    "education": "Education"
+    "school": "School"
   },
   "languageRedirect": {
     "link": "/ru",
@@ -19,6 +16,7 @@
   },
   "sectionName": {
     "en": "Software Engineering",
+    "en/sborka": "Sborka",
     "en/jobs": "Jobs",
     "en/school": "School"
   },

@@ -12,6 +12,9 @@ const items = [{
   path: '',
   key: 'common:menu.dev',
 }, {
+  path: '/sborka',
+  key: 'common:menu.sborka',
+}, {
   path: '/jobs',
   key: 'common:menu.jobs',
   redirect: {
@@ -109,7 +112,9 @@ export class SideBar extends PureComponent {
 
           <div className='body'>
             <div className='top'>
-              <div className='font_perforator-16-black section-name'>{t(getSectionName(pathname))}</div>
+              <div className='font_perforator-16-black section-name'>
+                {t(getSectionName(pathname))}
+              </div>
               <ul className='list'>
                 {items.map(this.renderNavItem)}
               </ul>

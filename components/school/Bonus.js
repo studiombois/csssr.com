@@ -47,7 +47,6 @@ class Bonus extends PureComponent {
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'school', key: image, alt: title }}
-            customResolutions={['360', '1024']}
           />
           <h3 className='font_h2-regular bonus-title'>
             {title}

@@ -45,7 +45,6 @@ export default css`
     position: absolute;
     top: 1px;
     left: 1px;
-    right: 1px;
     margin: auto;
     padding-top: 1.4375rem;
     padding-left: 1rem;

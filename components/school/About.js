@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { translate } from 'react-i18next'
 import css from 'styled-jsx/css'
-import PictureForAllResolutions from '../PictureForAllResolutions'
+import Picture from '../Picture'
 
 const picture = css.resolve`
   picture {
@@ -11,13 +11,17 @@ const picture = css.resolve`
     margin-top: 1.625rem;
     height: 568px;
   }
+  
+  img {
+    height: 100%;
+  }
 
- @media (max-width: 1279px) {
+  @media (max-width: 1279px) {
     picture {
       margin-top: 5rem;
       height: 32rem;
     }
-
+  
     @media (max-width: 1023px) {
       picture {
         margin-top: 1.2rem;
@@ -26,7 +30,7 @@ const picture = css.resolve`
       }
     }
   }
-
+  
   @media (max-width: 767px) {
     picture {
       grid-column: 1 / span 6;
@@ -41,7 +45,7 @@ const About = ({ t }) =>
   <Fragment>
     <section className='grid-container' id='about'>
       <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:about.title') }} />
-      <PictureForAllResolutions
+      <Picture
         className={picture.className}
         image={{ namespace: 'school', key: 'stat', alt: t('school:imgAlt.about') }}
       />

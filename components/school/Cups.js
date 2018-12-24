@@ -3,7 +3,7 @@ import { translate } from 'react-i18next'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
 import cupMock from '../../data/school/cup-mock'
-import PictureForAllResolutions from '../PictureForAllResolutions'
+import Picture from '../Picture'
 
 const picture = css.resolve`
   picture {
@@ -14,6 +14,10 @@ const picture = css.resolve`
     height: 48px;
     justify-self: center;
     transition: height 0.5s ease;
+  }
+  
+  img {
+    height: 100%;
   }
   
   .active {
@@ -93,13 +97,12 @@ class Cups extends PureComponent {
     const { t } = this.props
     const active = this.state.active === id
     return (
-      <PictureForAllResolutions
+      <Picture
         key={id}
         className={cn(picture.className, {
           active,
         })}
-        image={{ namespace: 'school', key: image, alt: t('school:imgAlt.cup') }}
-      />
+        image={{ namespace: 'school', key: image, alt: t('school:imgAlt.cup') }}/>
     )
   }
 

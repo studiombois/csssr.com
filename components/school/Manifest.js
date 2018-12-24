@@ -71,6 +71,7 @@ class Manifest extends PureComponent {
               left,
             })}
             image={{ namespace: 'school', key: image, alt: title }}
+            customResolutions={['360', '1024']}
           />
           <h3 className={cn('font_h2-regular', `h3-${index}`, {
             right,

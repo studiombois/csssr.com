@@ -92,6 +92,7 @@ class Courses extends PureComponent {
                 gray: !active,
               })}
               image={{ namespace: 'school', key: image, alt: title }}
+              customResolutions={['360', '1024']}
             />
             {
               !active && (

@@ -52,6 +52,7 @@ class Earn extends PureComponent {
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'school', key: 'cover', alt: t('school:imgAlt.earn') }}
+            customResolutions={['360', '1024']}
           />
           <h1 className='font_h1-slab' >
             <span dangerouslySetInnerHTML={{ __html: t('school:school.title') }} />

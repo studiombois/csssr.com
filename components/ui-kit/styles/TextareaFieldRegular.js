@@ -20,7 +20,7 @@ export default css`
     padding-bottom: 1.5rem;
     display: block;
     width: 100%;
-    height: 10rem;
+    min-height: 10rem;
     border: none;
     border: solid 0.0625rem #e1e1e1;
     border-radius: 0;

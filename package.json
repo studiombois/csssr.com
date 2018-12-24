@@ -6,10 +6,11 @@
     "start": "cross-env NODE_ENV=production node ./server/index.js",
     "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
     "eslint-fix": "eslint --fix .",
-    "analyze": "cross-env ANALYZE=1 next build"
+    "analyze": "cross-env ANALYZE=1 next build",
+    "optimize-images": "node -e 'require(\"optimize-png-for-web\")(process.argv[1], \"./optimized-images\", {})'"
   },
   "dependencies": {
-    "@sentry/browser": "^4.3.4",
+    "@sentry/browser": "^4.4.2",
     "@sentry/node": "^4.3.4",
     "babel-plugin-inline-react-svg": "^0.5.4",
     "body-parser": "^1.18.3",
@@ -24,6 +25,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.1",
     "object-to-formdata": "^1.5.2",
+    "optimize-png-for-web": "^0.1.5",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-final-form": "^3.6.5",
@@ -36,7 +38,7 @@
     "eslint": "^5.6.0",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.1.2",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.8",
     "webpack-bundle-analyzer": "^3.0.2"
   },
   "husky": {

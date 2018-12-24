@@ -8,6 +8,7 @@ module.exports = (req, res) => {
     email,
     message,
     pageName,
+    consents,
     gacid,
     language,
   } = req.body
@@ -19,6 +20,10 @@ module.exports = (req, res) => {
     tagsArray.push(tagFromEnv)
   } else if (process.env.NODE_ENV !== 'production') {
     tagsArray.push('TEST')
+  }
+
+  if (consents.includes('newsletter')) {
+    tagsArray.push('Подписчик')
   }
 
   tagsArray.push(language)
@@ -52,6 +57,14 @@ module.exports = (req, res) => {
                 {
                   value: email,
                   enum: '303521',
+                },
+              ],
+            },
+            {
+              id: 584019,
+              values: [
+                {
+                  value: consents.includes('newsletter'),
                 },
               ],
             },

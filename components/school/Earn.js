@@ -48,7 +48,7 @@ class Earn extends PureComponent {
 
     return (
       <Fragment>
-        <article id='competence' className='grid-container'>
+        <article className='grid-container'>
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'school', key: 'cover', alt: t('school:imgAlt.earn') }}
@@ -122,11 +122,6 @@ class Earn extends PureComponent {
             h1 {
               grid-column: 2 / span 7;
               margin-bottom: 3.8125rem;
-            }
-
-            .font_subhead-slab {
-              margin-top: 0rem;
-              line-height: 2rem;
             }
 
             .font_subhead-slab {

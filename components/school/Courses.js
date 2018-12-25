@@ -159,12 +159,12 @@ class Courses extends PureComponent {
                     modal && (
                       <p className='font_p16-regular under_course_text'>
                         {t('school:course.text-1')}
-                        <a
+                        <button
                           onClick={this.handleShowModal(index)}
-                          className={'font_link-list_16'}
+                          className={'font_link-list_16 modal-button'}
                         >
                           {t('school:course.text-2')}
-                        </a>
+                        </button>
                       </p>
                     )
                   }
@@ -189,6 +189,10 @@ class Courses extends PureComponent {
             text-align: center;
             margin-top: 1rem;
             padding: 0 0rem;
+          }
+          .modal-button {
+            border: none;
+            display: inline-block;
           }
           .imageColumn {
             position: relative;
@@ -396,10 +400,6 @@ class Courses extends PureComponent {
             section {
               padding-top: 3rem;
               width: 20.5rem;
-            }
-
-            h2 {
-              grid-column: 1 / span 6;
             }
 
             h2 {

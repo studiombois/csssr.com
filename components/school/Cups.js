@@ -154,19 +154,6 @@ class Cups extends PureComponent {
             height: 27.5rem;
           }
 
-          h2 {
-            grid-column: 5 / span 4;
-            grid-row: 1;
-            margin-bottom: 5.5rem;
-            text-align: center;
-          }
-
-          p {
-            grid-column: 3 / span 8;
-            text-align: center;
-            grid-row: 2;
-          }
-
           .font_h1-slab {
             grid-column: 5 / span 6;
             grid-row: 2 / span 5;
@@ -175,27 +162,6 @@ class Cups extends PureComponent {
             align-self: center;
             line-height: 1.625rem;
             margin-top: -4rem;
-          }
-
-          .font_h2-regular {
-            grid-column: 4 / span 4;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 14rem;
-          }
-
-          .point {
-            grid-column: 4 / span 5;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 17rem;
-          }
-
-          .font_p16-regular {
-            grid-column: 1 / span 12;
-            grid-row: 1;
-            text-align: left;
-            margin-bottom: 1rem;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
@@ -259,12 +225,6 @@ class Cups extends PureComponent {
               width: 18.5rem;
               text-align: center;
               height: 40vh;
-            }
-
-            h2,
-            p,
-            footer {
-              grid-column: 1 / span 6;
             }
 
             .font_h1-slab {

@@ -57,33 +57,6 @@ const Form = ({ t }) =>
         text-align: center;
       }
 
-      p {
-        grid-column: 3 / span 8;
-        text-align: center;
-        grid-row: 2;
-      }
-
-      .font_h2-regular {
-        grid-column: 4 / span 4;
-        grid-row: 2;
-        text-align: left;
-        margin-top: 14rem;
-      }
-
-      .font_p16-regular {
-        grid-column: 3 / span 4;
-        grid-row: 2;
-        text-align: left;
-        margin-top: 0.4rem;
-      }
-
-      .foot_text {
-        margin-top: -1.2rem;
-        grid-column: 8 / span 3;
-        grid-row: 3;
-      }
-
-
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
           width: 1328px;
@@ -128,12 +101,6 @@ const Form = ({ t }) =>
         section {
           padding-top: 3rem;
           width: 20.5rem;
-        }
-
-        h2,
-        p,
-        footer {
-          grid-column: 1 / span 6;
         }
 
         h2 {

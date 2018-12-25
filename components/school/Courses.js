@@ -175,7 +175,7 @@ class Courses extends PureComponent {
             grid-row: 2;
             text-align: center;
             margin-top: 1rem;
-            padding: 0 2rem;
+            padding: 0 0rem;
           }
           .imageColumn {
             position: relative;
@@ -228,13 +228,13 @@ class Courses extends PureComponent {
           }
 
           .courseWrapper:nth-of-type(1) {
-            grid-column: 1 / span 4;
+            grid-column: 1 / span 3;
           }
           .courseWrapper:nth-of-type(2) {
             grid-column: 5 / span 4;
           }
           .courseWrapper:nth-of-type(3) {
-            grid-column: 9 / span 4;
+            grid-column: 10 / span 3;
           }
 
           @media (max-width: 1279px) {

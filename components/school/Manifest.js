@@ -71,17 +71,20 @@ class Manifest extends PureComponent {
             })}
             image={{ namespace: 'school', key: image, alt: title }}
           />
-          <h3 className={cn('font_h2-regular', `h3-${index}`, {
-            right,
-            left,
-          })}>
-            {title}
-          </h3>
+          <h3
+            className={cn('font_h2-regular', `h3-${index}`, {
+              right,
+              left,
+            })}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
           <div className={cn('font_p16-regular', `p-${index}`, 'description', {
             right,
             left,
           })}>
-            {descriptionLines.map((line, lineIndex) => <p key={lineIndex}>{line}</p>)}
+            {descriptionLines.map((line, lineIndex) => (
+              <p key={lineIndex} dangerouslySetInnerHTML={{ __html: line }}/>)
+            )}
           </div>
         </section>
         {

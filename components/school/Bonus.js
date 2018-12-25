@@ -43,17 +43,19 @@ class Bonus extends PureComponent {
   }, index) => {
     return (
       <Fragment key={index}>
-        <div className={cn('bonusWrapper', `margin-${index}`)}>
+        <div className={cn('bonusWrapper')}>
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'school', key: image, alt: title }}
           />
-          <h3 className='font_h2-regular bonus-title'>
-            {title}
-          </h3>
-          <p className='font_p16-regular description'>
-            {description}
-          </p>
+          <h3
+            className='font_h2-regular bonus-title'
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <p
+            className='font_p16-regular description'
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
         <style jsx>{`
           .bonusWrapper {
@@ -64,18 +66,14 @@ class Bonus extends PureComponent {
           }
           .bonusWrapper:nth-of-type(1) {
             grid-column: 3 / span 2;
+            margin-top: 19.5rem;
           }
           .bonusWrapper:nth-of-type(2) {
             grid-column: 6 / span 2;
+            margin-top: 10.5rem;
           }
           .bonusWrapper:nth-of-type(3) {
             grid-column: 9 / span 2;
-          }
-          .bonusWrapper.margin-0 {
-            margin-top: 19.5rem;
-          }
-          .bonusWrapper.margin-1 {
-            margin-top: 10.5rem;
           }
           .description {
             margin-top: 0.5rem;
@@ -99,18 +97,14 @@ class Bonus extends PureComponent {
               .bonusWrapper {
                 margin-top: 0rem;
               }
-              .bonusWrapper.margin-0 {
-                margin-top: 9.25rem;
-              }
-              .bonusWrapper.margin-1 {
-                margin-top: 4.5rem;
-              }
               .bonusWrapper:nth-of-type(1) {
                 grid-column: 2 / span 3;
+                margin-top: 9.25rem;
               }
               .bonusWrapper:nth-of-type(2) {
                 grid-column: 5 / span 4;
                 margin-left: 2.5rem;
+                margin-top: 4.5rem;
               }
               .bonusWrapper:nth-of-type(3) {
                 grid-column: 9 / span 3;
@@ -127,6 +121,7 @@ class Bonus extends PureComponent {
             }
             .bonusWrapper:nth-of-type(1) {
               grid-column: 1 / span 6;
+              margin-top: 0;
               margin-left: 0;
             }
             .bonusWrapper:nth-of-type(2) {
@@ -135,13 +130,6 @@ class Bonus extends PureComponent {
             }
             .bonusWrapper:nth-of-type(3) {
               grid-column: 1 / span 6;
-              margin-left: 0;
-            }
-            .bonusWrapper.margin-0 {
-              margin-top: 0;
-              margin-left: 0;
-            }
-            .bonusWrapper.margin-1 {
               margin-top: 0;
               margin-left: 0;
             }
@@ -178,19 +166,6 @@ class Bonus extends PureComponent {
             grid-row: 1;
             margin-bottom: 5.625rem;
             text-align: center;
-          }
-
-          p {
-            grid-column: 3 / span 8;
-            text-align: center;
-            grid-row: 2;
-          }
-
-          .point {
-            grid-column: 4 / span 5;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 17rem;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {

@@ -48,14 +48,14 @@ class Earn extends PureComponent {
 
     return (
       <Fragment>
-        <article id='competence' className='grid-container'>
+        <article className='grid-container'>
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'school', key: 'cover', alt: t('school:imgAlt.earn') }}
           />
           <h1 className='font_h1-slab' >
             <span dangerouslySetInnerHTML={{ __html: t('school:school.title') }} />
-            <span className='mark'>JavaScript</span>
+            <span className='mark' dangerouslySetInnerHTML={{ __html: t('school:school.tool') }} />
             <span className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: t('school:school.subTitle') }} />
           </h1>
 
@@ -122,11 +122,6 @@ class Earn extends PureComponent {
             h1 {
               grid-column: 2 / span 7;
               margin-bottom: 3.8125rem;
-            }
-
-            .font_subhead-slab {
-              margin-top: 0rem;
-              line-height: 2rem;
             }
 
             .font_subhead-slab {

@@ -36,19 +36,7 @@ class ModalCourse extends PureComponent {
             position: relative;
             margin-left: 1rem;
           }
-          li::before {
-            position: absolute;
-            content: '';
-            width: 0.25rem;
-            height: 0.25rem;
-            top: 0.5rem;
-            left: -1rem;
-            border: 2px solid #000;
-          }
           @media (max-width: 1023px) {
-            li::before {
-              top: 0.3rem;
-            }
             @media (max-width: 767px) {
               li {
                 margin-bottom: 0.5rem;
@@ -69,22 +57,22 @@ class ModalCourse extends PureComponent {
           <div className='columnsWrapper'>
             <div className='columnStudy'>
               <h3 className='font_h3-regular'>{studyItemsTitle}</h3>
-              <ul>
+              <ul className='have-square-bullets'>
                 {studyItems && studyItems.map(this.renderPoint)}
               </ul>
             </div>
             <div className='columnNeedKnow'>
               <h3 className='font_h3-regular'>{needKnowTitle}</h3>
-              <ul>
+              <ul className='have-square-bullets'>
                 {needKnow && needKnow.map(this.renderPoint)}
               </ul>
             </div>
             <div className='buttonWrapper'>
               <div
                 className='button_register'
-                onClick={onCloseModal}
               >
                 <ButtonLink
+                  onClick={onCloseModal}
                   href={'#sign'}
                 >
                   {t('school:course.register')}
@@ -137,7 +125,7 @@ class ModalCourse extends PureComponent {
           }
           .button_register {
             display: inline-block;
-            margin-top: 3.6rem;
+            margin-top: 3.625rem;
             width: 19.5rem;
           }
           @media (max-width: 767px) {
@@ -163,7 +151,7 @@ class ModalCourse extends PureComponent {
     return (
       <Fragment>
         <div className='modalWrapper'>
-          <button type='button' aria-label='Close menu' onClick={this.handleCloseModal}>
+          <button type='button' aria-label='Close modal' onClick={this.handleCloseModal}>
             {crossIcon}
           </button>
           <div className='modalContent'>

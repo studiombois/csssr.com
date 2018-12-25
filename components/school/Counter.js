@@ -6,7 +6,10 @@ const Counter = ({ t }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:counter.nowTitle') }} />
-      <p className='font_roboto-slab-light big_counter'>{counterMock.freePlaces}</p>
+      <p
+        className='font_roboto-slab-light big_counter'
+        dangerouslySetInnerHTML={{ __html: counterMock.freePlaces }}
+      />
       <p
         className='font_subhead-slab free_places'
         dangerouslySetInnerHTML={{ __html: `${t('school:counter.freePlaces')} ${counterMock.allPlaces}` }}

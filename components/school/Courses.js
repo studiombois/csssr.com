@@ -6,6 +6,7 @@ import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
 import ModalCourse from './ModalCourse'
 import coursesMock from '../../data/school/courses-mock'
+import getScrollbarWidth from '../../utils/getScrollbarWidth'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
@@ -55,8 +56,12 @@ class Courses extends PureComponent {
   state = {
     modalActiveId: -1,
   }
+  componentDidMount() {
+    this.scrollbarWidth = getScrollbarWidth()
+  }
   handleCloseModal = () => {
     document.body.style.overflow = this.bodyOverflow || 'initial'
+    document.body.style.paddingRight = 0
     this.setState({
       modalActiveId: -1,
     })
@@ -65,6 +70,7 @@ class Courses extends PureComponent {
   handleShowModal = index => () => {
     this.bodyOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    document.body.style.paddingRight = `${this.scrollbarWidth}px`
     this.setState({
       modalActiveId: index,
     })
@@ -95,43 +101,50 @@ class Courses extends PureComponent {
             />
             {
               !active && (
-                <div className='soon font_roboto-slab-light'>
-                  {t('school:course.soon')}
-                </div>
+                <div
+                  className='soon font_roboto-slab-light'
+                  dangerouslySetInnerHTML={{ __html: t('school:course.soon') }}
+                />
               )
             }
             {
               active && isTabletOrLowResDesktop && (
                 <Fragment>
-                  <p className='font_p16-regular info'>
-                    {info}
-                  </p>
-                  <p className='font_p16-regular duration'>
-                    {duration}
-                  </p>
+                  <p
+                    className='font_p16-regular info'
+                    dangerouslySetInnerHTML={{ __html: info }}
+                  />
+                  <p
+                    className='font_p16-regular duration'
+                    dangerouslySetInnerHTML={{ __html: duration }}
+                  />
                 </Fragment>
               )
             }
           </div>
           <div className='infoColumn'>
-            <h3 className='font_h2-regular course-title'>
-              {title}
-            </h3>
-            <p className='font_p24-strong description'>
-              {description}
-            </p>
+            <h3
+              className='font_h2-regular course-title'
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
+            <p
+              className='font_p24-strong description'
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
             {
               active ? (
                 <div className='button_wrapper'>
                   {
                     !isTabletOrLowResDesktop && (
                       <Fragment>
-                        <p className='font_p16-regular info'>
-                          {info}
-                        </p>
-                        <p className='font_p16-regular duration'>
-                          {duration}
-                        </p>
+                        <p
+                          className='font_p16-regular info'
+                          dangerouslySetInnerHTML={{ __html: info }}
+                        />
+                        <p
+                          className='font_p16-regular duration'
+                          dangerouslySetInnerHTML={{ __html: duration }}
+                        />
                       </Fragment>
                     )
                   }
@@ -146,12 +159,12 @@ class Courses extends PureComponent {
                     modal && (
                       <p className='font_p16-regular under_course_text'>
                         {t('school:course.text-1')}
-                        <a
+                        <button
                           onClick={this.handleShowModal(index)}
-                          className={'font_link-list_16'}
+                          className={'font_link-list_16 modal-button'}
                         >
                           {t('school:course.text-2')}
-                        </a>
+                        </button>
                       </p>
                     )
                   }
@@ -175,7 +188,11 @@ class Courses extends PureComponent {
             grid-row: 2;
             text-align: center;
             margin-top: 1rem;
-            padding: 0 2rem;
+            padding: 0 0rem;
+          }
+          .modal-button {
+            border: none;
+            display: inline-block;
           }
           .imageColumn {
             position: relative;
@@ -228,13 +245,13 @@ class Courses extends PureComponent {
           }
 
           .courseWrapper:nth-of-type(1) {
-            grid-column: 1 / span 4;
+            grid-column: 1 / span 3;
           }
           .courseWrapper:nth-of-type(2) {
             grid-column: 5 / span 4;
           }
           .courseWrapper:nth-of-type(3) {
-            grid-column: 9 / span 4;
+            grid-column: 10 / span 3;
           }
 
           @media (max-width: 1279px) {
@@ -383,10 +400,6 @@ class Courses extends PureComponent {
             section {
               padding-top: 3rem;
               width: 20.5rem;
-            }
-
-            h2 {
-              grid-column: 1 / span 6;
             }
 
             h2 {

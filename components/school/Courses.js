@@ -6,6 +6,7 @@ import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
 import ModalCourse from './ModalCourse'
 import coursesMock from '../../data/school/courses-mock'
+import getScrollbarWidth from '../../utils/getScrollbarWidth'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
@@ -55,8 +56,12 @@ class Courses extends PureComponent {
   state = {
     modalActiveId: -1,
   }
+  componentDidMount() {
+    this.scrollbarWidth = getScrollbarWidth()
+  }
   handleCloseModal = () => {
     document.body.style.overflow = this.bodyOverflow || 'initial'
+    document.body.style.paddingRight = 0
     this.setState({
       modalActiveId: -1,
     })
@@ -65,6 +70,7 @@ class Courses extends PureComponent {
   handleShowModal = index => () => {
     this.bodyOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    document.body.style.paddingRight = `${this.scrollbarWidth}px`
     this.setState({
       modalActiveId: index,
     })

@@ -70,9 +70,9 @@ class ModalCourse extends PureComponent {
             <div className='buttonWrapper'>
               <div
                 className='button_register'
-                onClick={onCloseModal}
               >
                 <ButtonLink
+                  onClick={onCloseModal}
                   href={'#sign'}
                 >
                   {t('school:course.register')}

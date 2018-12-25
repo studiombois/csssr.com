@@ -118,7 +118,7 @@ class Cups extends PureComponent {
         <section className='grid-container bg'>
           <div className='font_h1-slab'>
             {
-              !!active ? (
+              active ? (
                 <span
                   className='font_subhead-slab'
                   dangerouslySetInnerHTML={{ __html: active.title }}

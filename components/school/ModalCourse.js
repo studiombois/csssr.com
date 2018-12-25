@@ -125,7 +125,7 @@ class ModalCourse extends PureComponent {
           }
           .button_register {
             display: inline-block;
-            margin-top: 3.6rem;
+            margin-top: 3.625rem;
             width: 19.5rem;
           }
           @media (max-width: 767px) {
@@ -151,7 +151,7 @@ class ModalCourse extends PureComponent {
     return (
       <Fragment>
         <div className='modalWrapper'>
-          <button type='button' aria-label='Close menu' onClick={this.handleCloseModal}>
+          <button type='button' aria-label='Close modal' onClick={this.handleCloseModal}>
             {crossIcon}
           </button>
           <div className='modalContent'>

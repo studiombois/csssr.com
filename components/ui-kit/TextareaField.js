@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { string, oneOf, bool } from 'prop-types'
 import cn from 'classnames'
-import getScrollbarWidth from '../../utils/getScrollbarWidth'
 import TextareaFieldLightStyles from './styles/TextareaFieldLight'
 import TextareaFieldRegularStyles from './styles/TextareaFieldRegular'
 
@@ -22,10 +21,6 @@ export default class TextareaField extends PureComponent {
   static defaultProps = {
     state: null,
     theme: 'light',
-  }
-
-  componentDidMount() {
-    this.scrollbarWidth = getScrollbarWidth()
   }
 
   handleChange = event => {
@@ -82,7 +77,6 @@ export default class TextareaField extends PureComponent {
           className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
           dangerouslySetInnerHTML={{ __html: label }}
           htmlFor={id}
-          style={{ right: `${this.scrollbarWidth}px` }}
         />}<style jsx>{styles}</style>
       </div>
     )

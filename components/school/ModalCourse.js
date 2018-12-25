@@ -36,19 +36,7 @@ class ModalCourse extends PureComponent {
             position: relative;
             margin-left: 1rem;
           }
-          li::before {
-            position: absolute;
-            content: '';
-            width: 0.25rem;
-            height: 0.25rem;
-            top: 0.5rem;
-            left: -1rem;
-            border: 2px solid #000;
-          }
           @media (max-width: 1023px) {
-            li::before {
-              top: 0.3rem;
-            }
             @media (max-width: 767px) {
               li {
                 margin-bottom: 0.5rem;
@@ -69,13 +57,13 @@ class ModalCourse extends PureComponent {
           <div className='columnsWrapper'>
             <div className='columnStudy'>
               <h3 className='font_h3-regular'>{studyItemsTitle}</h3>
-              <ul>
+              <ul className='have-square-bullets'>
                 {studyItems && studyItems.map(this.renderPoint)}
               </ul>
             </div>
             <div className='columnNeedKnow'>
               <h3 className='font_h3-regular'>{needKnowTitle}</h3>
-              <ul>
+              <ul className='have-square-bullets'>
                 {needKnow && needKnow.map(this.renderPoint)}
               </ul>
             </div>

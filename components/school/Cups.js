@@ -118,12 +118,12 @@ class Cups extends PureComponent {
         <section className='grid-container bg'>
           <div className='font_h1-slab'>
             {
-              !!active && (
+              !!active ? (
                 <span
                   className='font_subhead-slab'
                   dangerouslySetInnerHTML={{ __html: active.title }}
                 />
-              )
+              ) : ''
             }
           </div>
         </section>
@@ -149,7 +149,6 @@ class Cups extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             padding-top: 1.5rem;
-            width: 1792px;
             margin-bottom: 2rem;
             height: 27.5rem;
           }

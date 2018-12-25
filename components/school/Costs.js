@@ -6,8 +6,8 @@ const Costs = ({ t }) =>
     <section className='grid-container'>
       <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:costs.title') }} />
       <div className='font_roboto-slab-light big_counter'>
-        {t('school:costs.cost')}
-        <sup className='currency'>₽</sup>
+        <span dangerouslySetInnerHTML={{ __html: t('school:costs.cost') }} />
+        <sup className='currency' dangerouslySetInnerHTML={{ __html: t('school:costs.currency') }} />
       </div>
 
       <h2 className='font_subhead-slab period' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />

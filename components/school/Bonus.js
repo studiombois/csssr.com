@@ -48,12 +48,14 @@ class Bonus extends PureComponent {
             className={picture.className}
             image={{ namespace: 'school', key: image, alt: title }}
           />
-          <h3 className='font_h2-regular bonus-title'>
-            {title}
-          </h3>
-          <p className='font_p16-regular description'>
-            {description}
-          </p>
+          <h3
+            className='font_h2-regular bonus-title'
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <p
+            className='font_p16-regular description'
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
         <style jsx>{`
           .bonusWrapper {

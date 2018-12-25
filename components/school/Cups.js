@@ -106,7 +106,8 @@ class Cups extends PureComponent {
         className={cn(picture.className, {
           active,
         })}
-        image={{ namespace: 'school', key: image, alt: t('school:imgAlt.cup') }}/>
+        image={{ namespace: 'school', key: image, alt: t('school:imgAlt.cup') }}
+      />
     )
   }
 
@@ -116,9 +117,14 @@ class Cups extends PureComponent {
       <Fragment>
         <section className='grid-container bg'>
           <div className='font_h1-slab'>
-            <span className='font_subhead-slab'>
-              { !!active && active.title}
-            </span>
+            {
+              !!active && (
+                <span
+                  className='font_subhead-slab'
+                  dangerouslySetInnerHTML={{ __html: active.title }}
+                />
+              )
+            }
           </div>
         </section>
         <section className='grid-container' id='cups'>

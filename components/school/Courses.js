@@ -101,43 +101,50 @@ class Courses extends PureComponent {
             />
             {
               !active && (
-                <div className='soon font_roboto-slab-light'>
-                  {t('school:course.soon')}
-                </div>
+                <div
+                  className='soon font_roboto-slab-light'
+                  dangerouslySetInnerHTML={{ __html: t('school:course.soon') }}
+                />
               )
             }
             {
               active && isTabletOrLowResDesktop && (
                 <Fragment>
-                  <p className='font_p16-regular info'>
-                    {info}
-                  </p>
-                  <p className='font_p16-regular duration'>
-                    {duration}
-                  </p>
+                  <p
+                    className='font_p16-regular info'
+                    dangerouslySetInnerHTML={{ __html: info }}
+                  />
+                  <p
+                    className='font_p16-regular duration'
+                    dangerouslySetInnerHTML={{ __html: duration }}
+                  />
                 </Fragment>
               )
             }
           </div>
           <div className='infoColumn'>
-            <h3 className='font_h2-regular course-title'>
-              {title}
-            </h3>
-            <p className='font_p24-strong description'>
-              {description}
-            </p>
+            <h3
+              className='font_h2-regular course-title'
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
+            <p
+              className='font_p24-strong description'
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
             {
               active ? (
                 <div className='button_wrapper'>
                   {
                     !isTabletOrLowResDesktop && (
                       <Fragment>
-                        <p className='font_p16-regular info'>
-                          {info}
-                        </p>
-                        <p className='font_p16-regular duration'>
-                          {duration}
-                        </p>
+                        <p
+                          className='font_p16-regular info'
+                          dangerouslySetInnerHTML={{ __html: info }}
+                        />
+                        <p
+                          className='font_p16-regular duration'
+                          dangerouslySetInnerHTML={{ __html: duration }}
+                        />
                       </Fragment>
                     )
                   }

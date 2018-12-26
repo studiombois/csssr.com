@@ -54,8 +54,6 @@ class ButtonSelect extends PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
-
-    // document.body.style.overflow = 'initial'
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -64,8 +62,6 @@ class ButtonSelect extends PureComponent {
     if (isDropdownVisible === prevState.isDropdownVisible) {
       return
     }
-
-    // document.body.style.overflow = isDropdownVisible ? 'hidden' : 'initial'
   }
 
   handleScroll = () => {

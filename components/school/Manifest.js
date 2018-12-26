@@ -24,6 +24,10 @@ const picture = css.resolve`
     margin-top: 7.5rem;
   }
 
+  img {
+    width: auto;
+  }
+
 
  @media (max-width: 1279px) {
     picture {

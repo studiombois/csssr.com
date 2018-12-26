@@ -61,8 +61,7 @@ class Header extends PureComponent {
   }
 
   handleSideBarClose = e => {
-    const isSideBar = e.target.classList.toString().match(/sidebar/)
-
+    const isSideBar = !!e.target.classList && e.target.classList.contains('sidebar')
     if (this.state.isSideBarOpened && isSideBar) {
       this.setState({
         isSideBarOpened: false,

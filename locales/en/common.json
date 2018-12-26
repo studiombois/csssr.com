@@ -2,7 +2,7 @@
   "hello": "Hello!",
   "menu": {
     "dev": "Software Engineering",
-    "sborka": "HTML—Sborka",
+    "sborka": "Mock&#x2010;ups to&nbsp;HTML",
     "jobs": "Jobs",
     "school": "School"
   },
@@ -16,7 +16,7 @@
   },
   "sectionName": {
     "en": "Software Engineering",
-    "en/sborka": "Sborka",
+    "en/html": "Mock&#x2010;ups to&nbsp;HTML",
     "en/jobs": "Jobs",
     "en/school": "School"
   },

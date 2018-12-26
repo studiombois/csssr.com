@@ -12,7 +12,7 @@ const items = [{
   path: '',
   key: 'common:menu.dev',
 }, {
-  path: '/sborka',
+  path: '/html',
   key: 'common:menu.sborka',
 }, {
   path: '/jobs',
@@ -57,18 +57,21 @@ export class SideBar extends PureComponent {
     return (
       <li key={key} className='item'>
         {shouldBeRedirected
-          ? <a href={href} className={cn('font_burger-menu link', {
-            link_active: pathname === languageHref,
-          })}>
-            {t(key)}
-          </a>
+          ? <a
+            href={href}
+            className={cn('font_burger-menu link', {
+              link_active: pathname === languageHref,
+            })}
+            dangerouslySetInnerHTML={{ __html: t(key) }}
+          />
 
           : <Link href={href}>
-            <a className={cn('font_burger-menu link', {
-              link_active: pathname === languageHref,
-            })}>
-              {t(key)}
-            </a>
+            <a
+              className={cn('font_burger-menu link', {
+                link_active: pathname === languageHref,
+              })}
+              dangerouslySetInnerHTML={{ __html: t(key) }}
+            />
           </Link>
         }
         <style jsx>{`
@@ -112,9 +115,10 @@ export class SideBar extends PureComponent {
 
           <div className='body'>
             <div className='top'>
-              <div className='font_perforator-16-black section-name'>
-                {t(getSectionName(pathname))}
-              </div>
+              <div
+                className='font_perforator-16-black section-name'
+                dangerouslySetInnerHTML={{ __html: t(getSectionName(pathname)) }}
+              />
               <ul className='list'>
                 {items.map(this.renderNavItem)}
               </ul>

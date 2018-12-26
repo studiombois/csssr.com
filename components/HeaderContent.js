@@ -102,9 +102,10 @@ class HeaderContent extends PureComponent {
               </ul>
             </nav>
 
-            <span className='section-name font_perforator-16-black'>
-              {t(`common:sectionName.${pathname.slice(1)}`)}
-            </span>
+            <span
+              className='section-name font_perforator-16-black'
+              dangerouslySetInnerHTML={{ __html: t(`common:sectionName.${pathname.slice(1)}`) }}
+            />
 
             {isBurgerVisible &&
               <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>

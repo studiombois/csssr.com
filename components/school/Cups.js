@@ -11,36 +11,26 @@ const picture = css.resolve`
     grid-column: 2 / span 1;
     z-index: -1;
     margin-top: 1rem;
-    margin-left: 0rem;
     height: 48px;
     justify-self: center;
     transition: height 0.5s ease;
   }
-  
+
   img {
     height: 100%;
   }
-  
+
   .active {
     height: 9rem;
     transition: height 0.4s ease;
   }
-  
 
-  @media (max-width: 1279px) {
+
+  @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      height: 48px;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        grid-column: 11 / span 1;
-        margin-left: -2.5rem;
-        height: 3rem;
-      }
-      picture.left {
-        height: 3rem;
-      }
+      grid-column: 11 / span 1;
+      margin-left: -2.5rem;
+      height: 3rem;
     }
   }
 
@@ -48,13 +38,15 @@ const picture = css.resolve`
     picture {
       grid-column: span 1;
       grid-row: 1;
-      margin-left: 0;
       margin-top: 1.875rem;
       height: 3rem;
     }
+
     .active {
-      height: 6.25rem;
-      margin-top: -0.5625px;
+      grid-column: span 2;
+      height: 9rem;
+      margin-top: -1.5rem;
+      transition: height 0.3s ease, margin-top 0.3s ease;
     }
   }
 `
@@ -63,7 +55,9 @@ class Cups extends PureComponent {
   state = {
     active: 0,
   }
+
   rafId = null
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
   }
@@ -76,6 +70,7 @@ class Cups extends PureComponent {
     if (this.rafId) {
       cancelAnimationFrame(this.rafId)
     }
+
     this.rafId = requestAnimationFrame(() => {
       const padding = 100
       const active = this.state.active
@@ -87,6 +82,7 @@ class Cups extends PureComponent {
         0,
         cupMock.items.length - 1
       )
+
       if (active !== newActive) {
         this.setState({
           active: newActive,
@@ -95,17 +91,14 @@ class Cups extends PureComponent {
     })
   }
 
-  renderItem = ({
-    image,
-  }, index) => {
+  renderCup = ({ image }, index) => {
     const { t } = this.props
     const active = this.state.active === index
+
     return (
       <Picture
         key={index}
-        className={cn(picture.className, {
-          active,
-        })}
+        className={cn(picture.className, { active })}
         image={{ namespace: 'school', key: image, alt: t('school:imgAlt.cup') }}
       />
     )
@@ -115,130 +108,82 @@ class Cups extends PureComponent {
     const active = cupMock.items[this.state.active]
     return (
       <Fragment>
-        <section className='grid-container bg'>
-          <div className='font_h1-slab'>
-            {
-              active ? (
-                <span
-                  className='font_subhead-slab'
-                  dangerouslySetInnerHTML={{ __html: active.title }}
-                />
-              ) : ''
-            }
+        <section className='grid-container' id='cups'>
+          {cupMock.items.map(this.renderCup)}
+
+          <div className='grid-container'>
+            <span
+              className='font_subhead-slab'
+              dangerouslySetInnerHTML={{ __html: active.title }}
+            />
           </div>
         </section>
-        <section className='grid-container' id='cups'>
-          {
-            cupMock.items.map(this.renderItem)
-          }
-        </section>
+
         <style jsx>{`
           section {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 1.5rem;
+            margin-top: 6rem;
             width: 1792px;
-            margin-bottom: 2rem;
-            height: 27.5rem;
+            height: 26rem;
           }
 
-          section.bg {
+          div {
             position: absolute;
-            z-index: -1;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 1.5rem;
-            margin-bottom: 2rem;
-            height: 27.5rem;
+            height: 100%;
           }
 
-          .font_h1-slab {
+          span {
             grid-column: 5 / span 6;
-            grid-row: 2 / span 5;
-            padding-top: 1rem;
-            position: absolute;
-            align-self: center;
-            line-height: 1.625rem;
-            margin-top: -4rem;
+            margin-top: 10.3125rem;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             section {
               width: 1328px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             section {
               width: 1232px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
             section {
+              margin-top: 3rem;
               width: 944px;
             }
 
-            h2 {
-              margin-bottom: 2.5rem;
+            span {
+              grid-column: 4 / span 5;
+              margin-top: 10.1875rem;
             }
 
             @media (max-width: 1023px) {
               section {
                 width: 59rem;
-                margin-top: 1.625rem;
-                margin-bottom: -4rem;
               }
-              .font_h1-slab {
-                grid-column: 4 / span 5;
-                grid-row: 2 / span 5;
-                padding-top: 0.5rem;
-                position: absolute;
-                align-self: center;
-                line-height: 1.625rem;
-                margin-top: -0.5rem;
-                margin-left: 2.5rem;
-              }
-              .left {
-                margin-top: 2rem;
-              }
-
             }
           }
 
           @media (max-width: 767px) {
             section {
-              padding-top: 5rem;
-              margin-bottom: 8rem;
-              width: 18.5rem;
+              margin-top: 14.6875rem;
+              width: 20.5rem;
+              height: 25.875rem;
+            }
+
+            div {
               text-align: center;
-              height: 40vh;
             }
 
-            .font_h1-slab {
-              margin-top: 8rem;
+            span {
               grid-column: 2 / span 4;
-              grid-row: 2 / span 5;
-              padding-top: 0.5rem;
-              align-self: center;
-              line-height: 1.625rem;
+              margin-top: 10.4375rem;
             }
-
-            h2 {
-              margin-bottom: 1.1875rem;
-            }
-
            }
         `}</style>
         {picture.styles}

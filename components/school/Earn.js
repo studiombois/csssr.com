@@ -8,31 +8,23 @@ const picture = css.resolve`
     grid-column: 7 / span 6;
     grid-row: 1;
     z-index: -1;
-    margin-top: -4rem;
+    margin-top: -3rem;
     height: 640px;
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      grid-column: 8 / span 6;
+      grid-column: 7 / span 6;
+      margin-top: -1rem;
       height: 23rem;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        grid-column: 7 / span 6;
-        height: 20.75rem;
-        margin-top: -2rem;
-      }
     }
   }
 
   @media (max-width: 767px) {
     picture {
-      grid-column: 1 / span 6;
+      grid-column: 2 / span 4;
       grid-row: 2;
-      text-align: center;
-      margin-top: 1.4375rem;
+      margin-top: 3rem;
       height: 13.5rem;
     }
   }
@@ -64,15 +56,14 @@ class Earn extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 12rem;
+            margin-top: 11rem;
             width: 1792px;
-            height: 57rem;
+            height: 46rem;
           }
 
           h1 {
             grid-column: 2 / span 7;
             grid-row: 1;
-            margin-bottom: 5rem;
           }
 
           .font_subhead-slab {
@@ -90,6 +81,7 @@ class Earn extends PureComponent {
             position: relative;
             padding-top: 0;
           }
+
           .mark::before {
             content: '';
             position: absolute;
@@ -116,44 +108,38 @@ class Earn extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             article {
-              width: 1024px;
-              height: 31rem;
+              margin-top: 9rem;
+              width: 944px;
+              height: 22rem;
             }
+
             h1 {
-              grid-column: 2 / span 7;
-              margin-bottom: 3.8125rem;
+              grid-column: 2 / span 5;
             }
 
             .font_subhead-slab {
-              padding-top: 1.6875rem;
+              padding-top: 2.1875rem;
               line-height: 2rem;
+            }
+
+            .mark::before {
+              top: 45%;
+              bottom: -0.5rem;
+              left: 0.5rem;
+              right: -1rem;
+              z-index: -1;
             }
 
             @media (max-width: 1023px) {
               article {
                 width: 59rem;
-                padding-top: 10rem;
-              }
-              h1 {
-                grid-column: 2 / span 5;
-                padding-top: 0rem;
-              }
-
-              .font_subhead-slab {
-                padding-top: 2rem;
-                line-height: 2rem;
-              }
-
-              span {
-                padding-top: 1rem;
-                display: block;
               }
             }
           }
 
           @media (max-width: 767px) {
             article {
-              padding-top: 5rem;
+              margin-top: 4rem;
               width: 20.5rem;
               height: auto;
               min-height: 37rem;
@@ -162,7 +148,6 @@ class Earn extends PureComponent {
             h1 {
               grid-column: 1 / span 6;
               grid-row: 1;
-              margin-bottom: 1.375rem;
               text-align: center;
             }
 
@@ -170,9 +155,7 @@ class Earn extends PureComponent {
               padding-top: 0.6875rem;
               line-height: 2rem;
             }
-
           }
-
         `}</style>
         {picture.styles}
       </Fragment>

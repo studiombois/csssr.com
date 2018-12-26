@@ -13,23 +13,15 @@ const picture = css.resolve`
 
  @media (max-width: 1279px) {
     picture {
-      margin-top: 5rem;
+      margin-top: 0.5rem;
       height: 19rem;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        height: 19rem;
-        margin-top: 3rem;
-      }
     }
   }
 
   @media (max-width: 767px) {
     picture {
       grid-column: 1 / span 6;
-      grid-row: 3;
-      margin-top: 1.875rem;
+      margin-top: 0rem;
       height: 10rem;
     }
   }
@@ -85,53 +77,54 @@ class Bonus extends PureComponent {
           }
 
           @media (max-width: 1279px) {
-            @media (max-width: 1023px) {
-              .bonus-title {
-                margin-top: 1.9375rem;
-                text-align: left;
-              }
-              .description {
-                margin-top: 1rem;
-                text-align: left;
-              }
-              .bonusWrapper {
-                margin-top: 0rem;
-              }
-              .bonusWrapper:nth-of-type(1) {
-                grid-column: 2 / span 3;
-                margin-top: 9.25rem;
-              }
-              .bonusWrapper:nth-of-type(2) {
-                grid-column: 5 / span 4;
-                margin-left: 2.5rem;
-                margin-top: 4.5rem;
-              }
-              .bonusWrapper:nth-of-type(3) {
-                grid-column: 9 / span 3;
-              }
+            .bonusWrapper {
+              margin-top: 0rem;
+            }
+            .bonusWrapper:nth-of-type(1) {
+              grid-column: 2 / span 3;
+              margin-top: 9rem;
+            }
+            .bonusWrapper:nth-of-type(2) {
+              grid-column: 6 / span 3;
+              margin-top: 4.5rem;
+              margin-left: -2.5rem;
+              text-align: left;
+            }
+            .bonusWrapper:nth-of-type(3) {
+              grid-column: 9 / span 3;
+            }
+            .bonus-title {
+              margin-top: 1.4375rem;
+              text-align: left;
+            }
+            .description {
+              margin-top: 0.8125rem;
+              text-align: left;
             }
           }
 
           @media (max-width: 767px) {
-            .bonusWrapper {
+            .bonusWrapper:nth-of-type(n) {
               grid-column: 1 / span 6;
               grid-row: auto;
               text-align: center;
-              margin-top: 1.5rem;
+              margin-top: 3.75rem;
+              margin-left: 0;
             }
+
             .bonusWrapper:nth-of-type(1) {
-              grid-column: 1 / span 6;
-              margin-top: 0;
-              margin-left: 0;
+              margin-top: 3.5625rem;
             }
-            .bonusWrapper:nth-of-type(2) {
-              grid-column: 1 / span 6;
-              margin-left: 0;
+
+            .bonus-title {
+              margin-top: 1.375rem;
+              padding-bottom: 0;
+              text-align: left;
             }
-            .bonusWrapper:nth-of-type(3) {
-              grid-column: 1 / span 6;
-              margin-top: 0;
-              margin-left: 0;
+            .description {
+              margin-top: 0.875rem;
+              padding-bottom: 0;
+              text-align: left;
             }
           }
         `}
@@ -157,14 +150,13 @@ class Bonus extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 8rem;
+            margin-top: 8.5rem;
             width: 1792px;
           }
 
           h2 {
-            grid-column: 5 / span 4;
-            grid-row: 1;
-            margin-bottom: 5.625rem;
+            grid-column: 4 / span 6;
+            margin-bottom: 5.5625rem;
             text-align: center;
           }
 
@@ -172,32 +164,22 @@ class Bonus extends PureComponent {
             section {
               width: 1328px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             section {
               width: 1232px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
             section {
-              padding-top: 6.5rem;
+              margin-top: 6rem;
               width: 944px;
             }
 
             h2 {
-              margin-bottom: 2.5rem;
+              margin-bottom: 3rem;
             }
 
             @media (max-width: 1023px) {
@@ -205,29 +187,19 @@ class Bonus extends PureComponent {
                 width: 59rem;
                 padding-top: 5.75rem;
               }
-              h2 {
-                margin-bottom: 0;
-              }
-
             }
           }
 
           @media (max-width: 767px) {
             section {
-              padding-top: 3rem;
+              margin-top: 6rem;
               width: 20.5rem;
             }
 
-            h2,
-            p,
-            footer {
-              grid-column: 1 / span 6;
-            }
-
             h2 {
-              margin-bottom: 1.1875rem;
+              grid-column: 1 / span 6;
+              margin-bottom: 0;
             }
-
            }
         `}</style>
         {picture.styles}

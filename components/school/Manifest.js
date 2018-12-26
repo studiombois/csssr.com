@@ -8,29 +8,36 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
+    grid-column: 2 / span 3;
     grid-row: 1;
     z-index: -1;
-    grid-column: 2 / span 2;
     margin-top: 3rem;
     height: 248px;
   }
-  
-  picture.left {
+
+  picture.of_number_two {
     margin-top: 8rem;
-    grid-column: 9 / span 2;
+    grid-column: 9 / span 4;
   }
+
+  picture.of_number_three {
+    margin-top: 7.5rem;
+  }
+
 
  @media (max-width: 1279px) {
     picture {
-      margin-top: 5rem;
+      margin-top: 3.25rem;
       height: 15.5rem;
     }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 15.5rem;
-        margin-top: 3.5rem;
-      }
+    picture.of_number_two {
+      margin-top: 4rem;
+    }
+
+    picture.of_number_three {
+      grid-column: 2 / span 4;
+      margin-top: 5.75rem;
     }
   }
 
@@ -41,313 +48,249 @@ const picture = css.resolve`
       margin-top: 1.875rem;
       height: 7rem;
     }
-    picture.left {
+
+    picture.of_number_one {
       grid-column: 1 / span 6;
+      text-align: center;
+    }
+
+    picture.of_number_two,
+    picture.of_number_three {
+      grid-column: 2 / span 4;
       margin-top: 0;
+    }
+
+    picture.of_number_three {
+      text-align: center;
     }
   }
 `
 
 class Manifest extends PureComponent {
-
-  renderItem = ({
-    title,
-    descriptionLines,
-    isCups,
-    image,
-  }, index) => {
-    const right = !(index % 2)
-    const left = (index % 2)
-    return (
-      <Fragment key={index}>
-        <section className={cn('grid-container', {
-          right,
-          left,
-        })}>
-          <PictureForAllResolutions
-            className={cn(picture.className, {
-              right,
-              left,
-            })}
-            image={{ namespace: 'school', key: image, alt: title }}
-          />
-          <h3
-            className={cn('font_h2-regular', `h3-${index}`, {
-              right,
-              left,
-            })}
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-          <div className={cn('font_p16-regular', `p-${index}`, 'description', {
-            right,
-            left,
-          })}>
-            {descriptionLines.map((line, lineIndex) => (
-              <p key={lineIndex} dangerouslySetInnerHTML={{ __html: line }}/>)
-            )}
-          </div>
-        </section>
-        {
-          isCups && <Cups />
+  renderItem = ({ title, descriptionLines, isCups, image }, index) =>
+    <Fragment key={index}>
+      <section className='grid-container'>
+        <PictureForAllResolutions
+          className={cn(picture.className, {
+            of_number_one: index === 0,
+            of_number_two: index === 1,
+            of_number_three: index === 2,
+          })}
+          image={{ namespace: 'school', key: image, alt: title }}
+        />
+        <div>
+          <h3 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
+          {descriptionLines.map((line, lineIndex) =>
+            <p
+              key={lineIndex}
+              className='font_p16-regular'
+              dangerouslySetInnerHTML={{ __html: line }}
+            />
+          )}
+        </div>
+      </section>
+      { isCups && <Cups /> }
+      <style jsx>{`
+        section {
+          grid-column: 1 / span 12;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
         }
-        <style jsx>{`
+
+        div {
+          grid-column: 4 / span 5;
+          grid-row: 1;
+        }
+
+        h3 {
+          margin-top: 9.0625rem;
+        }
+
+        p {
+          margin-top: 0.5rem;
+        }
+
+        p + p {
+          margin-top: 1rem;
+        }
+
+        section:nth-of-type(3) {
+          margin-top: 2rem;
+        }
+
+        section:nth-of-type(3) div {
+          grid-column: 3 / span 5;
+        }
+
+        section:nth-of-type(4) {
+          margin-top: -1.5rem;
+        }
+
+        section:nth-of-type(4) div {
+          grid-column: 6 / span 5;
+        }
+
+        @media (min-width: 1360px) and (max-width: 1919px) {
           section {
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 0rem;
-            width: 1792px;
-            margin-bottom: 4rem;
+            width: 1328px;
+          }
+        }
+
+        @media (min-width: 1280px) and (max-width: 1359px) {
+          section {
+            width: 1232px;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1279px) {
+          section {
+            width: 944px;
           }
 
-          h2 {
-            grid-column: 2 / span 4;
-            grid-row: 2;
-            margin-top: 0;
-            margin-bottom: 0;
-            text-align: center;
+          div {
+            grid-column: 5 / span 6;
           }
 
-          .description {
-            grid-column: 3 / span 5;
-            grid-row: 1;
-            margin-top: 12rem;
+          h3 {
+            margin-top: 8.75rem;
           }
 
-          .description p + p {
-            margin-top: 1rem;
+          p {
+            margin-top: 0.4375rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
           }
 
-          .font_h2-regular {
-            grid-column: 3 / span 4;
-            grid-row: 1;
-            text-align: left;
-            margin-top: 9rem;
+          p + p {
+            margin-top: 0.8125rem;
           }
 
-          .right {
+          section:nth-of-type(3) {
+            margin-top: 0rem;
+          }
+
+          section:nth-of-type(3) div {
+            margin-top: 0rem;
             grid-column: 4 / span 5;
           }
 
-          .h3-2 {
-            grid-column: 6 / span 5;
-            margin-top: 3.5rem;
+          section:nth-of-type(3) h3 {
+            margin-top: 7.5rem;
           }
 
-          .p-2 {
-            grid-column: 6 / span 5;
-            margin-top: 6.5rem;
+          section:nth-of-type(4) {
+            margin-top: -1.75rem;
           }
 
-          .left {
-            grid-column: 3 / span 6;
+          section:nth-of-type(4) div {
+            grid-column: 7 / span 5;
+          }
+        }
+
+        @media (max-width: 767px) {
+          section {
+            grid-column: 1 / span 6;
+            width: 20.5rem;
           }
 
-          @media (min-width: 1360px) and (max-width: 1919px) {
-            section {
-              width: 1328px;
-            }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
+          h3 {
+            padding-bottom: 0;
+            font-family: Roboto Slab;
+            font-size: 1rem;
+            line-height: 2rem;
           }
 
-          @media (min-width: 1280px) and (max-width: 1359px) {
-            section {
-              width: 1232px;
-            }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
+          p {
+            margin-top: 0.8125rem;
+            padding-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.5rem;
           }
 
-          @media (min-width: 768px) and (max-width: 1279px) {
-            section {
-              padding-top: 0rem;
-              width: 944px;
-              margin-bottom: 0rem;
-            }
-
-            h2 {
-              margin-bottom: 1.5rem;
-            }
-
-            @media (min-width: 1000px) and (max-width: 1023px) {
-              section {
-                width: 59rem;
-              }
-              .font_p16-regular {
-                font-size: 1rem;
-                line-height: 1.5rem;
-              }
-              .h3-0 {
-                grid-column: 5 / span 5;
-                margin-top: 9rem;
-              }
-              .p-0 {
-                grid-column: 5 / span 5;
-                margin-top: 11rem;
-              }
-              .h3-1 {
-                grid-column: 4 / span 5;
-                margin-top: 11.5rem;
-              }
-              .p-1 {
-                grid-column: 4 / span 5;
-                margin-top: 13.5rem;
-              }
-
-              .h3-2 {
-                grid-column: 7 / span 5;
-                margin-top: 7rem;
-              }
-
-              .p-2 {
-                grid-column: 7 / span 4;
-                margin-top: 9rem;
-              }
-            }
+          p + p {
+            margin-top: 1rem;
           }
 
-          @media (max-width: 767px) {
-            section {
-              padding-top: 3rem;
-              width: 20.5rem;
-              margin-bottom: 1rem;
-            }
+          section:nth-of-type(n) div {
+            grid-column: 1 / span 6;
+            margin-top: 1.125rem;
+            grid-row: 2;
+            height: auto;
+            text-align: center;
+          }
 
-            .right {
-              grid-column: 1 / span 6;
-              text-align: center;
-            }
+          section:nth-of-type(n) h3 {
+            margin-top: 0;
+          }
 
-            .left {
-              grid-column: 1 / span 6;
-              text-align: center;
-            }
-
-            h2,
-            .h3-2,
-            .p-2,
-            p {
-              grid-column: 1 / span 6;
-            }
-
-            .h3-2 {
-              margin-top: 9rem;
-            }
-            .p-2 {
-              margin-top: 12rem;
-            }
-
-            h2 {
-              margin-bottom: 1.1875rem;
-            }
-
-           }
-        `}
-        </style>
-        {picture.styles}
-      </Fragment>
-    )
-  }
+          section:nth-of-type(4) {
+            margin-top: 4rem;
+          }
+        }
+      `}
+      </style>
+      {picture.styles}
+    </Fragment>
 
   render() {
     const { t } = this.props
     return (
       <Fragment>
-        <section className='grid-container' id='manifest'>
+        <article className='grid-container' id='manifest'>
           <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:manifest.title') }} />
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('school:manifest.text') }} />
-        </section>
-        {
-          manifestMock.items.map(this.renderItem)
-        }
+
+          {manifestMock.items.map(this.renderItem)}
+        </article>
         <style jsx>{`
-          section {
-            position: relative;
+          article {
             margin-left: auto;
             margin-right: auto;
-            padding-top: 0;
             width: 1792px;
           }
 
-          h2 {
-            grid-column: 5 / span 4;
-            grid-row: 1;
-            margin-bottom: 5.5rem;
-            text-align: center;
-          }
-
-          p {
+          h2, p {
             grid-column: 3 / span 8;
             text-align: center;
-            grid-row: 2;
           }
 
-          .font_h2-regular {
-            grid-column: 4 / span 4;
-            grid-row: 2;
-            text-align: left;
-            margin-top: 14rem;
-          }
-
-          .font_p16-regular {
-            grid-column: 1 / span 12;
-            grid-row: 1;
-            text-align: left;
-            margin-bottom: 1rem;
+          h2 {
+            margin-bottom: 5.5rem;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
-            section {
+            article {
               width: 1328px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
-            section {
+            article {
               width: 1232px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
-            section {
+            article {
               padding-top: 6.5rem;
               width: 944px;
             }
 
             h2 {
-              margin-bottom: 2.5rem;
+              margin-bottom: 2.6875rem;
             }
 
             @media (max-width: 1023px) {
-              section {
+              article {
                 width: 59rem;
-              }
-              h2 {
-                margin-bottom: 1.8em;
               }
             }
           }
 
           @media (max-width: 767px) {
-            section {
-              padding-top: 3rem;
+            article {
+              margin-top: 0.5rem;
               width: 20.5rem;
             }
 
@@ -355,6 +298,7 @@ class Manifest extends PureComponent {
               grid-column: 1 / span 6;
               margin-bottom: 1.1875rem;
             }
+
             p {
               grid-column: 1 / span 6;
               text-align: center;

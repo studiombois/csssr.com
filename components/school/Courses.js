@@ -16,6 +16,7 @@ const picture = css.resolve`
     margin-left: 0;
     height: 208px;
   }
+
   .gray {
     filter: gray;
     -webkit-filter: grayscale(1);
@@ -39,9 +40,16 @@ const picture = css.resolve`
   @media (max-width: 767px) {
     picture {
       grid-column: 1 / span 6;
-      grid-row: 3;
-      margin-top: 2rem;
-      height: 8.75rem;
+      margin-top: 0;
+      height: 10rem;
+    }
+  }
+`
+
+const button = css.resolve`
+  @media (max-width: 1279px) {
+    .button {
+      height: 3rem;
     }
   }
 `
@@ -88,27 +96,21 @@ class Courses extends PureComponent {
     const { t, isTabletOrLowResDesktop } = this.props
     return (
       <Fragment key={index}>
-        <div className={cn('courseWrapper', {
-          active,
-          'grid-container': isTabletOrLowResDesktop,
-        })}>
+        <div className={cn('courseWrapper', { 'grid-container': isTabletOrLowResDesktop })}>
           <div className='imageColumn'>
             <PictureForAllResolutions
-              className={cn(picture.className, {
-                gray: !active,
-              })}
+              className={cn(picture.className, { gray: !active })}
               image={{ namespace: 'school', key: image, alt: title }}
             />
-            {
-              !active && (
+
+            { !active &&
                 <div
                   className='soon font_roboto-slab-light'
                   dangerouslySetInnerHTML={{ __html: t('school:course.soon') }}
                 />
-              )
             }
-            {
-              active && isTabletOrLowResDesktop && (
+
+            { active && isTabletOrLowResDesktop &&
                 <Fragment>
                   <p
                     className='font_p16-regular info'
@@ -119,66 +121,60 @@ class Courses extends PureComponent {
                     dangerouslySetInnerHTML={{ __html: duration }}
                   />
                 </Fragment>
-              )
             }
           </div>
+
           <div className='infoColumn'>
             <h3
               className='font_h2-regular course-title'
               dangerouslySetInnerHTML={{ __html: title }}
             />
+
             <p
               className='font_p24-strong description'
               dangerouslySetInnerHTML={{ __html: description }}
             />
-            {
-              active ? (
-                <div className='button_wrapper'>
-                  {
-                    !isTabletOrLowResDesktop && (
-                      <Fragment>
-                        <p
-                          className='font_p16-regular info'
-                          dangerouslySetInnerHTML={{ __html: info }}
-                        />
-                        <p
-                          className='font_p16-regular duration'
-                          dangerouslySetInnerHTML={{ __html: duration }}
-                        />
-                      </Fragment>
-                    )
-                  }
-                  <div className='button_register'>
-                    <ButtonLink
-                      href={'#sign'}
-                    >
-                      {t('school:course.register')}
-                    </ButtonLink>
-                  </div>
-                  {
-                    modal && (
-                      <p className='font_p16-regular under_course_text'>
-                        {t('school:course.text-1')}
-                        <button
-                          onClick={this.handleShowModal(index)}
-                          className={'font_link-list_16 modal-button'}
-                        >
-                          {t('school:course.text-2')}
-                        </button>
-                      </p>
-                    )
-                  }
-                </div>
-              ) : (
+
+            { active
+              ? <div className='button_wrapper'>
+                { !isTabletOrLowResDesktop &&
+                    <Fragment>
+                      <p
+                        className='font_p16-regular info'
+                        dangerouslySetInnerHTML={{ __html: info }}
+                      />
+                      <p
+                        className='font_p16-regular duration'
+                        dangerouslySetInnerHTML={{ __html: duration }}
+                      />
+                    </Fragment>
+                }
+
                 <div className='button_register'>
-                  <ButtonLink
-                    href={'#sign'}
-                    theme={'secondary'}
-                  >
-                    {t('school:course.sendRequest')}
+                  <ButtonLink className={button.className} href={'#sign'} >
+                    {t('school:course.register')}
                   </ButtonLink>
                 </div>
-              )
+
+                { modal &&
+                    <p className='font_p16-regular under_course_text'>
+                      {t('school:course.text-1')}
+                      <a
+                        onClick={this.handleShowModal(index)}
+                        className={'font_link-list_16 modal-button'}
+                      >
+                        {t('school:course.text-2')}
+                      </a>
+                    </p>
+                }
+              </div>
+
+
+              : <div className='button_register'>
+                <ButtonLink className={button.className} href={'#sign'} theme={'secondary'} >
+                  {t('school:course.sendRequest')}
+                </ButtonLink>
+              </div>
             }
           </div>
         </div>
@@ -190,41 +186,52 @@ class Courses extends PureComponent {
             margin-top: 1rem;
             padding: 0 0rem;
           }
+
           .modal-button {
+            display: inline;
             border: none;
-            display: inline-block;
+            background: none;
+            white-space: normal;
+            text-align: left;
           }
+
           .imageColumn {
             position: relative;
             overflow: hidden;
           }
+
           .soon {
-            background: #ffee1f;
-            text-align: center;
             position: absolute;
             left: -20%;
             right: -20%;
             bottom: 45%;
+            padding: 0;
+            font-family: Roboto;
             font-size: 0.75rem;
+            font-weight: bold;
+            line-height: 1.375rem;
+            text-align: center;
             text-transform: uppercase;
             letter-spacing: 0.0625rem;
-            padding: 0 0;
-            line-height: 1.375rem;
-            font-weight: bold;
-            transform: rotate(12deg);
+            background-color: #ffee1f;
+            transform: rotate(18deg);
           }
+
           .description {
-            margin-top: 1.4375rem;
+            margin-top: 1.3125rem;
           }
+
           .info {
-            margin-top: 1.4375rem;
+            margin-top: 1.5rem;
             text-align: center;
           }
+
           .duration {
             margin-top: 2.0rem;
           }
+
           .course-title {
-            margin-top: 3rem;
+            margin-top: 3.0625rem;
           }
 
           .under_course_text {
@@ -240,54 +247,92 @@ class Courses extends PureComponent {
             grid-row: 3;
             text-align: center;
           }
+
           .button_register {
-            margin-top: 3.625rem;
+            margin-top: 3.0625rem;
           }
 
           .courseWrapper:nth-of-type(1) {
             grid-column: 1 / span 3;
           }
+
           .courseWrapper:nth-of-type(2) {
             grid-column: 5 / span 4;
           }
+
           .courseWrapper:nth-of-type(3) {
             grid-column: 10 / span 3;
           }
 
           @media (max-width: 1279px) {
-            .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
+            .courseWrapper:nth-of-type(n) {
               grid-column: 1 / span 12;
               grid-row: auto;
-              text-align: left;
-              padding: 0 0rem;
-              margin-bottom: 1rem;
+              margin-top: 1.675rem;
+              padding: 0;
             }
+
+            .courseWrapper:nth-of-type(2) {
+              margin-top: 1rem;
+              order: 1;
+            }
+            .courseWrapper:nth-of-type(1) {
+              order: 2;
+            }
+            .courseWrapper:nth-of-type(3) {
+              margin-top: 2rem;
+              order: 3;
+            }
+
             .course-title {
-              margin-top: 3.25rem;
+              margin-top: 3.4375rem;
+              padding-bottom: 0;
             }
+
+            .description {
+              margin-top: 1.0625rem;
+              padding-bottom: 0;
+              font-family: Roboto;
+              font-size: 0.875rem;
+              font-weight: 300;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.5rem;
+              letter-spacing: normal;
+            }
+
             .info {
               font-size: 1rem;
               line-height: 1.5rem;
             }
+
             .duration {
               text-align: center;
               padding: 0 5rem;
-              margin-top: 1.3125rem;
+              margin-top: 1.125rem;
             }
+
+            .soon {
+              bottom: 39%;
+            }
+
             .imageColumn {
               grid-column: 2 / span 5;
             }
+
             .infoColumn {
               grid-column: 8 / span 4;
+              text-align: left;
             }
-            .font_p16-regular {
-            }
+
             .button_register {
-              margin-top: 2.5rem;
+              margin-top: 2.0625rem;
             }
+
             .font_link-list_16 {
               display: inline;
             }
+
             .under_course_text {
               grid-column: 3 / span 6;
               text-align: left;
@@ -297,24 +342,65 @@ class Courses extends PureComponent {
           }
 
           @media (max-width: 767px) {
-            .courseWrapper:nth-of-type(1), .courseWrapper:nth-of-type(2), .courseWrapper:nth-of-type(3) {
+            .courseWrapper:nth-of-type(n) {
               grid-column: 1 / span 6;
               grid-row: auto;
               text-align: center;
+            }
+
+            .courseWrapper:nth-of-type(2) {
+              margin-top: 3.5rem;
+            }
+
+            .courseWrapper:nth-of-type(1) {
+              margin-top: 3.3125rem;
+            }
+
+            .courseWrapper:nth-of-type(3) {
+              margin-top: 3.8125rem;
+            }
+
+            .course-title,
+            .description {
+              text-align: center;
+            }
+
+            .course-title {
+              grid-column: 1 / span 6;
               margin-top: 1.4375rem;
-              padding: 0 2rem;
+              margin-botton: 0;
+              padding-bottom: 0;
             }
-            .under_course_text {
-              font-size: 1rem;
-              line-height: 1.5rem;
+
+            .description {
+              grid-column: 1 / span 6;
             }
+
+            .info {
+              margin-top: 1rem;
+            }
+
             .duration {
-              padding: 0;
+              padding-right: 3.5rem;
+              padding-left: 3.5rem;
+            }
+
+            .soon {
+              bottom: 44%;
+            }
+
+            .button_register {
+              margin-top: 2.25rem;
+            }
+
+            .under_course_text {
+              text-align: center;
             }
           }
         `}
         </style>
         {picture.styles}
+        {button.styles}
       </Fragment>
     )
   }
@@ -324,62 +410,48 @@ class Courses extends PureComponent {
     const { modalActiveId } = this.state
     return (
       <Fragment>
-        {
-          modalActiveId !== -1 && (
+        { modalActiveId !== -1 &&
             <ModalCourse
               modalActiveId={modalActiveId}
               onCloseModal={this.handleCloseModal}
             />
-          )
         }
-        <section className='grid-container' id='courses'>
+
+        <article className='grid-container' id='courses'>
           <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('school:course.title') }} />
-          {
-            coursesMock.items.map(this.renderCourse)
-          }
-        </section>
+          { coursesMock.items.map(this.renderCourse) }
+        </article>
 
         <style jsx>{`
-          section {
+          article {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 8rem;
+            margin-top: 8rem;
             width: 1792px;
           }
 
           h2 {
-            grid-column: 5 / span 4;
-            grid-row: 1;
-            margin-bottom: 5.5rem;
+            grid-column: 4 / span 6;
+            margin-bottom: 6rem;
             text-align: center;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
-            section {
+            article {
               width: 1328px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
-            section {
+            article {
               width: 1232px;
             }
-
-            h2 {
-              grid-column: 4 / span 6;
-            }
-
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
-            section {
-              padding-top: 5rem;
+            article {
+              margin-top: 5rem;
               width: 944px;
             }
 
@@ -389,7 +461,7 @@ class Courses extends PureComponent {
             }
 
             @media (max-width: 1023px) {
-              section {
+              article {
                 width: 59rem;
               }
 
@@ -397,15 +469,15 @@ class Courses extends PureComponent {
           }
 
           @media (max-width: 767px) {
-            section {
-              padding-top: 3rem;
+            article {
+              margin-top: 5.5rem;
               width: 20.5rem;
             }
 
             h2 {
-              margin-bottom: 1.1875rem;
+              grid-column: 2 / span 4;
+              margin-bottom: 0;
             }
-
            }
         `}</style>
         {picture.styles}

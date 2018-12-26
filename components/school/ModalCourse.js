@@ -6,7 +6,6 @@ import ClickOutside from '../ui-kit/ClickOutside'
 import ButtonLink from '../ui-kit/ButtonLink'
 import coursesMock from '../../data/school/courses-mock'
 
-const crossIcon = <CrossIcon width='2.5rem' height='2.5rem'/>
 const clickOutsideStyles = {
   position: 'absolute',
   top: 0,
@@ -22,25 +21,28 @@ class ModalCourse extends PureComponent {
     modalActiveId: number,
     onCloseModal: func,
   }
+
   static defaultProps = {
     modalActiveId: -1,
     onCloseModal: () => {},
   }
+
   renderPoint = (item, index) => {
     return (
       <Fragment key={index}>
         <li className='font_p16-regular'>{item}</li>
         <style jsx>{`
-          li {
-            margin-bottom: 1.5rem;
-            position: relative;
-            margin-left: 1rem;
+          li:not(:first-child) {
+            margin-top: 1rem;
           }
-          @media (max-width: 1023px) {
-            @media (max-width: 767px) {
-              li {
-                margin-bottom: 0.5rem;
-              }
+
+          @media (max-width: 1279px) {
+            li:not(:first-child) {
+              margin-top: 0.3125rem;
+            }
+
+            li:before {
+              top: 0.25rem !important;
             }
           }
         `}</style>
@@ -54,37 +56,49 @@ class ModalCourse extends PureComponent {
       <Fragment>
         <section className='wrapper'>
           <h2 className='font_h2-regular title'>{title}</h2>
+
           <div className='columnsWrapper'>
             <div className='columnStudy'>
               <h3 className='font_h3-regular'>{studyItemsTitle}</h3>
+
               <ul className='have-square-bullets'>
                 {studyItems && studyItems.map(this.renderPoint)}
               </ul>
             </div>
+
             <div className='columnNeedKnow'>
               <h3 className='font_h3-regular'>{needKnowTitle}</h3>
+
               <ul className='have-square-bullets'>
                 {needKnow && needKnow.map(this.renderPoint)}
               </ul>
             </div>
-            <div className='buttonWrapper'>
-              <div
-                className='button_register'
-              >
-                <ButtonLink
-                  onClick={onCloseModal}
-                  href={'#sign'}
-                >
-                  {t('school:course.register')}
-                </ButtonLink>
-              </div>
+          </div>
+
+          <div className='buttonWrapper'>
+            <div className='button_register'>
+              <ButtonLink onClick={onCloseModal} href={'#sign'}>
+                {t('school:course.register')}
+              </ButtonLink>
             </div>
           </div>
         </section>
         <style jsx>{`
+          h3 {
+            margin-top: 2.8125rem;
+          }
+
+          ul {
+            margin-top: 1rem;
+          }
+
           .wrapper {
+            padding-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
             min-height: 100%;
           }
+
           .title {
             width: 100%;
             text-align: center;
@@ -93,52 +107,83 @@ class ModalCourse extends PureComponent {
             line-height: 8.875rem;
             vertical-align: middle;
           }
+
           .columnsWrapper {
             width: 100%;
             height: 100%;
             padding-bottom: 2.5rem;
           }
+
           .columnStudy, .columnNeedKnow {
             display: inline-block;
             width: 50%;
             vertical-align: top;
             padding-left: 6.5rem;
           }
+
           .columnNeedKnow {
             padding-left: 0.5rem;
             padding-right: 5rem;
           }
-          ul {
-            list-style: none;
-            margin-block-start: 0em;
-            margin-block-end: 0em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            padding-inline-start: 0px;
-          }
-          h3 {
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-          }
+
           .buttonWrapper {
+            margin-top: auto;
             text-align: center;
           }
+
           .button_register {
             display: inline-block;
-            margin-top: 3.625rem;
             width: 19.5rem;
           }
+
+          @media (max-width: 1279px) {
+            h3 {
+              margin-top: 2.9375rem;
+              margin-bottom: 1rem;
+            }
+
+            ul {
+              margin-top: 1.5rem;
+            }
+
+            .title {
+              font-size: 1.5rem;
+            }
+
+            .columnStudy {
+              padding-left: 5rem;
+            }
+          }
+
           @media (max-width: 767px) {
+            .wrapper {
+              padding-bottom: 4rem;
+            }
+
+            .title {
+              height: 7.5rem;
+              line-height: 8rem;
+            }
+
             .columnsWrapper {
               width: 100%;
               height: 100%;
-              padding-bottom: 10rem;
+              padding-bottom: 0;
             }
+
             .columnStudy, .columnNeedKnow {
               display: block;
               width: 100%;
               vertical-align: top;
-              padding-left: 1rem;
+              padding: 0 1rem;
+            }
+
+            .columnNeedKnow h3 {
+              margin-top: 2.5rem;
+            }
+
+            .buttonWrapper {
+              margin-top: 3.5rem;
             }
           }
         `}</style>
@@ -152,7 +197,7 @@ class ModalCourse extends PureComponent {
       <Fragment>
         <div className='modalWrapper'>
           <button type='button' aria-label='Close modal' onClick={this.handleCloseModal}>
-            {crossIcon}
+            <CrossIcon width='100%' height='100%' />
           </button>
           <div className='modalContent'>
             <ClickOutside
@@ -185,31 +230,39 @@ class ModalCourse extends PureComponent {
 
           button {
             position: absolute;
-            color: #FFF;
+            color: white;
             z-index: 1;
             top: 1.25rem;
-            right: 4rem;
+            right: 3rem;
             height: 2.5rem;
             width: 2.5rem;
             border: none;
             background: none;
             cursor: pointer;
           }
-          @media (max-width: 1023px) {
+
+          @media (max-width: 1279px) {
             .modalContent {
-              width: 100%;
+              width: 49rem;
             }
+
             button {
-              position: absolute;
-              color: #000;
-              z-index: 1;
-              top: 1.25rem;
+              top: 2.5rem;
+              right: 3.25rem;
+            }
+          }
+
+          @media (max-width: 767px) {
+            .modalContent {
+              width: 22.5rem;s
+            }
+
+            button {
+              top: 1rem;
               right: 1rem;
-              height: 2.5rem;
-              width: 2.5rem;
-              border: none;
-              background: none;
-              cursor: pointer;
+              width: 1.5rem;
+              height: 1.5rem;
+              color: #4a4a4a;
             }
           }
         `}</style>
@@ -219,13 +272,8 @@ class ModalCourse extends PureComponent {
 
   render() {
     const activeModal = coursesMock.items[this.props.modalActiveId]
-    return (
-      <Fragment>
-        {
-          activeModal && this.renderModal(activeModal.modal)
-        }
-      </Fragment>
-    )
+
+    return activeModal && this.renderModal(activeModal.modal)
   }
 }
 

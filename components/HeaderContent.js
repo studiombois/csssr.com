@@ -232,7 +232,8 @@ class HeaderContent extends PureComponent {
 
             .section-name {
               grid-column: 9 / span 3;
-              height: 1.5rem;
+              height: 1rem;
+              line-height: 1rem;
               text-align: right;
             }
 

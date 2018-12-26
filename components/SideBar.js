@@ -15,18 +15,18 @@ const items = [{
   path: '/sborka',
   key: 'common:menu.sborka',
 }, {
-  path: '/jobs',
-  key: 'common:menu.jobs',
-  redirect: {
-    from: '/en/jobs',
-    to: '/ru/jobs',
-  },
-}, {
   path: '/school',
   key: 'common:menu.school',
   redirect: {
     from: '/en/school',
     to: '/ru/school',
+  },
+}, {
+  path: '/jobs',
+  key: 'common:menu.jobs',
+  redirect: {
+    from: '/en/jobs',
+    to: '/ru/jobs',
   },
 }]
 

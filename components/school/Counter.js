@@ -17,102 +17,79 @@ const Counter = ({ t }) =>
     </section>
     <style jsx>{`
       section {
-        position: relative;
+        margin-top: 9rem;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 0rem;
         width: 1792px;
+        text-align: center;
       }
 
-      .font_h2-slab {
-        grid-column: 1 / span 12;
-        grid-row: 2;
-        text-align: center;
-        margin-top: 3.9375rem;
+      h2 {
+        grid-column: 4 / span 6;
       }
 
       .big_counter {
-        font-size: 6.2rem;
-        grid-column: 1 / span 12;
-        grid-row: 3;
-        text-align: center;
-        margin-top: 7.125rem;
-        justify-self: center;
+        grid-column: 5 / span 4;
+        margin-top: 7.0625rem;
+        font-size: 6.25rem;
       }
 
       .free_places {
-        grid-column: 1 / span 12;
-        grid-row: 3;
-        text-align: center;
-        margin-top: 13.8125rem;
-        justify-self: center;
+        grid-column: 5 / span 4;
+        margin-top: 3.375rem;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
           width: 1328px;
         }
-
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         section {
           width: 1232px;
         }
-
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
         section {
+          margin-top: 6.5625rem;
           width: 944px;
+        }
+
+        .big_counter {
+          margin-top: 3.5625rem;
+        }
+
+        .free_places {
+          margin-top: 1.6875rem;
         }
 
         @media (max-width: 1023px) {
           section {
             width: 59rem;
-            padding-top: 3rem;
           }
-          .big_counter {
-            margin-top: 3.8125rem;
-          }
-          .free_places {
-            margin-top: 8.8125rem;
-          }
-
         }
       }
 
       @media (max-width: 767px) {
         section {
-          padding-top: 3rem;
+          margin-top: 4.0625rem;
           width: 20.5rem;
         }
 
-        h2 {
-          grid-column: 1 / span 6;
-        }
-        .font_h2-slab {
-          grid-column: 1 / span 6;
-          grid-row: 2;
-          text-align: center;
-          margin-top: 8.9375rem;
+        h2, .big_counter, .free_places {
+          grid-column: 2 / span 4;
         }
 
+
         .big_counter {
-          font-size: 6.25rem;
-          grid-column: 1 / span 6;
-          grid-row: 3;
-          margin-top: 7.125rem;
-          justify-self: center;
+          margin-top: 3.5625rem;
         }
 
         .free_places {
-          grid-column: 1 / span 6;
-          grid-row: 3;
-          margin-top: 13.8125rem;
-          justify-self: center;
+          margin-top: 1.6875rem;
         }
-
        }
     `}</style>
   </Fragment>

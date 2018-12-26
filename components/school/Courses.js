@@ -158,13 +158,12 @@ class Courses extends PureComponent {
                   {
                     modal && (
                       <p className='font_p16-regular under_course_text'>
-                        {t('school:course.text-1')}
+                        <span dangerouslySetInnerHTML={{ __html: t('school:course.text1') }} />
                         <button
                           onClick={this.handleShowModal(index)}
                           className={'font_link-list_16 modal-button'}
-                        >
-                          {t('school:course.text-2')}
-                        </button>
+                          dangerouslySetInnerHTML={{ __html: t('school:course.text2') }}
+                        />
                       </p>
                     )
                   }

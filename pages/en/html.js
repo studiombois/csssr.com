@@ -15,6 +15,15 @@ import withI18next from '../../utils/withI18next'
 
 
 class Sborka extends PureComponent {
+  static async getInitialProps(appContext) {
+
+    return {
+      userAgent: appContext.req
+        ? appContext.req.headers['user-agent']
+        : window.navigator.userAgent,
+    }
+  }
+
   state = {
     isMobile: false,
   }
@@ -35,15 +44,15 @@ class Sborka extends PureComponent {
     })
 
   render() {
-    const { t } = this.props
+    const { t, userAgent } = this.props
 
     return (
       <Layout
-        headerProps={{ logoHref: '/en/sborka', isBurgerVisible: true }}
-        footerProps={{ logoHref: '/en/sborka', socialLinks: devSocialLinks }}
+        headerProps={{ logoHref: '/en/html', isBurgerVisible: true }}
+        footerProps={{ logoHref: '/en/html', socialLinks: devSocialLinks }}
       >
         <Head title={t('sborka:meta.title')} description={t('sborka:meta.description')} />
-        <Hire />
+        <Hire isEdge={userAgent.includes('Edge')} />
         <Budget />
         <Projects />
         <Portfolio isMobile={this.state.isMobile} />

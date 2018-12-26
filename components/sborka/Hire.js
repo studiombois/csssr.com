@@ -54,15 +54,18 @@ const planets = css.resolve`
 
   @media (max-width: 767px) {
     svg {
-      width: 22.5rem;
-      min-height: 10.5rem;
+      margin-top: -5.25rem;
+      margin-bottom: -5.25rem;
+      margin-left: -11.25rem;
+      width: 45rem;
+      min-height: 21rem;
     }
   }
 `
 
 class Hire extends PureComponent {
   render() {
-    const { t } = this.props
+    const { t, isEdge } = this.props
 
     return (
       <Fragment>
@@ -85,7 +88,11 @@ class Hire extends PureComponent {
               alt: t('sborka:imgAlt.rocket'),
             }}
           />
-          <HirePlanetsAndSatellites className={planets.className}/>
+          { isEdge
+            ? null
+            : <HirePlanetsAndSatellites className={planets.className} />
+          }
+
         </div><style jsx>{`
           article {
             position: relative;
@@ -270,7 +277,8 @@ class Hire extends PureComponent {
 
             .image-wrapper {
               min-height: 10.5rem;
-              background-size: contain;
+              background-position-y: 0;
+              background-size: 45rem 21rem;
             }
 
             .button-wrapper {

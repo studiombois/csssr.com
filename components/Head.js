@@ -5,6 +5,8 @@ import { string } from 'prop-types'
 const defaultOGURL = ''
 const defaultOGImage = ''
 
+const replaceNbspMdash = value => value.replace(/&nbsp;/g, ' ').replace(/&mdash;/g, '—')
+
 const Head = props => (
   <NextHead>
     <script dangerouslySetInnerHTML={{ __html: `
@@ -23,7 +25,7 @@ const Head = props => (
     <title>{`${props.title} | CSSSR`}</title>
     <meta
       name='description'
-      content={props.description}
+      content={replaceNbspMdash(props.description)}
     />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='icon' sizes='192x192' href='/static/icons/touch-icon.png' />

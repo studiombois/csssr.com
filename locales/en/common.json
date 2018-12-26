@@ -7,7 +7,7 @@
     "company": "Company",
     "products": "Products",
     "education": "Education",
-    "sborka": "Sborka"
+    "sborka": "Mock&#x2010;ups to&nbsp;HTML"
   },
   "floatingButton": {
     "mobileText": "Choose a convenient way of communication:"
@@ -23,7 +23,7 @@
   "sectionName": {
     "en": "Software Engineering",
     "en/jobs": "Jobs",
-    "en/sborka": "Sborka"
+    "en/html": "Mock&#x2010;ups to&nbsp;HTML"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

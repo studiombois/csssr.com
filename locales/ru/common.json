@@ -4,7 +4,7 @@
     "dev": "Фронтенд разработка",
     "jobs": "Работа в CSSSR",
     "job": "Работа в CSSSR",
-    "sborka": "Сборка"
+    "sborka": "Вёрстка"
   },
   "floatingButton": {
     "mobileText": "Выберите удобный способ связи:"
@@ -21,7 +21,7 @@
     "ru": "Фронтенд разработка",
     "ru/jobs": "Работа в CSSSR",
     "ru/job": "Работа в CSSSR",
-    "ru/sborka": "Сборка"
+    "ru/html": "Вёрстка"
   },
   "privacyPolicy": {
     "title": "Политика кон&shy;фи&shy;ден&shy;ци&shy;а&shy;ль&shy;но&shy;с&shy;ти",

@@ -32,8 +32,8 @@ export default pathname => {
   case ('/ru'):
   case ('/en'):
     return headerLinks.dev
-  case ('/ru/sborka'):
-  case ('/en/sborka'):
+  case ('/ru/html'):
+  case ('/en/html'):
     return headerLinks.sborka
   default:
     return []

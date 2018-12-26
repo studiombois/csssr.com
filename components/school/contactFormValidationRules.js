@@ -12,5 +12,9 @@ export default values => {
     errors.email = 'Invalid email format'
   }
 
+  if (!values.consents || (values.consents && !values.consents.includes('privacyPolicy'))) {
+    errors.privacyPolicy = 'Required'
+  }
+
   return errors
 }

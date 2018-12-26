@@ -3,7 +3,8 @@
   "menu": {
     "dev": "Фронтенд разработка",
     "jobs": "Работа в CSSSR",
-    "job": "Работа в CSSSR"
+    "job": "Работа в CSSSR",
+    "sborka": "Вёрстка"
   },
   "languageRedirect": {
     "link": "/en",
@@ -16,7 +17,8 @@
   "sectionName": {
     "ru": "Фронтенд разработка",
     "ru/jobs": "Работа в CSSSR",
-    "ru/job": "Работа в CSSSR"
+    "ru/job": "Работа в CSSSR",
+    "ru/html": "Вёрстка"
   },
   "privacyPolicy": {
     "title": "Политика кон&shy;фи&shy;ден&shy;ци&shy;а&shy;ль&shy;но&shy;с&shy;ти",

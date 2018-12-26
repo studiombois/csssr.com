@@ -2,7 +2,7 @@
   "hello": "Привет!",
   "menu": {
     "dev": "Фронтенд разработка",
-    "sborka": "HTML—Сборка",
+    "sborka": "Вёрстка",
     "jobs": "Работа в CSSSR",
     "job": "Работа в CSSSR",
     "school": "Школа"
@@ -17,7 +17,7 @@
   },
   "sectionName": {
     "ru": "Фронтенд разработка",
-    "ru/sborka": "Сборка",
+    "ru/html": "Вёрстка",
     "ru/jobs": "Работа в CSSSR",
     "ru/job": "Работа в CSSSR",
     "ru/school": "Школа"

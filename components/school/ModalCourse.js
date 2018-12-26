@@ -30,7 +30,7 @@ class ModalCourse extends PureComponent {
   renderPoint = (item, index) => {
     return (
       <Fragment key={index}>
-        <li className='font_p16-regular'>{item}</li>
+        <li className='font_p16-regular' dangerouslySetInnerHTML={{ __html: item }} />
         <style jsx>{`
           li:not(:first-child) {
             margin-top: 1rem;

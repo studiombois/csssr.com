@@ -239,7 +239,6 @@ class Courses extends PureComponent {
             grid-row: 3;
             margin-top: 1.4375rem;
             text-align: center;
-            cursor: pointer;
           }
 
           .button_wrapper {

@@ -9,6 +9,9 @@
     "education": "Education",
     "sborka": "Mock&#x2010;ups to&nbsp;HTML"
   },
+  "floatingButton": {
+    "mobileText": "Choose a convenient way of communication:"
+  },
   "languageRedirect": {
     "link": "/ru",
     "text": "Доступно на русском"

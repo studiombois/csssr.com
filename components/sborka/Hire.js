@@ -1,7 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
 import css from 'styled-jsx/css'
-import cn from 'classnames'
-import ButtonLink from '../ui-kit/ButtonLink'
 import { translate } from 'react-i18next'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 import HirePlanetsAndSatellites from '../../static/images/sborka/hire-planets-and-satellites.svg'
@@ -66,46 +64,6 @@ const planets = css.resolve`
 `
 
 class Hire extends PureComponent {
-  state = {
-    showScrollButton: false,
-  }
-
-  rafId = null
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  // Логика для этой кнопки уже есть в dev/Hire,
-  // если появится где-то ещё, то эту логику нужно будет вынести,
-  // что бы больше не дублировать
-  handleScroll = () => {
-    if (this.rafId) {
-      cancelAnimationFrame(this.rafId)
-    }
-
-    this.rafId = requestAnimationFrame(() => {
-      const bottomPadding = 250
-      const featureBoundings = document.getElementById('budget').getBoundingClientRect()
-      const formBoundings = document.getElementById('hire-us').getBoundingClientRect()
-      const formOffsetTop = formBoundings.top - formBoundings.height - bottomPadding
-
-      if (featureBoundings.top >= 450 || formOffsetTop <= 0) {
-        this.setState({
-          showScrollButton: false,
-        })
-      } else if (formOffsetTop && !this.state.showScrollButton) {
-        this.setState({
-          showScrollButton: true,
-        })
-      }
-    })
-  }
-
   render() {
     const { t, isEdge } = this.props
 
@@ -120,19 +78,6 @@ class Hire extends PureComponent {
             className='font_subhead-regular'
             dangerouslySetInnerHTML={{ __html: t('sborka:hire.subTitle') }}
           />
-
-          <div
-            id='hire-us-button'
-            className={cn({
-              'button-wrapper': true,
-              'button-wrapper-invisible': !this.state.showScrollButton,
-            })}
-          >
-            <ButtonLink href={'#hire-us'}>
-              {t('sborka:hire.buttonText')}
-            </ButtonLink>
-          </div>
-
         </article>
         <div className='image-wrapper'>
           <PictureForAllResolutions
@@ -301,10 +246,6 @@ class Hire extends PureComponent {
 
               .button-wrapper {
                 width: 12rem;
-              }
-
-              :global(#main) {
-                background-size: 80rem 30rem;
               }
             }
           }

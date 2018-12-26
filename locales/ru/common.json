@@ -6,6 +6,9 @@
     "job": "Работа в CSSSR",
     "sborka": "Вёрстка"
   },
+  "floatingButton": {
+    "mobileText": "Выберите удобный способ связи:"
+  },
   "languageRedirect": {
     "link": "/en",
     "text": "Switch to English"

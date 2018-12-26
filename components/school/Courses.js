@@ -192,6 +192,7 @@ class Courses extends PureComponent {
           .modal-button {
             border: none;
             display: inline-block;
+            cursor: pointer;
           }
           .imageColumn {
             position: relative;
@@ -231,7 +232,6 @@ class Courses extends PureComponent {
             grid-row: 3;
             margin-top: 1.4375rem;
             text-align: center;
-            cursor: pointer;
           }
 
           .button_wrapper {

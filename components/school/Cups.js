@@ -18,6 +18,8 @@ const picture = css.resolve`
 
   img {
     height: 100%;
+    width: auto;
+    object-fit: contain;
   }
 
   .active {

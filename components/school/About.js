@@ -49,7 +49,7 @@ const About = ({ t }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 10rem;
+        margin-top: 8.5rem;
         width: 1792px;
       }
 

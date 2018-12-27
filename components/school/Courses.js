@@ -328,7 +328,7 @@ class Courses extends PureComponent {
               text-align: left;
             }
 
-            .button_register {
+            .button_register, .button_wrapper .button_register {
               margin-top: 2.0625rem;
             }
 
@@ -356,11 +356,11 @@ class Courses extends PureComponent {
             }
 
             .courseWrapper:nth-of-type(1) {
-              margin-top: 3.3125rem;
+              margin-top: 2.8125rem;
             }
 
             .courseWrapper:nth-of-type(3) {
-              margin-top: 3.8125rem;
+              margin-top: 4.0625rem;
             }
 
             .course-title,
@@ -392,8 +392,12 @@ class Courses extends PureComponent {
               bottom: 44%;
             }
 
-            .button_register {
+            .button_wrapper .button_register {
               margin-top: 2.25rem;
+            }
+
+            .button_register {
+              margin-top: 2rem;
             }
 
             .under_course_text {
@@ -473,7 +477,7 @@ class Courses extends PureComponent {
 
           @media (max-width: 767px) {
             article {
-              margin-top: 5.5rem;
+              margin-top: 6rem;
               width: 20.5rem;
             }
 

@@ -53,52 +53,52 @@ const fieldCss = css.resolve`
     grid-column: 4 / span 6;
     margin-bottom: 2.0625rem;
   }
-  
+
   .field_type_textarea {
     position: relative;
     margin-top: 1.5rem;
     margin-bottom: 3.5rem;
   }
-  
+
   .field_type_no-margin {
     margin: 0;
   }
-  
+
   .field_type_checkbox {
     margin-bottom: 2rem;
   }
-  
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     .field_type_checkbox + .field_type_checkbox {
       margin-bottom: 2.5rem;
     }
   }
-  
+
   @media (min-width: 768px) and (max-width: 1279px) {
     .field {
       grid-column: 4 / span 6;
       margin-bottom: 1.5625rem;
     }
-  
+
     .field_type_textarea {
       margin-bottom: 3.625rem;
     }
-  
+
     .field_type_checkbox {
       margin-bottom: 1.5rem;
     }
   }
-  
+
   @media (max-width: 767px) {
     .field {
       grid-column: 1 / span 6;
     }
-  
+
     .field_type_textarea {
       margin-top: 1.4375rem;
       margin-bottom: 1.6875rem;
     }
-  
+
     .field_type_checkbox {
       margin-bottom: 1.1875rem;
     }
@@ -305,6 +305,10 @@ class ContactForm extends PureComponent {
 
             h2 {
               margin-bottom: 2.375rem;
+            }
+
+            .button {
+              grid-column: 5 / span 4;
             }
 
             @media (max-width: 1023px) {

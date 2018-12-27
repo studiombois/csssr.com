@@ -6,12 +6,22 @@ import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from './contactFormValidationRules'
 
-const ContactFormForSchool = props => <ContactForm
-  pageName='school'
-  headerId='sign'
-  fields={['name', 'email', 'phone']}
-  {...props}
-/>
+const ContactFormForSchool = props =>
+  <div>
+    <ContactForm
+      pageName='school'
+      headerId='sign'
+      fields={['name', 'email', 'phone']}
+      {...props}
+    /><style jsx>{`
+      @media (min-width: 768px) and (max-width: 1279px) {
+        div {
+          margin-top: -0.375rem;
+          margin-bottom: 0.375rem;
+        }
+      }
+    `}</style>
+  </div>
 
 const onSubmit = async values => {
   const res = await fetch('/api/school-submit-form', {

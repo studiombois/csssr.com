@@ -105,7 +105,7 @@ const Costs = ({ t }) =>
 
       @media (max-width: 767px) {
         section {
-          margin-top: 6.1975rem;
+          margin-top: 6.4375rem;
           width: 20.5rem;
         }
 

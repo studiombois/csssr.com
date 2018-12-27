@@ -11,6 +11,10 @@ const picture = css.resolve`
     height: 304px;
   }
 
+  img {
+    width: auto;
+  }
+
  @media (max-width: 1279px) {
     picture {
       margin-top: 0.5rem;

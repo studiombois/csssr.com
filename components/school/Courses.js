@@ -213,7 +213,7 @@ class Courses extends PureComponent {
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 0.0625rem;
-            background-color: #ffee1f;
+            background-color: #f8e71c;
             transform: rotate(18deg);
           }
 

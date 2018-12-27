@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import RubleIcon from '../../static/icons/ruble.svg'
 import { translate } from 'react-i18next'
 
 const Costs = ({ t }) =>
@@ -9,7 +10,9 @@ const Costs = ({ t }) =>
         <br/>
         <div className='font_roboto-slab-light big_counter'>
           <span dangerouslySetInnerHTML={{ __html: t('school:costs.cost') }} />
-          <sup className='currency' dangerouslySetInnerHTML={{ __html: t('school:costs.currency') }} />
+          <sup className='currency'>
+            <RubleIcon height='100%' />
+          </sup>
         </div>
         <span className='font_subhead-slab period' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
       </h2>
@@ -45,9 +48,9 @@ const Costs = ({ t }) =>
       .currency {
         position: absolute;
         right: -1rem;
-        top: -2.9375rem;
-        font-size: 2rem;
-        line-height: 6.1875rem;
+        top: -0.6875rem;
+        height: 2rem;
+        font-size: 0;
       }
 
       .period {

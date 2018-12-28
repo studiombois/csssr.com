@@ -1,0 +1,18 @@
+{
+  "errors": {
+    "notFound": {
+      "title": "Страница не&nbsp;найдена"
+    }
+  },
+  "nav": {
+    "dev": "Фронтенд разработка",
+    "html": "Вёрстка",
+    "school": "Школа",
+    "jobs": "Работа в CSSSR"
+  },
+  "listTitle": "Изучите наши разделы",
+  "imgAlt": {
+    "logo": "logo CSSSR",
+    "notFound": "404"
+  }
+}

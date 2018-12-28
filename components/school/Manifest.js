@@ -71,7 +71,7 @@ const picture = css.resolve`
 `
 
 class Manifest extends PureComponent {
-  renderItem = ({ title, descriptionLines, isCups, image }, index) =>
+  renderItem = ({ title, altText, descriptionLines, isCups, image }, index) =>
     <Fragment key={index}>
       <section className='grid-container'>
         <PictureForAllResolutions
@@ -80,7 +80,7 @@ class Manifest extends PureComponent {
             of_number_two: index === 1,
             of_number_three: index === 2,
           })}
-          image={{ namespace: 'school', key: image, alt: title }}
+          image={{ namespace: 'school', key: image, alt: altText }}
         />
         <div>
           <h3 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />

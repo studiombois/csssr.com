@@ -36,13 +36,14 @@ class Bonus extends PureComponent {
     title,
     description,
     image,
+    altText,
   }, index) => {
     return (
       <Fragment key={index}>
         <div className={cn('bonusWrapper')}>
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'school', key: image, alt: title }}
+            image={{ namespace: 'school', key: image, alt: altText }}
           />
           <h3
             className='font_h2-regular bonus-title'

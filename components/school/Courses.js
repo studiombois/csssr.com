@@ -91,6 +91,7 @@ class Courses extends PureComponent {
     info,
     duration,
     image,
+    altText,
     modal,
   }, index) => {
     const { t, isTabletOrLowResDesktop } = this.props
@@ -100,7 +101,7 @@ class Courses extends PureComponent {
           <div className='imageColumn'>
             <PictureForAllResolutions
               className={cn(picture.className, { gray: !active })}
-              image={{ namespace: 'school', key: image, alt: title }}
+              image={{ namespace: 'school', key: image, alt: altText }}
             />
 
             { !active &&

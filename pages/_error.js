@@ -246,7 +246,6 @@ class MyError extends React.Component {
             margin-top: 2.625rem;
             grid-column: 1 / span 3;
             grid-row: 3;
-            // z-index: 1;
           }
 
           ul {

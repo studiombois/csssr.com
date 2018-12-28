@@ -5,6 +5,7 @@ export default {
       description: 'Помогаем повысить вашу профессиональную ценность.',
       info: '7&nbsp;частей&nbsp;/ 8&nbsp;заданий',
       image: 'React_course_middle',
+      altText: 'Футболист с мячом с логотипом реакта',
     },
     {
       title: 'Junior React разработчик',
@@ -12,6 +13,7 @@ export default {
       info: '18&nbsp;частей&nbsp;/ 13&nbsp;заданий',
       duration: 'Примерно месяц, если учиться по&nbsp;два часа в&nbsp;день после работы',
       image: 'React_course_junior',
+      altText: 'Девушка, толкающая перед собой большой шар с логотипом реакта',
       active: true,
       modal:
         {
@@ -45,6 +47,7 @@ export default {
       description: 'Делаем из&nbsp;вас действительно редкого специалиста.',
       info: '8&nbsp;частей&nbsp;/ 7&nbsp;заданий',
       image: 'React_course_advanced',
+      altText: 'Человек подбрасывает в руке небольшой мячик с логотипом реакта',
     },
   ],
 }

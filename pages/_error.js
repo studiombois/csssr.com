@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import NextHead from 'next/head'
 import css from 'styled-jsx/css'
 import withI18next from '../utils/withI18next'
 import Common from '../components/Common'
@@ -61,22 +62,20 @@ class MyError extends React.Component {
     return { statusCode }
   }
 
-  renderNav = ({ sectionTitle, href }) => <li>
-    <a
-      href={href}
-      className='font_burger-menu'
-      dangerouslySetInnerHTML={{ __html: this.props.t(`${sectionTitle}`) }}
-    /><style jsx>{`
-      a {
-        margin-top: 0;
-        padding-bottom: 0;
-        height: 3rem;
-      }
-
-      @media (max-width: 767px) {
-      }
-    `}</style>
-  </li>
+  renderNav = ({ sectionTitle, href }) =>
+    <li key={sectionTitle}>
+      <a
+        href={href}
+        className='font_burger-menu'
+        dangerouslySetInnerHTML={{ __html: this.props.t(`${sectionTitle}`) }}
+      /><style jsx>{`
+        a {
+          margin-top: 0;
+          padding-bottom: 0;
+          height: 3rem;
+        }
+      `}</style>
+    </li>
 
   render() {
     const { t, lng, statusCode } = this.props
@@ -85,6 +84,25 @@ class MyError extends React.Component {
       <Common />
       <Settings />
       <Text />
+      <NextHead>
+        <script dangerouslySetInnerHTML={{ __html: `
+          // https://stackoverflow.com/a/27232658
+          // https://github.com/bfred-it/supports-webp/blob/master/index.js
+          function canUseWebP() {
+              const canvas = document.createElement('canvas')
+              canvas.width = canvas.height = 1;
+              return canvas.toDataURL &&
+                canvas.toDataURL('image/webp') &&
+                canvas.toDataURL('image/webp').indexOf('image/webp') === 5
+          }
+          if (canUseWebP()) {
+              document.documentElement.classList.add('webp')
+          }
+        ` }} />
+        <meta charSet='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+      </NextHead>
+
       <header className='grid-container'>
         <a href={ lng === 'ru' ? '/ru' : '/en' }>
           <LogoIcon width='100%' height='100%' />
@@ -96,6 +114,7 @@ class MyError extends React.Component {
           className='font_h1-slab'
           dangerouslySetInnerHTML={{ __html: t(`${localesByStatusCode[statusCode]}`) }}
         />
+
         <PictureForAllResolutions
           className={picture.className}
           image={{ namespace: 'error', key: 'notFound', alt: t('error:imgAlt.notFound') }}
@@ -103,13 +122,16 @@ class MyError extends React.Component {
         <div className='code-wrapper'>
           {codeIconByStatusCode[statusCode]}
         </div>
+
         <h2
           className='font_subhead-slab'
           dangerouslySetInnerHTML={{ __html: t('error:listTitle') }}
         />
+
         <div className='arrow-wrapper'>
           <LineFromTopToBottomIcon width='100%' height='100%' />
         </div>
+
         <ul>
           { lng === 'ru' && navItemsRu.map(this.renderNav) }
           { lng === 'en' && navItemsEn.map(this.renderNav) }

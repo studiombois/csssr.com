@@ -1,11 +1,11 @@
 export const iTcompaniesLinksEn = [
   { href: 'https://www.kaspersky.com/', label: 'Kaspersky Lab' },
-  { href: 'https://yandex.com/', label: 'Yandex' },
+  { href: 'https://realty.yandex.ru/', label: 'Yandex.Realty' },
 ]
 
 export const iTcompaniesLinksRu = [
   { href: 'https://www.kaspersky.ru/', label: 'Kaspersky Lab' },
-  { href: 'https://yandex.ru/', label: 'Яндекс' },
+  { href: 'https://realty.yandex.ru/', label: 'Яндекс.Недвижимость' },
 ]
 
 export const realEstateLinksEn = [

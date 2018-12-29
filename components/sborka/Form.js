@@ -40,7 +40,12 @@ const onSubmit = language => async values => {
 }
 const ContactFormForSborka = props =>
   <div>
-    <ContactForm pageName={pageName} {...props} />
+    <ContactForm
+      pageName={pageName}
+      headerId='hire-us'
+      fields={['name', 'phone', 'email', 'message']}
+      {...props}
+    />
     <style jsx>{`
       div {
         margin-top: 0.5rem;

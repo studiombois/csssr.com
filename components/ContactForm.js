@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react'
-import { string } from 'prop-types'
+import React, { Fragment, PureComponent } from 'react'
+import cn from 'classnames'
+import { string, arrayOf } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
@@ -48,11 +49,70 @@ const picture = css.resolve`
   }
 `
 
+const fieldCss = css.resolve`
+  .field {
+    grid-column: 4 / span 6;
+    margin-bottom: 2.0625rem;
+  }
+
+  .field_type_textarea {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .field_type_no-margin {
+    margin: 0;
+  }
+
+  .field_type_checkbox {
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 1360px) and (max-width: 1919px) {
+    .field_type_checkbox + .field_type_checkbox {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .field {
+      grid-column: 4 / span 6;
+      margin-bottom: 1.5625rem;
+    }
+
+    .field_type_textarea {
+      margin-bottom: 3.625rem;
+    }
+
+    .field_type_checkbox {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .field {
+      grid-column: 1 / span 6;
+    }
+
+    .field_type_textarea {
+      margin-top: 1.4375rem;
+      margin-bottom: 1.6875rem;
+    }
+
+    .field_type_checkbox {
+      margin-bottom: 1.1875rem;
+    }
+  }
+`
+
 class ContactForm extends PureComponent {
   messageRef = React.createRef()
   static proptypes = {
-    pageName: string,
     imageName: string,
+    pageName: string,
+    headerId: string,
+    fields: arrayOf(string),
   }
 
   state = {
@@ -111,11 +171,80 @@ class ContactForm extends PureComponent {
     this.handleScroll()
 
     return handleSubmit(e).then(() => {
-      if (!this.props.hasSubmitErrors) {
+      if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
         reset()
         this.setState({ formSubmitStatus: 'success' })
+      } else {
+        this.setState({ formSubmitStatus: 'fail' })
       }
     })
+  }
+
+  renderField = fieldName => {
+    const {
+      pageName,
+      t,
+    } = this.props
+
+    const fieldByName = {
+      name: <div className={cn('field', fieldCss.className)}>
+        <Field
+          id='name'
+          name='name'
+          component={TextField}
+          type='text'
+          placeholder={t(`${pageName}:form.namePlaceholder`)}
+          label={t(`${pageName}:form.nameLabel`)}
+        />
+      </div>,
+      phone: <div className={cn('field', fieldCss.className)}>
+        <Field
+          id='phone'
+          name='phone'
+          component={TextField}
+          type='text'
+          placeholder={t(`${pageName}:form.phonePlaceholder`)}
+          label={t(`${pageName}:form.phoneLabel`)}
+        />
+      </div>,
+      email: <div className={cn('field', fieldCss.className)}>
+        <Field
+          id='email'
+          name='email'
+          component={TextField}
+          type='email'
+          placeholder={t(`${pageName}:form.emailPlaceholder`)}
+          label={t(`${pageName}:form.emailLabel`)}
+        />
+      </div>,
+      message: <div className={cn('field', 'field_type_textarea', fieldCss.className)}>
+        <Field
+          id='message'
+          name='message'
+          component={TextareaField}
+          placeholder={t(`${pageName}:form.messagePlaceholder`)}
+          label={t(`${pageName}:form.messageLabel`)}
+        />
+      </div>,
+      privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className)}>
+        <PrivacyPolicyCheckbox />
+      </div>,
+      newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className)}>
+        <Field
+          id='newsletterCheckbox'
+          name='consents'
+          type='checkbox'
+          value='newsletter'
+          component={Checkbox}
+        >
+          {t('common:checkBoxesText.newsletterText')}
+        </Field>
+      </div>,
+    }
+
+    return <Fragment key={fieldName}>
+      {fieldByName[fieldName]}
+    </Fragment>
   }
 
   render() {
@@ -124,6 +253,8 @@ class ContactForm extends PureComponent {
       hasValidationErrors,
       // imageName,
       pageName,
+      headerId,
+      fields,
       t,
     } = this.props
 
@@ -133,65 +264,11 @@ class ContactForm extends PureComponent {
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
-        <h2 id='hire-us' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.title`) }} />
-        <div className='field'>
-          <Field
-            id='name'
-            name='name'
-            component={TextField}
-            type='text'
-            placeholder={t(`${pageName}:form.namePlaceholder`)}
-            label={t(`${pageName}:form.nameLabel`)}
-            errorShouldBeShown
-          />
-        </div>
-        <div className='field'>
-          <Field
-            id='phone'
-            name='phone'
-            component={TextField}
-            type='text'
-            placeholder={t(`${pageName}:form.phonePlaceholder`)}
-            label={t(`${pageName}:form.phoneLabel`)}
-          />
-        </div>
-        <div className='field'>
-          <Field
-            id='email'
-            name='email'
-            component={TextField}
-            type='email'
-            placeholder={t(`${pageName}:form.emailPlaceholder`)}
-            label={t(`${pageName}:form.emailLabel`)}
-            errorShouldBeShown
-          />
-        </div>
-        <div className='field field_type_textarea'>
-          <Field
-            id='message'
-            name='message'
-            component={TextareaField}
-            placeholder={t(`${pageName}:form.messagePlaceholder`)}
-            label={t(`${pageName}:form.messageLabel`)}
-          />
-        </div>
+        <h2 id={headerId} className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.title`) }} />
 
-        <div className='field field_type_checkbox'>
-          <PrivacyPolicyCheckbox />
-        </div>
-
-        <div className='field field_type_checkbox'>
-          <Field
-            id='newsletterCheckbox'
-            name='consents'
-            type='checkbox'
-            value='newsletter'
-            component={Checkbox}
-          >
-            {t('common:checkBoxesText.newsletterText')}
-          </Field>
-        </div>
-
+        {fields.map(this.renderField)}
+        {this.renderField('privacyPolicy')}
+        {this.renderField('newsletter')}
 
         <div className='button' ref={this.messageRef}>
           <AnimatedButton
@@ -225,25 +302,6 @@ class ContactForm extends PureComponent {
             text-align: center;
           }
 
-          .field {
-            grid-column: 4 / span 6;
-            margin-bottom: 2.0625rem;
-          }
-
-          .field_type_textarea {
-            position: relative;
-            margin-top: 1.5rem;
-            margin-bottom: 3.5rem;
-          }
-
-          .field_type_no-margin {
-            margin: 0;
-          }
-
-          .field_type_checkbox {
-            margin-bottom: 2rem;
-          }
-
           .button {
             margin-top: 1.5rem;
             grid-column: 6 / span 2;
@@ -256,10 +314,6 @@ class ContactForm extends PureComponent {
           @media (min-width: 1360px) and (max-width: 1919px) {
             form {
               width: 1328px;
-            }
-
-            .field_type_checkbox + .field_type_checkbox {
-              margin-bottom: 2.5rem;
             }
           }
 
@@ -280,17 +334,8 @@ class ContactForm extends PureComponent {
               margin-bottom: 2.375rem;
             }
 
-            .field {
-              grid-column: 4 / span 6;
-              margin-bottom: 1.5625rem;
-            }
-
-            .field_type_textarea {
-              margin-bottom: 3.625rem;
-            }
-
-            .field_type_checkbox {
-              margin-bottom: 1.5rem;
+            .button {
+              grid-column: 5 / span 4;
             }
 
             @media (max-width: 1023px) {
@@ -308,10 +353,6 @@ class ContactForm extends PureComponent {
 
             h2 {
               margin-bottom: 2.5625rem;
-            }
-
-            h2,
-            .field {
               grid-column: 1 / span 6;
             }
 
@@ -336,6 +377,7 @@ class ContactForm extends PureComponent {
 
         `}</style>
         {picture.styles}
+        {fieldCss.styles}
       </form>
     )
   }

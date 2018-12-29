@@ -2,12 +2,9 @@
   "hello": "Hello!",
   "menu": {
     "dev": "Software Engineering",
+    "sborka": "Mock&#x2010;ups to&nbsp;HTML",
     "jobs": "Jobs",
-    "recruitment": "Recruitment",
-    "company": "Company",
-    "products": "Products",
-    "education": "Education",
-    "sborka": "Mock&#x2010;ups to&nbsp;HTML"
+    "school": "School"
   },
   "floatingButton": {
     "mobileText": "Choose a convenient way of communication:"
@@ -22,8 +19,9 @@
   },
   "sectionName": {
     "en": "Software Engineering",
+    "en/html": "Mock&#x2010;ups to&nbsp;HTML",
     "en/jobs": "Jobs",
-    "en/html": "Mock&#x2010;ups to&nbsp;HTML"
+    "en/school": "School"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

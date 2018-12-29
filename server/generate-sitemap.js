@@ -96,6 +96,10 @@ const generateSitemap = () =>
         url: 'https://csssr.com/ru/jobs',
         changefreq: 'weekly',
         priority: 1,
+      }, {
+        url: 'https://csssr.com/ru/school',
+        changefreq: 'weekly',
+        priority: 1,
       }, ...vacanciesUrls],
     })
   )

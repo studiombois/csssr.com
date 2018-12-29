@@ -40,7 +40,6 @@ class HeaderContent extends PureComponent {
       onSideBarToggle,
       t,
     } = this.props
-
     return (
       <Fragment>
         <header
@@ -89,7 +88,9 @@ class HeaderContent extends PureComponent {
               </span>
             }
 
-            <nav className='nav'>
+            <nav className={cn('nav', {
+              'with-logo-sup': logoSup,
+            })}>
               <ul className='nav-list'>
                 {links.map(({ href, label }) => (
                   <li
@@ -103,7 +104,9 @@ class HeaderContent extends PureComponent {
             </nav>
 
             <span
-              className='section-name font_perforator-16-black'
+              className={cn('section-name', 'font_perforator-16-black', {
+                'with-logo-sup': logoSup,
+              })}
               dangerouslySetInnerHTML={{ __html: t(`common:sectionName.${pathname.slice(1)}`) }}
             />
 
@@ -201,6 +204,11 @@ class HeaderContent extends PureComponent {
               height: 2rem;
             }
 
+            .nav.with-logo-sup {
+              grid-column: 4 / span 6;
+              height: 2rem;
+            }
+
             .nav-list {
               display: flex;
               width: 100%;
@@ -225,8 +233,13 @@ class HeaderContent extends PureComponent {
 
             .section-name {
               grid-column: 9 / span 3;
-              height: 1.5rem;
+              height: 1rem;
+              line-height: 1rem;
               text-align: right;
+            }
+
+            .section-name.with-logo-sup {
+              grid-column: 10 / span 2;
             }
 
             .burger {

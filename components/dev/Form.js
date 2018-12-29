@@ -7,7 +7,13 @@ import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 
-const ContactFormForDev = props => <ContactForm imageName='letter' pageName='dev' {...props} />
+const ContactFormForDev = props => <ContactForm
+  imageName='letter'
+  pageName='dev'
+  headerId='hire-us'
+  fields={['name', 'phone', 'email', 'message']}
+  {...props}
+/>
 
 const onSubmit = language => async values => {
   const gacid = window.ga.getAll()[0].get('clientId')

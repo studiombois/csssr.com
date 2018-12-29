@@ -86,7 +86,7 @@ class Hire extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 12rem;
+            margin-top: 12rem;
             width: 1792px;
             height: 60rem;
           }
@@ -244,7 +244,7 @@ class Hire extends PureComponent {
             }
 
             article {
-              padding-top: 10rem;
+              margin-top: 10rem;
               width: 944px;
               height: 52rem;
             }
@@ -306,7 +306,7 @@ class Hire extends PureComponent {
 
           @media (max-width: 767px) {
             article {
-              padding-top: 5rem;
+              margin-top: 5rem;
               width: 20.5rem;
               height: auto;
               min-height: 37rem;

@@ -44,7 +44,7 @@ const ContactFormForSborka = props =>
     <style jsx>{`
       div {
         margin-top: 0.5rem;
-        margin-bottom: -31.5rem;
+        margin-bottom: -17.5rem;
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {

@@ -52,11 +52,13 @@ class FormStateMessage extends PureComponent {
   static propTypes = {
     status: oneOf(['success', 'fail']),
     errorText: string,
+    feedbackEmail: string,
   }
 
   static defaultProps = {
     status: 'success',
     errorText: 'Что-то пошло не так.',
+    feedbackEmail: 'sales@csssr.io',
   }
 
   componentWillReceiveProps({ status }) {
@@ -82,7 +84,7 @@ class FormStateMessage extends PureComponent {
           <span>Попробуйте </span>
           <button type='button' className='font_link-list_16' onClick={this.props.onReset}>еще раз</button>
           <span> или отправьте вопрос на </span>
-          <a className='font_link-list_16' href='mailto:sales@csssr.io'>sales@csssr.io</a><style jsx>{`
+          <a className='font_link-list_16' href={`mailto:${this.props.feedbackEmail}`}>{this.props.feedbackEmail}</a><style jsx>{`
             button {
               border: none;
               background: none;

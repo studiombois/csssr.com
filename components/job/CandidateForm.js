@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import css from 'styled-jsx/css'
-import { equals } from 'ramda'
+import equals from 'ramda/es/equals'
 import cn from 'classnames'
 import Link from 'next/link'
 import FormRow from './FormRow'
@@ -135,7 +135,7 @@ class CandidateForm extends PureComponent {
       }
     }
 
-    if (formSubmitStatus && formSubmitStatus !== 'success' && !equals(values, this.props.values)) {
+    if (formSubmitStatus && !equals(values, this.props.values)) {
       this.handleStateClear()
     }
   }
@@ -185,9 +185,11 @@ class CandidateForm extends PureComponent {
     this.handleScroll()
 
     return handleSubmit(e).then(() => {
-      if (!this.props.hasSubmitErrors) {
+      if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
         reset()
         this.setState({ formSubmitStatus: 'success' })
+      } else {
+        this.setState({ formSubmitStatus: 'fail' })
       }
     })
   }

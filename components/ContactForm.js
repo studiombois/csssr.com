@@ -4,7 +4,7 @@ import { string, arrayOf } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
-import { equals } from 'ramda'
+import equals from 'ramda/es/equals'
 import Checkbox from './ui-kit/Checkbox'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
@@ -251,7 +251,6 @@ class ContactForm extends PureComponent {
     const {
       submitting,
       hasValidationErrors,
-      // imageName,
       pageName,
       headerId,
       fields,

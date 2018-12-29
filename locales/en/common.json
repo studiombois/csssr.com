@@ -6,7 +6,11 @@
     "recruitment": "Recruitment",
     "company": "Company",
     "products": "Products",
-    "education": "Education"
+    "education": "Education",
+    "sborka": "Mock&#x2010;ups to&nbsp;HTML"
+  },
+  "floatingButton": {
+    "mobileText": "Choose a convenient way of communication:"
   },
   "languageRedirect": {
     "link": "/ru",
@@ -18,7 +22,8 @@
   },
   "sectionName": {
     "en": "Software Engineering",
-    "en/jobs": "Jobs"
+    "en/jobs": "Jobs",
+    "en/html": "Mock&#x2010;ups to&nbsp;HTML"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

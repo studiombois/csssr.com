@@ -20,7 +20,7 @@ export default css`
     padding-bottom: 1.5rem;
     display: block;
     width: 100%;
-    height: 10rem;
+    min-height: 10rem;
     border: none;
     border: solid 0.0625rem #e1e1e1;
     border-radius: 0;
@@ -43,12 +43,15 @@ export default css`
 
   label {
     position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 17px;
     margin: auto;
-    top: 1.4375rem;
-    left: 1rem;
-    height: 1rem;
+    padding-top: 1.4375rem;
+    padding-left: 1rem;
     line-height: 1rem;
     font-size: 0.875rem;
+    background-color: #fff;
     color: #9b9b9b;
     pointer-events: none;
     user-select: none;
@@ -63,7 +66,7 @@ export default css`
 
   div.textarea_filled label,
   div textarea:focus + label {
-    top: 0.375rem;
+    padding-top: 0.375rem;
     font-size: 0.625rem;
   }
 

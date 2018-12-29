@@ -39,6 +39,7 @@ export default class TextField extends PureComponent {
       // state,
       className,
       errorShouldBeShown,
+      maxLength,
       input: {
         name,
         value,
@@ -73,6 +74,7 @@ export default class TextField extends PureComponent {
           autoFocus={autoFocus}
           type={type}
           disabled={disabled}
+          maxLength={maxLength}
         />
         {(errorShouldBeShown && meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
         {label && <label

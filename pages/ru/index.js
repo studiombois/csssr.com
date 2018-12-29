@@ -7,6 +7,7 @@ import Feature2 from '../../components/dev/Feature2'
 import Partners from '../../components/dev/Partners'
 import PartnersMobile from '../../components/dev/PartnersMobile'
 import Layout from '../../components/Layout'
+import ButtonSelect from '../../components/ui-kit/ButtonSelect'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
@@ -57,6 +58,9 @@ class Dev extends PureComponent {
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
         />
         <Form language={lng} />
+        <ButtonSelect showButtonOnNode='feature1' hideButtonOnNode='hire-us'>
+          {t('dev:hire.buttonText')}
+        </ButtonSelect>
         <style jsx>{`
           :global(#header-background) {
             z-index: 1;

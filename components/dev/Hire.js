@@ -1,7 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
 import css from 'styled-jsx/css'
-import cn from 'classnames'
-import ButtonLink from '../ui-kit/ButtonLink'
 import { translate } from 'react-i18next'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
@@ -60,50 +58,7 @@ const picture = css.resolve`
   }
 `
 
-const trackHireUsButtonClick = () => {
-  if (window.dataLayer) {
-    window.dataLayer.push({ event: 'floating_button' })
-  }
-}
-
 class Hire extends PureComponent {
-  state = {
-    showScrollButton: false,
-  }
-
-  rafId = null
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = () => {
-    if (this.rafId) {
-      cancelAnimationFrame(this.rafId)
-    }
-
-    this.rafId = requestAnimationFrame(() => {
-      const bottomPadding = 250
-      const featureBoundings = document.getElementById('feature1').getBoundingClientRect()
-      const formBoundings = document.getElementById('hire-us').getBoundingClientRect()
-      const formOffsetTop = formBoundings.top - formBoundings.height - bottomPadding
-
-      if (featureBoundings.top >= 450 || formOffsetTop <= 0) {
-        this.setState({
-          showScrollButton: false,
-        })
-      } else if (formOffsetTop && !this.state.showScrollButton) {
-        this.setState({
-          showScrollButton: true,
-        })
-      }
-    })
-  }
-
   render() {
     const { t } = this.props
 
@@ -114,18 +69,6 @@ class Hire extends PureComponent {
             {t('dev:hire.title')}
             <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
           </h1>
-
-          <div
-            id='hire-us-button'
-            className={cn({
-              'button-wrapper': true,
-              'button-wrapper-invisible': !this.state.showScrollButton,
-            })}
-          >
-            <ButtonLink href={'#hire-us'} onClick={trackHireUsButtonClick}>
-              {t('dev:hire.buttonText')}
-            </ButtonLink>
-          </div>
 
           <blockquote>
             <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph1') }} />
@@ -173,20 +116,6 @@ class Hire extends PureComponent {
             font-weight: bold;
           }
 
-          .button-wrapper {
-            position: fixed;
-            bottom: 4rem;
-            right: 4rem;
-            width: 272px;
-            z-index: 8999;
-            transform: translateY(0);
-            transition: transform 0.3s ease-out;
-          }
-
-          .button-wrapper-invisible {
-            transform: translateY(calc(100% + 15rem));
-          }
-
           :global(#main) {
             background-image: url(/static/images/dev/1920/dev_line@1x.png);
             background-size: 1920px 640px;
@@ -229,10 +158,6 @@ class Hire extends PureComponent {
               width: 1328px;
             }
 
-            .button-wrapper {
-              width: 208px;
-            }
-
             :global(#main) {
               background-image: url(/static/images/dev/1360/dev_line@1x.png);
               background-size: 1360px 640px;
@@ -273,10 +198,6 @@ class Hire extends PureComponent {
           @media (min-width: 1280px) and (max-width: 1359px) {
             article {
               width: 1232px;
-            }
-
-            .button-wrapper {
-              width: 192px;
             }
 
             :global(#main) {
@@ -336,10 +257,6 @@ class Hire extends PureComponent {
               margin-top: 1.3125rem;
             }
 
-            .button-wrapper {
-              width: 192px;
-            }
-
             :global(#main) {
               background-image: url(/static/images/dev/1024/dev_line@1x.png);
               background-size: 1024px 480px;
@@ -381,10 +298,6 @@ class Hire extends PureComponent {
                 width: 59rem;
               }
 
-              .button-wrapper {
-                width: 12rem;
-              }
-
               :global(#main) {
                 background-size: 80rem 30rem;
               }
@@ -419,14 +332,6 @@ class Hire extends PureComponent {
             p {
               margin-bottom: 0.5rem;
             }
-
-            .button-wrapper {
-              position: fixed;
-              bottom: 2rem;
-              width: 13.5rem;
-              right: calc(50% - 13.5rem / 2);
-            }
-
 
             :global(#main) {
               background-image: url(/static/images/dev/360/dev_line@1x.png);

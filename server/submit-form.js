@@ -1,5 +1,5 @@
 const fetch = require('isomorphic-unfetch')
-const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT, GOOGLE_CID } } } = require('./amo-config')
+const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT, NEWSLETTER, GOOGLE_CID } } } = require('./amo-config')
 
 module.exports = (req, res) => {
   const {
@@ -61,18 +61,18 @@ module.exports = (req, res) => {
               ],
             },
             {
-              id: 584019,
-              values: [
-                {
-                  value: consents.includes('newsletter'),
-                },
-              ],
-            },
-            {
               id: COMMENT.ID,
               values: [
                 {
                   value: message,
+                },
+              ],
+            },
+            {
+              id: NEWSLETTER.ID,
+              values: [
+                {
+                  value: consents.includes('newsletter'),
                 },
               ],
             },

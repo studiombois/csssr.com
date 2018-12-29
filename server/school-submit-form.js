@@ -1,21 +1,28 @@
 const fetch = require('isomorphic-unfetch')
-const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL } } } = require('./amo-config')
-
-const tagsArray = ['csssr.com']
-const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
-if (tagFromEnv) {
-  tagsArray.push(tagFromEnv)
-} else if (process.env.NODE_ENV !== 'production') {
-  tagsArray.push('TEST')
-}
-const tags = tagsArray.join(',')
+const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
 
 module.exports = (req, res) => {
   const {
     name,
     phone,
     email,
+    consents,
   } = req.body
+
+  const tagsArray = ['csssr.com']
+  const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
+
+  if (tagFromEnv) {
+    tagsArray.push(tagFromEnv)
+  } else if (process.env.NODE_ENV !== 'production') {
+    tagsArray.push('TEST')
+  }
+
+  if (consents.includes('newsletter')) {
+    tagsArray.push('Подписчик')
+  }
+
+  const tags = tagsArray.join(',')
 
   return fetch(`${ORIGIN}/api/v2/contacts/?${AUTH_QUERY}`, {
     method: 'POST',
@@ -44,6 +51,14 @@ module.exports = (req, res) => {
                 {
                   value: email,
                   enum: EMAIL.ENUM,
+                },
+              ],
+            },
+            {
+              id: NEWSLETTER.ID,
+              values: [
+                {
+                  value: consents.includes('newsletter'),
                 },
               ],
             },

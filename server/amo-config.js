@@ -18,6 +18,9 @@ module.exports = {
       COMMENT: {
         ID: 568629,
       },
+      NEWSLETTER: {
+        ID: 584019,
+      },
       GOOGLE_CID: {
         ID: 582127,
       },
@@ -36,6 +39,9 @@ module.exports = {
       EMAIL: {
         ID: 7317,
         ENUM: '10849',
+      },
+      NEWSLETTER: {
+        ID: 92481,
       },
     },
   },

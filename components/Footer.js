@@ -116,7 +116,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
       .social-links {
         grid-column: 4 / span 2;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         font-size: 0;
       }
 
@@ -130,7 +130,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
       }
 
       .footer-links {
-        grid-column: 9 / span 4;
+        grid-column: 7 / span 5;
         display: flex;
         justify-content: flex-end;
         height: 1.5rem;
@@ -143,10 +143,6 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
       @media (min-width: 1360px) and (max-width: 1919px) {
         footer {
           width: 1328px;
-        }
-
-        .change-language-link-wrapper {
-          grid-column: 6 / span 2;
         }
       }
 
@@ -184,7 +180,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
         }
 
         .footer-links {
-          grid-column: 9 / span 4;
+          grid-column: 7 / span 6;
         }
 
         @media (max-width: 1023px) {

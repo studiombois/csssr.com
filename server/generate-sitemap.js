@@ -65,7 +65,39 @@ const generateSitemap = () =>
           },
         ],
       }, {
+        url: 'https://csssr.com/ru/html',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/html',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/html',
+          },
+        ],
+      }, {
+        url: 'https://csssr.com/en/html',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/html',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/html',
+          },
+        ],
+      }, {
         url: 'https://csssr.com/ru/jobs',
+        changefreq: 'weekly',
+        priority: 1,
+      }, {
+        url: 'https://csssr.com/ru/school',
         changefreq: 'weekly',
         priority: 1,
       }, ...vacanciesUrls],

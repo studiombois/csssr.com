@@ -239,21 +239,6 @@ export default class AnimatedButton extends PureComponent {
           .loading.elastic.progress-button button {
             transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
           }
-
-          @media (min-width: 768px) and (max-width: 1279px) {
-            .progress-button button {
-              height: 2.5rem;
-            }
-
-            .loading.progress-button button {
-              width: 2.5rem;
-            }
-
-            .progress-button svg {
-              width: 2.5rem;
-              height: 2.5rem;
-            }
-          }
         `}</style>
       </div>
     )

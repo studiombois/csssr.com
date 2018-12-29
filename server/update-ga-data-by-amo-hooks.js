@@ -1,9 +1,6 @@
-const { AMO_CRM_BASE_URL, AUTH_QUERY_PARAMS } = require('../constants/amocrm')
 const fetch = require('isomorphic-unfetch')
 const getGaId = require('../utils/getGaId')
-
-const frontendSalesPipelineId = '938752'
-const googleCidFieldId = 582127
+const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIELDS: { GOOGLE_CID } } } = require('./amo-config')
 
 // это вебхук для amoCRM, почитать про их вебхуки можно тут:
 // https://www.amocrm.ru/developers/content/api/webhooks
@@ -30,7 +27,7 @@ module.exports = (req, res) => {
     //
     // дока о сделках:
     // https://www.amocrm.ru/developers/content/api/leads
-    fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?id=${leads.update[0].id}&${AUTH_QUERY_PARAMS}`, {
+    fetch(`${ORIGIN}/api/v2/leads/?id=${leads.update[0].id}&${AUTH_QUERY}`, {
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -43,7 +40,7 @@ module.exports = (req, res) => {
         //
         // дока о воронках:
         // https://www.amocrm.ru/developers/content/api/pipelines
-        fetch(`${AMO_CRM_BASE_URL}/api/v2/pipelines/?id=${leads.update[0].pipeline_id}&${AUTH_QUERY_PARAMS}`, {
+        fetch(`${ORIGIN}/api/v2/pipelines/?id=${leads.update[0].pipeline_id}&${AUTH_QUERY}`, {
           method: 'GET',
           headers: {
             Accept: 'application/json',
@@ -56,7 +53,7 @@ module.exports = (req, res) => {
         // https://www.amocrm.ru/developers/content/api/contacts
         //
         // eslint-disable-next-line
-        fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?id=${leadData._embedded.items[0].main_contact.id}&${AUTH_QUERY_PARAMS}`, {
+        fetch(`${ORIGIN}/api/v2/contacts/?id=${leadData._embedded.items[0].main_contact.id}&${AUTH_QUERY}`, {
           method: 'GET',
           headers: {
             Accept: 'application/json',
@@ -67,9 +64,9 @@ module.exports = (req, res) => {
       .then(response => Promise.all(response.map(r => r.json())))
       .then(([piplelineData, contactData]) => {
         /* eslint-disable */
-        const statusesInfoById = piplelineData._embedded.items[frontendSalesPipelineId].statuses
+        const statusesInfoById = piplelineData._embedded.items[PIPELINE_ID].statuses
         const leadStatusName = statusesInfoById[leads.update[0].status_id].name
-        const leadContactCid = contactData._embedded.items[0].custom_fields.find(({id}) => id === googleCidFieldId).values[0].value
+        const leadContactCid = contactData._embedded.items[0].custom_fields.find(({id}) => id === GOOGLE_CID.ID).values[0].value
         const leadPrice = leads.update[0].price || 0
         /* eslint-enable */
 

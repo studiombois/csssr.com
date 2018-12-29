@@ -6,8 +6,13 @@ export default pathname => {
   case ('/ru/jobs'):
   case ('/en/jobs'):
     return 'common:menu.jobs'
+  case ('/ru/school'):
+    return 'common:menu.school'
   case ('/ru/job'):
     return 'common:menu.job'
+  case ('/ru/html'):
+  case ('/en/html'):
+    return 'common:menu.sborka'
   default:
     return '404'
   }

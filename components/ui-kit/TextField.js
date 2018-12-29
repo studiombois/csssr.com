@@ -38,6 +38,7 @@ export default class TextField extends PureComponent {
       theme,
       // state,
       className,
+      maxLength,
       input: {
         name,
         value,
@@ -72,6 +73,7 @@ export default class TextField extends PureComponent {
           autoFocus={autoFocus}
           type={type}
           disabled={disabled}
+          maxLength={maxLength}
         />
         {label && <label
           className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}

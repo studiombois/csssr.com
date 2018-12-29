@@ -2,11 +2,9 @@
   "hello": "Hello!",
   "menu": {
     "dev": "Software Engineering",
+    "sborka": "Mock&#x2010;ups to&nbsp;HTML",
     "jobs": "Jobs",
-    "recruitment": "Recruitment",
-    "company": "Company",
-    "products": "Products",
-    "education": "Education"
+    "school": "School"
   },
   "languageRedirect": {
     "link": "/ru",
@@ -18,7 +16,9 @@
   },
   "sectionName": {
     "en": "Software Engineering",
-    "en/jobs": "Jobs"
+    "en/html": "Mock&#x2010;ups to&nbsp;HTML",
+    "en/jobs": "Jobs",
+    "en/school": "School"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

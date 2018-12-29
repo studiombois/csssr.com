@@ -15,8 +15,12 @@ export default class Settings extends PureComponent {
 
   render() {
     return <Fragment>
-      <div id='background-for-layout' />
-      <div id='background-for-grid' />
+      <div id='background-for-layout'
+        // className='layout-columns-on'
+      />
+      <div id='background-for-grid'
+        // className='grid'
+      />
 
       <style jsx global>{`
       #background-for-layout,

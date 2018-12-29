@@ -2,9 +2,10 @@
   "hello": "Привет!",
   "menu": {
     "dev": "Фронтенд разработка",
+    "sborka": "Вёрстка",
     "jobs": "Работа в CSSSR",
     "job": "Работа в CSSSR",
-    "sborka": "Вёрстка"
+    "school": "Школа"
   },
   "languageRedirect": {
     "link": "/en",
@@ -16,9 +17,10 @@
   },
   "sectionName": {
     "ru": "Фронтенд разработка",
+    "ru/html": "Вёрстка",
     "ru/jobs": "Работа в CSSSR",
     "ru/job": "Работа в CSSSR",
-    "ru/html": "Вёрстка"
+    "ru/school": "Школа"
   },
   "privacyPolicy": {
     "title": "Политика кон&shy;фи&shy;ден&shy;ци&shy;а&shy;ль&shy;но&shy;с&shy;ти",

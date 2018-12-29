@@ -25,6 +25,22 @@ const headerLinks = {
     href: '#hire-us',
     label: 'sborka:headerNav.hireUs',
   }],
+  school: [{
+    href: '#manifest',
+    label: 'school:headerNav.manifest',
+  }, {
+    href: '#courses',
+    label: 'school:headerNav.courses',
+  }, {
+    href: '#services',
+    label: 'school:headerNav.services',
+  }, {
+    href: '#about',
+    label: 'school:headerNav.about',
+  }, {
+    href: '#sign',
+    label: 'school:headerNav.sign',
+  }],
 }
 
 export default pathname => {
@@ -35,6 +51,8 @@ export default pathname => {
   case ('/ru/html'):
   case ('/en/html'):
     return headerLinks.sborka
+  case ('/ru/school'):
+    return headerLinks.school
   default:
     return []
   }

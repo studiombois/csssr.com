@@ -1,5 +1,5 @@
-const { AMO_CRM_BASE_URL, AUTH_QUERY_PARAMS } = require('../constants/amocrm')
 const fetch = require('isomorphic-unfetch')
+const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT, GOOGLE_CID } } } = require('./amo-config')
 
 module.exports = (req, res) => {
   const {
@@ -30,7 +30,7 @@ module.exports = (req, res) => {
 
   const tags = tagsArray.join(',')
 
-  return fetch(`${AMO_CRM_BASE_URL}/api/v2/contacts/?${AUTH_QUERY_PARAMS}`, {
+  return fetch(`${ORIGIN}/api/v2/contacts/?${AUTH_QUERY}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -43,20 +43,28 @@ module.exports = (req, res) => {
           tags,
           custom_fields: [
             {
-              id: 143825,
+              id: PHONE.ID,
               values: [
                 {
                   value: phone,
-                  enum: '303513',
+                  enum: PHONE.ENUM,
                 },
               ],
             },
             {
-              id: 143827,
+              id: EMAIL.ID,
               values: [
                 {
                   value: email,
-                  enum: '303521',
+                  enum: EMAIL.ENUM,
+                },
+              ],
+            },
+            {
+              id: COMMENT.ID,
+              values: [
+                {
+                  value: message,
                 },
               ],
             },
@@ -69,15 +77,7 @@ module.exports = (req, res) => {
               ],
             },
             {
-              id: 568629,
-              values: [
-                {
-                  value: message,
-                },
-              ],
-            },
-            {
-              id: 582127,
+              id: GOOGLE_CID.ID,
               values: [
                 {
                   value: gacid,
@@ -96,7 +96,7 @@ module.exports = (req, res) => {
         return res.status(400).send({ error: 'server/submit-form.js ошибка при создании контакта' })
       }
 
-      return fetch(`${AMO_CRM_BASE_URL}/api/v2/leads/?${AUTH_QUERY_PARAMS}`, {
+      return fetch(`${ORIGIN}/api/v2/leads/?${AUTH_QUERY}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -106,8 +106,8 @@ module.exports = (req, res) => {
           add: [
             {
               name: `${name} | Первичный запрос с csssr.com`,
-              status_id: 21946756,
-              pipeline_id: 938752,
+              pipeline_id: PIPELINE_ID,
+              status_id: FIRST_STATUS_ID,
               // eslint-disable-next-line no-underscore-dangle
               contacts_id: createContactData._embedded.items[0].id,
               tags,

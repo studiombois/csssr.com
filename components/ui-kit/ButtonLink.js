@@ -7,6 +7,7 @@ export default class Button extends PureComponent {
     theme: oneOf(['primary', 'secondary']),
     children: node,
     href: string,
+    className: string,
     external: bool,
     disabled: bool,
     onClick: func,
@@ -23,11 +24,13 @@ export default class Button extends PureComponent {
       external,
       disabled,
       href,
+      className,
       onClick,
     } = this.props
 
     const classNames = cn('button', {
       'font_button-label': true,
+      [className]: className,
       button_state_disabled: disabled,
       button_theme_primary: theme === 'primary',
       button_theme_secondary: theme === 'secondary',

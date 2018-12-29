@@ -6,6 +6,7 @@ import portfolioProjects from '../../data/sborka/porfolioProjects'
 import { translate } from 'react-i18next'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 import Arrow from '../../static/icons/arrow.svg'
+import limit from '../../utils/limit'
 
 const picture = css.resolve`
   picture {
@@ -58,10 +59,7 @@ class Portfolio extends PureComponent {
     const { activeScrollItemIndex } = this.state
 
     this.setState({
-      activeScrollItemIndex: Math.min(
-        Math.max(activeScrollItemIndex + step, 0),
-        portfolioProjects.length - 1
-      ),
+      activeScrollItemIndex: limit(activeScrollItemIndex + step, 0, portfolioProjects.length - 1),
     })
   }
 

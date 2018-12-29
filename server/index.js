@@ -7,6 +7,7 @@ const i18nextMiddleware = require('i18next-express-middleware')
 const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
+const schoolSubmitForm = require('./school-submit-form')
 const generateSitemap = require('./generate-sitemap')
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 
@@ -30,7 +31,7 @@ i18n
     load: 'languageOnly',
     whitelist: ['en', 'ru', 'de'],
     preload: ['en', 'ru', 'de'],
-    ns: ['common', 'dev', 'jobs', 'sborka', 'job'],
+    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'school'],
     detection: {
       order: ['path', 'cookie', 'header'],
       lookupCookie: 'language',
@@ -81,6 +82,7 @@ i18n
         }))
 
         server.post('/api/submit-form', submitForm)
+        server.post('/api/school-submit-form', schoolSubmitForm)
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
         server.use(i18nextMiddleware.handle(i18n))

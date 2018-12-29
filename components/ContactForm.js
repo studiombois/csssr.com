@@ -76,7 +76,7 @@ class ContactForm extends PureComponent {
       }
     }
 
-    if (formSubmitStatus && formSubmitStatus !== 'success' && !equals(values, this.props.values)) {
+    if (formSubmitStatus && !equals(values, this.props.values)) {
       this.handleStateClear()
     }
   }

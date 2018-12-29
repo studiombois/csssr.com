@@ -9,7 +9,7 @@ import PictureForAllResolutions from '../components/PictureForAllResolutions'
 import LogoIcon from '../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../static/icons/notFound.svg'
-import { navItemsRu, navItemsEn } from '../data/error/navItems'
+import navItems from '../data/error/navItems'
 
 
 const localesByStatusCode = {
@@ -133,8 +133,7 @@ class MyError extends React.Component {
         </div>
 
         <ul>
-          { lng === 'ru' && navItemsRu.map(this.renderNav) }
-          { lng === 'en' && navItemsEn.map(this.renderNav) }
+          { navItems[lng].map(this.renderNav) }
         </ul>
       </main><style jsx>{`
         main {

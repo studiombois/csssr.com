@@ -364,7 +364,6 @@ class ButtonSelect extends PureComponent {
             }
 
             .button-wrapper_is_dropdown-visible ul li:hover {
-              margin-top: 2.375rem;
               background-color: white;
             }
 

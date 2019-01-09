@@ -1,11 +1,10 @@
 import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
+import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 
 const defaultOGURL = ''
 const defaultOGImage = ''
-
-const replaceNbspMdash = value => value.replace(/&nbsp;/g, ' ').replace(/&mdash;/g, '—')
 
 const Head = props => (
   <NextHead>
@@ -25,7 +24,7 @@ const Head = props => (
     <title>{`${props.title} | CSSSR`}</title>
     <meta
       name='description'
-      content={replaceNbspMdash(props.description)}
+      content={unescapeHtmlEntities(props.description)}
     />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='icon' sizes='192x192' href='/static/icons/touch-icon.png' />
@@ -36,7 +35,7 @@ const Head = props => (
     <meta property='og:title' content={props.title || ''} />
     <meta
       property='og:description'
-      content={replaceNbspMdash(props.description)}
+      content={unescapeHtmlEntities(props.description)}
     />
     <meta name='twitter:site' content={props.url || defaultOGURL} />
     <meta name='twitter:card' content='summary_large_image' />

@@ -90,7 +90,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
       footer {
         margin-right: auto;
         margin-left: auto;
-        padding-bottom: 5.4375em;
+        padding-bottom: 3.9375em;
         width: 1792px;
         align-items: center;
       }
@@ -158,6 +158,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
       @media (min-width: 768px) and (max-width: 1279px) {
         footer {
           width: 944px;
+          padding-bottom: 5.4375em;
         }
 
         .logo-wrapper {
@@ -170,16 +171,27 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
         }
 
         .social-link:not(:last-child) {
-          margin-right: 1rem;
+          margin-right: 1.5rem;
         }
 
         .social-logo {
-          width: 1rem;
-          height: 1rem;
+          width: 1.5rem;
+          height: 1.5rem;
         }
 
         .footer-links {
           grid-column: 8 / span 6;
+          margin-top: 0.875rem;
+          flex-wrap: wrap;
+        }
+
+        .footer-link:first-child {
+          width: 100%;
+        }
+
+        .footer-link:not(:first-child) {
+          margin-top: 0.5rem;
+          width: 100%;
         }
 
         @media (max-width: 1023px) {

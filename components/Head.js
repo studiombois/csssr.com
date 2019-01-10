@@ -14,7 +14,9 @@ const Head = props => (
       function canUseWebP() {
           const canvas = document.createElement('canvas')
           canvas.width = canvas.height = 1;
-          return canvas.toDataURL && canvas.toDataURL('image/webp').indexOf('image/webp') === 5
+          return canvas.toDataURL &&
+            canvas.toDataURL('image/webp') &&
+            canvas.toDataURL('image/webp').indexOf('image/webp') === 5
       }
       if (canUseWebP()) {
           document.documentElement.classList.add('webp')

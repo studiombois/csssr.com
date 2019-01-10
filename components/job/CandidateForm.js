@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react'
 import css from 'styled-jsx/css'
+import equals from 'ramda/es/equals'
 import cn from 'classnames'
 import Link from 'next/link'
 import FormRow from './FormRow'
 import Section from '../job/Section'
 import CandidateInfoSection from './CandidateInfoSection'
 import AnimatedButton from '../ui-kit/AnimatedButton'
+import FormStateMessage from '../ui-kit/FormStateMessage'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
@@ -103,6 +105,8 @@ const mapVacancies = vacancy =>
   </li>
 
 class CandidateForm extends PureComponent {
+  messageRef = React.createRef()
+
   state = {
     formSubmitStatus: null,
     isMobile: false,
@@ -114,12 +118,13 @@ class CandidateForm extends PureComponent {
     this.handleMediaMatch(this.mobileMediaQuery)
   }
 
-  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
+  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit, values }) {
+    const { formSubmitStatus } = this.state
+
     if (
       this.props.submitting !== submitting ||
       this.props.submitFailed !== submitFailed ||
-      this.props.submitSucceeded !== submitSucceeded ||
-      this.props.dirtySinceLastSubmit !== dirtySinceLastSubmit
+      this.props.submitSucceeded !== submitSucceeded
     ) {
       if (submitting) {
         this.setState({ formSubmitStatus: 'submitting' })
@@ -127,14 +132,30 @@ class CandidateForm extends PureComponent {
         this.setState({ formSubmitStatus: 'fail' })
       } else if (submitSucceeded) {
         this.setState({ formSubmitStatus: 'success' })
-      } else {
-        this.setState({ formSubmitStatus: null })
       }
+    }
+
+    if (formSubmitStatus && !equals(values, this.props.values)) {
+      this.handleStateClear()
     }
   }
 
+
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMediaMatch)
+  }
+
+  getMessageStatus = () => {
+    const { formSubmitStatus } = this.state
+    if (formSubmitStatus === 'submitting') {
+      return null
+    }
+
+    return formSubmitStatus
+  }
+
+  handleStateClear = () => {
+    this.setState({ formSubmitStatus: null })
   }
 
   handleMediaMatch = ({ matches }) =>
@@ -147,12 +168,28 @@ class CandidateForm extends PureComponent {
     this.setState({ formSubmitStatus: null })
   }
 
+  handleScroll = () => {
+    const messageNode = this.messageRef.current
+    const bodyRect = document.body.getBoundingClientRect()
+    const elemRect = messageNode.getBoundingClientRect()
+    const offset = elemRect.top - bodyRect.top - 20
+
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    })
+  }
+
   handleSubmit = e => {
     const { handleSubmit, form: { reset } } = this.props
+    this.handleScroll()
 
     return handleSubmit(e).then(() => {
-      if (!this.props.hasSubmitErrors) {
+      if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
         reset()
+        this.setState({ formSubmitStatus: 'success' })
+      } else {
+        this.setState({ formSubmitStatus: 'fail' })
       }
     })
   }
@@ -277,15 +314,21 @@ class CandidateForm extends PureComponent {
         />
 
         <FormRow>
-          <div className='button'>
+          <div className='button' ref={this.messageRef}>
             <AnimatedButton
               type='submit'
               disabled={isSubmitButtonDisabled}
               status={this.state.formSubmitStatus}
-              onAnimationEnd={this.handleStateClear}
             >
               Отправить
             </AnimatedButton>
+          </div>
+
+          <div className='message'>
+            <FormStateMessage
+              status={this.getMessageStatus()}
+              onReset={this.handleStateClear}
+            />
           </div>
         </FormRow>
 
@@ -302,7 +345,6 @@ class CandidateForm extends PureComponent {
             margin-right: auto;
             margin-left: auto;
             padding-top: 13.5625rem;
-            padding-bottom: 31.5rem;
             align-items: center;
             border: none;
           }
@@ -332,10 +374,6 @@ class CandidateForm extends PureComponent {
           }
 
           @media (max-width: 767px) {
-            form {
-              padding-bottom: 14rem;
-            }
-
             h1 {
               margin-top: 2.125rem;
             }

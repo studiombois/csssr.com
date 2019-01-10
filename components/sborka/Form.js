@@ -1,6 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
+import { translate } from 'react-i18next'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
@@ -48,7 +49,7 @@ const ContactFormForSborka = props =>
     <style jsx>{`
       div {
         margin-top: 0.5rem;
-        margin-bottom: -31.5rem;
+        margin-bottom: -17.5rem;
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
@@ -72,9 +73,9 @@ const ContactFormForSborka = props =>
     `}</style>
   </div>
 
-const Form = ({ language }) => <ReactFinalForm
+const Form = ({ language, t }) => <ReactFinalForm
   onSubmit={onSubmit(language)}
-  validate={contactFormValidationRules}
+  validate={contactFormValidationRules(t)}
   component={ContactFormForSborka}
 />
 
@@ -82,4 +83,4 @@ Form.propTypes = {
   language: string,
 }
 
-export default Form
+export default translate()(Form)

@@ -39,6 +39,7 @@ export default class TextareaField extends PureComponent {
       theme,
       disabled,
       className,
+      errorShouldBeShown,
       maxLength,
       input: {
         name,
@@ -73,6 +74,7 @@ export default class TextareaField extends PureComponent {
           value={value}
           maxLength={maxLength}
         />
+        {(errorShouldBeShown && meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
         {label && <label
           className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
           dangerouslySetInnerHTML={{ __html: label }}

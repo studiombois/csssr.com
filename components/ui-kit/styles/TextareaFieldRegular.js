@@ -57,6 +57,13 @@ export default css`
     user-select: none;
   }
 
+  span.error {
+    margin-top: 0.625rem;
+    display: block;
+    font-weight: 400;
+    color: #ff0000;
+  }
+
   div.textarea_filled label,
   div textarea:focus + label {
     padding-top: 0.375rem;

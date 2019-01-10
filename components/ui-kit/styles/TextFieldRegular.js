@@ -47,7 +47,7 @@ export default css`
   label {
     position: absolute;
     margin: auto;
-    top: 1.4375rem;
+    top: 1.5rem;
     left: 1rem;
     height: 1rem;
     line-height: 1rem;
@@ -55,6 +55,12 @@ export default css`
     color: #9b9b9b;
     pointer-events: none;
     user-select: none;
+  }
+
+  span.error {
+    margin-top: 0.625rem;
+    display: block;
+    color: #ff0000;
   }
 
   div.font_inputted-text-error input:focus + label,

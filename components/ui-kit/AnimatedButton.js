@@ -23,6 +23,10 @@ export default class AnimatedButton extends PureComponent {
     } else if (status === 'fail') {
       this.toggleError()
     }
+
+    if (this.props.status && !status) {
+      this.handleReset()
+    }
   }
 
   buttonRef = React.createRef()
@@ -30,23 +34,11 @@ export default class AnimatedButton extends PureComponent {
   toggleSuccess() {
     this.buttonRef.current.classList.add('success')
     this.draw('.checkmark path')
-    setTimeout(() => {
-      this.buttonRef.current.classList.remove('loading')
-      this.buttonRef.current.classList.remove('success')
-      this.resetDashes()
-      this.props.onAnimationEnd()
-    }, 2000)
   }
 
   toggleError() {
     this.buttonRef.current.classList.add('error')
     this.draw('.cross path')
-    setTimeout(() => {
-      this.buttonRef.current.classList.remove('loading')
-      this.buttonRef.current.classList.remove('error')
-      this.resetDashes()
-      this.props.onAnimationEnd()
-    }, 2000)
   }
 
   draw(selector) {
@@ -68,6 +60,13 @@ export default class AnimatedButton extends PureComponent {
   handleLoaderProgerss = () => {
     this.buttonRef.current.classList.add('loading')
     this.draw('.progress-circle path')
+  }
+
+  handleReset() {
+    this.buttonRef.current.classList.remove('loading')
+    this.buttonRef.current.classList.remove('success')
+    this.buttonRef.current.classList.remove('error')
+    this.resetDashes()
   }
 
   render() {

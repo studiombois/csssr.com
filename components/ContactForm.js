@@ -4,12 +4,13 @@ import { string, arrayOf } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field } from 'react-final-form'
 import { translate } from 'react-i18next'
+import equals from 'ramda/es/equals'
 import Checkbox from './ui-kit/Checkbox'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
+import FormStateMessage from './ui-kit/FormStateMessage'
 import PrivacyPolicyCheckbox from './PrivacyPolicyCheckbox'
-import Picture from './Picture'
 
 const picture = css.resolve`
   picture {
@@ -106,6 +107,7 @@ const fieldCss = css.resolve`
 `
 
 class ContactForm extends PureComponent {
+  messageRef = React.createRef()
   static proptypes = {
     imageName: string,
     pageName: string,
@@ -117,12 +119,13 @@ class ContactForm extends PureComponent {
     formSubmitStatus: null,
   }
 
-  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit }) {
+  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit, values }) {
+    const { formSubmitStatus } = this.state
+
     if (
       this.props.submitting !== submitting ||
       this.props.submitFailed !== submitFailed ||
-      this.props.submitSucceeded !== submitSucceeded ||
-      this.props.dirtySinceLastSubmit !== dirtySinceLastSubmit
+      this.props.submitSucceeded !== submitSucceeded
     ) {
       if (submitting) {
         this.setState({ formSubmitStatus: 'submitting' })
@@ -130,10 +133,33 @@ class ContactForm extends PureComponent {
         this.setState({ formSubmitStatus: 'fail' })
       } else if (submitSucceeded) {
         this.setState({ formSubmitStatus: 'success' })
-      } else {
-        this.setState({ formSubmitStatus: null })
       }
     }
+
+    if (formSubmitStatus && !equals(values, this.props.values)) {
+      this.handleStateClear()
+    }
+  }
+
+  getMessageStatus = () => {
+    const { formSubmitStatus } = this.state
+    if (formSubmitStatus === 'submitting') {
+      return null
+    }
+
+    return formSubmitStatus
+  }
+
+  handleScroll = () => {
+    const messageNode = this.messageRef.current
+    const bodyRect = document.body.getBoundingClientRect()
+    const elemRect = messageNode.getBoundingClientRect()
+    const offset = elemRect.top - bodyRect.top - 20
+
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    })
   }
 
   handleStateClear = () => {
@@ -142,10 +168,14 @@ class ContactForm extends PureComponent {
 
   handleSubmit = e => {
     const { handleSubmit, form: { reset } } = this.props
+    this.handleScroll()
 
     return handleSubmit(e).then(() => {
-      if (!this.props.hasSubmitErrors) {
+      if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
         reset()
+        this.setState({ formSubmitStatus: 'success' })
+      } else {
+        this.setState({ formSubmitStatus: 'fail' })
       }
     })
   }
@@ -221,9 +251,6 @@ class ContactForm extends PureComponent {
     const {
       submitting,
       hasValidationErrors,
-      hasSubmitErrors,
-      dirtySinceLastSubmit,
-      imageName,
       pageName,
       headerId,
       fields,
@@ -232,8 +259,7 @@ class ContactForm extends PureComponent {
 
     const isSubmitButtonDisabled =
       submitting ||
-      hasValidationErrors ||
-      (hasSubmitErrors && !dirtySinceLastSubmit)
+      hasValidationErrors
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit}>
@@ -243,30 +269,27 @@ class ContactForm extends PureComponent {
         {this.renderField('privacyPolicy')}
         {this.renderField('newsletter')}
 
-        <div className='button'>
+        <div className='button' ref={this.messageRef}>
           <AnimatedButton
             type='submit'
             disabled={isSubmitButtonDisabled}
             status={this.state.formSubmitStatus}
-            onAnimationEnd={this.handleStateClear}
           >
             {t(`${pageName}:form.submitText`)}
           </AnimatedButton>
         </div>
 
-        { imageName &&
-            <Picture
-              className={picture.className}
-              image={{ namespace: 'dev', key: imageName, alt: t(`${pageName}:imgAlt.${imageName}`) }}
-            />
-        }
-        <style jsx>{`
+        <div className='message'>
+          <FormStateMessage
+            status={this.getMessageStatus()}
+            onReset={this.handleStateClear}
+          />
+        </div><style jsx>{`
           form {
             position: relative;
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;
-            padding-bottom: 31.5rem;
             width: 1792px;
             align-items: center;
             border: none;
@@ -281,6 +304,10 @@ class ContactForm extends PureComponent {
           .button {
             margin-top: 1.5rem;
             grid-column: 6 / span 2;
+          }
+
+          .message {
+            grid-column: 4 / span 6;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
@@ -298,7 +325,6 @@ class ContactForm extends PureComponent {
           @media (min-width: 768px) and (max-width: 1279px) {
             form {
               padding-top: 6.1875rem;
-              padding-bottom: 31.5rem;
               background-position: 50% calc(100% - 8.45rem);
               width: 944px;
             }
@@ -321,7 +347,6 @@ class ContactForm extends PureComponent {
           @media (max-width: 767px) {
             form {
               padding-top: 3rem;
-              padding-bottom: 14rem;
               width: 20.5rem;
             }
 
@@ -333,6 +358,19 @@ class ContactForm extends PureComponent {
             .button {
               margin-top: 3.4375rem;
               grid-column: 2 / span 4;
+            }
+
+            .message {
+              grid-column: 1 / span 6;
+            }
+
+            .field_type_textarea {
+              margin-top: 1.4375rem;
+              margin-bottom: 1.6875rem;
+            }
+
+            .field_type_checkbox {
+              margin-bottom: 1.1875rem;
             }
           }
 

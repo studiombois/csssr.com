@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { string, number, bool } from 'prop-types'
 import css from 'styled-jsx/css'
+import { translate } from 'react-i18next'
 import { Field } from 'react-final-form'
 import TextareaField from '../../ui-kit/TextareaField'
 import {
@@ -15,10 +16,10 @@ const { className, styles } = css.resolve`
   }
 `
 
-const JobSectionTextField = ({ title, maxLength, required, inputIndex }) => {
+const JobSectionTextField = ({ title, maxLength, required, inputIndex, t }) => {
   const validate = composeValidators(
-    required && requiredValidator,
-    maxLengthValidator(maxLength)
+    required && requiredValidator(t),
+    maxLengthValidator(maxLength, t)
   )
   return <Fragment>
     <Field
@@ -29,6 +30,7 @@ const JobSectionTextField = ({ title, maxLength, required, inputIndex }) => {
       component={TextareaField}
       label={title}
       theme='regular'
+      errorShouldBeShown
     />
     <style jsx>{`
       p {
@@ -46,4 +48,4 @@ JobSectionTextField.propTypes = {
   required: bool,
 }
 
-export default JobSectionTextField
+export default translate()(JobSectionTextField)

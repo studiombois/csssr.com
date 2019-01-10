@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import css from 'styled-jsx/css'
-import equals from 'ramda/es/equals'
+import equals from 'ramda/src/equals'
 import cn from 'classnames'
 import Link from 'next/link'
 import FormRow from './FormRow'

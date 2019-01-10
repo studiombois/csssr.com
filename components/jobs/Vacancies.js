@@ -287,7 +287,7 @@ export default class Vacancies extends PureComponent {
             justify-content: center;
             align-items: center;
             height: 100vh;
-            width: 50vw;
+            width: calc(50vw - 1rem);
             background-image: url(/static/images/jobs/1920/cover@1x.jpg);
             background-position: 50%;
             background-size: auto 100%;
@@ -410,6 +410,10 @@ export default class Vacancies extends PureComponent {
             .logo-wrapper {
               width: 13rem;
             }
+
+            .half-page-picture {
+              width: calc(50vw - 0.5rem);
+            }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
@@ -420,6 +424,10 @@ export default class Vacancies extends PureComponent {
 
             .logo-wrapper {
               width: 12rem;
+            }
+
+            .half-page-picture {
+              width: calc(50vw - 0.5rem);
             }
           }
 
@@ -457,6 +465,10 @@ export default class Vacancies extends PureComponent {
             .font_link-list_16::after {
               bottom: 0.625rem;
               right: -0.375rem;
+            }
+
+            .half-page-picture {
+              width: calc(50vw - 0.5rem);
             }
 
             @media (max-width: 1023px) {

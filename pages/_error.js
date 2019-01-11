@@ -117,7 +117,7 @@ class MyError extends React.Component {
 
         <PictureForAllResolutions
           className={picture.className}
-          image={{ namespace: 'error', key: 'notFound', alt: t('error:imgAlt.notFound') }}
+          image={{ namespace: 'error', key: '404', alt: t('error:imgAlt.notFound') }}
         />
         <div className='code-wrapper'>
           {codeIconByStatusCode[statusCode]}

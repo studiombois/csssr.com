@@ -5,7 +5,7 @@ export const iTcompaniesLinksEn = [
 
 export const iTcompaniesLinksRu = [
   { href: 'https://www.kaspersky.ru/', label: 'Kaspersky Lab' },
-  { href: 'https://realty.yandex.ru/', label: 'Яндекс.Недвижимость' },
+  { href: 'https://realty.yandex.ru/', label: 'Яндекс.Недвижимость', shortLabel: 'Я.Недвижимость' },
 ]
 
 export const realEstateLinksEn = [
@@ -15,7 +15,7 @@ export const realEstateLinksEn = [
 
 export const financeAndBankingLinksEn = [
   { href: 'https://www.tinkoff.ru/eng/', label: 'Tinkoff Bank' },
-  { href: 'http://bcsgm.com/en/', label: 'BCS Financial Group' },
+  { href: 'http://bcsgm.com/en/', label: 'BCS' },
   { href: 'https://www.sberbank.ru/en/', label: 'Sberbank' },
   { href: 'https://alfabank.com/', label: 'Alfa-Bank' },
   { href: 'https://www.sravni.ru/', label: 'sravni.ru' },

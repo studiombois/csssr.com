@@ -13,6 +13,7 @@
     "@sentry/browser": "^4.4.2",
     "@sentry/node": "^4.3.4",
     "babel-plugin-inline-react-svg": "^0.5.4",
+    "babel-plugin-ramda": "^2.0.0",
     "body-parser": "^1.18.3",
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",

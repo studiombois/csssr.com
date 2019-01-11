@@ -137,9 +137,7 @@ export default class Vacancies extends PureComponent {
   render() {
     return (
       <Fragment>
-        <div className='half-page-picture'>
-          <span>Работай где хочешь!</span>
-        </div>
+        <div className='half-page-picture' />
 
         <div className='jobs-header-logo-container'>
           <div className='logo-wrapper'>
@@ -314,18 +312,6 @@ export default class Vacancies extends PureComponent {
 
           :global(html.webp) .half-page-picture {
             background-image: url(/static/images/jobs/1920/cover@1x.webp);
-          }
-
-          .half-page-picture span {
-            margin-bottom: 4.8vh;
-            height: 8.8vh;
-            width: 100%;
-            text-align: center;
-            font-size: 3.6vh;
-            font-family: Roboto Slab;
-            line-height: 8.8vh;
-            border-top: 1px solid #979797;
-            border-bottom: 1px solid #979797;
           }
 
           .jobs-header-logo-container {
@@ -545,8 +531,34 @@ export default class Vacancies extends PureComponent {
                 width: 59rem;
               }
 
-              .half-page-picture span {
-                font-size: 1.8vh;
+              :global(html.webp) .half-page-picture {
+                background-image: url(/static/images/jobs/1024/cover@1x.webp);
+              }
+
+              @media
+              only screen and (-webkit-min-device-pixel-ratio: 2),
+              only screen and (min-resolution: 192dpi),
+              only screen and (min-resolution: 2dppx) {
+                .half-page-picture {
+                  background-image: url(/static/images/jobs/1024/cover@2x.jpg);
+                }
+
+                :global(html.webp) .half-page-picture {
+                  background-image: url(/static/images/jobs/1024/cover@2x.webp);
+                }
+              }
+
+              @media
+              only screen and (-webkit-min-device-pixel-ratio: 3),
+              only screen and (min-resolution: 288dpi),
+              only screen and (min-resolution: 3dppx) {
+                .half-page-picture {
+                  background-image: url(/static/images/jobs/1024/cover@3x.jpg);
+                }
+
+                :global(html.webp) .half-page-picture {
+                  background-image: url(/static/images/jobs/1024/cover@3x.webp);
+                }
               }
             }
           }
@@ -661,15 +673,6 @@ export default class Vacancies extends PureComponent {
 
             :global(html.webp) .half-page-picture {
               background-image: url(/static/images/jobs/360/cover@1x.webp);
-            }
-
-            .half-page-picture span {
-              margin-bottom: -0.3125rem;
-              width: 100%;
-              height: 5.5rem;
-              font-size: 1.5rem;
-              line-height: 5.5rem;
-              border-width: 0.0625rem
             }
 
             @media

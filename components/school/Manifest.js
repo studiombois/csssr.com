@@ -8,20 +8,27 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
-    grid-column: 2 / span 3;
+    grid-column: 3 / span 3;
     grid-row: 1;
     z-index: -1;
     margin-top: 3rem;
-    height: 248px;
+    height: 264px;
+  }
+
+  picture.of_number_one {
+    text-align: right;
   }
 
   picture.of_number_two {
-    margin-top: 8rem;
-    grid-column: 9 / span 4;
+    margin-top: -3.5rem;
+    grid-column: 8 / span 2;
+    height: 248px;
   }
 
   picture.of_number_three {
-    margin-top: 7.5rem;
+    grid-column: 4 / span 2;
+    margin-top: 8rem;
+    height: 248px;
   }
 
   img {
@@ -32,16 +39,18 @@ const picture = css.resolve`
  @media (max-width: 1279px) {
     picture {
       margin-top: 3.25rem;
-      height: 15.5rem;
+      height: 14rem;
     }
 
     picture.of_number_two {
       margin-top: 4rem;
+      height: 13.5rem;
     }
 
     picture.of_number_three {
-      grid-column: 2 / span 4;
+      grid-column: 4 / span 2;
       margin-top: 5.75rem;
+      height: 13.5rem;
     }
   }
 
@@ -62,9 +71,11 @@ const picture = css.resolve`
     picture.of_number_three {
       grid-column: 2 / span 4;
       margin-top: 0;
+      height: 7rem;
     }
 
     picture.of_number_three {
+      grid-column: 3 / span 2;
       text-align: center;
     }
   }
@@ -103,12 +114,12 @@ class Manifest extends PureComponent {
         }
 
         div {
-          grid-column: 4 / span 5;
+          grid-column: 6 / span 5;
           grid-row: 1;
         }
 
         h3 {
-          margin-top: 9.0625rem;
+          margin-top: 9.5625rem;
         }
 
         p {
@@ -120,15 +131,15 @@ class Manifest extends PureComponent {
         }
 
         section:nth-of-type(3) {
-          margin-top: 2rem;
+          margin-top: 6rem; //TODO: Во второй версии школу понизить отступ до 2rem, сейчас ужасно близко
         }
 
         section:nth-of-type(3) div {
-          grid-column: 3 / span 5;
+          grid-column: 4 / span 4;
         }
 
-        section:nth-of-type(4) {
-          margin-top: -1.5rem;
+        section:nth-of-type(3) h3 {
+          margin-top: -0.4375rem;
         }
 
         section:nth-of-type(4) div {
@@ -153,15 +164,17 @@ class Manifest extends PureComponent {
           }
 
           div {
-            grid-column: 5 / span 6;
+            grid-column: 6 / span 5;
           }
 
           h3 {
-            margin-top: 8.75rem;
+            margin-top: 6.5625rem;
+            font-size: 1rem;
+            line-height: 2rem;
           }
 
           p {
-            margin-top: 0.4375rem;
+            margin-top: 0.125rem;
             font-size: 1rem;
             line-height: 1.5rem;
           }
@@ -171,7 +184,7 @@ class Manifest extends PureComponent {
           }
 
           section:nth-of-type(3) {
-            margin-top: 0rem;
+            margin-top: 3rem;
           }
 
           section:nth-of-type(3) div {
@@ -180,7 +193,7 @@ class Manifest extends PureComponent {
           }
 
           section:nth-of-type(3) h3 {
-            margin-top: 7.5rem;
+            margin-top: 6.8125rem;
           }
 
           section:nth-of-type(4) {
@@ -188,7 +201,11 @@ class Manifest extends PureComponent {
           }
 
           section:nth-of-type(4) div {
-            grid-column: 7 / span 5;
+            grid-column: 6 / span 4;
+          }
+
+          section:nth-of-type(4) h3 {
+            margin-top: 9.0625rem;
           }
         }
 
@@ -216,6 +233,10 @@ class Manifest extends PureComponent {
             margin-top: 1rem;
           }
 
+          section:nth-of-type(3) {
+            margin-top: 4rem;
+          }
+
           section:nth-of-type(n) div {
             grid-column: 1 / span 6;
             margin-top: 1.125rem;
@@ -229,7 +250,7 @@ class Manifest extends PureComponent {
           }
 
           section:nth-of-type(4) {
-            margin-top: 4rem;
+            margin-top: 3.5rem;
           }
         }
       `}

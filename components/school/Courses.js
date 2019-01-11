@@ -435,7 +435,7 @@ class Courses extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 8rem;
+            margin-top: 9rem;
             width: 1792px;
           }
 
@@ -459,7 +459,7 @@ class Courses extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             article {
-              margin-top: 5rem;
+              margin-top: 6rem;
               width: 944px;
             }
 
@@ -478,7 +478,7 @@ class Courses extends PureComponent {
 
           @media (max-width: 767px) {
             article {
-              margin-top: 6rem;
+              margin-top: 5.5rem;
               width: 20.5rem;
             }
 

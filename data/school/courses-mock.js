@@ -45,7 +45,7 @@ export default {
         },
     },
     {
-      id: 'high middle',
+      id: 'high_middle',
       title: 'High Middle React разработчик',
       description: 'Делаем из&nbsp;вас действительно редкого специалиста.',
       info: '8&nbsp;частей&nbsp;/ 7&nbsp;заданий',

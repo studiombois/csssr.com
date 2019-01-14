@@ -14,7 +14,8 @@ import withI18next from '../../utils/withI18next'
 
 class School extends PureComponent {
   state = {
-    isTabletOrLowResDesktop: false,
+    isTablet: false,
+    choosenCourse: null,
   }
 
   componentDidMount() {
@@ -29,12 +30,17 @@ class School extends PureComponent {
 
   handleMediaMatch = ({ matches }) =>
     this.setState({
-      isTabletOrLowResDesktop: matches,
+      isTablet: matches,
+    })
+
+  handleChooseCourse = courseId =>
+    this.setState({
+      choosenCourse: courseId,
     })
 
   render() {
     const { t } = this.props
-    const { isTabletOrLowResDesktop } = this.state
+    const { isTablet, choosenCourse } = this.state
 
     return (
       <Layout
@@ -51,11 +57,14 @@ class School extends PureComponent {
         <Earn />
         <Manifest />
         <Counter />
-        <Courses isTabletOrLowResDesktop={isTabletOrLowResDesktop} />
+        <Courses
+          isTablet={isTablet}
+          onChoosingCourse={this.handleChooseCourse}
+        />
         <Costs />
         <Bonus />
         <About />
-        <Form />
+        <Form choosenCourse={choosenCourse} />
       </Layout>
     )
   }

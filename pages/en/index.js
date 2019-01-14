@@ -34,6 +34,7 @@ class Dev extends PureComponent {
 
   render() {
     const { t } = this.props
+    const { isMobile } = this.state
 
     return (
       <Layout
@@ -50,7 +51,10 @@ class Dev extends PureComponent {
           text={t('dev:time.text')}
           image={{ namespace: 'dev', key: 'time', alt: t('dev:imgAlt.time') }}
         />
-        {this.state.isMobile ? <PartnersMobile /> : <Partners />}
+        {isMobile
+          ? <PartnersMobile />
+          : <Partners />
+        }
 
         <Feature2
           style={{ marginTop: '-0.5rem' }}
@@ -59,7 +63,11 @@ class Dev extends PureComponent {
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
         />
         <Form />
-        <ButtonSelect showButtonOnNode='feature1' hideButtonOnNode='hire-us'>
+        <ButtonSelect
+          isMobile={isMobile}
+          showButtonOnNode='feature1'
+          hideButtonOnNode='hire-us'
+        >
           {t('dev:hire.buttonText')}
         </ButtonSelect>
         <style jsx>{`

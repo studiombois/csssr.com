@@ -8,6 +8,7 @@ import Email from '../../static/icons/email.svg'
 import Telegram from '../../static/icons/telegram.svg'
 import Facebook from '../../static/icons/facebook.svg'
 import CrossIcon from '../../static/icons/cross.svg'
+import isAppleDevice from '../../utils/isAppleDevice'
 
 // TODO: вынести в компоненты Hire
 const links = [{
@@ -28,6 +29,14 @@ const iconsByLabel = {
   Facebook: <Facebook />,
 }
 
+const stopBodyScrolling = shouldStop => {
+  const stopEventDefaultBehavior = e => e.preventDefault()
+
+  return shouldStop
+    ? document.body.addEventListener('touchmove', stopEventDefaultBehavior, false)
+    : document.body.removeEventListener('touchmove', stopEventDefaultBehavior, false)
+}
+
 class ButtonSelect extends PureComponent {
   static propTypes = {
     children: node,
@@ -38,6 +47,7 @@ class ButtonSelect extends PureComponent {
       href: string,
       external: bool,
     })),
+    isMobile: bool,
     t: func,
   }
 
@@ -58,9 +68,23 @@ class ButtonSelect extends PureComponent {
 
   componentDidUpdate(prevProps, prevState) {
     const { isDropdownVisible } = this.state
+    const { isMobile } = this.props
 
     if (isDropdownVisible === prevState.isDropdownVisible) {
       return
+    }
+
+    if (isMobile) {
+      document.body.style.overflow = isDropdownVisible ? 'hidden' : 'initial'
+      document.body.style.cursor = 'pointer'
+
+      if (isAppleDevice()) {
+        // eslint-disable-next-line
+        isDropdownVisible ? stopBodyScrolling(true) : stopBodyScrolling(false)
+      }
+    } else {
+      document.body.style.overflow = 'initial'
+      document.body.style.cursor = 'default'
     }
   }
 

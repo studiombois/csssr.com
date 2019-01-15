@@ -7,6 +7,10 @@ const picture = css.resolve`
   picture {
     height: 100%;
   }
+
+  img {
+    width: auto;
+  }
 `
 
 const Feature1 = ({ t, image }) =>

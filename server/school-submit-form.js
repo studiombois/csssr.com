@@ -1,21 +1,33 @@
 const fetch = require('isomorphic-unfetch')
-const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL } } } = require('./amo-config')
-
-const tagsArray = ['csssr.com']
-const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
-if (tagFromEnv) {
-  tagsArray.push(tagFromEnv)
-} else if (process.env.NODE_ENV !== 'production') {
-  tagsArray.push('TEST')
-}
-const tags = tagsArray.join(',')
+const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
 
 module.exports = (req, res) => {
   const {
     name,
     phone,
     email,
+    consents,
+    course,
   } = req.body
+
+  const tagsArray = ['csssr.com']
+  const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
+
+  if (tagFromEnv) {
+    tagsArray.push(tagFromEnv)
+  } else if (process.env.NODE_ENV !== 'production') {
+    tagsArray.push('TEST')
+  }
+
+  if (consents.includes('newsletter')) {
+    tagsArray.push('Подписчик')
+  }
+
+  if (course) {
+    tagsArray.push(course)
+  }
+
+  const tags = tagsArray.join(',')
 
   return fetch(`${ORIGIN}/api/v2/contacts/?${AUTH_QUERY}`, {
     method: 'POST',
@@ -47,6 +59,14 @@ module.exports = (req, res) => {
                 },
               ],
             },
+            {
+              id: NEWSLETTER.ID,
+              values: [
+                {
+                  value: consents.includes('newsletter'),
+                },
+              ],
+            },
           ],
         },
       ],
@@ -56,7 +76,7 @@ module.exports = (req, res) => {
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
         console.log('server/school-submit-form.js ERROR', JSON.stringify(createContactData))
-        return res.status(400).send({ error: 'Произошла ошибка' })
+        return res.status(400).send({ error: 'server/school-submit-form.js ошибка при создании контакта' })
       }
 
       return fetch(`${ORIGIN}/api/v2/leads/?${AUTH_QUERY}`, {
@@ -82,7 +102,7 @@ module.exports = (req, res) => {
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
             console.log('server/school-submit-form.js ERROR', JSON.stringify(createLeadData))
-            return res.status(400).send({ error: 'Произошла ошибка' })
+            return res.status(400).send({ error: 'server/school-submit-form.js ошибка при создании лида' })
           }
 
           console.log('server/school-submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))

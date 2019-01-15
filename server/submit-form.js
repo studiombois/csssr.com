@@ -1,5 +1,5 @@
 const fetch = require('isomorphic-unfetch')
-const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT, GOOGLE_CID } } } = require('./amo-config')
+const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, COMMENT, NEWSLETTER, GOOGLE_CID } } } = require('./amo-config')
 
 module.exports = (req, res) => {
   const {
@@ -8,6 +8,7 @@ module.exports = (req, res) => {
     email,
     message,
     pageName,
+    consents,
     gacid,
     language,
   } = req.body
@@ -19,6 +20,10 @@ module.exports = (req, res) => {
     tagsArray.push(tagFromEnv)
   } else if (process.env.NODE_ENV !== 'production') {
     tagsArray.push('TEST')
+  }
+
+  if (consents.includes('newsletter')) {
+    tagsArray.push('Подписчик')
   }
 
   tagsArray.push(language)
@@ -60,6 +65,14 @@ module.exports = (req, res) => {
               values: [
                 {
                   value: message,
+                },
+              ],
+            },
+            {
+              id: NEWSLETTER.ID,
+              values: [
+                {
+                  value: consents.includes('newsletter'),
                 },
               ],
             },

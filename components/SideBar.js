@@ -13,7 +13,7 @@ const items = [{
   key: 'common:menu.dev',
 }, {
   path: '/html',
-  key: 'common:menu.sborka',
+  key: 'common:menu.html',
 }, {
   path: '/school',
   key: 'common:menu.school',

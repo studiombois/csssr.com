@@ -217,7 +217,7 @@ export default class Vacancies extends PureComponent {
           />
 
           <h2 className='font_h2-regular'>
-            <span style={{ color: '#f8585c' }}>
+            <span style={{ color: '#fe535b' }}>
               Кого
             </span>
             {' '}

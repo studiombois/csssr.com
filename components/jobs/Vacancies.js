@@ -366,8 +366,8 @@ export default class Vacancies extends PureComponent {
           }
 
           .hunter-text {
-            margin-top: 14.5rem;
-            grid-column: 9 / span 4;
+            margin-top: 13rem;
+            grid-column: 9 / span 3;
             grid-row: 13;
           }
 
@@ -432,6 +432,10 @@ export default class Vacancies extends PureComponent {
             .half-page-picture {
               width: calc(50vw - 0.5rem);
             }
+
+            .hunter-text {
+              grid-column: 9 / span 4;
+            }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
@@ -446,6 +450,10 @@ export default class Vacancies extends PureComponent {
 
             .half-page-picture {
               width: calc(50vw - 0.5rem);
+            }
+
+            .hunter-text {
+              grid-column: 9 / span 4;
             }
           }
 
@@ -520,6 +528,7 @@ export default class Vacancies extends PureComponent {
             }
 
             .hunter-text {
+              grid-column: 9 / span 5;
               margin-top: 14rem;
               font-size: 1rem;
               line-height: 1.5rem;

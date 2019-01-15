@@ -12,7 +12,7 @@ import {
   othersLinksEn,
   othersLinksRu,
   healthLinksRu,
-} from '../../data/jobs/partnersLinks'
+} from '../../data/dev/partnersLinks'
 
 const Partners = ({ t, lng }) =>
   <Fragment>

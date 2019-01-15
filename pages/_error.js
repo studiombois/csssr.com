@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import NextHead from 'next/head'
 import css from 'styled-jsx/css'
 import withI18next from '../utils/withI18next'
 import Common from '../components/Common'
 import Settings from '../components/Settings'
 import Text from '../components/Text'
+import Head from '../components/Head'
 import PictureForAllResolutions from '../components/PictureForAllResolutions'
 import LogoIcon from '../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../static/icons/lineFromTopToBottom.svg'
@@ -84,24 +84,10 @@ class MyError extends React.Component {
       <Common />
       <Settings />
       <Text />
-      <NextHead>
-        <script dangerouslySetInnerHTML={{ __html: `
-          // https://stackoverflow.com/a/27232658
-          // https://github.com/bfred-it/supports-webp/blob/master/index.js
-          function canUseWebP() {
-              const canvas = document.createElement('canvas')
-              canvas.width = canvas.height = 1;
-              return canvas.toDataURL &&
-                canvas.toDataURL('image/webp') &&
-                canvas.toDataURL('image/webp').indexOf('image/webp') === 5
-          }
-          if (canUseWebP()) {
-              document.documentElement.classList.add('webp')
-          }
-        ` }} />
-        <meta charSet='UTF-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-      </NextHead>
+      <Head
+        title={t('error:head.title')}
+        description={t('error:head.description')}
+      />
 
       <header className='grid-container'>
         <a href={ lng === 'ru' ? '/ru' : '/en' }>
@@ -155,7 +141,7 @@ class MyError extends React.Component {
         }
 
         h2, ul {
-          grid-column: 10 / span 2;
+          grid-column: 10 / span 3;
         }
 
         h2 {
@@ -196,7 +182,7 @@ class MyError extends React.Component {
           }
 
           .code-wrapper {
-            margin-top: -5rem;
+            margin-top: -7.5rem;
             width: 41.75rem;
             height: 18.625rem;
           }

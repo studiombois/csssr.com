@@ -1,4 +1,8 @@
 {
+  "head": {
+    "title": "Oooops! Something went wrong.",
+    "description": "Try to reload the page or come back later."
+  },
   "errors": {
     "notFound": {
       "title": "Not found"

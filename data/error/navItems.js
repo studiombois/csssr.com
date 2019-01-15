@@ -5,7 +5,7 @@ export default {
     // TODO: вставить разделы подсекций, когда появятся соответствующие разделы
     // subsections: ['', '', ''],
   }, {
-    sectionTitle: 'common:menu.sborka',
+    sectionTitle: 'common:menu.html',
     href: '/ru/html',
   }, {
     sectionTitle: 'common:menu.school',

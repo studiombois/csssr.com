@@ -1,10 +1,14 @@
 {
+  "head": {
+    "title": "Ой-ёй! Что-то пошло не так.",
+    "description": "Попробуйте перезагрузить страницу или зайти позже."
+  },
   "errors": {
     "notFound": {
       "title": "Страница не&nbsp;найдена"
     }
   },
-  "listTitle": "Изучите наши разделы",
+  "listTitle": "Изучите наши&nbsp;разделы",
   "imgAlt": {
     "logo": "logo CSSSR",
     "notFound": "404"

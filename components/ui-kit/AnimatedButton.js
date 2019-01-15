@@ -1,14 +1,13 @@
 import React, { PureComponent } from 'react'
-import { node, oneOf, bool, func } from 'prop-types'
+import { node, oneOf, func } from 'prop-types'
 import cn from 'classnames'
 
 export default class AnimatedButton extends PureComponent {
   static propTypes = {
-    disabled: bool,
+    status: oneOf(['pending', 'submitting', 'success', 'fail']),
     type: oneOf(['button', 'submit']),
     children: node,
     onClick: func,
-    onAinimationEnd: func,
   }
 
   static defaultProps = {
@@ -17,14 +16,12 @@ export default class AnimatedButton extends PureComponent {
 
   componentWillReceiveProps({ status }) {
     if (status === 'submitting') {
-      this.handleLoaderProgerss()
+      this.handleLoaderProgress()
     } if (status === 'success') {
       this.toggleSuccess()
     } else if (status === 'fail') {
       this.toggleError()
-    }
-
-    if (this.props.status && !status) {
+    } else if (status === 'pending') {
       this.handleReset()
     }
   }
@@ -57,7 +54,7 @@ export default class AnimatedButton extends PureComponent {
     })
   }
 
-  handleLoaderProgerss = () => {
+  handleLoaderProgress = () => {
     this.buttonRef.current.classList.add('loading')
     this.draw('.progress-circle path')
   }
@@ -71,10 +68,12 @@ export default class AnimatedButton extends PureComponent {
 
   render() {
     const {
-      disabled,
+      status,
       type,
       children,
     } = this.props
+
+    const disabled = status !== 'pending'
 
     const classNames = cn('button', 'font_button-label', {
       button_state_disabled: disabled,

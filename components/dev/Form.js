@@ -2,33 +2,39 @@ import React from 'react'
 import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
+import createDecorator from 'final-form-focus'
 import { translate } from 'react-i18next'
 import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
+import getGaCid from '../../utils/client/getGaCid'
 
 const ContactFormForDev = props => <ContactForm
   imageName='letter'
   pageName='dev'
   headerId='hire-us'
   fields={['name', 'phone', 'email', 'message']}
+  feedbackEmail='sales@csssr.io'
   {...props}
 />
 
-const onSubmit = language => async values => {
-  const gacid = window.ga.getAll()[0].get('clientId')
-
-  values.gacid = gacid
+const onSubmit = (t, language) => async values => {
+  values.gacid = getGaCid()
   values.language = language
 
-  const res = await fetch('/api/submit-form', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(values),
-  })
+  let res
+  try {
+    res = await fetch('/api/submit-form', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+  } catch {
+    return { [FORM_ERROR]: t('common:formErrors.general') }
+  }
 
   if (res.status === 201) {
     if (window.dataLayer) {
@@ -40,7 +46,7 @@ const onSubmit = language => async values => {
       const response = await res.json()
       error = response.error
     } catch {
-      error = 'Something went wrong. Please try again later.'
+      error = t('common:formErrors.general')
     }
 
     if (window.dataLayer) {
@@ -51,9 +57,12 @@ const onSubmit = language => async values => {
   }
 }
 
-const Form = ({ language, t }) => <ReactFinalForm
-  onSubmit={onSubmit(language)}
+const focusOnErrors = createDecorator()
+
+const Form = ({ t, language }) => <ReactFinalForm
+  onSubmit={onSubmit(t, language)}
   validate={contactFormValidationRules(t)}
+  decorators={[ focusOnErrors ]}
   component={ContactFormForDev}
 />
 

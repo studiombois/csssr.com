@@ -43,7 +43,14 @@ export default class Checkbox extends PureComponent {
       disabled,
       className,
       children,
+      meta: {
+        error,
+        invalid,
+        submitFailed,
+      },
     } = this.props
+
+    const showError = invalid && submitFailed
 
     return (
       <span
@@ -68,7 +75,9 @@ export default class Checkbox extends PureComponent {
         >
           <span className='border' />
           {children && <span className='content'>{children}</span>}
-        </label><style jsx>{`
+        </label>
+        {showError && <span className='font_input-small-error-label error'>{error}</span>}
+        <style jsx>{`
           span.checkbox:hover label::before {
             border-color: rgba(155, 155, 155, 1);
           }

@@ -276,6 +276,7 @@ class CandidateForm extends PureComponent {
       vacancy,
       vacancies,
       pathName,
+      feedbackEmail,
     } = this.props
 
     const isSubmitButtonDisabled =
@@ -328,6 +329,7 @@ class CandidateForm extends PureComponent {
             <FormStateMessage
               status={this.getMessageStatus()}
               onReset={this.handleStateClear}
+              feedbackEmail={feedbackEmail}
             />
           </div>
         </FormRow>

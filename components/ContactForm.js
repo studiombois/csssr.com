@@ -2,9 +2,10 @@ import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import { string, arrayOf } from 'prop-types'
 import css from 'styled-jsx/css'
-import { Field } from 'react-final-form'
+import { Field, FormSpy } from 'react-final-form'
+import { getFormInputs } from 'final-form-focus'
 import { translate } from 'react-i18next'
-import equals from 'ramda/es/equals'
+import { isEmpty } from 'ramda'
 import Checkbox from './ui-kit/Checkbox'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
@@ -116,38 +117,10 @@ class ContactForm extends PureComponent {
   }
 
   state = {
-    formSubmitStatus: null,
-  }
-
-  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit, values }) {
-    const { formSubmitStatus } = this.state
-
-    if (
-      this.props.submitting !== submitting ||
-      this.props.submitFailed !== submitFailed ||
-      this.props.submitSucceeded !== submitSucceeded
-    ) {
-      if (submitting) {
-        this.setState({ formSubmitStatus: 'submitting' })
-      } else if (submitFailed && !dirtySinceLastSubmit) {
-        this.setState({ formSubmitStatus: 'fail' })
-      } else if (submitSucceeded) {
-        this.setState({ formSubmitStatus: 'success' })
-      }
-    }
-
-    if (formSubmitStatus && !equals(values, this.props.values)) {
-      this.handleStateClear()
-    }
-  }
-
-  getMessageStatus = () => {
-    const { formSubmitStatus } = this.state
-    if (formSubmitStatus === 'submitting') {
-      return null
-    }
-
-    return formSubmitStatus
+    // В final-form есть submitFailed и submitSucceeded,
+    // но они учитывают только была ли засабмичена форма на фронте.
+    // Мы показываем изображения только при отправке формы на сервер.
+    submittedToServer: false,
   }
 
   handleScroll = () => {
@@ -162,22 +135,62 @@ class ContactForm extends PureComponent {
     })
   }
 
-  handleStateClear = () => {
-    this.setState({ formSubmitStatus: null })
-  }
-
   handleSubmit = e => {
     const { handleSubmit, form: { reset } } = this.props
-    this.handleScroll()
 
-    return handleSubmit(e).then(() => {
-      if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
-        reset()
-        this.setState({ formSubmitStatus: 'success' })
-      } else {
-        this.setState({ formSubmitStatus: 'fail' })
+    // Может быть undefined если были ошибки валидации
+    // или Promise если запрос отправлен
+    const submitResult = handleSubmit(e)
+
+    if (submitResult) {
+      this.setState({
+        submittedToServer: true,
+      })
+
+      this.handleScroll()
+
+      return submitResult.then(() => {
+        if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
+          reset()
+        }
+      })
+    }
+  }
+
+  handleAnyValuesChange = ({ values }) => {
+    // values пустые при reset'е формы
+    if (this.state.submittedToServer && !isEmpty(values)) {
+      this.setState({
+        submittedToServer: false,
+      })
+    }
+  }
+
+  handleTryToFillFormAgain = () => {
+    getFormInputs('contact')()[0].focus()
+    this.setState({ submittedToServer: false })
+  }
+
+  getStatus = () => {
+    const { submitting, submitFailed } = this.props
+    // this.props.dirtySinceLastSubmit к сожалению не подходит,
+    // потому что не отслеживает первое изменение после сабмита,
+    // а сравнивает значения формы во время сабмита с текущими.
+    // Поэтому dirtySinceLastSubmit false, когда форму поменяли и вернули значения как на момент сабмита.
+    const { submittedToServer } = this.state
+
+    if (submitting) {
+      return 'submitting'
+    }
+
+    if (submittedToServer) {
+      if (submitFailed) {
+        return 'fail'
       }
-    })
+      return 'success'
+    }
+
+    return 'pending'
   }
 
   renderField = fieldName => {
@@ -232,9 +245,8 @@ class ContactForm extends PureComponent {
       newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className)}>
         <Field
           id='newsletterCheckbox'
-          name='consents'
+          name='newsletter'
           type='checkbox'
-          value='newsletter'
           component={Checkbox}
         >
           {t('common:checkBoxesText.newsletterText')}
@@ -249,20 +261,22 @@ class ContactForm extends PureComponent {
 
   render() {
     const {
-      submitting,
-      hasValidationErrors,
       pageName,
       headerId,
       fields,
+      feedbackEmail,
+      submitError,
       t,
     } = this.props
 
-    const isSubmitButtonDisabled =
-      submitting ||
-      hasValidationErrors
+    const status = this.getStatus()
+
+    console.log('!!!', this.props)
 
     return (
-      <form className='grid-container' onSubmit={this.handleSubmit}>
+      <form className='grid-container' onSubmit={this.handleSubmit} name='contact' noValidate>
+        <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }}/>
+
         <h2 id={headerId} className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.title`) }} />
 
         {fields.map(this.renderField)}
@@ -272,8 +286,7 @@ class ContactForm extends PureComponent {
         <div className='button' ref={this.messageRef}>
           <AnimatedButton
             type='submit'
-            disabled={isSubmitButtonDisabled}
-            status={this.state.formSubmitStatus}
+            status={status}
           >
             {t(`${pageName}:form.submitText`)}
           </AnimatedButton>
@@ -281,8 +294,10 @@ class ContactForm extends PureComponent {
 
         <div className='message'>
           <FormStateMessage
-            status={this.getMessageStatus()}
-            onReset={this.handleStateClear}
+            status={status}
+            errorText={submitError}
+            onReset={this.handleTryToFillFormAgain}
+            feedbackEmail={feedbackEmail}
           />
         </div><style jsx>{`
           form {

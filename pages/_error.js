@@ -25,24 +25,26 @@ const picture = css.resolve`
     grid-column: 2 / span 7;
     grid-row: 2 / span 10;
     z-index: -1;
-    margin-top: 1.5rem;
     height: 51.5rem;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
+      margin-top: 1.5rem;
       height: 38.5rem;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
     picture {
+      margin-top: 1.5rem;
       height: 35.5rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
+      margin-top: 1.5rem;
       height: 27rem;
     }
   }
@@ -51,6 +53,7 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 2;
+      margin-top: 1.5rem;
       height: 16.5rem;
     }
   }
@@ -141,7 +144,7 @@ class MyError extends React.Component {
         }
 
         h2, ul {
-          grid-column: 10 / span 3;
+          grid-column: 10 / span 2;
         }
 
         h2 {
@@ -157,7 +160,7 @@ class MyError extends React.Component {
         .code-wrapper {
           grid-column: 2 / span 6;
           grid-row: 4;
-          margin-top: -4rem;
+          margin-top: -5.5rem;
           width: calc(100% + 1rem);
           height: 25rem;
         }
@@ -177,18 +180,26 @@ class MyError extends React.Component {
         }
 
         @media (min-width: 1360px) and (max-width: 1919px) {
+          ul {
+            grid-column: 10 / span 3;
+          }
+
           .grid-container {
             width: 1328px;
           }
 
           .code-wrapper {
-            margin-top: -7.5rem;
+            margin-top: -4.5rem;
             width: 41.75rem;
             height: 18.625rem;
           }
         }
 
         @media (min-width: 1280px) and (max-width: 1359px) {
+          ul {
+            grid-column: 10 / span 3;
+          }
+
           .grid-container {
             width: 1232px;
           }
@@ -199,19 +210,24 @@ class MyError extends React.Component {
             width: 41.75rem;
             height: 18.625rem;
           }
+
           .arrow-wrapper {
             grid-column: 10 / span 1;
             grid-row: 3;
             margin-top: 0;
             padding-top: 1.5rem;
             width: 0.625rem;
-            height: 3.875rem;
+            height: 5.375rem;
           }
         }
 
         @media (min-width: 768px) and (max-width: 1279px) {
           .grid-container {
             width: 59rem;
+          }
+
+          ul {
+            grid-column: 10 / span 3;
           }
 
           h1 {
@@ -223,7 +239,7 @@ class MyError extends React.Component {
           }
 
           .code-wrapper {
-            margin-top: -4rem;
+            margin-top: -5rem;
             margin-left: 0.5rem;
             width: 30.5rem;
             height: 13.625rem;
@@ -251,7 +267,7 @@ class MyError extends React.Component {
 
           h2 {
             margin-top: 2.625rem;
-            grid-column: 1 / span 3;
+            grid-column: 1 / span 2;
             grid-row: 3;
           }
 

@@ -1,50 +1,57 @@
 import React, { Fragment, PureComponent } from 'react'
 import { bool } from 'prop-types'
-import css from 'styled-jsx/css'
 import cn from 'classnames'
+import Transition from 'react-transition-group/Transition'
 import portfolioProjects from '../../data/sborka/porfolioProjects'
 import { translate } from 'react-i18next'
-import PictureForAllResolutions from '../PictureForAllResolutions'
 import Arrow from '../../static/icons/arrow.svg'
 import limit from '../../utils/limit'
+import PortfolioItem from './PortfolioItem'
 
-const picture = css.resolve`
-  picture {
-    display: block;
-    width: 100%;
-    height: 1128px;
+const getAnimationProperties = slideTo => {
+  const animationDuration = 300
+  const defaultStyles = {
+    gridColumn: '1 / span 12',
+    gridRow: 1,
+    display: 'block',
+    opacity: 0,
+    transition: `
+      opacity ${animationDuration}ms linear,
+      transform ${animationDuration}ms linear
+    `,
   }
 
-  @media (min-width: 1360px) and (max-width: 1919px) {
-    picture {
-      height: 832px;
-    }
+  const enteringTransfromStylesBySlideDirection = {
+    right: 'translateX(5%)',
+    left: 'translateX(-5%)',
   }
 
-  @media (min-width: 1280px) and (max-width: 1359px) {
-    picture {
-      height: 776px;
-    }
+  const exitingTransfromStylesBySlideDirection = {
+    right: 'translateX(-5%)',
+    left: 'translateX(5%)',
   }
 
-  @media (min-width: 768px) and (max-width: 1279px) {
-    picture {
-      height: 596px;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        height: 37.25rem;
-      }
-    }
+  const transitionStylesByAnimationState = {
+    entering: {
+      opacity: 0,
+      transform: enteringTransfromStylesBySlideDirection[slideTo],
+    },
+    entered: { opacity: 1, transform: 'translateX(0)' },
+    exiting: {
+      opacity: 0,
+      transform: exitingTransfromStylesBySlideDirection[slideTo],
+    },
+    exited: { opacity: 0, transform: 'translateX(0)' },
   }
 
-  @media (max-width: 767px) {
-    picture {
-      height: 31rem;
-    }
-  }
-`
+  return ({
+    animationDuration,
+    animationStyles: {
+      default: defaultStyles,
+      byAnimationState: transitionStylesByAnimationState,
+    },
+  })
+}
 
 class Portfolio extends PureComponent {
   static propTypes = {
@@ -53,6 +60,7 @@ class Portfolio extends PureComponent {
 
   state = {
     activeScrollItemIndex: 0,
+    slideTo: 'right',
   }
 
   handleChangeSlide = step => () => {
@@ -60,117 +68,48 @@ class Portfolio extends PureComponent {
 
     this.setState({
       activeScrollItemIndex: limit(activeScrollItemIndex + step, 0, portfolioProjects.length - 1),
+      slideTo: step === 1 ? 'right' : 'left',
     })
   }
 
   renderPortfolioProjects = (project, index) => {
-    const { t, isMobile } = this.props
-    const { activeScrollItemIndex } = this.state
+    const { isMobile } = this.props
+    const { activeScrollItemIndex, slideTo } = this.state
+    const { animationDuration, animationStyles } = getAnimationProperties(slideTo)
+    const Project = () =>
+      <PortfolioItem
+        name={project.name}
+        href={project.href}
+        index={index}
+      />
 
-    if ((!isMobile && index === activeScrollItemIndex) || isMobile) {
+    if (isMobile) {
       return (
         <Fragment key={project.name}>
-          <section>
-            <PictureForAllResolutions
-              className={picture.className}
-              image={{ namespace: 'sborka/portfolio', key: project.name, alt: project.name }}
-            />
-          </section>
-
-          <div>
-            <h3
-              className='font_h2-regular'
-              dangerouslySetInnerHTML={{ __html: t(`sborka:portfolio.portfolioProjects.${project.name}.title`) }}
-            />
-            <p
-              className='font_p16-regular'
-              dangerouslySetInnerHTML={{ __html: t(`sborka:portfolio.portfolioProjects.${project.name}.text`) }}
-            />
-            <a
-              className='font_link-list_16'
-              href={project.href}
-              target='_blank'
-              dangerouslySetInnerHTML={{ __html: t('sborka:portfolio.linkText') }}
-            />
-          </div><style jsx>{`
-            section {
-              grid-column: 1 / span 12;
-            }
-
-            div {
-              margin-top: -8.4375rem;
-              grid-column: 2 / span 5;
-              grid-row: 2;
-            }
-
-            p {
-              margin-top: 0.5rem;
-            }
-
-            a {
-              margin-top: 1rem;
-            }
-
-            @media (min-width: 1360px) and (max-width: 1919px) {
-              div {
-                margin-top: -5.4375rem;
-              }
-            }
-
-            @media (min-width: 1280px) and (max-width: 1359px) {
-              div {
-                grid-column: 2 / span 4;
-                margin-top: -4.4375rem;
-              }
-            }
-
-            @media (min-width: 768px) and (max-width: 1279px) {
-              div {
-                grid-column: 2 / span 4;
-                margin-top: -1.75rem;
-              }
-
-              p {
-                margin-top: 1rem;
-                font-size: 0.875rem;
-                line-height: 1.5rem;
-              }
-
-              a {
-                margin-top: 0.8125rem;
-              }
-            }
-
-            @media (max-width: 767px) {
-              div {
-                margin-top: 0.5625rem;
-              }
-
-              p {
-                margin-top: 0.9375rem;
-                font-size: 0.875rem;
-                line-height: 1.5rem;
-              }
-
-              a {
-                margin-top: 0.8125rem;
-              }
-            }
-          `}</style>
-          <style jsx>{`
-            @media (max-width: 767px) {
-              section {
-                grid-column: ${index * 4 + 1} / span 3;
-              }
-
-              div {
-                grid-column: ${index * 4 + 1} / span 3;
-              }
-            }
-          `}</style>
+          <Project />
         </Fragment>
       )
     }
+
+    return (
+      <Transition
+        key={project.name}
+        in={index === activeScrollItemIndex}
+        timeout={animationDuration}
+      >
+        {state =>
+          <div
+            className='grid-container'
+            style={{
+              ...animationStyles.default,
+              ...animationStyles.byAnimationState[state],
+            }}
+          >
+            <Project />
+          </div>
+        }
+      </Transition>
+    )
   }
 
   render() {
@@ -361,7 +300,6 @@ class Portfolio extends PureComponent {
             }
           }
         `}</style>
-        {picture.styles}
       </Fragment>
     )
   }

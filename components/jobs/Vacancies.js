@@ -310,10 +310,6 @@ export default class Vacancies extends PureComponent {
             overflow: hidden;
           }
 
-          :global(html.webp) .half-page-picture {
-            background-image: url(/static/images/jobs/1920/cover@1x.webp);
-          }
-
           .jobs-header-logo-container {
             position: fixed;
             left: 50%;
@@ -386,10 +382,6 @@ export default class Vacancies extends PureComponent {
             .half-page-picture {
               background-image: url(/static/images/jobs/1920/cover@2x.jpg);
             }
-
-            :global(html.webp) .half-page-picture {
-              background-image: url(/static/images/jobs/1920/cover@2x.webp);
-            }
           }
 
           @media
@@ -398,10 +390,6 @@ export default class Vacancies extends PureComponent {
           only screen and (min-resolution: 3dppx) {
             .half-page-picture {
               background-image: url(/static/images/jobs/1920/cover@3x.jpg);
-            }
-
-            :global(html.webp) .half-page-picture {
-              background-image: url(/static/images/jobs/1920/cover@3x.webp);
             }
           }
 
@@ -521,18 +509,15 @@ export default class Vacancies extends PureComponent {
               right: -0.375rem;
             }
 
-            .half-page-picture {
-              width: calc(50vw - 0.5rem);
-            }
-
             @media (max-width: 1023px) {
               article,
               .jobs-header-logo-container {
                 width: 59rem;
               }
 
-              :global(html.webp) .half-page-picture {
-                background-image: url(/static/images/jobs/1024/cover@1x.webp);
+              .half-page-picture {
+                width: calc(50vw - 0.5rem);
+                background-image: url(/static/images/jobs/1024/cover@1x.jpg);
               }
 
               @media
@@ -542,10 +527,6 @@ export default class Vacancies extends PureComponent {
                 .half-page-picture {
                   background-image: url(/static/images/jobs/1024/cover@2x.jpg);
                 }
-
-                :global(html.webp) .half-page-picture {
-                  background-image: url(/static/images/jobs/1024/cover@2x.webp);
-                }
               }
 
               @media
@@ -554,10 +535,6 @@ export default class Vacancies extends PureComponent {
               only screen and (min-resolution: 3dppx) {
                 .half-page-picture {
                   background-image: url(/static/images/jobs/1024/cover@3x.jpg);
-                }
-
-                :global(html.webp) .half-page-picture {
-                  background-image: url(/static/images/jobs/1024/cover@3x.webp);
                 }
               }
             }
@@ -671,20 +648,12 @@ export default class Vacancies extends PureComponent {
               background-image: url(/static/images/jobs/360/cover@1x.jpg);
             }
 
-            :global(html.webp) .half-page-picture {
-              background-image: url(/static/images/jobs/360/cover@1x.webp);
-            }
-
             @media
             only screen and (-webkit-min-device-pixel-ratio: 2),
             only screen and (min-resolution: 192dpi),
             only screen and (min-resolution: 2dppx) {
               .half-page-picture {
                 background-image: url(/static/images/jobs/360/cover@2x.jpg);
-              }
-
-              :global(html.webp) .half-page-picture {
-                background-image: url(/static/images/jobs/360/cover@2x.webp);
               }
             }
 
@@ -694,10 +663,6 @@ export default class Vacancies extends PureComponent {
             only screen and (min-resolution: 3dppx) {
               .half-page-picture {
                 background-image: url(/static/images/jobs/360/cover@3x.jpg);
-              }
-
-              :global(html.webp) .half-page-picture {
-                background-image: url(/static/images/jobs/360/cover@3x.webp);
               }
             }
           }

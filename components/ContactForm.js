@@ -5,7 +5,7 @@ import css from 'styled-jsx/css'
 import { Field, FormSpy } from 'react-final-form'
 import { getFormInputs } from 'final-form-focus'
 import { translate } from 'react-i18next'
-import { isEmpty } from 'ramda'
+import { equals } from 'ramda'
 import Checkbox from './ui-kit/Checkbox'
 import TextField from './ui-kit/TextField'
 import TextareaField from './ui-kit/TextareaField'
@@ -150,7 +150,7 @@ class ContactForm extends PureComponent {
       this.handleScroll()
 
       return submitResult.then(() => {
-        if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
+        if (this.props.submitSucceeded) {
           reset()
         }
       })
@@ -158,8 +158,13 @@ class ContactForm extends PureComponent {
   }
 
   handleAnyValuesChange = ({ values }) => {
-    // values пустые при reset'е формы
-    if (this.state.submittedToServer && !isEmpty(values)) {
+    // При ресете форма реинициализируется с initialValues
+    // или, если они не заданы, с пустым объектом.
+    const { initialValues } = this.props
+    const wasReset = initialValues === undefined ?
+      equals(values, {}) :
+      values === this.props.initialValues
+    if (this.state.submittedToServer && !wasReset) {
       this.setState({
         submittedToServer: false,
       })
@@ -270,8 +275,6 @@ class ContactForm extends PureComponent {
     } = this.props
 
     const status = this.getStatus()
-
-    console.log('!!!', this.props)
 
     return (
       <form className='grid-container' onSubmit={this.handleSubmit} name='contact' noValidate>

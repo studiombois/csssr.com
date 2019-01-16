@@ -1,6 +1,7 @@
 import React, { Fragment, PureComponent } from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
+import createDecorator from 'final-form-focus'
 import fetch from 'isomorphic-unfetch'
 import objectToFormData from 'object-to-formdata'
 import Layout from '../../components/Layout'
@@ -89,7 +90,7 @@ const filterUnckeckedContactOptions = values => {
     }), {})
 }
 
-const onSubmit = async values => {
+const onSubmit = t => async values => {
   const filteredValues = filterUnckeckedContactOptions(values)
   if (values.quests.length === 0) {
     delete filteredValues.quests
@@ -105,10 +106,15 @@ const onSubmit = async values => {
     formData.set('file', values.files[0])
   }
 
-  const res = await fetch(`${hrOrigin}/api/candidates`, {
-    method: 'POST',
-    body: formData,
-  })
+  let res
+  try {
+    res = await fetch(`${hrOrigin}/api/candidates`, {
+      method: 'POST',
+      body: formData,
+    })
+  } catch {
+    return { [FORM_ERROR]: t('common:formErrors.general') }
+  }
 
   if (res.status === 200) {
     if (window.dataLayer) {
@@ -116,12 +122,11 @@ const onSubmit = async values => {
     }
   } else {
     let error
-    await res.json()
     try {
       const response = await res.json()
       error = response.error
     } catch {
-      error = 'Something went wrong. Please try again later.'
+      error = t('common:formErrors.general')
     }
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'job_form_fail' })
@@ -130,6 +135,8 @@ const onSubmit = async values => {
     return { [FORM_ERROR]: error }
   }
 }
+
+const focusOnErrors = createDecorator()
 
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
@@ -178,7 +185,8 @@ class Job extends PureComponent {
             vacancies={vacancies}
             initialValues={initialValues}
             validate={candidateFormValidationRules(vacancy, t)}
-            onSubmit={onSubmit}
+            onSubmit={onSubmit(t)}
+            decorators={[ focusOnErrors ]}
             component={CandidateForm}
           />
         </Layout>

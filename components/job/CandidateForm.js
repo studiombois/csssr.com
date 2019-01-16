@@ -51,6 +51,7 @@ const picturesMap = {
   'product-manager': 'Product_manager',
   'devops-engineer': 'Developer_2',
   'sales-assistant': '',
+  'office-manager': 'Documents_1',
 }
 
 const divideSections = sections => {

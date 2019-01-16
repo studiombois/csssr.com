@@ -3,7 +3,6 @@ import App, { Container } from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/browser'
 import initialI18nInstance from '../common/i18n'
-// import Layout from '../components/Layout'
 
 const dev = process.env.NODE_ENV === 'development'
 
@@ -61,9 +60,7 @@ export default class MyApp extends App {
           initialLanguage={initialLanguage}
         >
           <React.Fragment>
-            {/* <Layout> */}
             <Component {...pageProps} />
-            {/* </Layout> */}
           </React.Fragment>
         </I18nextProvider>
       </Container>

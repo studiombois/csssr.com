@@ -12,7 +12,23 @@ export default class LinksList extends PureComponent {
 
   state = {
     isListVisible: false,
+    isTablet: false,
   }
+
+  componentDidMount() {
+    this.tabletMediaQuery = window.matchMedia('(min-width: 768px) and (max-width: 1279px)')
+    this.tabletMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.tabletMediaQuery)
+  }
+
+  componentWillUnmount() {
+    this.tabletMediaQuery.removeListener(this.handleMediaMatch)
+  }
+
+  handleMediaMatch = ({ matches }) =>
+    this.setState({
+      isTablet: matches,
+    })
 
   handleToggleListVisability = () =>
     this.setState({
@@ -21,7 +37,7 @@ export default class LinksList extends PureComponent {
 
   render() {
     const { title, links } = this.props
-    const { isListVisible } = this.state
+    const { isListVisible, isTablet } = this.state
 
     return (
       <div>
@@ -34,7 +50,7 @@ export default class LinksList extends PureComponent {
         </span>
 
         <ul className={isListVisible ? 'list_state_visible' : ''}>
-          {links.map(({ href, label }) =>
+          {links.map(({ href, label, shortLabel }) =>
             <li key={`nav-link-${href}-${label}`}>
               {href && <a
                 href={href}
@@ -42,12 +58,18 @@ export default class LinksList extends PureComponent {
                 className='font_link-list_28'
                 rel='noopener'
               >
-                {label}
+                {isTablet && shortLabel
+                  ? shortLabel
+                  : label
+                }
               </a>}
               {!href && <span
                 className='font_link-list_28'
               >
-                {label}
+                {isTablet && shortLabel
+                  ? shortLabel
+                  : label
+                }
               </span>}
             </li>
           )}

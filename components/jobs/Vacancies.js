@@ -9,16 +9,26 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 const picture = css.resolve`
   picture {
     grid-column: 8 / span 2;
-    margin-top: 7.5625rem;
+    margin-top: 5.5rem;
   }
 
   picture:first-of-type {
-    margin-top: 10.5rem;
+    margin-top: 6rem;
   }
 
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    picture {
+      margin-top: 3.5rem;
+    }
+
+    picture:first-of-type {
+      margin-top: 6.5rem;
+    }
   }
 
   @media (max-width: 767px) {
@@ -45,10 +55,16 @@ const pictureHunter = css.resolve`
     width: 100%;
   }
 
+  @media (min-width: 768px) and (max-width: 1279px) {
+    picture {
+      margin-top: 13.5625rem;
+    }
+  }
+
   @media (max-width: 767px) {
     picture {
       position: relative;
-      margin-top: 4.5625rem;
+      margin-top: 5.0625rem;
       grid-column: 1 / span 1;
     }
 
@@ -64,10 +80,16 @@ const footer = css.resolve`
     grid-row: 14;
   }
 
+  @media (min-width: 768px) and (max-width: 1279px) {
+    footer {
+      margin-top: 13.6875rem;
+    }
+  }
+
   @media (max-width: 767px) {
     footer {
       position: relative;
-      margin-top: 5rem;
+      margin-top: 5.5rem;
     }
   }
 `
@@ -174,11 +196,11 @@ export default class Vacancies extends PureComponent {
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}
-            customResolutions={['360']}
+            customResolutions={['360', '1024']}
           />
 
           <h2 className='font_h2-regular'>
-            <span style={{ color: '#0054d8' }}>
+            <span style={{ color: '#85d4b2' }}>
               Как
             </span>
             {' '}
@@ -191,11 +213,11 @@ export default class Vacancies extends PureComponent {
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}
-            customResolutions={['360']}
+            customResolutions={['360', '1024']}
           />
 
           <h2 className='font_h2-regular'>
-            <span style={{ color: '#f8585c' }}>
+            <span style={{ color: '#fe535b' }}>
               Кого
             </span>
             {' '}
@@ -208,7 +230,7 @@ export default class Vacancies extends PureComponent {
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}
-            customResolutions={['360']}
+            customResolutions={['360', '1024']}
           />
 
           <h2 className='font_h2-regular'>
@@ -238,10 +260,6 @@ export default class Vacancies extends PureComponent {
             width: 1792px;
           }
 
-          header {
-            margin-bottom: 0.5rem;
-          }
-
           header,
           h2,
           p {
@@ -258,11 +276,11 @@ export default class Vacancies extends PureComponent {
           }
 
           h2 {
-            margin-top: 2.5rem;
+            margin-top: 1.5625rem;
           }
 
           h2 + p {
-            margin-top: 2rem;
+            margin-top: 1rem;
           }
 
           p + p {
@@ -270,7 +288,7 @@ export default class Vacancies extends PureComponent {
           }
 
           ul {
-            margin-top: 1.0625rem;
+            margin-top: 2rem;
             grid-column: 8 / span 5;
           }
 
@@ -287,7 +305,7 @@ export default class Vacancies extends PureComponent {
             justify-content: center;
             align-items: center;
             height: 100vh;
-            width: 50vw;
+            width: calc(50vw - 1rem);
             background-image: url(/static/images/jobs/1920/cover@1x.jpg);
             background-position: 50%;
             background-size: auto 100%;
@@ -348,8 +366,8 @@ export default class Vacancies extends PureComponent {
           }
 
           .hunter-text {
-            margin-top: 14.5rem;
-            grid-column: 9 / span 4;
+            margin-top: 13rem;
+            grid-column: 9 / span 3;
             grid-row: 13;
           }
 
@@ -410,6 +428,14 @@ export default class Vacancies extends PureComponent {
             .logo-wrapper {
               width: 13rem;
             }
+
+            .half-page-picture {
+              width: calc(50vw - 0.5rem);
+            }
+
+            .hunter-text {
+              grid-column: 9 / span 4;
+            }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
@@ -421,12 +447,64 @@ export default class Vacancies extends PureComponent {
             .logo-wrapper {
               width: 12rem;
             }
+
+            .half-page-picture {
+              width: calc(50vw - 0.5rem);
+            }
+
+            .hunter-text {
+              grid-column: 9 / span 4;
+            }
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
+            article {
+              padding-top: 9.875rem;
+            }
+
+            h1 {
+              font-size: 2.5rem;
+              line-height: 3.5rem;
+            }
+
+            h1 span {
+              padding-top: 2rem;
+            }
+
+            ul {
+              margin-top: 1.625rem;
+            }
+
+            h2 {
+              margin-top: 1.4375rem;
+              padding-bottom: 0;
+            }
+
+            h2 + p,
+            p + p {
+              padding-bottom: 0rem;
+              font-size: 0.875rem;
+              line-height: 1.5rem;
+            }
+
+            h2 + p {
+              margin-top: 0.5625rem;
+            }
+
+            p + p {
+              margin-top: 0.5rem;
+            }
+
             article,
             .jobs-header-logo-container {
               width: 944px;
+            }
+
+            .font_link-list_24 {
+              margin-top: 0rem;
+              padding-bottom: 0rem;
+              font-size: 1rem;
+              line-height: 1.5rem;
             }
 
             .hot-vacancy::before {
@@ -449,14 +527,25 @@ export default class Vacancies extends PureComponent {
               font-size: 0.625rem;
             }
 
+            .hunter-text {
+              grid-column: 9 / span 5;
+              margin-top: 14rem;
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+
             .font_link-list_16 {
-              font-size: 0.75rem;
-              line-height: 1rem;
+              font-size: 1em;
+              line-height: 1.5rem;
             }
 
             .font_link-list_16::after {
               bottom: 0.625rem;
               right: -0.375rem;
+            }
+
+            .half-page-picture {
+              width: calc(50vw - 0.5rem);
             }
 
             @media (max-width: 1023px) {
@@ -539,7 +628,7 @@ export default class Vacancies extends PureComponent {
             }
 
             ul {
-              margin-top: 1.125rem;
+              margin-top: 1.625rem;
               padding-left: 1.5rem;
             }
 
@@ -564,7 +653,7 @@ export default class Vacancies extends PureComponent {
             }
 
             .hunter-text {
-              margin-top: 4.5rem;
+              margin-top: 5rem;
               grid-column: 2 / span 5;
             }
 

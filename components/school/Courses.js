@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { bool } from 'prop-types'
+import { bool, func } from 'prop-types'
 import { translate } from 'react-i18next'
 import cn from 'classnames'
 import css from 'styled-jsx/css'
@@ -56,17 +56,22 @@ const button = css.resolve`
 
 class Courses extends PureComponent {
   static propTypes = {
-    isTabletOrLowResDesktop: bool,
+    isTablet: bool,
+    onChoosingCourse: func,
   }
+
   static defaultProps = {
-    isTabletOrLowResDesktop: false,
+    isTablet: false,
   }
+
   state = {
     modalActiveId: -1,
   }
+
   componentDidMount() {
     this.scrollbarWidth = getScrollbarWidth()
   }
+
   handleCloseModal = () => {
     document.body.style.overflow = this.bodyOverflow || 'initial'
     document.body.style.paddingRight = 0
@@ -85,6 +90,7 @@ class Courses extends PureComponent {
   }
 
   renderCourse = ({
+    id,
     active,
     title,
     description,
@@ -94,10 +100,10 @@ class Courses extends PureComponent {
     altText,
     modal,
   }, index) => {
-    const { t, isTabletOrLowResDesktop } = this.props
+    const { t, isTablet, onChoosingCourse } = this.props
     return (
       <Fragment key={index}>
-        <div className={cn('courseWrapper', { 'grid-container': isTabletOrLowResDesktop })}>
+        <div className={cn('courseWrapper', { 'grid-container': isTablet })}>
           <div className='imageColumn'>
             <PictureForAllResolutions
               className={cn(picture.className, { gray: !active })}
@@ -111,7 +117,7 @@ class Courses extends PureComponent {
                 />
             }
 
-            { active && isTabletOrLowResDesktop &&
+            { active && isTablet &&
                 <Fragment>
                   <p
                     className='font_p16-regular info'
@@ -138,7 +144,7 @@ class Courses extends PureComponent {
 
             { active
               ? <div className='button_wrapper'>
-                { !isTabletOrLowResDesktop &&
+                { !isTablet &&
                     <Fragment>
                       <p
                         className='font_p16-regular info'
@@ -152,7 +158,11 @@ class Courses extends PureComponent {
                 }
 
                 <div className='button_register'>
-                  <ButtonLink className={button.className} href={'#sign'} >
+                  <ButtonLink
+                    className={button.className}
+                    href={'#sign'}
+                    onClick={() => onChoosingCourse(id)}
+                  >
                     {t('school:course.register')}
                   </ButtonLink>
                 </div>
@@ -171,7 +181,12 @@ class Courses extends PureComponent {
 
 
               : <div className='button_register'>
-                <ButtonLink className={button.className} href={'#sign'} theme={'secondary'} >
+                <ButtonLink
+                  className={button.className}
+                  href={'#sign'}
+                  theme={'secondary'}
+                  onClick={() => onChoosingCourse(id)}
+                >
                   {t('school:course.sendRequest')}
                 </ButtonLink>
               </div>
@@ -435,7 +450,7 @@ class Courses extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 8rem;
+            margin-top: 9rem;
             width: 1792px;
           }
 
@@ -459,7 +474,7 @@ class Courses extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             article {
-              margin-top: 5rem;
+              margin-top: 6rem;
               width: 944px;
             }
 
@@ -478,7 +493,7 @@ class Courses extends PureComponent {
 
           @media (max-width: 767px) {
             article {
-              margin-top: 6rem;
+              margin-top: 5.5rem;
               width: 20.5rem;
             }
 

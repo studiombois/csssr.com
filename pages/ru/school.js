@@ -9,12 +9,13 @@ import Bonus from '../../components/school/Bonus'
 import About from '../../components/school/About'
 import Form from '../../components/school/Form'
 import Layout from '../../components/Layout'
-import { devSocialLinks } from '../../data/jobs/footerLinks'
+import { allSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
 class School extends PureComponent {
   state = {
-    isTabletOrLowResDesktop: false,
+    isTablet: false,
+    choosenCourse: null,
   }
 
   componentDidMount() {
@@ -29,12 +30,17 @@ class School extends PureComponent {
 
   handleMediaMatch = ({ matches }) =>
     this.setState({
-      isTabletOrLowResDesktop: matches,
+      isTablet: matches,
+    })
+
+  handleChooseCourse = courseId =>
+    this.setState({
+      choosenCourse: courseId,
     })
 
   render() {
     const { t } = this.props
-    const { isTabletOrLowResDesktop } = this.state
+    const { isTablet, choosenCourse } = this.state
 
     return (
       <Layout
@@ -45,17 +51,20 @@ class School extends PureComponent {
           isLogoLink: true,
           isBurgerVisible: true,
         }}
-        footerProps={{ logoHref: '/ru', socialLinks: devSocialLinks }}
+        footerProps={{ logoHref: '/ru', socialLinks: allSocialLinks }}
       >
         <Head title={t('school:meta.title')} description={t('school:meta.description')} />
         <Earn />
         <Manifest />
         <Counter />
-        <Courses isTabletOrLowResDesktop={isTabletOrLowResDesktop} />
+        <Courses
+          isTablet={isTablet}
+          onChoosingCourse={this.handleChooseCourse}
+        />
         <Costs />
         <Bonus />
         <About />
-        <Form />
+        <Form choosenCourse={choosenCourse} />
       </Layout>
     )
   }

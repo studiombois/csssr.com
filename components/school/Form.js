@@ -25,9 +25,9 @@ const ContactFormForSchool = props =>
     `}</style>
   </div>
 
-const Form = ({ t, choosenCourse }) => {
+const Form = ({ t, chosenCourse }) => {
   const onSubmit = async values => {
-    values.course = choosenCourse
+    values.course = chosenCourse
 
     let res
     try {

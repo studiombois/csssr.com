@@ -8,14 +8,13 @@ export const allSocialLinks = [
     label: 'LinkedIn',
   },
   {
+    href: 'https://www.instagram.com/csssr_com/',
+    label: 'Instagram',
+  },
+  {
     href: 'https://twitter.com/csssr_dev',
     label: 'Twitter',
   },
-  // TODO телеграм пока не готов
-  // {
-  //   href: '#',
-  //   label: 'Telegram',
-  // },
   {
     href: 'https://vk.com/csssr',
     label: 'VK',

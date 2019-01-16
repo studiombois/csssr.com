@@ -25,50 +25,56 @@ const ContactFormForSchool = props =>
     `}</style>
   </div>
 
-const onSubmit = t => async values => {
-  let res
-  try {
-    res = await fetch('/api/school-submit-form', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    })
-  } catch {
-    return { [FORM_ERROR]: t('common:formErrors.general') }
-  }
+const Form = ({ t, choosenCourse }) => {
+  const onSubmit = async values => {
+    values.course = choosenCourse
 
-
-  if (res.status === 201) {
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'school_form_success' })
-    }
-  } else {
-    let error
+    let res
     try {
-      const response = await res.json()
-      error = response.error
+      res = await fetch('/api/school-submit-form', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
     } catch {
-      error = t('common:formErrors.general')
+      return { [FORM_ERROR]: t('common:formErrors.general') }
     }
 
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'school_form_fail' })
-    }
 
-    return { [FORM_ERROR]: error }
+    if (res.status === 201) {
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'school_form_success' })
+      }
+    } else {
+      let error
+      try {
+        const response = await res.json()
+        error = response.error
+      } catch {
+        error = t('common:formErrors.general')
+      }
+
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'school_form_fail' })
+      }
+
+      return { [FORM_ERROR]: error }
+    }
   }
+
+  const focusOnErrors = createDecorator()
+
+  return (
+    <ReactFinalForm
+      onSubmit={onSubmit}
+      decorators={[ focusOnErrors ]}
+      validate={contactFormValidationRules(t)}
+      component={ContactFormForSchool}
+    />
+  )
 }
-
-const focusOnErrors = createDecorator()
-
-const Form = ({ t }) => <ReactFinalForm
-  onSubmit={onSubmit(t)}
-  decorators={[ focusOnErrors ]}
-  validate={contactFormValidationRules(t)}
-  component={ContactFormForSchool}
-/>
 
 export default translate()(Form)

@@ -209,7 +209,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
         }
 
         .social-link:not(:last-child) {
-          margin-right: 2rem;
+          margin-right: 1.5rem;
         }
 
         .social-links {
@@ -230,7 +230,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
         }
 
         .footer-link:last-child {
-          margin-top: 8px;
+          margin-top: 0.5rem;
           width: 100%;
           text-align: center;
         }

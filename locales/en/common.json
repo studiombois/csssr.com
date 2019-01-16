@@ -2,7 +2,7 @@
   "hello": "Hello!",
   "menu": {
     "dev": "Software Engineering",
-    "sborka": "Mock&#x2010;ups to&nbsp;HTML",
+    "html": "Mock&#x2010;ups to&nbsp;HTML",
     "jobs": "Jobs",
     "school": "School"
   },

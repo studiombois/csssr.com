@@ -7,6 +7,7 @@ module.exports = (req, res) => {
     phone,
     email,
     newsletter,
+    course,
   } = req.body
 
   // if (newsletter)
@@ -24,6 +25,10 @@ module.exports = (req, res) => {
 
   if (newsletter) {
     tagsArray.push('Подписчик')
+  }
+
+  if (course) {
+    tagsArray.push(course)
   }
 
   const tags = tagsArray.join(',')
@@ -75,7 +80,7 @@ module.exports = (req, res) => {
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
         console.log('server/school-submit-form.js ERROR', JSON.stringify(createContactData))
-        return res.status(400).send({ error: 'Произошла ошибка' })
+        return res.status(400).send({ error: 'server/school-submit-form.js ошибка при создании контакта' })
       }
 
       return fetch(`${ORIGIN}/api/v2/leads/?${AUTH_QUERY}`, {
@@ -101,7 +106,7 @@ module.exports = (req, res) => {
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
             console.log('server/school-submit-form.js ERROR', JSON.stringify(createLeadData))
-            return res.status(400).send({ error: 'Произошла ошибка' })
+            return res.status(400).send({ error: 'server/school-submit-form.js ошибка при создании лида' })
           }
 
           console.log('server/school-submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))

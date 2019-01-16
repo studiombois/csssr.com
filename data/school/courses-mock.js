@@ -1,6 +1,7 @@
 export default {
   items: [
     {
+      id: 'middle',
       title: 'Middle React разработчик',
       description: 'Помогаем повысить вашу профессиональную ценность.',
       info: '7&nbsp;частей&nbsp;/ 8&nbsp;заданий',
@@ -8,6 +9,7 @@ export default {
       altText: 'Футболист с мячом с логотипом реакта',
     },
     {
+      id: 'junior',
       title: 'Junior React разработчик',
       description: 'Сопровождаем вас до&nbsp;первой работы React-разработчиком.',
       info: '18&nbsp;частей&nbsp;/ 13&nbsp;заданий',
@@ -43,6 +45,7 @@ export default {
         },
     },
     {
+      id: 'high_middle',
       title: 'High Middle React разработчик',
       description: 'Делаем из&nbsp;вас действительно редкого специалиста.',
       info: '8&nbsp;частей&nbsp;/ 7&nbsp;заданий',

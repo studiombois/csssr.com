@@ -13,7 +13,7 @@ const items = [{
   key: 'common:menu.dev',
 }, {
   path: '/html',
-  key: 'common:menu.sborka',
+  key: 'common:menu.html',
 }, {
   path: '/school',
   key: 'common:menu.school',
@@ -126,7 +126,7 @@ export class SideBar extends PureComponent {
             <div className='bottom'>
               <a
                 href={t('common:languageRedirect.link')}
-                className='font_footer-link'
+                className='font_link-list_16'
               >
                 {t('common:languageRedirect.text')}
               </a>
@@ -199,7 +199,7 @@ export class SideBar extends PureComponent {
           }
 
           .body {
-            padding-bottom: 4rem;
+            padding-bottom: 3.8125rem;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -234,7 +234,7 @@ export class SideBar extends PureComponent {
             }
 
             .body {
-              padding-bottom: 4.0625rem;
+              padding-bottom: 3.8125rem;
             }
 
             .top {

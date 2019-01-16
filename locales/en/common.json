@@ -39,6 +39,7 @@
   },
   "formErrors": {
     "email": "Invalid email format",
+    "integer": "The value must be a number",
     "link": "Invalid link format",
     "maxLength": "The quantity of characters should not exceed {{maxLength}}",
     "required": "Required",

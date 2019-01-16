@@ -4,7 +4,6 @@ import { equals } from 'ramda'
 import cn from 'classnames'
 import Link from 'next/link'
 import { FormSpy } from 'react-final-form'
-import { getFormInputs } from 'final-form-focus'
 import FormRow from './FormRow'
 import Section from '../job/Section'
 import CandidateInfoSection from './CandidateInfoSection'
@@ -163,9 +162,8 @@ class CandidateForm extends PureComponent {
     }
   }
 
-  // TODO такой же метод есть в ContactForm, поменялось только имя формы
+  // TODO такой же метод есть в ContactForm
   handleTryToFillFormAgain = () => {
-    getFormInputs('job')()[0].focus()
     this.setState({ submittedToServer: false })
   }
 
@@ -332,7 +330,7 @@ class CandidateForm extends PureComponent {
             <FormStateMessage
               status={status}
               errorText={submitError}
-              onReset={this.handleTryToFillFormAgain}
+              onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail='hr@csssr.io'
             />
           </div>

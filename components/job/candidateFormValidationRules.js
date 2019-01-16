@@ -1,10 +1,11 @@
 import {
   composeValidators,
   email,
+  file,
+  integer,
   link,
   maxLength,
   required,
-  file,
 } from '../../utils/validators/index'
 
 export default (vacancy, t) => values => {
@@ -16,6 +17,7 @@ export default (vacancy, t) => values => {
   errors.email = composeValidators(required(t), email(t))(values.email)
   errors.comment = maxLength(4096, t)(values.comment)
   errors.privacyPolicy = required(t)(values.privacyPolicy)
+  errors.age = integer(t)(values.age)
 
   if (vacancy.hasGithub) {
     errors.github = composeValidators(required(t), link(t))(values.github)

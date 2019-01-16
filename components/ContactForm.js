@@ -3,7 +3,6 @@ import cn from 'classnames'
 import { string, arrayOf } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field, FormSpy } from 'react-final-form'
-import { getFormInputs } from 'final-form-focus'
 import { translate } from 'react-i18next'
 import { equals } from 'ramda'
 import Checkbox from './ui-kit/Checkbox'
@@ -172,7 +171,6 @@ class ContactForm extends PureComponent {
   }
 
   handleTryToFillFormAgain = () => {
-    getFormInputs('contact')()[0].focus()
     this.setState({ submittedToServer: false })
   }
 
@@ -299,7 +297,7 @@ class ContactForm extends PureComponent {
           <FormStateMessage
             status={status}
             errorText={submitError}
-            onReset={this.handleTryToFillFormAgain}
+            onTryAgain={this.handleTryToFillFormAgain}
             feedbackEmail={feedbackEmail}
           />
         </div><style jsx>{`

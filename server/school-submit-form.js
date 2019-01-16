@@ -10,10 +10,6 @@ module.exports = (req, res) => {
     course,
   } = req.body
 
-  // if (newsletter)
-  //   return res.sendStatus(201)
-  // return res.status(400).send({ error: 'Ошибка от сервера' })
-
   const tagsArray = ['csssr.com']
   const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
 

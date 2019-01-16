@@ -47,7 +47,7 @@ class FormStateMessage extends PureComponent {
   static propTypes = {
     status: oneOf(['pending', 'submitting', 'success', 'fail']),
     errorText: string,
-    onReset: func,
+    onTryAgain: func,
     feedbackEmail: string,
   }
 
@@ -63,7 +63,7 @@ class FormStateMessage extends PureComponent {
         intro: this.props.errorText,
         message: <span>
           <span>Попробуйте </span>
-          <button type='button' className='font_link-list_16' onClick={this.props.onReset}>еще раз</button>
+          <button type='button' className='font_link-list_16' onClick={this.props.onTryAgain}>еще раз</button>
           <span> или отправьте вопрос на </span>
           <a className='font_link-list_16' href={`mailto:${this.props.feedbackEmail}`}>{this.props.feedbackEmail}</a><style jsx>{`
             button {
@@ -82,7 +82,7 @@ class FormStateMessage extends PureComponent {
       }
     }
 
-    return {}
+    return null
   }
 
   render() {

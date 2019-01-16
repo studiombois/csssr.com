@@ -8,10 +8,15 @@ module.exports = (req, res) => {
     email,
     message,
     pageName,
-    consents,
+    newsletter,
     gacid,
     language,
   } = req.body
+
+  if (newsletter)
+    return res.sendStatus(201)
+  else if (!newsletter) // trick eslint kek
+    return res.status(400).send({ error: 'Ошибка от сервера' })
 
   const tagsArray = ['csssr.com'].concat(pageName)
   const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
@@ -22,7 +27,7 @@ module.exports = (req, res) => {
     tagsArray.push('TEST')
   }
 
-  if (consents.includes('newsletter')) {
+  if (newsletter) {
     tagsArray.push('Подписчик')
   }
 
@@ -72,7 +77,7 @@ module.exports = (req, res) => {
               id: NEWSLETTER.ID,
               values: [
                 {
-                  value: consents.includes('newsletter'),
+                  value: newsletter,
                 },
               ],
             },

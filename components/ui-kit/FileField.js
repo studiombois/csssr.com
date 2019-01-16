@@ -41,8 +41,14 @@ export default class FileField extends PureComponent {
         onBlur,
         onFocus,
       },
-      meta,
+      meta: {
+        error,
+        invalid,
+        submitFailed,
+      },
     } = this.props
+
+    const showError = invalid && submitFailed
 
     return (
       <Fragment>
@@ -61,8 +67,8 @@ export default class FileField extends PureComponent {
         />
         <div
           className={cn({
-            'font_inputted-text-error': (value && meta.error && meta.touched),
-            'font_inputted-text-regular': !(value && meta.error && meta.touched),
+            'font_inputted-text-error': showError,
+            'font_inputted-text-regular': !showError,
             textfield_filled: value,
             [className]: !!className,
           })}
@@ -72,7 +78,7 @@ export default class FileField extends PureComponent {
           </span>
 
           {label && <label
-            className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
+            className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
             dangerouslySetInnerHTML={{ __html: label }}
             htmlFor={id}
           />}
@@ -86,7 +92,7 @@ export default class FileField extends PureComponent {
         >
           Обзор
         </label>
-        {(meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
+        {(showError) && <span className='font_input-small-error-label error'>{error}</span>}
         <style jsx>{`
           div {
             position: relative;

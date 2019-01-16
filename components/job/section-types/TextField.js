@@ -30,7 +30,6 @@ const JobSectionTextField = ({ title, maxLength, required, inputIndex, t }) => {
       component={TextareaField}
       label={title}
       theme='regular'
-      errorShouldBeShown
     />
     <style jsx>{`
       p {

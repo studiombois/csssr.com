@@ -9,7 +9,6 @@ export default class TextareaField extends PureComponent {
     tag: string,
     id: string,
     theme: oneOf(['regular', 'light']),
-    state: oneOf(['error', null]),
     className: string,
     placeholder: string,
     label: string,
@@ -19,7 +18,6 @@ export default class TextareaField extends PureComponent {
   }
 
   static defaultProps = {
-    state: null,
     theme: 'light',
   }
 
@@ -31,7 +29,6 @@ export default class TextareaField extends PureComponent {
   render() {
     const {
       id,
-      state,
       placeholder,
       label,
       autoFocus,
@@ -39,7 +36,6 @@ export default class TextareaField extends PureComponent {
       theme,
       disabled,
       className,
-      errorShouldBeShown,
       maxLength,
       input: {
         name,
@@ -47,14 +43,19 @@ export default class TextareaField extends PureComponent {
         onBlur,
         onFocus,
       },
-      meta,
+      meta: {
+        error,
+        invalid,
+        submitFailed,
+      },
     } = this.props
 
     const styles = theme === 'light' ? TextareaFieldLightStyles : TextareaFieldRegularStyles
+    const showError = invalid && submitFailed
 
     return (
       <div className={cn('font_inputted-text-regular', {
-        error: state === 'error',
+        error: showError,
         [`textarea_${theme}`]: theme,
         textarea_filled: value,
         [className]: !!className,
@@ -74,9 +75,9 @@ export default class TextareaField extends PureComponent {
           value={value}
           maxLength={maxLength}
         />
-        {(errorShouldBeShown && meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
+        {showError && <span className='font_input-small-error-label error'>{error}</span>}
         {label && <label
-          className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
+          className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
           dangerouslySetInnerHTML={{ __html: label }}
           htmlFor={id}
         />}<style jsx>{styles}</style>

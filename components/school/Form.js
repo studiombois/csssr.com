@@ -4,7 +4,8 @@ import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
-import contactFormValidationRules from './contactFormValidationRules'
+import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
+import createDecorator from 'final-form-focus'
 
 const ContactFormForSchool = props =>
   <div>
@@ -24,40 +25,53 @@ const ContactFormForSchool = props =>
     `}</style>
   </div>
 
-
-
-const Form = ({ choosenCourse }) => {
+const Form = ({ t, chosenCourse }) => {
   const onSubmit = async values => {
-    values.course = choosenCourse
+    values.course = chosenCourse
 
-    const res = await fetch('/api/school-submit-form', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    })
+    let res
+    try {
+      res = await fetch('/api/school-submit-form', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+    } catch {
+      return { [FORM_ERROR]: t('common:formErrors.general') }
+    }
+
 
     if (res.status === 201) {
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'school_form_success' })
       }
-    } else if (res.status === 400) {
-      const error = await res.json()
+    } else {
+      let error
+      try {
+        const response = await res.json()
+        error = response.error
+      } catch {
+        error = t('common:formErrors.general')
+      }
 
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'school_form_fail' })
       }
 
-      return { [FORM_ERROR]: error.error }
+      return { [FORM_ERROR]: error }
     }
   }
+
+  const focusOnErrors = createDecorator()
 
   return (
     <ReactFinalForm
       onSubmit={onSubmit}
-      validate={contactFormValidationRules}
+      decorators={[ focusOnErrors ]}
+      validate={contactFormValidationRules(t)}
       component={ContactFormForSchool}
     />
   )

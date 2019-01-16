@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
 import { translate } from 'react-i18next'
-import { oneOf, string } from 'prop-types'
+import { oneOf, string, func } from 'prop-types'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
@@ -44,45 +44,26 @@ const picture = css.resolve`
 `
 
 class FormStateMessage extends PureComponent {
-
-  state = {
-    innerStatus: 'success',
-  }
-
   static propTypes = {
-    status: oneOf(['success', 'fail']),
+    status: oneOf(['pending', 'submitting', 'success', 'fail']),
     errorText: string,
+    onTryAgain: func,
     feedbackEmail: string,
   }
 
-  static defaultProps = {
-    status: 'success',
-    errorText: 'Что-то пошло не так.',
-    feedbackEmail: 'sales@csssr.io',
-  }
-
-  componentWillReceiveProps({ status }) {
-    if (status && status !== this.state.innerStatus) {
-      this.setState({
-        innerStatus: status,
-      })
-    }
-  }
-
   getTextData = () => {
-    const { innerStatus } = this.state
-    switch (innerStatus) {
-    case 'success':
+    const { status } = this.props
+    if (status === 'success') {
       return {
         intro: 'Успех!',
         message: 'Совсем скоро мы с вами свяжемся.',
       }
-    case 'fail':
+    } else if (status === 'fail') {
       return {
         intro: this.props.errorText,
         message: <span>
           <span>Попробуйте </span>
-          <button type='button' className='font_link-list_16' onClick={this.props.onReset}>еще раз</button>
+          <button type='button' className='font_link-list_16' onClick={this.props.onTryAgain}>еще раз</button>
           <span> или отправьте вопрос на </span>
           <a className='font_link-list_16' href={`mailto:${this.props.feedbackEmail}`}>{this.props.feedbackEmail}</a><style jsx>{`
             button {
@@ -99,37 +80,37 @@ class FormStateMessage extends PureComponent {
           `}</style>
         </span>,
       }
-
-    default:
-      return {}
     }
+
+    return null
   }
 
   render() {
     const { status } = this.props
     const textData = this.getTextData()
+    const messageShown = status === 'success' || status === 'fail'
 
     return (
       <Fragment>
         <div
           className={cn('body', {
-            body_state_visible: status && status !== 'submitting',
+            body_state_visible: messageShown,
           })}
         >
-          <div className='text'>
+          { textData && <div className='text'>
             <span className='font_p16-regular'>
               {textData.intro}
               <br />
               {textData.message}
             </span>
-          </div>
-          <div className='picture'>
+          </div> }
+          { (messageShown) && <div className='picture'>
             <PictureForAllResolutions
               className={picture.className}
-              image={{ namespace: 'forms', key: `${this.state.innerStatus}`, alt: '' }}
+              image={{ namespace: 'forms', key: `${status}`, alt: '' }}
               customResolutions={['360']}
             />
-          </div><style jsx>{`
+          </div> }<style jsx>{`
             .body {
               position: relative;
               display: flex;

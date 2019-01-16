@@ -107,40 +107,32 @@ const CandidateInfoSection = props => {
     id: 'firstname',
     className: `${stylesForFullWidthField.className} ${stylesForFirstHalfWidthField.className}`,
     label: 'Имя',
-    errorShouldBeShown: true,
   }, {
     id: 'lastname',
     label: 'Фамилия',
     className: `${stylesForFullWidthField.className} ${stylesForSecondHalfWidthField.className}`,
-    errorShouldBeShown: true,
   }, {
     id: 'age',
     label: 'Возраст',
-    errorShouldBeShown: true,
   }, {
     id: 'location',
     label: 'Город',
-    errorShouldBeShown: true,
   }, {
     id: 'email',
     label: 'E-mail',
     type: 'email',
-    errorShouldBeShown: true,
   }, {
     id: 'resume',
     label: 'Ссылка на резюме',
     shouldShow: hasResume,
-    errorShouldBeShown: true,
   }, {
     id: 'portfolio',
     label: 'Ссылка на портфолио',
     shouldShow: hasPortfolio,
-    errorShouldBeShown: true,
   }, {
     id: 'github',
     label: 'Ссылка на github',
     shouldShow: hasGithub,
-    errorShouldBeShown: true,
   }]
 
   return (
@@ -151,7 +143,7 @@ const CandidateInfoSection = props => {
         <ContactOptions connection={connection}/>
       }
 
-      {commonFieldsData.map(({ id, label, className = stylesForFullWidthField.className, type = 'text', shouldShow = true, errorShouldBeShown = false }) =>
+      {commonFieldsData.map(({ id, label, className = stylesForFullWidthField.className, type = 'text', shouldShow = true }) =>
         shouldShow
           ? <Field
             key={id}
@@ -162,7 +154,6 @@ const CandidateInfoSection = props => {
             type={type}
             label={label}
             theme='regular'
-            errorShouldBeShown={errorShouldBeShown}
           />
           : null
       )}
@@ -176,7 +167,6 @@ const CandidateInfoSection = props => {
           fileAccept={fileExt}
           component={FileField}
           onFileFieldChange={onFileFieldChange}
-          errorShouldBeShown
         />
       }
 
@@ -193,7 +183,6 @@ const CandidateInfoSection = props => {
             className={stylesForTextareaField.className}
             component={TextareaField}
             theme='regular'
-            errorShouldBeShown
           />
         </Fragment>
       }

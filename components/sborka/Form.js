@@ -3,39 +3,50 @@ import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { translate } from 'react-i18next'
 import { FORM_ERROR } from 'final-form'
+import createDecorator from 'final-form-focus'
 import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
+import getGaCid from '../../utils/client/getGaCid'
 
 const pageName = 'sborka'
-const onSubmit = language => async values => {
-  const gacid = window.ga.getAll()[0].get('clientId')
-
+const onSubmit = (t, language) => async values => {
   values.pageName = pageName
-  values.gacid = gacid
+  values.gacid = getGaCid()
   values.language = language
 
-  const res = await fetch('/api/submit-form', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(values),
-  })
+  let res
+  try {
+    res = await fetch('/api/submit-form', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+  } catch {
+    return { [FORM_ERROR]: t('common:formErrors.general') }
+  }
 
   if (res.status === 201) {
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'sborka_form_success' })
     }
-  } else if (res.status === 400) {
-    const error = await res.json()
+  } else {
+    let error
+    try {
+      const response = await res.json()
+      error = response.error
+    } catch {
+      error = t('common:formErrors.general')
+    }
 
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'sborka_form_fail' })
     }
 
-    return { [FORM_ERROR]: error.error }
+    return { [FORM_ERROR]: error }
   }
 }
 const ContactFormForSborka = props =>
@@ -44,6 +55,7 @@ const ContactFormForSborka = props =>
       pageName={pageName}
       headerId='hire-us'
       fields={['name', 'phone', 'email', 'message']}
+      feedbackEmail='sales@csssr.io'
       {...props}
     />
     <style jsx>{`
@@ -73,9 +85,12 @@ const ContactFormForSborka = props =>
     `}</style>
   </div>
 
-const Form = ({ language, t }) => <ReactFinalForm
-  onSubmit={onSubmit(language)}
+const focusOnErrors = createDecorator()
+
+const Form = ({ t, language }) => <ReactFinalForm
+  onSubmit={onSubmit(t, language)}
   validate={contactFormValidationRules(t)}
+  decorators={[ focusOnErrors ]}
   component={ContactFormForSborka}
 />
 

@@ -8,7 +8,6 @@ export default class TextField extends PureComponent {
   static propTypes = {
     id: string,
     theme: oneOf(['regular', 'light']),
-    state: oneOf(['error', null]),
     className: string,
     placeholder: string,
     label: string,
@@ -18,7 +17,6 @@ export default class TextField extends PureComponent {
   }
 
   static defaultProps = {
-    state: 'error',
     theme: 'light',
   }
 
@@ -36,9 +34,7 @@ export default class TextField extends PureComponent {
       type,
       disabled,
       theme,
-      // state,
       className,
-      errorShouldBeShown,
       maxLength,
       input: {
         name,
@@ -46,16 +42,21 @@ export default class TextField extends PureComponent {
         onBlur,
         onFocus,
       },
-      meta,
+      meta: {
+        error,
+        invalid,
+        submitFailed,
+      },
     } = this.props
 
     const styles = theme === 'light' ? TextFieldLightStyles : TextFieldRegularStyles
+    const showError = invalid && submitFailed
 
     return (
       <div
         className={cn({
-          'font_inputted-text-error': (value && meta.error && meta.touched),
-          'font_input-basic-label': !(value && meta.error && meta.touched),
+          'font_inputted-text-error': showError,
+          'font_input-basic-label': !showError,
           [`textfield_${theme}`]: theme,
           textfield_filled: value,
           [className]: !!className,
@@ -63,7 +64,7 @@ export default class TextField extends PureComponent {
       >
         <input
           id={id}
-          className={value && meta.error && meta.touched ? 'font_inputted-text-error' : 'font_inputted-text-regular'}
+          className={showError ? 'font_inputted-text-error' : 'font_inputted-text-regular'}
           name={name}
           value={value}
           placeholder={placeholder}
@@ -76,9 +77,9 @@ export default class TextField extends PureComponent {
           disabled={disabled}
           maxLength={maxLength}
         />
-        {(errorShouldBeShown && meta.error && meta.touched) && <span className='font_input-small-error-label error'>{meta.error}</span>}
+        {showError && <span className='font_input-small-error-label error'>{error}</span>}
         {label && <label
-          className={value && meta.error && meta.touched ? 'font_input-small-error-label' : 'font_input-small-label'}
+          className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
           dangerouslySetInnerHTML={{ __html: label }}
           htmlFor={id}
         />}<style jsx>{styles}</style>

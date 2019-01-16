@@ -4,14 +4,8 @@ import {
   required,
 } from '../../utils/validators/index'
 
-export default t => values => {
-  const errors = {}
-  errors.name = required(t)(values.name)
-  errors.email = composeValidators(required(t), email(t))(values.email)
-
-  if (!values.consents || (values.consents && !values.consents.includes('privacyPolicy'))) {
-    errors.privacyPolicy = t('common:formErrors.required')
-  }
-
-  return errors
-}
+export default t => values => ({
+  name: required(t)(values.name),
+  email: composeValidators(required(t), email(t))(values.email),
+  privacyPolicy: required(t)(values.privacyPolicy),
+})

@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     name,
     phone,
     email,
-    consents,
+    newsletter,
     course,
   } = req.body
 
@@ -19,7 +19,7 @@ module.exports = (req, res) => {
     tagsArray.push('TEST')
   }
 
-  if (consents.includes('newsletter')) {
+  if (newsletter) {
     tagsArray.push('Подписчик')
   }
 
@@ -63,7 +63,7 @@ module.exports = (req, res) => {
               id: NEWSLETTER.ID,
               values: [
                 {
-                  value: consents.includes('newsletter'),
+                  value: newsletter,
                 },
               ],
             },

@@ -15,7 +15,7 @@ import withI18next from '../../utils/withI18next'
 class School extends PureComponent {
   state = {
     isTablet: false,
-    choosenCourse: null,
+    chosenCourse: null,
   }
 
   componentDidMount() {
@@ -35,12 +35,12 @@ class School extends PureComponent {
 
   handleChooseCourse = courseId =>
     this.setState({
-      choosenCourse: courseId,
+      chosenCourse: courseId,
     })
 
   render() {
     const { t } = this.props
-    const { isTablet, choosenCourse } = this.state
+    const { isTablet, chosenCourse } = this.state
 
     return (
       <Layout
@@ -64,7 +64,7 @@ class School extends PureComponent {
         <Costs />
         <Bonus />
         <About />
-        <Form choosenCourse={choosenCourse} />
+        <Form chosenCourse={chosenCourse} />
       </Layout>
     )
   }

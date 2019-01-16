@@ -3,6 +3,7 @@ import css from 'styled-jsx/css'
 import { equals } from 'ramda'
 import cn from 'classnames'
 import Link from 'next/link'
+import { FormSpy } from 'react-final-form'
 import FormRow from './FormRow'
 import Section from '../job/Section'
 import CandidateInfoSection from './CandidateInfoSection'
@@ -109,66 +110,12 @@ class CandidateForm extends PureComponent {
   messageRef = React.createRef()
 
   state = {
-    formSubmitStatus: null,
+    // TODO такой же элемент стейта есть в ContactForm
+    submittedToServer: false,
     isMobile: false,
   }
 
-  componentDidMount() {
-    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-    this.mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(this.mobileMediaQuery)
-  }
-
-  componentWillReceiveProps({ submitting, submitFailed, submitSucceeded, dirtySinceLastSubmit, values }) {
-    const { formSubmitStatus } = this.state
-
-    if (
-      this.props.submitting !== submitting ||
-      this.props.submitFailed !== submitFailed ||
-      this.props.submitSucceeded !== submitSucceeded
-    ) {
-      if (submitting) {
-        this.setState({ formSubmitStatus: 'submitting' })
-      } else if (submitFailed && !dirtySinceLastSubmit) {
-        this.setState({ formSubmitStatus: 'fail' })
-      } else if (submitSucceeded) {
-        this.setState({ formSubmitStatus: 'success' })
-      }
-    }
-
-    if (formSubmitStatus && !equals(values, this.props.values)) {
-      this.handleStateClear()
-    }
-  }
-
-
-  componentWillUnmount() {
-    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
-  }
-
-  getMessageStatus = () => {
-    const { formSubmitStatus } = this.state
-    if (formSubmitStatus === 'submitting') {
-      return null
-    }
-
-    return formSubmitStatus
-  }
-
-  handleStateClear = () => {
-    this.setState({ formSubmitStatus: null })
-  }
-
-  handleMediaMatch = ({ matches }) =>
-    this.setState({
-      isMobile: matches,
-    })
-
-
-  handleStateClear = () => {
-    this.setState({ formSubmitStatus: null })
-  }
-
+  // TODO такой же метод есть в ContactForm
   handleScroll = () => {
     const messageNode = this.messageRef.current
     const bodyRect = document.body.getBoundingClientRect()
@@ -181,19 +128,78 @@ class CandidateForm extends PureComponent {
     })
   }
 
+  // TODO такой же метод есть в ContactForm
   handleSubmit = e => {
     const { handleSubmit, form: { reset } } = this.props
-    this.handleScroll()
 
-    return handleSubmit(e).then(() => {
-      if (!this.props.hasSubmitErrors && this.props.submitSucceeded) {
-        reset()
-        this.setState({ formSubmitStatus: 'success' })
-      } else {
-        this.setState({ formSubmitStatus: 'fail' })
-      }
-    })
+    const submitResult = handleSubmit(e)
+
+    if (submitResult) {
+      this.setState({
+        submittedToServer: true,
+      })
+
+      this.handleScroll()
+
+      return submitResult.then(() => {
+        if (this.props.submitSucceeded) {
+          reset()
+        }
+      })
+    }
   }
+
+  // TODO такой же метод есть в ContactForm
+  handleAnyValuesChange = ({ values }) => {
+    const { initialValues } = this.props
+    const wasReset = initialValues === undefined ?
+      equals(values, {}) :
+      values !== this.props.initialValues
+    if (this.state.submittedToServer && wasReset) {
+      this.setState({
+        submittedToServer: false,
+      })
+    }
+  }
+
+  // TODO такой же метод есть в ContactForm
+  handleTryToFillFormAgain = () => {
+    this.setState({ submittedToServer: false })
+  }
+
+  // TODO такой же метод есть в ContactForm
+  getStatus = () => {
+    const { submitting, submitFailed } = this.props
+    const { submittedToServer } = this.state
+
+    if (submitting) {
+      return 'submitting'
+    }
+
+    if (submittedToServer) {
+      if (submitFailed) {
+        return 'fail'
+      }
+      return 'success'
+    }
+
+    return 'pending'
+  }
+
+  componentDidMount() {
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
+  }
+
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
+  }
+
+  handleMediaMatch = ({ matches }) =>
+    this.setState({
+      isMobile: matches,
+    })
 
   renderVacancyImageAndLinks = () => {
     const { vacancies, vacancy: { pathName, name } } = this.props
@@ -267,29 +273,25 @@ class CandidateForm extends PureComponent {
 
   render() {
     const {
-      submitting,
-      hasValidationErrors,
-      hasSubmitErrors,
-      dirtySinceLastSubmit,
       values: {
         connection,
       },
       vacancy,
       vacancies,
       pathName,
+      submitError,
     } = this.props
-
-    const isSubmitButtonDisabled =
-      submitting ||
-      hasValidationErrors ||
-      (hasSubmitErrors && !dirtySinceLastSubmit)
 
     const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
 
     const pictureName = picturesMap[pathName]
 
+    const status = this.getStatus()
+
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} name='job' noValidate>
+        <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }}/>
+
         <FormRow rightSideContent={this.renderVacancyImageAndLinks()}>
           <h1
             className={cn({
@@ -318,8 +320,7 @@ class CandidateForm extends PureComponent {
           <div className='button' ref={this.messageRef}>
             <AnimatedButton
               type='submit'
-              disabled={isSubmitButtonDisabled}
-              status={this.state.formSubmitStatus}
+              status={status}
             >
               Отправить
             </AnimatedButton>
@@ -327,8 +328,10 @@ class CandidateForm extends PureComponent {
 
           <div className='message'>
             <FormStateMessage
-              status={this.getMessageStatus()}
-              onReset={this.handleStateClear}
+              status={status}
+              errorText={submitError}
+              onTryAgain={this.handleTryToFillFormAgain}
+              feedbackEmail='hr@csssr.io'
             />
           </div>
         </FormRow>

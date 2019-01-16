@@ -8,7 +8,6 @@ import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 
 function PrivacyPolicyCheckbox({
   id = 'privacyPolicyCheckbox',
-  name = 'consents',
   className,
   t,
 }) {
@@ -16,9 +15,8 @@ function PrivacyPolicyCheckbox({
     <Fragment>
       <Field
         id={id}
-        name={name}
+        name='privacyPolicy'
         className={className}
-        value='privacyPolicy'
         type='checkbox'
         component={Checkbox}
       >

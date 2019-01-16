@@ -99,6 +99,7 @@ class Portfolio extends PureComponent {
       >
         {state =>
           <div
+            key={project.name}
             className='grid-container'
             style={{
               ...animationStyles.default,

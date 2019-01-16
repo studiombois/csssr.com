@@ -76,17 +76,15 @@ class Portfolio extends PureComponent {
     const { isMobile } = this.props
     const { activeScrollItemIndex, slideTo } = this.state
     const { animationDuration, animationStyles } = getAnimationProperties(slideTo)
-    const Project = () =>
-      <PortfolioItem
-        name={project.name}
-        href={project.href}
-        index={index}
-      />
 
     if (isMobile) {
       return (
         <Fragment key={project.name}>
-          <Project />
+          <PortfolioItem
+            name={project.name}
+            href={project.href}
+            index={index}
+          />
         </Fragment>
       )
     }
@@ -99,14 +97,17 @@ class Portfolio extends PureComponent {
       >
         {state =>
           <div
-            key={project.name}
             className='grid-container'
             style={{
               ...animationStyles.default,
               ...animationStyles.byAnimationState[state],
             }}
           >
-            <Project />
+            <PortfolioItem
+              name={project.name}
+              href={project.href}
+              index={index}
+            />
           </div>
         }
       </Transition>

@@ -45,6 +45,7 @@ class Sborka extends PureComponent {
 
   render() {
     const { t, userAgent } = this.props
+    const { isMobile } = this.state
 
     return (
       <Layout
@@ -55,12 +56,16 @@ class Sborka extends PureComponent {
         <Hire isEdge={userAgent.includes('Edge')} />
         <Budget />
         <Projects />
-        <Portfolio isMobile={this.state.isMobile} />
+        <Portfolio isMobile={isMobile} />
         <OurPrinciples />
         <WorkingProcess />
         <Form />
         <PostScriptum />
-        <ButtonSelect showButtonOnNode='budget' hideButtonOnNode='hire-us'>
+        <ButtonSelect
+          isMobile={isMobile}
+          showButtonOnNode='budget'
+          hideButtonOnNode='hire-us'
+        >
           {t('sborka:hire.buttonText')}
         </ButtonSelect>
       </Layout>

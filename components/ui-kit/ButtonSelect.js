@@ -333,6 +333,8 @@ class ButtonSelect extends PureComponent {
 
             .button-wrapper_is_dropdown-visible button {
               background-color: transparent;
+              transition: none;
+              -webkit-tap-highlight-color: transparent;
             }
 
             .button-wrapper_is_dropdown-visible button span {
@@ -364,7 +366,6 @@ class ButtonSelect extends PureComponent {
             }
 
             .button-wrapper_is_dropdown-visible ul li:hover {
-              margin-top: 2.375rem;
               background-color: white;
             }
 

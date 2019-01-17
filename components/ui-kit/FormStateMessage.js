@@ -8,7 +8,7 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 const picture = css.resolve`
   picture {
     position: absolute;
-    bottom: 11.25rem;
+    bottom: 10.75rem;
     left: 50%;
     z-index: -1;
     width: 304px;

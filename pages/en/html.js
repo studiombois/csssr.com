@@ -46,7 +46,7 @@ class Sborka extends PureComponent {
   render() {
     const { t, userAgent } = this.props
     const { isMobile } = this.state
-    
+
     return (
       <Layout
         headerProps={{ logoHref: '/en/html', isBurgerVisible: true }}

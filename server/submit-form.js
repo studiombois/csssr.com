@@ -13,6 +13,7 @@ module.exports = (req, res) => {
     language,
   } = req.body
 
+  // TODO убрать
   if (newsletter)
     return res.sendStatus(201)
   else if (!newsletter) // trick eslint kek

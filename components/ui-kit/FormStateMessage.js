@@ -8,11 +8,11 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 const picture = css.resolve`
   picture {
     position: absolute;
-    bottom: 10.75rem;
+    bottom: 11.25rem;
     left: 50%;
     z-index: -1;
-    width: 340px;
-    height: 220px;
+    width: 304px;
+    height: 224px;
     transform: translateX(-50%);
   }
 
@@ -23,13 +23,6 @@ const picture = css.resolve`
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
-    }
-
-    @media (max-width: 1023px) {
-      picture {
-        width: 21.25rem;
-        height: 13.75rem;
-      }
     }
   }
 
@@ -116,7 +109,7 @@ class FormStateMessage extends PureComponent {
               display: flex;
               flex-direction: column;
               align-items: center;
-              height: 32rem;
+              height: 31.5rem;
               transform: scale(0);
               transition: transform 0.3s ease-out;
             }

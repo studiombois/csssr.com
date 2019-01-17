@@ -18,6 +18,7 @@ function PrivacyPolicyCheckbox({
         name='privacyPolicy'
         className={className}
         type='checkbox'
+        showValidationAsWarning
         component={Checkbox}
       >
         {t('common:checkBoxesText.privacyPolicyText')}

@@ -25,6 +25,7 @@ export default class Checkbox extends PureComponent {
     crossed: bool,
     children: node,
     onChange: func,
+    showValidationAsWarning: bool,
   }
 
   static defaultProps = {
@@ -43,6 +44,7 @@ export default class Checkbox extends PureComponent {
       disabled,
       className,
       children,
+      showValidationAsWarning,
       meta: {
         error,
         invalid,
@@ -66,17 +68,19 @@ export default class Checkbox extends PureComponent {
           checked={input.checked}
           disabled={disabled}
           type='checkbox'
-          disabled={disabled}
           onChange={this.handleChange}
         />
         <label
-          className='font_p16-regular'
+          className={cn('input-label', {
+            'font_p16-regular': true,
+            'input-label_warning': showValidationAsWarning && showError,
+          })}
           htmlFor={id}
         >
           <span className='border' />
           {children && <span className='content'>{children}</span>}
         </label>
-        {showError && <span className='font_input-small-error-label error'>{error}</span>}
+        {!showValidationAsWarning && showError && <span className='font_input-small-error-label error'>{error}</span>}
         <style jsx>{`
           span.checkbox:hover label::before {
             border-color: rgba(155, 155, 155, 1);
@@ -108,6 +112,10 @@ export default class Checkbox extends PureComponent {
             border: 1px solid rgba(155, 155, 155, 0.5);
             transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
             content: '';
+          }
+
+          label.input-label_warning::before {
+            border-color: #ffc045;
           }
 
           label::after {

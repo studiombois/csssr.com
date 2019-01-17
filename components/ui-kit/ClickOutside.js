@@ -16,32 +16,31 @@ export default class ClickOutside extends PureComponent {
   }
 
   componentDidMount() {
-    const domNode = findDOMNode(this)
-
-    this.clickHandler = event => {
-      const target = event.target
-
-      if (target !== domNode && !domNode.contains(target)) {
-        this.props.onOutsideClick(event)
-      }
-    }
-
-    this.keypressHandler = event => {
-      const TABKEY = 9
-      const ESCKEY = 27
-
-      if (event.keyCode === TABKEY || event.keyCode === ESCKEY) {
-        this.props.onOutsideClick(event)
-      }
-    }
-
-    window.document.addEventListener('click', this.clickHandler)
-    window.document.addEventListener('keydown', this.keypressHandler)
+    window.document.addEventListener('click', this.handleClick)
+    window.document.addEventListener('keydown', this.handleKeypress)
   }
 
   componentWillUnmount() {
-    window.document.removeEventListener('click', this.clickHandler)
-    window.document.removeEventListener('keydown', this.keypressHandler)
+    window.document.removeEventListener('click', this.handleClick)
+    window.document.removeEventListener('keydown', this.handleKeypress)
+  }
+
+  handleClick = event => {
+    const target = event.target
+    const domNode = findDOMNode(this)
+
+    if (target !== domNode && !domNode.contains(target)) {
+      this.props.onOutsideClick(event)
+    }
+  }
+
+  handleKeypress = event => {
+    const TABKEY = 9
+    const ESCKEY = 27
+
+    if (event.keyCode === TABKEY || event.keyCode === ESCKEY) {
+      this.props.onOutsideClick(event)
+    }
   }
 
   render() {

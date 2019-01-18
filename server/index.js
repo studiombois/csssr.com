@@ -96,6 +96,8 @@ i18n
 
         server.use('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
 
+        server.use('/yandex_3ecce01745a58936.html', express.static(path.join(__dirname, '../yandex_3ecce01745a58936.html')))
+
         server.get('/sitemap.xml', (req, res) => {
           generateSitemap().then(sitemap =>
             sitemap.toXML((err, xml) => {

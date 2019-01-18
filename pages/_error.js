@@ -10,7 +10,6 @@ import LogoIcon from '../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../static/icons/notFound.svg'
 import navItems from '../data/error/navItems'
-import getISO639LanguageCode from '../utils/getISO639LanguageCode'
 
 
 const localesByStatusCode = {
@@ -82,8 +81,8 @@ class MyError extends React.Component {
     </li>
 
   render() {
-    const { t, lng: lngCodeFromI18n, statusCode } = this.props
-    const lng = getISO639LanguageCode(lngCodeFromI18n)
+    const { t, lng: lngCodeFromI18n, statusCode, i18n } = this.props
+    const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
 
     return <Fragment>
       <Common />

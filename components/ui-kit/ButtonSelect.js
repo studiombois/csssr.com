@@ -16,7 +16,7 @@ const links = [{
   href: '#hire-us',
 }, {
   label: 'Telegram',
-  href: 'tg://resolve?domain=sputnik_one_bot',
+  href: 'http://t.me/sputnik_one_bot',
 }, {
   label: 'Facebook',
   href: 'https://m.me/csssr',

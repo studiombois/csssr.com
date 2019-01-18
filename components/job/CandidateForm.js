@@ -341,10 +341,6 @@ class CandidateForm extends PureComponent {
         </ul>
 
         <style jsx>{`
-          :global(#header-background) {
-            z-index: 1;
-          }
-
           form {
             margin-right: auto;
             margin-left: auto;

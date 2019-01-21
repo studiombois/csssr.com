@@ -313,7 +313,7 @@ class HeaderContent extends PureComponent {
 
               .header-background {
                 height: 3rem;
-                z-index: -2;
+                z-index: 1;
               }
 
               .header-content {

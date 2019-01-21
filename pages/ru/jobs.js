@@ -31,6 +31,13 @@ class Jobs extends PureComponent {
           <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
           <Vacancies vacancies={vacancies} />
         </Layout>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            :global(#header-background) {
+              z-index: -2;
+            }
+          }
+        `}</style>
       </Fragment>
     )
   }

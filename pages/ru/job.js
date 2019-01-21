@@ -106,10 +106,6 @@ const onSubmit = t => async values => {
     formData.set('file', values.files[0])
   }
 
-  if (values.age !== '33') {
-    return { [FORM_ERROR]: 'Возраст должен быть 33, чтобы засабмитить форму' }
-  }
-
   let res
   try {
     res = await fetch(`${hrOrigin}/api/candidates`, {

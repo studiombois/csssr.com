@@ -13,12 +13,6 @@ module.exports = (req, res) => {
     language,
   } = req.body
 
-  // TODO убрать
-  if (newsletter)
-    return res.sendStatus(201)
-  else if (!newsletter) // trick eslint kek
-    return res.status(400).send({ error: 'Ошибка от сервера' })
-
   const tagsArray = ['csssr.com'].concat(pageName)
   const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
 

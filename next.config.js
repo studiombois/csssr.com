@@ -10,6 +10,20 @@ module.exports = {
       fs: 'empty',
     }
 
+    config.module.rules.push({
+      test: /\.woff2?$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            publicPath: '/_next/static/fonts/',
+            outputPath: 'static/fonts/',
+            name: '[name]-[hash].[ext]',
+          },
+        },
+      ],
+    })
+
     if (ANALYZE) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 

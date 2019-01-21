@@ -1,15 +1,15 @@
 import React from 'react'
-import styles from './privacy-policy/styles'
+import styles from '../privacy-policy/styles'
 import { translate } from 'react-i18next'
 
-const CookiesPolicy = ({ t }) => (
-  <article className='grid-container' id='cookies-policy'>
+const CookiesPolicyContent = ({ t }) => (
+  <article className='grid-container'>
     <header>
       <h2 className='font_h1-regular'>
-        {t('common:cookiesPolicy.title')}
+        {t('cookiesPolicy:title')}
       </h2>
       <p className='font_subhead-regular'>
-        {t('common:cookiesPolicy.date')}
+        {t('cookiesPolicy:date')}
       </p>
     </header>
     <div>
@@ -157,4 +157,4 @@ const CookiesPolicy = ({ t }) => (
   </article>
 )
 
-export default translate()(CookiesPolicy)
+export default translate()(CookiesPolicyContent)

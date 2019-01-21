@@ -54,9 +54,9 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
-          href='#privacy-policy'
           target='_blank'
           rel='noopener'
+          href={`${rootUrl}/privacy-policy`}
           className={lng !== 'ru' ? 'font_footer-link' : 'font_footer-link font_footer-link_without-margin'}
           onClick={privacyPolicyLinkClick}
         >
@@ -66,9 +66,9 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) 
 
       {lng !== 'ru' && <li className='footer-link'>
         <a
-          href='#cookies-policy'
           target='_blank'
           rel='noopener'
+          href='/en/cookies-policy'
           className='font_footer-link'
           onClick={privacyPolicyLinkClick}
         >

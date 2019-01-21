@@ -5,7 +5,8 @@
     "html": "Вёрстка",
     "jobs": "Работа в CSSSR",
     "job": "Работа в CSSSR",
-    "school": "Школа"
+    "school": "Школа",
+    "privacy-policy": "Политика конфиденциальности"
   },
   "floatingButton": {
     "mobileText": "Выберите удобный способ связи:"
@@ -23,15 +24,8 @@
     "ru/html": "Вёрстка",
     "ru/jobs": "Работа в CSSSR",
     "ru/job": "Работа в CSSSR",
-    "ru/school": "Школа"
-  },
-  "privacyPolicy": {
-    "title": "Политика кон&shy;фи&shy;ден&shy;ци&shy;а&shy;ль&shy;но&shy;с&shy;ти",
-    "date": "25 мая 2018 года"
-  },
-  "cookiesPolicy": {
-    "title": "Website Cookie Policy",
-    "date": "May 25, 2018"
+    "ru/school": "Школа",
+    "ru/privacy-policy": "Политика конфиденциальности"
   },
   "noPage": "Данная страница не доступна на русском языке.",
   "checkBoxesText": {

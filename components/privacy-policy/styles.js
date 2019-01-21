@@ -1,6 +1,23 @@
 import css from 'styled-jsx/css'
 
 export default css`
+  article{
+    margin-bottom: 31rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1792px;
+    background-color: white;
+  }
+
+  header {
+    grid-column: 2 / span 3;
+    padding-top: 13.5rem;
+  }
+
+  h2 {
+    display: inline-block;
+  }
+
   div {
     grid-column: 6 / span 6;
     padding-top: 14.5rem;
@@ -54,13 +71,49 @@ export default css`
     padding-left: 2rem;
   }
 
+  @media (min-width: 1360px) and (max-width: 1919px) {
+    article{
+      width: 1328px;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1359px) {
+    article{
+      width: 1232px;
+    }
+  }
+
   @media (min-width: 768px) and (max-width: 1023px) {
+    article{
+      width: 944px;
+    }
+
     div {
       padding-top: 13.875rem;
+    }
+
+    @media (max-width: 1023px) {
+      article{
+        width: 59rem;
+      }
     }
   }
 
   @media (max-width: 767px) {
+    article{
+      margin-bottom: 13.5rem;
+      width: 20.5rem;
+    }
+
+    header {
+      grid-column: 1 / span 6;
+      padding-top: 5.5rem;
+    }
+
+    p {
+      margin-top: 0.125rem;
+    }
+
     div {
       padding-top: 2.1875rem;
       grid-column: 1 / span 6;

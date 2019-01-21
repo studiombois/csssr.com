@@ -11,7 +11,7 @@ const PrivacyPolicy = ({ t }) =>
     headerProps={{ logoHref: '/en', isLogoLink: true, isBurgerVisible: true }}
     footerProps={{ logoHref: '/en', socialLinks: devSocialLinks }}
   >
-    <Head title={t('privacyPolicy:meta.title')} description={t('privacyPolicy:meta.description')} />
+    <Head title={t('cookiesPolicy:meta.title')} description={t('cookiesPolicy:meta.description')} />
     <CookiesPolicyContent />
   </Layout>
 

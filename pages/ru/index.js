@@ -32,7 +32,7 @@ class Dev extends PureComponent {
     })
 
   render() {
-    const { t, lng } = this.props
+    const { t } = this.props
     const { isMobile } = this.state
 
     return (
@@ -58,7 +58,7 @@ class Dev extends PureComponent {
           text={t('dev:perfect.text')}
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
         />
-        <Form language={lng} />
+        <Form />
         <ButtonSelect
           isMobile={isMobile}
           showButtonOnNode='feature1'

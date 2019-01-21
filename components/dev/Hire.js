@@ -8,7 +8,7 @@ const picture = css.resolve`
     grid-column: 1 / span 12;
     grid-row: 3;
     z-index: 0;
-    margin-top: -5rem;
+    margin-top: -9rem;
     margin-left: -4rem;
     height: 640px;
     width: 1920px;
@@ -16,7 +16,6 @@ const picture = css.resolve`
 
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
-      margin-top: -14rem;
       margin-left: -1rem;
       width: 1360px;
     }
@@ -24,7 +23,7 @@ const picture = css.resolve`
 
   @media (min-width: 1280px) and (max-width: 1359px) {
     picture {
-      margin-top: -15rem;
+      margin-top: -14rem;
       margin-left: -1.5rem;
       width: 1280px;
     }
@@ -86,9 +85,8 @@ class Hire extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 12rem;
+            margin-top: 16rem;
             width: 1792px;
-            height: 60rem;
           }
 
           blockquote {
@@ -155,6 +153,7 @@ class Hire extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             article {
+              margin-top: 12rem;
               width: 1328px;
             }
 
@@ -197,6 +196,7 @@ class Hire extends PureComponent {
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             article {
+              margin-top: 12rem;
               width: 1232px;
             }
 
@@ -246,7 +246,6 @@ class Hire extends PureComponent {
             article {
               margin-top: 10rem;
               width: 944px;
-              height: 52rem;
             }
 
             span {
@@ -309,7 +308,6 @@ class Hire extends PureComponent {
               margin-top: 5rem;
               width: 20.5rem;
               height: auto;
-              min-height: 37rem;
             }
 
             h1 {

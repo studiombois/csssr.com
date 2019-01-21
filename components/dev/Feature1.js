@@ -42,7 +42,7 @@ const Feature1 = ({ t, image }) =>
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 9rem;
+        padding-top: 5rem;
         width: 1792px;
       }
 
@@ -111,6 +111,7 @@ const Feature1 = ({ t, image }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         section {
+          padding-top: 9rem;
           width: 1328px;
         }
 
@@ -133,6 +134,7 @@ const Feature1 = ({ t, image }) =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         section {
+          padding-top: 9rem;
           width: 1232px;
         }
 

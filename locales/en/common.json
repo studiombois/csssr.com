@@ -4,7 +4,9 @@
     "dev": "Software Engineering",
     "html": "Mock&#x2010;ups to&nbsp;HTML",
     "jobs": "Jobs",
-    "school": "School"
+    "school": "School",
+    "privacy-policy": "Privacy Policy",
+    "cookies-policy": "Cookies Policy"
   },
   "floatingButton": {
     "mobileText": "Choose a convenient way of communication:"
@@ -21,15 +23,9 @@
     "en": "Software Engineering",
     "en/html": "Mock&#x2010;ups to&nbsp;HTML",
     "en/jobs": "Jobs",
-    "en/school": "School"
-  },
-  "privacyPolicy": {
-    "title": "Privacy Policy",
-    "date": "May 25, 2018"
-  },
-  "cookiesPolicy": {
-    "title": "Website Cookie Policy",
-    "date": "May 25, 2018"
+    "en/school": "School",
+    "en/privacy-policy": "Privacy Policy",
+    "en/cookies-policy": "Cookies Policy"
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {

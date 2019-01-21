@@ -62,7 +62,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
     <ul className='footer-links'>
       <li className='footer-link'>
         <a
-          href='#privacy-policy'
+          href={`${rootUrl}/privacy-policy`}
           target='_blank'
           rel='noopener'
           className='font_footer-link'

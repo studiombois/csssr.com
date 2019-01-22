@@ -93,6 +93,38 @@ const generateSitemap = () =>
           },
         ],
       }, {
+        url: 'https://csssr.com/en/privacy-policy',
+        changefreq: 'yearly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/privacy-policy',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/privacy-policy',
+          },
+        ],
+      }, {
+        url: 'https://csssr.com/ru/privacy-policy',
+        changefreq: 'yearly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/privacy-policy',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/privacy-policy',
+          },
+        ],
+      }, {
+        url: 'https://csssr.com/en/cookies-policy',
+        changefreq: 'yearly',
+        priority: 1,
+      }, {
         url: 'https://csssr.com/ru/jobs',
         changefreq: 'weekly',
         priority: 1,

@@ -89,8 +89,8 @@ class MyError extends React.Component {
       <Settings />
       <Text />
       <Head
-        title={t('error:head.title')}
-        description={t('error:head.description')}
+        title={t('error:meta.title')}
+        description={t('error:meta.description')}
       />
 
       <header className='grid-container'>

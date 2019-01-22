@@ -4,8 +4,6 @@ import Common from './Common'
 import Settings from './Settings'
 import Text from './Text'
 import Footer from './Footer'
-import CookiesPolicy from './CookiesPolicy'
-import PrivacyPolicy from './privacy-policy/index'
 import { withRouter } from 'next/router'
 import { string, shape, bool } from 'prop-types'
 
@@ -16,8 +14,6 @@ const Layout = props => {
     <Common />
     <Settings />
     <Text />
-    <CookiesPolicy />
-    <PrivacyPolicy />
     <Header {...props.headerProps} />
     <main id='main'>
       {children}
@@ -27,56 +23,9 @@ const Layout = props => {
     }
 
     <style jsx global>{`
-      #cookies-policy,
-      #privacy-policy {
-        display: none;
-      }
-
-      #cookies-policy:target,
-      #privacy-policy:target {
-        display: grid;
-      }
-
-      #cookies-policy:target ~ #main,
-      #privacy-policy:target ~ #main {
-        display: none;
-      }
-
       #main {
         overflow-x: hidden;
       }
-
-      /*
-        TODO: Стили для анимации изчезновения privacy-policy
-      */
-      /* #cookies-policy:not(:target),
-      #privacy-policy:not(:target) {
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 50%;
-        margin-bottom: 0;
-        height: 100%;
-        overflow-y: hidden;
-        opacity: 0;
-        transform: translateX(-50%);
-        transition: opacity 300ms ease-out;
-      }
-
-      #cookies-policy:target,
-      #privacy-policy:target {
-        //TODO: если оставлять эти стили, то убрать из PrivatePolicy margin-bottom
-                у privacy-policy
-        margin-bottom: 31rem;
-        height: auto;
-        position: relative;
-        opacity: 1;
-      }
-
-      #cookies-policy:target ~ #main,
-      #privacy-policy:target ~ #main {
-        display: none;
-      } */
     `}</style>
   </Fragment>
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { translate } from 'react-i18next'
 import { FORM_ERROR } from 'final-form'
@@ -10,10 +9,10 @@ import contactFormValidationRules from '../../utils/validators/contactFormValida
 import getGaCid from '../../utils/client/getGaCid'
 
 const pageName = 'sborka'
-const onSubmit = (t, language) => async values => {
+const onSubmit = (t, lng) => async values => {
   values.pageName = pageName
   values.gacid = getGaCid()
-  values.language = language
+  values.language = lng
 
   let res
   try {
@@ -87,15 +86,11 @@ const ContactFormForSborka = props =>
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, language }) => <ReactFinalForm
-  onSubmit={onSubmit(t, language)}
+const Form = ({ t, lng }) => <ReactFinalForm
+  onSubmit={onSubmit(t, lng)}
   validate={contactFormValidationRules(t)}
   decorators={[ focusOnErrors ]}
   component={ContactFormForSborka}
 />
-
-Form.propTypes = {
-  language: string,
-}
 
 export default translate()(Form)

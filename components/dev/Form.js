@@ -1,5 +1,4 @@
 import React from 'react'
-import { string } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
@@ -18,9 +17,9 @@ const ContactFormForDev = props => <ContactForm
   {...props}
 />
 
-const onSubmit = (t, language) => async values => {
+const onSubmit = (t, lng) => async values => {
   values.gacid = getGaCid()
-  values.language = language
+  values.language = lng
 
   let res
   try {
@@ -59,15 +58,11 @@ const onSubmit = (t, language) => async values => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, language }) => <ReactFinalForm
-  onSubmit={onSubmit(t, language)}
+const Form = ({ t, lng }) => <ReactFinalForm
+  onSubmit={onSubmit(t, lng)}
   validate={contactFormValidationRules(t)}
   decorators={[ focusOnErrors ]}
   component={ContactFormForDev}
 />
-
-Form.propTypes = {
-  language: string,
-}
 
 export default translate()(Form)

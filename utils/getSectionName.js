@@ -13,6 +13,11 @@ export default pathname => {
   case ('/ru/html'):
   case ('/en/html'):
     return 'common:menu.sborka'
+  case ('/ru/privacy-policy'):
+  case ('/en/privacy-policy'):
+    return 'common:menu.privacy-policy'
+  case ('/en/cookies-policy'):
+    return 'common:menu.cookies-policy'
   default:
     return '404'
   }

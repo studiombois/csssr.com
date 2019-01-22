@@ -52,7 +52,12 @@ const picturesMap = {
   'product-manager': 'Product_manager',
   'devops-engineer': 'Developer_2',
   'sales-assistant': '',
-  'office-manager': 'Documents_1',
+  'office-manager': 'Documents_2',
+  'account-manager-ru': 'Account_manager_1',
+  'account-manager-en': 'Account_manager_1',
+  'global-business-director': 'Account_manager_2',
+  'legal-expert': 'Documents_1',
+  'hr-manager': 'Recruiter',
 }
 
 const divideSections = sections => {

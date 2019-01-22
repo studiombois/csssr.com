@@ -65,7 +65,7 @@ export class SideBar extends PureComponent {
             dangerouslySetInnerHTML={{ __html: t(key) }}
           />
 
-          : <Link href={href}>
+          : <Link prefetch href={href}>
             <a
               className={cn('font_burger-menu link', {
                 link_active: pathname === languageHref,

@@ -1,5 +1,6 @@
 import React from 'react'
 import NextHead from 'next/head'
+import { translate } from 'react-i18next'
 import { string } from 'prop-types'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 
@@ -8,6 +9,9 @@ const defaultOGImage = ''
 
 const Head = props => (
   <NextHead>
+    <link rel='preload' href={require(`../static/fonts/Roboto_Slab_normal_300_${props.lng}.woff2`)} as='font' type='font/woff2' crossOrigin='anonymous'/>
+    <link rel='preload' href={require(`../static/fonts/Roboto_normal_100_${props.lng}.woff2`)} as='font' type='font/woff2' crossOrigin='anonymous'/>
+    <link rel='preload' href={require(`../static/fonts/Roboto_normal_900_${props.lng}.woff2`)} as='font' type='font/woff2' crossOrigin='anonymous'/>
     <script dangerouslySetInnerHTML={{ __html: `
       // https://stackoverflow.com/a/27232658
       // https://github.com/bfred-it/supports-webp/blob/master/index.js
@@ -55,4 +59,4 @@ Head.propTypes = {
   ogImage: string,
 }
 
-export default Head
+export default translate()(Head)

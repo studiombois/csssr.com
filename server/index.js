@@ -12,6 +12,7 @@ const generateSitemap = require('./generate-sitemap')
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 
 const dev = process.env.NODE_ENV === 'development'
+const production = process.env.NODE_ENV === 'production'
 
 Sentry.init({
   dsn: 'https://1f3577495b4f4a3aac74c16fece4bd41@sentry.io/1330750',
@@ -91,6 +92,16 @@ i18n
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
           res.redirect(`/${language}`)
         })
+
+        if (production) {
+          server.get(
+            /^\/_next\/static\/(images|fonts)\//,
+            (req, res, nextHandler) => {
+              res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+              nextHandler()
+            },
+          )
+        }
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))
 

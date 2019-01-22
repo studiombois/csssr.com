@@ -10,6 +10,7 @@ module.exports = {
       fs: 'empty',
     }
 
+    // TODO добавить такое же для картинок и svg
     config.module.rules.push({
       test: /\.woff2?$/,
       use: [

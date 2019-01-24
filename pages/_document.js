@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
 
   render() {
     const language = this.props.language
-    const gtmId = getGtmId(process.env.NODE_ENV, language)
+    const gtmId = getGtmId(language)
 
     return (
       <html lang={language}>

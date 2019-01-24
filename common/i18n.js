@@ -1,12 +1,13 @@
 const i18n = require('i18next')
 const XHR = require('i18next-xhr-backend')
+// const { isDevelopment } = require('../utils/app-environment')
 
 const options = {
   load: 'languageOnly',
   whitelist: ['en', 'ru', 'de'],
   ns: ['common'],
   defaultNS: 'common',
-  // debug: process.env.NODE_ENV === 'development', // Потому что его сообщения в терминал мешали работать
+  // debug: isDevelopment, // Потому что его сообщения в терминал мешали работать
   interpolation: {
     escapeValue: false,
     formatSeparator: ',',

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import Transition from 'react-transition-group/Transition'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import { node, string, arrayOf, shape, bool, func } from 'prop-types'
 import cn from 'classnames'
 import ClickOutside from './ClickOutside'

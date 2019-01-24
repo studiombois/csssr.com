@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import { bool, func } from 'prop-types'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import cn from 'classnames'
 import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'

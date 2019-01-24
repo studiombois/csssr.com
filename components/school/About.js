@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import css from 'styled-jsx/css'
 import Picture from '../Picture'
 

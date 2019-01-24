@@ -1,7 +1,7 @@
 import React from 'react'
 import NextHead from 'next/head'
-import { translate } from 'react-i18next'
 import { string } from 'prop-types'
+import translate from '../utils/translate-wrapper'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 
 const defaultOGURL = ''

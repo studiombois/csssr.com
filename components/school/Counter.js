@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import counterMock from '../../data/school/counter-mock'
 
 const Counter = ({ t }) =>

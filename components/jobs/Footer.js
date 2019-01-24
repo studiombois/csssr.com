@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import { allSocialLinks } from '../../data/jobs/footerLinks'
 
 const handleLinkClick = () => {

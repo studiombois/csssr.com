@@ -58,7 +58,7 @@ const picturesMap = {
   'global-business-director': 'Account_manager_2',
   'legal-expert': 'Documents_1',
   'hr-manager': 'Recruiter',
-  'java-developer': 'Developer_1',
+  'java-developer': 'Developer_2',
 }
 
 const divideSections = sections => {

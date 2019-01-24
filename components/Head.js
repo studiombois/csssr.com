@@ -26,7 +26,7 @@ const Head = props => (
           document.documentElement.classList.add('webp')
       }
     ` }} />
-    <meta charSet='UTF-8' />
+    <meta charSet='utf-8' />
     <title>{`${props.title} | CSSSR`}</title>
     <meta
       name='description'

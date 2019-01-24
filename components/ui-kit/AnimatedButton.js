@@ -47,11 +47,13 @@ export default class AnimatedButton extends PureComponent {
 
   resetDashes() {
     const paths = this.buttonRef.current.querySelectorAll('path')
-    paths.forEach(path => {
-      const length = path.getTotalLength()
-      path.style.strokeDasharray = length + ' ' + length
-      path.style.strokeDashoffset = length
-    })
+    if (paths) {
+      paths.forEach(path => {
+        const length = path.getTotalLength()
+        path.style.strokeDasharray = length + ' ' + length
+        path.style.strokeDashoffset = length
+      })
+    }
   }
 
   handleLoaderProgress = () => {

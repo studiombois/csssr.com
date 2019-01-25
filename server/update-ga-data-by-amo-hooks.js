@@ -94,6 +94,8 @@ module.exports = (req, res) => {
           cd2: leadStatusName,
           cd3: leadPrice,
         }
+        // TODO создать поля cd1
+        // TODO Проверить лимит 500
 
         const query = Object
           .keys(params)

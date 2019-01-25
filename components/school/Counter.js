@@ -13,7 +13,7 @@ const Counter = ({ t }) =>
         />
         <p
           className='font_subhead-slab free_places'
-          dangerouslySetInnerHTML={{ __html: `${t('school:counter.freePlaces')} ${counterMock.allPlaces}` }}
+          dangerouslySetInnerHTML={{ __html: `${t('school:counter.freePlaces', { count: counterMock.freePlaces })} ${counterMock.allPlaces}` }}
         />
       </div>
     </section>

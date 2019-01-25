@@ -21,7 +21,9 @@
   },
   "counter": {
     "nowTitle": "Сейчас в&nbsp;нашей школе",
-    "freePlaces": "свободных мест&nbsp;из"
+    "freePlaces_0": "свободное место&nbsp;из",
+    "freePlaces_1": "свободных места&nbsp;из",
+    "freePlaces_2": "свободных мест&nbsp;из"
   },
   "costs": {
     "title": "Стоимость обучения",

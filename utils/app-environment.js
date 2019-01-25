@@ -1,8 +1,13 @@
 const DEVELOPMENT = 'development'
 const PRODUCTION = 'production'
-// Окружение максимально приближенное к production, но с небольшими исключениями.
-// Например, с теста мы хотим отправлять тег ТЕСТ в AmoCRM и не хотим отправлять события в production GA.
+// Окружение максимально приближенное к production
 const PRODUCTION_LIKE = 'production-like'
+
+// Отличия production от production-like и development:
+// - ошибки в sentry отправляются в соответствующие окружения, удобно для фильтрации ошибок только на проде
+// - на production используется свой GTM и ga
+// - на не production отправляется тег "TEST" в AmoCRM
+// - на не production robots.txt запрещает индексацию стенда
 
 // local, yarn dev => 'development'
 // local, yarn build => 'production-like'

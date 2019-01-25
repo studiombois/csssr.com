@@ -7,7 +7,9 @@ const options = {
   whitelist: ['en', 'ru', 'de'],
   ns: ['common'],
   defaultNS: 'common',
-  // debug: isDevelopment, // Потому что его сообщения в терминал мешали работать
+  // TODO разобраться, донастроить, пофиксить проблем i18next и обуздать debug режим
+  // Закомментировали, потому что его сообщения в терминале мешали работать
+  // debug: isDevelopment,
   interpolation: {
     escapeValue: false,
     formatSeparator: ',',

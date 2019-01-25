@@ -39,6 +39,7 @@ const Head = props => (
     <link rel='icon' href='/static/icons/favicon.ico' />
     <meta property='og:url' content={props.url || defaultOGURL} />
     <meta property='og:title' content={props.title || ''} />
+    <meta property='og:type' content='website' />
     <meta
       property='og:description'
       content={unescapeHtmlEntities(props.description)}

@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import { bool, object, string, number, func } from 'prop-types'
 import cn from 'classnames'
-import { translate } from 'react-i18next'
+import translate from '../utils/translate-wrapper'
 import BurgerIcon from '../static/icons/burger.svg'
 
 const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>

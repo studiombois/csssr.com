@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
 import cupMock from '../../data/school/cup-mock'

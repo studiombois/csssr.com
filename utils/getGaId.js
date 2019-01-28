@@ -1,5 +1,7 @@
-module.exports = (environment, language) => {
-  if (environment !== 'production') {
+const { isProduction } = require('../utils/app-environment')
+
+module.exports = language => {
+  if (!isProduction) {
     return 'UA-122976231-5'
   }
   if (language === 'en') {

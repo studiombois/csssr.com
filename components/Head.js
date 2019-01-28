@@ -26,7 +26,7 @@ const Head = props => (
           document.documentElement.classList.add('webp')
       }
     ` }} />
-    <meta charSet='UTF-8' />
+    <meta charSet='utf-8' />
     <title>{`${props.title} | CSSSR`}</title>
     <meta
       name='description'
@@ -39,6 +39,7 @@ const Head = props => (
     <link rel='icon' href='/static/icons/favicon.ico' />
     <meta property='og:url' content={props.url || defaultOGURL} />
     <meta property='og:title' content={props.title || ''} />
+    <meta property='og:type' content='website' />
     <meta
       property='og:description'
       content={unescapeHtmlEntities(props.description)}

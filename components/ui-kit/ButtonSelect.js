@@ -14,13 +14,17 @@ import isAppleDevice from '../../utils/isAppleDevice'
 const links = [{
   label: 'Email',
   href: '#hire-us',
+  dataLayerEvent: 'floating_button_form',
 }, {
   label: 'Telegram',
   href: 'http://t.me/sputnik_one_bot',
+  external: true,
+  dataLayerEvent: 'floating_button_tg',
 }, {
   label: 'Facebook',
   href: 'https://m.me/csssr',
   external: true,
+  dataLayerEvent: 'floating_button_fb',
 }]
 
 const iconsByLabel = {
@@ -129,6 +133,13 @@ class ButtonSelect extends PureComponent {
     })
   }
 
+  handleLinkClick = dataLayerEvent => () => {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: dataLayerEvent })
+    }
+    this.handleHideDropdown()
+  }
+
   render() {
     const { children, t } = this.props
     const { isDropdownVisible } = this.state
@@ -158,11 +169,11 @@ class ButtonSelect extends PureComponent {
             <ClickOutside onOutsideClick={this.handleHideDropdown}>
               <ul className={`is_${animationState}`}>
                 <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.mobileText') }} />
-                {links.map(({ label, href, external }) =>
+                {links.map(({ label, href, external, dataLayerEvent }) =>
                   <li key={label}>
                     <a
                       href={href}
-                      onClick={this.handleHideDropdown}
+                      onClick={this.handleLinkClick(dataLayerEvent)}
                       target={external ? '_blank' : null}
                       rel='noopener'
                     >

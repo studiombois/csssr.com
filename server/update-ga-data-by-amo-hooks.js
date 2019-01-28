@@ -10,7 +10,7 @@ module.exports = (req, res) => {
 
   // Определяем язык, что бы выбрать правильный Google Analytics ID
   const language = leads.update[0].tags.find(({ name }) => name === 'ru' || name === 'en').name
-  const gaId = getGaId(process.env.NODE_ENV, language)
+  const gaId = getGaId(language)
 
   // При разных операциях внутри объекта leads лежат разные поля с одинаковыми
   // данными:

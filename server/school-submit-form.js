@@ -1,5 +1,5 @@
 const fetch = require('isomorphic-unfetch')
-const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
+const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, CONTACT_FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
 
 module.exports = (req, res) => {
   const {

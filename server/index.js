@@ -2,9 +2,11 @@ const path = require('path')
 const Sentry = require('@sentry/node')
 const express = require('express')
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 const next = require('next')
 const i18nextMiddleware = require('i18next-express-middleware')
 const i18nextNodeFsBackend = require('i18next-node-fs-backend')
+const { pick } = require('ramda')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const schoolSubmitForm = require('./school-submit-form')
@@ -76,11 +78,25 @@ i18n
 
         server.use(Sentry.Handlers.requestHandler())
 
+        server.use((req, res, nextHandler) => {
+          const allowedUtmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+          const utmQueryParams = pick(allowedUtmParams, req.query)
+
+          const ONE_YEAR = 365 * 24 * 60 * 60 * 1000
+
+          Object.keys(utmQueryParams).forEach(utmKey => {
+            res.cookie(utmKey, utmQueryParams[utmKey], { maxAge: ONE_YEAR })
+          })
+
+          nextHandler()
+        })
+
         // eslint-disable-next-line
         server.use(bodyParser.json())      // to support JSON-encoded bodies
         server.use(bodyParser.urlencoded({ // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
           extended: true,
         }))
+        server.use(cookieParser())
 
         server.post('/api/submit-form', submitForm)
         server.post('/api/school-submit-form', schoolSubmitForm)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import styles from './styles'
 
 const PrivacyPolicyContentRu = ({ t }) => (

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { string, number, bool } from 'prop-types'
 import css from 'styled-jsx/css'
-import { translate } from 'react-i18next'
+import translate from '../../../utils/translate-wrapper'
 import { Field } from 'react-final-form'
 import TextareaField from '../../ui-kit/TextareaField'
 import {

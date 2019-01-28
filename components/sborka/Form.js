@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
 import fetch from 'isomorphic-unfetch'

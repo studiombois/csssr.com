@@ -1,4 +1,5 @@
 const fetch = require('isomorphic-unfetch')
+const { isProduction } = require('../utils/app-environment')
 const {
   SALES: {
     ORIGIN,
@@ -35,11 +36,8 @@ module.exports = (req, res) => {
   } = req.body
 
   const tagsArray = ['csssr.com'].concat(pageName)
-  const tagFromEnv = process.env.AMO_CRM_SUBMIT_FORM_TAG
 
-  if (tagFromEnv) {
-    tagsArray.push(tagFromEnv)
-  } else if (process.env.NODE_ENV !== 'production') {
+  if (!isProduction) {
     tagsArray.push('TEST')
   }
 

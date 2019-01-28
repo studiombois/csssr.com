@@ -1,5 +1,5 @@
 import React from 'react'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
@@ -28,6 +28,8 @@ const ContactFormForSchool = props =>
 const Form = ({ t, chosenCourse }) => {
   const onSubmit = async values => {
     values.course = chosenCourse
+    // TODO надо добавить
+    // values.gacid = getGaCid()
 
     let res
     try {

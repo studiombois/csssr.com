@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import RubleIcon from '../../static/icons/ruble.svg'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 
 const Costs = ({ t }) =>
   <Fragment>

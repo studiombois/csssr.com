@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import { number, func } from 'prop-types'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import CrossIcon from '../../static/icons/cross_white.svg'
 import ClickOutside from '../ui-kit/ClickOutside'
 import ButtonLink from '../ui-kit/ButtonLink'

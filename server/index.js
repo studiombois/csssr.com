@@ -12,18 +12,16 @@ const submitForm = require('./submit-form')
 const schoolSubmitForm = require('./school-submit-form')
 const generateSitemap = require('./generate-sitemap')
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
-
-const dev = process.env.NODE_ENV === 'development'
-const production = process.env.NODE_ENV === 'production'
+const { APP_ENV, isDevelopment, isProduction } = require('../utils/app-environment')
 
 Sentry.init({
   dsn: 'https://1f3577495b4f4a3aac74c16fece4bd41@sentry.io/1330750',
-  environment: process.env.NODE_ENV,
-  debug: dev,
+  environment: APP_ENV,
+  debug: isDevelopment,
 })
 
 const port = parseInt(process.env.PORT, 10) || 3000
-const app = next({ dev })
+const app = next({ dev: isDevelopment })
 const handle = app.getRequestHandler()
 
 i18n
@@ -109,7 +107,7 @@ i18n
           res.redirect(`/${language}`)
         })
 
-        if (production) {
+        if (!isDevelopment) {
           server.get(
             /^\/_next\/static\/(images|fonts)\//,
             (req, res, nextHandler) => {
@@ -121,7 +119,14 @@ i18n
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))
 
-        server.use('/robots.txt', express.static(path.join(__dirname, '../robots.txt')))
+        server.get('/robots.txt', function (req, res) {
+          res.type('text/plain')
+          if (isProduction) {
+            res.send('User-agent: *\nDisallow: *.js\nSitemap: https://csssr.com/sitemap.xml')
+          } else {
+            res.send('User-agent: *\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml')
+          }
+        })
 
         server.use('/yandex_3ecce01745a58936.html', express.static(path.join(__dirname, '../yandex_3ecce01745a58936.html')))
 

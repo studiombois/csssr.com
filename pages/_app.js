@@ -3,13 +3,12 @@ import App, { Container } from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/browser'
 import initialI18nInstance from '../common/i18n'
-
-const dev = process.env.NODE_ENV === 'development'
+import { APP_ENV, isDevelopment } from '../utils/app-environment'
 
 Sentry.init({
   dsn: 'https://7b0bc195d134489f86572d94c310969b@sentry.io/1330752',
-  environment: process.env.NODE_ENV,
-  debug: dev,
+  environment: APP_ENV,
+  debug: isDevelopment,
 })
 
 export default class MyApp extends App {

@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import { object, string, bool } from 'prop-types'
 import { withRouter } from 'next/router'
-import { translate } from 'react-i18next'
+import translate from '../utils/translate-wrapper'
 import getHeaderLinks from '../utils/getHeaderLinks'
 import getScrollbarWidth from '../utils/getScrollbarWidth'
 import SideBar from './SideBar'

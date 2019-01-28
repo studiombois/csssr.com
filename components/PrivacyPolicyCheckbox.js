@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { string, func } from 'prop-types'
 import { Field } from 'react-final-form'
-import { translate } from 'react-i18next'
+import translate from '../utils/translate-wrapper'
 import Checkbox from '../components/ui-kit/Checkbox'
 import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 

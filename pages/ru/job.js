@@ -92,6 +92,10 @@ const filterUnckeckedContactOptions = values => {
 
 const onSubmit = t => async values => {
   const filteredValues = filterUnckeckedContactOptions(values)
+
+  // TODO надо добавить
+  // values.gacid = getGaCid()
+
   if (values.quests.length === 0) {
     delete filteredValues.quests
   }

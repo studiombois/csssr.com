@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../privacy-policy/styles'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 
 const CookiesPolicyContent = ({ t }) => (
   <article className='grid-container'>

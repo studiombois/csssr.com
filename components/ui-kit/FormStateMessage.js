@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import { oneOf, string, func } from 'prop-types'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 

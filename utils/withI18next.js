@@ -1,4 +1,4 @@
-import { translate } from 'react-i18next'
+import translate from '../utils/translate-wrapper'
 import i18n from '../common/i18n'
 
 export default namespaces => ComposedComponent => {

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PictureForAllResolutions from '../PictureForAllResolutions'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import css from 'styled-jsx/css'
 
 const picture = css.resolve`

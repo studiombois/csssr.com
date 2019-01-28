@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import css from 'styled-jsx/css'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 import HirePlanetsAndSatellites from '../../static/images/sborka/hire-planets-and-satellites.svg'
 

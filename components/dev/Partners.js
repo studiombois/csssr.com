@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import LinksList from './LinksList'
-import { translate } from 'react-i18next'
+import translate from '../../utils/translate-wrapper'
 import {
   iTcompaniesLinksEn,
   iTcompaniesLinksRu,

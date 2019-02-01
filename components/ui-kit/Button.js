@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react'
-import { node, oneOf, bool, func } from 'prop-types'
+import { node, oneOf, bool, func, string } from 'prop-types'
 import cn from 'classnames'
 
 export default class Button extends PureComponent {
@@ -7,6 +7,7 @@ export default class Button extends PureComponent {
     disabled: bool,
     type: oneOf(['button', 'submit']),
     theme: oneOf(['primary', 'secondary']),
+    className: string,
     children: node,
     onClick: func,
   }
@@ -21,12 +22,14 @@ export default class Button extends PureComponent {
       disabled,
       type,
       theme,
+      className,
       children,
       onClick,
     } = this.props
 
     const classNames = cn('button', {
       'font_button-label': true,
+      [className]: className,
       button_state_disabled: disabled,
       button_theme_primary: theme === 'primary',
       button_theme_secondary: theme === 'secondary',

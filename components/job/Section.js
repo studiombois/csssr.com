@@ -1,6 +1,5 @@
 import React from 'react'
 import { string } from 'prop-types'
-
 import FormRow from './FormRow'
 import BoldText from './section-types/BoldText'
 import Quest from './section-types/Quest'

@@ -1,6 +1,6 @@
 const fetch = require('isomorphic-unfetch')
 const getGaId = require('../utils/getGaId')
-const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIELDS: { GOOGLE_CID } } } = require('./amo-config')
+const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, CONTACT_FIELDS: { GOOGLE_CID } } } = require('./amo-config')
 
 // это вебхук для amoCRM, почитать про их вебхуки можно тут:
 // https://www.amocrm.ru/developers/content/api/webhooks

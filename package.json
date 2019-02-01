@@ -16,6 +16,7 @@
     "babel-plugin-ramda": "^2.0.0",
     "body-parser": "^1.18.3",
     "classnames": "^2.2.6",
+    "cookie-parser": "^1.4.3",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "file-loader": "^3.0.1",

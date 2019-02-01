@@ -155,7 +155,7 @@ export class SideBar extends PureComponent {
             width: 26.5rem;
             background-color: #fff;
             transform: translateX(100%);
-            transition: transform 0.3s ease-out;
+            transition: transform 150ms ease-out;
           }
 
           .data {

@@ -9,7 +9,7 @@ export default css`
   }
 
   ul.is_entered {
-    height: 19.5rem;
+    height: 17rem;
   }
 
   li {

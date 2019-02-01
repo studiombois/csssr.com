@@ -4,7 +4,6 @@ import translate from '../../../utils/translate-wrapper'
 import Email from '../../../static/icons/email.svg'
 import Telegram from '../../../static/icons/telegram.svg'
 import Messenger from '../../../static/icons/messenger.svg'
-import HandsetWithBackground from '../../../static/icons/handsetWithBackground.svg'
 
 const links = [{
   label: 'Messenger',
@@ -19,13 +18,7 @@ const links = [{
   external: true,
   dataLayerEvent: 'floating_button_tg',
 }, {
-  label: 'Call',
-  localeLink: 'common:floatingButton.call',
-  href: 'tel: +7-499-704-38-27',
-  dataLayerEvent: 'floating_button_phone',
-}, {
   label: 'Email',
-  text: 'Email',
   localeLink: 'common:floatingButton.email',
   href: 'mailto:sales@csssr.com',
   dataLayerEvent: 'floating_button_form',
@@ -35,7 +28,6 @@ const iconsByLabel = {
   Email: <Email />,
   Telegram: <Telegram />,
   Messenger: <Messenger />,
-  Call: <HandsetWithBackground />,
 }
 
 const ButtonSelectLinksDefault = props => {
@@ -60,10 +52,6 @@ const ButtonSelectLinksDefault = props => {
         <style jsx>{`
           li {
             padding: 0.5rem 1rem;
-          }
-
-          li:nth-child(4) {
-            display: none;
           }
 
           a {
@@ -96,10 +84,6 @@ const ButtonSelectLinksDefault = props => {
           @media (max-width: 767px) {
             li {
               margin-top: 1.5rem;
-            }
-
-            li:nth-child(4) {
-              display: block;
             }
 
             li:hover {

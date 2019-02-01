@@ -1,7 +1,6 @@
 import React from 'react'
 import { func } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
-import Handset from '../../../static/icons/handset.svg'
 
 const links = [{
   label: 'Messenger',
@@ -16,11 +15,6 @@ const links = [{
   external: true,
   dataLayerEvent: 'floating_button_tg',
 }, {
-  label: 'Call',
-  localeLink: 'common:floatingButton.call',
-  href: 'tel: +7-499-704-38-27',
-  dataLayerEvent: 'floating_button_phone',
-}, {
   label: 'Email',
   localeLink: 'common:floatingButton.email',
   href: 'mailto:sales@csssr.com',
@@ -31,7 +25,6 @@ const iconsByLabel = {
   Email: null,
   Telegram: null,
   Messenger: null,
-  Call: <Handset />,
 }
 
 const ButtonSelectLinksDefault = props => {
@@ -64,7 +57,7 @@ const ButtonSelectLinksDefault = props => {
             background-color: white;
           }
 
-          li:nth-child(5) {
+          li:nth-child(4) {
             border-radius: 0 0 0.375rem 0.375rem;
           }
 
@@ -90,10 +83,6 @@ const ButtonSelectLinksDefault = props => {
             letter-spacing: normal;
             color: #345eff;
             cursor: pointer;
-          }
-
-          a[href^="tel"] span {
-            margin-left: 0.25rem;
           }
 
           a[href^="mailto"] span {

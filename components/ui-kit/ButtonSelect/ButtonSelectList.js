@@ -113,7 +113,7 @@ const ButtonSelectList = props => {
             margin-top: auto;
             padding-top: 0;
             padding-bottom: 0.5rem;
-            height: 24.5rem;
+            height: 20.5rem;
             border: none;
           }
 

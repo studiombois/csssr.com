@@ -136,7 +136,7 @@ class ButtonSelect extends PureComponent {
       >
         <ButtonSelectList
           isDropdownVisible={isDropdownVisible}
-          isAppleDevice={isAppleDevice()}
+          isAppleDevice={isAppleDevice}
           onLinkClick={this.handleLinkClick}
           onCloseButtonClick={this.handleHideDropdown}
         />

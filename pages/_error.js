@@ -9,42 +9,48 @@ import PictureForAllResolutions from '../components/PictureForAllResolutions'
 import LogoIcon from '../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../static/icons/notFound.svg'
+import ServerError from '../static/icons/serverError.svg'
 import navItems from '../data/error/navItems'
 
 
-const localesByStatusCode = {
+const titleLocalesByStatusCode = {
   404: 'error:errors.notFound.title',
+  500: 'error:errors.serverError.title',
+}
+
+const subtitleLocalesByStatusCode = {
+  404: 'error:errors.notFound.subtitle',
+  500: 'error:errors.serverError.subtitle',
 }
 
 const codeIconByStatusCode = {
   404: <NotFound width='auto' height='100%' />,
+  500: <ServerError width='auto' height='100%' />,
 }
 
 const picture = css.resolve`
   picture {
     grid-column: 2 / span 7;
     grid-row: 2 / span 10;
+    margin-top: 1.5rem;
     z-index: -1;
     height: 51.5rem;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
-      margin-top: 1.5rem;
       height: 38.5rem;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
     picture {
-      margin-top: 1.5rem;
       height: 35.5rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      margin-top: 1.5rem;
       height: 27rem;
     }
   }
@@ -53,7 +59,6 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 2;
-      margin-top: 1.5rem;
       height: 16.5rem;
     }
   }
@@ -99,32 +104,40 @@ class MyError extends React.Component {
         </a>
       </header>
 
-      <main className='grid-container'>
+      <main className={`grid-container error-code_${statusCode}`}>
         <h1
           className='font_h1-slab'
-          dangerouslySetInnerHTML={{ __html: t(`${localesByStatusCode[statusCode]}`) }}
+          dangerouslySetInnerHTML={{ __html: t(`${titleLocalesByStatusCode[statusCode]}`) }}
         />
 
         <PictureForAllResolutions
           className={picture.className}
-          image={{ namespace: 'error', key: '404', alt: t('error:imgAlt.notFound') }}
+          image={{ namespace: 'error', key: statusCode, alt: statusCode }}
         />
-        <div className='code-wrapper'>
+
+        <div className={`code-wrapper error-code_${statusCode}`}>
           {codeIconByStatusCode[statusCode]}
         </div>
 
         <h2
           className='font_subhead-slab'
-          dangerouslySetInnerHTML={{ __html: t('error:listTitle') }}
+          dangerouslySetInnerHTML={{ __html: [
+            t(`${subtitleLocalesByStatusCode[statusCode]}`),
+            statusCode === 500 ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>' : null,
+          ].join('') }}
         />
+        {statusCode === 404 &&
+          <Fragment>
+            <div className='arrow-wrapper'>
+              <LineFromTopToBottomIcon width='100%' height='100%' />
+            </div>
 
-        <div className='arrow-wrapper'>
-          <LineFromTopToBottomIcon width='100%' height='100%' />
-        </div>
+            <ul>
+              { navItems[lng].map(this.renderNav) }
+            </ul>
+          </Fragment>
+        }
 
-        <ul>
-          { navItems[lng].map(this.renderNav) }
-        </ul>
       </main><style jsx>{`
         main {
           padding-bottom: 4rem;
@@ -153,6 +166,10 @@ class MyError extends React.Component {
           grid-row: 2;
         }
 
+        .error-code_500 h2 {
+          grid-column: 9 / span 4;
+        }
+
         ul {
           margin-top: -0.125rem;
           grid-row: 4;
@@ -160,8 +177,8 @@ class MyError extends React.Component {
 
         .code-wrapper {
           grid-column: 2 / span 6;
-          grid-row: 4;
-          margin-top: -5.5rem;
+          grid-row: 2 / span 10;
+          margin-top: 2.5rem;
           width: calc(100% + 1rem);
           height: 25rem;
         }
@@ -190,7 +207,7 @@ class MyError extends React.Component {
           }
 
           .code-wrapper {
-            margin-top: -4.5rem;
+            margin-top: 3.5rem;
             width: 41.75rem;
             height: 18.625rem;
           }
@@ -206,8 +223,7 @@ class MyError extends React.Component {
           }
 
           .code-wrapper {
-            margin-top: -6rem;
-            margin-left: 0.75rem;
+            margin-top: 2.5rem;
             width: 41.75rem;
             height: 18.625rem;
           }
@@ -240,8 +256,7 @@ class MyError extends React.Component {
           }
 
           .code-wrapper {
-            margin-top: -5rem;
-            margin-left: 0.5rem;
+            margin-top: 2.5rem;
             width: 30.5rem;
             height: 13.625rem;
           }
@@ -272,6 +287,10 @@ class MyError extends React.Component {
             grid-row: 3;
           }
 
+          .error-code_500 h2 {
+            grid-column: 1 / span 4;
+          }
+
           ul {
             grid-column: 1 / span 4;
             grid-row: 5;
@@ -294,6 +313,15 @@ class MyError extends React.Component {
             margin-left: 0.1875rem;
             width: 16.125rem;
             height: 7.25rem;
+          }
+
+          .error-code_500 .code-wrapper {
+            margin-top: 0;
+            margin-left: 0;
+            width: 17.875rem;
+            height: 8.5rem;
+            width: 18.75rem;
+            height: 8.9375rem;
           }
 
           .grid-container {

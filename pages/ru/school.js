@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Head from '../../components/Head'
 import Earn from '../../components/school/Earn'
 import Manifest from '../../components/school/Manifest'
-import Counter from '../../components/school/Counter'
+// import Counter from '../../components/school/Counter'
 import Courses from '../../components/school/Courses'
 import Costs from '../../components/school/Costs'
 import Bonus from '../../components/school/Bonus'
@@ -56,7 +56,7 @@ class School extends PureComponent {
         <Head title={t('school:meta.title')} description={t('school:meta.description')} />
         <Earn />
         <Manifest />
-        <Counter />
+        {/* <Counter />*/}
         <Courses
           isTablet={isTablet}
           onChoosingCourse={this.handleChooseCourse}

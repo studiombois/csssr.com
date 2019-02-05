@@ -52,6 +52,7 @@ const Head = props => (
     <meta property='og:image' content={`${origin}${props.ogImage.url}`} />
     <meta property='og:image:width' content={props.ogImage.width} />
     <meta property='og:image:height' content={props.ogImage.height} />
+    <meta property='fb:app_id' content='416195255787519'/>
   </NextHead>
 )
 

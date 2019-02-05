@@ -10,9 +10,8 @@ function Jobs({ t }) {
     <Fragment>
       <Layout
         headerProps={{
-          logoHref: '/ru/jobs#',
+          logoHref: '/en',
           logoAlt: 'CSSSR jobs logo',
-          logoSup: '.jobs',
           isLogoLink: true,
           isBurgerVisible: true,
         }}

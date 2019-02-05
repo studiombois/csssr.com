@@ -19,13 +19,7 @@ class Jobs extends PureComponent {
     return (
       <Fragment>
         <Layout
-          headerProps={{
-            logoHref: '/ru/jobs#',
-            logoAlt: 'CSSSR jobs logo',
-            logoSup: '.jobs',
-            isLogoLink: true,
-            isBurgerVisible: true,
-          }}
+          headerProps={{ isBurgerVisible: true }}
           footerProps={{ noFooter: true }}
         >
           <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />

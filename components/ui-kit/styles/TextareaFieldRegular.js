@@ -51,6 +51,7 @@ export default css`
     padding-left: 1rem;
     line-height: 1rem;
     font-size: 0.875rem;
+    font-weight: normal;
     background-color: #fff;
     color: #9b9b9b;
     pointer-events: none;

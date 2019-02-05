@@ -5,6 +5,10 @@ import { number, string, shape } from 'prop-types'
 import translate from '../utils/translate-wrapper'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 
+// TODO если deplomat передаёт origin или host в env, то использовать эти данные
+// Пока хардкод, решим позже как лучше это сделать
+const origin = 'https://csssr.com'
+
 const Head = props => (
   <NextHead>
     <link rel='preload' href={require(`../static/fonts/Roboto_Slab_normal_300_${props.lng}.woff2`)} as='font' type='font/woff2' crossOrigin='anonymous'/>
@@ -36,7 +40,7 @@ const Head = props => (
     {/* <link rel='mask-icon' href='/static/icons/favicon-mask.svg' color='#49B882' />*/}
     <link rel='icon' href='/static/icons/favicon.ico' />
     <meta property='og:title' content={props.title || ''} />
-    <meta property='og:url' content={props.router.asPath} />
+    <meta property='og:url' content={`${origin}${props.router.asPath}`} />
     <meta property='og:type' content='website' />
     <meta
       property='og:description'
@@ -44,8 +48,8 @@ const Head = props => (
     />
     <meta name='twitter:site' content={props.router.asPath} />
     <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:image' content={props.ogImage.url} />
-    <meta property='og:image' content={props.ogImage.url} />
+    <meta name='twitter:image' content={`${origin}${props.ogImage.url}`} />
+    <meta property='og:image' content={`${origin}${props.ogImage.url}`} />
     <meta property='og:image:width' content={props.ogImage.width} />
     <meta property='og:image:height' content={props.ogImage.height} />
   </NextHead>

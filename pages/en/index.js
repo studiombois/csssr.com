@@ -41,7 +41,15 @@ class Dev extends PureComponent {
         headerProps={{ logoHref: '/en', isBurgerVisible: true }}
         footerProps={{ logoHref: '/en', socialLinks: devSocialLinks }}
       >
-        <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
+
+        <Head
+          title={t('dev:meta.title')}
+          description={t('dev:meta.description')}
+          ogImage={{
+            url: '/static/images/dev/1920/dev@2x.png',
+            width: 3840,
+            height: 1280,
+          }}/>
         <Hire />
         <Feature1
           image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }}

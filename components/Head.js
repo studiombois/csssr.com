@@ -1,11 +1,9 @@
 import React from 'react'
 import NextHead from 'next/head'
-import { string } from 'prop-types'
+import { withRouter } from 'next/router'
+import { number, string, shape } from 'prop-types'
 import translate from '../utils/translate-wrapper'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
-
-const defaultOGURL = ''
-const defaultOGImage = ''
 
 const Head = props => (
   <NextHead>
@@ -33,31 +31,38 @@ const Head = props => (
       content={unescapeHtmlEntities(props.description)}
     />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <link rel='icon' sizes='192x192' href='/static/icons/touch-icon.png' />
-    <link rel='apple-touch-icon' href='/static/icons/touch-icon.png' />
-    <link rel='mask-icon' href='/static/icons/favicon-mask.svg' color='#49B882' />
+    {/* <link rel='icon' sizes='192x192' href='/static/icons/touch-icon.png' />*/}
+    {/* <link rel='apple-touch-icon' href='/static/icons/touch-icon.png' />*/}
+    {/* <link rel='mask-icon' href='/static/icons/favicon-mask.svg' color='#49B882' />*/}
     <link rel='icon' href='/static/icons/favicon.ico' />
-    <meta property='og:url' content={props.url || defaultOGURL} />
     <meta property='og:title' content={props.title || ''} />
+    <meta property='og:url' content={props.router.asPath} />
     <meta property='og:type' content='website' />
     <meta
       property='og:description'
       content={unescapeHtmlEntities(props.description)}
     />
-    <meta name='twitter:site' content={props.url || defaultOGURL} />
+    <meta name='twitter:site' content={props.router.asPath} />
     <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:image' content={props.ogImage || defaultOGImage} />
-    <meta property='og:image' content={props.ogImage || defaultOGImage} />
-    <meta property='og:image:width' content='1200' />
-    <meta property='og:image:height' content='630' />
+    <meta name='twitter:image' content={props.ogImage.url} />
+    <meta property='og:image' content={props.ogImage.url} />
+    <meta property='og:image:width' content={props.ogImage.width} />
+    <meta property='og:image:height' content={props.ogImage.height} />
   </NextHead>
 )
 
 Head.propTypes = {
   title: string,
   description: string,
-  url: string,
-  ogImage: string,
+  ogImage: shape({
+    url: string,
+    width: number,
+    height: number,
+  }),
 }
 
-export default translate()(Head)
+Head.defaultProps = {
+  ogImage: {},
+}
+
+export default withRouter(translate()(Head))

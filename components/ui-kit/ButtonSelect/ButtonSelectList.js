@@ -30,14 +30,13 @@ const ButtonSelectList = props => {
   const { t, lng, isDropdownVisible, isAppleDevice, onLinkClick, onCloseButtonClick } = props
   const animationDuration = 300
   const Links = isAppleDevice ? ButtonSelectLinksApple : ButtonSelectLinksDefault
-  const unstableStyles = isAppleDevice ? appleListStyles : ''
 
   return (
     <Fragment>
       <Transition in={isDropdownVisible} timeout={animationDuration}>
         {animationState => isDropdownVisible &&
           <ClickOutside onOutsideClick={onCloseButtonClick}>
-            <ul className={`is_${animationState}`}>
+            <ul className={`is_${animationState} ${isAppleDevice ? 'is_appleDevice' : ''}`}>
               <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }} />
               <Links links={links} onLinkClick={onLinkClick} />
               <li>
@@ -175,7 +174,7 @@ const ButtonSelectList = props => {
           }
         }
       `}</style>
-      <style jsx>{unstableStyles}</style>
+      <style jsx>{appleListStyles}</style>
     </Fragment>
   )
 }

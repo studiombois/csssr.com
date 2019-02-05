@@ -1,32 +1,32 @@
 import css from 'styled-jsx/css'
 
 export default css`
-  ul {
+  .is_appleDevice {
     margin-left: auto;
     margin-right: auto;
     width: 20.5rem;
     background-color: transparent;
   }
 
-  ul.is_entered {
+  .is_appleDevice.is_entered {
     height: 17rem;
   }
 
-  li {
+  .is_appleDevice li {
     margin: 0;
     border-top: 0.0625rem solid #cccccc;
     text-align: center;
     background-color: white;
   }
 
-  li:first-child {
+  .is_appleDevice li:first-child {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-top: none;
     border-radius: 0.375rem 0.375rem 0 0;
   }
 
-  li:last-child {
+  .is_appleDevice li:last-child {
     margin-top: 1.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -34,7 +34,7 @@ export default css`
     border-radius: 0.375rem;
   }
 
-  li:last-child button {
+  .is_appleDevice li:last-child button {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     font-family: Roboto;

@@ -12,7 +12,7 @@ export default pathname => {
     return 'common:menu.job'
   case ('/ru/html'):
   case ('/en/html'):
-    return 'common:menu.sborka'
+    return 'common:menu.html'
   case ('/ru/privacy-policy'):
   case ('/en/privacy-policy'):
     return 'common:menu.privacy-policy'

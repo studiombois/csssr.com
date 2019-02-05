@@ -1,28 +1,9 @@
 import React from 'react'
-import { func } from 'prop-types'
+import { func, arrayOf, shape, string, bool } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import Email from '../../../static/icons/email.svg'
 import Telegram from '../../../static/icons/telegram.svg'
 import Messenger from '../../../static/icons/messenger.svg'
-
-const links = [{
-  label: 'Messenger',
-  localeLink: 'common:floatingButton.messenger',
-  href: 'https://m.me/csssr',
-  external: true,
-  dataLayerEvent: 'floating_button_fb',
-}, {
-  label: 'Telegram',
-  localeLink: 'common:floatingButton.telegram',
-  href: 'http://t.me/sputnik_one_bot',
-  external: true,
-  dataLayerEvent: 'floating_button_tg',
-}, {
-  label: 'Email',
-  localeLink: 'common:floatingButton.email',
-  href: 'mailto:sales@csssr.com',
-  dataLayerEvent: 'floating_button_form',
-}]
 
 const iconsByLabel = {
   Email: <Email />,
@@ -36,7 +17,7 @@ const ButtonSelectLinksDefault = props => {
   }
 
   return (
-    links.map(({ label, localeLink, href, external, dataLayerEvent }) =>
+    props.links.map(({ label, localeLink, href, external, dataLayerEvent }) =>
       <li key={label}>
         <a
           href={href}
@@ -108,6 +89,13 @@ const ButtonSelectLinksDefault = props => {
 ButtonSelectLinksDefault.propTypes = {
   onLinkClick: func,
   t: func,
+  links: arrayOf(shape({
+    label: string,
+    localeLink: string,
+    href: string,
+    external: bool,
+    dataLayerEvent: string,
+  })),
 }
 
 export default translate()(ButtonSelectLinksDefault)

@@ -1,25 +1,6 @@
 import React from 'react'
-import { func } from 'prop-types'
+import { func, arrayOf, shape, string, bool } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
-
-const links = [{
-  label: 'Messenger',
-  localeLink: 'common:floatingButton.facebookMessenger',
-  href: 'https://m.me/csssr',
-  external: true,
-  dataLayerEvent: 'floating_button_fb',
-}, {
-  label: 'Telegram',
-  localeLink: 'common:floatingButton.telegram',
-  href: 'http://t.me/sputnik_one_bot',
-  external: true,
-  dataLayerEvent: 'floating_button_tg',
-}, {
-  label: 'Email',
-  localeLink: 'common:floatingButton.email',
-  href: 'mailto:sales@csssr.com',
-  dataLayerEvent: 'floating_button_form',
-}]
 
 const iconsByLabel = {
   Email: null,
@@ -33,7 +14,7 @@ const ButtonSelectLinksDefault = props => {
   }
 
   return (
-    links.map(({ label, localeLink, href, external, dataLayerEvent }) =>
+    props.links.map(({ label, localeLink, href, external, dataLayerEvent }) =>
       <li key={label}>
         <a
           href={href}
@@ -43,7 +24,7 @@ const ButtonSelectLinksDefault = props => {
         >
           {iconsByLabel[label]}
           <span>
-            {props.t(localeLink)}
+            {props.t(label === 'Messenger' ? 'common:floatingButton.facebookMessenger' : localeLink)}
           </span>
         </a>
         <style jsx>{`
@@ -97,6 +78,13 @@ const ButtonSelectLinksDefault = props => {
 ButtonSelectLinksDefault.propTypes = {
   onLinkClick: func,
   t: func,
+  links: arrayOf(shape({
+    label: string,
+    localeLink: string,
+    href: string,
+    external: bool,
+    dataLayerEvent: string,
+  })),
 }
 
 export default translate()(ButtonSelectLinksDefault)

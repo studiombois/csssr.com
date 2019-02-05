@@ -7,6 +7,25 @@ import ButtonSelectLinksApple from './ButtonSelectLinksApple'
 import ButtonSelectLinksDefault from './ButtonSelectLinksDefault'
 import appleListStyles from './styles/stylesForAppleList'
 
+const links = [{
+  label: 'Messenger',
+  localeLink: 'common:floatingButton.messenger',
+  href: 'https://m.me/csssr',
+  external: true,
+  dataLayerEvent: 'floating_button_fb',
+}, {
+  label: 'Telegram',
+  localeLink: 'common:floatingButton.telegram',
+  href: 'http://t.me/sputnik_one_bot',
+  external: true,
+  dataLayerEvent: 'floating_button_tg',
+}, {
+  label: 'Email',
+  localeLink: 'common:floatingButton.email',
+  href: 'mailto:sales@csssr.com',
+  dataLayerEvent: 'floating_button_form',
+}]
+
 const ButtonSelectList = props => {
   const { t, lng, isDropdownVisible, isAppleDevice, onLinkClick, onCloseButtonClick } = props
   const animationDuration = 300
@@ -20,7 +39,7 @@ const ButtonSelectList = props => {
           <ClickOutside onOutsideClick={onCloseButtonClick}>
             <ul className={`is_${animationState}`}>
               <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }} />
-              <Links onLinkClick={onLinkClick} />
+              <Links links={links} onLinkClick={onLinkClick} />
               <li>
                 <button
                   className='close-button'

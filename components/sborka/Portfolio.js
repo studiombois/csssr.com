@@ -41,7 +41,7 @@ const getAnimationProperties = slideTo => {
       opacity: 0,
       transform: exitingTransfromStylesBySlideDirection[slideTo],
     },
-    exited: { opacity: 0, transform: 'translateX(0)' },
+    exited: { opacity: 0, transform: 'translateX(0)', pointerEvents: 'none' },
   }
 
   return ({

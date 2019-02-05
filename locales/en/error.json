@@ -5,12 +5,15 @@
   },
   "errors": {
     "notFound": {
-      "title": "Not found"
+      "title": "Not found",
+      "subtitle": "Learn our&nbsp;sections"
+    },
+    "serverError": {
+      "title": "Server Error",
+      "subtitle": "Something went wrong. Try again or&nbsp;contact&nbsp;us at&nbsp; "
     }
   },
-  "listTitle": "Learn our&nbsp;sections",
   "imgAlt": {
-    "logo": "CSSSR logo",
-    "notFound": "404"
+    "logo": "CSSSR logo"
   }
 }

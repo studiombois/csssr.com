@@ -5,12 +5,15 @@
   },
   "errors": {
     "notFound": {
-      "title": "Страница не&nbsp;найдена"
+      "title": "Страница не&nbsp;найдена",
+      "subtitle": "Изучите наши&nbsp;разделы"
+    },
+    "serverError": {
+      "title": "Ошибка на&nbsp;сервере",
+      "subtitle": "Что-то пошло не&nbsp;так. Попробуйте еще раз или свяжитесь с&nbsp;нами по&nbsp;почте "
     }
   },
-  "listTitle": "Изучите наши&nbsp;разделы",
   "imgAlt": {
-    "logo": "logo CSSSR",
-    "notFound": "404"
+    "logo": "logo CSSSR"
   }
 }

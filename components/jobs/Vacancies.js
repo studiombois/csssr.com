@@ -141,17 +141,13 @@ export default class Vacancies extends PureComponent {
 
         <div className='jobs-header-logo-container'>
           <div className='logo-wrapper'>
-            <span>
+            <a href='/ru/jobs'>
               <img
                 className='logo'
                 src='/static/icons/csssr_logo.svg'
                 alt='CSSSR jobs logo'
               />
-
-              <sup className='font_roboto-slab-light'>
-                .jobs
-              </sup>
-            </span>
+            </a>
           </div>
         </div>
 
@@ -317,7 +313,6 @@ export default class Vacancies extends PureComponent {
             padding-top: 1.25rem;
             transform: translateX(-50%);
             width: 1792px;
-            pointer-events: none;
           }
 
           .logo-wrapper {
@@ -331,20 +326,11 @@ export default class Vacancies extends PureComponent {
             height: 100%;
           }
 
-          .logo-wrapper span {
+          .logo-wrapper a {
             position: relative;
             display: inline-block;
+            cursor: pointer;
             height: 100%;
-          }
-
-          .logo-wrapper sup {
-            position: absolute;
-            top: -4px;
-            left: calc(100% + 7px);
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            line-height: 1;
           }
 
           .hunter-text {
@@ -487,18 +473,12 @@ export default class Vacancies extends PureComponent {
             }
 
             .jobs-header-logo-container {
-              padding-top: 1.5rem;
+              padding-top: 1.5625rem;
             }
 
             .logo-wrapper {
               width: 9rem;
               height: 1rem;
-            }
-
-            .logo-wrapper sup {
-              top: -4px;
-              left: calc(100% + 2px);
-              font-size: 0.625rem;
             }
 
             .hunter-text {

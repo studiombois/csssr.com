@@ -5,7 +5,8 @@ import Settings from './Settings'
 import Text from './Text'
 import Footer from './Footer'
 import { withRouter } from 'next/router'
-import { string, shape, bool } from 'prop-types'
+import { string, shape, bool, arrayOf } from 'prop-types'
+import { allSocialLinks } from '../data/jobs/footerLinks'
 
 const Layout = props => {
   const { children } = props
@@ -43,17 +44,18 @@ Layout.propTypes = {
     isBurgerVisible: bool,
   }),
   footerProps: shape({
-    logoHref: string,
-    logoAlt: string,
-    logoSup: string,
     noFooter: bool,
-    isLogoLink: bool,
+    socialLinks: arrayOf(shape({
+      href: string,
+      label: string,
+    })),
   }),
 }
 
 Layout.defaultProps = {
   footerProps: {
     noFooter: false,
+    socialLinks: allSocialLinks,
   },
 }
 

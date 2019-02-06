@@ -45,13 +45,13 @@ class School extends PureComponent {
     return (
       <Layout
         headerProps={{
-          logoHref: '/ru',
+          logoHref: '/ru/school',
           logoAlt: 'CSSSR school logo',
           logoSup: '.school',
           isLogoLink: true,
           isBurgerVisible: true,
         }}
-        footerProps={{ logoHref: '/ru', socialLinks: allSocialLinks }}
+        footerProps={{ socialLinks: allSocialLinks }}
       >
         <Head title={t('school:meta.title')} description={t('school:meta.description')} />
         <Earn />

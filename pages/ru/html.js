@@ -49,8 +49,8 @@ class Sborka extends PureComponent {
 
     return (
       <Layout
-        headerProps={{ logoHref: '/ru/html', isBurgerVisible: true }}
-        footerProps={{ logoHref: '/ru/html', socialLinks: devSocialLinks }}
+        headerProps={{ logoHref: '/ru/html', isLogoLink: true, isBurgerVisible: true }}
+        footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head title={t('sborka:meta.title')} description={t('sborka:meta.description')} />
         <Hire isEdge={userAgent.includes('Edge')} />

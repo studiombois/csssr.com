@@ -101,7 +101,7 @@ const Costs = ({ t }) =>
           width: 20.5rem;
         }
 
-        h2, p {
+        h2 {
           grid-column: 1 / span 6;
         }
 

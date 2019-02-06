@@ -176,10 +176,10 @@ const CandidateInfoSection = props => {
 
       {hasComment &&
         <Fragment>
-          <p className='font_p16-regular'>Хотите добавить что-то о себе?</p>
           <Field
             id='comment'
             name='comment'
+            label='Хотите добавить что-то о себе?'
             className={stylesForTextareaField.className}
             component={TextareaField}
             theme='regular'

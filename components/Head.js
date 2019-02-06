@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import NextHead from 'next/head'
-import { string } from 'prop-types'
+import { withRouter } from 'next/router'
+import { number, string, shape } from 'prop-types'
 import translate from '../utils/translate-wrapper'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 
-const defaultOGURL = ''
-const defaultOGImage = ''
+// TODO если deplomat передаёт origin или host в env, то использовать эти данные
+// Пока хардкод, решим позже как лучше это сделать
+const origin = 'https://csssr.com'
 
 const Head = props => (
   <NextHead>
@@ -33,31 +35,37 @@ const Head = props => (
       content={unescapeHtmlEntities(props.description)}
     />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <link rel='icon' sizes='192x192' href='/static/icons/touch-icon.png' />
-    <link rel='apple-touch-icon' href='/static/icons/touch-icon.png' />
-    <link rel='mask-icon' href='/static/icons/favicon-mask.svg' color='#49B882' />
+    {/* <link rel='icon' sizes='192x192' href='/static/icons/touch-icon.png' />*/}
+    {/* <link rel='apple-touch-icon' href='/static/icons/touch-icon.png' />*/}
+    {/* <link rel='mask-icon' href='/static/icons/favicon-mask.svg' color='#49B882' />*/}
     <link rel='icon' href='/static/icons/favicon.ico' />
-    <meta property='og:url' content={props.url || defaultOGURL} />
     <meta property='og:title' content={props.title || ''} />
+    <meta property='og:url' content={`${origin}${props.router.asPath}`} />
     <meta property='og:type' content='website' />
     <meta
       property='og:description'
       content={unescapeHtmlEntities(props.description)}
     />
-    <meta name='twitter:site' content={props.url || defaultOGURL} />
+    <meta name='twitter:site' content={props.router.asPath} />
     <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:image' content={props.ogImage || defaultOGImage} />
-    <meta property='og:image' content={props.ogImage || defaultOGImage} />
-    <meta property='og:image:width' content='1200' />
-    <meta property='og:image:height' content='630' />
+    {props.ogImage && <Fragment>
+      <meta name='twitter:image' content={`${origin}${props.ogImage.url}`} />
+      <meta property='og:image' content={`${origin}${props.ogImage.url}`} />
+      <meta property='og:image:width' content={props.ogImage.width} />
+      <meta property='og:image:height' content={props.ogImage.height} />
+    </Fragment>}
+    <meta property='fb:app_id' content='416195255787519'/>
   </NextHead>
 )
 
 Head.propTypes = {
   title: string,
   description: string,
-  url: string,
-  ogImage: string,
+  ogImage: shape({
+    url: string,
+    width: number,
+    height: number,
+  }),
 }
 
-export default translate()(Head)
+export default withRouter(translate()(Head))

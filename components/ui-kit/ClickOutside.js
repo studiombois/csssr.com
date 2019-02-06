@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import { findDOMNode } from 'react-dom'
 import { node, string, func } from 'prop-types'
 
@@ -44,11 +44,8 @@ export default class ClickOutside extends PureComponent {
   }
 
   render() {
-    const args = [
-      this.props.rootElement,
-      { className: this.props.className, style: this.props.style },
-    ].concat(this.props.children)
+    const args = { className: this.props.className, style: this.props.style }
 
-    return React.cloneElement.apply(null, args)
+    return React.cloneElement(<Fragment />, args, this.props.children)
   }
 }

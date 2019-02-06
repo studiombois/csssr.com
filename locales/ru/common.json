@@ -9,7 +9,13 @@
     "privacy-policy": "Политика конфиденциальности"
   },
   "floatingButton": {
-    "mobileText": "Выберите удобный способ связи:"
+    "question": "Как вам удобнее связаться с нами?",
+    "facebookMessenger": "Facebook Messenger",
+    "messenger": "Messenger",
+    "telegram": "Telegram",
+    "call": "Позвонить +7-499-704-38-27",
+    "email": "Email",
+    "closeText": "Отмена"
   },
   "languageRedirect": {
     "link": "/en",

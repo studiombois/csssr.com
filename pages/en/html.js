@@ -9,7 +9,7 @@ import WorkingProcess from '../../components/sborka/WorkingProcess'
 import Form from '../../components/sborka/Form'
 import PostScriptum from '../../components/sborka/PostScriptum'
 import Layout from '../../components/Layout'
-import ButtonSelect from '../../components/ui-kit/ButtonSelect'
+import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
@@ -65,9 +65,8 @@ class Sborka extends PureComponent {
           isMobile={isMobile}
           showButtonOnNode='budget'
           hideButtonOnNode='hire-us'
-        >
-          {t('sborka:hire.buttonText')}
-        </ButtonSelect>
+          buttonText={t('sborka:hire.buttonText')}
+        />
       </Layout>
     )
   }

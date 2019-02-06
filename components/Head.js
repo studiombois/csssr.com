@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
 import { number, string, shape } from 'prop-types'
@@ -48,10 +48,12 @@ const Head = props => (
     />
     <meta name='twitter:site' content={props.router.asPath} />
     <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:image' content={`${origin}${props.ogImage.url}`} />
-    <meta property='og:image' content={`${origin}${props.ogImage.url}`} />
-    <meta property='og:image:width' content={props.ogImage.width} />
-    <meta property='og:image:height' content={props.ogImage.height} />
+    {props.ogImage && <Fragment>
+      <meta name='twitter:image' content={`${origin}${props.ogImage.url}`} />
+      <meta property='og:image' content={`${origin}${props.ogImage.url}`} />
+      <meta property='og:image:width' content={props.ogImage.width} />
+      <meta property='og:image:height' content={props.ogImage.height} />
+    </Fragment>}
     <meta property='fb:app_id' content='416195255787519'/>
   </NextHead>
 )
@@ -64,10 +66,6 @@ Head.propTypes = {
     width: number,
     height: number,
   }),
-}
-
-Head.defaultProps = {
-  ogImage: {},
 }
 
 export default withRouter(translate()(Head))

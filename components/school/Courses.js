@@ -4,7 +4,7 @@ import translate from '../../utils/translate-wrapper'
 import cn from 'classnames'
 import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
-import ModalCourse from './ModalCourse'
+import ModalCourse from './ModalCourse/ModalCourse'
 import coursesMock from '../../data/school/courses-mock'
 import getScrollbarWidth from '../../utils/getScrollbarWidth'
 import PictureForAllResolutions from '../PictureForAllResolutions'
@@ -308,7 +308,9 @@ class Courses extends PureComponent {
               padding-bottom: 0;
             }
 
-            .description {
+            .description,
+            .under_course_text,
+            .font_link-list_16 {
               margin-top: 1.0625rem;
               padding-bottom: 0;
               font-family: Roboto;
@@ -355,8 +357,6 @@ class Courses extends PureComponent {
             .under_course_text {
               grid-column: 3 / span 6;
               text-align: left;
-              font-size: 1rem;
-              line-height: 1.5rem;
             }
           }
 
@@ -380,7 +380,8 @@ class Courses extends PureComponent {
             }
 
             .course-title,
-            .description {
+            .description,
+            .under_course_text  {
               text-align: center;
             }
 

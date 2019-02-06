@@ -2,35 +2,24 @@ import React from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import translate from '../utils/translate-wrapper'
-import { allSocialLinks } from '../data/jobs/footerLinks'
 import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 
 
-const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, lng, t }) => {
+const Footer = ({ socialLinks, lng, t }) => {
   const rootUrl = `/${lng}`
 
   return <footer className='grid-container'>
-    {pathname === rootUrl
-      ? <span className='logo-wrapper'>
-        <img
-          className='logo'
-          src='/static/icons/csssr_logo.svg'
-          alt='CSSSR Logo'
-        />
-      </span>
-
-      : <span className='logo-wrapper'>
-        <Link prefetch href={rootUrl}>
-          <a>
-            <img
-              className='logo'
-              src='/static/icons/csssr_logo.svg'
-              alt='CSSSR Logo'
-            />
-          </a>
-        </Link>
-      </span>
-    }
+    <span className='logo-wrapper'>
+      <Link prefetch href={rootUrl}>
+        <a>
+          <img
+            className='logo'
+            src='/static/icons/csssr_logo.svg'
+            alt='CSSSR Logo'
+          />
+        </a>
+      </Link>
+    </span>
 
     <ul className='social-links'>
       {socialLinks.map(({ href, label }) =>

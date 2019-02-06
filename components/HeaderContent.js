@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react'
 import { bool, object, string, number, func } from 'prop-types'
+import Link from 'next/link'
 import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
 import BurgerIcon from '../static/icons/burger.svg'
@@ -57,19 +58,21 @@ class HeaderContent extends PureComponent {
           >
             {isLogoLink
               ? <span className='logo-wrapper'>
-                <a href={logoHref} >
-                  <img
-                    className='logo'
-                    src='/static/icons/csssr_logo.svg'
-                    alt={logoAlt}
-                  />
+                <Link href={logoHref}>
+                  <a>
+                    <img
+                      className='logo'
+                      src='/static/icons/csssr_logo.svg'
+                      alt={logoAlt}
+                    />
 
-                  {logoSup &&
-                    <sup className='font_roboto-slab-light'>
-                      {logoSup}
-                    </sup>
-                  }
-                </a>
+                    {logoSup &&
+                      <sup className='font_roboto-slab-light'>
+                        {logoSup}
+                      </sup>
+                    }
+                  </a>
+                </Link>
               </span>
 
               : <span className='logo-wrapper'>

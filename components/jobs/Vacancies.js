@@ -141,7 +141,7 @@ export default class Vacancies extends PureComponent {
 
         <div className='jobs-header-logo-container'>
           <div className='logo-wrapper'>
-            <a href='/ru'>
+            <a href='/ru/jobs'>
               <img
                 className='logo'
                 src='/static/icons/csssr_logo.svg'

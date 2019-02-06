@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Link from 'next/link'
 import css from 'styled-jsx/css'
 import withI18next from '../utils/withI18next'
 import Common from '../components/Common'
@@ -88,6 +89,7 @@ class MyError extends React.Component {
   render() {
     const { t, lng: lngCodeFromI18n, statusCode, i18n } = this.props
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
+    const rootUrl = `/${lng}`
 
     return <Fragment>
       <Common />
@@ -99,9 +101,11 @@ class MyError extends React.Component {
       />
 
       <header className='grid-container'>
-        <a href={ lng === 'ru' ? '/ru' : '/en' }>
-          <LogoIcon width='100%' height='100%' />
-        </a>
+        <Link prefetch href={rootUrl}>
+          <a>
+            <LogoIcon width='100%' height='100%' />
+          </a>
+        </Link>
       </header>
 
       <main className={`grid-container error-code_${statusCode}`}>

@@ -38,8 +38,8 @@ class Dev extends PureComponent {
 
     return (
       <Layout
-        headerProps={{ logoHref: '/en', isBurgerVisible: true }}
-        footerProps={{ logoHref: '/en', socialLinks: devSocialLinks }}
+        headerProps={{ logoHref: '/en', isLogoLink: true, isBurgerVisible: true }}
+        footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
         <Hire />

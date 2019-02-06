@@ -46,14 +46,13 @@ export default class AnimatedButton extends PureComponent {
   }
 
   resetDashes() {
+    // querySelectorAll возвращает NodeList, не во всех браузерах есть поддержка NodeList#forEach
     const paths = this.buttonRef.current.querySelectorAll('path')
-    if (paths) {
-      paths.forEach(path => {
-        const length = path.getTotalLength()
-        path.style.strokeDasharray = length + ' ' + length
-        path.style.strokeDashoffset = length
-      })
-    }
+    Array.from(paths).forEach(path => {
+      const length = path.getTotalLength()
+      path.style.strokeDasharray = length + ' ' + length
+      path.style.strokeDashoffset = length
+    })
   }
 
   handleLoaderProgress = () => {

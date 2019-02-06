@@ -116,7 +116,7 @@ class MyError extends React.Component {
 
         <PictureForAllResolutions
           className={picture.className}
-          image={{ namespace: 'error', key: statusCode, alt: statusCode }}
+          image={{ namespace: 'error', key: `${statusCode}`, alt: `${statusCode}` }}
         />
 
         <div className={`code-wrapper error-code_${statusCode}`}>

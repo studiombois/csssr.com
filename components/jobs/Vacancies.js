@@ -313,6 +313,7 @@ export default class Vacancies extends PureComponent {
             padding-top: 1.25rem;
             transform: translateX(-50%);
             width: 1792px;
+            pointer-events: none;
           }
 
           .logo-wrapper {
@@ -320,6 +321,7 @@ export default class Vacancies extends PureComponent {
             width: 17rem;
             height: 1.5rem;
             text-align: center;
+            pointer-events: auto;
           }
 
           .logo-wrapper img {

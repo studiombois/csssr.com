@@ -6,6 +6,7 @@ import translate from '../utils/translate-wrapper'
 import CrossIcon from '../static/icons/cross.svg'
 import ClickOutside from './ui-kit/ClickOutside'
 import getSectionName from '../utils/getSectionName'
+import getLanguageRedirectionLink from '../utils/getLanguageRedirectionLink'
 import Link from 'next/link'
 
 const items = [{
@@ -125,7 +126,7 @@ export class SideBar extends PureComponent {
             </div>
             <div className='bottom'>
               <a
-                href={t('common:languageRedirect.link')}
+                href={getLanguageRedirectionLink(pathname)}
                 className='font_link-list_16'
               >
                 {t('common:languageRedirect.text')}

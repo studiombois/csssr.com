@@ -102,7 +102,7 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { router: { pathname, asPath }, isOpened, onToggle, onClose, t } = this.props
+    const { router: { pathname, asPath }, isOpened, onToggle, onClose, t, lng } = this.props
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
@@ -131,7 +131,7 @@ export class SideBar extends PureComponent {
             */}
             <div className='bottom'>
               <a
-                href={getLanguageRedirectionLink(asPath)}
+                href={getLanguageRedirectionLink(asPath, lng)}
                 className='font_link-list_16'
               >
                 {t('common:languageRedirect.text')}

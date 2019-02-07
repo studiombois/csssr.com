@@ -102,7 +102,7 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { router: { pathname }, isOpened, onToggle, onClose, t } = this.props
+    const { router: { pathname, asPath }, isOpened, onToggle, onClose, t } = this.props
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
@@ -124,9 +124,14 @@ export class SideBar extends PureComponent {
                 {items.map(this.renderNavItem)}
               </ul>
             </div>
+            {/*
+              Поменял pathname на asPath (https://github.com/zeit/next.js/#intercepting-popstate)
+              для того что бы на страницах вакансий переадресация при смене языка была на эти же страницы,
+              а не на /jobs
+            */}
             <div className='bottom'>
               <a
-                href={getLanguageRedirectionLink(pathname)}
+                href={getLanguageRedirectionLink(asPath)}
                 className='font_link-list_16'
               >
                 {t('common:languageRedirect.text')}
@@ -178,6 +183,7 @@ export class SideBar extends PureComponent {
             background-color: #000;
             content: '';
             transition: right 0s ease-out 1s, opacity 0.3s ease-out;
+            pointer-events: none;
           }
 
           .sidebar_opened {
@@ -189,6 +195,7 @@ export class SideBar extends PureComponent {
             right: 100%;
             opacity: 0.3;
             transition: right 0s ease-out 0s, opacity 0.3s ease-out;
+            pointer-events: auto;
           }
 
           .section-name {

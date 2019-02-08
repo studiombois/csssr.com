@@ -30,8 +30,8 @@ i18n
   .init({
     fallbackLng: 'en',
     load: 'languageOnly',
-    whitelist: ['en', 'ru', 'de'],
-    preload: ['en', 'ru', 'de'],
+    whitelist: ['en', 'ru'],
+    preload: ['en', 'ru'],
     ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'school', 'error', 'privacyPolicy', 'cookiesPolicy'],
     detection: {
       order: ['path', 'cookie', 'header'],

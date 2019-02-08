@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import css from 'styled-jsx/css'
+import * as Sentry from '@sentry/browser'
 import withI18next from '../utils/withI18next'
 import Common from '../components/Common'
 import Settings from '../components/Settings'
@@ -90,6 +91,14 @@ class MyError extends React.Component {
     const { t, lng: lngCodeFromI18n, statusCode, i18n } = this.props
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`
+
+    if (!navItems[lng]) {
+      Sentry.withScope(scope => {
+        scope.setExtra('lngCodeFromI18n', lngCodeFromI18n)
+        scope.setExtra('lng', lng)
+        Sentry.captureMessage('Опять что-то не так с определением языка, смотри url и дополнительные параметры')
+      })
+    }
 
     return <Fragment>
       <Common />

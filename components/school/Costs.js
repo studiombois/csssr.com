@@ -16,7 +16,6 @@ const Costs = ({ t }) =>
         </div>
         <span className='font_subhead-slab period' dangerouslySetInnerHTML={{ __html: t('school:costs.period') }} />
       </h2>
-      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('school:costs.underCostsText') }}/>
     </section>
     <style jsx>{`
       section {
@@ -30,11 +29,6 @@ const Costs = ({ t }) =>
       h2 {
         grid-column: 4 / span 6;
         text-align: center;
-      }
-
-      p {
-        grid-column: 2 / span 8;
-        margin-top: 4.4375rem;
       }
 
       .big_counter {
@@ -82,11 +76,6 @@ const Costs = ({ t }) =>
           text-align: center;
         }
 
-        p {
-          grid-column: 2 / span 8;
-          margin-top: 2.3125rem;
-        }
-
         .big_counter {
           margin-top: 3.5625rem;
         }
@@ -112,12 +101,8 @@ const Costs = ({ t }) =>
           width: 20.5rem;
         }
 
-        h2, p {
+        h2 {
           grid-column: 1 / span 6;
-        }
-
-        p {
-          margin-top: 0.8125rem;
         }
 
         .big_counter {

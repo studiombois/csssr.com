@@ -4,7 +4,7 @@ const XHR = require('i18next-xhr-backend')
 
 const options = {
   load: 'languageOnly',
-  whitelist: ['en', 'ru', 'de'],
+  whitelist: ['en', 'ru'],
   ns: ['common'],
   defaultNS: 'common',
   // TODO разобраться, донастроить, пофиксить проблем i18next и обуздать debug режим

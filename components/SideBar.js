@@ -177,6 +177,7 @@ export class SideBar extends PureComponent {
             background-color: #000;
             content: '';
             transition: right 0s ease-out 1s, opacity 0.3s ease-out;
+            pointer-events: none;
           }
 
           .sidebar_opened {
@@ -188,6 +189,7 @@ export class SideBar extends PureComponent {
             right: 100%;
             opacity: 0.3;
             transition: right 0s ease-out 0s, opacity 0.3s ease-out;
+            pointer-events: auto;
           }
 
           .section-name {

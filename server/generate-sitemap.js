@@ -95,7 +95,7 @@ const generateSitemap = () =>
       }, {
         url: 'https://csssr.com/en/privacy-policy',
         changefreq: 'yearly',
-        priority: 1,
+        priority: 0.6,
         links: [
           {
             lang: 'en',
@@ -109,7 +109,7 @@ const generateSitemap = () =>
       }, {
         url: 'https://csssr.com/ru/privacy-policy',
         changefreq: 'yearly',
-        priority: 1,
+        priority: 0.6,
         links: [
           {
             lang: 'en',
@@ -123,7 +123,7 @@ const generateSitemap = () =>
       }, {
         url: 'https://csssr.com/en/cookies-policy',
         changefreq: 'yearly',
-        priority: 1,
+        priority: 0.6,
       }, {
         url: 'https://csssr.com/ru/jobs',
         changefreq: 'weekly',

@@ -109,7 +109,7 @@ i18n
 
         if (!isDevelopment) {
           server.get(
-            /^\/_next\/static\/(images|fonts)\//,
+            /^\/_next\/static\/(fonts|icons|images)\//,
             (req, res, nextHandler) => {
               res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
               nextHandler()

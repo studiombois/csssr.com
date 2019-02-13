@@ -115,14 +115,14 @@ class Hire extends PureComponent {
           }
 
           :global(#main) {
-            background-image: url(/static/images/dev/1920/dev_line@1x.png);
+            background-image: url('${require('../../static/images/dev/1920/dev_line@1x.png')}');
             background-size: 1920px 640px;
             background-position: 50% 24rem;
             background-repeat: repeat-x;
           }
 
           :global(html.webp #main) {
-            background-image: url(/static/images/dev/1920/dev_line@1x.webp);
+            background-image: url('${require('../../static/images/dev/1920/dev_line@1x.webp')}');
           }
 
           @media
@@ -130,11 +130,11 @@ class Hire extends PureComponent {
           only screen and (min-resolution: 192dpi),
           only screen and (min-resolution: 2dppx) {
             :global(#main) {
-              background-image: url(/static/images/dev/1920/dev_line@2x.png);
+              background-image: url('${require('../../static/images/dev/1920/dev_line@2x.png')}');
             }
 
             :global(html.webp #main) {
-              background-image: url(/static/images/dev/1920/dev_line@2x.webp);
+              background-image: url('${require('../../static/images/dev/1920/dev_line@2x.webp')}');
             }
           }
 
@@ -143,11 +143,11 @@ class Hire extends PureComponent {
           only screen and (min-resolution: 288dpi),
           only screen and (min-resolution: 3dppx) {
             :global(#main) {
-              background-image: url(/static/images/dev/1920/dev_line@3x.png);
+              background-image: url('${require('../../static/images/dev/1920/dev_line@3x.png')}');
             }
 
             :global(html.webp #main) {
-              background-image: url(/static/images/dev/1920/dev_line@3x.webp);
+              background-image: url('${require('../../static/images/dev/1920/dev_line@3x.webp')}');
             }
           }
 
@@ -158,13 +158,13 @@ class Hire extends PureComponent {
             }
 
             :global(#main) {
-              background-image: url(/static/images/dev/1360/dev_line@1x.png);
+              background-image: url('${require('../../static/images/dev/1360/dev_line@1x.png')}');
               background-size: 1360px 640px;
               background-position: 50% 20rem;
             }
 
             :global(html.webp #main) {
-              background-image: url(/static/images/dev/1360/dev_line@1x.webp);
+              background-image: url('${require('../../static/images/dev/1360/dev_line@1x.webp')}');
             }
 
             @media
@@ -172,11 +172,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 192dpi),
             only screen and (min-resolution: 2dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/1360/dev_line@2x.png);
+                background-image: url('${require('../../static/images/dev/1360/dev_line@2x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/1360/dev_line@2x.webp);
+                background-image: url('${require('../../static/images/dev/1360/dev_line@2x.webp')}');
               }
             }
 
@@ -185,11 +185,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 288dpi),
             only screen and (min-resolution: 3dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/1360/dev_line@3x.png);
+                background-image: url('${require('../../static/images/dev/1360/dev_line@3x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/1360/dev_line@3x.webp);
+                background-image: url('${require('../../static/images/dev/1360/dev_line@3x.webp')}');
               }
             }
           }
@@ -201,13 +201,13 @@ class Hire extends PureComponent {
             }
 
             :global(#main) {
-              background-image: url(/static/images/dev/1280/dev_line@1x.png);
+              background-image: url('${require('../../static/images/dev/1280/dev_line@1x.png')}');
               background-size: 1280px 640px;
               background-position: 50% 20rem;
             }
 
             :global(html.webp #main) {
-              background-image: url(/static/images/dev/1280/dev_line@1x.webp);
+              background-image: url('${require('../../static/images/dev/1280/dev_line@1x.webp')}');
             }
 
             @media
@@ -215,11 +215,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 192dpi),
             only screen and (min-resolution: 2dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/1280/dev_line@2x.png);
+                background-image: url('${require('../../static/images/dev/1280/dev_line@2x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/1280/dev_line@2x.webp);
+                background-image: url('${require('../../static/images/dev/1280/dev_line@2x.webp')}');
               }
             }
 
@@ -228,11 +228,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 288dpi),
             only screen and (min-resolution: 3dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/1280/dev_line@3x.png);
+                background-image: url('${require('../../static/images/dev/1280/dev_line@3x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/1280/dev_line@3x.webp);
+                background-image: url('${require('../../static/images/dev/1280/dev_line@3x.webp')}');
               }
             }
           }
@@ -257,13 +257,13 @@ class Hire extends PureComponent {
             }
 
             :global(#main) {
-              background-image: url(/static/images/dev/1024/dev_line@1x.png);
+              background-image: url('${require('../../static/images/dev/1024/dev_line@1x.png')}');
               background-size: 1024px 480px;
               background-position: 50% 22rem;
             }
 
             :global(html.webp #main) {
-              background-image: url(/static/images/dev/1024/dev_line@1x.webp);
+              background-image: url('${require('../../static/images/dev/1024/dev_line@1x.webp')}');
             }
 
             @media
@@ -271,11 +271,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 192dpi),
             only screen and (min-resolution: 2dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/1024/dev_line@2x.png);
+                background-image: url('${require('../../static/images/dev/1024/dev_line@2x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/1024/dev_line@2x.webp);
+                background-image: url('${require('../../static/images/dev/1024/dev_line@2x.webp')}');
               }
             }
 
@@ -284,11 +284,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 288dpi),
             only screen and (min-resolution: 3dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/1024/dev_line@3x.png);
+                background-image: url('${require('../../static/images/dev/1024/dev_line@3x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/1024/dev_line@3x.webp);
+                background-image: url('${require('../../static/images/dev/1024/dev_line@3x.webp')}');
               }
             }
 
@@ -332,13 +332,13 @@ class Hire extends PureComponent {
             }
 
             :global(#main) {
-              background-image: url(/static/images/dev/360/dev_line@1x.png);
+              background-image: url('${require('../../static/images/dev/360/dev_line@1x.png')}');
               background-size: 22.5rem 10.5rem;
               background-position: 50% 18rem;
             }
 
             :global(html.webp #main) {
-              background-image: url(/static/images/dev/360/dev_line@1x.webp);
+              background-image: url('${require('../../static/images/dev/360/dev_line@1x.webp')}');
             }
 
             @media
@@ -346,11 +346,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 192dpi),
             only screen and (min-resolution: 2dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/360/dev_line@2x.png);
+                background-image: url('${require('../../static/images/dev/360/dev_line@2x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/360/dev_line@2x.webp);
+                background-image: url('${require('../../static/images/dev/360/dev_line@2x.webp')}');
               }
             }
 
@@ -359,11 +359,11 @@ class Hire extends PureComponent {
             only screen and (min-resolution: 288dpi),
             only screen and (min-resolution: 3dppx) {
               :global(#main) {
-                background-image: url(/static/images/dev/360/dev_line@3x.png);
+                background-image: url('${require('../../static/images/dev/360/dev_line@3x.png')}');
               }
 
               :global(html.webp #main) {
-                background-image: url(/static/images/dev/360/dev_line@3x.webp);
+                background-image: url('${require('../../static/images/dev/360/dev_line@3x.webp')}');
               }
             }
           }

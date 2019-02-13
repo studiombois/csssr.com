@@ -144,7 +144,7 @@ export default class Vacancies extends PureComponent {
             <a href='/ru/jobs'>
               <img
                 className='logo'
-                src='/static/icons/csssr_logo.svg'
+                src={`${require('../../static/icons/csssr_logo.svg')}`}
                 alt='CSSSR jobs logo'
               />
             </a>
@@ -300,7 +300,7 @@ export default class Vacancies extends PureComponent {
             align-items: center;
             height: 100vh;
             width: calc(50vw - 1rem);
-            background-image: url(/static/images/jobs/1920/cover@1x.jpg);
+            background-image: url('${require('../../static/images/jobs/1920/cover@1x.jpg')}');
             background-position: 50%;
             background-size: auto 100%;
             overflow: hidden;
@@ -368,7 +368,7 @@ export default class Vacancies extends PureComponent {
           only screen and (min-resolution: 192dpi),
           only screen and (min-resolution: 2dppx) {
             .half-page-picture {
-              background-image: url(/static/images/jobs/1920/cover@2x.jpg);
+              background-image: url('${require('../../static/images/jobs/1920/cover@2x.jpg')}');
             }
           }
 
@@ -377,7 +377,7 @@ export default class Vacancies extends PureComponent {
           only screen and (min-resolution: 288dpi),
           only screen and (min-resolution: 3dppx) {
             .half-page-picture {
-              background-image: url(/static/images/jobs/1920/cover@3x.jpg);
+              background-image: url('${require('../../static/images/jobs/1920/cover@3x.jpg')}');
             }
           }
 
@@ -508,7 +508,7 @@ export default class Vacancies extends PureComponent {
 
               .half-page-picture {
                 width: calc(50vw - 0.5rem);
-                background-image: url(/static/images/jobs/1024/cover@1x.jpg);
+                background-image: url('${require('../../static/images/jobs/1024/cover@1x.jpg')}');
               }
 
               @media
@@ -516,7 +516,7 @@ export default class Vacancies extends PureComponent {
               only screen and (min-resolution: 192dpi),
               only screen and (min-resolution: 2dppx) {
                 .half-page-picture {
-                  background-image: url(/static/images/jobs/1024/cover@2x.jpg);
+                  background-image: url('${require('../../static/images/jobs/1024/cover@2x.jpg')}');
                 }
               }
 
@@ -525,7 +525,7 @@ export default class Vacancies extends PureComponent {
               only screen and (min-resolution: 288dpi),
               only screen and (min-resolution: 3dppx) {
                 .half-page-picture {
-                  background-image: url(/static/images/jobs/1024/cover@3x.jpg);
+                  background-image: url('${require('../../static/images/jobs/1024/cover@3x.jpg')}');
                 }
               }
             }
@@ -636,7 +636,7 @@ export default class Vacancies extends PureComponent {
               z-index: -1;
               width: 100vw;
               height: 15.5rem;
-              background-image: url(/static/images/jobs/360/cover@1x.jpg);
+              background-image: url('${require('../../static/images/jobs/360/cover@1x.jpg')}');
             }
 
             @media
@@ -644,7 +644,7 @@ export default class Vacancies extends PureComponent {
             only screen and (min-resolution: 192dpi),
             only screen and (min-resolution: 2dppx) {
               .half-page-picture {
-                background-image: url(/static/images/jobs/360/cover@2x.jpg);
+                background-image: url('${require('../../static/images/jobs/360/cover@2x.jpg')}');
               }
             }
 
@@ -653,7 +653,7 @@ export default class Vacancies extends PureComponent {
             only screen and (min-resolution: 288dpi),
             only screen and (min-resolution: 3dppx) {
               .half-page-picture {
-                background-image: url(/static/images/jobs/360/cover@3x.jpg);
+                background-image: url('${require('../../static/images/jobs/360/cover@3x.jpg')}');
               }
             }
           }

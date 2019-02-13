@@ -10,16 +10,14 @@ module.exports = {
       fs: 'empty',
     }
 
-    // TODO добавить такое же для картинок и svg
     config.module.rules.push({
-      test: /\.woff2?$/,
+      test: /\.(jpe?g|png|gif|webp|svg|ico|woff2?)$/,
       use: [
         {
           loader: 'file-loader',
           options: {
-            publicPath: '/_next/static/fonts/',
-            outputPath: 'static/fonts/',
-            name: '[name]-[hash].[ext]',
+            publicPath: '/_next',
+            name: '[path][name]-[hash].[ext]',
           },
         },
       ],

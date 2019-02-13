@@ -22,7 +22,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
       ? <span className='logo-wrapper'>
         <img
           className='logo'
-          src='/static/icons/csssr_logo.svg'
+          src={require('../../static/icons/csssr_logo.svg')}
           alt='CSSSR Logo'
         />
       </span>
@@ -32,7 +32,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
           <a>
             <img
               className='logo'
-              src='/static/icons/csssr_logo.svg'
+              src={require('../../static/icons/csssr_logo.svg')}
               alt='CSSSR Logo'
             />
           </a>
@@ -51,7 +51,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
           >
             <img
               className='social-logo'
-              src={`/static/icons/${label.toLowerCase()}.svg`}
+              src={require(`../../static/icons/${label.toLowerCase()}.svg`)}
               alt={`${label} logo`}
             />
           </a>

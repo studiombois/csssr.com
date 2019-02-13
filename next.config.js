@@ -17,7 +17,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             publicPath: '/_next',
-            name: '[path][name]-[hash].[ext]',
+            name: '[path][name]-[hash:8].[ext]',
           },
         },
       ],

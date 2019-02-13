@@ -5,7 +5,7 @@ import withI18next from '../../utils/withI18next'
 import Layout from '../../components/Layout'
 import NoPage from '../../components/NoPage'
 
-function Jobs({ t }) {
+function School({ t }) {
   return (
     <Fragment>
       <Layout
@@ -17,7 +17,7 @@ function Jobs({ t }) {
         }}
         footerProps={{ noFooter: true }}
       >
-        <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
+        <Head title={t('school:meta.title')} description={t('school:meta.description')} />
         <NextHead>
           <meta name='robots' content='noindex'/>
         </NextHead>
@@ -27,4 +27,4 @@ function Jobs({ t }) {
   )
 }
 
-export default withI18next(['jobs'])(Jobs)
+export default withI18next(['school'])(School)

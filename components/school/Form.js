@@ -7,6 +7,7 @@ import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import createDecorator from 'final-form-focus'
 
+const focusOnErrors = createDecorator()
 const ContactFormForSchool = props =>
   <div>
     <ContactForm
@@ -66,8 +67,6 @@ const Form = ({ t, chosenCourse }) => {
       return { [FORM_ERROR]: error }
     }
   }
-
-  const focusOnErrors = createDecorator()
 
   return (
     <ReactFinalForm

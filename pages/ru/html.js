@@ -56,9 +56,9 @@ class Sborka extends PureComponent {
         <Hire isEdge={userAgent.includes('Edge')} />
         <Budget />
         <Projects />
+        <WorkingProcess />
         <Portfolio isMobile={isMobile} />
         <OurPrinciples />
-        <WorkingProcess />
         <Form />
         <PostScriptum />
         <ButtonSelect

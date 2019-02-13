@@ -144,7 +144,7 @@ const Projects = ({ t }) =>
 
         span {
           grid-column: 4 / span 3;
-          margin-top: -2.2625rem;
+          margin-top: -3.2625rem;
           font-size: 1.5rem;
           line-height: 2rem;
         }

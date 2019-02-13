@@ -13,7 +13,6 @@ const getAnimationProperties = slideTo => {
   const defaultStyles = {
     gridColumn: '1 / span 12',
     gridRow: 1,
-    display: 'block',
     opacity: 0,
     transition: `
       opacity ${animationDuration}ms linear,
@@ -152,7 +151,7 @@ class Portfolio extends PureComponent {
         </article><style jsx>{`
           article {
             position: relative;
-            margin-top: 7.9375rem;
+            margin-top: 9.9375rem;
             margin-left: auto;
             margin-right: auto;
             width: 1792px;
@@ -227,7 +226,7 @@ class Portfolio extends PureComponent {
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             article {
-              margin-top: 10.9375rem;
+              margin-top: 9.9375rem;
               width: 1232px;
             }
 
@@ -238,7 +237,7 @@ class Portfolio extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             article {
-              margin-top: 5.5rem;
+              margin-top: 6.5rem;
               width: 944px;
             }
 
@@ -297,7 +296,7 @@ class Portfolio extends PureComponent {
 
               // 3rem занимает каждая колонка
               // 0.5rem занимает расстояние между ними
-              // паддинги
+              // 4rem это сумма паддингов
               width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 4}rem;
             }
           }

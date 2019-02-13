@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { string, shape } from 'prop-types'
+import getSrcSet from '../utils/client/getSrcSet'
 
 const defaultResolutions = ['360', '1024', '1280', '1360']
 const mediaRuleByResoluton = {
@@ -16,30 +17,22 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
           <source
             media={mediaRuleByResoluton[resolution]}
             type='image/webp'
-            srcSet={`/static/images/${namespace}/${resolution}/${key}@1x.webp,
-                     /static/images/${namespace}/${resolution}/${key}@2x.webp 2x,
-                     /static/images/${namespace}/${resolution}/${key}@3x.webp 3x`}/>
+            srcSet={getSrcSet(namespace, resolution, key, 'webp', ['1x', '2x', '3x'])}/>
 
           <source
             media={mediaRuleByResoluton[resolution]}
-            srcSet={`/static/images/${namespace}/${resolution}/${key}@1x.${extension},
-                     /static/images/${namespace}/${resolution}/${key}@2x.${extension} 2x,
-                     /static/images/${namespace}/${resolution}/${key}@3x.${extension} 3x`}/>
+            srcSet={getSrcSet(namespace, resolution, key, extension, ['1x', '2x', '3x'])}/>
         </Fragment>
       )}
 
       <source
         type='image/webp'
-        srcSet={`/static/images/${namespace}/1920/${key}@1x.webp,
-                 /static/images/${namespace}/1920/${key}@2x.webp 2x,
-                 /static/images/${namespace}/1920/${key}@3x.webp 3x`}/>
+        srcSet={getSrcSet(namespace, 1920, key, 'webp', ['1x', '2x', '3x'])}/>
 
       <img
         className={className}
-        srcSet={`/static/images/${namespace}/1920/${key}@1x.${extension},
-                 /static/images/${namespace}/1920/${key}@2x.${extension} 2x,
-                 /static/images/${namespace}/1920/${key}@3x.${extension} 3x`}
-        src={`/static/images/${namespace}/1920/${key}@1x.${extension}`}
+        srcSet={getSrcSet(namespace, 1920, key, extension, ['1x', '2x', '3x'])}
+        src={getSrcSet(namespace, 1920, key, extension, ['1x'])}
         alt={alt} />
     </picture>
     <style jsx>{`

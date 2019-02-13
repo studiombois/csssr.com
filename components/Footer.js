@@ -14,7 +14,7 @@ const Footer = ({ socialLinks, lng, t }) => {
         <a>
           <img
             className='logo'
-            src='/static/icons/csssr_logo.svg'
+            src={require('../static/icons/csssr_logo.svg')}
             alt='CSSSR Logo'
           />
         </a>
@@ -32,7 +32,7 @@ const Footer = ({ socialLinks, lng, t }) => {
           >
             <img
               className='social-logo'
-              src={`/static/icons/${label.toLowerCase()}.svg`}
+              src={require(`../static/icons/${label.toLowerCase()}.svg`)}
               alt={`${label} logo`}
             />
           </a>

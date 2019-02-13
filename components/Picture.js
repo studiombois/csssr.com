@@ -1,20 +1,17 @@
 import React, { Fragment } from 'react'
 import { string, shape } from 'prop-types'
+import getSrcSet from '../utils/client/getSrcSet'
 
 const Picture = ({ className, image: { namespace, key, alt } }) =>
   <Fragment>
     <picture className={className}>
       <source
         type='image/webp'
-        srcSet={`/static/images/${namespace}/${key}@1x.webp,
-                /static/images/${namespace}/${key}@2x.webp 2x,
-                /static/images/${namespace}/${key}@3x.webp 3x`}/>
+        srcSet={getSrcSet(namespace, null, key, 'webp', ['1x', '2x', '3x'])}/>
       <img
         className={className}
-        srcSet={`/static/images/${namespace}/${key}@1x.png,
-                /static/images/${namespace}/${key}@2x.png 2x,
-                /static/images/${namespace}/${key}@3x.png 3x`}
-        src={`/static/images/${namespace}/${key}@1x.png`}
+        srcSet={getSrcSet(namespace, null, key, 'png', ['1x', '2x', '3x'])}
+        src={getSrcSet(namespace, null, key, 'png', ['1x'])}
         alt={alt}/>
     </picture>
   </Fragment>

@@ -7,7 +7,7 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
   <Fragment>
     <div className='icon-wrapper'>
       <img
-        src={`/static/icons/${fileExt.toLowerCase()}.svg`}
+        src={require(`../../../static/icons/${fileExt.toLowerCase()}.svg`)}
         alt={`${fileExt} file extension logo`}
       />
     </div>

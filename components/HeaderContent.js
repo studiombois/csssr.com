@@ -62,7 +62,7 @@ class HeaderContent extends PureComponent {
                   <a>
                     <img
                       className='logo'
-                      src='/static/icons/csssr_logo.svg'
+                      src={require('../static/icons/csssr_logo.svg')}
                       alt={logoAlt}
                     />
 
@@ -79,7 +79,7 @@ class HeaderContent extends PureComponent {
                 <span>
                   <img
                     className='logo'
-                    src='/static/icons/csssr_logo.svg'
+                    src={require('../static/icons/csssr_logo.svg')}
                     alt={logoAlt}
                   />
                   {logoSup &&

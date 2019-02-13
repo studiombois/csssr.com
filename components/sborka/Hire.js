@@ -131,7 +131,7 @@ class Hire extends PureComponent {
             position: relative;
             margin-top: 1rem;
             max-height: 570px;
-            background-image: url(/static/images/sborka/hire-orbits.svg);
+            background-image: url('${require('../../static/images/sborka/hire-orbits.svg')}');
             background-size: 1920px 570px;
             background-position: 50%;
             background-repeat: repeat-x;

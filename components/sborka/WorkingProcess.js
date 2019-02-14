@@ -235,7 +235,7 @@ const WorkingProcess = ({ t }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
-          margin-top: 7.5rem;
+          margin-top: 7rem;
           width: 1328px;
         }
 
@@ -254,7 +254,7 @@ const WorkingProcess = ({ t }) =>
 
       @media (min-width: 1280px) and (max-width: 1359px) {
         article {
-          margin-top: 7.5rem;
+          margin-top: 7rem;
           width: 1232px;
         }
 
@@ -273,7 +273,7 @@ const WorkingProcess = ({ t }) =>
 
       @media (min-width: 768px) and (max-width: 1279px) {
         article {
-          margin-top: 5.3125rem;
+          margin-top: 5rem;
           width: 944px;
         }
 
@@ -308,7 +308,7 @@ const WorkingProcess = ({ t }) =>
       @media (max-width: 767px) {
         article {
           grid-column: 1 / span 6;
-          margin-top: 5.3125rem;
+          margin-top: 5rem;
           width: 20.5rem;
         }
 

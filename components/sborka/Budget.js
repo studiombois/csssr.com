@@ -110,7 +110,7 @@ const Budget = ({ t, lng }) =>
 
       @media (min-width: 1360px) and (max-width: 1919px) {
         article {
-          margin-top: 8.9375rem;
+          margin-top: 11.9375rem;
           width: 1328px;
         }
 

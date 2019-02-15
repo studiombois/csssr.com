@@ -1,8 +1,8 @@
 const { ANALYZE } = process.env
 
 module.exports = {
-  publicRuntimeConfig: {
-    HR_ORIGIN: process.env.HR_ORIGIN,
+  env: {
+    CSSSR_SPACE_ORIGIN: process.env.CSSSR_SPACE_ORIGIN,
   },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module

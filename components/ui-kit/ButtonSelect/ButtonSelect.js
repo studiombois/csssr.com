@@ -109,7 +109,7 @@ class ButtonSelect extends PureComponent {
 
   handleScrollPageToForm = () => {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'floating_button' })
+      window.dataLayer.push({ event: 'floating_button_form' })
     }
   }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Router from 'next/router'
 import App, { Container } from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/browser'
@@ -45,6 +46,19 @@ export default class MyApp extends App {
     window.addEventListener('click', function () {
       document.body.classList.remove('outline')
     })
+
+    Router.events.on('routeChangeComplete', this.handleRouteChange)
+  }
+
+
+  componentWillUnmount() {
+    Router.events.off('routeChangeComplete', this.handleRouteChange)
+  }
+
+  handleRouteChange = () => {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'route_change_complete' })
+    }
   }
 
   render() {

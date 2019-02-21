@@ -23,7 +23,7 @@ const links = [{
   label: 'Email',
   localeLink: 'common:floatingButton.email',
   href: 'mailto:sales@csssr.com',
-  dataLayerEvent: 'floating_button_form',
+  dataLayerEvent: 'floating_button_email',
 }]
 
 const ButtonSelectList = props => {

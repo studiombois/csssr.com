@@ -72,7 +72,7 @@ const PortfolioItem = ({ name, href, index, t }) =>
       }
 
       div {
-        margin-top: -8.4375rem;
+        margin-top: -7.9375rem;
         grid-column: 2 / span 5;
         grid-row: 2;
       }
@@ -104,10 +104,13 @@ const PortfolioItem = ({ name, href, index, t }) =>
           margin-top: -1.75rem;
         }
 
-        p {
-          margin-top: 1rem;
+        p, a {
           font-size: 0.875rem;
           line-height: 1.5rem;
+        }
+
+        p {
+          margin-top: 1rem;
         }
 
         a {
@@ -120,10 +123,14 @@ const PortfolioItem = ({ name, href, index, t }) =>
           margin-top: 0.5625rem;
         }
 
-        p {
-          margin-top: 0.9375rem;
+        p, a {
+
           font-size: 0.875rem;
           line-height: 1.5rem;
+        }
+
+        p {
+          margin-top: 0.9375rem;
         }
 
         a {

@@ -94,7 +94,7 @@ const OurPrinciples = ({ t }) => {
 
         @media (min-width: 1360px) and (max-width: 1919px) {
           section {
-            margin-top: ${3.125 + (2 - index) * 7.5 + 7.5}rem;
+            margin-top: ${2.125 + (2 - index) * 7.5 + 7.5}rem;
           }
         }
 
@@ -166,7 +166,7 @@ const OurPrinciples = ({ t }) => {
         {howWeWorkItems.map(renderHowWeWorkItems)}
       </article><style jsx>{`
         article {
-          margin-top: 8rem;
+          margin-top: 8.4375rem;
           margin-right: auto;
           margin-left: auto;
           width: 1792px;
@@ -208,7 +208,7 @@ const OurPrinciples = ({ t }) => {
 
         @media (min-width: 768px) and (max-width: 1279px) {
           article {
-            margin-top: 6rem;
+            margin-top: 5.8125rem;
             width: 944px;
           }
 
@@ -231,7 +231,7 @@ const OurPrinciples = ({ t }) => {
         @media (max-width: 767px) {
           article {
             grid-column: 1 / span 6;
-            margin-top: 6rem;
+            margin-top: 5.8125rem;
             width: 20.5rem;
           }
 

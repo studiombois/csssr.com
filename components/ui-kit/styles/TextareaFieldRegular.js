@@ -70,10 +70,4 @@ export default css`
     padding-top: 0.375rem;
     font-size: 0.625rem;
   }
-
- @media (max-width: 1279px) {
-    textarea {
-      padding-top: 0.875rem;
-    }
-  }
 `

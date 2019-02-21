@@ -8,7 +8,7 @@ import Layout from '../../components/Layout'
 import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
 import withI18next from '../../utils/withI18next'
-import hrOrigin from '../../utils/hrOrigin'
+import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
 import contactOptions from '../../data/job/contactOptions'
@@ -112,7 +112,7 @@ const onSubmit = t => async values => {
 
   let res
   try {
-    res = await fetch(`${hrOrigin}/api/candidates`, {
+    res = await fetch(`${csssrSpaceOrigin}/api/candidates`, {
       method: 'POST',
       body: formData,
     })
@@ -144,7 +144,7 @@ const focusOnErrors = createDecorator()
 
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
-    const response = await fetch(`${hrOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}`)
+    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}`)
     const vacancies = await response.json()
 
     const vacancy = vacancies.find(v => v.pathName === query.jobPathName)

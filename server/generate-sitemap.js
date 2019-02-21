@@ -1,5 +1,6 @@
 const fetch = require('isomorphic-unfetch')
 const sitemap = require('sitemap')
+const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
 
 const oneDay = 24 * 60 * 60 * 1000
 
@@ -21,9 +22,7 @@ const cache = (asyncFunc, time) => {
 }
 
 const getVacancies = () =>
-  // TODO использовать HR_ORIGIN.
-  // Сейчас невозможно использовать, потому что этот код выполняется раньше, чем next/config инициализируется
-  fetch('http://hr.csssr.ru/api/public/vacancies/active').then(res =>
+  fetch(`${csssrSpaceOrigin}/api/public/vacancies/active`).then(res =>
     res.json().then(vacancies =>
       vacancies.map(vacancy => ({
         url: `https://csssr.com/ru/jobs/${vacancy.pathName}`,

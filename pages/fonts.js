@@ -38,7 +38,7 @@ export default class Fonts extends PureComponent {
         <div className='font_perforator-16-black'>Perforator 16 black</div>
         <div className='font_perforator-10-regular'>Perforator 10 regular</div>
       </section>
-      <style jsx global>{`
+      <style jsx>{`
         section {
           padding-top: 1rem;
           margin-rigth: auto;

@@ -1,17 +1,12 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import { I18nextProvider } from 'react-i18next'
-import * as Sentry from '@sentry/browser'
+import * as Sentry from '@sentry/node'
 import initialI18nInstance from '../common/i18n'
-import { APP_ENV, isDevelopment } from '../utils/app-environment'
-
-Sentry.init({
-  dsn: 'https://7b0bc195d134489f86572d94c310969b@sentry.io/1330752',
-  environment: APP_ENV,
-  debug: isDevelopment,
-})
+import '../utils/sentry'
 
 export default class MyApp extends App {
+  // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
 
@@ -21,9 +16,39 @@ export default class MyApp extends App {
       if (Component.getInitialProps) {
         pageProps = await Component.getInitialProps(ctx)
       }
-    } catch (e) {
-      Sentry.captureException(e, ctx)
-      throw e
+    } catch (error) {
+      Sentry.withScope(scope => {
+        const { req, res, errorInfo, query, pathname } = ctx
+
+        if (error.statusCode) {
+          scope.setExtra('statusCode', error.statusCode)
+        }
+
+        if (res && res.statusCode) {
+          scope.setExtra('statusCode', res.statusCode)
+        }
+
+        if (process.browser) {
+          scope.setTag('ssr', false)
+          scope.setExtra('query', query)
+          scope.setExtra('pathname', pathname)
+        } else {
+          scope.setTag('ssr', true)
+          scope.setExtra('url', req.url)
+          scope.setExtra('method', req.method)
+          scope.setExtra('headers', req.headers)
+          scope.setExtra('params', req.params)
+          scope.setExtra('query', req.query)
+        }
+
+        if (errorInfo) {
+          scope.setExtra('componentStack', errorInfo.componentStack)
+        }
+
+        Sentry.captureException(error)
+      })
+
+      throw error
     }
 
     return {
@@ -31,8 +56,10 @@ export default class MyApp extends App {
     }
   }
 
+  // This reports errors thrown while rendering components
   componentDidCatch(error, errorInfo) {
     Sentry.captureException(error, { extra: errorInfo })
+    super.componentDidCatch(error, errorInfo)
   }
 
   componentDidMount() {

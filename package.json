@@ -12,6 +12,7 @@
   "dependencies": {
     "@sentry/browser": "^4.4.2",
     "@sentry/node": "^4.3.4",
+    "@zeit/next-source-maps": "0.0.4-canary.1",
     "babel-plugin-ramda": "^2.0.0",
     "body-parser": "^1.18.3",
     "classnames": "^2.2.6",

@@ -133,10 +133,9 @@ const onSubmit = t => async values => {
     } catch {
       error = t('common:formErrors.general')
     }
-    Sentry.captureException(error, {
-      extra: {
-        reqBody: formData,
-      },
+    Sentry.withScope(scope => {
+      scope.setExtra('reqBody', formData)
+      Sentry.captureException(error)
     })
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'job_form_fail' })

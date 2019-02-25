@@ -74,11 +74,10 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
-        Sentry.captureException(createContactData.response.error, {
-          extra: {
-            createContactData,
-            reqBody: req.body,
-          },
+        Sentry.withScope(scope => {
+          scope.setExtra('createContactData', createContactData)
+          scope.setExtra('reqBody', req.body)
+          Sentry.captureException(createContactData.response.error)
         })
         return res.status(400).send({ error: 'Ошибка при создании контакта' })
       }
@@ -105,11 +104,10 @@ module.exports = (req, res) => {
         .then(response => response.json())
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
-            Sentry.captureException(createLeadData.response.error, {
-              extra: {
-                createLeadData,
-                reqBody: req.body,
-              },
+            Sentry.withScope(scope => {
+              scope.setExtra('createLeadData', createLeadData)
+              scope.setExtra('reqBody', req.body)
+              Sentry.captureException(createLeadData.response.error)
             })
             return res.status(400).send({ error: 'Ошибка при создании лида' })
           }

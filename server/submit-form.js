@@ -1,3 +1,4 @@
+const Sentry = require('@sentry/node')
 const fetch = require('isomorphic-unfetch')
 const { isProduction } = require('../utils/app-environment')
 const {
@@ -111,8 +112,13 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
-        console.log('x1b[31m', 'server/submit-form.js ERROR', JSON.stringify(createContactData), 'x1b[0m')
-        return res.status(400).send({ error: 'server/submit-form.js ошибка при создании контакта' })
+        Sentry.captureException(createContactData.response.error, {
+          extra: {
+            createContactData,
+            reqBody: req.body,
+          },
+        })
+        return res.status(400).send({ error: 'Ошибка при создании контакта' })
       }
 
       const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies
@@ -181,8 +187,13 @@ module.exports = (req, res) => {
         .then(response => response.json())
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
-            console.log('server/submit-form.js ERROR', JSON.stringify(createLeadData))
-            return res.status(400).send({ error: 'server/submit-form.js ошибка при создании лида' })
+            Sentry.captureException(createLeadData.response.error, {
+              extra: {
+                createLeadData,
+                reqBody: req.body,
+              },
+            })
+            return res.status(400).send({ error: 'Ошибка при создании лида' })
           }
 
           console.log('server/submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))

@@ -4,6 +4,7 @@ import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
 import fetch from 'isomorphic-unfetch'
 import objectToFormData from 'object-to-formdata'
+import Sentry from '@sentry/node'
 import Layout from '../../components/Layout'
 import Head from '../../components/Head'
 import CandidateForm from '../../components/job/CandidateForm'
@@ -132,6 +133,11 @@ const onSubmit = t => async values => {
     } catch {
       error = t('common:formErrors.general')
     }
+    Sentry.captureException(error, {
+      extra: {
+        reqBody: formData,
+      },
+    })
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'job_form_fail' })
     }

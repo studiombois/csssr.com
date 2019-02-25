@@ -6,8 +6,8 @@ const headerLinks = {
     href: '#services',
     label: 'dev:headerNav.services',
   }, {
-    href: '#customers',
-    label: 'dev:headerNav.customers',
+    href: '#clients',
+    label: 'dev:headerNav.clients',
   }, {
     href: '#hire-us',
     label: 'dev:headerNav.hireUs',

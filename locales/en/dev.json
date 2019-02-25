@@ -6,7 +6,7 @@
   "headerNav": {
     "competence": "Competence",
     "services": "Services",
-    "customers": "Customers",
+    "clients": "Clients",
     "hireUs": "Hire us"
   },
   "imgAlt": {
@@ -43,14 +43,36 @@
     "text3": "We&nbsp;follow the latest trends and update our work space with new tools consistently.",
     "butonText": "More"
   },
-  "partners": {
+  "clients": {
     "title": "More than 450 completed projects in&nbsp;different industries",
-    "iTTitle": "IT companies",
-    "estateTitle": "Real Estate",
-    "financeTitle": "Finance & banking",
-    "healthTitle": "Health",
-    "othersTitle": "Others",
-    "telecomTitle": "Telecom"
+    "text1": "We&nbsp;work with large companies for whom strong online presence is&nbsp;important. We&nbsp;share their business interests and help them to&nbsp;achieve their goals.",
+    "text2": "And other major Russian companies that can not be&nbsp;named in&nbsp;accordance with NDA",
+    "tabs": {
+      "financeAndBanking": "Finance & banking",
+      "it": "IT companies",
+      "realEstate": "Real Estate",
+      "retail": "Retail",
+      "others": "Others"
+    },
+    "imgAlts": {
+      "innova": "Innova logo",
+      "rUcenter": "RU-CENTER logo",
+      "kaspersky": "Kaspersky lab logo",
+      "mammy": "Mammy TV logo",
+      "aventica": "Aventica logo",
+      "notamedia": "NOTAMEDIA logo",
+      "kiwiTaxi": "KiwiTaxi logo",
+      "nutri": "Nutrilogic logo",
+      "relief": "Relief lofo",
+      "tsum": "TSUM logo",
+      "yandexNedv": "Yandex.Nedvizhimost logo",
+      "cian": "CIAN logo",
+      "tinkoff": "Tinkoff Bank logo",
+      "alfaBank": "Alfa Bank logo",
+      "bcs": "BCS logo",
+      "sravni": "Sravni.ru logo",
+      "evotor": "EVOTOR logo"
+    }
   },
   "perfect": {
     "title": "We&nbsp;were&nbsp;born with a&nbsp;gene of&nbsp;perfectionism",

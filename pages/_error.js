@@ -87,7 +87,7 @@ class MyError extends React.Component {
     </li>
 
   render() {
-    const { t, lng: lngCodeFromI18n, statusCode, i18n } = this.props
+    const { t, lng: lngCodeFromI18n, statusCode = 500, i18n } = this.props
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`
 

@@ -5,7 +5,7 @@ import toolsForCompetence from '../../data/dev/toolsForCompetence'
 const LogosSheet = () =>
   <Fragment>
     {toolsForCompetence.map(tool =>
-      <figure className={tool.iconName}>
+      <figure key={tool.iconName} className={tool.iconName}>
         <LogoWithText
           iconName={tool.iconName}
           logoCaption={tool.logoCaption}

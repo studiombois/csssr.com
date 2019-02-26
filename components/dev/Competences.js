@@ -6,21 +6,21 @@ import FoldArrow from '../../static/icons/foldArrow.svg'
 
 class Competences extends PureComponent {
   state = {
-    isCuted: true,
+    isCut: true,
   }
 
   handleUncutArticle = () => {
     this.setState({
-      isCuted: false,
+      isCut: false,
     })
   }
 
   render() {
     const { t, lng } = this.props
-    const { isCuted } = this.state
+    const { isCut } = this.state
 
     return <Fragment>
-      <article className={cn('grid-container', { is_cuted: isCuted, lng_en: lng === 'en', lng_ru: lng === 'ru' })}>
+      <article className={cn('grid-container', { is_cut: isCut, lng_en: lng === 'en', lng_ru: lng === 'ru' })}>
         <h2
           id='competences'
           className='font_h2-slab'
@@ -76,11 +76,11 @@ class Competences extends PureComponent {
         />
       </article>
 
-      { isCuted &&
+      { isCut &&
           <div className='grid-container'>
             <div className='border-bottom'/>
             <button onClick={this.handleUncutArticle}>
-              {t('dev:competence.butonText')}
+              {t('dev:competence.buttonText')}
               <FoldArrow style={{ marginLeft: '0.375rem' }}/>
             </button>
           </div>
@@ -93,7 +93,7 @@ class Competences extends PureComponent {
           transition: height 300ms linear;
         }
 
-        article.is_cuted {
+        article.is_cut {
           height: 41rem;
         }
 
@@ -279,11 +279,11 @@ class Competences extends PureComponent {
             height: 148.5625rem;
           }
 
-          article.is_cuted {
+          article.is_cut {
             height: 43.5rem;
           }
 
-          article.is_cuted.lng_en {
+          article.is_cut.lng_en {
             height: 41.5rem;
           }
 
@@ -325,7 +325,7 @@ class Competences extends PureComponent {
             height: 108.0625rem;
           }
 
-          article.is_cuted {
+          article.is_cut {
             height: 29.5rem;
           }
 
@@ -434,15 +434,15 @@ class Competences extends PureComponent {
             height: 111.5625rem;
           }
 
-          article.is_cuted {
+          article.is_cut {
             height: 28rem;
           }
 
-          article.is_cuted.lng_en {
+          article.is_cut.lng_en {
             height: 26rem;
           }
 
-          article.is_cuted {
+          article.is_cut {
             height: 28rem;
           }
 

@@ -1,23 +1,28 @@
 import React, { Fragment, PureComponent } from 'react'
-import Common from '../../components/Common'
-import Settings from '../../components/Settings'
-import Head from '../../components/Head'
-import Text from '../../components/Text'
+import cn from 'classnames'
 import LogosSheet from '../../components/dev/LogosSheet'
 import withI18next from '../../utils/withI18next'
+import FoldArrow from '../../static/icons/foldArrow.svg'
 
 class Competences extends PureComponent {
+  state = {
+    isCut: true,
+  }
+
+  handleUncutArticle = () => {
+    this.setState({
+      isCut: false,
+    })
+  }
+
   render() {
-    const { t } = this.props
+    const { t, lng } = this.props
+    const { isCut } = this.state
 
     return <Fragment>
-      <Common />
-      <Settings />
-      <Text />
-      <Head title='компетенции' description='тестовая страница компетенций' />
-      <article className='grid-container'>
+      <article className={cn('grid-container', { is_cut: isCut, lng_en: lng === 'en', lng_ru: lng === 'ru' })}>
         <h2
-          id='competence'
+          id='competences'
           className='font_h2-slab'
           dangerouslySetInnerHTML={{ __html: t('dev:competence.title1') }}
         />
@@ -70,24 +75,32 @@ class Competences extends PureComponent {
           dangerouslySetInnerHTML={{ __html: t('dev:competence.text3') }}
         />
       </article>
+
+      { isCut &&
+          <div className='grid-container'>
+            <div className='border-bottom'/>
+            <button onClick={this.handleUncutArticle}>
+              {t('dev:competence.buttonText')}
+              <FoldArrow style={{ marginLeft: '0.375rem' }}/>
+            </button>
+          </div>
+      }
+
       <style jsx>{`
         article {
-          margin-left: auto;
-          margin-right: auto;
-          width: 1792px;
-          height: 154.5rem;
+          height: 146.0625rem;
+          overflow: hidden;
+          transition: height 300ms linear;
+        }
+
+        article.is_cut {
+          height: 41rem;
         }
 
         h2:first-of-type {
           grid-row: 1;
           grid-column: 2 / span 4;
           margin-top: 18.9325rem;
-        }
-
-        .logos-and-text-container {
-          position: relative;
-          grid-row: 2;
-          grid-column: 2 / span 4;
         }
 
         h2:nth-of-type(2) {
@@ -134,6 +147,42 @@ class Competences extends PureComponent {
           letter-spacing: 0.35rem;
           text-transform: uppercase;
           color: #1d1d1d;
+        }
+
+        button {
+          grid-column: 6 / span 2;
+          padding: 1rem 1.5rem;
+          display: flex;
+          border: none;
+          align-items: center;
+          justify-content: center;
+          font-family: Roboto;
+          font-size: 0.625rem;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1rem;
+          letter-spacing: 0.08125rem;
+          text-transform: uppercase;
+          color: #345eff;
+          background: none;
+          cursor: pointer;
+        }
+
+        button:hover {
+          color: #0254d8;
+        }
+
+        .grid-container {
+          margin-left: auto;
+          margin-right: auto;
+          width: 1792px;
+        }
+
+        .logos-and-text-container {
+          position: relative;
+          grid-row: 2;
+          grid-column: 2 / span 4;
         }
 
         .react {
@@ -185,17 +234,23 @@ class Competences extends PureComponent {
           left: 0;
         }
 
+        .border-bottom {
+          grid-column: 2 / span 10;
+          height: 1px;
+          background-color: #979797;
+        }
+
         @media (min-width: 1360px) and (max-width: 1919px) {
-          article {
+          h2:last-of-type {
+            margin-top: 23.5rem;
+          }
+
+          .grid-container {
             width: 1328px;
           }
 
           .logos-and-text-container {
             grid-column: 2 / span 5;
-          }
-
-          h2:last-of-type {
-            margin-top: 23.5rem;
           }
 
           .react {
@@ -221,16 +276,27 @@ class Competences extends PureComponent {
 
         @media (min-width: 1280px) and (max-width: 1359px) {
           article {
-            width: 1232px;
-            height: 157rem;
+            height: 148.5625rem;
           }
 
-          .logos-and-text-container {
-            grid-column: 2 / span 5;
+          article.is_cut {
+            height: 43.5rem;
+          }
+
+          article.is_cut.lng_en {
+            height: 41.5rem;
           }
 
           h2:last-of-type {
             margin-top: 23.5rem;
+          }
+
+          .grid-container {
+            width: 1232px;
+          }
+
+          .logos-and-text-container {
+            grid-column: 2 / span 5;
           }
 
           .react {
@@ -256,16 +322,15 @@ class Competences extends PureComponent {
 
         @media (min-width: 768px) and (max-width: 1279px) {
           article {
-            width: 944px;
-            height: 113.5rem;
+            height: 108.0625rem;
+          }
+
+          article.is_cut {
+            height: 29.5rem;
           }
 
           h2:first-of-type {
             margin-top: 12.5rem;
-          }
-
-          .logos-and-text-container {
-            grid-column: 2 / span 5;
           }
 
           h2:nth-of-type(2) {
@@ -294,6 +359,14 @@ class Competences extends PureComponent {
           figcaption {
             font-size: 1.125rem;
             letter-spacing: 0.2625rem;
+          }
+
+          .grid-container {
+            width: 944px;
+          }
+
+          .logos-and-text-container {
+            grid-column: 2 / span 5;
           }
 
           .react {
@@ -346,7 +419,7 @@ class Competences extends PureComponent {
           }
 
           @media (max-width: 1023px) {
-            article {
+            .grid-container {
               width: 59rem;
             }
           }
@@ -354,20 +427,28 @@ class Competences extends PureComponent {
 
         @media (max-width: 767px) {
           article {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            width: 22.5rem;
-            height: 119rem;
-            overflow: hidden;
+            height: 113.5625rem;
+          }
+
+          article.lng_en {
+            height: 111.5625rem;
+          }
+
+          article.is_cut {
+            height: 28rem;
+          }
+
+          article.is_cut.lng_en {
+            height: 26rem;
+          }
+
+          article.is_cut {
+            height: 28rem;
           }
 
           h2:first-of-type {
             grid-column: 1 / span 4;
             margin-top: 6.5rem;
-          }
-
-          .logos-and-text-container {
-            grid-column: 1 / span 4;
           }
 
           h2:nth-of-type(2) {
@@ -406,6 +487,20 @@ class Competences extends PureComponent {
           figcaption {
             font-size: 0.875rem;
             letter-spacing: 0.2rem;
+          }
+
+          button {
+            grid-column: 2 / span 4;
+          }
+
+          .grid-container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            width: 22.5rem;
+          }
+
+          .logos-and-text-container {
+            grid-column: 1 / span 4;
           }
 
           .react {
@@ -456,8 +551,15 @@ class Competences extends PureComponent {
           .logos-sheet {
             top: calc(100% + 37.3125rem);
             left: 0;
+            z-index: -1;
+          }
 
-            outline: 1px solid red;
+          .lng_en .logos-sheet {
+            top: calc(100% + 35.3125rem);
+          }
+
+          .border-bottom {
+            grid-column: 1 / span 6;
           }
         }
       `}</style>

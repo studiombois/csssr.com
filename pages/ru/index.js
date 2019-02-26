@@ -3,6 +3,7 @@ import Head from '../../components/Head'
 import Form from '../../components/dev/Form'
 import Hire from '../../components/dev/Hire'
 import Feature1 from '../../components/dev/Feature1'
+import Competences from '../../components/dev/Competences'
 import Feature2 from '../../components/dev/Feature2'
 import Partners from '../../components/dev/Partners'
 import PartnersMobile from '../../components/dev/PartnersMobile'
@@ -52,6 +53,7 @@ class Dev extends PureComponent {
         <Feature1
           image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }}
         />
+        <Competences />
         <Feature2
           title={t('dev:time.title')}
           text={t('dev:time.text')}

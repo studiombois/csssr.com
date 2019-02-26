@@ -28,6 +28,7 @@ const picture = css.resolve`
     picture {
       grid-column: 1 / span 6;
       grid-row: 2;
+      margin-top: 0.5rem;
       height: 10.5rem;
     }
   }
@@ -48,7 +49,7 @@ export default ({ title, text, image, style }) =>
       section {
         margin-left: auto;
         margin-right: auto;
-        padding-top: 9.5rem;
+        padding-top: 8.4375rem;
         width: 1792px;
       }
 
@@ -85,7 +86,7 @@ export default ({ title, text, image, style }) =>
 
      @media (min-width: 768px) and (max-width: 1279px) {
         section {
-          padding-top: 6.1875rem;
+          padding-top: 5.4375rem;
           width: 944px;
         }
 
@@ -94,7 +95,7 @@ export default ({ title, text, image, style }) =>
         }
 
         p {
-          margin-top: 3.25rem;
+          margin-top: 2.75rem;
         }
 
         @media (max-width: 1023px) {
@@ -106,7 +107,7 @@ export default ({ title, text, image, style }) =>
 
       @media (max-width: 767px) {
         section {
-          padding-top: 3.5rem;
+          padding-top: 5.4375rem;
           width: 20.5rem;
         }
 

@@ -34,6 +34,15 @@
     "title": "We&nbsp;care about time to&nbsp;market metrics",
     "text": "Our methodology is&nbsp;similar to&nbsp;Scrum and involves working with sprints. Our sprints generally last one or&nbsp;two weeks. At&nbsp;the end of&nbsp;each sprint, we&nbsp;release a&nbsp;new build version and plan product features that will be&nbsp;developed in&nbsp;the next sprint."
   },
+  "competence": {
+    "title1": "Our tools",
+    "title2": "Technologies</br>with open-source license",
+    "title3": "Supporting technologies",
+    "text1": "There is&nbsp;no&nbsp;perfect framework.</br>We&nbsp;choose the most approptiate instrument based on&nbsp;the task.",
+    "text2": "We&nbsp;use technologies and frameworks with open-source code. They are free, oriented for commercial use and fully reliable due to&nbsp;the developers community participation.",
+    "text3": "We&nbsp;follow the latest trends and update our work space with new tools consistently.",
+    "buttonText": "More"
+  },
   "partners": {
     "title": "More than 450 completed projects in&nbsp;different industries",
     "iTTitle": "IT companies",

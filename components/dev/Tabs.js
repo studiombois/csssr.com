@@ -7,7 +7,7 @@ const Tabs = ({ t, tabs, pathToTabsLocales, activeTabId, onClick }) =>
   <Fragment>
     <ul>
       {tabs.map(tabId =>
-        <li className={cn({ active: tabId === activeTabId })}key={tabId}>
+        <li className={cn({ active: tabId === activeTabId })} key={tabId}>
           <button
             onClick={onClick}
             value={tabId}

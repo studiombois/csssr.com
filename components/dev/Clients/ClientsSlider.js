@@ -11,6 +11,7 @@ class ClientsSlider extends PureComponent {
   }
 
   state = {
+    // clientsGroups всегда массив хотя бы с одноим объектом с полями id и clients
     activeClientsGroupId: clientsGroups[0].id,
   }
 

@@ -14,6 +14,8 @@ const ClientsLogosList = ({ clients }) => {
       )}
       <style jsx>{`
         ul {
+          // высоту строки умножаем на количеество строк
+          // и прибавляем высоту отступа между строк
           height: ${(9.5 * numberOfRows) + (1.5 * (numberOfRows - 1))}rem;
         }
 

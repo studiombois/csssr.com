@@ -30,10 +30,6 @@
     "app": "Support and development of&nbsp;high load web applications",
     "stack": "Stack migration"
   },
-  "openSource": {
-    "title": "Open source technologies only",
-    "text": "We&nbsp;are the part of&nbsp;the global community of&nbsp;developers who use popular open source technologies and frameworks, such as&nbsp;React, Angular, Vue, Node and many others."
-  },
   "time": {
     "title": "We&nbsp;care about time to&nbsp;market metrics",
     "text": "Our methodology is&nbsp;similar to&nbsp;Scrum and involves working with sprints. Our sprints generally last one or&nbsp;two weeks. At&nbsp;the end of&nbsp;each sprint, we&nbsp;release a&nbsp;new build version and plan product features that will be&nbsp;developed in&nbsp;the next sprint."

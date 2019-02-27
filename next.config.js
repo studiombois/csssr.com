@@ -1,10 +1,26 @@
+const webpack = require('webpack')
+const withSourceMaps = require('@zeit/next-source-maps')()
+
 const { ANALYZE } = process.env
 
-module.exports = {
+module.exports = withSourceMaps({
+  poweredByHeader: false,
   env: {
     CSSSR_SPACE_ORIGIN: process.env.CSSSR_SPACE_ORIGIN,
   },
-  webpack: (config, { isServer }) => {
+  webpack: (config, { dev, isServer, buildId }) => {
+    if (!dev) {
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          'process.env.SENTRY_RELEASE': JSON.stringify(buildId),
+        })
+      )
+    }
+
+    if (!isServer) {
+      config.resolve.alias['@sentry/node'] = '@sentry/browser'
+    }
+
     // Fixes npm packages that depend on `fs` module
     config.node = {
       fs: 'empty',
@@ -35,4 +51,4 @@ module.exports = {
 
     return config
   },
-}
+})

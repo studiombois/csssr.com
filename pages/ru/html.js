@@ -16,6 +16,9 @@ import withI18next from '../../utils/withI18next'
 
 class Sborka extends PureComponent {
   static async getInitialProps(appContext) {
+    if (!appContext.nonExistentProp) {
+      throw new Error('WHAT AN ERROR')
+    }
 
     return {
       userAgent: appContext.req

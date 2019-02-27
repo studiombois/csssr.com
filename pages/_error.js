@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import css from 'styled-jsx/css'
-import * as Sentry from '@sentry/browser'
+import * as Sentry from '@sentry/node'
 import withI18next from '../utils/withI18next'
 import Common from '../components/Common'
 import Settings from '../components/Settings'
@@ -13,7 +13,6 @@ import LineFromTopToBottomIcon from '../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../static/icons/notFound.svg'
 import ServerError from '../static/icons/serverError.svg'
 import navItems from '../data/error/navItems'
-
 
 const titleLocalesByStatusCode = {
   404: 'error:errors.notFound.title',
@@ -88,7 +87,7 @@ class MyError extends React.Component {
     </li>
 
   render() {
-    const { t, lng: lngCodeFromI18n, statusCode, i18n } = this.props
+    const { t, lng: lngCodeFromI18n, statusCode = 500, i18n } = this.props
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`
 

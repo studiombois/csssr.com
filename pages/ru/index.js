@@ -34,9 +34,6 @@ class Dev extends PureComponent {
   render() {
     const { t } = this.props
     const { isMobile } = this.state
-    if (!this.state.nonExistentProp) {
-      throw new Error('WHY ME???')
-    }
 
     return (
       <Layout

@@ -20,12 +20,12 @@ const getAnimationProperties = slideTo => {
     `,
   }
 
-  const enteringTransfromStylesBySlideDirection = {
+  const enteringTransformStylesBySlideDirection = {
     right: 'translateX(5%)',
     left: 'translateX(-5%)',
   }
 
-  const exitingTransfromStylesBySlideDirection = {
+  const exitingTransformStylesBySlideDirection = {
     right: 'translateX(-5%)',
     left: 'translateX(5%)',
   }
@@ -33,12 +33,12 @@ const getAnimationProperties = slideTo => {
   const transitionStylesByAnimationState = {
     entering: {
       opacity: 0,
-      transform: enteringTransfromStylesBySlideDirection[slideTo],
+      transform: enteringTransformStylesBySlideDirection[slideTo],
     },
     entered: { opacity: 1, transform: 'translateX(0)' },
     exiting: {
       opacity: 0,
-      transform: exitingTransfromStylesBySlideDirection[slideTo],
+      transform: exitingTransformStylesBySlideDirection[slideTo],
     },
     exited: { opacity: 0, transform: 'translateX(0)', pointerEvents: 'none' },
   }
@@ -133,7 +133,7 @@ class Portfolio extends PureComponent {
               {portfolioProjects.map(this.renderPortfolioProjects)}
             </div>
 
-            <div className='controlls'>
+            <div className='controls'>
               <button
                 className={cn({ is_invisible: activeScrollItemIndex === 0 })}
                 onClick={this.handleChangeSlide(-1)}
@@ -206,7 +206,7 @@ class Portfolio extends PureComponent {
             grid-column: 1 / span 12;
           }
 
-          .controlls {
+          .controls {
             position: absolute;
             top: 30.5rem;
             display: flex;
@@ -220,7 +220,7 @@ class Portfolio extends PureComponent {
               width: 1328px;
             }
 
-            .controlls {
+            .controls {
               top: 22.5rem;
             }
           }
@@ -231,7 +231,7 @@ class Portfolio extends PureComponent {
               width: 1232px;
             }
 
-            .controlls {
+            .controls {
               top: 22.5rem;
             }
           }
@@ -247,7 +247,7 @@ class Portfolio extends PureComponent {
               line-height: 2rem;
             }
 
-            .controlls {
+            .controls {
               top: 15rem;
             }
 
@@ -284,7 +284,7 @@ class Portfolio extends PureComponent {
               width: 22,5rem;
             }
 
-            .controlls {
+            .controls {
               display: none;
             }
           }

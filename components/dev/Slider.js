@@ -47,7 +47,7 @@ class Slider extends PureComponent {
             )}
           </div>
 
-          <div className='controlls'>
+          <div className='controls'>
             <button
               className={cn({ is_invisible: activeSlide === 1 })}
               onClick={this.handleChangeSlide(-1)}
@@ -113,7 +113,7 @@ class Slider extends PureComponent {
             overflow: hidden;
           }
 
-          .controlls {
+          .controls {
             position: absolute;
             z-index: 1;
             padding-right: 1.5rem;

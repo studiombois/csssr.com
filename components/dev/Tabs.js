@@ -41,7 +41,7 @@ const Tabs = ({ t, tabs, activeTabId, onClick }) =>
       }
 
       button {
-        bacground: none;
+        background: none;
         border: none;
       }
 

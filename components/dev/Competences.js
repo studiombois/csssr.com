@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import LogosSheet from '../../components/dev/LogosSheet'
 import withI18next from '../../utils/withI18next'
-import FoldArrow from '../../static/icons/foldArrow.svg'
+import CutButton from './CutButton'
 
 class Competences extends PureComponent {
   state = {
@@ -77,13 +77,9 @@ class Competences extends PureComponent {
       </article>
 
       { isCut &&
-          <div className='grid-container'>
-            <div className='border-bottom'/>
-            <button onClick={this.handleUncutArticle}>
-              {t('dev:competence.buttonText')}
-              <FoldArrow style={{ marginLeft: '0.375rem' }}/>
-            </button>
-          </div>
+          <CutButton isCut={isCut} onClick={this.handleUncutArticle}>
+            {t('dev:competence.buttonText')}
+          </CutButton>
       }
 
       <style jsx>{`
@@ -149,30 +145,6 @@ class Competences extends PureComponent {
           color: #1d1d1d;
         }
 
-        button {
-          grid-column: 6 / span 2;
-          padding: 1rem 1.5rem;
-          display: flex;
-          border: none;
-          align-items: center;
-          justify-content: center;
-          font-family: Roboto;
-          font-size: 0.625rem;
-          font-weight: bold;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1rem;
-          letter-spacing: 0.08125rem;
-          text-transform: uppercase;
-          color: #345eff;
-          background: none;
-          cursor: pointer;
-        }
-
-        button:hover {
-          color: #0254d8;
-        }
-
         .grid-container {
           margin-left: auto;
           margin-right: auto;
@@ -232,12 +204,6 @@ class Competences extends PureComponent {
         .logos-sheet {
           top: calc(100% + 42rem);
           left: 0;
-        }
-
-        .border-bottom {
-          grid-column: 2 / span 10;
-          height: 1px;
-          background-color: #979797;
         }
 
         @media (min-width: 1360px) and (max-width: 1919px) {
@@ -489,10 +455,6 @@ class Competences extends PureComponent {
             letter-spacing: 0.2rem;
           }
 
-          button {
-            grid-column: 2 / span 4;
-          }
-
           .grid-container {
             padding-left: 1rem;
             padding-right: 1rem;
@@ -556,10 +518,6 @@ class Competences extends PureComponent {
 
           .lng_en .logos-sheet {
             top: calc(100% + 35.3125rem);
-          }
-
-          .border-bottom {
-            grid-column: 1 / span 6;
           }
         }
       `}</style>

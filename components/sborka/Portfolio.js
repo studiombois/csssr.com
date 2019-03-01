@@ -93,6 +93,7 @@ class Portfolio extends PureComponent {
         key={project.name}
         in={index === activeScrollItemIndex}
         timeout={animationDuration}
+        unmountOnExit
       >
         {state =>
           <div

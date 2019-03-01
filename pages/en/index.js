@@ -6,6 +6,7 @@ import Feature1 from '../../components/dev/Feature1'
 import Competences from '../../components/dev/Competences'
 import Feature2 from '../../components/dev/Feature2'
 import Clients from '../../components/dev/Clients'
+import Portfolio from '../../components/dev/Portfolio'
 import Layout from '../../components/Layout'
 import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
@@ -61,8 +62,8 @@ class Dev extends PureComponent {
           image={{ namespace: 'dev', key: 'time', alt: t('dev:imgAlt.time') }}
         />
         <Clients isMobile={isMobile} />
+        <Portfolio isMobile={isMobile}/>
         <Feature2
-          style={{ marginTop: '-0.5rem' }}
           title={t('dev:perfect.title')}
           text={t('dev:perfect.text')}
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}

@@ -4,15 +4,15 @@ import ClientsSliderMobile from './ClientsSliderMobile'
 import translate from '../../../utils/translate-wrapper'
 import { bool } from 'prop-types'
 
-const pathToTabsLocales = 'dev:clients.tabs'
 const Clients = ({ t, isMobile }) =>
   <Fragment>
     <section className='grid-container'>
       <h2 id='clients' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:clients.title') }} />
       <p className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('dev:clients.text1') }} />
       {isMobile
-        ? <ClientsSliderMobile pathToTabsLocales={pathToTabsLocales} />
-        : <ClientsSlider pathToTabsLocales={pathToTabsLocales} />}
+        ? <ClientsSliderMobile />
+        : <ClientsSlider />
+      }
       <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:clients.text2') }} />
     </section><style jsx>{`
       section {
@@ -75,7 +75,7 @@ const Clients = ({ t, isMobile }) =>
         }
 
         .font_p24-strong {
-          margin-top: 0.9375em;
+          margin-top: 1.0625rem;
         }
 
         @media (max-width: 1023px) {

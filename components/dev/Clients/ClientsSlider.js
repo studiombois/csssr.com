@@ -1,21 +1,16 @@
 import React, { Fragment, PureComponent } from 'react'
-import { string } from 'prop-types'
 import Tabs from '../Tabs'
 import ClientsLogosList from './ClientsLogosList'
 import clientsGroups from '../../../data/dev/clientsGroups'
 
 const tabs = clientsGroups.map(clientsGroup => clientsGroup.id)
 class ClientsSlider extends PureComponent {
-  static propTypes = {
-    pathToTabsLocales: string,
-  }
-
   state = {
     // clientsGroups всегда массив хотя бы с одноим объектом с полями id и clients
     activeClientsGroupId: clientsGroups[0].id,
   }
 
-  handleChangeactiveClientsGroupId = e =>
+  handleChangeActiveClientsGroupId = e =>
     this.setState({
       activeClientsGroupId: e.target.value,
     })
@@ -27,10 +22,9 @@ class ClientsSlider extends PureComponent {
     return (
       <Fragment>
         <Tabs
-          pathToTabsLocales={this.props.pathToTabsLocales}
           tabs={tabs}
           activeTabId={activeClientsGroupId}
-          onClick={this.handleChangeactiveClientsGroupId}
+          onClick={this.handleChangeActiveClientsGroupId}
         />
         <ClientsLogosList clients={activeClients} />
       </Fragment>

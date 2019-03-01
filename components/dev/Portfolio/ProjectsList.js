@@ -1,13 +1,24 @@
 import React, { Fragment, PureComponent } from 'react'
+import { arrayOf, shape, string, number } from 'prop-types'
 import cn from 'classnames'
 import Tabs from '../Tabs'
 import Project from './Project'
 import CutButton from '../CutButton'
 import translate from '../../../utils/translate-wrapper'
-import portfolio from '../../../data/dev/portfolio'
 
-const tabs = ['all'].concat(portfolio.map(projectsGroup => projectsGroup.id ))
+
 class ProjectsList extends PureComponent {
+  static proptypes = {
+    porfolio: arrayOf(shape({
+      id: string,
+      projects: arrayOf(shape({
+        id: string,
+        type: string,
+        slides: arrayOf(number),
+        href: string,
+      })),
+    })),
+  }
   state = {
     activeProjectsGroupId: 'all',
     listHeight: null,
@@ -17,6 +28,7 @@ class ProjectsList extends PureComponent {
   listRef = React.createRef()
 
   getProjectsOfActiveProjectsGroupId = () => {
+    const { portfolio } = this.props
     const { activeProjectsGroupId } = this.state
 
     return activeProjectsGroupId === 'all'
@@ -59,7 +71,7 @@ class ProjectsList extends PureComponent {
     />
 
   renderAllProjects = () =>
-    portfolio.map(projectGroup =>
+    this.props.portfolio.map(projectGroup =>
       projectGroup.projects.map((project, index) => index === 0
         ? this.renderProjectWithTitle(project, projectGroup.id)
         : this.renderProject(project)
@@ -67,17 +79,18 @@ class ProjectsList extends PureComponent {
     )
 
   renderSpecificProjects = () => {
-    return portfolio
+    return this.props.portfolio
       .find(projectGroup => projectGroup.id === this.state.activeProjectsGroupId)
       .projects
       .map(this.renderProject)
   }
 
   render() {
-    const { t } = this.props
+    const { t, portfolio } = this.props
     const { activeProjectsGroupId, listHeight, isCut } = this.state
     const projectsOfActiveProjectsGroupId = this.getProjectsOfActiveProjectsGroupId()
     const shouldShowCutButton = projectsOfActiveProjectsGroupId.length > 5
+    const tabs = ['all'].concat(portfolio.map(projectsGroup => projectsGroup.id ))
 
     return (
       <Fragment>

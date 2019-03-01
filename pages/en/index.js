@@ -11,9 +11,24 @@ import Layout from '../../components/Layout'
 import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
+import shuffleArray from '../../utils/shuffleArray'
+import portfolio from '../../data/dev/portfolio'
 
 
 class Dev extends PureComponent {
+  static async getInitialProps() {
+    const portfolioWithShuffledProjects = portfolio.map(projectGroup =>
+      ({
+        ...projectGroup,
+        projects: shuffleArray(projectGroup.projects),
+      })
+    )
+
+    const shuffledPortfolio = shuffleArray(portfolioWithShuffledProjects)
+
+    return { shuffledPortfolio }
+  }
+
   state = {
     isMobile: false,
   }
@@ -34,7 +49,7 @@ class Dev extends PureComponent {
     })
 
   render() {
-    const { t } = this.props
+    const { t, shuffledPortfolio } = this.props
     const { isMobile } = this.state
 
     return (
@@ -62,7 +77,7 @@ class Dev extends PureComponent {
           image={{ namespace: 'dev', key: 'time', alt: t('dev:imgAlt.time') }}
         />
         <Clients isMobile={isMobile} />
-        <Portfolio isMobile={isMobile}/>
+        <Portfolio portfolio={shuffledPortfolio} isMobile={isMobile}/>
         <Feature2
           title={t('dev:perfect.title')}
           text={t('dev:perfect.text')}

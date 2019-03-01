@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react'
-import { bool } from 'prop-types'
+import { bool, arrayOf, shape, string, number } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import ProjectsList from './ProjectsList'
 import ProjectsListMobile from './ProjectsListMobile'
-import portfolio from '../../../data/dev/portfolio'
 
-const Portfolio = ({ t, isMobile }) =>
+const Portfolio = ({ t, isMobile, portfolio }) =>
   <Fragment>
     <article className='grid-container'>
       <h2 id='portfolio' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:portfolio.title') }} />
@@ -19,7 +18,7 @@ const Portfolio = ({ t, isMobile }) =>
             </div>
           </Fragment>
         )
-        : <ProjectsList />
+        : <ProjectsList portfolio={portfolio} />
       }
     </article>
     <style jsx>{`
@@ -132,6 +131,15 @@ const Portfolio = ({ t, isMobile }) =>
 
 Portfolio.propTypes = {
   isMobile: bool,
+  porfolio: arrayOf(shape({
+    id: string,
+    projects: arrayOf(shape({
+      id: string,
+      type: string,
+      slides: arrayOf(number),
+      href: string,
+    })),
+  })),
 }
 
 export default translate()(Portfolio)

@@ -1,15 +1,14 @@
 import React from 'react'
-import { string } from 'prop-types'
 import ClientsLogosListMobile from './ClientsLogosListMobile'
 import clientsGroups from '../../../data/dev/clientsGroups'
 
 // 4 колоки занимает каждый айтем
 // 1 колонка расстояния между ними, кроме последнего
 const gridColumns = 4 * clientsGroups.length + (clientsGroups.length - 1)
-const ClientsSliderMobile = ({ pathToTabsLocales }) =>
+const ClientsSliderMobile = () =>
   <div className='scroller-wrapper'>
     <ul className='grid-container'>
-      <ClientsLogosListMobile pathToTabsLocales={pathToTabsLocales} />
+      <ClientsLogosListMobile />
     </ul>
     <style jsx>{`
       ul.grid-container {
@@ -37,9 +36,5 @@ const ClientsSliderMobile = ({ pathToTabsLocales }) =>
       }
     `}</style>
   </div>
-
-ClientsSliderMobile.propTypes = {
-  pathToTabsLocales: string,
-}
 
 export default ClientsSliderMobile

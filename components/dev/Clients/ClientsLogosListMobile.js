@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react'
-import { string } from 'prop-types'
 import ClientLogo from './ClientLogo'
 import translate from '../../../utils/translate-wrapper'
 import clientsGroups from '../../../data/dev/clientsGroups'
 
-const ClientsLogosListMobile = ({ t, pathToTabsLocales }) => clientsGroups.map((clientsGroup, index) =>
+const ClientsLogosListMobile = ({ t }) => clientsGroups.map((clientsGroup, index) =>
   <Fragment key={clientsGroup.id}>
     <li className='clients-group'>
-      <h3 dangerouslySetInnerHTML={{ __html: t(`${pathToTabsLocales}.${clientsGroup.id}`) }} />
+      <h3 dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${clientsGroup.id}`) }} />
 
       <ul className='logos'>
         {clientsGroup.clients.map(clientId =>
@@ -56,9 +55,5 @@ const ClientsLogosListMobile = ({ t, pathToTabsLocales }) => clientsGroups.map((
     `}</style>
   </Fragment>
 )
-
-ClientsLogosListMobile.propTypes = {
-  pathToTabsLocales: string,
-}
 
 export default translate()(ClientsLogosListMobile)

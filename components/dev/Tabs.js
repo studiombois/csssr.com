@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { arrayOf, string, func } from 'prop-types'
 import translate from '../../utils/translate-wrapper'
 
-const Tabs = ({ t, tabs, pathToTabsLocales, activeTabId, onClick }) =>
+const Tabs = ({ t, tabs, activeTabId, onClick }) =>
   <Fragment>
     <ul>
       {tabs.map(tabId =>
@@ -11,7 +11,7 @@ const Tabs = ({ t, tabs, pathToTabsLocales, activeTabId, onClick }) =>
           <button
             onClick={onClick}
             value={tabId}
-            dangerouslySetInnerHTML={{ __html: t(`${pathToTabsLocales}.${tabId}`) }}
+            dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${tabId}`) }}
           />
         </li>
       )}
@@ -58,7 +58,6 @@ const Tabs = ({ t, tabs, pathToTabsLocales, activeTabId, onClick }) =>
 
 Tabs.propTypes = {
   tabs: arrayOf(string),
-  pathToTabsLocales: string,
   onClick: func,
 }
 

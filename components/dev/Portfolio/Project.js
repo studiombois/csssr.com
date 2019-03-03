@@ -5,7 +5,10 @@ import Slider from '../Slider'
 
 const Project = project =>
   <li
-    className={cn({ 'smaller-margin-top': project.title })}
+    className={cn({
+      'smaller-margin-top': project.title,
+      [project.className]: !!project.className,
+    })}
   >
     { project.title &&
       <h3 className='font_h3-regular' dangerouslySetInnerHTML={{ __html: project.title }} />
@@ -23,14 +26,6 @@ const Project = project =>
         text-transform: uppercase;
       }
 
-      li {
-        margin-top: 3.125rem;
-      }
-
-      li.smaller-margin-top {
-        margin-top: 1.5625rem;
-      }
-
       li:nth-child(odd) {
         grid-column: 2 / span 5;
       }
@@ -39,20 +34,23 @@ const Project = project =>
         grid-column: 7 / span 5;
       }
 
+      li {
+        margin-top: 3.125rem;
+      }
+
+      // У элементов списка с заголовком маргин меньше
       li.smaller-margin-top:nth-child(n + 3) {
         margin-top: 6rem;
       }
 
-      // У элементов списка, у которых на строке есть заголовок, маргин больше
-      li.smaller-margin-top:nth-child(n + 3) + li:nth-child(n + 3):not(.smaller-margin-top) {
-        margin-top: 7.5625rem;
+      // У первых двух элементов списка с заголовком самый маленький маргин
+      li.smaller-margin-top:nth-child(-n + 2) {
+        margin-top: 1.5625rem;
       }
 
-      // У элементов списка, у которых на строке нет заголовка, маргин меньше
-      li:nth-child(n + 3):not(.smaller-margin-top),
-      li:nth-child(n + 3):not(.smaller-margin-top) + li:not(.smaller-margin-top),
-      li.smaller-margin-top:nth-child(n + 3) + li:nth-child(odd) {
-        margin-top: 5.5625rem;
+      // У элементов списка, у которых на строке есть заголовок, маргин больше
+      li.bigger-margin-top:nth-child(n + 3) {
+        margin-top: 7.5625rem;
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
@@ -88,6 +86,7 @@ Project.propTypes = {
   title: string,
   type: oneOf(['slider', 'video']),
   href: string,
+  className: string,
 }
 
 export default Project

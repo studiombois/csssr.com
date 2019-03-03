@@ -5,7 +5,8 @@ import Tabs from '../Tabs'
 import Project from './Project'
 import CutButton from '../CutButton'
 import translate from '../../../utils/translate-wrapper'
-
+import isOdd from '../../../utils/isOdd'
+import isEven from '../../../utils/isEven'
 
 class ProjectsList extends PureComponent {
   static proptypes = {
@@ -56,27 +57,41 @@ class ProjectsList extends PureComponent {
       key={project.id}
       id={project.id}
       type={project.type}
+      title={project.title}
       slides={project.slides}
       href={project.href}
+      className={project.className}
     />
 
-  renderProjectWithTitle = (project, projectGroupId) =>
-    <Project
-      key={project.id}
-      title={this.props.t(`dev:tabs.${projectGroupId}`)}
-      id={project.id}
-      type={project.type}
-      slides={project.slides}
-      href={project.href}
-    />
+  renderAllProjects = () => {
+    const projects = this.props.portfolio.reduce((accumulator, projectGroup) => {
+      projectGroup.projects.forEach((project, index) => {
+        const shouldHaveTitle = index === 0
 
-  renderAllProjects = () =>
-    this.props.portfolio.map(projectGroup =>
-      projectGroup.projects.map((project, index) => index === 0
-        ? this.renderProjectWithTitle(project, projectGroup.id)
-        : this.renderProject(project)
-      )
-    )
+        if (shouldHaveTitle) {
+          project.title = this.props.t(`dev:tabs.${projectGroup.id}`)
+        }
+
+        accumulator.push(project)
+      })
+
+      return accumulator
+    }, [])
+
+    return projects.map((project, index) => {
+      const nextProject = projects[index + 1]
+      const prevProject = projects[index - 1]
+      const lastProject = (index + 1) === projects.length
+      const hasTitleOnSameRow = (isOdd(index + 1) && nextProject && nextProject.title)
+                                || (!lastProject && isEven(index + 1) && prevProject && prevProject.title)
+
+      if (hasTitleOnSameRow) {
+        project.className = 'bigger-margin-top'
+      }
+
+      return this.renderProject(project)
+    })
+  }
 
   renderSpecificProjects = () => {
     return this.props.portfolio

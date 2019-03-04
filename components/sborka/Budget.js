@@ -60,7 +60,7 @@ const Budget = ({ t, lng }) =>
         dangerouslySetInnerHTML={{ __html: t('sborka:budget.postPricetext') }}
       />
       <p className='font_subhead-regular'>
-        {t('sborka:budget.articleText')} <a href={lng === 'ru' ? '/ru' : '/en'}>{t('sborka:budget.articleLinkText')} </a>
+        {t('sborka:budget.articleText')} <a href={lng === 'ru' ? '/ru' : '/en'} dangerouslySetInnerHTML={{ __html: t('sborka:budget.articleLinkText') }} />
       </p>
 
     </article><style jsx>{`

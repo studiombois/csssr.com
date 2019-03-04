@@ -1,3 +1,4 @@
+const Sentry = require('@sentry/node')
 const fetch = require('isomorphic-unfetch')
 const { isProduction } = require('../utils/app-environment')
 const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, CONTACT_FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
@@ -73,8 +74,12 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
-        console.log('server/school-submit-form.js ERROR', JSON.stringify(createContactData))
-        return res.status(400).send({ error: 'server/school-submit-form.js ошибка при создании контакта' })
+        Sentry.withScope(scope => {
+          scope.setExtra('createContactData', createContactData)
+          scope.setExtra('reqBody', req.body)
+          Sentry.captureException(createContactData.response.error)
+        })
+        return res.status(400).send({ error: 'Ошибка при создании контакта' })
       }
 
       return fetch(`${ORIGIN}/api/v2/leads/?${AUTH_QUERY}`, {
@@ -99,8 +104,12 @@ module.exports = (req, res) => {
         .then(response => response.json())
         .then(createLeadData => {
           if (createLeadData.response && createLeadData.response.error) {
-            console.log('server/school-submit-form.js ERROR', JSON.stringify(createLeadData))
-            return res.status(400).send({ error: 'server/school-submit-form.js ошибка при создании лида' })
+            Sentry.withScope(scope => {
+              scope.setExtra('createLeadData', createLeadData)
+              scope.setExtra('reqBody', req.body)
+              Sentry.captureException(createLeadData.response.error)
+            })
+            return res.status(400).send({ error: 'Ошибка при создании лида' })
           }
 
           console.log('server/school-submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))

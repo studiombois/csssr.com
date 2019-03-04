@@ -12,13 +12,9 @@ const submitForm = require('./submit-form')
 const schoolSubmitForm = require('./school-submit-form')
 const generateSitemap = require('./generate-sitemap')
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
-const { APP_ENV, isDevelopment, isProduction } = require('../utils/app-environment')
+const { isDevelopment, isProduction } = require('../utils/app-environment')
 
-Sentry.init({
-  dsn: 'https://1f3577495b4f4a3aac74c16fece4bd41@sentry.io/1330750',
-  environment: APP_ENV,
-  debug: isDevelopment,
-})
+require('../utils/sentry')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const app = next({ dev: isDevelopment })
@@ -47,6 +43,8 @@ i18n
       .then(() => {
         const server = express()
 
+        server.use(Sentry.Handlers.requestHandler())
+
         // TODO
         // Добавить favicon
 
@@ -74,7 +72,21 @@ i18n
           server.get(url, (req, res) => res.redirect(301, '/'))
         )
 
-        server.use(Sentry.Handlers.requestHandler())
+        // Отключаем хедер x-powered-by. Зачем разглашать информацию, какой веб-сервер/фреймворк мы используем?
+        server.disable('x-powered-by')
+
+        // In production we don't want to serve sourcemaps for anyone
+        if (isProduction) {
+          const sentryToken = process.env.SENTRY_TOKEN
+          server.get(/\.js\.map$/, (req, res, nextHandler) => {
+            if (!sentryToken || req.headers['x-sentry-token'] !== sentryToken) {
+              return res
+                .status(401)
+                .send('Authentication access token is required to access the source map.')
+            }
+            nextHandler()
+          })
+        }
 
         server.use((req, res, nextHandler) => {
           const allowedUtmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']

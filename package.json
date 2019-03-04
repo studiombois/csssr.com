@@ -12,6 +12,7 @@
   "dependencies": {
     "@sentry/browser": "^4.4.2",
     "@sentry/node": "^4.3.4",
+    "@zeit/next-source-maps": "0.0.4-canary.1",
     "babel-plugin-ramda": "^2.0.0",
     "body-parser": "^1.18.3",
     "classnames": "^2.2.6",
@@ -26,7 +27,7 @@
     "i18next-node-fs-backend": "^2.1.0",
     "i18next-xhr-backend": "^1.5.1",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "^8.0.1",
+    "next": "^8.0.3",
     "object-to-formdata": "^1.5.2",
     "optimize-png-for-web": "^0.1.5",
     "ramda": "^0.26.1",

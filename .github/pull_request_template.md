@@ -3,7 +3,7 @@
 - стенд: http://__HERE_BRANCH_NAME__.test.csssr.com
 
 ### Релиз
-* https://jira.csssr.io/browse/__HERE_JIRA_RELEASE_ID__
+* https://jira.csssr.io/projects/COM/versions/__HERE_JIRA_VERSION_ID__
 * стенд: http://release-__HERE_JIRA_RELEASE_ID__.test.csssr.com
 
 ## Чек-лист

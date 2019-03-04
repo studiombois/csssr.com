@@ -20,9 +20,8 @@ class Competences extends PureComponent {
     const { isCut } = this.state
 
     return <Fragment>
-      <article className={cn('grid-container', { is_cut: isCut, lng_en: lng === 'en', lng_ru: lng === 'ru' })}>
+      <article id='competences' className={cn('grid-container', { is_cut: isCut, lng_en: lng === 'en', lng_ru: lng === 'ru' })}>
         <h2
-          id='competences'
           className='font_h2-slab'
           dangerouslySetInnerHTML={{ __html: t('dev:competence.title1') }}
         />

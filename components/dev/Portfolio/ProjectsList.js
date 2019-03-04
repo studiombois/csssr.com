@@ -44,11 +44,22 @@ class ProjectsList extends PureComponent {
 
   handleCutListOnOff = () => {
     const listNode = this.listRef.current
+    const scrollToNextBlock = () => {
+      if (this.state.isCut) {
+        const elem = document.getElementById('portfolio')
+        const srollToOffset = elem.offsetTop - 80
+
+        window.scrollTo({
+          top: srollToOffset,
+          behavior: 'smooth',
+        })
+      }
+    }
 
     this.setState({
       isCut: !this.state.isCut,
       listHeight: listNode.offsetHeight,
-    })
+    }, scrollToNextBlock)
   }
 
   renderProject = project =>

@@ -47,10 +47,11 @@ class ProjectsList extends PureComponent {
     const scrollToNextBlock = () => {
       if (this.state.isCut) {
         const elem = document.getElementById('portfolio')
-        const srollToOffset = elem.offsetTop - 80
+        const magicNumber = 80 // Что-бы не прижиматься верхней границей страницы к заголовку
+        const scrollToOffset = elem.offsetTop - magicNumber
 
         window.scrollTo({
-          top: srollToOffset,
+          top: scrollToOffset,
           behavior: 'smooth',
         })
       }

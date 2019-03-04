@@ -231,8 +231,18 @@ class Slider extends PureComponent {
               overflow: hidden;
             }
 
+            .controls {
+              display: none;
+            }
+
             .slider::after {
-              pointer-events: none
+              background-color: rgba(0, 0, 0, 0.15);
+              pointer-events: none;
+            }
+
+            a {
+              color: #fff;
+              pointer-events: auto;
             }
           }
         `}</style>

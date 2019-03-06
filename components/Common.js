@@ -28,6 +28,10 @@ const Common = () =>
       outline: none;
     }
 
+    body:not(.outline) button::-moz-focus-inner {
+      border: 0;
+    }
+
     ul {
       list-style: none;
     }

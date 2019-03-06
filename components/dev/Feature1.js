@@ -31,11 +31,6 @@ const Feature1 = ({ t, image }) =>
         <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
         <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
       </div>
-
-      <footer className='grid-container'>
-        <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.title') }} />
-        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:openSource.text') }} />
-      </footer>
     </section>
     <style jsx>{`
       section {
@@ -56,22 +51,6 @@ const Feature1 = ({ t, image }) =>
       p {
         grid-column: 3 / span 4;
         grid-row: 2;
-      }
-
-      footer {
-        grid-row: 3;
-        grid-column: 1 / span 12;
-        margin-top: 7rem;
-      }
-
-      footer h2,
-      footer p {
-        grid-column: 7 / span 5;
-      }
-
-      footer h2 {
-        text-align: left;
-        margin-bottom: 0.5rem;
       }
 
       .picture-wrapper {
@@ -190,14 +169,6 @@ const Feature1 = ({ t, image }) =>
           left: 31.875rem;
         }
 
-        footer {
-          margin-top: 3.5rem;
-        }
-
-        footer h2 {
-          margin-bottom: 0.8125rem;
-        }
-
         @media (max-width: 1023px) {
           section {
             width: 59rem;
@@ -216,32 +187,12 @@ const Feature1 = ({ t, image }) =>
         }
 
         h2,
-        p,
-        footer {
+        p {
           grid-column: 1 / span 6;
         }
 
         h2 {
           margin-bottom: 1.1875rem;
-        }
-
-        footer {
-          margin-top: 3.0625rem;
-          grid-row: 4;
-        }
-
-        footer h2,
-        footer p {
-          grid-column: 2 / span 5;
-        }
-
-        // Заголовок h2 в футере в мобильной версии меняет свои стили с
-        // font_h2-regular на font_h3-regular, что избежать использование
-        // JS Media Queries я просто продублирую стили font_h3-regular
-        footer h2 {
-          margin-bottom: 0.9375rem;
-          font-size: 0.875rem;
-          line-height: 1.5rem;
         }
 
         .picture-wrapper {

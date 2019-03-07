@@ -59,6 +59,8 @@ const picturesMap = {
   'legal-expert': 'Documents_1',
   'hr-manager': 'Recruiter',
   'java-developer': 'Developer_2',
+  'junior-project-manager': 'Project_manager',
+  'account-manager-ee': 'Account_manager_1',
 }
 
 const divideSections = sections => {

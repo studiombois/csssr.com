@@ -19,6 +19,8 @@ export default pathname => {
     return 'common:menu.privacy-policy'
   case ('/en/cookies-policy'):
     return 'common:menu.cookies-policy'
+  case ('/ru/mvp'):
+    return 'common:menu.mvp'
   default:
     return '404'
   }

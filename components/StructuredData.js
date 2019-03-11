@@ -1,13 +1,14 @@
 import React from 'react'
 
+// https://developers.google.com/search/docs/guides/intro-structured-data
 export default () =>
   <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `
   {
     "@context" : "http://schema.org",
     "@type" : "Organization",
     "name" : "CSSSR",
-    "url" : "http://csssr.com",
-    "logo": "http://csssr.com/static/csssr_logo.png",
+    "url" : "https://csssr.com",
+    "logo": "https://csssr.com/static/csssr_logo.png",
     "sameAs" : [
       "https://www.facebook.com/csssr/",
       "https://www.linkedin.com/company/csssr/",

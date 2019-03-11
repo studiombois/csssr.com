@@ -7,6 +7,7 @@ module.exports = withSourceMaps({
   poweredByHeader: false,
   env: {
     CSSSR_SPACE_ORIGIN: process.env.CSSSR_SPACE_ORIGIN,
+    IS_PRODUCTION: process.env.IS_PRODUCTION,
   },
   webpack: (config, { dev, isServer, buildId }) => {
     if (!dev) {

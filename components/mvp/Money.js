@@ -22,6 +22,21 @@ const picture = css.resolve`
       margin-top: -0.8rem;
     }
   }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    picture {
+      margin-top: -2.8rem;
+      grid-column: 8 / span 5;
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      margin-top: -3.4rem;
+      grid-column: 2 / span 4;
+      grid-row: 1;
+    }
+  }
 `
 
 class Money extends PureComponent {
@@ -83,6 +98,50 @@ class Money extends PureComponent {
             article {
               margin-top: 5.2rem;
               width: 1232px;
+            }
+          }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            article {
+              margin-top: 2.9rem;
+              width: 944px;
+            }
+
+            h2 {
+              margin-bottom: 2rem;
+              font-size: 1.5rem;
+            }
+
+            p {
+              font-size: 1rem;
+              line-height: 1.5rem
+            }
+          }
+
+          @media (max-width: 767px) {
+            article {
+              margin-top: 5.8rem;
+              width: 20.5rem;
+            }
+
+            h2 {
+              margin-top: 1rem;
+              margin-bottom: 0.9rem;
+              padding-left: 0;
+              grid-column: 1 / span 6;
+              grid-row: 2;
+              text-align: center;
+              font-size: 1.5rem;
+            }
+
+            p {
+              padding-right: 0.5rem;
+              padding-left: 0.5rem;
+              grid-column: 1 / span 6;
+              grid-row: 3;
+              font-size: 1rem;
+              text-align: center;
+              line-height: 1.5rem;
             }
           }
         `}</style>

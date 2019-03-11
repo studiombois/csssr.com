@@ -95,9 +95,9 @@ class HeaderContent extends PureComponent {
               'with-logo-sup': logoSup,
             })}>
               <ul className='nav-list'>
-                {links.map(({ href, label }) => (
+                {links.map(({ href, label, hideOnTablet }) => (
                   <li
-                    className='nav-list-item'
+                    className={`nav-list-item${hideOnTablet ? ' nav-list-item_hide-on-tablet' : ''}`}
                     key={`nav-link-${href}-${label}`}
                   >
                     <a className='nav-list-link font_top-menu' href={href}>{t(label)}</a>
@@ -299,6 +299,10 @@ class HeaderContent extends PureComponent {
               .logo {
                 width: 4rem;
                 height: 1rem;
+              }
+
+              .nav-list-item_hide-on-tablet {
+                display: none;
               }
 
               @media (max-width: 1023px) {

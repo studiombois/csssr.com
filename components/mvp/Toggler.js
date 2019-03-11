@@ -15,7 +15,7 @@ class Toggler extends PureComponent {
           div {
             position: relative;
             display: inline-flex;
-            height: 48px;
+            height: 3rem;
             background-color: #cecece;
           }
 

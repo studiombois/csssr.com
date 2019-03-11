@@ -56,6 +56,32 @@ class Process extends PureComponent {
               margin-top: 13.1rem;
             }
           }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            section {
+              margin-top: 5.6rem;
+              width: 944px;
+              height: 1090px;
+            }
+
+            h2 {
+              margin-top: 11.2rem;
+              font-size: 1.5rem;
+            }
+          }
+          @media (max-width: 767px) {
+            section {
+              margin-top: 6rem;
+              width: 20.5rem;
+              height: 697px;
+            }
+
+            h2 {
+              margin-top: 7.9rem;
+              grid-column: 1 / span 6;
+              font-size: 1.5rem;
+            }
+          }
         `}</style>
       </Fragment>
     )

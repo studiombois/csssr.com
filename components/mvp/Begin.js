@@ -22,8 +22,28 @@ const picture = css.resolve`
 
   @media (min-width: 1280px) and (max-width: 1359px) {
     picture {
-      left: 14.6%;
+      left: 15%;
       width: 1360px;
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    picture {
+      left: 20.5%;
+      width: 50.43rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    picture {
+      left: 17.2%;
+      width: 53rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      left: -4.5%;
+      width: 22.5rem;
     }
   }
 `
@@ -34,6 +54,34 @@ const planet = css.resolve`
     width: 100%;
     display: block;
     height: auto;
+  }
+
+  @media (min-width: 1360px) and (max-width: 1919px) {
+    picture {
+      margin-top: -3.4rem;
+      margin-left: 0.3rem;
+      width: 80px;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1359px) {
+    picture {
+      margin-top: -3.8rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    picture {
+      margin-left: -0.4rem;
+      margin-top: -4.2rem;
+      width: 85px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      display: none;
+    }
   }
 `
 
@@ -63,7 +111,18 @@ class Begin extends PureComponent {
               image={{ namespace: 'mvp', key: 'yellow_planet', alt: imageAlt }}
             />
           </div>
-          <div className='rocket' />
+          <div className='rocket'>
+            <div className='rocket-inner'>
+              {/* <img className='rocket-body' src={require(`../../static/images/mvp/red_block.png`)} />
+              <img className='rocket-dress' src={require(`../../static/images/mvp/yellow_block.png`)} />
+              <img className='rocket-blue' src={require(`../../static/images/mvp/blue_line.png`)} />
+              <img className='rocket-arrow' src={require(`../../static/images/mvp/yellow_arrow.png`)} />
+              <img className='rocket-jet-1' src={require(`../../static/images/mvp/green_line_left.png`)} />
+              <img className='rocket-jet-2' src={require(`../../static/images/mvp/green_line_middle.png`)} />
+              <img className='rocket-jet-3' src={require(`../../static/images/mvp/green_line_right.png`)} />
+              <img className='rocket-black' src={require(`../../static/images/mvp/black_line.png`)} /> */}
+            </div>
+          </div>
           <p className='rocket-text font_p16-regular'>{rocketText}</p>
         </article><style jsx>{`
           article {
@@ -71,6 +130,7 @@ class Begin extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             width: 1792px;
+            max-width: 100%;
           }
 
           h1 {
@@ -97,6 +157,7 @@ class Begin extends PureComponent {
           }
 
           .rocket-text {
+            z-index: 2;
             margin-bottom: 9rem;
             grid-column: 8 / span 4;
             grid-row: 4;
@@ -110,8 +171,72 @@ class Begin extends PureComponent {
           .rocket {
             grid-column: 4 / span 6;
             grid-row: 3 / span 2;
-            height: 664px;
-            background-color: #f0f;
+            height: 41.5rem;
+            text-align: center;
+          }
+
+          .rocket-inner {
+            display: inline-block;
+            position: relative;
+            width: 55rem;
+            height: 41.5rem;
+            transform-origin: 0 0;
+          }
+
+          .rocket-body {
+            position: absolute;
+            top: 5.3%;
+            left: 46.4%;
+            width: 21.2rem;
+          }
+
+          .rocket-blue {
+            position: absolute;
+            top: 30%;
+            left: 44.4%;
+            width: 11rem;
+          }
+
+          .rocket-dress {
+            position: absolute;
+            top: 27.7%;
+            left: 32.1%;
+            width: 17.1rem;
+          }
+
+          .rocket-arrow {
+            position: absolute;
+            top: -1.2%;
+            left: 66.4%;
+            width: 14rem;
+          }
+
+          .rocket-jet-1 {
+            position: absolute;
+            top: 65.5%;
+            left: 38.5%;
+            width: 12.6rem;
+          }
+
+          .rocket-jet-2 {
+            position: absolute;
+            top: 50%;
+            left: 27%;
+            width: 10.5rem;
+          }
+
+          .rocket-jet-3 {
+            position: absolute;
+            top: 27%;
+            left: 14.4%;
+            width: 12.7rem;
+          }
+
+          .rocket-black {
+            position: absolute;
+            top: 15.5%;
+            left: 59.3%;
+            width: 9.1rem;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
@@ -128,7 +253,11 @@ class Begin extends PureComponent {
             }
 
             .rocket {
-              height: 495px;
+              height: 30.9rem;
+            }
+
+            .rocket-inner {
+              transform: scale(0.745);
             }
 
             .rocket-text {
@@ -153,13 +282,103 @@ class Begin extends PureComponent {
             }
 
             .rocket {
-              height: 464px;
+              height: 29rem;
+            }
+
+            .rocket-inner {
+              transform: scale(0.69);
             }
 
             .rocket-text {
               padding-right: 0.5rem;
               margin-bottom: -2.3rem;
               grid-column: 8 / span 4;
+            }
+          }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            article {
+              width: 944px;
+            }
+
+            h1 {
+              padding-top: 5.5rem;
+              margin-bottom: 9rem;
+              grid-column: 5 / span 5;
+              font-size: 7.5rem;
+            }
+
+            .begin-text {
+              grid-column: 2 / span 7;
+              margin-bottom: 4rem;
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+
+            .rocket {
+              height: 22rem;
+            }
+
+            .rocket-inner {
+              transform: scale(0.53);
+            }
+
+            .rocket-text {
+              padding-right: 0.5rem;
+              margin-bottom: -6.2rem;
+              font-size: 0.88rem;
+              line-height: 1.5rem;
+              grid-column: 8 / span 4;
+            }
+          }
+
+          @media (max-width: 767px) {
+            article {
+              width: 20.5rem;
+            }
+
+            h1 {
+              margin-bottom: 6.6rem;
+              padding-top: 5.6rem;
+              padding-left: 0;
+              grid-column: 2 / span 4;
+              font-size: 4rem;
+            }
+
+            .begin-text {
+              grid-column: 1 / span 6;
+              margin-bottom: 6rem;
+              font-size: 1rem;
+              line-height: 1.5rem;
+              text-align: center;
+            }
+
+            .planet {
+              display: none;
+            }
+
+            .rocket {
+              margin-bottom: 1.1rem;
+              grid-column: 2 / span 4;
+              grid-row: 3;
+              height: 160px;
+            }
+
+            .rocket {
+              height: 10rem;
+            }
+
+            .rocket-inner {
+              margin-top: 0.35rem;
+              transform: scale(0.243);
+            }
+
+            .rocket-text {
+              margin-bottom: 0;
+              grid-column: 1 / span 6;
+              font-size: 0.87rem;
+              line-height: 1.5rem;
+              text-align: center;
             }
           }
         `}</style>

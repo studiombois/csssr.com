@@ -151,6 +151,71 @@ class RiskMinimization extends PureComponent {
               right: 0;
             }
           }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            article {
+              margin-top: 11.85rem;
+              grid-template-rows: auto auto 15.55rem auto;
+              width: 944px;
+            }
+
+            h2 {
+              margin-bottom: 3.7rem;
+              font-size: 1.5rem;
+            }
+
+            .image-off,
+            .image-on {
+              top: -4.25rem;
+              left: -1.5rem;
+              right: -1.8rem;
+            }
+
+            p {
+              font-size: 1.13rem;
+              line-height: 2rem
+            }
+          }
+
+          @media (max-width: 767px) {
+            article {
+              grid-template-rows: auto 11.1rem auto auto;
+              margin-top: 5.8rem;
+              width: 20.5rem;
+            }
+
+            h2 {
+              margin-bottom: 1rem;
+              padding-left: 1.7rem;
+              grid-column: 1 / span 6;
+              font-size: 1.5rem;
+            }
+
+            .images {
+              grid-column: 1 / span 6;
+              grid-row: 2 / span 1;
+            }
+
+            .image-off,
+            .image-on {
+              top: 1.2rem;
+              left: 0;
+              right: 0;
+            }
+
+            .toggler {
+              margin-bottom: 2.6rem;
+              grid-column: 2 / span 4;
+              grid-row: 3 / span 1;
+            }
+
+            p {
+              grid-column: 1 / span 6;
+              font-size: 1.13rem;
+              text-align: center;
+              line-height: 2rem
+            }
+          }
         `}</style>
       </Fragment>
     )

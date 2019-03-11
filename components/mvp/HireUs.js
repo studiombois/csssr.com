@@ -7,9 +7,27 @@ import ButtonLink from '../ui-kit/ButtonLink'
 
 const picture = css.resolve`
   picture {
-    grid-column: 5 / span 4;
+    grid-column: 4 / span 6;
     text-align: center;
     grid-row: 2;
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      grid-column: 1 / span 6;
+    }
+
+    picture img {
+      max-width: 220px
+    }
+  }
+`
+
+const button = css.resolve`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    a.button {
+      height: 3rem;
+    }
   }
 `
 
@@ -26,7 +44,7 @@ class HireUs extends PureComponent {
       <Fragment>
         <section id='hire-us' className='grid-container'>
           <div>
-            <ButtonLink href={link}>{buttonText}</ButtonLink>
+            <ButtonLink className={button.className} href={link}>{buttonText}</ButtonLink>
           </div>
           <Picture
             className={picture.className}
@@ -78,8 +96,38 @@ class HireUs extends PureComponent {
               grid-column: 5 / span 4;
             }
           }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            section {
+              margin-top: 7.5rem;
+              margin-bottom: 9rem;
+              width: 944px;
+            }
+
+            div {
+              margin-bottom: 8.8rem;
+              grid-column: 5 / span 4;
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
+
+          @media (max-width: 767px) {
+            section {
+              margin-bottom: 2.6rem;
+              width: 20.5rem;
+            }
+
+            div {
+              margin-bottom: 2.5rem;
+              grid-column: 2 / span 4;
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
         `}</style>
         {picture.styles}
+        {button.styles}
       </Fragment>
     )
   }

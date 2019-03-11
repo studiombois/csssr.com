@@ -53,6 +53,7 @@ const headerLinks = {
   }, {
     href: '#hire-us',
     label: 'mvp:headerNav.hireUs',
+    hideOnTablet: true,
   }],
 }
 

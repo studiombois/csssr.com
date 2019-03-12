@@ -1,6 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
 import { string } from 'prop-types'
-import translate from '../../utils/translate-wrapper'
 import css from 'styled-jsx/css'
 import Picture from '../Picture'
 import ButtonLink from '../ui-kit/ButtonLink'
@@ -133,4 +132,4 @@ class HireUs extends PureComponent {
   }
 }
 
-export default translate()(HireUs)
+export default HireUs

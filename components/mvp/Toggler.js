@@ -1,5 +1,4 @@
 import React, { Fragment, PureComponent } from 'react'
-import translate from '../../utils/translate-wrapper'
 
 class Toggler extends PureComponent {
   render() {
@@ -25,12 +24,12 @@ class Toggler extends PureComponent {
             top: 0;
             left: 0;
             display: block;
-            width: 104px;
+            width: 6.5rem;
             height: 100%;
             content: '';
             background: #0076ff;
             transition: transform 0.3s ease-out;
-            transform: translateX(${104 * activeIndex}px);
+            transform: translateX(${100 * activeIndex}%);
           }
 
           button {
@@ -38,13 +37,14 @@ class Toggler extends PureComponent {
             z-index: 2;
             padding: 0;
             display: block;
-            width: 104px;
+            width: 6.5rem;
             font-size: 0.875rem;
             font-family: Roboto, sans-serif;
             font-weight: 900;
             text-transform: uppercase;
             color: #fff;
             border: none;
+            cursor: pointer;
             letter-spacing: 0.08rem;
             background: none;
           }
@@ -54,4 +54,4 @@ class Toggler extends PureComponent {
   }
 }
 
-export default translate()(Toggler)
+export default Toggler

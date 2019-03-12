@@ -8,35 +8,9 @@ import Process from '../../components/mvp/Process'
 import HireUs from '../../components/mvp/HireUs'
 import withI18next from '../../utils/withI18next'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
+import Rocket from '../../components/mvp/Rocket'
 
 class MVP extends PureComponent {
-  // static async getInitialProps(appContext) {
-  //   return {
-  //     userAgent: appContext.req
-  //       ? appContext.req.headers['user-agent']
-  //       : window.navigator.userAgent,
-  //   }
-  // }
-
-  // state = {
-  //   isMobile: false,
-  // }
-
-  // componentDidMount() {
-  //   this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-  //   this.mobileMediaQuery.addListener(this.handleMediaMatch)
-  //   this.handleMediaMatch(this.mobileMediaQuery)
-  // }
-
-  // componentWillUnmount() {
-  //   this.mobileMediaQuery.removeListener(this.handleMediaMatch)
-  // }
-
-  // handleMediaMatch = ({ matches }) =>
-  //   this.setState({
-  //     isMobile: matches,
-  //   })
-
   render() {
     const { t } = this.props
 
@@ -47,11 +21,19 @@ class MVP extends PureComponent {
       >
         <Head title={t('mvp:meta.title')} description={t('mvp:meta.description')} />
         <Begin
-          imageAlt={t('mvp:begin.imageAlt')}
+          imageAlt={t('mvp:begin.imageAlt.title')}
           title={t('mvp:begin.title')}
           text={t('mvp:begin.text')}
           rocketText={t('mvp:begin.rocketText')}
-        />
+        >
+          <Rocket
+            rocketBodyAlt={t('mvp:begin.imageAlt.rocketBody')}
+            rocketDressAlt={t('mvp:begin.imageAlt.rocketDress')}
+            rocketJetAlt={t('mvp:begin.imageAlt.rocketJet')}
+            rocketDeviderAlt={t('mvp:begin.imageAlt.rocketDevider')}
+            rocketArrowAlt={t('mvp:begin.imageAlt.rocketArrow')}
+          />
+        </Begin>
         <RiskMinimization
           toggleItems={[
             t('mvp:riskMinimization.togglerOn'),
@@ -59,6 +41,7 @@ class MVP extends PureComponent {
           ]}
           imageAltOn={t('mvp:riskMinimization.imageAltOn')}
           imageAltOff={t('mvp:riskMinimization.imageAltOff')}
+          imageAltVawes={t('mvp:riskMinimization.imageAltVawes')}
           title={t('mvp:riskMinimization.title')}
           textOn={t('mvp:riskMinimization.textOn')}
           textOff={t('mvp:riskMinimization.textOff')}

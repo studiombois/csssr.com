@@ -1,6 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
 import { string, arrayOf } from 'prop-types'
-import translate from '../../utils/translate-wrapper'
 import Toggler from './Toggler'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
@@ -25,36 +24,56 @@ class RiskMinimization extends PureComponent {
       toggleItems,
       imageAltOn,
       imageAltOff,
+      imageAltVawes,
     } = this.props
     const { togglerIndex } = this.state
 
     return (
       <Fragment>
-        <article id='advantages' className='grid-container'>
-          <h2>{title}</h2>
-          <div className='toggler'>
-            <Toggler
-              activeIndex={togglerIndex}
-              items={toggleItems}
-              onChange={index => this.setState({ togglerIndex: index })}
-            />
-          </div>
-          <div className='images'>
-            <div className='image-on'>
-              <PictureForAllResolutions
-                image={{ namespace: 'mvp', key: 'MVP_ON', alt: imageAltOn }}
+        <article id='advantages'>
+          <img
+            className='vawes'
+            src={require('../../static/images/mvp/Vawes.svg')}
+            alt={imageAltVawes}
+          />
+          <div className='wrapper grid-container'>
+            <h2>{title}</h2>
+            <div className='toggler'>
+              <Toggler
+                activeIndex={togglerIndex}
+                items={toggleItems}
+                onChange={index => this.setState({ togglerIndex: index })}
               />
             </div>
-            <div className='image-off'>
-              <PictureForAllResolutions
-                image={{ namespace: 'mvp', key: 'MVP_OFF', alt: imageAltOff }}
-              />
+            <div className='images'>
+              <div className='image-on'>
+                <PictureForAllResolutions
+                  image={{ namespace: 'mvp', key: 'MVP_ON', alt: imageAltOn }}
+                />
+              </div>
+              <div className='image-off'>
+                <PictureForAllResolutions
+                  image={{ namespace: 'mvp', key: 'MVP_OFF', alt: imageAltOff }}
+                />
+              </div>
             </div>
+            <p className='on-text' dangerouslySetInnerHTML={{ __html: textOn }} />
+            <p className='off-text' dangerouslySetInnerHTML={{ __html: textOff }} />
           </div>
-          <p className='on-text' dangerouslySetInnerHTML={{ __html: textOn }} />
-          <p className='off-text' dangerouslySetInnerHTML={{ __html: textOff }} />
         </article><style jsx>{`
           article {
+            position: relative;
+          }
+
+          .vawes {
+            position: absolute;
+            top: 11rem;
+            left: 0;
+            width: 100%;
+            opacity: ${togglerIndex === 0 ? 1 : 0};
+          }
+
+          .wrapper {
             position: relative;
             grid-template-rows: auto auto 31.8rem auto;
             margin-top: -0.5rem;
@@ -124,7 +143,12 @@ class RiskMinimization extends PureComponent {
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
-            article {
+            .vawes {
+              top: 19.2rem;
+              transform: translateY(-50%);
+            }
+            
+            .wrapper {
               margin-top: 7.4rem;
               grid-template-rows: auto auto 22.8rem auto;
               width: 1328px;
@@ -139,7 +163,11 @@ class RiskMinimization extends PureComponent {
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
-            article {
+            .vawes {
+              top: 19.2rem;
+              transform: translateY(-50%);
+            }
+            .wrapper {
               margin-top: 10.85rem;
               grid-template-rows: auto auto 21.15rem auto;
               width: 1232px;
@@ -153,7 +181,11 @@ class RiskMinimization extends PureComponent {
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
-            article {
+            .vawes {
+              top: 14rem;
+              transform: translateY(-50%);
+            }
+            .wrapper {
               margin-top: 11.85rem;
               grid-template-rows: auto auto 15.55rem auto;
               width: 944px;
@@ -178,7 +210,12 @@ class RiskMinimization extends PureComponent {
           }
 
           @media (max-width: 767px) {
-            article {
+            .vawes {
+              top: 8rem;
+              transform: translateY(-50%);
+            }
+
+            .wrapper {
               grid-template-rows: auto 11.1rem auto auto;
               margin-top: 5.8rem;
               width: 20.5rem;
@@ -205,7 +242,7 @@ class RiskMinimization extends PureComponent {
 
             .toggler {
               margin-bottom: 2.6rem;
-              grid-column: 2 / span 4;
+              grid-column: 2 / span 5;
               grid-row: 3 / span 1;
             }
 
@@ -222,4 +259,4 @@ class RiskMinimization extends PureComponent {
   }
 }
 
-export default translate()(RiskMinimization)
+export default RiskMinimization

@@ -1,6 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
 import { string } from 'prop-types'
-import translate from '../../utils/translate-wrapper'
 import css from 'styled-jsx/css'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
@@ -151,4 +150,4 @@ class Money extends PureComponent {
   }
 }
 
-export default translate()(Money)
+export default Money

@@ -1,6 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
 import { string } from 'prop-types'
-import lottie from 'lottie-web'
 
 class Process extends PureComponent {
   orbitsRef = React.createRef()
@@ -33,22 +32,27 @@ class Process extends PureComponent {
   }
 
   componentDidMount() {
-    this.orbitsLottie = lottie.loadAnimation({
-      container: this.orbitsRef.current,
-      renderer: 'canvas',
-      autoplay: false,
-      animationData: require('../../static/json/orbits.json'),
-    })
+    const lottieWeb = import(/* webpackChunkName: "lottie-web" */ 'lottie-web/build/player/lottie_canvas.min')
+    const orbits = import(/* webpackChunkName: "orbits" */ '../../static/json/orbits.json')
+    const sputnik = import(/* webpackChunkName: "sputnik" */ '../../static/json/sputnik.json')
 
-    this.sputnikLottie = lottie.loadAnimation({
-      container: this.sputnikRef.current,
-      renderer: 'canvas',
-      autoplay: false,
-      animationData: require('../../static/json/sputnik.json'),
-    })
+    Promise.all([lottieWeb, orbits, sputnik]).then(([lottie, orbitsJson, sputnikJson]) => {
+      this.orbitsLottie = lottie.loadAnimation({
+        container: this.orbitsRef.current,
+        renderer: 'canvas',
+        autoplay: false,
+        animationData: orbitsJson,
+      })
 
-    document.addEventListener('scroll', this.handleScroll)
-    this.handleScroll()
+      this.sputnikLottie = lottie.loadAnimation({
+        container: this.sputnikRef.current,
+        renderer: 'canvas',
+        autoplay: false,
+        animationData: sputnikJson,
+      })
+      this.handleScroll()
+      document.addEventListener('scroll', this.handleScroll)
+    })
   }
 
   componentWillUnmount() {

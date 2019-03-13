@@ -28,7 +28,7 @@ const picture = css.resolve`
   @media (min-width: 1024px) and (max-width: 1279px) {
     picture {
       left: 20.5%;
-      width: 50.43rem;
+      width: 57.5rem;
     }
   }
 

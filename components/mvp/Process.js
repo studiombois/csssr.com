@@ -32,23 +32,29 @@ class Process extends PureComponent {
   }
 
   componentDidMount() {
-    const lottieWeb = import(/* webpackChunkName: "lottie-web" */ 'lottie-web/build/player/lottie_canvas.min')
+    const lottieWeb = import(/* webpackChunkName: "lottie-web" */ 'lottie-web/build/player/lottie_light.min')
     const orbits = import(/* webpackChunkName: "orbits" */ '../../static/json/orbits.json')
     const sputnik = import(/* webpackChunkName: "sputnik" */ '../../static/json/sputnik.json')
 
     Promise.all([lottieWeb, orbits, sputnik]).then(([lottie, orbitsJson, sputnikJson]) => {
       this.orbitsLottie = lottie.loadAnimation({
         container: this.orbitsRef.current,
-        renderer: 'canvas',
+        renderer: 'svg',
         autoplay: false,
         animationData: orbitsJson,
+        rendererSettings: {
+          progressiveLoad: true,
+        },
       })
 
       this.sputnikLottie = lottie.loadAnimation({
         container: this.sputnikRef.current,
-        renderer: 'canvas',
+        renderer: 'svg',
         autoplay: false,
         animationData: sputnikJson,
+        rendererSettings: {
+          progressiveLoad: true,
+        },
       })
       this.handleScroll()
       document.addEventListener('scroll', this.handleScroll)
@@ -78,9 +84,9 @@ class Process extends PureComponent {
           .orbits {
             position: absolute;
             display: block;
-            top: 14rem;
-            left: -16rem;
-            width: 124rem;
+            top: 11rem;
+            left: 2rem;
+            width: 90rem;
           }
 
           .sputnik {
@@ -88,7 +94,7 @@ class Process extends PureComponent {
             display: block;
             top: -2rem;
             left: -8rem;
-            right: -10rem;
+            right: -34rem;
           }
 
           div {
@@ -120,9 +126,9 @@ class Process extends PureComponent {
             }
 
             .orbits {
-              top: 14rem;
-              left: -30rem;
-              width: 126rem;
+              top: 15rem;
+              left: -11rem;
+              width: 90rem;
             }
 
             .sputnik {
@@ -146,8 +152,8 @@ class Process extends PureComponent {
 
             .orbits {
               top: 14rem;
-              left: -32rem;
-              width: 126rem;
+              left: -13rem;
+              width: 90rem;
             }
 
             .sputnik {
@@ -171,9 +177,9 @@ class Process extends PureComponent {
             }
 
             .orbits {
-              top: 11rem;
-              left: -29rem;
-              width: 107rem;
+              top: 12rem;
+              left: -10rem;
+              width: 72rem;
             }
 
             .sputnik {
@@ -197,9 +203,9 @@ class Process extends PureComponent {
             }
 
             .orbits {
-              top: 13rem;
-              left: -23rem;
-              width: 54rem;
+              top: 14rem;
+              left: -15rem;
+              width: 38rem;
             }
 
             .sputnik {

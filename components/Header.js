@@ -98,6 +98,15 @@ class Header extends PureComponent {
     this.lastScrollTop = scrollTop
   }
 
+  handleHeaderFocus = () => {
+    if (!this.state.showHeader) {
+      this.setState({
+        showHeader: true,
+        toggleHeaderAnimations: true,
+      })
+    }
+  }
+
   render() {
     const {
       router: { pathname },
@@ -132,6 +141,7 @@ class Header extends PureComponent {
           isBurgerVisible={isBurgerVisible}
           isSideBarOpened={isSideBarOpened}
           toggleHeaderAnimations={toggleHeaderAnimations}
+          onFocus={this.handleHeaderFocus}
           onSideBarToggle={this.handleSideBarToggle}
         />
       </Fragment>

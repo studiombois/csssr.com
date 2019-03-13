@@ -12,6 +12,24 @@ import Link from 'next/link'
 const items = [{
   path: '',
   key: 'common:menu.dev',
+  subItems: [
+    {
+      path: '/mvp',
+      key: 'common:menu.mvp',
+      redirect: {
+        from: '/en/mvp',
+        to: '/ru/mvp',
+      },
+    },
+    // {
+    //   path: '/',
+    //   key: 'High load',
+    // },
+    // {
+    //   path: '/',
+    //   key: 'Stack migration',
+    // },
+  ],
 }, {
   path: '/html',
   key: 'common:menu.html',
@@ -49,7 +67,64 @@ export class SideBar extends PureComponent {
     onClose: func,
   }
 
-  renderNavItem = ({ path, key, redirect }) => {
+  renderSubItem = ({ path, key, redirect }) => {
+    const { router: { pathname }, t, lng } = this.props
+    const languageHref = `/${lng}${path}`
+    const shouldBeRedirected = redirect && redirect.from === languageHref
+    const href = shouldBeRedirected ? redirect.to : languageHref
+
+    return (
+      <li key={key} className='sub-item'>
+        {shouldBeRedirected
+          ? <a
+            href={href}
+            className={cn('sub-link', {
+              'sub-link_active': pathname === languageHref,
+            })}
+            dangerouslySetInnerHTML={{ __html: t(key) }}
+          />
+          : <Link prefetch href={href}>
+            <a
+              className={cn('sub-link', {
+                'sub-link_active': pathname === languageHref,
+              })}
+              dangerouslySetInnerHTML={{ __html: t(key) }}
+            />
+          </Link>
+        }
+        <style jsx>{`
+          .sub-link {
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-right: 5.5rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 1.625rem;
+            font-family: Roboto, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #a6a6a6;
+          }
+
+          .sub-link_active {
+            background-color: #7b7b7b;
+            color: #fff;
+          }
+
+          @media (max-width: 767px) {
+            .sub-link {
+              padding-right: 3.125rem;
+            }
+          }
+        `}</style>
+      </li>
+    )
+  }
+
+  renderNavItem = ({ path, key, redirect, subItems }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
     const shouldBeRedirected = redirect && redirect.from === languageHref
@@ -65,7 +140,6 @@ export class SideBar extends PureComponent {
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
           />
-
           : <Link prefetch href={href}>
             <a
               className={cn('font_burger-menu link', {
@@ -75,6 +149,7 @@ export class SideBar extends PureComponent {
             />
           </Link>
         }
+        {subItems && <ul className='sub-menu'>{subItems.map(this.renderSubItem)}</ul>}
         <style jsx>{`
           .link {
             margin-top: 0;
@@ -83,12 +158,23 @@ export class SideBar extends PureComponent {
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            width: 100%;
             height: 3rem;
           }
 
           .link_active {
             background-color: #7b7b7b;
             color: #fff;
+          }
+
+          .link_active + .sub-menu {
+            padding-top: 0.6rem;
+          }
+
+          .sub-menu {
+            margin-top: -0.4rem;
+            overflow: hidden;
+            padding-bottom: 1.5625rem;
           }
 
           @media (max-width: 767px) {
@@ -200,7 +286,7 @@ export class SideBar extends PureComponent {
 
           .section-name {
             position: relative;
-            margin-bottom: 4.4375rem;
+            margin-bottom: 4.15rem;
             padding-right: 8rem;
             line-height: 1rem;
             text-align: right;

@@ -27,6 +27,7 @@ class Process extends PureComponent {
 
     if (sputnikRect.top < window.innerHeight / 2 && !this.isSputnikMoved) {
       this.isSputnikMoved = true
+      this.sputnikLottie.setSpeed(0.6)
       this.sputnikLottie.play()
     }
   }

@@ -20,6 +20,8 @@ const APP_ENV = process.env.NODE_ENV === DEVELOPMENT ?
     PRODUCTION :
     PRODUCTION_LIKE
 
+console.log('ENV', APP_ENV, process.env, process.env.CSSSR_SPACE_ORIGIN, process.env.IS_PRODUCTION, process.env.NODE_ENV)
+
 module.exports = {
   APP_ENV,
   isDevelopment: APP_ENV === DEVELOPMENT,

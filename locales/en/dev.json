@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "We create web services for millions to use",
-    "description": "We specialize in developing high load web applications, using JavaScript. And dream about space."
+    "description": "We love: work on front-end web development outsourcing harder, make JavaScript code better and projects faster. And dream about space."
   },
   "headerNav": {
     "competence": "Competence",
     "services": "Services",
-    "customers": "Customers",
+    "clients": "Clients",
     "hireUs": "Hire us"
   },
   "imgAlt": {
@@ -30,22 +30,128 @@
     "app": "Support and development of&nbsp;high load web applications",
     "stack": "Stack migration"
   },
-  "openSource": {
-    "title": "Open source technologies only",
-    "text": "We&nbsp;are the part of&nbsp;the global community of&nbsp;developers who use popular open source technologies and frameworks, such as&nbsp;React, Angular, Vue, Node and many others."
-  },
   "time": {
     "title": "We&nbsp;care about time to&nbsp;market metrics",
     "text": "Our methodology is&nbsp;similar to&nbsp;Scrum and involves working with sprints. Our sprints generally last one or&nbsp;two weeks. At&nbsp;the end of&nbsp;each sprint, we&nbsp;release a&nbsp;new build version and plan product features that will be&nbsp;developed in&nbsp;the next sprint."
   },
-  "partners": {
+  "competence": {
+    "title1": "Our tools",
+    "title2": "Technologies</br>with open-source license",
+    "title3": "Supporting technologies",
+    "text1": "There is&nbsp;no&nbsp;perfect framework.</br>We&nbsp;choose the most approptiate instrument based on&nbsp;the task.",
+    "text2": "We&nbsp;use technologies and frameworks with open-source code. They are free, oriented for commercial use and fully reliable due to&nbsp;the developers community participation.",
+    "text3": "We&nbsp;follow the latest trends and update our work space with new tools consistently.",
+    "buttonText": "See more"
+  },
+  "tabs": {
+    "all": "All",
+    "automotive": "Automotive",
+    "telecom": "Telecom",
+    "financeAndBanking": "Finance & banking",
+    "it": "IT companies",
+    "realEstate": "Real Estate",
+    "retail": "Retail",
+    "others": "Others"
+  },
+  "clients": {
     "title": "More than 450 completed projects in&nbsp;different industries",
-    "iTTitle": "IT companies",
-    "estateTitle": "Real Estate",
-    "financeTitle": "Finance & banking",
-    "healthTitle": "Health",
-    "othersTitle": "Others",
-    "telecomTitle": "Telecom"
+    "text1": "We&nbsp;work with large companies for whom strong online presence is&nbsp;important. We&nbsp;share their business interests and help them to&nbsp;achieve their goals.",
+    "text2": "And other major Russian companies that can not be&nbsp;named in&nbsp;accordance with NDA",
+    "imgAlts": {
+      "innova": "Innova logo",
+      "ruCenter": "RU-CENTER logo",
+      "kaspersky": "Kaspersky lab logo",
+      "mammy": "Mammy TV logo",
+      "aventica": "Aventica logo",
+      "notamedia": "NOTAMEDIA logo",
+      "kiwiTaxi": "KiwiTaxi logo",
+      "nutri": "Nutrilogic logo",
+      "relief": "Relief lofo",
+      "tsum": "TSUM logo",
+      "yandexNedv": "Yandex.Nedvizhimost logo",
+      "cian": "CIAN logo",
+      "tinkoff": "Tinkoff Bank logo",
+      "alfaBank": "Alfa Bank logo",
+      "bcs": "BCS logo",
+      "sravni": "Sravni.ru logo",
+      "evotor": "EVOTOR logo"
+    }
+  },
+  "portfolio": {
+    "title": "Projects",
+    "text": "We&nbsp;love to&nbsp;make projects with a&nbsp;thoughtful interface and well working code",
+    "buttonText1": "See more",
+    "buttonText2": "See less",
+    "projects": {
+      "acura": {
+        "title": "Acura",
+        "text": "Automotive website"
+      },
+      "camry": {
+        "title": "Toyota Camry",
+        "text": "Mobile version of&nbsp;the automotive brand page"
+      },
+      "investments101": {
+        "title": "Investments 101",
+        "text": "Online educational platform for traders and investors"
+      },
+      "phoenix": {
+        "title": "Phoenix",
+        "text": "Single page website for the debt collection agency"
+      },
+      "quickpay": {
+        "title": "QuickPay",
+        "text": "Payment system promo website"
+      },
+      "remont": {
+        "title": "Tinkoff & houzz",
+        "text": "Promo page for a&nbsp;prize draw"
+      },
+      "cian": {
+        "title": "CIAN",
+        "text": "Website of&nbsp;the real estate database"
+      },
+      "ndv": {
+        "title": "NDV Global",
+        "text": "Corporate website for the investment company"
+      },
+      "nutrilogic": {
+        "title": "Nutrilogic",
+        "text": "Online service for personal meal planning"
+      },
+      "bork": {
+        "title": "BORK",
+        "text": "Product page for the home appliances manufacturing company"
+      },
+      "relef": {
+        "title": "Relief-center",
+        "text": "Wholesale online store for office supplies"
+      },
+      "sellbeing": {
+        "title": "Sellbeing",
+        "text": "Landing page of&nbsp;the online store builder"
+      },
+      "shina": {
+        "title": "RU-SHINA",
+        "text": "Online store specializing in&nbsp;car tires and alloy wheels"
+      },
+      "tsum": {
+        "title": "TSUM",
+        "text": "Website for the fashion department store"
+      },
+      "ruCenter": {
+        "title": "RU-CENTER",
+        "text": "Website for the domain registrar"
+      },
+      "auditorius": {
+        "title": "Auditorius",
+        "text": "Landing page for the programmatic buying company"
+      },
+      "expressobet": {
+        "title": "Expresso",
+        "text": "Betting odds monitoring service"
+      }
+    }
   },
   "perfect": {
     "title": "We&nbsp;were&nbsp;born with a&nbsp;gene of&nbsp;perfectionism",

@@ -3,36 +3,50 @@ import { string } from 'prop-types'
 import lottie from 'lottie-web'
 
 class Process extends PureComponent {
-  solarSystemRef = React.createRef()
-  solarLottie = null
+  orbitsRef = React.createRef()
+  sputnikRef = React.createRef()
+  orbitsLottie = null
+  sputnikLottie = null
+  isSputnikMoved = false
+  isOrbitsMoved = false
 
   static propTypes = {
     title: string,
   }
 
-  state = {
-    isMoved: false,
-  }
-
   handleScroll = () => {
-    if (!this.solarSystemRef || !this.solarSystemRef.current) {
+    if (!this.orbitsRef || !this.orbitsRef.current) {
       return
     }
-    const { isMoved } = this.state
-    const solarRect = this.solarSystemRef.current.getBoundingClientRect()
-    if (solarRect.top < window.innerHeight / 3 && !isMoved) {
-      this.setState({ isMoved: true })
-      this.solarLottie.play()
+    const solarRect = this.orbitsRef.current.getBoundingClientRect()
+    const sputnikRect = this.sputnikRef.current.getBoundingClientRect()
+
+    if (solarRect.top < window.innerHeight / 2 && !this.isOrbitsMoved) {
+      this.isOrbitsMoved = true
+      this.orbitsLottie.play()
+    }
+
+    if (sputnikRect.top < window.innerHeight / 2 && !this.isSputnikMoved) {
+      this.isSputnikMoved = true
+      this.sputnikLottie.play()
     }
   }
 
   componentDidMount() {
-    this.solarLottie = lottie.loadAnimation({
-      container: this.solarSystemRef.current,
+    this.orbitsLottie = lottie.loadAnimation({
+      container: this.orbitsRef.current,
       renderer: 'canvas',
       autoplay: false,
-      animationData: require('../../static/solarSystem/solarSystem.json'),
+      animationData: require('../../static/json/orbits.json'),
     })
+
+    this.sputnikLottie = lottie.loadAnimation({
+      container: this.sputnikRef.current,
+      renderer: 'canvas',
+      autoplay: false,
+      animationData: require('../../static/json/sputnik.json'),
+    })
+
     document.addEventListener('scroll', this.handleScroll)
     this.handleScroll()
   }
@@ -47,22 +61,30 @@ class Process extends PureComponent {
     return (
       <Fragment>
         <section id='process'>
-          <span className='solar-system' ref={this.solarSystemRef} />
+          <span className='orbits' ref={this.orbitsRef} />
+          <span className='sputnik' ref={this.sputnikRef} />
           <div className='grid-container'>
             <h2>{title}</h2>
           </div>
         </section><style jsx>{`
           section {
-            overflow: hidden;
             position: relative;
           }
 
-          .solar-system {
+          .orbits {
             position: absolute;
             display: block;
-            top: 8rem;
-            left: -32rem;
-            width: 170rem;
+            top: 14rem;
+            left: -16rem;
+            width: 124rem;
+          }
+
+          .sputnik {
+            position: absolute;
+            display: block;
+            top: -2rem;
+            left: -8rem;
+            right: -10rem;
           }
 
           div {
@@ -93,10 +115,17 @@ class Process extends PureComponent {
               margin-top: 12.9rem;
             }
 
-            .solar-system {
-              top: 10rem;
-              left: -44rem;
-              width: 166rem;
+            .orbits {
+              top: 14rem;
+              left: -30rem;
+              width: 126rem;
+            }
+
+            .sputnik {
+              top: -10rem;
+              left: -36rem;
+              right: auto;
+              width: 155rem;
             }
           }
 
@@ -111,10 +140,17 @@ class Process extends PureComponent {
               margin-top: 13.1rem;
             }
 
-            .solar-system {
-              top: 10rem;
-              left: -44rem;
-              width: 166rem;
+            .orbits {
+              top: 14rem;
+              left: -32rem;
+              width: 126rem;
+            }
+
+            .sputnik {
+              top: -7rem;
+              left: -20rem;
+              right: auto;
+              width: 120rem;
             }
           }
 
@@ -130,10 +166,17 @@ class Process extends PureComponent {
               font-size: 1.5rem;
             }
 
-            .solar-system {
-              top: 7rem;
-              left: -35rem;
-              width: 136rem;
+            .orbits {
+              top: 11rem;
+              left: -29rem;
+              width: 107rem;
+            }
+
+            .sputnik {
+              top: -7rem;
+              left: -25rem;
+              right: auto;
+              width: 125rem;
             }
           }
           @media (max-width: 767px) {
@@ -149,10 +192,17 @@ class Process extends PureComponent {
               font-size: 1.5rem;
             }
 
-            .solar-system {
+            .orbits {
               top: 13rem;
-              left: -38rem;
-              width: 81rem;
+              left: -23rem;
+              width: 54rem;
+            }
+
+            .sputnik {
+              top: -1rem;
+              left: -30rem;
+              right: auto;
+              width: 80rem;
             }
           }
         `}</style>

@@ -28,6 +28,7 @@ class Header extends PureComponent {
     isBurgerVisible: false,
   }
 
+  isScrollToSection = false
   lastScrollTop = 0
 
   componentDidMount() {
@@ -69,13 +70,21 @@ class Header extends PureComponent {
     }
   }
 
+  handleScrollToSection = () => {
+    this.isScrollToSection = true
+    const timeout = setTimeout(() => {
+      this.isScrollToSection = false
+      clearTimeout(timeout)
+    }, 1500)
+  }
+
   handleScroll = event => {
     const { target: { scrollingElement } } = event
     const { showHeader } = this.state
     const headerHeight = 65
     const scrollTop = (scrollingElement === document.body.parentNode || scrollingElement === document.body) && scrollingElement.scrollTop
 
-    if (scrollTop > this.lastScrollTop && scrollTop > headerHeight) {
+    if ((scrollTop > this.lastScrollTop && scrollTop > headerHeight) || this.isScrollToSection) {
       // eslint-disable-next-line
       showHeader && this.setState({
         showHeader: false,
@@ -133,6 +142,7 @@ class Header extends PureComponent {
           isSideBarOpened={isSideBarOpened}
           toggleHeaderAnimations={toggleHeaderAnimations}
           onSideBarToggle={this.handleSideBarToggle}
+          onScrollToSection={this.handleScrollToSection}
         />
       </Fragment>
     )

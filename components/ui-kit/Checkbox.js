@@ -163,6 +163,13 @@ export default class Checkbox extends PureComponent {
             outline: none;
           }
 
+          :global(body.outline) input:focus + label::before {
+            outline-color: #4D90FE;
+            outline-offset: -2px;
+            outline-style: auto;
+            outline-width: 5px;
+          }
+
           input:checked + label::before {
             background-color: #0076ff;
             border-color: #0076ff;

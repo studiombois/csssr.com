@@ -27,6 +27,7 @@ class ProjectsList extends PureComponent {
   }
 
   listRef = React.createRef()
+  listCutHeight = 0
 
   getProjectsOfActiveProjectsGroupId = () => {
     const { portfolio } = this.props
@@ -45,11 +46,14 @@ class ProjectsList extends PureComponent {
 
   handleCutListOnOff = () => {
     const listNode = this.listRef.current
+    if (this.state.isCut) {
+      this.listCutHeight = listNode.parentNode.parentNode.offsetHeight
+    }
     const scrollToNextBlock = () => {
       if (this.state.isCut) {
         const elem = document.getElementById('portfolio')
-        const magicNumber = 80 // Чтобы не прижиматься верхней границей страницы к заголовку
-        const scrollToOffset = elem.offsetTop - magicNumber
+        const headerOffset = 80 // Чтобы не прижиматься верхней границей страницы к заголовку
+        const scrollToOffset = elem.offsetTop + this.listCutHeight - headerOffset
 
         window.scrollTo({
           top: scrollToOffset,

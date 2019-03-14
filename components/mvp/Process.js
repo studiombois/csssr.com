@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { string } from 'prop-types'
+import translate from '../../utils/translate-wrapper'
 
 class Process extends PureComponent {
   orbitsRef = React.createRef()
@@ -8,10 +8,6 @@ class Process extends PureComponent {
   sputnikLottie = null
   isSputnikMoved = false
   isOrbitsMoved = false
-
-  static propTypes = {
-    title: string,
-  }
 
   handleScroll = () => {
     if (!this.orbitsRef || !this.orbitsRef.current) {
@@ -33,9 +29,9 @@ class Process extends PureComponent {
   }
 
   componentDidMount() {
-    const lottieWeb = import(/* webpackChunkName: "lottie-web" */ 'lottie-web/build/player/lottie_light.min')
-    const orbits = import(/* webpackChunkName: "orbits" */ '../../static/json/orbits.json')
-    const sputnik = import(/* webpackChunkName: "sputnik" */ '../../static/json/sputnik.json')
+    const lottieWeb = import(/* webpackChunkName: "lottie" */ 'lottie-web/build/player/lottie_light.min')
+    const orbits = import(/* webpackChunkName: "lottie" */ '../../static/lottie/orbits.json')
+    const sputnik = import(/* webpackChunkName: "lottie" */ '../../static/lottie/sputnik.json')
 
     Promise.all([lottieWeb, orbits, sputnik]).then(([lottie, orbitsJson, sputnikJson]) => {
       this.orbitsLottie = lottie.loadAnimation({
@@ -67,7 +63,7 @@ class Process extends PureComponent {
   }
 
   render() {
-    const { title } = this.props
+    const { t } = this.props
 
     return (
       <Fragment>
@@ -75,7 +71,7 @@ class Process extends PureComponent {
           <span className='orbits' ref={this.orbitsRef} />
           <span className='sputnik' ref={this.sputnikRef} />
           <div className='grid-container'>
-            <h2>{title}</h2>
+            <h2>{t('mvp:process.title')}</h2>
           </div>
         </section><style jsx>{`
           section {
@@ -109,7 +105,7 @@ class Process extends PureComponent {
           h2 {
             grid-column: 2 / span 11;
             grid-row: 1;
-            margin-top: 10.8rem;
+            margin-top: 10.8125rem;
             font-size: 3rem;
             font-family: 'Roboto Slab', serif;
             font-weight: normal;
@@ -123,7 +119,7 @@ class Process extends PureComponent {
             }
 
             h2 {
-              margin-top: 12.9rem;
+              margin-top: 12.875rem;
             }
 
             .orbits {
@@ -142,13 +138,13 @@ class Process extends PureComponent {
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             div {
-              margin-top: 8.7rem;
+              margin-top: 8.6875rem;
               width: 1232px;
               height: 82.1875rem;
             }
 
             h2 {
-              margin-top: 13.1rem;
+              margin-top: 13.125rem;
             }
 
             .orbits {
@@ -167,13 +163,13 @@ class Process extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             div {
-              margin-top: 5.6rem;
+              margin-top: 5.625rem;
               width: 944px;
               height: 68.125rem;
             }
 
             h2 {
-              margin-top: 11.2rem;
+              margin-top: 11.1875rem;
               font-size: 1.5rem;
             }
 
@@ -198,7 +194,7 @@ class Process extends PureComponent {
             }
 
             h2 {
-              margin-top: 7.9rem;
+              margin-top: 7.875rem;
               grid-column: 1 / span 6;
               font-size: 1.5rem;
             }
@@ -222,4 +218,4 @@ class Process extends PureComponent {
   }
 }
 
-export default Process
+export default translate()(Process)

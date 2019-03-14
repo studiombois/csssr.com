@@ -1,7 +1,8 @@
 import React, { Fragment, PureComponent } from 'react'
-import { string } from 'prop-types'
 import css from 'styled-jsx/css'
+import translate from '../../utils/translate-wrapper'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+import Rocket from './Rocket'
 
 const picture = css.resolve`
   picture {
@@ -57,22 +58,22 @@ const planet = css.resolve`
 
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
-      margin-top: -3.4rem;
-      margin-left: 0.3rem;
+      margin-top: -3.375rem;
+      margin-left: 0.3125rem;
       width: 5rem;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
     picture {
-      margin-top: -3.8rem;
+      margin-top: -3.8125rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      margin-left: -0.4rem;
-      margin-top: -4.2rem;
+      margin-left: -0.375rem;
+      margin-top: -4.1875rem;
       width: 5.3125rem;
     }
   }
@@ -85,35 +86,28 @@ const planet = css.resolve`
 `
 
 class Begin extends PureComponent {
-  static propTypes = {
-    imageAlt: string,
-    title: string,
-    text: string,
-    rocketText: string,
-  }
-
   render() {
-    const { title, text, rocketText, imageAlt, children } = this.props
+    const { t } = this.props
 
     return (
       <Fragment>
         <article id='what-is-mvp' className='grid-container'>
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'mvp', key: 'geometry', alt: imageAlt.title }}
+            image={{ namespace: 'mvp', key: 'geometry', alt: t('mvp:begin.imageAlt.title') }}
           />
-          <h1>{title}</h1>
-          <p className='begin-text'>{text}</p>
+          <h1>{t('mvp:begin.title')}</h1>
+          <p className='begin-text'>{t('mvp:begin.text')}</p>
           <div className='planet'>
             <PictureForAllResolutions
               className={planet.className}
-              image={{ namespace: 'mvp', key: 'yellow_planet', alt: imageAlt.title }}
+              image={{ namespace: 'mvp', key: 'yellow_planet', alt: t('mvp:begin.imageAlt.title') }}
             />
           </div>
           <div className='rocket'>
-            {children}
+            <Rocket />
           </div>
-          <p className='rocket-text font_p16-regular'>{rocketText}</p>
+          <p className='rocket-text font_p16-regular'>{t('mvp:begin.rocketText')}</p>
         </article><style jsx>{`
           article {
             position: relative;
@@ -126,17 +120,17 @@ class Begin extends PureComponent {
           h1 {
             grid-column: 6 / span 3;
             grid-row: 1;
-            padding-left: 2.6rem;
+            padding-left: 2.625rem;
             padding-top: 11.5rem;
             font-size: 10.5rem;
             font-family: Roboto, sans-serif;
             font-weight: 900;
-            margin-bottom: 12.6rem;
+            margin-bottom: 12.625rem;
             text-align: center;
           }
 
           .begin-text {
-            margin-bottom: 8.2rem;
+            margin-bottom: 8.1875rem;
             grid-column: 2 / span 6;
             grid-row: 2;
             font-family: Roboto, sans-serif;
@@ -175,11 +169,11 @@ class Begin extends PureComponent {
             }
 
             .begin-text {
-              margin-bottom: 7.3rem;
+              margin-bottom: 7.3125rem;
             }
 
             .rocket {
-              height: 30.9rem;
+              height: 30.875rem;
             }
 
             .rocket-text {
@@ -195,12 +189,12 @@ class Begin extends PureComponent {
 
             h1 {
               grid-column: 5 / span 5;
-              margin-bottom: 13.1rem;
-              padding-left: 0.6rem;
+              margin-bottom: 13.125rem;
+              padding-left: 0.625rem;
             }
 
             .begin-text {
-              margin-bottom: 7.3rem;
+              margin-bottom: 7.3125rem;
             }
 
             .rocket {
@@ -209,7 +203,7 @@ class Begin extends PureComponent {
 
             .rocket-text {
               padding-right: 0.5rem;
-              margin-bottom: -2.3rem;
+              margin-bottom: -2.3125rem;
               grid-column: 8 / span 4;
             }
           }
@@ -239,8 +233,8 @@ class Begin extends PureComponent {
 
             .rocket-text {
               padding-right: 0.5rem;
-              margin-bottom: -6.2rem;
-              font-size: 0.88rem;
+              margin-bottom: -6.1875rem;
+              font-size: 0.875rem;
               line-height: 1.5rem;
               grid-column: 8 / span 4;
             }
@@ -252,8 +246,8 @@ class Begin extends PureComponent {
             }
 
             h1 {
-              margin-bottom: 6.6rem;
-              padding-top: 5.6rem;
+              margin-bottom: 6.625rem;
+              padding-top: 5.625rem;
               padding-left: 0;
               grid-column: 2 / span 4;
               font-size: 4rem;
@@ -272,7 +266,7 @@ class Begin extends PureComponent {
             }
 
             .rocket {
-              margin-bottom: 1.1rem;
+              margin-bottom: 1.125rem;
               grid-column: 2 / span 4;
               grid-row: 3;
               height: 10rem;
@@ -281,7 +275,7 @@ class Begin extends PureComponent {
             .rocket-text {
               margin-bottom: 0;
               grid-column: 1 / span 6;
-              font-size: 0.87rem;
+              font-size: 0.875rem;
               line-height: 1.5rem;
               text-align: center;
             }
@@ -294,4 +288,4 @@ class Begin extends PureComponent {
   }
 }
 
-export default Begin
+export default translate()(Begin)

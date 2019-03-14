@@ -45,7 +45,7 @@ class Toggler extends PureComponent {
             color: #fff;
             border: none;
             cursor: pointer;
-            letter-spacing: 0.08rem;
+            letter-spacing: 0.0625rem;
             background: none;
           }
         `}</style>

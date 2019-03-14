@@ -168,11 +168,11 @@ export class SideBar extends PureComponent {
           }
 
           .link_active + .sub-menu {
-            padding-top: 0.6rem;
+            padding-top: 0.625rem;
           }
 
           .sub-menu {
-            margin-top: -0.4rem;
+            margin-top: -0.375rem;
             overflow: hidden;
             padding-bottom: 1.5625rem;
           }
@@ -286,7 +286,7 @@ export class SideBar extends PureComponent {
 
           .section-name {
             position: relative;
-            margin-bottom: 4.15rem;
+            margin-bottom: 4.125rem;
             padding-right: 8rem;
             line-height: 1rem;
             text-align: right;

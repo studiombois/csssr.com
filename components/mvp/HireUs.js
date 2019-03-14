@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
-import { string } from 'prop-types'
 import css from 'styled-jsx/css'
+import translate from '../../utils/translate-wrapper'
 import Picture from '../Picture'
 import ButtonLink from '../ui-kit/ButtonLink'
 
@@ -31,23 +31,19 @@ const button = css.resolve`
 `
 
 class HireUs extends PureComponent {
-  static propTypes = {
-    imageAlt: string,
-    buttonText: string,
-    link: string,
-  }
-
   render() {
-    const { imageAlt, buttonText, link } = this.props
+    const { t } = this.props
     return (
       <Fragment>
         <section id='hire-us' className='grid-container'>
           <div>
-            <ButtonLink className={button.className} href={link}>{buttonText}</ButtonLink>
+            <ButtonLink className={button.className} href={t('mvp:hireUs.link')}>
+              {t('mvp:hireUs.buttonText')}
+            </ButtonLink>
           </div>
           <Picture
             className={picture.className}
-            image={{ namespace: 'dev', key: 'letter', alt: imageAlt }}
+            image={{ namespace: 'dev', key: 'letter', alt: t('mvp:hireUs.imageAlt') }}
           />
         </section><style jsx>{`
           section {
@@ -68,13 +64,13 @@ class HireUs extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             section {
-              margin-top: 4.7rem;
+              margin-top: 4.6875rem;
               margin-bottom: 11rem;
               width: 1328px;
             }
 
             div {
-              margin-bottom: 3.1rem;
+              margin-bottom: 3.125rem;
               padding-left: 5.25rem;
               padding-right: 5.25rem;
               grid-column: 5 / span 4;
@@ -83,15 +79,15 @@ class HireUs extends PureComponent {
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             section {
-              margin-top: 5.2rem;
+              margin-top: 5.1875rem;
               margin-bottom: 11rem;
               width: 1232px;
             }
 
             div {
-              margin-bottom: 4.45rem;
-              padding-right: 4.2rem;
-              padding-left: 4.2rem;
+              margin-bottom: 4.4375rem;
+              padding-right: 4.1875rem;
+              padding-left: 4.1875rem;
               grid-column: 5 / span 4;
             }
           }
@@ -104,7 +100,7 @@ class HireUs extends PureComponent {
             }
 
             div {
-              margin-bottom: 8.8rem;
+              margin-bottom: 8.8125rem;
               grid-column: 5 / span 4;
               padding-left: 0;
               padding-right: 0;
@@ -113,7 +109,7 @@ class HireUs extends PureComponent {
 
           @media (max-width: 767px) {
             section {
-              margin-bottom: 2.6rem;
+              margin-bottom: 2.625rem;
               width: 20.5rem;
             }
 
@@ -132,4 +128,4 @@ class HireUs extends PureComponent {
   }
 }
 
-export default HireUs
+export default translate()(HireUs)

@@ -1,6 +1,7 @@
 import React, { Fragment, PureComponent } from 'react'
 import { string } from 'prop-types'
 import css from 'styled-jsx/css'
+import translate from '../../utils/translate-wrapper'
 import Picture from '../Picture'
 
 const rocketBody = isAssembled => css.resolve`
@@ -128,41 +129,41 @@ class Rocket extends PureComponent {
 
   render() {
     const { isAssembled } = this.state
-    const { rocketBodyAlt, rocketDressAlt, rocketJetAlt, rocketDeviderAlt, rocketArrowAlt } = this.props
+    const { t } = this.props
     return (
       <Fragment>
         <div ref={this.rocketRef}>
           <Picture
             className={rocketBody(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'red_block', alt: rocketBodyAlt }}
+            image={{ namespace: 'mvp', key: 'red_block', alt: t('mvp:begin.imageAlt.rocketBody') }}
           />
           <Picture
             className={rocketDress(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'yellow_block', alt: rocketDressAlt }}
+            image={{ namespace: 'mvp', key: 'yellow_block', alt: t('mvp:begin.imageAlt.rocketDress') }}
           />
           <Picture
             className={rocketBlue(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'blue_line', alt: rocketDeviderAlt }}
+            image={{ namespace: 'mvp', key: 'blue_line', alt: t('mvp:begin.imageAlt.rocketDevider') }}
           />
           <Picture
             className={rocketArrow(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'yellow_arrow', alt: rocketArrowAlt }}
+            image={{ namespace: 'mvp', key: 'yellow_arrow', alt: t('mvp:begin.imageAlt.rocketArrow') }}
           />
           <Picture
             className={rocketJet1(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'green_line_left', alt: rocketJetAlt }}
+            image={{ namespace: 'mvp', key: 'green_line_left', alt: t('mvp:begin.imageAlt.rocketJet') }}
           />
           <Picture
             className={rocketJet2(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'green_line_middle', alt: rocketJetAlt }}
+            image={{ namespace: 'mvp', key: 'green_line_middle', alt: t('mvp:begin.imageAlt.rocketJet') }}
           />
           <Picture
             className={rocketJet3(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'green_line_right', alt: rocketJetAlt }}
+            image={{ namespace: 'mvp', key: 'green_line_right', alt: t('mvp:begin.imageAlt.rocketJet') }}
           />
           <Picture
             className={rocketBlack(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'black_line', alt: rocketDeviderAlt }}
+            image={{ namespace: 'mvp', key: 'black_line', alt: t('mvp:begin.imageAlt.rocketDevider') }}
           />
         </div><style jsx>{`
           div {
@@ -201,7 +202,7 @@ class Rocket extends PureComponent {
             div {
               position: absolute;
               left: 50%;
-              margin-top: -2.4rem;
+              margin-top: -2.375rem;
               transform-origin: 0 50%;
               transform: scale(0.43) translate(-50%, -50%);
             }
@@ -211,7 +212,7 @@ class Rocket extends PureComponent {
             div {
               position: absolute;
               left: 50%;
-              margin-top: 0.4rem;
+              margin-top: 0.375rem;
               transform: scale(0.243) translateX(-50%);
             }
           }
@@ -229,4 +230,4 @@ class Rocket extends PureComponent {
   }
 }
 
-export default Rocket
+export default translate()(Rocket)

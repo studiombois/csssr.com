@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { string } from 'prop-types'
+import translate from '../../utils/translate-wrapper'
 import css from 'styled-jsx/css'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
@@ -12,26 +12,26 @@ const picture = css.resolve`
 
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
-      margin-top: -3.8rem;
+      margin-top: -3.8125rem;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
     picture {
-      margin-top: -0.8rem;
+      margin-top: -0.8125rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      margin-top: -2.8rem;
+      margin-top: -2.8125rem;
       grid-column: 8 / span 5;
     }
   }
 
   @media (max-width: 767px) {
     picture {
-      margin-top: -3.4rem;
+      margin-top: -3.375rem;
       grid-column: 2 / span 4;
       grid-row: 1;
     }
@@ -39,23 +39,17 @@ const picture = css.resolve`
 `
 
 class Money extends PureComponent {
-  static propTypes = {
-    imageAlt: string,
-    text: string,
-    title: string,
-  }
-
   render() {
-    const { title, text, imageAlt } = this.props
+    const { t } = this.props
 
     return (
       <Fragment>
         <article className='grid-container'>
-          <h2>{title}</h2>
-          <p>{text}</p>
+          <h2>{t('mvp:money.title')}</h2>
+          <p>{t('mvp:money.text')}</p>
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'mvp', key: 'money', alt: imageAlt }}
+            image={{ namespace: 'mvp', key: 'money', alt: t('mvp:money.imageAlt') }}
           />
         </article><style jsx>{`
           article {
@@ -82,27 +76,27 @@ class Money extends PureComponent {
             font-family: 'Roboto', sans-serif;
             font-size: 1.5rem;
             font-weight: normal;
-            line-height: 2.55rem;
+            line-height: 2.5625rem;
             color: #4a4a4a;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             article {
-              margin-top: 5.1rem;
+              margin-top: 5.125rem;
               width: 1328px;
             }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             article {
-              margin-top: 5.2rem;
+              margin-top: 5.1875rem;
               width: 1232px;
             }
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
             article {
-              margin-top: 2.9rem;
+              margin-top: 2.875rem;
               width: 944px;
             }
 
@@ -119,13 +113,13 @@ class Money extends PureComponent {
 
           @media (max-width: 767px) {
             article {
-              margin-top: 5.8rem;
+              margin-top: 5.8125rem;
               width: 20.5rem;
             }
 
             h2 {
               margin-top: 1rem;
-              margin-bottom: 0.9rem;
+              margin-bottom: 0.875rem;
               padding-left: 0;
               grid-column: 1 / span 6;
               grid-row: 2;
@@ -150,4 +144,4 @@ class Money extends PureComponent {
   }
 }
 
-export default Money
+export default translate()(Money)

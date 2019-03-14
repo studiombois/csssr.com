@@ -4,6 +4,7 @@ import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
 import Footer from './Footer'
+import translate from '../../utils/translate-wrapper'
 import Picture from '../Picture'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
@@ -95,7 +96,7 @@ const footer = css.resolve`
   }
 `
 
-export default class Vacancies extends PureComponent {
+class Vacancies extends PureComponent {
   static propTypes = {
     title: string,
     subTitle: string,
@@ -170,14 +171,8 @@ export default class Vacancies extends PureComponent {
 
   render() {
     const {
-      title,
-      subTitle,
-      logoAlt,
-      how,
-      who,
-      about,
-      hunter,
       lang,
+      t,
     } = this.props
     return (
       <Fragment>
@@ -189,7 +184,7 @@ export default class Vacancies extends PureComponent {
               <img
                 className='logo'
                 src={`${require('../../static/icons/csssr_logo.svg')}`}
-                alt={logoAlt}
+                alt={t('jobs:logoAlt')}
               />
             </a>
           </div>
@@ -201,8 +196,8 @@ export default class Vacancies extends PureComponent {
         >
           <header>
             <h1 className='font_h1-regular'>
-              <div dangerouslySetInnerHTML={{ __html: title }} />
-              <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: subTitle }} />
+              <div dangerouslySetInnerHTML={{ __html: t('jobs:title') }} />
+              <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('jobs:subTitle') }} />
             </h1>
           </header>
 
@@ -231,48 +226,48 @@ export default class Vacancies extends PureComponent {
 
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'jobs', key: 'how', alt: how.alt }}
+            image={{ namespace: 'jobs', key: 'how', alt: t('jobs:how.alt') }}
             customResolutions={['360', '1024']}
           />
 
           <h2 className='font_h2-regular'>
             <span style={{ color: '#85d4b2' }}>
-              {how.word}
+              {t('jobs:how.word')}
             </span>
             {' '}
-            <span dangerouslySetInnerHTML={{ __html: how.title }} />
+            <span dangerouslySetInnerHTML={{ __html: t('jobs:how.title') }} />
           </h2>
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: how.description }} />
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:how.description') }} />
 
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'jobs', key: 'who', alt: who.alt }}
+            image={{ namespace: 'jobs', key: 'who', alt: t('jobs:who.alt') }}
             customResolutions={['360', '1024']}
           />
 
           <h2 className='font_h2-regular'>
             <span style={{ color: '#fe535b' }}>
-              {who.word}
+              {t('jobs:who.word')}
             </span>
             {' '}
-            <span dangerouslySetInnerHTML={{ __html: who.title }} />
+            <span dangerouslySetInnerHTML={{ __html: t('jobs:who.title') }} />
           </h2>
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: who.description }} />
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:who.description') }} />
 
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'jobs', key: 'distance', alt: about.alt }}
+            image={{ namespace: 'jobs', key: 'distance', alt: t('jobs:about.alt') }}
             customResolutions={['360', '1024']}
           />
 
-          <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: about.title }} />
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: about.descriptionFirst }} />
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: about.descriptionSecond }} />
+          <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.title') }} />
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionFirst') }} />
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionSecond') }} />
 
-          <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: hunter.alt }}/>
+          <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: t('jobs:hunter.alt') }}/>
 
           <p className='hunter-text font_p16-regular'>
-            {hunter.description}&nbsp;<a href={hunter.firstLink} target='_blank' rel='noopener' className='font_link-list_16'>{hunter.firstLinkText}</a> <span className='hunter-text-inner'>{hunter.and} <a href={hunter.secondLink} target='_blank' rel='noopener' className='font_link-list_16'>{hunter.secondLinkText}</a></span>.
+            {t('jobs:hunter.description')}&nbsp;<a href={t('jobs:hunter.firstLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.firstLinkText')}</a> <span className='hunter-text-inner'>{t('jobs:hunter.and')} <a href={t('jobs:hunter.secondLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.secondLinkText')}</a></span>.
           </p>
 
           <Footer className={footer.className}/>
@@ -701,3 +696,5 @@ export default class Vacancies extends PureComponent {
     )
   }
 }
+
+export default translate()(Vacancies)

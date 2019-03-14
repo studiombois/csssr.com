@@ -23,40 +23,7 @@ class Jobs extends PureComponent {
           footerProps={{ noFooter: true }}
         >
           <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
-          <Vacancies
-            vacancies={vacancies}
-            lang='ru'
-            title={t('jobs:title')}
-            subTitle={t('jobs:subTitle')}
-            logoAlt={t('jobs:logoAlt')}
-            how={{
-              alt: t('jobs:how.alt'),
-              word: t('jobs:how.word'),
-              title: t('jobs:how.title'),
-              description: t('jobs:how.description'),
-            }}
-            who={{
-              alt: t('jobs:who.alt'),
-              word: t('jobs:who.word'),
-              title: t('jobs:who.title'),
-              description: t('jobs:who.description'),
-            }}
-            about={{
-              alt: t('jobs:about.alt'),
-              title: t('jobs:about.title'),
-              descriptionFirst: t('jobs:about.descriptionFirst'),
-              descriptionSecond: t('jobs:about.descriptionSecond'),
-            }}
-            hunter={{
-              alt: t('jobs:hunter.alt'),
-              description: t('jobs:hunter.description'),
-              and: t('jobs:hunter.and'),
-              secondLinkText: t('jobs:hunter.secondLinkText'),
-              firstLinkText: t('jobs:hunter.firstLinkText'),
-              firstLink: t('jobs:hunter.firstLink'),
-              secondLink: t('jobs:hunter.secondLink'),
-            }}
-          />
+          <Vacancies vacancies={vacancies} lang='ru' />
         </Layout>
         <style jsx>{`
           @media (max-width: 767px) {

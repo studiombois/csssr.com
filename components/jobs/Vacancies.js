@@ -1,5 +1,4 @@
 import React, { PureComponent, Fragment } from 'react'
-import { string, shape } from 'prop-types'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
@@ -97,39 +96,6 @@ const footer = css.resolve`
 `
 
 class Vacancies extends PureComponent {
-  static propTypes = {
-    title: string,
-    subTitle: string,
-    logoAlt: string,
-    lang: string,
-    how: shape({
-      alt: string,
-      word: string,
-      title: string,
-      description: string,
-    }),
-    who: shape({
-      alt: string,
-      word: string,
-      title: string,
-      description: string,
-    }),
-    about: shape({
-      alt: string,
-      title: string,
-      descriptionFirst: string,
-      descriptionSecond: string,
-    }),
-    hunter: shape({
-      alt: string,
-      description: string,
-      and: string,
-      firstLink: string,
-      secondLink: string,
-      firstLinkText: string,
-      secondLinkText: string,
-    }),
-  }
   articleRef = React.createRef()
 
   componentDidMount() {
@@ -171,7 +137,7 @@ class Vacancies extends PureComponent {
 
   render() {
     const {
-      lang,
+      lng,
       t,
     } = this.props
     return (
@@ -180,7 +146,7 @@ class Vacancies extends PureComponent {
 
         <div className='jobs-header-logo-container'>
           <div className='logo-wrapper'>
-            <a href={`/${lang}/jobs`}>
+            <a href={`/${lng}/jobs`}>
               <img
                 className='logo'
                 src={`${require('../../static/icons/csssr_logo.svg')}`}
@@ -207,8 +173,8 @@ class Vacancies extends PureComponent {
                 <li key={vacancy.id}>
                   <Link
                     prefetch
-                    href={{ pathname: `/${lang}/job`, query: { jobPathName: vacancy.pathName } }}
-                    as={`/${lang}/jobs/${vacancy.pathName}`}
+                    href={{ pathname: `/${lng}/job`, query: { jobPathName: vacancy.pathName } }}
+                    as={`/${lng}/jobs/${vacancy.pathName}`}
                   >
                     <a
                       className={cn({

@@ -23,7 +23,7 @@ class Jobs extends PureComponent {
           footerProps={{ noFooter: true }}
         >
           <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
-          <Vacancies vacancies={vacancies} lang='en' />
+          <Vacancies vacancies={vacancies} />
         </Layout>
         <style jsx>{`
           @media (max-width: 767px) {

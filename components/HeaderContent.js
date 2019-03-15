@@ -23,6 +23,7 @@ class HeaderContent extends PureComponent {
     toggleHeaderAnimations: bool,
     onFocus: func,
     onSideBarToggle: func,
+    onScrollToSection: func,
   }
 
   render() {
@@ -41,6 +42,7 @@ class HeaderContent extends PureComponent {
       toggleHeaderAnimations,
       onSideBarToggle,
       onFocus,
+      onScrollToSection,
       t,
     } = this.props
     return (
@@ -102,6 +104,7 @@ class HeaderContent extends PureComponent {
                   <li
                     className='nav-list-item'
                     key={`nav-link-${href}-${label}`}
+                    onClick={onScrollToSection}
                   >
                     <a className='nav-list-link font_top-menu' href={href}>{t(label)}</a>
                   </li>

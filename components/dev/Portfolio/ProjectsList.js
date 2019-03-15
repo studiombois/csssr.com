@@ -189,7 +189,7 @@ class ProjectsList extends PureComponent {
             height: ${listHeight ? listHeight / 16 + 'rem' : 'auto'};
             max-height: auto;
             overflow: hidden;
-            transition: height ${listHeight ? listHeight / 5 : 200}ms linear; // коэффициент подобран на глаз
+            transition: height ${listHeight ? listHeight / 3.8 : 200}ms ease-in; // коэффициент подобран на глаз
           }
         `}</style>
       </Fragment>

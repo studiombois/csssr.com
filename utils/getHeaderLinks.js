@@ -51,7 +51,7 @@ const headerLinks = {
     href: '#process',
     label: 'mvp:headerNav.process',
   }, {
-    href: '#hire-us',
+    href: '/ru#hire-us',
     label: 'mvp:headerNav.hireUs',
     hideOnTablet: true,
   }],

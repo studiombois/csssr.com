@@ -21,6 +21,7 @@ class HeaderContent extends PureComponent {
     showHeader: bool,
     pinHeader: bool,
     toggleHeaderAnimations: bool,
+    onFocus: func,
     onSideBarToggle: func,
     onScrollToSection: func,
   }
@@ -40,12 +41,14 @@ class HeaderContent extends PureComponent {
       pinHeader,
       toggleHeaderAnimations,
       onSideBarToggle,
+      onFocus,
       onScrollToSection,
       t,
     } = this.props
     return (
       <Fragment>
         <header
+          onFocus={onFocus}
           className={cn({
             header: true,
             header_pinned: pinHeader,

@@ -6,7 +6,8 @@
     "jobs": "Работа в CSSSR",
     "job": "Работа в CSSSR",
     "school": "Школа",
-    "privacy-policy": "Политика конфиденциальности"
+    "privacy-policy": "Политика конфиденциальности",
+    "mvp": "MVP"
   },
   "floatingButton": {
     "question": "Как вам удобнее связаться с нами?",
@@ -30,7 +31,8 @@
     "ru/jobs": "Работа в CSSSR",
     "ru/job": "Работа в CSSSR",
     "ru/school": "Школа",
-    "ru/privacy-policy": "Политика конфиденциальности"
+    "ru/privacy-policy": "Политика конфиденциальности",
+    "ru/mvp": "Фронтенд разработка"
   },
   "noPage": "Данная страница не доступна на русском языке.",
   "checkBoxesText": {

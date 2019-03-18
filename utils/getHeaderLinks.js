@@ -41,6 +41,20 @@ const headerLinks = {
     href: '#sign',
     label: 'school:headerNav.sign',
   }],
+  mvp: [{
+    href: '#what-is-mvp',
+    label: 'mvp:headerNav.what',
+  }, {
+    href: '#advantages',
+    label: 'mvp:headerNav.advantages',
+  }, {
+    href: '#process',
+    label: 'mvp:headerNav.process',
+  }, {
+    href: '/ru#hire-us',
+    label: 'mvp:headerNav.hireUs',
+    hideOnTablet: true,
+  }],
 }
 
 export default pathname => {
@@ -53,6 +67,8 @@ export default pathname => {
     return headerLinks.sborka
   case ('/ru/school'):
     return headerLinks.school
+  case ('/ru/mvp'):
+    return headerLinks.mvp
   default:
     return []
   }

@@ -6,7 +6,8 @@
     "jobs": "Jobs",
     "school": "School",
     "privacy-policy": "Privacy Policy",
-    "cookies-policy": "Cookies Policy"
+    "cookies-policy": "Cookies Policy",
+    "mvp": "Software Engineering"
   },
   "floatingButton": {
     "question": "How would you like to&nbsp;contact&nbsp;us?",
@@ -30,7 +31,8 @@
     "en/jobs": "Jobs",
     "en/school": "School",
     "en/privacy-policy": "Privacy Policy",
-    "en/cookies-policy": "Cookies Policy"
+    "en/cookies-policy": "Cookies Policy",
+    "en/mvp": "Software Engineering"
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {

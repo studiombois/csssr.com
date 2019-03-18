@@ -28,7 +28,7 @@ i18n
     load: 'languageOnly',
     whitelist: ['en', 'ru'],
     preload: ['en', 'ru'],
-    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'school', 'error', 'privacyPolicy', 'cookiesPolicy'],
+    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'school', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
     detection: {
       order: ['path', 'cookie', 'header'],
       lookupCookie: 'language',

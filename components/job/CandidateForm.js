@@ -51,7 +51,7 @@ const picturesMap = {
   'senior-apparel-developer': 'Clothes',
   'product-manager': 'Product_manager',
   'devops-engineer': 'Developer_2',
-  'sales-assistant': '',
+  'sales-assistant': 'Assistant',
   'office-manager': 'Documents_2',
   'account-manager-ru': 'Account_manager_1',
   'account-manager-en': 'Account_manager_1',
@@ -61,6 +61,7 @@ const picturesMap = {
   'java-developer': 'Developer_2',
   'junior-project-manager': 'Project_manager',
   'account-manager-ee': 'Account_manager_1',
+  'smm-manager': 'SMM',
 }
 
 const divideSections = sections => {

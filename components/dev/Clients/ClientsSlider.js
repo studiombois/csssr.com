@@ -10,9 +10,9 @@ class ClientsSlider extends PureComponent {
     activeClientsGroupId: clientsGroups[0].id,
   }
 
-  handleChangeActiveClientsGroupId = e =>
+  handleChangeActiveClientsGroupId = value =>
     this.setState({
-      activeClientsGroupId: e.currentTarget.value,
+      activeClientsGroupId: value,
     })
 
   render() {

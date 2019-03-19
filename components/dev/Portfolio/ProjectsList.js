@@ -40,9 +40,9 @@ class ProjectsList extends PureComponent {
     return targetPortfolio ? targetPortfolio.projects : []
   }
 
-  handleChangeActiveProjectsGroupId = e =>
+  handleChangeActiveProjectsGroupId = value =>
     this.setState({
-      activeProjectsGroupId: e.currentTarget.value,
+      activeProjectsGroupId: value,
       listHeight: null,
     })
 

@@ -92,6 +92,34 @@ const generateSitemap = () =>
           },
         ],
       }, {
+        url: 'https://csssr.com/ru/mvp',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/mvp',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/mvp',
+          },
+        ],
+      }, {
+        url: 'https://csssr.com/en/mvp',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/mvp',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/mvp',
+          },
+        ],
+      }, {
         url: 'https://csssr.com/en/privacy-policy',
         changefreq: 'yearly',
         priority: 0.6,

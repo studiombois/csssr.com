@@ -1,0 +1,5 @@
+{
+  "minutes_0": "~ {{count}} minute",
+  "minutes_1": "~ {{count}} minutes",
+  "minutes_2": "~ {{count}} minutes"
+}

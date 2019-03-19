@@ -149,7 +149,7 @@ const focusOnErrors = createDecorator()
 
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
-    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?lang=ru`)
+    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?lang=en`)
     const vacancies = await response.json()
 
     const vacancy = vacancies.find(v => v.pathName === query.jobPathName)
@@ -181,7 +181,7 @@ class Job extends PureComponent {
       <Fragment>
         <Layout
           headerProps={{
-            logoHref: '/ru/jobs',
+            logoHref: '/en/jobs',
             logoAlt: 'CSSSR jobs logo',
             isLogoLink: true,
             isBurgerVisible: true,
@@ -190,7 +190,7 @@ class Job extends PureComponent {
           <Head title={vacancy.name} description={vacancy.description} />
           <ReactFinalForm
             vacancy={vacancy}
-            language='ru'
+            language='en'
             vacancies={vacancies}
             initialValues={initialValues}
             validate={candidateFormValidationRules(vacancy, t)}

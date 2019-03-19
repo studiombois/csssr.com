@@ -25,10 +25,6 @@ const items = [{
 }, {
   path: '/jobs',
   key: 'common:menu.jobs',
-  redirect: {
-    from: '/en/jobs',
-    to: '/ru/jobs',
-  },
 }]
 
 const crossIcon = <CrossIcon width='100%' height='100%' />

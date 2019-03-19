@@ -57,7 +57,7 @@ class ProjectsList extends PureComponent {
 
         window.scrollTo({
           top: scrollToOffset,
-          behavior: 'smooth',
+          behavior: 'instant',
         })
       }
     }
@@ -189,7 +189,7 @@ class ProjectsList extends PureComponent {
             height: ${listHeight ? listHeight / 16 + 'rem' : 'auto'};
             max-height: auto;
             overflow: hidden;
-            transition: height ${listHeight ? listHeight / 3.8 : 200}ms ease-in; // коэффициент подобран на глаз
+            transition: height ${!isCut ? listHeight / 3.8 : 0}ms ease-in; // коэффициент подобран на глаз
           }
         `}</style>
       </Fragment>

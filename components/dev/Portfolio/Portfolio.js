@@ -6,8 +6,8 @@ import ProjectsListMobile from './ProjectsListMobile'
 
 const Portfolio = ({ t, isMobile, portfolio }) =>
   <Fragment>
-    <article className='grid-container'>
-      <h2 id='portfolio' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:portfolio.title') }} />
+    <article className='grid-container' id='portfolio'>
+      <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:portfolio.title') }} />
       <p className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('dev:portfolio.text') }} />
       { isMobile
         ? portfolio.map(projectGroup =>

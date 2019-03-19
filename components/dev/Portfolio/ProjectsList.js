@@ -46,14 +46,13 @@ class ProjectsList extends PureComponent {
 
   handleCutListOnOff = () => {
     const listNode = this.listRef.current
+    const portfolioSection = document.getElementById('portfolio')
     if (this.state.isCut) {
-      this.listCutHeight = listNode.parentNode.parentNode.offsetHeight
+      this.listCutHeight = portfolioSection.offsetHeight
     }
     const scrollToNextBlock = () => {
       if (this.state.isCut) {
-        const elem = document.getElementById('portfolio')
-        const headerOffset = 80 // Чтобы не прижиматься верхней границей страницы к заголовку
-        const scrollToOffset = elem.offsetTop + this.listCutHeight - headerOffset
+        const scrollToOffset = portfolioSection.offsetTop + this.listCutHeight
 
         window.scrollTo({
           top: scrollToOffset,

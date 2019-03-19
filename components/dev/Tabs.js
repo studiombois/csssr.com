@@ -9,7 +9,7 @@ const Tabs = ({ t, tabs, activeTabId, onClick }) =>
       {tabs.map(tabId =>
         <li className={cn({ active: tabId === activeTabId })} key={tabId}>
           <button
-            onClick={onClick}
+            onClick={() => onClick(tabId)}
             value={tabId}
             dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${tabId}`) }}
           />

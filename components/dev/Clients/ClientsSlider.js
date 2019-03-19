@@ -12,12 +12,13 @@ class ClientsSlider extends PureComponent {
 
   handleChangeActiveClientsGroupId = e =>
     this.setState({
-      activeClientsGroupId: e.target.value,
+      activeClientsGroupId: e.currentTarget.value,
     })
 
   render() {
     const { activeClientsGroupId } = this.state
-    const activeClients = clientsGroups.find(clientsGroup => clientsGroup.id === activeClientsGroupId).clients
+    const activeClientsGroup = clientsGroups.find(clientsGroup => clientsGroup.id === activeClientsGroupId)
+    const activeClients = activeClientsGroup ? activeClientsGroup.clients : []
 
     return (
       <Fragment>

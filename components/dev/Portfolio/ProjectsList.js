@@ -32,14 +32,17 @@ class ProjectsList extends PureComponent {
     const { portfolio } = this.props
     const { activeProjectsGroupId } = this.state
 
-    return activeProjectsGroupId === 'all'
-      ? portfolio.map(projectGroup => projectGroup.projects.map(project => project))
-      : portfolio.find(projectGroup => projectGroup.id === activeProjectsGroupId).projects
+    if (activeProjectsGroupId === 'all') {
+      return portfolio.map(projectGroup => projectGroup.projects.map(project => project))
+    }
+
+    const targetPortfolio = portfolio.find(projectGroup => projectGroup.id === activeProjectsGroupId)
+    return targetPortfolio ? targetPortfolio.projects : []
   }
 
   handleChangeActiveProjectsGroupId = e =>
     this.setState({
-      activeProjectsGroupId: e.target.value,
+      activeProjectsGroupId: e.currentTarget.value,
       listHeight: null,
     })
 

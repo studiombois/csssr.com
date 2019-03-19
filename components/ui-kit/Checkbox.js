@@ -82,6 +82,13 @@ export default class Checkbox extends PureComponent {
         </label>
         {!showValidationAsWarning && showError && <span className='font_input-small-error-label error'>{error}</span>}
         <style jsx>{`
+          .checkbox {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+          }
+
           span.checkbox:hover label::before {
             border-color: rgba(155, 155, 155, 1);
           }
@@ -151,16 +158,13 @@ export default class Checkbox extends PureComponent {
 
           input {
             position: absolute;
+            top: 0;
             margin: 0;
-            overflow: visible;
-            height: 0;
-            width: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: none;
             border: 0;
-            clip: rect(0 0 0 0);
-          }
-
-          input:focus {
-            outline: none;
+            appearance: none;
           }
 
           input:checked + label::before {

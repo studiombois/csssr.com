@@ -3,6 +3,7 @@ import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
 import Footer from './Footer'
+import translate from '../../utils/translate-wrapper'
 import Picture from '../Picture'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
@@ -94,7 +95,7 @@ const footer = css.resolve`
   }
 `
 
-export default class Vacancies extends PureComponent {
+class Vacancies extends PureComponent {
   articleRef = React.createRef()
 
   componentDidMount() {
@@ -135,17 +136,21 @@ export default class Vacancies extends PureComponent {
   }
 
   render() {
+    const {
+      lng,
+      t,
+    } = this.props
     return (
       <Fragment>
         <div className='half-page-picture' />
 
         <div className='jobs-header-logo-container'>
           <div className='logo-wrapper'>
-            <a href='/ru/jobs'>
+            <a href={`/${lng}/jobs`}>
               <img
                 className='logo'
                 src={`${require('../../static/icons/csssr_logo.svg')}`}
-                alt='CSSSR jobs logo'
+                alt={t('jobs:logoAlt')}
               />
             </a>
           </div>
@@ -157,10 +162,8 @@ export default class Vacancies extends PureComponent {
         >
           <header>
             <h1 className='font_h1-regular'>
-              Работа в&nbsp;CSSSR
-              <span className='font_subhead-regular'>
-                CSSSR&nbsp;&mdash; островок здравого смысла в&nbsp;корпоративном океане зла.
-              </span>
+              <div dangerouslySetInnerHTML={{ __html: t('jobs:title') }} />
+              <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('jobs:subTitle') }} />
             </h1>
           </header>
 
@@ -170,8 +173,8 @@ export default class Vacancies extends PureComponent {
                 <li key={vacancy.id}>
                   <Link
                     prefetch
-                    href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
-                    as={`/ru/jobs/${vacancy.pathName}`}
+                    href={{ pathname: `/${lng}/job`, query: { jobPathName: vacancy.pathName } }}
+                    as={`/${lng}/jobs/${vacancy.pathName}`}
                   >
                     <a
                       className={cn({
@@ -189,58 +192,48 @@ export default class Vacancies extends PureComponent {
 
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'jobs', key: 'how', alt: 'Работа мечты CSSSR' }}
+            image={{ namespace: 'jobs', key: 'how', alt: t('jobs:how.alt') }}
             customResolutions={['360', '1024']}
           />
 
           <h2 className='font_h2-regular'>
             <span style={{ color: '#85d4b2' }}>
-              Как
+              {t('jobs:how.word')}
             </span>
             {' '}
-            мы&nbsp;нанимаем?
+            <span dangerouslySetInnerHTML={{ __html: t('jobs:how.title') }} />
           </h2>
-          <p className='font_p16-regular'>
-            Процесс найма в&nbsp;CSSSR состоит из&nbsp;нескольких этапов. Как правило, необходимо выполнить тестовое задание, пройти интервью c&nbsp;командой рекрутеров, поразить интервьюера на&nbsp;техническом собеседовании и&nbsp;подружиться с&nbsp;потенциальным начальником. Процесс занимает от&nbsp;одной до&nbsp;двух недель, но, как показывает практика, результат стоит того.
-          </p>
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:how.description') }} />
 
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'jobs', key: 'who', alt: 'Работа мечты CSSSR' }}
+            image={{ namespace: 'jobs', key: 'who', alt: t('jobs:who.alt') }}
             customResolutions={['360', '1024']}
           />
 
           <h2 className='font_h2-regular'>
             <span style={{ color: '#fe535b' }}>
-              Кого
+              {t('jobs:who.word')}
             </span>
             {' '}
-            мы&nbsp;нанимаем?
+            <span dangerouslySetInnerHTML={{ __html: t('jobs:who.title') }} />
           </h2>
-          <p className='font_p16-regular'>
-            В&nbsp;CSSSR работают необыкновенные люди&nbsp;&mdash; нас всех объединяет стремление создавать безупречное. В&nbsp;компанию попадают только самые талантливые, амбициозные, стойкие, напористые, умные люди с&nbsp;хорошим чувством юмора. Мы&nbsp;не&nbsp;скрываем, что даём зеленый свет прежде всего тем, кто хочет работать именно с&nbsp;нами, тем, кому нравится наша концепция, кто проникся нашими ценностями.
-          </p>
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:who.description') }} />
 
           <PictureForAllResolutions
             className={picture.className}
-            image={{ namespace: 'jobs', key: 'distance', alt: 'Работа мечты CSSSR' }}
+            image={{ namespace: 'jobs', key: 'distance', alt: t('jobs:about.alt') }}
             customResolutions={['360', '1024']}
           />
 
-          <h2 className='font_h2-regular'>
-            О&nbsp;дистанционной работе
-          </h2>
-          <p className='font_p16-regular'>
-            Быть успешной компанией в&nbsp;21&nbsp;веке&nbsp;&mdash; не&nbsp;значит сидеть друг напротив друга в&nbsp;офисе. Большинство сотрудников CSSSR работают там, где считают нужным: дома, в&nbsp;кафе, в&nbsp;пробке, в&nbsp;аэропорту, на&nbsp;берегу Индийского океана, за&nbsp;пределами Солнечной системы (если там есть интернет).
-          </p>
-          <p className='font_p16-regular'>
-            Однако не&nbsp;стоит думать, что отсутствие необходимости ходить в&nbsp;офис предполагает меньше ответственности и&nbsp;больше свободного времени. Обязательными условиями удалённой работы являются способность самостоятельно организовывать свой рабочий процесс и&nbsp;возможность без всяких «но» трудиться полный рабочий день.
-          </p>
+          <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.title') }} />
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionFirst') }} />
+          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionSecond') }} />
 
-          <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: 'jobs-hunter' }}/>
+          <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: t('jobs:hunter.alt') }}/>
 
           <p className='hunter-text font_p16-regular'>
-            Также наши вакансии можно найти на&nbsp;<a href='https://moikrug.ru/companies/csssr' target='_blank' rel='noopener' className='font_link-list_16'>Моём Круге</a> и&nbsp;на&nbsp;<a href='https://spb.hh.ru/employer/1230690' target='_blank' rel='noopener' className='font_link-list_16'>Head Hunter</a>.
+            {t('jobs:hunter.description')}&nbsp;<a href={t('jobs:hunter.firstLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.firstLinkText')}</a> <span className='hunter-text-inner'>{t('jobs:hunter.and')} <a href={t('jobs:hunter.secondLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.secondLinkText')}</a></span>.
           </p>
 
           <Footer className={footer.className}/>
@@ -339,6 +332,10 @@ export default class Vacancies extends PureComponent {
             margin-top: 13rem;
             grid-column: 9 / span 3;
             grid-row: 13;
+          }
+
+          .hunter-text-inner {
+            white-space: nowrap;
           }
 
           :global(#main) {
@@ -665,3 +662,5 @@ export default class Vacancies extends PureComponent {
     )
   }
 }
+
+export default translate()(Vacancies)

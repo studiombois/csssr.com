@@ -137,6 +137,7 @@ class Begin extends PureComponent {
             font-size: 1.5rem;
             font-weight: normal;
             line-height: 2.5rem;
+            color: #4a4a4a;
           }
 
           .rocket-text {

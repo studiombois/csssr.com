@@ -16,10 +16,6 @@ const items = [{
     {
       path: '/mvp',
       key: 'common:menu.mvp',
-      redirect: {
-        from: '/en/mvp',
-        to: '/ru/mvp',
-      },
     },
     // {
     //   path: '/',

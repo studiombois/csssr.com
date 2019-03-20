@@ -26,7 +26,7 @@ const Feature1 = ({ t, image }) =>
         />
 
         <p className='font_feature_1'>
-          MVP
+          {t('dev:service.mvp')}
         </p>
         <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
         <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />

@@ -1,7 +1,7 @@
 {
   "hello": "Hello!",
   "menu": {
-    "dev": "Software Engineering",
+    "dev": "FRONT-END DEVELOPMENT",
     "html": "Mock&#x2010;ups to&nbsp;HTML",
     "jobs": "Jobs",
     "job": "Job",
@@ -27,20 +27,20 @@
     "alliancePartText": "CSSSR is a part of"
   },
   "sectionName": {
-    "en": "Software Engineering",
+    "en": "FRONT-END DEVELOPMENT",
     "en/html": "Mock&#x2010;ups to&nbsp;HTML",
     "en/jobs": "Jobs",
     "en/job": "Job",
     "en/school": "School",
     "en/privacy-policy": "Privacy Policy",
     "en/cookies-policy": "Cookies Policy",
-    "en/mvp": "Software Engineering"
+    "en/mvp": "FRONT-END DEVELOPMENT"
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {
-    "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in ",
+    "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in the ",
     "privacyPolicyLinkText": "Privacy Policy",
-    "newsletterText": "I agree to recieve information and commercial offers"
+    "newsletterText": "I agree to receive information and commercial offers"
   },
   "formErrors": {
     "email": "Invalid email format",

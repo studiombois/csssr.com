@@ -72,12 +72,12 @@ const divideSections = sections => {
   ]
 }
 
-const mapVacancies = vacancy =>
+const mapVacancies = language => vacancy =>
   <li key={vacancy.id}>
     <Link
       prefetch
-      href={{ pathname: '/ru/job', query: { jobPathName: vacancy.pathName } }}
-      as={`/ru/jobs/${vacancy.pathName}`}
+      href={{ pathname: `/${language}/job`, query: { jobPathName: vacancy.pathName } }}
+      as={`/${language}/jobs/${vacancy.pathName}`}
     >
       <a
         className={cn({
@@ -211,7 +211,7 @@ class CandidateForm extends PureComponent {
     })
 
   renderVacancyImageAndLinks = () => {
-    const { vacancies, vacancy: { pathName, name } } = this.props
+    const { vacancies, language, vacancy: { pathName, name } } = this.props
 
     const pictureName = picturesMap[pathName]
 
@@ -224,7 +224,7 @@ class CandidateForm extends PureComponent {
         />}
 
         <ul>
-          {vacancies.map(mapVacancies)}
+          {vacancies.map(mapVacancies(language))}
         </ul><style jsx>{`
         div {
           grid-column: 9 / span 4;

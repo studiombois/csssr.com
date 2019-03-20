@@ -8,7 +8,7 @@ import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 
 class Jobs extends PureComponent {
   static async getInitialProps() {
-    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active`)
+    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?lang=en`)
     const vacancies = await res.json()
 
     return { vacancies }

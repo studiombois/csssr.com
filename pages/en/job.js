@@ -149,7 +149,7 @@ const focusOnErrors = createDecorator()
 
 class Job extends PureComponent {
   static async getInitialProps({ res, query }) {
-    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?lang=ru`)
+    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?lang=en`)
     const vacancies = await response.json()
 
     const vacancy = vacancies.find(v => v.pathName === query.jobPathName)

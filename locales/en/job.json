@@ -1,0 +1,4 @@
+{
+  "minutes": "~ {{count}} minute",
+  "minutes_plural": "~ {{count}} minutes"
+}

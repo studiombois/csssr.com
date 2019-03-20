@@ -1,131 +1,71 @@
-import React, { Fragment, PureComponent } from 'react'
-import css from 'styled-jsx/css'
+import React from 'react'
+import { Form as ReactFinalForm } from 'react-final-form'
+import { FORM_ERROR } from 'final-form'
+import createDecorator from 'final-form-focus'
 import translate from '../../utils/translate-wrapper'
-import Picture from '../Picture'
-import ButtonLink from '../ui-kit/ButtonLink'
+import fetch from 'isomorphic-unfetch'
+import ContactForm from '../ContactForm'
+import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
+import getGaCid from '../../utils/client/getGaCid'
 
-const picture = css.resolve`
-  picture {
-    grid-column: 4 / span 6;
-    text-align: center;
-    grid-row: 2;
+const pageName = 'mvp'
+
+const ContactFormForMVP = props => <ContactForm
+  imageName='letter'
+  pageName={pageName}
+  headerId='hire-us'
+  fields={['name', 'phone', 'email', 'message']}
+  feedbackEmail='sales@csssr.io'
+  {...props}
+/>
+
+const onSubmit = (t, lng) => async values => {
+  values.pageName = pageName
+  values.gacid = getGaCid()
+  values.language = lng
+
+  let res
+  try {
+    res = await fetch('/api/submit-form', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+  } catch {
+    return { [FORM_ERROR]: t('common:formErrors.general') }
   }
 
-  @media (max-width: 767px) {
-    picture {
-      grid-column: 1 / span 6;
+  if (res.status === 201) {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'form_mvp_success' })
+    }
+  } else {
+    let error
+    try {
+      const response = await res.json()
+      error = response.error
+    } catch {
+      error = t('common:formErrors.general')
     }
 
-    picture img {
-      max-width: 220px
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'form_mvp_fail' })
     }
-  }
-`
 
-const button = css.resolve`
-  @media (min-width: 768px) and (max-width: 1279px) {
-    a.button {
-      height: 3rem;
-    }
-  }
-`
-
-class HireUs extends PureComponent {
-  render() {
-    const { t } = this.props
-    return (
-      <Fragment>
-        <section id='hire-us' className='grid-container'>
-          <div>
-            <ButtonLink className={button.className} href={t('mvp:hireUs.link')}>
-              {t('mvp:hireUs.buttonText')}
-            </ButtonLink>
-          </div>
-          <Picture
-            className={picture.className}
-            image={{ namespace: 'dev', key: 'letter', alt: t('mvp:hireUs.imageAlt') }}
-          />
-        </section><style jsx>{`
-          section {
-            margin-top: 5rem;
-            margin-bottom: 6.5rem;
-            margin-left: auto;
-            margin-right: auto;
-            width: 1792px;
-          }
-
-          div {
-            margin-bottom: 1.5rem;
-            padding-left: 5px;
-            padding-right: 5px;
-            grid-column: 6 / span 2;
-            grid-row: 1;
-          }
-
-          @media (min-width: 1360px) and (max-width: 1919px) {
-            section {
-              margin-top: 4.6875rem;
-              margin-bottom: 11rem;
-              width: 1328px;
-            }
-
-            div {
-              margin-bottom: 3.125rem;
-              padding-left: 5.25rem;
-              padding-right: 5.25rem;
-              grid-column: 5 / span 4;
-            }
-          }
-
-          @media (min-width: 1280px) and (max-width: 1359px) {
-            section {
-              margin-top: 5.1875rem;
-              margin-bottom: 11rem;
-              width: 1232px;
-            }
-
-            div {
-              margin-bottom: 4.4375rem;
-              padding-right: 4.1875rem;
-              padding-left: 4.1875rem;
-              grid-column: 5 / span 4;
-            }
-          }
-
-          @media (min-width: 768px) and (max-width: 1279px) {
-            section {
-              margin-top: 7.5rem;
-              margin-bottom: 9rem;
-              width: 944px;
-            }
-
-            div {
-              margin-bottom: 8.8125rem;
-              grid-column: 5 / span 4;
-              padding-left: 0;
-              padding-right: 0;
-            }
-          }
-
-          @media (max-width: 767px) {
-            section {
-              margin-bottom: 2.625rem;
-              width: 20.5rem;
-            }
-
-            div {
-              margin-bottom: 2.5rem;
-              grid-column: 2 / span 4;
-              padding-left: 0;
-              padding-right: 0;
-            }
-          }
-        `}</style>
-        {picture.styles}
-        {button.styles}
-      </Fragment>
-    )
+    return { [FORM_ERROR]: error }
   }
 }
+
+const focusOnErrors = createDecorator()
+
+const HireUs = ({ t, lng }) => <ReactFinalForm
+  onSubmit={onSubmit(t, lng)}
+  validate={contactFormValidationRules(t)}
+  decorators={[ focusOnErrors ]}
+  component={ContactFormForMVP}
+/>
 
 export default translate()(HireUs)

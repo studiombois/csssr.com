@@ -84,9 +84,6 @@ export default class Checkbox extends PureComponent {
         <style jsx>{`
           .checkbox {
             position: relative;
-            margin: 0;
-            padding: 0;
-            display: inline-block;
           }
 
           span.checkbox:hover label::before {

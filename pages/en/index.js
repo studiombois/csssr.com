@@ -29,25 +29,6 @@ class Dev extends PureComponent {
     return { shuffledPortfolio }
   }
 
-  state = {
-    isMobile: false,
-  }
-
-  componentDidMount() {
-    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-    this.mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(this.mobileMediaQuery)
-  }
-
-  componentWillUnmount() {
-    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
-  }
-
-  handleMediaMatch = ({ matches }) =>
-    this.setState({
-      isMobile: matches,
-    })
-
   render() {
     const { t, shuffledPortfolio } = this.props
     const { isMobile } = this.state

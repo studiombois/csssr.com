@@ -6,6 +6,10 @@ import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 
 export default class MyApp extends App {
+  state = {
+    isMobile: false,
+  }
+
   // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
@@ -63,6 +67,9 @@ export default class MyApp extends App {
   }
 
   componentDidMount() {
+    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
+    this.mobileMediaQuery.addListener(this.handleMediaMatch)
+    this.handleMediaMatch(this.mobileMediaQuery)
     window.addEventListener('keydown', function (event) {
       if (event.which === 9) {
         document.body.classList.add('outline')
@@ -73,6 +80,15 @@ export default class MyApp extends App {
       document.body.classList.remove('outline')
     })
   }
+
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
+  }
+
+  handleMediaMatch = ({ matches }) =>
+    this.setState({
+      isMobile: matches,
+    })
 
   render() {
     const { Component, pageProps } = this.props
@@ -86,7 +102,7 @@ export default class MyApp extends App {
           initialLanguage={initialLanguage}
         >
           <React.Fragment>
-            <Component {...pageProps} />
+            <Component {...pageProps} isMobile={this.state.isMobile} />
           </React.Fragment>
         </I18nextProvider>
       </Container>

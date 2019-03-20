@@ -82,6 +82,7 @@
     "text": "We&nbsp;love to&nbsp;make projects with a&nbsp;thoughtful interface and well working code",
     "buttonText1": "See more",
     "buttonText2": "See less",
+    "slidesAlt": "Portfolio CSSSR - ",
     "projects": {
       "acura": {
         "title": "Acura",

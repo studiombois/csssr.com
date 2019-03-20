@@ -42,6 +42,7 @@ class Slider extends PureComponent {
             {slides.map(slide =>
               <img
                 key={`${id}_${slide}`}
+                alt={`${t('dev:portfolio.slidesAlt')}${t(`dev:portfolio.projects.${id}.title`)}`}
                 src={require(`../../static/images/dev/portfolio/${id}_${slide}.png`)}
               />
             )}

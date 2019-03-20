@@ -40,11 +40,6 @@
   "process": {
     "title": "Процесс"
   },
-  "hireUs": {
-    "imageAlt": "Нанять нас",
-    "buttonText": "Нанять нас",
-    "link": "/ru#hire-us"
-  },
   "form": {
     "title": "Давайте пообщаемся",
     "namePlaceholder": "Тим Бернерс-Ли",

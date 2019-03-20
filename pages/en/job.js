@@ -175,13 +175,13 @@ class Job extends PureComponent {
   }
 
   render() {
-    const { vacancy, vacancies, initialValues, t } = this.props
+    const { vacancy, vacancies, initialValues, t, lng } = this.props
 
     return (
       <Fragment>
         <Layout
           headerProps={{
-            logoHref: '/en/jobs',
+            logoHref: `/${lng}/jobs`,
             logoAlt: 'CSSSR jobs logo',
             isLogoLink: true,
             isBurgerVisible: true,
@@ -190,7 +190,7 @@ class Job extends PureComponent {
           <Head title={vacancy.name} description={vacancy.description} />
           <ReactFinalForm
             vacancy={vacancy}
-            language='en'
+            language={lng}
             vacancies={vacancies}
             initialValues={initialValues}
             validate={candidateFormValidationRules(vacancy, t)}

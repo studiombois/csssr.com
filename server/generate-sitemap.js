@@ -25,7 +25,7 @@ const getVacancies = () =>
   fetch(`${csssrSpaceOrigin}/api/public/vacancies/active`).then(res =>
     res.json().then(vacancies =>
       vacancies.map(vacancy => ({
-        url: `https://csssr.com/en/jobs/${vacancy.pathName}`,
+        url: `https://csssr.com/${vacancy.language}/jobs/${vacancy.pathName}`,
         changefreq: 'weekly',
         priority: 0.8,
       }))

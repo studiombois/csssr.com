@@ -10,7 +10,7 @@ import appleListStyles from './styles/stylesForAppleList'
 const links = [{
   label: 'Messenger',
   localeLink: 'common:floatingButton.messenger',
-  href: 'https://m.me/csssr',
+  href: 'https://messenger.com/t/csssr',
   external: true,
   dataLayerEvent: 'floating_button_fb',
 }, {

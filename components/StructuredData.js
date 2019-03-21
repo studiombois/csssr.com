@@ -1,7 +1,7 @@
 import React from 'react'
 
 // https://developers.google.com/search/docs/guides/intro-structured-data
-export default () =>
+const StructuredData = () =>
   <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `
   {
     "@context" : "http://schema.org",
@@ -20,3 +20,5 @@ export default () =>
     ]
   }
 ` }} />
+
+export default StructuredData

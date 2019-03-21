@@ -34,7 +34,7 @@ const picture = css.resolve`
   }
 `
 
-export default ({ title, text, image, style }) =>
+const Feature2 = ({ title, text, image, style }) =>
   <Fragment>
     <section className='grid-container' style={style}>
       <h2 className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: title }} />
@@ -125,3 +125,5 @@ export default ({ title, text, image, style }) =>
     `}</style>
     {picture.styles}
   </Fragment>
+
+export default Feature2

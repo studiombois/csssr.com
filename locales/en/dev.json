@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "We create web services for millions to use",
-    "description": "We love: work on front-end web development outsourcing harder, make JavaScript code better and projects faster. And dream of the stars."
+    "description": "We love: work on front-end web development outsourcing harder, make JavaScript code better and projects faster. And dream of the stars."
   },
   "headerNav": {
     "competence": "Competencies",
@@ -18,9 +18,9 @@
   },
   "hire": {
     "title": "We use JavaScript to\u00A0bring logic to\u00A0the\u00A0world",
-    "subTitle": "and dream of the stars",
+    "subTitle": "and dream of the stars",
     "paragraph1": "We&nbsp;write code. Our specialty is&nbsp;front-end development for banks, insurance companies, airlines and mobile network operators.",
-    "paragraph2": "We don't just work with big companies — we also help startups that are just beginning their journeys.",
+    "paragraph2": "We don’t just work with big companies — we also help startups that are just beginning their journeys.",
     "author": "Dmitriy Chekin, CEO",
     "buttonText": "Hire us"
   },
@@ -48,7 +48,7 @@
     "all": "All",
     "automotive": "Automotive",
     "telecom": "Telecom",
-    "financeAndBanking": "Banking & Finance",
+    "financeAndBanking": "Banking & Finance",
     "it": "IT",
     "realEstate": "Real Estate",
     "retail": "Retail",
@@ -158,15 +158,15 @@
     "text": "As&nbsp;perfectionists, we&nbsp;like to&nbsp;work through every detail, building elegant, and architecturally complex solutions. We&nbsp;think that details are what make the difference between just okay projects, and <nobr>market-changing</nobr> solutions. But perfection can be&nbsp;even more dangerous than procrastination at&nbsp;times, which is&nbsp;why we&rsquo;ve tamed our near maniacal attention to&nbsp;detail to&nbsp;focus on&nbsp;our clients' business requirements."
   },
   "form": {
-    "title": "Get in Touch",
+    "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",
     "nameLabel": "Your Name",
     "phonePlaceholder": "+1-612-566-34-43",
     "phoneLabel": "Phone",
     "emailPlaceholder": "name@example.com",
     "emailLabel": "E-mail",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "How can we help?",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "How can we help?",
     "submitText": "Submit"
   }
 }

@@ -38,9 +38,9 @@
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {
-    "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in the ",
+    "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in the ",
     "privacyPolicyLinkText": "Privacy Policy",
-    "newsletterText": "I agree to receive information and commercial offers"
+    "newsletterText": "I agree to receive information and commercial offers"
   },
   "formErrors": {
     "email": "Invalid email format",

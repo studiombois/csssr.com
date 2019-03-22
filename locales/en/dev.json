@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "We create web services for millions to use",
-    "description": "We love: work on front-end web development outsourcing harder, make JavaScript code better and projects faster. And dream about space."
+    "description": "We love: work on front-end web development outsourcing harder, make JavaScript code better and projects faster. And dream of the stars."
   },
   "headerNav": {
-    "competence": "Competence",
+    "competence": "Competencies",
     "services": "Services",
     "clients": "Clients",
     "hireUs": "Hire us"
@@ -17,46 +17,46 @@
     "letter": "a letter — hang-glider on which a man is flying"
   },
   "hire": {
-    "title": "We make the\u00A0world more logical with\u00A0JS",
-    "subTitle": "and dream about space",
-    "paragraph1": "We&nbsp;specialize in&nbsp;front-end outsourcing for banks, insurance companies, airlines companies and mobile network operators.",
-    "paragraph2": "However, our services are not just for large companies&nbsp;&mdash; we&rsquo;re open to&nbsp;startups who are just at&nbsp;the beginning of&nbsp;their journey.",
+    "title": "We use JavaScript to\u00A0bring logic to\u00A0the\u00A0world",
+    "subTitle": "and dream of the stars",
+    "paragraph1": "We&nbsp;write code. Our specialty is&nbsp;front-end development for banks, insurance companies, airlines and mobile network operators.",
+    "paragraph2": "We don’t just work with big companies — we also help startups that are just beginning their journeys.",
     "author": "Dmitriy Chekin, CEO",
     "buttonText": "Hire us"
   },
   "service": {
-    "title": "We&nbsp;create web services for&nbsp;millions to&nbsp;use",
-    "text": "We&rsquo;re engineers, and our true calling is&nbsp;to&nbsp;find the most elegant and economical solutions for business challenges. We&nbsp;use a&nbsp;variety of&nbsp;tools, technologies and programming languages, but more often than not, we&nbsp;use JavaScript.",
-    "app": "Support and development of&nbsp;high load web applications",
-    "stack": "Stack migration"
+    "title": "We&nbsp;create web services for&nbsp;millions",
+    "text": "First and foremost, we&rsquo;re engineers. Our calling card is&nbsp;finding top-tier, elegant and economical business solutions. We&nbsp;use a&nbsp;variety of&nbsp;tools, technologies and programming languages&nbsp;&mdash; most commonly, JavaScript.",
+    "app": "Development and support of&nbsp;high-load web applications",
+    "mvp": "MVP",
+    "stack": "Stack Migration"
   },
   "time": {
-    "title": "We&nbsp;care about time to&nbsp;market metrics",
-    "text": "Our methodology is&nbsp;similar to&nbsp;Scrum and involves working with sprints. Our sprints generally last one or&nbsp;two weeks. At&nbsp;the end of&nbsp;each sprint, we&nbsp;release a&nbsp;new build version and plan product features that will be&nbsp;developed in&nbsp;the next sprint."
+    "title": "Time-to-market is&nbsp;important to&nbsp;us",
+    "text": "Our software development framework is&nbsp;oriented around sprints, and similar to&nbsp;Scrum methodology. Our sprints generally last 1&ndash;2 weeks, and at&nbsp;the end of&nbsp;each sprint, we&nbsp;release a&nbsp;new build and plan product features for the next sprint."
   },
   "competence": {
-    "title1": "Our tools",
-    "title2": "Technologies</br>with open-source license",
-    "title3": "Supporting technologies",
-    "text1": "There is&nbsp;no&nbsp;perfect framework.</br>We&nbsp;choose the most approptiate instrument based on&nbsp;the task.",
-    "text2": "We&nbsp;use technologies and frameworks with open-source code. They are free, oriented for commercial use and fully reliable due to&nbsp;the developers community participation.",
-    "text3": "We&nbsp;follow the latest trends and update our work space with new tools consistently.",
+    "title1": "Our Tools",
+    "title2": "Open-Source Tech",
+    "title3": "Supported Tech",
+    "text1": "There is&nbsp;no&nbsp;one-size-fits-all framework.<br/>We&nbsp;choose the most appropriate instruments for the task at&nbsp;hand.",
+    "text2": "We&nbsp;use open-source technologies and frameworks that are free and oriented toward commercial use, because developer participation in&nbsp;the communities makes them more reliable.",
+    "text3": "We&nbsp;keep up-to-date with the latest market trends and tools.",
     "buttonText": "See more"
   },
   "tabs": {
     "all": "All",
     "automotive": "Automotive",
     "telecom": "Telecom",
-    "financeAndBanking": "Finance & banking",
-    "it": "IT companies",
+    "financeAndBanking": "Banking & Finance",
+    "it": "IT",
     "realEstate": "Real Estate",
     "retail": "Retail",
-    "others": "Others"
+    "others": "Other"
   },
   "clients": {
-    "title": "More than 450 completed projects in&nbsp;different industries",
-    "text1": "We&nbsp;work with large companies for whom strong online presence is&nbsp;important. We&nbsp;share their business interests and help them to&nbsp;achieve their goals.",
-    "text2": "And other major Russian companies that can not be&nbsp;named in&nbsp;accordance with NDA",
+    "title": "Over 450 completed projects",
+    "text1": "We&nbsp;work with large companies for whom a&nbsp;strong online presence is&nbsp;important. We&nbsp;share their business interests and help them achieve their goals.",
     "imgAlts": {
       "innova": "Innova logo",
       "ruCenter": "RU-CENTER logo",
@@ -79,7 +79,7 @@
   },
   "portfolio": {
     "title": "Projects",
-    "text": "We&nbsp;love to&nbsp;make projects with a&nbsp;thoughtful interface and well working code",
+    "text": "We&nbsp;love doing projects with intuitive interfaces and good code",
     "buttonText1": "See more",
     "buttonText2": "See less",
     "projects": {
@@ -154,19 +154,19 @@
     }
   },
   "perfect": {
-    "title": "We&nbsp;were&nbsp;born with a&nbsp;gene of&nbsp;perfectionism",
-    "text": "Most of&nbsp;us are perfectionists. Perfectionism is&nbsp;far more dangerous than procrastination&nbsp;&mdash; and we&nbsp;have tamed&nbsp;it. That is&nbsp;why our code is&nbsp;architecturally complex yet elegant, and our attention to&nbsp;detail is&nbsp;almost maniacal&nbsp;&mdash; but only if&nbsp;justified by&nbsp;the business requirements. In&nbsp;our opinion, it&nbsp;is&nbsp;focus on&nbsp;details that makes the difference between average and successful projects."
+    "title": "Perfectionism is&nbsp;in&nbsp;our DNA",
+    "text": "As&nbsp;perfectionists, we&nbsp;like to&nbsp;work through every detail, building elegant, and architecturally complex solutions. We&nbsp;think that details are what make the difference between just okay projects, and <nobr>market-changing</nobr> solutions. But perfection can be&nbsp;even more dangerous than procrastination at&nbsp;times, which is&nbsp;why we&rsquo;ve tamed our near maniacal attention to&nbsp;detail to&nbsp;focus on&nbsp;our clients' business requirements."
   },
   "form": {
-    "title": "Talk to us",
-    "namePlaceholder": "Timothy John Berners-Lee",
+    "title": "Get in Touch",
+    "namePlaceholder": "Tim Berners-Lee",
     "nameLabel": "Your Name",
     "phonePlaceholder": "+1-612-566-34-43",
     "phoneLabel": "Phone",
     "emailPlaceholder": "name@example.com",
     "emailLabel": "E-mail",
-    "messagePlaceholder": "How can we be of help to you?",
-    "messageLabel": "How can we be of help to you?",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "How can we help?",
     "submitText": "Submit"
   }
 }

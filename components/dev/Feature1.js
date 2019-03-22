@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Link from 'next/link'
 import translate from '../../utils/translate-wrapper'
 import css from 'styled-jsx/css'
 import PictureForAllResolutions from '../PictureForAllResolutions'
@@ -26,7 +27,11 @@ const Feature1 = ({ t, image }) =>
         />
 
         <p className='font_feature_1'>
-          {t('dev:service.mvp')}
+          <Link prefetch href={t('dev:service.mvpLink')}>
+            <a className='mvp-link'>
+              {t('dev:service.mvp')}
+            </a>
+          </Link>
         </p>
         <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
         <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
@@ -57,7 +62,7 @@ const Feature1 = ({ t, image }) =>
         position: relative;
         grid-column: 2 / span 10;
         grid-row: 2;
-        z-index: -1;
+        z-index: 1;
         margin-top: 5.5rem;
         height: 768px;
       }
@@ -86,6 +91,16 @@ const Feature1 = ({ t, image }) =>
         top: 3.875rem;
         left: 58.875rem;
         text-align: right;
+      }
+
+      .mvp-link {
+        color: #000;
+        cursor: pointer;
+        transition: opacity 0.3s ease-out;
+      }
+
+      .mvp-link:hover {
+        opacity: 0.6;
       }
 
       @media (min-width: 1360px) and (max-width: 1919px) {

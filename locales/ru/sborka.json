@@ -43,6 +43,8 @@
   "portfolio": {
     "title": "Портфолио",
     "linkText": "Посмотреть",
+    "nextSlide": "Следующий слайд",
+    "previousSlide": "Предыдущий слайд",
     "portfolioProjects": {
       "relef": {
         "title": "Рельеф-Центр",

@@ -8,6 +8,8 @@ export default class Button extends PureComponent {
     type: oneOf(['button', 'submit']),
     theme: oneOf(['primary', 'secondary']),
     className: string,
+    name: string,
+    ariaLabel: string,
     children: node,
     onClick: func,
   }
@@ -21,6 +23,8 @@ export default class Button extends PureComponent {
     const {
       disabled,
       type,
+      name,
+      ariaLabel,
       theme,
       className,
       children,
@@ -42,6 +46,8 @@ export default class Button extends PureComponent {
           className={classNames}
           onClick={onClick}
           disabled={disabled}
+          name={name}
+          aria-label={ariaLabel}
         >
           {children}
         </button><style jsx>{`

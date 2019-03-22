@@ -34,6 +34,7 @@ class Slider extends PureComponent {
   render() {
     const { t, id, slides, href } = this.props
     const { activeSlide } = this.state
+    const slideTitle = t(`dev:portfolio.projects.${id}.title`)
 
     return (
       <section>
@@ -42,7 +43,7 @@ class Slider extends PureComponent {
             {slides.map(slide =>
               <img
                 key={`${id}_${slide}`}
-                alt={`${t('dev:portfolio.slidesAlt')}${t(`dev:portfolio.projects.${id}.title`)}`}
+                alt={`${t('dev:portfolio.slidesAlt')}${slideTitle}`}
                 src={require(`../../static/images/dev/portfolio/${id}_${slide}.png`)}
               />
             )}
@@ -50,12 +51,16 @@ class Slider extends PureComponent {
 
           <div className='controls'>
             <button
+              name='previous-slide'
+              aria-label={t('dev:portfolio.previousSlide')}
               className={cn({ is_invisible: activeSlide === 1 })}
               onClick={this.handleChangeSlide(-1)}
             >
               <Arrow width='100%' height='100%'/>
             </button>
             <button
+              name='next-slide'
+              aria-label={t('dev:portfolio.nextSlide')}
               className={cn({ is_invisible: activeSlide === slides.length })}
               onClick={this.handleChangeSlide(1)}
             >
@@ -64,7 +69,7 @@ class Slider extends PureComponent {
           </div>
 
           { href &&
-            <a href={href} target='_blank' rel='noopener'>
+            <a href={href} target='_blank' rel='noopener' aria-label={`${t('dev:portfolio.openSlide')} ${slideTitle}`}>
               <CrossdomainLink width='100%' height='100%' />
             </a>
           }

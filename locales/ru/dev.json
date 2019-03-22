@@ -83,6 +83,9 @@
     "buttonText1": "Ещё",
     "buttonText2": "Свернуть",
     "slidesAlt": "Портфолио CSSSR - ",
+    "nextSlide": "Следующий слайд",
+    "previousSlide": "Предыдущий слайд",
+    "openSlide": "Открыть",
     "projects": {
       "acura": {
         "title": "Acura",

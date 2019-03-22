@@ -135,12 +135,16 @@ class Portfolio extends PureComponent {
 
             <div className='controls'>
               <button
+                name='previous-slide'
+                aria-label={t('sborka:portfolio.previousSlide')}
                 className={cn({ is_invisible: activeScrollItemIndex === 0 })}
                 onClick={this.handleChangeSlide(-1)}
               >
                 <Arrow />
               </button>
               <button
+                name='next-slide'
+                aria-label={t('sborka:portfolio.nextSlide')}
                 className={cn({ is_invisible: activeScrollItemIndex === portfolioProjects.length - 1 })}
                 onClick={this.handleChangeSlide(1)}
               >

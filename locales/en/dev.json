@@ -83,6 +83,9 @@
     "buttonText1": "See more",
     "buttonText2": "See less",
     "slidesAlt": "Portfolio CSSSR - ",
+    "nextSlide": "Next slide",
+    "previousSlide": "Previous slide",
+    "openSlide": "Open",
     "projects": {
       "acura": {
         "title": "Acura",

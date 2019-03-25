@@ -13,7 +13,6 @@ import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
-
 class Sborka extends PureComponent {
   static async getInitialProps(appContext) {
     return {
@@ -23,28 +22,8 @@ class Sborka extends PureComponent {
     }
   }
 
-  state = {
-    isMobile: false,
-  }
-
-  componentDidMount() {
-    this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-    this.mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(this.mobileMediaQuery)
-  }
-
-  componentWillUnmount() {
-    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
-  }
-
-  handleMediaMatch = ({ matches }) =>
-    this.setState({
-      isMobile: matches,
-    })
-
   render() {
-    const { t, userAgent } = this.props
-    const { isMobile } = this.state
+    const { t, userAgent, isMobile } = this.props
 
     return (
       <Layout

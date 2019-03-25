@@ -30,8 +30,7 @@ class Dev extends PureComponent {
   }
 
   render() {
-    const { t, shuffledPortfolio } = this.props
-    const { isMobile } = this.state
+    const { t, shuffledPortfolio, isMobile } = this.props
 
     return (
       <Layout

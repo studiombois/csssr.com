@@ -4,6 +4,7 @@ import cn from 'classnames'
 import translate from '../../utils/translate-wrapper'
 import { oneOf, string, func } from 'prop-types'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+import Picture from '../Picture'
 
 const picture = css.resolve`
   picture {
@@ -30,6 +31,36 @@ const picture = css.resolve`
     picture {
       top: 0;
       bottom: initial;
+      width: 13.5rem;
+      height: 10.5rem;
+    }
+  }
+`
+
+const hideMessagePicture = css.resolve`
+  picture {
+    position: absolute;
+    bottom: 10.75rem;
+    left: 50%;
+    z-index: -1;
+    width: 304px;
+    height: 224px;
+    transform: translateX(-50%);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    picture {
+      margin-top: -6.5rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      bottom: 12rem;
       width: 13.5rem;
       height: 10.5rem;
     }
@@ -85,6 +116,15 @@ class FormStateMessage extends PureComponent {
 
     return (
       <Fragment>
+        {
+          !messageShown && (
+            <Picture
+              className={hideMessagePicture.className}
+              image={{ namespace: 'dev', key: 'letter', alt: '' }}
+              customResolutions={['360']}
+            />
+          )
+        }
         <div
           className={cn('body', {
             body_state_visible: messageShown,
@@ -145,6 +185,7 @@ class FormStateMessage extends PureComponent {
             }
           `}</style>
           {picture.styles}
+          {hideMessagePicture.styles}
         </div>
       </Fragment>
     )

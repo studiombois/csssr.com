@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-export default () =>
+const Settings = () =>
   <Fragment>
     <div id='background-for-layout'
       // className='layout-columns-on'
@@ -117,3 +117,5 @@ export default () =>
     }
   `}</style>
   </Fragment>
+
+export default Settings

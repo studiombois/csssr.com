@@ -4,6 +4,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
 import BurgerIcon from '../static/icons/burger.svg'
+import { getFormInputs } from 'final-form-focus'
 
 const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
@@ -22,6 +23,13 @@ class HeaderContent extends PureComponent {
     pinHeader: bool,
     toggleHeaderAnimations: bool,
     onSideBarToggle: func,
+  }
+
+  scrollToForm = formName => () => {
+    const timeout = setTimeout(() => {
+      getFormInputs(formName)()[0].focus()
+      clearTimeout(timeout)
+    }, 1800)
   }
 
   render() {
@@ -95,12 +103,18 @@ class HeaderContent extends PureComponent {
               'with-logo-sup': logoSup,
             })}>
               <ul className='nav-list'>
-                {links.map(({ href, label }) => (
+                {links.map(({ href, label, scrollToForm }) => (
                   <li
                     className='nav-list-item'
                     key={`nav-link-${href}-${label}`}
                   >
-                    <a className='nav-list-link font_top-menu' href={href}>{t(label)}</a>
+                    <a
+                      className='nav-list-link font_top-menu'
+                      href={href}
+                      onClick={scrollToForm ? this.scrollToForm(scrollToForm) : null}
+                    >
+                      {t(label)}
+                    </a>
                   </li>
                 ))}
               </ul>

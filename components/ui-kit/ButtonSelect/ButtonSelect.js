@@ -10,6 +10,7 @@ import ThreePointIcon from '../../../static/icons/threePoint.svg'
 import isAppleDevice from '../../../utils/isAppleDevice'
 import { whiteButtonStyles, whiteButtonClassName } from './styles/stylesForWhiteButton'
 import { blueButtonStyles, blueButtonClassName } from './styles/stylesForBlueButton'
+import { getFormInputs } from 'final-form-focus'
 
 const stopBodyScrolling = shouldStop => {
   const stopEventDefaultBehavior = e => e.preventDefault()
@@ -111,6 +112,11 @@ class ButtonSelect extends PureComponent {
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'floating_button_form' })
     }
+
+    const timeout = setTimeout(() => {
+      getFormInputs('contact')()[0].focus()
+      clearTimeout(timeout)
+    }, 1800)
   }
 
   handleLinkClick = dataLayerEvent => {

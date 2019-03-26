@@ -40,7 +40,7 @@ const onSubmit = (t, lng) => async values => {
 
   if (res.status === 201) {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_mvp_success' })
+      window.dataLayer.push({ event: 'mvp_form_success' })
     }
   } else {
     let error
@@ -52,7 +52,7 @@ const onSubmit = (t, lng) => async values => {
     }
 
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_mvp_fail' })
+      window.dataLayer.push({ event: 'mvp_form_fail' })
     }
 
     return { [FORM_ERROR]: error }

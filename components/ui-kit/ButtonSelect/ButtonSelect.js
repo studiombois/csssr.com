@@ -8,6 +8,7 @@ import ButtonSelectList from './ButtonSelectList'
 import CrossIcon from '../../../static/icons/cross.svg'
 import ThreePointIcon from '../../../static/icons/threePoint.svg'
 import isAppleDevice from '../../../utils/isAppleDevice'
+import scrollStop from '../../../utils/scrollStop'
 import { whiteButtonStyles, whiteButtonClassName } from './styles/stylesForWhiteButton'
 import { blueButtonStyles, blueButtonClassName } from './styles/stylesForBlueButton'
 import { getFormInputs } from 'final-form-focus'
@@ -113,10 +114,7 @@ class ButtonSelect extends PureComponent {
       window.dataLayer.push({ event: 'floating_button_form' })
     }
 
-    const timeout = setTimeout(() => {
-      getFormInputs('contact')()[0].focus()
-      clearTimeout(timeout)
-    }, 1800)
+    scrollStop(window, () => getFormInputs('contact')()[0].focus())
   }
 
   handleLinkClick = dataLayerEvent => {

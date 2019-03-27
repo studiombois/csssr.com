@@ -1,9 +1,16 @@
 let isScrolling
 const frequency = 66
 
-export default (window, callback) => {
-  window.addEventListener('scroll', () => {
+export default callback => {
+  const onScroll = () => {
     window.clearTimeout( isScrolling )
-    isScrolling = setTimeout(callback, frequency)
-  }, false)
+    isScrolling = setTimeout(
+      () => {
+        callback()
+        window.removeEventListener('scroll', onScroll, false)
+      },
+      frequency
+    )
+  }
+  window.addEventListener('scroll', onScroll, false)
 }

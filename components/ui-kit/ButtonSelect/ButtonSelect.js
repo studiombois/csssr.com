@@ -114,7 +114,7 @@ class ButtonSelect extends PureComponent {
       window.dataLayer.push({ event: 'floating_button_form' })
     }
 
-    scrollStop(window, () => getFormInputs('contact')()[0].focus())
+    scrollStop(() => getFormInputs('contact')()[0].focus())
   }
 
   handleLinkClick = dataLayerEvent => {

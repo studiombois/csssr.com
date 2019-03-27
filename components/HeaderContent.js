@@ -27,7 +27,7 @@ class HeaderContent extends PureComponent {
   }
 
   scrollToForm = formName => () => {
-    scrollStop(window, () => getFormInputs(formName)()[0].focus())
+    scrollStop(() => getFormInputs(formName)()[0].focus())
   }
 
   render() {

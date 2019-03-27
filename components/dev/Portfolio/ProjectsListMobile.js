@@ -10,10 +10,16 @@ const ProjectsListMobile = ({ t, projects }) => {
       <li>
         { project.href
           ? <a href={project.href} target='_blank' rel='noopener'>
-            <img src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)} />
+            <img
+              src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)}
+              alt={`${t('dev:portfolio.slidesAlt')}${t(`dev:portfolio.projects.${project.id}.title`)}`}
+            />
           </a>
 
-          : <img src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)} />
+          : <img
+            src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)}
+            alt={`${t('dev:portfolio.slidesAlt')}${t(`dev:portfolio.projects.${project.id}.title`)}`}
+          />
         }
 
         <h4 className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t(`dev:portfolio.projects.${project.id}.title`) }} />

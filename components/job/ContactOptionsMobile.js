@@ -25,6 +25,7 @@ const ContactOptionsMobile = ({ connection }) => {
         name='connection[0]'
         placeholder='Дополнительный способ связи'
         options={contactOptions}
+        id='phone'
         component={SelectField}
       />
 

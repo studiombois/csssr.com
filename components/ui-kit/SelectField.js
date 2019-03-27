@@ -84,7 +84,11 @@ export default class SelectField extends PureComponent {
           }
 
           label {
-            display: none;
+            position: absolute;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            opacity: 0;
           }
 
           :not(.select_filled) select:focus {
@@ -110,8 +114,10 @@ export default class SelectField extends PureComponent {
             left: 1rem;
             display: block;
             width: calc(100% - 2rem);
+            height: auto;
             font-size: 0.625rem;
             color: #0076ff;
+            opacity: 1;
             pointer-events: none;
             user-select: none;
           }

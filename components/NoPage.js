@@ -51,6 +51,18 @@ function NoPage({ t }) {
           }
         }
       }
+      @media (max-width: 767px) {
+        section {
+          width: 20.5rem;
+          padding-bottom: 6rem;
+        }
+
+        .text {
+          padding-top: 6rem;
+          grid-column: 1 / span 6;
+          text-align: center;
+        }
+      }
     `}</style>
     </section>
   )

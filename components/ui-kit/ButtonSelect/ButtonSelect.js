@@ -8,8 +8,10 @@ import ButtonSelectList from './ButtonSelectList'
 import CrossIcon from '../../../static/icons/cross.svg'
 import ThreePointIcon from '../../../static/icons/threePoint.svg'
 import isAppleDevice from '../../../utils/isAppleDevice'
+import scrollStop from '../../../utils/scrollStop'
 import { whiteButtonStyles, whiteButtonClassName } from './styles/stylesForWhiteButton'
 import { blueButtonStyles, blueButtonClassName } from './styles/stylesForBlueButton'
+import { getFormInputs } from 'final-form-focus'
 
 const stopBodyScrolling = shouldStop => {
   const stopEventDefaultBehavior = e => e.preventDefault()
@@ -111,6 +113,8 @@ class ButtonSelect extends PureComponent {
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'floating_button_form' })
     }
+
+    scrollStop(() => getFormInputs('contact')()[0].focus())
   }
 
   handleLinkClick = dataLayerEvent => {

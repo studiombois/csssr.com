@@ -10,6 +10,7 @@ const headerLinks = {
     label: 'dev:headerNav.clients',
   }, {
     href: '#hire-us',
+    scrollToFormName: 'contact',
     label: 'dev:headerNav.hireUs',
   }],
   sborka: [{
@@ -23,6 +24,7 @@ const headerLinks = {
     label: 'sborka:headerNav.howWeWork',
   }, {
     href: '#hire-us',
+    scrollToFormName: 'contact',
     label: 'sborka:headerNav.hireUs',
   }],
   school: [{
@@ -39,6 +41,7 @@ const headerLinks = {
     label: 'school:headerNav.about',
   }, {
     href: '#sign',
+    scrollToFormName: 'contact',
     label: 'school:headerNav.sign',
   }],
 }

@@ -35,7 +35,6 @@ export default css`
 
   label {
     border: 0;
-    clip: rect(0 0 0 0);
     height: 0.0625rem;
     margin: -0.0625rem;
     overflow: hidden;

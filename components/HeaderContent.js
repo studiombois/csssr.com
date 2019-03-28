@@ -35,7 +35,8 @@ class HeaderContent extends PureComponent {
       pathname,
       links,
       logoHref,
-      logoAlt,
+      t,
+      logoAlt = t('common:headerLogoAlt'),
       logoSup,
       scrollbarWidth,
       isLogoLink,
@@ -45,7 +46,6 @@ class HeaderContent extends PureComponent {
       pinHeader,
       toggleHeaderAnimations,
       onSideBarToggle,
-      t,
     } = this.props
     return (
       <Fragment>

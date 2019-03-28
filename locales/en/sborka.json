@@ -42,6 +42,8 @@
   "portfolio": {
     "title": "Portfolio",
     "linkText": "Take a&nbsp;look",
+    "nextSlide": "Next slide",
+    "previousSlide": "Previous slide",
     "portfolioProjects": {
       "relef": {
         "title": "Relief-center",

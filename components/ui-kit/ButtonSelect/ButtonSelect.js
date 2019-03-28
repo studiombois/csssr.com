@@ -126,7 +126,7 @@ class ButtonSelect extends PureComponent {
   }
 
   render() {
-    const { buttonText } = this.props
+    const { buttonText, t } = this.props
     const { isDropdownVisible } = this.state
 
     return (
@@ -154,6 +154,8 @@ class ButtonSelect extends PureComponent {
         </ButtonLink>
 
         <Button
+          name='more-links'
+          ariaLabel={t('common:moreLinks')}
           onClick={this.handleToggleDropdown}
           className={whiteButtonClassName}
           theme='secondary'

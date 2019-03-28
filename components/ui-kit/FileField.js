@@ -64,6 +64,7 @@ export default class FileField extends PureComponent {
           autoFocus={autoFocus}
           type='file'
           disabled={disabled}
+          aria-label={label}
         />
         <div
           className={cn({
@@ -80,7 +81,6 @@ export default class FileField extends PureComponent {
           {label && <label
             className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
             dangerouslySetInnerHTML={{ __html: label }}
-            htmlFor={id}
           />}
         </div>
         <label

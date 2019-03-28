@@ -74,6 +74,7 @@ export default class TextareaField extends PureComponent {
           disabled={disabled}
           value={value}
           maxLength={maxLength}
+          aria-label={label}
         />
         {showError && <span className='font_input-small-error-label error'>{error}</span>}
         {label && <label

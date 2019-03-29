@@ -13,7 +13,6 @@ const Clients = ({ t, isMobile }) =>
         ? <ClientsSliderMobile />
         : <ClientsSlider />
       }
-      <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:clients.text2') }} />
     </section><style jsx>{`
       section {
         margin-left: auto;

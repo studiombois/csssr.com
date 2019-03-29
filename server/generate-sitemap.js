@@ -25,7 +25,7 @@ const getVacancies = () =>
   fetch(`${csssrSpaceOrigin}/api/public/vacancies/active`).then(res =>
     res.json().then(vacancies =>
       vacancies.map(vacancy => ({
-        url: `https://csssr.com/ru/jobs/${vacancy.pathName}`,
+        url: `https://csssr.com/${vacancy.language}/jobs/${vacancy.pathName}`,
         changefreq: 'weekly',
         priority: 0.8,
       }))
@@ -92,6 +92,34 @@ const generateSitemap = () =>
           },
         ],
       }, {
+        url: 'https://csssr.com/ru/mvp',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/mvp',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/mvp',
+          },
+        ],
+      }, {
+        url: 'https://csssr.com/en/mvp',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/mvp',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/mvp',
+          },
+        ],
+      }, {
         url: 'https://csssr.com/en/privacy-policy',
         changefreq: 'yearly',
         priority: 0.6,
@@ -127,6 +155,30 @@ const generateSitemap = () =>
         url: 'https://csssr.com/ru/jobs',
         changefreq: 'weekly',
         priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/jobs',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/jobs',
+          },
+        ],
+      }, {
+        url: 'https://csssr.com/en/jobs',
+        changefreq: 'weekly',
+        priority: 1,
+        links: [
+          {
+            lang: 'en',
+            url: 'https://csssr.com/en/jobs',
+          },
+          {
+            lang: 'ru',
+            url: 'https://csssr.com/ru/jobs',
+          },
+        ],
       }, {
         url: 'https://csssr.com/ru/school',
         changefreq: 'weekly',

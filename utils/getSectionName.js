@@ -10,6 +10,7 @@ export default pathname => {
   case ('/en/school'):
     return 'common:menu.school'
   case ('/ru/job'):
+  case ('/en/job'):
     return 'common:menu.job'
   case ('/ru/html'):
   case ('/en/html'):
@@ -19,6 +20,8 @@ export default pathname => {
     return 'common:menu.privacy-policy'
   case ('/en/cookies-policy'):
     return 'common:menu.cookies-policy'
+  case ('/ru/mvp'):
+    return 'common:menu.mvp'
   default:
     return '404'
   }

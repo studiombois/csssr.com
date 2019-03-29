@@ -23,7 +23,9 @@ class HeaderContent extends PureComponent {
     showHeader: bool,
     pinHeader: bool,
     toggleHeaderAnimations: bool,
+    onFocus: func,
     onSideBarToggle: func,
+    onScrollToSection: func,
   }
 
   scrollToForm = formName => () => {
@@ -46,10 +48,13 @@ class HeaderContent extends PureComponent {
       pinHeader,
       toggleHeaderAnimations,
       onSideBarToggle,
+      onFocus,
+      onScrollToSection,
     } = this.props
     return (
       <Fragment>
         <header
+          onFocus={onFocus}
           className={cn({
             header: true,
             header_pinned: pinHeader,
@@ -101,10 +106,11 @@ class HeaderContent extends PureComponent {
               'with-logo-sup': logoSup,
             })}>
               <ul className='nav-list'>
-                {links.map(({ href, label, scrollToFormName }) => (
+                {links.map(({ href, label, scrollToFormName, hideOnTablet }) => (
                   <li
-                    className='nav-list-item'
+                    className={`nav-list-item${hideOnTablet ? ' nav-list-item_hide-on-tablet' : ''}`}
                     key={`nav-link-${href}-${label}`}
+                    onClick={onScrollToSection}
                   >
                     <a
                       className='nav-list-link font_top-menu'
@@ -311,6 +317,10 @@ class HeaderContent extends PureComponent {
               .logo {
                 width: 4rem;
                 height: 1rem;
+              }
+
+              .nav-list-item_hide-on-tablet {
+                display: none;
               }
 
               @media (max-width: 1023px) {

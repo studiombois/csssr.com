@@ -19,7 +19,9 @@ const Feature1 = ({ t, image }) =>
     <section className='grid-container' id='feature1'>
       <h2 id='services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
 
-      <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} />
+      <p className='font_p24-strong'>
+        <span dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} className='description' />
+      </p>
       <div className='picture-wrapper'>
         <PictureForAllResolutions
           className={picture.className}
@@ -58,11 +60,15 @@ const Feature1 = ({ t, image }) =>
         grid-row: 2;
       }
 
+      .description {
+        position: relative;
+        z-index: 5;
+      }
+
       .picture-wrapper {
         position: relative;
         grid-column: 2 / span 10;
         grid-row: 2;
-        z-index: 1;
         margin-top: 5.5rem;
         height: 768px;
       }
@@ -76,6 +82,7 @@ const Feature1 = ({ t, image }) =>
       .font_feature_1 {
         top: 30.875rem;
         left: 20.5rem;
+        z-index: 1;
       }
 
       .font_feature_2 {

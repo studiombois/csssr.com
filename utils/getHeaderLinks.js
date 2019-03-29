@@ -56,7 +56,7 @@ const headerLinks = {
   }, {
     href: '#hire-us',
     label: 'mvp:headerNav.hireUs',
-    scrollToForm: 'contact',
+    scrollToFormName: 'contact',
     hideOnTablet: true,
   }],
 }

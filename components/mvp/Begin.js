@@ -35,7 +35,7 @@ const picture = css.resolve`
 
   @media (min-width: 768px) and (max-width: 1023px) {
     picture {
-      left: 17.2%;
+      left: 22.2%;
       width: 53rem;
     }
   }
@@ -216,6 +216,7 @@ class Begin extends PureComponent {
 
             h1 {
               padding-top: 5.5rem;
+              padding-left: 3rem;
               margin-bottom: 9rem;
               grid-column: 5 / span 5;
               font-size: 7.5rem;

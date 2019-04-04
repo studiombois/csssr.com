@@ -41,6 +41,7 @@ const picture = css.resolve`
 `
 
 const picturesMap = {
+  'project-manager-ru': 'Project_manager',
   'project-manager': 'Project_manager',
   'middle-js-developer': 'Developer_2',
   'senior-js-developer': 'JS_senior',

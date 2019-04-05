@@ -3,9 +3,9 @@ const headerLinks = {
     href: '#services',
     label: 'dev:headerNav.services',
   }, {
-    href: '#competences',
-    label: 'dev:headerNav.competence',
-  }, {
+  //   href: '#competences',
+  //   label: 'dev:headerNav.competence',
+  // }, {
     href: '#clients',
     label: 'dev:headerNav.clients',
   }, {

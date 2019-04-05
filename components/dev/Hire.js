@@ -65,7 +65,7 @@ class Hire extends PureComponent {
       <Fragment>
         <article className='grid-container'>
           <h1 className='font_h1-slab'>
-            {t('dev:hire.title')}
+            <span dangerouslySetInnerHTML={{ __html: t('dev:hire.title') }} />
             <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
           </h1>
 

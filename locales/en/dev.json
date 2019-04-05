@@ -55,6 +55,15 @@
     "retail": "Retail",
     "others": "Other"
   },
+  "partners": {
+    "title": "More than 450 completed projects in&nbsp;different industries",
+    "iTTitle": "IT companies",
+    "estateTitle": "Real Estate",
+    "financeTitle": "Finance & banking",
+    "healthTitle": "Health",
+    "othersTitle": "Others",
+    "telecomTitle": "Telecom"
+  },
   "clients": {
     "title": "Over 450 completed projects",
     "text1": "We&nbsp;work with large companies for whom a&nbsp;strong online presence is&nbsp;important. We&nbsp;share their business interests and help them achieve their goals.",

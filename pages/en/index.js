@@ -32,7 +32,7 @@ class Dev extends PureComponent {
   // }
 
   render() {
-    const { t/*, shuffledPortfolio*/, isMobile } = this.props
+    const { t/* , shuffledPortfolio*/, isMobile } = this.props
 
     return (
       <Layout
@@ -52,7 +52,7 @@ class Dev extends PureComponent {
         <Feature1
           image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }}
         />
-        {/*<Competences />*/}
+        {/* <Competences />*/}
         <Feature2
           title={t('dev:time.title')}
           text={t('dev:time.text')}
@@ -62,8 +62,8 @@ class Dev extends PureComponent {
           ? <PartnersMobile />
           : <Partners />
         }
-        {/*<Clients isMobile={isMobile} />*/}
-        {/*<Portfolio portfolio={shuffledPortfolio} isMobile={isMobile}/>*/}
+        {/* <Clients isMobile={isMobile} />*/}
+        {/* <Portfolio portfolio={shuffledPortfolio} isMobile={isMobile}/>*/}
         <Feature2
           title={t('dev:perfect.title')}
           text={t('dev:perfect.text')}

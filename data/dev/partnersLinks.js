@@ -9,6 +9,7 @@ export const iTcompaniesLinksRu = [
 ]
 
 export const realEstateLinksEn = [
+  { href: null, label: 'Urban Group' },
   { href: 'https://www.cian.ru/', label: 'CIAN' },
 ]
 

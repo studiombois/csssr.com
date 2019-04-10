@@ -59,7 +59,7 @@ const picturesMap = {
   'global-business-director': 'Account_manager_2',
   'legal-expert': 'Documents_1',
   'hr-manager': 'Recruiter',
-  'java-developer': 'Developer_2',
+  'java-developer': 'Backend_developer_1',
   'junior-project-manager': 'Project_manager',
   'account-manager-ee': 'Account_manager_1',
   'smm-manager': 'SMM',

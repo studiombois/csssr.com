@@ -22,7 +22,14 @@ class Jobs extends PureComponent {
           headerProps={{ isBurgerVisible: true }}
           footerProps={{ noFooter: true }}
         >
-          <Head title={t('jobs:meta.title')} description={t('jobs:meta.description')} />
+          <Head
+            title={t('jobs:meta.title')}
+            description={t('jobs:meta.description')}
+            ogImage={{
+              url: require('../../static/images/jobs/1920/cover@2x.jpg'),
+              width: 1266,
+              height: 2000,
+            }}/>
           <Vacancies vacancies={vacancies} />
         </Layout>
         <style jsx>{`

@@ -187,7 +187,14 @@ class Job extends PureComponent {
             isBurgerVisible: true,
           }}
         >
-          <Head title={vacancy.name} description={vacancy.description} />
+          <Head
+            title={vacancy.name}
+            description={vacancy.description}
+            ogImage={{
+              url: require('../../static/images/jobs/1920/cover@2x.jpg'),
+              width: 1266,
+              height: 2000,
+            }}/>
           <ReactFinalForm
             vacancy={vacancy}
             language={lng}

@@ -22,9 +22,7 @@ module.exports = (req, res) => {
     tagsArray.push('Подписчик')
   }
 
-  if (course) {
-    tagsArray.push(course)
-  }
+  tagsArray.push(course || 'Без курса')
 
   const tags = tagsArray.join(',')
 

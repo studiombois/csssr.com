@@ -33,6 +33,7 @@ Find the most recent version of this guide at [here](https://github.com/segmenti
 ## Вертикальный ритм и baseline
 
 В типографике термин _базовая линия шрифта_ или _baseline_ служит для обозначения воображаемой прямой линии, проходящей по нижнему краю прямых букв
+
 ![](https://upload.wikimedia.org/wikipedia/commons/3/39/Typography_Line_Terms.svg)
 
 В макетах все вертикальные расстояния до текстовых блоков отсчитываются от baseline (bl), это означает, что все текстовые блоки должны быть выровнены в сетке по bl.

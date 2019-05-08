@@ -14,13 +14,13 @@ import withI18next from '../../utils/withI18next'
 import { courseIdByName } from '../../data/school/courses-mock'
 
 class School extends PureComponent {
-  static async getInitialProps({ pathname, query }) {
-    console.log('xxx', 'pathname: ', pathname, 'query: ', query)
+  static async getInitialProps({ query }) {
     let modalActiveId
 
     if (query['full-programm']) {
       modalActiveId = courseIdByName[query['full-programm']]
     }
+
     return { modalActiveId }
   }
 

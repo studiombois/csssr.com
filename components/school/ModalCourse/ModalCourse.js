@@ -17,10 +17,12 @@ import {
 
 const costs = css.resolve`
   section {
-    margin-top: 4.5rem;
-    margin-bottom: 4.5rem;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
     width: 100%;
     grid-template-columns: repeat(12, 1fr);
+    grid-column: 1 / span 6;
+    transform: scale(0.75);
   }
 
   section h2 {
@@ -29,7 +31,7 @@ const costs = css.resolve`
 
   @media (max-width: 767px) {
     section {
-      margin-top: 6.4375rem;
+      margin-top: 4.4375rem;
       width: 20.5rem;
       grid-template-columns: repeat(6, 3rem);
     }

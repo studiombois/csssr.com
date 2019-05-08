@@ -262,6 +262,7 @@ export const modalStyles = css`
     margin: 0 auto;
     width: 1024px;
     height: 100%;
+    overflow: auto;
   }
 
   button {

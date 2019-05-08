@@ -1,3 +1,15 @@
+export const courseNameById = {
+  0: 'react-middle',
+  1: 'react-junior',
+  2: 'react-hight-middle',
+}
+
+export const courseIdByName = {
+  'react-middle': 0,
+  'react-junior': 1,
+  'react-hight-middle': 2,
+}
+
 export default {
   items: [
     {

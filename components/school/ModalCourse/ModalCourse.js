@@ -5,6 +5,8 @@ import CrossIcon from '../../../static/icons/cross_white.svg'
 import ClickOutside from '../../ui-kit/ClickOutside'
 import ButtonLink from '../../ui-kit/ButtonLink'
 import coursesMock from '../../../data/school/courses-mock'
+import Costs from '../Costs'
+import css from 'styled-jsx/css'
 import {
   clickOutsideStyles,
   listItemStyles,
@@ -12,6 +14,31 @@ import {
   titleBackgroundStyles,
   modalStyles,
 } from './styles'
+
+const costs = css.resolve`
+  section {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  section h2 {
+    grid-column: 3 / span 8;
+  }
+
+  @media (max-width: 767px) {
+    section {
+      margin-top: 6.4375rem;
+      width: 20.5rem;
+      grid-template-columns: repeat(6, 3rem);
+    }
+
+    section h2 {
+      grid-column: 1 / span 6;
+    }
+  }
+`
 
 class ModalCourse extends PureComponent {
   static propTypes = {
@@ -58,6 +85,8 @@ class ModalCourse extends PureComponent {
             </div>
           </div>
 
+          <Costs className={costs.className}/>
+
           <div className='buttonWrapper'>
             <div className='button_register'>
               <ButtonLink onClick={onCloseModal} href={'#sign'}>
@@ -66,8 +95,10 @@ class ModalCourse extends PureComponent {
             </div>
           </div>
         </section>
+
         <style jsx>{modalContentStyles}</style>
         <style jsx>{titleBackgroundStyles}</style>
+        {costs.styles}
       </Fragment>
     )
   }

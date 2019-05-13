@@ -11,8 +11,19 @@ import Form from '../../components/school/Form'
 import Layout from '../../components/Layout'
 import { allSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
+import { courseIdByName } from '../../data/school/courses-mock'
 
 class School extends PureComponent {
+  static async getInitialProps({ query }) {
+    let modalActiveId
+
+    if (query['full-programm']) {
+      modalActiveId = courseIdByName[query['full-programm']]
+    }
+
+    return { modalActiveId }
+  }
+
   state = {
     isTablet: false,
     chosenCourse: null,
@@ -39,7 +50,7 @@ class School extends PureComponent {
     })
 
   render() {
-    const { t } = this.props
+    const { t, modalActiveId } = this.props
     const { isTablet, chosenCourse } = this.state
 
     return (
@@ -59,6 +70,7 @@ class School extends PureComponent {
         {/* <Counter />*/}
         <Courses
           isTablet={isTablet}
+          modalActiveId={modalActiveId}
           onChoosingCourse={this.handleChooseCourse}
         />
         <Costs />

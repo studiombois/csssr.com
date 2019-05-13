@@ -109,15 +109,9 @@ const LogosSheet = () =>
       }
 
       .gulp {
-        top: 30.0625rem;
+        top: 34.0625rem;
         left: 26.5rem;
         width: 3.75rem;
-      }
-
-      .oracle {
-        top: 43.75rem;
-        left: 25rem;
-        width: 8rem;
       }
 
       .pug {
@@ -258,15 +252,9 @@ const LogosSheet = () =>
         }
 
         .gulp {
-          top: 19.8125rem;
+          top: 23.8125rem;
           left: 34.0625rem;
           width: 2.5rem;
-        }
-
-        .oracle {
-          top: 28.875rem;
-          left: 33.125rem;
-          width: 5.375rem;
         }
 
         .pug {
@@ -393,21 +381,15 @@ const LogosSheet = () =>
           width: 2rem;
         }
 
-        .oracle {
-          top: 41.375rem;
-          left: 0;
-          width: 4.25rem;
-        }
-
         .pug {
-          top: 49.1875rem;
+          top: 49.6875rem;
           left: 7.75rem;
           width: 2.375rem;
         }
 
         .rispa {
-          top: 46.625rem;
-          left: 0.625rem;
+          top: 42.625rem;
+          left: 0.125rem;
           width: 2.375rem;
         }
 
@@ -418,8 +400,8 @@ const LogosSheet = () =>
         }
 
         .jasmine {
-          top: 51.25rem;
-          left: 3rem;
+          top: 48.25rem;
+          left: 0.625rem;
           width: 3.75rem;
           height: 2.75rem;
         }

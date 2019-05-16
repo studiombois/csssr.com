@@ -56,7 +56,6 @@ class School extends PureComponent {
     return (
       <Layout
         headerProps={{
-          logoHref: '/ru/school',
           logoAlt: 'CSSSR school logo',
           logoSup: '.school',
           isLogoLink: true,

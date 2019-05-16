@@ -33,7 +33,7 @@ class Dev extends PureComponent {
 
     return (
       <Layout
-        headerProps={{ logoHref: '/ru', isLogoLink: true, isBurgerVisible: true }}
+        headerProps={{ isLogoLink: true, isBurgerVisible: true }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head

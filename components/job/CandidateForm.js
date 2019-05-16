@@ -63,6 +63,7 @@ const picturesMap = {
   'junior-project-manager': 'Project_manager',
   'account-manager-ee': 'Account_manager_1',
   'smm-manager': 'SMM',
+  'account-manager': 'Documents_1',
 }
 
 const divideSections = sections => {

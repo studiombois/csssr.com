@@ -36,7 +36,7 @@ class MVP extends PureComponent {
 
     return (
       <Layout
-        headerProps={{ logoHref: '/ru', isLogoLink: true, isBurgerVisible: true }}
+        headerProps={{ isLogoLink: true, isBurgerVisible: true }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head title={t('mvp:meta.title')} description={t('mvp:meta.description')} />

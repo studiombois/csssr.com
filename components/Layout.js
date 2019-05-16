@@ -37,7 +37,6 @@ Layout.propTypes = {
   url: string,
   ogImage: string,
   headerProps: shape({
-    logoHref: string,
     logoAlt: string,
     logoSup: string,
     isLogoLink: bool,

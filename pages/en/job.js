@@ -181,7 +181,6 @@ class Job extends PureComponent {
       <Fragment>
         <Layout
           headerProps={{
-            logoHref: `/${lng}/jobs`,
             logoAlt: 'CSSSR jobs logo',
             isLogoLink: true,
             isBurgerVisible: true,

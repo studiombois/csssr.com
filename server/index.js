@@ -81,8 +81,7 @@ i18n
           server.get(/\.js\.map$/, (req, res, nextHandler) => {
             if (!sentryToken || req.headers['x-sentry-token'] !== sentryToken) {
               return res
-                .status(401)
-                .send('Authentication access token is required to access the source map.')
+                .sendStatus(404)
             }
             nextHandler()
           })

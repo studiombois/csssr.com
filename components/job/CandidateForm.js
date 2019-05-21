@@ -64,6 +64,7 @@ const picturesMap = {
   'account-manager-ee': 'Account_manager_1',
   'smm-manager': 'SMM',
   'account-manager': 'Documents_1',
+  'system-analyst': 'Systems_analyst',
 }
 
 const divideSections = sections => {

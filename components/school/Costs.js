@@ -1,11 +1,20 @@
 import React, { Fragment } from 'react'
 import RubleIcon from '../../static/icons/ruble.svg'
 import translate from '../../utils/translate-wrapper'
+import cn from 'classnames'
 
-const Costs = ({ t }) =>
+const Costs = ({ t, className }) =>
   <Fragment>
-    <section className='grid-container'>
-      <h2 className='font_h2-slab'>
+    <section
+      className={cn('grid-container', {
+        [className]: className,
+      })}
+    >
+      <h2
+        className={cn('font_h2-slab', {
+          [className]: className,
+        })}
+      >
         {t('school:costs.title') }
         <br/>
         <div className='font_roboto-slab-light big_counter'>

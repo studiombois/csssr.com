@@ -44,9 +44,6 @@ export default [{
   iconName: 'gulp',
   logoCaption: 'Gulp',
 }, {
-  iconName: 'oracle',
-  logoCaption: 'Oracle',
-}, {
   iconName: 'pug',
   logoCaption: 'Pug',
 }, {

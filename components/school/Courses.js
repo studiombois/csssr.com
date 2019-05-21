@@ -1,11 +1,13 @@
 import React, { Fragment, PureComponent } from 'react'
 import { bool, func } from 'prop-types'
+import { withRouter } from 'next/router'
+import Router from 'next/router'
 import translate from '../../utils/translate-wrapper'
 import cn from 'classnames'
 import css from 'styled-jsx/css'
 import ButtonLink from '../ui-kit/ButtonLink'
 import ModalCourse from './ModalCourse/ModalCourse'
-import coursesMock from '../../data/school/courses-mock'
+import coursesMock, { courseNameById } from '../../data/school/courses-mock'
 import getScrollbarWidth from '../../utils/getScrollbarWidth'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
@@ -65,7 +67,7 @@ class Courses extends PureComponent {
   }
 
   state = {
-    modalActiveId: -1,
+    modalActiveId: this.props.modalActiveId || -1,
   }
 
   componentDidMount() {
@@ -78,12 +80,22 @@ class Courses extends PureComponent {
     this.setState({
       modalActiveId: -1,
     })
+
+    Router.push({
+      pathname: this.props.router.pathname,
+    })
   }
 
   handleShowModal = index => () => {
     this.bodyOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     document.body.style.paddingRight = `${this.scrollbarWidth}px`
+
+    Router.push({
+      pathname: this.props.router.pathname,
+      query: { 'full-programm': courseNameById[index] },
+    })
+
     this.setState({
       modalActiveId: index,
     })
@@ -510,4 +522,4 @@ class Courses extends PureComponent {
   }
 }
 
-export default translate()(Courses)
+export default translate()(withRouter(Courses))

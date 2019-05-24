@@ -36,6 +36,13 @@ const PrivacyPolicyCheckbox = ({
         display: none;
       }
 
+      @media (max-width: 1279px) {
+        .font_link-list_16 {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      }
+
       @media (max-width: 767px) {
         .font_link-list_16 {
           padding-bottom: 0;

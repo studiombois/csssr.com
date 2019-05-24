@@ -177,6 +177,13 @@ export default class Checkbox extends PureComponent {
             display: block;
           }
 
+          @media (max-width: 1279px) {
+            .font_p16-regular {
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+          }
+
           @media (max-width: 767px) {
             label {
               padding-bottom: 0;

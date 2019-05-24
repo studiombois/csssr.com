@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
-import { string, arrayOf } from 'prop-types'
+import { string, arrayOf, bool, func } from 'prop-types'
 import css from 'styled-jsx/css'
 import { Field, FormSpy } from 'react-final-form'
 import translate from '../utils/translate-wrapper'
@@ -108,11 +108,21 @@ const fieldCss = css.resolve`
 
 class ContactForm extends PureComponent {
   messageRef = React.createRef()
+
   static proptypes = {
     imageName: string,
     pageName: string,
+    className: string,
     headerId: string,
+    shouldScroll: bool,
+    shouldShowStatusMessage: bool,
+    onSubmitResolve: func,
     fields: arrayOf(string),
+  }
+
+  static defaultProps = {
+    shouldScroll: true,
+    shouldShowStatusMessage: true,
   }
 
   state = {
@@ -135,7 +145,13 @@ class ContactForm extends PureComponent {
   }
 
   handleSubmit = e => {
-    const { handleSubmit, form: { reset } } = this.props
+    const {
+      handleSubmit,
+      onSubmitResolve,
+      submitSucceeded,
+      shouldScroll,
+      form: { reset },
+    } = this.props
 
     // Может быть undefined если были ошибки валидации
     // или Promise если запрос отправлен
@@ -146,10 +162,16 @@ class ContactForm extends PureComponent {
         submittedToServer: true,
       })
 
-      this.handleScroll()
+      if (shouldScroll) {
+        this.handleScroll()
+      }
 
       return submitResult.then(() => {
-        if (this.props.submitSucceeded) {
+        if (onSubmitResolve) {
+          onSubmitResolve(this.getStatus())
+        }
+
+        if (submitSucceeded) {
           reset()
         }
       })
@@ -163,6 +185,7 @@ class ContactForm extends PureComponent {
     const wasReset = initialValues === undefined ?
       equals(values, {}) :
       values === this.props.initialValues
+
     if (this.state.submittedToServer && !wasReset) {
       this.setState({
         submittedToServer: false,
@@ -198,57 +221,64 @@ class ContactForm extends PureComponent {
 
   renderField = fieldName => {
     const {
+      className,
       pageName,
+      fieldsIds,
       t,
     } = this.props
 
+    // теперь у нас две одинаковые формы на одной странице и
+    // если у них будут одинаековые названия полей, то валидатор
+    // и фокус по полям с ошибками и чекбосы будут коряво
+    // работать поэтому теперь прокидывается дополнительно fieldsIds
     const fieldByName = {
-      name: <div className={cn('field', fieldCss.className)}>
+      name: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
         <Field
-          id='name'
-          name='name'
+          id={fieldsIds && fieldsIds.name || 'name'}
+          name={fieldsIds && fieldsIds.name || 'name'}
           component={TextField}
           type='text'
           placeholder={t(`${pageName}:form.namePlaceholder`)}
           label={t(`${pageName}:form.nameLabel`)}
         />
       </div>,
-      phone: <div className={cn('field', fieldCss.className)}>
+      phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
         <Field
-          id='phone'
-          name='phone'
+          id={fieldsIds && fieldsIds.phone || 'phone'}
+          name={fieldsIds && fieldsIds.phone || 'phone'}
           component={TextField}
           type='text'
           placeholder={t(`${pageName}:form.phonePlaceholder`)}
           label={t(`${pageName}:form.phoneLabel`)}
         />
       </div>,
-      email: <div className={cn('field', fieldCss.className)}>
+      email: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
         <Field
-          id='email'
-          name='email'
+          id={fieldsIds && fieldsIds.email || 'email'}
+          name={fieldsIds && fieldsIds.email || 'email'}
           component={TextField}
           type='email'
           placeholder={t(`${pageName}:form.emailPlaceholder`)}
           label={t(`${pageName}:form.emailLabel`)}
         />
       </div>,
-      message: <div className={cn('field', 'field_type_textarea', fieldCss.className)}>
+      message: <div className={cn('field', 'field_type_textarea', fieldCss.className, { [className]: !!className })}>
         <Field
-          id='message'
-          name='message'
+          id={fieldsIds && fieldsIds.message || 'message'}
+          name={fieldsIds && fieldsIds.message || 'message'}
+          className={cn({ [className]: !!className })}
           component={TextareaField}
           placeholder={t(`${pageName}:form.messagePlaceholder`)}
           label={t(`${pageName}:form.messageLabel`)}
         />
       </div>,
-      privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className)}>
-        <PrivacyPolicyCheckbox />
+      privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
+        <PrivacyPolicyCheckbox id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'} />
       </div>,
-      newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className)}>
+      newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
         <Field
-          id='newsletterCheckbox'
-          name='newsletter'
+          id={fieldsIds && fieldsIds.newsletter || 'newsletter'}
+          name={fieldsIds && fieldsIds.newsletter || 'newsletter'}
           type='checkbox'
           component={Checkbox}
         >
@@ -265,6 +295,8 @@ class ContactForm extends PureComponent {
   render() {
     const {
       pageName,
+      className,
+      shouldShowStatusMessage,
       headerId,
       fields,
       feedbackEmail,
@@ -272,19 +304,28 @@ class ContactForm extends PureComponent {
       t,
     } = this.props
 
-    const status = this.getStatus()
+    const status = this.props.status || this.getStatus()
 
     return (
-      <form className='grid-container' onSubmit={this.handleSubmit} name='contact' noValidate>
+      <form
+        className={cn('grid-container', { [className]: !!className })}
+        onSubmit={this.handleSubmit}
+        name='contact'
+        noValidate
+      >
         <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }}/>
 
-        <h2 id={headerId} className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.title`) }} />
+        <h2
+          id={headerId}
+          className={cn('font_h2-slab', { [className]: !!className })}
+          dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.title`) }}
+        />
 
         {fields.map(this.renderField)}
         {this.renderField('privacyPolicy')}
         {this.renderField('newsletter')}
 
-        <div className='button' ref={this.messageRef}>
+        <div className={cn('button', { [className]: !!className })} ref={this.messageRef}>
           <AnimatedButton
             type='submit'
             status={status}
@@ -293,14 +334,18 @@ class ContactForm extends PureComponent {
           </AnimatedButton>
         </div>
 
-        <div className='message'>
-          <FormStateMessage
-            status={status}
-            errorText={submitError}
-            onTryAgain={this.handleTryToFillFormAgain}
-            feedbackEmail={feedbackEmail}
-          />
-        </div><style jsx>{`
+        {shouldShowStatusMessage &&
+          <div className={cn('message', { [className]: !!className })}>
+            <FormStateMessage
+              status={status}
+              errorText={submitError}
+              onTryAgain={this.handleTryToFillFormAgain}
+              feedbackEmail={feedbackEmail}
+            />
+          </div>
+        }
+
+        <style jsx>{`
           form {
             position: relative;
             margin-right: auto;

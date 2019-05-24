@@ -5,7 +5,7 @@ function isPositiveInteger(str) {
 
 export default t => value => {
   if (value && !isPositiveInteger(value)) {
-    return t('common:formErrors.integer')
+    return t('common:form.errors.integer')
   }
 
   return undefined

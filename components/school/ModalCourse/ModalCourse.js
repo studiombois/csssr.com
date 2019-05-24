@@ -8,7 +8,6 @@ import coursesMock from '../../../data/school/courses-mock'
 import Costs from '../Costs'
 import css from 'styled-jsx/css'
 import {
-  clickOutsideStyles,
   listItemStyles,
   modalContentStyles,
   titleBackgroundStyles,
@@ -114,10 +113,7 @@ class ModalCourse extends PureComponent {
             <CrossIcon width='100%' height='100%' />
           </button>
           <div className='modalContent'>
-            <ClickOutside
-              onOutsideClick={onCloseModal}
-              style={clickOutsideStyles}
-            >
+            <ClickOutside onOutsideClick={onCloseModal}>
               {this.renderModalContent(modal)}
             </ClickOutside>
           </div>

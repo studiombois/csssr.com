@@ -32,7 +32,7 @@ const onSubmit = (t, lng) => async values => {
       body: JSON.stringify(values),
     })
   } catch {
-    return { [FORM_ERROR]: t('common:formErrors.general') }
+    return { [FORM_ERROR]: t('common:form.errors.general') }
   }
 
   if (res.status === 201) {
@@ -45,7 +45,7 @@ const onSubmit = (t, lng) => async values => {
       const response = await res.json()
       error = response.error
     } catch {
-      error = t('common:formErrors.general')
+      error = t('common:form.errors.general')
     }
 
     if (window.dataLayer) {
@@ -66,3 +66,4 @@ const Form = ({ t, lng }) => <ReactFinalForm
 />
 
 export default translate()(Form)
+export { onSubmit }

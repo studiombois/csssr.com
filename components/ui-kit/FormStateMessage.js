@@ -76,20 +76,33 @@ class FormStateMessage extends PureComponent {
   }
 
   getTextData = () => {
-    const { status } = this.props
+    const { status, t, errorText } = this.props
     if (status === 'success') {
       return {
-        intro: 'Успех!',
-        message: 'Совсем скоро мы с вами свяжемся.',
+        intro: t('common:form.message.success.intro'),
+        message: t('common:form.message.success.body'),
       }
     } else if (status === 'fail') {
       return {
-        intro: this.props.errorText,
+        intro: t(errorText),
         message: <span>
-          <span>Попробуйте </span>
-          <button type='button' className='font_link-list_16' onClick={this.props.onTryAgain}>еще раз</button>
-          <span> или отправьте вопрос на </span>
-          <a className='font_link-list_16' href={`mailto:${this.props.feedbackEmail}`}>{this.props.feedbackEmail}</a><style jsx>{`
+          <span>{t('common:form.message.fail.body.textStart')}</span>
+
+          <button
+            type='button'
+            className='font_link-list_16'
+            onClick={this.props.onTryAgain}
+          >
+            {t('common:form.message.fail.body.textForButton')}
+          </button>
+
+          <span>{t('common:form.message.fail.body.textBetweenButtonAndLink')}</span>
+
+          <a className='font_link-list_16' href={`mailto:${this.props.feedbackEmail}`}>
+            {this.props.feedbackEmail}
+          </a>
+
+          <style jsx>{`
             button {
               border: none;
               background: none;
@@ -101,6 +114,12 @@ class FormStateMessage extends PureComponent {
               text-decoration: none;
             }
 
+            @media (max-width: 1279px) {
+              a {
+                  font-size: 1rem;
+                  line-height: 1.5rem;
+              }
+            }
           `}</style>
         </span>,
       }

@@ -9,13 +9,14 @@ import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 const PrivacyPolicyCheckbox = ({
   id = 'privacyPolicyCheckbox',
   lng,
+  name = 'privacyPolicy',
   className,
   t,
 }) =>
   <Fragment>
     <Field
       id={id}
-      name='privacyPolicy'
+      name={name}
       className={className}
       type='checkbox'
       showValidationAsWarning

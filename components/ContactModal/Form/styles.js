@@ -145,26 +145,26 @@ const formCSS = css.resolve`
   }
 `
 
-const generateDynamicFormCSS = hasSubmitStatus => css.resolve`
+const generateDynamicFormCSS = hasFailOrSuccessStatus => css.resolve`
   .field {
-    opacity: ${hasSubmitStatus ? 0 : 1};
-    pointer-events: ${hasSubmitStatus ? 'none' : 'auto'};
+    opacity: ${hasFailOrSuccessStatus ? 0 : 1};
+    pointer-events: ${hasFailOrSuccessStatus ? 'none' : 'auto'};
   }
 
   .button {
-    opacity: ${hasSubmitStatus ? 0 : 1};
-    pointer-events: ${hasSubmitStatus ? 'none' : 'auto'};
+    opacity: ${hasFailOrSuccessStatus ? 0 : 1};
+    pointer-events: ${hasFailOrSuccessStatus ? 'none' : 'auto'};
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
     form {
-      height: ${hasSubmitStatus ? '36.5rem' : 'auto'};
+      height: ${hasFailOrSuccessStatus ? '36.5rem' : 'auto'};
     }
   }
 
   @media (max-width: 767px) {
     form {
-      height: ${hasSubmitStatus ? '100vh' : 'auto'};
+      height: ${hasFailOrSuccessStatus ? '100vh' : 'auto'};
     }
   }
 `

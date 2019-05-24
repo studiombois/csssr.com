@@ -2,31 +2,86 @@ import React, { PureComponent } from 'react'
 import { string, func } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
 import createDecorator from 'final-form-focus'
+import { FORM_ERROR } from 'final-form'
+import fetch from 'isomorphic-unfetch'
+import getGaCid from '../../utils/client/getGaCid'
 import translate from '../../utils/translate-wrapper'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
-import { onSubmit } from '../dev/Form'
 import Form from './Form'
 import ClickOutside from '../ui-kit/ClickOutside'
 import { generateDynamicContactModalStyles, contactModalStyles } from './styles'
 
 const focusOnErrors = createDecorator()
+const fieldsIds = {
+  name: 'ConctactModalForm_name',
+  phone: 'ConctactModalForm_phone',
+  email: 'ConctactModalForm_email',
+  message: 'ConctactModalForm_message',
+  privacyPolicy: 'ConctactModalForm_privacyPolicy',
+  newsletter: 'ConctactModalForm_newsletter',
+}
 
 class ContactModal extends PureComponent {
   state = {
     submitStatus: '',
   }
 
-  handleSubmitResolve = submitStatus => {
-    if (submitStatus === 'success' || submitStatus === 'fail') {
-      this.setState({ submitStatus })
+  handleSubmit = (t, lng) => async values => {
+    this.setState({ submitStatus: '' })
+
+    let res
+    try {
+      res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: values[fieldsIds.name],
+          phone: values[fieldsIds.phone],
+          email: values[fieldsIds.email],
+          message: values[fieldsIds.message],
+          privacyPolicy: values[fieldsIds.privacyPolicy],
+          newsletter: values[fieldsIds.newsletter],
+          gacid: getGaCid(),
+          language: lng,
+        }),
+      })
+    } catch {
+      return { [FORM_ERROR]: t('common:form.errors.general') }
     }
+
+    if (res.status === 201) {
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'form_success' })
+      }
+    } else {
+      let error
+      try {
+        const response = await res.json()
+        error = response.error
+      } catch {
+        error = t('common:form.errors.general')
+      }
+
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'form_fail' })
+      }
+
+      return { [FORM_ERROR]: error }
+    }
+  }
+
+  handleSubmitResolve = submitStatus => {
+    this.setState({ submitStatus })
   }
 
   handleStatusButtonClick = () => {
     const { submitStatus } = this.state
 
     if (submitStatus === 'fail') {
-      this.setState({ submitStatus: '' })
+      this.setState({ submitStatus: 'pending' })
     }
 
     if (submitStatus === 'success') {
@@ -37,16 +92,8 @@ class ContactModal extends PureComponent {
   render() {
     const { t, lng, feedbackEmail, pageName, onClose } = this.props
     const { submitStatus } = this.state
-    const hasSubmitStatus = !!submitStatus
-    const dynamicModalStyles = generateDynamicContactModalStyles(hasSubmitStatus)
-    const fieldsIds = {
-      name: 'ConctactModalForm_name',
-      phone: 'ConctactModalForm_phone',
-      email: 'ConctactModalForm_email',
-      message: 'ConctactModalForm_message',
-      privacyPolicy: 'ConctactModalForm_privacyPolicy',
-      newsletter: 'ConctactModalForm_newsletter',
-    }
+    const hasFailOrSuccessStatus = submitStatus === 'success' || submitStatus === 'fail'
+    const dynamicModalStyles = generateDynamicContactModalStyles(hasFailOrSuccessStatus)
 
     return (
       <div className='screen-shadow'>
@@ -58,8 +105,8 @@ class ContactModal extends PureComponent {
               decorators={[ focusOnErrors ]}
               feedbackEmail={feedbackEmail}
               submitStatus={submitStatus}
-              hasSubmitStatus={hasSubmitStatus}
-              onSubmit={onSubmit(t, lng)}
+              hasFailOrSuccessStatus={hasFailOrSuccessStatus}
+              onSubmit={this.handleSubmit(t, lng)}
               onSubmitResolve={this.handleSubmitResolve}
               onStatusButtonClick={this.handleStatusButtonClick}
               fieldsIds={fieldsIds}

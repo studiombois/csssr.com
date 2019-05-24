@@ -86,10 +86,10 @@ const statusMessageStyles = css`
   }
 `
 
-const generateStatusMessageDynamicCSS = hasSubmitStatus => css.resolve`
+const generateStatusMessageDynamicCSS = hasFailOrSuccessStatus => css.resolve`
   div {
-    opacity: ${hasSubmitStatus ? 1 : 0};
-    pointer-events: ${hasSubmitStatus ? 'auto' : 'none'};
+    opacity: ${hasFailOrSuccessStatus ? 1 : 0};
+    pointer-events: ${hasFailOrSuccessStatus ? 'auto' : 'none'};
   }
 `
 

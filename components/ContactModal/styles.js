@@ -89,10 +89,10 @@ const contactModalStyles = css`
   }
 `
 
-const generateDynamicContactModalStyles = hasSubmitStatus => css.resolve`
+const generateDynamicContactModalStyles = hasFailOrSuccessStatus => css.resolve`
   @media (max-width: 767px) {
     .modal-wrapper {
-      overflow-y: ${hasSubmitStatus ? 'unset' : 'auto'};
+      overflow-y: ${hasFailOrSuccessStatus ? 'unset' : 'auto'};
     }
   }
 `

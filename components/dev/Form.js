@@ -20,8 +20,8 @@ const ContactFormForDev = props => <ContactForm
 const onSubmit = (t, lng) => async values => {
   values.gacid = getGaCid()
   values.language = lng
-
   let res
+  
   try {
     res = await fetch('/api/submit-form', {
       method: 'POST',

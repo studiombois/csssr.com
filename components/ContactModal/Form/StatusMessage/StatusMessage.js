@@ -5,13 +5,13 @@ import getMessageTextOfStatus from '../../../../utils/client/getMessageTextOfSta
 import Button from '../../../ui-kit/Button'
 import { statusMessageStyles, generateStatusMessageDynamicCSS, buttonCSS } from './styles'
 
-const StatusMessage = ({ t, errorText, status, hasSubmitStatus, feedbackEmail, onClick }) => {
+const StatusMessage = ({ t, errorText, status, feedbackEmail, hasFailOrSuccessStatus, onClick }) => {
   const messageText = getMessageTextOfStatus({ status, feedbackEmail, errorText, t })
-  const statusMessageDynamicCSS = generateStatusMessageDynamicCSS(hasSubmitStatus)
+  const statusMessageDynamicCSS = generateStatusMessageDynamicCSS(hasFailOrSuccessStatus)
 
   return (
     <div className={statusMessageDynamicCSS.className}>
-      {hasSubmitStatus &&
+      { hasFailOrSuccessStatus &&
         <img
           src={require(`../../../../static/icons/button_${status}.svg`)}
           alt='Submit status icon'
@@ -35,7 +35,7 @@ const StatusMessage = ({ t, errorText, status, hasSubmitStatus, feedbackEmail, o
 
 StatusMessage.propTypes = {
   status: string,
-  hasSubmitStatus: bool,
+  hasFailOrSuccessStatus: bool,
   feedbackEmail: string,
   errorText: string,
   onClick: func,

@@ -10,12 +10,12 @@ const Form = props => {
     pageName,
     fieldsIds,
     submitStatus,
-    hasSubmitStatus,
+    hasFailOrSuccessStatus,
     onSubmitResolve,
     submitError,
     onStatusButtonClick,
   } = props
-  const dynamicFormCSS = generateDynamicFormCSS(hasSubmitStatus)
+  const dynamicFormCSS = generateDynamicFormCSS(hasFailOrSuccessStatus)
 
   return (
     <Fragment>
@@ -25,7 +25,7 @@ const Form = props => {
         fields={['name', 'phone', 'email', 'message']}
         fieldsIds={fieldsIds}
         className={cn(formCSS.className, dynamicFormCSS.className)}
-        status={submitStatus || 'pending'}
+        status={submitStatus}
         shouldScroll={false}
         shouldShowStatusMessage={false}
         onSubmitResolve={onSubmitResolve}
@@ -34,7 +34,7 @@ const Form = props => {
 
       <StatusMessage
         status={submitStatus}
-        hasSubmitStatus={hasSubmitStatus}
+        hasFailOrSuccessStatus={hasFailOrSuccessStatus}
         feedbackEmail='sales@csssr.io'
         errorText={submitError}
         onClick={onStatusButtonClick}
@@ -48,7 +48,7 @@ const Form = props => {
 
 Form.propTypes = {
   submitStatus: string,
-  hasSubmitStatus: bool,
+  hasFailOrSuccessStatus: bool,
   submitError: string,
   pageName: string,
   onSubmitResolve: func,

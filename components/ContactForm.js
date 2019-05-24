@@ -273,7 +273,10 @@ class ContactForm extends PureComponent {
         />
       </div>,
       privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
-        <PrivacyPolicyCheckbox id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'} />
+        <PrivacyPolicyCheckbox
+          id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
+          name={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
+        />
       </div>,
       newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
         <Field

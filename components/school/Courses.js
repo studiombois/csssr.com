@@ -442,7 +442,7 @@ class Courses extends PureComponent {
   }
 
   render() {
-    const { t } = this.props
+    const { t, onChoosingCourse } = this.props
     const { modalActiveId } = this.state
     return (
       <Fragment>
@@ -450,6 +450,7 @@ class Courses extends PureComponent {
             <ModalCourse
               modalActiveId={modalActiveId}
               onCloseModal={this.handleCloseModal}
+              onChoosingCourse={() => onChoosingCourse(coursesMock.items[modalActiveId].id)}
             />
         }
 

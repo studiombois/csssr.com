@@ -46,6 +46,7 @@ class ModalCourse extends PureComponent {
   static propTypes = {
     modalActiveId: number,
     onCloseModal: func,
+    onChoosingCourse: func,
   }
 
   static defaultProps = {
@@ -62,8 +63,14 @@ class ModalCourse extends PureComponent {
     )
   }
 
+  handleRegister = () => {
+    const { onCloseModal, onChoosingCourse } = this.props
+    onChoosingCourse()
+    onCloseModal()
+  }
+
   renderModalContent = ({ title, studyItems, studyItemsTitle, needKnow, needKnowTitle }) => {
-    const { t, onCloseModal } = this.props
+    const { t } = this.props
     return (
       <Fragment>
         <section className='wrapper'>
@@ -91,7 +98,7 @@ class ModalCourse extends PureComponent {
 
           <div className='buttonWrapper'>
             <div className='button_register'>
-              <ButtonLink onClick={onCloseModal} href={'#sign'}>
+              <ButtonLink onClick={this.handleRegister} href={'#sign'}>
                 {t('school:course.register')}
               </ButtonLink>
             </div>

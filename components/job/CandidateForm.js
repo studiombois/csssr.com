@@ -65,6 +65,8 @@ const picturesMap = {
   'smm-manager': 'SMM',
   'account-manager': 'Documents_1',
   'system-analyst': 'Systems_analyst',
+  'senior-fullstack-developer': 'JS_senior',
+  'product-designer': 'Designer',
 }
 
 const divideSections = sections => {

@@ -1,17 +1,16 @@
 import React, { PureComponent } from 'react'
+import ReactDOM from 'react-dom'
 import translate from '../../../utils/translate-wrapper'
 import { string, arrayOf, shape, bool, func } from 'prop-types'
 import cn from 'classnames'
 import Button from '../Button'
-import ButtonLink from '../ButtonLink'
 import ButtonSelectList from './ButtonSelectList'
 import CrossIcon from '../../../static/icons/cross.svg'
 import ThreePointIcon from '../../../static/icons/threePoint.svg'
 import isAppleDevice from '../../../utils/isAppleDevice'
-import scrollStop from '../../../utils/scrollStop'
 import { whiteButtonStyles, whiteButtonClassName } from './styles/stylesForWhiteButton'
 import { blueButtonStyles, blueButtonClassName } from './styles/stylesForBlueButton'
-import { getFormInputs } from 'final-form-focus'
+import ContactModal from '../../ContactModal'
 
 const stopBodyScrolling = shouldStop => {
   const stopEventDefaultBehavior = e => e.preventDefault()
@@ -31,6 +30,7 @@ class ButtonSelect extends PureComponent {
       href: string,
       external: bool,
     })),
+    pageName: string,
     isMobile: bool,
     t: func,
   }
@@ -38,6 +38,7 @@ class ButtonSelect extends PureComponent {
   state = {
     isDropdownVisible: false,
     showScrollButton: false,
+    showContactModal: false,
   }
 
   rafId = null
@@ -109,14 +110,6 @@ class ButtonSelect extends PureComponent {
     })
   }
 
-  handleScrollPageToForm = () => {
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'floating_button_form' })
-    }
-
-    scrollStop(() => getFormInputs('contact')()[0].focus())
-  }
-
   handleLinkClick = dataLayerEvent => {
     if (window.dataLayer) {
       window.dataLayer.push({ event: dataLayerEvent })
@@ -125,8 +118,28 @@ class ButtonSelect extends PureComponent {
     this.handleHideDropdown()
   }
 
+  handleHideContactModal = () => {
+    this.setState({
+      showContactModal: false,
+    })
+
+    document.body.style.overflow = 'initial'
+  }
+
+  handleShowContactModal = () => {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'floating_button_form' })
+    }
+
+    document.body.style.overflow = 'hidden'
+
+    this.setState({
+      showContactModal: true,
+    })
+  }
+
   render() {
-    const { buttonText, t } = this.props
+    const { buttonText, t, pageName } = this.props
     const { isDropdownVisible } = this.state
 
     return (
@@ -145,13 +158,12 @@ class ButtonSelect extends PureComponent {
           onCloseButtonClick={this.handleHideDropdown}
         />
 
-        <ButtonLink
+        <Button
           className={blueButtonClassName}
-          onClick={this.handleScrollPageToForm}
-          href='#hire-us'
+          onClick={this.handleShowContactModal}
         >
           {buttonText}
-        </ButtonLink>
+        </Button>
 
         <Button
           name='more-links'
@@ -165,6 +177,18 @@ class ButtonSelect extends PureComponent {
             : <ThreePointIcon width='3rem' height='3rem'/>
           }
         </Button>
+
+        {/* Поместил форму сюда, что бы не изменять state на уровне всей страницы */}
+        {typeof window !== 'undefined' && this.state.showContactModal &&
+          ReactDOM.createPortal(
+            <ContactModal
+              onClose={this.handleHideContactModal}
+              pageName={pageName}
+            />,
+            document.getElementById('main')
+
+          )
+        }
 
         <style jsx>{`
           .button-wrapper {

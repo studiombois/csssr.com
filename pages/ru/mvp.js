@@ -50,6 +50,7 @@ class MVP extends PureComponent {
           showButtonOnNode='advantages'
           hideButtonOnNode='hire-us'
           buttonText={t('mvp:buttonText')}
+          pageName='mvp'
         />
       </Layout>
     )

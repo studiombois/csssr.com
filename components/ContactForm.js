@@ -111,6 +111,7 @@ class ContactForm extends PureComponent {
 
   static proptypes = {
     imageName: string,
+    formName: string,
     pageName: string,
     className: string,
     headerId: string,
@@ -121,6 +122,7 @@ class ContactForm extends PureComponent {
   }
 
   static defaultProps = {
+    formName: 'contact',
     shouldScroll: true,
     shouldShowStatusMessage: true,
   }
@@ -227,15 +229,11 @@ class ContactForm extends PureComponent {
       t,
     } = this.props
 
-    // теперь у нас две одинаковые формы на одной странице и
-    // если у них будут одинаековые названия полей, то валидатор
-    // и фокус по полям с ошибками и чекбосы будут коряво
-    // работать поэтому теперь прокидывается дополнительно fieldsIds
     const fieldByName = {
       name: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
         <Field
           id={fieldsIds && fieldsIds.name || 'name'}
-          name={fieldsIds && fieldsIds.name || 'name'}
+          name='name'
           component={TextField}
           type='text'
           placeholder={t(`${pageName}:form.namePlaceholder`)}
@@ -245,7 +243,7 @@ class ContactForm extends PureComponent {
       phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
         <Field
           id={fieldsIds && fieldsIds.phone || 'phone'}
-          name={fieldsIds && fieldsIds.phone || 'phone'}
+          name='phone'
           component={TextField}
           type='text'
           placeholder={t(`${pageName}:form.phonePlaceholder`)}
@@ -255,7 +253,7 @@ class ContactForm extends PureComponent {
       email: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
         <Field
           id={fieldsIds && fieldsIds.email || 'email'}
-          name={fieldsIds && fieldsIds.email || 'email'}
+          name='email'
           component={TextField}
           type='email'
           placeholder={t(`${pageName}:form.emailPlaceholder`)}
@@ -265,7 +263,7 @@ class ContactForm extends PureComponent {
       message: <div className={cn('field', 'field_type_textarea', fieldCss.className, { [className]: !!className })}>
         <Field
           id={fieldsIds && fieldsIds.message || 'message'}
-          name={fieldsIds && fieldsIds.message || 'message'}
+          name='message'
           className={cn({ [className]: !!className })}
           component={TextareaField}
           placeholder={t(`${pageName}:form.messagePlaceholder`)}
@@ -275,13 +273,13 @@ class ContactForm extends PureComponent {
       privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
         <PrivacyPolicyCheckbox
           id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
-          name={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
+          name='privacyPolicy'
         />
       </div>,
       newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
         <Field
           id={fieldsIds && fieldsIds.newsletter || 'newsletter'}
-          name={fieldsIds && fieldsIds.newsletter || 'newsletter'}
+          name='newsletter'
           type='checkbox'
           component={Checkbox}
         >
@@ -298,6 +296,7 @@ class ContactForm extends PureComponent {
   render() {
     const {
       pageName,
+      formName,
       className,
       shouldShowStatusMessage,
       headerId,
@@ -313,7 +312,7 @@ class ContactForm extends PureComponent {
       <form
         className={cn('grid-container', { [className]: !!className })}
         onSubmit={this.handleSubmit}
-        name='contact'
+        name={formName}
         noValidate
       >
         <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }}/>

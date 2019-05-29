@@ -8,6 +8,7 @@ import { formCSS, generateDynamicFormCSS } from './styles'
 const Form = props => {
   const {
     pageName,
+    formName,
     fieldsIds,
     submitStatus,
     hasFailOrSuccessStatus,
@@ -20,6 +21,7 @@ const Form = props => {
   return (
     <Fragment>
       <ContactForm
+        formName={formName}
         pageName={pageName}
         headerId='hire-us-modal'
         fields={['name', 'phone', 'email', 'message']}

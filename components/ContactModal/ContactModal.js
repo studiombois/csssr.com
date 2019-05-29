@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { string, func } from 'prop-types'
 import { Form as ReactFinalForm } from 'react-final-form'
-import createDecorator from 'final-form-focus'
+import createDecorator, { getFormInputs } from 'final-form-focus'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
 import getGaCid from '../../utils/client/getGaCid'
@@ -11,7 +11,8 @@ import Form from './Form'
 import ClickOutside from '../ui-kit/ClickOutside'
 import { generateDynamicContactModalStyles, contactModalStyles } from './styles'
 
-const focusOnErrors = createDecorator()
+const formName = 'contact-modal'
+const focusOnErrors = createDecorator(getFormInputs(formName))
 const fieldsIds = {
   name: 'ConctactModalForm_name',
   phone: 'ConctactModalForm_phone',
@@ -29,6 +30,10 @@ class ContactModal extends PureComponent {
   handleSubmit = (t, lng) => async values => {
     this.setState({ submitStatus: '' })
 
+    values.pageName = this.props.pageName
+    values.gacid = getGaCid()
+    values.language = lng
+
     let res
     try {
       res = await fetch('/api/submit-form', {
@@ -37,16 +42,7 @@ class ContactModal extends PureComponent {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: values[fieldsIds.name],
-          phone: values[fieldsIds.phone],
-          email: values[fieldsIds.email],
-          message: values[fieldsIds.message],
-          privacyPolicy: values[fieldsIds.privacyPolicy],
-          newsletter: values[fieldsIds.newsletter],
-          gacid: getGaCid(),
-          language: lng,
-        }),
+        body: JSON.stringify(values),
       })
     } catch {
       return { [FORM_ERROR]: t('common:form.errors.general') }
@@ -102,6 +98,7 @@ class ContactModal extends PureComponent {
             <ReactFinalForm
               component={Form}
               pageName={pageName}
+              formName={formName}
               decorators={[ focusOnErrors ]}
               feedbackEmail={feedbackEmail}
               submitStatus={submitStatus}
@@ -110,7 +107,7 @@ class ContactModal extends PureComponent {
               onSubmitResolve={this.handleSubmitResolve}
               onStatusButtonClick={this.handleStatusButtonClick}
               fieldsIds={fieldsIds}
-              validate={contactFormValidationRules(t, fieldsIds)}
+              validate={contactFormValidationRules(t)}
             />
 
             <button aria-label='close modal' onClick={onClose} />

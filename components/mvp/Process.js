@@ -13,10 +13,10 @@ class Process extends PureComponent {
     if (!this.planetsRef || !this.planetsRef.current) {
       return
     }
-    const solarRect = this.planetsRef.current.getBoundingClientRect()
+    const planetsRect = this.planetsRef.current.getBoundingClientRect()
     const sputnikRect = this.sputnikRef.current.getBoundingClientRect()
 
-    if (solarRect.top < window.innerHeight / 2 && !this.isPlanetsMoved) {
+    if (planetsRect.top < window.innerHeight / 2 && !this.isPlanetsMoved) {
       this.isPlanetsMoved = true
       this.planetsLottie.play()
     }

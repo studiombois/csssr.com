@@ -101,6 +101,15 @@ const Common = () =>
         min-width: 944px;
       }
 
+      ul.have-square-bullets li:before {
+        top: 0.25rem;
+        left: 0;
+        box-sizing: border-box;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 0.125rem solid black;
+      }
+
       .grid-container {
         grid-template-columns: repeat(12, 64px);
         grid-gap: 0 16px;

@@ -8,7 +8,7 @@ import withI18next from '../../utils/withI18next'
 
 const PrivacyPolicy = ({ t }) =>
   <Layout
-    headerProps={{ logoHref: '/en', isLogoLink: true, isBurgerVisible: true }}
+    headerProps={{ isLogoLink: true, isBurgerVisible: true }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
     <Head title={t('cookiesPolicy:meta.title')} description={t('cookiesPolicy:meta.description')} />

@@ -13,7 +13,6 @@ class HeaderContent extends PureComponent {
   static propTypes = {
     router: object,
     sectionName: string,
-    logoHref: string,
     logoAlt: string,
     logoSup: string,
     scrollbarWidth: number,
@@ -36,7 +35,6 @@ class HeaderContent extends PureComponent {
     const {
       pathname,
       links,
-      logoHref,
       t,
       logoAlt = t('common:headerLogoAlt'),
       logoSup,
@@ -69,7 +67,7 @@ class HeaderContent extends PureComponent {
           >
             {isLogoLink
               ? <span className='logo-wrapper'>
-                <Link href={logoHref}>
+                <Link href='/'>
                   <a>
                     <img
                       className='logo'

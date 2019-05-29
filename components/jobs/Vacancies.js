@@ -146,7 +146,7 @@ class Vacancies extends PureComponent {
 
         <div className='jobs-header-logo-container'>
           <div className='logo-wrapper'>
-            <a href={`/${lng}/jobs`}>
+            <a href='/' >
               <img
                 className='logo'
                 src={`${require('../../static/icons/csssr_logo.svg')}`}

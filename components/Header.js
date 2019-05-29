@@ -11,7 +11,6 @@ class Header extends PureComponent {
   static propTypes = {
     router: object,
     sectionName: string,
-    logoHref: string,
     logoAlt: string,
     logoSup: string,
     isLogoLink: bool,
@@ -120,7 +119,6 @@ class Header extends PureComponent {
     const {
       router: { pathname },
       sectionName,
-      logoHref,
       logoAlt,
       logoSup,
       isLogoLink,
@@ -142,7 +140,6 @@ class Header extends PureComponent {
           sectionName={sectionName}
           showHeader={showHeader}
           pinHeader={pinHeader}
-          logoHref={logoHref}
           logoAlt={logoAlt}
           logoSup={logoSup}
           scrollbarWidth={this.scrollbarWidth}

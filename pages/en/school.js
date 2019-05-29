@@ -10,7 +10,6 @@ function School({ t }) {
     <Fragment>
       <Layout
         headerProps={{
-          logoHref: '/en',
           logoAlt: 'CSSSR logo',
           isLogoLink: true,
           isBurgerVisible: true,

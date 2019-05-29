@@ -2,23 +2,23 @@ import React, { Fragment, PureComponent } from 'react'
 import translate from '../../utils/translate-wrapper'
 
 class Process extends PureComponent {
-  orbitsRef = React.createRef()
+  planetsRef = React.createRef()
   sputnikRef = React.createRef()
-  orbitsLottie = null
+  planetsLottie = null
   sputnikLottie = null
   isSputnikMoved = false
-  isOrbitsMoved = false
+  isPlanetsMoved = false
 
   handleScroll = () => {
-    if (!this.orbitsRef || !this.orbitsRef.current) {
+    if (!this.planetsRef || !this.planetsRef.current) {
       return
     }
-    const solarRect = this.orbitsRef.current.getBoundingClientRect()
+    const solarRect = this.planetsRef.current.getBoundingClientRect()
     const sputnikRect = this.sputnikRef.current.getBoundingClientRect()
 
-    if (solarRect.top < window.innerHeight / 2 && !this.isOrbitsMoved) {
-      this.isOrbitsMoved = true
-      this.orbitsLottie.play()
+    if (solarRect.top < window.innerHeight / 2 && !this.isPlanetsMoved) {
+      this.isPlanetsMoved = true
+      this.planetsLottie.play()
     }
 
     if (sputnikRect.top < window.innerHeight / 2 && !this.isSputnikMoved) {
@@ -29,16 +29,18 @@ class Process extends PureComponent {
   }
 
   componentDidMount() {
+    // this.props.lng
+    const { lng } = this.props
     const lottieWeb = import(/* webpackChunkName: "lottie" */ 'lottie-web/build/player/lottie_light.min')
-    const orbits = import(/* webpackChunkName: "lottie" */ '../../static/lottie/orbits.json')
+    const planets = import(/* webpackChunkName: "lottie" */ `../../static/lottie/mvp/${lng}/planets.json`)
     const sputnik = import(/* webpackChunkName: "lottie" */ '../../static/lottie/sputnik.json')
 
-    Promise.all([lottieWeb, orbits, sputnik]).then(([lottie, orbitsJson, sputnikJson]) => {
-      this.orbitsLottie = lottie.loadAnimation({
-        container: this.orbitsRef.current,
+    Promise.all([lottieWeb, planets, sputnik]).then(([lottie, planetsJson, sputnikJson]) => {
+      this.planetsLottie = lottie.loadAnimation({
+        container: this.planetsRef.current,
         renderer: 'svg',
         autoplay: false,
-        animationData: orbitsJson,
+        animationData: planetsJson,
         rendererSettings: {
           progressiveLoad: true,
         },
@@ -68,7 +70,7 @@ class Process extends PureComponent {
     return (
       <Fragment>
         <section id='process'>
-          <span className='orbits' ref={this.orbitsRef} />
+          <span className='planets' ref={this.planetsRef} />
           <span className='sputnik' ref={this.sputnikRef} />
           <div className='grid-container'>
             <h2>{t('mvp:process.title')}</h2>
@@ -78,7 +80,7 @@ class Process extends PureComponent {
             position: relative;
           }
 
-          .orbits {
+          .planets {
             position: absolute;
             display: block;
             top: 11rem;
@@ -122,7 +124,7 @@ class Process extends PureComponent {
               margin-top: 12.875rem;
             }
 
-            .orbits {
+            .planets {
               top: 15rem;
               left: -11rem;
               width: 90rem;
@@ -147,7 +149,7 @@ class Process extends PureComponent {
               margin-top: 13.125rem;
             }
 
-            .orbits {
+            .planets {
               top: 14rem;
               left: -13rem;
               width: 90rem;
@@ -173,7 +175,7 @@ class Process extends PureComponent {
               font-size: 1.5rem;
             }
 
-            .orbits {
+            .planets {
               top: 12rem;
               left: -10rem;
               width: 72rem;
@@ -199,7 +201,7 @@ class Process extends PureComponent {
               font-size: 1.5rem;
             }
 
-            .orbits {
+            .planets {
               top: 14rem;
               left: -15rem;
               width: 38rem;

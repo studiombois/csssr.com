@@ -10,7 +10,7 @@ const { pick } = require('ramda')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const schoolSubmitForm = require('./school-submit-form')
-const generateSitemap = require('./generate-sitemap').deafult
+const generateSitemap = require('./generate-sitemap').generateSitemap
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 

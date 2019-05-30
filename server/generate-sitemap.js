@@ -193,5 +193,5 @@ const sitemapUrls = sitemapUrlsSettings.map(sitemapUrlSettings => sitemapUrlSett
 
 module.exports = {
   sitemapUrls,
-  deafult: cache(generateSitemap, oneDay),
+  generateSitemap: cache(generateSitemap, oneDay),
 }

@@ -1,9 +1,7 @@
 const fs = require('fs')
 const sitemapUrls = require('./generate-sitemap').sitemapUrls
 
-// module.exports = () => {
 const pagesUrls = []
-
 const walkSync = dir => {
   const files = fs.readdirSync(dir)
 
@@ -53,6 +51,3 @@ pagesUrls.some(pageUrl => {
     `
   }
 })
-
-
-// }

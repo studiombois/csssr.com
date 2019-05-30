@@ -1,6 +1,7 @@
 const Sentry = require('@sentry/node')
 const fetch = require('isomorphic-unfetch')
 const { isProduction } = require('../utils/app-environment')
+const validateFormFields = require('./validate-form-fields')
 const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, CONTACT_FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
 
 module.exports = (req, res) => {
@@ -10,7 +11,14 @@ module.exports = (req, res) => {
     email,
     newsletter,
     course,
+    privacyPolicy,
   } = req.body
+
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name: null, email, privacyPolicy })
+
+  if (validationResult.errors) {
+    return res.status(400).send({ error: validationResult.errors })
+  }
 
   const tagsArray = ['csssr.com']
 

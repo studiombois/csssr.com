@@ -1,7 +1,7 @@
 {
   "name": "csssr.com",
   "scripts": {
-    "dev": "nodemon --exec node $NODE_DEBUG_OPTION ./server/index.js",
+    "dev": "nodemon --exec node -r esm $NODE_DEBUG_OPTION ./server/index.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node ./server/index.js",
     "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
@@ -45,6 +45,7 @@
     "babel-plugin-inline-react-svg": "^1.0.1",
     "eslint": "^5.6.0",
     "eslint-plugin-react": "^7.11.1",
+    "esm": "^3.2.25",
     "husky": "^1.1.2",
     "nodemon": "^1.18.8",
     "webpack-bundle-analyzer": "^3.0.2"

@@ -107,11 +107,12 @@ i18n
         }))
         server.use(cookieParser())
 
-        server.post('/api/submit-form', submitForm)
-        server.post('/api/school-submit-form', schoolSubmitForm)
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
         server.use(i18nextMiddleware.handle(i18n))
+
+        server.post('/api/submit-form', submitForm)
+        server.post('/api/school-submit-form', schoolSubmitForm)
 
         server.get('/', function (req, res) {
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)

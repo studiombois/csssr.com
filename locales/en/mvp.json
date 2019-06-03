@@ -1,6 +1,56 @@
 {
   "meta": {
-    "title": "Outsource MVP development",
-    "description": ""
-  }
+    "title": "Outsourced MVP development",
+    "description": "We’ll help you to test out your business idea and demonstrate the product’s potential to investors."
+  },
+  "headerNav": {
+    "what": "What's an mvp",
+    "advantages": "Advantages",
+    "process": "Process",
+    "hireUs": "Hire us"
+  },
+  "begin": {
+    "imageAlt": {
+      "title": "MVP",
+      "rocketBody": "Rocket body",
+      "rocketDress": "Rocket turbine",
+      "rocketJet": "Rocket jet",
+      "rocketDivider": "Rocket divider",
+      "rocketArrow": "Triangle symbol that point direction in in which the rocket travels"
+    },
+    "title": "MVP",
+    "text": "An MVP (Minimum Viable Product) is the most basic form of your product, with only the essential functionality. A well built MVP allows you to test out your business idea and demonstrate the product’s potential to investors.",
+    "rocketText": "In a highly competitive market, building a product quickly is crucial. We create core products for our clients in a short timeframe, helping them determine the best direction for future development."
+  },
+  "riskMinimization": {
+    "togglerOn": "With MVP",
+    "togglerOff": "Without MVP",
+    "imageAltOn": "Development process with MVP",
+    "imageAltOff": "Development process without MVP",
+    "title": "Risk Minimization",
+    "textOn": "Simple and robust product in-hand that’s easy to modify and improve later.",
+    "textOff": "Wasted time and resources developing a product, without knowing if it brings value to users.",
+    "imageAltWaves": "Curves symbolizing the MVP development process"
+  },
+  "money": {
+    "imageAlt": "Man with coins in hand",
+    "title": "Cost Savings",
+    "text": "Invest your money only in the necessary functionality, giving you a working product that helps gain your first followers."
+  },
+  "process": {
+    "title": "Process"
+  },
+  "form": {
+    "title": "Get in Touch",
+    "namePlaceholder": "Tim Berners-Lee",
+    "nameLabel": "Name",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "phoneLabel": "Phone",
+    "emailPlaceholder": "name@example.com",
+    "emailLabel": "E-mail",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "How can we help?",
+    "submitText": "Submit"
+  },
+  "buttonText": "Hire Us"
 }

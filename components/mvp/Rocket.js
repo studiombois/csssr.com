@@ -97,7 +97,7 @@ class Rocket extends PureComponent {
     rocketBodyAlt: string,
     rocketDressAlt: string,
     rocketJetAlt: string,
-    rocketDeviderAlt: string,
+    rocketDividerAlt: string,
     rocketArrowAlt: string,
   }
 
@@ -143,7 +143,7 @@ class Rocket extends PureComponent {
           />
           <Picture
             className={rocketBlue(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'blue_line', alt: t('mvp:begin.imageAlt.rocketDevider') }}
+            image={{ namespace: 'mvp', key: 'blue_line', alt: t('mvp:begin.imageAlt.rocketDivider') }}
           />
           <Picture
             className={rocketArrow(isAssembled).className}
@@ -163,7 +163,7 @@ class Rocket extends PureComponent {
           />
           <Picture
             className={rocketBlack(isAssembled).className}
-            image={{ namespace: 'mvp', key: 'black_line', alt: t('mvp:begin.imageAlt.rocketDevider') }}
+            image={{ namespace: 'mvp', key: 'black_line', alt: t('mvp:begin.imageAlt.rocketDivider') }}
           />
         </div><style jsx>{`
           div {

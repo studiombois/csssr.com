@@ -32,6 +32,10 @@ const onSubmit = (t, lng) => async values => {
       body: JSON.stringify(values),
     })
   } catch {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'form_fail' })
+    }
+
     return { [FORM_ERROR]: t('common:formErrors.general') }
   }
 

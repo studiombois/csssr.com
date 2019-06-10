@@ -5,8 +5,6 @@ const validateFormFields = require('./validate-form-fields')
 const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, CONTACT_FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
 
 module.exports = (req, res) => {
-  return res.status(400).send({ error: { name: 'i throw errors for breakfast' } })
-
   const {
     name,
     phone,

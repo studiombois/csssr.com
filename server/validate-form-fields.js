@@ -6,8 +6,8 @@ module.exports = (t, fieldsValues) => {
   const hasValidationErrors = failedValidationFields.length > 0
 
   if (hasValidationErrors) {
-    return ({ errors: failedValidationFields.map(field => `${field} ${validationObject[field].toLowerCase()}`).join(', ') })
+    return { errors: validationObject }
   }
 
-  return ({ errors: null })
+  return { errors: null }
 }

@@ -43,7 +43,10 @@ const Form = ({ t, chosenCourse }) => {
         body: JSON.stringify(values),
       })
     } catch {
-      // TODO В этом случае не будет отправлено событие window.dataLayer.push({ event: 'school_form_fail' })
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'school_form_fail' })
+      }
+
       return { [FORM_ERROR]: t('common:formErrors.general') }
     }
 

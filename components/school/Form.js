@@ -43,6 +43,7 @@ const Form = ({ t, chosenCourse }) => {
         body: JSON.stringify(values),
       })
     } catch {
+      // TODO В этом случае не будет отправлено событие window.dataLayer.push({ event: 'school_form_fail' })
       return { [FORM_ERROR]: t('common:formErrors.general') }
     }
 
@@ -64,7 +65,11 @@ const Form = ({ t, chosenCourse }) => {
         window.dataLayer.push({ event: 'school_form_fail' })
       }
 
-      return { [FORM_ERROR]: error }
+      if (typeof error === 'string') {
+        return { [FORM_ERROR]: error }
+      }
+
+      return error
     }
   }
 

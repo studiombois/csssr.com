@@ -14,7 +14,7 @@ module.exports = (req, res) => {
     privacyPolicy,
   } = req.body
 
-  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name: null, email, privacyPolicy })
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name, email, privacyPolicy })
 
   if (validationResult.errors) {
     return res.status(400).send({ error: validationResult.errors })

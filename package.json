@@ -7,7 +7,8 @@
     "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
     "eslint-fix": "eslint --fix .",
     "analyze": "cross-env ANALYZE=1 next build",
-    "optimize-images": "node -e 'require(\"optimize-png-for-web\")(process.argv[1], \"./optimized-images\", {})'"
+    "optimize-images": "node -e 'require(\"optimize-png-for-web\")(process.argv[1], \"./optimized-images\", {})'",
+    "check-sitemap": "node ./server/check-sitemap.js"
   },
   "dependencies": {
     "@sentry/browser": "^4.4.2",
@@ -51,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:js"
+      "pre-commit": "npm run lint:js && npm run check-sitemap"
     }
   }
 }

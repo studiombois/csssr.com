@@ -45,6 +45,7 @@ export default class TextField extends PureComponent {
       meta: {
         error,
         invalid,
+        submitError,
         submitFailed,
       },
     } = this.props
@@ -77,7 +78,7 @@ export default class TextField extends PureComponent {
           disabled={disabled}
           maxLength={maxLength}
         />
-        {showError && <span className='font_input-small-error-label error'>{error}</span>}
+        {showError && <span className='font_input-small-error-label error'>{error || submitError}</span>}
         {label && <label
           className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
           dangerouslySetInnerHTML={{ __html: label }}

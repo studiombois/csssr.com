@@ -43,14 +43,32 @@
     "privacyPolicyLinkText": "Privacy Policy",
     "newsletterText": "I agree to receive information and commercial offers"
   },
-  "formErrors": {
-    "email": "Invalid email format",
-    "integer": "The value must be a number",
-    "link": "Invalid link format",
-    "maxLength": "The quantity of characters should not exceed {{maxLength}}",
-    "required": "Required",
-    "file": "Invalid file format",
-    "general": "Something went wrong"
+  "form": {
+    "errors": {
+      "email": "Invalid email format",
+      "integer": "The value must be a number",
+      "link": "Invalid link format",
+      "maxLength": "The quantity of characters should not exceed {{maxLength}}",
+      "required": "Required",
+      "file": "Invalid file format",
+      "general": "Something went wrong"
+    },
+    "message": {
+      "success": {
+        "intro": "Success!",
+        "body": "We will contact you soon",
+        "action": "Back"
+      },
+      "fail": {
+        "intro": "An error occurred",
+        "body": {
+          "textStart": "Please ",
+          "textForButton": "try again",
+          "textBetweenButtonAndLink": " or send us a message: "
+        },
+        "action": "Try again"
+      }
+    }
   },
   "moreLinks": "More links"
 }

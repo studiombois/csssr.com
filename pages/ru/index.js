@@ -67,6 +67,7 @@ class Dev extends PureComponent {
           showButtonOnNode='feature1'
           hideButtonOnNode='hire-us'
           buttonText={t('dev:hire.buttonText')}
+          pageName='dev'
         />
         <style jsx>{`
           :global(#header-background) {

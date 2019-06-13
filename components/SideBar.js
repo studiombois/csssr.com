@@ -42,15 +42,6 @@ const items = [{
 }]
 
 const crossIcon = <CrossIcon width='100%' height='100%' />
-const clickOutsideStyles = {
-  position: 'absolute',
-  top: 0,
-  right: 0,
-  left: 0,
-  bottom: 0,
-  height: '100%',
-}
-
 
 export class SideBar extends PureComponent {
   state = {
@@ -203,10 +194,7 @@ export class SideBar extends PureComponent {
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
-        <ClickOutside
-          onOutsideClick={onClose}
-          style={clickOutsideStyles}
-        >
+        <ClickOutside onOutsideClick={onClose}>
           <button type='button' aria-label='Close menu' onClick={onToggle}>
             {crossIcon}
           </button>

@@ -118,7 +118,7 @@ const onSubmit = t => async values => {
       body: formData,
     })
   } catch {
-    return { [FORM_ERROR]: t('common:formErrors.general') }
+    return { [FORM_ERROR]: t('common:form.errors.general') }
   }
 
   if (res.status === 200) {
@@ -131,7 +131,7 @@ const onSubmit = t => async values => {
       const response = await res.json()
       error = response.error
     } catch {
-      error = t('common:formErrors.general')
+      error = t('common:form.errors.general')
     }
     Sentry.withScope(scope => {
       scope.setExtra('reqBody', formData)

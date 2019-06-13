@@ -9,13 +9,14 @@ import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 const PrivacyPolicyCheckbox = ({
   id = 'privacyPolicyCheckbox',
   lng,
+  name = 'privacyPolicy',
   className,
   t,
 }) =>
   <Fragment>
     <Field
       id={id}
-      name='privacyPolicy'
+      name={name}
       className={className}
       type='checkbox'
       showValidationAsWarning
@@ -34,6 +35,13 @@ const PrivacyPolicyCheckbox = ({
     </Field><style jsx>{`
       a[target='_blank']::after {
         display: none;
+      }
+
+      @media (max-width: 1279px) {
+        .font_link-list_16 {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
       }
 
       @media (max-width: 767px) {

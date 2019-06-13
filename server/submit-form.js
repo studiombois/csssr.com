@@ -112,12 +112,14 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
+        console.error('server/submit-form.js ERROR', JSON.stringify(req.body), JSON.stringify(createContactData))
+
         Sentry.withScope(scope => {
           scope.setExtra('createContactData', createContactData)
           scope.setExtra('reqBody', req.body)
           Sentry.captureException(createContactData.response.error)
         })
-        return res.status(400).send({ error: 'Ошибка при создании контакта' })
+        return res.status(400).send({ error: 'common:form.message.fail.intro' })
       }
 
       const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies

@@ -17,10 +17,6 @@ export default async (pathname, language) => {
   * @example: `/en/jobs/senior-js-developer`
   */
   const preciseRedirectionPath = getRedirectionPath(pathname, language)
-  /**
-  * @type {String}
-  * @example: `/en`
-  */
   const baseRedirectionPath = preciseRedirectionPath.split('/').slice(0, 2).join('/')
 
   try {

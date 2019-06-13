@@ -5,7 +5,7 @@ import styles from './styles'
 const PrivacyPolicyContentEn = ({ t }) => (
   <article className='grid-container'>
     <header>
-      <h2
+      <h1
         className='font_h1-regular'
         dangerouslySetInnerHTML={{ __html: t('privacyPolicy:title') }}
       />

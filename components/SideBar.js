@@ -53,10 +53,29 @@ const clickOutsideStyles = {
 
 
 export class SideBar extends PureComponent {
+  state = {
+    foreignLanguagePageRedirectionLink: '',
+  }
+
   static propTypes = {
     isOpened: bool,
     onToggle: func,
     onClose: func,
+  }
+
+  componentWillMount() {
+    /*
+      тут asPath (https://github.com/zeit/next.js/#intercepting-popstate)
+      для того что бы на страницах вакансий переадресация при смене языка
+      была на эти же страницы, а не на /jobs
+    */
+    const { router: { asPath }, lng } = this.props
+
+    getLanguageRedirectionLink(asPath, lng).then(foreignLanguagePageRedirectionLink => { 
+      this.setState({
+        foreignLanguagePageRedirectionLink,
+      })
+    })
   }
 
   renderSubItem = ({ path, key, redirect }) => {
@@ -180,7 +199,7 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { router: { pathname, asPath }, isOpened, onToggle, onClose, t, lng } = this.props
+    const { router: { pathname }, isOpened, onToggle, onClose, t } = this.props
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
@@ -202,14 +221,9 @@ export class SideBar extends PureComponent {
                 {items.map(this.renderNavItem)}
               </ul>
             </div>
-            {/*
-              Поменял pathname на asPath (https://github.com/zeit/next.js/#intercepting-popstate)
-              для того что бы на страницах вакансий переадресация при смене языка была на эти же страницы,
-              а не на /jobs
-            */}
             <div className='bottom'>
               <a
-                href={getLanguageRedirectionLink(asPath, lng)}
+                href={this.state.foreignLanguagePageRedirectionLink}
                 className='font_link-list_16'
               >
                 {t('common:languageRedirect.text')}

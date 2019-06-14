@@ -68,7 +68,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
           className='font_footer-link'
           onClick={handleLinkClick}
         >
-          Политика конфиденциальности
+          {t('common:footer.privacyPolicy')}
         </a>
       </li>
 

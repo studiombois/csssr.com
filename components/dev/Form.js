@@ -21,7 +21,7 @@ const onSubmit = (t, lng) => async values => {
   values.gacid = getGaCid()
   values.language = lng
   let res
-  
+
   try {
     res = await fetch('/api/submit-form', {
       method: 'POST',
@@ -32,6 +32,10 @@ const onSubmit = (t, lng) => async values => {
       body: JSON.stringify(values),
     })
   } catch {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'form_fail' })
+    }
+
     return { [FORM_ERROR]: t('common:form.errors.general') }
   }
 

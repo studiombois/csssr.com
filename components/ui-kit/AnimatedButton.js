@@ -14,59 +14,6 @@ export default class AnimatedButton extends PureComponent {
     type: 'button',
   }
 
-  componentWillReceiveProps({ status }) {
-    if (status === 'submitting') {
-      this.handleLoaderProgress()
-    } if (status === 'success') {
-      this.toggleSuccess()
-    } else if (status === 'fail') {
-      this.toggleError()
-    } else if (status === 'pending') {
-      this.handleReset()
-    }
-  }
-
-  buttonRef = React.createRef()
-
-  toggleSuccess() {
-    this.buttonRef.current.classList.add('success')
-    this.draw('.checkmark path')
-  }
-
-  toggleError() {
-    this.buttonRef.current.classList.add('error')
-    this.draw('.cross path')
-  }
-
-  draw(selector) {
-    const paths = document.querySelectorAll(selector)
-    paths.forEach(path => {
-      path.style.strokeDashoffset = '0'
-    })
-  }
-
-  resetDashes() {
-    // querySelectorAll возвращает NodeList, не во всех браузерах есть поддержка NodeList#forEach
-    const paths = this.buttonRef.current.querySelectorAll('path')
-    Array.from(paths).forEach(path => {
-      const length = path.getTotalLength()
-      path.style.strokeDasharray = length + ' ' + length
-      path.style.strokeDashoffset = length
-    })
-  }
-
-  handleLoaderProgress = () => {
-    this.buttonRef.current.classList.add('loading')
-    this.draw('.progress-circle path')
-  }
-
-  handleReset() {
-    this.buttonRef.current.classList.remove('loading')
-    this.buttonRef.current.classList.remove('success')
-    this.buttonRef.current.classList.remove('error')
-    this.resetDashes()
-  }
-
   render() {
     const {
       status,
@@ -81,7 +28,11 @@ export default class AnimatedButton extends PureComponent {
     })
 
     return (
-      <div ref={this.buttonRef} className='progress-button elastic'>
+      <div className={cn('progress-button', 'elastic', {
+        loading: status === 'submitting' || status === 'success' || status === 'fail',
+        success: status === 'success',
+        error: status === 'fail',
+      })}>
         <button
           type={type}
           className={classNames}
@@ -221,13 +172,13 @@ export default class AnimatedButton extends PureComponent {
 
           .loading.progress-button svg.progress-circle path {
             opacity: 1;
-            transition: stroke-dashoffset 2s;
+            animation: dash 2s linear forwards;
           }
 
           .success.progress-button svg.checkmark path,
           .error.progress-button svg.cross path {
             opacity: 1;
-            transition: stroke-dashoffset 0.5s;
+            animation: dash 0.25s linear forwards;
           }
 
           /* Optional elastic effect for the width of the button */
@@ -237,6 +188,12 @@ export default class AnimatedButton extends PureComponent {
 
           .loading.elastic.progress-button button {
             transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+          }
+
+          @keyframes dash {
+            to {
+              stroke-dashoffset: 0;
+            }
           }
         `}</style>
       </div>

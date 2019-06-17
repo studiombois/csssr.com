@@ -62,7 +62,7 @@ export class SideBar extends PureComponent {
     */
     const { router: { asPath }, lng } = this.props
 
-    getLanguageRedirectionLink(asPath, lng).then(foreignLanguagePageRedirectionLink => { 
+    getLanguageRedirectionLink(asPath, lng).then(foreignLanguagePageRedirectionLink => {
       this.setState({
         foreignLanguagePageRedirectionLink,
       })

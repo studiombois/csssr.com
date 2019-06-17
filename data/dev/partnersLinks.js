@@ -18,7 +18,6 @@ export const financeAndBankingLinksEn = [
   { href: 'http://bcsgm.com/en/', label: 'BCS' },
   { href: 'https://www.sberbank.ru/en/', label: 'Sberbank' },
   { href: 'https://alfabank.com/', label: 'Alfa-Bank' },
-  { href: 'https://www.homecredit.ru/ ', label: 'Home Credit Bank' },
   { href: 'https://www.sravni.ru/', label: 'sravni.ru' },
 ]
 
@@ -39,7 +38,6 @@ export const othersLinksEn = [
   { href: 'https://www.renins.com/', label: 'Renaissance Insurance' },
   { href: 'https://www.s7.ru/en/', label: 'S7 Airlines' },
   { href: 'https://www.mos.ru/', label: 'mos.ru' },
-  { href: 'https://www.gazprom-neft.com/', label: 'Gazprom Neft' },
 ]
 
 export const othersLinksRu = [

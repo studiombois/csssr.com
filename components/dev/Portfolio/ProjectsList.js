@@ -10,7 +10,7 @@ import isEven from '../../../utils/isEven'
 
 class ProjectsList extends PureComponent {
   static proptypes = {
-    porfolio: arrayOf(shape({
+    portfolio: arrayOf(shape({
       id: string,
       projects: arrayOf(shape({
         id: string,
@@ -86,17 +86,15 @@ class ProjectsList extends PureComponent {
     const projects = this.props.portfolio.reduce((accumulator, projectGroup) => {
       projectGroup.projects.forEach((project, index) => {
         const shouldHaveTitle = index === 0
+        const newProject = shouldHaveTitle
+          ? { ...project, title: this.props.t(`dev:tabs.${projectGroup.id}`) }
+          : project
 
-        if (shouldHaveTitle) {
-          project.title = this.props.t(`dev:tabs.${projectGroup.id}`)
-        }
-
-        accumulator.push(project)
+        accumulator.push(newProject)
       })
 
       return accumulator
     }, [])
-
     return projects.map((project, index) => {
       const nextProject = projects[index + 1]
       const prevProject = projects[index - 1]
@@ -104,11 +102,11 @@ class ProjectsList extends PureComponent {
       const hasTitleOnSameRow = (isOdd(index + 1) && nextProject && nextProject.title)
                                 || (!lastProject && isEven(index + 1) && prevProject && prevProject.title)
 
-      if (hasTitleOnSameRow) {
-        project.className = 'bigger-margin-top'
-      }
+      const newProject = hasTitleOnSameRow
+        ? { ...project, className: 'bigger-margin-top' }
+        : project
 
-      return this.renderProject(project)
+      return this.renderProject(newProject)
     })
   }
 

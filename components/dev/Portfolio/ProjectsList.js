@@ -95,7 +95,6 @@ class ProjectsList extends PureComponent {
 
       return accumulator
     }, [])
-    // debugger
     return projects.map((project, index) => {
       const nextProject = projects[index + 1]
       const prevProject = projects[index - 1]

@@ -316,7 +316,12 @@ class CandidateForm extends PureComponent {
             })}
           >
             {vacancy.name }
-            <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
+
+            {(pathName === 'react-yoda' || pathName === 'copywriter')
+              ? <span className='font_subhead-regular'>Дистанционно</span>
+              : <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
+            }
+
           </h1>
 
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />

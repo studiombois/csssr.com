@@ -294,14 +294,11 @@ class CandidateForm extends PureComponent {
       },
       vacancy,
       vacancies,
-      pathName,
       submitError,
     } = this.props
 
     const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
-
-    const pictureName = picturesMap[pathName]
-
+    const pictureName = picturesMap[vacancy.pathName]
     const status = this.getStatus()
 
     return (
@@ -317,7 +314,7 @@ class CandidateForm extends PureComponent {
           >
             {vacancy.name }
 
-            {(pathName === 'react-yoda' || pathName === 'copywriter')
+            {(vacancy.pathName === 'react-yoda' || vacancy.pathName === 'copywriter')
               ? <span className='font_subhead-regular'>Дистанционно</span>
               : <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
             }

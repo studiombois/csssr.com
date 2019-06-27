@@ -115,6 +115,9 @@ i18n
         server.post('/api/school-submit-form', schoolSubmitForm)
 
         server.get('/', function (req, res) {
+          // TODO разобрать почему при навигации с фронта на рут ('/')
+          // рандомно переадресовывает то на /ru, то на /en
+          // похоже LanguageDetector сломался
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
           res.redirect(`/${language}`)
         })

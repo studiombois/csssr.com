@@ -67,6 +67,8 @@ const picturesMap = {
   'system-analyst': 'Systems_analyst',
   'senior-fullstack-developer': 'JS_senior',
   'product-designer': 'Designer',
+  'react-yoda': 'Copywriter_rus',
+  copywriter: 'Copywriter_eng',
 }
 
 const divideSections = sections => {
@@ -292,14 +294,11 @@ class CandidateForm extends PureComponent {
       },
       vacancy,
       vacancies,
-      pathName,
       submitError,
     } = this.props
 
     const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
-
-    const pictureName = picturesMap[pathName]
-
+    const pictureName = picturesMap[vacancy.pathName]
     const status = this.getStatus()
 
     return (
@@ -314,7 +313,12 @@ class CandidateForm extends PureComponent {
             })}
           >
             {vacancy.name }
-            <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
+
+            {(vacancy.pathName === 'react-yoda' || vacancy.pathName === 'copywriter')
+              ? <span className='font_subhead-regular'>Дистанционно</span>
+              : <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
+            }
+
           </h1>
 
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />

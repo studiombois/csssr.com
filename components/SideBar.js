@@ -33,6 +33,7 @@ const items = [{
   path: '/school',
   key: 'common:menu.school',
   redirect: {
+    when: 'always',
     from: '/en/school',
     to: '/ru/school',
   },
@@ -72,7 +73,7 @@ export class SideBar extends PureComponent {
   renderSubItem = ({ path, key, redirect }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
-    const shouldBeRedirected = redirect && redirect.from === languageHref
+    const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
     const href = shouldBeRedirected ? redirect.to : languageHref
 
     return (
@@ -129,7 +130,7 @@ export class SideBar extends PureComponent {
   renderNavItem = ({ path, key, redirect, subItems }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
-    const shouldBeRedirected = redirect && redirect.from === languageHref
+    const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
     const href = shouldBeRedirected ? redirect.to : languageHref
 
     return (

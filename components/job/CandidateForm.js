@@ -67,6 +67,9 @@ const picturesMap = {
   'system-analyst': 'Systems_analyst',
   'senior-fullstack-developer': 'JS_senior',
   'product-designer': 'Designer',
+  'senior-java-developer': 'Backend_developer_1',
+  'copywriter-en': 'Copywriter_eng',
+  'copywriter-ru': 'Copywriter_rus',
 }
 
 const divideSections = sections => {

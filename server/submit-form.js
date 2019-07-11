@@ -1,6 +1,7 @@
 const Sentry = require('@sentry/node')
 const fetch = require('isomorphic-unfetch')
 const { isProduction } = require('../utils/app-environment')
+const validateFormFields = require('./validate-form-fields')
 const {
   SALES: {
     ORIGIN,
@@ -34,7 +35,14 @@ module.exports = (req, res) => {
     newsletter,
     gacid,
     language,
+    privacyPolicy,
   } = req.body
+
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name, email, privacyPolicy })
+
+  if (validationResult.errors) {
+    return res.status(400).send({ error: validationResult.errors })
+  }
 
   const tagsArray = ['csssr.com'].concat(pageName)
 

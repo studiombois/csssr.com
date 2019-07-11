@@ -36,6 +36,7 @@ class HeaderContent extends PureComponent {
       pathname,
       links,
       t,
+      lng,
       logoAlt = t('common:headerLogoAlt'),
       logoSup,
       scrollbarWidth,
@@ -49,6 +50,8 @@ class HeaderContent extends PureComponent {
       onFocus,
       onScrollToSection,
     } = this.props
+    const rootUrl = `/${lng}`
+
     return (
       <Fragment>
         <header
@@ -67,7 +70,7 @@ class HeaderContent extends PureComponent {
           >
             {isLogoLink
               ? <span className='logo-wrapper'>
-                <Link href='/'>
+                <Link href={rootUrl}>
                   <a>
                     <img
                       className='logo'

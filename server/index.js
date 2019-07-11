@@ -10,7 +10,7 @@ const { pick } = require('ramda')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const schoolSubmitForm = require('./school-submit-form')
-const generateSitemap = require('./generate-sitemap')
+const generateSitemap = require('./generate-sitemap').generateSitemap
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 
@@ -107,13 +107,17 @@ i18n
         }))
         server.use(cookieParser())
 
-        server.post('/api/submit-form', submitForm)
-        server.post('/api/school-submit-form', schoolSubmitForm)
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
         server.use(i18nextMiddleware.handle(i18n))
 
+        server.post('/api/submit-form', submitForm)
+        server.post('/api/school-submit-form', schoolSubmitForm)
+
         server.get('/', function (req, res) {
+          // TODO разобрать почему при навигации с фронта на рут ('/')
+          // рандомно переадресовывает то на /ru, то на /en
+          // похоже LanguageDetector сломался
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
           res.redirect(`/${language}`)
         })

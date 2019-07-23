@@ -137,7 +137,7 @@ i18n
         server.get('/robots.txt', function (req, res) {
           res.type('text/plain')
           if (isProduction) {
-            res.send('User-agent: *\nDisallow: *.js\nSitemap: https://csssr.com/sitemap.xml')
+            res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
           } else {
             res.send('User-agent: *\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml')
           }

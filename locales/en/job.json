@@ -1,4 +1,27 @@
 {
   "minutes": "~ {{count}} minute",
-  "minutes_plural": "~ {{count}} minutes"
+  "minutes_plural": "~ {{count}} minutes",
+  "willBeRequired": "will need to solve the problem",
+  "annotation": "Annotation",
+  "remote": "Remote",
+  "remoteAndFullTime": "Remote and full-time",
+  "tellAboutYourself": "Tell us about yourself",
+  "tellUsMoreAboutYourself": "Tell us  more about yourself",
+  "additionalContactInfo": "Additional contact info",
+  "testQuest": "Test quest",
+  "name": "name",
+  "lastname": "lastname",
+  "age": "age",
+  "city": "city",
+  "email": "E-mail",
+  "send": "send",
+  "resumeLink": "Link to resume",
+  "resumePortfolio": "Link to portfolio",
+  "resumeGithub": "Link to github",
+  "zipPacked": "ZIP archive",
+  "docxFormat": "DOCX format",
+  "xlsxFormat": "XLSX format",
+  "sketchFormat": "Sketch format",
+  "jpgFormat": "JPG format",
+  "chooseFile": "Choose File"
 }

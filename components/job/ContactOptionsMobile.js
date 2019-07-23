@@ -1,7 +1,8 @@
 import React from 'react'
 import css from 'styled-jsx/css'
-import { arrayOf, string } from 'prop-types'
+import { arrayOf, string, func } from 'prop-types'
 import { Field } from 'react-final-form'
+import withI18next from '../../utils/withI18next'
 import SelectField from '../ui-kit/SelectField'
 import TextField from '../ui-kit/TextField'
 import contactOptions from '../../data/job/contactOptions'
@@ -12,18 +13,18 @@ const stylesForInput = css.resolve`
   }
 `
 
-const ContactOptionsMobile = ({ connection }) => {
+const ContactOptionsMobile = ({ connection, t }) => {
   const connectionData = connection[0] && contactOptions.find(contact => contact.id === connection[0])
 
   return (
     <fieldset>
       <legend className='font_h3-regular'>
-        Дополнительные способы связи:
+        {t('job:additionalContactInfo')}:
       </legend>
 
       <Field
         name='connection[0]'
-        placeholder='Дополнительный способ связи'
+        placeholder={t('job:additionalContactInfo')}
         options={contactOptions}
         id='phone'
         component={SelectField}
@@ -65,6 +66,7 @@ const ContactOptionsMobile = ({ connection }) => {
 
 ContactOptionsMobile.propTypes = {
   connection: arrayOf(string),
+  t: func,
 }
 
-export default ContactOptionsMobile
+export default withI18next(['job'])(ContactOptionsMobile)

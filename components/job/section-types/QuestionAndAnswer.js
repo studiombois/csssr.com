@@ -21,7 +21,7 @@ const renderTime = (time, t, isVisibleOnMobile) => {
     >
       <div className='font_subhead-regular value'>{t('job:minutes', { count: time })}</div>
       <div className='font_p16-regular hint'>
-        потребуется на решение
+        {t('job:willBeRequired')}
       </div>
       <style jsx>{`
         .wrapper {
@@ -112,7 +112,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
       name={`quests[${inputIndex}].text`}
       component={TextareaField}
       theme='regular'
-      label='Комментарий'
+      label={t('job:annotation')}
     />
     <Field
       className={className}

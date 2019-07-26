@@ -1,5 +1,38 @@
 {
   "minutes_0": "~ {{count}} минута",
   "minutes_1": "~ {{count}} минуты",
-  "minutes_2": "~ {{count}} минут"
+  "minutes_2": "~ {{count}} минут",
+  "willBeRequired": "потребуется на решение",
+  "annotation": "Комментарий",
+  "remote": "Дистанционно",
+  "remoteAndFullTime": "Дистанционно и на фуллтайм",
+  "tellAboutYourself": "Расскажите о себе",
+  "tellUsMoreAboutYourself": "Хотите добавить что-то о себе",
+  "additionalContactInfo": "Дополнительные способы связи",
+  "testQuest": "Тестовый квест",
+  "name": "имя",
+  "lastname": "фамилия",
+  "age": "возраст",
+  "city": "город",
+  "email": "E-mail",
+  "send": "отправить",
+  "resumeLink": "Ссылка на резюме",
+  "resumePortfolio": "Ссылка на портфолио",
+  "resumeGithub": "Ссылка на github",
+  "zipPacked": "упакованный в ZIP",
+  "docxFormat": "в формате DOCX",
+  "xlsxFormat": "в формате XLSX",
+  "sketchFormat": "в формате Sketch",
+  "jpgFormat": "в формате JPG",
+  "chooseFile": "Обзор",
+  "moreLinks": "Больше ссылок",
+  "contactOptions": {
+    "telegram": "Логин или номер",
+    "whatsapp": "Номер",
+    "skype": "Логин",
+    "phone": {
+      "checkbox": "Телефон",
+      "input": "Номер"
+    }
+  }
 }

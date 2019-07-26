@@ -4,6 +4,7 @@ import { equals } from 'ramda'
 import cn from 'classnames'
 import Link from 'next/link'
 import { FormSpy } from 'react-final-form'
+import withI18next from '../../utils/withI18next'
 import FormRow from './FormRow'
 import Section from '../job/Section'
 import CandidateInfoSection from './CandidateInfoSection'
@@ -298,6 +299,7 @@ class CandidateForm extends PureComponent {
       vacancy,
       vacancies,
       submitError,
+      t,
     } = this.props
 
     const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
@@ -318,8 +320,8 @@ class CandidateForm extends PureComponent {
             {vacancy.name }
 
             {(vacancy.pathName === 'react-yoda' || vacancy.pathName === 'copywriter')
-              ? <span className='font_subhead-regular'>Дистанционно</span>
-              : <span className='font_subhead-regular'>Дистанционно и на фуллтайм</span>
+              ? <span className='font_subhead-regular'>{t('job:remote')}</span>
+              : <span className='font_subhead-regular'>{t('job:remoteAndFullTime')}</span>
             }
 
           </h1>
@@ -343,7 +345,7 @@ class CandidateForm extends PureComponent {
               type='submit'
               status={status}
             >
-              Отправить
+              {t('job:send')}
             </AnimatedButton>
           </div>
 
@@ -434,4 +436,4 @@ class CandidateForm extends PureComponent {
   }
 }
 
-export default CandidateForm
+export default withI18next(['job'])(CandidateForm)

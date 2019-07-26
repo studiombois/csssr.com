@@ -1,8 +1,9 @@
 import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import { string, bool, func } from 'prop-types'
+import withI18next from '../../utils/withI18next'
 
-export default class FileField extends PureComponent {
+class FileField extends PureComponent {
   static propTypes = {
     id: string,
     fileAccept: string,
@@ -11,6 +12,7 @@ export default class FileField extends PureComponent {
     onFileFieldChange: func,
     autoFocus: bool,
     disabled: bool,
+    t: func,
   }
 
   state = {
@@ -29,6 +31,7 @@ export default class FileField extends PureComponent {
 
   render() {
     const {
+      t,
       id,
       fileAccept,
       label,
@@ -90,7 +93,7 @@ export default class FileField extends PureComponent {
             [className]: !!className,
           })}
         >
-          Обзор
+          {t('job:chooseFile')}
         </label>
         {(showError) && <span className='font_input-small-error-label error'>{error}</span>}
         <style jsx>{`
@@ -213,3 +216,5 @@ export default class FileField extends PureComponent {
     )
   }
 }
+
+export default withI18next('job')(FileField)

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import css from 'styled-jsx/css'
+import withI18next from '../../utils/withI18next'
 import ContactOptions from './ContactOptions'
 import ContactOptionsMobile from './ContactOptionsMobile'
 import TextField from '../ui-kit/TextField'
@@ -101,43 +102,43 @@ const stylesForFileField = css.resolve`
 `
 
 const CandidateInfoSection = props => {
-  const { connection, vacancy, onFileFieldChange } = props
+  const { connection, vacancy, onFileFieldChange, t } = props
   const { hasComment, hasGithub, hasPortfolio, hasResume, hasFile, fileExt } = vacancy
   const commonFieldsData = [{
     id: 'firstname',
     className: `${stylesForFullWidthField.className} ${stylesForFirstHalfWidthField.className}`,
-    label: 'Имя',
+    label: t('job:name'),
   }, {
     id: 'lastname',
-    label: 'Фамилия',
+    label: t('job:lastname'),
     className: `${stylesForFullWidthField.className} ${stylesForSecondHalfWidthField.className}`,
   }, {
     id: 'age',
-    label: 'Возраст',
+    label: t('job:age'),
   }, {
     id: 'location',
-    label: 'Город',
+    label: t('job:city'),
   }, {
     id: 'email',
-    label: 'E-mail',
+    label: t('job:email'),
     type: 'email',
   }, {
     id: 'resume',
-    label: 'Ссылка на резюме',
+    label: t('job:resumeLink'),
     shouldShow: hasResume,
   }, {
     id: 'portfolio',
-    label: 'Ссылка на портфолио',
+    label: t('job:resumePortfolio'),
     shouldShow: hasPortfolio,
   }, {
     id: 'github',
-    label: 'Ссылка на github',
+    label: t('job:resumeGithub'),
     shouldShow: hasGithub,
   }]
 
   return (
     <div className='grid-container'>
-      <h2 className='font_h2-regular'>Расскажите о себе</h2>
+      <h2 className='font_h2-regular'>{t('job:tellAboutYourself')}</h2>
 
       {!props.isMobile &&
         <ContactOptions connection={connection}/>
@@ -163,7 +164,7 @@ const CandidateInfoSection = props => {
           id='file'
           name='file'
           className={stylesForFileField.className}
-          label={`Тестовый квест ${getFileFieldText(fileExt)}`}
+          label={`${t('job:testQuest')} ${getFileFieldText(t)(fileExt)}`}
           fileAccept={fileExt}
           component={FileField}
           onFileFieldChange={onFileFieldChange}
@@ -179,7 +180,7 @@ const CandidateInfoSection = props => {
           <Field
             id='comment'
             name='comment'
-            label='Хотите добавить что-то о себе?'
+            label={t('job:tellUsMoreAboutYourself')}
             className={stylesForTextareaField.className}
             component={TextareaField}
             theme='regular'
@@ -258,4 +259,4 @@ const CandidateInfoSection = props => {
   )
 }
 
-export default CandidateInfoSection
+export default withI18next(['job'])(CandidateInfoSection)

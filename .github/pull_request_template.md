@@ -1,10 +1,10 @@
 ## Задача
 - ссылка на jira: https://jira.csssr.io/browse/__HERE_JIRA_ID__
-- стенд: http://__HERE_BRANCH_NAME__.csssr-express.csssr.ru
+- стенд: http://__HERE_BRANCH_NAME__.test.csssr.ru
 
 ### Релиз
 * https://jira.csssr.io/projects/COM/versions/__HERE_JIRA_VERSION_ID__
-* стенд: http://release-__HERE_JIRA_RELEASE_ID__.csssr-express.csssr.com
+* стенд: http://release-__HERE_JIRA_RELEASE_ID__.test.csssr.com
 
 ## Чек-лист
 - [ ] PR в ветку релиза

@@ -24,5 +24,15 @@
   "xlsxFormat": "в формате XLSX",
   "sketchFormat": "в формате Sketch",
   "jpgFormat": "в формате JPG",
-  "chooseFile": "Обзор"
+  "chooseFile": "Обзор",
+  "moreLinks": "Больше ссылок",
+  "contactOptions": {
+    "telegram": "Логин или номер",
+    "whatsapp": "Номер",
+    "skype": "Логин",
+    "phone": {
+      "checkbox": "Телефон",
+      "input": "Номер"
+    }
+  }
 }

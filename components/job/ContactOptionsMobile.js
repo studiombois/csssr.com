@@ -5,7 +5,7 @@ import { Field } from 'react-final-form'
 import withI18next from '../../utils/withI18next'
 import SelectField from '../ui-kit/SelectField'
 import TextField from '../ui-kit/TextField'
-import contactOptions from '../../data/job/contactOptions'
+import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
 
 const stylesForInput = css.resolve`
   div {
@@ -14,7 +14,7 @@ const stylesForInput = css.resolve`
 `
 
 const ContactOptionsMobile = ({ connection, t }) => {
-  const connectionData = connection[0] && contactOptions.find(contact => contact.id === connection[0])
+  const connectionData = connection[0] && getContactOptionsByI18N(t).find(contact => contact.id === connection[0])
 
   return (
     <fieldset>
@@ -25,7 +25,7 @@ const ContactOptionsMobile = ({ connection, t }) => {
       <Field
         name='connection[0]'
         placeholder={t('job:additionalContactInfo')}
-        options={contactOptions}
+        options={getContactOptionsByI18N(t)}
         id='phone'
         component={SelectField}
       />

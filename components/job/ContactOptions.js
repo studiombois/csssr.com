@@ -5,7 +5,7 @@ import { Field } from 'react-final-form'
 import withI18next from '../../utils/withI18next'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
-import contactOptions from '../../data/job/contactOptions'
+import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
 
 const stylesForCheckbox = css.resolve`
   span {
@@ -27,7 +27,7 @@ const ContactOptions = ({ connection = [], t }) =>
       {t('job:additionalContactInfo')}:
     </legend>
 
-    {contactOptions.map(option =>
+    {getContactOptionsByI18N(t).map(option =>
       <Fragment key={option.id}>
         <Field
           className={stylesForCheckbox.className}

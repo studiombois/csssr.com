@@ -23,5 +23,15 @@
   "xlsxFormat": "XLSX format",
   "sketchFormat": "Sketch format",
   "jpgFormat": "JPG format",
-  "chooseFile": "Choose File"
+  "chooseFile": "Choose File",
+  "moreLinks": "More links",
+  "contactOptions": {
+    "telegram": "Login or number",
+    "whatsapp": "Number",
+    "skype": "Login",
+    "phone": {
+      "checkbox": "Phone",
+      "input": "Number"
+    }
+  }
 }

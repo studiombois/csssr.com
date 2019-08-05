@@ -319,7 +319,7 @@ class CandidateForm extends PureComponent {
           >
             {vacancy.name }
 
-            {(vacancy.pathName === 'react-yoda' || vacancy.pathName === 'copywriter')
+            {(vacancy.employment === 'part-time')
               ? <span className='font_subhead-regular'>{t('job:remote')}</span>
               : <span className='font_subhead-regular'>{t('job:remoteAndFullTime')}</span>
             }

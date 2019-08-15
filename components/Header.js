@@ -50,7 +50,10 @@ class Header extends PureComponent {
       return
     }
 
-    document.body.style.overflowY = isSideBarOpened ? 'hidden' : 'scroll'
+    document.body.style.overflowY = isSideBarOpened ? 'hidden' : 'auto'
+    document.body.parentElement.style.overflowY = isSideBarOpened ? 'hidden' : 'auto'
+    document.body.style.height = isSideBarOpened ? '100vh' : 'auto'
+    document.body.parentElement.style.height = isSideBarOpened ? '100vh' : 'auto'
     document.body.style.paddingRight = isSideBarOpened ? `${this.scrollbarWidth}px` : 0
   }
 

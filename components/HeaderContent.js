@@ -138,6 +138,9 @@ class HeaderContent extends PureComponent {
         </header>
         <div className='header-background' id='header-background' />
         <style jsx>{`
+            body, html {
+              position: relative;
+            }
             sup {
               position: absolute;
               top: -4px;

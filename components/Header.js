@@ -50,11 +50,19 @@ class Header extends PureComponent {
       return
     }
 
-    document.body.style.overflowY = isSideBarOpened ? 'hidden' : 'auto'
-    document.body.parentElement.style.overflowY = isSideBarOpened ? 'hidden' : 'auto'
-    document.body.style.height = isSideBarOpened ? '100vh' : 'auto'
-    document.body.parentElement.style.height = isSideBarOpened ? '100vh' : 'auto'
-    document.body.style.paddingRight = isSideBarOpened ? `${this.scrollbarWidth}px` : 0
+    if (isSideBarOpened) {
+      document.body.style.overflowY = 'hidden'
+      document.body.parentElement.style.overflowY = 'hidden'
+      document.body.style.height = '100vh'
+      document.body.parentElement.style.height = '100vh'
+      document.body.style.paddingRight = `${this.scrollbarWidth}px`
+    } else {
+      document.body.style.overflowY = 'auto'
+      document.body.parentElement.style.overflowY = 'auto'
+      document.body.style.height = 'auto'
+      document.body.parentElement.style.height = 'auto'
+      document.body.style.paddingRight = 0
+    }
   }
 
   handleSideBarToggle = () => {

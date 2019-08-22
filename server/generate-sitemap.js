@@ -32,159 +32,166 @@ const getVacancies = () =>
     )
   )
 
+const sitemapUrlsSettings = [{
+  url: 'https://csssr.com/en',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/ru',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/ru/html',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/html',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/html',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/en/html',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/html',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/html',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/ru/mvp',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/mvp',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/mvp',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/en/mvp',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/mvp',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/mvp',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/en/privacy-policy',
+  changefreq: 'yearly',
+  priority: 0.6,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/privacy-policy',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/privacy-policy',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/ru/privacy-policy',
+  changefreq: 'yearly',
+  priority: 0.6,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/privacy-policy',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/privacy-policy',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/en/cookies-policy',
+  changefreq: 'yearly',
+  priority: 0.6,
+}, {
+  url: 'https://csssr.com/ru/jobs',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/jobs',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/jobs',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/en/jobs',
+  changefreq: 'weekly',
+  priority: 1,
+  links: [
+    {
+      lang: 'en',
+      url: 'https://csssr.com/en/jobs',
+    },
+    {
+      lang: 'ru',
+      url: 'https://csssr.com/ru/jobs',
+    },
+  ],
+}, {
+  url: 'https://csssr.com/ru/school',
+  changefreq: 'weekly',
+  priority: 1,
+}]
+
 const generateSitemap = () =>
   getVacancies().then(vacanciesUrls =>
     sitemap.createSitemap({
-      urls: [{
-        url: 'https://csssr.com/en',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/ru',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/ru/html',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/html',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/html',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/en/html',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/html',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/html',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/ru/mvp',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/mvp',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/mvp',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/en/mvp',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/mvp',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/mvp',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/en/privacy-policy',
-        changefreq: 'yearly',
-        priority: 0.6,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/privacy-policy',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/privacy-policy',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/ru/privacy-policy',
-        changefreq: 'yearly',
-        priority: 0.6,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/privacy-policy',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/privacy-policy',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/en/cookies-policy',
-        changefreq: 'yearly',
-        priority: 0.6,
-      }, {
-        url: 'https://csssr.com/ru/jobs',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/jobs',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/jobs',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/en/jobs',
-        changefreq: 'weekly',
-        priority: 1,
-        links: [
-          {
-            lang: 'en',
-            url: 'https://csssr.com/en/jobs',
-          },
-          {
-            lang: 'ru',
-            url: 'https://csssr.com/ru/jobs',
-          },
-        ],
-      }, {
-        url: 'https://csssr.com/ru/school',
-        changefreq: 'weekly',
-        priority: 1,
-      }, ...vacanciesUrls],
+      urls: [...sitemapUrlsSettings, ...vacanciesUrls],
     })
   )
 
-module.exports = cache(generateSitemap, oneDay)
+const sitemapUrls = sitemapUrlsSettings.map(sitemapUrlSettings => sitemapUrlSettings.url)
+
+module.exports = {
+  sitemapUrls,
+  generateSitemap: cache(generateSitemap, oneDay),
+}

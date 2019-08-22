@@ -125,7 +125,8 @@ const Common = () =>
         }
 
         ul.have-square-bullets li:before {
-          top: 0.5rem;
+          top: 0.25rem;
+          border-width: 2px;
         }
 
         .grid-container {

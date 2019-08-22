@@ -20,8 +20,8 @@ const ContactFormForDev = props => <ContactForm
 const onSubmit = (t, lng) => async values => {
   values.gacid = getGaCid()
   values.language = lng
-
   let res
+
   try {
     res = await fetch('/api/submit-form', {
       method: 'POST',
@@ -32,7 +32,11 @@ const onSubmit = (t, lng) => async values => {
       body: JSON.stringify(values),
     })
   } catch {
-    return { [FORM_ERROR]: t('common:formErrors.general') }
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'form_fail' })
+    }
+
+    return { [FORM_ERROR]: t('common:form.errors.general') }
   }
 
   if (res.status === 201) {
@@ -45,7 +49,7 @@ const onSubmit = (t, lng) => async values => {
       const response = await res.json()
       error = response.error
     } catch {
-      error = t('common:formErrors.general')
+      error = t('common:form.errors.general')
     }
 
     if (window.dataLayer) {
@@ -66,3 +70,4 @@ const Form = ({ t, lng }) => <ReactFinalForm
 />
 
 export default translate()(Form)
+export { onSubmit }

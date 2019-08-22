@@ -1,6 +1,7 @@
 const Sentry = require('@sentry/node')
 const fetch = require('isomorphic-unfetch')
 const { isProduction } = require('../utils/app-environment')
+const validateFormFields = require('./validate-form-fields')
 const { SCHOOL: { ORIGIN, AUTH_QUERY, PIPELINE_ID, FIRST_STATUS_ID, CONTACT_FIELDS: { PHONE, EMAIL, NEWSLETTER } } } = require('./amo-config')
 
 module.exports = (req, res) => {
@@ -10,7 +11,14 @@ module.exports = (req, res) => {
     email,
     newsletter,
     course,
+    privacyPolicy,
   } = req.body
+
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name, email, privacyPolicy })
+
+  if (validationResult.errors) {
+    return res.status(400).send({ error: validationResult.errors })
+  }
 
   const tagsArray = ['csssr.com']
 
@@ -72,12 +80,14 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
+        console.error('server/submit-form.js ERROR', JSON.stringify(req.body), JSON.stringify(createContactData))
+
         Sentry.withScope(scope => {
           scope.setExtra('createContactData', createContactData)
           scope.setExtra('reqBody', req.body)
           Sentry.captureException(createContactData.response.error)
         })
-        return res.status(400).send({ error: 'Ошибка при создании контакта' })
+        return res.status(400).send({ error: 'common:form.message.fail.intro' })
       }
 
       return fetch(`${ORIGIN}/api/v2/leads/?${AUTH_QUERY}`, {

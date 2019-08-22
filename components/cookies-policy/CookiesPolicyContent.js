@@ -5,9 +5,9 @@ import translate from '../../utils/translate-wrapper'
 const CookiesPolicyContent = ({ t }) => (
   <article className='grid-container'>
     <header>
-      <h2 className='font_h1-regular'>
+      <h1 className='font_h1-regular'>
         {t('cookiesPolicy:title')}
-      </h2>
+      </h1>
       <p className='font_subhead-regular'>
         {t('cookiesPolicy:date')}
       </p>

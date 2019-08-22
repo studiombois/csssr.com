@@ -1,6 +1,7 @@
 const Sentry = require('@sentry/node')
 const fetch = require('isomorphic-unfetch')
 const { isProduction } = require('../utils/app-environment')
+const validateFormFields = require('./validate-form-fields')
 const {
   SALES: {
     ORIGIN,
@@ -34,7 +35,14 @@ module.exports = (req, res) => {
     newsletter,
     gacid,
     language,
+    privacyPolicy,
   } = req.body
+
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name, email, privacyPolicy })
+
+  if (validationResult.errors) {
+    return res.status(400).send({ error: validationResult.errors })
+  }
 
   const tagsArray = ['csssr.com'].concat(pageName)
 
@@ -112,12 +120,14 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
+        console.error('server/submit-form.js ERROR', JSON.stringify(req.body), JSON.stringify(createContactData))
+
         Sentry.withScope(scope => {
           scope.setExtra('createContactData', createContactData)
           scope.setExtra('reqBody', req.body)
           Sentry.captureException(createContactData.response.error)
         })
-        return res.status(400).send({ error: 'Ошибка при создании контакта' })
+        return res.status(400).send({ error: 'common:form.message.fail.intro' })
       }
 
       const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies

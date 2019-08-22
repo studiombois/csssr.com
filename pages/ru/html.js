@@ -44,6 +44,7 @@ class Sborka extends PureComponent {
           showButtonOnNode='budget'
           hideButtonOnNode='hire-us'
           buttonText={t('sborka:hire.buttonText')}
+          pageName='sborka'
         />
       </Layout>
     )

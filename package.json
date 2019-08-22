@@ -1,13 +1,14 @@
 {
   "name": "csssr.com",
   "scripts": {
-    "dev": "nodemon --exec node $NODE_DEBUG_OPTION ./server/index.js",
+    "dev": "nodemon --exec node -r esm $NODE_DEBUG_OPTION ./server/index.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node ./server/index.js",
+    "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",
     "eslint-fix": "eslint --fix .",
     "analyze": "cross-env ANALYZE=1 next build",
-    "optimize-images": "node -e 'require(\"optimize-png-for-web\")(process.argv[1], \"./optimized-images\", {})'"
+    "optimize-images": "node -e 'require(\"optimize-png-for-web\")(process.argv[1], \"./optimized-images\", {})'",
+    "check-sitemap": "node ./server/check-sitemap.js"
   },
   "dependencies": {
     "@sentry/browser": "^4.4.2",
@@ -27,7 +28,7 @@
     "i18next-node-fs-backend": "^2.1.0",
     "i18next-xhr-backend": "^1.5.1",
     "isomorphic-unfetch": "^3.0.0",
-    "lottie-web": "^5.4.4",
+    "lottie-web": "^5.5.4",
     "next": "^8.0.3",
     "object-to-formdata": "^1.5.2",
     "optimize-png-for-web": "^0.1.5",
@@ -45,13 +46,14 @@
     "babel-plugin-inline-react-svg": "^1.0.1",
     "eslint": "^5.6.0",
     "eslint-plugin-react": "^7.11.1",
+    "esm": "^3.2.25",
     "husky": "^1.1.2",
     "nodemon": "^1.18.8",
     "webpack-bundle-analyzer": "^3.0.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:js"
+      "pre-commit": "npm run lint:js && npm run check-sitemap"
     }
   }
 }

@@ -62,7 +62,7 @@ export default class TextareaField extends PureComponent {
       })}>
         <textarea
           id={id}
-          className='font_inputted-text-regular'
+          className={cn('font_inputted-text-regular', { [className]: !!className })}
           name={name}
           placeholder={placeholder}
           onChange={this.handleChange}

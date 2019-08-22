@@ -72,6 +72,7 @@ export default pathname => {
   case ('/ru/school'):
     return headerLinks.school
   case ('/ru/mvp'):
+  case ('/en/mvp'):
     return headerLinks.mvp
   default:
     return []

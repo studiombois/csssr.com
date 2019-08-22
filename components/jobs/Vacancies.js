@@ -140,13 +140,14 @@ class Vacancies extends PureComponent {
       lng,
       t,
     } = this.props
+    const rootUrl = `/${lng}`
     return (
       <Fragment>
         <div className='half-page-picture' />
 
         <div className='jobs-header-logo-container'>
           <div className='logo-wrapper'>
-            <a href='/' >
+            <a href={rootUrl} >
               <img
                 className='logo'
                 src={`${require('../../static/icons/csssr_logo.svg')}`}

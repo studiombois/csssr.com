@@ -33,6 +33,7 @@ const items = [{
   path: '/school',
   key: 'common:menu.school',
   redirect: {
+    when: 'always',
     from: '/en/school',
     to: '/ru/school',
   },
@@ -42,27 +43,37 @@ const items = [{
 }]
 
 const crossIcon = <CrossIcon width='100%' height='100%' />
-const clickOutsideStyles = {
-  position: 'absolute',
-  top: 0,
-  right: 0,
-  left: 0,
-  bottom: 0,
-  height: '100%',
-}
-
 
 export class SideBar extends PureComponent {
+  state = {
+    foreignLanguagePageRedirectionLink: '',
+  }
+
   static propTypes = {
     isOpened: bool,
     onToggle: func,
     onClose: func,
   }
 
+  componentWillMount() {
+    /*
+      тут asPath (https://github.com/zeit/next.js/#intercepting-popstate)
+      для того что бы на страницах вакансий переадресация при смене языка
+      была на эти же страницы, а не на /jobs
+    */
+    const { router: { asPath }, lng } = this.props
+
+    getLanguageRedirectionLink(asPath, lng).then(foreignLanguagePageRedirectionLink => {
+      this.setState({
+        foreignLanguagePageRedirectionLink,
+      })
+    })
+  }
+
   renderSubItem = ({ path, key, redirect }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
-    const shouldBeRedirected = redirect && redirect.from === languageHref
+    const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
     const href = shouldBeRedirected ? redirect.to : languageHref
 
     return (
@@ -119,7 +130,7 @@ export class SideBar extends PureComponent {
   renderNavItem = ({ path, key, redirect, subItems }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
-    const shouldBeRedirected = redirect && redirect.from === languageHref
+    const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
     const href = shouldBeRedirected ? redirect.to : languageHref
 
     return (
@@ -180,14 +191,11 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { router: { pathname, asPath }, isOpened, onToggle, onClose, t, lng } = this.props
+    const { router: { pathname }, isOpened, onToggle, onClose, t } = this.props
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
-        <ClickOutside
-          onOutsideClick={onClose}
-          style={clickOutsideStyles}
-        >
+        <ClickOutside onOutsideClick={onClose}>
           <button type='button' aria-label='Close menu' onClick={onToggle}>
             {crossIcon}
           </button>
@@ -202,14 +210,9 @@ export class SideBar extends PureComponent {
                 {items.map(this.renderNavItem)}
               </ul>
             </div>
-            {/*
-              Поменял pathname на asPath (https://github.com/zeit/next.js/#intercepting-popstate)
-              для того что бы на страницах вакансий переадресация при смене языка была на эти же страницы,
-              а не на /jobs
-            */}
             <div className='bottom'>
               <a
-                href={getLanguageRedirectionLink(asPath, lng)}
+                href={this.state.foreignLanguagePageRedirectionLink}
                 className='font_link-list_16'
               >
                 {t('common:languageRedirect.text')}

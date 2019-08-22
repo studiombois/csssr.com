@@ -85,7 +85,7 @@ class Header extends PureComponent {
     const timeout = setTimeout(() => {
       this.isScrollToSection = false
       clearTimeout(timeout)
-    }, 1500)
+    }, 700)
   }
 
   handleScroll = event => {

@@ -43,7 +43,11 @@ const Form = ({ t, chosenCourse }) => {
         body: JSON.stringify(values),
       })
     } catch {
-      return { [FORM_ERROR]: t('common:formErrors.general') }
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'school_form_fail' })
+      }
+
+      return { [FORM_ERROR]: t('common:form.errors.general') }
     }
 
 
@@ -57,14 +61,18 @@ const Form = ({ t, chosenCourse }) => {
         const response = await res.json()
         error = response.error
       } catch {
-        error = t('common:formErrors.general')
+        error = t('common:form.errors.general')
       }
 
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'school_form_fail' })
       }
 
-      return { [FORM_ERROR]: error }
+      if (typeof error === 'string') {
+        return { [FORM_ERROR]: error }
+      }
+
+      return error
     }
   }
 

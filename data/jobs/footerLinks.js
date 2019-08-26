@@ -16,7 +16,7 @@ export const allSocialLinks = [
     label: 'Twitter',
   },
   {
-    href: 'https://vk.com/csssr',
+    href: 'https://vk.com/csssr_dev',
     label: 'VK',
   },
   {

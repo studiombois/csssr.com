@@ -16,7 +16,7 @@ pipeline {
               $class: 'GitSCM',
               branches: [[name: GIT_BRANCH]],
               doGenerateSubmoduleConfigurations: false,
-              userRemoteConfigs: [[credentialsId: 'csssr.com', url: 'git@github.com:csssr-team/csssr.com']]
+              userRemoteConfigs: [[credentialsId: 'csssr.com', url: 'git@github.com:csssr/csssr.com']]
             ])
           }
           script {

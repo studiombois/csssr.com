@@ -64,7 +64,7 @@ pipeline {
               sh """
                 git config --global user.name "Jenkins CI"
                 rm -rf csssr.com
-                git clone git@github.com:csssr/csssr-chart.git
+                git clone git@github.com:csssr-team/csssr-chart.git
                 cd csssr-chart
                 git checkout jenkins
                 sed -i 's/siteGitCommit.*/siteGitCommit: \"${scmVars.GIT_COMMIT.substring(0,8)}\"/g' ${valuesFile}
@@ -82,7 +82,7 @@ pipeline {
                 pwd
                 source ~/.bashrc
                 cd keen-chart
-                export KUBECONFIG=/var/lib/jenkins/.kube/config.keen
+                export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
                 printf "$GPG_PASSPHRASE" | helm secrets upgrade -f secrets.yaml -f ${valuesFile} ${helmRelease} ./
                 """
             }

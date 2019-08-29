@@ -64,8 +64,8 @@ pipeline {
               sh """
                 git config --global user.name "Jenkins CI"
                 rm -rf csssr.com
-                git clone git@github.com:csssr/csssr.com.git
-                cd csssr.com
+                git clone git@github.com:csssr/csssr-chart.git
+                cd csssr-chart
                 git checkout jenkins
                 sed -i 's/siteGitCommit.*/siteGitCommit: \"${scmVars.GIT_COMMIT.substring(0,8)}\"/g' ${valuesFile}
                 if [ `git status -s | wc -l` -gt 0 ]; then

@@ -81,7 +81,7 @@ pipeline {
                 whoami
                 pwd
                 source ~/.bashrc
-                cd keen-chart
+                cd csssr-chart
                 export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
                 printf "$GPG_PASSPHRASE" | helm secrets upgrade -f secrets.yaml -f ${valuesFile} ${helmRelease} ./
                 """

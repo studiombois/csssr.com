@@ -27,7 +27,7 @@ const items = [{
     // },
   ],
 }, {
-  path: '/html',
+  path: '/express',
   key: 'common:menu.html',
 }, {
   path: '/school',

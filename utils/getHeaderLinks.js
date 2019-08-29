@@ -66,8 +66,8 @@ export default pathname => {
   case ('/ru'):
   case ('/en'):
     return headerLinks.dev
-  case ('/ru/html'):
-  case ('/en/html'):
+  case ('/ru/express'):
+  case ('/en/express'):
     return headerLinks.sborka
   case ('/ru/school'):
     return headerLinks.school

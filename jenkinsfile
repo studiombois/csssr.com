@@ -20,7 +20,7 @@ pipeline {
             ])
           }
           script {
-            if (scmVars.GIT_BRANCH == 'origin/production') {
+            if (scmVars.GIT_BRANCH == 'origin/jenkins') {
               helmRelease = "csssr-com"
               valuesFile = "values.yaml"
               projectEnv = "production"

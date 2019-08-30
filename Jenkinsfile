@@ -26,7 +26,7 @@ pipeline {
               projectEnv = "production"
             } else {
               helmRelease = "csssr-com-master"
-              valuesFile = "values-stage.yaml"
+              valuesFile = "values-preproduction.yaml"
               projectEnv = "preproduction"
             }
           }
@@ -68,10 +68,7 @@ pipeline {
                 cd csssr-chart
                 git checkout jenkins
                 sed -i 's/siteGitCommit.*/siteGitCommit: \"${scmVars.GIT_COMMIT.substring(0,8)}\"/g' ${valuesFile}
-                if [ `git status -s | wc -l` -gt 0 ]; then
-                  git commit -am \"Update ${projectEnv} site to ${scmVars.GIT_COMMIT.substring(0,8)}\"
-                  git push origin jenkins
-                fi
+
               """
             }
           }

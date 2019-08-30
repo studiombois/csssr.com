@@ -29,6 +29,10 @@ const items = [{
 }, {
   path: '/express',
   key: 'common:menu.html',
+  redirect: {
+    from: '/en/express',
+    to: 'https://express.csssr.com',
+  },
 }, {
   path: '/school',
   key: 'common:menu.school',

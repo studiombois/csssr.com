@@ -3,7 +3,7 @@
   "headerLogoAlt": "CSSSR logo",
   "menu": {
     "dev": "FRONT-END DEVELOPMENT",
-    "html": "Mock&#x2010;ups to&nbsp;HTML",
+    "html": "Express frontend",
     "jobs": "Jobs",
     "job": "Job",
     "school": "School",
@@ -29,7 +29,7 @@
   },
   "sectionName": {
     "en": "FRONT-END DEVELOPMENT",
-    "en/express": "Mock&#x2010;ups to&nbsp;HTML",
+    "en/express": "Express frontend",
     "en/jobs": "Jobs",
     "en/job": "Job",
     "en/school": "School",

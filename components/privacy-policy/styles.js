@@ -93,19 +93,19 @@ export default css`
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 1023px) and (max-width: 1279px) {
     article {
       width: 944px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    article {
+      width: 59rem;
     }
 
     div {
       padding-top: 13.875rem;
-    }
-
-    @media (max-width: 1023px) {
-      article {
-        width: 59rem;
-      }
     }
   }
 

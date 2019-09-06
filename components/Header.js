@@ -1,9 +1,9 @@
 import React, { PureComponent, Fragment } from 'react'
 import { object, string, bool } from 'prop-types'
 import { withRouter } from 'next/router'
+import { disablePageScroll, enablePageScroll, clearQueueScrollLocks, getPageScrollBarWidth } from 'scroll-lock'
 import translate from '../utils/translate-wrapper'
 import getHeaderLinks from '../utils/getHeaderLinks'
-import getScrollbarWidth from '../utils/getScrollbarWidth'
 import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
@@ -33,14 +33,14 @@ class Header extends PureComponent {
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll)
 
-    this.scrollbarWidth = getScrollbarWidth()
+    this.scrollbarWidth = getPageScrollBarWidth()
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
 
-    document.body.style.overflow = 'initial'
-    document.body.style.paddingRight = 0
+    clearQueueScrollLocks()
+    enablePageScroll()
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -50,8 +50,12 @@ class Header extends PureComponent {
       return
     }
 
-    document.body.style.overflow = isSideBarOpened ? 'hidden' : 'initial'
-    document.body.style.paddingRight = isSideBarOpened ? `${this.scrollbarWidth}px` : 0
+    if (isSideBarOpened) {
+      disablePageScroll(document.body)
+
+    } else {
+      enablePageScroll(document.body)
+    }
   }
 
   handleSideBarToggle = () => {

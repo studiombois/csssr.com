@@ -55,6 +55,7 @@ class HeaderContent extends PureComponent {
     return (
       <Fragment>
         <header
+          data-scroll-lock-fill-gap
           onFocus={onFocus}
           className={cn({
             header: true,
@@ -182,10 +183,6 @@ class HeaderContent extends PureComponent {
             .header_visible + .header-background {
               position: fixed;
               top: 0;
-            }
-
-            .header_visible.header_padding-right_equals_scroll-width {
-              padding-right: ${scrollbarWidth}px;
             }
 
             .header_padding-right_equals_scroll-width ~ :global(main .jobs-header-logo-container) {

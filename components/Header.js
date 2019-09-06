@@ -1,9 +1,9 @@
 import React, { PureComponent, Fragment } from 'react'
 import { object, string, bool } from 'prop-types'
 import { withRouter } from 'next/router'
+import { disablePageScroll, enablePageScroll, clearQueueScrollLocks, getPageScrollBarWidth } from 'scroll-lock'
 import translate from '../utils/translate-wrapper'
 import getHeaderLinks from '../utils/getHeaderLinks'
-import getScrollbarWidth from '../utils/getScrollbarWidth'
 import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
 
@@ -33,14 +33,14 @@ class Header extends PureComponent {
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll)
 
-    this.scrollbarWidth = getScrollbarWidth()
+    this.scrollbarWidth = getPageScrollBarWidth()
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
 
-    document.body.style.overflow = 'initial'
-    document.body.style.paddingRight = 0
+    clearQueueScrollLocks()
+    enablePageScroll()
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -51,17 +51,10 @@ class Header extends PureComponent {
     }
 
     if (isSideBarOpened) {
-      document.body.style.overflowY = 'hidden'
-      document.body.parentElement.style.overflowY = 'hidden'
-      document.body.style.height = '100vh'
-      document.body.parentElement.style.height = '100vh'
-      document.body.style.paddingRight = `${this.scrollbarWidth}px`
+      disablePageScroll(document.body)
+
     } else {
-      document.body.style.overflowY = 'auto'
-      document.body.parentElement.style.overflowY = 'auto'
-      document.body.style.height = 'auto'
-      document.body.parentElement.style.height = 'auto'
-      document.body.style.paddingRight = 0
+      enablePageScroll(document.body)
     }
   }
 

@@ -1,22 +1,22 @@
-import React, { PureComponent } from 'react'
-import { arrayOf, string, number } from 'prop-types'
-import translate from '../../utils/translate-wrapper'
-import Arrow from '../../static/icons/arrow.svg'
-import CrossdomainLink from '../../static/icons/crossdomain_link.svg'
-import getScrollbarWidth from '../../utils/getScrollbarWidth'
-import cn from 'classnames'
-import limit from '../../utils/limit'
+import React, { PureComponent } from 'react';
+import { arrayOf, string, number } from 'prop-types';
+import translate from '../../utils/translate-wrapper';
+import Arrow from '../../static/icons/arrow.svg';
+import CrossdomainLink from '../../static/icons/crossdomain_link.svg';
+import getScrollbarWidth from '../../utils/getScrollbarWidth';
+import cn from 'classnames';
+import limit from '../../utils/limit';
 
 class Slider extends PureComponent {
   static propTypes = {
     id: string,
     slides: arrayOf(number),
     href: string,
-  }
+  };
 
   state = {
     activeSlide: 1,
-  }
+  };
 
   componentDidMount() {
     this.scrollbarWidth = getScrollbarWidth()
@@ -29,7 +29,7 @@ class Slider extends PureComponent {
     this.setState({
       activeSlide: limit(activeSlide + step, 1, slides.length),
     })
-  }
+  };
 
   render() {
     const { t, id, slides, href } = this.props
@@ -72,8 +72,7 @@ class Slider extends PureComponent {
             <a
               href={href}
               target='_blank'
-              rel='noopener'
-              rel='nofollow'
+              rel='noopener nofollow'
               aria-label={`${t('dev:portfolio.openSlide')} ${slideTitle}`}
             >
               <CrossdomainLink width='100%' height='100%' />
@@ -102,7 +101,7 @@ class Slider extends PureComponent {
           }
 
           .slider::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             right: 0;

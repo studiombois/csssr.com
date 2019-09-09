@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
-import translate from '../../../utils/translate-wrapper'
-import { arrayOf, number, string, shape } from 'prop-types'
+import React, { Fragment } from 'react';
+import translate from '../../../utils/translate-wrapper';
+import { arrayOf, number, string, shape } from 'prop-types';
 
 // 5 колоной занимает каждый айтем
 const ProjectsListMobile = ({ t, projects }) => {
@@ -9,7 +9,7 @@ const ProjectsListMobile = ({ t, projects }) => {
     <Fragment key={project.id}>
       <li>
         {project.href ? (
-          <a href={project.href} target='_blank' rel='noopener' rel='nofollow'>
+          <a href={project.href} target='_blank' rel='noopener nofollow'>
             <img
               src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)}
               alt={`${t('dev:portfolio.slidesAlt')}${t(
@@ -81,7 +81,7 @@ const ProjectsListMobile = ({ t, projects }) => {
       `}</style>
     </Fragment>
   )
-}
+};
 
 ProjectsListMobile.propTypes = {
   id: string,

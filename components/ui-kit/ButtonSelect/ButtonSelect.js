@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 import translate from '../../../utils/translate-wrapper'
 import { string, arrayOf, shape, bool, func } from 'prop-types'
 import cn from 'classnames'
+import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock'
 import Button from '../Button'
+import ButtonLink from '../ButtonLink'
 import ButtonSelectList from './ButtonSelectList'
 import CrossIcon from '../../../static/icons/cross.svg'
 import ThreePointIcon from '../../../static/icons/threePoint.svg'
@@ -11,14 +13,6 @@ import isAppleDevice from '../../../utils/isAppleDevice'
 import { whiteButtonStyles, whiteButtonClassName } from './styles/stylesForWhiteButton'
 import { blueButtonStyles, blueButtonClassName } from './styles/stylesForBlueButton'
 import ContactModal from '../../ContactModal'
-
-const stopBodyScrolling = shouldStop => {
-  const stopEventDefaultBehavior = e => e.preventDefault()
-
-  return shouldStop
-    ? document.body.addEventListener('touchmove', stopEventDefaultBehavior, false )
-    : document.body.removeEventListener('touchmove', stopEventDefaultBehavior, false )
-}
 
 class ButtonSelect extends PureComponent {
   static propTypes = {
@@ -49,6 +43,9 @@ class ButtonSelect extends PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+
+    clearQueueScrollLocks()
+    enablePageScroll()
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -60,16 +57,13 @@ class ButtonSelect extends PureComponent {
     }
 
     if (isMobile) {
-      document.body.style.overflow = isDropdownVisible ? 'hidden' : 'initial'
-      document.body.style.cursor = 'pointer'
-
-      if (isAppleDevice()) {
-        // eslint-disable-next-line
-        isDropdownVisible ? stopBodyScrolling(true) : stopBodyScrolling(false)
+      if (isDropdownVisible) {
+        disablePageScroll(document.body)
+      } else {
+        enablePageScroll(document.body)
       }
     } else {
-      document.body.style.overflow = 'initial'
-      document.body.style.cursor = 'default'
+      enablePageScroll(document.body)
     }
   }
 
@@ -123,7 +117,7 @@ class ButtonSelect extends PureComponent {
       showContactModal: false,
     })
 
-    document.body.style.overflow = 'initial'
+    enablePageScroll(document.body)
   }
 
   handleShowContactModal = () => {
@@ -131,19 +125,30 @@ class ButtonSelect extends PureComponent {
       window.dataLayer.push({ event: 'floating_button_form' })
     }
 
-    document.body.style.overflow = 'hidden'
+    disablePageScroll(document.body)
 
     this.setState({
       showContactModal: true,
     })
   }
 
+  handlePreventSmoothScroll = () => {
+    document.documentElement.style.scrollBehavior = 'auto'
+
+    const scrollStylesTimer = setTimeout(() => {
+      document.documentElement.style.scrollBehavior = 'smooth'
+
+      clearTimeout(scrollStylesTimer)
+    })
+  }
+
   render() {
-    const { buttonText, t, pageName } = this.props
+    const { buttonText, t, pageName, isMobile } = this.props
     const { isDropdownVisible } = this.state
 
     return (
       <div
+        data-scroll-lock-fill-gap
         id='hire-us-button'
         className={cn(blueButtonClassName, whiteButtonClassName, {
           'button-wrapper': true,
@@ -158,12 +163,22 @@ class ButtonSelect extends PureComponent {
           onCloseButtonClick={this.handleHideDropdown}
         />
 
-        <Button
-          className={blueButtonClassName}
-          onClick={this.handleShowContactModal}
-        >
-          {buttonText}
-        </Button>
+        { isMobile
+          ? <ButtonLink
+            href='#hire-us'
+            className={blueButtonClassName}
+            onClick={this.handlePreventSmoothScroll}
+          >
+            {buttonText}
+          </ButtonLink>
+
+          : <Button
+            className={blueButtonClassName}
+            onClick={this.handleShowContactModal}
+          >
+            {buttonText}
+          </Button>
+        }
 
         <Button
           name='more-links'
@@ -199,6 +214,7 @@ class ButtonSelect extends PureComponent {
             display: flex;
             flex-wrap: wrap;
             width: 312px;
+            box-sizing: content-box;
             transform: translateY(0);
             transition: transform 0.3s ease-out;
           }

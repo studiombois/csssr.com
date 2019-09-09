@@ -6,7 +6,7 @@ export default {
     // subsections: ['', '', ''],
   }, {
     sectionTitle: 'common:menu.html',
-    href: '/ru/html',
+    href: '/ru/express',
   }, {
     sectionTitle: 'common:menu.school',
     href: '/ru/school',
@@ -21,7 +21,7 @@ export default {
     // subsections: ['', '', ''],
   }, {
     sectionTitle: 'common:menu.html',
-    href: '/en/html',
+    href: '/en/express',
   }, {
     sectionTitle: 'common:menu.school',
     href: '/ru/school',

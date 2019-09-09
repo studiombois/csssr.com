@@ -6,12 +6,17 @@ import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
 
-const PrivacyPolicy = ({ t }) =>
+const PrivacyPolicy = ({ t, isMsBrowser }) =>
   <Layout
-    headerProps={{ isLogoLink: true, isBurgerVisible: true }}
+    headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
-    <Head title={t('privacyPolicy:meta.title')} description={t('privacyPolicy:meta.description')} />
+    <Head
+      title={t('privacyPolicy:meta.title')}
+      description={t('privacyPolicy:meta.description')}
+      isMsBrowser={isMsBrowser}
+    />
+
     <PrivacyPolicyContent />
   </Layout>
 

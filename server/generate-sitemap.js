@@ -61,31 +61,31 @@ const sitemapUrlsSettings = [{
     },
   ],
 }, {
-  url: 'https://csssr.com/ru/html',
+  url: 'https://csssr.com/ru/express',
   changefreq: 'weekly',
   priority: 1,
   links: [
     {
       lang: 'en',
-      url: 'https://csssr.com/en/html',
+      url: 'https://csssr.com/en/express',
     },
     {
       lang: 'ru',
-      url: 'https://csssr.com/ru/html',
+      url: 'https://csssr.com/ru/express',
     },
   ],
 }, {
-  url: 'https://csssr.com/en/html',
+  url: 'https://csssr.com/en/express',
   changefreq: 'weekly',
   priority: 1,
   links: [
     {
       lang: 'en',
-      url: 'https://csssr.com/en/html',
+      url: 'https://csssr.com/en/express',
     },
     {
       lang: 'ru',
-      url: 'https://csssr.com/ru/html',
+      url: 'https://csssr.com/ru/express',
     },
   ],
 }, {

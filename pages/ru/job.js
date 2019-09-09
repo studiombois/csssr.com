@@ -12,7 +12,7 @@ import withI18next from '../../utils/withI18next'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
-import contactOptions from '../../data/job/contactOptions'
+import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -73,8 +73,8 @@ const processVacancy = vacancy => {
   }
 }
 
-const filterUnckeckedContactOptions = values => {
-  const filteredContactOptions = contactOptions.reduce((acc, option) => {
+const filterUnckeckedContactOptions = (values, t) => {
+  const filteredContactOptions = getContactOptionsByI18N(t).reduce((acc, option) => {
     const optionId = option.id
 
     if (values.connection && !values.connection.includes(optionId)) {
@@ -92,7 +92,7 @@ const filterUnckeckedContactOptions = values => {
 }
 
 const onSubmit = t => async values => {
-  const filteredValues = filterUnckeckedContactOptions(values)
+  const filteredValues = filterUnckeckedContactOptions(values, t)
 
   // TODO надо добавить
   // values.gacid = getGaCid()

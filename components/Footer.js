@@ -90,9 +90,16 @@ const Footer = ({ socialLinks, lng, t }) => {
       }
 
       .logo-wrapper {
+        // IE-11 styles
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+        -ms-grid-row-align: center;
+
+        // Other browsers styles
         grid-column: 1 / span 2;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
+        display: block;
         height: 2.5rem;
         text-align: center;
       }
@@ -103,6 +110,12 @@ const Footer = ({ socialLinks, lng, t }) => {
       }
 
       .social-links {
+        // IE-11 styles
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 3;
+        -ms-grid-row-align: center;
+
+        // Other browsers styles
         grid-column: 4 / span 2;
         display: flex;
         justify-content: flex-start;
@@ -119,6 +132,12 @@ const Footer = ({ socialLinks, lng, t }) => {
       }
 
       .footer-links {
+        // IE-11 styles
+        -ms-grid-column: 13;
+        -ms-grid-column-span: 9;
+        -ms-grid-row-align: center;
+
+        // Other browsers styles
         grid-column: 7 / span 5;
         display: flex;
         justify-content: flex-end;
@@ -141,6 +160,11 @@ const Footer = ({ socialLinks, lng, t }) => {
         }
 
         .footer-links {
+          // IE-11 styles
+          -ms-grid-column: 17;
+          -ms-grid-column-span: 7;
+
+          // Other browsers styles
           grid-column: 9 / span 4;
         }
       }
@@ -169,6 +193,11 @@ const Footer = ({ socialLinks, lng, t }) => {
         }
 
         .footer-links {
+          // IE-11 styles
+          -ms-grid-column: 13;
+          -ms-grid-column-span: 11;
+
+          // Other browsers styles
           grid-column: 7 / span 6;
         }
 
@@ -190,11 +219,12 @@ const Footer = ({ socialLinks, lng, t }) => {
 
         .social-links,
         .footer-links {
-          grid-column: 1 / span 6;
-        }
+          // IE-11 styles
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
 
-        .footer-links {
-          grid-row: 1;
+          // Other browsers styles
+          grid-column: 1 / span 6;
         }
 
         .social-link:not(:last-child) {
@@ -206,6 +236,10 @@ const Footer = ({ socialLinks, lng, t }) => {
         }
 
         .footer-links {
+          // IE-11 styles
+          -ms-grid-row: 2;
+
+          // Other browsers styles
           grid-row: 2;
           margin-top: 1.0625rem;
           justify-content: center;

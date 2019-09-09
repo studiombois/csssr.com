@@ -129,7 +129,7 @@ const PrivacyPolicyContentRu = ({ t }) => (
           ссылки на&nbsp;страницы профиля на&nbsp;других сайтах и&nbsp;интернет-сервисах;
         </p>
         <p className='font_p16-regular list-item list-item_level_3' data-counter='3.4.5.'>
-          контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной программе Skype, телефон);
+          контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной программе Skype, логин Telegram, телефон)
         </p>
         <p className='font_p16-regular list-item list-item_level_3' data-counter='3.4.6.'>
           любая иная информация, предоставленная Пользователем по&nbsp;его желанию.

@@ -20,10 +20,14 @@ export default async (pathname, language) => {
   const baseRedirectionPath = preciseRedirectionPath.split('/').slice(0, 2).join('/')
 
   try {
-    const { status } = await fetch(preciseRedirectionPath, { method: 'HEAD' })
+    const { status } = await fetch(preciseRedirectionPath, { method: 'OPTIONS' })
 
     if (status === 404) {
       return baseRedirectionPath
+    }
+
+    if (preciseRedirectionPath === '/en/express') {
+      return 'https://express.csssr.com'
     }
 
     return preciseRedirectionPath

@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import translate from '../../../utils/translate-wrapper';
-import { arrayOf, number, string, shape } from 'prop-types';
+import React, { Fragment } from 'react'
+import translate from '../../../utils/translate-wrapper'
+import { arrayOf, number, string, shape } from 'prop-types'
 
 // 5 колоной занимает каждый айтем
 const ProjectsListMobile = ({ t, projects }) => {
@@ -81,7 +81,7 @@ const ProjectsListMobile = ({ t, projects }) => {
       `}</style>
     </Fragment>
   )
-};
+}
 
 ProjectsListMobile.propTypes = {
   id: string,

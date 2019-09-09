@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
-import { arrayOf, string, number } from 'prop-types';
-import translate from '../../utils/translate-wrapper';
-import Arrow from '../../static/icons/arrow.svg';
-import CrossdomainLink from '../../static/icons/crossdomain_link.svg';
-import getScrollbarWidth from '../../utils/getScrollbarWidth';
-import cn from 'classnames';
-import limit from '../../utils/limit';
+import React, { PureComponent } from 'react'
+import { arrayOf, string, number } from 'prop-types'
+import translate from '../../utils/translate-wrapper'
+import Arrow from '../../static/icons/arrow.svg'
+import CrossdomainLink from '../../static/icons/crossdomain_link.svg'
+import getScrollbarWidth from '../../utils/getScrollbarWidth'
+import cn from 'classnames'
+import limit from '../../utils/limit'
 
 class Slider extends PureComponent {
   static propTypes = {

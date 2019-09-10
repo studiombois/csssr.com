@@ -45,6 +45,11 @@ const Common = () =>
     }
 
     .grid-container {
+      // IE-11 styles
+      display: -ms-grid;
+      -ms-grid-columns: 120px (32px 120px)[11];
+
+      // Other browsers styles
       display: grid;
       align-content: start;
       grid-template-columns: repeat(12, 120px);
@@ -80,6 +85,10 @@ const Common = () =>
       }
 
       .grid-container {
+        // IE-11 styles
+        -ms-grid-columns: 96px (16px 96px)[11];
+
+        // Other browsers styles
         grid-template-columns: repeat(12, 96px);
         grid-gap: 0 16px;
       }
@@ -91,6 +100,10 @@ const Common = () =>
       }
 
       .grid-container {
+        // IE-11 styles
+        -ms-grid-columns: 88px (16px 88px)[11];
+
+        // Other browsers styles
         grid-template-columns: repeat(12, 88px);
         grid-gap: 0 16px;
       }
@@ -111,6 +124,10 @@ const Common = () =>
       }
 
       .grid-container {
+        // IE-11 styles
+        -ms-grid-columns: 64px (16px 64px)[11];
+
+        // Other browsers styles
         grid-template-columns: repeat(12, 64px);
         grid-gap: 0 16px;
       }
@@ -130,6 +147,10 @@ const Common = () =>
         }
 
         .grid-container {
+          // IE-11 styles
+          -ms-grid-columns: 4rem (1rem 4rem)[11];
+
+          // Other browsers styles
           grid-template-columns: repeat(12, 4rem);
           grid-gap: 0 1rem;
         }
@@ -146,6 +167,10 @@ const Common = () =>
       }
 
       .grid-container {
+        // IE-11 styles
+        -ms-grid-columns: 3rem (0.5rem 3rem)[5];
+
+        // Other browsers styles
         grid-template-columns: repeat(6, 3rem);
         grid-gap: 0 0.5rem;
       }

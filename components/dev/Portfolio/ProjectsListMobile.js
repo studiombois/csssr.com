@@ -5,25 +5,39 @@ import { arrayOf, number, string, shape } from 'prop-types'
 // 5 колоной занимает каждый айтем
 const ProjectsListMobile = ({ t, projects }) => {
   const gridColumns = 5 * projects.length
-  const renderProject = (project, index) =>
+  const renderProject = (project, index) => (
     <Fragment key={project.id}>
       <li>
-        { project.href
-          ? <a href={project.href} target='_blank' rel='noopener'>
+        {project.href ? (
+          <a href={project.href} target='_blank' rel='noopener nofollow'>
             <img
               src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)}
-              alt={`${t('dev:portfolio.slidesAlt')}${t(`dev:portfolio.projects.${project.id}.title`)}`}
+              alt={`${t('dev:portfolio.slidesAlt')}${t(
+                `dev:portfolio.projects.${project.id}.title`
+              )}`}
             />
           </a>
-
-          : <img
+        ) : (
+          <img
             src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)}
-            alt={`${t('dev:portfolio.slidesAlt')}${t(`dev:portfolio.projects.${project.id}.title`)}`}
+            alt={`${t('dev:portfolio.slidesAlt')}${t(
+              `dev:portfolio.projects.${project.id}.title`
+            )}`}
           />
-        }
+        )}
 
-        <h4 className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t(`dev:portfolio.projects.${project.id}.title`) }} />
-        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t(`dev:portfolio.projects.${project.id}.text`) }} />
+        <h4
+          className='font_subhead-regular'
+          dangerouslySetInnerHTML={{
+            __html: t(`dev:portfolio.projects.${project.id}.title`),
+          }}
+        />
+        <p
+          className='font_p16-regular'
+          dangerouslySetInnerHTML={{
+            __html: t(`dev:portfolio.projects.${project.id}.text`),
+          }}
+        />
       </li>
       <style jsx>{`
         li {
@@ -44,12 +58,11 @@ const ProjectsListMobile = ({ t, projects }) => {
         }
       `}</style>
     </Fragment>
+  )
 
   return (
     <Fragment>
-      <ul className='grid-container'>
-        {projects.map(renderProject)}
-      </ul>
+      <ul className='grid-container'>{projects.map(renderProject)}</ul>
       <style jsx>{`
         ul {
           margin-top: 1rem;
@@ -63,22 +76,23 @@ const ProjectsListMobile = ({ t, projects }) => {
           // 3rem занимает каждая колонка
           // 0.5rem занимает расстояние между ними
           // 9rem это сумма паддингов
-          width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 1}rem;
+          width: ${gridColumns * 3 + 0.5 * (gridColumns - 1) + 1}rem;
         }
       `}</style>
     </Fragment>
   )
 }
 
-
 ProjectsListMobile.propTypes = {
   id: string,
-  projects: arrayOf(shape({
-    id: string,
-    type: string,
-    slides: arrayOf(number),
-    href: string,
-  })),
+  projects: arrayOf(
+    shape({
+      id: string,
+      type: string,
+      slides: arrayOf(number),
+      href: string,
+    })
+  ),
 }
 
 export default translate()(ProjectsListMobile)

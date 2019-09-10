@@ -41,7 +41,7 @@ const picture = css.resolve`
   }
 `
 
-const PortfolioItem = ({ name, href, index, t }) =>
+const PortfolioItem = ({ name, href, index, t }) => (
   <Fragment>
     <section>
       <PictureForAllResolutions
@@ -53,15 +53,20 @@ const PortfolioItem = ({ name, href, index, t }) =>
     <div>
       <h3
         className='font_h2-regular'
-        dangerouslySetInnerHTML={{ __html: t(`sborka:portfolio.portfolioProjects.${name}.title`) }}
+        dangerouslySetInnerHTML={{
+          __html: t(`sborka:portfolio.portfolioProjects.${name}.title`),
+        }}
       />
       <p
         className='font_p16-regular'
-        dangerouslySetInnerHTML={{ __html: t(`sborka:portfolio.portfolioProjects.${name}.text`) }}
+        dangerouslySetInnerHTML={{
+          __html: t(`sborka:portfolio.portfolioProjects.${name}.text`),
+        }}
       />
       <a
         className='font_link-list_16'
         href={href}
+        rel='nofollow'
         target='_blank'
         dangerouslySetInnerHTML={{ __html: t('sborka:portfolio.linkText') }}
       />
@@ -104,7 +109,8 @@ const PortfolioItem = ({ name, href, index, t }) =>
           margin-top: -1.75rem;
         }
 
-        p, a {
+        p,
+        a {
           font-size: 0.875rem;
           line-height: 1.5rem;
         }
@@ -123,8 +129,8 @@ const PortfolioItem = ({ name, href, index, t }) =>
           margin-top: 0.5625rem;
         }
 
-        p, a {
-
+        p,
+        a {
           font-size: 0.875rem;
           line-height: 1.5rem;
         }
@@ -151,5 +157,6 @@ const PortfolioItem = ({ name, href, index, t }) =>
     `}</style>
     {picture.styles}
   </Fragment>
+)
 
 export default translate()(PortfolioItem)

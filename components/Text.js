@@ -29,7 +29,7 @@ const Text = () =>
     }
 
     .font_h1-slab {
-      font-family: Roboto Slab;
+      font-family: 'Roboto Slab', 'Arial', sans-serif;
       font-size: 4rem;
       font-weight: 300;
       line-height: 5rem;
@@ -37,7 +37,7 @@ const Text = () =>
     }
 
     .font_h1-regular {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 2.5rem;
       font-weight: 900;
       line-height: 3.5rem;
@@ -47,7 +47,7 @@ const Text = () =>
     .font_h2-slab {
       margin-top: -0.0625rem;
       padding-bottom: 0.0625rem;
-      font-family: Roboto Slab;
+      font-family: 'Roboto Slab', 'Arial', sans-serif;
       font-size: 3rem;
       line-height: 4rem;
       font-weight: normal;
@@ -57,7 +57,7 @@ const Text = () =>
     .font_h2-regular {
       margin-top: -0.4375rem;
       padding-bottom: 0.4375rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1.5rem;
       font-weight: 900;
       line-height: 2rem;
@@ -67,7 +67,7 @@ const Text = () =>
     .font_h3-slab {
       margin-top: -0.3125rem;
       padding-bottom: 0.3125rem;
-      font-family: Roboto Slab;
+      font-family: 'Roboto Slab', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: bold;
       font-style: normal;
@@ -78,7 +78,7 @@ const Text = () =>
     }
 
     .font_h3-regular {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: 900;
       line-height: 1.5rem;
@@ -88,7 +88,7 @@ const Text = () =>
     .font_subhead-slab {
       margin-top: -0.1875rem;
       padding-bottom: 0.1875rem;
-      font-family: Roboto Slab;
+      font-family: 'Roboto Slab', 'Arial', sans-serif;
       font-size: 2rem;
       font-weight: 300;
       line-height: 3rem;
@@ -98,7 +98,7 @@ const Text = () =>
     .font_subhead-regular {
       margin-top: -0.125rem;
       padding-bottom: 0.125rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 2rem;
       font-weight: 100;
       line-height: 3rem;
@@ -107,7 +107,7 @@ const Text = () =>
 
     .font_button-label,
     .font_button-label_custom_color {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: 900;
       line-height: 1.5rem;
@@ -128,7 +128,7 @@ const Text = () =>
     .font_link-list_16,
     .font_link-list_16_desktop_14_mobile {
       position: relative;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: 300;
       line-height: 1.5rem;
@@ -153,7 +153,7 @@ const Text = () =>
       position: relative;
       margin-top: -0.4375rem;
       padding-bottom: 0.4375rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1.5rem;
       font-weight: 300;
       line-height: 2rem;
@@ -177,7 +177,7 @@ const Text = () =>
       position: relative;
       margin-top: -0.25rem;
       padding-bottom: 0.25rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1.75rem;
       font-weight: 300;
       line-height: 2.5rem;
@@ -208,7 +208,7 @@ const Text = () =>
     .font_footer-text {
       margin-top: -0.375rem;
       padding-bottom: 0.375rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 0.625rem;
       font-weight: 500;
       line-height: 1.5rem;
@@ -222,7 +222,7 @@ const Text = () =>
 
     .font_input-basic-label,
     .font_input-error-label {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 0.875rem;
       line-height: 1rem;
       letter-spacing: 0.05rem;
@@ -234,7 +234,7 @@ const Text = () =>
     .font_input-small-error-label  {
       margin-top: -0.125rem;
       padding-bottom: 0.125rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 0.625rem;
       line-height: 1rem;
       letter-spacing: 0.08125rem;
@@ -262,7 +262,7 @@ const Text = () =>
     .font_input-placeholder {
       margin-top: -0.4375rem;
       padding-bottom: 0.4375rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1.5rem;
       font-weight: 100;
       line-height: 2rem;
@@ -273,7 +273,7 @@ const Text = () =>
     .font_inputted-text-error {
       margin-top: -0.4375rem;
       padding-bottom: 0.4375rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1.5rem;
       font-weight: 300;
       line-height: 2rem;
@@ -290,7 +290,7 @@ const Text = () =>
     .font_burger-menu {
       margin-top: -0.4375rem;
       padding-bottom: 0.4375rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: 900;
       line-height: 3rem;
@@ -302,7 +302,7 @@ const Text = () =>
     .font_top-menu {
       margin-top: -0.1875rem;
       padding-bottom: 0.1875rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 0.75rem;
       font-weight: bold;
       line-height: 2rem;
@@ -317,7 +317,7 @@ const Text = () =>
     }
 
     .font_p14-regular {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 0.875rem;
       font-weight: 300;
       font-style: normal;
@@ -328,7 +328,7 @@ const Text = () =>
     }
 
     .font_p16-regular {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: 300;
       line-height: 1.5rem;
@@ -338,14 +338,14 @@ const Text = () =>
     .font_p24-strong {
       margin-top: -0.1875rem;
       padding-bottom: 0.1875rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1.5rem;
       line-height: 2.5rem;
       color: #4a4a4a;
     }
 
     .font_perforator-16-black {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: 900;
       line-height: 1.5rem;
@@ -357,7 +357,7 @@ const Text = () =>
     .font_perforator-10-regular {
       margin-top: -0.125rem;
       padding-bottom: 0.125rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 0.625rem;
       line-height: 1rem;
       letter-spacing: 0.08125rem;
@@ -368,7 +368,7 @@ const Text = () =>
     .font_feature_1 {
       margin-top: -0.1875rem;
       padding-bottom: 0.1875rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 4.0625rem;
       line-height: 4.875rem;
       font-weight: 900;
@@ -376,7 +376,7 @@ const Text = () =>
     }
 
     .font_feature_2 {
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 2.8125rem;
       font-style: italic;
       line-height: 3.75rem;
@@ -386,7 +386,7 @@ const Text = () =>
     .font_feature_3 {
       margin-top: -0.375rem;
       padding-bottom: 0.375rem;
-      font-family: Roboto;
+      font-family: 'Roboto', 'Arial', sans-serif;
       font-size: 3.75rem;
       font-weight: 100;
       line-height: 4.375rem;
@@ -396,7 +396,7 @@ const Text = () =>
     .font_roboto-slab-light {
       margin-top: -4px;
       padding-bottom: 4px;
-      font-family: Roboto Slab;
+      font-family: 'Roboto Slab', 'Arial', sans-serif;
       font-size: 1rem;
       font-weight: 300;
       font-style: normal;
@@ -471,7 +471,7 @@ const Text = () =>
 
       // Это временное решение, заменить потом стили для p24_strong на то что скажет Влад
       .font_p24-strong {
-        font-family: Roboto;
+        font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 1rem;
         line-height: 1.5rem;
         color: #4a4a4a;

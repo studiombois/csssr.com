@@ -39,7 +39,7 @@ class Toggler extends PureComponent {
             display: block;
             width: 6.5rem;
             font-size: 0.875rem;
-            font-family: Roboto, sans-serif;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-weight: 900;
             text-transform: uppercase;
             color: #fff;

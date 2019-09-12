@@ -40,7 +40,7 @@ const Counter = ({ t }) =>
         grid-column: 2 / span 2;
         margin-top: 4.4375rem;
         padding-bottom: 0.4375rem;
-        font-family: Roboto;
+        font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 2.5rem;
         font-weight: 900;
         line-height: 3.5rem;
@@ -140,7 +140,7 @@ const Counter = ({ t }) =>
         h2 {
           margin-top: -0.0625rem;
           padding-bottom: 0.0625rem;
-          font-family: Roboto Slab;
+          font-family: 'Roboto Slab', 'Arial', sans-serif;
           font-size: 1.5rem;
           line-height: 2rem;
           font-weight: normal;

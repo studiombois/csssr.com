@@ -177,7 +177,7 @@ const OurPrinciples = ({ t }) => {
         }
 
         h2 {
-          font-family: Roboto Slab;
+          font-family: 'Roboto Slab', 'Arial', sans-serif;
           font-size: 3rem;
           font-weight: normal;
           font-style: normal;

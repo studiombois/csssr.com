@@ -217,7 +217,7 @@ class Manifest extends PureComponent {
 
           h3 {
             padding-bottom: 0;
-            font-family: Roboto Slab;
+            font-family: 'Roboto Slab', 'Arial', sans-serif;
             font-size: 1rem;
             line-height: 2rem;
           }

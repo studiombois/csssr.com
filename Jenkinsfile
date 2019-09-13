@@ -29,11 +29,24 @@ pipeline {
           if (branch == 'jenkins') {
             branch = 'master'
           }
+<<<<<<< HEAD
 
           if (branch == 'master') {
             helmRelease = "csssr-com"
           } else {
             helmRelease = "csssr-com-preprod"
+=======
+          script {
+            if (scmVars.GIT_BRANCH == 'origin/jenkins') {
+              helmRelease = "csssr-com"
+              valuesFile = "values.yaml"
+              projectEnv = "production"
+            } else {
+              helmRelease = "csssr-com-master"
+              valuesFile = "values-preproduction.yaml"
+              projectEnv = "preproduction"
+            }
+>>>>>>> bb80fa39f15bfd423ff4ca326d48679273e7e5bf
           }
         }
         echo "Helm Release: ${helmRelease}"
@@ -61,6 +74,7 @@ pipeline {
           }
         }
       }
+<<<<<<< HEAD
     }
     stage('Deploy Chart') {
       steps {
@@ -72,6 +86,22 @@ pipeline {
               cd csssr-chart
               git checkout master 
             """
+=======
+      stage('Update Chart') {
+        steps {
+          script {
+            sshagent(credentials: ['csssr-chart']) {
+              sh """
+                git config --global user.name "Jenkins CI"
+                rm -rf csssr.com
+                git clone git@github.com:csssr-team/csssr-chart.git
+                cd csssr-chart
+                git checkout jenkins
+                sed -i 's/siteGitCommit.*/siteGitCommit: \"${scmVars.GIT_COMMIT.substring(0,8)}\"/g' ${valuesFile}
+
+              """
+            }
+>>>>>>> bb80fa39f15bfd423ff4ca326d48679273e7e5bf
           }
         }
         script {

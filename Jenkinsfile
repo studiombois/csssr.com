@@ -83,7 +83,7 @@ pipeline {
               set -x
               cd csssr-chart
               export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-              printf "$GPG_PASSPHRASE" | helm secrets upgrade -f secrets-${branch}.yaml -f values-${branch}.yaml --set-string site.commit="${commit}" ${helmRelease} ./
+              printf "$GPG_PASSPHRASE" | helm secrets upgrade -f ${branch}/secrets.yaml -f ${branch}/values.yaml --set-string site.commit="${commit}" ${helmRelease} ./
               """
           }
         }

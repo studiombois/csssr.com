@@ -12,11 +12,11 @@ class Slider extends PureComponent {
     id: string,
     slides: arrayOf(number),
     href: string,
-  }
+  };
 
   state = {
     activeSlide: 1,
-  }
+  };
 
   componentDidMount() {
     this.scrollbarWidth = getScrollbarWidth()
@@ -29,7 +29,7 @@ class Slider extends PureComponent {
     this.setState({
       activeSlide: limit(activeSlide + step, 1, slides.length),
     })
-  }
+  };
 
   render() {
     const { t, id, slides, href } = this.props
@@ -40,13 +40,13 @@ class Slider extends PureComponent {
       <section>
         <div className='slider'>
           <div className='image-container'>
-            {slides.map(slide =>
+            {slides.map(slide => (
               <img
                 key={`${id}_${slide}`}
                 alt={`${t('dev:portfolio.slidesAlt')}${slideTitle}`}
                 src={require(`../../static/images/dev/portfolio/${id}_${slide}.png`)}
               />
-            )}
+            ))}
           </div>
 
           <div className='controls'>
@@ -56,7 +56,7 @@ class Slider extends PureComponent {
               className={cn({ is_invisible: activeSlide === 1 })}
               onClick={this.handleChangeSlide(-1)}
             >
-              <Arrow width='100%' height='100%'/>
+              <Arrow width='100%' height='100%' />
             </button>
             <button
               name='next-slide'
@@ -68,15 +68,30 @@ class Slider extends PureComponent {
             </button>
           </div>
 
-          { href &&
-            <a href={href} target='_blank' rel='noopener' aria-label={`${t('dev:portfolio.openSlide')} ${slideTitle}`}>
+          {href && (
+            <a
+              href={href}
+              target='_blank'
+              rel='noopener nofollow'
+              aria-label={`${t('dev:portfolio.openSlide')} ${slideTitle}`}
+            >
               <CrossdomainLink width='100%' height='100%' />
             </a>
-          }
+          )}
         </div>
 
-        <h4 className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t(`dev:portfolio.projects.${id}.title`) }} />
-        <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t(`dev:portfolio.projects.${id}.text`) }} />
+        <h4
+          className='font_subhead-regular'
+          dangerouslySetInnerHTML={{
+            __html: t(`dev:portfolio.projects.${id}.title`),
+          }}
+        />
+        <p
+          className='font_p16-regular'
+          dangerouslySetInnerHTML={{
+            __html: t(`dev:portfolio.projects.${id}.text`),
+          }}
+        />
         <style jsx>{`
           .slider {
             margin-top: 1.5rem;
@@ -86,7 +101,7 @@ class Slider extends PureComponent {
           }
 
           .slider::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             right: 0;
@@ -185,14 +200,15 @@ class Slider extends PureComponent {
             margin-top: 0.125rem;
           }
 
-          h4, p {
+          h4,
+          p {
             padding-bottom: 0;
             margin-bottom: 0;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             .image-container {
-              height: 19rem
+              height: 19rem;
             }
 
             h4 {
@@ -219,7 +235,8 @@ class Slider extends PureComponent {
               margin-top: 0.6875rem;
             }
 
-            h4, p {
+            h4,
+            p {
               text-align: center;
             }
 
@@ -230,7 +247,7 @@ class Slider extends PureComponent {
 
             .image-container {
               overflow-x: scroll;
-              height: calc(21.8125rem + ${this.scrollbarWidth}px)
+              height: calc(21.8125rem + ${this.scrollbarWidth}px);
             }
 
             .slider {
@@ -254,7 +271,7 @@ class Slider extends PureComponent {
         `}</style>
         <style jsx>{`
           img {
-            transform: translateX(${(-100 * (activeSlide - 1))}%);
+            transform: translateX(${-100 * (activeSlide - 1)}%);
         `}</style>
       </section>
     )

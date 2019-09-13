@@ -94,7 +94,10 @@ class ContactModal extends PureComponent {
     return (
       <div className='screen-shadow'>
         <ClickOutside onOutsideClick={onClose}>
-          <div className={`modal-wrapper ${dynamicModalStyles.className}`}>
+          <div
+            data-scroll-lock-scrollable
+            className={`modal-wrapper ${dynamicModalStyles.className}`}
+          >
             <ReactFinalForm
               component={Form}
               pageName={pageName}

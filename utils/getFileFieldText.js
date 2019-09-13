@@ -1,15 +1,15 @@
-export default accept => {
+export default t => accept => {
   switch (accept) {
   case 'zip':
-    return '(упакованный в ZIP)'
+    return `(${t('job:zipPacked')})`
   case 'docx':
-    return '(в формате DOCX)'
+    return `(${t('job:docxFormat')})`
   case 'xlsx':
-    return '(в формате XLSX)'
+    return `(${t('job:xlsxFormat')})`
   case 'sketch':
-    return '(в формате Sketch)'
+    return `(${t('job:sketchFormat')})`
   case 'jpg':
-    return '(в формате JPG)'
+    return `(${t('job:jpgFormat')})`
   default:
     return ''
   }

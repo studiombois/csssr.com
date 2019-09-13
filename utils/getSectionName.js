@@ -12,8 +12,8 @@ export default pathname => {
   case ('/ru/job'):
   case ('/en/job'):
     return 'common:menu.job'
-  case ('/ru/html'):
-  case ('/en/html'):
+  case ('/ru/express'):
+  case ('/en/express'):
     return 'common:menu.html'
   case ('/ru/privacy-policy'):
   case ('/en/privacy-policy'):

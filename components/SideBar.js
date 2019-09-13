@@ -27,8 +27,12 @@ const items = [{
     // },
   ],
 }, {
-  path: '/html',
+  path: '/express',
   key: 'common:menu.html',
+  redirect: {
+    from: '/en/express',
+    to: 'https://express.csssr.com',
+  },
 }, {
   path: '/school',
   key: 'common:menu.school',
@@ -273,7 +277,8 @@ export class SideBar extends PureComponent {
 
           .sidebar_opened:before {
             position: fixed;
-            right: 100%;
+            top: 0;
+            right: 26.5rem;
             opacity: 0.3;
             transition: right 0s ease-out 0s, opacity 0.3s ease-out;
             pointer-events: auto;
@@ -332,6 +337,12 @@ export class SideBar extends PureComponent {
 
             .bottom {
               padding-right: 3.125rem;
+            }
+
+            .sidebar_opened:before {
+              position: fixed;
+              top: 0;
+              right: 20rem;
             }
           }
 

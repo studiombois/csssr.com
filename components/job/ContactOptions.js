@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
-import { arrayOf, string } from 'prop-types'
+import { arrayOf, string, func } from 'prop-types'
 import { Field } from 'react-final-form'
+import withI18next from '../../utils/withI18next'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
-import contactOptions from '../../data/job/contactOptions'
+import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
 
 const stylesForCheckbox = css.resolve`
   span {
@@ -20,13 +21,13 @@ const stylesForInput = css.resolve`
   }
 `
 
-const ContactOptions = ({ connection = [] }) =>
+const ContactOptions = ({ connection = [], t }) =>
   <fieldset>
     <legend className='font_h3-regular'>
-      Дополнительные способы связи:
+      {t('job:additionalContactInfo')}:
     </legend>
 
-    {contactOptions.map(option =>
+    {getContactOptionsByI18N(t).map(option =>
       <Fragment key={option.id}>
         <Field
           className={stylesForCheckbox.className}
@@ -71,6 +72,7 @@ const ContactOptions = ({ connection = [] }) =>
 
 ContactOptions.propTypes = {
   connection: arrayOf(string),
+  t: func,
 }
 
-export default ContactOptions
+export default withI18next(['job'])(ContactOptions)

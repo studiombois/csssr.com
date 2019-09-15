@@ -133,7 +133,7 @@ class Competences extends PureComponent {
 
         figcaption {
           position: absolute;
-          font-family: 'Roboto Slab', 'Arial', sans-serif;
+          font-family: 'Roboto Slab', 'Georgia', serif;
           font-size: 1.5rem;
           font-weight: bold;
           font-style: normal;

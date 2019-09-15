@@ -29,7 +29,7 @@ const Text = () =>
     }
 
     .font_h1-slab {
-      font-family: 'Roboto Slab', 'Arial', sans-serif;
+      font-family: 'Roboto Slab', 'Georgia', serif;
       font-size: 4rem;
       font-weight: 300;
       line-height: 5rem;
@@ -47,7 +47,7 @@ const Text = () =>
     .font_h2-slab {
       margin-top: -0.0625rem;
       padding-bottom: 0.0625rem;
-      font-family: 'Roboto Slab', 'Arial', sans-serif;
+      font-family: 'Roboto Slab', 'Georgia', serif;
       font-size: 3rem;
       line-height: 4rem;
       font-weight: normal;
@@ -67,7 +67,7 @@ const Text = () =>
     .font_h3-slab {
       margin-top: -0.3125rem;
       padding-bottom: 0.3125rem;
-      font-family: 'Roboto Slab', 'Arial', sans-serif;
+      font-family: 'Roboto Slab', 'Georgia', serif;
       font-size: 1rem;
       font-weight: bold;
       font-style: normal;
@@ -88,7 +88,7 @@ const Text = () =>
     .font_subhead-slab {
       margin-top: -0.1875rem;
       padding-bottom: 0.1875rem;
-      font-family: 'Roboto Slab', 'Arial', sans-serif;
+      font-family: 'Roboto Slab', 'Georgia', serif;
       font-size: 2rem;
       font-weight: 300;
       line-height: 3rem;
@@ -396,7 +396,7 @@ const Text = () =>
     .font_roboto-slab-light {
       margin-top: -4px;
       padding-bottom: 4px;
-      font-family: 'Roboto Slab', 'Arial', sans-serif;
+      font-family: 'Roboto Slab', 'Georgia', serif;
       font-size: 1rem;
       font-weight: 300;
       font-style: normal;

@@ -140,7 +140,7 @@ const Counter = ({ t }) =>
         h2 {
           margin-top: -0.0625rem;
           padding-bottom: 0.0625rem;
-          font-family: 'Roboto Slab', 'Arial', sans-serif;
+          font-family: 'Roboto Slab', 'Georgia', serif;
           font-size: 1.5rem;
           line-height: 2rem;
           font-weight: normal;

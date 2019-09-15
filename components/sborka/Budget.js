@@ -76,7 +76,7 @@ const Budget = ({ t, lng }) =>
       }
 
       h2, span {
-        font-family: 'Roboto Slab', 'Arial', sans-serif;
+        font-family: 'Roboto Slab', 'Georgia', serif;
         font-size: 3rem;
         font-weight: normal;
         font-style: normal;

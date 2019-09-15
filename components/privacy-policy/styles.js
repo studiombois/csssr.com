@@ -183,4 +183,4 @@ export default css`
       line-height: 1.5rem;
     }
   }
-`;
+`

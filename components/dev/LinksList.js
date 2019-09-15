@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { string, arrayOf, shape } from 'prop-types';
+import React, { PureComponent } from 'react'
+import { string, arrayOf, shape } from 'prop-types'
 
 export default class LinksList extends PureComponent {
   static propTypes = {

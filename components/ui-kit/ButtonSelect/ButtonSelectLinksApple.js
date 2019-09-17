@@ -43,7 +43,7 @@ const ButtonSelectLinksDefault = props => {
           }
 
           span {
-            font-family: Roboto;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 1rem;
             font-weight: normal;
             line-height: 1.5rem;
@@ -55,7 +55,7 @@ const ButtonSelectLinksDefault = props => {
             align-items: center;
             justify-content: center;
             height: 1.5rem;
-            font-family: Roboto;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 1rem;
             font-weight: normal;
             font-style: normal;

@@ -234,7 +234,7 @@ class Courses extends PureComponent {
             right: -20%;
             bottom: 45%;
             padding: 0;
-            font-family: Roboto;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 0.75rem;
             font-weight: bold;
             line-height: 1.375rem;
@@ -325,7 +325,7 @@ class Courses extends PureComponent {
             .font_link-list_16 {
               margin-top: 1.0625rem;
               padding-bottom: 0;
-              font-family: Roboto;
+              font-family: 'Roboto', 'Arial', sans-serif;
               font-size: 0.875rem;
               font-weight: 300;
               font-style: normal;

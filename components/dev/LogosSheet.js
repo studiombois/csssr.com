@@ -141,7 +141,7 @@ const LogosSheet = () =>
       .express {
         top: 40.875rem;
         left: 65.5625rem;
-        font-family: Roboto;
+        font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 2.5rem;
         font-weight: 300;
         font-style: normal;

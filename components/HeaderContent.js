@@ -156,10 +156,10 @@ class HeaderContent extends PureComponent {
             .header-background {
               position: absolute;
               top: 0;
+              left: 0;
+              righ: 0;
               z-index: 9999;
-              left: 50%;
               width: 100%;
-              transform: translateX(-50%);
             }
 
             .header-background {

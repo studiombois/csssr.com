@@ -54,6 +54,12 @@ const Partners = ({ t, lng }) =>
         text-align: center;
       }
     `}</style>
+    <style jsx>{`
+      h2 {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 11;
+      }
+    `}</style>
   </Fragment>
 
 export default translate()(Partners)

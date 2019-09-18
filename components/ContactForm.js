@@ -52,8 +52,35 @@ const picture = css.resolve`
 const fieldCss = css.resolve`
   .field {
     grid-column: 4 / span 6;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 11;
     margin-bottom: 2.0625rem;
   }
+
+  .field:nth-of-type(1) {
+    -ms-grid-row: 2; 
+  }
+
+  .field:nth-of-type(2) {
+    -ms-grid-row: 3; 
+  }
+
+  .field:nth-of-type(3) {
+    -ms-grid-row: 4; 
+  }
+
+  .field:nth-of-type(4) {
+    -ms-grid-row: 5; 
+  }
+
+  .field:nth-of-type(5) {
+    -ms-grid-row: 6; 
+  }
+
+  .field:nth-of-type(6) {
+    -ms-grid-row: 7; 
+  }
+
 
   .field_type_textarea {
     position: relative;
@@ -78,8 +105,12 @@ const fieldCss = css.resolve`
   @media (min-width: 768px) and (max-width: 1279px) {
     .field {
       grid-column: 4 / span 6;
+      -ms-grid-column: 7;
+      -ms-grid-column-span: 11; 
       margin-bottom: 2.0625rem;
     }
+
+
 
     .field_type_textarea {
       margin-bottom: 3.625rem;
@@ -93,6 +124,8 @@ const fieldCss = css.resolve`
   @media (max-width: 767px) {
     .field {
       grid-column: 1 / span 6;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
     }
 
     .field_type_textarea {
@@ -448,6 +481,53 @@ class ContactForm extends PureComponent {
         `}</style>
         {picture.styles}
         {fieldCss.styles}
+        <style jsx>{`
+          form {
+            -ms-grid-rows: (auto)[9];
+          }
+
+          h2 {
+            -ms-grid-column: 7;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 1;
+          }
+
+          .button {
+            -ms-grid-column: 11;
+            -ms-grid-column-span: 3;
+            -ms-grid-row: 8;
+          }
+
+          .message {
+            -ms-grid-column: 7;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 9;
+          }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            .button {
+              -ms-grid-column: 9;
+              -ms-grid-column-span: 7;
+            }
+          }
+
+          @media (max-width: 767px) {
+            h2 {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+
+            .button {
+              grid-column: 2 / span 4;
+            }
+
+            .message {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+          }
+
+        `}</style>
       </form>
     )
   }

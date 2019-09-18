@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { string, arrayOf, shape } from 'prop-types';
+import React, { PureComponent } from 'react'
+import { string, arrayOf, shape } from 'prop-types'
 
 export default class LinksList extends PureComponent {
   static propTypes = {
@@ -209,6 +209,14 @@ export default class LinksList extends PureComponent {
               padding-bottom: 0;
               font-size: 1rem;
               line-height: 1.5rem;
+            }
+          }
+        `}</style>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
             }
           }
         `}</style>

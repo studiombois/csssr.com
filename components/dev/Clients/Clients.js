@@ -106,6 +106,51 @@ const Clients = ({ t, isMobile }) =>
         }
       }
     `}</style>
+    <style jsx>{`
+      section {
+        -ms-grid-rows: auto auto auto auto;
+      }
+
+      h2 {
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 11;
+      }
+
+      .font_subhead-regular {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 19;
+      }
+
+      .font_p24-strong {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 19;
+      }
+
+      @media (min-width: 1024px) {
+        h2 {
+          -ms-grid-column: 5;
+          -ms-grid-column-span: 15;
+          -ms-grid-row: 1;
+        }
+
+        p {
+          -ms-grid-row: 2;
+        }
+
+        .ul {
+          -ms-grid-row: 3;
+        }
+      }
+
+      @media (max-width: 767px) {
+        h2,
+        .font_subhead-regular,
+        .font_p24-strong  {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+        }
+      }
+    `}</style>
   </Fragment>
 
 Clients.propTypes = {

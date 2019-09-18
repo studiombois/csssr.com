@@ -35,6 +35,13 @@ const ClientsSliderMobile = () =>
         width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 9}rem;
       }
     `}</style>
+    <style jsx>{`
+      ul.grid-container {
+        -ms-grid-columns: (3rem)[${gridColumns}];
+        -ms-grid-column: 1;
+        -ms-grid-column-span: ${gridColumns};
+      }
+    `}</style>
   </div>
 
 export default ClientsSliderMobile

@@ -272,6 +272,7 @@ class Slider extends PureComponent {
         <style jsx>{`
           img {
             transform: translateX(${-100 * (activeSlide - 1)}%);
+          }
         `}</style>
       </section>
     )

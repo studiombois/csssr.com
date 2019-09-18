@@ -14,6 +14,8 @@ import withI18next from '../../utils/withI18next'
 import shuffleArray from '../../utils/shuffleArray'
 import portfolio from '../../data/dev/portfolio'
 
+
+
 class Dev extends PureComponent {
   static async getInitialProps() {
     const portfolioWithShuffledProjects = portfolio.map(projectGroup =>

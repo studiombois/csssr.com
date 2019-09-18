@@ -1,22 +1,28 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import cn from 'classnames'
 import { arrayOf, string, func } from 'prop-types'
 import translate from '../../utils/translate-wrapper'
 
-const Tabs = ({ t, tabs, activeTabId, onClick }) =>
-  <Fragment>
-    <ul>
-      {tabs.map(tabId =>
-        <li className={cn({ active: tabId === activeTabId })} key={tabId}>
-          <button
-            onClick={() => onClick(tabId)}
-            value={tabId}
-            dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${tabId}`) }}
-          />
-        </li>
-      )}
-    </ul>
-    <style jsx>{`
+
+
+
+class Tabs extends Component {
+  render() {
+    const { t, tabs, activeTabId, onClick } = this.props
+    return (
+      <Fragment>
+        <ul>
+          {tabs.map(tabId =>
+            <li className={cn({ active: tabId === activeTabId })} key={tabId}>
+              <button
+                onClick={() => onClick(tabId)}
+                value={tabId}
+                dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${tabId}`) }}
+              />
+            </li>
+          )}
+        </ul>
+        <style jsx>{`
       ul {
         grid-column: 1 / span 12;
         display: flex;
@@ -54,7 +60,19 @@ const Tabs = ({ t, tabs, activeTabId, onClick }) =>
         pointer-events: none;
       }
     `}</style>
-  </Fragment>
+        <style jsx>{`
+          ul {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 23;
+            -ms-grid-row: 3;
+          }
+        `}
+        </style>
+      </Fragment>
+    )
+  }
+}
+
 
 Tabs.propTypes = {
   tabs: arrayOf(string),

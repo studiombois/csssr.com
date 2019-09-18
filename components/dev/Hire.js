@@ -10,7 +10,7 @@ const picture = css.resolve`
     z-index: 0;
     margin-top: -9rem;
     margin-left: -4rem;
-    height: 640px;
+    // height: 640px;
     width: 1920px;
   }
 
@@ -52,7 +52,27 @@ const picture = css.resolve`
       margin-top: 0;
       margin-left: -1rem;
       width: 22.5rem;
-      height: 10.5rem;
+      // height: 10.5rem;
+    }
+  }
+
+  img {
+    display: block !important;
+    height: auto;
+  }
+
+  picture {
+    display: block !important;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 23;
+    -ms-grid-row: 3;
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+      -ms-grid-row: 2;
     }
   }
 `
@@ -85,7 +105,7 @@ class Hire extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 16rem;
+            padding-top: 16rem !important;
             width: 1792px;
           }
 
@@ -153,7 +173,7 @@ class Hire extends PureComponent {
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             article {
-              margin-top: 12rem;
+              padding-top: 12rem;
               width: 1328px;
             }
 
@@ -196,7 +216,7 @@ class Hire extends PureComponent {
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             article {
-              margin-top: 12rem;
+              padding-top: 12rem;
               width: 1232px;
             }
 
@@ -244,7 +264,7 @@ class Hire extends PureComponent {
             }
 
             article {
-              margin-top: 10rem;
+              padding-top: 10rem;
               width: 944px;
             }
 
@@ -305,7 +325,7 @@ class Hire extends PureComponent {
 
           @media (max-width: 767px) {
             article {
-              margin-top: 5rem;
+              padding-top: 5rem;
               width: 20.5rem;
               height: auto;
             }
@@ -365,6 +385,40 @@ class Hire extends PureComponent {
               :global(html.webp #main) {
                 background-image: url('${require('../../static/images/dev/360/dev_line@3x.webp')}');
               }
+            }
+          }
+        `}</style>
+        <style jsx>{`
+          blockquote {
+            -ms-grid-column: 17;
+            -ms-grid-column-span: 5;
+            -ms-grid-row: 1;
+          }
+
+          h1 {
+            -ms-grid-column: 5;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 1;
+          }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            h1 {
+              -ms-grid-column: 5;
+              -ms-grid-column-span: 7;
+            }
+          }
+
+          @media (max-width: 767px) {
+            h1 {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+              -ms-grid-row: 1;
+            }
+
+            blockquote {
+              -ms-grid-column: 3;
+              -ms-grid-column-span: 9;
+              -ms-grid-row: 3;
             }
           }
         `}</style>

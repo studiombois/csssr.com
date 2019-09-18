@@ -212,6 +212,12 @@ class FileField extends PureComponent {
             }
           }
         `}</style>
+        <style jsx>{`
+          span.error {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 11;
+          }
+        `}</style>
       </Fragment>
     )
   }

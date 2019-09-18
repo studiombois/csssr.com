@@ -70,8 +70,9 @@ class ProjectsList extends PureComponent {
     }, scrollToNextBlock)
   }
 
-  renderProject = project =>
+  renderProject = (project, index) =>
     <Project
+      index={index}
       key={project.id}
       id={project.id}
       type={project.type}
@@ -106,7 +107,7 @@ class ProjectsList extends PureComponent {
         ? { ...project, className: 'bigger-margin-top' }
         : project
 
-      return this.renderProject(newProject)
+      return this.renderProject(newProject, index)
     })
   }
 
@@ -190,6 +191,13 @@ class ProjectsList extends PureComponent {
             max-height: auto;
             overflow: hidden;
             transition: height ${!isCut ? listHeight / 3.8 : 0}ms ease-in; // коэффициент подобран на глаз
+          }
+        `}</style>
+        <style jsx>{`
+          .list-container {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 23;
+            -ms-grid-row: 4;
           }
         `}</style>
       </Fragment>

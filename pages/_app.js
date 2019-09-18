@@ -59,7 +59,7 @@ export default class MyApp extends App {
 
       throw error
     }
-    
+
     pageProps.userAgent = userAgent
 
     return {
@@ -97,10 +97,12 @@ export default class MyApp extends App {
       isMobile: matches,
     })
 
+
+
   render() {
     const { Component, pageProps } = this.props
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {}
-    const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
+    const isMsBrowser = detectMsBrowserByUserAgent(this.props.userAgent)
 
     return (
       <Container>

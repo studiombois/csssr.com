@@ -37,7 +37,7 @@ export default css`
   .is_appleDevice li:last-child button {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    font-family: Roboto;
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 1rem;
     font-weight: 900;
     line-height: 1.5rem;

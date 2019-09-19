@@ -24,7 +24,7 @@ const CutButton = ({ children, isCut, onClick }) =>
         border: none;
         align-items: center;
         justify-content: center;
-        font-family: Roboto;
+        font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 0.625rem;
         font-weight: bold;
         font-style: normal;

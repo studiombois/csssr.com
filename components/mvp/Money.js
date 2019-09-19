@@ -73,7 +73,7 @@ class Money extends PureComponent {
             z-index: 2;
             grid-column: 2 / span 6;
             grid-row: 2;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', 'Arial' sans-serif;
             font-size: 1.5rem;
             font-weight: normal;
             line-height: 2.5625rem;

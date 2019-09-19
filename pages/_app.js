@@ -59,7 +59,7 @@ export default class MyApp extends App {
 
       throw error
     }
-    
+
     pageProps.userAgent = userAgent
 
     return {

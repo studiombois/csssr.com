@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registryCredential = "keen-dockerhub"
+    registryCredential = "space-nexus"
     scmVars = ""
     branch = ""
     commit = ""
@@ -47,7 +47,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh "docker build --network host . -t zaebutton/csssr-com:${commit}"
+          sh "docker build --network host . -t docker.csssr.space/csssr-com:${commit}"
         }
       }
     }
@@ -59,8 +59,8 @@ pipeline {
               set +x
               docker login -u $USERNAME -p$PASSWORD
               '''
-            sh "docker push zaebutton/csssr-com:${commit}"
-            sh "docker rmi zaebutton/csssr-com:${commit}"
+            sh "docker push docker.csssr.space/csssr-com:${commit}"
+            sh "docker rmi docker.csssr.space/csssr-com:${commit}"
           }
         }
       }

@@ -55,10 +55,7 @@ pipeline {
       steps {
         script {
           withCredentials([usernamePassword(credentialsId: registryCredential, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh '''
-              set +x
-              docker login -u $USERNAME -p$PASSWORD
-              '''
+            sh "docker login -u ${USERNAME} -p \"${PASSWORD}\" docker.csssr.space"
             sh "docker push docker.csssr.space/csssr-com:${commit}"
             sh "docker rmi docker.csssr.space/csssr-com:${commit}"
           }

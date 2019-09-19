@@ -67,16 +67,15 @@ pipeline {
     }
     stage('Deploy Chart') {
       steps {
-        if (branch == 'production') {
-          script {
+        script {
+          if (branch == 'production') {
             sshagent(credentials: ['csssr-chart']) {
               sh """
               rm -rf csssr-chart
               git clone git@github.com:csssr-team/csssr-chart.git
               """
             }
-          }
-          script {
+
             sh """#!/bin/bash
             source ~/.bashrc
             set -x
@@ -84,17 +83,13 @@ pipeline {
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
             helm secrets upgrade ${valuesFile} --set-string site.commit="${commit}" ${options} ${helmRelease} ./
             """
-          }
-        } else if (branch.startsWith('release/')) {
-          script {
+          } else if (branch.startsWith('release/')) {
             sshagent(credentials: ['csssr-com-preprod-chart']) {
               sh """
               rm -rf csssr-com-preprod-chart
               git clone git@github.com:csssr-team/csssr-com-preprod-chart.git
               """
             }
-          }
-          script {
             sh """#!/bin/bash
             source ~/.bashrc
             set -x

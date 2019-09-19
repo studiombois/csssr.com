@@ -5,6 +5,8 @@ pipeline {
     branch = ""
     commit = ""
     helmRelease = ""
+    options = ""
+    valuesFiles = ""
   }
   agent any
   stages {
@@ -25,15 +27,16 @@ pipeline {
         script {
           branch = scmVars.GIT_BRANCH.replace('origin/', '')
           commit = scmVars.GIT_COMMIT.substring(0,8)
+          safeBranch = branch.replaceAll('/', '-')
 
-          if (branch == 'jenkins') {
-            branch = 'master'
-          }
-
-          if (branch == 'master') {
+          if (branch == 'production') {
             helmRelease = "csssr-com"
-          } else {
-            helmRelease = "csssr-com-preprod"
+            valuesFile = "-f master/secrets.yaml -f master/values.yaml"
+            safeBranch = "prod"
+          } else if (branch.startsWith('release/')) {
+            helmRelease = "csssr-com-${safeBranch}"
+            valuesFile = "-f preprod/secrets.yaml -f preprod/values.yaml"
+            options = " --set branch=${safeBranch},site.domains={\"${safeBranch}.csssr.com,${safeBranch}.jobs.csssr.com,${safeBranch}.express.csssr.com,${safeBranch}.dev.csssr.com}\""
           }
         }
         echo "Helm Release: ${helmRelease}"
@@ -64,27 +67,45 @@ pipeline {
     }
     stage('Deploy Chart') {
       steps {
-        script {
-          sshagent(credentials: ['csssr-chart']) {
-            sh """
+        if (branch == 'production') {
+          script {
+            sshagent(credentials: ['csssr-chart']) {
+              sh """
               rm -rf csssr-chart
               git clone git@github.com:csssr-team/csssr-chart.git
-              cd csssr-chart
-              git checkout master 
+              """
+            }
+          }
+          script {
+            sh """#!/bin/bash
+            source ~/.bashrc
+            set -x
+            cd csssr-chart
+            export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
+            helm secrets upgrade ${valuesFile} --set-string site.commit="${commit}" ${options} ${helmRelease} ./
             """
           }
-        }
-        script {
-          withCredentials([string(credentialsId: 'csssr-gpg-passphrase', variable: 'GPG_PASSPHRASE')]) {
-            sh """#!/bin/bash
-              whoami
-              pwd
-              source ~/.bashrc
-              set -x
-              cd csssr-chart
-              export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-              printf "$GPG_PASSPHRASE" | helm secrets upgrade -f ${branch}/secrets.yaml -f ${branch}/values.yaml --set-string site.commit="${commit}" ${helmRelease} ./
+        } else if (branch.startsWith('release/')) {
+          script {
+            sshagent(credentials: ['csssr-com-preprod-chart']) {
+              sh """
+              rm -rf csssr-com-preprod-chart
+              git clone git@github.com:csssr-team/csssr-com-preprod-chart.git
               """
+            }
+          }
+          script {
+            sh """#!/bin/bash
+            source ~/.bashrc
+            set -x
+            cd csssr-com-preprod-chart
+            export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
+            if [[ "$BUILD_ID" -eq 1 ]]; then
+              helm secrets install . --namespace site-${safeBranch} --name ${helmRelease} ${valuesFile} --set-string site.commit="${commit}" ${options}
+            else
+              helm secrets upgrade ${valuesFile} --set-string site.commit="${commit}" ${options} ${helmRelease} ./
+            fi
+            """
           }
         }
       }

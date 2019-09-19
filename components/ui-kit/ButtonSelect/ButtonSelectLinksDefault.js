@@ -39,7 +39,7 @@ const ButtonSelectLinksDefault = props => {
             display: flex;
             align-items: center;
             height: 1.5rem;
-            font-family: Roboto;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 1rem;
             font-weight: normal;
             font-style: normal;

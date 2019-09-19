@@ -9,7 +9,7 @@ const LogoWithText = ({ iconName, altText, logoCaption }) =>
     <style jsx>{`
       figcaption {
         margin-top: 0.375rem;
-        font-family: Roboto;
+        font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 1rem;
         font-weight: 300;
         font-style: normal;

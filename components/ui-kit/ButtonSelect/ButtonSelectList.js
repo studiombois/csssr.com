@@ -80,7 +80,7 @@ const ButtonSelectList = props => {
         li:first-child {
           padding-top: 0;
           padding-bottom: 0.5rem;
-          font-family: Roboto;
+          font-family: 'Roboto', 'Arial', sans-serif;
           font-size: 0.875rem;
           font-weight: 300;
           font-style: normal;
@@ -147,7 +147,7 @@ const ButtonSelectList = props => {
             display: block;
             width: 100%;
             height: auto;
-            font-family: Roboto;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 1rem;
             font-weight: normal;
             font-style: normal;

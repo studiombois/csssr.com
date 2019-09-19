@@ -164,7 +164,7 @@ class Portfolio extends PureComponent {
 
           h2 {
             grid-column: 2 / span 4;
-            font-family: Roboto Slab;
+            font-family: 'Roboto Slab', 'Georgia', serif;
             font-size: 3rem;
             font-weight: normal;
             font-style: normal;

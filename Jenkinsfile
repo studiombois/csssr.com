@@ -78,7 +78,7 @@ pipeline {
             set -x
             cd csssr-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            helm secrets upgrade ${valuesFile} --set-string site.commit="${commit}" ${options} ${helmRelease} ./
+            helm secrets upgrade ${valuesFile} --set-string site.commit="${commit}" ${helmRelease} ./
             """
           } else if (branch.startsWith('release/')) {
             sshagent(credentials: ['csssr-com-preprod-chart']) {

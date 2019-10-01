@@ -1,6 +1,7 @@
 const path = require('path')
 const Sentry = require('@sentry/node')
 const express = require('express')
+const expressStaticGzip = require('express-static-gzip')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const next = require('next')
@@ -129,6 +130,17 @@ i18n
               res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
               nextHandler()
             },
+          )
+
+          server.use(
+            '/_next',
+            expressStaticGzip(path.join(__dirname, '../.next'), {
+              enableBrotli: true,
+              orderPreference: ['br'],
+              setHeaders: res => {
+                res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+              },
+            }),
           )
         }
 

@@ -1,5 +1,8 @@
 {
   "name": "csssr.com",
+  "engines": {
+    "node": ">=11.7.0"
+  },
   "scripts": {
     "dev": "nodemon --exec node -r esm $NODE_DEBUG_OPTION ./server/index.js",
     "build": "next build",

@@ -108,7 +108,7 @@ export class SideBar extends PureComponent {
             justify-content: flex-end;
             align-items: center;
             height: 1.625rem;
-            font-family: Roboto, sans-serif;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 0.875rem;
             font-weight: 900;
             text-transform: uppercase;

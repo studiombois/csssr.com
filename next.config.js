@@ -64,11 +64,11 @@ module.exports = withSourceMaps({
       if (!dev) {
         config.plugins.push(
           new CompressionPlugin({
-            test: /\.js$|\.css$|\.html$/,
+            test: /\.js$|\.css$|\.html$|\.svg$/,
             threshold: 10240,
           }),
           new CompressionPlugin({
-            test: /\.js$|\.css$|\.html$/,
+            test: /\.js$|\.css$|\.html$|\.svg$/,
             algorithm: 'brotliCompress',
             filename: '[path].br[query]',
             compressionOptions: { level: 11 },

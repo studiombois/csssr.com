@@ -1,4 +1,4 @@
-FROM node:11.7.0-alpine AS build
+FROM node:11.7.0 AS build
 ENV NODE_ENV=production
 ENV IS_PRODUCTION=TRUE
 WORKDIR /app

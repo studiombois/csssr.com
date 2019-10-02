@@ -27,7 +27,7 @@ pipeline {
         script {
           branch = scmVars.GIT_BRANCH.replace('origin/', '')
           commit = scmVars.GIT_COMMIT.substring(0,8)
-          safeBranch = branch.replaceAll('/', '-')
+          safeBranch = branch.replaceAll('/', '-').toLowerCase()
 
           if (branch == 'production') {
             helmRelease = "csssr-com"

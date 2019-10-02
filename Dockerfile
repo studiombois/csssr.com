@@ -1,4 +1,4 @@
-FROM node:11.10.1-alpine AS build
+FROM node:11.7.0-alpine AS build
 ENV NODE_ENV=production
 ENV IS_PRODUCTION=TRUE
 WORKDIR /app
@@ -7,7 +7,7 @@ RUN yarn
 COPY . .
 RUN yarn build
 
-FROM node:11.10.1-alpine AS release
+FROM node:11.7.0-alpine AS release
 ENV NODE_ENV=production
 ENV IS_PRODUCTION=TRUE
 WORKDIR /app

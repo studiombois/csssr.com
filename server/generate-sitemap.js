@@ -176,10 +176,6 @@ const sitemapUrlsSettings = [{
       url: 'https://csssr.com/ru/jobs',
     },
   ],
-}, {
-  url: 'https://csssr.com/ru/school',
-  changefreq: 'weekly',
-  priority: 1,
 }]
 
 const generateSitemap = () =>

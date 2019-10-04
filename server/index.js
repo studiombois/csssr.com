@@ -10,7 +10,6 @@ const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const { pick } = require('ramda')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
-const schoolSubmitForm = require('./school-submit-form')
 const generateSitemap = require('./generate-sitemap').generateSitemap
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 const { isDevelopment, isProduction } = require('../utils/app-environment')
@@ -29,7 +28,7 @@ i18n
     load: 'languageOnly',
     whitelist: ['en', 'ru'],
     preload: ['en', 'ru'],
-    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'school', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
+    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
     detection: {
       order: ['path', 'cookie', 'header'],
       lookupCookie: 'language',
@@ -113,7 +112,6 @@ i18n
         server.use(i18nextMiddleware.handle(i18n))
 
         server.post('/api/submit-form', submitForm)
-        server.post('/api/school-submit-form', schoolSubmitForm)
 
         server.get('/', function (req, res) {
           // TODO разобрать почему при навигации с фронта на рут ('/')

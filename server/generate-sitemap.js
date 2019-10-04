@@ -67,21 +67,7 @@ const sitemapUrlsSettings = [{
   links: [
     {
       lang: 'en',
-      url: 'https://csssr.com/en/express',
-    },
-    {
-      lang: 'ru',
-      url: 'https://csssr.com/ru/express',
-    },
-  ],
-}, {
-  url: 'https://csssr.com/en/express',
-  changefreq: 'weekly',
-  priority: 1,
-  links: [
-    {
-      lang: 'en',
-      url: 'https://csssr.com/en/express',
+      url: 'https://express.csssr.com/',
     },
     {
       lang: 'ru',

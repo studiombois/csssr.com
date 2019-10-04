@@ -45,7 +45,7 @@ pagesUrls.some(pageUrl => {
       \x1b[33m
       Страница ${pageUrl} не указана в файле генерации sitemap: ./server/generate-sitemap.js
 
-      Добавтье информацию о ней в объект sitemapUrlsSettings 
+      Добавьте информацию о ней в объект sitemapUrlsSettings 
       или внесите её в список исключений excludedPagesUrls в  ./server/check-sitemap.js
       \x1b[0m
     `

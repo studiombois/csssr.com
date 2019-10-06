@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
-import { number, string, shape } from 'prop-types'
+import { number, string, shape, node } from 'prop-types'
 import translate from '../utils/translate-wrapper'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
@@ -56,7 +56,7 @@ const Head = props => (
       <meta property='og:image:height' content={props.ogImage.height} />
     </Fragment>}
     <meta property='fb:app_id' content='416195255787519'/>
-    <StructuredData />
+    {props.structuredData}
   </NextHead>
 )
 
@@ -68,6 +68,11 @@ Head.propTypes = {
     width: number,
     height: number,
   }),
+  structuredData: node,
+}
+
+Head.defaultProps = {
+  structuredData: <StructuredData />,
 }
 
 export default withRouter(translate()(Head))

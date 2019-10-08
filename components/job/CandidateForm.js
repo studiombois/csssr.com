@@ -312,7 +312,7 @@ class CandidateForm extends PureComponent {
               {t('job:faq.title')}
 
               <a
-                href='faq'
+                href='/ru/jobs-faq'
                 className='font_link-list_16'
               >
                 {t('job:faq.link')}

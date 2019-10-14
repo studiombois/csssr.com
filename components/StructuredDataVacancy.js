@@ -9,11 +9,21 @@ const StructuredDataVacancy = ({ vacancy }) => {
       ))}` : null
   ))}`
 
+  const datePostedFormat = str => {
+    const strLength = str.length
+    const iter = (newStr, count) => {
+      if (str[count] === 'T') return newStr
+      if (count === strLength) return newStr
+      return iter(`${newStr}${str[count]}`, count + 1)
+    }
+    return iter('', 0)
+  }
+
+  const datePosted = datePostedFormat(`${vacancy.createDate}`)
+
   const employment = vacancy.employment === 'part-time'
     ? 'PART_TIME'
     : 'FULL_TIME'
-
-  console.log(description)
 
   return (
     <script
@@ -21,9 +31,9 @@ const StructuredDataVacancy = ({ vacancy }) => {
       dangerouslySetInnerHTML={{
         __html: `
       {
-        "datePosted": ${vacancy.createDate},
-        "title": ${vacancy.name},
-        "description": ${description},
+        "datePosted": "${datePosted}",
+        "title": "${vacancy.name}",
+        "description": "${description}",
         "hiringOrganization": {
           "@type": "Organization",
           "name": "CSSSR"",
@@ -43,7 +53,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
           "name": "Russia"
         },
         "jobLocationType": "TELECOMMUTE",
-        "employmentType": ${employment}
+        "employmentType": "${employment}"
       }
     `,
       }}

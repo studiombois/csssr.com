@@ -2,14 +2,19 @@ import React from 'react'
 
 // https://developers.google.com/search/docs/guides/intro-structured-data
 const StructuredDataVacancy = ({ vacancy }) => {
-  const description = `${vacancy.sections.map(item => (
+  const description = `${vacancy.description}${vacancy.sections.map(item => (
     item.type !== 'questBox' ?
-      `<h2>${item.title}</h2><ul>${item.list.map(itemList => (
-        `<li>${itemList}</li>`
-      ))}</ul>` : null
+      `${item.title}${item.list.map(itemList => (
+        `•${itemList}`
+      ))}` : null
   ))}`
 
-  console.log('11!!!!!111', description)
+  const employment = vacancy.employment === 'part-time'
+    ? 'PART_TIME'
+    : 'FULL_TIME'
+
+  console.log(description)
+
   return (
     <script
       type='application/ld+json'
@@ -22,6 +27,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
         "hiringOrganization": {
           "@type": "Organization",
           "name": "CSSSR"",
+          "logo": "https://csssr.com/static/csssr_logo.png",
           "sameAs": [
             "https://www.facebook.com/csssr/",
             "https://www.linkedin.com/company/csssr/",
@@ -37,6 +43,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
           "name": "Russia"
         },
         "jobLocationType": "TELECOMMUTE",
+        "employmentType": ${employment}
       }
     `,
       }}

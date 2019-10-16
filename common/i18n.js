@@ -14,6 +14,9 @@ const options = {
     escapeValue: false,
     formatSeparator: ',',
   },
+  backend: {
+    loadPath: '/static/locales/{{lng}}/{{ns}}.json',
+  },
 }
 
 // for browser use xhr backend to load translations

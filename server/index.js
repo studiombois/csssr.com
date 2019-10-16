@@ -36,7 +36,7 @@ i18n
       caches: ['cookie'],
     },
     backend: {
-      loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
+      loadPath: path.join(__dirname, '../static/locales/{{lng}}/{{ns}}.json'),
     },
   }, () => {
     app.prepare()
@@ -141,8 +141,6 @@ i18n
             }),
           )
         }
-
-        server.use('/locales', express.static(path.join(__dirname, '../locales')))
 
         server.get('/robots.txt', function (req, res) {
           res.type('text/plain')

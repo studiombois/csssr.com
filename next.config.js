@@ -11,6 +11,11 @@ module.exports = withSourceMaps({
     IS_PRODUCTION: process.env.IS_PRODUCTION,
   },
   webpack: (config, { dev, isServer, buildId }) => {
+    // Фиксит npm пакеты, которые зависят от `fs` модуля
+    config.node = {
+      fs: 'empty',
+    }
+
     const withSentry = () => {
       if (!dev) {
         config.plugins.push(
@@ -23,35 +28,18 @@ module.exports = withSourceMaps({
       if (!isServer) {
         config.resolve.alias['@sentry/node'] = '@sentry/browser'
       }
-
-      // Фиксит npm пакеты, которые зависят от `fs` модуля
-      config.node = {
-        fs: 'empty',
-      }
     }
 
-    const withImages = () => {
+    const withAssets = () => {
       config.module.rules.push({
-        test: /\.(jpe?g|png|gif|webp|svg|ico)$/,
+        test: /\.(jpe?g|png|gif|webp|svg|ico|woff2?)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {
-              publicPath: '/_next',
-              name: '[path][name]-[hash:8].[ext]',
-            },
-          },
-        ],
-      })
-    }
-
-    const withFonts = () => {
-      config.module.rules.push({
-        test: /\.(woff2?)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
+            options: dev ? {
+              // в таком случае file-loader будет просто отдавать правильные url, файлы не будут копироваться и переименовываться
+              name: '[path][name].[ext]',
+            } : {
               publicPath: '/_next',
               name: '[path][name]-[hash:8].[ext]',
             },
@@ -79,8 +67,7 @@ module.exports = withSourceMaps({
     }
 
     withSentry()
-    withImages()
-    withFonts()
+    withAssets()
     withCompression()
 
     if (ANALYZE) {

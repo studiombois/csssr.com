@@ -109,7 +109,7 @@ class MyError extends React.Component {
       />
 
       <header className='grid-container'>
-        <Link prefetch href={rootUrl}>
+        <Link href={rootUrl}>
           <a>
             <LogoIcon width='100%' height='100%' />
           </a>

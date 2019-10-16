@@ -36,12 +36,9 @@ module.exports = withSourceMaps({
         use: [
           {
             loader: 'file-loader',
-            options: dev ? {
-              // в таком случае file-loader будет просто отдавать правильные url, файлы не будут копироваться и переименовываться
-              name: '[path][name].[ext]',
-            } : {
+            options: {
               publicPath: '/_next',
-              name: '[path][name]-[hash:8].[ext]',
+              name: dev ? '[path][name].[ext]' : '[path][name]-[hash:8].[ext]',
             },
           },
         ],

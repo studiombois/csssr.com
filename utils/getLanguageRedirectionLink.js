@@ -20,6 +20,9 @@ export default async (pathname, language) => {
   const baseRedirectionPath = preciseRedirectionPath.split('/').slice(0, 2).join('/')
 
   try {
+    // Такой запрос триггерил смену языка.
+    // Можно представить, что этот запрос выполнил пользователь, тогда вполне логично, что записывается другой язык в куке.
+    // На бекенде добавлен игнор для методов OPTIONS при определении локали и сохранении куки с локалью.
     const { status } = await fetch(preciseRedirectionPath, { method: 'OPTIONS' })
 
     if (status === 404) {

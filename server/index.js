@@ -24,14 +24,12 @@ i18n
   .use(i18nextMiddleware.LanguageDetector)
   .use(i18nextNodeFsBackend)
   .init({
-    fallbackLng: 'en',
-    load: 'languageOnly',
-    whitelist: ['en', 'ru'],
-    preload: ['en', 'ru'],
+    whitelist: ['en', 'ru', 'ru-RU', 'ru-EE', 'en-EE', 'en-SG'],
+    preload: ['en', 'ru', 'ru-RU', 'ru-EE', 'en-EE', 'en-SG'],
     ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
     detection: {
       order: ['path', 'cookie', 'header'],
-      lookupCookie: 'language',
+      lookupCookie: 'locale',
       lookupFromPathIndex: 0,
       caches: ['cookie'],
     },
@@ -109,14 +107,19 @@ i18n
 
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
-        server.use(i18nextMiddleware.handle(i18n))
+        server.use(i18nextMiddleware.handle(i18n, {
+          ignoreRoutes: req => {
+            const isMethodOptions = req.method === 'OPTIONS'
+            const patternsToIgnore = ['/_next/', '/static/']
+            return isMethodOptions || patternsToIgnore.reduce((memo, pattern) => {
+              return memo || req.path.includes(pattern)
+            }, false)
+          },
+        }))
 
         server.post('/api/submit-form', submitForm)
 
         server.get('/', function (req, res) {
-          // TODO разобрать почему при навигации с фронта на рут ('/')
-          // рандомно переадресовывает то на /ru, то на /en
-          // похоже LanguageDetector сломался
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
           res.redirect(`/${language}`)
         })

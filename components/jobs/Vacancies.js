@@ -286,7 +286,7 @@ class Vacancies extends PureComponent {
                 {t('jobs:faq.title')}
 
                 <a
-                  href='jobs-faq'
+                  href='../jobs-faq'
                   className='font_link-list_16'
                 >
                   {t('jobs:faq.link')}

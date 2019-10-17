@@ -64,7 +64,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set domain=csssr.com,branch=${branch},cert=csssr-com,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
+            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=csssr.com,branch=${branch},cert=csssr-com,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
             """
           } else if (branch.startsWith('release/')) {
             sh """#!/bin/bash
@@ -72,7 +72,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set domain=${safeBranch}.csssr.cloud,branch=${branch},cert=csssr-cloud,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
+            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=${safeBranch}.csssr.cloud,branch=${branch},cert=csssr-cloud,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
             """
           }
         }

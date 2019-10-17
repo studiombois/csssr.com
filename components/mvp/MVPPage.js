@@ -10,7 +10,7 @@ import HireUs from '../../components/mvp/HireUs'
 import withI18next from '../../utils/withI18next'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 
-class MVP extends PureComponent {
+class MVPPage extends PureComponent {
   state = {
     isMobile: false,
   }
@@ -57,4 +57,4 @@ class MVP extends PureComponent {
   }
 }
 
-export default withI18next(['mvp'])(MVP)
+export default withI18next(['mvp'])(MVPPage)

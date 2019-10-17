@@ -1,3 +1,3 @@
-import MVP from '../en/mvp'
+import MVP from '../../components/mvp/MVPPage'
 
 export default MVP

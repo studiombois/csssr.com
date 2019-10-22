@@ -91,7 +91,7 @@ const pictureFaq = css.resolve`
     picture.visible_on_mobile {
       display: block;
     }
-  
+
     img {
       width: auto;
       max-width: 100%;
@@ -464,7 +464,7 @@ class CandidateForm extends PureComponent {
                 {t('job:faq.title')}
 
                 <a
-                  href='faq'
+                  href='/ru/jobs-faq'
                   className='font_link-list_16'
                 >
                   {t('job:faq.link')}

@@ -20,7 +20,7 @@ class Header extends PureComponent {
   state = {
     logoAlt: 'CSSSR logo',
     showHeader: true,
-    pinHeader: !this.props.isMsBrowser, // Мы хотим всегда показывать хедер на IE,
+    pinHeader: false,
     toggleHeaderAnimations: false,
     isSideBarOpened: false,
     isLogoLink: false,
@@ -154,6 +154,7 @@ class Header extends PureComponent {
           onFocus={this.handleHeaderFocus}
           onSideBarToggle={this.handleSideBarToggle}
           onScrollToSection={this.handleScrollToSection}
+          isMsBrowser={this.props.isMsBrowser}
         />
       </Fragment>
     )

@@ -71,11 +71,6 @@ class Dev extends PureComponent {
           buttonText={t('dev:hire.buttonText')}
           pageName='dev'
         />
-        <style jsx>{`
-          :global(#header-background) {
-            z-index: 1;
-          }
-        `}</style>
       </Layout>
     )
   }

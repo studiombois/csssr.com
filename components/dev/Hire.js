@@ -105,7 +105,7 @@ class Hire extends PureComponent {
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 16rem !important;
+            padding-top: 16rem;
             width: 1792px;
           }
 

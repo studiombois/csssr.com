@@ -16,7 +16,7 @@ const Layout = props => {
     <Settings />
     <Text />
     <Header {...props.headerProps} />
-    <main id='main'>
+    <main id='main' style={{ display: 'block' }}>
       {children}
     </main>
     {!props.footerProps.noFooter &&

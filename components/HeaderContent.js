@@ -157,7 +157,7 @@ class HeaderContent extends PureComponent {
               position: absolute;
               top: 0;
               left: 0;
-              righ: 0;
+              right: 0;
               z-index: 9999;
               width: 100%;
             }

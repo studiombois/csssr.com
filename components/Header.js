@@ -20,7 +20,7 @@ class Header extends PureComponent {
   state = {
     logoAlt: 'CSSSR logo',
     showHeader: true,
-    pinHeader: !this.props.isMsBrowser, // Мы хотим всегда показывать хедер на IE,
+    pinHeader: !this.props.isMsBrowser, // Мы хотим всегда показывать хедер на IE
     toggleHeaderAnimations: false,
     isSideBarOpened: false,
     isLogoLink: false,
@@ -32,7 +32,6 @@ class Header extends PureComponent {
 
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll)
-
     this.scrollbarWidth = getPageScrollBarWidth()
   }
 

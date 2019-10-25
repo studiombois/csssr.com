@@ -220,7 +220,7 @@ class ButtonSelect extends PureComponent {
           }
 
           .button-wrapper_is_invisible {
-            transform: translateY(calc(100% + 15rem));
+            transform: translateY(250%);
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {

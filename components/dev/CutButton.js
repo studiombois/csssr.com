@@ -51,7 +51,7 @@ const CutButton = ({ children, isCut, onClick }) =>
         margin-right: -2rem;
         margin-left: -2rem;
         grid-column: 2 / span 10;
-        height: 0.125rem;
+        height: 0.0625rem;
         background-color: #979797;
       }
 

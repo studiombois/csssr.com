@@ -140,6 +140,7 @@ class Slider extends PureComponent {
             padding-right: 1.5rem;
             padding-left: 1.5rem;
             top: 50%;
+            left: 0;
             display: flex;
             justify-content: space-between;
             width: 100%;

@@ -60,7 +60,6 @@ class HeaderContent extends PureComponent {
           className={cn({
             header: true,
             header_pinned: pinHeader,
-            header_fixed: this.props.isMsBrowser, /* всегда показывать хедер в MS */
             header_visible: !pinHeader && showHeader,
             header_invisible: !pinHeader && !showHeader,
             header_animations_on: toggleHeaderAnimations,
@@ -188,11 +187,6 @@ class HeaderContent extends PureComponent {
             .header_visible + .header-background {
               position: fixed;
               top: 0;
-            }
-
-            .header_fixed,
-            .header_fixed + .header-background {
-              position: fixed;
             }
 
             .header_padding-right_equals_scroll-width ~ :global(main .jobs-header-logo-container) {

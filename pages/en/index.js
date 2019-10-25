@@ -32,11 +32,11 @@ class Dev extends PureComponent {
   // }
 
   render() {
-    const { t/* , shuffledPortfolio*/, isMobile } = this.props
+    const { t/* , shuffledPortfolio*/, isMobile, isMsBrowser } = this.props
 
     return (
       <Layout
-        headerProps={{ isLogoLink: true, isBurgerVisible: true }}
+        headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
 

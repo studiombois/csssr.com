@@ -102,7 +102,7 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {}
-    const isMsBrowser = detectMsBrowserByUserAgent(this.props.userAgent)
+    const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
 
     return (
       <Container>

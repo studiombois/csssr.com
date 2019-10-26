@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { bool } from 'prop-types'
 import Head from '../../components/Head'
 import Form from '../../components/dev/Form'
 import Hire from '../../components/dev/Hire'
@@ -28,6 +29,10 @@ class Dev extends PureComponent {
     const shuffledPortfolio = shuffleArray(portfolioWithShuffledProjects)
 
     return { shuffledPortfolio }
+  }
+
+  getChildContext() {
+    return { isMs: this.props.isMsBrowser }
   }
 
   render() {
@@ -75,5 +80,10 @@ class Dev extends PureComponent {
     )
   }
 }
+
+Dev.childContextTypes = {
+  isMs: bool,
+}
+
 
 export default withI18next(['dev'])(Dev)

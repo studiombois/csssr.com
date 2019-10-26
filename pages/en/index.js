@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { bool } from 'prop-types'
 import Head from '../../components/Head'
 import Form from '../../components/dev/Form'
 import Hire from '../../components/dev/Hire'
@@ -30,6 +31,10 @@ class Dev extends PureComponent {
   //
   //   return { shuffledPortfolio }
   // }
+
+  getChildContext() {
+    return { isMs: this.props.isMsBrowser }
+  }
 
   render() {
     const { t/* , shuffledPortfolio*/, isMobile, isMsBrowser } = this.props
@@ -77,14 +82,14 @@ class Dev extends PureComponent {
           buttonText={t('dev:hire.buttonText')}
           pageName='dev'
         />
-        <style jsx>{`
-          :global(#header-background) {
-            z-index: 1;
-          }
-        `}</style>
       </Layout>
     )
   }
 }
+
+Dev.childContextTypes = {
+  isMs: bool,
+}
+
 
 export default withI18next(['dev'])(Dev)

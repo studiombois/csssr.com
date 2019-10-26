@@ -98,8 +98,6 @@ export default class MyApp extends App {
       isMobile: matches,
     })
 
-
-
   render() {
     const { Component, pageProps } = this.props
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {}

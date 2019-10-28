@@ -26,6 +26,7 @@ const Layout = props => {
     <style jsx global>{`
       #main {
         overflow-x: hidden;
+        display: block;
       }
     `}</style>
   </Fragment>

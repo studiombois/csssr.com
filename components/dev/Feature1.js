@@ -227,20 +227,20 @@ const Feature1 = ({ t, image }) =>
 
         .font_feature_1 {
           top: 8.75rem;
-          left: 4.75rem;
+          left: 5.75rem;
         }
 
         .font_feature_2 {
-          top: 15.8rem;
-          left: 5.175rem;
+          top: 17.75rem;
+          left: 7.375rem;
           width: 13.75rem;
         }
 
         .font_feature_3 {
           width: 11.4375rem;
           height: 7rem;
-          top: 29.6rem;
-          left: -1rem;
+          top: 32rem;
+          left: 0;
         }
       }
     `}</style>

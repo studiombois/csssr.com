@@ -4,6 +4,7 @@ const formCSS = css.resolve`
   form {
     margin-top: 0.125rem;
     padding-top: 4rem;
+    padding-bottom: 3.375rem;
     grid-template-columns: repeat(10, 120px);
     width: 100%;
   }
@@ -11,10 +12,12 @@ const formCSS = css.resolve`
   h2 {
     grid-column: 3 / span 6;
     margin-bottom: 4.5rem;
+    -ms-grid-column: 5;
   }
 
   .field {
     grid-column: 2 / span 4;
+    -ms-grid-column: 5;
     margin-bottom: 2.0625rem;
   }
 
@@ -46,6 +49,7 @@ const formCSS = css.resolve`
   .button {
     margin-top: 0;
     grid-column: 5 / span 2;
+    -ms-grid-column: 9;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
@@ -59,6 +63,7 @@ const formCSS = css.resolve`
     form {
       grid-template-columns: repeat(10, 88px);
       width: 100%;
+      padding-bottom: 2rem;
     }
   }
 
@@ -68,6 +73,7 @@ const formCSS = css.resolve`
       grid-template-columns: repeat(8, 4rem);
       overflow: hidden;
       width: 100%;
+      padding-bottom: 2rem;
     }
 
     h2 {

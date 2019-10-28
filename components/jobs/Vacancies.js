@@ -198,7 +198,7 @@ class Vacancies extends PureComponent {
             <a href={rootUrl} >
               <img
                 className='logo'
-                src={`${require('../../static/icons/csssr_logo.svg')}`}
+                src={require('../../static/icons/csssr_logo.svg')}
                 alt={t('jobs:logoAlt')}
               />
             </a>
@@ -221,7 +221,6 @@ class Vacancies extends PureComponent {
               {this.props.vacancies.map(vacancy =>
                 <li key={vacancy.id}>
                   <Link
-                    prefetch
                     href={{ pathname: `/${lng}/job`, query: { jobPathName: vacancy.pathName } }}
                     as={`/${lng}/jobs/${vacancy.pathName}`}
                   >

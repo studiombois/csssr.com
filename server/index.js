@@ -10,10 +10,15 @@ const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const { pick } = require('ramda')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
-const schoolSubmitForm = require('./school-submit-form')
 const generateSitemap = require('./generate-sitemap').generateSitemap
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 const { isDevelopment, isProduction } = require('../utils/app-environment')
+
+import { supportedLanguages, supportedLocales, defaultLocaleByLanguage } from '../common/locales-settings'
+import pathCookieHeaderDetector from './path-cookie-header-detector'
+
+const languageDetector = new i18nextMiddleware.LanguageDetector()
+languageDetector.addDetector(pathCookieHeaderDetector)
 
 require('../utils/sentry')
 
@@ -22,22 +27,20 @@ const app = next({ dev: isDevelopment })
 const handle = app.getRequestHandler()
 
 i18n
-  .use(i18nextMiddleware.LanguageDetector)
+  .use(languageDetector)
   .use(i18nextNodeFsBackend)
   .init({
-    fallbackLng: 'en',
-    load: 'languageOnly',
-    whitelist: ['en', 'ru'],
-    preload: ['en', 'ru'],
-    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'school', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
+    load: 'all',
+    whitelist: [...supportedLanguages, ...supportedLocales],
+    preload: [...supportedLanguages, ...supportedLocales],
+    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
     detection: {
-      order: ['path', 'cookie', 'header'],
-      lookupCookie: 'language',
-      lookupFromPathIndex: 0,
+      order: ['pathCookieHeader'],
+      lookupCookie: 'locale',
       caches: ['cookie'],
     },
     backend: {
-      loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
+      loadPath: path.join(__dirname, '../static/locales/{{lng}}/{{ns}}.json'),
     },
   }, () => {
     app.prepare()
@@ -72,6 +75,16 @@ i18n
         oldPaths.forEach(url =>
           server.get(url, (req, res) => res.redirect(301, '/'))
         )
+
+        server.get('/:lng(ru|en)/jobs', (req, res) => {
+          const locale = defaultLocaleByLanguage[req.params.lng]
+          res.redirect(301, `/${locale.toLowerCase()}/jobs`)
+        })
+
+        server.get('/:lng(ru|en)/jobs/:jobName', (req, res) => {
+          const locale = defaultLocaleByLanguage[req.params.lng]
+          res.redirect(301, `/${locale.toLowerCase()}/jobs/${req.params.jobName}`)
+        })
 
         // Отключаем хедер x-powered-by. Зачем разглашать информацию, какой веб-сервер/фреймворк мы используем?
         server.disable('x-powered-by')
@@ -110,15 +123,13 @@ i18n
 
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
-        server.use(i18nextMiddleware.handle(i18n))
+        server.use(i18nextMiddleware.handle(i18n, {
+          ignoreRoutes: ['/_next/', '/static/'],
+        }))
 
         server.post('/api/submit-form', submitForm)
-        server.post('/api/school-submit-form', schoolSubmitForm)
 
         server.get('/', function (req, res) {
-          // TODO разобрать почему при навигации с фронта на рут ('/')
-          // рандомно переадресовывает то на /ru, то на /en
-          // похоже LanguageDetector сломался
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
           res.redirect(`/${language}`)
         })
@@ -143,8 +154,6 @@ i18n
             }),
           )
         }
-
-        server.use('/locales', express.static(path.join(__dirname, '../locales')))
 
         server.get('/robots.txt', function (req, res) {
           res.type('text/plain')

@@ -12,7 +12,7 @@ export default {
     href: '/ru/school',
   }, {
     sectionTitle: 'common:menu.jobs',
-    href: '/ru/jobs',
+    href: '/ru-RU/jobs',
   }],
   en: [{
     sectionTitle: 'common:menu.dev',
@@ -27,6 +27,6 @@ export default {
     href: '/ru/school',
   }, {
     sectionTitle: 'common:menu.jobs',
-    href: '/ru/jobs',
+    href: '/en-SG/jobs',
   }],
 }

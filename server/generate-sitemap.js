@@ -1,3 +1,5 @@
+import { supportedLocales } from '../common/locales-settings'
+
 const fetch = require('isomorphic-unfetch')
 const sitemap = require('sitemap')
 const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
@@ -31,6 +33,19 @@ const getVacancies = () =>
       }))
     )
   )
+
+const getJobsSitemapUrlsSettings = () => {
+  const links = supportedLocales.map(locale => ({
+    lang: locale,
+    url: `https://csssr.com/${locale}/jobs`,
+  }))
+  return supportedLocales.map(locale => ({
+    url: `https://csssr.com/${locale}/jobs`,
+    changefreq: 'weekly',
+    priority: 1,
+    links,
+  }))
+}
 
 const sitemapUrlsSettings = [{
   url: 'https://csssr.com/en',
@@ -67,21 +82,7 @@ const sitemapUrlsSettings = [{
   links: [
     {
       lang: 'en',
-      url: 'https://csssr.com/en/express',
-    },
-    {
-      lang: 'ru',
-      url: 'https://csssr.com/ru/express',
-    },
-  ],
-}, {
-  url: 'https://csssr.com/en/express',
-  changefreq: 'weekly',
-  priority: 1,
-  links: [
-    {
-      lang: 'en',
-      url: 'https://csssr.com/en/express',
+      url: 'https://express.csssr.com/',
     },
     {
       lang: 'ru',
@@ -148,39 +149,7 @@ const sitemapUrlsSettings = [{
   url: 'https://csssr.com/en/cookies-policy',
   changefreq: 'yearly',
   priority: 0.6,
-}, {
-  url: 'https://csssr.com/ru/jobs',
-  changefreq: 'weekly',
-  priority: 1,
-  links: [
-    {
-      lang: 'en',
-      url: 'https://csssr.com/en/jobs',
-    },
-    {
-      lang: 'ru',
-      url: 'https://csssr.com/ru/jobs',
-    },
-  ],
-}, {
-  url: 'https://csssr.com/en/jobs',
-  changefreq: 'weekly',
-  priority: 1,
-  links: [
-    {
-      lang: 'en',
-      url: 'https://csssr.com/en/jobs',
-    },
-    {
-      lang: 'ru',
-      url: 'https://csssr.com/ru/jobs',
-    },
-  ],
-}, {
-  url: 'https://csssr.com/ru/school',
-  changefreq: 'weekly',
-  priority: 1,
-}]
+}].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>
   getVacancies().then(vacanciesUrls =>

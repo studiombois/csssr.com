@@ -1,6 +1,8 @@
 const fs = require('fs')
 const sitemapUrls = require('./generate-sitemap').sitemapUrls
 
+import { supportedLocales } from '../common/locales-settings'
+
 const pagesUrls = []
 const walkSync = dir => {
   const files = fs.readdirSync(dir)
@@ -23,10 +25,8 @@ const walkSync = dir => {
         'https://csssr.com/_document',
         'https://csssr.com/_error',
         'https://csssr.com/fonts',
-        'https://csssr.com/en/job',
-        'https://csssr.com/ru/job',
         'https://csssr.com/en/school',
-      ]
+      ].join(supportedLocales.map(locale => `https://csssr.com/${locale}/job`))
 
       if (excludedPagesUrls.includes(url)) {
         return
@@ -45,7 +45,7 @@ pagesUrls.some(pageUrl => {
       \x1b[33m
       Страница ${pageUrl} не указана в файле генерации sitemap: ./server/generate-sitemap.js
 
-      Добавтье информацию о ней в объект sitemapUrlsSettings 
+      Добавьте информацию о ней в объект sitemapUrlsSettings 
       или внесите её в список исключений excludedPagesUrls в  ./server/check-sitemap.js
       \x1b[0m
     `

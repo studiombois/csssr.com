@@ -148,7 +148,6 @@ const divideSections = sections => {
 const mapVacancies = language => vacancy =>
   <li key={vacancy.id}>
     <Link
-      prefetch
       href={{ pathname: `/${language}/job`, query: { jobPathName: vacancy.pathName } }}
       as={`/${language}/jobs/${vacancy.pathName}`}
     >

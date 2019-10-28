@@ -33,5 +33,10 @@
       "checkbox": "Phone",
       "input": "Number"
     }
+  },
+  "faq": {
+    "alt": "Pictures a man with questions",
+    "title": "Have questions?",
+    "link": "See FAQ"
   }
 }

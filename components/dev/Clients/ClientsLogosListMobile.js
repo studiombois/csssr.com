@@ -24,7 +24,7 @@ const ClientsLogosListMobile = ({ t }) => clientsGroups.map((clientsGroup, index
       h3 {
         height: 1.75rem;
         border-bottom: 8px solid #345eff;
-        font-family: Roboto;
+        font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 0.75rem;
         font-weight: bold;
         font-style: normal;

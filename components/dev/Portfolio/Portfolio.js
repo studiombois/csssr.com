@@ -103,7 +103,7 @@ const Portfolio = ({ t, isMobile, portfolio }) =>
 
         h3 {
           height: 1.75rem;
-          font-family: Roboto;
+          font-family: 'Roboto', 'Arial', sans-serif;
           font-size: 0.75rem;
           font-weight: bold;
           font-style: normal;

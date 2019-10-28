@@ -4,9 +4,6 @@ pipeline {
     scmVars = ""
     branch = ""
     commit = ""
-    helmRelease = ""
-    options = ""
-    valuesFiles = ""
   }
   agent any
   stages {
@@ -28,18 +25,7 @@ pipeline {
           branch = scmVars.GIT_BRANCH.replace('origin/', '')
           commit = scmVars.GIT_COMMIT.substring(0,8)
           safeBranch = branch.replaceAll('/', '-').toLowerCase()
-
-          if (branch == 'production') {
-            helmRelease = "csssr-com"
-            valuesFile = "-f master/secrets.yaml -f master/values.yaml"
-            safeBranch = "prod"
-          } else if (branch.startsWith('release/')) {
-            helmRelease = "csssr-com-${safeBranch}"
-            valuesFile = "-f preprod/secrets.yaml -f preprod/values.yaml"
-            options = " --set branch=${safeBranch},site.domains={\"${safeBranch}.csssr.com,${safeBranch}.jobs.csssr.com,${safeBranch}.express.csssr.com,${safeBranch}.dev.csssr.com}\""
-          }
         }
-        echo "Helm Release: ${helmRelease}"
         echo "GIT_BRANCH: ${branch}"
         echo "GIT_COMMIT: ${commit}"
       }
@@ -65,38 +51,28 @@ pipeline {
     stage('Deploy Chart') {
       steps {
         script {
-          if (branch == 'production') {
-            sshagent(credentials: ['csssr-chart']) {
-              sh """
-              rm -rf csssr-chart
-              git clone git@github.com:csssr-team/csssr-chart.git
-              """
-            }
+          sshagent(credentials: ['csssr-com-chart']) {
+            sh """
+            rm -rf csssr.com-chart
+            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
+            """
+          }
 
+          if (branch == 'production') {
             sh """#!/bin/bash
             source ~/.bashrc
             set -x
-            cd csssr-chart
+            cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            helm secrets upgrade ${valuesFile} --set-string site.commit="${commit}" ${helmRelease} ./
+            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=csssr.com,branch=${branch},cert=csssr-com,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
             """
           } else if (branch.startsWith('release/')) {
-            sshagent(credentials: ['csssr-com-preprod-chart']) {
-              sh """
-              rm -rf csssr-com-preprod-chart
-              git clone git@github.com:csssr-team/csssr-com-preprod-chart.git
-              """
-            }
             sh """#!/bin/bash
             source ~/.bashrc
             set -x
-            cd csssr-com-preprod-chart
-            export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            if [[ "$BUILD_ID" -eq 1 ]]; then
-              helm secrets install . --namespace site-${safeBranch} --name ${helmRelease} ${valuesFile} --set-string site.commit="${commit}" ${options}
-            else
-              helm secrets upgrade ${valuesFile} --set-string site.commit="${commit}" ${options} ${helmRelease} ./
-            fi
+            cd csssr.com-chart
+            export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
+            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=${safeBranch}.csssr.cloud,branch=${branch},cert=csssr-cloud,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
             """
           }
         }

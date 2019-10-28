@@ -32,5 +32,10 @@
     "secondLink": "https://www.facebook.com/csssr/",
     "firstLinkText": "LinkedIn",
     "secondLinkText": "Facebook"
+  },
+  "faq": {
+    "alt": "Pictures a man with questions",
+    "title": "Any questions left?",
+    "link": "More answers in the FAQ"
   }
 }

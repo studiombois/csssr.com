@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import css from 'styled-jsx/css'
 import { equals } from 'ramda'
 import cn from 'classnames'
@@ -11,6 +11,7 @@ import CandidateInfoSection from './CandidateInfoSection'
 import AnimatedButton from '../ui-kit/AnimatedButton'
 import FormStateMessage from '../ui-kit/FormStateMessage'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+import Picture from '../Picture'
 
 const picture = css.resolve`
   picture {
@@ -40,6 +41,67 @@ const picture = css.resolve`
     }
   }
 `
+
+const pictureFaq = css.resolve`
+  picture {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12rem;
+    height: 8.75rem;
+    display: block;
+  }
+
+  picture.visible_on_mobile {
+    display: none;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 82%;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    picture {
+      margin-top: 0.75rem;
+      width: 9rem;
+    }
+
+    img {
+      object-position: 71%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      position: relative;
+      grid-column: 1 / span 6;
+      margin-top: 1.5rem;
+      width: auto;
+      height: 8.75rem;
+    }
+
+    picture.hidden_on_mobile {
+      display: none;
+    }
+
+    picture.visible_on_mobile {
+      display: block;
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 40%;
+    }
+  }
+`
+
 
 const picturesMap = {
   'project-manager-ru': 'Project_manager',
@@ -114,6 +176,13 @@ const mapVacancies = language => vacancy =>
         top: -0.125rem;
         left: -1.25rem;
         font-size: 0.75rem;
+      }
+
+      @media (min-width: 768px) and (max-width: 1279px) {
+        a {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
       }
 
       @media (max-width: 767px) {
@@ -221,8 +290,7 @@ class CandidateForm extends PureComponent {
     })
 
   renderVacancyImageAndLinks = () => {
-    const { vacancies, language, vacancy: { pathName, name } } = this.props
-
+    const { vacancies, language, vacancy: { pathName, name }, lng, t } = this.props
     const pictureName = picturesMap[pathName]
 
     return (
@@ -235,57 +303,116 @@ class CandidateForm extends PureComponent {
 
         <ul>
           {vacancies.map(mapVacancies(language))}
-        </ul><style jsx>{`
-        div {
-          grid-column: 9 / span 4;
+        </ul>
+
+        {lng === 'ru' &&
+          <Fragment>
+            <p className='faq-text font_p16-regular'>
+              {t('job:faq.title')}
+
+              <a
+                href='/ru/jobs-faq'
+                className='font_link-list_16'
+              >
+                {t('job:faq.link')}
+              </a>
+            </p>
+            <Picture className={`${pictureFaq.className} hidden_on_mobile`} image={{ namespace: 'jobs', key: 'faq', alt: t('job:faq.alt') }}/>
+          </Fragment>
         }
 
-        ul {
-          margin-top: 3.6875rem;
-          margin-left: auto;
-          margin-right: auto;
-          width: 17rem;
-        }
-
-        li:not(:last-child) {
-          margin-bottom: 1rem;
-        }
-
-        .hot-vacancy {
-          position: relative;
-        }
-
-        .hot-vacancy::before {
-          content: '🔥';
-          position: absolute;
-          top: -0.125rem;
-          left: -1.25rem;
-          font-size: 0.75rem;
-        }
-
-        @media (min-width: 1360px) and (max-width: 1919px) {
-          ul {
-            width: 13rem;
-          }
-        }
-
-        @media (min-width: 768px) and (max-width: 1359px) {
-          ul {
-            width: 12rem;
-          }
-        }
-
-        @media (max-width: 767px) {
+        <style jsx>{`
           div {
-            grid-column: 1 / span 6;
-            grid-row: 1;
+            grid-column: 9 / span 4;
           }
 
           ul {
-            display: none;
+            margin-top: 3.6875rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 17rem;
           }
-        }
-      `}</style>
+
+          li:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+
+          .hot-vacancy {
+            position: relative;
+          }
+
+          .hot-vacancy::before {
+            content: '🔥';
+            position: absolute;
+            top: -0.125rem;
+            left: -1.25rem;
+            font-size: 0.75rem;
+          }
+
+          .faq-text {
+            margin-top: 5rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 12rem;
+            display: block;
+            font-weight: 900;
+          }
+
+          .faq-text a {
+            margin-top: 0.5rem;
+            text-decoration: underline;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+          }
+
+          @media (min-width: 1360px) and (max-width: 1919px) {
+            ul {
+              width: 13rem;
+            }
+          }
+
+
+          @media (min-width: 1280px) and (max-width: 1359px) {
+            ul {
+              width: 12rem;
+            }
+          }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            ul {
+              width: 9rem;
+            }
+
+            .faq-text,
+            .faq-text a {
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+
+            .faq-text {
+              margin-top: 4.75rem;
+              width: 9rem;
+            }
+          }
+
+          @media (max-width: 767px) {
+            div {
+              grid-column: 1 / span 6;
+              grid-row: 1;
+            }
+
+            ul {
+              display: none;
+            }
+
+            .faq-text {
+              display: none;
+            }
+          }
+        `}
+        </style>
+        {pictureFaq.styles}
       </div>
     )
   }
@@ -298,6 +425,7 @@ class CandidateForm extends PureComponent {
       vacancy,
       vacancies,
       submitError,
+      lng,
       t,
     } = this.props
 
@@ -327,6 +455,22 @@ class CandidateForm extends PureComponent {
 
           <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />
           {beforeQuestSections.map((section, index) => <Section key={index} {...section} />)}
+
+          {lng === 'ru' &&
+            <div className='faq-text-container'>
+              <Picture className={`${pictureFaq.className} visible_on_mobile`} image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}/>
+              <p className='faq-text font_p16-regular'>
+                {t('job:faq.title')}
+
+                <a
+                  href='/ru/jobs-faq'
+                  className='font_link-list_16'
+                >
+                  {t('job:faq.link')}
+                </a>
+              </p>
+            </div>
+          }
         </FormRow>
 
         {otherSections.map((section, index) => <Section key={index} {...section} asRow />)}
@@ -395,6 +539,10 @@ class CandidateForm extends PureComponent {
             width: 12rem;
           }
 
+          .faq-text {
+            display: none;
+          }
+
           @media (max-width: 767px) {
             h1 {
               margin-top: 2.125rem;
@@ -427,9 +575,36 @@ class CandidateForm extends PureComponent {
             .button {
               width: 13.5rem;
             }
+
+            .faq-text-container {
+              position: relative;
+              width: 100%;
+            }
+
+            .faq-text {
+              display: block;
+            }
+
+            .faq-text  {
+              position: absolute;
+              top: 1.5rem;
+              max-width: 10rem;
+              font-weight: 900;
+            }
+
+            .faq-text,
+            .faq-text a {
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+
+            .faq-text a {
+              margin-top: 0.5rem;
+            }
           }
         `}</style>
         {picture.styles}
+        {pictureFaq.styles}
       </form>
     )
   }

@@ -45,11 +45,59 @@ const picture = css.resolve`
   }
 `
 
+const pictureFaq = css.resolve`
+  picture {
+    grid-column: 8 / span 5;
+    grid-row: 13;
+    margin-top: 3.5rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 33%;
+    }
+
+
+    @media (max-width: 1024px) {
+      img {
+        object-position: calc(100% + 6.5rem);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    picture {
+      position: relative;
+      grid-column: 1 / span 6;
+      margin-top: 1.5rem;
+      height: 100%;
+      max-height: 8.75rem;
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 40%;
+    }
+  }
+`
+
+
 const pictureHunter = css.resolve`
   picture {
     grid-column: 8 / span 1;
-    grid-row: 13;
-    margin-top: 13.0625rem;
+    grid-row: 14;
+    margin-top: 10.75rem;
   }
 
   img {
@@ -58,14 +106,14 @@ const pictureHunter = css.resolve`
 
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
-      margin-top: 13.5625rem;
+      margin-top: 11.375rem;
     }
   }
 
   @media (max-width: 767px) {
     picture {
       position: relative;
-      margin-top: 5.0625rem;
+      margin-top: 4.8125rem;
       grid-column: 1 / span 1;
     }
 
@@ -78,7 +126,7 @@ const pictureHunter = css.resolve`
 const footer = css.resolve`
   footer {
     margin-top: 12.5rem;
-    grid-row: 14;
+    grid-row: 15;
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
@@ -90,7 +138,7 @@ const footer = css.resolve`
   @media (max-width: 767px) {
     footer {
       position: relative;
-      margin-top: 5.5rem;
+      margin-top: 6rem;
     }
   }
 `
@@ -230,8 +278,23 @@ class Vacancies extends PureComponent {
           <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionFirst') }} />
           <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionSecond') }} />
 
-          <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: t('jobs:hunter.alt') }}/>
+          {lng === 'ru' &&
+            <Fragment>
+              <Picture className={pictureFaq.className} image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}/>
+              <p className='faq-text font_p16-regular'>
+                {t('jobs:faq.title')}
 
+                <a
+                  href='/ru/jobs-faq'
+                  className='font_link-list_16'
+                >
+                  {t('jobs:faq.link')}
+                </a>
+              </p>
+            </Fragment>
+          }
+
+          <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: t('jobs:hunter.alt') }}/>
           <p className='hunter-text font_p16-regular'>
             {t('jobs:hunter.description')}&nbsp;<a href={t('jobs:hunter.firstLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.firstLinkText')}</a> <span className='hunter-text-inner'>{t('jobs:hunter.and')} <a href={t('jobs:hunter.secondLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.secondLinkText')}</a></span>.
           </p>
@@ -329,9 +392,24 @@ class Vacancies extends PureComponent {
           }
 
           .hunter-text {
-            margin-top: 13rem;
+            margin-top: 10.75rem;
             grid-column: 9 / span 3;
+            grid-row: 14;
+          }
+
+          .faq-text {
+            margin-top: 6.5rem;
+            grid-column: 8 / span 2;
             grid-row: 13;
+            font-weight: 900;
+          }
+
+          .faq-text a {
+            margin-top: 0.5rem;
+            text-decoration: underline;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
           }
 
           .hunter-text-inner {
@@ -480,11 +558,19 @@ class Vacancies extends PureComponent {
               height: 1rem;
             }
 
+            .faq-text,
             .hunter-text {
-              grid-column: 9 / span 5;
-              margin-top: 14rem;
               font-size: 1rem;
               line-height: 1.5rem;
+            }
+
+            .faq-text {
+              grid-column: 8 / span 3;
+            }
+
+            .hunter-text {
+              grid-column: 9 / span 5;
+              margin-top: 11.8125rem;
             }
 
             .font_link-list_16 {
@@ -620,8 +706,13 @@ class Vacancies extends PureComponent {
               left: -1.25rem;
             }
 
+            .faq-text  {
+              margin-top: 4.5rem;
+              grid-column: 1 / span 4;
+            }
+
             .hunter-text {
-              margin-top: 5rem;
+              margin-top: 4.8125rem;
               grid-column: 2 / span 5;
             }
 
@@ -658,6 +749,7 @@ class Vacancies extends PureComponent {
         {footer.styles}
         {picture.styles}
         {pictureHunter.styles}
+        {pictureFaq.styles}
       </Fragment>
     )
   }

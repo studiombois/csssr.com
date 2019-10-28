@@ -32,7 +32,7 @@ const TitleAndList = ({ list, title, isChild }) => {
         @media (max-width: 767px) {
           h2, h3 {
             margin-top: 2.4375rem;
-            font-size: 16px;
+            font-size: 1rem;
           }
 
           ul {

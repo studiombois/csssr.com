@@ -31,6 +31,7 @@ class Dev extends PureComponent {
     return { shuffledPortfolio }
   }
 
+  // todo после обновления react обновить context api https://jira.csssr.io/browse/COM-830
   getChildContext() {
     return { isMsBrowser: this.props.isMsBrowser }
   }

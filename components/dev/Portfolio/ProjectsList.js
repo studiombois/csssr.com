@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { arrayOf, shape, string, number } from 'prop-types'
+import { arrayOf, shape, string, number, bool } from 'prop-types'
 import cn from 'classnames'
 import Tabs from '../Tabs'
 import Project from './Project'
@@ -53,14 +53,19 @@ class ProjectsList extends PureComponent {
     if (this.state.isCut) {
       this.listCutHeight = portfolioSection.offsetHeight
     }
+
     const scrollToNextBlock = () => {
       if (this.state.isCut) {
         const scrollToOffset = portfolioSection.offsetTop + this.listCutHeight
 
-        window.scrollTo({
-          top: scrollToOffset,
-          behavior: 'instant',
-        })
+        if (this.context.isMsBrowser) {
+          document.documentElement.scrollTop = scrollToOffset
+        } else {
+          window.scrollTo({
+            top: scrollToOffset,
+            behavior: 'instant',
+          })
+        }
       }
     }
 
@@ -204,5 +209,10 @@ class ProjectsList extends PureComponent {
     )
   }
 }
+
+ProjectsList.contextTypes = {
+  isMsBrowser: bool,
+}
+
 
 export default translate()(ProjectsList)

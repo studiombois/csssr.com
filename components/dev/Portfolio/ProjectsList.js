@@ -58,7 +58,7 @@ class ProjectsList extends PureComponent {
       if (this.state.isCut) {
         const scrollToOffset = portfolioSection.offsetTop + this.listCutHeight
 
-        if (this.context.isMs) {
+        if (this.context.isMsBrowser) {
           document.documentElement.scrollTop = scrollToOffset
         } else {
           window.scrollTo({
@@ -211,7 +211,7 @@ class ProjectsList extends PureComponent {
 }
 
 ProjectsList.contextTypes = {
-  isMs: bool,
+  isMsBrowser: bool,
 }
 
 

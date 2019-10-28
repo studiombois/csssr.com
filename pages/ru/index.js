@@ -32,7 +32,7 @@ class Dev extends PureComponent {
   }
 
   getChildContext() {
-    return { isMs: this.props.isMsBrowser }
+    return { isMsBrowser: this.props.isMsBrowser }
   }
 
   render() {
@@ -82,7 +82,7 @@ class Dev extends PureComponent {
 }
 
 Dev.childContextTypes = {
-  isMs: bool,
+  isMsBrowser: bool,
 }
 
 

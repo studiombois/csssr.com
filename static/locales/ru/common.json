@@ -27,13 +27,12 @@
     "alliancePartText": "CSSSR является частью"
   },
   "sectionName": {
-    "ru": "Фронтенд разработка",
-    "ru/express": "Вёрстка",
-    "ru/jobs": "Работа в CSSSR",
-    "ru/job": "Работа в CSSSR",
-    "ru/school": "Школа",
-    "ru/privacy-policy": "Политика конфиденциальности",
-    "ru/mvp": "Фронтенд разработка"
+    "dev": "Фронтенд разработка",
+    "express": "Вёрстка",
+    "jobs": "Работа в CSSSR",
+    "job": "Работа в CSSSR",
+    "privacy-policy": "Политика конфиденциальности",
+    "mvp": "Фронтенд разработка"
   },
   "noPage": "Данная страница не доступна на русском языке.",
   "checkBoxesText": {

@@ -1,6 +1,6 @@
-import i18n from 'i18next'
-import XHR from 'i18next-xhr-backend'
-// const { isDevelopment } = require('../utils/app-environment')
+const i18n = require('i18next')
+const XHR = require('i18next-xhr-backend')
+const { supportedLanguages, supportedLocales } = require('./locales-settings')
 
 // for browser use xhr backend to load translations
 if (process.browser) {
@@ -8,7 +8,7 @@ if (process.browser) {
     .use(XHR)
     .init({
       load: 'all',
-      whitelist: ['en', 'ru', 'ru-RU', 'ru-EE', 'en-EE', 'en-SG'],
+      whitelist: [...supportedLanguages, ...supportedLocales],
       ns: ['common'],
       defaultNS: 'common',
       backend: {

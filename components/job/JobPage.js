@@ -147,9 +147,9 @@ const onSubmit = t => async values => {
 
 const focusOnErrors = createDecorator()
 
-class Job extends PureComponent {
+class JobPage extends PureComponent {
   static async getInitialProps({ res, query }) {
-    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?lang=ru`)
+    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?lang=en`)
     const vacancies = await response.json()
 
     const vacancy = vacancies.find(v => v.pathName === query.jobPathName)
@@ -184,6 +184,8 @@ class Job extends PureComponent {
             logoAlt: 'CSSSR jobs logo',
             isLogoLink: true,
             isBurgerVisible: true,
+            menuName: t('common:menu.job'),
+            sectionName: t('common:sectionName.job'),
           }}
         >
           <Head
@@ -210,4 +212,4 @@ class Job extends PureComponent {
   }
 }
 
-export default withError(withI18next(['job'])(Job))
+export default withError(withI18next(['job'])(JobPage))

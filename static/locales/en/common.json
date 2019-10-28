@@ -28,14 +28,13 @@
     "alliancePartText": "CSSSR is a part of"
   },
   "sectionName": {
-    "en": "FRONT-END DEVELOPMENT",
-    "en/express": "Express frontend",
-    "en/jobs": "Jobs",
-    "en/job": "Job",
-    "en/school": "School",
-    "en/privacy-policy": "Privacy Policy",
-    "en/cookies-policy": "Cookies Policy",
-    "en/mvp": "FRONT-END DEVELOPMENT"
+    "dev": "FRONT-END DEVELOPMENT",
+    "express": "Express frontend",
+    "jobs": "Jobs",
+    "job": "Job",
+    "privacy-policy": "Privacy Policy",
+    "cookies-policy": "Cookies Policy",
+    "mvp": "FRONT-END DEVELOPMENT"
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {

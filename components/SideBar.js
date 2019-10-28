@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react'
 import { withRouter } from 'next/router'
-import { bool, func } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
 import CrossIcon from '../static/icons/cross.svg'
 import ClickOutside from './ui-kit/ClickOutside'
-import getSectionName from '../utils/getSectionName'
-import getLanguageRedirectionLink from '../utils/getLanguageRedirectionLink'
 import Link from 'next/link'
+import isAbsoluteUrl from '../utils/isAbsoluteUrl'
+import i18n from '../common/i18n'
+import { defaultLocaleByLanguage } from '../common/locales-settings'
 
 const items = [{
   path: '',
@@ -34,66 +35,98 @@ const items = [{
     to: 'https://express.csssr.com',
   },
 }, {
-  path: '/school',
+  path: 'https://school.csssr.com/ru',
   key: 'common:menu.school',
-  redirect: {
-    when: 'always',
-    from: '/en/school',
-    to: '/ru/school',
-  },
 }, {
   path: '/jobs',
   key: 'common:menu.jobs',
+  useLocale: true,
 }]
 
 const crossIcon = <CrossIcon width='100%' height='100%' />
 
 export class SideBar extends PureComponent {
-  state = {
-    foreignLanguagePageRedirectionLink: '',
-  }
-
   static propTypes = {
     isOpened: bool,
     onToggle: func,
     onClose: func,
+    menuName: string,
   }
 
-  componentWillMount() {
+  getLanguageRedirectionLink = () => {
     /*
       тут asPath (https://github.com/zeit/next.js/#intercepting-popstate)
       для того что бы на страницах вакансий переадресация при смене языка
       была на эти же страницы, а не на /jobs
     */
-    const { router: { asPath }, lng } = this.props
+    const { router: { asPath }, locale } = this.props
 
-    getLanguageRedirectionLink(asPath, lng).then(foreignLanguagePageRedirectionLink => {
-      this.setState({
-        foreignLanguagePageRedirectionLink,
-      })
-    })
+    if (asPath === '/ru/express') {
+      return 'https://express.csssr.com'
+    }
+
+    const otherLanguage = {
+      ru: 'en',
+      en: 'ru',
+    }
+
+    const language = i18n.services.languageUtils.getLanguagePartFromCode(locale)
+
+    if (asPath.includes('/jobs')) {
+      return `/${defaultLocaleByLanguage[otherLanguage[language]].toLowerCase()}/jobs`
+    }
+
+    const newPathnameParts = asPath.split('/')
+
+    newPathnameParts[1] = otherLanguage[newPathnameParts[1]]
+
+    return newPathnameParts.join('/')
   }
 
-  renderSubItem = ({ path, key, redirect }) => {
-    const { router: { pathname }, t, lng } = this.props
-    const languageHref = `/${lng}${path}`
-    const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
-    const href = shouldBeRedirected ? redirect.to : languageHref
+  getNavItem = ({ path, key, subItems, redirect, useLocale }) => {
+    const { router: { pathname }, lng, locale } = this.props
+    const languageHref = `/${useLocale ? locale : lng}${path}`
+    let href
+    let shouldReload
+    if (isAbsoluteUrl(path)) {
+      href = path
+      shouldReload = true
+    } else {
+      const shouldBeRedirected = redirect && redirect.from === languageHref
+      if (shouldBeRedirected) {
+        href = redirect.to
+        shouldReload = true
+      } else {
+        href = languageHref
+        shouldReload = false
+      }
+    }
+
+    return {
+      key,
+      shouldReload,
+      href,
+      isActive: pathname === languageHref,
+      subItems: subItems && subItems.map(this.getNavItem),
+    }
+  }
+
+  renderSubItem = ({ key, shouldReload, href, isActive }) => {
+    const { t } = this.props
 
     return (
       <li key={key} className='sub-item'>
-        {shouldBeRedirected
+        {shouldReload
           ? <a
             href={href}
             className={cn('sub-link', {
-              'sub-link_active': pathname === languageHref,
+              'sub-link_active': isActive,
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
-          />
-          : <Link href={href}>
+          /> : <Link href={href}>
             <a
               className={cn('sub-link', {
-                'sub-link_active': pathname === languageHref,
+                'sub-link_active': isActive,
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
             />
@@ -131,26 +164,22 @@ export class SideBar extends PureComponent {
     )
   }
 
-  renderNavItem = ({ path, key, redirect, subItems }) => {
-    const { router: { pathname }, t, lng } = this.props
-    const languageHref = `/${lng}${path}`
-    const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
-    const href = shouldBeRedirected ? redirect.to : languageHref
+  renderNavItem = ({ key, shouldReload, href, isActive, subItems }) => {
+    const { t } = this.props
 
     return (
       <li key={key} className='item'>
-        {shouldBeRedirected
+        {shouldReload
           ? <a
             href={href}
             className={cn('font_burger-menu link', {
-              link_active: pathname === languageHref,
+              link_active: isActive,
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
-          />
-          : <Link href={href}>
+          /> : <Link href={href}>
             <a
               className={cn('font_burger-menu link', {
-                link_active: pathname === languageHref,
+                link_active: isActive,
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
             />
@@ -195,7 +224,9 @@ export class SideBar extends PureComponent {
   }
 
   render() {
-    const { router: { pathname }, isOpened, onToggle, onClose, t } = this.props
+    const { isOpened, onToggle, onClose, t, menuName } = this.props
+
+    const navItems = items.map(this.getNavItem)
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
@@ -208,15 +239,15 @@ export class SideBar extends PureComponent {
             <div className='top'>
               <div
                 className='font_perforator-16-black section-name'
-                dangerouslySetInnerHTML={{ __html: t(getSectionName(pathname)) }}
+                dangerouslySetInnerHTML={{ __html: menuName }}
               />
               <ul className='list'>
-                {items.map(this.renderNavItem)}
+                {navItems.map(this.renderNavItem)}
               </ul>
             </div>
             <div className='bottom'>
               <a
-                href={this.state.foreignLanguagePageRedirectionLink}
+                href={this.getLanguageRedirectionLink()}
                 className='font_link-list_16'
               >
                 {t('common:languageRedirect.text')}

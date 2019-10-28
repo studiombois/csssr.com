@@ -11,12 +11,13 @@
     "eslint-fix": "eslint --fix .",
     "analyze": "cross-env ANALYZE=1 next build",
     "optimize-images": "node -e 'require(\"optimize-png-for-web\")(process.argv[1], \"./optimized-images\", {})'",
-    "check-sitemap": "node ./server/check-sitemap.js"
+    "check-sitemap": "node -r esm ./server/check-sitemap.js"
   },
   "dependencies": {
     "@sentry/browser": "^4.4.2",
     "@sentry/node": "^4.3.4",
     "@zeit/next-source-maps": "0.0.4-canary.1",
+    "accept-language-parser": "^1.5.0",
     "babel-plugin-inline-react-svg": "^1.1.0",
     "babel-plugin-ramda": "^2.0.0",
     "body-parser": "^1.18.3",

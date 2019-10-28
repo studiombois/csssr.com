@@ -5,10 +5,12 @@ import withI18next from '../../utils/withI18next'
 import Layout from '../../components/Layout'
 import Vacancies from '../../components/jobs/Vacancies'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
+import i18n from '../../common/i18n'
 
-class Jobs extends PureComponent {
-  static async getInitialProps() {
-    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?lang=en`)
+class JobsPage extends PureComponent {
+  static async getInitialProps({ req }) {
+    const locale = req ? req.language : i18n.language
+    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?lang=${locale}`)
     const vacancies = await res.json()
 
     return { vacancies }
@@ -19,7 +21,7 @@ class Jobs extends PureComponent {
     return (
       <Fragment>
         <Layout
-          headerProps={{ isBurgerVisible: true }}
+          headerProps={{ isBurgerVisible: true, menuName: t('common:menu.jobs'), sectionName: t('common:sectionName.jobs') }}
           footerProps={{ noFooter: true }}
         >
           <Head
@@ -44,4 +46,4 @@ class Jobs extends PureComponent {
   }
 }
 
-export default withI18next(['jobs'])(Jobs)
+export default withI18next(['jobs'])(JobsPage)

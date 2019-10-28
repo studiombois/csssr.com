@@ -5,7 +5,7 @@ import { devSocialLinks } from '../../data/jobs/footerLinks'
 
 const PrivacyPolicyPage = ({ t, isMsBrowser, children }) =>
   <Layout
-    headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser }}
+    headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser, title: t('common:menu.privacy-policy'), sectionName: t('common:sectionName.privacy-policy') }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
     <Head

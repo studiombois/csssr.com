@@ -36,7 +36,7 @@ class MVPPage extends PureComponent {
 
     return (
       <Layout
-        headerProps={{ isLogoLink: true, isBurgerVisible: true }}
+        headerProps={{ isLogoLink: true, isBurgerVisible: true, title: 'common:menu.mvp', menuName: t('common:menu.mvp'), sectionName: t('common:sectionName.mvp') }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head title={t('mvp:meta.title')} description={t('mvp:meta.description')} />

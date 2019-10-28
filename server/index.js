@@ -14,6 +14,12 @@ const generateSitemap = require('./generate-sitemap').generateSitemap
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 
+import { supportedLanguages, supportedLocales, defaultLocaleByLanguage } from '../common/locales-settings'
+import pathCookieHeaderDetector from './path-cookie-header-detector'
+
+const languageDetector = new i18nextMiddleware.LanguageDetector()
+languageDetector.addDetector(pathCookieHeaderDetector)
+
 require('../utils/sentry')
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -21,16 +27,16 @@ const app = next({ dev: isDevelopment })
 const handle = app.getRequestHandler()
 
 i18n
-  .use(i18nextMiddleware.LanguageDetector)
+  .use(languageDetector)
   .use(i18nextNodeFsBackend)
   .init({
-    whitelist: ['en', 'ru', 'ru-RU', 'ru-EE', 'en-EE', 'en-SG'],
-    preload: ['en', 'ru', 'ru-RU', 'ru-EE', 'en-EE', 'en-SG'],
+    load: 'all',
+    whitelist: [...supportedLanguages, ...supportedLocales],
+    preload: [...supportedLanguages, ...supportedLocales],
     ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
     detection: {
-      order: ['path', 'cookie', 'header'],
+      order: ['pathCookieHeader'],
       lookupCookie: 'locale',
-      lookupFromPathIndex: 0,
       caches: ['cookie'],
     },
     backend: {
@@ -70,6 +76,16 @@ i18n
           server.get(url, (req, res) => res.redirect(301, '/'))
         )
 
+        server.get('/:lng(ru|en)/jobs', (req, res) => {
+          const locale = defaultLocaleByLanguage[req.params.lng]
+          res.redirect(301, `/${locale.toLowerCase()}/jobs`)
+        })
+
+        server.get('/:lng(ru|en)/jobs/:jobName', (req, res) => {
+          const locale = defaultLocaleByLanguage[req.params.lng]
+          res.redirect(301, `/${locale.toLowerCase()}/jobs/${req.params.jobName}`)
+        })
+
         // Отключаем хедер x-powered-by. Зачем разглашать информацию, какой веб-сервер/фреймворк мы используем?
         server.disable('x-powered-by')
 
@@ -108,13 +124,7 @@ i18n
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
         server.use(i18nextMiddleware.handle(i18n, {
-          ignoreRoutes: req => {
-            const isMethodOptions = req.method === 'OPTIONS'
-            const patternsToIgnore = ['/_next/', '/static/']
-            return isMethodOptions || patternsToIgnore.reduce((memo, pattern) => {
-              return memo || req.path.includes(pattern)
-            }, false)
-          },
+          ignoreRoutes: ['/_next/', '/static/'],
         }))
 
         server.post('/api/submit-form', submitForm)

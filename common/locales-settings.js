@@ -1,9 +1,9 @@
 export const supportedLanguages = ['en', 'ru']
-export const supportedLocales = ['ru-RU', 'ru-EE', 'en-EE', 'en-SG', 'en-US']
+export const supportedLocales = ['ru-ru', 'ru-ee', 'en-ee', 'en-sg', 'en-us']
 
 export const defaultLocaleByLanguage = {
-  en: 'en-SG',
-  ru: 'ru-RU',
+  en: 'en-sg',
+  ru: 'ru-ru',
 }
 
-export const defaultLocale = 'en-SG'
+export const defaultLocale = 'en-sg'

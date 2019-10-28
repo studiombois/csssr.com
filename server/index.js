@@ -33,6 +33,7 @@ i18n
     load: 'all',
     whitelist: [...supportedLanguages, ...supportedLocales],
     preload: [...supportedLanguages, ...supportedLocales],
+    lowerCaseLng: true,
     ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
     detection: {
       order: ['pathCookieHeader'],
@@ -78,12 +79,12 @@ i18n
 
         server.get('/:lng(ru|en)/jobs', (req, res) => {
           const locale = defaultLocaleByLanguage[req.params.lng]
-          res.redirect(301, `/${locale.toLowerCase()}/jobs`)
+          res.redirect(301, `/${locale}/jobs`)
         })
 
         server.get('/:lng(ru|en)/jobs/:jobName', (req, res) => {
           const locale = defaultLocaleByLanguage[req.params.lng]
-          res.redirect(301, `/${locale.toLowerCase()}/jobs/${req.params.jobName}`)
+          res.redirect(301, `/${locale}/jobs/${req.params.jobName}`)
         })
 
         // Отключаем хедер x-powered-by. Зачем разглашать информацию, какой веб-сервер/фреймворк мы используем?

@@ -9,26 +9,26 @@ const log = (...args) => {
   }
 }
 
-// locale = language-REGION; примеры: ru-RU, ru-EE, en-US, en-SG.
+// locale = language-region; примеры: ru-ru, ru-ee, en-us, en-sg.
 //
 // Алгоритм определения локали:
 // 0. Входные данные:
-//       путь в url (path) может быть undefined, en/ru, en-US/ru-EE;
-//       кука (cookie) может быть undefined, en/ru, en-US/ru-EE;
+//       путь в url (path) может быть undefined, en/ru, en-us/ru-ee;
+//       кука (cookie) может быть undefined, en/ru, en-us/ru-ee;
 //       хедер accept-language (header) может содержать что угодно.
 // 1. Если в пути не локаль из whitelist, то идём дальше;
 // 2. Если в пути только часть language без региона и этот language в whitelist,
 //    то ищем наиболее подходящую локаль, используя значение из cookie;
 // 3. Если в cookie не локаль из whitelist, то идём дальше;
 // 4. Парсим header, пытаемся найти совпадение с whitelist;
-// 5. Если смогли определить ru язык, но локаль не совпала полностью, то ставим ru-RU;
-// 6. Если смогли определить en язык, но локаль не совпала полностью, то ставим en-SG;
-// 7. Если ничего не подошло, то ставим по умолчанию en-SG.
+// 5. Если смогли определить ru язык, но локаль не совпала полностью, то ставим ru-ru;
+// 6. Если смогли определить en язык, но локаль не совпала полностью, то ставим en-sg;
+// 7. Если ничего не подошло, то ставим по умолчанию en-sg.
 //
 // После определения локаль полностью записывается в куку locale.
 //
 // Мы поддерживаем следующие локали:
-// ru-RU, ru-EE, en-EE, en-SG, en-US
+// ru-ru, ru-ee, en-ee, en-sg, en-us
 
 const isLocaleLanguage = locale => locale === i18n.services.languageUtils.getLanguagePartFromCode(locale)
 const isLocaleInWhitelist = locale => supportedLocales.includes(i18n.services.languageUtils.formatLanguageCode(locale))
@@ -48,11 +48,11 @@ export default {
     const localeFromCookie = req.cookies[options.lookupCookie]
 
     // 2
-    // path=/ru, cookie=ru-EE => ru-EE
-    // path=/ru, cookie=ru-AB => ru-RU (by default)
-    // path=/ru, cookie=en-US => ru-RU (by default)
-    // path=/ru, cookie=undefined => ru-RU (by default)
-    // path=/ru, cookie=ru => ru-RU (by default)
+    // path=/ru, cookie=ru-ee => ru-ee
+    // path=/ru, cookie=ru-ab => ru-ru (by default)
+    // path=/ru, cookie=en-us => ru-ru (by default)
+    // path=/ru, cookie=undefined => ru-ru (by default)
+    // path=/ru, cookie=ru => ru-ru (by default)
     if (isLocaleLanguage(localeFromPath) && isLanguageInWhitelist(localeFromPath)) {
       if (
         !isLocaleLanguage(localeFromCookie) &&

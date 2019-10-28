@@ -9,6 +9,7 @@ if (process.browser) {
     .init({
       load: 'all',
       whitelist: [...supportedLanguages, ...supportedLocales],
+      lowerCaseLng: true,
       ns: ['common'],
       defaultNS: 'common',
       backend: {
@@ -25,6 +26,10 @@ i18n.getInitialProps = (req, namespaces) => {
 
   if (typeof namespaces === 'string') {
     namespaces = [namespaces]
+  }
+
+  if (!req.i18n) {
+    return {}
   }
 
   req.i18n.toJSON = () => null // do not serialize i18next instance and send to client

@@ -73,7 +73,7 @@ export class SideBar extends PureComponent {
     const language = i18n.services.languageUtils.getLanguagePartFromCode(locale)
 
     if (asPath.includes('/jobs')) {
-      return `/${defaultLocaleByLanguage[otherLanguage[language]].toLowerCase()}/jobs`
+      return `/${defaultLocaleByLanguage[otherLanguage[language]]}/jobs`
     }
 
     const newPathnameParts = asPath.split('/')

@@ -57,7 +57,8 @@ const statusMessageStyles = css`
   @media (min-width: 768px) and (max-width: 1279px) {
     img {
       margin-top: 12rem;
-      width: 8rem;
+      max-width: 8rem;
+      flex-basis: 8rem;
     }
 
     p {
@@ -75,7 +76,8 @@ const statusMessageStyles = css`
   @media (max-width: 767px) {
     img {
       margin-top: 10.5rem;
-      width: 5.5rem;
+      max-width: 5.5rem;
+      flex-basis: 5.5rem;
     }
 
     p {

@@ -16,7 +16,7 @@ const Layout = props => {
     <Settings />
     <Text />
     <Header {...props.headerProps} />
-    <main id='main' style={{ display: 'block' }}>
+    <main id='main'>
       {children}
     </main>
     {!props.footerProps.noFooter &&
@@ -26,6 +26,7 @@ const Layout = props => {
     <style jsx global>{`
       #main {
         overflow-x: hidden;
+        display: block;
       }
     `}</style>
   </Fragment>

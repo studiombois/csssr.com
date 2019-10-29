@@ -390,7 +390,6 @@ class ContactForm extends PureComponent {
 
         <style jsx>{`
           form {
-            position: relative;
             margin-right: auto;
             margin-left: auto;
             padding-top: 8.5rem;

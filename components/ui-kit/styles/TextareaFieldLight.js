@@ -21,6 +21,7 @@ export default css`
     border-radius: 0;
     caret-color: #4a4a4a;
     resize: vertical;
+    overflow: auto;
   }
 
   textarea::placeholder {

@@ -107,6 +107,7 @@ class Hire extends PureComponent {
             margin-right: auto;
             padding-top: 16rem;
             width: 1792px;
+            overflow-x: hidden;
           }
 
           blockquote {

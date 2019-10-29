@@ -145,11 +145,11 @@ const divideSections = sections => {
   ]
 }
 
-const mapVacancies = language => vacancy =>
+const mapVacancies = locale => vacancy =>
   <li key={vacancy.id}>
     <Link
-      href={{ pathname: `/${language}/job`, query: { jobPathName: vacancy.pathName } }}
-      as={`/${language}/jobs/${vacancy.pathName}`}
+      href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
+      as={`/${locale}/jobs/${vacancy.pathName}`}
     >
       <a
         className={cn({
@@ -290,7 +290,7 @@ class CandidateForm extends PureComponent {
     })
 
   renderVacancyImageAndLinks = () => {
-    const { vacancies, language, vacancy: { pathName, name }, lng, t } = this.props
+    const { vacancies, locale, vacancy: { pathName, name }, lng, t } = this.props
     const pictureName = picturesMap[pathName]
 
     return (
@@ -302,7 +302,7 @@ class CandidateForm extends PureComponent {
         />}
 
         <ul>
-          {vacancies.map(mapVacancies(language))}
+          {vacancies.map(mapVacancies(locale))}
         </ul>
 
         {lng === 'ru' &&
@@ -426,6 +426,7 @@ class CandidateForm extends PureComponent {
       vacancies,
       submitError,
       lng,
+      locale,
       t,
     } = this.props
 
@@ -503,7 +504,7 @@ class CandidateForm extends PureComponent {
         </FormRow>
 
         <ul>
-          {vacancies.map(mapVacancies)}
+          {vacancies.map(mapVacancies(locale))}
         </ul>
 
         <style jsx>{`

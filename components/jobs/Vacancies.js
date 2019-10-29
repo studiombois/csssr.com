@@ -186,9 +186,10 @@ class Vacancies extends PureComponent {
   render() {
     const {
       lng,
+      locale,
       t,
     } = this.props
-    const rootUrl = `/${lng}`
+    const rootUrl = `/${locale}`
     return (
       <Fragment>
         <div className='half-page-picture' />
@@ -221,8 +222,8 @@ class Vacancies extends PureComponent {
               {this.props.vacancies.map(vacancy =>
                 <li key={vacancy.id}>
                   <Link
-                    href={{ pathname: `/${lng}/job`, query: { jobPathName: vacancy.pathName } }}
-                    as={`/${lng}/jobs/${vacancy.pathName}`}
+                    href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
+                    as={`/${locale}/jobs/${vacancy.pathName}`}
                   >
                     <a
                       className={cn({

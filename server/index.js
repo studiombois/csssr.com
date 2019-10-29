@@ -179,17 +179,10 @@ i18n
           )
         })
 
-        server.get('/:language/jobs/:jobPathName', (req, res) => {
+        server.get('/:locale/jobs/:jobPathName', (req, res) => {
           const params = { jobPathName: req.params.jobPathName, preview: req.query.hasOwnProperty('preview') }
 
-          const languageMap = {
-            'ru-ru': 'ru',
-            'en-us': 'en',
-          }
-
-          const language = languageMap[req.params.language] || req.params.language
-
-          return app.render(req, res, `/${language}/job`, params)
+          return app.render(req, res, `/${req.params.locale}/job`, params)
         })
 
         server.get('*', (req, res) => {

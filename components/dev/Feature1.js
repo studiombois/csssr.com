@@ -5,13 +5,20 @@ import css from 'styled-jsx/css'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
-  picture {
-    display: block;
+  @media (max-width: 767px) {
+    img {
+      width: auto;
+    }
   }
 
-  img {
-    height: auto;
-    display: block;
+  @media (min-width: 768px) {
+    picture {
+      display: block;
+    }
+    img {
+      height: auto;
+      display: block;
+    }
   }
 `
 

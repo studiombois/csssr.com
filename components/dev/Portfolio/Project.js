@@ -81,7 +81,18 @@ const Project = project =>
     <style jsx>{`
       li {
         display: block;
-        -ms-grid-row: ${Math.ceil((project.index + 1) / 2)};
+      }
+
+      @media (max-width: 1279px) {
+        li {
+          -ms-grid-row: ${Math.ceil((project.index + 1))};
+        }
+      }
+
+      @media (min-width: 1280px) {
+        li {
+          -ms-grid-row: ${Math.ceil((project.index + 1) / 2)};
+        }
       }
       
       li:nth-child(odd) {

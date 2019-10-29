@@ -31,7 +31,7 @@ const log = (...args) => {
 // ru-ru, ru-ee, en-ee, en-sg, en-us
 
 const isLocaleLanguage = locale => locale === i18n.services.languageUtils.getLanguagePartFromCode(locale)
-const isLocaleInWhitelist = locale => supportedLocales.includes(i18n.services.languageUtils.formatLanguageCode(locale))
+const isLocaleInWhitelist = locale => supportedLocales.includes(locale)
 const isLanguageInWhitelist = locale => supportedLanguages.includes(locale)
 
 export default {

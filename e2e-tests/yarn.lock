@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@csssr/e2e-tools-nightwatch@~1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.6.3.tgz#57fee5858ea1e11a5c3125834ea9efa8326ddd96"
-  integrity sha512-0/pw2mnoxUPIlkRQu3mf7hwEVDGuVokflqbvAxFm5XHnlT4Y8+DjKAKvYj7wxAcCn4jllfgqunZ8tveSa8V5Nw==
+"@csssr/e2e-tools-nightwatch@~1.6.5":
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.6.5.tgz#77733cb42cda2ff87c87f4b0590bd1dd06941a36"
+  integrity sha512-OFirXOPoSeGCgDedBB05r1XoxtOb/mVFQDpre16GnZyOszxLLfG6yfW3Xjj7KSKFwxSx9lPJrQSC0q5l0w2kMw==
   dependencies:
     "@csssr/e2e-tools" "^1.1.0"
     "@nitive/mocha-testrail-reporter" "~0.1.4"

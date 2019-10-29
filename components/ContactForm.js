@@ -177,6 +177,14 @@ class ContactForm extends PureComponent {
       top: offset,
       behavior: 'smooth',
     })
+    if (this.context.isMsBrowser) {
+      document.documentElement.scrollTop = offset
+    } else {
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth',
+      })
+    }
   }
 
   handleSubmit = e => {
@@ -531,6 +539,10 @@ class ContactForm extends PureComponent {
       </form>
     )
   }
+}
+
+ContactForm.contextTypes = {
+  isMsBrowser: bool,
 }
 
 export default translate()(ContactForm)

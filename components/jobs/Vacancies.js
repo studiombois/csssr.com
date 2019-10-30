@@ -189,7 +189,7 @@ class Vacancies extends PureComponent {
       locale,
       t,
     } = this.props
-    const rootUrl = `/${locale}`
+    const rootUrl = `/${lng}`
     return (
       <Fragment>
         <div className='half-page-picture' />

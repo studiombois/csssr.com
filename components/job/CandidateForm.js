@@ -106,6 +106,7 @@ const pictureFaq = css.resolve`
 const picturesMap = {
   'project-manager-ru': 'Project_manager',
   'project-manager': 'Project_manager',
+  'project-product-manager': 'Project_manager',
   'middle-js-developer': 'Developer_2',
   'senior-js-developer': 'JS_senior',
   'qa-engineer': 'QA_1',
@@ -129,12 +130,15 @@ const picturesMap = {
   'account-manager': 'Documents_1',
   'system-analyst': 'Systems_analyst',
   'senior-fullstack-developer': 'JS_senior',
+  'senior-team-lead-js-developer': 'JS_senior',
   'product-designer': 'Designer',
   'react-yoda': 'Copywriter_rus',
   copywriter: 'Copywriter_eng',
   'senior-java-developer': 'Backend_developer_1',
   'copywriter-en': 'Copywriter_eng',
   'copywriter-ru': 'Copywriter_rus',
+  photographer: 'Photographer',
+  'brand-ambassador': 'Brand-ambassador',
 }
 
 const divideSections = sections => {
@@ -484,7 +488,12 @@ class CandidateForm extends PureComponent {
         />
 
         <FormRow>
-          <div className='button' ref={this.messageRef}>
+          <div
+            className={cn('button', {
+              button_lng_en: lng === 'en',
+            })}
+            ref={this.messageRef}
+          >
             <AnimatedButton
               type='submit'
               status={status}
@@ -540,6 +549,10 @@ class CandidateForm extends PureComponent {
             width: 12rem;
           }
 
+          .button_lng_en {
+            width: 16rem;
+          }
+
           .faq-text {
             display: none;
           }
@@ -575,6 +588,11 @@ class CandidateForm extends PureComponent {
 
             .button {
               width: 13.5rem;
+            }
+
+
+            .button_lng_en {
+              width: 17.5rem;
             }
 
             .faq-text-container {

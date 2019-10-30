@@ -164,6 +164,11 @@ export default class Checkbox extends PureComponent {
             appearance: none;
           }
 
+          input::-ms-check {
+            border: none;
+            opacity:0;
+          }
+
           input:checked + label::before {
             background-color: #0076ff;
             border-color: #0076ff;

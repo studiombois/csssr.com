@@ -488,7 +488,12 @@ class CandidateForm extends PureComponent {
         />
 
         <FormRow>
-          <div className='button' ref={this.messageRef}>
+          <div
+            className={cn('button', {
+              button_lng_en: lng === 'en',
+            })}
+            ref={this.messageRef}
+          >
             <AnimatedButton
               type='submit'
               status={status}
@@ -544,6 +549,10 @@ class CandidateForm extends PureComponent {
             width: 12rem;
           }
 
+          .button_lng_en {
+            width: 16rem;
+          }
+
           .faq-text {
             display: none;
           }
@@ -579,6 +588,11 @@ class CandidateForm extends PureComponent {
 
             .button {
               width: 13.5rem;
+            }
+
+
+            .button_lng_en {
+              width: 17.5rem;
             }
 
             .faq-text-container {

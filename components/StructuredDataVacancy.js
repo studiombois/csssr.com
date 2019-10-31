@@ -4,9 +4,9 @@ import React from 'react'
 const StructuredDataVacancy = ({ vacancy }) => {
   const description = `<p>${vacancy.description}</p></br>${vacancy.sections.map(item => (
     item.type !== 'questBox' ?
-      `<p>${item.title}</p></br><p>${item.text !== undefined ? `${item.text}` : null}</p></br>${item.list !== undefined ? item.list.map(itemList => (
+      `<p>${item.title}</p></br><p>${item.text !== undefined ? `${item.text}` : null}</p></br>${item.list !== undefined ? `<ul>${item.list.map(itemList => (
         `<li>${itemList}</li>`
-      )) : null}` : null
+      ))}</ul>` : null}` : null
   ))}`
 
   const employment = vacancy.employment === 'part-time'

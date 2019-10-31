@@ -318,7 +318,7 @@ class Competences extends PureComponent {
           }
 
           figure img {
-            width: 100%;
+            max-width: 100%;
           }
 
           figcaption {

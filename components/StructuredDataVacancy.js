@@ -4,10 +4,10 @@ import React from 'react'
 const StructuredDataVacancy = ({ vacancy }) => {
   const description = `<p>${vacancy.description}</p></br>${vacancy.sections.map(item => (
     item.type !== 'questBox' ?
-      `<p>${item.title}</p></br><p>${item.text !== undefined && `${item.text}`}</p></br><ul>${item.list !== undefined && item.list.map(itemList => (
+      `<p>${item.title}</p></br><p>${item.text !== undefined ? `${item.text}` : null}</p></br>${item.list !== undefined ? item.list.map(itemList => (
         `<li>${itemList}</li>`
-      ))}` : null
-  ))}</ul>`
+      )) : null}` : null
+  ))}`
 
   const employment = vacancy.employment === 'part-time'
     ? 'PART_TIME'
@@ -27,6 +27,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
       dangerouslySetInnerHTML={{
         __html: `
       {
+        "@type": "JobPosting",
         "datePosted": "${vacancy.createDate}",
         "title": "${vacancy.name}",
         "description": "${description}",
@@ -49,7 +50,9 @@ const StructuredDataVacancy = ({ vacancy }) => {
           "name": "${getCountry()}"
         },
         "jobLocationType": "TELECOMMUTE",
-        "employmentType": "${employment}"
+        "employmentType": "${employment}",
+        "workHours": "40 hours per week",
+        "industry": "Computer Software" 
       }
     `,
       }}

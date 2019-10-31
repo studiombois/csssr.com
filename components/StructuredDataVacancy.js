@@ -2,12 +2,31 @@ import React from 'react'
 
 // https://developers.google.com/search/docs/guides/intro-structured-data
 const StructuredDataVacancy = ({ vacancy }) => {
-  const description = `<p>${vacancy.description}</p></br>${vacancy.sections.map(item => (
-    item.type !== 'questBox' ?
-      `<p>${item.title}</p></br><p>${item.text !== undefined ? `${item.text}` : ''}</p></br>${item.list !== undefined ? `<ul>${item.list.map(itemList => (
-        `<li>${itemList}</li>`
-      ))}</ul>` : ''}` : ''
-  ))}`
+
+  const getDescriptionLayout = () => {
+    let resultDescription = ''
+
+    const getListLayout = arr => {
+      let resultList = ''
+
+      arr.forEach((item, i) => {
+        resultList += `<li>${arr[i]}</li>`
+      })
+
+      return resultList
+    }
+
+    vacancy.sections.forEach(item => {
+      if (item.type === 'titleAndText') {
+        resultDescription += `<p>${item.title}</p></br><p>${item.text}</p>`
+      } else if (item.type === 'titleAndList') {
+        resultDescription += `<p>${item.title}</p></br><ul>${getListLayout(item.list)}</ul>`
+      }
+    })
+
+    // todo  в массиве присутсвует призыв к действию, который помечен тем же типом что и скилы "titleAndText" нужно поменять тип
+    return resultDescription
+  }
 
   const employment = vacancy.employment === 'part-time'
     ? 'PART_TIME'
@@ -30,7 +49,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
         "@type": "JobPosting",
         "datePosted": "${vacancy.createDate}",
         "title": "${vacancy.name}",
-        "description": "${description}",
+        "description": "${vacancy.description}</br>${getDescriptionLayout()}",
         "hiringOrganization": {
           "@type": "Organization",
           "name": "CSSSR",

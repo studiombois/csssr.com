@@ -52,7 +52,6 @@ export default class Button extends PureComponent {
           {children}
         </button><style jsx>{`
           .button {
-            display: block !important;
             height: 3rem;
             background: none;
             border: none;

@@ -32,7 +32,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
         "description": "${description}",
         "hiringOrganization": {
           "@type": "Organization",
-          "name": "CSSSR"",
+          "name": "CSSSR",
           "logo": "https://csssr.com/static/csssr_logo.png",
           "sameAs": [
             "https://www.facebook.com/csssr/",

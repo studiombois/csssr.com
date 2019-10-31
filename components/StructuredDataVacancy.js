@@ -2,28 +2,24 @@ import React from 'react'
 
 // https://developers.google.com/search/docs/guides/intro-structured-data
 const StructuredDataVacancy = ({ vacancy }) => {
-  const description = `${vacancy.description}${vacancy.sections.map(item => (
+  const description = `<p>${vacancy.description}</p></br>${vacancy.sections.map(item => (
     item.type !== 'questBox' ?
-      `${item.title}${item.list.map(itemList => (
-        `•${itemList}`
+      `<p>${item.title}</p></br><p>${item.text !== undefined && `${item.text}`}</p></br><ul>${item.list !== undefined && item.list.map(itemList => (
+        `<li>${itemList}</li>`
       ))}` : null
-  ))}`
-
-  const datePostedFormat = str => {
-    const strLength = str.length
-    const iter = (newStr, count) => {
-      if (str[count] === 'T') return newStr
-      if (count === strLength) return newStr
-      return iter(`${newStr}${str[count]}`, count + 1)
-    }
-    return iter('', 0)
-  }
-
-  const datePosted = datePostedFormat(`${vacancy.createDate}`)
+  ))}</ul>`
 
   const employment = vacancy.employment === 'part-time'
     ? 'PART_TIME'
     : 'FULL_TIME'
+
+  const getCountry = () => {
+    const loc = vacancy.locale
+    if (loc === 'ru-ru') return 'Russia'
+    if (loc === 'en-us') return 'USA'
+    if (loc === 'en-sg') return 'Singapore'
+    if (loc === 'ru-ee' || loc === 'en-ee') return 'Eesti Vabariik'
+  }
 
   return (
     <script
@@ -31,7 +27,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
       dangerouslySetInnerHTML={{
         __html: `
       {
-        "datePosted": "${datePosted}",
+        "datePosted": "${vacancy.createDate}",
         "title": "${vacancy.name}",
         "description": "${description}",
         "hiringOrganization": {
@@ -50,7 +46,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
         },
         "applicantLocationRequirements": {
           "@type": "Country",
-          "name": "Russia"
+          "name": "${getCountry()}"
         },
         "jobLocationType": "TELECOMMUTE",
         "employmentType": "${employment}"

@@ -18,13 +18,15 @@ const StructuredDataVacancy = ({ vacancy }) => {
 
     vacancy.sections.forEach(item => {
       if (item.type === 'titleAndText') {
-        resultDescription += `<p>${item.title}</p></br><p>${item.text}</p>`
+        resultDescription += `<p>${item.title}</p><p>${item.text}</p>`
       } else if (item.type === 'titleAndList') {
-        resultDescription += `<p>${item.title}</p></br><ul>${getListLayout(item.list)}</ul>`
+        resultDescription += `<p>${item.title}</p><ul>${getListLayout(item.list)}</ul>`
+      } else if (item.type === 'text' || item.type === 'boldText') {
+        resultDescription += `<p>${item.text}</p>`
       }
     })
 
-    // todo  в массиве присутсвует призыв к действию, который помечен тем же типом что и скилы "titleAndText" нужно поменять тип
+    // todo  в массиве присутсвует призыв к действию, который помечен тем же типом что и скилы "titleAndText" нужно поменять типn
     return resultDescription
   }
 

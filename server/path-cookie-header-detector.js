@@ -1,5 +1,12 @@
 import acceptLanguageParser from 'accept-language-parser'
-import { supportedLocales, supportedLanguages, defaultLocaleByLanguage, defaultLocale } from '../common/locales-settings'
+import {
+  supportedLocales,
+  supportedLanguages,
+  estonianLanguageAndLocale,
+  defaultEstonianLocale,
+  defaultLocaleByLanguage,
+  defaultLocale,
+} from '../common/locales-settings'
 import i18n from '../common/i18n'
 import { isDevelopment } from '../utils/app-environment'
 
@@ -20,10 +27,11 @@ const log = (...args) => {
 // 2. Если в пути только часть language без региона и этот language в whitelist,
 //    то ищем наиболее подходящую локаль, используя значение из cookie;
 // 3. Если в cookie не локаль из whitelist, то идём дальше;
-// 4. Парсим header, пытаемся найти совпадение с whitelist;
-// 5. Если смогли определить ru язык, но локаль не совпала полностью, то ставим ru-ru;
-// 6. Если смогли определить en язык, но локаль не совпала полностью, то ставим en-sg;
-// 7. Если ничего не подошло, то ставим по умолчанию en-sg.
+// 4. Парсим header accept-language, если в порядке приоритетов там нашлась эстонская локаль, то ставим en-ee;
+// 5. Пытаемся найти совпадение хедера с whitelist;
+// 6. Если смогли определить ru язык, но локаль не совпала полностью, то ставим ru-ru;
+// 7. Если смогли определить en язык, но локаль не совпала полностью, то ставим en-sg;
+// 8. Если ничего не подошло, то ставим по умолчанию en-sg.
 //
 // После определения локаль полностью записывается в куку locale.
 //
@@ -75,9 +83,15 @@ export default {
     }
 
     const acceptLanguageHeader = req.headers['accept-language']
-    const localeFromHeader = acceptLanguageParser.pick(supportedLocales, acceptLanguageHeader)
+    const localeFromHeader = acceptLanguageParser.pick([...supportedLocales, ...estonianLanguageAndLocale], acceptLanguageHeader)
 
     // 4
+    if (estonianLanguageAndLocale.includes(localeFromHeader)) {
+      log(`locale detector: ${localeFromHeader} was found in header ${acceptLanguageHeader}, so ${defaultEstonianLocale} is set as locale`)
+      return defaultEstonianLocale
+    }
+
+    // 5
     if (localeFromHeader) {
       log(`locale detector: ${localeFromHeader} is set from header ${acceptLanguageHeader}`)
       return localeFromHeader
@@ -96,14 +110,14 @@ export default {
       return memo
     }, undefined)
 
-    // 5, 6
+    // 6, 7
     if (whitelistedLanguage) {
       const locale = defaultLocaleByLanguage[whitelistedLanguage]
       log(`locale detector: ${locale} is set because following languages were detected ${detectedLanguages}`)
       return locale
     }
 
-    // 7
+    // 8
     log(`locale detector: ${defaultLocale} is set by default`)
     return defaultLocale
   },

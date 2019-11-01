@@ -13,7 +13,7 @@ import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
 import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
-import StructiredDataVacancy from '../../components/StructuredDataVacancy'
+import StructuredDataVacancy from '../../components/StructuredDataVacancy'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -190,7 +190,7 @@ class Job extends PureComponent {
           <Head
             title={vacancy.name}
             description={vacancy.description}
-            structuredData={<StructiredDataVacancy vacancy={vacancy}/>}
+            structuredData={<StructuredDataVacancy vacancy={vacancy}/>}
             ogImage={{
               url: require('../../static/images/jobs/1920/cover@2x.jpg'),
               width: 1266,

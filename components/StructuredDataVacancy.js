@@ -4,30 +4,15 @@ import React from 'react'
 const StructuredDataVacancy = ({ vacancy }) => {
 
   const getDescriptionLayout = () => {
-    let resultDescription = ''
-
-    const getListLayout = arr => {
-      let resultList = ''
-
-      arr.forEach((item, i) => {
-        resultList += `<li>${arr[i]}</li>`
-      })
-
-      return resultList
-    }
-
-    vacancy.sections.forEach(item => {
+    return vacancy.sections.map(item => {
       if (item.type === 'titleAndText') {
-        resultDescription += `<p>${item.title}</p><p>${item.text}</p>`
+        return `<p>${item.title}</p><p>${item.text}</p>`
       } else if (item.type === 'titleAndList') {
-        resultDescription += `<p>${item.title}</p><ul>${getListLayout(item.list)}</ul>`
+        return `<p>${item.title}</p><ul>${item.list.map(li => (`<li>${li}</li>`)).join('')}</ul>`
       } else if (item.type === 'text' || item.type === 'boldText') {
-        resultDescription += `<p>${item.text}</p>`
+        return `<p>${item.text}</p>`
       }
-    })
-
-    // todo  в массиве присутсвует призыв к действию, который помечен тем же типом что и скилы "titleAndText" нужно поменять типn
-    return resultDescription
+    }).join('')
   }
 
   const employment = vacancy.employment === 'part-time'
@@ -51,7 +36,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
         "@type": "JobPosting",
         "datePosted": "${vacancy.createDate}",
         "title": "${vacancy.name}",
-        "description": "${vacancy.description}</br>${getDescriptionLayout()}",
+        "description": "${vacancy.description}${getDescriptionLayout()}",
         "hiringOrganization": {
           "@type": "Organization",
           "name": "CSSSR",

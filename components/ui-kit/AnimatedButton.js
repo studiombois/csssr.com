@@ -199,7 +199,7 @@ export default class AnimatedButton extends PureComponent {
 
           //ie 11 fallback
           @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-            .loading.success button.isMsBrowser {
+            .loading.success button {
               display: none;
             }
          }

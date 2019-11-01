@@ -117,7 +117,7 @@ const CutButton = ({ children, isCut, onClick }) =>
         }
       }
     `}</style>
-    {/* <style jsx>{`
+    <style jsx>{`
       button {
         -ms-grid-column: 11;
         -ms-grid-column-span: 3;
@@ -158,7 +158,7 @@ const CutButton = ({ children, isCut, onClick }) =>
           -ms-grid-column-span: 11;
         }
       }
-    `}</style> */}
+    `}</style>
   </Fragment>
 
 CutButton.propTypes = {

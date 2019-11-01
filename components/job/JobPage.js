@@ -151,7 +151,7 @@ const focusOnErrors = createDecorator()
 class JobPage extends PureComponent {
   static async getInitialProps({ req, res, query }) {
     const locale = req ? req.language : i18n.language
-    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?lang=${locale}`)
+    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?locale=${locale}`)
     const vacancies = await response.json()
 
     const vacancy = vacancies.find(v => v.pathName === query.jobPathName)

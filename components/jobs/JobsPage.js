@@ -10,7 +10,7 @@ import i18n from '../../common/i18n'
 class JobsPage extends PureComponent {
   static async getInitialProps({ req }) {
     const locale = req ? req.language : i18n.language
-    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?lang=${locale}`)
+    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?locale=${locale}`)
     const vacancies = await res.json()
 
     return { vacancies }

@@ -68,12 +68,12 @@ export default {
         i18n.services.languageUtils.getLanguagePartFromCode(localeFromCookie) === localeFromPath
       ) {
         log(`locale detector: ${localeFromPath} was found in path, it was parsed as language part of full locale, ${localeFromCookie} was found in cookie, it is in whitelist, so locale was set to ${localeFromCookie}`)
-        return defaultLocaleByLanguage[localeFromPath]
+        return localeFromCookie
       }
 
       const locale = defaultLocaleByLanguage[localeFromPath]
       log(`locale detector: ${localeFromPath} was found in path, it was parsed as language part of full locale, ${localeFromCookie} was found in cookie, is doesn't match for some reason, so locale was set to ${locale} by default`)
-      return defaultLocaleByLanguage[localeFromPath]
+      return locale
     }
 
     // 3

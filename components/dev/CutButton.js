@@ -78,6 +78,10 @@ const CutButton = ({ children, isCut, onClick }) =>
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
+        button {
+          padding: 1rem 1rem;
+        }
+
         .grid-container {
           width: 944px;
         }

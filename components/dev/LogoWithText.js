@@ -23,17 +23,27 @@ const LogoWithText = ({ iconName, altText, logoCaption }) =>
 
       @media (max-width: 1279px) {
         img {
-          max-width: 100%;
+          width: 100%;
+          height: 100%;
           object-fit: contain;
         }
       }
 
-      @media (min-width: 768px) and (max-width: 1279px) {
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         img {
-            max-width: 100%;
-            height: auto;
+          max-width: 100%;
+          width: auto;
+          height: auto;
         }
+      }
 
+      @media screen and (max-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        img {
+          max-width: 80%;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1279px) {
         figcaption {
           margin-top: 0rem;
           font-size: 0.75rem;

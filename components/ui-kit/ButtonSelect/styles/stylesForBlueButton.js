@@ -41,12 +41,14 @@ const blueButton = css.resolve`
   @media (max-width: 767px) {
     .button {
       width: 17rem;
+      max-width: 17rem;
     }
 
     .button-wrapper_is_dropdown-visible .button {
       -webkit-tap-highlight-color: transparent;
       display: none;
     }
+  }
 `
 
 export const blueButtonStyles = blueButton.styles

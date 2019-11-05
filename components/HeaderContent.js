@@ -55,6 +55,7 @@ class HeaderContent extends PureComponent {
     return (
       <Fragment>
         <header
+          data-scroll-lock-fill-gap
           onFocus={onFocus}
           className={cn({
             header: true,
@@ -164,7 +165,11 @@ class HeaderContent extends PureComponent {
             .header-background {
               z-index: 9998;
               height: 4rem;
-              background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+              background-image: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(255, 255, 255, 0.9) 100%
+              );
             }
 
             .header_invisible,
@@ -184,15 +189,15 @@ class HeaderContent extends PureComponent {
               top: 0;
             }
 
-            .header_visible.header_padding-right_equals_scroll-width {
-              padding-right: ${scrollbarWidth}px;
-            }
-
             .header_padding-right_equals_scroll-width ~ :global(main .jobs-header-logo-container) {
               transform: translateX(calc(-50% - ${scrollbarWidth / 2}px));
             }
 
             .header-content {
+              // IE-11 styles
+              -ms-grid-rows: 4rem;
+
+              // Other browsers styles
               margin-right: auto;
               margin-left: auto;
               height: 4rem;
@@ -202,7 +207,14 @@ class HeaderContent extends PureComponent {
             }
 
             .logo-wrapper {
+              // IE-11 styles
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 3;
+              -ms-grid-row-align: center;
+
+              // Other browsers styles
               grid-column: 1 / span 2;
+              display: block;
               padding-top: 0.5rem;
               padding-bottom: 0.5rem;
               height: 2.5rem;
@@ -222,11 +234,22 @@ class HeaderContent extends PureComponent {
             }
 
             .nav {
+              // IE-11 styles
+              -ms-grid-column: 5;
+              -ms-grid-column-span: 11;
+              -ms-grid-row-align: center;
+
+              // Other browsers styles
               grid-column: 3 / span 6;
               height: 2rem;
             }
 
             .nav.with-logo-sup {
+              // IE-11 styles
+              -ms-grid-column: 7;
+              -ms-grid-column-span: 11;
+
+              // Other browsers styles
               grid-column: 4 / span 6;
               height: 2rem;
             }
@@ -254,17 +277,36 @@ class HeaderContent extends PureComponent {
             }
 
             .section-name {
+              // IE-11 styles
+              -ms-grid-column: 17;
+              -ms-grid-column-span: 5;
+              -ms-grid-row-align: center;
+
+              // Other browsers styles
               grid-column: 9 / span 3;
+              display: block;
               height: 1rem;
               line-height: 1rem;
               text-align: right;
             }
 
             .section-name.with-logo-sup {
+              // IE-11 styles
+              -ms-grid-column: 19;
+              -ms-grid-column-span: 3;
+
+              // Other browsers styles
               grid-column: 10 / span 2;
             }
 
             .burger {
+              // IE-11 styles
+              -ms-grid-column: 23;
+              -ms-grid-column-span: 1;
+              -ms-grid-row-align: center;
+
+              // Other browsers styles
+              grid-column: 12 / span 1;
               margin-left: auto;
               margin-right: auto;
               display: block;
@@ -292,7 +334,7 @@ class HeaderContent extends PureComponent {
               sup {
                 top: -4px;
                 left: calc(100% + 2px);
-                font-size: 0.625rem
+                font-size: 0.625rem;
               }
 
               .header-content {
@@ -360,12 +402,15 @@ class HeaderContent extends PureComponent {
               }
 
               .burger {
+                // IE-11 styles
+                -ms-grid-column: 11;
+                -ms-grid-column-span: 1;
+
+                // Other browsers styles
                 grid-column: 6 / span 1;
               }
             }
-
-          `}
-        </style>
+        `}</style>
       </Fragment>
     )
   }

@@ -6,16 +6,16 @@
   "remote": "Remote",
   "remoteAndFullTime": "Remote and full-time",
   "tellAboutYourself": "Tell us about yourself",
-  "tellUsMoreAboutYourself": "Tell us  more about yourself",
-  "additionalContactInfo": "Additional contact info",
+  "tellUsMoreAboutYourself": "Additional information (optional)",
+  "additionalContactInfo": "Contacts (optional)",
   "testQuest": "Test quest",
-  "name": "name",
-  "lastname": "lastname",
+  "name": "first name",
+  "lastname": "last name",
   "age": "age",
   "city": "city",
   "email": "E-mail",
-  "send": "send",
-  "resumeLink": "Link to resume",
+  "send": "Submit application",
+  "resumeLink": "Link to Resume / CV",
   "resumePortfolio": "Link to portfolio",
   "resumeGithub": "Link to github",
   "zipPacked": "ZIP archive",
@@ -33,5 +33,10 @@
       "checkbox": "Phone",
       "input": "Number"
     }
+  },
+  "faq": {
+    "alt": "Pictures a man with questions",
+    "title": "Have questions?",
+    "link": "See FAQ"
   }
 }

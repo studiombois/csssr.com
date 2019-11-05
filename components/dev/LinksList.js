@@ -4,19 +4,23 @@ import { string, arrayOf, shape } from 'prop-types'
 export default class LinksList extends PureComponent {
   static propTypes = {
     className: string,
-    links: arrayOf(shape({
-      href: string,
-      label: string,
-    })),
-  }
+    links: arrayOf(
+      shape({
+        href: string,
+        label: string,
+      })
+    ),
+  };
 
   state = {
     isListVisible: false,
     isTablet: false,
-  }
+  };
 
   componentDidMount() {
-    this.tabletMediaQuery = window.matchMedia('(min-width: 768px) and (max-width: 1279px)')
+    this.tabletMediaQuery = window.matchMedia(
+      '(min-width: 768px) and (max-width: 1279px)'
+    )
     this.tabletMediaQuery.addListener(this.handleMediaMatch)
     this.handleMediaMatch(this.tabletMediaQuery)
   }
@@ -28,12 +32,12 @@ export default class LinksList extends PureComponent {
   handleMediaMatch = ({ matches }) =>
     this.setState({
       isTablet: matches,
-    })
+    });
 
   handleToggleListVisability = () =>
     this.setState({
       isListVisible: !this.state.isListVisible,
-    })
+    });
 
   render() {
     const { title, links } = this.props
@@ -50,30 +54,27 @@ export default class LinksList extends PureComponent {
         </span>
 
         <ul className={isListVisible ? 'list_state_visible' : ''}>
-          {links.map(({ href, label, shortLabel }) =>
+          {links.map(({ href, label, shortLabel }) => (
             <li key={`nav-link-${href}-${label}`}>
-              {href && <a
-                href={href}
-                target='_blank'
-                className='font_link-list_28'
-                rel='noopener'
-              >
-                {isTablet && shortLabel
-                  ? shortLabel
-                  : label
-                }
-              </a>}
-              {!href && <span
-                className='font_link-list_28'
-              >
-                {isTablet && shortLabel
-                  ? shortLabel
-                  : label
-                }
-              </span>}
+              {href && (
+                <a
+                  href={href}
+                  target='_blank'
+                  className='font_link-list_28'
+                  rel='noopener nofollow'
+                >
+                  {isTablet && shortLabel ? shortLabel : label}
+                </a>
+              )}
+              {!href && (
+                <span className='font_link-list_28'>
+                  {isTablet && shortLabel ? shortLabel : label}
+                </span>
+              )}
             </li>
-          )}
-        </ul><style jsx>{`
+          ))}
+        </ul>
+        <style jsx>{`
           span {
             margin-bottom: 2rem;
             display: block;
@@ -153,7 +154,7 @@ export default class LinksList extends PureComponent {
             button::after {
               position: absolute;
               top: 50%;
-              content: '';
+              content: "";
               display: block;
               width: 0.6875rem;
               height: 0.125rem;

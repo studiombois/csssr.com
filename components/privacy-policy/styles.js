@@ -1,7 +1,7 @@
 import css from 'styled-jsx/css'
 
 export default css`
-  article{
+  article {
     margin-bottom: 31rem;
     margin-right: auto;
     margin-left: auto;
@@ -10,6 +10,11 @@ export default css`
   }
 
   header {
+    // IE-11 styles
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 5;
+
+    // Other browsers styles
     grid-column: 2 / span 3;
     padding-top: 13.5rem;
   }
@@ -19,6 +24,11 @@ export default css`
   }
 
   div {
+    // IE-11 styles
+    -ms-grid-column: 11;
+    -ms-grid-column-span: 11;
+
+    // Other browsers styles
     grid-column: 6 / span 6;
     padding-top: 14.5rem;
   }
@@ -55,7 +65,7 @@ export default css`
     position: absolute;
     top: 0;
     left: 0;
-    content: attr(data-counter)
+    content: attr(data-counter);
   }
 
   .list-item.list-item_level_1,
@@ -72,40 +82,45 @@ export default css`
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    article{
+    article {
       width: 1328px;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    article{
+    article {
       width: 1232px;
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
-    article{
+  @media (min-width: 1023px) and (max-width: 1279px) {
+    article {
       width: 944px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    article {
+      width: 59rem;
     }
 
     div {
       padding-top: 13.875rem;
     }
-
-    @media (max-width: 1023px) {
-      article{
-        width: 59rem;
-      }
-    }
   }
 
   @media (max-width: 767px) {
-    article{
+    article {
       margin-bottom: 13.5rem;
       width: 20.5rem;
     }
 
     header {
+      // IE-11 styles
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+
+      // Other browsers styles
       grid-column: 1 / span 6;
       padding-top: 5.5rem;
     }
@@ -115,6 +130,12 @@ export default css`
     }
 
     div {
+      // IE-11 styles
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+
+      // Other browsers styles
+
       padding-top: 2.1875rem;
       grid-column: 1 / span 6;
     }

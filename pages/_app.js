@@ -4,6 +4,7 @@ import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/node'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
+import detectMsBrowserByUserAgent from '../utils/detectMsBrowserByUserAgent'
 
 export default class MyApp extends App {
   state = {
@@ -13,6 +14,10 @@ export default class MyApp extends App {
   // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
+
+    const userAgent = ctx.req
+      ? ctx.req.headers['user-agent']
+      : window.navigator.userAgent
 
     let pageProps = {}
 
@@ -55,6 +60,8 @@ export default class MyApp extends App {
       throw error
     }
 
+    pageProps.userAgent = userAgent
+
     return {
       pageProps,
     }
@@ -93,6 +100,7 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {}
+    const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
 
     return (
       <Container>
@@ -102,7 +110,7 @@ export default class MyApp extends App {
           initialLanguage={initialLanguage}
         >
           <React.Fragment>
-            <Component {...pageProps} isMobile={this.state.isMobile} />
+            <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
           </React.Fragment>
         </I18nextProvider>
       </Container>

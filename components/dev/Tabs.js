@@ -24,7 +24,7 @@ const Tabs = ({ t, tabs, activeTabId, onClick }) =>
       }
 
       li button {
-        font-family: Roboto;
+        font-family: 'Roboto', 'Arial', sans-serif;
         font-size: 0.75rem;
         font-weight: bold;
         font-style: normal;

@@ -108,7 +108,7 @@ export class SideBar extends PureComponent {
             justify-content: flex-end;
             align-items: center;
             height: 1.625rem;
-            font-family: Roboto, sans-serif;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 0.875rem;
             font-weight: 900;
             text-transform: uppercase;
@@ -277,7 +277,8 @@ export class SideBar extends PureComponent {
 
           .sidebar_opened:before {
             position: fixed;
-            right: 100%;
+            top: 0;
+            right: 26.5rem;
             opacity: 0.3;
             transition: right 0s ease-out 0s, opacity 0.3s ease-out;
             pointer-events: auto;
@@ -336,6 +337,12 @@ export class SideBar extends PureComponent {
 
             .bottom {
               padding-right: 3.125rem;
+            }
+
+            .sidebar_opened:before {
+              position: fixed;
+              top: 0;
+              right: 20rem;
             }
           }
 

@@ -1,6 +1,7 @@
 const path = require('path')
 const Sentry = require('@sentry/node')
 const express = require('express')
+const expressStaticGzip = require('express-static-gzip')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const next = require('next')
@@ -130,6 +131,17 @@ i18n
               nextHandler()
             },
           )
+
+          server.use(
+            '/_next',
+            expressStaticGzip(path.join(__dirname, '../.next'), {
+              enableBrotli: true,
+              orderPreference: ['br'],
+              setHeaders: res => {
+                res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+              },
+            }),
+          )
         }
 
         server.use('/locales', express.static(path.join(__dirname, '../locales')))
@@ -159,7 +171,15 @@ i18n
 
         server.get('/:language/jobs/:jobPathName', (req, res) => {
           const params = { jobPathName: req.params.jobPathName, preview: req.query.hasOwnProperty('preview') }
-          return app.render(req, res, `/${req.params.language}/job`, params)
+
+          const languageMap = {
+            'ru-ru': 'ru',
+            'en-us': 'en',
+          }
+
+          const language = languageMap[req.params.language] || req.params.language
+
+          return app.render(req, res, `/${language}/job`, params)
         })
 
         server.get('*', (req, res) => {

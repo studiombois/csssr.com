@@ -123,7 +123,7 @@ class Begin extends PureComponent {
             padding-left: 2.625rem;
             padding-top: 11.5rem;
             font-size: 10.5rem;
-            font-family: Roboto, sans-serif;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-weight: 900;
             margin-bottom: 12.625rem;
             text-align: center;
@@ -133,7 +133,7 @@ class Begin extends PureComponent {
             margin-bottom: 8.1875rem;
             grid-column: 2 / span 6;
             grid-row: 2;
-            font-family: Roboto, sans-serif;
+            font-family: 'Roboto', 'Arial', sans-serif;
             font-size: 1.5rem;
             font-weight: normal;
             line-height: 2.5rem;

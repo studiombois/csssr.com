@@ -10,7 +10,7 @@ import StructuredData from './StructuredData'
 // Пока хардкод, решим позже как лучше это сделать
 const origin = 'https://csssr.com'
 
-const Head = props => (
+const Head = props =>
   <NextHead>
     <link rel='preload' href={require(`../static/fonts/Roboto_Slab_normal_300_${props.lng}.woff2`)} as='font' type='font/woff2' crossOrigin='anonymous'/>
     <link rel='preload' href={require(`../static/fonts/Roboto_normal_100_${props.lng}.woff2`)} as='font' type='font/woff2' crossOrigin='anonymous'/>
@@ -29,6 +29,17 @@ const Head = props => (
           document.documentElement.classList.add('webp')
       }
     ` }} />
+
+    {/*
+      TODO: Дописать условие, когда пробросишь isMsBrowser во все Head
+            Сделать это в задаче, в которой будем переделывать com под IE11
+      {props.isMsBrowser &&
+    */}
+    <script
+      crossOrigin='anonymous'
+      src='https://polyfill.io/v3/polyfill.min.js?features=es6%2Ces7%2Cfetch%2CSymbol.asyncIterator'
+    />
+    {/* // } */}
     <meta charSet='utf-8' />
     <title>{`${props.title} | CSSSR`}</title>
     <meta
@@ -58,7 +69,6 @@ const Head = props => (
     <meta property='fb:app_id' content='416195255787519'/>
     {props.structuredData}
   </NextHead>
-)
 
 Head.propTypes = {
   title: string,

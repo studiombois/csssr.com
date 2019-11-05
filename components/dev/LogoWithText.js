@@ -21,20 +21,19 @@ const LogoWithText = ({ iconName, altText, logoCaption }) =>
         color: #9b9b9b;
       }
 
-      @media (min-width: 768px) and (max-width: 1279px) {
-        max-width: 100%;
-        height: auto;
-      }
-
       @media (max-width: 1279px) {
         img {
           max-width: 100%;
-          height: 100%;
           object-fit: contain;
         }
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         figcaption {
           margin-top: 0rem;
           font-size: 0.75rem;

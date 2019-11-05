@@ -32,5 +32,10 @@
     "secondLink": "https://spb.hh.ru/employer/1230690",
     "firstLinkText": "Моём Круге",
     "secondLinkText": "Head Hunter"
+  },
+  "faq": {
+    "alt": "Изображает мужчину с вопросами",
+    "title": "Осталиcь вопросы? ",
+    "link": "Больше ответов в FAQ"
   }
 }

@@ -29,7 +29,7 @@ const Feature1 = ({ t, image }) =>
         />
 
         <p className='font_feature_1'>
-          <Link prefetch href={t('dev:service.mvpLink')}>
+          <Link href={t('dev:service.mvpLink')}>
             <a className='mvp-link'>
               {t('dev:service.mvp')}
             </a>

@@ -10,7 +10,7 @@ const Footer = ({ socialLinks, lng, t }) => {
 
   return <footer className='grid-container'>
     <span className='logo-wrapper'>
-      <Link prefetch href={rootUrl}>
+      <Link href={rootUrl}>
         <a>
           <img
             className='logo'

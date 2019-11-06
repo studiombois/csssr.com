@@ -9,7 +9,8 @@ export default class MyDocument extends Document {
 
     return {
       ...initialProps,
-      language: ctx.req.i18n.language,
+      // https://github.com/isaachinman/next-i18next/issues/374#issuecomment-529196313
+      language: ctx.req.i18n ? ctx.req.i18n.language : undefined,
     }
   }
 

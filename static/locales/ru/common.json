@@ -1,0 +1,70 @@
+{
+  "hello": "Привет!",
+  "headerLogoAlt": "CSSSR логотип",
+  "menu": {
+    "dev": "Фронтенд разработка",
+    "html": "Вёрстка",
+    "jobs": "Работа в CSSSR",
+    "job": "Работа в CSSSR",
+    "school": "Школа",
+    "privacy-policy": "Политика конфиденциальности",
+    "mvp": "MVP"
+  },
+  "floatingButton": {
+    "question": "Как вам удобнее связаться с нами?",
+    "facebookMessenger": "Facebook Messenger",
+    "messenger": "Messenger",
+    "telegram": "Telegram",
+    "call": "Позвонить +7-499-704-38-27",
+    "email": "Email",
+    "closeText": "Отмена"
+  },
+  "languageRedirect": {
+    "text": "Switch to English"
+  },
+  "footer": {
+    "privacyPolicy": "Политика конфиденциальности",
+    "alliancePartText": "CSSSR является частью"
+  },
+  "sectionName": {
+    "dev": "Фронтенд разработка",
+    "express": "Вёрстка",
+    "jobs": "Работа в CSSSR",
+    "job": "Работа в CSSSR",
+    "privacy-policy": "Политика конфиденциальности",
+    "mvp": "Фронтенд разработка"
+  },
+  "noPage": "Данная страница не доступна на русском языке.",
+  "checkBoxesText": {
+    "privacyPolicyText": "я согласен на обработку моих персональных данных в соответствии с ",
+    "privacyPolicyLinkText": "Политикой конфиденциальности",
+    "newsletterText": "я согласен получать информацию об акциях и коммерческих спецпредложениях"
+  },
+  "form": {
+    "errors": {
+      "email": "Неверный формат адреса",
+      "integer": "Значение должно быть положительным числом",
+      "link": "Неверный формат ссылки",
+      "maxLength": "Количество символов не должно превышать {{maxLength}}",
+      "required": "Обязательное поле",
+      "file": "Неверный формат файла",
+      "general": "Что-то пошло не так"
+    },
+    "message": {
+      "success": {
+        "intro": "Успех!",
+        "body": "Совсем скоро мы с вами свяжемся.",
+        "action": "Закрыть"
+      },
+      "fail": {
+        "intro": "Ошибка при создании контакта",
+        "body": {
+          "textStart": "Попробуйте ",
+          "textForButton": "ещё раз",
+          "textBetweenButtonAndLink": " или отправьте вопрос на "
+        },
+        "action": "Попробовать снова"
+      }
+    }
+  }
+}

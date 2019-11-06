@@ -226,7 +226,7 @@ class ContactForm extends PureComponent {
       className,
       pageName,
       fieldsIds,
-      isModalForm,
+      formName,
       t,
     } = this.props
 
@@ -239,7 +239,7 @@ class ContactForm extends PureComponent {
           type='text'
           placeholder={t(`${pageName}:form.namePlaceholder`)}
           label={t(`${pageName}:form.nameLabel`)}
-          testid={`${isModalForm ? 'modalForm' : 'pageForm'}:field.callbackForm.name`}
+          testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:field:callbackForm.name`}
         />
       </div>,
       phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -250,7 +250,7 @@ class ContactForm extends PureComponent {
           type='text'
           placeholder={t(`${pageName}:form.phonePlaceholder`)}
           label={t(`${pageName}:form.phoneLabel`)}
-          testid={`${isModalForm ? 'modalForm' : 'pageForm'}:field.callbackForm.phone`}
+          testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:field:callbackForm.phone`}
         />
       </div>,
       email: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -261,7 +261,7 @@ class ContactForm extends PureComponent {
           type='email'
           placeholder={t(`${pageName}:form.emailPlaceholder`)}
           label={t(`${pageName}:form.emailLabel`)}
-          testid={`${isModalForm ? 'modalForm' : 'pageForm'}:field.callbackForm.email`}
+          testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:field:callbackForm.email`}
         />
       </div>,
       message: <div className={cn('field', 'field_type_textarea', fieldCss.className, { [className]: !!className })}>
@@ -272,15 +272,15 @@ class ContactForm extends PureComponent {
           component={TextareaField}
           placeholder={t(`${pageName}:form.messagePlaceholder`)}
           label={t(`${pageName}:form.messageLabel`)}
-          testid={`${isModalForm ? 'modalForm' : 'pageForm'}:field.callbackForm.message`}
+          testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:field:callbackForm.message`}
         />
       </div>,
       privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
         <PrivacyPolicyCheckbox
           id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
           name='privacyPolicy'
-          testid={`${isModalForm ? 'modalForm' : 'pageForm'}:field.callbackForm.privacyPolicy.checkbox`}
-          linkTestId={`${isModalForm ? 'modalForm' : 'pageForm'}:link.callbackForm.privacyPolicy`}
+          testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:field:callbackForm.privacyPolicy.checkbox`}
+          linkTestId={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:link:callbackForm.privacyPolicy`}
         />
       </div>,
       newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
@@ -289,7 +289,7 @@ class ContactForm extends PureComponent {
           name='newsletter'
           type='checkbox'
           component={Checkbox}
-          testid={`${isModalForm ? 'modalForm' : 'pageForm'}:field.callbackForm.newsletter.checkbox`}
+          testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:field:callbackForm.newsletter.checkbox`}
         >
           {t('common:checkBoxesText.newsletterText')}
         </Field>
@@ -311,7 +311,6 @@ class ContactForm extends PureComponent {
       fields,
       feedbackEmail,
       submitError,
-      isModalForm,
       t,
     } = this.props
 
@@ -340,8 +339,8 @@ class ContactForm extends PureComponent {
           <AnimatedButton
             type='submit'
             status={status}
-            testid={`${isModalForm ? 'modalForm' : 'pageForm'}:button.callbackForm.submit`}
-            btnContainerTestid={`${isModalForm ? 'modalForm' : 'pageForm'}:block.btnContainer`}
+            testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:button.callbackForm.submit`}
+            btnContainerTestid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:block.btnContainer`}
           >
             {t(`${pageName}:form.submitText`)}
           </AnimatedButton>
@@ -354,8 +353,8 @@ class ContactForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail={feedbackEmail}
-              testid={`${isModalForm ? 'modalForm' : 'pageForm'}:text.successMessage`}
-              successPictureTestid={`${isModalForm ? 'modalForm' : 'pageForm'}:picture.successMessageImg`}
+              testid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:text.successMessage`}
+              successPictureTestid={`${formName === 'contact-modal' ? 'modalForm' : 'pageForm'}:picture.successMessageImg`}
             />
           </div>
         }

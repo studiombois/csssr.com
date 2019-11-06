@@ -1,0 +1,72 @@
+{
+  "hello": "Hello!",
+  "headerLogoAlt": "CSSSR logo",
+  "menu": {
+    "dev": "FRONT-END DEVELOPMENT",
+    "html": "Express frontend",
+    "jobs": "Jobs",
+    "job": "Job",
+    "school": "School",
+    "privacy-policy": "Privacy Policy",
+    "cookies-policy": "Cookies Policy",
+    "mvp": "mvp"
+  },
+  "floatingButton": {
+    "question": "How would you like to&nbsp;contact&nbsp;us?",
+    "facebookMessenger": "Facebook Messenger",
+    "messenger": "Messenger",
+    "telegram": "Telegram",
+    "call": "Call +7-499-704-38-27",
+    "email": "Email",
+    "closeText": "Cancel"
+  },
+  "languageRedirect": {
+    "text": "Переключиться на русский"
+  },
+  "footer": {
+    "privacyPolicy": "Privacy policy",
+    "alliancePartText": "CSSSR is a part of"
+  },
+  "sectionName": {
+    "dev": "FRONT-END DEVELOPMENT",
+    "express": "Express frontend",
+    "jobs": "Jobs",
+    "job": "Job",
+    "privacy-policy": "Privacy Policy",
+    "cookies-policy": "Cookies Policy",
+    "mvp": "FRONT-END DEVELOPMENT"
+  },
+  "noPage": "This page is not available in English.",
+  "checkBoxesText": {
+    "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in the ",
+    "privacyPolicyLinkText": "Privacy Policy",
+    "newsletterText": "I agree to receive information and commercial offers"
+  },
+  "form": {
+    "errors": {
+      "email": "Invalid email format",
+      "integer": "The value must be a number",
+      "link": "Invalid link format",
+      "maxLength": "The quantity of characters should not exceed {{maxLength}}",
+      "required": "Required",
+      "file": "Invalid file format",
+      "general": "Something went wrong"
+    },
+    "message": {
+      "success": {
+        "intro": "Success!",
+        "body": "We will contact you soon",
+        "action": "Back"
+      },
+      "fail": {
+        "intro": "An error occurred",
+        "body": {
+          "textStart": "Please ",
+          "textForButton": "try again",
+          "textBetweenButtonAndLink": " or send us a message: "
+        },
+        "action": "Try again"
+      }
+    }
+  }
+}

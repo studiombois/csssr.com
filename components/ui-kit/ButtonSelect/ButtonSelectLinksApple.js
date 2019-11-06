@@ -14,13 +14,14 @@ const ButtonSelectLinksDefault = props => {
   }
 
   return (
-    props.links.map(({ label, localeLink, href, external, dataLayerEvent }) =>
+    props.links.map(({ label, localeLink, href, external, dataLayerEvent, testid }) =>
       <li key={label}>
         <a
           href={href}
           onClick={handleLinkClick(dataLayerEvent)}
           target={external ? '_blank' : null}
           rel='noopener'
+          data-testid={testid}
         >
           {iconsByLabel[label]}
           <span>

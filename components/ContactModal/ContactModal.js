@@ -113,7 +113,7 @@ class ContactModal extends PureComponent {
               validate={contactFormValidationRules(t)}
             />
 
-            <button aria-label='close modal' onClick={onClose} />
+            <button aria-label='close modal' onClick={onClose} data-testid='modalForm:button:closeModal'/>
           </div>
         </ClickOutside>
 

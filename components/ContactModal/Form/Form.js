@@ -31,6 +31,7 @@ const Form = props => {
         shouldScroll={false}
         shouldShowStatusMessage={false}
         onSubmitResolve={onSubmitResolve}
+        isModalForm={true} // for data-testid
         {...props}
       />
 

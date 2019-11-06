@@ -65,6 +65,7 @@ class HeaderContent extends PureComponent {
             header_animations_on: toggleHeaderAnimations,
             'header_padding-right_equals_scroll-width': isSideBarOpened,
           })}
+          data-testid={'common:block:header'}
         >
           <div
             className='grid-container header-content'
@@ -72,7 +73,7 @@ class HeaderContent extends PureComponent {
             {isLogoLink
               ? <span className='logo-wrapper'>
                 <Link href={rootUrl}>
-                  <a>
+                  <a data-testid='header:link:logo'>
                     <img
                       className='logo'
                       src={require('../static/icons/csssr_logo.svg')}
@@ -108,7 +109,7 @@ class HeaderContent extends PureComponent {
               'with-logo-sup': logoSup,
             })}>
               <ul className='nav-list'>
-                {links.map(({ href, label, scrollToFormName, hideOnTablet }) => (
+                {links.map(({ href, label, scrollToFormName, hideOnTablet, testid }) => (
                   <li
                     className={`nav-list-item${hideOnTablet ? ' nav-list-item_hide-on-tablet' : ''}`}
                     key={`nav-link-${href}-${label}`}
@@ -118,6 +119,7 @@ class HeaderContent extends PureComponent {
                       className='nav-list-link font_top-menu'
                       href={href}
                       onClick={scrollToFormName ? this.scrollToForm(scrollToFormName) : null}
+                      data-testid={testid}
                     >
                       {t(label)}
                     </a>
@@ -134,7 +136,7 @@ class HeaderContent extends PureComponent {
             />
 
             {isBurgerVisible &&
-              <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle}>
+              <button type='button' aria-label='Open menu' className='burger' onClick={onSideBarToggle} data-testid='header:button:openSideBar'>
                 {burgerIcon}
               </button>
             }

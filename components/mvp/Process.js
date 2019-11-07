@@ -215,6 +215,29 @@ class Process extends PureComponent {
             }
           }
         `}</style>
+
+        <style jsx>{`
+          :global(.ie11) h2 {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 21;
+            -ms-grid-row: 1;
+          }
+
+          @media (max-width: 767px) {
+            :global(.ie11) h2 {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+          }
+
+          :global(.ie11) .planets {
+            height: 92%;
+          }
+
+          :global(.ie11) .sputnik {
+            height: 92%;
+          }
+        `}</style>
       </Fragment>
     )
   }

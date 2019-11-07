@@ -242,6 +242,10 @@ class RiskMinimization extends PureComponent {
         `}</style>
 
         <style jsx>{`
+          .wrapper {
+            -ms-grid-rows: auto auto 31.75rem auto;
+          }
+
           :global(.ie11) h2 {
             -ms-grid-column: 3;
             -ms-grid-column-span: 21;

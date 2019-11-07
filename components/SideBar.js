@@ -12,10 +12,12 @@ import Link from 'next/link'
 const items = [{
   path: '',
   key: 'common:menu.dev',
+  testid: 'sidebarMenu:link.dev',
   subItems: [
     {
       path: '/mvp',
       key: 'common:menu.mvp',
+      testid: 'sidebarMenu:link.mvp',
     },
     // {
     //   path: '/',
@@ -29,6 +31,7 @@ const items = [{
 }, {
   path: '/express',
   key: 'common:menu.html',
+  testid: 'sidebarMenu:link.html',
   redirect: {
     from: '/en/express',
     to: 'https://express.csssr.com',
@@ -36,6 +39,7 @@ const items = [{
 }, {
   path: '/school',
   key: 'common:menu.school',
+  testid: 'sidebarMenu:link.school',
   redirect: {
     when: 'always',
     from: '/en/school',
@@ -44,6 +48,7 @@ const items = [{
 }, {
   path: '/jobs',
   key: 'common:menu.jobs',
+  testid: 'sidebarMenu:link.jobs',
 }]
 
 const crossIcon = <CrossIcon width='100%' height='100%' />
@@ -74,7 +79,7 @@ export class SideBar extends PureComponent {
     })
   }
 
-  renderSubItem = ({ path, key, redirect }) => {
+  renderSubItem = ({ path, key, redirect, testid }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
     const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
@@ -89,6 +94,7 @@ export class SideBar extends PureComponent {
               'sub-link_active': pathname === languageHref,
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
+            data-testid={testid}
           />
           : <Link prefetch href={href}>
             <a
@@ -96,6 +102,7 @@ export class SideBar extends PureComponent {
                 'sub-link_active': pathname === languageHref,
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
+              data-testid={testid}
             />
           </Link>
         }
@@ -131,7 +138,7 @@ export class SideBar extends PureComponent {
     )
   }
 
-  renderNavItem = ({ path, key, redirect, subItems }) => {
+  renderNavItem = ({ path, key, redirect, subItems, testid }) => {
     const { router: { pathname }, t, lng } = this.props
     const languageHref = `/${lng}${path}`
     const shouldBeRedirected = redirect && (redirect.from === languageHref || redirect.when === 'always')
@@ -146,6 +153,7 @@ export class SideBar extends PureComponent {
               link_active: pathname === languageHref,
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
+            data-testid={testid}
           />
           : <Link prefetch href={href}>
             <a
@@ -153,6 +161,7 @@ export class SideBar extends PureComponent {
                 link_active: pathname === languageHref,
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
+              data-testid={testid}
             />
           </Link>
         }
@@ -200,7 +209,7 @@ export class SideBar extends PureComponent {
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
         <ClickOutside onOutsideClick={onClose}>
-          <button type='button' aria-label='Close menu' onClick={onToggle}>
+          <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close'>
             {crossIcon}
           </button>
 
@@ -218,6 +227,7 @@ export class SideBar extends PureComponent {
               <a
                 href={this.state.foreignLanguagePageRedirectionLink}
                 className='font_link-list_16'
+                data-testid='sidebarMenu:link.switchLanguage'
               >
                 {t('common:languageRedirect.text')}
               </a>

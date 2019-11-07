@@ -11,7 +11,7 @@ const Footer = ({ socialLinks, lng, t }) => {
   return <footer className='grid-container'>
     <span className='logo-wrapper'>
       <Link prefetch href={rootUrl}>
-        <a>
+        <a data-testid='footer:link:logo'>
           <img
             className='logo'
             src={require('../static/icons/csssr_logo.svg')}
@@ -29,6 +29,7 @@ const Footer = ({ socialLinks, lng, t }) => {
             href={href}
             target='_blank'
             rel='noopener'
+            data-testid={`footer:social:${label.toLowerCase()}`}
           >
             <img
               className='social-logo'
@@ -48,8 +49,9 @@ const Footer = ({ socialLinks, lng, t }) => {
           href={`${rootUrl}/privacy-policy`}
           className={lng !== 'ru' ? 'font_footer-link' : 'font_footer-link font_footer-link_without-margin'}
           onClick={privacyPolicyLinkClick}
+          data-testid='footer:link:privacyPolicy'
         >
-          {t('common:footer.privacyPolicy')}
+          {t('common:footer:privacyPolicy')}
         </a>
       </li>
 
@@ -60,6 +62,7 @@ const Footer = ({ socialLinks, lng, t }) => {
           href='/en/cookies-policy'
           className='font_footer-link'
           onClick={privacyPolicyLinkClick}
+          data-testid='footer:link:cookiesPolicy'
         >
           Website cookie policy
         </a>
@@ -74,6 +77,7 @@ const Footer = ({ socialLinks, lng, t }) => {
           className='font_footer-link'
           target='_blank'
           rel='noopener'
+          data-testid='footer:link:frontendDigitalAlliance'
         >
           Frontend.Digital alliance
         </a>

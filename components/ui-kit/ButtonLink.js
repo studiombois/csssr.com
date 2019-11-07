@@ -26,6 +26,7 @@ export default class Button extends PureComponent {
       href,
       className,
       onClick,
+      testid,
     } = this.props
 
     const classNames = cn('button', {
@@ -45,6 +46,7 @@ export default class Button extends PureComponent {
           href={href}
           rel='noopener'
           onClick={onClick}
+          data-testid={testid}
         >
           {children}
         </a>

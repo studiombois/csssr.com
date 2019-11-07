@@ -9,7 +9,7 @@ const mediaRuleByResoluton = {
   1280: '(max-width: 1359px)',
   1360: '(max-width: 1919px)',
 }
-const PictureForAllResolutions = ({ className, image: { namespace, key, alt, extension = 'png' }, customResolutions = defaultResolutions }) =>
+const PictureForAllResolutions = ({ className, testid, image: { namespace, key, alt, extension = 'png' }, customResolutions = defaultResolutions }) =>
   <Fragment>
     <picture className={className}>
       {customResolutions.map(resolution =>
@@ -33,7 +33,9 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
         className={className}
         srcSet={getSrcSet(namespace, 1920, key, extension, ['1x', '2x', '3x'])}
         src={getSrcSet(namespace, 1920, key, extension, ['1x'])}
-        alt={alt} />
+        alt={alt}
+        data-testid={testid}
+      />
     </picture>
     <style jsx>{`
       img {
@@ -45,6 +47,7 @@ const PictureForAllResolutions = ({ className, image: { namespace, key, alt, ext
 
 PictureForAllResolutions.propTypes = {
   className: string,
+  testid: string,
   image: shape({
     namespace: string,
     key: string,

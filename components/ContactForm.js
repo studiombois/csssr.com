@@ -226,6 +226,7 @@ class ContactForm extends PureComponent {
       className,
       pageName,
       fieldsIds,
+      formName,
       t,
     } = this.props
 
@@ -238,6 +239,7 @@ class ContactForm extends PureComponent {
           type='text'
           placeholder={t(`${pageName}:form.namePlaceholder`)}
           label={t(`${pageName}:form.nameLabel`)}
+          testid={`${formName}:field:callbackForm.name`}
         />
       </div>,
       phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -248,6 +250,7 @@ class ContactForm extends PureComponent {
           type='text'
           placeholder={t(`${pageName}:form.phonePlaceholder`)}
           label={t(`${pageName}:form.phoneLabel`)}
+          testid={`${formName}:field:callbackForm.phone`}
         />
       </div>,
       email: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -258,6 +261,7 @@ class ContactForm extends PureComponent {
           type='email'
           placeholder={t(`${pageName}:form.emailPlaceholder`)}
           label={t(`${pageName}:form.emailLabel`)}
+          testid={`${formName}:field:callbackForm.email`}
         />
       </div>,
       message: <div className={cn('field', 'field_type_textarea', fieldCss.className, { [className]: !!className })}>
@@ -268,12 +272,15 @@ class ContactForm extends PureComponent {
           component={TextareaField}
           placeholder={t(`${pageName}:form.messagePlaceholder`)}
           label={t(`${pageName}:form.messageLabel`)}
+          testid={`${formName}:field:callbackForm.message`}
         />
       </div>,
       privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
         <PrivacyPolicyCheckbox
           id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
           name='privacyPolicy'
+          testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
+          linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
         />
       </div>,
       newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
@@ -282,6 +289,7 @@ class ContactForm extends PureComponent {
           name='newsletter'
           type='checkbox'
           component={Checkbox}
+          testid={`${formName}:field:callbackForm.newsletter.checkbox`}
         >
           {t('common:checkBoxesText.newsletterText')}
         </Field>
@@ -331,6 +339,8 @@ class ContactForm extends PureComponent {
           <AnimatedButton
             type='submit'
             status={status}
+            testid={`${formName}:button.callbackForm.submit`}
+            btnContainerTestid={`${formName}:block.btnContainer`}
           >
             {t(`${pageName}:form.submitText`)}
           </AnimatedButton>
@@ -343,6 +353,8 @@ class ContactForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail={feedbackEmail}
+              testid={`${formName}:text.successMessage`}
+              successPictureTestid={`${formName}:picture.successMessageImg`}
             />
           </div>
         }

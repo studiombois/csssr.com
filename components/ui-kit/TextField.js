@@ -36,6 +36,7 @@ export default class TextField extends PureComponent {
       theme,
       className,
       maxLength,
+      testid,
       input: {
         name,
         value,
@@ -77,6 +78,7 @@ export default class TextField extends PureComponent {
           type={type}
           disabled={disabled}
           maxLength={maxLength}
+          data-testid={testid}
         />
         {showError && <span className='font_input-small-error-label error'>{error || submitError}</span>}
         {label && <label

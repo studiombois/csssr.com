@@ -520,6 +520,89 @@ class Competences extends PureComponent {
           }
         }
       `}</style>
+      <style jsx>{`
+        h2:first-of-type {
+          -ms-grid-row: 1;
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 7;
+        }
+
+        h2:nth-of-type(2) {
+          -ms-grid-row: 3;
+          -ms-grid-column: 15;
+          -ms-grid-column-span: 21;
+        }
+
+        article > p:first-of-type {
+          -ms-grid-row: 4;
+          -ms-grid-column: 15;
+          -ms-grid-column-span: 7;
+        }
+
+        h2:last-of-type {
+          -ms-grid-row: 5;
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 9;
+        }
+
+        p:last-of-type {
+          -ms-grid-row: 6;
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 9;
+        }
+
+        .logos-and-text-container {
+          -ms-grid-row: 2;
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 7;
+        }
+
+        @media (min-width: 1360px) and (max-width: 1919px) {
+          .logos-and-text-container {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 9;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1279px) {
+          .logos-and-text-container {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 9;
+          }
+        }
+
+        @media (max-width: 767px) {
+          h2:first-of-type {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 7;
+          }
+
+          h2:nth-of-type(2) {
+            -ms-grid-column: 5;
+            -ms-grid-column-span: 7;
+          }
+
+          article > p:first-of-type {
+            -ms-grid-column: 5;
+            -ms-grid-column-span: 7;
+          }
+
+          h2:last-of-type {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 7;
+          }
+
+          p:last-of-type {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 7;
+          }
+
+          .logos-and-text-container {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 7;
+          }
+        }
+      `}</style>
     </Fragment>
   }
 }

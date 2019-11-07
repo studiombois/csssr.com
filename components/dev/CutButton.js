@@ -113,6 +113,48 @@ const CutButton = ({ children, isCut, onClick }) =>
         }
       }
     `}</style>
+    <style jsx>{`
+      button {
+        -ms-grid-column: 11;
+        -ms-grid-column-span: 3;
+      }
+
+      .grid-container {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 23;
+      }
+
+      .border-bottom {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 19;
+      }
+
+      @media (min-width: 768px) and (max-width: 1279px) {
+        .border-bottom {
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 19;
+        }
+      }
+
+      @media (max-width: 767px) {
+        button {
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 7;
+        }
+
+        .grid-container {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 11;
+      }
+
+        .border-bottom {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+        }
+      }
+    `}</style>
   </Fragment>
 
 CutButton.propTypes = {

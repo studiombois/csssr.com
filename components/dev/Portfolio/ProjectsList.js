@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { arrayOf, shape, string, number } from 'prop-types'
+import { arrayOf, shape, string, number, bool } from 'prop-types'
 import cn from 'classnames'
 import Tabs from '../Tabs'
 import Project from './Project'
@@ -53,14 +53,19 @@ class ProjectsList extends PureComponent {
     if (this.state.isCut) {
       this.listCutHeight = portfolioSection.offsetHeight
     }
+
     const scrollToNextBlock = () => {
       if (this.state.isCut) {
         const scrollToOffset = portfolioSection.offsetTop + this.listCutHeight
 
-        window.scrollTo({
-          top: scrollToOffset,
-          behavior: 'instant',
-        })
+        if (this.context.isMsBrowser) {
+          document.documentElement.scrollTop = scrollToOffset
+        } else {
+          window.scrollTo({
+            top: scrollToOffset,
+            behavior: 'instant',
+          })
+        }
       }
     }
 
@@ -70,8 +75,9 @@ class ProjectsList extends PureComponent {
     }, scrollToNextBlock)
   }
 
-  renderProject = project =>
+  renderProject = (project, index) =>
     <Project
+      index={index}
       key={project.id}
       id={project.id}
       type={project.type}
@@ -106,7 +112,7 @@ class ProjectsList extends PureComponent {
         ? { ...project, className: 'bigger-margin-top' }
         : project
 
-      return this.renderProject(newProject)
+      return this.renderProject(newProject, index)
     })
   }
 
@@ -192,9 +198,21 @@ class ProjectsList extends PureComponent {
             transition: height ${!isCut ? listHeight / 3.8 : 0}ms ease-in; // коэффициент подобран на глаз
           }
         `}</style>
+        <style jsx>{`
+          .list-container {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 23;
+            -ms-grid-row: 4;
+          }
+        `}</style>
       </Fragment>
     )
   }
 }
+
+ProjectsList.contextTypes = {
+  isMsBrowser: bool,
+}
+
 
 export default translate()(ProjectsList)

@@ -4,8 +4,8 @@ import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/node'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
-import detectMsBrowserByUserAgent from '../utils/detectMsBrowserByUserAgent'
-import MsBrowserProvider from '../utils/MsBrowserProvider'
+import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
+import Ie11BrowserContext from '../utils/Ie11BrowserProvider'
 
 export default class MyApp extends App {
   state = {
@@ -87,6 +87,11 @@ export default class MyApp extends App {
     window.addEventListener('click', function () {
       document.body.classList.remove('outline')
     })
+
+
+    if (detectIe11(this.props.pageProps.userAgent)) {
+      document.body.classList.add('ie11')
+    }
   }
 
   componentWillUnmount() {
@@ -102,6 +107,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {}
     const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
+    const isIe11Browser = detectIe11(pageProps.userAgent)
 
     return (
       <I18nextProvider
@@ -109,9 +115,9 @@ export default class MyApp extends App {
         initialI18nStore={initialI18nStore}
         initialLanguage={initialLanguage}
       >
-        <MsBrowserProvider value={isMsBrowser}>
+        <Ie11BrowserContext value={isIe11Browser}>
           <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
-        </MsBrowserProvider>
+        </Ie11BrowserContext>
       </I18nextProvider>
     )
   }

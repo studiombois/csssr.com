@@ -106,6 +106,7 @@ const pictureFaq = css.resolve`
 const picturesMap = {
   'project-manager-ru': 'Project_manager',
   'project-manager': 'Project_manager',
+  'project-product-manager': 'Project_manager',
   'middle-js-developer': 'Developer_2',
   'senior-js-developer': 'JS_senior',
   'qa-engineer': 'QA_1',
@@ -129,12 +130,15 @@ const picturesMap = {
   'account-manager': 'Documents_1',
   'system-analyst': 'Systems_analyst',
   'senior-fullstack-developer': 'JS_senior',
+  'senior-team-lead-js-developer': 'JS_senior',
   'product-designer': 'Designer',
   'react-yoda': 'Copywriter_rus',
   copywriter: 'Copywriter_eng',
   'senior-java-developer': 'Backend_developer_1',
   'copywriter-en': 'Copywriter_eng',
   'copywriter-ru': 'Copywriter_rus',
+  photographer: 'Photographer',
+  'brand-ambassador': 'Brand-ambassador',
 }
 
 const divideSections = sections => {
@@ -145,12 +149,11 @@ const divideSections = sections => {
   ]
 }
 
-const mapVacancies = language => vacancy =>
+const mapVacancies = locale => vacancy =>
   <li key={vacancy.id}>
     <Link
-      prefetch
-      href={{ pathname: `/${language}/job`, query: { jobPathName: vacancy.pathName } }}
-      as={`/${language}/jobs/${vacancy.pathName}`}
+      href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
+      as={`/${locale}/jobs/${vacancy.pathName}`}
     >
       <a
         className={cn({
@@ -291,7 +294,7 @@ class CandidateForm extends PureComponent {
     })
 
   renderVacancyImageAndLinks = () => {
-    const { vacancies, language, vacancy: { pathName, name }, lng, t } = this.props
+    const { vacancies, locale, vacancy: { pathName, name }, lng, t } = this.props
     const pictureName = picturesMap[pathName]
 
     return (
@@ -303,7 +306,7 @@ class CandidateForm extends PureComponent {
         />}
 
         <ul>
-          {vacancies.map(mapVacancies(language))}
+          {vacancies.map(mapVacancies(locale))}
         </ul>
 
         {lng === 'ru' &&
@@ -427,6 +430,7 @@ class CandidateForm extends PureComponent {
       vacancies,
       submitError,
       lng,
+      locale,
       t,
     } = this.props
 
@@ -484,7 +488,12 @@ class CandidateForm extends PureComponent {
         />
 
         <FormRow>
-          <div className='button' ref={this.messageRef}>
+          <div
+            className={cn('button', {
+              button_lng_en: lng === 'en',
+            })}
+            ref={this.messageRef}
+          >
             <AnimatedButton
               type='submit'
               status={status}
@@ -504,7 +513,7 @@ class CandidateForm extends PureComponent {
         </FormRow>
 
         <ul>
-          {vacancies.map(mapVacancies)}
+          {vacancies.map(mapVacancies(locale))}
         </ul>
 
         <style jsx>{`
@@ -538,6 +547,10 @@ class CandidateForm extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             width: 12rem;
+          }
+
+          .button_lng_en {
+            width: 16rem;
           }
 
           .faq-text {
@@ -575,6 +588,11 @@ class CandidateForm extends PureComponent {
 
             .button {
               width: 13.5rem;
+            }
+
+
+            .button_lng_en {
+              width: 17.5rem;
             }
 
             .faq-text-container {

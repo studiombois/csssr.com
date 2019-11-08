@@ -48,7 +48,7 @@ export default class SelectField extends PureComponent {
           disabled={disabled}
           onChange={this.handleChange}
         >
-          <option hidden>Дополнительный способ связи</option>
+          <option hidden>{placeholder}</option>
           {options.map(option =>
             <option key={option.id} value={option.id}>
               {option.checkboxText}

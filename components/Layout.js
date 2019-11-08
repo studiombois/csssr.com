@@ -42,6 +42,8 @@ Layout.propTypes = {
     logoSup: string,
     isLogoLink: bool,
     isBurgerVisible: bool,
+    menuName: string,
+    sectionName: string,
   }),
   footerProps: shape({
     noFooter: bool,

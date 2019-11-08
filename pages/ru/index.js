@@ -41,7 +41,7 @@ class Dev extends PureComponent {
 
     return (
       <Layout
-        headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser }}
+        headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser, menuName: t('common:menu.dev'), sectionName: t('common:sectionName.dev') }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head

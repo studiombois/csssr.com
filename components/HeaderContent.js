@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react'
-import { bool, object, string, number, func } from 'prop-types'
+import { bool, string, number, func } from 'prop-types'
 import Link from 'next/link'
 import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
@@ -11,8 +11,6 @@ const burgerIcon = <BurgerIcon style={{ width: '1.5rem', height: '1.125rem' }}/>
 
 class HeaderContent extends PureComponent {
   static propTypes = {
-    router: object,
-    sectionName: string,
     logoAlt: string,
     logoSup: string,
     scrollbarWidth: number,
@@ -25,6 +23,7 @@ class HeaderContent extends PureComponent {
     onFocus: func,
     onSideBarToggle: func,
     onScrollToSection: func,
+    sectionName: string,
   }
 
   scrollToForm = formName => () => {
@@ -33,7 +32,6 @@ class HeaderContent extends PureComponent {
 
   render() {
     const {
-      pathname,
       links,
       t,
       lng,
@@ -49,6 +47,7 @@ class HeaderContent extends PureComponent {
       onSideBarToggle,
       onFocus,
       onScrollToSection,
+      sectionName,
     } = this.props
     const rootUrl = `/${lng}`
 
@@ -130,7 +129,7 @@ class HeaderContent extends PureComponent {
               className={cn('section-name', 'font_perforator-16-black', {
                 'with-logo-sup': logoSup,
               })}
-              dangerouslySetInnerHTML={{ __html: t(`common:sectionName.${pathname.slice(1)}`) }}
+              dangerouslySetInnerHTML={{ __html: sectionName }}
             />
 
             {isBurgerVisible &&

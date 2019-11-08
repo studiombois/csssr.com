@@ -1,5 +1,5 @@
 import React from 'react'
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/node'
 import initialI18nInstance from '../common/i18n'
@@ -104,17 +104,15 @@ export default class MyApp extends App {
     const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
 
     return (
-      <Container>
-        <I18nextProvider
-          i18n={i18n || initialI18nInstance}
-          initialI18nStore={initialI18nStore}
-          initialLanguage={initialLanguage}
-        >
-          <MsBrowserProvider value={isMsBrowser}>
-            <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
-          </MsBrowserProvider>
-        </I18nextProvider>
-      </Container>
+      <I18nextProvider
+        i18n={i18n || initialI18nInstance}
+        initialI18nStore={initialI18nStore}
+        initialLanguage={initialLanguage}
+      >
+        <MsBrowserProvider value={isMsBrowser}>
+          <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
+        </MsBrowserProvider>
+      </I18nextProvider>
     )
   }
 }

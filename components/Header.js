@@ -10,11 +10,12 @@ import HeaderContent from './HeaderContent'
 class Header extends PureComponent {
   static propTypes = {
     router: object,
-    sectionName: string,
     logoAlt: string,
     logoSup: string,
     isLogoLink: bool,
     isBurgerVisible: bool,
+    menuName: string,
+    sectionName: string,
   }
 
   state = {
@@ -121,11 +122,12 @@ class Header extends PureComponent {
   render() {
     const {
       router: { pathname },
-      sectionName,
       logoAlt,
       logoSup,
       isLogoLink,
       isBurgerVisible,
+      menuName,
+      sectionName,
     } = this.props
     const { showHeader, pinHeader, isSideBarOpened, toggleHeaderAnimations } = this.state
     const links = getHeaderLinks(pathname)
@@ -136,11 +138,11 @@ class Header extends PureComponent {
           onToggle={this.handleSideBarToggle}
           isOpened={isSideBarOpened}
           onClose={this.handleSideBarClose}
+          menuName={menuName}
         />
         <HeaderContent
           links={links}
           pathname={pathname}
-          sectionName={sectionName}
           showHeader={showHeader}
           pinHeader={pinHeader}
           logoAlt={logoAlt}
@@ -153,6 +155,7 @@ class Header extends PureComponent {
           onFocus={this.handleHeaderFocus}
           onSideBarToggle={this.handleSideBarToggle}
           onScrollToSection={this.handleScrollToSection}
+          sectionName={sectionName}
         />
       </Fragment>
     )

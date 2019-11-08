@@ -289,6 +289,55 @@ class Hire extends PureComponent {
             }
           }
         `}</style>
+        <style jsx>{`
+          :global(.ie11) .image-wrapper {
+            min-height: 372px;
+          }
+          
+          @media (min-width: 1359px) and (max-width: 1920px) {
+            :global(.ie11) .image-wrapper {
+              min-height: 565px;
+            }
+          }
+
+          :global(.ie11) article {
+            -ms-grid-rows: auto auto;
+          }
+
+          :global(.ie11) h1 {
+            -ms-grid-column: 7;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 1;
+          }
+
+          :global(.ie11) span {
+            display: block;
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 19;
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 1;
+          }
+
+          @media (min-width: 1280px) and (max-width: 1359px) {
+            :global(.ie11) h1 {
+              -ms-grid-column: 5;
+              -ms-grid-column-span: 15;
+            }
+          }
+
+          @media (max-width: 767px) {
+            :global(.ie11) h1 {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+
+            :global(.ie11) span {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+          }
+        `}</style>
         {picture.styles}
         {planets.styles}
       </Fragment>

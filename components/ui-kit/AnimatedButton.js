@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { node, oneOf, func, bool } from 'prop-types'
+import { node, oneOf, func } from 'prop-types'
 import cn from 'classnames'
 
 export default class AnimatedButton extends PureComponent {
@@ -35,7 +35,7 @@ export default class AnimatedButton extends PureComponent {
       })}>
         <button
           type={type}
-          className={cn(classNames, { isMsBrowser: this.context.isMsBrowser })}
+          className={classNames}
           disabled={disabled}
         >
           <span>{children}</span>
@@ -198,16 +198,13 @@ export default class AnimatedButton extends PureComponent {
           }
 
           //ie 11 fallback
-          .loading.success button.isMsBrowser {
-             display: none;
-          }
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            .loading.success button {
+              display: none;
+            }
+         }
         `}</style>
       </div>
     )
   }
 }
-
-AnimatedButton.contextTypes = {
-  isMsBrowser: bool,
-}
-

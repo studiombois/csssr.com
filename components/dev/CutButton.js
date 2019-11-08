@@ -51,7 +51,7 @@ const CutButton = ({ children, isCut, onClick }) =>
         margin-right: -2rem;
         margin-left: -2rem;
         grid-column: 2 / span 10;
-        height: 0.0625rem;
+        height: 1px;
         background-color: #979797;
       }
 
@@ -78,6 +78,10 @@ const CutButton = ({ children, isCut, onClick }) =>
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
+        button {
+          padding: 1rem 1rem;
+        }
+
         .grid-container {
           width: 944px;
         }

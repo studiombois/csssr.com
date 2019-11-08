@@ -212,6 +212,14 @@ export default class LinksList extends PureComponent {
             }
           }
         `}</style>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+          }
+        `}</style>
       </div>
     )
   }

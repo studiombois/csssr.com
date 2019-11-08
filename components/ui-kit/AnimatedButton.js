@@ -56,6 +56,7 @@ export default class AnimatedButton extends PureComponent {
         <style jsx>{`
           button {
             cursor: pointer;
+            position: relative;
           }
 
           /* Button container */
@@ -195,6 +196,13 @@ export default class AnimatedButton extends PureComponent {
               stroke-dashoffset: 0;
             }
           }
+
+          //ie 11 fallback
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            .loading.success button {
+              display: none;
+            }
+         }
         `}</style>
       </div>
     )

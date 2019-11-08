@@ -79,6 +79,13 @@ const ProjectsListMobile = ({ t, projects }) => {
           width: ${gridColumns * 3 + 0.5 * (gridColumns - 1) + 1}rem;
         }
       `}</style>
+      <style jsx>{`
+        ul {
+          -ms-grid-columns: (3rem)[${gridColumns}];
+          -ms-grid-column: 1;
+          -ms-grid-column-span: ${gridColumns};
+        }
+      `}</style>
     </Fragment>
   )
 }

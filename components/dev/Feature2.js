@@ -4,11 +4,20 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
   picture {
+    display: block;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 15;
+    -ms-grid-row: 1;
     grid-column: 3 / span 8;
     grid-row: 1;
     z-index: -1;
     margin-top: 2rem;
     height: 568px;
+  }
+
+  img {
+    display: block;
+    height: auto;
   }
 
  @media (max-width: 1279px) {
@@ -26,6 +35,9 @@ const picture = css.resolve`
 
   @media (max-width: 767px) {
     picture {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+      -ms-grid-row: 2;
       grid-column: 1 / span 6;
       grid-row: 2;
       margin-top: 0.5rem;
@@ -124,6 +136,54 @@ const Feature2 = ({ title, text, image, style }) =>
       }
     `}</style>
     {picture.styles}
+    <style jsx>{`
+      h2 {
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 3;
+        -ms-grid-row: 1;
+      }
+
+      p {
+        -ms-grid-column: 9;
+        -ms-grid-column-span: 11;
+        -ms-grid-row: 2;
+      }
+
+      @media (min-width: 1360px) and (max-width: 1919px) {
+        h2 {
+          -ms-grid-column: 5;
+          -ms-grid-column-span: 5;
+        }
+      }
+
+      @media (min-width: 1280px) and (max-width: 1359px) {
+        h2 {
+          -ms-grid-column: 5;
+          -ms-grid-column-span: 5;
+        }
+      }
+
+     @media (min-width: 768px) and (max-width: 1279px) {
+        h2 {
+          -ms-grid-column: 5;
+          -ms-grid-column-span: 5;
+        }
+      }
+
+      @media (max-width: 767px) {
+        h2 {
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 7;
+          -ms-grid-row: 1;
+        }
+
+        p {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+          -ms-grid-row: 3;
+        }
+      }
+    `}</style>
   </Fragment>
 
 export default Feature2

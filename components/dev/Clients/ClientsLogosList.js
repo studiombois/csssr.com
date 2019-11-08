@@ -66,14 +66,13 @@ const ClientsLogosList = ({ clients }) => {
         }
 
         @media (min-width: 1360px) and (max-width: 1919px) {
-            li {
-              width: 13rem;
-              height: 7.5rem;
-            }
+          li {
+            width: 13rem;
+            height: 7.5rem;
+          }
 
-            li:not(:nth-child(4n)) {
-              margin-right: 1rem;
-            }
+          li:not(:nth-child(4n)) {
+            margin-right: 1rem;
           }
         }
 
@@ -105,6 +104,13 @@ const ClientsLogosList = ({ clients }) => {
           li:nth-child(n + 5) {
             margin-top: 1rem;
           }
+        }
+      `}</style>
+      <style jsx>{`
+        ul {
+          -ms-grid-column: 5;
+          -ms-grid-column-span: 15;
+          -ms-grid-row: 4;
         }
       `}</style>
     </ul>

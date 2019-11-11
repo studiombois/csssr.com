@@ -14,6 +14,14 @@ const picture = css.resolve`
     transform: translateX(-50%) translateY(-50%);
   }
 
+  :global(.ie11) picture {
+    position: static;
+    left: auto;
+    right: auto;
+    width: 100%;
+    transform: none;
+  }
+
   img {
     object-fit: contain;
   }
@@ -80,17 +88,29 @@ class Hire extends PureComponent {
           />
         </article>
         <div className='image-wrapper'>
-          <PictureForAllResolutions
-            className={picture.className}
-            image={{
-              namespace: 'sborka',
-              key: 'rocket',
-              alt: t('sborka:imgAlt.rocket'),
-            }}
-          />
-          { isMsBrowser
-            ? null
-            : <HirePlanetsAndSatellites className={planets.className} />
+          { isMsBrowser ? (
+            <Fragment>
+              <PictureForAllResolutions
+                className={picture.className}
+                image={{
+                  namespace: 'sborka',
+                  key: 'hireFallbackIe',
+                  alt: t('sborka:imgAlt.rocket'),
+                }}
+              />
+            </Fragment>
+          ) :
+            <Fragment>
+              <PictureForAllResolutions
+                className={picture.className}
+                image={{
+                  namespace: 'sborka',
+                  key: 'rocket',
+                  alt: t('sborka:imgAlt.rocket'),
+                }}
+              />
+              <HirePlanetsAndSatellites className={planets.className} />
+            </Fragment>
           }
 
         </div><style jsx>{`
@@ -291,13 +311,7 @@ class Hire extends PureComponent {
         `}</style>
         <style jsx>{`
           :global(.ie11) .image-wrapper {
-            min-height: 372px;
-          }
-          
-          @media (min-width: 1359px) and (max-width: 1920px) {
-            :global(.ie11) .image-wrapper {
-              min-height: 565px;
-            }
+            background: none;
           }
 
           :global(.ie11) article {

@@ -13,9 +13,9 @@ const getAnimationProperties = slideTo => {
   const defaultStyles = {
     gridColumn: '1 / span 12',
     gridRow: 1,
-    '-ms-grid-column': '1',
-    '-ms-grid-column-span': '23',
-    '-ms-grid-row': '1',
+    msGridColumn: 1,
+    msGridColumnSpan: 23,
+    msGridRow: 1,
     opacity: 0,
     transition: `
       opacity ${animationDuration}ms linear,

@@ -126,6 +126,47 @@ const Portfolio = ({ t, isMobile, portfolio }) =>
           grid-column: 1 / span 6;
           overflow-x: scroll;
         }
+      }
+    `}</style>
+    <style jsx>{`
+      article {
+        -ms-grid-row: (auto)[4];
+      }
+
+      h2 {
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 11;
+        -ms-grid-row: 1;
+      }
+
+      p {
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 11;
+        -ms-grid-row: 2;
+      }
+
+      @media (min-width: 1360px) {
+        h2,
+        p {
+          -ms-grid-column: 5;
+          -ms-grid-column-span: 15;
+        }
+      }
+
+      @media (max-width: 767px) {
+        h2,
+        h3,
+        p {
+          grid-column: 1 / span 6;
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+        }
+
+        .project-container {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+        }
+      }
     `}</style>
   </Fragment>
 

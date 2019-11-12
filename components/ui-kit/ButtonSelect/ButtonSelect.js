@@ -150,6 +150,7 @@ class ButtonSelect extends PureComponent {
       <div
         data-scroll-lock-fill-gap
         id='hire-us-button'
+        data-testid='buttonSelect:block.listAndText'
         className={cn(blueButtonClassName, whiteButtonClassName, {
           'button-wrapper': true,
           'button-wrapper_is_invisible': !this.state.showScrollButton,
@@ -168,6 +169,7 @@ class ButtonSelect extends PureComponent {
             href='#hire-us'
             className={blueButtonClassName}
             onClick={this.handlePreventSmoothScroll}
+            testid='buttonSelect:button.showModal'
           >
             {buttonText}
           </ButtonLink>
@@ -175,6 +177,7 @@ class ButtonSelect extends PureComponent {
           : <Button
             className={blueButtonClassName}
             onClick={this.handleShowContactModal}
+            testid='buttonSelect:button.showModal'
           >
             {buttonText}
           </Button>
@@ -186,6 +189,7 @@ class ButtonSelect extends PureComponent {
           onClick={this.handleToggleDropdown}
           className={whiteButtonClassName}
           theme='secondary'
+          testid='buttonSelect:button.toggle.moreLinks'
         >
           { isDropdownVisible
             ? <CrossIcon width='1.5rem'/>
@@ -220,7 +224,7 @@ class ButtonSelect extends PureComponent {
           }
 
           .button-wrapper_is_invisible {
-            transform: translateY(calc(100% + 15rem));
+            transform: translateY(250%);
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {

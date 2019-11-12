@@ -29,6 +29,7 @@ export default class Button extends PureComponent {
       className,
       children,
       onClick,
+      testid,
     } = this.props
 
     const classNames = cn('button', {
@@ -48,6 +49,7 @@ export default class Button extends PureComponent {
           disabled={disabled}
           name={name}
           aria-label={ariaLabel}
+          data-testid={testid}
         >
           {children}
         </button><style jsx>{`

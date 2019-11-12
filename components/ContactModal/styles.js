@@ -21,9 +21,8 @@ const contactModalStyles = css`
     margin-left: auto;
     margin-right: auto;
     grid-template-columns: repeat(10, 120px);
-    width: 93rem,;
+    width: 93rem;
     max-height: 86vh;
-    padding-bottom: 3.375rem;
     background-color: white;
     overflow-y: auto;
   }
@@ -52,7 +51,6 @@ const contactModalStyles = css`
   @media (min-width: 1280px) and (max-width: 1359px) {
     .modal-wrapper {
       grid-template-columns: repeat(10, 5.5rem);
-      padding-bottom: 2rem;
       width: 64rem;
     }
   }
@@ -60,7 +58,6 @@ const contactModalStyles = css`
   @media (min-width: 768px) and (max-width: 1279px) {
     .modal-wrapper {
       grid-template-columns: repeat(8, 4rem);
-      padding-bottom: 2rem;
       width: 39rem;
     }
   }

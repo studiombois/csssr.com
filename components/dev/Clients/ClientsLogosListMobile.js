@@ -53,6 +53,12 @@ const ClientsLogosListMobile = ({ t }) => clientsGroups.map((clientsGroup, index
         margin-top: 0.5rem;
       }
     `}</style>
+    <style jsx>{`
+      li.clients-group {
+        -ms-grid-column: ${(index * 5 + 1) + ((index * 5 + 1) - 1)};
+        -ms-grid-column-span: 7;
+      }
+    `}</style>
   </Fragment>
 )
 

@@ -5,6 +5,7 @@ import * as Sentry from '@sentry/node'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent from '../utils/detectMsBrowserByUserAgent'
+import MsBrowserProvider from '../utils/MsBrowserProvider'
 
 export default class MyApp extends App {
   state = {
@@ -108,9 +109,9 @@ export default class MyApp extends App {
         initialI18nStore={initialI18nStore}
         initialLanguage={initialLanguage}
       >
-        <React.Fragment>
+        <MsBrowserProvider value={isMsBrowser}>
           <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
-        </React.Fragment>
+        </MsBrowserProvider>
       </I18nextProvider>
     )
   }

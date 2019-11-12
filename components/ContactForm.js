@@ -52,8 +52,35 @@ const picture = css.resolve`
 const fieldCss = css.resolve`
   .field {
     grid-column: 4 / span 6;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 11;
     margin-bottom: 2.0625rem;
   }
+
+  .field:nth-of-type(1) {
+    -ms-grid-row: 2; 
+  }
+
+  .field:nth-of-type(2) {
+    -ms-grid-row: 3; 
+  }
+
+  .field:nth-of-type(3) {
+    -ms-grid-row: 4; 
+  }
+
+  .field:nth-of-type(4) {
+    -ms-grid-row: 5; 
+  }
+
+  .field:nth-of-type(5) {
+    -ms-grid-row: 6; 
+  }
+
+  .field:nth-of-type(6) {
+    -ms-grid-row: 7; 
+  }
+
 
   .field_type_textarea {
     position: relative;
@@ -78,8 +105,12 @@ const fieldCss = css.resolve`
   @media (min-width: 768px) and (max-width: 1279px) {
     .field {
       grid-column: 4 / span 6;
+      -ms-grid-column: 7;
+      -ms-grid-column-span: 11; 
       margin-bottom: 2.0625rem;
     }
+
+
 
     .field_type_textarea {
       margin-bottom: 3.625rem;
@@ -93,6 +124,8 @@ const fieldCss = css.resolve`
   @media (max-width: 767px) {
     .field {
       grid-column: 1 / span 6;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
     }
 
     .field_type_textarea {
@@ -140,10 +173,14 @@ class ContactForm extends PureComponent {
     const elemRect = messageNode.getBoundingClientRect()
     const offset = elemRect.top - bodyRect.top - 20
 
-    window.scrollTo({
-      top: offset,
-      behavior: 'smooth',
-    })
+    if (this.context.isMsBrowser) {
+      document.documentElement.scrollTop = offset
+    } else {
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth',
+      })
+    }
   }
 
   handleSubmit = e => {
@@ -226,6 +263,7 @@ class ContactForm extends PureComponent {
       className,
       pageName,
       fieldsIds,
+      formName,
       t,
     } = this.props
 
@@ -238,6 +276,7 @@ class ContactForm extends PureComponent {
           type='text'
           placeholder={t(`${pageName}:form.namePlaceholder`)}
           label={t(`${pageName}:form.nameLabel`)}
+          testid={`${formName}:field:callbackForm.name`}
         />
       </div>,
       phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -248,6 +287,7 @@ class ContactForm extends PureComponent {
           type='text'
           placeholder={t(`${pageName}:form.phonePlaceholder`)}
           label={t(`${pageName}:form.phoneLabel`)}
+          testid={`${formName}:field:callbackForm.phone`}
         />
       </div>,
       email: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -258,6 +298,7 @@ class ContactForm extends PureComponent {
           type='email'
           placeholder={t(`${pageName}:form.emailPlaceholder`)}
           label={t(`${pageName}:form.emailLabel`)}
+          testid={`${formName}:field:callbackForm.email`}
         />
       </div>,
       message: <div className={cn('field', 'field_type_textarea', fieldCss.className, { [className]: !!className })}>
@@ -268,12 +309,15 @@ class ContactForm extends PureComponent {
           component={TextareaField}
           placeholder={t(`${pageName}:form.messagePlaceholder`)}
           label={t(`${pageName}:form.messageLabel`)}
+          testid={`${formName}:field:callbackForm.message`}
         />
       </div>,
       privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
         <PrivacyPolicyCheckbox
           id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
           name='privacyPolicy'
+          testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
+          linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
         />
       </div>,
       newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
@@ -282,6 +326,7 @@ class ContactForm extends PureComponent {
           name='newsletter'
           type='checkbox'
           component={Checkbox}
+          testid={`${formName}:field:callbackForm.newsletter.checkbox`}
         >
           {t('common:checkBoxesText.newsletterText')}
         </Field>
@@ -331,6 +376,8 @@ class ContactForm extends PureComponent {
           <AnimatedButton
             type='submit'
             status={status}
+            testid={`${formName}:button.callbackForm.submit`}
+            btnContainerTestid={`${formName}:block.btnContainer`}
           >
             {t(`${pageName}:form.submitText`)}
           </AnimatedButton>
@@ -343,6 +390,8 @@ class ContactForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail={feedbackEmail}
+              testid={`${formName}:text.successMessage`}
+              successPictureTestid={`${formName}:picture.successMessageImg`}
             />
           </div>
         }
@@ -448,9 +497,60 @@ class ContactForm extends PureComponent {
         `}</style>
         {picture.styles}
         {fieldCss.styles}
+        <style jsx>{`
+          form {
+            -ms-grid-rows: (auto)[9];
+          }
+
+          h2 {
+            -ms-grid-column: 7;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 1;
+          }
+
+          .button {
+            -ms-grid-column: 11;
+            -ms-grid-column-span: 3;
+            -ms-grid-row: 8;
+          }
+
+          .message {
+            -ms-grid-column: 7;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 9;
+          }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            .button {
+              -ms-grid-column: 9;
+              -ms-grid-column-span: 7;
+            }
+          }
+
+          @media (max-width: 767px) {
+            h2 {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+
+            .button {
+              grid-column: 2 / span 4;
+            }
+
+            .message {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+          }
+
+        `}</style>
       </form>
     )
   }
+}
+
+ContactForm.contextTypes = {
+  isMsBrowser: bool,
 }
 
 export default translate()(ContactForm)

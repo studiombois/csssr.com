@@ -5,12 +5,20 @@ import css from 'styled-jsx/css'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 const picture = css.resolve`
-  picture {
-    height: 100%;
+  @media (max-width: 767px) {
+    img {
+      width: auto;
+    }
   }
 
-  img {
-    width: auto;
+  @media (min-width: 768px) {
+    picture {
+      display: block;
+    }
+    img {
+      height: auto;
+      display: block;
+    }
   }
 `
 
@@ -244,6 +252,53 @@ const Feature1 = ({ t, image }) =>
       }
     `}</style>
     {picture.styles}
+    <style jsx>{`
+      h2 {
+        -ms-grid-column: 9;
+        -ms-grid-column-span: 7;
+        -ms-grid-row: 1;
+      }
+
+      p {
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 7;
+        -ms-grid-row: 2;
+      }
+
+      .picture-wrapper {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 19;
+        -ms-grid-row: 2;
+      }
+
+      @media (min-width: 1360px) and (max-width: 1919px) {
+        h2 {
+          -ms-grid-column: 7;
+          -ms-grid-column-span: 11;
+        }
+      }
+
+      @media (min-width: 1280px) and (max-width: 1359px) {
+        h2 {
+          -ms-grid-column: 7;
+          -ms-grid-column-span: 11;
+        }
+      }
+
+      @media (max-width: 767px) {
+        h2,
+        p {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+        }
+
+        .picture-wrapper {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+          -ms-grid-row: 3;
+        }
+      }
+    `}</style>
   </Fragment>
 
 export default translate()(Feature1)

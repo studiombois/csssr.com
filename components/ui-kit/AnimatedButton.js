@@ -19,6 +19,8 @@ export default class AnimatedButton extends PureComponent {
       status,
       type,
       children,
+      testid,
+      btnContainerTestid,
     } = this.props
 
     const disabled = status !== 'pending'
@@ -32,11 +34,14 @@ export default class AnimatedButton extends PureComponent {
         loading: status === 'submitting' || status === 'success' || status === 'fail',
         success: status === 'success',
         error: status === 'fail',
-      })}>
+      })}
+      data-testid={btnContainerTestid}
+      >
         <button
           type={type}
           className={classNames}
           disabled={disabled}
+          data-testid={testid}
         >
           <span>{children}</span>
         </button>
@@ -56,6 +61,7 @@ export default class AnimatedButton extends PureComponent {
         <style jsx>{`
           button {
             cursor: pointer;
+            position: relative;
           }
 
           /* Button container */
@@ -195,6 +201,13 @@ export default class AnimatedButton extends PureComponent {
               stroke-dashoffset: 0;
             }
           }
+
+          //ie 11 fallback
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            .loading.success button {
+              display: none;
+            }
+         }
         `}</style>
       </div>
     )

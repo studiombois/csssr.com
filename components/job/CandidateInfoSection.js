@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import css from 'styled-jsx/css'
+import cn from 'classnames'
 import withI18next from '../../utils/withI18next'
 import ContactOptions from './ContactOptions'
 import ContactOptionsMobile from './ContactOptionsMobile'
@@ -9,11 +10,17 @@ import FileField from '../ui-kit/FileField'
 import TextareaField from '../ui-kit/TextareaField'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import getFileFieldText from '../../utils/getFileFieldText'
+import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
 const stylesForFullWidthField = css.resolve`
   div {
     margin-top: 2.5rem;
     grid-column: 2 / span 6;
+  }
+
+  :global(.ie11) div {
+    -ms-grid-column: ${getMsColumn(2)};
+    -ms-grid-column-span: ${getMsColumn(6)};
   }
 
   @media (max-width: 767px) {
@@ -27,6 +34,11 @@ const stylesForFirstHalfWidthField = css.resolve`
   div {
     margin-top: 3.0625rem;
     grid-column: 2 / span 3;
+  }
+
+  :global(.ie11) div {
+    -ms-grid-column: ${getMsColumn(2)};
+    -ms-grid-column-span: ${getMsColumn(3)};
   }
 
   @media (max-width: 767px) {
@@ -43,6 +55,11 @@ const stylesForSecondHalfWidthField = css.resolve`
     grid-column: 5 / span 3;
   }
 
+  :global(.ie11) div {
+    -ms-grid-column: ${getMsColumn(5)};
+    -ms-grid-column-span: ${getMsColumn(3)};
+  }
+
   @media (max-width: 767px) {
     div {
       margin-top: 2.5625rem;
@@ -57,6 +74,15 @@ const stylesForTextareaField = css.resolve`
     grid-column: 2 / span 6;
   }
 
+  :global(.ie11) div {
+    -ms-grid-column: ${getMsColumn(2)};
+    -ms-grid-column-span: ${getMsColumn(6)};
+  }
+
+  :global(.ie11 textarea) {
+    overflow: auto;
+  }
+
   @media (max-width: 767px) {
     div {
       grid-column: 1 / span 6;
@@ -68,6 +94,12 @@ const stylesForCheckboxField = css.resolve`
   span {
     margin-top: 3.4375rem;
     grid-column: 2 / span 6;
+  }
+
+  :global(.ie11) span {
+    display: block;
+    -ms-grid-column: ${getMsColumn(2)};
+    -ms-grid-column-span: ${getMsColumn(6)};
   }
 
   @media (max-width: 767px) {
@@ -84,9 +116,21 @@ const stylesForFileField = css.resolve`
     grid-column: 2 / span 4;
   }
 
+  :global(.ie11) div {
+    margin-top: 3rem;
+    -ms-grid-column: ${getMsColumn(2)};
+    -ms-grid-column-span: ${getMsColumn(4)};
+  }
+
   .button {
     margin-top: 3rem;
     grid-column: 6 / span 2;
+  }
+
+  :global(.ie11) .button {
+    height: 4rem;
+    -ms-grid-column: ${getMsColumn(6)};
+    -ms-grid-column-span: ${getMsColumn(2)};
   }
 
   @media (max-width: 767px) {
@@ -136,6 +180,7 @@ const CandidateInfoSection = props => {
     shouldShow: hasGithub,
   }]
 
+
   return (
     <div className='grid-container'>
       <h2 className='font_h2-regular'>{t('job:tellAboutYourself')}</h2>
@@ -150,7 +195,7 @@ const CandidateInfoSection = props => {
             key={id}
             id={id}
             name={id}
-            className={className}
+            className={cn(className, `input-${id}`)}
             component={TextField}
             type={type}
             label={label}
@@ -163,7 +208,7 @@ const CandidateInfoSection = props => {
         <Field
           id='file'
           name='file'
-          className={stylesForFileField.className}
+          className={cn(stylesForFileField.className, 'seventh-line')}
           label={`${t('job:testQuest')} ${getFileFieldText(t)(fileExt)}`}
           fileAccept={fileExt}
           component={FileField}
@@ -181,14 +226,14 @@ const CandidateInfoSection = props => {
             id='comment'
             name='comment'
             label={t('job:tellUsMoreAboutYourself')}
-            className={stylesForTextareaField.className}
+            className={cn(stylesForTextareaField.className, 'seventh-line')}
             component={TextareaField}
             theme='regular'
           />
         </Fragment>
       }
 
-      <PrivacyPolicyCheckbox className={stylesForCheckboxField.className} />
+      <PrivacyPolicyCheckbox className={cn(stylesForCheckboxField.className, 'input-checkbox')} />
 
       <style jsx>{`
         div {
@@ -247,6 +292,39 @@ const CandidateInfoSection = props => {
             font-size: 0.875rem;
             line-height: 1.5rem;
           }
+        }
+      `}</style>
+      <style jsx>{`
+       :global(.ie11) h2,
+       :global(.ie11) p {
+          -ms-grid-column: ${getMsColumn(2)};
+          -ms-grid-column-span: ${getMsColumn(6)};
+        }
+
+        :global(.ie11 .input-firstname) {
+          -ms-grid-row: 2;
+        }
+
+        :global(.ie11 .input-lastname) {
+          -ms-grid-row: 2;
+        }
+        :global(.ie11 .input-age) {
+          -ms-grid-row: 3;
+        }
+        :global(.ie11 .input-location) {
+          -ms-grid-row: 4;
+        }
+        :global(.ie11 .input-email) {
+          -ms-grid-row: 5;
+        }
+        :global(.ie11 .input-resume) {
+          -ms-grid-row: 6;
+        }
+        :global(.ie11 .seventh-line) {
+          -ms-grid-row: 7;
+        }
+        :global(.ie11 .input-checkbox) {
+          -ms-grid-row: 8;
         }
       `}</style>
       {stylesForFullWidthField.styles}

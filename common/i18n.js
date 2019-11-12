@@ -1,29 +1,21 @@
 const i18n = require('i18next')
 const XHR = require('i18next-xhr-backend')
-// const { isDevelopment } = require('../utils/app-environment')
-
-const options = {
-  load: 'languageOnly',
-  whitelist: ['en', 'ru'],
-  ns: ['common'],
-  defaultNS: 'common',
-  // TODO разобраться, донастроить, пофиксить проблем i18next и обуздать debug режим
-  // Закомментировали, потому что его сообщения в терминале мешали работать
-  // debug: isDevelopment,
-  interpolation: {
-    escapeValue: false,
-    formatSeparator: ',',
-  },
-}
+const { supportedLanguages, supportedLocales } = require('./locales-settings')
 
 // for browser use xhr backend to load translations
 if (process.browser) {
-  i18n.use(XHR)
-}
-
-// initialize if not already initialized
-if (!i18n.isInitialized) {
-  i18n.init(options)
+  i18n
+    .use(XHR)
+    .init({
+      load: 'all',
+      whitelist: [...supportedLanguages, ...supportedLocales],
+      lowerCaseLng: true,
+      ns: ['common'],
+      defaultNS: 'common',
+      backend: {
+        loadPath: '/static/locales/{{lng}}/{{ns}}.json',
+      },
+    })
 }
 
 // a simple helper to getInitialProps passed on loaded i18n data
@@ -34,6 +26,10 @@ i18n.getInitialProps = (req, namespaces) => {
 
   if (typeof namespaces === 'string') {
     namespaces = [namespaces]
+  }
+
+  if (!req.i18n) {
+    return {}
   }
 
   req.i18n.toJSON = () => null // do not serialize i18next instance and send to client

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
 import translate from '../../utils/translate-wrapper'
 import PictureForAllResolutions from '../PictureForAllResolutions'
-import { getMsColumn, getMsStyle } from '../../utils/style/getGridValueForMs'
+import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
 const howWeWorkItems = [
   'complexApproach',
@@ -260,7 +260,8 @@ const OurPrinciples = ({ t }) => {
       `}</style>
       <style jsx>{`
         h2, p {
-          ${getMsStyle(4, 5)}
+          -ms-grid-column: ${getMsColumn(4)};
+          -ms-grid-column-span: ${getMsColumn(5)};
         }
 
         p {

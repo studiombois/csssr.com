@@ -15,7 +15,7 @@ import withI18next from '../../utils/withI18next'
 
 const Sborka = ({ t, isMobile, isMsBrowser }) =>
   <Layout
-    headerProps={{ isLogoLink: true, isBurgerVisible: true }}
+    headerProps={{ isLogoLink: true, isBurgerVisible: true, title: t('common:menu.html'), sectionName: t('common:sectionName.express') }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
     <Head title={t('sborka:meta.title')} description={t('sborka:meta.description')} />

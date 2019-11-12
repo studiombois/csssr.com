@@ -28,7 +28,7 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
       </span>
 
       : <span className='logo-wrapper'>
-        <Link prefetch href={rootUrl}>
+        <Link href={rootUrl}>
           <a>
             <img
               className='logo'

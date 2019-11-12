@@ -13,8 +13,8 @@ import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../components/job/candidateFormValidationRules'
 import withError from '../../utils/withError'
 import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
-import i18n from '../../common/i18n'
 import StructuredDataVacancy from '../../components/StructuredDataVacancy'
+import i18n from '../../common/i18n'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе

@@ -292,6 +292,33 @@ const PostScriptum = ({ t }) =>
         }
       }
     `}</style>
+    <style jsx>{`
+      :global(.ie11) h2 {
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 15;
+        -ms-grid-row: 1;
+      }
+
+      :global(.ie11) p {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 19;
+        -ms-grid-row: 2;
+      }
+
+      :global(.ie11) span {
+        display: block;
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 11;
+        -ms-grid-row: 3;
+      }
+
+      @media (max-width: 767px) {
+        :global(.ie11) article, h2, p, span, div {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+        }
+      }
+    `}</style>
   </Fragment>
 
 export default translate()(PostScriptum)

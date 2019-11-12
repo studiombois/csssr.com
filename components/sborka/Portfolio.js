@@ -13,6 +13,9 @@ const getAnimationProperties = slideTo => {
   const defaultStyles = {
     gridColumn: '1 / span 12',
     gridRow: 1,
+    msGridColumn: 1,
+    msGridColumnSpan: 23,
+    msGridRow: 1,
     opacity: 0,
     transition: `
       opacity ${animationDuration}ms linear,
@@ -304,6 +307,17 @@ class Portfolio extends PureComponent {
               // 4rem это сумма паддингов
               width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 4}rem;
             }
+          }
+        `}</style>
+        <style jsx>{`
+          :global(.ie11) h2 {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 7;
+          }
+
+          :global(.ie11) .scroller-wrapper {
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 23;
           }
         `}</style>
       </Fragment>

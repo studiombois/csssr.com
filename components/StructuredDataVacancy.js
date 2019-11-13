@@ -53,7 +53,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
         },
         "applicantLocationRequirements": {
           "@type": "Country",
-          "name": "${getCountry()}"
+          "name": "${getCountry()}",
         },
         "jobLocationType": "TELECOMMUTE",
         "employmentType": "${employment}",

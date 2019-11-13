@@ -51,7 +51,7 @@ const CutButton = ({ children, isCut, onClick }) =>
         margin-right: -2rem;
         margin-left: -2rem;
         grid-column: 2 / span 10;
-        height: 0.0625rem;
+        height: 1px;
         background-color: #979797;
       }
 
@@ -78,6 +78,10 @@ const CutButton = ({ children, isCut, onClick }) =>
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
+        button {
+          padding: 1rem 1rem;
+        }
+
         .grid-container {
           width: 944px;
         }
@@ -114,44 +118,26 @@ const CutButton = ({ children, isCut, onClick }) =>
       }
     `}</style>
     <style jsx>{`
-      button {
+      :global(.ie11) button {
         -ms-grid-column: 11;
         -ms-grid-column-span: 3;
       }
 
-      .grid-container {
+      :global(.ie11) .grid-container {
         -ms-grid-row: 5;
         -ms-grid-column: 1;
         -ms-grid-column-span: 23;
       }
 
-      .border-bottom {
+      :global(.ie11) .border-bottom {
         -ms-grid-column: 3;
         -ms-grid-column-span: 19;
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
-        .border-bottom {
+        :global(.ie11) .border-bottom {
           -ms-grid-column: 3;
           -ms-grid-column-span: 19;
-        }
-      }
-
-      @media (max-width: 767px) {
-        button {
-          -ms-grid-column: 3;
-          -ms-grid-column-span: 7;
-        }
-
-        .grid-container {
-        -ms-grid-row: 5;
-        -ms-grid-column: 1;
-        -ms-grid-column-span: 11;
-      }
-
-        .border-bottom {
-          -ms-grid-column: 1;
-          -ms-grid-column-span: 11;
         }
       }
     `}</style>

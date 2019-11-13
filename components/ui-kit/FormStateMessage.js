@@ -129,7 +129,7 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { status } = this.props
+    const { status, testid, successPictureTestid } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 
@@ -149,7 +149,7 @@ class FormStateMessage extends PureComponent {
             body_state_visible: messageShown,
           })}
         >
-          { textData && <div className='text'>
+          { textData && <div className='text' data-testid={testid}>
             <span className='font_p16-regular'>
               {textData.intro}
               <br />
@@ -161,6 +161,7 @@ class FormStateMessage extends PureComponent {
               className={picture.className}
               image={{ namespace: 'forms', key: `${status}`, alt: '' }}
               customResolutions={['360']}
+              testid={successPictureTestid}
             />
           </div> }<style jsx>{`
             .body {

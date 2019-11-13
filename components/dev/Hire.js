@@ -390,36 +390,22 @@ class Hire extends PureComponent {
           }
         `}</style>
         <style jsx>{`
-          blockquote {
+         :global(.ie11) blockquote {
             -ms-grid-column: 17;
             -ms-grid-column-span: 5;
             -ms-grid-row: 1;
           }
 
-          h1 {
+          :global(.ie11) h1 {
             -ms-grid-column: 5;
             -ms-grid-column-span: 11;
             -ms-grid-row: 1;
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
-            h1 {
+            :global(.ie11) h1 {
               -ms-grid-column: 5;
               -ms-grid-column-span: 7;
-            }
-          }
-
-          @media (max-width: 767px) {
-            h1 {
-              -ms-grid-column: 1;
-              -ms-grid-column-span: 11;
-              -ms-grid-row: 1;
-            }
-
-            blockquote {
-              -ms-grid-column: 3;
-              -ms-grid-column-span: 9;
-              -ms-grid-row: 3;
             }
           }
         `}</style>

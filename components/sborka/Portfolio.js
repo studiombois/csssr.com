@@ -313,11 +313,13 @@ class Portfolio extends PureComponent {
           :global(.ie11) h2 {
             -ms-grid-column: 3;
             -ms-grid-column-span: 7;
+            -ms-grid-row: 1;
           }
 
           :global(.ie11) .scroller-wrapper {
             -ms-grid-column: 1;
             -ms-grid-column-span: 23;
+            -ms-grid-row: 2;
           }
         `}</style>
       </Fragment>

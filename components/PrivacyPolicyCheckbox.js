@@ -11,6 +11,8 @@ const PrivacyPolicyCheckbox = ({
   lng,
   name = 'privacyPolicy',
   className,
+  testid,
+  linkTestId,
   t,
 }) =>
   <Fragment>
@@ -21,6 +23,7 @@ const PrivacyPolicyCheckbox = ({
       type='checkbox'
       showValidationAsWarning
       component={Checkbox}
+      testid={testid}
     >
       {t('common:checkBoxesText.privacyPolicyText')}
       <a
@@ -29,6 +32,7 @@ const PrivacyPolicyCheckbox = ({
         rel='noopener'
         onClick={privacyPolicyLinkClick}
         className='font_link-list_16'
+        data-testid={linkTestId}
       >
         {t('common:checkBoxesText.privacyPolicyLinkText')}
       </a>

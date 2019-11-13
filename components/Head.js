@@ -41,7 +41,7 @@ const Head = props =>
     />
     {/* // } */}
     <meta charSet='utf-8' />
-    <title>{`${props.title}${props.titleTemplate}`}</title>
+    <title>{`${props.title} | CSSSR`}</title>
     <meta
       name='description'
       content={unescapeHtmlEntities(props.description)}
@@ -81,7 +81,6 @@ Head.propTypes = {
   structuredData: node,
 }
 Head.defaultProps = {
-  titleTemplate: ' | CSSSR',
   structuredData: <StructuredData />,
 }
 

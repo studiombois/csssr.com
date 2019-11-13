@@ -12,6 +12,7 @@ import AnimatedButton from '../ui-kit/AnimatedButton'
 import FormStateMessage from '../ui-kit/FormStateMessage'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 import Picture from '../Picture'
+import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
 const picture = css.resolve`
   picture {
@@ -64,6 +65,17 @@ const pictureFaq = css.resolve`
     object-position: 82%;
   }
 
+  :global(.ie11) picture {
+    position: relative;
+    overflow: hidden;
+  }
+
+  :global(.ie11) img {
+    max-width: none;
+    position: absolute;
+    right: -2.9375rem;
+  }
+
   @media (min-width: 768px) and (max-width: 1279px) {
     picture {
       margin-top: 0.75rem;
@@ -82,6 +94,11 @@ const pictureFaq = css.resolve`
       margin-top: 1.5rem;
       width: auto;
       height: 8.75rem;
+    }
+
+    :global(.ie11) picture {
+      -ms-grid-column: ${getMsColumn(1)};
+      -ms-grid-column-span: ${getMsColumn(6)};
     }
 
     picture.hidden_on_mobile {
@@ -180,6 +197,13 @@ const mapVacancies = locale => vacancy =>
         top: -0.125rem;
         left: -1.25rem;
         font-size: 0.75rem;
+      }
+
+      :global(.ie11) .hot-vacancy::before {
+        color: orange;
+        overflow: hidden;
+        line-height: 12px;
+        top: 0.3rem;
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
@@ -413,6 +437,14 @@ class CandidateForm extends PureComponent {
             .faq-text {
               display: none;
             }
+          }
+        `}
+        </style>
+
+        <style jsx>{`
+          :global(.ie11) div {
+            -ms-grid-column: ${getMsColumn(9)};
+            -ms-grid-column-span: ${getMsColumn(4)};
           }
         `}
         </style>

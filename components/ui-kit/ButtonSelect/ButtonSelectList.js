@@ -13,17 +13,20 @@ const links = [{
   href: 'https://messenger.com/t/csssr',
   external: true,
   dataLayerEvent: 'floating_button_fb',
+  testid: 'moreLinks:link.messenger',
 }, {
   label: 'Telegram',
   localeLink: 'common:floatingButton.telegram',
   href: 'http://t.me/sputnik_one_bot',
   external: true,
   dataLayerEvent: 'floating_button_tg',
+  testid: 'moreLinks:link.telegram',
 }, {
   label: 'Email',
   localeLink: 'common:floatingButton.email',
   href: 'mailto:sales@csssr.com',
   dataLayerEvent: 'floating_button_email',
+  testid: 'moreLinks:link.email',
 }]
 
 const ButtonSelectList = props => {
@@ -37,13 +40,14 @@ const ButtonSelectList = props => {
         {animationState => isDropdownVisible &&
           <ClickOutside onOutsideClick={onCloseButtonClick}>
             <ul className={`is_${animationState} ${isAppleDevice ? 'is_appleDevice' : ''}`}>
-              <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }} />
+              <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }} data-testid='buttonSelect:text.question'/>
               <Links links={links} onLinkClick={onLinkClick} />
               <li>
                 <button
                   className='close-button'
                   dangerouslySetInnerHTML={{ __html: t('common:floatingButton.closeText') }}
                   onClick={onCloseButtonClick}
+                  data-testid='moreLinks:button.closeDropdown'
                 />
               </li>
             </ul>

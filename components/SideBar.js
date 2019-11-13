@@ -13,10 +13,12 @@ import { defaultLocaleByLanguage } from '../common/locales-settings'
 const items = [{
   path: '',
   key: 'common:menu.dev',
+  testid: 'sidebarMenu:link.dev',
   subItems: [
     {
       path: '/mvp',
       key: 'common:menu.mvp',
+      testid: 'sidebarMenu:link.mvp',
     },
     // {
     //   path: '/',
@@ -30,6 +32,7 @@ const items = [{
 }, {
   path: '/express',
   key: 'common:menu.html',
+  testid: 'sidebarMenu:link.html',
   redirect: {
     from: '/en/express',
     to: 'https://express.csssr.com',
@@ -37,9 +40,11 @@ const items = [{
 }, {
   path: 'https://school.csssr.com/ru',
   key: 'common:menu.school',
+  testid: 'sidebarMenu:link.school',
 }, {
   path: '/jobs',
   key: 'common:menu.jobs',
+  testid: 'sidebarMenu:link.jobs',
   useLocale: true,
 }]
 
@@ -83,7 +88,7 @@ export class SideBar extends PureComponent {
     return newPathnameParts.join('/')
   }
 
-  getNavItem = ({ path, key, subItems, redirect, useLocale }) => {
+  getNavItem = ({ path, key, subItems, redirect, useLocale, testid }) => {
     const { router: { pathname }, lng, locale } = this.props
     const languageHref = `/${useLocale ? locale : lng}${path}`
     let href
@@ -108,10 +113,11 @@ export class SideBar extends PureComponent {
       href,
       isActive: pathname === languageHref,
       subItems: subItems && subItems.map(this.getNavItem),
+      testid,
     }
   }
 
-  renderSubItem = ({ key, shouldReload, href, isActive }) => {
+  renderSubItem = ({ key, shouldReload, href, isActive, testid }) => {
     const { t } = this.props
 
     return (
@@ -123,12 +129,14 @@ export class SideBar extends PureComponent {
               'sub-link_active': isActive,
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
+            data-testid={testid}
           /> : <Link href={href}>
             <a
               className={cn('sub-link', {
                 'sub-link_active': isActive,
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
+              data-testid={testid}
             />
           </Link>
         }
@@ -164,7 +172,7 @@ export class SideBar extends PureComponent {
     )
   }
 
-  renderNavItem = ({ key, shouldReload, href, isActive, subItems }) => {
+  renderNavItem = ({ key, shouldReload, href, isActive, subItems, testid }) => {
     const { t } = this.props
 
     return (
@@ -176,12 +184,14 @@ export class SideBar extends PureComponent {
               link_active: isActive,
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
+            data-testid={testid}
           /> : <Link href={href}>
             <a
               className={cn('font_burger-menu link', {
                 link_active: isActive,
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
+              data-testid={testid}
             />
           </Link>
         }
@@ -231,7 +241,7 @@ export class SideBar extends PureComponent {
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
         <ClickOutside onOutsideClick={onClose}>
-          <button type='button' aria-label='Close menu' onClick={onToggle}>
+          <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close'>
             {crossIcon}
           </button>
 
@@ -249,6 +259,7 @@ export class SideBar extends PureComponent {
               <a
                 href={this.getLanguageRedirectionLink()}
                 className='font_link-list_16'
+                data-testid='sidebarMenu:link.switchLanguage'
               >
                 {t('common:languageRedirect.text')}
               </a>

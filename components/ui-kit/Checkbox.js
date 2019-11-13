@@ -45,6 +45,7 @@ export default class Checkbox extends PureComponent {
       className,
       children,
       showValidationAsWarning,
+      testid,
       meta: {
         error,
         invalid,
@@ -69,6 +70,7 @@ export default class Checkbox extends PureComponent {
           disabled={disabled}
           type='checkbox'
           onChange={this.handleChange}
+          data-testid={testid}
         />
         <label
           className={cn('input-label', {

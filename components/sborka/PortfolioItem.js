@@ -144,6 +144,34 @@ const PortfolioItem = ({ name, href, index, t }) => (
         }
       }
     `}</style>
+
+    <style jsx>{`
+      :global(.ie11) section {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 23;
+      }
+
+      :global(.ie11) div {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 9;
+        -ms-grid-row: 2;
+      }
+
+      @media (min-width: 1280px) and (max-width: 1359px) {
+        :global(.ie11) div {
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 7;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1279px) {
+        :global(.ie11) div {
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 7;
+        }
+      }
+    `}</style>
+
     <style jsx>{`
       @media (max-width: 767px) {
         section {

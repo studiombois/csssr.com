@@ -14,6 +14,14 @@ const picture = css.resolve`
     transform: translateX(-50%) translateY(-50%);
   }
 
+  :global(.ie11) picture {
+    position: static;
+    left: auto;
+    right: auto;
+    width: 100%;
+    transform: none;
+  }
+
   img {
     object-fit: contain;
   }
@@ -80,17 +88,29 @@ class Hire extends PureComponent {
           />
         </article>
         <div className='image-wrapper'>
-          <PictureForAllResolutions
-            className={picture.className}
-            image={{
-              namespace: 'sborka',
-              key: 'rocket',
-              alt: t('sborka:imgAlt.rocket'),
-            }}
-          />
-          { isMsBrowser
-            ? null
-            : <HirePlanetsAndSatellites className={planets.className} />
+          { isMsBrowser ? (
+            <Fragment>
+              <PictureForAllResolutions
+                className={picture.className}
+                image={{
+                  namespace: 'sborka',
+                  key: 'hireFallbackIe',
+                  alt: t('sborka:imgAlt.rocket'),
+                }}
+              />
+            </Fragment>
+          ) :
+            <Fragment>
+              <PictureForAllResolutions
+                className={picture.className}
+                image={{
+                  namespace: 'sborka',
+                  key: 'rocket',
+                  alt: t('sborka:imgAlt.rocket'),
+                }}
+              />
+              <HirePlanetsAndSatellites className={planets.className} />
+            </Fragment>
           }
 
         </div><style jsx>{`
@@ -286,6 +306,49 @@ class Hire extends PureComponent {
               bottom: 2rem;
               width: 13.5rem;
               right: calc(50% - 13.5rem / 2);
+            }
+          }
+        `}</style>
+        <style jsx>{`
+          :global(.ie11) .image-wrapper {
+            background: none;
+          }
+
+          :global(.ie11) article {
+            -ms-grid-rows: auto auto;
+          }
+
+          :global(.ie11) h1 {
+            -ms-grid-column: 7;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 1;
+          }
+
+          :global(.ie11) span {
+            display: block;
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 19;
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 1;
+          }
+
+          @media (min-width: 1280px) and (max-width: 1359px) {
+            :global(.ie11) h1 {
+              -ms-grid-column: 5;
+              -ms-grid-column-span: 15;
+            }
+          }
+
+          @media (max-width: 767px) {
+            :global(.ie11) h1 {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+            }
+
+            :global(.ie11) span {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
             }
           }
         `}</style>

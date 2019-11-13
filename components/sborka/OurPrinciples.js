@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import css from 'styled-jsx/css'
 import translate from '../../utils/translate-wrapper'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
 const howWeWorkItems = [
   'complexApproach',
@@ -151,6 +152,13 @@ const OurPrinciples = ({ t }) => {
           }
         }
       `}</style>
+      <style jsx>{`
+        :global(.ie11) section {
+          -ms-grid-row: 2;
+          -ms-grid-column: ${getMsColumn(index * 3 + 3)};
+          -ms-grid-column-span: 3;
+        }
+      `}</style>
       {picture.styles}
     </section>
 
@@ -248,6 +256,16 @@ const OurPrinciples = ({ t }) => {
           p {
             margin-top: 0.625rem;
           }
+        }
+      `}</style>
+      <style jsx>{`
+        h2, p {
+          -ms-grid-column: ${getMsColumn(4)};
+          -ms-grid-column-span: ${getMsColumn(5)};
+        }
+
+        p {
+          -ms-grid-row: 2
         }
       `}</style>
     </Fragment>

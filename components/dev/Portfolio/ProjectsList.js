@@ -199,7 +199,7 @@ class ProjectsList extends PureComponent {
           }
         `}</style>
         <style jsx>{`
-          .list-container {
+          :global(.ie11) .list-container {
             -ms-grid-column: 1;
             -ms-grid-column-span: 23;
             -ms-grid-row: 4;

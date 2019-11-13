@@ -5,14 +5,17 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 const picture = css.resolve`
   picture {
     display: block;
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 15;
-    -ms-grid-row: 1;
     grid-column: 3 / span 8;
     grid-row: 1;
     z-index: -1;
     margin-top: 2rem;
     height: 568px;
+  }
+
+  :global(.ie11) picture {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 15;
+    -ms-grid-row: 1;
   }
 
   img {
@@ -35,9 +38,6 @@ const picture = css.resolve`
 
   @media (max-width: 767px) {
     picture {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-      -ms-grid-row: 2;
       grid-column: 1 / span 6;
       grid-row: 2;
       margin-top: 0.5rem;

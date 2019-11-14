@@ -234,6 +234,10 @@ class HeaderContent extends PureComponent {
               height: 1.5rem;
             }
 
+            :global(.ie11) .logo {
+              height: 1.7rem;
+            }
+
             .nav {
               // IE-11 styles
               -ms-grid-column: 5;
@@ -378,6 +382,7 @@ class HeaderContent extends PureComponent {
             @media (min-width: 1024px) and (max-width: 1279px) {
               :global(.ie11) .logo {
                 width: 5rem;
+                height: 1.2rem;
               }
             }
 

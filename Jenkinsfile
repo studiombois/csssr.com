@@ -58,13 +58,13 @@ pipeline {
             """
           }
 
-          if (branch == 'production') {
+          if (branch == 'master') {
             sh """#!/bin/bash
             source ~/.bashrc
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=csssr.com,branch=${branch},cert=csssr-com,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
+            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=csssr.com,branch=${branch},cert=csssr-com,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-production csssr-com-production ./
             """
           } else if (branch.startsWith('release/')) {
             sh """#!/bin/bash

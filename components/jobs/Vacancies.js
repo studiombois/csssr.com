@@ -99,6 +99,14 @@ const pictureFaq = css.resolve`
     }
   }
 
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    img {
+      height: 8.75rem;
+      width: auto;
+      max-width: none;
+    }
+  }
+
   @media (max-width: 767px) {
     picture {
       position: relative;
@@ -875,7 +883,6 @@ class Vacancies extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             :global(.ie11) .faq-text {
-              margin-top: 4.5rem;
               -ms-grid-column: ${getMsColumn(8)};
               -ms-grid-column-span: ${getMsColumn(3)};
             }

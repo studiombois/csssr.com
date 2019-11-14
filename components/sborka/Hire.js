@@ -14,7 +14,7 @@ const picture = css.resolve`
     transform: translateX(-50%) translateY(-50%);
   }
 
-  :global(.ie11) picture {
+  :global(.msBrowser) picture {
     position: static;
     left: auto;
     right: auto;
@@ -310,7 +310,7 @@ class Hire extends PureComponent {
           }
         `}</style>
         <style jsx>{`
-          :global(.ie11) .image-wrapper {
+          :global(.msBrowser) .image-wrapper {
             background: none;
           }
 

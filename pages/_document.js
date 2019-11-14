@@ -2,7 +2,8 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { GtmScript, GtmNoScript } from 'react-gtm-components'
 import getGtmId from '../utils/getGtmId'
-import { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
+import cn from 'classnames'
+import detectMsBrowser, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -21,8 +22,9 @@ export default class MyDocument extends Document {
     const language = this.props.language
     const gtmId = getGtmId(language)
     const isIe11 = detectIe11(this.props.userAgent)
+    const isMsBrowser = detectMsBrowser(this.props.userAgent)
     return (
-      <html lang={language} className={isIe11 ? 'ie11' : ''}>
+      <html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
         <Head>
           <GtmScript gtmId={gtmId}/>
         </Head>

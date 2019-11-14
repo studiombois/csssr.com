@@ -363,6 +363,7 @@ class HeaderContent extends PureComponent {
                 height: 1rem;
               }
 
+
               .nav-list-item_hide-on-tablet {
                 display: none;
               }
@@ -371,6 +372,12 @@ class HeaderContent extends PureComponent {
                 .header-content {
                   width: 59rem;
                 }
+              }
+            }
+
+            @media (min-width: 1024px) and (max-width: 1279px) {
+              :global(.ie11) .logo {
+                width: 5rem;
               }
             }
 

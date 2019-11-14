@@ -182,6 +182,11 @@ const Footer = ({ socialLinks, lng, t }) => {
           height: 2rem;
         }
 
+        :global(.ie11) .logo-wrapper a img {
+          width: 5rem;
+          height: 1.1rem;
+        }
+
         .logo {
           width: 4rem;
           height: 1rem;

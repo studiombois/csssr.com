@@ -217,10 +217,6 @@ class Process extends PureComponent {
         `}</style>
 
         <style jsx>{`
-          :global(.ie11) section {
-            overflow-x: hidden;
-          }
-        
           :global(.ie11) h2 {
             -ms-grid-column: 3;
             -ms-grid-column-span: 21;

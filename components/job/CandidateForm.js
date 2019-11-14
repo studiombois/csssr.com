@@ -578,14 +578,6 @@ class CandidateForm extends PureComponent {
               padding-top: 0;
             }
 
-            ul {
-              grid-column: 1 / span 6;
-              margin-top: 3.9375rem;
-              margin-left: 3rem;
-              display: block;
-              width: 18.5rem;
-            }
-
             .button {
               width: 13.5rem;
             }

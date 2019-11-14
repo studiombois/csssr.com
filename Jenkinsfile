@@ -1,7 +1,6 @@
 pipeline {
   environment {
     registryCredential = "space-nexus"
-    scmVars = ""
     branch = ""
     commit = ""
   }
@@ -14,16 +13,8 @@ pipeline {
         echo "Branch: ${GIT_BRANCH}"
 
         script {
-          scmVars = checkout([
-            $class: 'GitSCM',
-            branches: [[name: GIT_BRANCH]],
-            doGenerateSubmoduleConfigurations: false,
-            userRemoteConfigs: [[credentialsId: 'csssr.com', url: 'git@github.com:csssr/csssr.com']]
-          ])
-        }
-        script {
-          branch = scmVars.GIT_BRANCH.replace('origin/', '')
-          commit = scmVars.GIT_COMMIT.substring(0,8)
+          branch = GIT_BRANCH
+          commit = GIT_COMMIT.substring(0,8)
           safeBranch = branch.replaceAll('/', '-').toLowerCase()
         }
         echo "GIT_BRANCH: ${branch}"

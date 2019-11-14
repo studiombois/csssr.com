@@ -11,7 +11,7 @@ import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
 import FormStateMessage from './ui-kit/FormStateMessage'
 import PrivacyPolicyCheckbox from './PrivacyPolicyCheckbox'
-import { Ie11BrowserContext } from '../utils/Ie11BrowserProvider'
+import { MsBrowserContext } from '../utils/msBrowserProvider'
 
 const picture = css.resolve`
   picture {
@@ -142,7 +142,7 @@ const fieldCss = css.resolve`
 
 class ContactForm extends PureComponent {
   messageRef = React.createRef()
-  static contextType = Ie11BrowserContext
+  static contextType = MsBrowserContext
 
   static proptypes = {
     imageName: string,

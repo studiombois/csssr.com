@@ -292,6 +292,10 @@ class Begin extends PureComponent {
         {picture.styles}
         {planet.styles}
         <style jsx>{`
+          :global(.ie11) article {
+            overflow: hidden;
+          }
+
           :global(.ie11) h1 {
             -ms-grid-column: 11;
             -ms-grid-column-span: 5;

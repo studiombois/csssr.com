@@ -293,7 +293,7 @@ class Begin extends PureComponent {
         {planet.styles}
         <style jsx>{`
           :global(.ie11) article {
-            overflow-x: hidden;
+            overflow: hidden;
           }
 
           :global(.ie11) h1 {

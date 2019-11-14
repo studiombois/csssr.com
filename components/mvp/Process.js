@@ -218,7 +218,7 @@ class Process extends PureComponent {
 
         <style jsx>{`
           :global(.ie11) section {
-            overflow-x: hidden;
+            overflow: hidden;
           }
         
           :global(.ie11) h2 {

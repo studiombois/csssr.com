@@ -827,14 +827,6 @@ class Vacancies extends PureComponent {
             -ms-grid-row: 12;
           }
 
-          :global(.ie11) article *:nth-child(13), :global(.ie11) article *:nth-child(14) {
-            -ms-grid-row: 13;
-          }
-
-          :global(.ie11) article *:nth-child(15), :global(.ie11) article *:nth-child(16) {
-            -ms-grid-row: 14;
-          }
-
 
           :global(.ie11) header,
           :global(.ie11) h2,

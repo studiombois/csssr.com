@@ -81,7 +81,7 @@ def sendNotification(String buildStatus) {
   buildStatus = buildStatus ?: 'SUCCESS'
 
   def color
-  def channel = '#csssr_com'
+  def channel = '#csssr_bots'
   if (buildStatus == 'STARTED') {
     color = '#D4DADF'
   } else if (buildStatus == 'SUCCESS') {

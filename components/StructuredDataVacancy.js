@@ -56,9 +56,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
           "name": "${getCountry()}"
         },
         "jobLocationType": "TELECOMMUTE",
-        "employmentType": "${employment}",
-        "workHours": "40 hours per week",
-        "industry": "Computer Software" 
+        "employmentType": "${employment}"
       }
     `,
       }}

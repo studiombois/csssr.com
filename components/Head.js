@@ -85,7 +85,6 @@ Head.propTypes = {
   }),
   structuredData: node,
 }
-
 Head.defaultProps = {
   structuredData: <StructuredData />,
 }

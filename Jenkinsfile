@@ -90,7 +90,7 @@ def sendNotification(String buildStatus) {
     color = '#FEF65B'
   } else {
     color = '#D04538'
-    channel = '#csssr_com'
+    channel = '#csssr_bots'
   }
 
   def message = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}:\n${env.BUILD_URL}"

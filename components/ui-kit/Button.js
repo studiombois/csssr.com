@@ -54,13 +54,10 @@ export default class Button extends PureComponent {
           {children}
         </button><style jsx>{`
           .button {
-<<<<<<< Updated upstream
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-=======
->>>>>>> Stashed changes
             height: 3rem;
             background: none;
             border: none;

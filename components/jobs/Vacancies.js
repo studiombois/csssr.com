@@ -99,11 +99,12 @@ const pictureFaq = css.resolve`
     }
   }
 
-  @media (min-width: 1024px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1279px) {
     img {
-      height: 8.75rem;
-      width: auto;
+      width: 125%;
       max-width: none;
+      height: auto;
+      object-position: unset;
     }
   }
 

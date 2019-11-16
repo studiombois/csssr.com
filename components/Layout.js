@@ -26,6 +26,10 @@ const Layout = props => {
       #main {
         overflow-x: hidden;
       }
+
+      :global(.ie11) #main {
+        display: block;
+      }
     `}</style>
   </Fragment>
 }

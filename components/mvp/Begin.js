@@ -114,7 +114,6 @@ class Begin extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             width: 1792px;
-            max-width: 100%;
           }
 
           h1 {

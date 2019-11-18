@@ -227,7 +227,7 @@ class Process extends PureComponent {
               height: 1200px;
             }
           }
-
+        
           :global(.ie11) h2 {
             -ms-grid-column: 3;
             -ms-grid-column-span: 21;

@@ -119,6 +119,7 @@ class Begin extends PureComponent {
           h1 {
             grid-column: 6 / span 3;
             grid-row: 1;
+            padding-left: 2.625rem;
             padding-top: 11.5rem;
             font-size: 10.5rem;
             font-family: 'Roboto', 'Arial', sans-serif;
@@ -293,7 +294,7 @@ class Begin extends PureComponent {
           :global(.ie11) article {
             overflow: hidden;
           }
-  
+
           :global(.ie11) h1 {
             -ms-grid-column: 11;
             -ms-grid-column-span: 5;

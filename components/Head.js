@@ -5,14 +5,14 @@ import { number, string, shape, node } from 'prop-types'
 import translate from '../utils/translate-wrapper'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
-import { Ie11BrowserContext } from '../utils/Ie11BrowserProvider'
+import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 
 // TODO если deplomat передаёт origin или host в env, то использовать эти данные
 // Пока хардкод, решим позже как лучше это сделать
 const origin = 'https://csssr.com'
 
 const Head = props => {
-  const isIe11Browser = useContext(Ie11BrowserContext)
+  const isIe11 = useContext(Ie11BrowserContext)
 
   return (
     <NextHead>
@@ -33,7 +33,7 @@ const Head = props => {
             document.documentElement.classList.add('webp')
         }
       ` }} />
-      {isIe11Browser && (
+      {isIe11 && (
         <Fragment>
           <script
             crossOrigin='anonymous'

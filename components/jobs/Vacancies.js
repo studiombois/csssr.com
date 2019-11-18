@@ -6,11 +6,30 @@ import Footer from './Footer'
 import translate from '../../utils/translate-wrapper'
 import Picture from '../Picture'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
 const picture = css.resolve`
   picture {
     grid-column: 8 / span 2;
     margin-top: 5.5rem;
+  }
+
+  :global(.ie11) picture {
+    display: block;
+    -ms-grid-column: ${getMsColumn(8)};
+    -ms-grid-column-span: ${getMsColumn(2)};
+  }
+
+  :global(.ie11) picture:nth-child(3) {
+    -ms-grid-row: 3;
+  }
+
+  :global(.ie11) picture:nth-child(6) {
+    -ms-grid-row: 6;
+  }
+
+  :global(.ie11) picture:nth-child(9) {
+    -ms-grid-row: 9;
   }
 
   picture:first-of-type {
@@ -50,6 +69,13 @@ const pictureFaq = css.resolve`
     grid-column: 8 / span 5;
     grid-row: 13;
     margin-top: 3.5rem;
+  }
+
+  :global(.ie11) picture {
+    display: block;
+    -ms-grid-column: ${getMsColumn(8)};
+    -ms-grid-column-span: ${getMsColumn(5)};
+    -ms-grid-row: 13;
   }
 
   img {
@@ -100,6 +126,13 @@ const pictureHunter = css.resolve`
     margin-top: 10.75rem;
   }
 
+  :global(.ie11) picture {
+    display: block;
+    -ms-grid-column: ${getMsColumn(8)};
+    -ms-grid-column-span: ${getMsColumn(1)};
+    -ms-grid-row: 14;
+  }
+
   img {
     width: 100%;
   }
@@ -127,6 +160,7 @@ const footer = css.resolve`
   footer {
     margin-top: 12.5rem;
     grid-row: 15;
+    -ms-grid-row: 15;
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
@@ -744,6 +778,111 @@ class Vacancies extends PureComponent {
               .half-page-picture {
                 background-image: url('${require('../../static/images/jobs/360/cover@3x.jpg')}');
               }
+            }
+          }
+        `}</style>
+
+        <style jsx>{`
+          :global(.ie11) article *:nth-child(1) {
+            -ms-grid-row: 1;
+          }
+
+          :global(.ie11) article *:nth-child(2) {
+            -ms-grid-row: 2;
+          }
+
+          :global(.ie11) article *:nth-child(4) {
+            -ms-grid-row: 4;
+          }
+
+          :global(.ie11) article *:nth-child(5) {
+            -ms-grid-row: 5;
+          }
+
+          :global(.ie11) article *:nth-child(7) {
+            -ms-grid-row: 7;
+          }
+
+          :global(.ie11) article *:nth-child(8) {
+            -ms-grid-row: 8;
+          }
+
+          :global(.ie11) article *:nth-child(10) {
+            -ms-grid-row: 10;
+          }
+
+          :global(.ie11) article *:nth-child(11) {
+            -ms-grid-row: 11;
+          }
+
+          :global(.ie11) article *:nth-child(12) {
+            -ms-grid-row: 12;
+          }
+
+          :global(.ie11) article *:nth-child(13), :global(.ie11) article *:nth-child(14) {
+            -ms-grid-row: 13;
+          }
+
+          :global(.ie11) article *:nth-child(15), :global(.ie11) article *:nth-child(16) {
+            -ms-grid-row: 14;
+          }
+
+
+          :global(.ie11) header,
+          :global(.ie11) h2,
+          :global(.ie11) p {
+            -ms-grid-column: ${getMsColumn(8)};
+            -ms-grid-column-span: ${getMsColumn(5)};
+          }
+
+          :global(.ie11) .hot-vacancy::before {
+            content: '🔥';
+            color: orange;
+            height: 28px;
+            overflow: hidden;
+          }
+
+          :global(.ie11) ul {
+            -ms-grid-column: ${getMsColumn(8)};
+            -ms-grid-column-span: ${getMsColumn(5)};
+          }
+
+          :global(.ie11) .hunter-text {
+            -ms-grid-column: ${getMsColumn(9)};
+            -ms-grid-column-span: ${getMsColumn(3)};
+            -ms-grid-row: 14;
+          }
+
+          :global(.ie11) .faq-text {
+            -ms-grid-column: ${getMsColumn(8)};
+            -ms-grid-column-span: ${getMsColumn(2)};
+            -ms-grid-row: 13;
+          }
+
+          @media (min-width: 1360px) and (max-width: 1919px) {
+            :global(.ie11) .hunter-text {
+              -ms-grid-column: ${getMsColumn(9)};
+              -ms-grid-column-span: ${getMsColumn(4)};
+            }
+          }
+
+          @media (min-width: 1280px) and (max-width: 1359px) {
+            :global(.ie11) .hunter-text {
+              -ms-grid-column: ${getMsColumn(9)};
+              -ms-grid-column-span: ${getMsColumn(4)};
+            }
+          }
+
+          @media (min-width: 768px) and (max-width: 1279px) {
+            :global(.ie11) .faq-text {
+              margin-top: 4.5rem;
+              -ms-grid-column: ${getMsColumn(8)};
+              -ms-grid-column-span: ${getMsColumn(3)};
+            }
+
+            :global(.ie11) .hunter-text {
+              -ms-grid-column: ${getMsColumn(9)};
+              -ms-grid-column-span: ${getMsColumn(5)};
             }
           }
         `}</style>

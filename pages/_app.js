@@ -5,7 +5,7 @@ import * as Sentry from '@sentry/node'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
-import Ie11BrowserProvider from '../utils/Ie11BrowserProvider'
+import MsBrowserProvider from '../utils/msBrowserProvider'
 
 export default class MyApp extends App {
   state = {
@@ -110,9 +110,9 @@ export default class MyApp extends App {
         initialI18nStore={initialI18nStore}
         initialLanguage={initialLanguage}
       >
-        <Ie11BrowserProvider value={isIe11Browser}>
+        <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
           <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
-        </Ie11BrowserProvider>
+        </MsBrowserProvider>
       </I18nextProvider>
     )
   }

@@ -241,7 +241,8 @@ class CandidateForm extends PureComponent {
     const elemRect = messageNode.getBoundingClientRect()
     const offset = elemRect.top - bodyRect.top - 20
 
-    if (this.context) {
+    const isMsBrowser = this.context
+    if (isMsBrowser) {
       document.documentElement.scrollTop = offset
     } else {
       window.scrollTo({

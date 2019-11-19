@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import { bool } from 'prop-types'
 import Head from '../../components/Head'
 import Form from '../../components/dev/Form'
 import Hire from '../../components/dev/Hire'
@@ -32,17 +31,12 @@ class Dev extends PureComponent {
   //   return { shuffledPortfolio }
   // }
 
-  // todo после обновления react обновить context api https://jira.csssr.io/browse/COM-830
-  getChildContext() {
-    return { isMsBrowser: this.props.isMsBrowser }
-  }
-
   render() {
-    const { t/* , shuffledPortfolio*/, isMobile, isMsBrowser } = this.props
+    const { t/* , shuffledPortfolio*/, isMobile } = this.props
 
     return (
       <Layout
-        headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser, menuName: t('common:menu.dev'), sectionName: t('common:sectionName.dev') }}
+        headerProps={{ isLogoLink: true, isBurgerVisible: true, menuName: t('common:menu.dev'), sectionName: t('common:sectionName.dev') }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
 
@@ -87,10 +81,5 @@ class Dev extends PureComponent {
     )
   }
 }
-
-Dev.childContextTypes = {
-  isMsBrowser: bool,
-}
-
 
 export default withI18next(['dev'])(Dev)

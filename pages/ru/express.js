@@ -18,7 +18,14 @@ const Sborka = ({ t, isMobile, isMsBrowser }) =>
     headerProps={{ isLogoLink: true, isBurgerVisible: true, title: t('common:menu.html'), sectionName: t('common:sectionName.express') }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
-    <Head title={t('sborka:meta.title')} description={t('sborka:meta.description')} />
+    <Head
+      title={t('sborka:meta.title')}
+      description={t('sborka:meta.description')} ogImage={{
+        url: require('../../static/images/sborka/1920/three@2x.png'),
+        width: 2064,
+        height: 1568,
+      }}
+    />
     <Hire isMsBrowser={isMsBrowser} />
     <Budget />
     <Projects />

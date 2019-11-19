@@ -218,7 +218,14 @@ class Process extends PureComponent {
 
         <style jsx>{`
           :global(.ie11) section {
-            overflow-x: hidden;
+            overflow: hidden;
+            height: 1500px;
+          }
+
+          @media (min-width: 1024px) and (max-width: 1279px) {
+            :global(.ie11) section {
+              height: 1200px;
+            }
           }
         
           :global(.ie11) h2 {

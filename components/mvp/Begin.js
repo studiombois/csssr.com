@@ -114,7 +114,6 @@ class Begin extends PureComponent {
             margin-left: auto;
             margin-right: auto;
             width: 1792px;
-            max-width: 100%;
           }
 
           h1 {
@@ -293,7 +292,7 @@ class Begin extends PureComponent {
         {planet.styles}
         <style jsx>{`
           :global(.ie11) article {
-            overflow-x: hidden;
+            overflow: hidden;
           }
 
           :global(.ie11) h1 {

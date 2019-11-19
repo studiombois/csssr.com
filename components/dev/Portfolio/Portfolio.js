@@ -129,40 +129,40 @@ const Portfolio = ({ t, isMobile, portfolio }) =>
       }
     `}</style>
     <style jsx>{`
-      article {
+      :global(.ie11) article {
         -ms-grid-row: (auto)[4];
       }
 
-      h2 {
+      :global(.ie11) h2 {
         -ms-grid-column: 7;
         -ms-grid-column-span: 11;
         -ms-grid-row: 1;
       }
 
-      p {
+      :global(.ie11) p {
         -ms-grid-column: 7;
         -ms-grid-column-span: 11;
         -ms-grid-row: 2;
       }
 
       @media (min-width: 1360px) {
-        h2,
-        p {
+        :global(.ie11) h2,
+        :global(.ie11) p {
           -ms-grid-column: 5;
           -ms-grid-column-span: 15;
         }
       }
 
       @media (max-width: 767px) {
-        h2,
-        h3,
-        p {
+        :global(.ie11) h2,
+        :global(.ie11) h3,
+        :global(.ie11) p {
           grid-column: 1 / span 6;
           -ms-grid-column: 1;
           -ms-grid-column-span: 11;
         }
 
-        .project-container {
+        :global(.ie11) .project-container {
           -ms-grid-column: 1;
           -ms-grid-column-span: 11;
         }

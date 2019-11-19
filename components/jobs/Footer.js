@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 import translate from '../../utils/translate-wrapper'
 import { allSocialLinks } from '../../data/jobs/footerLinks'
+import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
 const handleLinkClick = () => {
   document.documentElement.style.scrollBehavior = 'auto'
@@ -245,6 +246,59 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
           margin-top: 8px;
           width: 100%;
           text-align: center;
+        }
+      }
+    `}</style>
+
+    <style jsx>{`
+      :global(.ie11) span {
+        display: none;
+      }
+
+      :global(.ie11) footer {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        -ms-grid-column: ${getMsColumn(8)};
+        -ms-grid-column-span: ${getMsColumn(5)};
+        width: auto;
+      }
+
+      :global(.ie11) .footer-link {
+        display: flex;
+        flex-flow: wrap;
+        white-space: nowrap;
+      }
+
+      :global(.ie11) .footer-link span {
+        display: block;
+        margin-right: 3px;
+      }
+
+      :global(.ie11) footer ul li {
+        display: flex;
+        align-items: center;
+      }
+
+      :global(.ie11) .social-links {
+        -ms-grid-column: ${getMsColumn(8)};
+        -ms-grid-column-span: ${getMsColumn(5)};
+      }
+
+      :global(.ie11) .footer-links {
+        -ms-grid-column: ${getMsColumn(8)};
+        -ms-grid-column-span: ${getMsColumn(5)};
+      }
+
+      :global(.ie11) .change-language-link-wrapper {
+        -ms-grid-column: ${getMsColumn(6)};
+        -ms-grid-column-span: ${getMsColumn(3)};
+      }
+
+      @media (min-width: 768px) and (max-width: 1279px) {
+        :global(.ie11) .footer-links {
+          -ms-grid-column: ${getMsColumn(8)};
+          -ms-grid-column-span: ${getMsColumn(6)};
         }
       }
     `}</style>

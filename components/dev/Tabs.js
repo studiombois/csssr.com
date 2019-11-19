@@ -61,7 +61,7 @@ class Tabs extends Component {
       }
     `}</style>
         <style jsx>{`
-          ul {
+          :global(.ie11) ul {
             -ms-grid-column: 1;
             -ms-grid-column-span: 23;
             -ms-grid-row: 3;

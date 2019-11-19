@@ -36,6 +36,29 @@ const picture = css.resolve`
       grid-row: 1;
     }
   }
+
+
+  :global(.ie11) picture {
+    display: block;
+    -ms-grid-column: 13;
+    -ms-grid-column-span: 9;
+    -ms-grid-row: 2;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    :global(.ie11) picture {
+      -ms-grid-column: 15;
+      -ms-grid-column-span: 9;
+    }
+  }
+
+  @media (max-width: 767px) {
+    :global(.ie11) picture {
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 7;
+      -ms-grid-row: 1;
+    }
+  }
 `
 
 class Money extends PureComponent {
@@ -73,7 +96,7 @@ class Money extends PureComponent {
             z-index: 2;
             grid-column: 2 / span 6;
             grid-row: 2;
-            font-family: 'Roboto', 'Arial' sans-serif;
+            font-family: 'Roboto', Arial sans-serif;
             font-size: 1.5rem;
             font-weight: normal;
             line-height: 2.5625rem;
@@ -135,6 +158,33 @@ class Money extends PureComponent {
               font-size: 1rem;
               text-align: center;
               line-height: 1.5rem;
+            }
+          }
+        `}</style>
+        <style jsx>{`
+          :global(.ie11) h2 {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 21;
+            -ms-grid-row: 1;
+          }
+
+          :global(.ie11) p {
+            -ms-grid-column: 3;
+            -ms-grid-column-span: 11;
+            -ms-grid-row: 2;
+          }
+
+          @media (max-width: 767px) {
+            :global(.ie11) h2 {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+              -ms-grid-row: 2;
+            }
+
+            :global(.ie11) p {
+              -ms-grid-column: 1;
+              -ms-grid-column-span: 11;
+              -ms-grid-row: 3;
             }
           }
         `}</style>

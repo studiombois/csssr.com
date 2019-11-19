@@ -6,6 +6,7 @@ import translate from '../utils/translate-wrapper'
 import getHeaderLinks from '../utils/getHeaderLinks'
 import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
+import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 
 class Header extends PureComponent {
   static propTypes = {
@@ -18,10 +19,12 @@ class Header extends PureComponent {
     sectionName: string,
   }
 
+  static contextType = Ie11BrowserContext
+
   state = {
     logoAlt: 'CSSSR logo',
     showHeader: true,
-    pinHeader: !this.props.isMsBrowser, // Мы хотим всегда показывать хедер на IE
+    pinHeader: !this.context, // Мы хотим всегда показывать хедер на IE
     toggleHeaderAnimations: false,
     isSideBarOpened: false,
     isLogoLink: false,

@@ -35,10 +35,9 @@ export default class ClickOutside extends PureComponent {
   }
 
   handleKeypress = event => {
-    const TABKEY = 9
     const ESCKEY = 27
 
-    if (event.keyCode === TABKEY || event.keyCode === ESCKEY) {
+    if (event.keyCode === ESCKEY) {
       this.props.onOutsideClick(event)
     }
   }

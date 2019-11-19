@@ -13,6 +13,7 @@ import FormStateMessage from '../ui-kit/FormStateMessage'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 import Picture from '../Picture'
 import { getMsColumn } from '../../utils/style/getGridValueForMs'
+import { MsBrowserContext } from '../../utils/msBrowserProvider'
 
 const picture = css.resolve`
   picture {
@@ -225,6 +226,8 @@ const mapVacancies = locale => vacancy =>
 class CandidateForm extends PureComponent {
   messageRef = React.createRef()
 
+  static contextType = MsBrowserContext
+
   state = {
     // TODO такой же элемент стейта есть в ContactForm
     submittedToServer: false,
@@ -238,10 +241,15 @@ class CandidateForm extends PureComponent {
     const elemRect = messageNode.getBoundingClientRect()
     const offset = elemRect.top - bodyRect.top - 20
 
-    window.scrollTo({
-      top: offset,
-      behavior: 'smooth',
-    })
+    const isMsBrowser = this.context
+    if (isMsBrowser) {
+      document.documentElement.scrollTop = offset
+    } else {
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth',
+      })
+    }
   }
 
   // TODO такой же метод есть в ContactForm

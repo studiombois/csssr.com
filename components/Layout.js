@@ -22,13 +22,6 @@ const Layout = props => {
     {!props.footerProps.noFooter &&
       <Footer {...props.footerProps}/>
     }
-
-    <style jsx global>{`
-      #main {
-        overflow-x: hidden;
-        display: block;
-      }
-    `}</style>
   </Fragment>
 }
 

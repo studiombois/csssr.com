@@ -11,6 +11,7 @@ import TextareaField from './ui-kit/TextareaField'
 import AnimatedButton from './ui-kit/AnimatedButton'
 import FormStateMessage from './ui-kit/FormStateMessage'
 import PrivacyPolicyCheckbox from './PrivacyPolicyCheckbox'
+import { MsBrowserContext } from '../utils/msBrowserProvider'
 
 const picture = css.resolve`
   picture {
@@ -141,6 +142,7 @@ const fieldCss = css.resolve`
 
 class ContactForm extends PureComponent {
   messageRef = React.createRef()
+  static contextType = MsBrowserContext
 
   static proptypes = {
     imageName: string,
@@ -173,7 +175,7 @@ class ContactForm extends PureComponent {
     const elemRect = messageNode.getBoundingClientRect()
     const offset = elemRect.top - bodyRect.top - 20
 
-    if (this.context.isMsBrowser) {
+    if (this.context) {
       document.documentElement.scrollTop = offset
     } else {
       window.scrollTo({
@@ -547,10 +549,6 @@ class ContactForm extends PureComponent {
       </form>
     )
   }
-}
-
-ContactForm.contextTypes = {
-  isMsBrowser: bool,
 }
 
 export default translate()(ContactForm)

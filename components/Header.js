@@ -6,7 +6,7 @@ import translate from '../utils/translate-wrapper'
 import getHeaderLinks from '../utils/getHeaderLinks'
 import SideBar from './SideBar'
 import HeaderContent from './HeaderContent'
-import { Ie11BrowserContext } from '../utils/Ie11BrowserProvider'
+import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 
 class Header extends PureComponent {
   static propTypes = {

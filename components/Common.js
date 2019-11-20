@@ -44,6 +44,10 @@ const Common = () =>
       position: relative;
     }
 
+    #main {
+      overflow-x: hidden;
+    }
+
     .grid-container {
       // IE-11 styles
       display: -ms-grid;

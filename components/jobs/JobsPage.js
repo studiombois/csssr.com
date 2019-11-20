@@ -17,7 +17,7 @@ class JobsPage extends PureComponent {
   }
 
   render() {
-    const { t, vacancies } = this.props
+    const { t, vacancies, locale } = this.props
     return (
       <Fragment>
         <Layout
@@ -26,6 +26,7 @@ class JobsPage extends PureComponent {
         >
           <Head
             title={t('jobs:meta.title')}
+            templateTitle={`${locale === 'ru-ru' ? ' | Вкансии CSSSR' : ' | CSSSR'}`}
             description={t('jobs:meta.description')}
             ogImage={{
               url: require('../../static/images/jobs/1920/cover@2x.jpg'),

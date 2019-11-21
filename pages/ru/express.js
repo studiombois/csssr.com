@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Head from '../../components/Head'
 import Hire from '../../components/sborka/Hire'
 import Budget from '../../components/sborka/Budget'
@@ -13,27 +13,44 @@ import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
-const Sborka = ({ t, isMobile, isMsBrowser }) =>
-  <Layout
-    headerProps={{ isLogoLink: true, isBurgerVisible: true, title: t('common:menu.html'), sectionName: t('common:sectionName.express') }}
-    footerProps={{ socialLinks: devSocialLinks }}
-  >
-    <Head title={t('sborka:meta.title')} description={t('sborka:meta.description')} />
-    <Hire isMsBrowser={isMsBrowser} />
-    <Budget />
-    <Projects />
-    <WorkingProcess />
-    <Portfolio isMobile={isMobile} />
-    <OurPrinciples />
-    <Form />
-    <PostScriptum />
-    <ButtonSelect
-      isMobile={isMobile}
-      showButtonOnNode='budget'
-      hideButtonOnNode='hire-us'
-      buttonText={t('sborka:hire.buttonText')}
-      pageName='sborka'
-    />
-  </Layout>
+class Sborka extends Component {
+  static async getInitialProps({ res }) {
+    if (res) {
+      res.writeHead(302, {
+        Location: '/',
+      })
+      res.end()
+    }
+    return {}
+  }
+
+  render() {
+    const { t, isMobile, isMsBrowser } = this.props
+
+    return (
+      <Layout
+        headerProps={{ isLogoLink: true, isBurgerVisible: true, title: t('common:menu.html'), sectionName: t('common:sectionName.express') }}
+        footerProps={{ socialLinks: devSocialLinks }}
+      >
+        <Head title={t('sborka:meta.title')} description={t('sborka:meta.description')} />
+        <Hire isMsBrowser={isMsBrowser} />
+        <Budget />
+        <Projects />
+        <WorkingProcess />
+        <Portfolio isMobile={isMobile} />
+        <OurPrinciples />
+        <Form />
+        <PostScriptum />
+        <ButtonSelect
+          isMobile={isMobile}
+          showButtonOnNode='budget'
+          hideButtonOnNode='hire-us'
+          buttonText={t('sborka:hire.buttonText')}
+          pageName='sborka'
+        />
+      </Layout>
+    )
+  }
+}
 
 export default withI18next(['sborka'])(Sborka)

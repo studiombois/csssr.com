@@ -178,7 +178,7 @@ class JobPage extends PureComponent {
   }
 
   render() {
-    const { vacancy, vacancies, initialValues, t, lng, locale } = this.props
+    const { vacancy, vacancies, initialValues, t, lng } = this.props
 
     return (
       <Fragment>
@@ -193,7 +193,7 @@ class JobPage extends PureComponent {
         >
           <Head
             title={vacancy.name}
-            templateTitle={`${locale === 'ru-ru' ? ' | Вкансии CSSSR' : ' | CSSSR'}`}
+            templateTitle={`${lng === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
             description={vacancy.description}
             structuredData={<StructuredDataVacancy vacancy={vacancy}/>}
             ogImage={{

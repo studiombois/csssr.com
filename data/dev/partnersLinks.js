@@ -16,7 +16,7 @@ export const realEstateLinksEn = [
 export const financeAndBankingLinksEn = [
   { href: 'https://www.tinkoff.ru/eng/', label: 'Tinkoff Bank' },
   { href: 'http://bcsgm.com/en/', label: 'BCS' },
-  { href: 'https://www.sberbank.ru/en/', label: 'Sberbank' },
+  // { href: 'https://www.sberbank.ru/en/', label: 'Sberbank' },
   { href: 'https://alfabank.com/', label: 'Alfa-Bank' },
   { href: 'https://www.sravni.ru/', label: 'sravni.ru' },
 ]

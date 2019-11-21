@@ -13,6 +13,7 @@ import LineFromTopToBottomIcon from '../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../static/icons/notFound.svg'
 import ServerError from '../static/icons/serverError.svg'
 import navItems from '../data/error/navItems'
+import getIeColumn from '../utils/style/getIeColumn'
 
 const titleLocalesByStatusCode = {
   404: 'error:errors.notFound.title',
@@ -38,6 +39,13 @@ const picture = css.resolve`
     height: 51.5rem;
   }
 
+  :global(.ie11) picture {
+    display: block;
+    -ms-grid-column: ${getIeColumn(2)}; 
+    -ms-grid-column-span: ${getIeColumn(7)};
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 10;
+  }
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
       height: 38.5rem;
@@ -338,6 +346,80 @@ class MyError extends React.Component {
 
           .grid-container {
             width: 20.5rem;
+          }
+        }
+      `}</style>
+      <style jsx>{`
+        :global(.ie11) a {
+          display: block;
+          -ms-grid-column: ${getIeColumn(2)}; 
+          -ms-grid-column-span: ${getIeColumn(2)};
+        }
+
+        :global(.ie11) h1 {
+          grid-column: 2 / span 7;
+          grid-row: 1;
+          -ms-grid-column: ${getIeColumn(2)}; 
+          -ms-grid-column-span: ${getIeColumn(7)};
+          -ms-grid-row: 1;
+        }
+
+        :global(.ie11) h2,
+        :global(.ie11) ul {
+          -ms-grid-column: ${getIeColumn(10)};
+          -ms-grid-column-span: ${getIeColumn(2)};
+        }
+
+        :global(.ie11) h2 {
+          -ms-grid-row: 2;
+        }
+
+        :global(.ie11) .error-code_500 h2 {
+          -ms-grid-column: ${getIeColumn(9)};
+          -ms-grid-column-span: ${getIeColumn(4)};
+        }
+
+        :global(.ie11) ul {
+          -ms-grid-row: 4;
+        }
+
+        :global(.ie11) .code-wrapper {
+          -ms-grid-column: ${getIeColumn(2)}; 
+          -ms-grid-column-span: ${getIeColumn(6)};
+          -ms-grid-row: 2;
+          -ms-grid-row-span: 10;
+        }
+
+        :global(.ie11) .arrow-wrapper {
+          -ms-grid-column: ${getIeColumn(10)};
+          -ms-grid-column-span: ${getIeColumn(1)};
+          -ms-grid-row: 3;
+        }
+
+        @media (min-width: 1360px) and (max-width: 1919px) {
+          :global(.ie11) ul {
+            -ms-grid-column: ${getIeColumn(10)}; 
+            -ms-grid-column-span: ${getIeColumn(3)};
+          }
+        }
+
+        @media (min-width: 1280px) and (max-width: 1359px) {
+          :global(.ie11) ul {
+            -ms-grid-column: ${getIeColumn(10)}; 
+            -ms-grid-column-span: ${getIeColumn(3)};
+          }
+
+          :global(.ie11) .arrow-wrapper {
+            -ms-grid-column: ${getIeColumn(10)}; 
+            -ms-grid-column-span: ${getIeColumn(1)};
+            -ms-grid-row: 3;
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1279px) {
+          :global(.ie11) ul {
+            -ms-grid-column: ${getIeColumn(10)}; 
+            -ms-grid-column-span: ${getIeColumn(3)};
           }
         }
       `}</style>

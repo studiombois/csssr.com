@@ -4,7 +4,7 @@ import { bool, func, string } from 'prop-types'
 import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
 import CrossIcon from '../static/icons/cross.svg'
-import ClickOutside from './ui-kit/ClickOutside'
+import OutsideClickHandler from './ui-kit/OutsideClickHandler'
 import Link from 'next/link'
 import isAbsoluteUrl from '../utils/isAbsoluteUrl'
 import i18n from '../common/i18n'
@@ -242,7 +242,7 @@ export class SideBar extends PureComponent {
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
-        <ClickOutside onOutsideClick={onClose}>
+        <OutsideClickHandler onOutsideClick={onClose}>
           <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close'>
             {crossIcon}
           </button>
@@ -267,7 +267,7 @@ export class SideBar extends PureComponent {
               </a>
             </div>
           </div>
-        </ClickOutside><style jsx>{`
+        </OutsideClickHandler><style jsx>{`
           button {
             position: absolute;
             z-index: 1;

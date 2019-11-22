@@ -8,7 +8,7 @@ import getGaCid from '../../utils/client/getGaCid'
 import translate from '../../utils/translate-wrapper'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import Form from './Form'
-import ClickOutside from '../ui-kit/ClickOutside'
+import OutsideClickHandler from '../ui-kit/OutsideClickHandler'
 import { generateDynamicContactModalStyles, contactModalStyles } from './styles'
 
 const formName = 'contact-modal'
@@ -93,7 +93,7 @@ class ContactModal extends PureComponent {
 
     return (
       <div className='screen-shadow'>
-        <ClickOutside onOutsideClick={onClose}>
+        <OutsideClickHandler onOutsideClick={onClose}>
           <div
             data-scroll-lock-scrollable
             className={`modal-wrapper ${dynamicModalStyles.className}`}
@@ -115,7 +115,7 @@ class ContactModal extends PureComponent {
 
             <button aria-label='close modal' onClick={onClose} data-testid='modalForm:button:closeModal'/>
           </div>
-        </ClickOutside>
+        </OutsideClickHandler>
 
         <style jsx>{contactModalStyles}</style>
         {dynamicModalStyles.styles}

@@ -14,16 +14,6 @@ import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
 class Sborka extends Component {
-  static async getInitialProps({ res }) {
-    if (res) {
-      res.writeHead(302, {
-        Location: '/',
-      })
-      res.end()
-    }
-    return {}
-  }
-
   render() {
     const { t, isMobile, isMsBrowser } = this.props
 

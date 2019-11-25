@@ -72,6 +72,7 @@ i18n
           '/thanks.html',
           '/timeline.html',
           '/view-project.html',
+          '/ru/express',
         ]
         oldPaths.forEach(url =>
           server.get(url, (req, res) => res.redirect(301, '/'))

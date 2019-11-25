@@ -193,6 +193,7 @@ class JobPage extends PureComponent {
         >
           <Head
             title={vacancy.name}
+            templateTitle={`${lng === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
             description={vacancy.description}
             structuredData={<StructuredDataVacancy vacancy={vacancy}/>}
             ogImage={{

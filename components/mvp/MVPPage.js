@@ -39,7 +39,14 @@ class MVPPage extends PureComponent {
         headerProps={{ isLogoLink: true, isBurgerVisible: true, title: 'common:menu.mvp', menuName: t('common:menu.mvp'), sectionName: t('common:sectionName.mvp') }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
-        <Head title={t('mvp:meta.title')} description={t('mvp:meta.description')} />
+        <Head
+          title={t('mvp:meta.title')}
+          description={t('mvp:meta.description')}
+          ogImage={{
+            url: require('../../static/images/mvp/1920/money@2x.png'),
+            width: 1456,
+            height: 1254,
+          }}/>
         <Begin />
         <RiskMinimization />
         <Money />

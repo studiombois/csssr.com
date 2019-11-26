@@ -8,7 +8,7 @@ import getGaCid from '../../utils/client/getGaCid'
 import translate from '../../utils/translate-wrapper'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import Form from './Form'
-import OutsideClickHandler from '../ui-kit/OutsideClickHandler'
+import OutsideClickHandler from 'react-outside-click-handler'
 import { generateDynamicContactModalStyles, contactModalStyles } from './styles'
 
 const formName = 'contact-modal'

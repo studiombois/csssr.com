@@ -45,7 +45,7 @@ const Head = props => {
 
       {/* // } */}
       <meta charSet='utf-8' />
-      <title>{`${props.title} | CSSSR`}</title>
+      <title>{`${props.title}${props.templateTitle}`}</title>
       <meta
         name='description'
         content={unescapeHtmlEntities(props.description)}
@@ -90,6 +90,7 @@ Head.propTypes = {
 }
 Head.defaultProps = {
   structuredData: <StructuredData />,
+  templateTitle: ' | CSSSR',
 }
 
 export default withRouter(translate()(Head))

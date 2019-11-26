@@ -20,7 +20,8 @@ const Sborka = ({ t, isMobile, isMsBrowser }) =>
   >
     <Head
       title={t('sborka:meta.title')}
-      description={t('sborka:meta.description')} ogImage={{
+      description={t('sborka:meta.description')}
+      ogImage={{
         url: require('../../static/images/sborka/1920/three@2x.png'),
         width: 2064,
         height: 1568,

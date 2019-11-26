@@ -29,15 +29,17 @@ const items = [{
     //   key: 'Stack migration',
     // },
   ],
-}, {
-  path: '/express',
-  key: 'common:menu.html',
-  testid: 'sidebarMenu:link.html',
-  redirect: {
-    from: '/en/express',
-    to: 'https://express.csssr.com',
-  },
-}, {
+},
+// {
+//   path: '/express',
+//   key: 'common:menu.html',
+//   testid: 'sidebarMenu:link.html',
+//   redirect: {
+//     from: '/en/express',
+//     to: 'https://express.csssr.com',
+//   },
+// },
+{
   path: 'https://school.csssr.com/ru',
   key: 'common:menu.school',
   testid: 'sidebarMenu:link.school',

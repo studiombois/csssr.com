@@ -189,7 +189,7 @@ export class SideBar extends PureComponent {
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
             data-testid={testid}
-          /> : !(href === '/ru/express') && <Link href={href}>
+          /> : href !== '/ru/express' && <Link href={href}>
             <a
               className={cn('font_burger-menu link', {
                 link_active: isActive,

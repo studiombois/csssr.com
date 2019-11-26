@@ -75,7 +75,7 @@ i18n
           '/ru/express',
         ]
         oldPaths.forEach(url =>
-          server.get(url, (req, res) => res.redirect(301, '/'))
+          server.get(url, (req, res) => res.redirect(302, '/'))
         )
 
         server.get('/:lng(ru|en)/jobs', (req, res) => {

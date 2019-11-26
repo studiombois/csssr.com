@@ -30,15 +30,15 @@ const items = [{
     // },
   ],
 },
-// {
-//   path: '/express',
-//   key: 'common:menu.html',
-//   testid: 'sidebarMenu:link.html',
-//   redirect: {
-//     from: '/en/express',
-//     to: 'https://express.csssr.com',
-//   },
-// },
+{
+  path: '/express',
+  key: 'common:menu.html',
+  testid: 'sidebarMenu:link.html',
+  redirect: {
+    from: '/en/express',
+    to: 'https://express.csssr.com',
+  },
+},
 {
   path: 'https://school.csssr.com/ru',
   key: 'common:menu.school',
@@ -189,7 +189,7 @@ export class SideBar extends PureComponent {
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
             data-testid={testid}
-          /> : <Link href={href}>
+          /> : !(href === '/ru/express') && <Link href={href}>
             <a
               className={cn('font_burger-menu link', {
                 link_active: isActive,

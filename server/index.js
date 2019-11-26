@@ -53,6 +53,8 @@ i18n
         // TODO
         // Добавить favicon
 
+        server.get('/ru/express', (req, res) => res.redirect(302, '/'))
+
         const oldPaths = [
           '/jobs/index.html',
           '/jobs/pixel-perfectionist/index.html',
@@ -72,10 +74,9 @@ i18n
           '/thanks.html',
           '/timeline.html',
           '/view-project.html',
-          '/ru/express',
         ]
         oldPaths.forEach(url =>
-          server.get(url, (req, res) => res.redirect(302, '/'))
+          server.get(url, (req, res) => res.redirect(301, '/'))
         )
 
         server.get('/:lng(ru|en)/jobs', (req, res) => {

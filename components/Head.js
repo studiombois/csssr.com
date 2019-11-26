@@ -62,7 +62,7 @@ const Head = props => {
         property='og:description'
         content={unescapeHtmlEntities(props.description)}
       />
-      <meta name='twitter:site' content={props.router.asPath} />
+      <meta name='twitter:site' content={`https://csssr.com${props.router.asPath}`} />
       <meta name='twitter:card' content='summary_large_image' />
       {props.ogImage && <Fragment>
         <meta name='twitter:image' content={`${origin}${props.ogImage.url}`} />

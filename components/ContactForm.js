@@ -142,6 +142,7 @@ const fieldCss = css.resolve`
 
 class ContactForm extends PureComponent {
   messageRef = React.createRef()
+
   static contextType = MsBrowserContext
 
   static proptypes = {
@@ -279,6 +280,7 @@ class ContactForm extends PureComponent {
           placeholder={t(`${pageName}:form.namePlaceholder`)}
           label={t(`${pageName}:form.nameLabel`)}
           testid={`${formName}:field:callbackForm.name`}
+          autoFocus={formName === 'contact-modal'}
         />
       </div>,
       phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>

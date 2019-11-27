@@ -85,6 +85,11 @@ class ContactModal extends PureComponent {
     }
   }
 
+  handleFirstChildFocus = () => {
+    const myNode = document.querySelector('#ConctactModalForm_name')
+    myNode.focus()
+  }
+
   render() {
     const { t, lng, feedbackEmail, pageName, onClose } = this.props
     const { submitStatus } = this.state
@@ -113,7 +118,7 @@ class ContactModal extends PureComponent {
               validate={contactFormValidationRules(t)}
             />
 
-            <button aria-label='close modal' onClick={onClose} data-testid='modalForm:button:closeModal'/>
+            <button aria-label='close modal' onClick={onClose} onBlur={this.handleFirstChildFocus} data-testid='modalForm:button:closeModal'/>
           </div>
         </ClickOutside>
 

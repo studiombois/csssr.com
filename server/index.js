@@ -130,10 +130,17 @@ i18n
 
         server.post('/api/submit-form', submitForm)
 
-        server.get('/', function (req, res) {
-          const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
-          res.redirect(`/${language}`)
-        })
+        const languageRedirectPath = [
+          '/',
+          '/ru/express',
+        ]
+
+        languageRedirectPath.forEach(url =>
+          server.get(url, function (req, res) {
+            const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
+            res.redirect(`/${language}`)
+          })
+        )
 
         if (!isDevelopment) {
           server.get(

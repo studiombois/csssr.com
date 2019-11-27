@@ -22,7 +22,7 @@ const StatusMessage = ({ t, errorText, status, feedbackEmail, hasFailOrSuccessSt
         {messageText}
       </p>
 
-      <Button className={buttonCSS.className} onClick={onClick}>
+      <Button tabIndex='-1' className={buttonCSS.className} onClick={onClick}>
         {t(`common:form.message.${status}.action`)}
       </Button>
 

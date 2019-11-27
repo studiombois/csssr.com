@@ -9,6 +9,7 @@ import translate from '../../utils/translate-wrapper'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import Form from './Form'
 import ClickOutside from '../ui-kit/ClickOutside'
+import FocusLock from 'react-focus-lock'
 import { generateDynamicContactModalStyles, contactModalStyles } from './styles'
 
 const formName = 'contact-modal'
@@ -85,11 +86,6 @@ class ContactModal extends PureComponent {
     }
   }
 
-  handleFirstChildFocus = () => {
-    const myNode = document.querySelector('#ConctactModalForm_name')
-    myNode.focus()
-  }
-
   render() {
     const { t, lng, feedbackEmail, pageName, onClose } = this.props
     const { submitStatus } = this.state
@@ -98,29 +94,31 @@ class ContactModal extends PureComponent {
 
     return (
       <div className='screen-shadow'>
-        <ClickOutside onOutsideClick={onClose}>
-          <div
-            data-scroll-lock-scrollable
-            className={`modal-wrapper ${dynamicModalStyles.className}`}
-          >
-            <ReactFinalForm
-              component={Form}
-              pageName={pageName}
-              formName={formName}
-              decorators={[ focusOnErrors ]}
-              feedbackEmail={feedbackEmail}
-              submitStatus={submitStatus}
-              hasFailOrSuccessStatus={hasFailOrSuccessStatus}
-              onSubmit={this.handleSubmit(t, lng)}
-              onSubmitResolve={this.handleSubmitResolve}
-              onStatusButtonClick={this.handleStatusButtonClick}
-              fieldsIds={fieldsIds}
-              validate={contactFormValidationRules(t)}
-            />
+        <FocusLock>
+          <ClickOutside onOutsideClick={onClose}>
+            <div
+              data-scroll-lock-scrollable
+              className={`modal-wrapper ${dynamicModalStyles.className}`}
+            >
+              <ReactFinalForm
+                component={Form}
+                pageName={pageName}
+                formName={formName}
+                decorators={[ focusOnErrors ]}
+                feedbackEmail={feedbackEmail}
+                submitStatus={submitStatus}
+                hasFailOrSuccessStatus={hasFailOrSuccessStatus}
+                onSubmit={this.handleSubmit(t, lng)}
+                onSubmitResolve={this.handleSubmitResolve}
+                onStatusButtonClick={this.handleStatusButtonClick}
+                fieldsIds={fieldsIds}
+                validate={contactFormValidationRules(t)}
+              />
 
-            <button aria-label='close modal' onClick={onClose} onBlur={this.handleFirstChildFocus} data-testid='modalForm:button:closeModal'/>
-          </div>
-        </ClickOutside>
+              <button aria-label='close modal' onClick={onClose} data-testid='modalForm:button:closeModal'/>
+            </div>
+          </ClickOutside>
+        </FocusLock>
 
         <style jsx>{contactModalStyles}</style>
         {dynamicModalStyles.styles}

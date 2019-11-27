@@ -21,7 +21,7 @@ export default ({ status, feedbackEmail, errorText, t }) => {
         {t('common:form.message.fail.body.textBetweenButtonAndLink')}
       </span>
 
-      <a className='font_link-list_16' href={`mailto:${feedbackEmail}`}>
+      <a className='font_link-list_16' href={`mailto:${feedbackEmail}`} tabIndex='-1'>
         {feedbackEmail}
       </a>
 

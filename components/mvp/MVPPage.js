@@ -43,9 +43,9 @@ class MVPPage extends PureComponent {
           title={t('mvp:meta.title')}
           description={t('mvp:meta.description')}
           ogImage={{
-            url: require('../../static/images/mvp/ogImage.png'),
-            width: 1456,
-            height: 1254,
+            url: require('../../static/images/mvp/ogImage.jpg'),
+            width: 2400,
+            height: 1260,
           }}/>
         <Begin />
         <RiskMinimization />

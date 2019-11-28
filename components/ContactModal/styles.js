@@ -3,6 +3,9 @@ import css from 'styled-jsx/css'
 const contactModalStyles = css`
   .screen-shadow {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 10000;
     top: 0;
     left: 0;

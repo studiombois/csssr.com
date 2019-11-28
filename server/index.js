@@ -53,6 +53,8 @@ i18n
         // TODO
         // Добавить favicon
 
+        server.get('/ru/express', (req, res) => res.redirect(302, '/ru'))
+
         const oldPaths = [
           '/jobs/index.html',
           '/jobs/pixel-perfectionist/index.html',
@@ -130,17 +132,10 @@ i18n
 
         server.post('/api/submit-form', submitForm)
 
-        const languageRedirectPath = [
-          '/',
-          '/ru/express',
-        ]
-
-        languageRedirectPath.forEach(url =>
-          server.get(url, function (req, res) {
-            const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
-            res.redirect(`/${language}`)
-          })
-        )
+        server.get('/', function (req, res) {
+          const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
+          res.redirect(`/${language}`)
+        })
 
         if (!isDevelopment) {
           server.get(

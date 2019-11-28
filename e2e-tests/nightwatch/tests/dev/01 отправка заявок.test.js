@@ -11,15 +11,21 @@ testcase('Отправка заявки из модалки', () => {
   })
   modalContInfo()
   step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    browser.click('div > form > div:nth-child(6)')
+    // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
+    // происходит переход на другую страницу
+    browser.execute(function (selector) {
+      document.querySelector(selector).click()
+    }, ['[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]'])
   })
   step('Отметить чекбокс с подпиской на рассылку', () => {
-    browser.click('div > form > div:nth-child(7)')
+    // TODO здесь нужно кликать на лейбл
+    browser.click('[for="ConctactModalForm_newsletter"]')
   })
   step('Нажать кнопку сабмита формы', () => {
     browser.click('[data-testid="contact-modal:button.callbackForm.submit"]')
   })
   expected('Появилось сообщение об успехе', () => {
+    // TODO здесь нужно добавить селектор
     browser.waitForElementPresent('div > div > p')
     browser.expect
       .element('div > div > p')
@@ -36,10 +42,9 @@ testcase('Отправка заявки из формы в конце стран
   })
   contInfo()
   step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    browser.setValue('input[type=checkbox]', [
-      'form > div:nth-child(6) > span',
-      browser.Keys.SPACE,
-    ])
+    browser.execute(function (selector) {
+      document.querySelector(selector).click()
+    }, ['[data-testid="contact:field:callbackForm.privacyPolicy.checkbox"]'])
   })
   step('Отправить форму', () => {
     browser.submitForm('form')

@@ -1,4 +1,4 @@
-const cont_info_modal = () => {
+const modalContInfo = () => {
   step('Заполнить форму', () => {
     browser.setValue(
       '[data-testid="contact-modal:field:callbackForm.name"]',
@@ -19,4 +19,4 @@ const cont_info_modal = () => {
   })
 }
 
-module.exports = { cont_info_modal }
+module.exports = { modalContInfo }

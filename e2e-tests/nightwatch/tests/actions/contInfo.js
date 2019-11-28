@@ -1,4 +1,4 @@
-const cont_info = () => {
+const contInfo = () => {
   step('Заполнить форму', () => {
     browser.setValue('[data-testid="contact:field:callbackForm.name"]', 'Тест')
     browser.setValue(
@@ -16,4 +16,4 @@ const cont_info = () => {
   })
 }
 
-module.exports = { cont_info }
+module.exports = { contInfo }

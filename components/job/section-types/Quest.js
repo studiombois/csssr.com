@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { array, string } from 'prop-types'
 import FormRow from '../FormRow'
 import Section from '../Section'
+import { getMsColumn } from '../../../utils/style/getGridValueForMs'
 
 const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
   <Fragment>
@@ -64,6 +65,18 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
           margin-top: 0.875rem;
           font-weight: bold;
         }
+      }
+    `}</style>
+
+    <style jsx>{`
+      :global(.ie11) .icon-wrapper {
+        -ms-grid-column: ${getMsColumn(10)};
+        -ms-grid-column-span: ${getMsColumn(1)};
+      }
+
+      :global(.ie11) .file-info {
+        -ms-grid-column: ${getMsColumn(11)};
+        -ms-grid-column-span: ${getMsColumn(1)};
       }
     `}</style>
   </Fragment>

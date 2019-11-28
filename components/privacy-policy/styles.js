@@ -10,11 +10,6 @@ export default css`
   }
 
   header {
-    // IE-11 styles
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 5;
-
-    // Other browsers styles
     grid-column: 2 / span 3;
     padding-top: 13.5rem;
   }
@@ -24,11 +19,6 @@ export default css`
   }
 
   div {
-    // IE-11 styles
-    -ms-grid-column: 11;
-    -ms-grid-column-span: 11;
-
-    // Other browsers styles
     grid-column: 6 / span 6;
     padding-top: 14.5rem;
   }
@@ -116,11 +106,6 @@ export default css`
     }
 
     header {
-      // IE-11 styles
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-
-      // Other browsers styles
       grid-column: 1 / span 6;
       padding-top: 5.5rem;
     }
@@ -130,12 +115,6 @@ export default css`
     }
 
     div {
-      // IE-11 styles
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-
-      // Other browsers styles
-
       padding-top: 2.1875rem;
       grid-column: 1 / span 6;
     }
@@ -181,6 +160,29 @@ export default css`
       padding-bottom: 0;
       font-size: 1rem;
       line-height: 1.5rem;
+    }
+  }
+
+
+  :global(.ie11) header {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 5;
+  }
+
+  :global(.ie11)  div {
+    -ms-grid-column: 11;
+    -ms-grid-column-span: 11;
+  }
+
+  @media (max-width: 767px) {
+    :global(.ie11) header {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+    }
+
+    :global(.ie11) div {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
     }
   }
 `

@@ -29,7 +29,8 @@ const items = [{
     //   key: 'Stack migration',
     // },
   ],
-}, {
+},
+{
   path: '/express',
   key: 'common:menu.html',
   testid: 'sidebarMenu:link.html',
@@ -37,7 +38,8 @@ const items = [{
     from: '/en/express',
     to: 'https://express.csssr.com',
   },
-}, {
+},
+{
   path: 'https://school.csssr.com/ru',
   key: 'common:menu.school',
   testid: 'sidebarMenu:link.school',
@@ -187,7 +189,7 @@ export class SideBar extends PureComponent {
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
             data-testid={testid}
-          /> : <Link href={href}>
+          /> : href !== '/ru/express' && <Link href={href}>
             <a
               className={cn('font_burger-menu link', {
                 link_active: isActive,

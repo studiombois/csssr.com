@@ -10,6 +10,13 @@ const picture = css.resolve`
     height: 260px;
   }
 
+  :global(.ie11) picture {
+    display: block;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 17;
+    -ms-grid-row: 2;
+  }
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
       margin-top: 1.5rem;
@@ -41,6 +48,11 @@ const picture = css.resolve`
       margin-top: 2rem;
       grid-column: 2 / span 5;
       height: 3.375rem;
+    }
+
+    :global(.ie11) picture {
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 9;
     }
   }
 `
@@ -184,6 +196,54 @@ const Budget = ({ t, lng }) =>
 
         span.is_hidden {
           display: none;
+        }
+      }
+    `}</style>
+    <style jsx>{`
+      :global(.ie11) article {
+        -ms-grid-rows: (auto)[4];
+      }
+
+      :global(.ie11) h2 {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 9;
+        -ms-grid-row: 1;
+      }
+
+      :global(.ie11) span {
+        display: block;
+        -ms-grid-column: 19;
+        -ms-grid-column-span: 5;
+        -ms-grid-row: 3;
+      }
+
+      :global(.ie11) p {
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 13;
+        -ms-grid-row: 4;
+      }
+
+      @media (min-width: 1280px) and (max-width: 1359px) {
+        :global(.ie11) h2 {
+          -ms-grid-column: 3;
+          -ms-grid-column-span: 11;
+        }
+      }
+
+      @media (max-width: 767px) {
+        :global(.ie11) h2 {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 5;
+        }
+
+        :global(.ie11) p {
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 11;
+        }
+
+        :global(.ie11) span {
+          -ms-grid-column: 9;
+          -ms-grid-column-span: 3;
         }
       }
     `}</style>

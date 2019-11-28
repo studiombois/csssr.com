@@ -107,7 +107,7 @@ const ClientsLogosList = ({ clients }) => {
         }
       `}</style>
       <style jsx>{`
-        ul {
+        :global(.ie11) ul {
           -ms-grid-column: 5;
           -ms-grid-column-span: 15;
           -ms-grid-row: 4;

@@ -79,39 +79,39 @@ const Project = project =>
       }
     `}</style>
     <style jsx>{`
-      li {
+      :global(.ie11) li {
         display: block;
       }
 
       @media (max-width: 1279px) {
-        li {
+        :global(.ie11) li {
           -ms-grid-row: ${Math.ceil((project.index + 1))};
         }
       }
 
       @media (min-width: 1280px) {
-        li {
+        :global(.ie11) li {
           -ms-grid-row: ${Math.ceil((project.index + 1) / 2)};
         }
       }
       
-      li:nth-child(odd) {
+      :global(.ie11) li:nth-child(odd) {
         -ms-grid-column: 3;
         -ms-grid-column-span: 9;
       }
 
-      li:nth-child(even) {
+      :global(.ie11) li:nth-child(even) {
         -ms-grid-column: 13;
         -ms-grid-column-span: 9;
       }
 
       @media (min-width: 768px) and (max-width: 1279px) {
-        h3 {
+        :global(.ie11) h3 {
           -ms-grid-column: 5;
           -ms-grid-column-span: 15;
         }
 
-        li {
+        :global(.ie11) li {
           -ms-grid-column: 5 !important;
           -ms-grid-column-span: 15 !important;
         }

@@ -10,6 +10,13 @@ const picture = css.resolve`
     height: 800px;
   }
 
+  :global(.ie11) picture {
+    display: block;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 19;
+    -ms-grid-row: 1;
+  }
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     picture {
       height: 592px;
@@ -153,6 +160,24 @@ const Projects = ({ t }) =>
           grid-column: 1 / span 6;
           margin-top: 2.125rem;
         }
+      }
+    `}</style>
+    <style jsx>{`
+      :global(.ie11) #projects {
+        -ms-grid-rows: auto auto auto;
+      }
+
+      :global(.ie11) span {
+        display: block;
+        -ms-grid-column: 17;
+        -ms-grid-column-span: 5;
+        -ms-grid-row: 2;
+      }
+
+      :global(.ie11) p {
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 15;
+        -ms-grid-row: 3;
       }
     `}</style>
     {picture.styles}

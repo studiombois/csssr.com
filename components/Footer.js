@@ -113,6 +113,10 @@ const Footer = ({ socialLinks, lng, t }) => {
         height: 1.5rem;
       }
 
+      :global(.ie11) .logo {
+        height: 1.7rem;
+      }
+
       .social-links {
         // IE-11 styles
         -ms-grid-column: 7;
@@ -209,6 +213,13 @@ const Footer = ({ socialLinks, lng, t }) => {
           footer {
             width: 59rem;
           }
+        }
+      }
+
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        :global(.ie11) .logo-wrapper a img {
+          width: 5rem;
+          height: 1.2rem;
         }
       }
 

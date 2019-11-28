@@ -6,6 +6,7 @@ import withI18next from '../../utils/withI18next'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
+import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
 const stylesForCheckbox = css.resolve`
   span {
@@ -64,6 +65,14 @@ const ContactOptions = ({ connection = [], t }) =>
       legend {
         white-space: nowrap;
         margin-bottom: 1rem;
+      }
+    `}</style>
+    <style jsx>{`
+      :global(.ie11) fieldset {
+        -ms-grid-column: ${getMsColumn(10)};
+        -ms-grid-column-span: ${getMsColumn(3)};
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 10;
       }
     `}</style>
     {stylesForCheckbox.styles}

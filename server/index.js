@@ -53,6 +53,8 @@ i18n
         // TODO
         // Добавить favicon
 
+        server.get('/ru/express', (req, res) => res.redirect(302, '/ru'))
+
         const oldPaths = [
           '/jobs/index.html',
           '/jobs/pixel-perfectionist/index.html',

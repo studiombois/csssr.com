@@ -38,6 +38,7 @@ export default class TextareaField extends PureComponent {
       className,
       maxLength,
       testid,
+      tabIndex,
       input: {
         name,
         value,
@@ -69,7 +70,7 @@ export default class TextareaField extends PureComponent {
           onChange={this.handleChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          tabIndex={disabled ? -1 : 0}
+          // tabIndex={disabled ? -1 : 0}
           autoFocus={autoFocus}
           type={type}
           disabled={disabled}
@@ -77,6 +78,7 @@ export default class TextareaField extends PureComponent {
           maxLength={maxLength}
           aria-label={label}
           data-testid={testid}
+          tabIndex={tabIndex}
         />
         {showError && <span className='font_input-small-error-label error'>{error}</span>}
         {label && <label

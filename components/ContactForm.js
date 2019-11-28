@@ -267,8 +267,11 @@ class ContactForm extends PureComponent {
       pageName,
       fieldsIds,
       formName,
+      hasFailOrSuccessStatus,
       t,
     } = this.props
+
+    const getTabIndex = `${hasFailOrSuccessStatus ? '-1' : '0'}`
 
     const fieldByName = {
       name: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -281,6 +284,7 @@ class ContactForm extends PureComponent {
           label={t(`${pageName}:form.nameLabel`)}
           testid={`${formName}:field:callbackForm.name`}
           autoFocus={formName === 'contact-modal'}
+          tabIndex={getTabIndex}
         />
       </div>,
       phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -292,6 +296,7 @@ class ContactForm extends PureComponent {
           placeholder={t(`${pageName}:form.phonePlaceholder`)}
           label={t(`${pageName}:form.phoneLabel`)}
           testid={`${formName}:field:callbackForm.phone`}
+          tabIndex={getTabIndex}
         />
       </div>,
       email: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
@@ -303,6 +308,7 @@ class ContactForm extends PureComponent {
           placeholder={t(`${pageName}:form.emailPlaceholder`)}
           label={t(`${pageName}:form.emailLabel`)}
           testid={`${formName}:field:callbackForm.email`}
+          tabIndex={getTabIndex}
         />
       </div>,
       message: <div className={cn('field', 'field_type_textarea', fieldCss.className, { [className]: !!className })}>
@@ -314,6 +320,7 @@ class ContactForm extends PureComponent {
           placeholder={t(`${pageName}:form.messagePlaceholder`)}
           label={t(`${pageName}:form.messageLabel`)}
           testid={`${formName}:field:callbackForm.message`}
+          tabIndex={getTabIndex}
         />
       </div>,
       privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
@@ -322,6 +329,7 @@ class ContactForm extends PureComponent {
           name='privacyPolicy'
           testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
           linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
+          tabIndex={getTabIndex}
         />
       </div>,
       newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
@@ -331,6 +339,7 @@ class ContactForm extends PureComponent {
           type='checkbox'
           component={Checkbox}
           testid={`${formName}:field:callbackForm.newsletter.checkbox`}
+          tabIndex={getTabIndex}
         >
           {t('common:checkBoxesText.newsletterText')}
         </Field>
@@ -363,6 +372,7 @@ class ContactForm extends PureComponent {
         onSubmit={this.handleSubmit}
         name={formName}
         noValidate
+
       >
         <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }}/>
 

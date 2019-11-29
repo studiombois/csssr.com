@@ -71,7 +71,7 @@ export class SideBar extends PureComponent {
     if (asPath === '/ru/express') {
       return 'https://express.csssr.com'
     } else if (asPath === '/en/cookies-policy') {
-      return 'https://csssr.com'
+      return 'https://csssr.com/ru'
     }
 
     const otherLanguage = {

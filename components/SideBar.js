@@ -244,7 +244,7 @@ export class SideBar extends PureComponent {
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
-        <OutsideClickHandler onOutsideClick={onClose}>
+        <OutsideClickHandler onOutsideClick={onClose} display='inline'>
           <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close'>
             {crossIcon}
           </button>

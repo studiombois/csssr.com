@@ -223,10 +223,6 @@ class ButtonSelect extends PureComponent {
             transition: transform 0.3s ease-out;
           }
 
-          :global(.button-wrapper > div) {
-            height: 100%;
-          }
-
           .button-wrapper_is_invisible {
             transform: translateY(250%);
           }
@@ -261,6 +257,10 @@ class ButtonSelect extends PureComponent {
               bottom: 0;
               width: 20.5rem;
               right: 1rem;
+            }
+
+            :global(.button-wrapper > div) {
+              margin-top: auto;
             }
 
             .button-wrapper_is_dropdown-visible {

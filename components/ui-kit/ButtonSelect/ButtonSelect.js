@@ -223,6 +223,10 @@ class ButtonSelect extends PureComponent {
             transition: transform 0.3s ease-out;
           }
 
+          :global(.button-wrapper > div) {
+            height: 100%;
+          }
+
           .button-wrapper_is_invisible {
             transform: translateY(250%);
           }

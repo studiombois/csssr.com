@@ -54,6 +54,7 @@ class HeaderContent extends PureComponent {
     return (
       <Fragment>
         <header
+          data-scroll-lock-fill-gap
           onFocus={onFocus}
           className={cn({
             header: true,
@@ -160,7 +161,7 @@ class HeaderContent extends PureComponent {
               right: 0;
               z-index: 9999;
               width: 100%;
-              padding-right: ${!pinHeader && showHeader && isSideBarOpened ? scrollbarWidth + 'px' : '0'};
+              padding-right: ${!pinHeader && showHeader && isSideBarOpened ? scrollbarWidth + 'px' : '0'} !important;
             }
 
             .header-background {

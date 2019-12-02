@@ -38,7 +38,7 @@ const ButtonSelectList = props => {
     <Fragment>
       <Transition in={isDropdownVisible} timeout={animationDuration}>
         {animationState => isDropdownVisible &&
-          <OutsideClickHandler onOutsideClick={onCloseButtonClick}>
+          <OutsideClickHandler onOutsideClick={onCloseButtonClick} display='flex'>
             <ul className={`is_${animationState} ${isAppleDevice ? 'is_appleDevice' : ''}`}>
               <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }} data-testid='buttonSelect:text.question'/>
               <Links links={links} onLinkClick={onLinkClick} />

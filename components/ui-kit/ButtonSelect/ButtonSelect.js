@@ -259,6 +259,10 @@ class ButtonSelect extends PureComponent {
               right: 1rem;
             }
 
+            :global(.button-wrapper > div) {
+              margin-top: auto;
+            }
+
             .button-wrapper_is_dropdown-visible {
               top: 0;
               right: 0;

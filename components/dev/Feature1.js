@@ -151,6 +151,10 @@ const Feature1 = ({ t, image }) =>
           grid-column: 4 / span 6;
         }
 
+        .font_p24-strong {
+          margin-top: -3rem;
+        }
+
         .font_feature_1 {
           left: 7rem;
         }

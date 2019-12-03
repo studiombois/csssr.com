@@ -70,7 +70,6 @@ export default class TextareaField extends PureComponent {
           onChange={this.handleChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          // tabIndex={disabled ? -1 : 0}
           autoFocus={autoFocus}
           type={type}
           disabled={disabled}

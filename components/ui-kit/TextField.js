@@ -75,8 +75,6 @@ export default class TextField extends PureComponent {
           onBlur={onBlur}
           onFocus={onFocus}
           tabIndex={tabIndex}
-          // tabIndex={disabled ? -1 : 0}
-
           autoFocus={autoFocus}
           type={type}
           disabled={disabled}

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import Transition from 'react-transition-group/Transition'
 import translate from '../../../utils/translate-wrapper'
 import { string, bool, func } from 'prop-types'
-import ClickOutside from '../ClickOutside'
+import OutsideClickHandler from 'react-outside-click-handler'
 import ButtonSelectLinksApple from './ButtonSelectLinksApple'
 import ButtonSelectLinksDefault from './ButtonSelectLinksDefault'
 import appleListStyles from './styles/stylesForAppleList'
@@ -38,7 +38,7 @@ const ButtonSelectList = props => {
     <Fragment>
       <Transition in={isDropdownVisible} timeout={animationDuration}>
         {animationState => isDropdownVisible &&
-          <ClickOutside onOutsideClick={onCloseButtonClick}>
+          <OutsideClickHandler onOutsideClick={onCloseButtonClick} display='flex'>
             <ul className={`is_${animationState} ${isAppleDevice ? 'is_appleDevice' : ''}`}>
               <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }} data-testid='buttonSelect:text.question'/>
               <Links links={links} onLinkClick={onLinkClick} />
@@ -51,7 +51,7 @@ const ButtonSelectList = props => {
                 />
               </li>
             </ul>
-          </ClickOutside>
+          </OutsideClickHandler>
         }
       </Transition>
       <style jsx>{`

@@ -235,7 +235,7 @@ const Feature1 = ({ t, image }) =>
 
         .font_feature_1 {
           top: 8.75rem;
-          left: 5.95rem;
+          left: 5.9375rem;
         }
 
         .font_feature_2 {

@@ -492,51 +492,51 @@ const Text = () =>
         line-height: 3.375rem;
         color: #000000;
       }
+    }
 
-      @media (max-width: 767px) {
-        .font_feature_1 {
-          font-size: 4.0625rem;
-          line-height: 4.875rem;
-        }
+    @media (max-width: 767px) {
+      .font_feature_1 {
+        font-size: 4.0625rem;
+        line-height: 4.875rem;
+      }
 
-        .font_feature_2 {
-          font-size: 1.75rem;
-          font-weight: normal;
-          font-stretch: normal;
-          line-height: 2.5rem;
-        }
+      .font_feature_2 {
+        font-size: 1.75rem;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 2.5rem;
+      }
 
-        .font_feature_3 {
-          font-size: 2rem;
-          line-height: 2.5rem;
-        }
+      .font_feature_3 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
 
-        .font_link-list_16_desktop_14_mobile {
-          padding: 0;
-          margin: 0;
-          font-size: 0.875rem;
-          line-height: 1.5rem;
-        }
+      .font_link-list_16_desktop_14_mobile {
+        padding: 0;
+        margin: 0;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+      }
 
-        // Если что-то отображать при ховере, то iOS сначала покажет что показывает ховер
-        // и только потом даст возможность произвести какой-то евент на действие.
-        //
-        // У нас внешние ссылки показывают квадратик при ховере, поэтому требуется даблтапнуть
-        // их что бы получить переход, как временное решение (не самое лучшее), я убираю этот ховер
-        // с мобильных разрешений, но лучше сами ссылки переработать и убрать эту квадратную фиглипигли
-        //
-        // В интернетах так же писали что любытие другие способы вскрытия/прятания элемента aka opacity,
-        // scale могу помочь, но не помогли, остается только JSить, а я вводить новые JS хаки
-        //
-        // Ознакомится с сутью проблемы можно тут:
-        // https://css-tricks.com/annoying-mobile-double-tap-link-issue/
-        // https://davidwalsh.name/ios-hover-menu-fix
-        .font_link-list_16:hover::after,
-        .font_link-list_16_desktop_14_mobile:hover::after,
-        .font_link-list_24:hover::after,
-        .font_link-list_28:hover::after {
-          display: none;
-        }
+      // Если что-то отображать при ховере, то iOS сначала покажет что показывает ховер
+      // и только потом даст возможность произвести какой-то евент на действие.
+      //
+      // У нас внешние ссылки показывают квадратик при ховере, поэтому требуется даблтапнуть
+      // их что бы получить переход, как временное решение (не самое лучшее), я убираю этот ховер
+      // с мобильных разрешений, но лучше сами ссылки переработать и убрать эту квадратную фиглипигли
+      //
+      // В интернетах так же писали что любытие другие способы вскрытия/прятания элемента aka opacity,
+      // scale могу помочь, но не помогли, остается только JSить, а я вводить новые JS хаки
+      //
+      // Ознакомится с сутью проблемы можно тут:
+      // https://css-tricks.com/annoying-mobile-double-tap-link-issue/
+      // https://davidwalsh.name/ios-hover-menu-fix
+      .font_link-list_16:hover::after,
+      .font_link-list_16_desktop_14_mobile:hover::after,
+      .font_link-list_24:hover::after,
+      .font_link-list_28:hover::after {
+        display: none;
       }
     }
   `}</style>

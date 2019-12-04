@@ -104,31 +104,33 @@ const PostScriptum = ({ t }) =>
         :global(html.webp) div {
           background-image: url('${require('../../static/images/sborka/1360/orbits@1x.webp')}');
         }
+      }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/1360/orbits@2x.png')}');
-          }
-
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/1360/orbits@2x.webp')}');
-          }
+      @media
+      screen and (min-width: 1360px) and (max-width: 1919px),
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/1360/orbits@2x.png')}');
         }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 3),
-        only screen and (min-resolution: 288dpi),
-        only screen and (min-resolution: 3dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/1360/orbits@3x.png')}');
-          }
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/1360/orbits@2x.webp')}');
+        }
+      }
 
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/1360/orbits@3x.webp')}');
-          }
+      @media
+      screen and (min-width: 1360px) and (max-width: 1919px),
+      only screen and (-webkit-min-device-pixel-ratio: 3),
+      only screen and (min-resolution: 288dpi),
+      only screen and (min-resolution: 3dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/1360/orbits@3x.png')}');
+        }
+
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/1360/orbits@3x.webp')}');
         }
       }
 
@@ -148,31 +150,33 @@ const PostScriptum = ({ t }) =>
         :global(html.webp) div {
           background-image: url('${require('../../static/images/sborka/1280/orbits@1x.webp')}');
         }
+      }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/1280/orbits@2x.png')}');
-          }
-
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/1280/orbits@2x.webp')}');
-          }
+      @media
+      screen and (min-width: 1280px) and (max-width: 1359px),
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/1280/orbits@2x.png')}');
         }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 3),
-        only screen and (min-resolution: 288dpi),
-        only screen and (min-resolution: 3dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/1280/orbits@3x.png')}');
-          }
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/1280/orbits@2x.webp')}');
+        }
+      }
 
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/1280/orbits@3x.webp')}');
-          }
+      @media
+      screen and (min-width: 1280px) and (max-width: 1359px),
+      only screen and (-webkit-min-device-pixel-ratio: 3),
+      only screen and (min-resolution: 288dpi),
+      only screen and (min-resolution: 3dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/1280/orbits@3x.png')}');
+        }
+
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/1280/orbits@3x.webp')}');
         }
       }
 
@@ -201,37 +205,39 @@ const PostScriptum = ({ t }) =>
         :global(html.webp) div {
           background-image: url('${require('../../static/images/sborka/1024/orbits@1x.webp')}');
         }
+      }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/1024/orbits@2x.png')}');
-          }
-
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/1024/orbits@2x.webp')}');
-          }
+      @media
+      screen and (min-width: 768px) and (max-width: 1279px),
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/1024/orbits@2x.png')}');
         }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 3),
-        only screen and (min-resolution: 288dpi),
-        only screen and (min-resolution: 3dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/1024/orbits@3x.png')}');
-          }
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/1024/orbits@2x.webp')}');
+        }
+      }
 
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/1024/orbits@3x.webp')}');
-          }
+      @media
+      screen and (min-width: 768px) and (max-width: 1279px),
+      only screen and (-webkit-min-device-pixel-ratio: 3),
+      only screen and (min-resolution: 288dpi),
+      only screen and (min-resolution: 3dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/1024/orbits@3x.png')}');
         }
 
-        @media (max-width: 1023px) {
-          article {
-            width: 59rem;
-          }
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/1024/orbits@3x.webp')}');
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        article {
+          width: 59rem;
         }
       }
 
@@ -264,31 +270,33 @@ const PostScriptum = ({ t }) =>
         :global(html.webp) div {
           background-image: url('${require('../../static/images/sborka/360/orbits@1x.webp')}');
         }
+      }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/360/orbits@2x.png')}');
-          }
-
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/360/orbits@2x.webp')}');
-          }
+      @media
+      screen and (max-width: 767px),
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/360/orbits@2x.png')}');
         }
 
-        @media
-        only screen and (-webkit-min-device-pixel-ratio: 3),
-        only screen and (min-resolution: 288dpi),
-        only screen and (min-resolution: 3dppx) {
-          div {
-            background-image: url('${require('../../static/images/sborka/360/orbits@3x.png')}');
-          }
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/360/orbits@2x.webp')}');
+        }
+      }
 
-          :global(html.webp) div {
-            background-image: url('${require('../../static/images/sborka/360/orbits@3x.webp')}');
-          }
+      @media
+      screen and (max-width: 767px),
+      only screen and (-webkit-min-device-pixel-ratio: 3),
+      only screen and (min-resolution: 288dpi),
+      only screen and (min-resolution: 3dppx) {
+        div {
+          background-image: url('${require('../../static/images/sborka/360/orbits@3x.png')}');
+        }
+
+        :global(html.webp) div {
+          background-image: url('${require('../../static/images/sborka/360/orbits@3x.webp')}');
         }
       }
     `}</style>

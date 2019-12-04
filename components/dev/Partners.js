@@ -162,11 +162,11 @@ const Partners = ({ t, lng }) =>
         .link-list-wrapper {
           margin-bottom: 2.5rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          section {
-            width: 59rem;
-          }
+      @media (max-width: 1023px) {
+        section {
+          width: 59rem;
         }
       }
     `}</style>

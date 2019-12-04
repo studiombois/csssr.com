@@ -194,11 +194,11 @@ const Footer = ({ router: { pathname }, socialLinks = allSocialLinks, className,
           margin-top: 0.5rem;
           width: 100%;
         }
+      }
 
-        @media (max-width: 1023px) {
-          footer {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        footer {
+          width: 59rem;
         }
       }
 

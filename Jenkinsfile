@@ -7,7 +7,7 @@ pipeline {
   agent any
 
   parameters {
-    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'CSSSR_SPACE_ORIGIN', trim: true)
+    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
   }
 
   stages {
@@ -16,6 +16,7 @@ pipeline {
         sendNotification('STARTED')
 
         echo "Branch: ${GIT_BRANCH}"
+        echo "CSSSR_SPACE_ORIGIN: ${params.csssrSpaceOrigin}"
 
         script {
           branch = GIT_BRANCH
@@ -68,7 +69,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=${safeBranch}.csssr.cloud,branch=${branch},cert=csssr-cloud,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
+            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=${safeBranch}.csssr.cloud,branch=${branch},cert=csssr-cloud,jobs=csssr-jobs,site.commit=${commit},csssrSpaceOrigin=${params.csssrSpaceOrigin} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
             """
           }
         }

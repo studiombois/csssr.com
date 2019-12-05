@@ -12,6 +12,7 @@ const contactModalStyles = css`
     padding-bottom: 3.5px;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.3);
   }

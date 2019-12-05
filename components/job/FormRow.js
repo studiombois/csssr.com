@@ -36,11 +36,11 @@ const FormRow = ({ children, rightSideContent }) =>
         .grid-container {
           width: 944px;
         }
+      }
 
-        @media (max-width: 1023px) {
-          .grid-container {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .grid-container {
+          width: 59rem;
         }
       }
 

@@ -121,11 +121,11 @@ const CookiesPolicyContent = ({ t }) => (
         article {
           width: 944px;
         }
+      }
 
-        @media (max-width: 1023px) {
-          article {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        article {
+          width: 59rem;
         }
       }
 

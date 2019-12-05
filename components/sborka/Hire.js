@@ -52,11 +52,11 @@ const planets = css.resolve`
     svg {
       min-height: 392px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      svg {
-        min-height: 24.5rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    svg {
+      min-height: 24.5rem;
     }
   }
 
@@ -248,25 +248,25 @@ class Hire extends PureComponent {
             .button-wrapper {
               width: 192px;
             }
+          }
 
-            @media (max-width: 1023px) {
-              article {
-                width: 59rem;
-              }
+          @media (min-width: 768px) and (max-width: 1023px) {
+            article {
+              width: 59rem;
+            }
 
-              h1::after {
-                left: 5rem;
-                width: 9rem;
-                height: 4rem;
-              }
+            h1::after {
+              left: 5rem;
+              width: 9rem;
+              height: 4rem;
+            }
 
-              .image-wrapper {
-                min-height: 24.5rem;
-              }
+            .image-wrapper {
+              min-height: 24.5rem;
+            }
 
-              .button-wrapper {
-                width: 12rem;
-              }
+            .button-wrapper {
+              width: 12rem;
             }
           }
 

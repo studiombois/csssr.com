@@ -39,11 +39,11 @@ const picture = css.resolve`
     picture {
       height: 224px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 14rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    picture {
+      height: 14rem;
     }
   }
 
@@ -228,11 +228,11 @@ const OurPrinciples = ({ t }) => {
           p {
             margin-top: 2.125rem;
           }
+        }
 
-          @media (max-width: 1023px) {
-            article {
-              width: 59rem;
-            }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          article {
+            width: 59rem;
           }
         }
 

@@ -208,11 +208,11 @@ const Footer = ({ socialLinks, lng, t }) => {
           // Other browsers styles
           grid-column: 7 / span 6;
         }
+      }
 
-        @media (max-width: 1023px) {
-          footer {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        footer {
+          width: 59rem;
         }
       }
 

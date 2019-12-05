@@ -30,11 +30,11 @@ const blueButton = css.resolve`
     .button {
       width: 176px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      .button {
-        width: 11rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .button {
+      width: 11rem;
     }
   }
 

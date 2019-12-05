@@ -40,6 +40,12 @@ const picture = css.resolve`
     }
   }
 
+  @media (min-width: 768px) and (max-width: 999px) {
+    picture {
+      left: 14.125rem;
+    }
+  }
+
   @media (max-width: 767px) {
     picture {
       left: -4.5%;

@@ -5,6 +5,11 @@ pipeline {
     commit = ""
   }
   agent any
+
+  parameters {
+    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'CSSSR_SPACE_ORIGIN', trim: true)
+  }
+
   stages {
     stage('Clone') {
       steps {

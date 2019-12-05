@@ -193,6 +193,7 @@ const Feature1 = ({ t, image }) =>
           left: 18.875rem;
           width: 16rem;
           height: 17rem;
+          max-width: 13.3125rem;
 
         }
 
@@ -238,12 +239,12 @@ const Feature1 = ({ t, image }) =>
 
         .font_feature_1 {
           top: 8.75rem;
-          left: 5.75rem;
+          left: 5.9375rem;
         }
 
         .font_feature_2 {
           top: 17.75rem;
-          left: 7.375rem;
+          left: 6.375rem;
           width: 13.75rem;
         }
 

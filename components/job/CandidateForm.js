@@ -157,6 +157,8 @@ const picturesMap = {
   'copywriter-ru': 'Copywriter_rus',
   photographer: 'Photographer',
   'brand-ambassador': 'Brand-ambassador',
+  'backend-qa-engineer': 'QA_2',
+  'deputy-chief-accountant': 'Documents_2',
 }
 
 const divideSections = sections => {

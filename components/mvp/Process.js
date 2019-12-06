@@ -242,11 +242,11 @@ class Process extends PureComponent {
           }
 
           :global(.ie11) .planets {
-            height: 92%;
+            height: 88%;
           }
 
           :global(.ie11) .sputnik {
-            height: 92%;
+            height: 88%;
           }
         `}</style>
       </Fragment>

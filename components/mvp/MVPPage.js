@@ -9,16 +9,24 @@ import Process from '../../components/mvp/Process'
 import HireUs from '../../components/mvp/HireUs'
 import withI18next from '../../utils/withI18next'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
+import { Ie11BrowserContext } from '../../utils/msBrowserProvider'
 
 class MVPPage extends PureComponent {
   state = {
     isMobile: false,
   }
 
+  static contextType = Ie11BrowserContext
+
   componentDidMount() {
+    const isIe11 = this.context
     this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
     this.mobileMediaQuery.addListener(this.handleMediaMatch)
     this.handleMediaMatch(this.mobileMediaQuery)
+    if (isIe11) {
+      // eslint-disable-next-line no-undef
+      picturefill()
+    }
   }
 
   componentWillUnmount() {

@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext, useLayoutEffect } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
 import { number, string, shape, node } from 'prop-types'
@@ -13,6 +13,13 @@ const origin = 'https://csssr.com'
 
 const Head = props => {
   const isIe11 = useContext(Ie11BrowserContext)
+
+  useLayoutEffect(() => {
+    if (isIe11) {
+      // eslint-disable-next-line no-undef
+      picturefill()
+    }
+  })
 
   return (
     <NextHead>

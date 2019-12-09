@@ -482,6 +482,12 @@ class Vacancies extends PureComponent {
             text-decoration: none;
           }
 
+          @media (min-width: 1920px) {
+            .font_subhead-regular {
+              max-width: 37.5rem;
+            }
+          }
+
           @media
           only screen and (-webkit-min-device-pixel-ratio: 2),
           only screen and (min-resolution: 192dpi),
@@ -517,11 +523,6 @@ class Vacancies extends PureComponent {
             .hunter-text {
               grid-column: 9 / span 4;
             }
-
-            .font_subhead-regular {
-              font-size: 1.875rem;
-            }
-
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
@@ -540,10 +541,6 @@ class Vacancies extends PureComponent {
 
             .hunter-text {
               grid-column: 9 / span 4;
-            }
-
-            .font_subhead-regular {
-              font-size: 1.75rem;
             }
           }
 

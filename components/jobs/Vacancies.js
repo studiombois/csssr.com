@@ -482,6 +482,12 @@ class Vacancies extends PureComponent {
             text-decoration: none;
           }
 
+          @media (min-width: 1920px) {
+            .font_subhead-regular {
+              max-width: 37.5rem;
+            }
+          }
+
           @media
           only screen and (-webkit-min-device-pixel-ratio: 2),
           only screen and (min-resolution: 192dpi),

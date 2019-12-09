@@ -14,6 +14,8 @@ const origin = 'https://csssr.com'
 const Head = props => {
   const isIe11 = useContext(Ie11BrowserContext)
 
+  // При роутинге в ie11 picturefill не подгружает правильные размеры изображений.
+  // Явный вызов плагина при каждом рендере исправляет баг
   useLayoutEffect(() => {
     if (isIe11) {
       // eslint-disable-next-line no-undef

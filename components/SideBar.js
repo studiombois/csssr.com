@@ -5,6 +5,7 @@ import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
 import CrossIcon from '../static/icons/cross.svg'
 import OutsideClickHandler from 'react-outside-click-handler'
+import FocusLock from 'react-focus-lock'
 import Link from 'next/link'
 import isAbsoluteUrl from '../utils/isAbsoluteUrl'
 import i18n from '../common/i18n'
@@ -134,6 +135,7 @@ export class SideBar extends PureComponent {
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
             data-testid={testid}
+            tabIndex={this.props.isOpened ? '0' : '-1'}
           /> : <Link href={href}>
             <a
               className={cn('sub-link', {
@@ -141,6 +143,7 @@ export class SideBar extends PureComponent {
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
               data-testid={testid}
+              tabIndex={this.props.isOpened ? '0' : '-1'}
             />
           </Link>
         }
@@ -189,6 +192,7 @@ export class SideBar extends PureComponent {
             })}
             dangerouslySetInnerHTML={{ __html: t(key) }}
             data-testid={testid}
+            tabIndex={this.props.isOpened ? '0' : '-1'}
           /> : href !== '/ru/express' && <Link href={href}>
             <a
               className={cn('font_burger-menu link', {
@@ -196,6 +200,7 @@ export class SideBar extends PureComponent {
               })}
               dangerouslySetInnerHTML={{ __html: t(key) }}
               data-testid={testid}
+              tabIndex={this.props.isOpened ? '0' : '-1'}
             />
           </Link>
         }
@@ -243,33 +248,36 @@ export class SideBar extends PureComponent {
     const navItems = items.map(this.getNavItem)
 
     return (
-      <aside className={cn('sidebar', { sidebar_opened: isOpened })}>
-        <OutsideClickHandler onOutsideClick={onClose} display='inline'>
-          <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close'>
-            {crossIcon}
-          </button>
+      <aside className={cn('sidebar', { sidebar_opened: isOpened })} onKeyDown={e => onClose(e)}>
+        <FocusLock disabled={!isOpened}>
+          <OutsideClickHandler onOutsideClick={onClose} display='inline'>
+            <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close' tabIndex={isOpened ? '0' : '-1'}>
+              {crossIcon}
+            </button>
 
-          <div className='body'>
-            <div className='top'>
-              <div
-                className='font_perforator-16-black section-name'
-                dangerouslySetInnerHTML={{ __html: menuName }}
-              />
-              <ul className='list'>
-                {navItems.map(this.renderNavItem)}
-              </ul>
+            <div className='body'>
+              <div className='top'>
+                <div
+                  className='font_perforator-16-black section-name'
+                  dangerouslySetInnerHTML={{ __html: menuName }}
+                />
+                <ul className='list'>
+                  {navItems.map(this.renderNavItem)}
+                </ul>
+              </div>
+              <div className='bottom'>
+                <a
+                  href={this.getLanguageRedirectionLink()}
+                  className='font_link-list_16'
+                  data-testid='sidebarMenu:link.switchLanguage'
+                  tabIndex={this.props.isOpened ? '0' : '-1'}
+                >
+                  {t('common:languageRedirect.text')}
+                </a>
+              </div>
             </div>
-            <div className='bottom'>
-              <a
-                href={this.getLanguageRedirectionLink()}
-                className='font_link-list_16'
-                data-testid='sidebarMenu:link.switchLanguage'
-              >
-                {t('common:languageRedirect.text')}
-              </a>
-            </div>
-          </div>
-        </OutsideClickHandler><style jsx>{`
+          </OutsideClickHandler>
+        </FocusLock><style jsx>{`
           button {
             position: absolute;
             z-index: 1;
@@ -291,7 +299,7 @@ export class SideBar extends PureComponent {
             z-index: 10001;
             width: 26.5rem;
             background-color: #fff;
-            transform: translateX(100%);
+            transform: translateX(101%);
             transition: transform 150ms ease-out;
           }
 

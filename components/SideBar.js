@@ -249,7 +249,7 @@ export class SideBar extends PureComponent {
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })} onKeyDown={e => onClose(e)}>
-        <FocusLock disabled={!isOpened} as='span'>
+        <FocusLock disabled={!isOpened} className='sidebar-focus-lock'>
           <OutsideClickHandler onOutsideClick={onClose} display='inline'>
             <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close' tabIndex={isOpened ? '0' : '-1'}>
               {crossIcon}
@@ -303,8 +303,7 @@ export class SideBar extends PureComponent {
             transition: transform 150ms ease-out;
           }
 
-          //задает высоту для обертки focus-lock
-          :global(aside > span) {
+          :global(.sidebar-focus-lock) {
             height: 100%;
           }
 

@@ -5,12 +5,18 @@ pipeline {
     commit = ""
   }
   agent any
+
+  parameters {
+    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
+  }
+
   stages {
     stage('Clone') {
       steps {
         sendNotification('STARTED')
 
         echo "Branch: ${GIT_BRANCH}"
+        echo "CSSSR_SPACE_ORIGIN: ${params.csssrSpaceOrigin}"
 
         script {
           branch = GIT_BRANCH
@@ -55,7 +61,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-	    make deploy-production branch=${branch} commit=${commit}
+            make deploy-production branch=${branch} commit=${commit}
             """
           } else if (branch.startsWith('release/')) {
             sh """#!/bin/bash
@@ -63,7 +69,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-	    make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} express=csssr-express-fix-com-987
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} express=csssr-express-fix-com-987
             """
           }
         }

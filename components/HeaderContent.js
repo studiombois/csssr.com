@@ -35,6 +35,8 @@ class HeaderContent extends PureComponent {
       links,
       t,
       lng,
+      locale,
+      pathname,
       logoAlt = t('common:headerLogoAlt'),
       logoSup,
       scrollbarWidth,
@@ -50,6 +52,8 @@ class HeaderContent extends PureComponent {
       sectionName,
     } = this.props
     const rootUrl = `/${lng}`
+    const jobsRootUrl = `/${locale}/jobs`
+    const isJob = pathname === `/${locale}/job`
 
     return (
       <Fragment>
@@ -70,7 +74,7 @@ class HeaderContent extends PureComponent {
           >
             {isLogoLink
               ? <span className='logo-wrapper'>
-                <Link href={rootUrl}>
+                <Link href={isJob ? jobsRootUrl : rootUrl}>
                   <a data-testid='header:link:logo'>
                     <img
                       className='logo'

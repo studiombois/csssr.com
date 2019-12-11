@@ -35,11 +35,11 @@ const picture = css.resolve`
       margin-top: 2rem;
       height: 138px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 8.625rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    picture {
+      height: 8.625rem;
     }
   }
 
@@ -160,11 +160,11 @@ const Budget = ({ t, lng }) =>
         p {
           margin-top: 2.125rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          article {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        article {
+          width: 59rem;
         }
       }
 

@@ -371,11 +371,11 @@ class HeaderContent extends PureComponent {
               .nav-list-item_hide-on-tablet {
                 display: none;
               }
+            }
 
-              @media (max-width: 1023px) {
-                .header-content {
-                  width: 59rem;
-                }
+            @media (min-width: 768px) and (max-width: 1023px) {
+              .header-content {
+                width: 59rem;
               }
             }
 

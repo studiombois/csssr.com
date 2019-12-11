@@ -203,15 +203,15 @@ const Feature1 = ({ t, image }) =>
           top: 1.875rem;
           left: 31.875rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          section {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        section {
+          width: 59rem;
+        }
 
-          .picture-wrapper {
-            height: 32rem;
-          }
+        .picture-wrapper {
+          height: 32rem;
         }
       }
 

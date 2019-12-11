@@ -33,11 +33,11 @@ const picture = css.resolve`
     picture {
       height: 424px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 26.5rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    picture {
+      height: 26.5rem;
     }
   }
 
@@ -134,11 +134,11 @@ const Projects = ({ t }) =>
         p {
           margin-top: 0.5625rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          div {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        div {
+          width: 59rem;
         }
       }
 

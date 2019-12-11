@@ -257,11 +257,11 @@ class Portfolio extends PureComponent {
             .controls {
               top: 15rem;
             }
+          }
 
-            @media (max-width: 1023px) {
-              article {
-                width: 59rem;
-              }
+          @media (min-width: 768px) and (max-width: 1023px) {
+            article {
+              width: 59rem;
             }
           }
 

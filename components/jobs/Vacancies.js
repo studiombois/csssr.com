@@ -90,12 +90,11 @@ const pictureFaq = css.resolve`
       object-fit: cover;
       object-position: 33%;
     }
+  }
 
-
-    @media (max-width: 1024px) {
-      img {
-        object-position: calc(100% + 6.5rem);
-      }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    img {
+      object-position: calc(100% + 6.5rem);
     }
   }
 
@@ -632,35 +631,37 @@ class Vacancies extends PureComponent {
               bottom: 0.625rem;
               right: -0.375rem;
             }
+          }
 
-            @media (max-width: 1023px) {
-              article,
-              .jobs-header-logo-container {
-                width: 59rem;
-              }
+          @media (min-width: 768px) and (max-width: 1023px) {
+            article,
+            .jobs-header-logo-container {
+              width: 59rem;
+            }
 
-              .half-page-picture {
-                width: calc(50vw - 0.5rem);
-                background-image: url('${require('../../static/images/jobs/1024/cover@1x.jpg')}');
-              }
+            .half-page-picture {
+              width: calc(50vw - 0.5rem);
+              background-image: url('${require('../../static/images/jobs/1024/cover@1x.jpg')}');
+            }
+          }
 
-              @media
-              only screen and (-webkit-min-device-pixel-ratio: 2),
-              only screen and (min-resolution: 192dpi),
-              only screen and (min-resolution: 2dppx) {
-                .half-page-picture {
-                  background-image: url('${require('../../static/images/jobs/1024/cover@2x.jpg')}');
-                }
-              }
+          @media
+          screen and (min-width: 768px) and (max-width: 1023px),
+          only screen and (-webkit-min-device-pixel-ratio: 2),
+          only screen and (min-resolution: 192dpi),
+          only screen and (min-resolution: 2dppx) {
+            .half-page-picture {
+              background-image: url('${require('../../static/images/jobs/1024/cover@2x.jpg')}');
+            }
+          }
 
-              @media
-              only screen and (-webkit-min-device-pixel-ratio: 3),
-              only screen and (min-resolution: 288dpi),
-              only screen and (min-resolution: 3dppx) {
-                .half-page-picture {
-                  background-image: url('${require('../../static/images/jobs/1024/cover@3x.jpg')}');
-                }
-              }
+          @media
+          screen and (min-width: 768px) and (max-width: 1023px),
+          only screen and (-webkit-min-device-pixel-ratio: 3),
+          only screen and (min-resolution: 288dpi),
+          only screen and (min-resolution: 3dppx) {
+            .half-page-picture {
+              background-image: url('${require('../../static/images/jobs/1024/cover@3x.jpg')}');
             }
           }
 
@@ -776,23 +777,25 @@ class Vacancies extends PureComponent {
               height: 15.5rem;
               background-image: url('${require('../../static/images/jobs/360/cover@1x.jpg')}');
             }
+          }
 
-            @media
-            only screen and (-webkit-min-device-pixel-ratio: 2),
-            only screen and (min-resolution: 192dpi),
-            only screen and (min-resolution: 2dppx) {
-              .half-page-picture {
-                background-image: url('${require('../../static/images/jobs/360/cover@2x.jpg')}');
-              }
+          @media
+          screen and (max-width: 767px),
+          only screen and (-webkit-min-device-pixel-ratio: 2),
+          only screen and (min-resolution: 192dpi),
+          only screen and (min-resolution: 2dppx) {
+            .half-page-picture {
+              background-image: url('${require('../../static/images/jobs/360/cover@2x.jpg')}');
             }
+          }
 
-            @media
-            only screen and (-webkit-min-device-pixel-ratio: 3),
-            only screen and (min-resolution: 288dpi),
-            only screen and (min-resolution: 3dppx) {
-              .half-page-picture {
-                background-image: url('${require('../../static/images/jobs/360/cover@3x.jpg')}');
-              }
+          @media
+          screen and (max-width: 767px),
+          only screen and (-webkit-min-device-pixel-ratio: 3),
+          only screen and (min-resolution: 288dpi),
+          only screen and (min-resolution: 3dppx) {
+            .half-page-picture {
+              background-image: url('${require('../../static/images/jobs/360/cover@3x.jpg')}');
             }
           }
         `}</style>

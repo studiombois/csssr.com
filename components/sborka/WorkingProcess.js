@@ -41,11 +41,11 @@ const pictureOfNumberOne = css.resolve`
       margin-top: 3rem;
       height: 344px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 21.5rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    picture {
+      height: 21.5rem;
     }
   }
 
@@ -91,11 +91,11 @@ const pictureOfNumberTwo = css.resolve`
       margin-top: 5rem;
       height: 392px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 24.5rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    picture {
+      height: 24.5rem;
     }
   }
 
@@ -143,11 +143,11 @@ const pictureOfNumberThee = css.resolve`
       margin-top: 4.5rem;
       height: 416px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 26rem;
-      }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    picture {
+      height: 26rem;
     }
   }
 
@@ -324,11 +324,11 @@ const WorkingProcess = ({ t }) =>
         div:nth-of-type(3) {
           margin-top: 7.5rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          article {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        article {
+          width: 59rem;
         }
       }
 

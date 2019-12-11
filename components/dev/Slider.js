@@ -44,7 +44,7 @@ class Slider extends PureComponent {
               <img
                 key={`${id}_${slide}`}
                 alt={`${t('dev:portfolio.slidesAlt')}${slideTitle}`}
-                src={require(`../../static/images/dev/portfolio/${id}_${slide}.png`)}
+                src={require(`../../static/images/dev/portfolio/${id}_${slide}.jpg`)}
               />
             ))}
           </div>

@@ -33,7 +33,7 @@ function NoPage({ t }) {
         }
       }
 
-     @media (max-width: 1279px) {
+      @media (max-width: 1279px) {
         section {
           padding-top: 6.1875rem;
           padding-bottom: 31.5rem;
@@ -44,13 +44,14 @@ function NoPage({ t }) {
         .text {
           margin-bottom: 2.3125rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          section {
-            width: 59rem;
-          }
+      @media (max-width: 1023px) {
+        section {
+          width: 59rem;
         }
       }
+
       @media (max-width: 767px) {
         section {
           width: 20.5rem;

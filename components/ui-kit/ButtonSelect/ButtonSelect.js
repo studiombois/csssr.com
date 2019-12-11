@@ -243,11 +243,11 @@ class ButtonSelect extends PureComponent {
             .button-wrapper {
               width: 232px;
             }
+          }
 
-            @media (max-width: 1023px) {
-              .button-wrapper {
-                width: 14.5rem;
-              }
+          @media (min-width: 768px) and (max-width: 1023px) {
+            .button-wrapper {
+              width: 14.5rem;
             }
           }
 

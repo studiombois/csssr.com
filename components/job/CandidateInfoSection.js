@@ -268,11 +268,11 @@ const CandidateInfoSection = props => {
           div {
             width: 944px;
           }
+        }
 
-          @media (max-width: 1023px) {
-            div {
-              width: 59rem;
-            }
+        @media (min-width: 768px) and  (max-width: 1023px) {
+          div {
+            width: 59rem;
           }
         }
 

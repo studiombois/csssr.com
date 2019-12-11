@@ -28,16 +28,16 @@ const picture = css.resolve`
     width: 100%;
   }
 
- @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1279px) {
     picture {
       margin-top: -6.5rem;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        width: 21.25rem;
-        height: 13.75rem;
-      }
+  @media (min-width: 768px) and  (max-width: 1023px) {
+    picture {
+      width: 21.25rem;
+      height: 13.75rem;
     }
   }
 
@@ -470,11 +470,11 @@ class ContactForm extends PureComponent {
             .button {
               grid-column: 5 / span 4;
             }
+          }
 
-            @media (max-width: 1023px) {
-              form {
-                width: 59rem;
-              }
+          @media (min-width: 768px) and (max-width: 1023px) {
+            form {
+              width: 59rem;
             }
           }
 

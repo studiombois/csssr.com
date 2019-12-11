@@ -239,11 +239,11 @@ class Begin extends PureComponent {
               line-height: 1.5rem;
               grid-column: 8 / span 4;
             }
-            
-            @media (min-width: 768px) and (max-width: 999px) {
-              h1 {
-                padding-left: 3.25rem;
-              }
+          }
+
+          @media (min-width: 768px) and (max-width: 999px) {
+            h1 {
+              padding-left: 3.25rem;
             }
           }
 

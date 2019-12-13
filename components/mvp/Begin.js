@@ -40,6 +40,7 @@ const picture = css.resolve`
     }
   }
 
+
   @media (max-width: 767px) {
     picture {
       left: -4.5%;
@@ -210,7 +211,7 @@ class Begin extends PureComponent {
 
           @media (min-width: 768px) and (max-width: 1279px) {
             article {
-              width: 944px;
+              width: 59rem;
             }
 
             h1 {
@@ -238,12 +239,6 @@ class Begin extends PureComponent {
               font-size: 0.875rem;
               line-height: 1.5rem;
               grid-column: 8 / span 4;
-            }
-          }
-
-          @media (min-width: 768px) and (max-width: 999px) {
-            h1 {
-              padding-left: 3.25rem;
             }
           }
 

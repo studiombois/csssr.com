@@ -1,4 +1,5 @@
 import React from 'react'
+import Router from 'next/router'
 import App from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/node'
@@ -87,10 +88,20 @@ export default class MyApp extends App {
     window.addEventListener('click', function () {
       document.body.classList.remove('outline')
     })
+
+    Router.events.on('routeChangeComplete', this.handleRouteChange)
+  }
+
+  handleRouteChange = () => {
+    if (window.dataLayer) {
+      // setTimeout для того чтобы страница успела отрендериться и поменялся title
+      setTimeout(() => window.dataLayer.push({ event: 'route_change_complete' }))
+    }
   }
 
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMediaMatch)
+    Router.events.off('routeChangeComplete', this.handleRouteChange)
   }
 
   handleMediaMatch = ({ matches }) =>

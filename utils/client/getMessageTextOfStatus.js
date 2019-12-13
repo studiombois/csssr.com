@@ -1,7 +1,7 @@
 
 import React, { Fragment } from 'react'
 
-export default ({ status, feedbackEmail, errorText, t }) => {
+export default ({ status, feedbackEmail, errorText, t, tabIndex }) => {
   if (status === 'success') {
     return (
       <Fragment>
@@ -21,7 +21,7 @@ export default ({ status, feedbackEmail, errorText, t }) => {
         {t('common:form.message.fail.body.textBetweenButtonAndLink')}
       </span>
 
-      <a className='font_link-list_16' href={`mailto:${feedbackEmail}`}>
+      <a className='font_link-list_16' href={`mailto:${feedbackEmail}`} tabIndex={tabIndex}>
         {feedbackEmail}
       </a>
 

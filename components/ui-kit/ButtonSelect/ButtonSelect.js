@@ -144,7 +144,7 @@ class ButtonSelect extends PureComponent {
 
   render() {
     const { buttonText, t, pageName, isMobile } = this.props
-    const { isDropdownVisible, showScrollButton } = this.state
+    const { isDropdownVisible } = this.state
 
     return (
       <div
@@ -178,7 +178,7 @@ class ButtonSelect extends PureComponent {
             className={blueButtonClassName}
             onClick={this.handleShowContactModal}
             testid='buttonSelect:button.showModal'
-            tabIndex={showScrollButton ? '0' : '-1'}
+            tabIndex='-1'
           >
             {buttonText}
           </Button>
@@ -191,7 +191,7 @@ class ButtonSelect extends PureComponent {
           className={whiteButtonClassName}
           theme='secondary'
           testid='buttonSelect:button.toggle.moreLinks'
-          tabIndex={showScrollButton ? '0' : '-1'}
+          tabIndex='-1'
         >
           { isDropdownVisible
             ? <CrossIcon width='1.5rem'/>

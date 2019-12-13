@@ -31,6 +31,7 @@ const Form = props => {
         shouldScroll={false}
         shouldShowStatusMessage={false}
         onSubmitResolve={onSubmitResolve}
+        hasFailOrSuccessStatus={hasFailOrSuccessStatus}
         {...props}
       />
 

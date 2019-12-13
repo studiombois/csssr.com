@@ -6,7 +6,8 @@ import Button from '../../../ui-kit/Button'
 import { statusMessageStyles, generateStatusMessageDynamicCSS, buttonCSS } from './styles'
 
 const StatusMessage = ({ t, errorText, status, feedbackEmail, hasFailOrSuccessStatus, onClick }) => {
-  const messageText = getMessageTextOfStatus({ status, feedbackEmail, errorText, t })
+  const tabIndex = hasFailOrSuccessStatus ? '0' : '-1'
+  const messageText = getMessageTextOfStatus({ status, feedbackEmail, errorText, t, tabIndex })
   const statusMessageDynamicCSS = generateStatusMessageDynamicCSS(hasFailOrSuccessStatus)
 
   return (
@@ -22,7 +23,7 @@ const StatusMessage = ({ t, errorText, status, feedbackEmail, hasFailOrSuccessSt
         {messageText}
       </p>
 
-      <Button className={buttonCSS.className} onClick={onClick}>
+      <Button tabIndex={tabIndex} className={buttonCSS.className} onClick={onClick}>
         {t(`common:form.message.${status}.action`)}
       </Button>
 

@@ -28,11 +28,11 @@ const picture = css.resolve`
       margin-top: 1.5625rem;
       height: 432px;
     }
+  }
 
-    @media (max-width: 1023px) {
-      picture {
-        height: 27rem;
-      }
+  @media (max-width: 1023px) {
+    picture {
+      height: 27rem;
     }
   }
 
@@ -96,7 +96,7 @@ const Feature2 = ({ title, text, image, style }) =>
         }
       }
 
-     @media (min-width: 768px) and (max-width: 1279px) {
+      @media (min-width: 768px) and (max-width: 1279px) {
         section {
           padding-top: 5.4375rem;
           width: 944px;
@@ -109,11 +109,11 @@ const Feature2 = ({ title, text, image, style }) =>
         p {
           margin-top: 2.75rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          section {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        section {
+          width: 59rem;
         }
       }
 
@@ -163,24 +163,10 @@ const Feature2 = ({ title, text, image, style }) =>
         }
       }
 
-     @media (min-width: 768px) and (max-width: 1279px) {
+      @media (min-width: 768px) and (max-width: 1279px) {
         h2 {
           -ms-grid-column: 5;
           -ms-grid-column-span: 5;
-        }
-      }
-
-      @media (max-width: 767px) {
-        h2 {
-          -ms-grid-column: 3;
-          -ms-grid-column-span: 7;
-          -ms-grid-row: 1;
-        }
-
-        p {
-          -ms-grid-column: 1;
-          -ms-grid-column-span: 11;
-          -ms-grid-row: 3;
         }
       }
     `}</style>

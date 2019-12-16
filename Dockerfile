@@ -3,6 +3,8 @@ ENV NODE_ENV=production
 ENV IS_PRODUCTION=TRUE
 WORKDIR /app
 COPY package.json yarn.lock /app/
+RUN apk add --no-cache git openssh
+RUN git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
 RUN yarn
 COPY . .
 RUN yarn build

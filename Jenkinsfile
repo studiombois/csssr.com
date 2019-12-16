@@ -19,7 +19,9 @@ pipeline {
         }
         echo "GIT_BRANCH: ${branch}"
         echo "GIT_COMMIT: ${commit}"
+        echo "myscript"
         echo "GITHUB_TOKEN: ${GITHUB_TOKEN}"
+        echo "myscript2"
       }
     }
     stage('Build') {

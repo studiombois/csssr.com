@@ -19,12 +19,13 @@ pipeline {
         }
         echo "GIT_BRANCH: ${branch}"
         echo "GIT_COMMIT: ${commit}"
+        echo "GITHUB_TOKEN: ${GITHUB_TOKEN}"
       }
     }
     stage('Build') {
       steps {
         script {
-          sh "docker build --network host . -t docker.csssr.space/csssr-com:${commit}"
+          sh "docker build -e GITHUB_TOKEN=${GITHUB_TOKEN} --network host . -t docker.csssr.space/csssr-com:${commit}"
         }
       }
     }

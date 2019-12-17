@@ -29,7 +29,7 @@ export default class Checkbox extends PureComponent {
   }
 
   static defaultProps = {
-    tabIndex: 0,
+    tabIndex: '0',
   }
 
   handleChange = data => {

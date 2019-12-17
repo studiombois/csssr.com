@@ -173,6 +173,7 @@ class Slider extends PureComponent {
           button.is_invisible {
             opacity: 0;
             pointer-events: none;
+            cursor: default;
           }
 
           a {

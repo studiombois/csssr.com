@@ -37,6 +37,7 @@ export default class TextField extends PureComponent {
       className,
       maxLength,
       testid,
+      tabIndex,
       input: {
         name,
         value,
@@ -73,7 +74,7 @@ export default class TextField extends PureComponent {
           onChange={this.handleChange}
           onBlur={onBlur}
           onFocus={onFocus}
-          tabIndex={disabled ? -1 : 0}
+          tabIndex={tabIndex}
           autoFocus={autoFocus}
           type={type}
           disabled={disabled}

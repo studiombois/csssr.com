@@ -17,7 +17,6 @@ export default class MyDocument extends Document {
     }
   }
 
-
   render() {
     const language = this.props.language
     const gtmId = getGtmId(language)

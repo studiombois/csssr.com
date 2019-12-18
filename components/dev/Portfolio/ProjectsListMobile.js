@@ -11,7 +11,7 @@ const ProjectsListMobile = ({ t, projects }) => {
         {project.href ? (
           <a href={project.href} target='_blank' rel='noopener nofollow'>
             <img
-              src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)}
+              src={require(`../../../static/images/dev/portfolio/${project.id}_1.jpg`)}
               alt={`${t('dev:portfolio.slidesAlt')}${t(
                 `dev:portfolio.projects.${project.id}.title`
               )}`}
@@ -19,7 +19,7 @@ const ProjectsListMobile = ({ t, projects }) => {
           </a>
         ) : (
           <img
-            src={require(`../../../static/images/dev/portfolio/${project.id}_1.png`)}
+            src={require(`../../../static/images/dev/portfolio/${project.id}_1.jpg`)}
             alt={`${t('dev:portfolio.slidesAlt')}${t(
               `dev:portfolio.projects.${project.id}.title`
             )}`}

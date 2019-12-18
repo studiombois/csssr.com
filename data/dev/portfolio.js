@@ -102,6 +102,5 @@ export default [{
     id: 'expressobet',
     type: 'slider',
     slides: [1, 2],
-    href: 'https://expressobet.com',
   }],
 }]

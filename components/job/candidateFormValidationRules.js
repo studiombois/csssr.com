@@ -29,18 +29,19 @@ export default (vacancy, t) => values => {
 
   if (vacancy.hasResume && values.resume) {
     errors.resume = link(t)(values.resume)
+    if (!values.file) {
+      errors.resume = composeValidators(required(t), link(t))(values.resume)
+    }
   }
 
-  if (vacancy.hasFile && vacancy.fileExt && values.file) {
-    errors.file = file(vacancy.fileExt, t)(values.file)
-  }
+  if (vacancy.hasFile && vacancy.fileExt) {
+    if (values.file) {
+      errors.file = file(vacancy.fileExt, t)(values.file)
+    }
 
-  if (vacancy.hasResume && values.resume && !values.file) {
-    errors.resume = composeValidators(required(t), link(t))(values.resume)
-  }
-
-  if (vacancy.hasFile && vacancy.fileExt && !values.resume) {
-    errors.file = composeValidators(required(t), file(vacancy.fileExt, t))(values.file)
+    if (!values.resume) {
+      errors.file = composeValidators(required(t), file(vacancy.fileExt, t))(values.file)
+    }
   }
 
   return errors

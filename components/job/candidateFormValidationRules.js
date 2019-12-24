@@ -27,10 +27,13 @@ export default (vacancy, t) => values => {
     errors.portfolio = link(t)(values.portfolio)
   }
 
-  if (vacancy.hasResume && values.resume) {
-    errors.resume = link(t)(values.resume)
+  if (vacancy.hasResume) {
     if (!values.file) {
       errors.resume = composeValidators(required(t), link(t))(values.resume)
+    }
+
+    if (values.file && values.resume) {
+      errors.resume = link(t)(values.resume)
     }
   }
 

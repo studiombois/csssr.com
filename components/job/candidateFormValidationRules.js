@@ -32,7 +32,7 @@ export default (vacancy, t) => values => {
       errors.resume = composeValidators(required(t), link(t))(values.resume)
     }
 
-    if (values.file && values.resume) {
+    if (values.resume) {
       errors.resume = link(t)(values.resume)
     }
   }

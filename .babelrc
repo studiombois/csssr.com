@@ -1,9 +1,7 @@
 {
   "env": {
     "development": {
-      "presets": [
-        "next/babel"
-      ]
+      "presets": ["next/babel", "@emotion/babel-preset-css-prop"]
     },
     "production": {
       "presets": [
@@ -15,12 +13,10 @@
               "node": "8"
             }
           }
-        ]
+        ],
+        "@emotion/babel-preset-css-prop"
       ]
     }
   },
-  "plugins": [
-    "inline-react-svg",
-    "ramda"
-  ]
+  "plugins": ["inline-react-svg", "ramda"]
 }

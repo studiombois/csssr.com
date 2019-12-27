@@ -18,7 +18,7 @@ function School({ t }) {
       >
         <Head title={t('school:meta.title')} description={t('school:meta.description')} />
         <NextHead>
-          <meta name='robots' content='noindex'/>
+          <meta name="robots" content="noindex" />
         </NextHead>
         <NoPage />
       </Layout>

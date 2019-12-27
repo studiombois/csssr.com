@@ -5,7 +5,6 @@ import translate from '../utils/translate-wrapper'
 import Checkbox from '../components/ui-kit/Checkbox'
 import privacyPolicyLinkClick from '../utils/privacyPolicyLinkClick'
 
-
 const PrivacyPolicyCheckbox = ({
   id = 'privacyPolicyCheckbox',
   lng,
@@ -15,13 +14,13 @@ const PrivacyPolicyCheckbox = ({
   linkTestId,
   t,
   tabIndex,
-}) =>
+}) => (
   <Fragment>
     <Field
       id={id}
       name={name}
       className={className}
-      type='checkbox'
+      type="checkbox"
       showValidationAsWarning
       component={Checkbox}
       testid={testid}
@@ -30,16 +29,17 @@ const PrivacyPolicyCheckbox = ({
       {t('common:checkBoxesText.privacyPolicyText')}
       <a
         href={`/${lng}/privacy-policy`}
-        target='_blank'
-        rel='noopener'
+        target="_blank"
+        rel="noopener"
         onClick={privacyPolicyLinkClick}
-        className='font_link-list_16'
+        className="font_link-list_16"
         data-testid={linkTestId}
         tabIndex={tabIndex}
       >
         {t('common:checkBoxesText.privacyPolicyLinkText')}
       </a>
-    </Field><style jsx>{`
+    </Field>
+    <style jsx>{`
       a[target='_blank']::after {
         display: none;
       }
@@ -60,6 +60,7 @@ const PrivacyPolicyCheckbox = ({
       }
     `}</style>
   </Fragment>
+)
 
 PrivacyPolicyCheckbox.propTypes = {
   id: string,

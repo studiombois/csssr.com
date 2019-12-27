@@ -42,7 +42,7 @@ const contactModalStyles = css`
     background-color: transparent;
     background-position: 50%;
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {

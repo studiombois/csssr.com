@@ -34,7 +34,7 @@ const picture = css.resolve`
     }
   }
 
-  @media (min-width: 768px) and  (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     picture {
       width: 21.25rem;
       height: 13.75rem;
@@ -59,29 +59,28 @@ const fieldCss = css.resolve`
   }
 
   .field:nth-of-type(1) {
-    -ms-grid-row: 2; 
+    -ms-grid-row: 2;
   }
 
   .field:nth-of-type(2) {
-    -ms-grid-row: 3; 
+    -ms-grid-row: 3;
   }
 
   .field:nth-of-type(3) {
-    -ms-grid-row: 4; 
+    -ms-grid-row: 4;
   }
 
   .field:nth-of-type(4) {
-    -ms-grid-row: 5; 
+    -ms-grid-row: 5;
   }
 
   .field:nth-of-type(5) {
-    -ms-grid-row: 6; 
+    -ms-grid-row: 6;
   }
 
   .field:nth-of-type(6) {
-    -ms-grid-row: 7; 
+    -ms-grid-row: 7;
   }
-
 
   .field_type_textarea {
     position: relative;
@@ -107,11 +106,9 @@ const fieldCss = css.resolve`
     .field {
       grid-column: 4 / span 6;
       -ms-grid-column: 7;
-      -ms-grid-column-span: 11; 
+      -ms-grid-column-span: 11;
       margin-bottom: 2.0625rem;
     }
-
-
 
     .field_type_textarea {
       margin-bottom: 3.625rem;
@@ -224,9 +221,8 @@ class ContactForm extends PureComponent {
     // При ресете форма реинициализируется с initialValues
     // или, если они не заданы, с пустым объектом.
     const { initialValues } = this.props
-    const wasReset = initialValues === undefined ?
-      equals(values, {}) :
-      values === this.props.initialValues
+    const wasReset =
+      initialValues === undefined ? equals(values, {}) : values === this.props.initialValues
 
     if (this.state.submittedToServer && !wasReset) {
       this.setState({
@@ -262,93 +258,108 @@ class ContactForm extends PureComponent {
   }
 
   renderField = fieldName => {
-    const {
-      className,
-      pageName,
-      fieldsIds,
-      formName,
-      hasFailOrSuccessStatus,
-      t,
-    } = this.props
+    const { className, pageName, fieldsIds, formName, hasFailOrSuccessStatus, t } = this.props
 
     const getTabIndex = `${hasFailOrSuccessStatus ? '-1' : '0'}`
 
     const fieldByName = {
-      name: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
-        <Field
-          id={fieldsIds && fieldsIds.name || 'name'}
-          name='name'
-          component={TextField}
-          type='text'
-          placeholder={t(`${pageName}:form.namePlaceholder`)}
-          label={t(`${pageName}:form.nameLabel`)}
-          testid={`${formName}:field:callbackForm.name`}
-          autoFocus={formName === 'contact-modal'}
-          tabIndex={getTabIndex}
-        />
-      </div>,
-      phone: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
-        <Field
-          id={fieldsIds && fieldsIds.phone || 'phone'}
-          name='phone'
-          component={TextField}
-          type='text'
-          placeholder={t(`${pageName}:form.phonePlaceholder`)}
-          label={t(`${pageName}:form.phoneLabel`)}
-          testid={`${formName}:field:callbackForm.phone`}
-          tabIndex={getTabIndex}
-        />
-      </div>,
-      email: <div className={cn('field', fieldCss.className, { [className]: !!className })}>
-        <Field
-          id={fieldsIds && fieldsIds.email || 'email'}
-          name='email'
-          component={TextField}
-          type='email'
-          placeholder={t(`${pageName}:form.emailPlaceholder`)}
-          label={t(`${pageName}:form.emailLabel`)}
-          testid={`${formName}:field:callbackForm.email`}
-          tabIndex={getTabIndex}
-        />
-      </div>,
-      message: <div className={cn('field', 'field_type_textarea', fieldCss.className, { [className]: !!className })}>
-        <Field
-          id={fieldsIds && fieldsIds.message || 'message'}
-          name='message'
-          className={cn({ [className]: !!className })}
-          component={TextareaField}
-          placeholder={t(`${pageName}:form.messagePlaceholder`)}
-          label={t(`${pageName}:form.messageLabel`)}
-          testid={`${formName}:field:callbackForm.message`}
-          tabIndex={getTabIndex}
-        />
-      </div>,
-      privacyPolicy: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
-        <PrivacyPolicyCheckbox
-          id={fieldsIds && fieldsIds.privacyPolicy || 'privacyPolicy'}
-          name='privacyPolicy'
-          testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
-          linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
-          tabIndex={getTabIndex}
-        />
-      </div>,
-      newsletter: <div className={cn('field', 'field_type_checkbox', fieldCss.className, { [className]: !!className })}>
-        <Field
-          id={fieldsIds && fieldsIds.newsletter || 'newsletter'}
-          name='newsletter'
-          type='checkbox'
-          component={Checkbox}
-          testid={`${formName}:field:callbackForm.newsletter.checkbox`}
-          tabIndex={getTabIndex}
+      name: (
+        <div className={cn('field', fieldCss.className, { [className]: !!className })}>
+          <Field
+            id={(fieldsIds && fieldsIds.name) || 'name'}
+            name="name"
+            component={TextField}
+            type="text"
+            placeholder={t(`${pageName}:form.namePlaceholder`)}
+            label={t(`${pageName}:form.nameLabel`)}
+            testid={`${formName}:field:callbackForm.name`}
+            autoFocus={formName === 'contact-modal'}
+            tabIndex={getTabIndex}
+          />
+        </div>
+      ),
+      phone: (
+        <div className={cn('field', fieldCss.className, { [className]: !!className })}>
+          <Field
+            id={(fieldsIds && fieldsIds.phone) || 'phone'}
+            name="phone"
+            component={TextField}
+            type="text"
+            placeholder={t(`${pageName}:form.phonePlaceholder`)}
+            label={t(`${pageName}:form.phoneLabel`)}
+            testid={`${formName}:field:callbackForm.phone`}
+            tabIndex={getTabIndex}
+          />
+        </div>
+      ),
+      email: (
+        <div className={cn('field', fieldCss.className, { [className]: !!className })}>
+          <Field
+            id={(fieldsIds && fieldsIds.email) || 'email'}
+            name="email"
+            component={TextField}
+            type="email"
+            placeholder={t(`${pageName}:form.emailPlaceholder`)}
+            label={t(`${pageName}:form.emailLabel`)}
+            testid={`${formName}:field:callbackForm.email`}
+            tabIndex={getTabIndex}
+          />
+        </div>
+      ),
+      message: (
+        <div
+          className={cn('field', 'field_type_textarea', fieldCss.className, {
+            [className]: !!className,
+          })}
         >
-          {t('common:checkBoxesText.newsletterText')}
-        </Field>
-      </div>,
+          <Field
+            id={(fieldsIds && fieldsIds.message) || 'message'}
+            name="message"
+            className={cn({ [className]: !!className })}
+            component={TextareaField}
+            placeholder={t(`${pageName}:form.messagePlaceholder`)}
+            label={t(`${pageName}:form.messageLabel`)}
+            testid={`${formName}:field:callbackForm.message`}
+            tabIndex={getTabIndex}
+          />
+        </div>
+      ),
+      privacyPolicy: (
+        <div
+          className={cn('field', 'field_type_checkbox', fieldCss.className, {
+            [className]: !!className,
+          })}
+        >
+          <PrivacyPolicyCheckbox
+            id={(fieldsIds && fieldsIds.privacyPolicy) || 'privacyPolicy'}
+            name="privacyPolicy"
+            testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
+            linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
+            tabIndex={getTabIndex}
+          />
+        </div>
+      ),
+      newsletter: (
+        <div
+          className={cn('field', 'field_type_checkbox', fieldCss.className, {
+            [className]: !!className,
+          })}
+        >
+          <Field
+            id={(fieldsIds && fieldsIds.newsletter) || 'newsletter'}
+            name="newsletter"
+            type="checkbox"
+            component={Checkbox}
+            testid={`${formName}:field:callbackForm.newsletter.checkbox`}
+            tabIndex={getTabIndex}
+          >
+            {t('common:checkBoxesText.newsletterText')}
+          </Field>
+        </div>
+      ),
     }
 
-    return <Fragment key={fieldName}>
-      {fieldByName[fieldName]}
-    </Fragment>
+    return <Fragment key={fieldName}>{fieldByName[fieldName]}</Fragment>
   }
 
   render() {
@@ -372,9 +383,8 @@ class ContactForm extends PureComponent {
         onSubmit={this.handleSubmit}
         name={formName}
         noValidate
-
       >
-        <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }}/>
+        <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }} />
 
         <h2
           id={headerId}
@@ -388,7 +398,7 @@ class ContactForm extends PureComponent {
 
         <div className={cn('button', { [className]: !!className })} ref={this.messageRef}>
           <AnimatedButton
-            type='submit'
+            type="submit"
             status={status}
             testid={`${formName}:button.callbackForm.submit`}
             btnContainerTestid={`${formName}:block.btnContainer`}
@@ -397,7 +407,7 @@ class ContactForm extends PureComponent {
           </AnimatedButton>
         </div>
 
-        {shouldShowStatusMessage &&
+        {shouldShowStatusMessage && (
           <div className={cn('message', { [className]: !!className })}>
             <FormStateMessage
               status={status}
@@ -408,7 +418,7 @@ class ContactForm extends PureComponent {
               successPictureTestid={`${formName}:picture.successMessageImg`}
             />
           </div>
-        }
+        )}
 
         <style jsx>{`
           form {
@@ -507,13 +517,12 @@ class ContactForm extends PureComponent {
               margin-bottom: 1.1875rem;
             }
           }
-
         `}</style>
         {picture.styles}
         {fieldCss.styles}
         <style jsx>{`
           form {
-            -ms-grid-rows: (auto)[9];
+            -ms-grid-rows: (auto) [9];
           }
 
           h2 {
@@ -556,7 +565,6 @@ class ContactForm extends PureComponent {
               -ms-grid-column-span: 11;
             }
           }
-
         `}</style>
       </form>
     )

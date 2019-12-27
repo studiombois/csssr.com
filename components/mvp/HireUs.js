@@ -10,14 +10,16 @@ import getGaCid from '../../utils/client/getGaCid'
 
 const pageName = 'mvp'
 
-const ContactFormForMVP = props => <ContactForm
-  imageName='letter'
-  pageName={pageName}
-  headerId='hire-us'
-  fields={['name', 'phone', 'email', 'message']}
-  feedbackEmail='sales@csssr.io'
-  {...props}
-/>
+const ContactFormForMVP = props => (
+  <ContactForm
+    imageName="letter"
+    pageName={pageName}
+    headerId="hire-us"
+    fields={['name', 'phone', 'email', 'message']}
+    feedbackEmail="sales@csssr.io"
+    {...props}
+  />
+)
 
 const onSubmit = (t, lng) => async values => {
   values.pageName = pageName
@@ -61,11 +63,13 @@ const onSubmit = (t, lng) => async values => {
 
 const focusOnErrors = createDecorator()
 
-const HireUs = ({ t, lng }) => <ReactFinalForm
-  onSubmit={onSubmit(t, lng)}
-  validate={contactFormValidationRules(t)}
-  decorators={[ focusOnErrors ]}
-  component={ContactFormForMVP}
-/>
+const HireUs = ({ t, lng }) => (
+  <ReactFinalForm
+    onSubmit={onSubmit(t, lng)}
+    validate={contactFormValidationRules(t)}
+    decorators={[focusOnErrors]}
+    component={ContactFormForMVP}
+  />
+)
 
 export default translate()(HireUs)

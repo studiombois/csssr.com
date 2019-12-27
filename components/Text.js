@@ -14,7 +14,7 @@ import React from 'react'
 поделить на два.
 */
 
-const Text = () =>
+const Text = () => (
   <style jsx global>{`
     h1 {
       margin: 0;
@@ -146,7 +146,7 @@ const Text = () =>
       height: 0.25rem;
       border: 0.125rem solid #0076ff;
       box-sizing: border-box;
-      content: ''
+      content: '';
     }
 
     .font_link-list_24 {
@@ -170,7 +170,7 @@ const Text = () =>
       height: 0.375rem;
       border: 0.0625rem solid #0076ff;
       box-sizing: border-box;
-      content: ''
+      content: '';
     }
 
     .font_link-list_28 {
@@ -194,7 +194,7 @@ const Text = () =>
       height: 0.5rem;
       border: 0.125rem solid #0076ff;
       box-sizing: border-box;
-      content: ''
+      content: '';
     }
 
     .font_link-list_16:hover::after,
@@ -231,7 +231,7 @@ const Text = () =>
 
     .font_input-small-label,
     .font_input-small-focus-label,
-    .font_input-small-error-label  {
+    .font_input-small-error-label {
       margin-top: -0.125rem;
       padding-bottom: 0.125rem;
       font-family: 'Roboto', 'Arial', sans-serif;
@@ -540,5 +540,6 @@ const Text = () =>
       }
     }
   `}</style>
+)
 
 export default Text

@@ -26,12 +26,11 @@ const Section = ({ type, asRow, ...others }) => {
   if (asRow && type !== 'questionAndAnswer' && type !== 'questBox' && type !== 'quest') {
     return (
       <FormRow>
-        <Component {...others}/>
+        <Component {...others} />
       </FormRow>
     )
   }
-  return <Component {...others}/>
-
+  return <Component {...others} />
 }
 
 Section.propTypes = {

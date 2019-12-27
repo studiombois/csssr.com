@@ -8,19 +8,17 @@ export default class LinksList extends PureComponent {
       shape({
         href: string,
         label: string,
-      })
+      }),
     ),
-  };
+  }
 
   state = {
     isListVisible: false,
     isTablet: false,
-  };
+  }
 
   componentDidMount() {
-    this.tabletMediaQuery = window.matchMedia(
-      '(min-width: 768px) and (max-width: 1279px)'
-    )
+    this.tabletMediaQuery = window.matchMedia('(min-width: 768px) and (max-width: 1279px)')
     this.tabletMediaQuery.addListener(this.handleMediaMatch)
     this.handleMediaMatch(this.tabletMediaQuery)
   }
@@ -32,12 +30,12 @@ export default class LinksList extends PureComponent {
   handleMediaMatch = ({ matches }) =>
     this.setState({
       isTablet: matches,
-    });
+    })
 
   handleToggleListVisability = () =>
     this.setState({
       isListVisible: !this.state.isListVisible,
-    });
+    })
 
   render() {
     const { title, links } = this.props
@@ -45,7 +43,7 @@ export default class LinksList extends PureComponent {
 
     return (
       <div>
-        <span className='font_perforator-10-regular'>
+        <span className="font_perforator-10-regular">
           {title}
           <button
             className={isListVisible ? 'button_state_opened' : ''}
@@ -59,15 +57,15 @@ export default class LinksList extends PureComponent {
               {href && (
                 <a
                   href={href}
-                  target='_blank'
-                  className='font_link-list_28'
-                  rel='noopener nofollow'
+                  target="_blank"
+                  className="font_link-list_28"
+                  rel="noopener nofollow"
                 >
                   {isTablet && shortLabel ? shortLabel : label}
                 </a>
               )}
               {!href && (
-                <span className='font_link-list_28'>
+                <span className="font_link-list_28">
                   {isTablet && shortLabel ? shortLabel : label}
                 </span>
               )}
@@ -154,7 +152,7 @@ export default class LinksList extends PureComponent {
             button::after {
               position: absolute;
               top: 50%;
-              content: "";
+              content: '';
               display: block;
               width: 0.6875rem;
               height: 0.125rem;

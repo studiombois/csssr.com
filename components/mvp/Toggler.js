@@ -6,11 +6,14 @@ class Toggler extends PureComponent {
 
     return (
       <Fragment>
-        <div className='toggler'>
-          {items.map((item, index) =>
-            <button key={index} type='button' onClick={() => onChange(index)}>{item}</button>)
-          }
-        </div><style jsx>{`
+        <div className="toggler">
+          {items.map((item, index) => (
+            <button key={index} type="button" onClick={() => onChange(index)}>
+              {item}
+            </button>
+          ))}
+        </div>
+        <style jsx>{`
           div {
             position: relative;
             display: inline-flex;

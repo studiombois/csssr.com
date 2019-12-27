@@ -19,11 +19,13 @@ class ButtonSelect extends PureComponent {
     buttonText: string,
     showButtonOnNode: string,
     hideButtonOnNode: string,
-    links: arrayOf(shape({
-      label: string,
-      href: string,
-      external: bool,
-    })),
+    links: arrayOf(
+      shape({
+        label: string,
+        href: string,
+        external: bool,
+      }),
+    ),
     pageName: string,
     isMobile: bool,
     t: func,
@@ -149,8 +151,8 @@ class ButtonSelect extends PureComponent {
     return (
       <div
         data-scroll-lock-fill-gap
-        id='hire-us-button'
-        data-testid='buttonSelect:block.listAndText'
+        id="hire-us-button"
+        data-testid="buttonSelect:block.listAndText"
         className={cn(blueButtonClassName, whiteButtonClassName, {
           'button-wrapper': true,
           'button-wrapper_is_invisible': !this.state.showScrollButton,
@@ -164,52 +166,49 @@ class ButtonSelect extends PureComponent {
           onCloseButtonClick={this.handleHideDropdown}
         />
 
-        { isMobile
-          ? <ButtonLink
-            href='#hire-us'
+        {isMobile ? (
+          <ButtonLink
+            href="#hire-us"
             className={blueButtonClassName}
             onClick={this.handlePreventSmoothScroll}
-            testid='buttonSelect:button.showModal'
+            testid="buttonSelect:button.showModal"
           >
             {buttonText}
           </ButtonLink>
-
-          : <Button
+        ) : (
+          <Button
             className={blueButtonClassName}
             onClick={this.handleShowContactModal}
-            testid='buttonSelect:button.showModal'
-            tabIndex='-1'
+            testid="buttonSelect:button.showModal"
+            tabIndex="-1"
           >
             {buttonText}
           </Button>
-        }
+        )}
 
         <Button
-          name='more-links'
+          name="more-links"
           ariaLabel={t('common:moreLinks')}
           onClick={this.handleToggleDropdown}
           className={whiteButtonClassName}
-          theme='secondary'
-          testid='buttonSelect:button.toggle.moreLinks'
-          tabIndex='-1'
+          theme="secondary"
+          testid="buttonSelect:button.toggle.moreLinks"
+          tabIndex="-1"
         >
-          { isDropdownVisible
-            ? <CrossIcon width='1.5rem'/>
-            : <ThreePointIcon width='3rem' height='3rem'/>
-          }
+          {isDropdownVisible ? (
+            <CrossIcon width="1.5rem" />
+          ) : (
+            <ThreePointIcon width="3rem" height="3rem" />
+          )}
         </Button>
 
         {/* Поместил форму сюда, что бы не изменять state на уровне всей страницы */}
-        {typeof window !== 'undefined' && this.state.showContactModal &&
+        {typeof window !== 'undefined' &&
+          this.state.showContactModal &&
           ReactDOM.createPortal(
-            <ContactModal
-              onClose={this.handleHideContactModal}
-              pageName={pageName}
-            />,
-            document.getElementById('main')
-
-          )
-        }
+            <ContactModal onClose={this.handleHideContactModal} pageName={pageName} />,
+            document.getElementById('main'),
+          )}
 
         <style jsx>{`
           .button-wrapper {

@@ -18,16 +18,7 @@ export default class Button extends PureComponent {
   }
 
   render() {
-    const {
-      theme,
-      children,
-      external,
-      disabled,
-      href,
-      className,
-      onClick,
-      testid,
-    } = this.props
+    const { theme, children, external, disabled, href, className, onClick, testid } = this.props
 
     const classNames = cn('button', {
       'font_button-label': true,
@@ -44,7 +35,7 @@ export default class Button extends PureComponent {
           target={external ? '_blank' : null}
           disabled={disabled}
           href={href}
-          rel='noopener'
+          rel="noopener"
           onClick={onClick}
           data-testid={testid}
         >
@@ -90,7 +81,7 @@ export default class Button extends PureComponent {
             color: #000;
           }
 
-         @media (min-width: 768px) and (max-width: 1279px) {
+          @media (min-width: 768px) and (max-width: 1279px) {
             .button {
               height: 2.5rem;
             }

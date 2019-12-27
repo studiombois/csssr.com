@@ -57,25 +57,33 @@ const picture = css.resolve`
   }
 `
 
-const Budget = ({ t, lng }) =>
+const Budget = ({ t, lng }) => (
   <Fragment>
-    <article id='budget' className='grid-container'>
+    <article id="budget" className="grid-container">
       <h2 dangerouslySetInnerHTML={{ __html: t('sborka:budget.title') }} />
 
       <PictureForAllResolutions
         className={picture.className}
-        image={{ namespace: 'sborka', key: lng === 'en' ? 'pricesEn' : 'prices', alt: t('sborka:imgAlt.budget') }}
+        image={{
+          namespace: 'sborka',
+          key: lng === 'en' ? 'pricesEn' : 'prices',
+          alt: t('sborka:imgAlt.budget'),
+        }}
       />
 
       <span
         className={lng === 'en' ? 'is_hidden' : ''}
         dangerouslySetInnerHTML={{ __html: t('sborka:budget.postPricetext') }}
       />
-      <p className='font_subhead-regular'>
-        {t('sborka:budget.articleText')} <a href={lng === 'ru' ? '/ru' : '/en'} dangerouslySetInnerHTML={{ __html: t('sborka:budget.articleLinkText') }} />
+      <p className="font_subhead-regular">
+        {t('sborka:budget.articleText')}{' '}
+        <a
+          href={lng === 'ru' ? '/ru' : '/en'}
+          dangerouslySetInnerHTML={{ __html: t('sborka:budget.articleLinkText') }}
+        />
       </p>
-
-    </article><style jsx>{`
+    </article>
+    <style jsx>{`
       article {
         margin-top: 8.8125rem;
         margin-right: auto;
@@ -87,7 +95,8 @@ const Budget = ({ t, lng }) =>
         grid-column: 2 / span 5;
       }
 
-      h2, span {
+      h2,
+      span {
         font-family: 'Roboto Slab', 'Georgia', serif;
         font-size: 3rem;
         font-weight: normal;
@@ -148,7 +157,8 @@ const Budget = ({ t, lng }) =>
           width: 944px;
         }
 
-        h2, span {
+        h2,
+        span {
           font-size: 1.5rem;
           line-height: 2rem;
         }
@@ -174,7 +184,8 @@ const Budget = ({ t, lng }) =>
           width: 20.5rem;
         }
 
-        h2, span {
+        h2,
+        span {
           font-size: 1.5rem;
           line-height: 2rem;
         }
@@ -201,7 +212,7 @@ const Budget = ({ t, lng }) =>
     `}</style>
     <style jsx>{`
       :global(.ie11) article {
-        -ms-grid-rows: (auto)[4];
+        -ms-grid-rows: (auto) [4];
       }
 
       :global(.ie11) h2 {
@@ -249,5 +260,6 @@ const Budget = ({ t, lng }) =>
     `}</style>
     {picture.styles}
   </Fragment>
+)
 
 export default translate()(Budget)

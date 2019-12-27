@@ -37,7 +37,6 @@ const picture = css.resolve`
     }
   }
 
-
   :global(.ie11) picture {
     display: block;
     -ms-grid-column: 13;
@@ -67,14 +66,15 @@ class Money extends PureComponent {
 
     return (
       <Fragment>
-        <article className='grid-container'>
+        <article className="grid-container">
           <h2>{t('mvp:money.title')}</h2>
           <p>{t('mvp:money.text')}</p>
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'mvp', key: 'money', alt: t('mvp:money.imageAlt') }}
           />
-        </article><style jsx>{`
+        </article>
+        <style jsx>{`
           article {
             margin-top: 5rem;
             margin-left: auto;
@@ -130,7 +130,7 @@ class Money extends PureComponent {
 
             p {
               font-size: 1rem;
-              line-height: 1.5rem
+              line-height: 1.5rem;
             }
           }
 

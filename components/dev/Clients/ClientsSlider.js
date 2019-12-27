@@ -17,7 +17,9 @@ class ClientsSlider extends PureComponent {
 
   render() {
     const { activeClientsGroupId } = this.state
-    const activeClientsGroup = clientsGroups.find(clientsGroup => clientsGroup.id === activeClientsGroupId)
+    const activeClientsGroup = clientsGroups.find(
+      clientsGroup => clientsGroup.id === activeClientsGroupId,
+    )
     const activeClients = activeClientsGroup ? activeClientsGroup.clients : []
 
     return (

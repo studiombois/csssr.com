@@ -10,15 +10,19 @@ import isEven from '../../../utils/isEven'
 
 class ProjectsList extends PureComponent {
   static proptypes = {
-    portfolio: arrayOf(shape({
-      id: string,
-      projects: arrayOf(shape({
+    portfolio: arrayOf(
+      shape({
         id: string,
-        type: string,
-        slides: arrayOf(number),
-        href: string,
-      })),
-    })),
+        projects: arrayOf(
+          shape({
+            id: string,
+            type: string,
+            slides: arrayOf(number),
+            href: string,
+          }),
+        ),
+      }),
+    ),
   }
   state = {
     activeProjectsGroupId: 'all',
@@ -37,7 +41,9 @@ class ProjectsList extends PureComponent {
       return portfolio.map(projectGroup => projectGroup.projects.map(project => project))
     }
 
-    const targetPortfolio = portfolio.find(projectGroup => projectGroup.id === activeProjectsGroupId)
+    const targetPortfolio = portfolio.find(
+      projectGroup => projectGroup.id === activeProjectsGroupId,
+    )
     return targetPortfolio ? targetPortfolio.projects : []
   }
 
@@ -69,13 +75,16 @@ class ProjectsList extends PureComponent {
       }
     }
 
-    this.setState({
-      isCut: !this.state.isCut,
-      listHeight: listNode.offsetHeight,
-    }, scrollToNextBlock)
+    this.setState(
+      {
+        isCut: !this.state.isCut,
+        listHeight: listNode.offsetHeight,
+      },
+      scrollToNextBlock,
+    )
   }
 
-  renderProject = (project, index) =>
+  renderProject = (project, index) => (
     <Project
       index={index}
       key={project.id}
@@ -86,6 +95,7 @@ class ProjectsList extends PureComponent {
       href={project.href}
       className={project.className}
     />
+  )
 
   // TODO очень сложный метод, надо подумать как его переделать
   renderAllProjects = () => {
@@ -104,9 +114,10 @@ class ProjectsList extends PureComponent {
     return projects.map((project, index) => {
       const nextProject = projects[index + 1]
       const prevProject = projects[index - 1]
-      const lastProject = (index + 1) === projects.length
-      const hasTitleOnSameRow = (isOdd(index + 1) && nextProject && nextProject.title)
-                                || (!lastProject && isEven(index + 1) && prevProject && prevProject.title)
+      const lastProject = index + 1 === projects.length
+      const hasTitleOnSameRow =
+        (isOdd(index + 1) && nextProject && nextProject.title) ||
+        (!lastProject && isEven(index + 1) && prevProject && prevProject.title)
 
       const newProject = hasTitleOnSameRow
         ? { ...project, className: 'bigger-margin-top' }
@@ -119,8 +130,7 @@ class ProjectsList extends PureComponent {
   renderSpecificProjects = () => {
     return this.props.portfolio
       .find(projectGroup => projectGroup.id === this.state.activeProjectsGroupId)
-      .projects
-      .map(this.renderProject)
+      .projects.map(this.renderProject)
   }
 
   render() {
@@ -128,7 +138,7 @@ class ProjectsList extends PureComponent {
     const { activeProjectsGroupId, listHeight, isCut } = this.state
     const projectsOfActiveProjectsGroupId = this.getProjectsOfActiveProjectsGroupId()
     const shouldShowCutButton = projectsOfActiveProjectsGroupId.length > 5
-    const tabs = ['all'].concat(portfolio.map(projectsGroup => projectsGroup.id ))
+    const tabs = ['all'].concat(portfolio.map(projectsGroup => projectsGroup.id))
 
     return (
       <Fragment>
@@ -143,21 +153,17 @@ class ProjectsList extends PureComponent {
           })}
         >
           <ul className={'grid-container'} ref={this.listRef}>
-            { activeProjectsGroupId === 'all'
+            {activeProjectsGroupId === 'all'
               ? this.renderAllProjects()
-              : this.renderSpecificProjects()
-            }
+              : this.renderSpecificProjects()}
           </ul>
         </div>
 
-        { shouldShowCutButton &&
+        {shouldShowCutButton && (
           <CutButton isCut={isCut} onClick={this.handleCutListOnOff}>
-            { isCut
-              ? t('dev:portfolio.buttonText1')
-              : t('dev:portfolio.buttonText2')
-            }
+            {isCut ? t('dev:portfolio.buttonText1') : t('dev:portfolio.buttonText2')}
           </CutButton>
-        }
+        )}
         <style jsx>{`
           ul {
             padding-bottom: 1.5625rem;
@@ -213,6 +219,5 @@ class ProjectsList extends PureComponent {
 ProjectsList.contextTypes = {
   isMsBrowser: bool,
 }
-
 
 export default translate()(ProjectsList)

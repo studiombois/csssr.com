@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 import formatText from '../../../utils/formatText'
 
-const Text = ({ text }) =>
+const Text = ({ text }) => (
   <Fragment>
-    <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: formatText(text) }} />
+    <p className="font_p16-regular" dangerouslySetInnerHTML={{ __html: formatText(text) }} />
     <style jsx>{`
       :global(ul) + p {
         margin-top: 2.5rem;
@@ -24,6 +24,7 @@ const Text = ({ text }) =>
       }
     `}</style>
   </Fragment>
+)
 
 Text.propTypes = {
   text: string,

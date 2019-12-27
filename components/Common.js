@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Common = () =>
+const Common = () => (
   <style jsx global>{`
     * {
       box-sizing: border-box;
@@ -432,5 +432,6 @@ const Common = () =>
       font-display: swap;
     }
   `}</style>
+)
 
 export default Common

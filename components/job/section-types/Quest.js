@@ -4,27 +4,21 @@ import FormRow from '../FormRow'
 import Section from '../Section'
 import { getMsColumn } from '../../../utils/style/getGridValueForMs'
 
-const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
+const renderFileInfo = (fileSize, fileExt, fileName, fileLink) => (
   <Fragment>
-    <div className='icon-wrapper'>
+    <div className="icon-wrapper">
       <img
         src={require(`../../../static/icons/${fileExt.toLowerCase()}.svg`)}
         alt={`${fileExt} file extension logo`}
       />
     </div>
 
-    <div className='file-info'>
-      <a
-        className='font_link-list_16'
-        href={fileLink}
-        target='_blank'
-        rel='noopener'
-      >
+    <div className="file-info">
+      <a className="font_link-list_16" href={fileLink} target="_blank" rel="noopener">
         {fileName}
       </a>
-      <span className='font_perforator-10-regular' dangerouslySetInnerHTML={{ __html: fileSize }} />
+      <span className="font_perforator-10-regular" dangerouslySetInnerHTML={{ __html: fileSize }} />
     </div>
-
 
     <style jsx>{`
       .icon-wrapper {
@@ -80,15 +74,18 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) =>
       }
     `}</style>
   </Fragment>
+)
 
-const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections }) =>
+const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections }) => (
   <Fragment>
     <FormRow rightSideContent={renderFileInfo(fileSize, fileExt, fileName, fileLink)}>
-      <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: title }} />
-      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
+      <h2 className="font_h2-regular" dangerouslySetInnerHTML={{ __html: title }} />
+      <p className="font_p16-regular" dangerouslySetInnerHTML={{ __html: text }} />
     </FormRow>
 
-    {sections.map((section, index) => <Section key={index} {...section} asRow isChild />)}
+    {sections.map((section, index) => (
+      <Section key={index} {...section} asRow isChild />
+    ))}
     <style jsx>{`
       h2 {
         margin-top: 6.0625rem;
@@ -111,6 +108,7 @@ const Quest = ({ fileSize, fileExt, fileName, fileLink, text, title, sections })
       }
     `}</style>
   </Fragment>
+)
 
 Quest.propTypes = {
   fileSize: string,

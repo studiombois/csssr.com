@@ -15,13 +15,7 @@ export default class AnimatedButton extends PureComponent {
   }
 
   render() {
-    const {
-      status,
-      type,
-      children,
-      testid,
-      btnContainerTestid,
-    } = this.props
+    const { status, type, children, testid, btnContainerTestid } = this.props
 
     const disabled = status !== 'pending'
 
@@ -30,33 +24,33 @@ export default class AnimatedButton extends PureComponent {
     })
 
     return (
-      <div className={cn('progress-button', 'elastic', {
-        loading: status === 'submitting' || status === 'success' || status === 'fail',
-        success: status === 'success',
-        error: status === 'fail',
-      })}
-      data-testid={btnContainerTestid}
+      <div
+        className={cn('progress-button', 'elastic', {
+          loading: status === 'submitting' || status === 'success' || status === 'fail',
+          success: status === 'success',
+          error: status === 'fail',
+        })}
+        data-testid={btnContainerTestid}
       >
-        <button
-          type={type}
-          className={classNames}
-          disabled={disabled}
-          data-testid={testid}
-        >
+        <button type={type} className={classNames} disabled={disabled} data-testid={testid}>
           <span>{children}</span>
         </button>
-        <svg className='progress-circle' width='70' height='70' viewBox='0 0 70 70'>
-          <path d='m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z' strokeDasharray='204.245 204.245' strokeDashoffset='204.245'/>
+        <svg className="progress-circle" width="70" height="70" viewBox="0 0 70 70">
+          <path
+            d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"
+            strokeDasharray="204.245 204.245"
+            strokeDashoffset="204.245"
+          />
         </svg>
-        <svg className='checkmark' width='70' height='70' viewBox='0 0 70 70'>
-          <path d='m31.5,46.5l15.3,-23.2' strokeDasharray='27.80 27.80' strokeDashoffset='27.80'/>
-          <path d='m31.5,46.5l-8.5,-7.1' strokeDasharray='11.7 11.7' strokeDashoffset='11.7'/>
+        <svg className="checkmark" width="70" height="70" viewBox="0 0 70 70">
+          <path d="m31.5,46.5l15.3,-23.2" strokeDasharray="27.80 27.80" strokeDashoffset="27.80" />
+          <path d="m31.5,46.5l-8.5,-7.1" strokeDasharray="11.7 11.7" strokeDashoffset="11.7" />
         </svg>
-        <svg className='cross' width='70' height='70' viewBox='0 0 70 70'>
-          <path d='m35,35l-9.3,-9.3'/>
-          <path d='m35,35l9.3,9.3'/>
-          <path d='m35,35l-9.3,9.3'/>
-          <path d='m35,35l9.3,-9.3'/>
+        <svg className="cross" width="70" height="70" viewBox="0 0 70 70">
+          <path d="m35,35l-9.3,-9.3" />
+          <path d="m35,35l9.3,9.3" />
+          <path d="m35,35l-9.3,9.3" />
+          <path d="m35,35l9.3,-9.3" />
         </svg>
         <style jsx>{`
           button {
@@ -86,7 +80,8 @@ export default class AnimatedButton extends PureComponent {
             color: #fff;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
-            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s, border-radius 0.3s;
+            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s,
+              border-color 0.3s, border-radius 0.3s;
           }
 
           .progress-button .button_state_disabled {
@@ -125,7 +120,7 @@ export default class AnimatedButton extends PureComponent {
           }
 
           .error.progress-button svg.progress-circle path {
-            stroke: #FB797E;
+            stroke: #fb797e;
             stroke-width: 5;
           }
 
@@ -172,8 +167,8 @@ export default class AnimatedButton extends PureComponent {
           }
 
           .error.progress-button button {
-            border-color: #FB797E;
-            background-color: #FB797E;
+            border-color: #fb797e;
+            background-color: #fb797e;
           }
 
           .loading.progress-button svg.progress-circle path {
@@ -189,11 +184,13 @@ export default class AnimatedButton extends PureComponent {
 
           /* Optional elastic effect for the width of the button */
           .elastic.progress-button button {
-            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s,
+              border-color 0.3s;
           }
 
           .loading.elastic.progress-button button {
-            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s,
+              border-color 0.3s;
           }
 
           @keyframes dash {
@@ -207,7 +204,7 @@ export default class AnimatedButton extends PureComponent {
             .loading.success button {
               display: none;
             }
-         }
+          }
         `}</style>
       </div>
     )

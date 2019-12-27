@@ -148,90 +148,101 @@ const stylesForFileField = css.resolve`
 const CandidateInfoSection = props => {
   const { connection, vacancy, onFileFieldChange, t } = props
   const { hasComment, hasGithub, hasPortfolio, hasResume, hasFile, fileExt } = vacancy
-  const commonFieldsData = [{
-    id: 'firstname',
-    className: `${stylesForFullWidthField.className} ${stylesForFirstHalfWidthField.className}`,
-    label: t('job:name'),
-  }, {
-    id: 'lastname',
-    label: t('job:lastname'),
-    className: `${stylesForFullWidthField.className} ${stylesForSecondHalfWidthField.className}`,
-  }, {
-    id: 'age',
-    label: t('job:age'),
-  }, {
-    id: 'location',
-    label: t('job:city'),
-  }, {
-    id: 'email',
-    label: t('job:email'),
-    type: 'email',
-  }, {
-    id: 'resume',
-    label: t('job:resumeLink'),
-    shouldShow: hasResume,
-  }, {
-    id: 'portfolio',
-    label: t('job:resumePortfolio'),
-    shouldShow: hasPortfolio,
-  }, {
-    id: 'github',
-    label: t('job:resumeGithub'),
-    shouldShow: hasGithub,
-  }]
-
+  const commonFieldsData = [
+    {
+      id: 'firstname',
+      className: `${stylesForFullWidthField.className} ${stylesForFirstHalfWidthField.className}`,
+      label: t('job:name'),
+    },
+    {
+      id: 'lastname',
+      label: t('job:lastname'),
+      className: `${stylesForFullWidthField.className} ${stylesForSecondHalfWidthField.className}`,
+    },
+    {
+      id: 'age',
+      label: t('job:age'),
+    },
+    {
+      id: 'location',
+      label: t('job:city'),
+    },
+    {
+      id: 'email',
+      label: t('job:email'),
+      type: 'email',
+    },
+    {
+      id: 'resume',
+      label: t('job:resumeLink'),
+      shouldShow: hasResume,
+    },
+    {
+      id: 'portfolio',
+      label: t('job:resumePortfolio'),
+      shouldShow: hasPortfolio,
+    },
+    {
+      id: 'github',
+      label: t('job:resumeGithub'),
+      shouldShow: hasGithub,
+    },
+  ]
 
   return (
-    <div className='grid-container'>
-      <h2 className='font_h2-regular'>{t('job:tellAboutYourself')}</h2>
+    <div className="grid-container">
+      <h2 className="font_h2-regular">{t('job:tellAboutYourself')}</h2>
 
-      {!props.isMobile &&
-        <ContactOptions connection={connection}/>
-      }
+      {!props.isMobile && <ContactOptions connection={connection} />}
 
-      {commonFieldsData.map(({ id, label, className = stylesForFullWidthField.className, type = 'text', shouldShow = true }) =>
-        shouldShow
-          ? <Field
-            key={id}
-            id={id}
-            name={id}
-            className={cn(className, `input-${id}`)}
-            component={TextField}
-            type={type}
-            label={label}
-            theme='regular'
-          />
-          : null
+      {commonFieldsData.map(
+        ({
+          id,
+          label,
+          className = stylesForFullWidthField.className,
+          type = 'text',
+          shouldShow = true,
+        }) =>
+          shouldShow ? (
+            <Field
+              key={id}
+              id={id}
+              name={id}
+              className={cn(className, `input-${id}`)}
+              component={TextField}
+              type={type}
+              label={label}
+              theme="regular"
+            />
+          ) : null,
       )}
 
-      {hasFile &&
+      {hasFile && (
         <Field
-          id='file'
-          name='file'
+          id="file"
+          name="file"
           className={cn(stylesForFileField.className, 'seventh-line')}
           label={`${t('job:testQuest')} ${getFileFieldText(t)(fileExt)}`}
           fileAccept={fileExt}
           component={FileField}
           onFileFieldChange={onFileFieldChange}
         />
-      }
+      )}
 
-      {props.isMobile &&
-        <ContactOptionsMobile connection={connection} />
-      }
+      {props.isMobile && <ContactOptionsMobile connection={connection} />}
 
-      {hasComment &&
+      {hasComment && (
         <Fragment>
           <Field
-            id='comment'
-            name='comment'
+            id="comment"
+            name="comment"
             label={t('job:tellUsMoreAboutYourself')}
             className={cn(stylesForTextareaField.className, 'seventh-line')}
             component={TextareaField}
-            theme='regular'
+            theme="regular"
           />
         </Fragment>
-      }
+      )}
 
       <PrivacyPolicyCheckbox className={cn(stylesForCheckboxField.className, 'input-checkbox')} />
 
@@ -270,7 +281,7 @@ const CandidateInfoSection = props => {
           }
         }
 
-        @media (min-width: 768px) and  (max-width: 1023px) {
+        @media (min-width: 768px) and (max-width: 1023px) {
           div {
             width: 59rem;
           }
@@ -295,8 +306,8 @@ const CandidateInfoSection = props => {
         }
       `}</style>
       <style jsx>{`
-       :global(.ie11) h2,
-       :global(.ie11) p {
+        :global(.ie11) h2,
+        :global(.ie11) p {
           -ms-grid-column: ${getMsColumn(2)};
           -ms-grid-column-span: ${getMsColumn(6)};
         }

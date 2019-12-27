@@ -15,10 +15,12 @@ const walkSync = dir => {
     if (isFileDirectory) {
       walkSync(`${filePath}/`)
     } else {
-      const url = 'https://csssr.com/' + filePath
-        .substr(0, filePath.lastIndexOf('.'))
-        .replace('pages/', '')
-        .replace('/index', '')
+      const url =
+        'https://csssr.com/' +
+        filePath
+          .substr(0, filePath.lastIndexOf('.'))
+          .replace('pages/', '')
+          .replace('/index', '')
 
       const excludedPagesUrls = [
         'https://csssr.com/_app',

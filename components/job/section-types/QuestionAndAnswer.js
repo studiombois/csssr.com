@@ -9,9 +9,7 @@ import TextField from '../../ui-kit/TextField'
 import FormRow from '../FormRow'
 import formatText from '../../../utils/formatText'
 
-
 const renderTime = (time, t, isVisibleOnMobile) => {
-
   return (
     <div
       className={cn({
@@ -19,10 +17,8 @@ const renderTime = (time, t, isVisibleOnMobile) => {
         'wrapper_mobile-only': isVisibleOnMobile,
       })}
     >
-      <div className='font_subhead-regular value'>{t('job:minutes', { count: time })}</div>
-      <div className='font_p16-regular hint'>
-        {t('job:willBeRequired')}
-      </div>
+      <div className="font_subhead-regular value">{t('job:minutes', { count: time })}</div>
+      <div className="font_p16-regular hint">{t('job:willBeRequired')}</div>
       <style jsx>{`
         .wrapper {
           grid-column: 10 / span 3;
@@ -84,43 +80,46 @@ const { className, styles } = css.resolve`
   }
 `
 
-const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, inputIndex, displayIndex }) =>
+const QuestionAndAnswer = ({
+  linkText,
+  taskLink,
+  taskText,
+  time,
+  title,
+  t,
+  inputIndex,
+  displayIndex,
+}) => (
   <FormRow rightSideContent={renderTime(time, t, false)}>
-    <h3 className='font_h3-regular'>
-      {title}
-    </h3>
-    <div className='link-wrapper'>
-      <a
-        className='font_link-list_16'
-        href={taskLink}
-        target='_blank'
-        rel='noopener'
-      >
+    <h3 className="font_h3-regular">{title}</h3>
+    <div className="link-wrapper">
+      <a className="font_link-list_16" href={taskLink} target="_blank" rel="noopener">
         {taskLink}
       </a>
     </div>
-    {taskText.split('\n').map((taskTextString, index) =>
+    {taskText.split('\n').map((taskTextString, index) => (
       <p
         key={index}
-        className='font_p16-regular'
+        className="font_p16-regular"
         dangerouslySetInnerHTML={{ __html: formatText(taskTextString) }}
       />
-    )}
+    ))}
     {renderTime(time, t, true)}
     <Field
       className={className}
       name={`quests[${inputIndex}].text`}
       component={TextareaField}
-      theme='regular'
+      theme="regular"
       label={t('job:annotation')}
     />
     <Field
       className={className}
       name={`quests[${inputIndex}].link`}
       component={TextField}
-      theme='regular'
+      theme="regular"
       label={linkText}
-    /><style jsx>{`
+    />
+    <style jsx>{`
       h3 {
         margin-top: 2.9375rem;
       }
@@ -180,6 +179,7 @@ const QuestionAndAnswer = ({ linkText, taskLink, taskText, time, title, t, input
     `}</style>
     {styles}
   </FormRow>
+)
 
 QuestionAndAnswer.propTypes = {
   index: number,

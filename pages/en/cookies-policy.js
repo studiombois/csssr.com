@@ -5,14 +5,19 @@ import CookiesPolicyContent from '../../components/cookies-policy/CookiesPolicyC
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
-
-const PrivacyPolicy = ({ t }) =>
+const PrivacyPolicy = ({ t }) => (
   <Layout
-    headerProps={{ isLogoLink: true, isBurgerVisible: true, menuName: t('common:menu.cookies-policy'), sectionName: t('common:sectionName.cookies-policy') }}
+    headerProps={{
+      isLogoLink: true,
+      isBurgerVisible: true,
+      menuName: t('common:menu.cookies-policy'),
+      sectionName: t('common:sectionName.cookies-policy'),
+    }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
     <Head title={t('cookiesPolicy:meta.title')} description={t('cookiesPolicy:meta.description')} />
     <CookiesPolicyContent />
   </Layout>
+)
 
 export default withI18next(['cookiesPolicy'])(PrivacyPolicy)

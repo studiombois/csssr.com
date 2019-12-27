@@ -17,6 +17,8 @@ module.exports = {
         bracketSpacing: true,
       },
     ],
+    'react/prop-types': 'off',
+    'react/jsx-no-target-blank': 'off',
   },
   extends: '@csssr/eslint-config-core',
 }

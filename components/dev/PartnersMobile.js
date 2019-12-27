@@ -14,10 +14,14 @@ import {
   healthLinksRu,
 } from '../../data/dev/partnersLinks'
 
-const Partners = ({ t, lng }) =>
+const Partners = ({ t, lng }) => (
   <Fragment>
-    <section className='grid-container'>
-      <h2 id='clients' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:partners.title') }} />
+    <section className="grid-container">
+      <h2
+        id="clients"
+        className="font_h2-slab"
+        dangerouslySetInnerHTML={{ __html: t('dev:partners.title') }}
+      />
 
       <LinksList
         title={t('dev:partners.iTTitle')}
@@ -39,7 +43,8 @@ const Partners = ({ t, lng }) =>
         title={t('dev:partners.othersTitle')}
         links={lng === 'ru' ? othersLinksRu : othersLinksEn}
       />
-    </section><style jsx>{`
+    </section>
+    <style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
@@ -55,5 +60,6 @@ const Partners = ({ t, lng }) =>
       }
     `}</style>
   </Fragment>
+)
 
 export default translate()(Partners)

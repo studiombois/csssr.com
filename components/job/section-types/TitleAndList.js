@@ -11,12 +11,18 @@ const TitleAndList = ({ list, title, isChild }) => {
         className={isChild ? 'font_h3-regular' : 'font_h2-regular'}
         dangerouslySetInnerHTML={{ __html: title }}
       />
-      <ul className='have-square-bullets'>
+      <ul className="have-square-bullets">
         {list.map((item, index) => (
-          <li className= 'font_p16-regular' key={index} dangerouslySetInnerHTML={{ __html: formatText(item) }} />
+          <li
+            className="font_p16-regular"
+            key={index}
+            dangerouslySetInnerHTML={{ __html: formatText(item) }}
+          />
         ))}
-      </ul><style jsx>{`
-        h2, h3 {
+      </ul>
+      <style jsx>{`
+        h2,
+        h3 {
           margin-top: 2.0625rem;
           padding: 0;
         }
@@ -30,7 +36,8 @@ const TitleAndList = ({ list, title, isChild }) => {
         }
 
         @media (max-width: 767px) {
-          h2, h3 {
+          h2,
+          h3 {
             margin-top: 2.4375rem;
             font-size: 1rem;
           }
@@ -54,7 +61,6 @@ const TitleAndList = ({ list, title, isChild }) => {
     </Fragment>
   )
 }
-
 
 TitleAndList.propTypes = {
   title: string,

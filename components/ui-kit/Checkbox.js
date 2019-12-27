@@ -1,23 +1,12 @@
 import React, { PureComponent } from 'react'
 import cn from 'classnames'
-import {
-  string,
-  number,
-  bool,
-  func,
-  node,
-  oneOfType,
-} from 'prop-types'
-
+import { string, number, bool, func, node, oneOfType } from 'prop-types'
 
 export default class Checkbox extends PureComponent {
   static propTypes = {
     id: oneOfType([string, number]),
     name: string,
-    value: oneOfType([
-      string,
-      number,
-    ]),
+    value: oneOfType([string, number]),
     tabIndex: string,
     className: string,
     checked: bool,
@@ -36,7 +25,6 @@ export default class Checkbox extends PureComponent {
     this.props.input.onChange(data)
   }
 
-
   render() {
     const {
       id,
@@ -47,11 +35,7 @@ export default class Checkbox extends PureComponent {
       showValidationAsWarning,
       testid,
       tabIndex,
-      meta: {
-        error,
-        invalid,
-        submitFailed,
-      },
+      meta: { error, invalid, submitFailed },
     } = this.props
 
     const showError = invalid && submitFailed
@@ -69,7 +53,7 @@ export default class Checkbox extends PureComponent {
           value={input.value}
           checked={input.checked}
           disabled={disabled}
-          type='checkbox'
+          type="checkbox"
           onChange={this.handleChange}
           data-testid={testid}
           tabIndex={tabIndex}
@@ -81,10 +65,12 @@ export default class Checkbox extends PureComponent {
           })}
           htmlFor={id}
         >
-          <span className='border' />
-          {children && <span className='content'>{children}</span>}
+          <span className="border" />
+          {children && <span className="content">{children}</span>}
         </label>
-        {!showValidationAsWarning && showError && <span className='font_input-small-error-label error'>{error}</span>}
+        {!showValidationAsWarning && showError && (
+          <span className="font_input-small-error-label error">{error}</span>
+        )}
         <style jsx>{`
           .checkbox {
             position: relative;
@@ -170,7 +156,7 @@ export default class Checkbox extends PureComponent {
 
           input::-ms-check {
             border: none;
-            opacity:0;
+            opacity: 0;
           }
 
           input:checked + label::before {

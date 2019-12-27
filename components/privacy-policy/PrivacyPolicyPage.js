@@ -3,9 +3,15 @@ import Head from '../Head'
 import Layout from '../Layout'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 
-const PrivacyPolicyPage = ({ t, isMsBrowser, children }) =>
+const PrivacyPolicyPage = ({ t, isMsBrowser, children }) => (
   <Layout
-    headerProps={{ isLogoLink: true, isBurgerVisible: true, isMsBrowser, title: t('common:menu.privacy-policy'), sectionName: t('common:sectionName.privacy-policy') }}
+    headerProps={{
+      isLogoLink: true,
+      isBurgerVisible: true,
+      isMsBrowser,
+      title: t('common:menu.privacy-policy'),
+      sectionName: t('common:sectionName.privacy-policy'),
+    }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
     <Head
@@ -16,5 +22,6 @@ const PrivacyPolicyPage = ({ t, isMsBrowser, children }) =>
 
     {children}
   </Layout>
+)
 
 export default PrivacyPolicyPage

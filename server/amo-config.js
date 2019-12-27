@@ -3,7 +3,10 @@ const getAuthQuery = (userLogin, userHash) => `USER_LOGIN=${userLogin}&USER_HASH
 module.exports = {
   SALES: {
     ORIGIN: 'https://csssr.amocrm.ru',
-    AUTH_QUERY: getAuthQuery(process.env.AMO_CRM_SALES_USER_LOGIN, process.env.AMO_CRM_SALES_USER_HASH),
+    AUTH_QUERY: getAuthQuery(
+      process.env.AMO_CRM_SALES_USER_LOGIN,
+      process.env.AMO_CRM_SALES_USER_HASH,
+    ),
     PIPELINE_ID: 938752,
     FIRST_STATUS_ID: 21946756,
     CONTACT_FIELDS: {
@@ -45,7 +48,10 @@ module.exports = {
   },
   SCHOOL: {
     ORIGIN: 'https://csssrschool.amocrm.ru',
-    AUTH_QUERY: getAuthQuery(process.env.AMO_CRM_SCHOOL_USER_LOGIN, process.env.AMO_CRM_SCHOOL_USER_HASH),
+    AUTH_QUERY: getAuthQuery(
+      process.env.AMO_CRM_SCHOOL_USER_LOGIN,
+      process.env.AMO_CRM_SCHOOL_USER_HASH,
+    ),
     PIPELINE_ID: 1511002,
     FIRST_STATUS_ID: 23311747,
     CONTACT_FIELDS: {

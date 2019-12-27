@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 
-const LogoWithText = ({ iconName, altText, logoCaption }) =>
+const LogoWithText = ({ iconName, altText, logoCaption }) => (
   <Fragment>
     <img src={require(`../../static/icons/dev/${iconName}.svg`)} alt={altText} />
     <figcaption>{logoCaption}</figcaption>
@@ -37,7 +37,8 @@ const LogoWithText = ({ iconName, altText, logoCaption }) =>
         }
       }
 
-      @media screen and (max-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @media screen and (max-width: 1024px) and (-ms-high-contrast: none),
+        (-ms-high-contrast: active) {
         img {
           max-width: 80%;
         }
@@ -52,7 +53,6 @@ const LogoWithText = ({ iconName, altText, logoCaption }) =>
         }
       }
 
-
       @media (max-width: 767px) {
         figcaption {
           margin-top: 0.0625rem;
@@ -62,6 +62,7 @@ const LogoWithText = ({ iconName, altText, logoCaption }) =>
       }
     `}</style>
   </Fragment>
+)
 
 LogoWithText.propTypes = {
   iconName: string,

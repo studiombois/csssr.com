@@ -23,7 +23,7 @@ const Form = props => {
       <ContactForm
         formName={formName}
         pageName={pageName}
-        headerId='hire-us-modal'
+        headerId="hire-us-modal"
         fields={['name', 'phone', 'email', 'message']}
         fieldsIds={fieldsIds}
         className={cn(formCSS.className, dynamicFormCSS.className)}
@@ -38,7 +38,7 @@ const Form = props => {
       <StatusMessage
         status={submitStatus}
         hasFailOrSuccessStatus={hasFailOrSuccessStatus}
-        feedbackEmail='sales@csssr.io'
+        feedbackEmail="sales@csssr.io"
         errorText={submitError}
         onClick={onStatusButtonClick}
       />

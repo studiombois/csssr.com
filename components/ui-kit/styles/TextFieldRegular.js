@@ -74,7 +74,7 @@ export default css`
     font-size: 0.625rem;
   }
 
- @media (max-width: 1279px) {
+  @media (max-width: 1279px) {
     input {
       padding-bottom: 0.1875rem;
     }

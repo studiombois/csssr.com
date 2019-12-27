@@ -1,20 +1,24 @@
+//TODO удалить после перевода всех страниц на новый emotionjs и новый ui-kit
 import React, { Fragment } from 'react'
 import { string, shape } from 'prop-types'
 import getSrcSet from '../utils/client/getSrcSet'
 
-const Picture = ({ className, image: { namespace, key, alt } }) =>
+const Picture = ({ className, image: { namespace, key, alt } }) => (
   <Fragment>
     <picture className={className}>
       <source
-        type='image/webp'
-        srcSet={getSrcSet(namespace, null, key, 'webp', ['1x', '2x', '3x'])}/>
+        type="image/webp"
+        srcSet={getSrcSet(namespace, null, key, 'webp', ['1x', '2x', '3x'])}
+      />
       <img
         className={className}
         srcSet={getSrcSet(namespace, null, key, 'png', ['1x', '2x', '3x'])}
         src={getSrcSet(namespace, null, key, 'png', ['1x'])}
-        alt={alt}/>
+        alt={alt}
+      />
     </picture>
   </Fragment>
+)
 
 Picture.propTypes = {
   className: string,

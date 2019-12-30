@@ -4,7 +4,7 @@ ARG csssrSpaceOrigin
 ARG githubToken
 
 # Для установки npm-пакетов с приватных github-репозиториев (начало)
-RUN apk add --no-cache git
+RUN apt get -y git
 RUN git config --global url."https://${githubToken}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
 # Для установки npm-пакетов с приватных github-репозиториев (конец)
 

@@ -1,6 +1,8 @@
 FROM node:11.7.0 AS build
+ARG csssrSpaceOrigin
 ENV NODE_ENV=production
 ENV IS_PRODUCTION=TRUE
+ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 WORKDIR /app
 COPY package.json yarn.lock /app/
 RUN yarn

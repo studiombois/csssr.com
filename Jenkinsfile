@@ -25,9 +25,6 @@ pipeline {
         }
         echo "GIT_BRANCH: ${branch}"
         echo "GIT_COMMIT: ${commit}"
-        echo "heelllooo1"
-        echo "GITHUB_TOKEN: ${GITHUB_TOKEN}"
-        echo "heelllooo2"
       }
     }
     stage('Build') {

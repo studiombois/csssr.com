@@ -12,7 +12,6 @@
 /.next
 
 # misc
-*.icloud
 .DS_Store
 .env
 npm-debug.log*

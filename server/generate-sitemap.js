@@ -76,20 +76,6 @@ const sitemapUrlsSettings = [{
     },
   ],
 }, {
-  url: 'https://csssr.com/en',
-  changefreq: 'weekly',
-  priority: 1,
-  links: [
-    {
-      lang: 'en',
-      url: 'https://express.csssr.com/en-sg',
-    },
-    // {
-    //   lang: 'ru',
-    //   url: 'https://csssr.com/ru/express',
-    // },
-  ],
-}, {
   url: 'https://csssr.com/ru/mvp',
   changefreq: 'weekly',
   priority: 1,

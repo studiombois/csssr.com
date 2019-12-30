@@ -1,23 +1,23 @@
 import React, { Fragment } from 'react'
 import translate from '../../utils/translate-wrapper'
 
-const PostScriptum = ({ t }) =>
+const PostScriptum = ({ t }) => (
   <Fragment>
-    <article className='grid-container'>
+    <article className="grid-container">
       <h2
-        className='font_h2-slab'
-        dangerouslySetInnerHTML={{ __html: t('sborka:postScriptum.title') }} />
+        className="font_h2-slab"
+        dangerouslySetInnerHTML={{ __html: t('sborka:postScriptum.title') }}
+      />
 
       <p
-        className='font_subhead-regular'
+        className="font_subhead-regular"
         dangerouslySetInnerHTML={{ __html: t('sborka:postScriptum.text') }}
       />
 
       <span
-        className='font_subhead-slab'
+        className="font_subhead-slab"
         dangerouslySetInnerHTML={{ __html: t('sborka:postScriptum.tagline') }}
       />
-
     </article>
     <div />
     <style jsx>{`
@@ -321,12 +321,17 @@ const PostScriptum = ({ t }) =>
       }
 
       @media (max-width: 767px) {
-        :global(.ie11) article, h2, p, span, div {
+        :global(.ie11) article,
+        h2,
+        p,
+        span,
+        div {
           -ms-grid-column: 1;
           -ms-grid-column-span: 11;
         }
       }
     `}</style>
   </Fragment>
+)
 
 export default translate()(PostScriptum)

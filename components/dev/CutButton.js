@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import FoldArrow from '../../static/icons/foldArrow.svg'
 import { string, bool, func } from 'prop-types'
 
-const CutButton = ({ children, isCut, onClick }) =>
+const CutButton = ({ children, isCut, onClick }) => (
   <Fragment>
-    <div className='grid-container'>
-      <div className='border-bottom'/>
+    <div className="grid-container">
+      <div className="border-bottom" />
       <button onClick={onClick}>
         {children}
         <FoldArrow
@@ -142,6 +142,7 @@ const CutButton = ({ children, isCut, onClick }) =>
       }
     `}</style>
   </Fragment>
+)
 
 CutButton.propTypes = {
   children: string,

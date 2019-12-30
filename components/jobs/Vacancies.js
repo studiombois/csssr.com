@@ -126,7 +126,6 @@ const pictureFaq = css.resolve`
   }
 `
 
-
 const pictureHunter = css.resolve`
   picture {
     grid-column: 8 / span 1;
@@ -203,8 +202,7 @@ class Vacancies extends PureComponent {
 
   // Выполняем handleScroll при переходе на мобильное разрешение
   // что бы спрятать header-background за картинку
-  handleMediaMatch = ({ matches }) =>
-    matches && !!this.articleRef.current && this.handleScroll()
+  handleMediaMatch = ({ matches }) => matches && !!this.articleRef.current && this.handleScroll()
 
   // При скролле изменяем z-index header-background что бы он был, когда мы
   // скролим описание вакансии и что бы его не было, когда попадаем на картикну
@@ -226,21 +224,17 @@ class Vacancies extends PureComponent {
   }
 
   render() {
-    const {
-      lng,
-      locale,
-      t,
-    } = this.props
+    const { lng, locale, t } = this.props
     const rootUrl = `/${lng}`
     return (
       <Fragment>
-        <div className='half-page-picture' />
+        <div className="half-page-picture" />
 
-        <div className='jobs-header-logo-container'>
-          <div className='logo-wrapper'>
-            <a href={rootUrl} >
+        <div className="jobs-header-logo-container">
+          <div className="logo-wrapper">
+            <a href={rootUrl}>
               <img
-                className='logo'
+                className="logo"
                 src={require('../../static/icons/csssr_logo.svg')}
                 alt={t('jobs:logoAlt')}
               />
@@ -248,20 +242,20 @@ class Vacancies extends PureComponent {
           </div>
         </div>
 
-        <article
-          className='grid-container'
-          ref={this.articleRef}
-        >
+        <article className="grid-container" ref={this.articleRef}>
           <header>
-            <h1 className='font_h1-regular'>
+            <h1 className="font_h1-regular">
               <div dangerouslySetInnerHTML={{ __html: t('jobs:title') }} />
-              <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('jobs:subTitle') }} />
+              <span
+                className="font_subhead-regular"
+                dangerouslySetInnerHTML={{ __html: t('jobs:subTitle') }}
+              />
             </h1>
           </header>
 
-          {this.props.vacancies.length > 0 &&
+          {this.props.vacancies.length > 0 && (
             <ul>
-              {this.props.vacancies.map(vacancy =>
+              {this.props.vacancies.map(vacancy => (
                 <li key={vacancy.id}>
                   <Link
                     href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
@@ -277,9 +271,9 @@ class Vacancies extends PureComponent {
                     </a>
                   </Link>
                 </li>
-              )}
+              ))}
             </ul>
-          }
+          )}
 
           <PictureForAllResolutions
             className={picture.className}
@@ -287,14 +281,14 @@ class Vacancies extends PureComponent {
             customResolutions={['360', '1024']}
           />
 
-          <h2 className='font_h2-regular'>
-            <span style={{ color: '#85d4b2' }}>
-              {t('jobs:how.word')}
-            </span>
-            {' '}
+          <h2 className="font_h2-regular">
+            <span style={{ color: '#85d4b2' }}>{t('jobs:how.word')}</span>{' '}
             <span dangerouslySetInnerHTML={{ __html: t('jobs:how.title') }} />
           </h2>
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:how.description') }} />
+          <p
+            className="font_p16-regular"
+            dangerouslySetInnerHTML={{ __html: t('jobs:how.description') }}
+          />
 
           <PictureForAllResolutions
             className={picture.className}
@@ -302,14 +296,14 @@ class Vacancies extends PureComponent {
             customResolutions={['360', '1024']}
           />
 
-          <h2 className='font_h2-regular'>
-            <span style={{ color: '#fe535b' }}>
-              {t('jobs:who.word')}
-            </span>
-            {' '}
+          <h2 className="font_h2-regular">
+            <span style={{ color: '#fe535b' }}>{t('jobs:who.word')}</span>{' '}
             <span dangerouslySetInnerHTML={{ __html: t('jobs:who.title') }} />
           </h2>
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:who.description') }} />
+          <p
+            className="font_p16-regular"
+            dangerouslySetInnerHTML={{ __html: t('jobs:who.description') }}
+          />
 
           <PictureForAllResolutions
             className={picture.className}
@@ -317,32 +311,64 @@ class Vacancies extends PureComponent {
             customResolutions={['360', '1024']}
           />
 
-          <h2 className='font_h2-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.title') }} />
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionFirst') }} />
-          <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionSecond') }} />
+          <h2
+            className="font_h2-regular"
+            dangerouslySetInnerHTML={{ __html: t('jobs:about.title') }}
+          />
+          <p
+            className="font_p16-regular"
+            dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionFirst') }}
+          />
+          <p
+            className="font_p16-regular"
+            dangerouslySetInnerHTML={{ __html: t('jobs:about.descriptionSecond') }}
+          />
 
-          {lng === 'ru' &&
+          {lng === 'ru' && (
             <Fragment>
-              <Picture className={pictureFaq.className} image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}/>
-              <p className='faq-text font_p16-regular'>
+              <Picture
+                className={pictureFaq.className}
+                image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}
+              />
+              <p className="faq-text font_p16-regular">
                 {t('jobs:faq.title')}
 
-                <a
-                  href='/ru/jobs-faq'
-                  className='font_link-list_16'
-                >
+                <a href="/ru/jobs-faq" className="font_link-list_16">
                   {t('jobs:faq.link')}
                 </a>
               </p>
             </Fragment>
-          }
+          )}
 
-          <Picture className={pictureHunter.className} image={{ namespace: 'jobs', key: 'jobs-hunter', alt: t('jobs:hunter.alt') }}/>
-          <p className='hunter-text font_p16-regular'>
-            {t('jobs:hunter.description')}&nbsp;<a href={t('jobs:hunter.firstLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.firstLinkText')}</a> <span className='hunter-text-inner'>{t('jobs:hunter.and')} <a href={t('jobs:hunter.secondLink')} target='_blank' rel='noopener' className='font_link-list_16'>{t('jobs:hunter.secondLinkText')}</a></span>.
+          <Picture
+            className={pictureHunter.className}
+            image={{ namespace: 'jobs', key: 'jobs-hunter', alt: t('jobs:hunter.alt') }}
+          />
+          <p className="hunter-text font_p16-regular">
+            {t('jobs:hunter.description')}&nbsp;
+            <a
+              href={t('jobs:hunter.firstLink')}
+              target="_blank"
+              rel="noopener"
+              className="font_link-list_16"
+            >
+              {t('jobs:hunter.firstLinkText')}
+            </a>{' '}
+            <span className="hunter-text-inner">
+              {t('jobs:hunter.and')}{' '}
+              <a
+                href={t('jobs:hunter.secondLink')}
+                target="_blank"
+                rel="noopener"
+                className="font_link-list_16"
+              >
+                {t('jobs:hunter.secondLinkText')}
+              </a>
+            </span>
+            .
           </p>
 
-          <Footer className={footer.className}/>
+          <Footer className={footer.className} />
         </article>
         <style jsx>{`
           article {
@@ -836,7 +862,6 @@ class Vacancies extends PureComponent {
           :global(.ie11) article *:nth-child(12) {
             -ms-grid-row: 12;
           }
-
 
           :global(.ie11) header,
           :global(.ie11) h2,

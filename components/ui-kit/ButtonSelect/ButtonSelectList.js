@@ -7,27 +7,31 @@ import ButtonSelectLinksApple from './ButtonSelectLinksApple'
 import ButtonSelectLinksDefault from './ButtonSelectLinksDefault'
 import appleListStyles from './styles/stylesForAppleList'
 
-const links = [{
-  label: 'Messenger',
-  localeLink: 'common:floatingButton.messenger',
-  href: 'https://messenger.com/t/csssr',
-  external: true,
-  dataLayerEvent: 'floating_button_fb',
-  testid: 'moreLinks:link.messenger',
-}, {
-  label: 'Telegram',
-  localeLink: 'common:floatingButton.telegram',
-  href: 'http://t.me/sputnik_one_bot',
-  external: true,
-  dataLayerEvent: 'floating_button_tg',
-  testid: 'moreLinks:link.telegram',
-}, {
-  label: 'Email',
-  localeLink: 'common:floatingButton.email',
-  href: 'mailto:sales@csssr.com',
-  dataLayerEvent: 'floating_button_email',
-  testid: 'moreLinks:link.email',
-}]
+const links = [
+  {
+    label: 'Messenger',
+    localeLink: 'common:floatingButton.messenger',
+    href: 'https://messenger.com/t/csssr',
+    external: true,
+    dataLayerEvent: 'floating_button_fb',
+    testid: 'moreLinks:link.messenger',
+  },
+  {
+    label: 'Telegram',
+    localeLink: 'common:floatingButton.telegram',
+    href: 'http://t.me/sputnik_one_bot',
+    external: true,
+    dataLayerEvent: 'floating_button_tg',
+    testid: 'moreLinks:link.telegram',
+  },
+  {
+    label: 'Email',
+    localeLink: 'common:floatingButton.email',
+    href: 'mailto:sales@csssr.com',
+    dataLayerEvent: 'floating_button_email',
+    testid: 'moreLinks:link.email',
+  },
+]
 
 const ButtonSelectList = props => {
   const { t, lng, isDropdownVisible, isAppleDevice, onLinkClick, onCloseButtonClick } = props
@@ -37,21 +41,26 @@ const ButtonSelectList = props => {
   return (
     <Fragment>
       <Transition in={isDropdownVisible} timeout={animationDuration}>
-        {animationState => isDropdownVisible &&
-          <OutsideClickHandler onOutsideClick={onCloseButtonClick} display='flex'>
-            <ul className={`is_${animationState} ${isAppleDevice ? 'is_appleDevice' : ''}`}>
-              <li dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }} data-testid='buttonSelect:text.question'/>
-              <Links links={links} onLinkClick={onLinkClick} />
-              <li>
-                <button
-                  className='close-button'
-                  dangerouslySetInnerHTML={{ __html: t('common:floatingButton.closeText') }}
-                  onClick={onCloseButtonClick}
-                  data-testid='moreLinks:button.closeDropdown'
+        {animationState =>
+          isDropdownVisible && (
+            <OutsideClickHandler onOutsideClick={onCloseButtonClick} display="flex">
+              <ul className={`is_${animationState} ${isAppleDevice ? 'is_appleDevice' : ''}`}>
+                <li
+                  dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }}
+                  data-testid="buttonSelect:text.question"
                 />
-              </li>
-            </ul>
-          </OutsideClickHandler>
+                <Links links={links} onLinkClick={onLinkClick} />
+                <li>
+                  <button
+                    className="close-button"
+                    dangerouslySetInnerHTML={{ __html: t('common:floatingButton.closeText') }}
+                    onClick={onCloseButtonClick}
+                    data-testid="moreLinks:button.closeDropdown"
+                  />
+                </li>
+              </ul>
+            </OutsideClickHandler>
+          )
         }
       </Transition>
       <style jsx>{`

@@ -85,43 +85,41 @@ class FormStateMessage extends PureComponent {
     } else if (status === 'fail') {
       return {
         intro: t(errorText),
-        message: <span>
-          <span>{t('common:form.message.fail.body.textStart')}</span>
+        message: (
+          <span>
+            <span>{t('common:form.message.fail.body.textStart')}</span>
 
-          <button
-            type='button'
-            className='font_link-list_16'
-            onClick={this.props.onTryAgain}
-          >
-            {t('common:form.message.fail.body.textForButton')}
-          </button>
+            <button type="button" className="font_link-list_16" onClick={this.props.onTryAgain}>
+              {t('common:form.message.fail.body.textForButton')}
+            </button>
 
-          <span>{t('common:form.message.fail.body.textBetweenButtonAndLink')}</span>
+            <span>{t('common:form.message.fail.body.textBetweenButtonAndLink')}</span>
 
-          <a className='font_link-list_16' href={`mailto:${this.props.feedbackEmail}`}>
-            {this.props.feedbackEmail}
-          </a>
+            <a className="font_link-list_16" href={`mailto:${this.props.feedbackEmail}`}>
+              {this.props.feedbackEmail}
+            </a>
 
-          <style jsx>{`
-            button {
-              border: none;
-              background: none;
-              text-decoration: none;
-              cursor: pointer;
-            }
+            <style jsx>{`
+              button {
+                border: none;
+                background: none;
+                text-decoration: none;
+                cursor: pointer;
+              }
 
-            a {
-              text-decoration: none;
-            }
-
-            @media (max-width: 1279px) {
               a {
+                text-decoration: none;
+              }
+
+              @media (max-width: 1279px) {
+                a {
                   font-size: 1rem;
                   line-height: 1.5rem;
+                }
               }
-            }
-          `}</style>
-        </span>,
+            `}</style>
+          </span>
+        ),
       }
     }
 
@@ -135,35 +133,38 @@ class FormStateMessage extends PureComponent {
 
     return (
       <Fragment>
-        {
-          !messageShown && (
-            <Picture
-              className={hideMessagePicture.className}
-              image={{ namespace: 'dev', key: 'letter', alt: '' }}
-              customResolutions={['360']}
-            />
-          )
-        }
+        {!messageShown && (
+          <Picture
+            className={hideMessagePicture.className}
+            image={{ namespace: 'dev', key: 'letter', alt: '' }}
+            customResolutions={['360']}
+          />
+        )}
         <div
           className={cn('body', {
             body_state_visible: messageShown,
           })}
         >
-          { textData && <div className='text' data-testid={testid}>
-            <span className='font_p16-regular'>
-              {textData.intro}
-              <br />
-              {textData.message}
-            </span>
-          </div> }
-          { (messageShown) && <div className='picture'>
-            <PictureForAllResolutions
-              className={picture.className}
-              image={{ namespace: 'forms', key: `${status}`, alt: '' }}
-              customResolutions={['360']}
-              testid={successPictureTestid}
-            />
-          </div> }<style jsx>{`
+          {textData && (
+            <div className="text" data-testid={testid}>
+              <span className="font_p16-regular">
+                {textData.intro}
+                <br />
+                {textData.message}
+              </span>
+            </div>
+          )}
+          {messageShown && (
+            <div className="picture">
+              <PictureForAllResolutions
+                className={picture.className}
+                image={{ namespace: 'forms', key: `${status}`, alt: '' }}
+                customResolutions={['360']}
+                testid={successPictureTestid}
+              />
+            </div>
+          )}
+          <style jsx>{`
             .body {
               position: relative;
               display: flex;
@@ -213,4 +214,3 @@ class FormStateMessage extends PureComponent {
 }
 
 export default translate()(FormStateMessage)
-

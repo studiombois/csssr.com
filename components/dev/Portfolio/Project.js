@@ -3,23 +3,19 @@ import cn from 'classnames'
 import { arrayOf, oneOf, string, number } from 'prop-types'
 import Slider from '../Slider'
 
-const Project = project =>
+const Project = project => (
   <li
     className={cn({
       'smaller-margin-top': project.title,
       [project.className]: !!project.className,
     })}
   >
-    { project.title &&
-      <h3 className='font_h3-regular' dangerouslySetInnerHTML={{ __html: project.title }} />
-    }
-    { project.type === 'slider' &&
-      <Slider
-        id={project.id}
-        slides={project.slides}
-        href={project.href}
-      />
-    }
+    {project.title && (
+      <h3 className="font_h3-regular" dangerouslySetInnerHTML={{ __html: project.title }} />
+    )}
+    {project.type === 'slider' && (
+      <Slider id={project.id} slides={project.slides} href={project.href} />
+    )}
     <style jsx>{`
       h3 {
         margin-bottom: 1.5625rem;
@@ -85,7 +81,7 @@ const Project = project =>
 
       @media (max-width: 1279px) {
         :global(.ie11) li {
-          -ms-grid-row: ${Math.ceil((project.index + 1))};
+          -ms-grid-row: ${Math.ceil(project.index + 1)};
         }
       }
 
@@ -94,7 +90,7 @@ const Project = project =>
           -ms-grid-row: ${Math.ceil((project.index + 1) / 2)};
         }
       }
-      
+
       :global(.ie11) li:nth-child(odd) {
         -ms-grid-column: 3;
         -ms-grid-column-span: 9;
@@ -118,6 +114,7 @@ const Project = project =>
       }
     `}</style>
   </li>
+)
 
 Project.propTypes = {
   id: string,

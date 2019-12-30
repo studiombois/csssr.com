@@ -11,47 +11,50 @@ import isAbsoluteUrl from '../utils/isAbsoluteUrl'
 import i18n from '../common/i18n'
 import { defaultLocaleByLanguage } from '../common/locales-settings'
 
-const items = [{
-  path: '',
-  key: 'common:menu.dev',
-  testid: 'sidebarMenu:link.dev',
-  subItems: [
-    {
-      path: '/mvp',
-      key: 'common:menu.mvp',
-      testid: 'sidebarMenu:link.mvp',
-    },
-    // {
-    //   path: '/',
-    //   key: 'High load',
-    // },
-    // {
-    //   path: '/',
-    //   key: 'Stack migration',
-    // },
-  ],
-},
-{
-  path: '/express',
-  key: 'common:menu.html',
-  testid: 'sidebarMenu:link.html',
-  redirect: {
-    from: '/en/express',
-    to: 'https://express.csssr.com',
+const items = [
+  {
+    path: '',
+    key: 'common:menu.dev',
+    testid: 'sidebarMenu:link.dev',
+    subItems: [
+      {
+        path: '/mvp',
+        key: 'common:menu.mvp',
+        testid: 'sidebarMenu:link.mvp',
+      },
+      // {
+      //   path: '/',
+      //   key: 'High load',
+      // },
+      // {
+      //   path: '/',
+      //   key: 'Stack migration',
+      // },
+    ],
   },
-},
-{
-  path: 'https://school.csssr.com/ru',
-  key: 'common:menu.school',
-  testid: 'sidebarMenu:link.school',
-}, {
-  path: '/jobs',
-  key: 'common:menu.jobs',
-  testid: 'sidebarMenu:link.jobs',
-  useLocale: true,
-}]
+  {
+    path: '/express',
+    key: 'common:menu.html',
+    testid: 'sidebarMenu:link.html',
+    redirect: {
+      from: '/en/express',
+      to: 'https://express.csssr.com',
+    },
+  },
+  {
+    path: 'https://school.csssr.com/ru',
+    key: 'common:menu.school',
+    testid: 'sidebarMenu:link.school',
+  },
+  {
+    path: '/jobs',
+    key: 'common:menu.jobs',
+    testid: 'sidebarMenu:link.jobs',
+    useLocale: true,
+  },
+]
 
-const crossIcon = <CrossIcon width='100%' height='100%' />
+const crossIcon = <CrossIcon width="100%" height="100%" />
 
 export class SideBar extends PureComponent {
   static propTypes = {
@@ -67,7 +70,10 @@ export class SideBar extends PureComponent {
       для того что бы на страницах вакансий переадресация при смене языка
       была на эти же страницы, а не на /jobs
     */
-    const { router: { asPath }, locale } = this.props
+    const {
+      router: { asPath },
+      locale,
+    } = this.props
 
     if (asPath === '/ru/express') {
       return 'https://express.csssr.com'
@@ -94,7 +100,11 @@ export class SideBar extends PureComponent {
   }
 
   getNavItem = ({ path, key, subItems, redirect, useLocale, testid }) => {
-    const { router: { pathname }, lng, locale } = this.props
+    const {
+      router: { pathname },
+      lng,
+      locale,
+    } = this.props
     const languageHref = `/${useLocale ? locale : lng}${path}`
     let href
     let shouldReload
@@ -126,9 +136,9 @@ export class SideBar extends PureComponent {
     const { t } = this.props
 
     return (
-      <li key={key} className='sub-item'>
-        {shouldReload
-          ? <a
+      <li key={key} className="sub-item">
+        {shouldReload ? (
+          <a
             href={href}
             className={cn('sub-link', {
               'sub-link_active': isActive,
@@ -136,7 +146,9 @@ export class SideBar extends PureComponent {
             dangerouslySetInnerHTML={{ __html: t(key) }}
             data-testid={testid}
             tabIndex={this.props.isOpened ? '0' : '-1'}
-          /> : <Link href={href}>
+          />
+        ) : (
+          <Link href={href}>
             <a
               className={cn('sub-link', {
                 'sub-link_active': isActive,
@@ -146,7 +158,7 @@ export class SideBar extends PureComponent {
               tabIndex={this.props.isOpened ? '0' : '-1'}
             />
           </Link>
-        }
+        )}
         <style jsx>{`
           .sub-link {
             margin-top: 0;
@@ -183,9 +195,9 @@ export class SideBar extends PureComponent {
     const { t } = this.props
 
     return (
-      <li key={key} className='item'>
-        {shouldReload
-          ? <a
+      <li key={key} className="item">
+        {shouldReload ? (
+          <a
             href={href}
             className={cn('font_burger-menu link', {
               link_active: isActive,
@@ -193,18 +205,22 @@ export class SideBar extends PureComponent {
             dangerouslySetInnerHTML={{ __html: t(key) }}
             data-testid={testid}
             tabIndex={this.props.isOpened ? '0' : '-1'}
-          /> : href !== '/ru/express' && <Link href={href}>
-            <a
-              className={cn('font_burger-menu link', {
-                link_active: isActive,
-              })}
-              dangerouslySetInnerHTML={{ __html: t(key) }}
-              data-testid={testid}
-              tabIndex={this.props.isOpened ? '0' : '-1'}
-            />
-          </Link>
-        }
-        {subItems && <ul className='sub-menu'>{subItems.map(this.renderSubItem)}</ul>}
+          />
+        ) : (
+          href !== '/ru/express' && (
+            <Link href={href}>
+              <a
+                className={cn('font_burger-menu link', {
+                  link_active: isActive,
+                })}
+                dangerouslySetInnerHTML={{ __html: t(key) }}
+                data-testid={testid}
+                tabIndex={this.props.isOpened ? '0' : '-1'}
+              />
+            </Link>
+          )
+        )}
+        {subItems && <ul className="sub-menu">{subItems.map(this.renderSubItem)}</ul>}
         <style jsx>{`
           .link {
             margin-top: 0;
@@ -249,27 +265,31 @@ export class SideBar extends PureComponent {
 
     return (
       <aside className={cn('sidebar', { sidebar_opened: isOpened })} onKeyDown={e => onClose(e)}>
-        <FocusLock disabled={!isOpened} className='sidebar-focus-lock'>
-          <OutsideClickHandler onOutsideClick={onClose} display='inline'>
-            <button type='button' aria-label='Close menu' onClick={onToggle} data-testid='sidebarMenu:button.close' tabIndex={isOpened ? '0' : '-1'}>
+        <FocusLock disabled={!isOpened} className="sidebar-focus-lock">
+          <OutsideClickHandler onOutsideClick={onClose} display="inline">
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={onToggle}
+              data-testid="sidebarMenu:button.close"
+              tabIndex={isOpened ? '0' : '-1'}
+            >
               {crossIcon}
             </button>
 
-            <div className='body'>
-              <div className='top'>
+            <div className="body">
+              <div className="top">
                 <div
-                  className='font_perforator-16-black section-name'
+                  className="font_perforator-16-black section-name"
                   dangerouslySetInnerHTML={{ __html: menuName }}
                 />
-                <ul className='list'>
-                  {navItems.map(this.renderNavItem)}
-                </ul>
+                <ul className="list">{navItems.map(this.renderNavItem)}</ul>
               </div>
-              <div className='bottom'>
+              <div className="bottom">
                 <a
                   href={this.getLanguageRedirectionLink()}
-                  className='font_link-list_16'
-                  data-testid='sidebarMenu:link.switchLanguage'
+                  className="font_link-list_16"
+                  data-testid="sidebarMenu:link.switchLanguage"
                   tabIndex={this.props.isOpened ? '0' : '-1'}
                 >
                   {t('common:languageRedirect.text')}
@@ -277,7 +297,8 @@ export class SideBar extends PureComponent {
               </div>
             </div>
           </OutsideClickHandler>
-        </FocusLock><style jsx>{`
+        </FocusLock>
+        <style jsx>{`
           button {
             position: absolute;
             z-index: 1;
@@ -403,7 +424,6 @@ export class SideBar extends PureComponent {
               right: 20rem;
             }
           }
-
         `}</style>
       </aside>
     )

@@ -5,9 +5,9 @@ import clientsGroups from '../../../data/dev/clientsGroups'
 // 4 колоки занимает каждый айтем
 // 1 колонка расстояния между ними, кроме последнего
 const gridColumns = 4 * clientsGroups.length + (clientsGroups.length - 1)
-const ClientsSliderMobile = () =>
-  <div className='scroller-wrapper'>
-    <ul className='grid-container'>
+const ClientsSliderMobile = () => (
+  <div className="scroller-wrapper">
+    <ul className="grid-container">
       <ClientsLogosListMobile />
     </ul>
     <style jsx>{`
@@ -32,16 +32,17 @@ const ClientsSliderMobile = () =>
         // 3rem занимает каждая колонка
         // 0.5rem занимает расстояние между ними
         // 9rem это сумма паддингов
-        width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 9}rem;
+        width: ${gridColumns * 3 + 0.5 * (gridColumns - 1) + 9}rem;
       }
     `}</style>
     <style jsx>{`
       ul.grid-container {
-        -ms-grid-columns: (3rem)[${gridColumns}];
+        -ms-grid-columns: (3rem) [ ${gridColumns}];
         -ms-grid-column: 1;
         -ms-grid-column-span: ${gridColumns};
       }
     `}</style>
   </div>
+)
 
 export default ClientsSliderMobile

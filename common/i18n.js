@@ -4,18 +4,16 @@ const { supportedLanguages, supportedLocales } = require('./locales-settings')
 
 // for browser use xhr backend to load translations
 if (process.browser) {
-  i18n
-    .use(XHR)
-    .init({
-      load: 'all',
-      whitelist: [...supportedLanguages, ...supportedLocales],
-      lowerCaseLng: true,
-      ns: ['common'],
-      defaultNS: 'common',
-      backend: {
-        loadPath: '/static/locales/{{lng}}/{{ns}}.json',
-      },
-    })
+  i18n.use(XHR).init({
+    load: 'all',
+    whitelist: [...supportedLanguages, ...supportedLocales],
+    lowerCaseLng: true,
+    ns: ['common'],
+    defaultNS: 'common',
+    backend: {
+      loadPath: '/static/locales/{{lng}}/{{ns}}.json',
+    },
+  })
 }
 
 // a simple helper to getInitialProps passed on loaded i18n data
@@ -38,7 +36,8 @@ i18n.getInitialProps = (req, namespaces) => {
   req.i18n.languages.forEach(language => {
     initialI18nStore[language] = {}
     namespaces.forEach(ns => {
-      initialI18nStore[language][ns] = (req.i18n.services.resourceStore.data[language] || {})[ns] || {}
+      initialI18nStore[language][ns] =
+        (req.i18n.services.resourceStore.data[language] || {})[ns] || {}
     })
   })
 

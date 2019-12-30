@@ -5,23 +5,28 @@ import getMessageTextOfStatus from '../../../../utils/client/getMessageTextOfSta
 import Button from '../../../ui-kit/Button'
 import { statusMessageStyles, generateStatusMessageDynamicCSS, buttonCSS } from './styles'
 
-const StatusMessage = ({ t, errorText, status, feedbackEmail, hasFailOrSuccessStatus, onClick }) => {
+const StatusMessage = ({
+  t,
+  errorText,
+  status,
+  feedbackEmail,
+  hasFailOrSuccessStatus,
+  onClick,
+}) => {
   const tabIndex = hasFailOrSuccessStatus ? '0' : '-1'
   const messageText = getMessageTextOfStatus({ status, feedbackEmail, errorText, t, tabIndex })
   const statusMessageDynamicCSS = generateStatusMessageDynamicCSS(hasFailOrSuccessStatus)
 
   return (
     <div className={statusMessageDynamicCSS.className}>
-      { hasFailOrSuccessStatus &&
+      {hasFailOrSuccessStatus && (
         <img
           src={require(`../../../../static/icons/button_${status}.svg`)}
-          alt='Submit status icon'
+          alt="Submit status icon"
         />
-      }
+      )}
 
-      <p className='font_p16-regular'>
-        {messageText}
-      </p>
+      <p className="font_p16-regular">{messageText}</p>
 
       <Button tabIndex={tabIndex} className={buttonCSS.className} onClick={onClick}>
         {t(`common:form.message.${status}.action`)}

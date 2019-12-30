@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 
-const ClientLogo = ({ t, clientId }) =>
+const ClientLogo = ({ t, clientId }) => (
   <Fragment>
     <img
       src={require(`../../../static/icons/dev/clients/${clientId}.svg`)}
@@ -16,6 +16,7 @@ const ClientLogo = ({ t, clientId }) =>
       }
     `}</style>
   </Fragment>
+)
 
 ClientLogo.propTypes = {
   clientId: string,

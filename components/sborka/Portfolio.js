@@ -46,13 +46,13 @@ const getAnimationProperties = slideTo => {
     exited: { opacity: 0, transform: 'translateX(0)', pointerEvents: 'none' },
   }
 
-  return ({
+  return {
     animationDuration,
     animationStyles: {
       default: defaultStyles,
       byAnimationState: transitionStylesByAnimationState,
     },
-  })
+  }
 }
 
 class Portfolio extends PureComponent {
@@ -82,11 +82,7 @@ class Portfolio extends PureComponent {
     if (isMobile) {
       return (
         <Fragment key={project.name}>
-          <PortfolioItem
-            name={project.name}
-            href={project.href}
-            index={index}
-          />
+          <PortfolioItem name={project.name} href={project.href} index={index} />
         </Fragment>
       )
     }
@@ -98,21 +94,17 @@ class Portfolio extends PureComponent {
         timeout={animationDuration}
         unmountOnExit
       >
-        {state =>
+        {state => (
           <div
-            className='grid-container'
+            className="grid-container"
             style={{
               ...animationStyles.default,
               ...animationStyles.byAnimationState[state],
             }}
           >
-            <PortfolioItem
-              name={project.name}
-              href={project.href}
-              index={index}
-            />
+            <PortfolioItem name={project.name} href={project.href} index={index} />
           </div>
-        }
+        )}
       </Transition>
     )
   }
@@ -126,19 +118,17 @@ class Portfolio extends PureComponent {
 
     return (
       <Fragment>
-        <article className='grid-container'>
-          <h2>
-            {t('sborka:portfolio.title')}
-          </h2>
+        <article className="grid-container">
+          <h2>{t('sborka:portfolio.title')}</h2>
 
-          <div className='scroller-wrapper'>
-            <div className='grid-container'>
+          <div className="scroller-wrapper">
+            <div className="grid-container">
               {portfolioProjects.map(this.renderPortfolioProjects)}
             </div>
 
-            <div className='controls'>
+            <div className="controls">
               <button
-                name='previous-slide'
+                name="previous-slide"
                 aria-label={t('sborka:portfolio.previousSlide')}
                 className={cn({ is_invisible: activeScrollItemIndex === 0 })}
                 onClick={this.handleChangeSlide(-1)}
@@ -146,17 +136,19 @@ class Portfolio extends PureComponent {
                 <Arrow />
               </button>
               <button
-                name='next-slide'
+                name="next-slide"
                 aria-label={t('sborka:portfolio.nextSlide')}
-                className={cn({ is_invisible: activeScrollItemIndex === portfolioProjects.length - 1 })}
+                className={cn({
+                  is_invisible: activeScrollItemIndex === portfolioProjects.length - 1,
+                })}
                 onClick={this.handleChangeSlide(1)}
               >
                 <Arrow />
               </button>
             </div>
           </div>
-
-        </article><style jsx>{`
+        </article>
+        <style jsx>{`
           article {
             position: relative;
             margin-top: 9.9375rem;
@@ -288,7 +280,7 @@ class Portfolio extends PureComponent {
 
               margin-top: 2rem;
               margin-left: -1rem;
-              width: 22,5rem;
+              width: 22, 5rem;
             }
 
             .controls {
@@ -305,7 +297,7 @@ class Portfolio extends PureComponent {
               // 3rem занимает каждая колонка
               // 0.5rem занимает расстояние между ними
               // 4rem это сумма паддингов
-              width: ${gridColumns * 3 + (0.5 * (gridColumns - 1)) + 4}rem;
+              width: ${gridColumns * 3 + 0.5 * (gridColumns - 1) + 4}rem;
             }
           }
         `}</style>

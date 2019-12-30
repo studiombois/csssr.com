@@ -15,10 +15,12 @@ const walkSync = dir => {
     if (isFileDirectory) {
       walkSync(`${filePath}/`)
     } else {
-      const url = 'https://csssr.com/' + filePath
-        .substr(0, filePath.lastIndexOf('.'))
-        .replace('pages/', '')
-        .replace('/index', '')
+      const url =
+        'https://csssr.com/' +
+        filePath
+          .substr(0, filePath.lastIndexOf('.'))
+          .replace('pages/', '')
+          .replace('/index', '')
 
       const excludedPagesUrls = [
         'https://csssr.com/_app',
@@ -26,6 +28,8 @@ const walkSync = dir => {
         'https://csssr.com/_error',
         'https://csssr.com/fonts',
         'https://csssr.com/en/school',
+        'https://csssr.com/en/main',
+        'https://csssr.com/ru/main',
       ].join(supportedLocales.map(locale => `https://csssr.com/${locale}/job`))
 
       if (excludedPagesUrls.includes(url)) {
@@ -45,7 +49,7 @@ pagesUrls.some(pageUrl => {
       \x1b[33m
       Страница ${pageUrl} не указана в файле генерации sitemap: ./server/generate-sitemap.js
 
-      Добавьте информацию о ней в объект sitemapUrlsSettings 
+      Добавьте информацию о ней в объект sitemapUrlsSettings
       или внесите её в список исключений excludedPagesUrls в  ./server/check-sitemap.js
       \x1b[0m
     `

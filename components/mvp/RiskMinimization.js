@@ -13,40 +13,52 @@ class RiskMinimization extends PureComponent {
 
     return (
       <Fragment>
-        <article id='advantages'>
+        <article id="advantages">
           <img
-            className='waves'
+            className="waves"
             src={require('../../static/images/mvp/Waves.svg')}
             alt={t('mvp:riskMinimization.imageAltWaves')}
           />
-          <div className='wrapper grid-container'>
+          <div className="wrapper grid-container">
             <h2>{t('mvp:riskMinimization.title')}</h2>
-            <div className='toggler'>
+            <div className="toggler">
               <Toggler
                 activeIndex={togglerIndex}
-                items={[
-                  t('mvp:riskMinimization.togglerOn'),
-                  t('mvp:riskMinimization.togglerOff'),
-                ]}
+                items={[t('mvp:riskMinimization.togglerOn'), t('mvp:riskMinimization.togglerOff')]}
                 onChange={index => this.setState({ togglerIndex: index })}
               />
             </div>
-            <div className='images'>
-              <div className='image-on'>
+            <div className="images">
+              <div className="image-on">
                 <PictureForAllResolutions
-                  image={{ namespace: 'mvp', key: 'MVP_ON', alt: t('mvp:riskMinimization.imageAltOn') }}
+                  image={{
+                    namespace: 'mvp',
+                    key: 'MVP_ON',
+                    alt: t('mvp:riskMinimization.imageAltOn'),
+                  }}
                 />
               </div>
-              <div className='image-off'>
+              <div className="image-off">
                 <PictureForAllResolutions
-                  image={{ namespace: 'mvp', key: 'MVP_OFF', alt: t('mvp:riskMinimization.imageAltOff') }}
+                  image={{
+                    namespace: 'mvp',
+                    key: 'MVP_OFF',
+                    alt: t('mvp:riskMinimization.imageAltOff'),
+                  }}
                 />
               </div>
             </div>
-            <p className='on-text' dangerouslySetInnerHTML={{ __html: t('mvp:riskMinimization.textOn') }} />
-            <p className='off-text' dangerouslySetInnerHTML={{ __html: t('mvp:riskMinimization.textOff') }} />
+            <p
+              className="on-text"
+              dangerouslySetInnerHTML={{ __html: t('mvp:riskMinimization.textOn') }}
+            />
+            <p
+              className="off-text"
+              dangerouslySetInnerHTML={{ __html: t('mvp:riskMinimization.textOff') }}
+            />
           </div>
-        </article><style jsx>{`
+        </article>
+        <style jsx>{`
           article {
             position: relative;
           }
@@ -133,7 +145,7 @@ class RiskMinimization extends PureComponent {
               top: 19.1875rem;
               transform: translateY(-50%);
             }
-            
+
             .wrapper {
               margin-top: 7.375rem;
               grid-template-rows: auto auto 22.8125rem auto;
@@ -191,7 +203,7 @@ class RiskMinimization extends PureComponent {
 
             p {
               font-size: 1.125rem;
-              line-height: 2rem
+              line-height: 2rem;
             }
           }
 
@@ -236,7 +248,7 @@ class RiskMinimization extends PureComponent {
               grid-column: 1 / span 6;
               font-size: 1.125rem;
               text-align: center;
-              line-height: 2rem
+              line-height: 2rem;
             }
           }
         `}</style>

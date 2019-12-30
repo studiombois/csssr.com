@@ -99,7 +99,7 @@ class ContactModal extends PureComponent {
     const dynamicModalStyles = generateDynamicContactModalStyles(hasFailOrSuccessStatus)
 
     return (
-      <div className='screen-shadow' onKeyDown={e => this.handleKeyDown(e)}>
+      <div className="screen-shadow" onKeyDown={e => this.handleKeyDown(e)}>
         <FocusLock>
           <OutsideClickHandler onOutsideClick={onClose}>
             <div
@@ -110,7 +110,7 @@ class ContactModal extends PureComponent {
                 component={Form}
                 pageName={pageName}
                 formName={formName}
-                decorators={[ focusOnErrors ]}
+                decorators={[focusOnErrors]}
                 feedbackEmail={feedbackEmail}
                 submitStatus={submitStatus}
                 hasFailOrSuccessStatus={hasFailOrSuccessStatus}
@@ -121,7 +121,11 @@ class ContactModal extends PureComponent {
                 validate={contactFormValidationRules(t)}
               />
 
-              <button aria-label='close modal' onClick={onClose} data-testid='modalForm:button:closeModal'/>
+              <button
+                aria-label="close modal"
+                onClick={onClose}
+                data-testid="modalForm:button:closeModal"
+              />
             </div>
           </OutsideClickHandler>
         </FocusLock>

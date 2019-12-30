@@ -7,33 +7,33 @@ const ClientsLogosList = ({ clients }) => {
 
   return (
     <ul>
-      {clients.map(clientId =>
+      {clients.map(clientId => (
         <li key={clientId}>
           <ClientLogo clientId={clientId} />
         </li>
-      )}
+      ))}
       <style jsx>{`
         ul {
           // высоту строки умножаем на количеество строк
           // и прибавляем высоту отступа между строк
-          height: ${(9.5 * numberOfRows) + (1.5 * (numberOfRows - 1))}rem;
+          height: ${9.5 * numberOfRows + 1.5 * (numberOfRows - 1)}rem;
         }
 
         @media (min-width: 1360px) and (max-width: 1919px) {
           ul {
-            height: ${(7.5 * numberOfRows) + (1.5 * (numberOfRows - 1))}rem;
+            height: ${7.5 * numberOfRows + 1.5 * (numberOfRows - 1)}rem;
           }
         }
 
         @media (min-width: 1280px) and (max-width: 1359px) {
           ul {
-            height: ${(7 * numberOfRows) + (1.5 * (numberOfRows - 1))}rem;
+            height: ${7 * numberOfRows + 1.5 * (numberOfRows - 1)}rem;
           }
         }
 
         @media (max-width: 1279px) {
           ul {
-            height: ${(5 * numberOfRows) + (1 * (numberOfRows - 1))}rem;
+            height: ${5 * numberOfRows + 1 * (numberOfRows - 1)}rem;
           }
         }
       `}</style>
@@ -116,7 +116,6 @@ const ClientsLogosList = ({ clients }) => {
     </ul>
   )
 }
-
 
 ClientsLogosList.propTypes = {
   clients: arrayOf(string),

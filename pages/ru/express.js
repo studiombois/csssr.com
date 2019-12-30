@@ -13,9 +13,14 @@ import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
 import { devSocialLinks } from '../../data/jobs/footerLinks'
 import withI18next from '../../utils/withI18next'
 
-const Sborka = ({ t, isMobile, isMsBrowser }) =>
+const Sborka = ({ t, isMobile, isMsBrowser }) => (
   <Layout
-    headerProps={{ isLogoLink: true, isBurgerVisible: true, title: t('common:menu.html'), sectionName: t('common:sectionName.express') }}
+    headerProps={{
+      isLogoLink: true,
+      isBurgerVisible: true,
+      title: t('common:menu.html'),
+      sectionName: t('common:sectionName.express'),
+    }}
     footerProps={{ socialLinks: devSocialLinks }}
   >
     <Head
@@ -37,11 +42,12 @@ const Sborka = ({ t, isMobile, isMsBrowser }) =>
     <PostScriptum />
     <ButtonSelect
       isMobile={isMobile}
-      showButtonOnNode='budget'
-      hideButtonOnNode='hire-us'
+      showButtonOnNode="budget"
+      hideButtonOnNode="hire-us"
       buttonText={t('sborka:hire.buttonText')}
-      pageName='sborka'
+      pageName="sborka"
     />
   </Layout>
+)
 
 export default withI18next(['sborka'])(Sborka)

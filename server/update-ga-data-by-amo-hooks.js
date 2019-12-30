@@ -1,6 +1,13 @@
 const fetch = require('isomorphic-unfetch')
 const getGaId = require('../utils/getGaId')
-const { SALES: { ORIGIN, AUTH_QUERY, PIPELINE_ID, CONTACT_FIELDS: { GOOGLE_CID } } } = require('./amo-config')
+const {
+  SALES: {
+    ORIGIN,
+    AUTH_QUERY,
+    PIPELINE_ID,
+    CONTACT_FIELDS: { GOOGLE_CID },
+  },
+} = require('./amo-config')
 
 // это вебхук для amoCRM, почитать про их вебхуки можно тут:
 // https://www.amocrm.ru/developers/content/api/webhooks
@@ -36,32 +43,35 @@ module.exports = (req, res) => {
       },
     })
       .then(response => response.json())
-      .then(leadData => Promise.all([
-        // Получаем инфу о цифрофых воронках
-        //
-        // дока о воронках:
-        // https://www.amocrm.ru/developers/content/api/pipelines
-        fetch(`${ORIGIN}/api/v2/pipelines/?id=${leads.update[0].pipeline_id}&${AUTH_QUERY}`, {
-          method: 'GET',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-        }),
-        // Получаем инфу о главном контакте сделки по его id
-        //
-        // дока о контактах:
-        // https://www.amocrm.ru/developers/content/api/contacts
-        //
-        // eslint-disable-next-line
+      .then(leadData =>
+        Promise.all([
+          // Получаем инфу о цифрофых воронках
+          //
+          // дока о воронках:
+          // https://www.amocrm.ru/developers/content/api/pipelines
+          fetch(`${ORIGIN}/api/v2/pipelines/?id=${leads.update[0].pipeline_id}&${AUTH_QUERY}`, {
+            method: 'GET',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+          }),
+          // Получаем инфу о главном контакте сделки по его id
+          //
+          // дока о контактах:
+          // https://www.amocrm.ru/developers/content/api/contacts
+          //
+          // eslint-disable-next-line
         fetch(`${ORIGIN}/api/v2/contacts/?id=${leadData._embedded.items[0].main_contact.id}&${AUTH_QUERY}`, {
-          method: 'GET',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-        }),
-      ]))
+              method: 'GET',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+            },
+          ),
+        ]),
+      )
       .then(response => Promise.all(response.map(r => r.json())))
       .then(([piplelineData, contactData]) => {
         /* eslint-disable */
@@ -71,7 +81,7 @@ module.exports = (req, res) => {
         const leadPrice = leads.update[0].price || 0
         /* eslint-enable */
 
-        return ({ leadStatusName, leadContactCid, leadPrice })
+        return { leadStatusName, leadContactCid, leadPrice }
       })
       .then(({ leadStatusName, leadContactCid, leadPrice }) => {
         // по google measurment protocol обращаемся к GA и передаём ей нужные
@@ -98,8 +108,7 @@ module.exports = (req, res) => {
         // TODO создать поля cd1
         // TODO Проверить лимит 500
 
-        const query = Object
-          .keys(params)
+        const query = Object.keys(params)
           .map(k => `${k}=${encodeURIComponent(params[k])}`)
           .join('&')
 

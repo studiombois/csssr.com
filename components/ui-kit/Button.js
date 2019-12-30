@@ -54,7 +54,8 @@ export default class Button extends PureComponent {
           tabIndex={tabIndex}
         >
           {children}
-        </button><style jsx>{`
+        </button>
+        <style jsx>{`
           .button {
             display: flex;
             align-items: center;

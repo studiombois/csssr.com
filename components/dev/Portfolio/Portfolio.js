@@ -4,22 +4,26 @@ import translate from '../../../utils/translate-wrapper'
 import ProjectsList from './ProjectsList'
 import ProjectsListMobile from './ProjectsListMobile'
 
-const Portfolio = ({ t, isMobile, portfolio }) =>
+const Portfolio = ({ t, isMobile, portfolio }) => (
   <Fragment>
-    <article className='grid-container' id='portfolio'>
-      <h2 className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:portfolio.title') }} />
-      <p className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('dev:portfolio.text') }} />
-      { isMobile
-        ? portfolio.map(projectGroup =>
+    <article className="grid-container" id="portfolio">
+      <h2 className="font_h2-slab" dangerouslySetInnerHTML={{ __html: t('dev:portfolio.title') }} />
+      <p
+        className="font_subhead-regular"
+        dangerouslySetInnerHTML={{ __html: t('dev:portfolio.text') }}
+      />
+      {isMobile ? (
+        portfolio.map(projectGroup => (
           <Fragment key={projectGroup.id}>
             <h3 dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${projectGroup.id}`) }} />
-            <div className='project-container'>
+            <div className="project-container">
               <ProjectsListMobile projects={projectGroup.projects} />
             </div>
           </Fragment>
-        )
-        : <ProjectsList portfolio={portfolio} />
-      }
+        ))
+      ) : (
+        <ProjectsList portfolio={portfolio} />
+      )}
     </article>
     <style jsx>{`
       article {
@@ -66,7 +70,7 @@ const Portfolio = ({ t, isMobile, portfolio }) =>
         }
       }
 
-      @media (min-width: 768px) and (max-width: 1279px)  {
+      @media (min-width: 768px) and (max-width: 1279px) {
         article {
           padding-top: 5.8125rem;
           width: 944px;
@@ -130,7 +134,7 @@ const Portfolio = ({ t, isMobile, portfolio }) =>
     `}</style>
     <style jsx>{`
       :global(.ie11) article {
-        -ms-grid-row: (auto)[4];
+        -ms-grid-row: (auto) [4];
       }
 
       :global(.ie11) h2 {
@@ -169,18 +173,23 @@ const Portfolio = ({ t, isMobile, portfolio }) =>
       }
     `}</style>
   </Fragment>
+)
 
 Portfolio.propTypes = {
   isMobile: bool,
-  porfolio: arrayOf(shape({
-    id: string,
-    projects: arrayOf(shape({
+  porfolio: arrayOf(
+    shape({
       id: string,
-      type: string,
-      slides: arrayOf(number),
-      href: string,
-    })),
-  })),
+      projects: arrayOf(
+        shape({
+          id: string,
+          type: string,
+          slides: arrayOf(number),
+          href: string,
+        }),
+      ),
+    }),
+  ),
 }
 
 export default translate()(Portfolio)

@@ -120,7 +120,6 @@ const pictureFaq = css.resolve`
   }
 `
 
-
 const picturesMap = {
   'project-manager-ru': 'Project_manager',
   'project-manager': 'Project_manager',
@@ -162,14 +161,13 @@ const picturesMap = {
 }
 
 const divideSections = sections => {
-  const firstQuestIndex = sections.findIndex(section => ['quest', 'questBox'].includes(section.type))
-  return [
-    sections.slice(0, firstQuestIndex),
-    sections.slice(firstQuestIndex),
-  ]
+  const firstQuestIndex = sections.findIndex(section =>
+    ['quest', 'questBox'].includes(section.type),
+  )
+  return [sections.slice(0, firstQuestIndex), sections.slice(firstQuestIndex)]
 }
 
-const mapVacancies = locale => vacancy =>
+const mapVacancies = locale => vacancy => (
   <li key={vacancy.id}>
     <Link
       href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
@@ -185,7 +183,6 @@ const mapVacancies = locale => vacancy =>
       </a>
     </Link>
     <style jsx>{`
-
       li:not(:last-child) {
         margin-bottom: 1rem;
       }
@@ -224,6 +221,7 @@ const mapVacancies = locale => vacancy =>
       }
     `}</style>
   </li>
+)
 
 class CandidateForm extends PureComponent {
   messageRef = React.createRef()
@@ -256,7 +254,10 @@ class CandidateForm extends PureComponent {
 
   // TODO такой же метод есть в ContactForm
   handleSubmit = e => {
-    const { handleSubmit, form: { reset } } = this.props
+    const {
+      handleSubmit,
+      form: { reset },
+    } = this.props
 
     const submitResult = handleSubmit(e)
 
@@ -278,9 +279,8 @@ class CandidateForm extends PureComponent {
   // TODO такой же метод есть в ContactForm
   handleAnyValuesChange = ({ values }) => {
     const { initialValues } = this.props
-    const wasReset = initialValues === undefined ?
-      equals(values, {}) :
-      values !== this.props.initialValues
+    const wasReset =
+      initialValues === undefined ? equals(values, {}) : values !== this.props.initialValues
     if (this.state.submittedToServer && wasReset) {
       this.setState({
         submittedToServer: false,
@@ -328,135 +328,142 @@ class CandidateForm extends PureComponent {
     })
 
   renderVacancyImageAndLinks = () => {
-    const { vacancies, locale, vacancy: { pathName, name }, lng, t } = this.props
+    const {
+      vacancies,
+      locale,
+      vacancy: { pathName, name },
+      lng,
+      t,
+    } = this.props
     const pictureName = picturesMap[pathName]
 
     return (
       <div>
-        { pictureName && <PictureForAllResolutions
-          className={picture.className}
-          customResolutions={['360']}
-          image={{ namespace: 'job', key: `${pictureName}`, alt: name }}
-        />}
+        {pictureName && (
+          <PictureForAllResolutions
+            className={picture.className}
+            customResolutions={['360']}
+            image={{ namespace: 'job', key: `${pictureName}`, alt: name }}
+          />
+        )}
 
-        <ul>
-          {vacancies.map(mapVacancies(locale))}
-        </ul>
+        <ul>{vacancies.map(mapVacancies(locale))}</ul>
 
-        {lng === 'ru' &&
+        {lng === 'ru' && (
           <Fragment>
-            <p className='faq-text font_p16-regular'>
+            <p className="faq-text font_p16-regular">
               {t('job:faq.title')}
 
-              <a
-                href='/ru/jobs-faq'
-                className='font_link-list_16'
-              >
+              <a href="/ru/jobs-faq" className="font_link-list_16">
                 {t('job:faq.link')}
               </a>
             </p>
-            <Picture className={`${pictureFaq.className} hidden_on_mobile`} image={{ namespace: 'jobs', key: 'faq', alt: t('job:faq.alt') }}/>
+            <Picture
+              className={`${pictureFaq.className} hidden_on_mobile`}
+              image={{ namespace: 'jobs', key: 'faq', alt: t('job:faq.alt') }}
+            />
           </Fragment>
-        }
+        )}
 
-        <style jsx>{`
-          div {
-            grid-column: 9 / span 4;
-          }
-
-          ul {
-            margin-top: 3.6875rem;
-            margin-left: auto;
-            margin-right: auto;
-            width: 17rem;
-          }
-
-          li:not(:last-child) {
-            margin-bottom: 1rem;
-          }
-
-          .hot-vacancy {
-            position: relative;
-          }
-
-          .hot-vacancy::before {
-            content: '🔥';
-            position: absolute;
-            top: -0.125rem;
-            left: -1.25rem;
-            font-size: 0.75rem;
-          }
-
-          .faq-text {
-            margin-top: 5rem;
-            margin-left: auto;
-            margin-right: auto;
-            width: 12rem;
-            display: block;
-            font-weight: 900;
-          }
-
-          .faq-text a {
-            margin-top: 0.5rem;
-            text-decoration: underline;
-            font-style: normal;
-            font-stretch: normal;
-            letter-spacing: normal;
-          }
-
-          @media (min-width: 1360px) and (max-width: 1919px) {
-            ul {
-              width: 13rem;
-            }
-          }
-
-
-          @media (min-width: 1280px) and (max-width: 1359px) {
-            ul {
-              width: 12rem;
-            }
-          }
-
-          @media (min-width: 768px) and (max-width: 1279px) {
-            ul {
-              width: 9rem;
-            }
-
-            .faq-text,
-            .faq-text a {
-              font-size: 1rem;
-              line-height: 1.5rem;
-            }
-
-            .faq-text {
-              margin-top: 4.75rem;
-              width: 9rem;
-            }
-          }
-
-          @media (max-width: 767px) {
+        <style jsx>
+          {`
             div {
-              grid-column: 1 / span 6;
-              grid-row: 1;
+              grid-column: 9 / span 4;
             }
 
             ul {
-              display: none;
+              margin-top: 3.6875rem;
+              margin-left: auto;
+              margin-right: auto;
+              width: 17rem;
+            }
+
+            li:not(:last-child) {
+              margin-bottom: 1rem;
+            }
+
+            .hot-vacancy {
+              position: relative;
+            }
+
+            .hot-vacancy::before {
+              content: '🔥';
+              position: absolute;
+              top: -0.125rem;
+              left: -1.25rem;
+              font-size: 0.75rem;
             }
 
             .faq-text {
-              display: none;
+              margin-top: 5rem;
+              margin-left: auto;
+              margin-right: auto;
+              width: 12rem;
+              display: block;
+              font-weight: 900;
             }
-          }
-        `}
+
+            .faq-text a {
+              margin-top: 0.5rem;
+              text-decoration: underline;
+              font-style: normal;
+              font-stretch: normal;
+              letter-spacing: normal;
+            }
+
+            @media (min-width: 1360px) and (max-width: 1919px) {
+              ul {
+                width: 13rem;
+              }
+            }
+
+            @media (min-width: 1280px) and (max-width: 1359px) {
+              ul {
+                width: 12rem;
+              }
+            }
+
+            @media (min-width: 768px) and (max-width: 1279px) {
+              ul {
+                width: 9rem;
+              }
+
+              .faq-text,
+              .faq-text a {
+                font-size: 1rem;
+                line-height: 1.5rem;
+              }
+
+              .faq-text {
+                margin-top: 4.75rem;
+                width: 9rem;
+              }
+            }
+
+            @media (max-width: 767px) {
+              div {
+                grid-column: 1 / span 6;
+                grid-row: 1;
+              }
+
+              ul {
+                display: none;
+              }
+
+              .faq-text {
+                display: none;
+              }
+            }
+          `}
         </style>
 
-        <style jsx>{`
-          :global(.ie11) div {
-            -ms-grid-column: ${getMsColumn(9)};
-            -ms-grid-column-span: ${getMsColumn(4)};
-          }
-        `}
+        <style jsx>
+          {`
+            :global(.ie11) div {
+              -ms-grid-column: ${getMsColumn(9)};
+              -ms-grid-column-span: ${getMsColumn(4)};
+            }
+          `}
         </style>
         {pictureFaq.styles}
       </div>
@@ -465,9 +472,7 @@ class CandidateForm extends PureComponent {
 
   render() {
     const {
-      values: {
-        connection,
-      },
+      values: { connection },
       vacancy,
       vacancies,
       submitError,
@@ -476,13 +481,13 @@ class CandidateForm extends PureComponent {
       t,
     } = this.props
 
-    const [ beforeQuestSections, otherSections ] = divideSections(vacancy.sections)
+    const [beforeQuestSections, otherSections] = divideSections(vacancy.sections)
     const pictureName = picturesMap[vacancy.pathName]
     const status = this.getStatus()
 
     return (
-      <form onSubmit={this.handleSubmit} name='job' noValidate>
-        <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }}/>
+      <form onSubmit={this.handleSubmit} name="job" noValidate>
+        <FormSpy onChange={this.handleAnyValuesChange} subscription={{ values: true }} />
 
         <FormRow rightSideContent={this.renderVacancyImageAndLinks()}>
           <h1
@@ -491,36 +496,43 @@ class CandidateForm extends PureComponent {
               'extra-margin': !pictureName,
             })}
           >
-            {vacancy.name }
+            {vacancy.name}
 
-            {(vacancy.employment === 'part-time')
-              ? <span className='font_subhead-regular'>{t('job:remote')}</span>
-              : <span className='font_subhead-regular'>{t('job:remoteAndFullTime')}</span>
-            }
-
+            {vacancy.employment === 'part-time' ? (
+              <span className="font_subhead-regular">{t('job:remote')}</span>
+            ) : (
+              <span className="font_subhead-regular">{t('job:remoteAndFullTime')}</span>
+            )}
           </h1>
 
-          <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: vacancy.description }} />
-          {beforeQuestSections.map((section, index) => <Section key={index} {...section} />)}
+          <p
+            className="font_p24-strong"
+            dangerouslySetInnerHTML={{ __html: vacancy.description }}
+          />
+          {beforeQuestSections.map((section, index) => (
+            <Section key={index} {...section} />
+          ))}
 
-          {lng === 'ru' &&
-            <div className='faq-text-container'>
-              <Picture className={`${pictureFaq.className} visible_on_mobile`} image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}/>
-              <p className='faq-text font_p16-regular'>
+          {lng === 'ru' && (
+            <div className="faq-text-container">
+              <Picture
+                className={`${pictureFaq.className} visible_on_mobile`}
+                image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}
+              />
+              <p className="faq-text font_p16-regular">
                 {t('job:faq.title')}
 
-                <a
-                  href='/ru/jobs-faq'
-                  className='font_link-list_16'
-                >
+                <a href="/ru/jobs-faq" className="font_link-list_16">
                   {t('job:faq.link')}
                 </a>
               </p>
             </div>
-          }
+          )}
         </FormRow>
 
-        {otherSections.map((section, index) => <Section key={index} {...section} asRow />)}
+        {otherSections.map((section, index) => (
+          <Section key={index} {...section} asRow />
+        ))}
 
         <CandidateInfoSection
           connection={connection}
@@ -536,27 +548,22 @@ class CandidateForm extends PureComponent {
             })}
             ref={this.messageRef}
           >
-            <AnimatedButton
-              type='submit'
-              status={status}
-            >
+            <AnimatedButton type="submit" status={status}>
               {t('job:send')}
             </AnimatedButton>
           </div>
 
-          <div className='message'>
+          <div className="message">
             <FormStateMessage
               status={status}
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
-              feedbackEmail='hr@csssr.io'
+              feedbackEmail="hr@csssr.io"
             />
           </div>
         </FormRow>
 
-        <ul>
-          {vacancies.map(mapVacancies(locale))}
-        </ul>
+        <ul>{vacancies.map(mapVacancies(locale))}</ul>
 
         <style jsx>{`
           form {
@@ -624,7 +631,6 @@ class CandidateForm extends PureComponent {
               width: 13.5rem;
             }
 
-
             .button_lng_en {
               width: 17.5rem;
             }
@@ -638,7 +644,7 @@ class CandidateForm extends PureComponent {
               display: block;
             }
 
-            .faq-text  {
+            .faq-text {
               position: absolute;
               top: 1.5rem;
               max-width: 10rem;

@@ -161,12 +161,13 @@ const pictureOfNumberThee = css.resolve`
   }
 `
 
-const WorkingProcess = ({ t }) =>
+const WorkingProcess = ({ t }) => (
   <Fragment>
-    <article className='grid-container'>
+    <article className="grid-container">
       <h2
-        className='font_h1-slab'
-        dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.title') }} />
+        className="font_h1-slab"
+        dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.title') }}
+      />
 
       <PictureForAllResolutions
         className={pictureOfNumberOne.className}
@@ -179,11 +180,10 @@ const WorkingProcess = ({ t }) =>
       <div>
         <h3 dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.items.one.title') }} />
         <p
-          className='font_subhead-regular'
+          className="font_subhead-regular"
           dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.items.one.text') }}
         />
       </div>
-
 
       <PictureForAllResolutions
         className={pictureOfNumberTwo.className}
@@ -196,7 +196,7 @@ const WorkingProcess = ({ t }) =>
       <div>
         <h3 dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.items.two.title') }} />
         <p
-          className='font_subhead-regular'
+          className="font_subhead-regular"
           dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.items.two.text') }}
         />
       </div>
@@ -212,12 +212,12 @@ const WorkingProcess = ({ t }) =>
       <div>
         <h3 dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.items.three.title') }} />
         <p
-          className='font_subhead-regular'
+          className="font_subhead-regular"
           dangerouslySetInnerHTML={{ __html: t('sborka:workingProcess.items.three.text') }}
         />
       </div>
-
-    </article><style jsx>{`
+    </article>
+    <style jsx>{`
       article {
         margin-top: 7rem;
         margin-right: auto;
@@ -339,7 +339,8 @@ const WorkingProcess = ({ t }) =>
           width: 20.5rem;
         }
 
-        h2, div:nth-of-type(n) {
+        h2,
+        div:nth-of-type(n) {
           grid-column: 1 / span 6;
           text-align: center;
         }
@@ -375,7 +376,7 @@ const WorkingProcess = ({ t }) =>
 
     <style jsx>{`
       :global(.ie11) article {
-        -ms-grid-rows: (auto)[4];
+        -ms-grid-rows: (auto) [4];
       }
 
       :global(.ie11) h2 {
@@ -383,7 +384,6 @@ const WorkingProcess = ({ t }) =>
         -ms-grid-column-span: 11;
         -ms-grid-row: 1;
       }
-
 
       :global(.ie11) div:nth-of-type(1) {
         -ms-grid-column: 15;
@@ -407,5 +407,6 @@ const WorkingProcess = ({ t }) =>
     {pictureOfNumberTwo.styles}
     {pictureOfNumberThee.styles}
   </Fragment>
+)
 
 export default translate()(WorkingProcess)

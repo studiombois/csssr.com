@@ -49,9 +49,9 @@ const picture = css.resolve`
   }
 `
 
-const Projects = ({ t }) =>
+const Projects = ({ t }) => (
   <Fragment>
-    <div id='projects' className='grid-container'>
+    <div id="projects" className="grid-container">
       <PictureForAllResolutions
         className={picture.className}
         image={{ namespace: 'sborka', key: 'projects', alt: t('sborka:imgAlt.projects') }}
@@ -59,11 +59,11 @@ const Projects = ({ t }) =>
 
       <span dangerouslySetInnerHTML={{ __html: t('sborka:projects.pictureText') }} />
       <p
-        className='font_subhead-regular'
+        className="font_subhead-regular"
         dangerouslySetInnerHTML={{ __html: t('sborka:projects.articleText') }}
       />
-
-    </div><style jsx>{`
+    </div>
+    <style jsx>{`
       div {
         margin-top: 5.8125rem;
         margin-right: auto;
@@ -182,5 +182,6 @@ const Projects = ({ t }) =>
     `}</style>
     {picture.styles}
   </Fragment>
+)
 
 export default translate()(Projects)

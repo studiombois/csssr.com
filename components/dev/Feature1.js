@@ -22,29 +22,31 @@ const picture = css.resolve`
   }
 `
 
-const Feature1 = ({ t, image }) =>
+const Feature1 = ({ t, image }) => (
   <Fragment>
-    <section className='grid-container' id='feature1'>
-      <h2 id='services' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:service.title') }} />
+    <section className="grid-container" id="feature1">
+      <h2
+        id="services"
+        className="font_h2-slab"
+        dangerouslySetInnerHTML={{ __html: t('dev:service.title') }}
+      />
 
-      <p className='font_p24-strong'>
-        <span dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} className='description' />
+      <p className="font_p24-strong">
+        <span dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} className="description" />
       </p>
-      <div className='picture-wrapper'>
-        <PictureForAllResolutions
-          className={picture.className}
-          image={image}
-        />
+      <div className="picture-wrapper">
+        <PictureForAllResolutions className={picture.className} image={image} />
 
-        <p className='font_feature_1'>
+        <p className="font_feature_1">
           <Link href={t('dev:service.mvpLink')}>
-            <a className='mvp-link'>
-              {t('dev:service.mvp')}
-            </a>
+            <a className="mvp-link">{t('dev:service.mvp')}</a>
           </Link>
         </p>
-        <p className='font_feature_2' dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
-        <p className='font_feature_3' dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }} />
+        <p className="font_feature_2" dangerouslySetInnerHTML={{ __html: t('dev:service.app') }} />
+        <p
+          className="font_feature_3"
+          dangerouslySetInnerHTML={{ __html: t('dev:service.stack') }}
+        />
       </div>
     </section>
     <style jsx>{`
@@ -194,7 +196,6 @@ const Feature1 = ({ t, image }) =>
           width: 16rem;
           height: 17rem;
           max-width: 13.3125rem;
-
         }
 
         .font_feature_3 {
@@ -284,12 +285,13 @@ const Feature1 = ({ t, image }) =>
       }
 
       @media (min-width: 1280px) and (max-width: 1359px) {
-       :global(.ie11) h2 {
+        :global(.ie11) h2 {
           -ms-grid-column: 7;
           -ms-grid-column-span: 11;
         }
       }
     `}</style>
   </Fragment>
+)
 
 export default translate()(Feature1)

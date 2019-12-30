@@ -48,13 +48,13 @@ const onSubmit = (t, lng) => async values => {
     return { [FORM_ERROR]: error }
   }
 }
-const ContactFormForSborka = props =>
+const ContactFormForSborka = props => (
   <div>
     <ContactForm
       pageName={pageName}
-      headerId='hire-us'
+      headerId="hire-us"
       fields={['name', 'phone', 'email', 'message']}
-      feedbackEmail='sales@csssr.io'
+      feedbackEmail="sales@csssr.io"
       {...props}
     />
     <style jsx>{`
@@ -76,14 +76,17 @@ const ContactFormForSborka = props =>
       }
     `}</style>
   </div>
+)
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, lng }) => <ReactFinalForm
-  onSubmit={onSubmit(t, lng)}
-  validate={contactFormValidationRules(t)}
-  decorators={[ focusOnErrors ]}
-  component={ContactFormForSborka}
-/>
+const Form = ({ t, lng }) => (
+  <ReactFinalForm
+    onSubmit={onSubmit(t, lng)}
+    validate={contactFormValidationRules(t)}
+    decorators={[focusOnErrors]}
+    component={ContactFormForSborka}
+  />
+)
 
 export default translate()(Form)

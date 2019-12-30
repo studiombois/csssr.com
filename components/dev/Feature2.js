@@ -23,7 +23,7 @@ const picture = css.resolve`
     height: auto;
   }
 
- @media (max-width: 1279px) {
+  @media (max-width: 1279px) {
     picture {
       margin-top: 1.5625rem;
       height: 432px;
@@ -46,16 +46,13 @@ const picture = css.resolve`
   }
 `
 
-const Feature2 = ({ title, text, image, style }) =>
+const Feature2 = ({ title, text, image, style }) => (
   <Fragment>
-    <section className='grid-container' style={style}>
-      <h2 className='font_subhead-slab' dangerouslySetInnerHTML={{ __html: title }} />
-      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: text }} />
+    <section className="grid-container" style={style}>
+      <h2 className="font_subhead-slab" dangerouslySetInnerHTML={{ __html: title }} />
+      <p className="font_p16-regular" dangerouslySetInnerHTML={{ __html: text }} />
 
-      <PictureForAllResolutions
-        className={picture.className}
-        image={image}
-      />
+      <PictureForAllResolutions className={picture.className} image={image} />
     </section>
     <style jsx>{`
       section {
@@ -171,5 +168,6 @@ const Feature2 = ({ title, text, image, style }) =>
       }
     `}</style>
   </Fragment>
+)
 
 export default Feature2

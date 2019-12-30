@@ -163,13 +163,12 @@ export default css`
     }
   }
 
-
   :global(.ie11) header {
     -ms-grid-column: 3;
     -ms-grid-column-span: 5;
   }
 
-  :global(.ie11)  div {
+  :global(.ie11) div {
     -ms-grid-column: 11;
     -ms-grid-column-span: 11;
   }

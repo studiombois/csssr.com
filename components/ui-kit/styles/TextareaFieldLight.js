@@ -33,7 +33,6 @@ export default css`
     border-color: #0076ff;
   }
 
-
   label {
     border: 0;
     height: 0.0625rem;
@@ -44,7 +43,7 @@ export default css`
     width: 0.0625rem;
   }
 
- @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1279px) {
     textarea {
       padding-top: 0.875rem;
     }

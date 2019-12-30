@@ -1,1 +1,5 @@
 e2e-tests/
+.next/
+node_modules/
+!.eslintrc.js
+!.prettierrc.js

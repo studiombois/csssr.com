@@ -1,22 +1,11 @@
 import React, { PureComponent } from 'react'
-import {
-  string,
-  number,
-  bool,
-  func,
-  node,
-  oneOfType,
-} from 'prop-types'
-
+import { string, number, bool, func, node, oneOfType } from 'prop-types'
 
 export default class Radio extends PureComponent {
   static propTypes = {
     id: oneOfType([string, number]),
     name: string,
-    value: oneOfType([
-      string,
-      number,
-    ]),
+    value: oneOfType([string, number]),
     className: string,
     tabIndex: number,
     checked: bool,
@@ -34,15 +23,8 @@ export default class Radio extends PureComponent {
     this.props.input.onChange(data)
   }
 
-
   render() {
-    const {
-      id,
-      input,
-      className,
-      disabled,
-      children,
-    } = this.props
+    const { id, input, className, disabled, children } = this.props
 
     return (
       <span className={className}>
@@ -52,14 +34,10 @@ export default class Radio extends PureComponent {
           value={input.value}
           checked={input.checked}
           disabled={disabled}
-          type='radio'
-          disabled={disabled}
+          type="radio"
           onChange={this.handleChange}
         />
-        <label
-          className='font_p16-regular'
-          htmlFor={id}
-        >
+        <label className="font_p16-regular" htmlFor={id}>
           {children}
         </label>
         <style jsx>{`
@@ -134,7 +112,6 @@ export default class Radio extends PureComponent {
             display: block;
             background-color: #0076ff;
           }
-
         `}</style>
       </span>
     )

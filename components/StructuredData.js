@@ -3,7 +3,7 @@ import React from 'react'
 // https://developers.google.com/search/docs/guides/intro-structured-data
 const StructuredData = () => (
   <script
-    type='application/ld+json'
+    type="application/ld+json"
     dangerouslySetInnerHTML={{
       __html: `
   {

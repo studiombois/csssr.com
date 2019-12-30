@@ -4,14 +4,16 @@ import FormRow from '../FormRow'
 import Section from '../Section'
 import formatText from '../../../utils/formatText'
 
-const QuestBox = ({ text, title, sections }) =>
+const QuestBox = ({ text, title, sections }) => (
   <Fragment>
     <FormRow>
-      <h2 className='font_h2-regular'>{title}</h2>
-      <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: formatText(text) }}/>
+      <h2 className="font_h2-regular">{title}</h2>
+      <p className="font_p16-regular" dangerouslySetInnerHTML={{ __html: formatText(text) }} />
     </FormRow>
 
-    {sections.map((section, index) => <Section key={index} {...section} asRow isChild />)}
+    {sections.map((section, index) => (
+      <Section key={index} {...section} asRow isChild />
+    ))}
     <style jsx>{`
       h2 {
         margin-top: 6.0625rem;
@@ -36,6 +38,7 @@ const QuestBox = ({ text, title, sections }) =>
       }
     `}</style>
   </Fragment>
+)
 
 QuestBox.propTypes = {
   text: string,

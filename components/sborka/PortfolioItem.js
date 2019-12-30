@@ -52,22 +52,22 @@ const PortfolioItem = ({ name, href, index, t }) => (
 
     <div>
       <h3
-        className='font_h2-regular'
+        className="font_h2-regular"
         dangerouslySetInnerHTML={{
           __html: t(`sborka:portfolio.portfolioProjects.${name}.title`),
         }}
       />
       <p
-        className='font_p16-regular'
+        className="font_p16-regular"
         dangerouslySetInnerHTML={{
           __html: t(`sborka:portfolio.portfolioProjects.${name}.text`),
         }}
       />
       <a
-        className='font_link-list_16'
+        className="font_link-list_16"
         href={href}
-        rel='nofollow'
-        target='_blank'
+        rel="nofollow"
+        target="_blank"
         dangerouslySetInnerHTML={{ __html: t('sborka:portfolio.linkText') }}
       />
     </div>

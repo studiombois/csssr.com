@@ -2,7 +2,9 @@ const contactFormValidationRules = require('../utils/validators/contactFormValid
 
 module.exports = (t, fieldsValues) => {
   const validationObject = contactFormValidationRules(t)(fieldsValues)
-  const failedValidationFields = Object.keys(validationObject).filter(field => validationObject[field])
+  const failedValidationFields = Object.keys(validationObject).filter(
+    field => validationObject[field],
+  )
   const hasValidationErrors = failedValidationFields.length > 0
 
   if (hasValidationErrors) {

@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 import formatText from '../../../utils/formatText'
 
-const BoldText = ({ text }) =>
+const BoldText = ({ text }) => (
   <Fragment>
-    <p className='font_p24-strong' dangerouslySetInnerHTML={{ __html: formatText(text) }} />
+    <p className="font_p24-strong" dangerouslySetInnerHTML={{ __html: formatText(text) }} />
     <style jsx>{`
       p {
         margin-top: 1.3125rem;
@@ -12,6 +12,7 @@ const BoldText = ({ text }) =>
       }
     `}</style>
   </Fragment>
+)
 
 BoldText.propTypes = {
   text: string,

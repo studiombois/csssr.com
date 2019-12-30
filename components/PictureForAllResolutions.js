@@ -1,3 +1,5 @@
+//TODO удалить после перевода всех страниц на новый emotionjs и новый ui-kit
+
 import React, { Fragment } from 'react'
 import { string, shape } from 'prop-types'
 import getSrcSet from '../utils/client/getSrcSet'
@@ -9,25 +11,33 @@ const mediaRuleByResoluton = {
   1280: '(max-width: 1359px)',
   1360: '(max-width: 1919px)',
 }
-const PictureForAllResolutions = ({ className, testid, image: { namespace, key, alt, extension = 'png' }, customResolutions = defaultResolutions }) =>
+const PictureForAllResolutions = ({
+  className,
+  testid,
+  image: { namespace, key, alt, extension = 'png' },
+  customResolutions = defaultResolutions,
+}) => (
   <Fragment>
     <picture className={className}>
-      {customResolutions.map(resolution =>
+      {customResolutions.map(resolution => (
         <Fragment key={resolution}>
           <source
             media={mediaRuleByResoluton[resolution]}
-            type='image/webp'
-            srcSet={getSrcSet(namespace, resolution, key, 'webp', ['1x', '2x', '3x'])}/>
+            type="image/webp"
+            srcSet={getSrcSet(namespace, resolution, key, 'webp', ['1x', '2x', '3x'])}
+          />
 
           <source
             media={mediaRuleByResoluton[resolution]}
-            srcSet={getSrcSet(namespace, resolution, key, extension, ['1x', '2x', '3x'])}/>
+            srcSet={getSrcSet(namespace, resolution, key, extension, ['1x', '2x', '3x'])}
+          />
         </Fragment>
-      )}
+      ))}
 
       <source
-        type='image/webp'
-        srcSet={getSrcSet(namespace, 1920, key, 'webp', ['1x', '2x', '3x'])}/>
+        type="image/webp"
+        srcSet={getSrcSet(namespace, 1920, key, 'webp', ['1x', '2x', '3x'])}
+      />
 
       <img
         className={className}
@@ -44,6 +54,7 @@ const PictureForAllResolutions = ({ className, testid, image: { namespace, key, 
       }
     `}</style>
   </Fragment>
+)
 
 PictureForAllResolutions.propTypes = {
   className: string,

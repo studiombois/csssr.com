@@ -30,16 +30,111 @@ module.exports = withSourceMaps({
       }
     }
 
-    const withAssets = () => {
+    const fileLoaderConfig = {
+      loader: 'file-loader',
+      options: {
+        publicPath: '/_next',
+        name: dev ? '[path][name].[ext]' : '[path][name]-[hash:8].[ext]',
+      },
+    }
+
+    const withFonts = () => {
       config.module.rules.push({
-        test: /\.(jpe?g|png|gif|webp|svg|ico|woff2?)$/,
-        use: [
+        test: /\.(woff2?)$/,
+        use: [fileLoaderConfig],
+      })
+    }
+
+    const responsiveLoaderConfig = {
+      loader: 'image-resolution-loader',
+      options: {
+        publicPath: '/_next',
+        name: dev ? '[path][name][resolution].[ext]' : '[path][name]-[hash:8][resolution].[ext]',
+        disable: dev,
+        webp: {
+          quality: 75,
+        },
+        jpg: {
+          quality: 75,
+        },
+        png: {
+          quality: [0.3, 0.5],
+          speed: 1,
+        },
+      },
+    }
+
+    const urlLoaderConfig = {
+      loader: 'url-loader',
+      options: {
+        publicPath: '/_next',
+        name: dev ? '[path][name].[ext]' : '[path][name]-[hash:8].[ext]',
+        limit: 8192,
+        mimetype: 'image/webp',
+      },
+    }
+
+    const webpLoaderConfig = {
+      loader: 'webp-loader',
+      options: {
+        quality: 75,
+      },
+    }
+
+    const withResponsiveImages = () => {
+      config.module.rules.push({
+        test: /\.(jpe?g|png|webp|gif|ico)$/,
+        oneOf: [
           {
-            loader: 'file-loader',
-            options: {
-              publicPath: '/_next',
-              name: dev ? '[path][name].[ext]' : '[path][name]-[hash:8].[ext]',
+            resourceQuery: /responsive_and_webp/,
+            use: [responsiveLoaderConfig, webpLoaderConfig],
+          },
+          {
+            resourceQuery: /responsive/,
+            use: [responsiveLoaderConfig],
+          },
+          {
+            use: [urlLoaderConfig],
+          },
+        ],
+      })
+    }
+
+    const svgrLoaderConfig = {
+      loader: '@svgr/webpack',
+      options: {
+        svgoConfig: {
+          plugins: [
+            { inlineStyles: false },
+            { prefixIds: false },
+            {
+              cleanupNumericValues: {
+                floatPrecision: 3,
+              },
             },
+          ],
+        },
+      },
+    }
+
+    const svgrLoaderConfigWithOutSvgo = {
+      ...svgrLoaderConfig,
+      options: {
+        ...svgrLoaderConfig.options,
+        svgo: false,
+      },
+    }
+
+    const withSvg = () => {
+      config.module.rules.push({
+        test: /\.svg$/,
+        oneOf: [
+          {
+            resourceQuery: /original/,
+            use: [svgrLoaderConfigWithOutSvgo, fileLoaderConfig],
+          },
+          {
+            use: [svgrLoaderConfig, fileLoaderConfig],
           },
         ],
       })
@@ -64,17 +159,21 @@ module.exports = withSourceMaps({
     }
 
     withSentry()
-    withAssets()
+    withFonts()
+    withSvg()
+    withResponsiveImages()
     withCompression()
 
     if (ANALYZE) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-      config.plugins.push(new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
-        analyzerPort: isServer ? 8888 : 8889,
-        openAnalyzer: true,
-      }))
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          analyzerPort: isServer ? 8888 : 8889,
+          openAnalyzer: true,
+        }),
+      )
     }
 
     return config

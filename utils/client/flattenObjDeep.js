@@ -9,7 +9,7 @@ const go = obj =>
     }
   }, toPairs(obj))
 
-const flattenObj = obj => fromPairs(go(obj))
+const flattenObjDeep = obj => fromPairs(go(obj))
 
-export default flattenObj
-export { flattenObj }
+export default flattenObjDeep
+export { flattenObjDeep }

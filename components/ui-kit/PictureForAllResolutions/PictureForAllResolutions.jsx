@@ -4,7 +4,7 @@ import { withTheme } from 'emotion-theming'
 import { isEmpty } from 'ramda'
 import { string, object } from 'prop-types'
 import styles from './PictureForAllResolutions.styles'
-import flattenObj from '../../../utils/client/flattenObj'
+import flattenObjDeep from '../../../utils/client/flattenObjDeep'
 
 const PictureForAllResolutions = ({ className, testid, images, fallback, alt, theme }) => {
   if (isEmpty(theme) || isEmpty(theme.breakpoints)) {
@@ -14,7 +14,7 @@ const PictureForAllResolutions = ({ className, testid, images, fallback, alt, th
   }
 
   const fallbackResolution = 'desktop.all'
-  const mediaRulesByResoluton = flattenObj(theme.breakpoints)
+  const mediaRulesByResoluton = flattenObjDeep(theme.breakpoints)
 
   return (
     <Fragment>

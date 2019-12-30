@@ -25,13 +25,15 @@ pipeline {
         }
         echo "GIT_BRANCH: ${branch}"
         echo "GIT_COMMIT: ${commit}"
+        echo "heelllooo1"
         echo "GITHUB_TOKEN: ${GITHUB_TOKEN}"
+        echo "heelllooo2"
       }
     }
     stage('Build') {
       steps {
         script {
-          sh "docker build -e GITHUB_TOKEN=${GITHUB_TOKEN} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          sh "docker build --build-arg githubToken=${GITHUB_TOKEN} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
         }
       }
     }

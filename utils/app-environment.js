@@ -4,7 +4,7 @@ const PRODUCTION = 'production'
 const PRODUCTION_LIKE = 'production-like'
 
 // Отличия production от production-like и development:
-// - ошибки в sentry отправляются в соответствующие окружения, удобно для фильтрации ошибок только на проде
+// - по дефолту ошибки в sentry отправляются только на проде
 // - на production используется свой GTM и ga
 // - на не production отправляется тег "TEST" в AmoCRM
 // - на не production robots.txt запрещает индексацию стенда

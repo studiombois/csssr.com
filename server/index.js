@@ -14,7 +14,11 @@ const generateSitemap = require('./generate-sitemap').generateSitemap
 const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 
-import { supportedLanguages, supportedLocales, defaultLocaleByLanguage } from '../common/locales-settings'
+import {
+  supportedLanguages,
+  supportedLocales,
+  defaultLocaleByLanguage,
+} from '../common/locales-settings'
 import pathCookieHeaderDetector from './path-cookie-header-detector'
 
 const languageDetector = new i18nextMiddleware.LanguageDetector()
@@ -29,23 +33,34 @@ const handle = app.getRequestHandler()
 i18n
   .use(languageDetector)
   .use(i18nextNodeFsBackend)
-  .init({
-    load: 'all',
-    whitelist: [...supportedLanguages, ...supportedLocales],
-    preload: [...supportedLanguages, ...supportedLocales],
-    lowerCaseLng: true,
-    ns: ['common', 'dev', 'sborka', 'jobs', 'job', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
-    detection: {
-      order: ['pathCookieHeader'],
-      lookupCookie: 'locale',
-      caches: ['cookie'],
+  .init(
+    {
+      load: 'all',
+      whitelist: [...supportedLanguages, ...supportedLocales],
+      preload: [...supportedLanguages, ...supportedLocales],
+      lowerCaseLng: true,
+      ns: [
+        'common',
+        'dev',
+        'sborka',
+        'jobs',
+        'job',
+        'error',
+        'privacyPolicy',
+        'cookiesPolicy',
+        'mvp',
+      ],
+      detection: {
+        order: ['pathCookieHeader'],
+        lookupCookie: 'locale',
+        caches: ['cookie'],
+      },
+      backend: {
+        loadPath: path.join(__dirname, '../static/locales/{{lng}}/{{ns}}.json'),
+      },
     },
-    backend: {
-      loadPath: path.join(__dirname, '../static/locales/{{lng}}/{{ns}}.json'),
-    },
-  }, () => {
-    app.prepare()
-      .then(() => {
+    () => {
+      app.prepare().then(() => {
         const server = express()
 
         server.use(Sentry.Handlers.requestHandler())
@@ -75,9 +90,7 @@ i18n
           '/timeline.html',
           '/view-project.html',
         ]
-        oldPaths.forEach(url =>
-          server.get(url, (req, res) => res.redirect(301, '/'))
-        )
+        oldPaths.forEach(url => server.get(url, (req, res) => res.redirect(301, '/')))
 
         server.get('/:lng(ru|en)/jobs', (req, res) => {
           const locale = defaultLocaleByLanguage[req.params.lng]
@@ -97,15 +110,20 @@ i18n
           const sentryToken = process.env.SENTRY_TOKEN
           server.get(/\.js\.map$/, (req, res, nextHandler) => {
             if (!sentryToken || req.headers['x-sentry-token'] !== sentryToken) {
-              return res
-                .sendStatus(404)
+              return res.sendStatus(404)
             }
             nextHandler()
           })
         }
 
         server.use((req, res, nextHandler) => {
-          const allowedUtmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+          const allowedUtmParams = [
+            'utm_source',
+            'utm_medium',
+            'utm_campaign',
+            'utm_term',
+            'utm_content',
+          ]
           const utmQueryParams = pick(allowedUtmParams, req.query)
 
           const ONE_YEAR = 365 * 24 * 60 * 60 * 1000
@@ -119,32 +137,34 @@ i18n
 
         // eslint-disable-next-line
         server.use(bodyParser.json())      // to support JSON-encoded bodies
-        server.use(bodyParser.urlencoded({ // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
-          extended: true,
-        }))
+        server.use(
+          bodyParser.urlencoded({
+            // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
+            extended: true,
+          }),
+        )
         server.use(cookieParser())
 
         server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
-        server.use(i18nextMiddleware.handle(i18n, {
-          ignoreRoutes: ['/_next/', '/static/'],
-        }))
+        server.use(
+          i18nextMiddleware.handle(i18n, {
+            ignoreRoutes: ['/_next/', '/static/'],
+          }),
+        )
 
         server.post('/api/submit-form', submitForm)
 
-        server.get('/', function (req, res) {
+        server.get('/', function(req, res) {
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
           res.redirect(`/${language}`)
         })
 
         if (!isDevelopment) {
-          server.get(
-            /^\/_next\/static\/(fonts|icons|images)\//,
-            (req, res, nextHandler) => {
-              res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
-              nextHandler()
-            },
-          )
+          server.get(/^\/_next\/static\/(fonts|icons|images)\//, (req, res, nextHandler) => {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+            nextHandler()
+          })
 
           server.use(
             '/_next',
@@ -158,7 +178,7 @@ i18n
           )
         }
 
-        server.get('/robots.txt', function (req, res) {
+        server.get('/robots.txt', function(req, res) {
           res.type('text/plain')
           if (isProduction) {
             res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
@@ -167,7 +187,10 @@ i18n
           }
         })
 
-        server.use('/yandex_3ecce01745a58936.html', express.static(path.join(__dirname, '../yandex_3ecce01745a58936.html')))
+        server.use(
+          '/yandex_3ecce01745a58936.html',
+          express.static(path.join(__dirname, '../yandex_3ecce01745a58936.html')),
+        )
 
         server.get('/sitemap.xml', (req, res) => {
           generateSitemap().then(sitemap =>
@@ -177,15 +200,20 @@ i18n
               }
               res.header('Content-Type', 'application/xml')
               res.send(xml)
-            })
+            }),
           )
         })
 
+        /* eslint-disable no-prototype-builtins */
         server.get('/:locale/jobs/:jobPathName', (req, res) => {
-          const params = { jobPathName: req.params.jobPathName, preview: req.query.hasOwnProperty('preview') }
+          const params = {
+            jobPathName: req.params.jobPathName,
+            preview: req.query.hasOwnProperty('preview'),
+          }
 
           return app.render(req, res, `/${req.params.locale}/job`, params)
         })
+        /* eslint-enable no-prototype-builtins */
 
         server.get('*', (req, res) => {
           return handle(req, res)
@@ -198,4 +226,5 @@ i18n
           console.log(`> Ready on http://localhost:${port}`)
         })
       })
-  })
+    },
+  )

@@ -38,17 +38,8 @@ class FileField extends PureComponent {
       autoFocus,
       disabled,
       className,
-      input: {
-        name,
-        value,
-        onBlur,
-        onFocus,
-      },
-      meta: {
-        error,
-        invalid,
-        submitFailed,
-      },
+      input: { name, value, onBlur, onFocus },
+      meta: { error, invalid, submitFailed },
     } = this.props
 
     const showError = invalid && submitFailed
@@ -65,7 +56,7 @@ class FileField extends PureComponent {
           onFocus={onFocus}
           tabIndex={disabled ? -1 : 0}
           autoFocus={autoFocus}
-          type='file'
+          type="file"
           disabled={disabled}
           aria-label={label}
         />
@@ -77,14 +68,14 @@ class FileField extends PureComponent {
             [className]: !!className,
           })}
         >
-          <span className='value'>
-            {value && this.state.value}
-          </span>
+          <span className="value">{value && this.state.value}</span>
 
-          {label && <label
-            className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
-            dangerouslySetInnerHTML={{ __html: label }}
-          />}
+          {label && (
+            <label
+              className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
+              dangerouslySetInnerHTML={{ __html: label }}
+            />
+          )}
         </div>
         <label
           htmlFor={id}
@@ -95,7 +86,7 @@ class FileField extends PureComponent {
         >
           {t('job:chooseFile')}
         </label>
-        {(showError) && <span className='font_input-small-error-label error'>{error}</span>}
+        {showError && <span className="font_input-small-error-label error">{error}</span>}
         <style jsx>{`
           div {
             position: relative;
@@ -118,7 +109,7 @@ class FileField extends PureComponent {
             color: #d0021b;
           }
 
-          input:focus + div.font_inputted-text-error  {
+          input:focus + div.font_inputted-text-error {
             color: #4a4a4a;
             border-color: #e1e1e1;
           }
@@ -206,7 +197,7 @@ class FileField extends PureComponent {
             opacity: 0.3;
           }
 
-         @media (max-width: 1279px) {
+          @media (max-width: 1279px) {
             div {
               padding-bottom: 0.1875rem;
             }

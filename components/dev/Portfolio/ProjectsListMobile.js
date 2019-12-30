@@ -9,11 +9,11 @@ const ProjectsListMobile = ({ t, projects }) => {
     <Fragment key={project.id}>
       <li>
         {project.href ? (
-          <a href={project.href} target='_blank' rel='noopener nofollow'>
+          <a href={project.href} target="_blank" rel="noopener nofollow">
             <img
               src={require(`../../../static/images/dev/portfolio/${project.id}_1.jpg`)}
               alt={`${t('dev:portfolio.slidesAlt')}${t(
-                `dev:portfolio.projects.${project.id}.title`
+                `dev:portfolio.projects.${project.id}.title`,
               )}`}
             />
           </a>
@@ -21,19 +21,19 @@ const ProjectsListMobile = ({ t, projects }) => {
           <img
             src={require(`../../../static/images/dev/portfolio/${project.id}_1.jpg`)}
             alt={`${t('dev:portfolio.slidesAlt')}${t(
-              `dev:portfolio.projects.${project.id}.title`
+              `dev:portfolio.projects.${project.id}.title`,
             )}`}
           />
         )}
 
         <h4
-          className='font_subhead-regular'
+          className="font_subhead-regular"
           dangerouslySetInnerHTML={{
             __html: t(`dev:portfolio.projects.${project.id}.title`),
           }}
         />
         <p
-          className='font_p16-regular'
+          className="font_p16-regular"
           dangerouslySetInnerHTML={{
             __html: t(`dev:portfolio.projects.${project.id}.text`),
           }}
@@ -62,7 +62,7 @@ const ProjectsListMobile = ({ t, projects }) => {
 
   return (
     <Fragment>
-      <ul className='grid-container'>{projects.map(renderProject)}</ul>
+      <ul className="grid-container">{projects.map(renderProject)}</ul>
       <style jsx>{`
         ul {
           margin-top: 1rem;
@@ -81,7 +81,7 @@ const ProjectsListMobile = ({ t, projects }) => {
       `}</style>
       <style jsx>{`
         ul {
-          -ms-grid-columns: (3rem)[${gridColumns}];
+          -ms-grid-columns: (3rem) [ ${gridColumns}];
           -ms-grid-column: 1;
           -ms-grid-column-span: ${gridColumns};
         }
@@ -98,7 +98,7 @@ ProjectsListMobile.propTypes = {
       type: string,
       slides: arrayOf(number),
       href: string,
-    })
+    }),
   ),
 }
 

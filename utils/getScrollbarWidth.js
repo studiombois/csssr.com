@@ -1,2 +1,1 @@
-export default () =>
-  window && window.innerWidth - document.documentElement.clientWidth
+export default () => window && window.innerWidth - document.documentElement.clientWidth

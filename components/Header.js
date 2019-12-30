@@ -1,7 +1,12 @@
 import React, { PureComponent, Fragment } from 'react'
 import { object, string, bool } from 'prop-types'
 import { withRouter } from 'next/router'
-import { disablePageScroll, enablePageScroll, clearQueueScrollLocks, getPageScrollBarWidth } from 'scroll-lock'
+import {
+  disablePageScroll,
+  enablePageScroll,
+  clearQueueScrollLocks,
+  getPageScrollBarWidth,
+} from 'scroll-lock'
 import translate from '../utils/translate-wrapper'
 import getHeaderLinks from '../utils/getHeaderLinks'
 import SideBar from './SideBar'
@@ -55,7 +60,6 @@ class Header extends PureComponent {
 
     if (isSideBarOpened) {
       disablePageScroll(document.body)
-
     } else {
       enablePageScroll(document.body)
     }
@@ -69,7 +73,7 @@ class Header extends PureComponent {
 
   handleSideBarClose = e => {
     const isSideBar = !!e.target.classList && e.target.classList.contains('sidebar')
-    if (this.state.isSideBarOpened && isSideBar || e.keyCode === 27) {
+    if ((this.state.isSideBarOpened && isSideBar) || e.keyCode === 27) {
       this.setState({
         isSideBarOpened: false,
       })
@@ -85,17 +89,21 @@ class Header extends PureComponent {
   }
 
   handleScroll = event => {
-    const { target: { scrollingElement } } = event
+    const {
+      target: { scrollingElement },
+    } = event
     const { showHeader } = this.state
     const headerHeight = 65
-    const scrollTop = (scrollingElement === document.body.parentNode || scrollingElement === document.body) && scrollingElement.scrollTop
+    const scrollTop =
+      (scrollingElement === document.body.parentNode || scrollingElement === document.body) &&
+      scrollingElement.scrollTop
 
     if ((scrollTop > this.lastScrollTop && scrollTop > headerHeight) || this.isScrollToSection) {
       // eslint-disable-next-line
       showHeader && this.setState({
-        showHeader: false,
-        pinHeader: false,
-      })
+          showHeader: false,
+          pinHeader: false,
+        })
     } else if (scrollTop === 0) {
       this.setState({
         pinHeader: true,
@@ -104,10 +112,10 @@ class Header extends PureComponent {
     } else {
       // eslint-disable-next-line
       !showHeader && this.setState({
-        showHeader: true,
-        pinHeader: false,
-        toggleHeaderAnimations: true,
-      })
+          showHeader: true,
+          pinHeader: false,
+          toggleHeaderAnimations: true,
+        })
     }
 
     this.lastScrollTop = scrollTop

@@ -38,18 +38,8 @@ export default class TextField extends PureComponent {
       maxLength,
       testid,
       tabIndex,
-      input: {
-        name,
-        value,
-        onBlur,
-        onFocus,
-      },
-      meta: {
-        error,
-        invalid,
-        submitError,
-        submitFailed,
-      },
+      input: { name, value, onBlur, onFocus },
+      meta: { error, invalid, submitError, submitFailed },
     } = this.props
 
     const styles = theme === 'light' ? TextFieldLightStyles : TextFieldRegularStyles
@@ -81,12 +71,17 @@ export default class TextField extends PureComponent {
           maxLength={maxLength}
           data-testid={testid}
         />
-        {showError && <span className='font_input-small-error-label error'>{error || submitError}</span>}
-        {label && <label
-          className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
-          dangerouslySetInnerHTML={{ __html: label }}
-          htmlFor={id}
-        />}<style jsx>{styles}</style>
+        {showError && (
+          <span className="font_input-small-error-label error">{error || submitError}</span>
+        )}
+        {label && (
+          <label
+            className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
+            dangerouslySetInnerHTML={{ __html: label }}
+            htmlFor={id}
+          />
+        )}
+        <style jsx>{styles}</style>
       </div>
     )
   }

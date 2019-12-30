@@ -1,11 +1,9 @@
 import React from 'react'
 import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
-const FormRow = ({ children, rightSideContent }) =>
-  <div className='grid-container'>
-    <div className='cell'>
-      {children}
-    </div>
+const FormRow = ({ children, rightSideContent }) => (
+  <div className="grid-container">
+    <div className="cell">{children}</div>
     {rightSideContent}
 
     <style jsx>{`
@@ -62,5 +60,6 @@ const FormRow = ({ children, rightSideContent }) =>
       }
     `}</style>
   </div>
+)
 
 export default FormRow

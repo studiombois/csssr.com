@@ -31,8 +31,12 @@ class Process extends PureComponent {
   componentDidMount() {
     // this.props.lng
     const { lng } = this.props
-    const lottieWeb = import(/* webpackChunkName: "lottie" */ 'lottie-web/build/player/lottie_light.min')
-    const planets = import(/* webpackChunkName: "lottie" */ `../../static/lottie/mvp/${lng}/planets.json`)
+    const lottieWeb = import(
+      /* webpackChunkName: "lottie" */ 'lottie-web/build/player/lottie_light.min'
+    )
+    const planets = import(
+      /* webpackChunkName: "lottie" */ `../../static/lottie/mvp/${lng}/planets.json`
+    )
     const sputnik = import(/* webpackChunkName: "lottie" */ '../../static/lottie/sputnik.json')
 
     Promise.all([lottieWeb, planets, sputnik]).then(([lottie, planetsJson, sputnikJson]) => {
@@ -69,13 +73,14 @@ class Process extends PureComponent {
 
     return (
       <Fragment>
-        <section id='process'>
-          <span className='planets' ref={this.planetsRef} />
-          <span className='sputnik' ref={this.sputnikRef} />
-          <div className='grid-container'>
+        <section id="process">
+          <span className="planets" ref={this.planetsRef} />
+          <span className="sputnik" ref={this.sputnikRef} />
+          <div className="grid-container">
             <h2>{t('mvp:process.title')}</h2>
           </div>
-        </section><style jsx>{`
+        </section>
+        <style jsx>{`
           section {
             position: relative;
           }
@@ -227,7 +232,7 @@ class Process extends PureComponent {
               height: 1200px;
             }
           }
-        
+
           :global(.ie11) h2 {
             -ms-grid-column: 3;
             -ms-grid-column-span: 21;

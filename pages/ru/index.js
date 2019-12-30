@@ -14,29 +14,29 @@ import withI18next from '../../utils/withI18next'
 import shuffleArray from '../../utils/shuffleArray'
 import portfolio from '../../data/dev/portfolio'
 
-
-
 class Dev extends PureComponent {
   static async getInitialProps() {
-    const portfolioWithShuffledProjects = portfolio.map(projectGroup =>
-      ({
-        ...projectGroup,
-        projects: shuffleArray(projectGroup.projects),
-      })
-    )
+    const portfolioWithShuffledProjects = portfolio.map(projectGroup => ({
+      ...projectGroup,
+      projects: shuffleArray(projectGroup.projects),
+    }))
 
     const shuffledPortfolio = shuffleArray(portfolioWithShuffledProjects)
 
     return { shuffledPortfolio }
   }
 
-
   render() {
     const { t, shuffledPortfolio, isMobile } = this.props
 
     return (
       <Layout
-        headerProps={{ isLogoLink: true, isBurgerVisible: true, menuName: t('common:menu.dev'), sectionName: t('common:sectionName.dev') }}
+        headerProps={{
+          isLogoLink: true,
+          isBurgerVisible: true,
+          menuName: t('common:menu.dev'),
+          sectionName: t('common:sectionName.dev'),
+        }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head
@@ -46,11 +46,10 @@ class Dev extends PureComponent {
             url: require('../../static/images/dev/1920/dev@2x.png'),
             width: 3840,
             height: 1280,
-          }}/>
-        <Hire />
-        <Feature1
-          image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }}
+          }}
         />
+        <Hire />
+        <Feature1 image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }} />
         <Competences />
         <Feature2
           title={t('dev:time.title')}
@@ -67,15 +66,14 @@ class Dev extends PureComponent {
         <Form />
         <ButtonSelect
           isMobile={isMobile}
-          showButtonOnNode='feature1'
-          hideButtonOnNode='hire-us'
+          showButtonOnNode="feature1"
+          hideButtonOnNode="hire-us"
           buttonText={t('dev:hire.buttonText')}
-          pageName='dev'
+          pageName="dev"
         />
       </Layout>
     )
   }
 }
-
 
 export default withI18next(['dev'])(Dev)

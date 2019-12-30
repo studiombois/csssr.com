@@ -8,20 +8,8 @@ const {
     AUTH_QUERY,
     PIPELINE_ID,
     FIRST_STATUS_ID,
-    CONTACT_FIELDS: {
-      PHONE,
-      EMAIL,
-      COMMENT,
-      NEWSLETTER,
-      GOOGLE_CID,
-    },
-    LEAD_FIELDS: {
-      UTM_SOURCE,
-      UTM_MEDIUM,
-      UTM_CAMPAIGN,
-      UTM_TERM,
-      UTM_CONTENT,
-    },
+    CONTACT_FIELDS: { PHONE, EMAIL, COMMENT, NEWSLETTER, GOOGLE_CID },
+    LEAD_FIELDS: { UTM_SOURCE, UTM_MEDIUM, UTM_CAMPAIGN, UTM_TERM, UTM_CONTENT },
   },
 } = require('./amo-config')
 
@@ -38,7 +26,11 @@ module.exports = (req, res) => {
     privacyPolicy,
   } = req.body
 
-  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name, email, privacyPolicy })
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), {
+    name,
+    email,
+    privacyPolicy,
+  })
 
   if (validationResult.errors) {
     return res.status(400).send({ error: validationResult.errors })
@@ -120,7 +112,11 @@ module.exports = (req, res) => {
     .then(response => response.json())
     .then(createContactData => {
       if (createContactData.response && createContactData.response.error) {
-        console.error('server/submit-form.js ERROR', JSON.stringify(req.body), JSON.stringify(createContactData))
+        console.error(
+          'server/submit-form.js ERROR',
+          JSON.stringify(req.body),
+          JSON.stringify(createContactData),
+        )
 
         Sentry.withScope(scope => {
           scope.setExtra('createContactData', createContactData)
@@ -204,7 +200,11 @@ module.exports = (req, res) => {
             return res.status(400).send({ error: 'Ошибка при создании лида' })
           }
 
-          console.log('server/submit-form.js SUCCESS', JSON.stringify(createContactData), JSON.stringify(createLeadData))
+          console.log(
+            'server/submit-form.js SUCCESS',
+            JSON.stringify(createContactData),
+            JSON.stringify(createLeadData),
+          )
           return res.sendStatus(201)
         })
     })

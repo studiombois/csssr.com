@@ -16,7 +16,6 @@ import withI18next from '../../utils/withI18next'
 // import shuffleArray from '../../utils/shuffleArray'
 // import portfolio from '../../data/dev/portfolio'
 
-
 class Dev extends PureComponent {
   // static async getInitialProps() {
   //   const portfolioWithShuffledProjects = portfolio.map(projectGroup =>
@@ -32,14 +31,18 @@ class Dev extends PureComponent {
   // }
 
   render() {
-    const { t/* , shuffledPortfolio*/, isMobile } = this.props
+    const { t /* , shuffledPortfolio*/, isMobile } = this.props
 
     return (
       <Layout
-        headerProps={{ isLogoLink: true, isBurgerVisible: true, menuName: t('common:menu.dev'), sectionName: t('common:sectionName.dev') }}
+        headerProps={{
+          isLogoLink: true,
+          isBurgerVisible: true,
+          menuName: t('common:menu.dev'),
+          sectionName: t('common:sectionName.dev'),
+        }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
-
         <Head
           title={t('dev:meta.title')}
           description={t('dev:meta.description')}
@@ -47,21 +50,17 @@ class Dev extends PureComponent {
             url: require('../../static/images/dev/1920/dev@2x.png'),
             width: 3840,
             height: 1280,
-          }}/>
-        <Hire />
-        <Feature1
-          image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }}
+          }}
         />
+        <Hire />
+        <Feature1 image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }} />
         {/* <Competences />*/}
         <Feature2
           title={t('dev:time.title')}
           text={t('dev:time.text')}
           image={{ namespace: 'dev', key: 'time', alt: t('dev:imgAlt.time') }}
         />
-        {isMobile
-          ? <PartnersMobile />
-          : <Partners />
-        }
+        {isMobile ? <PartnersMobile /> : <Partners />}
         {/* <Clients isMobile={isMobile} />*/}
         {/* <Portfolio portfolio={shuffledPortfolio} isMobile={isMobile}/>*/}
         <Feature2
@@ -72,10 +71,10 @@ class Dev extends PureComponent {
         <Form />
         <ButtonSelect
           isMobile={isMobile}
-          showButtonOnNode='feature1'
-          hideButtonOnNode='hire-us'
+          showButtonOnNode="feature1"
+          hideButtonOnNode="hire-us"
           buttonText={t('dev:hire.buttonText')}
-          pageName='dev'
+          pageName="dev"
         />
       </Layout>
     )

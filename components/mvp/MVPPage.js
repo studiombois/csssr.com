@@ -36,7 +36,13 @@ class MVPPage extends PureComponent {
 
     return (
       <Layout
-        headerProps={{ isLogoLink: true, isBurgerVisible: true, title: 'common:menu.mvp', menuName: t('common:menu.mvp'), sectionName: t('common:sectionName.mvp') }}
+        headerProps={{
+          isLogoLink: true,
+          isBurgerVisible: true,
+          title: 'common:menu.mvp',
+          menuName: t('common:menu.mvp'),
+          sectionName: t('common:sectionName.mvp'),
+        }}
         footerProps={{ socialLinks: devSocialLinks }}
       >
         <Head
@@ -46,7 +52,8 @@ class MVPPage extends PureComponent {
             url: require('../../static/images/mvp/ogImage.jpg'),
             width: 2400,
             height: 1260,
-          }}/>
+          }}
+        />
         <Begin />
         <RiskMinimization />
         <Money />
@@ -54,10 +61,10 @@ class MVPPage extends PureComponent {
         <HireUs />
         <ButtonSelect
           isMobile={isMobile}
-          showButtonOnNode='advantages'
-          hideButtonOnNode='hire-us'
+          showButtonOnNode="advantages"
+          hideButtonOnNode="hire-us"
           buttonText={t('mvp:buttonText')}
-          pageName='mvp'
+          pageName="mvp"
         />
       </Layout>
     )

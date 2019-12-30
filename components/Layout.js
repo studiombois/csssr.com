@@ -11,23 +11,16 @@ import { allSocialLinks } from '../data/jobs/footerLinks'
 const Layout = props => {
   const { children } = props
 
-  return <Fragment>
-    <Common />
-    <Settings />
-    <Text />
-    <Header {...props.headerProps} />
-    <main id='main'>
-      {children}
-    </main>
-    {!props.footerProps.noFooter &&
-      <Footer {...props.footerProps}/>
-    }
-    <style jsx global>{`
-      #main {
-        overflow-x: hidden;
-      }
-    `}</style>
-  </Fragment>
+  return (
+    <Fragment>
+      <Common />
+      <Settings />
+      <Text />
+      <Header {...props.headerProps} />
+      <main id="main">{children}</main>
+      {!props.footerProps.noFooter && <Footer {...props.footerProps} />}
+    </Fragment>
+  )
 }
 
 Layout.propTypes = {
@@ -45,10 +38,12 @@ Layout.propTypes = {
   }),
   footerProps: shape({
     noFooter: bool,
-    socialLinks: arrayOf(shape({
-      href: string,
-      label: string,
-    })),
+    socialLinks: arrayOf(
+      shape({
+        href: string,
+        label: string,
+      }),
+    ),
   }),
 }
 

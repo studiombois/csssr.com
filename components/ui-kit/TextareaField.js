@@ -39,29 +39,22 @@ export default class TextareaField extends PureComponent {
       maxLength,
       testid,
       tabIndex,
-      input: {
-        name,
-        value,
-        onBlur,
-        onFocus,
-      },
-      meta: {
-        error,
-        invalid,
-        submitFailed,
-      },
+      input: { name, value, onBlur, onFocus },
+      meta: { error, invalid, submitFailed },
     } = this.props
 
     const styles = theme === 'light' ? TextareaFieldLightStyles : TextareaFieldRegularStyles
     const showError = invalid && submitFailed
 
     return (
-      <div className={cn('font_inputted-text-regular', {
-        error: showError,
-        [`textarea_${theme}`]: theme,
-        textarea_filled: value,
-        [className]: !!className,
-      })}>
+      <div
+        className={cn('font_inputted-text-regular', {
+          error: showError,
+          [`textarea_${theme}`]: theme,
+          textarea_filled: value,
+          [className]: !!className,
+        })}
+      >
         <textarea
           id={id}
           className={cn('font_inputted-text-regular', { [className]: !!className })}
@@ -79,12 +72,15 @@ export default class TextareaField extends PureComponent {
           data-testid={testid}
           tabIndex={tabIndex}
         />
-        {showError && <span className='font_input-small-error-label error'>{error}</span>}
-        {label && <label
-          className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
-          dangerouslySetInnerHTML={{ __html: label }}
-          htmlFor={id}
-        />}<style jsx>{styles}</style>
+        {showError && <span className="font_input-small-error-label error">{error}</span>}
+        {label && (
+          <label
+            className={showError ? 'font_input-small-error-label' : 'font_input-small-label'}
+            dangerouslySetInnerHTML={{ __html: label }}
+            htmlFor={id}
+          />
+        )}
+        <style jsx>{styles}</style>
       </div>
     )
   }

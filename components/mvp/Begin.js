@@ -40,7 +40,6 @@ const picture = css.resolve`
     }
   }
 
-
   @media (max-width: 767px) {
     picture {
       left: -4.5%;
@@ -92,24 +91,25 @@ class Begin extends PureComponent {
 
     return (
       <Fragment>
-        <article id='what-is-mvp' className='grid-container'>
+        <article id="what-is-mvp" className="grid-container">
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'mvp', key: 'geometry', alt: t('mvp:begin.imageAlt.title') }}
           />
           <h1>{t('mvp:begin.title')}</h1>
-          <p className='begin-text'>{t('mvp:begin.text')}</p>
-          <div className='planet'>
+          <p className="begin-text">{t('mvp:begin.text')}</p>
+          <div className="planet">
             <PictureForAllResolutions
               className={planet.className}
               image={{ namespace: 'mvp', key: 'yellow_planet', alt: t('mvp:begin.imageAlt.title') }}
             />
           </div>
-          <div className='rocket'>
+          <div className="rocket">
             <Rocket />
           </div>
-          <p className='rocket-text font_p16-regular'>{t('mvp:begin.rocketText')}</p>
-        </article><style jsx>{`
+          <p className="rocket-text font_p16-regular">{t('mvp:begin.rocketText')}</p>
+        </article>
+        <style jsx>{`
           article {
             position: relative;
             margin-left: auto;

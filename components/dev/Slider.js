@@ -12,11 +12,11 @@ class Slider extends PureComponent {
     id: string,
     slides: arrayOf(number),
     href: string,
-  };
+  }
 
   state = {
     activeSlide: 1,
-  };
+  }
 
   componentDidMount() {
     this.scrollbarWidth = getScrollbarWidth()
@@ -29,7 +29,7 @@ class Slider extends PureComponent {
     this.setState({
       activeSlide: limit(activeSlide + step, 1, slides.length),
     })
-  };
+  }
 
   render() {
     const { t, id, slides, href } = this.props
@@ -38,8 +38,8 @@ class Slider extends PureComponent {
 
     return (
       <section>
-        <div className='slider'>
-          <div className='image-container'>
+        <div className="slider">
+          <div className="image-container">
             {slides.map(slide => (
               <img
                 key={`${id}_${slide}`}
@@ -49,54 +49,52 @@ class Slider extends PureComponent {
             ))}
           </div>
 
-          <div className='controls'>
+          <div className="controls">
             <button
-              name='previous-slide'
+              name="previous-slide"
               aria-label={t('dev:portfolio.previousSlide')}
               className={cn({ is_invisible: activeSlide === 1 })}
               onClick={this.handleChangeSlide(-1)}
               tabIndex={activeSlide === 1 ? '-1' : '0'}
             >
-              <Arrow width='100%' height='100%' />
+              <Arrow width="100%" height="100%" />
             </button>
             <button
-              name='next-slide'
+              name="next-slide"
               aria-label={t('dev:portfolio.nextSlide')}
               className={cn({ is_invisible: activeSlide === slides.length })}
               onClick={this.handleChangeSlide(1)}
               tabIndex={activeSlide === slides.length ? '-1' : '0'}
             >
-              <Arrow width='100%' height='100%' />
+              <Arrow width="100%" height="100%" />
             </button>
           </div>
 
           {href && (
             <a
               href={href}
-              target='_blank'
-              rel='noopener nofollow'
+              target="_blank"
+              rel="noopener nofollow"
               aria-label={`${t('dev:portfolio.openSlide')} ${slideTitle}`}
             >
-              <CrossdomainLink width='100%' height='100%' />
+              <CrossdomainLink width="100%" height="100%" />
             </a>
           )}
         </div>
 
         <h4
-          className='font_subhead-regular'
+          className="font_subhead-regular"
           dangerouslySetInnerHTML={{
             __html: t(`dev:portfolio.projects.${id}.title`),
           }}
         />
         <p
-          className='font_p16-regular'
+          className="font_p16-regular"
           dangerouslySetInnerHTML={{
             __html: t(`dev:portfolio.projects.${id}.text`),
           }}
         />
         <style jsx>{`
-
-
           .slider {
             margin-top: 1.5rem;
             position: relative;
@@ -105,7 +103,7 @@ class Slider extends PureComponent {
           }
 
           .slider::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 0;
             right: 0;

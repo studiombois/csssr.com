@@ -25,10 +25,10 @@ export default class MyDocument extends Document {
     return (
       <html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
         <Head>
-          <GtmScript gtmId={gtmId}/>
+          <GtmScript gtmId={gtmId} />
         </Head>
         <body>
-          <GtmNoScript gtmId={gtmId}/>
+          <GtmNoScript gtmId={gtmId} />
           <Main />
           <NextScript />
         </body>

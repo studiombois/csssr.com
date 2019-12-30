@@ -14,77 +14,68 @@ import {
   healthLinksRu,
 } from '../../data/dev/partnersLinks'
 
-const Partners = ({ t, lng }) =>
+const Partners = ({ t, lng }) => (
   <Fragment>
-    <section className='grid-container'>
-      <h2 id='clients' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:partners.title') }} />
+    <section className="grid-container">
+      <h2
+        id="clients"
+        className="font_h2-slab"
+        dangerouslySetInnerHTML={{ __html: t('dev:partners.title') }}
+      />
 
-      <div className='column'>
-        {lng !== 'ru' && <div className='link-list-wrapper'>
-          <LinksList
-            title={t('dev:partners.iTTitle')}
-            links={iTcompaniesLinksEn}
-          />
-        </div>}
+      <div className="column">
+        {lng !== 'ru' && (
+          <div className="link-list-wrapper">
+            <LinksList title={t('dev:partners.iTTitle')} links={iTcompaniesLinksEn} />
+          </div>
+        )}
 
-        {lng !== 'ru' && <LinksList
-          title={t('dev:partners.estateTitle')}
-          links={realEstateLinksEn}
-        />}
+        {lng !== 'ru' && (
+          <LinksList title={t('dev:partners.estateTitle')} links={realEstateLinksEn} />
+        )}
 
-        {lng === 'ru' && <div className='link-list-wrapper'>
-          <LinksList
-            title={t('dev:partners.iTTitle')}
-            links={iTcompaniesLinksRu}
-          />
-        </div>}
+        {lng === 'ru' && (
+          <div className="link-list-wrapper">
+            <LinksList title={t('dev:partners.iTTitle')} links={iTcompaniesLinksRu} />
+          </div>
+        )}
 
-        {lng === 'ru' && <LinksList
-          title={t('dev:partners.telecomTitle')}
-          links={telecomLinksRu}
-        />}
+        {lng === 'ru' && (
+          <LinksList title={t('dev:partners.telecomTitle')} links={telecomLinksRu} />
+        )}
       </div>
 
-      <div className='column'>
-        {lng !== 'ru' && <div className='link-list-wrapper'>
-          <LinksList
-            title={t('dev:partners.financeTitle')}
-            links={financeAndBankingLinksEn}
-          />
-        </div>}
+      <div className="column">
+        {lng !== 'ru' && (
+          <div className="link-list-wrapper">
+            <LinksList title={t('dev:partners.financeTitle')} links={financeAndBankingLinksEn} />
+          </div>
+        )}
 
-        {lng === 'ru' && <div className='link-list-wrapper'>
-          <LinksList
-            title={t('dev:partners.financeTitle')}
-            links={financeAndBankingLinksRu}
-          />
-        </div>}
+        {lng === 'ru' && (
+          <div className="link-list-wrapper">
+            <LinksList title={t('dev:partners.financeTitle')} links={financeAndBankingLinksRu} />
+          </div>
+        )}
 
-        {lng !== 'ru' && <LinksList
-          title={t('dev:partners.othersTitle')}
-          links={othersLinksEn}
-        />}
+        {lng !== 'ru' && <LinksList title={t('dev:partners.othersTitle')} links={othersLinksEn} />}
       </div>
 
-      <div className='column'>
-        {lng === 'ru' && <div className='link-list-wrapper'>
-          <LinksList
-            title={t('dev:partners.healthTitle')}
-            links={healthLinksRu}
-          />
-        </div>}
+      <div className="column">
+        {lng === 'ru' && (
+          <div className="link-list-wrapper">
+            <LinksList title={t('dev:partners.healthTitle')} links={healthLinksRu} />
+          </div>
+        )}
 
-        {lng !== 'ru' && <LinksList
-          title={t('dev:partners.telecomTitle')}
-          links={telecomLinksEn}
-        />}
+        {lng !== 'ru' && (
+          <LinksList title={t('dev:partners.telecomTitle')} links={telecomLinksEn} />
+        )}
 
-        {lng === 'ru' && <LinksList
-          title={t('dev:partners.othersTitle')}
-          links={othersLinksRu}
-        />}
+        {lng === 'ru' && <LinksList title={t('dev:partners.othersTitle')} links={othersLinksRu} />}
       </div>
-    </section><style jsx>{`
+    </section>
+    <style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
@@ -100,7 +91,7 @@ const Partners = ({ t, lng }) =>
       }
 
       .column {
-        grid-row: 2
+        grid-row: 2;
       }
 
       .column:nth-of-type(1) {
@@ -178,7 +169,7 @@ const Partners = ({ t, lng }) =>
       }
 
       :global(.ie11) .column {
-        -ms-grid-row: 2
+        -ms-grid-row: 2;
       }
 
       :global(.ie11) .column:nth-of-type(1) {
@@ -210,5 +201,6 @@ const Partners = ({ t, lng }) =>
       }
     `}</style>
   </Fragment>
+)
 
 export default translate()(Partners)

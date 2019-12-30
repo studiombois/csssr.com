@@ -83,24 +83,34 @@ class Hire extends PureComponent {
 
     return (
       <Fragment>
-        <article className='grid-container'>
-          <h1 className='font_h1-slab'>
+        <article className="grid-container">
+          <h1 className="font_h1-slab">
             <span dangerouslySetInnerHTML={{ __html: t('dev:hire.title') }} />
-            <span className='font_subhead-slab'>{t('dev:hire.subTitle')}</span>
+            <span className="font_subhead-slab">{t('dev:hire.subTitle')}</span>
           </h1>
 
           <blockquote>
-            <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph1') }} />
-            <p className='font_p16-regular' dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph2') }} />
-            <footer className='font_p16-regular' rel='author' dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }} />
+            <p
+              className="font_p16-regular"
+              dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph1') }}
+            />
+            <p
+              className="font_p16-regular"
+              dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph2') }}
+            />
+            <footer
+              className="font_p16-regular"
+              rel="author"
+              dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }}
+            />
           </blockquote>
 
           <PictureForAllResolutions
             className={picture.className}
             image={{ namespace: 'dev', key: 'dev', alt: t('dev:imgAlt.dev') }}
           />
-
-        </article><style jsx>{`
+        </article>
+        <style jsx>{`
           article {
             position: relative;
             margin-left: auto;
@@ -398,7 +408,7 @@ class Hire extends PureComponent {
           }
         `}</style>
         <style jsx>{`
-         :global(.ie11) blockquote {
+          :global(.ie11) blockquote {
             -ms-grid-column: 17;
             -ms-grid-column-span: 5;
             -ms-grid-row: 1;

@@ -87,10 +87,13 @@ const filterUnckeckedContactOptions = (values, t) => {
 
   return Object.keys(values)
     .filter(key => !filteredContactOptions[key])
-    .reduce((memo, key) => ({
-      ...memo,
-      [key]: values[key],
-    }), {})
+    .reduce(
+      (memo, key) => ({
+        ...memo,
+        [key]: values[key],
+      }),
+      {},
+    )
 }
 
 const onSubmit = t => async values => {
@@ -152,7 +155,11 @@ const focusOnErrors = createDecorator()
 class JobPage extends PureComponent {
   static async getInitialProps({ req, res, query }) {
     const locale = req ? req.language : i18n.language
-    const response = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/${query.preview ? 'preview' : 'active'}?locale=${locale}`)
+    const response = await fetch(
+      `${csssrSpaceOrigin}/api/public/vacancies/${
+        query.preview ? 'preview' : 'active'
+      }?locale=${locale}`,
+    )
     const vacancies = await response.json()
 
     const vacancy = vacancies.find(v => v.pathName === query.jobPathName)
@@ -195,12 +202,13 @@ class JobPage extends PureComponent {
             title={vacancy.name}
             templateTitle={`${lng === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
             description={vacancy.description}
-            structuredData={<StructuredDataVacancy vacancy={vacancy}/>}
+            structuredData={<StructuredDataVacancy vacancy={vacancy} />}
             ogImage={{
               url: require('../../static/images/jobs/1920/cover@2x.jpg'),
               width: 1266,
               height: 2000,
-            }}/>
+            }}
+          />
           <ReactFinalForm
             vacancy={vacancy}
             language={lng}
@@ -208,7 +216,7 @@ class JobPage extends PureComponent {
             initialValues={initialValues}
             validate={candidateFormValidationRules(vacancy, t)}
             onSubmit={onSubmit(t)}
-            decorators={[ focusOnErrors ]}
+            decorators={[focusOnErrors]}
             component={CandidateForm}
           />
         </Layout>

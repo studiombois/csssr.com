@@ -4,16 +4,21 @@ import ClientsSliderMobile from './ClientsSliderMobile'
 import translate from '../../../utils/translate-wrapper'
 import { bool } from 'prop-types'
 
-const Clients = ({ t, isMobile }) =>
+const Clients = ({ t, isMobile }) => (
   <Fragment>
-    <section className='grid-container'>
-      <h2 id='clients' className='font_h2-slab' dangerouslySetInnerHTML={{ __html: t('dev:clients.title') }} />
-      <p className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('dev:clients.text1') }} />
-      {isMobile
-        ? <ClientsSliderMobile />
-        : <ClientsSlider />
-      }
-    </section><style jsx>{`
+    <section className="grid-container">
+      <h2
+        id="clients"
+        className="font_h2-slab"
+        dangerouslySetInnerHTML={{ __html: t('dev:clients.title') }}
+      />
+      <p
+        className="font_subhead-regular"
+        dangerouslySetInnerHTML={{ __html: t('dev:clients.text1') }}
+      />
+      {isMobile ? <ClientsSliderMobile /> : <ClientsSlider />}
+    </section>
+    <style jsx>{`
       section {
         margin-left: auto;
         margin-right: auto;
@@ -23,7 +28,7 @@ const Clients = ({ t, isMobile }) =>
 
       h2,
       .font_subhead-regular,
-      .font_p24-strong  {
+      .font_p24-strong {
         text-align: center;
       }
 
@@ -62,7 +67,7 @@ const Clients = ({ t, isMobile }) =>
         }
       }
 
-      @media (min-width: 768px) and (max-width: 1279px)  {
+      @media (min-width: 768px) and (max-width: 1279px) {
         section {
           padding-top: 6rem;
           width: 944px;
@@ -92,7 +97,7 @@ const Clients = ({ t, isMobile }) =>
 
         h2,
         .font_subhead-regular,
-        .font_p24-strong  {
+        .font_p24-strong {
           grid-column: 1 / span 6;
         }
 
@@ -143,6 +148,7 @@ const Clients = ({ t, isMobile }) =>
       }
     `}</style>
   </Fragment>
+)
 
 Clients.propTypes = {
   isMobile: bool,

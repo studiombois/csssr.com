@@ -19,25 +19,27 @@ const { className, styles } = css.resolve`
 const JobSectionTextField = ({ title, maxLength, required, inputIndex, t }) => {
   const validate = composeValidators(
     required && requiredValidator(t),
-    maxLengthValidator(maxLength, t)
+    maxLengthValidator(maxLength, t),
   )
-  return <Fragment>
-    <Field
-      className={className}
-      name={`quests[${inputIndex}].text`}
-      maxLength={maxLength}
-      validate={validate}
-      component={TextareaField}
-      label={title}
-      theme='regular'
-    />
-    <style jsx>{`
-      p {
-        margin-top: 0.5rem;
-      }
-    `}</style>
-    {styles}
-  </Fragment>
+  return (
+    <Fragment>
+      <Field
+        className={className}
+        name={`quests[${inputIndex}].text`}
+        maxLength={maxLength}
+        validate={validate}
+        component={TextareaField}
+        label={title}
+        theme="regular"
+      />
+      <style jsx>{`
+        p {
+          margin-top: 0.5rem;
+        }
+      `}</style>
+      {styles}
+    </Fragment>
+  )
 }
 
 JobSectionTextField.propTypes = {

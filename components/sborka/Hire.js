@@ -77,18 +77,16 @@ class Hire extends PureComponent {
 
     return (
       <Fragment>
-        <article className='grid-container'>
-          <h1 className='font_h1-slab'>
-            {t('sborka:hire.title')}
-          </h1>
+        <article className="grid-container">
+          <h1 className="font_h1-slab">{t('sborka:hire.title')}</h1>
 
           <span
-            className='font_subhead-regular'
+            className="font_subhead-regular"
             dangerouslySetInnerHTML={{ __html: t('sborka:hire.subTitle') }}
           />
         </article>
-        <div className='image-wrapper'>
-          { isMsBrowser ? (
+        <div className="image-wrapper">
+          {isMsBrowser ? (
             <Fragment>
               <PictureForAllResolutions
                 className={picture.className}
@@ -99,7 +97,7 @@ class Hire extends PureComponent {
                 }}
               />
             </Fragment>
-          ) :
+          ) : (
             <Fragment>
               <PictureForAllResolutions
                 className={picture.className}
@@ -111,9 +109,9 @@ class Hire extends PureComponent {
               />
               <HirePlanetsAndSatellites className={planets.className} />
             </Fragment>
-          }
-
-        </div><style jsx>{`
+          )}
+        </div>
+        <style jsx>{`
           article {
             position: relative;
             margin-top: 12rem;

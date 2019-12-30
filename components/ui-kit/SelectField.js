@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import cn from 'classnames'
 import { string, number, bool, func } from 'prop-types'
 
-
 export default class SelectField extends PureComponent {
   static propTypes = {
     id: string,
@@ -22,16 +21,8 @@ export default class SelectField extends PureComponent {
     this.props.input.onChange(data)
   }
 
-
   render() {
-    const {
-      id,
-      input,
-      disabled,
-      className,
-      placeholder,
-      options,
-    } = this.props
+    const { id, input, disabled, className, placeholder, options } = this.props
 
     return (
       <div
@@ -43,17 +34,17 @@ export default class SelectField extends PureComponent {
         <select
           id={id}
           name={input.name}
-          className='font_input-small-label'
+          className="font_input-small-label"
           value={input.value}
           disabled={disabled}
           onChange={this.handleChange}
         >
           <option hidden>{placeholder}</option>
-          {options.map(option =>
+          {options.map(option => (
             <option key={option.id} value={option.id}>
               {option.checkboxText}
             </option>
-          )}
+          ))}
         </select>
 
         <label

@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import LogoWithText from './LogoWithText'
 import toolsForCompetence from '../../data/dev/toolsForCompetence'
 
-const LogosSheet = () =>
+const LogosSheet = () => (
   <Fragment>
-    {toolsForCompetence.map(tool =>
+    {toolsForCompetence.map(tool => (
       <figure key={tool.iconName} className={tool.iconName}>
         <LogoWithText
           iconName={tool.iconName}
@@ -12,11 +12,9 @@ const LogosSheet = () =>
           altText={`${tool.logoCaption} logo`}
         />
       </figure>
-    )}
+    ))}
 
-    <span className='express'>
-      Express
-    </span>
+    <span className="express">Express</span>
 
     <style jsx>{`
       figure,
@@ -415,5 +413,6 @@ const LogosSheet = () =>
       }
     `}</style>
   </Fragment>
+)
 
 export default LogosSheet

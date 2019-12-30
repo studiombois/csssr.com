@@ -16,13 +16,16 @@ class JobsPage extends PureComponent {
     return { vacancies }
   }
 
-
   render() {
     const { t, vacancies, lng } = this.props
     return (
       <Fragment>
         <Layout
-          headerProps={{ isBurgerVisible: true, menuName: t('common:menu.jobs'), sectionName: t('common:sectionName.jobs') }}
+          headerProps={{
+            isBurgerVisible: true,
+            menuName: t('common:menu.jobs'),
+            sectionName: t('common:sectionName.jobs'),
+          }}
           footerProps={{ noFooter: true }}
         >
           <Head
@@ -33,7 +36,8 @@ class JobsPage extends PureComponent {
               url: require('../../static/images/jobs/1920/cover@2x.jpg'),
               width: 1266,
               height: 2000,
-            }}/>
+            }}
+          />
           <Vacancies vacancies={vacancies} />
         </Layout>
         <style jsx>{`

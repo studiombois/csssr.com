@@ -4,18 +4,13 @@ import translate from '../../utils/translate-wrapper'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 import { getMsColumn } from '../../utils/style/getGridValueForMs'
 
-const howWeWorkItems = [
-  'complexApproach',
-  'productionPotential',
-  'frontendIsOurSpecialty',
-]
+const howWeWorkItems = ['complexApproach', 'productionPotential', 'frontendIsOurSpecialty']
 
 const pictureNameByHowWeWorkItemName = {
   complexApproach: 'trio',
   productionPotential: 'matreshka',
   frontendIsOurSpecialty: 'planeta',
 }
-
 
 const picture = css.resolve`
   picture {
@@ -58,8 +53,8 @@ const picture = css.resolve`
 `
 
 const OurPrinciples = ({ t }) => {
-  const renderHowWeWorkItems = (itemName, index) =>
-    <section key={itemName} >
+  const renderHowWeWorkItems = (itemName, index) => (
+    <section key={itemName}>
       <PictureForAllResolutions
         className={picture.className}
         image={{
@@ -70,11 +65,11 @@ const OurPrinciples = ({ t }) => {
       />
 
       <h3
-        className='font_h2-regular'
+        className="font_h2-regular"
         dangerouslySetInnerHTML={{ __html: t(`sborka:howWeWork.items.${itemName}.title`) }}
       />
       <p
-        className='font_p16-regular'
+        className="font_p16-regular"
         dangerouslySetInnerHTML={{ __html: t(`sborka:howWeWork.items.${itemName}.text`) }}
       />
       <style jsx>{`
@@ -128,7 +123,8 @@ const OurPrinciples = ({ t }) => {
             grid-row: ${5 - index};
           }
 
-          h3, p {
+          h3,
+          p {
             text-align: center;
           }
 
@@ -161,18 +157,20 @@ const OurPrinciples = ({ t }) => {
       `}</style>
       {picture.styles}
     </section>
+  )
 
   return (
     <Fragment>
-      <article id='how-we-work' className='grid-container'>
+      <article id="how-we-work" className="grid-container">
         <h2 dangerouslySetInnerHTML={{ __html: t('sborka:howWeWork.title') }} />
         <p
-          className='font_subhead-regular'
+          className="font_subhead-regular"
           dangerouslySetInnerHTML={{ __html: t('sborka:howWeWork.text') }}
         />
 
         {howWeWorkItems.map(renderHowWeWorkItems)}
-      </article><style jsx>{`
+      </article>
+      <style jsx>{`
         article {
           margin-top: 8.4375rem;
           margin-right: auto;
@@ -180,7 +178,8 @@ const OurPrinciples = ({ t }) => {
           width: 1792px;
         }
 
-        h2, p {
+        h2,
+        p {
           grid-column: 4 / span 5;
         }
 
@@ -243,7 +242,8 @@ const OurPrinciples = ({ t }) => {
             width: 20.5rem;
           }
 
-          h2, p {
+          h2,
+          p {
             grid-column: 1 / span 6;
             text-align: center;
           }
@@ -259,13 +259,14 @@ const OurPrinciples = ({ t }) => {
         }
       `}</style>
       <style jsx>{`
-        h2, p {
+        h2,
+        p {
           -ms-grid-column: ${getMsColumn(4)};
           -ms-grid-column-span: ${getMsColumn(5)};
         }
 
         p {
-          -ms-grid-row: 2
+          -ms-grid-row: 2;
         }
       `}</style>
     </Fragment>

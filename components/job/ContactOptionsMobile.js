@@ -14,23 +14,22 @@ const stylesForInput = css.resolve`
 `
 
 const ContactOptionsMobile = ({ connection, t }) => {
-  const connectionData = connection[0] && getContactOptionsByI18N(t).find(contact => contact.id === connection[0])
+  const connectionData =
+    connection[0] && getContactOptionsByI18N(t).find(contact => contact.id === connection[0])
 
   return (
     <fieldset>
-      <legend className='font_h3-regular'>
-        {t('job:additionalContactInfo')}:
-      </legend>
+      <legend className="font_h3-regular">{t('job:additionalContactInfo')}:</legend>
 
       <Field
-        name='connection[0]'
+        name="connection[0]"
         placeholder={t('job:additionalContactInfo')}
         options={getContactOptionsByI18N(t)}
-        id='phone'
+        id="phone"
         component={SelectField}
       />
 
-      {connection[0] &&
+      {connection[0] && (
         <Field
           className={stylesForInput.className}
           id={`${connectionData.id}OptionalContactField`}
@@ -38,10 +37,9 @@ const ContactOptionsMobile = ({ connection, t }) => {
           type={connectionData.inputType}
           label={connectionData.inputText}
           component={TextField}
-          theme='regular'
+          theme="regular"
         />
-      }
-
+      )}
 
       <style jsx>{`
         fieldset {
@@ -55,8 +53,11 @@ const ContactOptionsMobile = ({ connection, t }) => {
           position: absolute;
           overflow: hidden;
           clip: rect(0 0 0 0);
-          height: 1px; width: 1px;
-          margin: -1px; padding: 0; border: 0;
+          height: 1px;
+          width: 1px;
+          margin: -1px;
+          padding: 0;
+          border: 0;
         }
       `}</style>
       {stylesForInput.styles}

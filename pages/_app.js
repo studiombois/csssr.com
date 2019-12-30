@@ -3,6 +3,8 @@ import Router from 'next/router'
 import App from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/node'
+import { ThemeProvider } from 'emotion-theming'
+import { customTheme } from '../themes/customTheme'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
@@ -17,9 +19,7 @@ export default class MyApp extends App {
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
 
-    const userAgent = ctx.req
-      ? ctx.req.headers['user-agent']
-      : window.navigator.userAgent
+    const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
 
     let pageProps = {}
 
@@ -79,13 +79,13 @@ export default class MyApp extends App {
     this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
     this.mobileMediaQuery.addListener(this.handleMediaMatch)
     this.handleMediaMatch(this.mobileMediaQuery)
-    window.addEventListener('keydown', function (event) {
+    window.addEventListener('keydown', function(event) {
       if (event.which === 9) {
         document.body.classList.add('outline')
       }
     })
 
-    window.addEventListener('click', function () {
+    window.addEventListener('click', function() {
       document.body.classList.remove('outline')
     })
 
@@ -122,7 +122,9 @@ export default class MyApp extends App {
         initialLanguage={initialLanguage}
       >
         <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
-          <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
+          <ThemeProvider theme={customTheme}>
+            <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
+          </ThemeProvider>
         </MsBrowserProvider>
       </I18nextProvider>
     )

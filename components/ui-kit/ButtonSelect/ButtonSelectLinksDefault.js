@@ -16,22 +16,19 @@ const ButtonSelectLinksDefault = props => {
     props.onLinkClick(dataLayerEvent)
   }
 
-  return (
-    props.links.map(({ label, localeLink, href, external, dataLayerEvent, testid }) =>
-      <li key={label}>
-        <a
-          href={href}
-          onClick={handleLinkClick(dataLayerEvent)}
-          target={external ? '_blank' : null}
-          rel='noopener'
-          data-testid={testid}
-        >
-          {iconsByLabel[label]}
-          <span>
-            {props.t(localeLink)}
-          </span>
-        </a>
-        <style jsx>{`
+  return props.links.map(({ label, localeLink, href, external, dataLayerEvent, testid }) => (
+    <li key={label}>
+      <a
+        href={href}
+        onClick={handleLinkClick(dataLayerEvent)}
+        target={external ? '_blank' : null}
+        rel="noopener"
+        data-testid={testid}
+      >
+        {iconsByLabel[label]}
+        <span>{props.t(localeLink)}</span>
+      </a>
+      <style jsx>{`
           li {
             padding: 0.5rem 1rem;
           }
@@ -81,22 +78,22 @@ const ButtonSelectLinksDefault = props => {
               text-decoration: none;
             }
         `}</style>
-      </li>
-    )
-  )
+    </li>
+  ))
 }
-
 
 ButtonSelectLinksDefault.propTypes = {
   onLinkClick: func,
   t: func,
-  links: arrayOf(shape({
-    label: string,
-    localeLink: string,
-    href: string,
-    external: bool,
-    dataLayerEvent: string,
-  })),
+  links: arrayOf(
+    shape({
+      label: string,
+      localeLink: string,
+      href: string,
+      external: bool,
+      dataLayerEvent: string,
+    }),
+  ),
 }
 
 export default translate()(ButtonSelectLinksDefault)

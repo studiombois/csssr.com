@@ -22,38 +22,36 @@ const stylesForInput = css.resolve`
   }
 `
 
-const ContactOptions = ({ connection = [], t }) =>
+const ContactOptions = ({ connection = [], t }) => (
   <fieldset>
-    <legend className='font_h3-regular'>
-      {t('job:additionalContactInfo')}:
-    </legend>
+    <legend className="font_h3-regular">{t('job:additionalContactInfo')}:</legend>
 
-    {getContactOptionsByI18N(t).map(option =>
+    {getContactOptionsByI18N(t).map(option => (
       <Fragment key={option.id}>
         <Field
           className={stylesForCheckbox.className}
           id={`${option.id}OptionalContactCheckbox`}
-          name='connection'
+          name="connection"
           value={option.id}
-          type='checkbox'
+          type="checkbox"
           component={Checkbox}
         >
           {option.checkboxText}
         </Field>
 
-        {connection.includes(option.id) &&
+        {connection.includes(option.id) && (
           <Field
             className={stylesForInput.className}
             id={`${option.id}OptionalContactField`}
             name={option.id}
             component={TextField}
             type={option.inputType}
-            theme='regular'
+            theme="regular"
             label={option.inputText}
           />
-        }
+        )}
       </Fragment>
-    )}
+    ))}
     <style jsx>{`
       fieldset {
         grid-column: 10 / span 3;
@@ -78,6 +76,7 @@ const ContactOptions = ({ connection = [], t }) =>
     {stylesForCheckbox.styles}
     {stylesForInput.styles}
   </fieldset>
+)
 
 ContactOptions.propTypes = {
   connection: arrayOf(string),

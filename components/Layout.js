@@ -19,11 +19,6 @@ const Layout = props => {
       <Header {...props.headerProps} />
       <main id="main">{children}</main>
       {!props.footerProps.noFooter && <Footer {...props.footerProps} />}
-      <style jsx global>{`
-        #main {
-          overflow-x: hidden;
-        }
-      `}</style>
     </Fragment>
   )
 }

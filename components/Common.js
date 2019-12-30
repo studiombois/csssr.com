@@ -135,29 +135,29 @@ const Common = () =>
       :global(.ie11) .grid-container {
         -ms-grid-columns: 64px (16px 64px)[11];
       }
+    }
 
-      @media (max-width: 1023px) {
-        html {
-          font-size: 1.5625vw;
-        }
+    @media (min-width: 768px) and  (max-width: 1023px) {
+      html {
+        font-size: 1.5625vw;
+      }
 
-        body {
-          min-width: 59rem;
-        }
+      body {
+        min-width: 59rem;
+      }
 
-        ul.have-square-bullets li:before {
-          top: 0.25rem;
-          border-width: 2px;
-        }
+      ul.have-square-bullets li:before {
+        top: 0.25rem;
+        border-width: 2px;
+      }
 
-        .grid-container {
-          grid-template-columns: repeat(12, 4rem);
-          grid-gap: 0 1rem;
-        }
+      .grid-container {
+        grid-template-columns: repeat(12, 4rem);
+        grid-gap: 0 1rem;
+      }
 
-        :global(.ie11) .grid-container {
-          -ms-grid-columns: 4rem (1rem 4rem)[11];
-        }
+      :global(.ie11) .grid-container {
+        -ms-grid-columns: 4rem (1rem 4rem)[11];
       }
     }
 
@@ -178,11 +178,11 @@ const Common = () =>
       :global(.ie11) .grid-container {
         -ms-grid-columns: 3rem (0.5rem 3rem)[5];
       }
+    }
 
-      @media (max-width: 319px) {
-        html {
-          font-size: 14px;
-        }
+    @media (max-width: 319px) {
+      html {
+        font-size: 14px;
       }
     }
 

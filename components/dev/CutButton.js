@@ -91,11 +91,11 @@ const CutButton = ({ children, isCut, onClick }) =>
           margin-right: -1rem;
           margin-left: -1rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          .grid-container {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .grid-container {
+          width: 59rem;
         }
       }
 

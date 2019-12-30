@@ -5,12 +5,18 @@ pipeline {
     commit = ""
   }
   agent any
+
+  parameters {
+    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
+  }
+
   stages {
     stage('Clone') {
       steps {
         sendNotification('STARTED')
 
         echo "Branch: ${GIT_BRANCH}"
+        echo "CSSSR_SPACE_ORIGIN: ${params.csssrSpaceOrigin}"
 
         script {
           branch = GIT_BRANCH
@@ -19,15 +25,13 @@ pipeline {
         }
         echo "GIT_BRANCH: ${branch}"
         echo "GIT_COMMIT: ${commit}"
-        echo "myscript"
         echo "GITHUB_TOKEN: ${GITHUB_TOKEN}"
-        echo "myscript2"
       }
     }
     stage('Build') {
       steps {
         script {
-          sh "docker build -e GITHUB_TOKEN=${GITHUB_TOKEN} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          sh "docker build -e GITHUB_TOKEN=${GITHUB_TOKEN} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
         }
       }
     }
@@ -58,7 +62,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=csssr.com,branch=${branch},cert=csssr-com,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-production csssr-com-production ./
+            make deploy-production branch=${branch} commit=${commit}
             """
           } else if (branch.startsWith('release/')) {
             sh """#!/bin/bash
@@ -66,7 +70,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            helm secrets upgrade --install -f preprod/values.yaml -f preprod/secrets.yaml --set-string domain=${safeBranch}.csssr.cloud,branch=${branch},cert=csssr-cloud,jobs=csssr-jobs,site.commit=${commit} --namespace csssr-com-${safeBranch} csssr-com-${safeBranch} ./
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} express=csssr-express-fix-com-987
             """
           }
         }

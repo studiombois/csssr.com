@@ -4,10 +4,12 @@ export default {
     href: '/ru',
     // TODO: вставить разделы подсекций, когда появятся соответствующие разделы
     // subsections: ['', '', ''],
-  }, {
-    sectionTitle: 'common:menu.html',
-    href: '/ru/express',
-  }, {
+  },
+  // {
+  // sectionTitle: 'common:menu.html',
+  // href: '/ru/express',
+  // },
+  {
     sectionTitle: 'common:menu.school',
     href: '/ru/school',
   }, {

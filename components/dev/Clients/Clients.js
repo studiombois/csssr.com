@@ -76,11 +76,11 @@ const Clients = ({ t, isMobile }) =>
         .font_p24-strong {
           margin-top: 1.0625rem;
         }
+      }
 
-        @media (max-width: 1023px) {
-          section {
-            width: 59rem;
-          }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        section {
+          width: 59rem;
         }
       }
 

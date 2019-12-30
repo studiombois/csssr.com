@@ -44,7 +44,7 @@ class Slider extends PureComponent {
               <img
                 key={`${id}_${slide}`}
                 alt={`${t('dev:portfolio.slidesAlt')}${slideTitle}`}
-                src={require(`../../static/images/dev/portfolio/${id}_${slide}.png`)}
+                src={require(`../../static/images/dev/portfolio/${id}_${slide}.jpg`)}
               />
             ))}
           </div>
@@ -55,6 +55,7 @@ class Slider extends PureComponent {
               aria-label={t('dev:portfolio.previousSlide')}
               className={cn({ is_invisible: activeSlide === 1 })}
               onClick={this.handleChangeSlide(-1)}
+              tabIndex={activeSlide === 1 ? '-1' : '0'}
             >
               <Arrow width='100%' height='100%' />
             </button>
@@ -63,6 +64,7 @@ class Slider extends PureComponent {
               aria-label={t('dev:portfolio.nextSlide')}
               className={cn({ is_invisible: activeSlide === slides.length })}
               onClick={this.handleChangeSlide(1)}
+              tabIndex={activeSlide === slides.length ? '-1' : '0'}
             >
               <Arrow width='100%' height='100%' />
             </button>
@@ -93,6 +95,8 @@ class Slider extends PureComponent {
           }}
         />
         <style jsx>{`
+
+
           .slider {
             margin-top: 1.5rem;
             position: relative;
@@ -112,12 +116,15 @@ class Slider extends PureComponent {
             pointer-events: all;
           }
 
-          .slider:hover::after {
+          .slider:hover::after,
+          :global(.outline) .slider::after {
             background-color: rgba(0, 0, 0, 0.15);
           }
 
           .slider:hover button,
-          .slider:hover a {
+          .slider:hover a,
+          a:focus,
+          button:focus {
             pointer-events: auto;
             color: #fff;
           }
@@ -173,6 +180,7 @@ class Slider extends PureComponent {
           button.is_invisible {
             opacity: 0;
             pointer-events: none;
+            cursor: default;
           }
 
           a {

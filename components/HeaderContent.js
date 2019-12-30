@@ -35,6 +35,8 @@ class HeaderContent extends PureComponent {
       links,
       t,
       lng,
+      locale,
+      pathname,
       logoAlt = t('common:headerLogoAlt'),
       logoSup,
       scrollbarWidth,
@@ -50,11 +52,12 @@ class HeaderContent extends PureComponent {
       sectionName,
     } = this.props
     const rootUrl = `/${lng}`
+    const jobsRootUrl = `/${locale}/jobs`
+    const isJob = pathname === `/${locale}/job`
 
     return (
       <Fragment>
         <header
-          data-scroll-lock-fill-gap
           onFocus={onFocus}
           className={cn({
             header: true,
@@ -71,7 +74,7 @@ class HeaderContent extends PureComponent {
           >
             {isLogoLink
               ? <span className='logo-wrapper'>
-                <Link href={rootUrl}>
+                <Link href={isJob ? jobsRootUrl : rootUrl}>
                   <a data-testid='header:link:logo'>
                     <img
                       className='logo'
@@ -161,6 +164,7 @@ class HeaderContent extends PureComponent {
               right: 0;
               z-index: 9999;
               width: 100%;
+              padding-right: ${!pinHeader && showHeader && isSideBarOpened ? scrollbarWidth + 'px' : '0'};
             }
 
             .header-background {
@@ -371,11 +375,11 @@ class HeaderContent extends PureComponent {
               .nav-list-item_hide-on-tablet {
                 display: none;
               }
+            }
 
-              @media (max-width: 1023px) {
-                .header-content {
-                  width: 59rem;
-                }
+            @media (min-width: 768px) and (max-width: 1023px) {
+              .header-content {
+                width: 59rem;
               }
             }
 

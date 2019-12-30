@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
 import { number, string, shape, node } from 'prop-types'
@@ -13,6 +13,15 @@ const origin = 'https://csssr.com'
 
 const Head = props => {
   const isIe11 = useContext(Ie11BrowserContext)
+
+  // При роутинге в ie11 picturefill не подгружает правильные размеры изображений.
+  // Явный вызов плагина при каждом рендере исправляет баг
+  useEffect(() => {
+    if (isIe11) {
+      // eslint-disable-next-line no-undef
+      picturefill()
+    }
+  })
 
   return (
     <NextHead>

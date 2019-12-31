@@ -10,7 +10,7 @@ import FileField from '../ui-kit/FileField'
 import TextareaField from '../ui-kit/TextareaField'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import getFileFieldText from '../../utils/getFileFieldText'
-import { getMsColumn } from '../../utils/style/getGridValueForMs'
+import getGridValueForMs from '../../utils/style/getGridValueForMs'
 
 const stylesForFullWidthField = css.resolve`
   div {
@@ -19,8 +19,8 @@ const stylesForFullWidthField = css.resolve`
   }
 
   :global(.ie11) div {
-    -ms-grid-column: ${getMsColumn(2)};
-    -ms-grid-column-span: ${getMsColumn(6)};
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
   @media (max-width: 767px) {
@@ -37,8 +37,8 @@ const stylesForFirstHalfWidthField = css.resolve`
   }
 
   :global(.ie11) div {
-    -ms-grid-column: ${getMsColumn(2)};
-    -ms-grid-column-span: ${getMsColumn(3)};
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(3)};
   }
 
   @media (max-width: 767px) {
@@ -56,8 +56,8 @@ const stylesForSecondHalfWidthField = css.resolve`
   }
 
   :global(.ie11) div {
-    -ms-grid-column: ${getMsColumn(5)};
-    -ms-grid-column-span: ${getMsColumn(3)};
+    -ms-grid-column: ${getGridValueForMs(5)};
+    -ms-grid-column-span: ${getGridValueForMs(3)};
   }
 
   @media (max-width: 767px) {
@@ -75,8 +75,8 @@ const stylesForTextareaField = css.resolve`
   }
 
   :global(.ie11) div {
-    -ms-grid-column: ${getMsColumn(2)};
-    -ms-grid-column-span: ${getMsColumn(6)};
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
   :global(.ie11 textarea) {
@@ -98,8 +98,8 @@ const stylesForCheckboxField = css.resolve`
 
   :global(.ie11) span {
     display: block;
-    -ms-grid-column: ${getMsColumn(2)};
-    -ms-grid-column-span: ${getMsColumn(6)};
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
   @media (max-width: 767px) {
@@ -118,8 +118,8 @@ const stylesForFileField = css.resolve`
 
   :global(.ie11) div {
     margin-top: 3rem;
-    -ms-grid-column: ${getMsColumn(2)};
-    -ms-grid-column-span: ${getMsColumn(4)};
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(4)};
   }
 
   .button {
@@ -129,8 +129,8 @@ const stylesForFileField = css.resolve`
 
   :global(.ie11) .button {
     height: 4rem;
-    -ms-grid-column: ${getMsColumn(6)};
-    -ms-grid-column-span: ${getMsColumn(2)};
+    -ms-grid-column: ${getGridValueForMs(6)};
+    -ms-grid-column-span: ${getGridValueForMs(2)};
   }
 
   @media (max-width: 767px) {
@@ -308,8 +308,8 @@ const CandidateInfoSection = props => {
       <style jsx>{`
         :global(.ie11) h2,
         :global(.ie11) p {
-          -ms-grid-column: ${getMsColumn(2)};
-          -ms-grid-column-span: ${getMsColumn(6)};
+          -ms-grid-column: ${getGridValueForMs(2)};
+          -ms-grid-column-span: ${getGridValueForMs(6)};
         }
 
         :global(.ie11 .input-firstname) {

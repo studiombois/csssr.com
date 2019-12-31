@@ -8,7 +8,6 @@ import Money from '../../components/mvp/Money'
 import Process from '../../components/mvp/Process'
 import HireUs from '../../components/mvp/HireUs'
 import withI18next from '../../utils/withI18next'
-import { devSocialLinks } from '../../data/jobs/footerLinks'
 
 class MVPPage extends PureComponent {
   state = {
@@ -35,16 +34,7 @@ class MVPPage extends PureComponent {
     const { isMobile } = this.state
 
     return (
-      <Layout
-        headerProps={{
-          isLogoLink: true,
-          isBurgerVisible: true,
-          title: 'common:menu.mvp',
-          menuName: t('common:menu.mvp'),
-          sectionName: t('common:sectionName.mvp'),
-        }}
-        footerProps={{ socialLinks: devSocialLinks }}
-      >
+      <Layout>
         <Head
           title={t('mvp:meta.title')}
           description={t('mvp:meta.description')}

@@ -189,15 +189,7 @@ class JobPage extends PureComponent {
 
     return (
       <Fragment>
-        <Layout
-          headerProps={{
-            logoAlt: 'CSSSR jobs logo',
-            isLogoLink: true,
-            isBurgerVisible: true,
-            menuName: t('common:menu.job'),
-            sectionName: t('common:sectionName.job'),
-          }}
-        >
+        <Layout>
           <Head
             title={vacancy.name}
             templateTitle={`${lng === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}

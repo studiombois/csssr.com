@@ -20,14 +20,7 @@ class JobsPage extends PureComponent {
     const { t, vacancies, lng } = this.props
     return (
       <Fragment>
-        <Layout
-          headerProps={{
-            isBurgerVisible: true,
-            menuName: t('common:menu.jobs'),
-            sectionName: t('common:sectionName.jobs'),
-          }}
-          footerProps={{ noFooter: true }}
-        >
+        <Layout>
           <Head
             title={t('jobs:meta.title')}
             templateTitle={`${lng === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}

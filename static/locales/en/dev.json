@@ -3,12 +3,6 @@
     "title": "We Create Web Services for Millions",
     "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript. And dream of the stars."
   },
-  "headerNav": {
-    "competence": "Competencies",
-    "services": "Services",
-    "clients": "Clients",
-    "hireUs": "Hire us"
-  },
   "imgAlt": {
     "dev": "picture that represents our CSSSR team",
     "geometry": "geometric figures showing the range of our services: a triangle with the text “MVP”, a circle with the text “Support the development of high load web applications” and a square with the text “Stack migration”",

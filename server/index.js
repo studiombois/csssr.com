@@ -39,17 +39,7 @@ i18n
       whitelist: [...supportedLanguages, ...supportedLocales],
       preload: [...supportedLanguages, ...supportedLocales],
       lowerCaseLng: true,
-      ns: [
-        'common',
-        'dev',
-        'sborka',
-        'jobs',
-        'job',
-        'error',
-        'privacyPolicy',
-        'cookiesPolicy',
-        'mvp',
-      ],
+      ns: ['common', 'dev', 'jobs', 'job', 'error', 'privacyPolicy', 'cookiesPolicy', 'mvp'],
       detection: {
         order: ['pathCookieHeader'],
         lookupCookie: 'locale',

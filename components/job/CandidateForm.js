@@ -12,7 +12,7 @@ import AnimatedButton from '../ui-kit/AnimatedButton'
 import FormStateMessage from '../ui-kit/FormStateMessage'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 import Picture from '../Picture'
-import { getMsColumn } from '../../utils/style/getGridValueForMs'
+import getGridValueForMs from '../../utils/style/getGridValueForMs'
 import { MsBrowserContext } from '../../utils/msBrowserProvider'
 
 const picture = css.resolve`
@@ -98,8 +98,8 @@ const pictureFaq = css.resolve`
     }
 
     :global(.ie11) picture {
-      -ms-grid-column: ${getMsColumn(1)};
-      -ms-grid-column-span: ${getMsColumn(6)};
+      -ms-grid-column: ${getGridValueForMs(1)};
+      -ms-grid-column-span: ${getGridValueForMs(6)};
     }
 
     picture.hidden_on_mobile {
@@ -460,8 +460,8 @@ class CandidateForm extends PureComponent {
         <style jsx>
           {`
             :global(.ie11) div {
-              -ms-grid-column: ${getMsColumn(9)};
-              -ms-grid-column-span: ${getMsColumn(4)};
+              -ms-grid-column: ${getGridValueForMs(9)};
+              -ms-grid-column-span: ${getGridValueForMs(4)};
             }
           `}
         </style>

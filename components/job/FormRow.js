@@ -1,5 +1,5 @@
 import React from 'react'
-import { getMsColumn } from '../../utils/style/getGridValueForMs'
+import getGridValueForMs from '../../utils/style/getGridValueForMs'
 
 const FormRow = ({ children, rightSideContent }) => (
   <div className="grid-container">
@@ -55,8 +55,8 @@ const FormRow = ({ children, rightSideContent }) => (
 
     <style jsx>{`
       :global(.ie11) .cell {
-        -ms-grid-column: ${getMsColumn(2)};
-        -ms-grid-column-span: ${getMsColumn(6)};
+        -ms-grid-column: ${getGridValueForMs(2)};
+        -ms-grid-column-span: ${getGridValueForMs(6)};
       }
     `}</style>
   </div>

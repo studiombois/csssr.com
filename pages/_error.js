@@ -2,18 +2,21 @@ import React, { Fragment } from 'react'
 import Link from 'next/link'
 import css from 'styled-jsx/css'
 import * as Sentry from '@sentry/node'
+import { Global } from '@emotion/core'
 import withI18next from '../utils/withI18next'
-import Common from '../components/Common'
-import Settings from '../components/Settings'
-import Text from '../components/Text'
+import DevTools from '../components/DevTools'
 import Head from '../components/Head'
 import PictureForAllResolutions from '../components/PictureForAllResolutions'
 import LogoIcon from '../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../static/icons/notFound.svg'
 import ServerError from '../static/icons/serverError.svg'
+/**
+ * Прописать NavItems как в Header когда мы его начнем делать
+ */
 import navItems from '../data/error/navItems'
-import getIeColumn from '../utils/style/getIeColumn'
+import getGridValueForMs from '../utils/style/getGridValueForMs'
+import styles from '../components/Layout/Layout.styles'
 
 const titleLocalesByStatusCode = {
   404: 'error:errors.notFound.title',
@@ -41,8 +44,8 @@ const picture = css.resolve`
 
   :global(.ie11) picture {
     display: block;
-    -ms-grid-column: ${getIeColumn(2)};
-    -ms-grid-column-span: ${getIeColumn(7)};
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(7)};
     -ms-grid-row: 2;
     -ms-grid-row-span: 10;
   }
@@ -113,9 +116,11 @@ class MyError extends React.Component {
 
     return (
       <Fragment>
-        <Common />
-        <Settings />
-        <Text />
+        <Global styles={styles.base} />
+        <Global styles={styles.font_faces} />
+        <Global styles={styles.fonts} />
+        <DevTools />
+
         <Head title={t('error:meta.title')} description={t('error:meta.description')} />
 
         <header className="grid-container">
@@ -158,7 +163,10 @@ class MyError extends React.Component {
                 <LineFromTopToBottomIcon width="100%" height="100%" />
               </div>
 
-              <ul>{navItems[lng].map(this.renderNav)}</ul>
+              {/**
+               * Прописать NavItems как в Header когда мы его начнем делать
+               */}
+              {/* <ul>{navItems[lng].map(this.renderNav)}</ul> */}
             </Fragment>
           )}
         </main>
@@ -357,22 +365,22 @@ class MyError extends React.Component {
         <style jsx>{`
           :global(.ie11) a {
             display: block;
-            -ms-grid-column: ${getIeColumn(2)};
-            -ms-grid-column-span: ${getIeColumn(2)};
+            -ms-grid-column: ${getGridValueForMs(2)};
+            -ms-grid-column-span: ${getGridValueForMs(2)};
           }
 
           :global(.ie11) h1 {
             grid-column: 2 / span 7;
             grid-row: 1;
-            -ms-grid-column: ${getIeColumn(2)};
-            -ms-grid-column-span: ${getIeColumn(7)};
+            -ms-grid-column: ${getGridValueForMs(2)};
+            -ms-grid-column-span: ${getGridValueForMs(7)};
             -ms-grid-row: 1;
           }
 
           :global(.ie11) h2,
           :global(.ie11) ul {
-            -ms-grid-column: ${getIeColumn(10)};
-            -ms-grid-column-span: ${getIeColumn(2)};
+            -ms-grid-column: ${getGridValueForMs(10)};
+            -ms-grid-column-span: ${getGridValueForMs(2)};
           }
 
           :global(.ie11) h2 {
@@ -380,8 +388,8 @@ class MyError extends React.Component {
           }
 
           :global(.ie11) .error-code_500 h2 {
-            -ms-grid-column: ${getIeColumn(9)};
-            -ms-grid-column-span: ${getIeColumn(4)};
+            -ms-grid-column: ${getGridValueForMs(9)};
+            -ms-grid-column-span: ${getGridValueForMs(4)};
           }
 
           :global(.ie11) ul {
@@ -389,42 +397,42 @@ class MyError extends React.Component {
           }
 
           :global(.ie11) .code-wrapper {
-            -ms-grid-column: ${getIeColumn(2)};
-            -ms-grid-column-span: ${getIeColumn(6)};
+            -ms-grid-column: ${getGridValueForMs(2)};
+            -ms-grid-column-span: ${getGridValueForMs(6)};
             -ms-grid-row: 2;
             -ms-grid-row-span: 10;
           }
 
           :global(.ie11) .arrow-wrapper {
-            -ms-grid-column: ${getIeColumn(10)};
-            -ms-grid-column-span: ${getIeColumn(1)};
+            -ms-grid-column: ${getGridValueForMs(10)};
+            -ms-grid-column-span: ${getGridValueForMs(1)};
             -ms-grid-row: 3;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             :global(.ie11) ul {
-              -ms-grid-column: ${getIeColumn(10)};
-              -ms-grid-column-span: ${getIeColumn(3)};
+              -ms-grid-column: ${getGridValueForMs(10)};
+              -ms-grid-column-span: ${getGridValueForMs(3)};
             }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             :global(.ie11) ul {
-              -ms-grid-column: ${getIeColumn(10)};
-              -ms-grid-column-span: ${getIeColumn(3)};
+              -ms-grid-column: ${getGridValueForMs(10)};
+              -ms-grid-column-span: ${getGridValueForMs(3)};
             }
 
             :global(.ie11) .arrow-wrapper {
-              -ms-grid-column: ${getIeColumn(10)};
-              -ms-grid-column-span: ${getIeColumn(1)};
+              -ms-grid-column: ${getGridValueForMs(10)};
+              -ms-grid-column-span: ${getGridValueForMs(1)};
               -ms-grid-row: 3;
             }
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
             :global(.ie11) ul {
-              -ms-grid-column: ${getIeColumn(10)};
-              -ms-grid-column-span: ${getIeColumn(3)};
+              -ms-grid-column: ${getGridValueForMs(10)};
+              -ms-grid-column-span: ${getGridValueForMs(3)};
             }
           }
         `}</style>

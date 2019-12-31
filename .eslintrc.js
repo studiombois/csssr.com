@@ -4,6 +4,7 @@ module.exports = {
     node: true,
     es6: true,
   },
+  extends: '@csssr/eslint-config-core',
   rules: {
     'prettier/prettier': [
       'error',
@@ -20,5 +21,9 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-no-target-blank': 'off',
   },
-  extends: '@csssr/eslint-config-core',
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }

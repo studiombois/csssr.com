@@ -1,16 +1,6 @@
 {
   "hello": "Hello!",
   "headerLogoAlt": "CSSSR logo",
-  "menu": {
-    "dev": "FRONT-END DEVELOPMENT",
-    "html": "Express front-end",
-    "jobs": "Jobs",
-    "job": "Job",
-    "school": "School",
-    "privacy-policy": "Privacy Policy",
-    "cookies-policy": "Cookies Policy",
-    "mvp": "mvp"
-  },
   "floatingButton": {
     "question": "How would you like to&nbsp;contact&nbsp;us?",
     "facebookMessenger": "Facebook Messenger",
@@ -26,15 +16,6 @@
   "footer": {
     "privacyPolicy": "Privacy policy",
     "alliancePartText": "CSSSR is a part of"
-  },
-  "sectionName": {
-    "dev": "FRONT-END DEVELOPMENT",
-    "express": "Express frontend",
-    "jobs": "Jobs",
-    "job": "Job",
-    "privacy-policy": "Privacy Policy",
-    "cookies-policy": "Cookies Policy",
-    "mvp": "FRONT-END DEVELOPMENT"
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {

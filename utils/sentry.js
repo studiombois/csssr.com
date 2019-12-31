@@ -6,7 +6,7 @@ const { APP_ENV, isProduction, isDevelopment } = require('../utils/app-environme
  * на месте сделать Sentry.init() и Sentry.captureMessage()
  */
 
-if ( isProduction ) {
+if (isProduction) {
   Sentry.init({
     dsn: 'https://7b0bc195d134489f86572d94c310969b@sentry.io/1330752',
     release: process.env.SENTRY_RELEASE,

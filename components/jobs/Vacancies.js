@@ -2,11 +2,10 @@ import React, { PureComponent, Fragment } from 'react'
 import css from 'styled-jsx/css'
 import cn from 'classnames'
 import Link from 'next/link'
-import Footer from './Footer'
 import translate from '../../utils/translate-wrapper'
 import Picture from '../Picture'
 import PictureForAllResolutions from '../PictureForAllResolutions'
-import { getMsColumn } from '../../utils/style/getGridValueForMs'
+import getGridValueForMs from '../../utils/style/getGridValueForMs'
 
 const picture = css.resolve`
   picture {
@@ -16,8 +15,8 @@ const picture = css.resolve`
 
   :global(.ie11) picture {
     display: block;
-    -ms-grid-column: ${getMsColumn(8)};
-    -ms-grid-column-span: ${getMsColumn(2)};
+    -ms-grid-column: ${getGridValueForMs(8)};
+    -ms-grid-column-span: ${getGridValueForMs(2)};
   }
 
   :global(.ie11) picture:nth-child(3) {
@@ -73,8 +72,8 @@ const pictureFaq = css.resolve`
 
   :global(.ie11) picture {
     display: block;
-    -ms-grid-column: ${getMsColumn(8)};
-    -ms-grid-column-span: ${getMsColumn(5)};
+    -ms-grid-column: ${getGridValueForMs(8)};
+    -ms-grid-column-span: ${getGridValueForMs(5)};
     -ms-grid-row: 13;
   }
 
@@ -135,8 +134,8 @@ const pictureHunter = css.resolve`
 
   :global(.ie11) picture {
     display: block;
-    -ms-grid-column: ${getMsColumn(8)};
-    -ms-grid-column-span: ${getMsColumn(1)};
+    -ms-grid-column: ${getGridValueForMs(8)};
+    -ms-grid-column-span: ${getGridValueForMs(1)};
     -ms-grid-row: 14;
   }
 
@@ -367,8 +366,6 @@ class Vacancies extends PureComponent {
             </span>
             .
           </p>
-
-          <Footer className={footer.className} />
         </article>
         <style jsx>{`
           article {
@@ -866,8 +863,8 @@ class Vacancies extends PureComponent {
           :global(.ie11) header,
           :global(.ie11) h2,
           :global(.ie11) p {
-            -ms-grid-column: ${getMsColumn(8)};
-            -ms-grid-column-span: ${getMsColumn(5)};
+            -ms-grid-column: ${getGridValueForMs(8)};
+            -ms-grid-column-span: ${getGridValueForMs(5)};
           }
 
           :global(.ie11) .hot-vacancy::before {
@@ -878,45 +875,45 @@ class Vacancies extends PureComponent {
           }
 
           :global(.ie11) ul {
-            -ms-grid-column: ${getMsColumn(8)};
-            -ms-grid-column-span: ${getMsColumn(5)};
+            -ms-grid-column: ${getGridValueForMs(8)};
+            -ms-grid-column-span: ${getGridValueForMs(5)};
           }
 
           :global(.ie11) .hunter-text {
-            -ms-grid-column: ${getMsColumn(9)};
-            -ms-grid-column-span: ${getMsColumn(3)};
+            -ms-grid-column: ${getGridValueForMs(9)};
+            -ms-grid-column-span: ${getGridValueForMs(3)};
             -ms-grid-row: 14;
           }
 
           :global(.ie11) .faq-text {
-            -ms-grid-column: ${getMsColumn(8)};
-            -ms-grid-column-span: ${getMsColumn(2)};
+            -ms-grid-column: ${getGridValueForMs(8)};
+            -ms-grid-column-span: ${getGridValueForMs(2)};
             -ms-grid-row: 13;
           }
 
           @media (min-width: 1360px) and (max-width: 1919px) {
             :global(.ie11) .hunter-text {
-              -ms-grid-column: ${getMsColumn(9)};
-              -ms-grid-column-span: ${getMsColumn(4)};
+              -ms-grid-column: ${getGridValueForMs(9)};
+              -ms-grid-column-span: ${getGridValueForMs(4)};
             }
           }
 
           @media (min-width: 1280px) and (max-width: 1359px) {
             :global(.ie11) .hunter-text {
-              -ms-grid-column: ${getMsColumn(9)};
-              -ms-grid-column-span: ${getMsColumn(4)};
+              -ms-grid-column: ${getGridValueForMs(9)};
+              -ms-grid-column-span: ${getGridValueForMs(4)};
             }
           }
 
           @media (min-width: 768px) and (max-width: 1279px) {
             :global(.ie11) .faq-text {
-              -ms-grid-column: ${getMsColumn(8)};
-              -ms-grid-column-span: ${getMsColumn(3)};
+              -ms-grid-column: ${getGridValueForMs(8)};
+              -ms-grid-column-span: ${getGridValueForMs(3)};
             }
 
             :global(.ie11) .hunter-text {
-              -ms-grid-column: ${getMsColumn(9)};
-              -ms-grid-column-span: ${getMsColumn(5)};
+              -ms-grid-column: ${getGridValueForMs(9)};
+              -ms-grid-column-span: ${getGridValueForMs(5)};
             }
           }
         `}</style>

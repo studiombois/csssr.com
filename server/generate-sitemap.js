@@ -4,7 +4,7 @@ const fetch = require('isomorphic-unfetch')
 const sitemap = require('sitemap')
 const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
 
-const oneDay = 24 * 60 * 60 * 1000
+const oneDay = 5 * 60 * 1000
 
 const cache = (asyncFunc, time) => {
   let cached

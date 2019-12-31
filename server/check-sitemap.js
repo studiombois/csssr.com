@@ -26,6 +26,7 @@ const walkSync = dir => {
         'https://csssr.com/_error',
         'https://csssr.com/fonts',
         'https://csssr.com/en/school',
+        'https://csssr.com/ru/express',
       ].join(supportedLocales.map(locale => `https://csssr.com/${locale}/job`))
 
       if (excludedPagesUrls.includes(url)) {

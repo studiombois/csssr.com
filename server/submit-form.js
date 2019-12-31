@@ -8,6 +8,8 @@ const {
     AUTH_QUERY,
     PIPELINE_ID,
     FIRST_STATUS_ID,
+    PIPELINE_ID_EN,
+    FIRST_STATUS_ID_EN,
     CONTACT_FIELDS: {
       PHONE,
       EMAIL,
@@ -142,8 +144,9 @@ module.exports = (req, res) => {
           add: [
             {
               name: `${name} | Первичный запрос с csssr.com`,
-              pipeline_id: PIPELINE_ID,
-              status_id: FIRST_STATUS_ID,
+              // TODO при мёрдже задачи COM-920 про использование csssr-amo это надо внести в библиотеку
+              pipeline_id: language === 'en' ? PIPELINE_ID_EN : PIPELINE_ID,
+              status_id: language === 'en' ? FIRST_STATUS_ID_EN : FIRST_STATUS_ID,
               // eslint-disable-next-line no-underscore-dangle
               contacts_id: createContactData._embedded.items[0].id,
               tags,

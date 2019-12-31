@@ -6,6 +6,11 @@ module.exports = {
     AUTH_QUERY: getAuthQuery(process.env.AMO_CRM_SALES_USER_LOGIN, process.env.AMO_CRM_SALES_USER_HASH),
     PIPELINE_ID: 938752,
     FIRST_STATUS_ID: 21946756,
+
+    // TODO при мёрдже задачи COM-920 про использование csssr-amo это надо внести в библиотеку
+    PIPELINE_ID_EN: 1981756,
+    FIRST_STATUS_ID_EN: 29378050,
+
     CONTACT_FIELDS: {
       PHONE: {
         ID: 143825,

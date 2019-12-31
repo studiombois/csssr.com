@@ -30,7 +30,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          withCredentials([string(credentialsId: 'SPACE_GITHUB_TOKEN', variable: 'GITHUB_TOKEN')]) {
+          withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
             sh "docker build --build-arg githubToken=${GITHUB_TOKEN} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
           }
         }

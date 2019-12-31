@@ -30,7 +30,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh "docker build --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          sh "docker build --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
         }
       }
     }
@@ -51,7 +51,7 @@ pipeline {
           sshagent(credentials: ['csssr-com-chart']) {
             sh """
             rm -rf csssr.com-chart
-            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
+            git clone -b COM-961 git@github.com:csssr-dreamteam/csssr.com-chart.git
             """
           }
 

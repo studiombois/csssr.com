@@ -13,7 +13,7 @@ ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 
 WORKDIR /app
 COPY package.json yarn.lock /app/
-RUN yarn
+RUN yarn --frozen-lockfile
 COPY . .
 RUN yarn build
 

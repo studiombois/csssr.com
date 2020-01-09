@@ -31,7 +31,7 @@ pipeline {
       steps {
         script {
           withCredentials([string(credentialsId: 'csssr-nexus-npm-token', variable: 'NPM_TOKEN')]) {
-            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
+            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
           }
         }
       }

@@ -4,7 +4,7 @@ const fetch = require('isomorphic-unfetch')
 const sitemap = require('sitemap')
 const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
 
-const oneDay = 5 * 60 * 1000
+const thirtyMinutes = 30 * 60 * 1000
 
 const cache = (asyncFunc, time) => {
   let cached
@@ -148,5 +148,5 @@ const sitemapUrls = sitemapUrlsSettings.map(sitemapUrlSettings => sitemapUrlSett
 
 module.exports = {
   sitemapUrls,
-  generateSitemap: cache(generateSitemap, oneDay),
+  generateSitemap: cache(generateSitemap, thirtyMinutes),
 }

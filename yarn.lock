@@ -885,6 +885,13 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@dreamteam/csssr-amo@^1.0.1":
+  version "1.0.1"
+  resolved "https://nexus.csssr.space/repository/csssr/@dreamteam/csssr-amo/-/csssr-amo-1.0.1.tgz#479ca898b60c5a2e4010c44de2e10eb058897555"
+  integrity sha512-7J/h2aYURimyHn1mOVNjcmjixnoqHR/xEsPNZ9loNCQXeWjN3MdAaHahdkBtm535ggYJJSrJKxbcrOT9uGg9rg==
+  dependencies:
+    isomorphic-unfetch "^3.0.0"
+
 "@sentry/browser@^4.4.2":
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-4.4.2.tgz#8d361778962ef8ab1540e4ebbf64d485903abdf1"
@@ -2640,12 +2647,6 @@ csso@~2.3.1:
   dependencies:
     clap "^1.0.9"
     source-map "^0.5.3"
-
-"csssr-amo@git+ssh://git@github.com:csssr-dreamteam/csssr-amo.git#publish-lib":
-  version "1.0.0"
-  resolved "git+ssh://git@github.com:csssr-dreamteam/csssr-amo.git#23816bf56777c3e03ed144bc35ef5394c9855725"
-  dependencies:
-    isomorphic-unfetch "^3.0.0"
 
 cyclist@~0.2.2:
   version "0.2.2"

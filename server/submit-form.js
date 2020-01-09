@@ -1,5 +1,5 @@
 const Sentry = require('@sentry/node')
-const { sales } = require('csssr-amo')
+const { sales, TEST_TAG } = require('@dreamteam/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
 
@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
   const tagsArray = ['csssr.com'].concat(pageName)
 
   if (!isProduction) {
-    tagsArray.push('TEST')
+    tagsArray.push(TEST_TAG)
   }
 
   if (newsletter) {
@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
   const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies
 
   try {
-    const amoResponse = await amoSales.createLead({
+    const amoResponse = await amoSales.createLead(language, {
       tags,
       name,
       phone,

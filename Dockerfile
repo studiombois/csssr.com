@@ -1,11 +1,9 @@
 FROM node:11.7.0 AS build
 
 ARG csssrSpaceOrigin
-ARG githubToken
+ARG NPM_TOKEN
 
-# Для установки npm-пакетов с приватных github-репозиториев (начало)
-RUN git config --global url."https://${githubToken}:x-oauth-basic@github.com/".insteadOf "git@github.com:"
-# Для установки npm-пакетов с приватных github-репозиториев (конец)
+RUN echo "//nexus.csssr.space/repository/csssr/:_authToken=${NPM_TOKEN}" > .npmrc
 
 ENV NODE_ENV=production
 ENV IS_PRODUCTION=TRUE
@@ -17,8 +15,7 @@ RUN yarn --frozen-lockfile
 COPY . .
 RUN yarn build
 
-RUN git config --global --remove-section url."https://${githubToken}:x-oauth-basic@github.com/"
-
+RUN rm .npmrc
 
 FROM node:11.7.0-alpine AS release
 ENV NODE_ENV=production

@@ -2641,6 +2641,12 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
+"csssr-amo@git+ssh://git@github.com:csssr-dreamteam/csssr-amo.git#publish-lib":
+  version "1.0.0"
+  resolved "git+ssh://git@github.com:csssr-dreamteam/csssr-amo.git#23816bf56777c3e03ed144bc35ef5394c9855725"
+  dependencies:
+    isomorphic-unfetch "^3.0.0"
+
 cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"

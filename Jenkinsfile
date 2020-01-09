@@ -30,7 +30,9 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh "docker build --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+            sh "docker build --build-arg githubToken=${GITHUB_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          }
         }
       }
     }

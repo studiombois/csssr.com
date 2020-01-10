@@ -30,8 +30,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
-            sh "docker build --build-arg githubToken=${GITHUB_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          withCredentials([string(credentialsId: 'csssr-nexus-npm-token', variable: 'NPM_TOKEN')]) {
+            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
           }
         }
       }
@@ -53,7 +53,7 @@ pipeline {
           sshagent(credentials: ['csssr-com-chart']) {
             sh """
             rm -rf csssr.com-chart
-            git clone -b COM-961 git@github.com:csssr-dreamteam/csssr.com-chart.git
+            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
             """
           }
 

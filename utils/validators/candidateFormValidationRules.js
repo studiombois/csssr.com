@@ -1,0 +1,31 @@
+import { composeValidators, email, file, integer, link, maxLength, required } from './index'
+
+export default (vacancy, t) => values => {
+  const errors = {}
+
+  errors.firstname = required(t)(values.firstname)
+  errors.lastname = required(t)(values.lastname)
+  errors.location = required(t)(values.location)
+  errors.email = composeValidators(required(t), email(t))(values.email)
+  errors.comment = maxLength(4096, t)(values.comment)
+  errors.privacyPolicy = required(t)(values.privacyPolicy)
+  errors.age = integer(t)(values.age)
+
+  if (vacancy.hasGithub) {
+    errors.github = composeValidators(required(t), link(t))(values.github)
+  }
+
+  if (vacancy.hasPortfolio) {
+    errors.portfolio = composeValidators(required(t), link(t))(values.portfolio)
+  }
+
+  if (vacancy.hasResume) {
+    errors.resume = composeValidators(required(t), link(t))(values.resume)
+  }
+
+  if (vacancy.hasFile && vacancy.fileExt) {
+    errors.file = composeValidators(required(t), file(vacancy.fileExt, t))(values.file)
+  }
+
+  return errors
+}

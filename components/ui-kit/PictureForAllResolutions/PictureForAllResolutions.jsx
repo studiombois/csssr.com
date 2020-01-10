@@ -13,30 +13,27 @@ const PictureForAllResolutions = ({ className, testid, images, fallback, alt, th
     )
   }
 
-  const fallbackResolution = 'desktop.all'
   const mediaRulesByResoluton = flattenObjDeep(theme.breakpoints)
 
   return (
     <Fragment>
       <picture className={className}>
-        {Object.keys(images)
-          // .filter(resolution => resolution !== fallbackResolution)
-          .map(resolution => {
-            const mediaRule = mediaRulesByResoluton[resolution].slice(7)
-            const extensions = ['webp', 'png', 'jpeg', 'jpg']
+        {Object.keys(images).map(resolution => {
+          const mediaRule = mediaRulesByResoluton[resolution].slice(7)
+          const extensions = ['webp', 'png', 'jpeg', 'jpg']
 
-            return extensions.map(
-              extension =>
-                images[resolution][extension] && (
-                  <source
-                    key={`${resolution}_${extension}`}
-                    media={mediaRule}
-                    type={`image/${extension}`}
-                    srcSet={images[resolution][extension].srcSet}
-                  />
-                ),
-            )
-          })}
+          return extensions.map(
+            extension =>
+              images[resolution][extension] && (
+                <source
+                  key={`${resolution}_${extension}`}
+                  media={mediaRule}
+                  type={`image/${extension}`}
+                  srcSet={images[resolution][extension].srcSet}
+                />
+              ),
+          )
+        })}
 
         <img srcSet={fallback.srcSet} src={fallback['1x']} data-testid={testid} alt={alt} />
       </picture>

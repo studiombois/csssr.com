@@ -6,18 +6,17 @@ ARG NPM_TOKEN
 
 WORKDIR /app
 
-RUN echo "//nexus.csssr.space/repository/csssr/:_authToken=${NPM_TOKEN}" > .npmrc
-
 ENV NODE_ENV=production
 ENV IS_PRODUCTION=$isProduction
 ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 
-COPY package.json yarn.lock /app/
+COPY .npmrc package.json yarn.lock /app/
+RUN echo "//nexus.csssr.space/repository/csssr/:_authToken=${NPM_TOKEN}" >> .npmrc
 RUN yarn --frozen-lockfile
 COPY . .
 RUN yarn build
 
-RUN rm .npmrc
+RUN sed '/\/\/nexus.csssr.space\/repository\/csssr\/:_authToken=/d' .npmrc
 
 FROM node:11.7.0-alpine AS release
 ARG isProduction

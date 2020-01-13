@@ -977,10 +977,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@csssr/core-design@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-4.0.1.tgz#d44eb32471341487708aedcb153a542de57591fc"
-  integrity sha512-T7IeTWP0UufrfIyWlb15aU7FAnTxpO1diL/XE+uBSxbWYGSLzbzDD/nzDBXytv6SwPsV+cpIRrX7VovLbO9aeg==
+"@csssr/core-design@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.0.0.tgz#fb74fb3739831a44004004535ae93d0c5e35896e"
+  integrity sha512-8cBtWajr5Kweu56RKlJlplr6PiluyB6PoSaipsjfbelM9QIoB7qX+nmRae9bTcI4EG/vAuUa5wCecAdDejA7+g==
   dependencies:
     "@emotion/styled-base" "^10.0.10"
     color "^3.1.1"

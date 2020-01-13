@@ -78,6 +78,21 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/industry',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/express',
     changefreq: 'weekly',
     priority: 1,

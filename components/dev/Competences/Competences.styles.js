@@ -287,7 +287,10 @@ const base = css`
 
   @media (max-width: 767px) {
     & {
+      padding-left: 1rem;
+      padding-right: 1rem;
       height: 113.5625rem;
+      width: 22.5rem;
     }
 
     &.lng_en {

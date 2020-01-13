@@ -191,8 +191,13 @@ const base = css`
       margin-bottom: 1.1875rem;
     }
 
+    picture {
+      height: 100%;
+    }
+
     img {
       width: auto;
+      height: 100%;
     }
 
     .picture-wrapper {

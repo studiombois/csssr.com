@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 
 const base = css`
-  div {
+  & {
     margin-top: 2.5rem;
   }
 

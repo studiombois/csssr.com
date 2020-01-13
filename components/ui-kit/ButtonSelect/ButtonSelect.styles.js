@@ -126,6 +126,7 @@ const whiteButtonStyles = css`
     justify-content: center;
     flex-shrink: 0;
     width: 3rem;
+    height: 3rem;
     background-color: white;
   }
 

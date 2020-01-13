@@ -18,7 +18,7 @@ const Feature1 = ({ className, t, image }) => (
       <span dangerouslySetInnerHTML={{ __html: t('dev:service.text') }} className="description" />
     </p>
     <div className="picture-wrapper">
-      <PictureForAllResolutions className={picture.className} image={image} />
+      <PictureForAllResolutions image={image} />
 
       <p className="font_feature_1">
         <Link href={t('dev:service.mvpLink')}>

@@ -3,16 +3,16 @@ import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 import styles from './DevTools.styles'
 
-const DevTools = (/*{ className }*/) => (
+const DevTools = (/* { className } */) => (
   <Fragment>
-    <div
+    {/* <div
       id="background-for-layout"
-      //  className={cn(className, 'layout-columns-on')}
+       className={cn(className, 'layout-columns-on')}
     />
     <div
       id="background-for-grid"
-      // className={cn(className, 'grid-on')}
-    />
+      className={cn(className, 'grid-on')}
+    /> */}
   </Fragment>
 )
 

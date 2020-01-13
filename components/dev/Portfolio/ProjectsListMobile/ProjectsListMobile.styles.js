@@ -1,6 +1,8 @@
 import { css } from '@emotion/core'
 
 const base = css`
+  display: grid;
+  grid-gap: 0 0.5rem;
   margin-top: 1rem;
 
   img {
@@ -15,6 +17,11 @@ const base = css`
   p {
     margin-top: 0.3125rem;
   }
+
+  h4, p {
+    text-align: left;
+  }
+
 `
 
 const dynamic = ({ projects }) => {

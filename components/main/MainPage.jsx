@@ -2,6 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
+import cn from 'classnames'
 import Text from '../ui-kit/core-design/Text'
 import Heading from '../ui-kit/core-design/Heading'
 import SubHeading from '../ui-kit/core-design/SubHeading'
@@ -15,7 +16,7 @@ import TextareaRegular from '../ui-kit/core-design/TextareaRegular'
 import Layout from '../Layout'
 
 const MainPage = ({ className }) => (
-  <div className={className}>
+  <article className={cn(className, 'my-class')}>
     <Layout>
       <Heading as="h3" type="slab" size="l">
         MainPage
@@ -83,7 +84,7 @@ const MainPage = ({ className }) => (
         `}
       />
     </Layout>
-  </div>
+  </article>
 )
 
 MainPage.propTypes = {

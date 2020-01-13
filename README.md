@@ -7,6 +7,8 @@ Find the most recent version of this guide at [here](https://github.com/segmenti
 
 ## Запуск проекта
 
+Среди зависимостей проекта есть наши приватные npm пакеты, чтобы их установить, надо выполнить инструкцию из статьи https://confluence.csssr.io/display/DT/Nexus
+
 `yarn install`
 
 `yarn dev`

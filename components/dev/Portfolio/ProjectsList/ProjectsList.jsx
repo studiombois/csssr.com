@@ -101,7 +101,6 @@ class ProjectsList extends PureComponent {
     />
   )
 
-  // TODO очень сложный метод, надо подумать как его переделать
   renderAllProjects = () => {
     const projects = this.props.portfolio.reduce((accumulator, projectGroup) => {
       projectGroup.projects.forEach((project, index) => {

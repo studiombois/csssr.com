@@ -55,9 +55,6 @@ i18n
 
         server.use(Sentry.Handlers.requestHandler())
 
-        // TODO
-        // Добавить favicon
-
         server.get('/ru/express', (req, res) => res.redirect(302, '/ru'))
 
         const oldPaths = [

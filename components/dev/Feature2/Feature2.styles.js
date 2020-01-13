@@ -91,9 +91,6 @@ const base = css`
     }
   }
 `
-
-// TODO: перевести на динамические стили. Вставлять стили для ie
-// в зависимости от того isIE11Browser из контекста тру или нет
 const ie11Styles = css`
   h2 {
     -ms-grid-column: 5;

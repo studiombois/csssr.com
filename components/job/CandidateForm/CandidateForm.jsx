@@ -69,12 +69,12 @@ class CandidateForm extends PureComponent {
   static contextType = MsBrowserContext
 
   state = {
-    // TODO такой же элемент стейта есть в ContactForm
+    // такой же элемент стейта есть в ContactForm
     submittedToServer: false,
     isMobile: false,
   }
 
-  // TODO такой же метод есть в ContactForm
+  // такой же метод есть в ContactForm
   handleScroll = () => {
     const messageNode = this.messageRef.current
     const bodyRect = document.body.getBoundingClientRect()
@@ -92,7 +92,7 @@ class CandidateForm extends PureComponent {
     }
   }
 
-  // TODO такой же метод есть в ContactForm
+  // такой же метод есть в ContactForm
   handleSubmit = e => {
     const {
       handleSubmit,
@@ -116,7 +116,7 @@ class CandidateForm extends PureComponent {
     }
   }
 
-  // TODO такой же метод есть в ContactForm
+  // такой же метод есть в ContactForm
   handleAnyValuesChange = ({ values }) => {
     const { initialValues } = this.props
     const wasReset =
@@ -128,12 +128,12 @@ class CandidateForm extends PureComponent {
     }
   }
 
-  // TODO такой же метод есть в ContactForm
+  // такой же метод есть в ContactForm
   handleTryToFillFormAgain = () => {
     this.setState({ submittedToServer: false })
   }
 
-  // TODO такой же метод есть в ContactForm
+  // такой же метод есть в ContactForm
   getStatus = () => {
     const { submitting, submitFailed } = this.props
     const { submittedToServer } = this.state

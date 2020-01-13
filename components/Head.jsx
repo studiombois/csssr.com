@@ -7,8 +7,6 @@ import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 
-// TODO если deplomat передаёт origin или host в env, то использовать эти данные
-// Пока хардкод, решим позже как лучше это сделать
 const origin = 'https://csssr.com'
 
 const Head = props => {

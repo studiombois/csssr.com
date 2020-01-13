@@ -26,7 +26,7 @@ const walkSync = dir => {
         'https://csssr.com/_app',
         'https://csssr.com/_document',
         'https://csssr.com/_error',
-        /** TODO:
+        /**
          * убрать dev из исключений перед выпуском нового дизайна на прод
          * или когда будет известен его url
          * */

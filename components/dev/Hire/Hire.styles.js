@@ -92,9 +92,7 @@ const base = css`
       margin-left: -1rem;
       width: 1360px;
     }
-    /* TODO: написать миксин, который будет подставлять изображения для background для всех
-     * брекйпоинтов для всех pixel-density
-    **/
+
     :global(#main) {
       background-image: url('${require('../../../static/images/dev/1360/dev_line@1x.png')}');
       background-size: 1360px 640px;

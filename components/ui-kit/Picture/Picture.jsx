@@ -1,4 +1,3 @@
-//TODO заменить key на name
 import React from 'react'
 import styled from '@emotion/styled'
 import { string, object } from 'prop-types'
@@ -20,9 +19,6 @@ const Picture = ({ images, ...props }) => {
   )
 }
 
-/**
- * TODO: дописать propTypes
- */
 Picture.propTypes = {
   className: string,
   testid: string,

@@ -1,5 +1,3 @@
-//TODO удалить после перевода всех страниц на новый emotionjs и новый ui-kit
-
 import React, { Fragment } from 'react'
 import { css } from '@emotion/core'
 import { string, shape } from 'prop-types'

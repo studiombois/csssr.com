@@ -41,9 +41,6 @@ const PictureForAllResolutions = ({ className, testid, images, fallback, alt, th
   )
 }
 
-/**
- * TODO: дописать propTypes
- */
 PictureForAllResolutions.propTypes = {
   className: string,
   testid: string,

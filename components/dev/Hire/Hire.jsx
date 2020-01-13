@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import styles from './Hire.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import translate from '../../../utils/translate-wrapper'
-// TODO: заменить везде на новый компонент PictureForAllResolutions из ui-kit
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 
 class Hire extends PureComponent {

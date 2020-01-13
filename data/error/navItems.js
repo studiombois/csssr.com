@@ -1,6 +1,3 @@
-/**
- * TODO: Прописать NavItems как в Header когда мы его начнем делать
- */
 export default {
   // ru: [
   //   {

@@ -1,4 +1,3 @@
-// TODO: переделать на компоненты из core-design
 import React, { Fragment, PureComponent } from 'react'
 import { string, arrayOf, bool, func } from 'prop-types'
 import cn from 'classnames'

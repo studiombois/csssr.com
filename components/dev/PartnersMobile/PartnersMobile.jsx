@@ -1,5 +1,5 @@
 import React from 'react'
-import LinksList from './LinksList'
+import LinksList from '../LinksList'
 import translate from '../../../utils/translate-wrapper'
 import {
   iTcompaniesLinksEn,

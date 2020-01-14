@@ -1,1 +1,1 @@
-export { default } from './Greeting'
+export { default } from './Feature1'

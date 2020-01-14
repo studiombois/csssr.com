@@ -4,7 +4,7 @@ const base = css`
   & {
     display: none;
     position: absolute;
-    z-index: 99999;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;

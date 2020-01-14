@@ -49,6 +49,7 @@ i18n
         'cookiesPolicy',
         'mvp',
         'industry',
+        'main',
       ],
       detection: {
         order: ['pathCookieHeader'],

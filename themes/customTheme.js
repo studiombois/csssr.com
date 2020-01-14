@@ -25,7 +25,7 @@ const customTheme = {
     },
     secondary: {
       origin: secondary.hex(),
-      darken100: secondary.darken(1).hex(),
+      darken100: '#18191B',
       lighten110: secondary.lighten(1.1).hex(),
     },
   },
@@ -42,6 +42,7 @@ const customTheme = {
     desktop: {
       s: `@media (min-width: ${breakpoints.l}px) and (max-width: ${breakpoints.s_xl}px)`,
       m: `@media (min-width: ${breakpoints.xl}px) and (max-width: ${breakpoints.s_xxl}px)`,
+      l: `@media (min-width: ${breakpoints.xxl}px)`,
       all: `@media (min-width: ${breakpoints.l}px)`,
     },
     //to-do странный брейкпоинт

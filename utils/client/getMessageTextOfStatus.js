@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
+import { css } from '@emotion/core'
 
-/**
- * TODO: сделать из этого отдельный компонент
- */
 /* eslint-disable react/display-name */
 export default ({ status, feedbackEmail, errorText, t, tabIndex }) => {
   if (status === 'success') {
@@ -26,22 +24,21 @@ export default ({ status, feedbackEmail, errorText, t, tabIndex }) => {
         {t('common:form.message.fail.body.textBetweenButtonAndLink')}
       </span>
 
-      <a className="font_link-list_16" href={`mailto:${feedbackEmail}`} tabIndex={tabIndex}>
-        {feedbackEmail}
-      </a>
-
-      <style jsx>{`
-        a {
+      <a
+        className="font_link-list_16"
+        href={`mailto:${feedbackEmail}`}
+        tabIndex={tabIndex}
+        css={css`
           text-decoration: none;
-        }
 
-        @media (max-width: 1279px) {
-          a {
+          @media (max-width: 1279px) {
             font-size: 1rem;
             line-height: 1.5rem;
           }
-        }
-      `}</style>
+        `}
+      >
+        {feedbackEmail}
+      </a>
     </Fragment>
   )
 }

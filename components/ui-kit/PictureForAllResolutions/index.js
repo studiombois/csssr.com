@@ -1,3 +1,1 @@
-import PictureForAllResolutions from './PictureForAllResolutions'
-
-export default PictureForAllResolutions
+export { default } from './PictureForAllResolutions'

@@ -35,6 +35,7 @@ module.exports = withSourceMaps({
       options: {
         publicPath: '/_next',
         name: dev ? '[path][name].[ext]' : '[path][name]-[hash:8].[ext]',
+        esModule: false,
       },
     }
 
@@ -71,6 +72,7 @@ module.exports = withSourceMaps({
         name: dev ? '[path][name].[ext]' : '[path][name]-[hash:8].[ext]',
         limit: 8192,
         mimetype: 'image/webp',
+        esModule: false,
       },
     }
 

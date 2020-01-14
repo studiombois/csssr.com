@@ -1,4 +1,3 @@
-//TODO удалить после перевода всех страниц на новый emotionjs и новый ui-kit
 export default (namespace, resolution, key, extension, sizes) => {
   return sizes
     .map(size => {

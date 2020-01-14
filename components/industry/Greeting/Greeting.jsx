@@ -10,6 +10,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Greeting = ({
   className,
+  id,
   content: {
     heading,
     text,
@@ -17,7 +18,7 @@ const Greeting = ({
     images: { desktop_all, desktop_m, desktop_s, tablet_all, mobile_all, fallback, altImg },
   },
 }) => (
-  <Grid className={className} as="section" id="greeting">
+  <Grid className={className} as="section" id={id}>
     <Heading.H1
       type="slab"
       size="l"

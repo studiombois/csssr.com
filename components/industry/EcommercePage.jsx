@@ -20,6 +20,7 @@ const IndustryPage = ({ t }) => {
   return (
     <Layout>
       <Greeting
+        id="greeting"
         content={{
           heading: t('ecommerce:greeting.title'),
           text: t('ecommerce:greeting.paragraph'),

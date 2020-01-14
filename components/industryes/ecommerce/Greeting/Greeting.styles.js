@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
-import calcRem from '../../../utils/style/calcRem'
-import getGridValueForMs from '../../../utils/style/getGridValueForMs'
+import calcRem from '../../../../utils/style/calcRem'
+import getGridValueForMs from '../../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {

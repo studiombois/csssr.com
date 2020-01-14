@@ -1,3 +1,3 @@
-import Ecommerce from '../../../components/industryes/ecommerce/EcommercePage'
+import EcommercePage from '../../../components/industry/EcommercePage'
 
-export default Ecommerce
+export default EcommercePage

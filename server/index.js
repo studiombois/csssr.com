@@ -48,7 +48,7 @@ i18n
         'privacyPolicy',
         'cookiesPolicy',
         'mvp',
-        'industry',
+        'ecommerce',
         'main',
       ],
       detection: {

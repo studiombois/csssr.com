@@ -7,6 +7,7 @@ import Heading from '../../ui-kit/core-design/Heading'
 import Button from '../../ui-kit/core-design/Button'
 import translate from '../../../utils/translate-wrapper'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import greeting_desktop_all from '../../../static/images/industry/desktop.all/greeting.png?responsive'
 import greeting_desktop_m from '../../../static/images/industry/desktop.m/greeting.png?responsive'
@@ -53,6 +54,6 @@ const Greeting = ({ className, t }) => (
   </Grid>
 )
 
-export default styled(translate()(Greeting))`
+export default styled(translate()(MsBrowserConsumer(Greeting)))`
   ${styles}
 `

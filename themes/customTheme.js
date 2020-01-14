@@ -45,7 +45,6 @@ const customTheme = {
       l: `@media (min-width: ${breakpoints.xxl}px)`,
       all: `@media (min-width: ${breakpoints.l}px)`,
     },
-    //to-do странный брейкпоинт
     below: {
       desktop: `@media (max-width: ${breakpoints.s_l}px)`,
     },

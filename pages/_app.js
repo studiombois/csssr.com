@@ -9,6 +9,7 @@ import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
 import MsBrowserProvider from '../utils/msBrowserProvider'
+import DeviceProvider from '../utils/deviceProvider'
 
 export default class MyApp extends App {
   state = {
@@ -122,9 +123,11 @@ export default class MyApp extends App {
         initialLanguage={initialLanguage}
       >
         <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
-          <ThemeProvider theme={customTheme}>
-            <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
-          </ThemeProvider>
+          <DeviceProvider isMobile={this.state.isMobile}>
+            <ThemeProvider theme={customTheme}>
+              <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
+            </ThemeProvider>
+          </DeviceProvider>
         </MsBrowserProvider>
       </I18nextProvider>
     )

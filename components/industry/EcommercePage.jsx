@@ -51,6 +51,7 @@ const IndustryPage = ({ t }) => {
       />
 
       <OurClients
+        id="ourClients"
         content={{
           heading: t('ecommerce:ourClients.title'),
           images: {

@@ -8,15 +8,16 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const OurClients = ({
   className,
+  id,
   content: {
     heading,
     images: { desktop_all, desktop_m, desktop_s, tablet_all, mobile_all, fallback, altImg },
   },
 }) => (
-  <Grid className={className} as="section" id="greeting">
+  <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"
-      size="l"
+      size="m"
       dangerouslySetInnerHTML={{ __html: heading }}
       className="heading"
     />

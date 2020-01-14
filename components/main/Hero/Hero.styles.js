@@ -26,8 +26,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       width: calc(100% - 128px);
       height: 278px;
 
-      outline: 1px solid red;
-
       :hover + .picture {
         background-color: black;
         transition: background-color 100ms ease-out;
@@ -164,6 +162,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints, colors })}
-    ${ie11Styles({ breakpoints })}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

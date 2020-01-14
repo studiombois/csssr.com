@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import styles from './Hero.styles'
 import translate from '../../../utils/translate-wrapper'
 import { DeviceContext } from '../../../utils/deviceProvider'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
@@ -18,7 +19,6 @@ import hero_mobile_webp from '../../../static/images/main/mobile.all/hero.png?re
 
 const Hero = ({ className, t }) => {
   const isMobile = useContext(DeviceContext)
-  console.log('xxx', isMobile)
 
   return (
     <Grid as="article" className={className}>
@@ -56,6 +56,6 @@ Hero.propTypes = {
   className: string,
 }
 
-export default styled(translate()(Hero))`
+export default styled(translate()(MsBrowserConsumer(Hero)))`
   ${styles}
 `

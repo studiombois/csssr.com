@@ -1,27 +1,27 @@
 import { css } from '@emotion/core'
+import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ theme }) => {
   const breakpoints = theme.breakpoints
-  // const media = theme.media
-  // const points = theme.media.points
 
   return (
     css`
       & {
         grid-template-rows: max-content max-content;
-        padding-top: 11rem;
+        padding-top: ${calcRem(240)};
+        margin-bottom: ${calcRem(347)};
 
         .heading {
           grid-column: 2 / span 5;
           grid-row: 1;
-          margin-bottom: 5rem;
+          margin-bottom: ${calcRem(77)};
         }
 
         .text {
           grid-column: 2 / span 5;
           grid-row: 2;
-          margin-bottom: 5rem;
+          margin-bottom: ${calcRem(84)};
         }
 
         .image {
@@ -29,6 +29,7 @@ const base = ({ theme }) => {
           grid-column: 7 / span 5;
           grid-row: 1 / 4;
           z-index: -1;
+          /* //to-to удалить как только придут картинки с фоном */
           border: 1px solid gray;
         }
 
@@ -38,20 +39,22 @@ const base = ({ theme }) => {
         }
 
         ${breakpoints.desktop.m} {
-          padding-top: 11.5rem;
+          padding-top: ${calcRem(197)};
+          margin-bottom: ${calcRem(308)};
 
           .heading {
             grid-column: 2 / span 7;
-            margin-bottom: 5rem;
+            margin-bottom: ${calcRem(84)};
           }
 
           .text {
-            margin-bottom: 4.5rem;
+            margin-bottom: ${calcRem(59)};
           }
 
           .image {
             border: 1px solid gray;
             grid-column: 6 / span 7;
+            margin-top: ${calcRem(42)};
           }
 
           .button {
@@ -60,21 +63,22 @@ const base = ({ theme }) => {
         }
 
         ${breakpoints.desktop.s} {
-          padding-top: 11.5rem;
+          padding-top: ${calcRem(197)};
+          margin-bottom: ${calcRem(224)};
 
           .heading {
             grid-column: 2 / span 7;
-            margin-bottom: 5rem;
+            margin-bottom: ${calcRem(84)};
           }
 
           .text {
             grid-column: 2 / span 5;
-            margin-bottom: 3.5rem;
+            margin-bottom: ${calcRem(57)};
           }
 
           .image {
             grid-column: 6 / span 7;
-            margin-top: 6rem;
+            margin-top: ${calcRem(83)};
           }
 
           .button {
@@ -83,16 +87,18 @@ const base = ({ theme }) => {
         }
 
         ${breakpoints.tablet.all} {
-          padding-top: 11.5rem;
+          padding-top: ${calcRem(184)};
+          margin-bottom: ${calcRem(240)};
 
           .heading {
             grid-column: 2 / span 7;
-            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: ${calcRem(27)};
           }
 
           .text {
             grid-column: 2 / span 5;
-            margin-bottom: 4.5rem;
+            margin-bottom: ${calcRem(74)};
           }
 
           .image {
@@ -105,7 +111,8 @@ const base = ({ theme }) => {
         }
 
         ${breakpoints.mobile.all} {
-          padding-top: 5rem;
+          padding-top: ${calcRem(78)};
+          margin-bottom: ${calcRem(135)};
 
           .heading,
           .text,
@@ -114,11 +121,11 @@ const base = ({ theme }) => {
           }
 
           .heading {
-            margin-bottom: 2rem;
+            margin-bottom: ${calcRem(27)};
           }
 
           .text {
-            margin-bottom: 4rem;
+            margin-bottom: ${calcRem(49)};
           }
 
           .image {

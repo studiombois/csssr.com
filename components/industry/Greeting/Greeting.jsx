@@ -22,8 +22,7 @@ import greeting_mobile_all_webp from '../../../static/images/industry/mobile.all
 
 const Greeting = ({ className, t }) => (
   <Grid className={className} as="section" id="greeting">
-    <Heading
-      as="h3"
+    <Heading.H1
       type="slab"
       size="l"
       dangerouslySetInnerHTML={{ __html: t('industry:greeting.title') }}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './OurClients.styles'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -11,7 +12,8 @@ const OurClients = ({
   id,
   content: {
     heading,
-    images: { desktop_all, desktop_m, desktop_s, tablet_all, mobile_all, fallback, altImg },
+    images,
+    altImg,
   },
 }) => (
   <Grid className={className} as="section" id={id}>
@@ -23,19 +25,19 @@ const OurClients = ({
     />
 
     <PictureForAllResolutions
-      images={{
-        'desktop.all': desktop_all,
-        'desktop.m': desktop_m,
-        'desktop.s': desktop_s,
-        'tablet.all': tablet_all,
-        'mobile.all': mobile_all,
-      }}
-      fallback={fallback}
+      images={images}
+      fallback={images['desktop.all'].png}
       alt={altImg}
       className="image"
     />
   </Grid>
 )
+
+OurClients.propTypes = {
+  className: string,
+  id: string,
+  content: object,
+}
 
 export default styled(MsBrowserConsumer(OurClients))`
   ${styles}

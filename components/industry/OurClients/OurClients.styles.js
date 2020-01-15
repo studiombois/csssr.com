@@ -4,14 +4,13 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    margin-bottom: ${calcRem(352)};
+    margin-top: ${calcRem(347)};
   }
 
   .heading {
     grid-column: 1 / span 12;
     grid-row: 1;
     justify-self: center;
-    margin-bottom: ${calcRem(119)};
   }
 
   .image {
@@ -19,46 +18,44 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 2 / span 11;
     grid-row: 2;
     z-index: -1;
+    margin-top: ${calcRem(119)};
   }
 
   ${desktop.m} {
-    margin-bottom: ${calcRem(278)};
+    margin-top: ${calcRem(308)};
 
-    .heading {
-      margin-bottom: ${calcRem(69)};
+    .image {
+      margin-top: ${calcRem(69)};
     }
   }
 
   ${desktop.s} {
-    margin-bottom: ${calcRem(274)};
+    margin-top: ${calcRem(224)};
 
-    .heading {
-      margin-bottom: ${calcRem(82)};
+    .image {
+      margin-top: ${calcRem(82)};
     }
   }
 
   ${tablet.all} {
-    margin-bottom: ${calcRem(212)};
-
-    .heading {
-      margin-bottom: ${calcRem(78)};
-    }
+    margin-top: ${calcRem(215)};
 
     .image {
+      margin-top: ${calcRem(78)};
       margin-left: -3.5rem;
     }
   }
 
   ${mobile.all} {
-    margin-bottom: ${calcRem(143)};
+    margin-top: ${calcRem(135)};
 
     .heading {
       justify-self: start;
-      margin-bottom: ${calcRem(130)};
     }
 
     .image {
       grid-column: 1 / span 6;
+      margin-top: ${calcRem(130)};
     }
   }
 `

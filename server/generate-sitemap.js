@@ -78,6 +78,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/industry/ecommerce',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/ecommerce',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/ecommerce',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/ecommerce',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/ecommerce',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/ecommerce',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/express',
     changefreq: 'weekly',
     priority: 1,

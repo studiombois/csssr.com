@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "We Code for Good",
+    "description": "We&nbsp;are an&nbsp;international&nbsp;IT company that specializes in&nbsp;front-end web development service and dreams of&nbsp;the stars."
+  },
+  "hero": {
+    "title": "We Code for Good",
+    "description": "We&nbsp;are an&nbsp;international&nbsp;IT company that specializes in&nbsp;<span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> web development service and dreams of&nbsp;the stars."
+  },
+  "imageAlt": {
+    "hero": "Happy astronauts in front of CSSSR logo"
+  }
+}

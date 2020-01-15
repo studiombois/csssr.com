@@ -1,4 +1,5 @@
 import React from 'react'
+import { string, object } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -8,16 +9,7 @@ import Button from '../../ui-kit/core-design/Button'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Greeting = ({
-  className,
-  id,
-  content: {
-    heading,
-    text,
-    button,
-    images: { desktop_all, desktop_m, desktop_s, tablet_all, mobile_all, fallback, altImg },
-  },
-}) => (
+const Greeting = ({ className, id, content: { heading, text, button, images, imgAlt } }) => (
   <Grid className={className} as="section" id={id}>
     <Heading.H1
       type="slab"
@@ -29,21 +21,21 @@ const Greeting = ({
     <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: text }} className="text" />
 
     <PictureForAllResolutions
-      images={{
-        'desktop.all': desktop_all,
-        'desktop.m': desktop_m,
-        'desktop.s': desktop_s,
-        'tablet.all': tablet_all,
-        'mobile.all': mobile_all,
-      }}
-      fallback={fallback}
-      alt={altImg}
+      images={images}
+      fallback={images['desktop.all'].png}
+      alt={imgAlt}
       className="image"
     />
 
     <Button className="button">{button}</Button>
   </Grid>
 )
+
+Greeting.propTypes = {
+  className: string,
+  id: string,
+  content: object,
+}
 
 export default styled(MsBrowserConsumer(Greeting))`
   ${styles}

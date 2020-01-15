@@ -6,19 +6,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     grid-template-rows: max-content max-content;
     padding-top: ${calcRem(240)};
-    margin-bottom: ${calcRem(347)};
   }
 
   .heading {
     grid-column: 2 / span 5;
     grid-row: 1;
-    margin-bottom: ${calcRem(77)};
   }
 
   .text {
     grid-column: 2 / span 5;
     grid-row: 2;
-    margin-bottom: ${calcRem(84)};
+    margin-top: ${calcRem(77)};
   }
 
   .image {
@@ -31,19 +29,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .button {
     grid-column: 2 / span 2;
     grid-row: 3;
+    margin-top: ${calcRem(84)};
   }
 
   ${desktop.m} {
     padding-top: ${calcRem(197)};
-    margin-bottom: ${calcRem(308)};
 
     .heading {
       grid-column: 2 / span 7;
-      margin-bottom: ${calcRem(84)};
     }
 
     .text {
-      margin-bottom: ${calcRem(59)};
+      margin-top: ${calcRem(84)};
     }
 
     .image {
@@ -53,21 +50,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .button {
       grid-column: 2 / span 3;
+      margin-top: ${calcRem(59)};
     }
   }
 
   ${desktop.s} {
     padding-top: ${calcRem(197)};
-    margin-bottom: ${calcRem(224)};
 
     .heading {
       grid-column: 2 / span 7;
-      margin-bottom: ${calcRem(84)};
     }
 
     .text {
       grid-column: 2 / span 5;
-      margin-bottom: ${calcRem(57)};
+      margin-top: ${calcRem(84)};
     }
 
     .image {
@@ -77,22 +73,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .button {
       grid-column: 2 / span 3;
+      margin-top: ${calcRem(57)};
     }
   }
 
   ${tablet.all} {
     padding-top: ${calcRem(184)};
-    margin-bottom: ${calcRem(240)};
 
     .heading {
       grid-column: 2 / span 7;
       margin-top: 1rem;
-      margin-bottom: ${calcRem(27)};
     }
 
     .text {
       grid-column: 2 / span 5;
-      margin-bottom: ${calcRem(74)};
+      margin-top: ${calcRem(27)};
     }
 
     .image {
@@ -101,12 +96,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .button {
       grid-column: 2 / span 3;
+      margin-top: ${calcRem(74)};
     }
   }
 
   ${mobile.all} {
     padding-top: ${calcRem(78)};
-    margin-bottom: ${calcRem(135)};
 
     .heading,
     .text,
@@ -114,16 +109,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 1 / span 6;
     }
 
-    .heading {
-      margin-bottom: ${calcRem(27)};
-    }
-
     .text {
-      margin-bottom: ${calcRem(49)};
+      margin-top: ${calcRem(27)};
     }
 
     .image {
       display: none;
+    }
+
+    .button {
+      margin-top: ${calcRem(49)};
     }
   }
 `

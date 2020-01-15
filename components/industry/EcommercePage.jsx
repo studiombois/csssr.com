@@ -2,9 +2,10 @@ import React from 'react'
 import { func } from 'prop-types'
 import Layout from '../Layout'
 import Greeting from './Greeting'
+import Facts from './Facts'
 import withI18next from '../../utils/withI18next'
 import translate from '../../utils/translate-wrapper'
-import { greetingImages } from '../../data/industry/images/ecommerce'
+import { greetingImages, factsImages } from '../../data/industry/images/ecommerce'
 
 const IndustryPage = ({ t }) => {
   return (
@@ -17,6 +18,38 @@ const IndustryPage = ({ t }) => {
           button: t('ecommerce:greeting.button'),
           images: greetingImages,
           imgAlt: t('ecommerce:imgAlt.greeting'),
+        }}
+      />
+
+      <Facts
+        id="facts"
+        content={{
+          heading: t('ecommerce:facts.heading'),
+          subHeading: t('ecommerce:facts.subHeading'),
+          images: factsImages,
+          imgAlt: t('ecommerce:imgAlt.facts'),
+          factItems: [
+            {
+              number: t('ecommerce:facts.firstItem.number'),
+              text: t('ecommerce:facts.firstItem.text'),
+              className: 'first-item',
+            },
+            {
+              number: t('ecommerce:facts.secondItem.number'),
+              text: t('ecommerce:facts.secondItem.text'),
+              className: 'second-item',
+            },
+            {
+              number: t('ecommerce:facts.thirdItem.number'),
+              text: t('ecommerce:facts.thirdItem.text'),
+              className: 'third-item',
+            },
+            {
+              number: t('ecommerce:facts.fourthItem.number'),
+              text: t('ecommerce:facts.fourthItem.text'),
+              className: 'fourth-item',
+            },
+          ],
         }}
       />
     </Layout>

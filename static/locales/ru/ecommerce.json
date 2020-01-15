@@ -4,11 +4,32 @@
     "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript. And dream of the stars."
   },
   "imgAlt": {
-    "greeting": "Illustration with two figures of people, a man conveys something to a girl"
+    "greeting": "Illustration with two figures of people, a man conveys something to a girl",
+    "facts": "Alt text for illustartion"
   },
   "greeting": {
     "title": "Custom eCommerce <br/>Development Services",
-    "paragraph": "In&nbsp;the constantly growing and highly competitive industry of&nbsp;eCommerce every page, every metric, and every user&rsquo;s opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing web site, that will boost your sales.",
+    "paragraph": "In&nbsp;the constantly growing and highly competitive industry of eCommerce every page, every metric, and every user&rsquo;s opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing web site, that will boost your sales.",
     "button": "Get in touch"
+  },
+  "facts": {
+    "title": "Development With a&nbsp;Personal Approach",
+    "subTitle": "Regardless of&nbsp;the size and duration of&nbsp;your project, you will get a&nbsp;personalized service and flexible conditions.",
+    "firstItem": {
+      "number": "3-7",
+      "fact": "specialists <br/>in a team"
+    },
+    "secondItem": {
+      "number": "2w - ∞",
+      "fact": "possible project <br/>duration"
+    },
+    "thirdItem": {
+      "number": "150+",
+      "fact": "professionals"
+    },
+    "fourthItem": {
+      "number": "500+",
+      "fact": "projects done"
+    }
   }
 }

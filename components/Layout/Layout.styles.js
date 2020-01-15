@@ -44,10 +44,6 @@ export default {
       position: relative;
     }
 
-    #main {
-      overflow-x: hidden;
-    }
-
     .grid-container {
       display: grid;
       align-content: start;

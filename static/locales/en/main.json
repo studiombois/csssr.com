@@ -7,7 +7,27 @@
     "title": "We Code for Good",
     "description": "We&nbsp;are an&nbsp;international&nbsp;IT company that specializes in&nbsp;<span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> web development service and dreams of&nbsp;the stars."
   },
+  "services": {
+    "title": "We&nbsp;Create Web Services<br />for Millions to&nbsp;Use",
+    "link": "more",
+    "outsourcing": {
+      "title": "<span style=\"font-weight: bold;\">Outsourcing</span> Front&#8209;end",
+      "subtitle": "Front-end development for large companies"
+    },
+    "express": {
+      "title": "<span style=\"font-weight: bold;\">Express</span> Front&#8209;end",
+      "subtitle": "Fixed-cost service for fast web projects"
+    },
+    "mvp": {
+      "title": "<span style=\"font-weight: bold;\">MVP</span> Development",
+      "subtitle": "Only essential functionality to&nbsp;test business ideas"
+    }
+  },
   "imageAlt": {
-    "hero": "Happy astronauts in front of CSSSR logo"
+    "hero": "Happy astronauts in front of CSSSR logo",
+    "square": "Square figure",
+    "triangle": "Triangle figure",
+    "circle": "Circle figure",
+    "figures": "Square, Triangle and Circle figures in a pile "
   }
 }

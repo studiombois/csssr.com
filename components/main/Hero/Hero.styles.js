@@ -28,12 +28,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
       :hover + .picture {
         background-color: black;
-        transition: background-color 100ms ease-out;
       }
     }
 
   .picture {
     width: 100%;
+    transition: background-color 100ms ease-out;
   }
 
   .description {

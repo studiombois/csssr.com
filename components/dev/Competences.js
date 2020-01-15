@@ -512,7 +512,6 @@ class Competences extends PureComponent {
           .logos-sheet {
             top: calc(100% + 37.3125rem);
             left: 0;
-            z-index: -1;
           }
 
           .lng_en .logos-sheet {

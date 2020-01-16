@@ -1,10 +1,14 @@
 import React from 'react'
 import { func } from 'prop-types'
 import Layout from '../Layout'
-import Greeting from './Greeting'
 import withI18next from '../../utils/withI18next'
 import translate from '../../utils/translate-wrapper'
-import { greetingImages } from '../../data/industry/images/ecommerce'
+
+import Greeting from './Greeting'
+import OurClients from './OurClients'
+
+import { greetingImages } from '../../data/industry/ecommerce/images/greeting'
+import { ourClientsImages } from '../../data/industry/ecommerce/images/logos'
 
 const IndustryPage = ({ t }) => {
   return (
@@ -17,6 +21,15 @@ const IndustryPage = ({ t }) => {
           button: t('ecommerce:greeting.button'),
           images: greetingImages,
           imgAlt: t('ecommerce:imgAlt.greeting'),
+        }}
+      />
+
+      <OurClients
+        id="ourClients"
+        content={{
+          heading: t('ecommerce:ourClients.title'),
+          images: ourClientsImages,
+          altImg: t('ecommerce:imgAlt.ourClients'),
         }}
       />
     </Layout>

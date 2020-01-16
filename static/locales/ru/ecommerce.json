@@ -1,14 +1,15 @@
 {
   "meta": {
-    "title": "We Create Web Services for Millions",
-    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript. And dream of the stars."
+    "title": "Мы создаем веб-сервисы для миллионов",
+    "description": "Наша специальность - аутсорсинг веб-разработки. Мы привносим логику в мир с помощью JavaScript. И мечтать о звездах."
   },
   "imgAlt": {
-    "greeting": "Illustration with two figures of people, a man conveys something to a girl"
+    "greeting": "Иллюстрация с двумя фигурами людей, мужчина передает что-то девушке",
+    "facts": "Альтернативный текст для иллюстрации"
   },
   "greeting": {
-    "title": "Custom eCommerce <br/>Development Services",
-    "paragraph": "In&nbsp;the constantly growing and highly competitive industry of&nbsp;eCommerce every page, every metric, and every user&rsquo;s opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing web site, that will boost your sales.",
-    "button": "Get in touch"
-  }
+    "title": "Индивидуальная электронная коммерция <br/> Услуги по разработке",
+    "paragraph": "В постоянно растущей и высококонкурентной индустрии электронной коммерции огромную роль играет каждая страница, каждая метрика и мнение каждого пользователя. Мы готовы превратить ваши макеты дизайна в хорошо работающий веб-сайт, который увеличит ваши продажи.",
+    "button": "Связаться"
+  },
 }

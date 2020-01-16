@@ -325,14 +325,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 `
 
-const ie11Styles = ({ breakpoints: { desktop }}) => css`
-  .title {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(6)};
+const ie11Styles = ({ breakpoints: { mobile }}) => css`
+  .title_main {
+    -ms-grid-column: ${getGridValueForMs(3)};
+    -ms-grid-column-span: ${getGridValueForMs(8)};
   }
 
-  ${desktop.l} {
+  .navigation {
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(5)};
+  }
+  .picture-wrapper {
+    -ms-grid-column: ${getGridValueForMs(8)};
+  }
 
+  ${mobile.all} {
+    .title_main {
+      -ms-grid-column: ${getGridValueForMs(1)};
+      -ms-grid-column-span: ${getGridValueForMs(6)};
+    }
   }
 `
 

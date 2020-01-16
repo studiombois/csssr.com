@@ -14,6 +14,7 @@ import DeviceProvider from '../utils/deviceProvider'
 export default class MyApp extends App {
   state = {
     isMobile: false,
+    isTablet: false,
   }
 
   // This reports errors before rendering, when fetching initial props
@@ -78,8 +79,13 @@ export default class MyApp extends App {
 
   componentDidMount() {
     this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-    this.mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(this.mobileMediaQuery)
+    this.mobileMediaQuery.addListener(this.handleMobileMediaMatch)
+    this.handleMobileMediaMatch(this.mobileMediaQuery)
+
+    this.tabletMediaQuery = window.matchMedia('(max-width: 1280px)')
+    this.tabletMediaQuery.addListener(this.handleTableMediaMatch)
+    this.handleTableMediaMatch(this.tabletMediaQuery)
+
     window.addEventListener('keydown', function(event) {
       if (event.which === 9) {
         document.body.classList.add('outline')
@@ -93,22 +99,29 @@ export default class MyApp extends App {
     Router.events.on('routeChangeComplete', this.handleRouteChange)
   }
 
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMobileMediaMatch)
+    this.tabletMediaQuery.removeListener(this.handleTableMediaMatch)
+
+    Router.events.off('routeChangeComplete', this.handleRouteChange)
+  }
+
+  handleMobileMediaMatch = ({ matches }) =>
+    this.setState({
+      isMobile: matches,
+    })
+
+  handleTableMediaMatch = ({ matches }) =>
+    this.setState({
+      isTablet: matches,
+    })
+
   handleRouteChange = () => {
     if (window.dataLayer) {
       // setTimeout для того чтобы страница успела отрендериться и поменялся title
       setTimeout(() => window.dataLayer.push({ event: 'route_change_complete' }))
     }
   }
-
-  componentWillUnmount() {
-    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
-    Router.events.off('routeChangeComplete', this.handleRouteChange)
-  }
-
-  handleMediaMatch = ({ matches }) =>
-    this.setState({
-      isMobile: matches,
-    })
 
   render() {
     const { Component, pageProps } = this.props
@@ -123,8 +136,10 @@ export default class MyApp extends App {
         initialLanguage={initialLanguage}
       >
         <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
-          <DeviceProvider isMobile={this.state.isMobile}>
+          <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
             <ThemeProvider theme={customTheme}>
+              {/* У Component isMobile прокидывается явно для обратной совместимости  */}
+              {/* TODO: перевести все компоненты на isMobile из контекста */}
               <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
             </ThemeProvider>
           </DeviceProvider>

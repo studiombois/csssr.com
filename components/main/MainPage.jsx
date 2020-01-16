@@ -1,8 +1,9 @@
 import React from 'react'
 import { string } from 'prop-types'
+import Layout from '../Layout'
 import Hero from './Hero'
 import Services from './Services'
-import Layout from '../Layout'
+import Industries from './Industries'
 import Head from '../Head'
 import withI18next from '../../utils/withI18next'
 
@@ -11,6 +12,7 @@ const MainPage = ({ t }) => (
     <Head title={t('main:meta.title')} description={t('main:meta.description')} />
     <Hero />
     <Services />
+    <Industries />
   </Layout>
 )
 

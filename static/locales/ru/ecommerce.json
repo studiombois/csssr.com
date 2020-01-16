@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "We Create Web Services for Millions",
-    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript. And dream of the stars."
+    "title": "Мы создаем веб-сервисы для миллионов",
+    "description": "Наша специальность - аутсорсинг веб-разработки. Мы привносим логику в мир с помощью JavaScript. И мечтать о звездах."
   },
   "imgAlt": {
-    "greeting": "Illustration with two figures of people, a man conveys something to a girl",
-    "facts": "Alt text for illustartion"
+    "greeting": "Иллюстрация с двумя фигурами людей, мужчина передает что-то девушке",
+    "facts": "Альтернативный текст для иллюстрации"
   },
   "greeting": {
     "title": "Custom eCommerce <br/>Development Services",
@@ -13,23 +13,23 @@
     "button": "Get in touch"
   },
   "facts": {
-    "title": "Development With a&nbsp;Personal Approach",
-    "subTitle": "Regardless of&nbsp;the size and duration of&nbsp;your project, you will get a&nbsp;personalized service and flexible conditions.",
+    "title": "Разработка с индивидуальным подходом",
+    "subTitle": "Независимо от размера и продолжительности вашего проекта, вы получите индивидуальное обслуживание и гибкие условия.",
     "firstItem": {
       "number": "3-7",
-      "fact": "specialists <br/>in a team"
+      "fact": "Специалисты <br/>в команде"
     },
     "secondItem": {
       "number": "2w - ∞",
-      "fact": "possible project <br/>duration"
+      "fact": "Возможная продолжительность <br/>проекта"
     },
     "thirdItem": {
       "number": "150+",
-      "fact": "professionals"
+      "fact": "профессионалов"
     },
     "fourthItem": {
       "number": "500+",
-      "fact": "projects done"
+      "fact": "проекты выполнены"
     }
   }
 }

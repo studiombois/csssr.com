@@ -5,7 +5,8 @@ import Greeting from './Greeting'
 import Facts from './Facts'
 import withI18next from '../../utils/withI18next'
 import translate from '../../utils/translate-wrapper'
-import { greetingImages, factsImages } from '../../data/industry/images/ecommerce'
+import { greetingImages } from '../../data/industry/ecommerce/images/greeting'
+import { factsImages } from '../../data/industry/ecommerce/images/facts'
 
 const IndustryPage = ({ t }) => {
   return (

@@ -6,7 +6,10 @@
   "imgAlt": {
     "greeting": "Illustration with two figures of people, a man conveys something to a girl",
     "ourClients": "Сompany logos of our customers",
-    "facts": "Alt text for illustartion"
+    "facts": "Alt text for illustartion",
+    "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
+    "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
+    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat."
   },
   "greeting": {
     "title": "Custom eCommerce <br/>Development Services",
@@ -34,6 +37,22 @@
     "fourthItem": {
       "number": "500+",
       "text": "projects done"
+    }
+  },
+  "coreValues": {
+    "heading": "Core Values",
+    "subHeading": "We follow the highest standards of web development and apply best practices for each project",
+    "firstItem": {
+      "link": "Accessibility",
+      "text": "Did you know that up&nbsp;to&nbsp;20% of&nbsp;all users have special needs when using the Internet? A&nbsp;web application should not only be&nbsp;well written, so&nbsp;that only developers can appreciate&nbsp;it, but first of&nbsp;all, should be&nbsp;well delivered, so&nbsp;that every user can enjoy it&nbsp;on&nbsp;every level. We&nbsp;care. You can be&nbsp;sure that everybody will have an&nbsp;equal access to&nbsp;your product."
+    },
+    "secondItem": {
+      "link": "Web Security",
+      "text": "Web applications should not only be&nbsp;well written, reliable, user-friendly but also business secure. We&nbsp;understand that a&nbsp;small vulnerability in&nbsp;an&nbsp;application can lead to&nbsp;significant financial and reputational risks. One incorrectly implemented authorization or&nbsp;payment form can lead to&nbsp;hacking and extraction of&nbsp;user or&nbsp;company data. From the very beginning, we&nbsp;think very carefully about the code architecture and pay special attention to&nbsp;this issue, even if&nbsp;there is&nbsp;a&nbsp;security audit on&nbsp;the client side."
+    },
+    "thirdItem": {
+      "link": "UX",
+      "text": "We&nbsp;understand how important little things in&nbsp;design are, and we&nbsp;can do&nbsp;pixel-perfect development. But we&nbsp;never forget about user-friendliness. Developing your designs we&nbsp;are basically the first users of&nbsp;your product and we&nbsp;pay a&nbsp;lot of&nbsp;attention to&nbsp;the&nbsp;UX details that can seriously affect the users&rsquo; opinion. Perfectionism must be&nbsp;smart."
     }
   }
 }

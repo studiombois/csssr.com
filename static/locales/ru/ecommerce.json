@@ -5,31 +5,35 @@
   },
   "imgAlt": {
     "greeting": "Иллюстрация с двумя фигурами людей, мужчина передает что-то девушке",
+    "ourClients": "Логотипы компаний нашихх клиентов",
     "facts": "Альтернативный текст для иллюстрации"
   },
   "greeting": {
-    "title": "Custom eCommerce <br/>Development Services",
-    "paragraph": "In&nbsp;the constantly growing and highly competitive industry of eCommerce every page, every metric, and every user&rsquo;s opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing web site, that will boost your sales.",
-    "button": "Get in touch"
+    "title": "Индивидуальная электронная коммерция <br/> Услуги по разработке",
+    "paragraph": "В постоянно растущей и высококонкурентной индустрии электронной коммерции огромную роль играет каждая страница, каждая метрика и мнение каждого пользователя. Мы готовы превратить ваши макеты дизайна в хорошо работающий веб-сайт, который увеличит ваши продажи.",
+    "button": "Связаться"
+  },
+  "ourClients": {
+    "title": "Наши клиенты"
   },
   "facts": {
-    "title": "Разработка с индивидуальным подходом",
-    "subTitle": "Независимо от размера и продолжительности вашего проекта, вы получите индивидуальное обслуживание и гибкие условия.",
+    "heading": "Разработка с индивидуальным подходом",
+    "subHeading": "Независимо от размера и продолжительности вашего проекта, вы получите индивидуальное обслуживание и гибкие условия.",
     "firstItem": {
       "number": "3-7",
-      "fact": "Специалисты <br/>в команде"
+      "text": "Специалисты <br/>в команде"
     },
     "secondItem": {
       "number": "2w - ∞",
-      "fact": "Возможная продолжительность <br/>проекта"
+      "text": "Возможная продолжительность <br/>проекта"
     },
     "thirdItem": {
       "number": "150+",
-      "fact": "профессионалов"
+      "text": "профессионалов"
     },
     "fourthItem": {
       "number": "500+",
-      "fact": "проекты выполнены"
+      "text": "проекты выполнены"
     }
   }
 }

@@ -60,44 +60,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   }
 
-  .picture-wrapper {
-    position: sticky;
-    top: 129px;
-    margin-top: 129px;
-    grid-column: 8;
-    width: 456px;
-  }
-
-  .picture:not(.picture_figures) {
-    position: absolute;
-    left: 50%;
-    opacity: 0;
-    transform: translateX(calc(-50% + 8px));
-    transition: opacity 100ms ease-out;
-
-    &.picture_is_visible {
-      opacity: 1;
-    }
-  }
-
-  .picture_square {
-    top: 0;
-    z-index: 1;
-    width: 186px;
-  }
-
-  .picture_triangle {
-    top: 174px;
-    z-index: 2;
-    width: 246px;
-  }
-
-  .picture_circle {
-    top: 367px;
-    z-index: 3;
-    width: 223px;
-  }
-
   @media (pointer: fine) {
     .service:hover .service-icon_circle {
       fill: #F5565F;
@@ -150,10 +112,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     .service-icon {
       left: 36px;
     }
-
-    .picture-wrapper {
-      margin-left: -32px;
-    }
   }
 
   ${desktop.s} {
@@ -167,10 +125,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .service-icon {
       left: 28px;
-    }
-
-    .picture-wrapper {
-      margin-left: -16px;
     }
   }
 
@@ -193,17 +147,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: ${calcRem(101)};
     }
 
-    .picture-wrapper {
-      top: ${calcRem(105)};
-      margin-top: ${calcRem(105)};
-      margin-left: ${calcRem(-26)};
-      width: ${calcRem(324)};
-    }
-
-    .picture_figures {
-      width: 100%;
-    }
-
     .service:not(:first-of-type) {
       margin-top: ${calcRem(100)};
     }
@@ -214,26 +157,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .service-link {
       margin-top: ${calcRem(24)};
-    }
-
-    .picture:not(.picture_figures) {
-      transform: translateX(calc(-50% + 0.375rem));
-      opacity: 1;
-    }
-
-    .picture_square {
-      top: 0;
-      width: ${calcRem(132)};
-    }
-
-    .picture_triangle {
-      top: ${calcRem(123)};
-      width: ${calcRem(176)};
-    }
-
-    .picture_circle {
-      top: ${calcRem(260)};
-      width: ${calcRem(158)}
     }
 
     .service-icon_circle {
@@ -262,6 +185,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${mobile.all} {
+    & {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: 22.5rem;
+      overflow-x: hidden;
+    }
+
     .title_main {
       grid-column: 1 / span 6;
       margin-top: ${calcRem(102)};
@@ -334,9 +264,6 @@ const ie11Styles = ({ breakpoints: { mobile }}) => css`
   .navigation {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
-  }
-  .picture-wrapper {
-    -ms-grid-column: ${getGridValueForMs(8)};
   }
 
   ${mobile.all} {

@@ -32,8 +32,8 @@ const Hero = ({ className, t, isMobile }) => (
       <PictureForAllResolutions
         className="picture"
         images={{
-          'desktop.all': { png: hero_desktop, webp: hero_desktop_webp },
           'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
+          'desktop.all': { png: hero_desktop, webp: hero_desktop_webp },
         }}
         fallback={hero_desktop}
         alt={t('main:imageAlt.hero')}

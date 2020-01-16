@@ -21,6 +21,16 @@
     "mvp": {
       "title": "<span style=\"font-weight: bold;\">MVP</span> Development",
       "subtitle": "Only essential functionality to&nbsp;test business ideas"
+    },
+    "ourFeatures": {
+      "feature1": {
+        "text": "It&nbsp;is&nbsp;attention to&nbsp;detail and well-established processes that makes the difference between average and successful projects.",
+        "link": "Read about processes"
+      },
+      "feature2": {
+        "text": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tool. We&nbsp;keep a&nbsp;close eye on&nbsp;emerging web development trends, but do&nbsp;not forget about best practices",
+        "link": "Read about technologies"
+      }
     }
   },
   "imageAlt": {
@@ -28,6 +38,7 @@
     "square": "Square figure",
     "triangle": "Triangle figure",
     "circle": "Circle figure",
-    "figures": "Square, Triangle and Circle figures in a pile"
+    "figures": "Square, Triangle and Circle figures in a pile",
+    "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly"
   }
 }

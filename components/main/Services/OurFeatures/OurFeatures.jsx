@@ -32,7 +32,7 @@ const OurFeatures = ({ className, t }) => {
       <PictureForAllResolutions
         className="picture"
         images={images}
-        fallback={images['desktop.all'].png}
+        fallback={images['desktop.l'].png}
         alt={t('main:imageAlt.ourFeatures')}
       />
 

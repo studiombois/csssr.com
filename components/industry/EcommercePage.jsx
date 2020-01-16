@@ -7,7 +7,8 @@ import translate from '../../utils/translate-wrapper'
 import Greeting from './Greeting'
 import OurClients from './OurClients'
 
-import { greetingImages, ourClientsImages } from '../../data/industry/images/ecommerce'
+import { greetingImages } from '../../data/industry/ecommerce/images/greeting'
+import { ourClientsImages } from '../../data/industry/ecommerce/images/logos'
 
 const IndustryPage = ({ t }) => {
   return (

@@ -11,7 +11,7 @@ export default [
     iconName: 'circle',
     title: 'main:services.outsourcing.title',
     subtitle: 'main:services.outsourcing.subtitle',
-    href: '/',
+    href: 'outsourcing-front-end',
   },
   {
     id: 'express',
@@ -19,7 +19,7 @@ export default [
     iconName: 'triangle',
     title: 'main:services.express.title',
     subtitle: 'main:services.express.subtitle',
-    href: '/',
+    href: 'express-front-end',
   },
   {
     id: 'mvp',
@@ -27,6 +27,6 @@ export default [
     iconName: 'square',
     title: 'main:services.mvp.title',
     subtitle: 'main:services.mvp.subtitle',
-    href: '/',
+    href: '/mvp-development ',
   },
 ]

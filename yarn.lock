@@ -937,10 +937,17 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.7.tgz#194769ca8d6d7790ec23605af9ee3e42a0aa79cf"
   integrity sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
+"@babel/runtime@^7.5.5":
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.3.tgz#0811944f73a6c926bb2ad35e918dcc1bfab279f1"
+  integrity sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -977,10 +984,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@csssr/core-design@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.0.0.tgz#fb74fb3739831a44004004535ae93d0c5e35896e"
-  integrity sha512-8cBtWajr5Kweu56RKlJlplr6PiluyB6PoSaipsjfbelM9QIoB7qX+nmRae9bTcI4EG/vAuUa5wCecAdDejA7+g==
+"@csssr/core-design@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.0.1.tgz#e7aa9b275cc50dbaab224f159a9b31c75eb7efa5"
+  integrity sha512-PIGswJADlSLN0nAfez+ChyMjW2+0GtjWm/vo/g52KvsNVsCsou/DqFROpFY4FGjMoJAjQSxX9HdJCUkpc2Ym0g==
   dependencies:
     "@emotion/styled-base" "^10.0.10"
     color "^3.1.1"

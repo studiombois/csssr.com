@@ -13,7 +13,7 @@
     "check-sitemap": "node -r esm ./server/check-sitemap.js"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.0.0",
+    "@csssr/core-design": "^5.0.1",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",

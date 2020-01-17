@@ -46,7 +46,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "lottie-web": "^5.5.10",
     "next": "^9.1.1",
-    "object-to-formdata": "^2.2.0",
+    "object-to-formdata": "^2.2.1",
     "prop-types": "^15.7.2",
     "prop-types-exact": "^1.2.0",
     "ramda": "^0.26.1",

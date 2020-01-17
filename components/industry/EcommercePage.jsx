@@ -9,13 +9,9 @@ import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
 
-import { greetingImages } from '../../data/industry/ecommerce/images/greeting'
-import { ourClientsImages } from '../../data/industry/ecommerce/images/logos'
-import {
-  coreValuesAccessibilityImages,
-  coreValuesSecurityImages,
-  coreValuesUXImages,
-} from '../../data/industry/ecommerce/images/coreValues'
+import { greetingImages } from '../../data/industry/ecommerce/greeting'
+import { ourClientsImages } from '../../data/industry/ecommerce/logos'
+import coreValues from '../../data/industry/ecommerce/coreValues'
 
 import facts from '../../data/industry/ecommerce/facts'
 
@@ -44,36 +40,7 @@ const IndustryPage = ({ t }) => {
 
       <Facts id="facts" content={facts} />
 
-      <CoreValues
-        id="core-values"
-        content={{
-          heading: t('ecommerce:coreValues.heading'),
-          subHeading: t('ecommerce:coreValues.subHeading'),
-          coreValuesItems: [
-            {
-              images: coreValuesAccessibilityImages,
-              imgAlt: t('ecommerce:imgAlt.coreValuesAccessibility'),
-              link: t('ecommerce:coreValues.firstItem.link'),
-              text: t('ecommerce:coreValues.firstItem.text'),
-              className: 'first-item',
-            },
-            {
-              images: coreValuesSecurityImages,
-              imgAlt: t('ecommerce:imgAlt.coreValuesSecurity'),
-              link: t('ecommerce:coreValues.secondItem.link'),
-              text: t('ecommerce:coreValues.secondItem.text'),
-              className: 'second-item',
-            },
-            {
-              images: coreValuesUXImages,
-              imgAlt: t('ecommerce:imgAlt.coreValuesUX'),
-              link: t('ecommerce:coreValues.thirdItem.link'),
-              text: t('ecommerce:coreValues.thirdItem.text'),
-              className: 'third-item',
-            },
-          ],
-        }}
-      />
+      <CoreValues id="core-values" content={coreValues} />
     </Layout>
   )
 }

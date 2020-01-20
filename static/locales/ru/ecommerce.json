@@ -9,7 +9,10 @@
     "facts": "Альтернативный текст для иллюстрации",
     "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
     "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
-    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat."
+    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat.",
+    "projects_1": "Schematic illustration of a web portal",
+    "projects_2": "Schematic illustration of a web portal",
+    "projects_3": "Schematic illustration of a web portal"
   },
   "greeting": {
     "title": "Индивидуальная электронная коммерция <br/> Услуги по разработке",
@@ -53,6 +56,52 @@
     "thirdItem": {
       "link": "UX",
       "text": "Мы понимаем, насколько важны мелочи в дизайне, и мы можем сделать идеальную пиксельную разработку. Но мы никогда не забываем о удобстве использования. Разрабатывая ваши дизайны, мы в основном являемся первыми пользователями вашего продукта и уделяем большое внимание деталям UX, которые могут серьезно повлиять на мнение пользователей. Перфекционизм должен быть умным."
+    }
+  },
+  "projects": {
+    "heading": "Наши Проекты",
+    "subHeading": "Это правдивые истории. Описанные здесь события произошли в CSSSR в 20XX году. По просьбе клиентов все имена и важные детали были скрыты. Из уважения к команде, остальное было сказано точно так, как это произошло",
+    "firstItem": {
+      "heading": "Телеком Провайдер",
+      "text": "Сайт для крупнейшего модного универмага в Восточной Европе.",
+      "numericData": {
+        "firstItem": {
+          "number": "9",
+          "text": "размер команды"
+        },
+        "secondItem": {
+          "number": "12",
+          "text": "месяцев"
+        }
+      }
+    },
+    "secondItem": {
+      "heading": "Телеком Провайдер",
+      "text": "Интернет-витрина для импортера и дистрибьютора вина",
+      "numericData": {
+        "firstItem": {
+          "number": "4",
+          "text": "размер команды"
+        },
+        "secondItem": {
+          "number": "7",
+          "text": "месяцев"
+        }
+      }
+    },
+    "thirdItem": {
+      "heading": "Телеком Провайдер",
+      "text": "Интерфейс системы терминалов самообслуживания для одного из крупнейших российских интернет-магазинов электроники",
+      "numericData": {
+        "firstItem": {
+          "number": "14",
+          "text": "размер команды"
+        },
+        "secondItem": {
+          "number": "17",
+          "text": "месяцев"
+        }
+      }
     }
   }
 }

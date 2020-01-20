@@ -6,6 +6,28 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     margin-top: ${calcRem(352)};
   }
+
+  .first-item {
+    margin-top: ${calcRem(153)};
+  }
+
+  .second-item {
+    margin-top: ${calcRem(197)};
+  }
+
+  .third-item {
+    margin-top: ${calcRem(218)};
+  }
+
+  .first-item .image {
+    margin-left: ${calcRem(-45)};
+  }
+
+  .third-item .image {
+    margin-top: ${calcRem(-17)};
+    margin-left: ${calcRem(-33)};
+  }
+
   
   .heading {
     grid-column: 1 / span 12;
@@ -20,11 +42,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(31)};
   }
 
+
   ${desktop.m} {
     & {
       margin-top: ${calcRem(307)};
     }
-    
+
+    .second-item {
+      margin-top: ${calcRem(226)};
+    }
+
+    .third-item {
+      margin-top: ${calcRem(226)};
+    }
+
+    .first-item .image {
+      margin-left: ${calcRem(-12)};
+    }
+
+    .third-item .image {
+      margin-top: ${calcRem(-17)};
+      margin-left: 0;
+    }
+
     .heading {
       grid-column: 1 / span 12;
       text-align: center;
@@ -59,8 +99,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(10)};
     }
 
-    .image {
-      margin-top: ${calcRem(71)};
+    .first-item .image {
+      margin-left: ${calcRem(-41)};
+    }
+
+    .second-item .image {
+      margin-right: ${calcRem(-35)};
+    }
+
+    .third-item .image {
+      margin-top: ${calcRem(-17)};
+      margin-left: ${calcRem(-27)};
     }
   }
 
@@ -69,14 +118,39 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(143)};
     }
 
-    .heading,
-    .sub-heading {
+    .heading {
       grid-column: 1 / span 6;
       text-align: start;
     }
 
     .sub-heading {
-      margin-top: ${calcRem(10)};
+      display: none;
+    }
+
+    .first-item {
+      margin-top: ${calcRem(90)};
+    }
+
+    .second-item {
+      margin-top: ${calcRem(112)};
+    }
+
+    .third-item {
+      margin-top: ${calcRem(106)};
+    }
+
+    .first-item .image {
+      margin-left: ${calcRem(-9)};
+    }
+
+    .second-item .image {
+      width: ${calcRem(339)};
+    }
+
+    .third-item .image {
+      margin-top: 0;
+      margin-left: ${calcRem(-12)};
+      width: ${calcRem(350)};
     }
   }
 `

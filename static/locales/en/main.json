@@ -74,6 +74,31 @@
     },
     "link": "Read more"
   },
+  "projects": {
+    "title": "Our projects",
+    "tracker": {
+      "title": "CSSSR.Tracker",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+    },
+    "school": {
+      "title": "CSSSR.School",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+    },
+    "blog": {
+      "title": "CSSSR.Blog",
+      "description": "Здесь нет менеджеров,  фронтенд-разработчиков  и тестировщиков.",
+      "post1": {
+        "title": "10 Tips and Best Practices for Accurately Task Estimating",
+        "description": "Над каждым проектом трудится минимум три специалиста - менеджер, фронтенд-разработчик и тестировщик.",
+        "link": "Read more"
+      },
+      "post2": {
+        "title": "Stimulators of the Programmer's Work. Environment",
+        "description": "Над каждым проектом трудится минимум три специалиста - менеджер, фронтенд-разработчик и тестировщик.",
+        "link": "Read more"
+      }
+    }
+  },
   "imageAlt": {
     "hero": "Happy astronauts in front of CSSSR logo",
     "square": "Square figure",
@@ -88,5 +113,8 @@
     "aboutUs": "A man hugging a heart with «Do» written on him",
     "volleyball": "CSSSR Teams after Volleyball Tournament",
     "elbrus": "CSSSR flag on Elbrus",
+    "tracker": "A man who does his job productively",
+    "school": "Robot in a bachelor's hat",
+    "blog": "The man who reads the news"
   }
 }

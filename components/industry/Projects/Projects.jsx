@@ -11,7 +11,7 @@ import ProjectsItem from '../ProjectsItem'
 
 const Projects = ({ t, className, id, content: { heading, subHeading, projectsItems } }) => (
   <section className={className} id={id}>
-    <Grid as="div">
+    <Grid>
       <Heading.H2
         type="slab"
         size="l"

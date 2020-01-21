@@ -45,8 +45,8 @@ const LinkWithNextLink = styled(Link)`
   ${({ type, size }) => type && size && fonts[type][size]}
 `
 
-const LinkWrapper = ({ next, as, passHref, prefetch, replace, scroll, ...props }) => {
-  if (next) {
+const LinkWrapper = ({ isNextLink, as, passHref, prefetch, replace, scroll, ...props }) => {
+  if (isNextLink) {
     return (
       <LinkWithNextLink
         as={as}

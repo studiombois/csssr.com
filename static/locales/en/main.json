@@ -53,6 +53,27 @@
       "description": "We&nbsp;deliver a&nbsp;high-quality viewer experience with zero-fault approach"
     }
   },
+  "aboutUs": {
+    "title": "We&nbsp;Really Love</br>What We",
+    "description": "CSSSR.Pte.Ltd is&nbsp;a&nbsp;group of&nbsp;companies. Headquartered in&nbsp;Singapore, we&nbsp;work in&nbsp;a&nbsp;fully distributed way, which helps&nbsp;us to&nbsp;make projects better and stay happy",
+    "fact1": {
+      "title": "2012",
+      "description": "year of&nbsp;foundation"
+    },
+    "fact2": {
+      "title": "500+",
+      "description": "projects are completed"
+    },
+    "fact3": {
+      "title": "150+",
+      "description": "people are involved"
+    },
+    "fact4": {
+      "title": "1",
+      "description": " on&nbsp;top of&nbsp;Elbrus is&nbsp;set"
+    },
+    "link": "Read more"
+  },
   "imageAlt": {
     "hero": "Happy astronauts in front of CSSSR logo",
     "square": "Square figure",
@@ -63,6 +84,9 @@
     "fintech": "Woman holding credit cards",
     "eCommerce": "Two people helping each other carry the product",
     "information": "Browser window",
-    "mediaAndMarketing": "Several people interacting with each other in front of computer"
+    "mediaAndMarketing": "Several people interacting with each other in front of computer",
+    "aboutUs": "A man hugging a heart with «Do» written on him",
+    "volleyball": "CSSSR Teams after Volleyball Tournament",
+    "elbrus": "CSSSR flag on Elbrus",
   }
 }

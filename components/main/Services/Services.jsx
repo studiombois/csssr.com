@@ -80,14 +80,8 @@ const Services = ({ className, t, lng, isMobile }) => {
                     type="list"
                     size="m"
                     dangerouslySetInnerHTML={{ __html: t('main:services.link') }}
-                    next
+                    isNextLink
                   />
-
-                  {/* <Link as="span" className="service-link" type="list" size="m">
-                    <NextLink href={`${lng}/service/${href}`}>
-                      <a dangerouslySetInnerHTML={{ __html: t('main:services.link') }} />
-                    </NextLink>
-                  </Link> */}
 
                   <Icon className={cn('service-icon', `service-icon_${iconName}`)} />
                 </li>

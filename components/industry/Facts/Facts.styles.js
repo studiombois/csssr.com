@@ -25,7 +25,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .first-item,
-  .third-item  {
+  .third-item {
     grid-column: 8 / span 2;
   }
 
@@ -46,7 +46,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(49)};
   }
 
-  .fact-item {
+  .fact-number {
     white-space: nowrap;
   }
 
@@ -57,7 +57,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .heading {
       grid-column: 2 / span 5;
-      font-size: 3rem;
     }
 
     .sub-heading {
@@ -137,8 +136,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .heading {
-      font-size: 1.5rem;
-      line-height: 2rem;
       grid-column: 2 / span 4;
     }
 

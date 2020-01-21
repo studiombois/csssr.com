@@ -1,5 +1,5 @@
-import ourFeatures_desktop_all from '../../static/images/main/desktop.all/perfect.png?responsive'
-import ourFeatures_desktop_all_webp from '../../static/images/main/desktop.all/perfect.png?responsive_and_webp'
+import ourFeatures_desktop_l from '../../static/images/main/desktop.l/perfect.png?responsive'
+import ourFeatures_desktop_l_webp from '../../static/images/main/desktop.l/perfect.png?responsive_and_webp'
 
 import ourFeatures_desktop_m from '../../static/images/main/desktop.m/perfect.png?responsive'
 import ourFeatures_desktop_m_webp from '../../static/images/main/desktop.m/perfect.png?responsive_and_webp'
@@ -18,5 +18,5 @@ export default {
   'tablet.all': { png: ourFeatures_tablet_all, webp: ourFeatures_tablet_all_webp },
   'desktop.s': { png: ourFeatures_desktop_s, webp: ourFeatures_desktop_s_webp },
   'desktop.m': { png: ourFeatures_desktop_m, webp: ourFeatures_desktop_m_webp },
-  'desktop.all': { png: ourFeatures_desktop_all, webp: ourFeatures_desktop_all_webp },
+  'desktop.l': { png: ourFeatures_desktop_l, webp: ourFeatures_desktop_l_webp },
 }

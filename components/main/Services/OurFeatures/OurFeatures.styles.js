@@ -36,6 +36,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: -120px;
       margin-left: -32px;
       grid-column: 5 / span 5;
+      width: calc(100% + 32px);
     }
   }
 

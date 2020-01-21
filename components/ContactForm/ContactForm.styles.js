@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
 import AnimatedButton from '../ui-kit/core-design/AnimatedButton'
 import Text from '../ui-kit/core-design/Text'
+import calcRem from '../../utils/style/calcRem'
 
 const ie11Styles = css`
   -ms-grid-rows: (auto)[9];
@@ -87,7 +88,8 @@ const ie11Styles = css`
   }
 `
 
-const base = css`
+
+const base = shouldShowSubHeading => css`
   position: relative;
   margin-right: auto;
   margin-left: auto;
@@ -127,6 +129,18 @@ const base = css`
       grid-column: 1 / span 6;
     }
   }
+
+  ${shouldShowSubHeading && `
+    h2 {
+      margin-bottom: ${calcRem(31)};
+    }
+
+    .sub-heading {
+      grid-column: 1 / span 12;
+      text-align: center;
+      margin-bottom: ${calcRem(132)};
+    }
+  `}
 
   .button {
     margin-top: 2.5625rem;
@@ -202,7 +216,7 @@ const base = css`
   }
 `
 
-export default css`
-  ${base}
+export default props => css`
+  ${base(props.shouldShowSubHeading)}
   ${ie11Styles}
 `

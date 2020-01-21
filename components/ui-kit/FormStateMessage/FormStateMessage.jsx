@@ -7,7 +7,7 @@ import styles, {
   textDataStyles,
 } from './FormStateMessage.styles'
 import translate from '../../../utils/translate-wrapper'
-import { oneOf, string, func } from 'prop-types'
+import { oneOf, string, func, bool } from 'prop-types'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 import Picture from '../../Picture'
 
@@ -17,6 +17,7 @@ class FormStateMessage extends PureComponent {
     errorText: string,
     onTryAgain: func,
     feedbackEmail: string,
+    shouldShown: bool,
   }
 
   getTextData = () => {
@@ -51,13 +52,13 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { className, status, testid, successPictureTestid } = this.props
+    const { className, status, testid, successPictureTestid, shouldShown } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 
     return (
       <Fragment>
-        {!messageShown && (
+        {!messageShown && shouldShown && (
           <Picture
             css={hideMessagePictureStyles}
             image={{ namespace: 'dev', key: 'letter', alt: '' }}

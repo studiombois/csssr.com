@@ -8,6 +8,7 @@ import Greeting from './Greeting'
 import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
+import Form from './Form'
 
 import { greetingImages } from '../../data/industry/ecommerce/greeting'
 import { ourClientsImages } from '../../data/industry/ecommerce/logos'
@@ -41,6 +42,8 @@ const IndustryPage = ({ t }) => {
       <Facts id="facts" content={facts} />
 
       <CoreValues id="core-values" content={coreValues} />
+
+      <Form />
     </Layout>
   )
 }

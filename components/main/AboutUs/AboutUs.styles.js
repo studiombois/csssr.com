@@ -312,11 +312,11 @@ export const loveBackgroundImagesStyles = theme => {
 
   return css`
     ${desktop.all} {
-      ${getBackgroundImageSrcSet({ png: image_do, webp: image_do_webp}, '.picture-wrapper')}
+      ${getBackgroundImageSrcSet({ png: image_do, webp: image_do_webp}, '.about-us .picture-wrapper')}
     }
 
     ${tablet.all} {
-      ${getBackgroundImageSrcSet({ png: image_do, webp: image_do_webp}, '.picture-wrapper')}
+      ${getBackgroundImageSrcSet({ png: image_do, webp: image_do_webp}, '.about-us .picture-wrapper')}
     }
   `
 }

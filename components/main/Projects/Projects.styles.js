@@ -40,7 +40,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     order: 5;
   }
 
-  .card_radio .picture {
+  .card_radio .card-picture {
     z-index: 1;
     pointer-events: none;
   }
@@ -268,31 +268,37 @@ const ie11Styles = ({ breakpoints: { desktop,  mobile }}) => css`
   .title {
     -ms-grid-column: ${getGridValueForMs(3)};
     -ms-grid-column-span: ${getGridValueForMs(8)};
+    -ms-grid-row: 1;
   }
 
   .card_tracker {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 2;
   }
 
   .card_school {
     -ms-grid-column: ${getGridValueForMs(9)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
+    -ms-grid-row: 2;
   }
 
   .card_blog {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
+    -ms-grid-row: 3;
   }
 
   .card_radio {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(10)};
+    -ms-grid-row: 4;
   }
 
   .posts {
     -ms-grid-column: ${getGridValueForMs(6)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 3;
   }
 
   ${desktop.l} {
@@ -318,6 +324,27 @@ const ie11Styles = ({ breakpoints: { desktop,  mobile }}) => css`
       -ms-grid-column: ${getGridValueForMs(1)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
     }
+
+    .card_tracker {
+      -ms-grid-row: 2;
+    }
+
+    .card_school {
+      -ms-grid-row: 3;
+    }
+
+    .card_blog {
+      -ms-grid-row: 4;
+    }
+
+    .posts {
+      -ms-grid-row: 5;
+    }
+
+    .card_radio {
+      -ms-grid-row: 6;
+    }
+
   }
 `
 

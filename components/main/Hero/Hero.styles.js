@@ -127,16 +127,19 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
   .title {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 1;
   }
 
   .picture-wrapper  {
     -ms-grid-column: ${getGridValueForMs(1)};
     -ms-grid-column-span: ${getGridValueForMs(11)};
+    -ms-grid-row: 2;
   }
 
   .description {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 3;
   }
 
   ${desktop.l} {

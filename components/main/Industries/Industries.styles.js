@@ -111,6 +111,24 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
     -ms-grid-column: ${getGridValueForMs(8)};
   }
 
+  .title {
+    -ms-grid-row: 1;
+  }
+
+  .subtitle {
+    -ms-grid-row: 2;
+  }
+
+  .card:nth-of-type(1),
+  .card:nth-of-type(2) {
+    -ms-grid-row: 3;
+  }
+
+  .card:nth-of-type(3),
+  .card:nth-of-type(4) {
+    -ms-grid-row: 4;
+  }
+
   ${desktop.s} {
     .subtitle {
       -ms-grid-column: ${getGridValueForMs(3)};
@@ -131,6 +149,23 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
       -ms-grid-column: ${getGridValueForMs(1)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
     }
+
+    .card:nth-of-type(1) {
+      -ms-grid-row: 3;
+    }
+
+    .card:nth-of-type(2) {
+      -ms-grid-row: 4;
+    }
+
+    .card:nth-of-type(3) {
+      -ms-grid-row: 5;
+    }
+
+    .card:nth-of-type(4) {
+      -ms-grid-row: 6;
+    }
+
   }
 `
 

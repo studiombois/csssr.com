@@ -12,6 +12,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .title {
     margin-top: 213px;
     color: ${colors.secondary.darken100};
+    z-index: 1;
   }
 
   .list {
@@ -121,7 +122,21 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     -ms-grid-column-span: ${getGridValueForMs(4)};
   }
 
+  .title {
+    -ms-grid-row: 1;
+  }
+
+  .list {
+    -ms-grid-row: 2;
+  }
+
+  .link {
+    display: block;
+    -ms-grid-row: 3;
+  }
+
   .picture {
+    -ms-grid-row: 1;
     -ms-grid-row-span: 4
   }
 
@@ -171,7 +186,20 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       -ms-grid-column: ${getGridValueForMs(2)};
       -ms-grid-column-span: ${getGridValueForMs(4)};
-      -ms-grid-row-span: auto;
+      -ms-grid-row: 4;
+      -ms-grid-row-span: 1;
+    }
+
+    .title {
+      -ms-grid-row: 1;
+    }
+
+    .list {
+      -ms-grid-row: 2;
+    }
+
+    .link {
+      -ms-grid-row: 3;
     }
   }
 `

@@ -90,6 +90,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 const ie11Styles = css`
   & {
     -ms-grid-column: ${getGridValueForMs(8)};
+    -ms-grid-row: 2;
   }
 `
 

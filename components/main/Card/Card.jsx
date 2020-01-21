@@ -29,14 +29,14 @@ const Card = ({
   const CardBody = () => (
     <Fragment>
       <PictureForAllResolutions
-        className={cn('picture', `picture_${id}`)}
+        className={cn('card-picture', `card-picture_${id}`)}
         images={images}
         fallback={fallback}
         alt={t(`main:imageAlt.${id}`)}
       />
 
       <Heading
-        className="title"
+        className="card-title"
         as="h3"
         dangerouslySetInnerHTML={{ __html: t(title) }}
         type="regular"
@@ -44,14 +44,14 @@ const Card = ({
       />
 
       <Text
-        className="description"
+        className="card-description"
         as="p"
         dangerouslySetInnerHTML={{ __html: t(description) }}
         type="regular"
         size="m"
       />
 
-      <ArrowIcon className="icon" />
+      <ArrowIcon className="card-icon" />
       <div className="break" />
     </Fragment>
   )

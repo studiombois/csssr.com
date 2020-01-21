@@ -67,6 +67,8 @@ Vacancies.propTypes = {
   t: func,
 }
 
-export default styled(translate()(MsBrowserConsumer(Vacancies)))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Vacancies)`
+    ${styles}
+  `),
+)

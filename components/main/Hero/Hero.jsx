@@ -52,6 +52,10 @@ Hero.propTypes = {
   className: string,
 }
 
-export default styled(translate()(DeviceConsumer(MsBrowserConsumer(Hero))))`
-  ${styles}
-`
+export default translate()(
+  DeviceConsumer(
+    MsBrowserConsumer(styled(Hero)`
+      ${styles}
+    `),
+  ),
+)

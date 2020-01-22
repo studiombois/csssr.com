@@ -38,6 +38,8 @@ Figures.propTypes = {
   hoveredService: string,
 }
 
-export default styled(translate()(MsBrowserConsumer(Figures)))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Figures)`
+    ${styles}
+  `),
+)

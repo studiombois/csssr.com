@@ -59,6 +59,8 @@ OurFeatures.propTypes = {
   t: func,
 }
 
-export default styled(translate()(MsBrowserConsumer(OurFeatures)))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(OurFeatures)`
+    ${styles}
+  `),
+)

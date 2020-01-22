@@ -51,11 +51,6 @@ export default {
       grid-gap: 0 32px;
     }
 
-    :global(.ie11) .grid-container {
-      display: -ms-grid;
-      -ms-grid-columns: 120px (32px 120px)[11];
-    }
-
     ul.have-square-bullets li {
       position: relative;
       padding-left: 1rem;

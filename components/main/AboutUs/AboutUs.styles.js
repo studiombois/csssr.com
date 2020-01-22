@@ -70,7 +70,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: 32px;
     grid-column: 1 / span 6;
     grid-row-end: span 4;
-    background-size: 100%;
+    background-size: 99% !important;
   }
 
   .picture_elbrus,
@@ -241,18 +241,20 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
   .about-us-title {
     -ms-grid-column: ${getGridValueForMs(3)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
+    -ms-grid-row: 1;
   }
 
   .about-us-description {
     -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: ${getGridValueForMs(1)};
+    -ms-grid-row: 1;
     -ms-grid-row-span: 3;
   }
 
   .picture-wrapper {
     -ms-grid-column: ${getGridValueForMs(1)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 2;
     -ms-grid-row-span: 4;
   }
 
@@ -266,11 +268,29 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
     &:nth-of-type(2n) {
       -ms-grid-column: ${getGridValueForMs(9)};
     }
+
+    &:nth-of-type(1) {
+      -ms-grid-row: 4;
+    }
+
+    &:nth-of-type(2) {
+      -ms-grid-row: 4;
+    }
+
+    &:nth-of-type(3) {
+      -ms-grid-row: 5;
+    }
+
+    &:nth-of-type(4) {
+      -ms-grid-row: 5;
+    }
   }
 
   .link {
     -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
+    -ms-grid-row: 6;
+    display: block;
   }
 
   ${desktop.l} {
@@ -288,6 +308,20 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
     .picture {
       -ms-grid-column: ${getGridValueForMs(1)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
+    }
+
+    .about-us-title {
+      -ms-grid-row: 1;
+    }
+
+    .picture-wrapper {
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+    }
+
+    .about-us-description {
+      -ms-grid-row: 3;
+      -ms-grid-row-span: 1;
     }
 
     .fact {

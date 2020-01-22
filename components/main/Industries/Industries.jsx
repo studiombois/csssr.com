@@ -54,6 +54,8 @@ Industries.propTypes = {
   t: func,
 }
 
-export default styled(translate()(MsBrowserConsumer(Industries)))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Industries)`
+    ${styles}
+  `),
+)

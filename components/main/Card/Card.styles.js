@@ -8,32 +8,32 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     cursor: pointer;
   }
 
-  .picture {
+  .card-picture {
     order: 1;
     width: 100%;
     flex-shrink: 0;
   }
 
-  .title,
-  .description {
+  .card-title,
+  .card-description {
     text-align: left;
     color: ${colors.secondary.darken100};
   }
 
-  .title {
+  .card-title {
     margin-top: 32px;
     order: 2;
   }
 
-  .description {
+  .card-description {
     margin-top: 15px;
     width: 75%;
     flex-shrink: 0;
     order: 5;
   }
 
-  .title,
-  .icon {
+  .card-title,
+  .card-icon {
     align-self: baseline;
   }
 
@@ -43,7 +43,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     order: 4;
   }
 
-  .icon {
+  .card-icon {
     margin-left: 16px;
     opacity: 0;
     order: 3;
@@ -51,31 +51,31 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
-    .title {
+    .card-title {
       margin-top: ${calcRem(22)};
     }
 
-    .description {
+    .card-description {
       margin-top: ${calcRem(9)};
       width: 100%;
     }
 
-    .icon {
+    .card-icon {
       display: none;
     }
   }
 
   ${mobile.all} {
-    .title {
+    .card-title {
       margin-top: ${calcRem(22)};
     }
 
-    .description {
+    .card-description {
       margin-top: ${calcRem(9)};
       width: 100%;
     }
 
-    .icon {
+    .card-icon {
       display: none;
     }
   }
@@ -85,13 +85,13 @@ const dynamic = canHoverAllCard => css`
   @media (pointer: fine) {
     ${canHoverAllCard
       ? `
-        &:hover .icon {
+        &:hover .card-icon {
           opacity: 1;
         }
       `
       : `
-        .description:hover ~ .icon,
-        .title:hover ~ .icon{
+        .card-description:hover ~ .card-icon,
+        .card-title:hover ~ .card-icon{
           opacity: 1;
         }
       `

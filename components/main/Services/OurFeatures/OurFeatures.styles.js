@@ -114,12 +114,34 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .feature_1 + .link {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
+    display: block;
   }
 
   .feature_2,
   .feature_2 + .link {
     -ms-grid-column: ${getGridValueForMs(5)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    display: block;
+  }
+
+  .feature_1 {
+    -ms-grid-row: 3;
+  }
+
+  .feature_1 + .link {
+    -ms-grid-row: 4;
+  }
+
+  .picture {
+    -ms-grid-row: 5;
+  }
+
+  .feature_2 {
+    -ms-grid-row: 6;
+  }
+
+  .feature_2 + .link {
+    -ms-grid-row: 7;
   }
 
   ${desktop.l} {

@@ -4,7 +4,7 @@
 
 ### Релиз
 * https://jira.csssr.io/projects/COM/versions/__HERE_JIRA_VERSION_ID__
-* стенд: http://release-__HERE_JIRA_RELEASE_ID__.test.csssr.com
+* стенд: http://release-__HERE_JIRA_RELEASE_ID__.csssr.cloud
 
 ## Чек-лист
 - [ ] PR в ветку релиза
@@ -12,7 +12,6 @@
 - [ ] Стенды собрались и работают
 - [ ] Код работает полностью согласно описанию задачи
 - [ ] eslint и dev-консоль браузера без ошибок
-- [ ] текстовые блоки выровнены по бейзлайну
 
 ## Дополнительно
 * документация по добавленным библиотекам

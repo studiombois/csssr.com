@@ -259,11 +259,13 @@ const ie11Styles = ({ breakpoints: { mobile }}) => css`
   .title_main {
     -ms-grid-column: ${getGridValueForMs(3)};
     -ms-grid-column-span: ${getGridValueForMs(8)};
+    -ms-grid-row: 1;
   }
 
   .navigation {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
+    -ms-grid-row: 2;
   }
 
   ${mobile.all} {

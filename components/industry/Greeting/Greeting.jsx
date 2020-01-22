@@ -37,6 +37,6 @@ Greeting.propTypes = {
   content: object,
 }
 
-export default styled(MsBrowserConsumer(Greeting))`
+export default MsBrowserConsumer(styled(Greeting)`
   ${styles}
-`
+`)

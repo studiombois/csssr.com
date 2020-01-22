@@ -45,6 +45,8 @@ CoreValues.propTypes = {
   factItems: array,
 }
 
-export default styled(translate()(MsBrowserConsumer(CoreValues)))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(CoreValues)`
+    ${styles}
+  `),
+)

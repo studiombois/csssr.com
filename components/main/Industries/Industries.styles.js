@@ -18,6 +18,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     color: ${colors.secondary.darken100};
   }
 
+  .card {
+    margin-top: 76px;
+    grid-column-end: span 4;
+  }
+
+  .card:nth-of-type(2n+1) {
+    grid-column-start: 2;
+  }
+
+  .card:nth-of-type(2n) {
+    grid-column-start: 8;
+  }
+
+  .card:nth-of-type(n + 3) {
+    margin-top: 81px;
+  }
+
+  @media (pointer: fine) {
+    .card:hover .icon {
+      opacity: 1;
+    }
+  }
+
   ${desktop.s} {
     .subtitle {
       grid-column: 3 / span 8;
@@ -25,6 +48,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
+    .card,
+    .card:nth-of-type(n + 3) {
+      margin-top: ${calcRem(56)};
+    }
+
     .title {
       margin-top: ${calcRem(160)};
     }
@@ -35,6 +63,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${mobile.all} {
+    .card,
+    .card:nth-of-type(2n+1),
+    .card:nth-of-type(2n) {
+      grid-column: 1 / span 6;
+    }
+
+    .card {
+      margin-top: ${calcRem(31)};
+    }
+
+    .card:not(:first-of-type) {
+      margin-top: ${calcRem(73)};
+    }
+
     .title,
     .subtitle {
       grid-column: 1 / span 6;
@@ -57,6 +99,18 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
+  .card {
+    -ms-grid-column-span: ${getGridValueForMs(4)};
+  }
+
+  .card:nth-of-type(2n+1) {
+    -ms-grid-column: ${getGridValueForMs(2)};
+  }
+
+  .card:nth-of-type(2n) {
+    -ms-grid-column: ${getGridValueForMs(8)};
+  }
+
   ${desktop.s} {
     .subtitle {
       -ms-grid-column: ${getGridValueForMs(3)};
@@ -67,6 +121,13 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
   ${mobile.all} {
     .title,
     .subtitle {
+      -ms-grid-column: ${getGridValueForMs(1)};
+      -ms-grid-column-span: ${getGridValueForMs(6)};
+    }
+
+    .card,
+    .card:nth-of-type(2n+1),
+    .card:nth-of-type(2n) {
       -ms-grid-column: ${getGridValueForMs(1)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
     }

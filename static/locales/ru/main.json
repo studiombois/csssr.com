@@ -75,6 +75,35 @@
     },
     "link": "Подробнее"
   },
+  "projects": {
+    "title": "Наши проекты",
+    "tracker": {
+      "title": "CSSSR.Tracker",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+    },
+    "school": {
+      "title": "CSSSR.School",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+    },
+    "blog": {
+      "title": "CSSSR.Blog",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков.",
+      "post1": {
+        "title": "Точная оценка задач: 10 советов и рекомендаций",
+        "description": "How do you stop guessing and start progressing: through trial and error, we have created a set of rules to improve the accuracy of our estimates. ",
+        "link": "Read more"
+      },
+      "post2": {
+        "title": "Stimulators of the Programmer's Work. Environment",
+        "description": "Split-stack web development is a rising trend. The key question is whether it is a good idea.",
+        "link": "Read more"
+      }
+    },
+    "radio": {
+      "title": "<a href=\"/\" target=\"_blank\" rel\"noopener nofollow\" style=\"color: inherit;\">CSSSR.Radio</a>",
+      "description": "<a href=\"/\" target=\"_blank\" rel\"noopener nofollow\" style=\"color: inherit;\">Еженедельные подборки новостей, интервью с представителями индустрии и советы путешественниками</a>"
+    }
+  },
   "imageAlt": {
     "hero": "Счастливые космонавты на фоне лого CSSSR",
     "square": "Фигура квадрата",
@@ -88,6 +117,10 @@
     "mediaAndMarketing": "Несколько взаимодействующий между собой людей перед компьютером",
     "aboutUs": "Человек обнимающий сердце c надписью «Делаем»",
     "volleyball": "Команды CSSSR после турнира по волейболу",
-    "elbrus": "Флаг CSSSR на Эльбрусе"
+    "elbrus": "Флаг CSSSR на Эльбрусе",
+    "tracker": "Человек продуктивно выполняющий свою работу",
+    "school": "Робот в шапке бакалавра",
+    "blog": "Человек, читающий новости",
+    "radio": "Завернувшийся в плед человек с кружкой чая"
   }
 }

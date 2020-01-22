@@ -247,13 +247,13 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
     -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
     -ms-grid-row: ${getGridValueForMs(1)};
-    -ms-grid-row-span: ${getGridValueForMs(3)};
+    -ms-grid-row-span: 3;
   }
 
   .picture-wrapper {
     -ms-grid-column: ${getGridValueForMs(1)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
-    -ms-grid-row-span: ${getGridValueForMs(4)};
+    -ms-grid-row-span: 4;
   }
 
   .fact {

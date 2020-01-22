@@ -100,6 +100,10 @@
       }
     }
   },
+  "vacancies": {
+    "title": "Ready to&nbsp;<span style=\"font-style: italic;\">join our team</span> and and enjoy all the benefits of&nbsp;remote work on&nbsp;a&nbsp;full-time basis?",
+    "link": "All our vacancies"
+  },
   "imageAlt": {
     "hero": "Happy astronauts in front of CSSSR logo",
     "square": "Square figure",
@@ -116,6 +120,7 @@
     "elbrus": "CSSSR flag on Elbrus",
     "tracker": "A man who does his job productively",
     "school": "Robot in a bachelor's hat",
-    "blog": "The man who reads the news"
+    "blog": "The man who reads the news",
+    "vacancies": "Happy faces of people"
   }
 }

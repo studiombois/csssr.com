@@ -9,7 +9,10 @@
     "facts": "Alt text for illustartion",
     "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
     "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
-    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat."
+    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat.",
+    "projects_1": "Schematic illustration of a web portal",
+    "projects_2": "Schematic illustration of a web portal",
+    "projects_3": "Schematic illustration of a web portal"
   },
   "greeting": {
     "title": "Custom eCommerce <br/>Development Services",
@@ -53,6 +56,52 @@
     "thirdItem": {
       "link": "UX",
       "text": "We&nbsp;understand how important little things in&nbsp;design are, and we&nbsp;can do&nbsp;pixel-perfect development. But we&nbsp;never forget about user-friendliness. Developing your designs we&nbsp;are basically the first users of&nbsp;your product and we&nbsp;pay a&nbsp;lot of&nbsp;attention to&nbsp;the&nbsp;UX details that can seriously affect the users&rsquo; opinion. Perfectionism must be&nbsp;smart."
+    }
+  },
+  "projects": {
+    "heading": "Our projects",
+    "subHeading": "This is&nbsp;the true stories. The events described here took place in&nbsp;CSSSR in&nbsp;20XX. At&nbsp;the request of&nbsp;the clients, all names and important details have been hidden. Out of&nbsp;respect for the team, the rest has been told exactly as&nbsp;it&nbsp;occurred",
+    "firstItem": {
+      "heading": "Telecom Provider",
+      "text": "Website for the largest fashion department store in&nbsp;Eastern Europe.",
+      "numericData": {
+        "firstItem": {
+          "number": "9",
+          "text": "team size"
+        },
+        "secondItem": {
+          "number": "12",
+          "text": "month"
+        }
+      }
+    },
+    "secondItem": {
+      "heading": "Telecom Provider",
+      "text": "Online storefront for wine importer and distributor",
+      "numericData": {
+        "firstItem": {
+          "number": "4",
+          "text": "team size"
+        },
+        "secondItem": {
+          "number": "7",
+          "text": "month"
+        }
+      }
+    },
+    "thirdItem": {
+      "heading": "Telecom Provider",
+      "text": "Interface of&nbsp;self service terminal system for one of&nbsp;the largest Russian online electronics retailers",
+      "numericData": {
+        "firstItem": {
+          "number": "14",
+          "text": "team size"
+        },
+        "secondItem": {
+          "number": "17",
+          "text": "month"
+        }
+      }
     }
   }
 }

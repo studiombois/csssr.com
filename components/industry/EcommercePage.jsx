@@ -9,12 +9,13 @@ import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
 import Form from './Form'
+import Projects from './Projects'
 
 import { greetingImages } from '../../data/industry/ecommerce/greeting'
 import { ourClientsImages } from '../../data/industry/ecommerce/logos'
 import coreValues from '../../data/industry/ecommerce/coreValues'
-
 import facts from '../../data/industry/ecommerce/facts'
+import projects from '../../data/industry/ecommerce/projects'
 
 const IndustryPage = ({ t }) => {
   return (
@@ -42,6 +43,8 @@ const IndustryPage = ({ t }) => {
       <Facts id="facts" content={facts} />
 
       <CoreValues id="core-values" content={coreValues} />
+
+      <Projects id="projects" content={projects} />
 
       <Form />
     </Layout>

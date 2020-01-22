@@ -30,7 +30,6 @@ class ContactForm extends PureComponent {
     headerId: string,
     shouldScroll: bool,
     shouldShowStatusMessage: bool,
-    shouldShownImgStatusMessage: bool,
     onSubmitResolve: func,
     fields: arrayOf(string),
   }
@@ -39,7 +38,6 @@ class ContactForm extends PureComponent {
     formName: 'contact',
     shouldScroll: true,
     shouldShowStatusMessage: true,
-    shouldShownImgStatusMessage: true,
     shouldShowSubHeading: false,
   }
 
@@ -275,7 +273,6 @@ class ContactForm extends PureComponent {
             type="submit"
             status={status}
             testid={`${formName}:button.callbackForm.submit`}
-            // btnContainerTestid={`${formName}:block.btnContainer`}
           >
             <Text type="perforator" size="m" className="button-content" as="span">
               {t(`${pageName}:form.submitText`)}

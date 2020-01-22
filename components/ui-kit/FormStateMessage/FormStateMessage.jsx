@@ -7,7 +7,7 @@ import styles, {
   textDataStyles,
 } from './FormStateMessage.styles'
 import translate from '../../../utils/translate-wrapper'
-import { oneOf, string, func, bool } from 'prop-types'
+import { oneOf, string, func } from 'prop-types'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 import Picture from '../../Picture'
 
@@ -17,7 +17,6 @@ class FormStateMessage extends PureComponent {
     errorText: string,
     onTryAgain: func,
     feedbackEmail: string,
-    shouldShown: bool,
   }
 
   getTextData = () => {

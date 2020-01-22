@@ -95,7 +95,7 @@ const AboutUs = ({ className, isMobile, isTablet, t, lng }) => {
                 onMouseOver={handleHover('elbrus')}
                 onMouseLeave={handleHover(null)}
               >
-                {lng === 'ru' ? 'флаг' : 'flag'}
+                {t(`main:aboutUs.${id}.hero`)}
               </span>
             )}
             {unescapeHtmlEntities(t(`main:aboutUs.${id}.description`))}

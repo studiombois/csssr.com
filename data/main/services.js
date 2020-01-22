@@ -27,6 +27,6 @@ export default [
     iconName: 'square',
     title: 'main:services.mvp.title',
     subtitle: 'main:services.mvp.subtitle',
-    href: '/mvp-development ',
+    href: 'mvp-development ',
   },
 ]

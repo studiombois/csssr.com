@@ -239,7 +239,6 @@ class ContactForm extends PureComponent {
       className,
       shouldShowSubHeading,
       shouldShowStatusMessage,
-      shouldShownImgStatusMessage,
       headerId,
       fields,
       feedbackEmail,
@@ -293,7 +292,6 @@ class ContactForm extends PureComponent {
               feedbackEmail={feedbackEmail}
               testid={`${formName}:text.successMessage`}
               successPictureTestid={`${formName}:picture.successMessageImg`}
-              shouldShown={shouldShownImgStatusMessage}
             />
           </div>
         )}

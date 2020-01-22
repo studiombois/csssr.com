@@ -89,7 +89,7 @@ const ie11Styles = css`
 `
 
 
-const base = shouldShowSubHeading => css`
+const base = ({ shouldShowSubHeading }) => css`
   position: relative;
   margin-right: auto;
   margin-left: auto;
@@ -217,6 +217,6 @@ const base = shouldShowSubHeading => css`
 `
 
 export default props => css`
-  ${base(props.shouldShowSubHeading)}
+  ${base(props)}
   ${ie11Styles}
 `

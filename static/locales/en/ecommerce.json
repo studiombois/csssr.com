@@ -54,16 +54,5 @@
       "link": "UX",
       "text": "We&nbsp;understand how important little things in&nbsp;design are, and we&nbsp;can do&nbsp;pixel-perfect development. But we&nbsp;never forget about user-friendliness. Developing your designs we&nbsp;are basically the first users of&nbsp;your product and we&nbsp;pay a&nbsp;lot of&nbsp;attention to&nbsp;the&nbsp;UX details that can seriously affect the users&rsquo; opinion. Perfectionism must be&nbsp;smart."
     }
-  },
-  "form": {
-    "title": "Let’s Talk",
-    "subTitle": "please provide your contact details and we will respond shortly",
-    "namePlaceholder": "Jhon Lenin",
-    "emailPlaceholder": "lenin@gmail.com",
-    "messagePlaceholder": "Comment",
-    "messageLabel": "comment",
-    "emailLabel": "E-mail",
-    "nameLabel": "YOUR NAME",
-    "submitText": "SEND"
   }
 }

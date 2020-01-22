@@ -52,13 +52,13 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { className, status, testid, successPictureTestid, shouldShown } = this.props
+    const { className, status, testid, successPictureTestid } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 
     return (
       <Fragment>
-        {!messageShown && shouldShown && (
+        {!messageShown && (
           <Picture
             css={hideMessagePictureStyles}
             image={{ namespace: 'dev', key: 'letter', alt: '' }}

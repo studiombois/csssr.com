@@ -4,6 +4,7 @@ import Layout from '../Layout'
 import Hero from './Hero'
 import Services from './Services'
 import Industries from './Industries'
+import AboutUs from './AboutUs'
 import Head from '../Head'
 import withI18next from '../../utils/withI18next'
 
@@ -13,6 +14,7 @@ const MainPage = ({ t }) => (
     <Hero />
     <Services />
     <Industries />
+    <AboutUs />
   </Layout>
 )
 

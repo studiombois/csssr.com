@@ -13,7 +13,7 @@ import circle from '../../../static/images/main/circle.png?responsive'
 import circle_webp from '../../../static/images/main/circle.png?responsive_and_webp'
 
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
   align-items: start;
 
   .title_main {
@@ -57,7 +57,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   .service-link {
     display: block;
     margin-top: 28px;
-
+    cursor: pointer;
   }
 
   @media (pointer: fine) {
@@ -227,10 +227,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .service_mvp::before {
       top: ${calcRem(-40)};
-      left: ${calcRem(-136)};
+      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-136)})` : calcRem(-136)};
       width: ${calcRem(218)};
       height: ${calcRem(218)};
-      transform: scale(-1);
+      transform: ${lng === 'ru' ? `scaleY(-1)` : `scale(-1)`};
     }
 
     .service-icon {
@@ -290,9 +290,10 @@ export const mobileBackgroundImagesStyles = theme => {
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { lng } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, lng })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles, { mobileBackgroundImagesStyles } from './Services.styles'
 
+import NextLink from 'next/link'
 import Figures from './Figures'
 import OurFeatures from './OurFeatures'
 import Heading from '../../ui-kit/core-design/Heading'
@@ -18,7 +19,7 @@ import translate from '../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Services = ({ className, t, isMobile }) => {
+const Services = ({ className, t, lng, isMobile }) => {
   const [hoveredService, setHoveredService] = useState(null)
 
   return (
@@ -44,6 +45,10 @@ const Services = ({ className, t, isMobile }) => {
                 setHoveredService(hoveredService)
               }
 
+              if (lng === 'ru' && id === 'express') {
+                return
+              }
+
               return (
                 <li
                   key={id}
@@ -51,13 +56,15 @@ const Services = ({ className, t, isMobile }) => {
                   onMouseOver={handleHover(iconName)}
                   onMouseLeave={handleHover(null)}
                 >
-                  <Heading
-                    className="service-title"
-                    as="h3"
-                    type="slab"
-                    size="l"
-                    dangerouslySetInnerHTML={{ __html: `<a href=${href}>${t(title)}</a>` }}
-                  />
+                  <Heading className="service-title" as="h3" type="slab" size="l">
+                    <NextLink href={`${lng}/service/${href}`}>
+                      <a
+                        dangerouslySetInnerHTML={{
+                          __html: t(title),
+                        }}
+                      />
+                    </NextLink>
+                  </Heading>
 
                   <Text
                     className="service-subtitle"
@@ -69,10 +76,11 @@ const Services = ({ className, t, isMobile }) => {
 
                   <Link
                     className="service-link"
-                    href="/"
+                    href={`${lng}/service/${href}`}
                     type="list"
                     size="m"
                     dangerouslySetInnerHTML={{ __html: t('main:services.link') }}
+                    isNextLink
                   />
 
                   <Icon className={cn('service-icon', `service-icon_${iconName}`)} />
@@ -95,9 +103,14 @@ const Services = ({ className, t, isMobile }) => {
 Services.propTypes = {
   className: string,
   t: func,
+  lng: string,
   isMobile: bool,
 }
 
-export default styled(translate()(DeviceConsumer(MsBrowserConsumer(Services))))`
-  ${styles}
-`
+export default translate()(
+  DeviceConsumer(
+    MsBrowserConsumer(styled(Services)`
+      ${styles}
+    `),
+  ),
+)

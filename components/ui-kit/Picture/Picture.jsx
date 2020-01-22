@@ -25,7 +25,7 @@ Picture.propTypes = {
   images: object.isRequired,
   fallback: object.isRequired,
   alt: string.isRequired,
-  theme: object.isRequired,
+  theme: object,
 }
 
 export default styled(Picture)`

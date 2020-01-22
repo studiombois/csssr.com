@@ -70,7 +70,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: 32px;
     grid-column: 1 / span 6;
     grid-row-end: span 4;
-    background-size: 100%;
+    background-size: 99% !important;
   }
 
   .picture_elbrus,

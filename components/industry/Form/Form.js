@@ -15,7 +15,6 @@ const ContactFormForIndustry = props => (
     headerId="hire-us"
     fields={['name', 'email', 'message']}
     feedbackEmail="sales@csssr.io"
-    shouldShownImgStatusMessage={false}
     shouldShowSubHeading={true}
     {...props}
   />

@@ -46,6 +46,8 @@ const LinkWithNextLink = styled(Link)`
 `
 
 const LinkWrapper = ({ isNextLink, as, passHref, prefetch, replace, scroll, ...props }) => {
+  // Все ссылки на проекте имеют одинаковый вид
+  // Для ссылок внутри проекта следует использовать isNextLink
   if (isNextLink) {
     return (
       <LinkWithNextLink
@@ -59,6 +61,7 @@ const LinkWrapper = ({ isNextLink, as, passHref, prefetch, replace, scroll, ...p
     )
   }
 
+  // Для ссылок на другие ресурсы подойдут и обычные ссылки
   return <CoreDesignLink {...props} />
 }
 

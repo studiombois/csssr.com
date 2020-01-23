@@ -38,4 +38,4 @@ IndustryPage.propTypes = {
   t: func,
 }
 
-export default withI18next(['ecommerce'])(translate()(IndustryPage))
+export default withI18next(['ecommerce'])(IndustryPage)

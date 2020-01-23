@@ -11,16 +11,15 @@ import getGaCid from '../../../utils/client/getGaCid'
 const ContactFormForIndustry = props => (
   <ContactForm
     imageName="letter"
-    pageName="industry"
     headerId="hire-us"
     fields={['name', 'email', 'message']}
     feedbackEmail="sales@csssr.io"
-    shouldShowSubHeading={true}
+    shouldShowSubHeading
     {...props}
   />
 )
 
-const onSubmit = (t, lng) => async values => {
+const onSubmit = (t, lng, pageName) => async values => {
   values.gacid = getGaCid()
   values.language = lng
   let res
@@ -36,7 +35,7 @@ const onSubmit = (t, lng) => async values => {
     })
   } catch {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_fail' })
+      window.dataLayer.push({ event: `form_${pageName}_fail` })
     }
 
     return { [FORM_ERROR]: t('common:form.errors.general') }
@@ -44,7 +43,7 @@ const onSubmit = (t, lng) => async values => {
 
   if (res.status === 201) {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_success' })
+      window.dataLayer.push({ event: `form_${pageName}_success` })
     }
   } else {
     let error
@@ -56,7 +55,7 @@ const onSubmit = (t, lng) => async values => {
     }
 
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_fail' })
+      window.dataLayer.push({ event: `form_${pageName}_fail` })
     }
 
     return { [FORM_ERROR]: error }
@@ -65,12 +64,13 @@ const onSubmit = (t, lng) => async values => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, lng }) => (
+const Form = ({ t, lng, pageName }) => (
   <ReactFinalForm
     onSubmit={onSubmit(t, lng)}
     validate={contactFormValidationRules(t)}
     decorators={[focusOnErrors]}
     component={ContactFormForIndustry}
+    pageName={pageName}
   />
 )
 

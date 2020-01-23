@@ -103,5 +103,16 @@
         }
       }
     }
+  },
+  "form": {
+    "title": "Давайте поговорим",
+    "subTitle": "пожалуйста, предоставьте свои контактные данные, и мы ответим в ближайшее время",
+    "namePlaceholder": "Джон Ленин",
+    "emailPlaceholder": "lenin@gmail.com",
+    "messagePlaceholder": "Коментарий",
+    "messageLabel": "коментарий",
+    "emailLabel": "E-mail",
+    "nameLabel": "Ваше Имя",
+    "submitText": "ОТПРАВИТЬ"
   }
 }

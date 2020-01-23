@@ -46,7 +46,7 @@ const IndustryPage = ({ t }) => {
 
       <Projects id="projects" content={projects} />
 
-      <Form />
+      <Form pageName="ecommerce" />
     </Layout>
   )
 }
@@ -55,4 +55,4 @@ IndustryPage.propTypes = {
   t: func,
 }
 
-export default withI18next(['ecommerce', 'industry'])(translate()(IndustryPage))
+export default withI18next(['ecommerce'])(translate()(IndustryPage))

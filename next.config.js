@@ -47,6 +47,7 @@ module.exports = withSourceMaps(
           use: [fileLoaderConfig],
         })
       }
+      console.log('XXX', PROCESS_IMAGES, !PROCESS_IMAGES)
 
       const responsiveLoaderConfig = {
         loader: 'image-resolution-loader',

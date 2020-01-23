@@ -52,7 +52,7 @@ module.exports = withSourceMaps(
         options: {
           publicPath: '/_next',
           name: dev ? '[path][name][resolution].[ext]' : '[path][name]-[hash:8][resolution].[ext]',
-          disable: dev,
+          disable: true,
           webp: {
             quality: 75,
           },

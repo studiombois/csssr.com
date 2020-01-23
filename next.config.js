@@ -3,6 +3,7 @@ const withSourceMaps = require('@zeit/next-source-maps')()
 const CompressionPlugin = require('compression-webpack-plugin')
 const withTM = require('next-transpile-modules')(['object-to-formdata'])
 const { ANALYZE } = process.env
+const { PROCESS_IMAGES } = process.env
 
 module.exports = withSourceMaps(
   withTM({
@@ -52,7 +53,7 @@ module.exports = withSourceMaps(
         options: {
           publicPath: '/_next',
           name: dev ? '[path][name][resolution].[ext]' : '[path][name]-[hash:8][resolution].[ext]',
-          disable: true,
+          disable: !PROCESS_IMAGES,
           webp: {
             quality: 75,
           },

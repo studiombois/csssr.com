@@ -32,7 +32,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh "docker build --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          sh "docker build --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} --network host . -t docker.csssr.space/csssr-com:${commit}"
         }
       }
     }

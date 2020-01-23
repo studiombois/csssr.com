@@ -47,14 +47,13 @@ module.exports = withSourceMaps(
           use: [fileLoaderConfig],
         })
       }
-      console.log('XXX', PROCESS_IMAGES, !PROCESS_IMAGES)
 
       const responsiveLoaderConfig = {
         loader: 'image-resolution-loader',
         options: {
           publicPath: '/_next',
           name: dev ? '[path][name][resolution].[ext]' : '[path][name]-[hash:8][resolution].[ext]',
-          disable: !PROCESS_IMAGES,
+          disable: PROCESS_IMAGES === 'true' ? false : true,
           webp: {
             quality: 75,
           },

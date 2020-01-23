@@ -1,5 +1,6 @@
 import React from 'react'
-import { string, object } from 'prop-types'
+import { string, object, func } from 'prop-types'
+import translate from '../../../utils/translate-wrapper'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -9,34 +10,35 @@ import Button from '../../ui-kit/core-design/Button'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Greeting = ({ className, id, content: { heading, text, button, images, imgAlt } }) => (
+const Greeting = ({ t, className, id, content: { heading, text, button, images, imgAlt } }) => (
   <Grid className={className} as="section" id={id}>
     <Heading.H1
       type="slab"
       size="l"
-      dangerouslySetInnerHTML={{ __html: heading }}
+      dangerouslySetInnerHTML={{ __html: t(heading) }}
       className="heading"
     />
 
-    <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: text }} className="text" />
+    <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
 
     <PictureForAllResolutions
       images={images}
       fallback={images['desktop.all'].png}
-      alt={imgAlt}
+      alt={t(imgAlt)}
       className="image"
     />
 
-    <Button className="button">{button}</Button>
+    <Button className="button">{t(button)}</Button>
   </Grid>
 )
 
 Greeting.propTypes = {
+  t: func,
   className: string,
   id: string,
   content: object,
 }
 
-export default styled(MsBrowserConsumer(Greeting))`
+export default styled(translate()(MsBrowserConsumer(Greeting)))`
   ${styles}
 `

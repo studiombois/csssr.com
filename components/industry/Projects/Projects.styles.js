@@ -5,6 +5,7 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     margin-top: ${calcRem(352)};
+    margin-bottom: ${calcRem(210)};
   }
 
   .first-item {
@@ -46,6 +47,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.m} {
     & {
       margin-top: ${calcRem(307)};
+      margin-bottom: ${calcRem(173)};
     }
 
     .second-item {
@@ -81,6 +83,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.s} {
     & {
       margin-top: ${calcRem(312)};
+      margin-bottom: ${calcRem(173)};
     }
     
     .heading {
@@ -93,6 +96,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${tablet.all} {
     & {
       margin-top: ${calcRem(215)};
+      margin-bottom: ${calcRem(117)};
     }
 
     .sub-heading {
@@ -116,6 +120,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${mobile.all} {
     & {
       margin-top: ${calcRem(143)};
+      margin-bottom: ${calcRem(93)};
     }
 
     .heading {

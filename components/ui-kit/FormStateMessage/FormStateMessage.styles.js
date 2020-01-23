@@ -25,7 +25,7 @@ const base = css`
   .picture {
     position: relative;
     margin-top: 3.5rem;
-    flex-grow: 1;
+    flex: none;
   }
 
   @media (max-width: 767px) {

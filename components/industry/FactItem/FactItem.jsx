@@ -3,7 +3,6 @@ import { string, func } from 'prop-types'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
 import translate from '../../../utils/translate-wrapper'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const FactItem = ({ t, number, text, itemClassName }) => (
   <div className={itemClassName}>
@@ -26,4 +25,4 @@ FactItem.propTypes = {
   itemClassName: string,
 }
 
-export default translate()(MsBrowserConsumer(FactItem))
+export default translate()(FactItem)

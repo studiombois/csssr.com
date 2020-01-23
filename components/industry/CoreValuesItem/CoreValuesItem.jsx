@@ -5,7 +5,6 @@ import cn from 'classnames'
 import Text from '../../ui-kit/core-design/Text'
 import Link from '../../ui-kit/core-design/Link'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const CoreValuesItem = ({ t, images, imgAlt, link, text, itemClassName }) => (
   <>
@@ -38,4 +37,4 @@ CoreValuesItem.propTypes = {
   factItems: array,
 }
 
-export default MsBrowserConsumer(translate()(CoreValuesItem))
+export default translate()(CoreValuesItem)

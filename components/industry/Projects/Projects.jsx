@@ -52,6 +52,8 @@ Projects.propTypes = {
   factItems: array,
 }
 
-export default styled(translate()(MsBrowserConsumer(Projects)))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Projects)`
+    ${styles}
+  `),
+)

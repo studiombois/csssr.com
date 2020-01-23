@@ -8,6 +8,7 @@ pipeline {
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
+    boolean(defaultValue: false, description: 'Включить обработку изображений', name: 'processImages', trim: true)
   }
 
   stages {
@@ -17,6 +18,7 @@ pipeline {
 
         echo "Branch: ${GIT_BRANCH}"
         echo "CSSSR_SPACE_ORIGIN: ${params.csssrSpaceOrigin}"
+        echo "PROCESS_IMAGES: ${params.processImages}"
 
         script {
           branch = GIT_BRANCH
@@ -30,7 +32,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh "docker build --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          sh "docker build --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages} --network host . -t docker.csssr.space/csssr-com:${commit}"
         }
       }
     }
@@ -69,7 +71,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} express=csssr-express-fix-com-987
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages} express=csssr-express-fix-com-987
             """
           }
         }

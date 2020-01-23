@@ -8,7 +8,7 @@ pipeline {
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
-    boolean(defaultValue: false, description: 'Включить обработку изображений', name: 'processImages', trim: true)
+    booleanParam(defaultValue: false, description: 'Включить обработку изображений', name: 'processImages', trim: true)
   }
 
   stages {

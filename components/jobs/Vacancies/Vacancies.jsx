@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styled from '@emotion/styled'
 import styles, { pictureStyles, pictureFaqStyles, pictureHunterStyles } from './Vacancies.styles'
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Picture from '../../Picture'
 import Grid from '../../ui-kit/core-design/Grid'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
@@ -145,6 +146,8 @@ class Vacancies extends PureComponent {
   }
 }
 
-export default styled(translate()(Vacancies))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Vacancies)`
+    ${styles}
+  `),
+)

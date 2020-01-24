@@ -179,66 +179,72 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) a {
+  a {
     display: block;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
   }
 
-  :global(.ie11) h1 {
-    grid-column: 2 / span 7;
-    grid-row: 1;
+  h1 {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(7)};
     -ms-grid-row: 1;
   }
 
-  :global(.ie11) h2,
-  :global(.ie11) ul {
+  h2,
+  ul {
     -ms-grid-column: ${getGridValueForMs(10)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
   }
 
-  :global(.ie11) h2 {
+  h2 {
     -ms-grid-row: 2;
   }
 
-  :global(.ie11) &.error-code_500 h2 {
+  &.error-code_500 h2 {
     -ms-grid-column: ${getGridValueForMs(9)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
   }
 
-  :global(.ie11) ul {
+  ul {
     -ms-grid-row: 4;
   }
 
-  :global(.ie11) .code-wrapper {
+  .code-wrapper {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
     -ms-grid-row: 2;
     -ms-grid-row-span: 10;
   }
 
-  :global(.ie11) .arrow-wrapper {
+  .arrow-wrapper {
     -ms-grid-column: ${getGridValueForMs(10)};
     -ms-grid-column-span: ${getGridValueForMs(1)};
     -ms-grid-row: 3;
   }
 
+  .picture {
+    display: block;
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(7)};
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 10;
+  }
+
   @media (min-width: 1360px) and (max-width: 1919px) {
-    :global(.ie11) ul {
+    ul {
       -ms-grid-column: ${getGridValueForMs(10)};
       -ms-grid-column-span: ${getGridValueForMs(3)};
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    :global(.ie11) ul {
+    ul {
       -ms-grid-column: ${getGridValueForMs(10)};
       -ms-grid-column-span: ${getGridValueForMs(3)};
     }
 
-    :global(.ie11) .arrow-wrapper {
+    .arrow-wrapper {
       -ms-grid-column: ${getGridValueForMs(10)};
       -ms-grid-column-span: ${getGridValueForMs(1)};
       -ms-grid-row: 3;
@@ -246,7 +252,7 @@ const ie11Styles = css`
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) ul {
+    ul {
       -ms-grid-column: ${getGridValueForMs(10)};
       -ms-grid-column-span: ${getGridValueForMs(3)};
     }
@@ -254,7 +260,7 @@ const ie11Styles = css`
 `
 
 const pictureStyles = css`
-  & {
+  .picture {
     grid-column: 2 / span 7;
     grid-row: 2 / span 10;
     margin-top: 1.5rem;
@@ -262,33 +268,26 @@ const pictureStyles = css`
     height: 51.5rem;
   }
 
-  :global(.ie11) & {
-    display: block;
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(7)};
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 10;
-  }
   @media (min-width: 1360px) and (max-width: 1919px) {
-    & {
+    .picture {
       height: 38.5rem;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    & {
+    .picture {
       height: 35.5rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    & {
+    .picture {
       height: 27rem;
     }
   }
 
   @media (max-width: 767px) {
-    & {
+    .picture {
       grid-column: 1 / span 6;
       grid-row: 2;
       height: 16.5rem;
@@ -296,8 +295,8 @@ const pictureStyles = css`
   }
 `
 
-export { pictureStyles }
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${pictureStyles}
+  ${isIe11 && ie11Styles}
 `

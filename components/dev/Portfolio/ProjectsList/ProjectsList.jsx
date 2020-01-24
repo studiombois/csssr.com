@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import styles from './ProjectsList.styles'
 import Grid from '../../../ui-kit/core-design/Grid'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Tabs from '../../Tabs'
 import Project from '../Project/Project'
 import CutButton from '../../CutButton'
@@ -180,6 +181,8 @@ ProjectsList.contextTypes = {
   isMsBrowser: bool,
 }
 
-export default styled(translate()(ProjectsList))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(ProjectsList)`
+    ${styles}
+  `),
+)

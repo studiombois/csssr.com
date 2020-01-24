@@ -2,6 +2,7 @@ import React from 'react'
 import { arrayOf, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './ClientsLogosList.styles'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import ClientLogo from '../ClientLogo'
 
 const ClientsLogosList = ({ className, clients }) => (
@@ -18,6 +19,6 @@ ClientsLogosList.propTypes = {
   clients: arrayOf(string),
 }
 
-export default styled(ClientsLogosList)`
+export default MsBrowserConsumer(styled(ClientsLogosList)`
   ${styles}
-`
+`)

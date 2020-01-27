@@ -64,23 +64,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
+const ie11Styles = () => css`
 
   .heading {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
-  }
-
-  ${desktop.m} {
-
-  }
-
-  ${desktop.s} {
-
-  }
-
-  ${tablet.all} {
-
   }
 `
 
@@ -89,6 +77,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints })}
-    ${props.isIe11 && ie11Styles({ breakpoints })}
+    ${props.isIe11 && ie11Styles()}
   `
 }

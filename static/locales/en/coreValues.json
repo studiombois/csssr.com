@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "We Create Web Services for Millions",
+    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript. And dream of the stars."
+  },
+  "imgAlt": {
+    "greeting": "Illustration with wavy horizontal lines, geometric figures and a small rocket flying along the lines."
+  },
+  "greeting": {
+    "title": "Core Values"
+  },
+  "form": {
+    "title": "Let’s Talk",
+    "subTitle": "please provide your contact details and we will respond shortly",
+    "namePlaceholder": "Jhon Lenin",
+    "emailPlaceholder": "lenin@gmail.com",
+    "messagePlaceholder": "Comment",
+    "messageLabel": "comment",
+    "emailLabel": "E-mail",
+    "nameLabel": "YOUR NAME",
+    "submitText": "SEND"
+  }
+}

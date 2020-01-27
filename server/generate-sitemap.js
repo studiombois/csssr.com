@@ -108,6 +108,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/core-values',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/core-values',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/core-values',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/core-values',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/core-values',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/core-values',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/express',
     changefreq: 'weekly',
     priority: 1,

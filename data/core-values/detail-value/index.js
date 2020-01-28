@@ -1,5 +1,3 @@
-import React from 'react'
-
 import cleanCode from './cleanCode'
 import reliability from './reliability'
 import accessibility from './accessibility'
@@ -16,69 +14,74 @@ import Reliability from '../../../static/icons/core-values/reliability.svg'
 
 export default [
   {
+    id: 'code',
     images: cleanCode,
     imgAlt: 'coreValues:imgAlt.cleanCode',
     title: 'coreValues:detailValue.cleanCode.title',
     subTitle: 'coreValues:detailValue.cleanCode.subTitle',
     description: [
       {
-        icon: <Code />,
+        icon: Code,
         text: 'coreValues:detailValue.cleanCode.text',
       },
       {
-        icon: <Line_code />,
+        icon: Line_code,
         text: 'coreValues:detailValue.cleanCode.text_2',
       },
     ],
   },
   {
+    id: 'reliability',
     images: reliability,
     imgAlt: 'coreValues:imgAlt.reliability',
     title: 'coreValues:detailValue.reliability.title',
     subTitle: 'coreValues:detailValue.reliability.subTitle',
     description: [
       {
-        icon: <Reliability />,
+        icon: Reliability,
         text: 'coreValues:detailValue.reliability.text',
       },
     ],
   },
   {
+    id: 'accessibility',
     images: accessibility,
     imgAlt: 'coreValues:imgAlt.accessibility',
     title: 'coreValues:detailValue.accessibility.title',
     subTitle: 'coreValues:detailValue.accessibility.subTitle',
     description: [
       {
-        icon: <Accessibility_1 />,
+        icon: Accessibility_1,
         text: 'coreValues:detailValue.accessibility.text',
       },
       {
-        icon: <Accessibility_2 />,
+        icon: Accessibility_2,
         text: 'coreValues:detailValue.accessibility.text_2',
       },
     ],
   },
   {
+    id: 'ux',
     images: ux,
     imgAlt: 'coreValues:imgAlt.ux',
     title: 'coreValues:detailValue.ux.title',
     subTitle: 'coreValues:detailValue.ux.subTitle',
     description: [
       {
-        icon: <Perfectionism />,
+        icon: Perfectionism,
         text: 'coreValues:detailValue.ux.text',
       },
     ],
   },
   {
+    id: 'security',
     images: webSecurity,
     imgAlt: 'coreValues:imgAlt.webSecurity',
     title: 'coreValues:detailValue.webSecurity.title',
     subTitle: 'coreValues:detailValue.webSecurity.subTitle',
     description: [
       {
-        icon: <Keys />,
+        icon: Keys,
         text: 'coreValues:detailValue.webSecurity.text',
       },
     ],

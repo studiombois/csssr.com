@@ -8,7 +8,11 @@ import Heading from '../../ui-kit/core-design/Heading'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Greeting = ({ t, className, id, content: { heading, images, imgAlt } }) => (
+import greeting from '../../../data/core-values/greeting'
+
+const { heading, images, imgAlt } = greeting
+
+const Greeting = ({ t, className, id }) => (
   <section className={className} id={id}>
     <Grid className="grid-heading">
       <Heading.H1

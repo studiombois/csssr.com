@@ -2,11 +2,12 @@ import React from 'react'
 import { string, object, array, func } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import cn from 'classnames'
+import NextLink from 'next/link'
 import Text from '../../ui-kit/core-design/Text'
 import Link from '../../ui-kit/core-design/Link'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
-const CoreValuesItem = ({ t, images, imgAlt, link, text, itemClassName }) => (
+const CoreValuesItem = ({ t, lng, images, imgAlt, link, href, text, itemClassName }) => (
   <>
     <PictureForAllResolutions
       images={images}
@@ -15,11 +16,13 @@ const CoreValuesItem = ({ t, images, imgAlt, link, text, itemClassName }) => (
       className={cn(itemClassName, 'image')}
     />
 
-    <Link
-      size="m"
-      dangerouslySetInnerHTML={{ __html: t(link) }}
-      className={cn(itemClassName, 'link')}
-    />
+    <NextLink href={`/${lng}/core-values${href}`} passHref>
+      <Link
+        size="m"
+        dangerouslySetInnerHTML={{ __html: t(link) }}
+        className={cn(itemClassName, 'link')}
+      />
+    </NextLink>
 
     <Text
       type="regular"

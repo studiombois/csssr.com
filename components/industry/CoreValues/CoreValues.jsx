@@ -24,11 +24,12 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
       className="sub-heading"
     />
 
-    {coreValuesItems.map(({ images, imgAlt, link, text, className }) => (
+    {coreValuesItems.map(({ images, imgAlt, link, href, text, className }) => (
       <CoreValuesItem
         images={images}
         imgAlt={imgAlt}
         link={link}
+        href={href}
         text={text}
         itemClassName={className}
         key={link}

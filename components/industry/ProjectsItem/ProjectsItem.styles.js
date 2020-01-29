@@ -15,7 +15,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .text {
-          grid-column: 3 / span 4;
+          grid-column: 3 / span 3;
         }
 
         .column-1 {
@@ -50,25 +50,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           }
 
           .text {
-            grid-column: 2 / span 4;
-          }
-
-          .column-1 {
-            grid-column: 2 / span 2;
-          }
-
-          .column-2 {
-            grid-column: 4 / span 2;
-          }
-        }
-
-        ${desktop.s} {
-          .image {
-            grid-column: 2 / span 2;
-          }
-
-          .text {
-            grid-column: 2 / span 4;
+            grid-column: 2 / span 5;
           }
 
           .column-1 {
@@ -144,6 +126,14 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
       }
 
       ${desktop.m} {
+        .text {
+          grid-column: 7 / span 5;
+        }
+        
+        &.third-item .text {
+          grid-column: 7 / span 4;
+        }
+
         .image {
           grid-column: 2 / span 5;
         }
@@ -155,19 +145,19 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .item-heading {
-          grid-column: 8 / span 2;
+          grid-column: 7 / span 2;
         }
 
         .text {
-          grid-column: 8 / span 4;
+          grid-column: 7 / span 5;
         }
 
         .column-1 {
-          grid-column: 8 / span 2;
+          grid-column: 7 / span 2;
         }
 
         .column-2 {
-          grid-column: 10 / span 2;
+          grid-column: 9 / span 2;
         }
       }
 
@@ -212,7 +202,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
   )
 }
 
-const base = (imgMaxWidth, { breakpoints: { mobile }}) => css`
+const base = (imgMaxWidth, { colors,  breakpoints: { mobile }}) => css`
   grid-template-rows: max-content max-content max-content;
 
   .image {
@@ -228,11 +218,13 @@ const base = (imgMaxWidth, { breakpoints: { mobile }}) => css`
 
   .item-heading {
     grid-row: 1;
+    color: ${colors.secondary.darken100};
   }
 
   .text {
     grid-row: 2;
     margin-top: ${calcRem(21)};
+    color: ${colors.secondary.darken100};
   }
 
   .number-data {
@@ -242,6 +234,7 @@ const base = (imgMaxWidth, { breakpoints: { mobile }}) => css`
 
   .text-data {
     grid-row: 4;
+    color: ${colors.secondary.darken100};
   }
 
   ${mobile.all} {
@@ -513,10 +506,11 @@ const ie11BaseStyles = () => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
     ${dynamicStyles(props.direction, { breakpoints })}
-    ${base(props.imgMaxWidth, { breakpoints })}
+    ${base(props.imgMaxWidth, { colors, breakpoints })}
     ${props.isIe11 && ie11DynamicStyles(props.direction, { breakpoints })}
     ${props.isIe11 && ie11BaseStyles()}
   `

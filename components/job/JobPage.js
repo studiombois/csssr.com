@@ -125,7 +125,7 @@ const onSubmit = t => async values => {
 
   if (res.status === 200) {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_success' })
+      window.dataLayer.push({ event: 'job_form_success' })
     }
   } else {
     let error
@@ -140,7 +140,7 @@ const onSubmit = t => async values => {
       Sentry.captureException(error)
     })
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'form_fail' })
+      window.dataLayer.push({ event: 'job_form_fail' })
     }
 
     return { [FORM_ERROR]: error }

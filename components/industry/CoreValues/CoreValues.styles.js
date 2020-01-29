@@ -165,10 +165,13 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
   }
 
   .image {
+    display: flex;
+    align-items: flex-end;
     -ms-grid-row: 3;
   }
 
   .link {
+    display: block;
     -ms-grid-row: 4;
   }
 

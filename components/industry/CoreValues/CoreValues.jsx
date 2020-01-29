@@ -13,7 +13,7 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
   <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"
-      size="l"
+      size="m"
       dangerouslySetInnerHTML={{ __html: t(heading) }}
       className="heading"
     />

@@ -14,7 +14,7 @@ const Projects = ({ t, className, id, content: { heading, subHeading, projectsIt
     <Grid>
       <Heading.H2
         type="slab"
-        size="l"
+        size="m"
         dangerouslySetInnerHTML={{ __html: t(heading) }}
         className="heading"
       />

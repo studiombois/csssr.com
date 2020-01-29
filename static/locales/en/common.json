@@ -13,6 +13,64 @@
   "languageRedirect": {
     "text": "Переключиться на русский"
   },
+  "header": {
+    "menu": {
+      "services": {
+        "title": "Services",
+        "outsourcing": {
+          "title": "Outsourcing Front&#8209;end",
+          "description": "Front-end development for large companies"
+        },
+        "express": {
+          "title": "Express Front&#8209;end",
+          "description": "Fixed-cost service for fast web projects"
+        },
+        "mvp": {
+          "title": "MVP Development",
+          "description": "Only essential functionality to&nbsp;test business ideas"
+        }
+      },
+      "industries": {
+        "title": "Industries",
+        "fintech": {
+          "title": "Fintech"
+        },
+        "eCommerce": {
+          "title": "eCommerce"
+        },
+        "information": {
+          "title": "Information Technology"
+        },
+        "mediaAndMarketing": {
+          "title": "Media and Marketing"
+        }
+      },
+      "howWeWork": {
+        "title": "How we work",
+        "technologies": {
+          "title": "Technologies",
+          "description": "It&nbsp;is&nbsp;attention to&nbsp;detail and well-established processes that makes the difference between average and successful projects"
+        },
+        "processes": {
+          "title": "Processes",
+          "description": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tool"
+        }
+      }
+    },
+    "links": {
+      "blog": {
+        "title": "Blog"
+      },
+      "aboutUs": {
+        "title": "About us"
+      },
+      "careers": {
+        "title": "Careers"
+      }
+    },
+    "action": "Contact us",
+    "backLink": "Our services"
+  },
   "footer": {
     "privacyPolicy": "Privacy policy",
     "alliancePartText": "CSSSR is a part of"

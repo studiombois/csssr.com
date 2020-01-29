@@ -6,7 +6,7 @@ import styles from './DetailValue.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Heading from '../../ui-kit/core-design/Heading'
-import Picture from '../../ui-kit/Picture'
+import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Description from '../Description'
 
@@ -17,7 +17,7 @@ const DetailValue = ({
 }) => (
   <article id={id}>
     <Grid className={className}>
-      <Picture
+      <PictureForAllResolutions
         images={images}
         fallback={images['desktop.all'].png}
         alt={t(imgAlt)}

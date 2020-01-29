@@ -8,7 +8,7 @@ import ContactForm from '../../ContactForm'
 import contactFormValidationRules from '../../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../../utils/client/getGaCid'
 
-const ContactFormForIndustry = props => (
+const ContactFormForCoreValues = props => (
   <ContactForm
     imageName="letter"
     headerId="hire-us"
@@ -69,7 +69,7 @@ const Form = ({ t, lng, pageName }) => (
     onSubmit={onSubmit(t, lng)}
     validate={contactFormValidationRules(t)}
     decorators={[focusOnErrors]}
-    component={ContactFormForIndustry}
+    component={ContactFormForCoreValues}
     pageName={pageName}
   />
 )

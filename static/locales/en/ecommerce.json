@@ -106,7 +106,7 @@
   },
   "form": {
     "title": "Let’s Talk",
-    "subTitle": "please provide your contact details and we will respond shortly",
+    "subTitle": "please provide your contact details and we will respond&nbsp;shortly",
     "namePlaceholder": "Jhon Lenin",
     "emailPlaceholder": "lenin@gmail.com",
     "messagePlaceholder": "Comment",

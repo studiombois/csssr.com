@@ -136,9 +136,26 @@ const base = ({ shouldShowSubHeading }) => css`
     }
 
     .sub-heading {
-      grid-column: 1 / span 12;
+      grid-column: 3 / span 8;
       text-align: center;
       margin-bottom: ${calcRem(132)};
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .sub-heading {
+        grid-column: 4 / span 6;
+      }
+    }
+
+    @media (max-width: 767px) {
+      h2 {
+        text-align: start;
+      }
+
+      .sub-heading {
+        grid-column: 1 / span 6;
+        text-align: start;
+      }
     }
   `}
 

@@ -10,6 +10,7 @@ import CoreValues from './CoreValues'
 import Form from './Form'
 import Projects from './Projects'
 
+import Head from '../Head'
 import greeting from '../../data/industry/ecommerce/greeting'
 import ourClients from '../../data/industry/ecommerce/logos'
 import coreValues from '../../data/industry/ecommerce/coreValues'
@@ -19,6 +20,17 @@ import projects from '../../data/industry/ecommerce/projects'
 const IndustryPage = () => {
   return (
     <Layout>
+      <Head
+        //to-do заменить meta как только они будут известны
+        title="demo-title"
+        description="demo-description"
+        ogImage={{
+          url: require('../../static/images/jobs/1920/cover@2x.jpg'),
+          width: 1266,
+          height: 2000,
+        }}
+      />
+
       <Greeting id="greeting" content={greeting} />
 
       <OurClients id="ourClients" content={ourClients} />

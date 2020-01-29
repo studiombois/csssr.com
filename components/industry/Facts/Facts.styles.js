@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     grid-template-rows: max-content max-content;
     margin-top: ${calcRem(352)};
@@ -16,6 +16,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .sub-heading {
     grid-column: 8 / span 4;
     grid-row: 1;
+    color: ${colors.secondary.darken100};
   }
 
   .image {
@@ -351,9 +352,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

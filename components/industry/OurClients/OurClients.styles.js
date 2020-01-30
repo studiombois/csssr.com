@@ -60,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
+const ie11Styles = () => css`
   .heading {
     -ms-grid-column: ${getGridValueForMs(1)};
     -ms-grid-column-span: ${getGridValueForMs(12)};
@@ -72,42 +72,6 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
     -ms-grid-column-span: ${getGridValueForMs(11)};
     -ms-grid-row: 2;
   }
-
-  ${desktop.m} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-  }
-
-  ${desktop.s} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-  }
-
-  ${tablet.all} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-  }
 `
 
 export default props => {
@@ -115,6 +79,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints })}
-    ${props.isIe11 && ie11Styles({ breakpoints })}
+    ${props.isIe11 && ie11Styles()}
   `
 }

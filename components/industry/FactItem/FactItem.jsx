@@ -14,7 +14,7 @@ const FactItem = ({ t, number, text, itemClassName }) => (
       className="fact-number"
     />
 
-    <Text type="strong" dangerouslySetInnerHTML={{ __html: t(text) }} />
+    <Text type="strong" className="fact-text" dangerouslySetInnerHTML={{ __html: t(text) }} />
   </div>
 )
 

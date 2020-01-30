@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
+
 // хак для grid-template-rows обеспечивает рамер по контенту для всех строк кроме последней
 // после этого приема можно использовать положительный margin-top для отступов
 // firefox применяет max-content только внутри функции minmax
@@ -20,6 +21,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-column: 8 / span 4;
     grid-row: 1;
     color: ${colors.secondary.darken100};
+    margin-top: ${calcRem(14)};
   }
 
   .image {
@@ -110,6 +112,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .sub-heading {
       grid-column: 7 / span 5;
+      margin-top: ${calcRem(2)};
     }
 
     .image {
@@ -149,6 +152,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .sub-heading {
       grid-column: 7 / span 5;
+      margin-top: ${calcRem(2)};
     }
 
     .image {

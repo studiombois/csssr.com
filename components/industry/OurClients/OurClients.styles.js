@@ -10,7 +10,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .heading {
     grid-column: 1 / span 12;
     grid-row: 1;
-    justify-self: center;
+    text-align: center;
   }
 
   .image {
@@ -50,7 +50,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(135)};
 
     .heading {
-      justify-self: start;
+      text-align: start;
     }
 
     .image {
@@ -62,16 +62,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
   .heading {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
+    -ms-grid-column: ${getGridValueForMs(1)};
+    -ms-grid-column-span: ${getGridValueForMs(12)};
     -ms-grid-row: 1;
   }
 
   .image {
-    -ms-grid-column: ${getGridValueForMs(7)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(11)};
+    -ms-grid-row: 2;
   }
 
   ${desktop.m} {

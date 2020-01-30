@@ -45,9 +45,7 @@ const DetailValue = ({
 DetailValue.propTypes = {
   t: func,
   className: string,
-  id: string,
   content: object,
-  factItems: array,
 }
 
 export default translate()(

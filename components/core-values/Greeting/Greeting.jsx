@@ -35,7 +35,6 @@ Greeting.propTypes = {
   t: func,
   className: string,
   id: string,
-  content: object,
 }
 
 export default translate()(

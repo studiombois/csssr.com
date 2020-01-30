@@ -26,6 +26,7 @@ const Description = ({ t, className, description }) => (
 Description.propTypes = {
   t: func,
   className: string,
+  description: string,
 }
 
 export default translate()(

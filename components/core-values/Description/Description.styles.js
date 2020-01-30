@@ -76,7 +76,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-const ie11Styles = ({ description, breakpoints: { desktop }}) => css`
+const ie11Styles = ({ description }) => css`
   ${description.length < 2 ?
     `
       .icon-column-1 {
@@ -111,14 +111,6 @@ const ie11Styles = ({ description, breakpoints: { desktop }}) => css`
         -ms-grid-column-span: ${getGridValueForMs(3)};
       }
     `
-  }
-
-  ${desktop.m} {
-    
-  }
-
-  ${desktop.s} {
-    
   }
 `
 

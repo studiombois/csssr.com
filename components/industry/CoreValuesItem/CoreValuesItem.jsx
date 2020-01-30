@@ -2,7 +2,6 @@ import React from 'react'
 import { string, object, array, func } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import cn from 'classnames'
-import NextLink from 'next/link'
 import Text from '../../ui-kit/core-design/Text'
 import Link from '../../ui-kit/core-design/Link'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
@@ -16,13 +15,13 @@ const CoreValuesItem = ({ t, lng, images, imgAlt, link, href, text, itemClassNam
       className={cn(itemClassName, 'image')}
     />
 
-    <NextLink href={`/${lng}/core-values${href}`} passHref>
-      <Link
-        size="m"
-        dangerouslySetInnerHTML={{ __html: t(link) }}
-        className={cn(itemClassName, 'link')}
-      />
-    </NextLink>
+    <Link
+      isNextLink
+      href={`/${lng}/core-values${href}`}
+      size="m"
+      dangerouslySetInnerHTML={{ __html: t(link) }}
+      className={cn(itemClassName, 'link')}
+    />
 
     <Text
       type="regular"

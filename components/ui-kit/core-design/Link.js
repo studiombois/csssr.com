@@ -45,6 +45,11 @@ const LinkWithNextLink = styled(Link)`
   ${({ type, size }) => type && size && fonts[type][size]}
 `
 
+LinkWithNextLink.defaultProps = {
+  type: 'list',
+  size: 's',
+}
+
 const LinkWrapper = ({ isNextLink, as, passHref, prefetch, replace, scroll, ...props }) => {
   // Все ссылки на проекте имеют одинаковый вид
   // Для ссылок внутри проекта следует использовать isNextLink
@@ -62,7 +67,7 @@ const LinkWrapper = ({ isNextLink, as, passHref, prefetch, replace, scroll, ...p
   }
 
   // Для ссылок на другие ресурсы подойдут и обычные ссылки
-  return <CoreDesignLink {...props} />
+  return <CoreDesignLink {...props} as={as} />
 }
 
 export default LinkWrapper

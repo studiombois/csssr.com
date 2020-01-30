@@ -5,6 +5,7 @@ module.exports = {
     es6: true,
   },
   extends: '@csssr/eslint-config-core',
+  plugins: ['react-hooks'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -20,6 +21,8 @@ module.exports = {
     ],
     'react/prop-types': 'off',
     'react/jsx-no-target-blank': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
   settings: {
     react: {

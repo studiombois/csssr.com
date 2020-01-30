@@ -97,6 +97,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .button {
       grid-column: 2 / span 4;
       margin-top: ${calcRem(74)};
+      height: 3rem;
     }
   }
 
@@ -119,6 +120,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .button {
       margin-top: ${calcRem(49)};
+      height: 3rem;
     }
   }
 `

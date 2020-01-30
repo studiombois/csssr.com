@@ -17,8 +17,11 @@ const CoreValuesItem = ({ t, lng, images, imgAlt, link, href, text, itemClassNam
 
     <Link
       isNextLink
-      href={`/${lng}/core-values${href}`}
+      href={`/${lng}/core-values`}
+      as={`/${lng}/core-values${href}`}
+      type="list"
       size="m"
+      scroll
       dangerouslySetInnerHTML={{ __html: t(link) }}
       className={cn(itemClassName, 'link')}
     />

@@ -4,7 +4,6 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
-    grid-template-rows: max-content max-content;
     margin-top: ${calcRem(352)};
   }
 
@@ -23,7 +22,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .image {
     grid-column: 2 / span 4;
     grid-row: 2 / span 2;
-    margin-top: ${calcRem(91)};
+    margin-top: ${calcRem(44)};
   }
 
   .first-item,
@@ -45,7 +44,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .third-item,
   .fourth-item {
     grid-row: 3;
-    margin-top: ${calcRem(49)};
+    margin-top: ${calcRem(-70)};
   }
 
   .fact-number {
@@ -67,7 +66,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .image {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(94)};
+      margin-top: ${calcRem(46)};
     }
 
     .first-item,
@@ -87,7 +86,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .third-item,
     .fourth-item {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(-90)};
     }
   }
 
@@ -109,7 +108,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .image {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(61)};
+      margin-top: ${calcRem(48)};
     }
 
     .first-item,
@@ -129,7 +128,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .third-item,
     .fourth-item {
-      margin-top: ${calcRem(31)};
+      margin-top: ${calcRem(-60)};
     }
   }
 
@@ -149,7 +148,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .image {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(28)};
+      margin-top: ${calcRem(23)};
     }
 
     .first-item,
@@ -169,7 +168,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .third-item,
     .fourth-item {
-      margin-top: ${calcRem(37)};
+      margin-top: ${calcRem(-50)};
     }
   }
 

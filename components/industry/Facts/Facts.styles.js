@@ -16,6 +16,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .sub-heading {
     grid-column: 8 / span 4;
     grid-row: 1;
+    margin-top: ${calcRem(14)};
   }
 
   .image {
@@ -102,6 +103,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .sub-heading {
       grid-column: 7 / span 5;
+      margin-top: ${calcRem(2)};
     }
 
     .image {
@@ -141,6 +143,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .sub-heading {
       grid-column: 7 / span 5;
+      margin-top: ${calcRem(2)};
     }
 
     .image {

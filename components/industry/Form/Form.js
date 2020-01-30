@@ -19,7 +19,7 @@ const ContactFormForIndustry = props => (
   />
 )
 
-const onSubmit = (t, lng, pageName) => async values => {
+const onSubmit = (t, lng) => async values => {
   values.gacid = getGaCid()
   values.language = lng
   let res
@@ -35,7 +35,7 @@ const onSubmit = (t, lng, pageName) => async values => {
     })
   } catch {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: `form_${pageName}_fail` })
+      window.dataLayer.push({ event: `form_fail` })
     }
 
     return { [FORM_ERROR]: t('common:form.errors.general') }
@@ -43,7 +43,7 @@ const onSubmit = (t, lng, pageName) => async values => {
 
   if (res.status === 201) {
     if (window.dataLayer) {
-      window.dataLayer.push({ event: `form_${pageName}_success` })
+      window.dataLayer.push({ event: `form_success` })
     }
   } else {
     let error
@@ -55,7 +55,7 @@ const onSubmit = (t, lng, pageName) => async values => {
     }
 
     if (window.dataLayer) {
-      window.dataLayer.push({ event: `form_${pageName}_fail` })
+      window.dataLayer.push({ event: `form_fail` })
     }
 
     return { [FORM_ERROR]: error }

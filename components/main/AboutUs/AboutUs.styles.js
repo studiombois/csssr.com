@@ -166,9 +166,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(32)};
     }
 
-    .picture_elbrus,
-    .picture_volleyball {
-      display: none;
+    @media (pointer:coarse) {
+        .picture_elbrus,
+        .picture_volleyball {
+          display: none;
+        }
+      }
     }
   }
 

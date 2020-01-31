@@ -12,6 +12,9 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     order: 1;
     width: 100%;
     flex-shrink: 0;
+    img {
+      height: auto;
+    }
   }
 
   .card-title,

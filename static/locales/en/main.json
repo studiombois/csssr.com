@@ -11,11 +11,11 @@
     "title": "We&nbsp;Create Web Services<br />for Millions to&nbsp;Use",
     "link": "more",
     "outsourcing": {
-      "title": "<span style=\"font-weight: bold;\">Outsourcing</span> Front&#8209;end",
+      "title": "<span style=\"font-weight: bold;\">Outsourcing</span><span style=\"white-space: nowrap; display: block;\">Front-end</span>",
       "subtitle": "Front-end development for large companies"
     },
     "express": {
-      "title": "<span style=\"font-weight: bold;\">Express</span> Front&#8209;end",
+      "title": "<span style=\"font-weight: bold;\">Express</span> Front-end",
       "subtitle": "Fixed-cost service for fast web projects"
     },
     "mvp": {

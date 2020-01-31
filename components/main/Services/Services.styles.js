@@ -126,6 +126,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     .service-icon {
       left: 28px;
     }
+
+    .service_outsourcing .service-subtitle,
+    .service_express .service-subtitle {
+      white-space: nowrap;
+    }
   }
 
   ${tablet.all} {
@@ -181,6 +186,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
       & path {
         stroke: #8BD9B9;
       }
+    }
+
+    .service_outsourcing .service-subtitle,
+    .service_express .service-subtitle {
+      white-space: nowrap;
     }
   }
 

@@ -60,49 +60,49 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) & {
+  & {
     display: block;
   }
 
-  :global(.ie11) &:nth-child(odd) {
+  &:nth-of-type(odd) {
     -ms-grid-column: 3;
     -ms-grid-column-span: 9;
   }
 
-  :global(.ie11) &:nth-child(even) {
+  &:nth-of-type(even) {
     -ms-grid-column: 13;
     -ms-grid-column-span: 9;
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) h3 {
+    h3 {
       -ms-grid-column: 5;
       -ms-grid-column-span: 15;
     }
 
-    :global(.ie11) & {
+    & {
       -ms-grid-column: 5 !important;
       -ms-grid-column-span: 15 !important;
     }
   }
 `
 
-const dynamic = ({ index }) => css`
+const dynamic = index => css`
   @media (max-width: 1279px) {
-    :global(.ie11) & {
+    & {
       -ms-grid-row: ${Math.ceil(index + 1)};
     }
   }
 
   @media (min-width: 1280px) {
-    :global(.ie11) & {
+    & {
       -ms-grid-row: ${Math.ceil((index + 1) / 2)};
     }
   }
 `
 
-export default props => css`
+export default ({ index, isIe11 }) => css`
   ${base}
-  ${ie11Styles}
-  ${dynamic(props)}
+  ${isIe11 && ie11Styles}
+  ${dynamic(index)}
 `

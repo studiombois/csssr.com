@@ -32,8 +32,8 @@ const base = css`
   }
 `
 
-const ie11Styles = css`
-  :global(.ie11) .hot-vacancy::before {
+const ie11Styles =  css`
+ .hot-vacancy::before {
     color: orange;
     overflow: hidden;
     line-height: 12px;
@@ -41,7 +41,7 @@ const ie11Styles = css`
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

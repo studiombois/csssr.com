@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { array, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Quest.styles'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import FormRow from '../../FormRow'
 import Section from '../../Section'
 
@@ -49,6 +50,6 @@ Quest.propTypes = {
   sections: array,
 }
 
-export default styled(Quest)`
+export default MsBrowserConsumer(styled(Quest)`
   ${styles}
-`
+`)

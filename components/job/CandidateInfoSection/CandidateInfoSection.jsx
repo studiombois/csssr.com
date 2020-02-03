@@ -11,6 +11,7 @@ import styles, {
 } from './CandidateInfoSection.styles'
 import { css } from '@emotion/core'
 import withI18next from '../../../utils/withI18next'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import ContactOptions from '../ContactOptions'
 import ContactOptionsMobile from '../ContactOptionsMobile'
 import TextField from '../../ui-kit/TextField/TextField'
@@ -153,6 +154,8 @@ const CandidateInfoSection = props => {
   )
 }
 
-export default styled(withI18next(['job'])(CandidateInfoSection))`
-  ${styles}
-`
+export default withI18next(['job'])(
+  MsBrowserConsumer(styled(CandidateInfoSection)`
+    ${styles}
+  `),
+)

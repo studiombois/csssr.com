@@ -2,91 +2,6 @@ import { css } from '@emotion/core'
 import AnimatedButton from '../ui-kit/core-design/AnimatedButton'
 import Text from '../ui-kit/core-design/Text'
 
-const ie11Styles = css`
-  -ms-grid-rows: (auto)[9];
-
-  h2 {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 11;
-    -ms-grid-row: 1;
-
-    @media (max-width: 767px) {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-    }
-  }
-
-  .button {
-    -ms-grid-column: 11;
-    -ms-grid-column-span: 3;
-    -ms-grid-row: 8;
-
-    @media (min-width: 768px) and (max-width: 1279px) {
-      -ms-grid-column: 9;
-      -ms-grid-column-span: 7;
-    }
-
-    @media (max-width: 767px) {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 9;
-    }
-  }
-
-  .message {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 11;
-    -ms-grid-row: 9;
-
-    @media (max-width: 767px) {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-    }
-  }
-
-  .field {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 11;
-
-    @media (min-width: 768px) and (max-width: 1279px) {
-      -ms-grid-column: 7;
-      -ms-grid-column-span: 11;
-    }
-
-    @media (max-width: 767px) {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-    }
-  }
-
-  .field:nth-of-type(1) {
-    -ms-grid-row: 2;
-  }
-
-  .field:nth-of-type(2) {
-    -ms-grid-row: 3;
-  }
-
-  .field:nth-of-type(3) {
-    -ms-grid-row: 4;
-  }
-
-  .field:nth-of-type(4) {
-    -ms-grid-row: 5;
-  }
-
-  .field:nth-of-type(5) {
-    -ms-grid-row: 6;
-  }
-
-  .field:nth-of-type(6) {
-    -ms-grid-row: 7;
-  }
-
-  ${AnimatedButton} ${Text} {
-    color: white;
-  }
-`
-
 const base = css`
   position: relative;
   margin-right: auto;
@@ -200,9 +115,94 @@ const base = css`
   .field_type_no-margin {
     margin: 0;
   }
+
+  ${AnimatedButton} ${Text} {
+    color: white;
+  }
 `
 
-export default css`
+const ie11Styles = css`
+  -ms-grid-rows: (auto)[9];
+
+  h2 {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 11;
+    -ms-grid-row: 1;
+
+    @media (max-width: 767px) {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+    }
+  }
+
+  .button {
+    -ms-grid-column: 11;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 8;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      -ms-grid-column: 9;
+      -ms-grid-column-span: 7;
+    }
+
+    @media (max-width: 767px) {
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 9;
+    }
+  }
+
+  .message {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 11;
+    -ms-grid-row: 9;
+
+    @media (max-width: 767px) {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+    }
+  }
+
+  .field {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 11;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      -ms-grid-column: 7;
+      -ms-grid-column-span: 11;
+    }
+
+    @media (max-width: 767px) {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+    }
+  }
+
+  .field:nth-of-type(1) {
+    -ms-grid-row: 2;
+  }
+
+  .field:nth-of-type(2) {
+    -ms-grid-row: 3;
+  }
+
+  .field:nth-of-type(3) {
+    -ms-grid-row: 4;
+  }
+
+  .field:nth-of-type(4) {
+    -ms-grid-row: 5;
+  }
+
+  .field:nth-of-type(5) {
+    -ms-grid-row: 6;
+  }
+
+  .field:nth-of-type(6) {
+    -ms-grid-row: 7;
+  }
+`
+
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

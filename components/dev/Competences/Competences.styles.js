@@ -414,58 +414,58 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) h2:first-of-type {
+  h2:first-of-type {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     -ms-grid-column-span: 7;
   }
 
-  :global(.ie11) h2:nth-of-type(2) {
+  h2:nth-of-type(2) {
     -ms-grid-row: 3;
     -ms-grid-column: 15;
     -ms-grid-column-span: 21;
   }
 
-  :global(.ie11) & > p:first-of-type {
+  & > p:first-of-type {
     -ms-grid-row: 4;
     -ms-grid-column: 15;
     -ms-grid-column-span: 7;
   }
 
-  :global(.ie11) h2:last-of-type {
+  h2:last-of-type {
     -ms-grid-row: 5;
     -ms-grid-column: 3;
     -ms-grid-column-span: 9;
   }
 
-  :global(.ie11) p:last-of-type {
+  p:last-of-type {
     -ms-grid-row: 6;
     -ms-grid-column: 3;
     -ms-grid-column-span: 9;
   }
 
-  :global(.ie11) .logos-and-text-container {
+  .logos-and-text-container {
     -ms-grid-row: 2;
     -ms-grid-column: 3;
     -ms-grid-column-span: 7;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    :global(.ie11) .logos-and-text-container {
+    .logos-and-text-container {
       -ms-grid-column: 3;
       -ms-grid-column-span: 9;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) .logos-and-text-container {
+    .logos-and-text-container {
       -ms-grid-column: 3;
       -ms-grid-column-span: 9;
     }
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

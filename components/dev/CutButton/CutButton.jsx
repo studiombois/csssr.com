@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import styles from './CutButton.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import FoldArrow from '../../../static/icons/foldArrow.svg'
 import { string, bool, func } from 'prop-types'
@@ -21,6 +22,6 @@ CutButton.propTypes = {
   onClick: func,
 }
 
-export default styled(CutButton)`
+export default MsBrowserConsumer(styled(CutButton)`
   ${styles}
-`
+`)

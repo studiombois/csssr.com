@@ -81,47 +81,44 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) {
-    -ms-grid-row: (auto) [4];
-  }
+  -ms-grid-row: (auto) [4];
 
-  :global(.ie11) h2 {
+  h2 {
     -ms-grid-column: 7;
     -ms-grid-column-span: 11;
     -ms-grid-row: 1;
   }
 
-  :global(.ie11) p {
+  p {
     -ms-grid-column: 7;
     -ms-grid-column-span: 11;
     -ms-grid-row: 2;
   }
 
   @media (min-width: 1360px) {
-    :global(.ie11) h2,
-    :global(.ie11) p {
+    h2,
+    p {
       -ms-grid-column: 5;
       -ms-grid-column-span: 15;
     }
   }
 
   @media (max-width: 767px) {
-    :global(.ie11) h2,
-    :global(.ie11) h3,
-    :global(.ie11) p {
-      grid-column: 1 / span 6;
+    h2,
+    h3,
+    p {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
 
-    :global(.ie11) .project-container {
+    .project-container {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from '@emotion/styled'
 import styles from './Hire.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import translate from '../../../utils/translate-wrapper'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
@@ -40,6 +41,8 @@ class Hire extends PureComponent {
   }
 }
 
-export default styled(translate()(Hire))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Hire)`
+    ${styles}
+  `),
+)

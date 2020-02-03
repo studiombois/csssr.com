@@ -385,94 +385,94 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) & *:nth-child(1) {
+  & *:nth-of-type(1) {
     -ms-grid-row: 1;
   }
 
-  :global(.ie11) & *:nth-child(2) {
+  & *:nth-of-type(2) {
     -ms-grid-row: 2;
   }
 
-  :global(.ie11) & *:nth-child(4) {
+  & *:nth-of-type(4) {
     -ms-grid-row: 4;
   }
 
-  :global(.ie11) & *:nth-child(5) {
+  & *:nth-of-type(5) {
     -ms-grid-row: 5;
   }
 
-  :global(.ie11) & *:nth-child(7) {
+  & *:nth-of-type(7) {
     -ms-grid-row: 7;
   }
 
-  :global(.ie11) & *:nth-child(8) {
+  & *:nth-of-type(8) {
     -ms-grid-row: 8;
   }
 
-  :global(.ie11) & *:nth-child(10) {
+  & *:nth-of-type(10) {
     -ms-grid-row: 10;
   }
 
-  :global(.ie11) & *:nth-child(11) {
+  & *:nth-of-type(11) {
     -ms-grid-row: 11;
   }
 
-  :global(.ie11) & *:nth-child(12) {
+  & *:nth-of-type(12) {
     -ms-grid-row: 12;
   }
 
-  :global(.ie11) header,
-  :global(.ie11) h2,
-  :global(.ie11) p {
+  header,
+  h2,
+  p {
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
   }
 
-  :global(.ie11) .hot-vacancy::before {
+  .hot-vacancy::before {
     content: '🔥';
     color: orange;
     height: 28px;
     overflow: hidden;
   }
 
-  :global(.ie11) ul {
+  ul {
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
   }
 
-  :global(.ie11) .hunter-text {
+  .hunter-text {
     -ms-grid-column: ${getGridValueForMs(9)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
     -ms-grid-row: 14;
   }
 
-  :global(.ie11) .faq-text {
+  .faq-text {
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
     -ms-grid-row: 13;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    :global(.ie11) .hunter-text {
+    .hunter-text {
       -ms-grid-column: ${getGridValueForMs(9)};
       -ms-grid-column-span: ${getGridValueForMs(4)};
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    :global(.ie11) .hunter-text {
+    .hunter-text {
       -ms-grid-column: ${getGridValueForMs(9)};
       -ms-grid-column-span: ${getGridValueForMs(4)};
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) .faq-text {
+    .faq-text {
       -ms-grid-column: ${getGridValueForMs(8)};
       -ms-grid-column-span: ${getGridValueForMs(3)};
     }
 
-    :global(.ie11) .hunter-text {
+    .hunter-text {
       -ms-grid-column: ${getGridValueForMs(9)};
       -ms-grid-column-span: ${getGridValueForMs(5)};
     }
@@ -485,21 +485,21 @@ const pictureStyles = css`
     margin-top: 5.5rem;
   }
 
-  :global(.ie11) & {
+  & {
     display: block;
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
   }
 
-  :global(.ie11) &:nth-child(3) {
+  &:nth-of-type(3) {
     -ms-grid-row: 3;
   }
 
-  :global(.ie11) &:nth-child(6) {
+  &:nth-of-type(6) {
     -ms-grid-row: 6;
   }
 
-  :global(.ie11) &:nth-child(9) {
+  &:nth-of-type(9) {
     -ms-grid-row: 9;
   }
 
@@ -542,7 +542,7 @@ const pictureFaqStyles = css`
     margin-top: 3.5rem;
   }
 
-  :global(.ie11) & {
+  & {
     display: block;
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
@@ -604,7 +604,7 @@ const pictureHunterStyles = css`
     margin-top: 10.75rem;
   }
 
-  :global(.ie11) & {
+  & {
     display: block;
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-column-span: ${getGridValueForMs(1)};
@@ -640,7 +640,7 @@ export {
   pictureHunterStyles,
 }
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

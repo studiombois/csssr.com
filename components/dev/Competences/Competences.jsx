@@ -2,6 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Competences.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import LogosSheet from '../LogosSheet'
 import withI18next from '../../../utils/withI18next'
@@ -104,6 +105,8 @@ class Competences extends PureComponent {
   }
 }
 
-export default styled(withI18next(['dev'])(Competences))`
-  ${styles}
-`
+export default withI18next(['dev'])(
+  MsBrowserConsumer(styled(Competences)`
+    ${styles}
+  `),
+)

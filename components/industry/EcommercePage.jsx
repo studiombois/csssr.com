@@ -21,16 +21,7 @@ import projects from '../../data/industry/ecommerce/projects'
 const IndustryPage = ({ t }) => {
   return (
     <Layout>
-      <Head
-        title={t('ecommerce:meta.title')}
-        description={t('ecommerce:meta.description')}
-        templateTitle=" | CSSSR"
-        ogImage={{
-          url: require('../../static/images/jobs/1920/cover@2x.jpg'),
-          width: 1266,
-          height: 2000,
-        }}
-      />
+      <Head title={t('ecommerce:meta.title')} description={t('ecommerce:meta.description')} />
 
       <Greeting id="greeting" content={greeting} />
 

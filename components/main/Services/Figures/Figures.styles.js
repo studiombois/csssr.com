@@ -87,10 +87,22 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   }
 `
 
-const ie11Styles = css`
+const ie11Styles = ({ breakpoints: { tablet } }) => css`
   & {
+    position: relative;
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-row: 2;
+  }
+
+  .picture:not(.picture_figures) {
+    left: calc(50% + 8px);
+    transform: translate(-50%);
+  }
+
+  ${tablet.all} {
+    .picture:not(.picture_figures) {
+      left: calc(50% + 6px);
+    }
   }
 `
 
@@ -100,6 +112,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints, colors })}
-    ${props.isIe11 && ie11Styles}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

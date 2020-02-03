@@ -6,7 +6,7 @@ import Text from '../../ui-kit/core-design/Text'
 import Link from '../../ui-kit/core-design/Link'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
-const CoreValuesItem = ({ t, images, imgAlt, link, text, itemClassName }) => (
+const CoreValuesItem = ({ t, lng, images, imgAlt, link, href, text, itemClassName }) => (
   <>
     <PictureForAllResolutions
       images={images}
@@ -16,7 +16,12 @@ const CoreValuesItem = ({ t, images, imgAlt, link, text, itemClassName }) => (
     />
 
     <Link
+      isNextLink
+      href={`/${lng}/core-values`}
+      as={`/${lng}/core-values${href}`}
+      type="list"
       size="m"
+      scroll
       dangerouslySetInnerHTML={{ __html: t(link) }}
       className={cn(itemClassName, 'link')}
     />

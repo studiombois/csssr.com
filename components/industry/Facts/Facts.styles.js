@@ -2,8 +2,13 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
+
+// хак для grid-template-rows обеспечивает рамер по контенту для всех строк кроме последней
+// после этого приема можно использовать положительный margin-top для отступов
+// firefox применяет max-content только внутри функции minmax
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
+    grid-template-rows: minmax(0, max-content) minmax(0, max-content);
     margin-top: ${calcRem(352)};
   }
 
@@ -44,11 +49,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .third-item,
   .fourth-item {
     grid-row: 3;
-    margin-top: ${calcRem(-70)};
+    margin-top: ${calcRem(49)};
   }
 
   .fact-number {
     white-space: nowrap;
+  }
+
+  .fact-text {
+    color: ${colors.secondary.darken100};
   }
 
   ${desktop.m} {
@@ -66,7 +75,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .image {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(46)};
+      margin-top: ${calcRem(46 )};
     }
 
     .first-item,
@@ -86,7 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .third-item,
     .fourth-item {
-      margin-top: ${calcRem(-90)};
+      margin-top: ${calcRem(40)};
     }
   }
 
@@ -128,7 +137,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .third-item,
     .fourth-item {
-      margin-top: ${calcRem(-60)};
+      margin-top: ${calcRem(31)};
     }
   }
 
@@ -168,7 +177,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .third-item,
     .fourth-item {
-      margin-top: ${calcRem(-50)};
+      margin-top: ${calcRem(37)};
     }
   }
 
@@ -220,7 +229,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
   & {
-    -ms-grid-template-rows: max-content max-content;
+    -ms-grid-template-rows: minmax(0, max-content) minmax(0, max-content);
   }
 
   .heading {

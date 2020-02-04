@@ -66,7 +66,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .picture-wrapper {
-    position: relative;
+    position: sticky;
+    top: 24px;
     margin-top: 35px;
     grid-column: 1 / span 6;
     grid-row-end: span 4;

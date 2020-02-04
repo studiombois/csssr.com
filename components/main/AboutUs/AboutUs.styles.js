@@ -67,10 +67,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .picture-wrapper {
     position: relative;
-    margin-top: 32px;
+    margin-top: 35px;
     grid-column: 1 / span 6;
     grid-row-end: span 4;
     background-size: 99% !important;
+    overflow: hidden;
   }
 
   .picture_elbrus,
@@ -90,6 +91,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .picture_volleyball {
     z-index: 0;
+    top: -2px;
   }
 
   .picture_elbrus {
@@ -107,7 +109,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.l} {
     .picture-wrapper {
-      margin-top: 48px;
+      margin-top: 46px;
       grid-column: 2 / span 4;
     }
 
@@ -163,7 +165,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .picture-wrapper {
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(35)};
     }
 
     @media (pointer:coarse) {

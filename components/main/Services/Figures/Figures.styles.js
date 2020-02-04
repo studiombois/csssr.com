@@ -11,6 +11,10 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     width: 456px;
   }
 
+  @media (max-height: 800px) and (min-width: 1280px) {
+    top: 5vh;
+  }
+
   .picture:not(.picture_figures) {
     position: absolute;
     left: 50%;
@@ -59,6 +63,10 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       margin-top: ${calcRem(105)};
       margin-left: ${calcRem(-26)};
       width: ${calcRem(324)};
+    }
+
+    @media (max-height: 600px) {
+      top: 7vh;
     }
 
     .picture_figures {

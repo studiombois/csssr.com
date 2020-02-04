@@ -1,15 +1,6 @@
 {
   "hello": "Привет!",
   "headerLogoAlt": "CSSSR логотип",
-  "menu": {
-    "dev": "Фронтенд разработка",
-    "html": "Вёрстка",
-    "jobs": "Вакансии",
-    "job": "Вакансии",
-    "school": "Школа",
-    "privacy-policy": "Политика конфиденциальности",
-    "mvp": "MVP"
-  },
   "floatingButton": {
     "question": "Как вам удобнее связаться с нами?",
     "facebookMessenger": "Facebook Messenger",
@@ -25,14 +16,6 @@
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
     "alliancePartText": "CSSSR является частью"
-  },
-  "sectionName": {
-    "dev": "Фронтенд разработка",
-    "express": "Вёрстка",
-    "jobs": "Вакансии",
-    "job": "Вакансии",
-    "privacy-policy": "Политика конфиденциальности",
-    "mvp": "Фронтенд разработка"
   },
   "noPage": "Данная страница не доступна на русском языке.",
   "checkBoxesText": {

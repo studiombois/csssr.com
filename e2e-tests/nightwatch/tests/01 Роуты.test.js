@@ -32,13 +32,6 @@ testcase('Роуты', () => {
     browser.assert.urlEquals('https://store.csssr.com/')
   })
 
-  step('перейти на страницу csssr.school', () => {
-    browser.url('http://csssr.school')
-  })
-  expected('редирект на store.csssr.com ', () => {
-    browser.assert.urlEquals('https://school.csssr.com/ru')
-  })
-
   // step('Перейти на страницу space.csssr + http', () => {
   //   browser.url('http://space.csssr.com')
   // })

@@ -3,23 +3,25 @@ import Router from 'next/router'
 import App from 'next/app'
 import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/node'
+import { ThemeProvider } from 'emotion-theming'
+import { customTheme } from '../themes/customTheme'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
 import MsBrowserProvider from '../utils/msBrowserProvider'
+import DeviceProvider from '../utils/deviceProvider'
 
 export default class MyApp extends App {
   state = {
     isMobile: false,
+    isTablet: false,
   }
 
   // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
 
-    const userAgent = ctx.req
-      ? ctx.req.headers['user-agent']
-      : window.navigator.userAgent
+    const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
 
     let pageProps = {}
 
@@ -77,20 +79,42 @@ export default class MyApp extends App {
 
   componentDidMount() {
     this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-    this.mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(this.mobileMediaQuery)
-    window.addEventListener('keydown', function (event) {
+    this.mobileMediaQuery.addListener(this.handleMobileMediaMatch)
+    this.handleMobileMediaMatch(this.mobileMediaQuery)
+
+    this.tabletMediaQuery = window.matchMedia('(max-width: 1280px)')
+    this.tabletMediaQuery.addListener(this.handleTableMediaMatch)
+    this.handleTableMediaMatch(this.tabletMediaQuery)
+
+    window.addEventListener('keydown', function(event) {
       if (event.which === 9) {
         document.body.classList.add('outline')
       }
     })
 
-    window.addEventListener('click', function () {
+    window.addEventListener('click', function() {
       document.body.classList.remove('outline')
     })
 
     Router.events.on('routeChangeComplete', this.handleRouteChange)
   }
+
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMobileMediaMatch)
+    this.tabletMediaQuery.removeListener(this.handleTableMediaMatch)
+
+    Router.events.off('routeChangeComplete', this.handleRouteChange)
+  }
+
+  handleMobileMediaMatch = ({ matches }) =>
+    this.setState({
+      isMobile: matches,
+    })
+
+  handleTableMediaMatch = ({ matches }) =>
+    this.setState({
+      isTablet: matches,
+    })
 
   handleRouteChange = () => {
     if (window.dataLayer) {
@@ -98,16 +122,6 @@ export default class MyApp extends App {
       setTimeout(() => window.dataLayer.push({ event: 'route_change_complete' }))
     }
   }
-
-  componentWillUnmount() {
-    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
-    Router.events.off('routeChangeComplete', this.handleRouteChange)
-  }
-
-  handleMediaMatch = ({ matches }) =>
-    this.setState({
-      isMobile: matches,
-    })
 
   render() {
     const { Component, pageProps } = this.props
@@ -122,7 +136,13 @@ export default class MyApp extends App {
         initialLanguage={initialLanguage}
       >
         <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
-          <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
+          <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
+            <ThemeProvider theme={customTheme}>
+              {/* У Component isMobile прокидывается явно для обратной совместимости  */}
+              {/* TODO: перевести все компоненты на isMobile из контекста */}
+              <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
+            </ThemeProvider>
+          </DeviceProvider>
         </MsBrowserProvider>
       </I18nextProvider>
     )

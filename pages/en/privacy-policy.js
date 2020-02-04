@@ -5,7 +5,7 @@ import withI18next from '../../utils/withI18next'
 
 const PrivacyPolicy = props => (
   <PrivacyPolicyPage {...props}>
-    <PrivacyPolicyContent/>
+    <PrivacyPolicyContent />
   </PrivacyPolicyPage>
 )
 

@@ -3,7 +3,10 @@ const { sales, TEST_TAG } = require('@dreamteam/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
 
-const amoSales = sales.init(process.env.AMO_CRM_SALES_USER_LOGIN, process.env.AMO_CRM_SALES_USER_HASH)
+const amoSales = sales.init(
+  process.env.AMO_CRM_SALES_USER_LOGIN,
+  process.env.AMO_CRM_SALES_USER_HASH,
+)
 
 module.exports = async (req, res) => {
   const {
@@ -18,7 +21,11 @@ module.exports = async (req, res) => {
     privacyPolicy,
   } = req.body
 
-  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), { name, email, privacyPolicy })
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), {
+    name,
+    email,
+    privacyPolicy,
+  })
 
   if (validationResult.errors) {
     return res.status(400).send({ error: validationResult.errors })
@@ -56,7 +63,11 @@ module.exports = async (req, res) => {
       utm_content,
     })
 
-    console.log('server/submit-form.js SUCCESS', JSON.stringify(amoResponse.contact), JSON.stringify(amoResponse.lead))
+    console.log(
+      'server/submit-form.js SUCCESS',
+      JSON.stringify(amoResponse.contact),
+      JSON.stringify(amoResponse.lead),
+    )
 
     return res.sendStatus(201)
   } catch (e) {

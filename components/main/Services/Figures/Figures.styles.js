@@ -11,6 +11,10 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     width: 456px;
   }
 
+  @media (max-height: 800px) and (min-width: 1280px) {
+    top: 5vh;
+  }
+
   .picture:not(.picture_figures) {
     position: absolute;
     left: 50%;
@@ -61,6 +65,10 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       width: ${calcRem(324)};
     }
 
+    @media (max-height: 600px) {
+      top: 7vh;
+    }
+
     .picture_figures {
       width: 100%;
     }
@@ -87,10 +95,22 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   }
 `
 
-const ie11Styles = css`
+const ie11Styles = ({ breakpoints: { tablet } }) => css`
   & {
+    position: relative;
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-row: 2;
+  }
+
+  .picture:not(.picture_figures) {
+    left: calc(50% + 8px);
+    transform: translate(-50%);
+  }
+
+  ${tablet.all} {
+    .picture:not(.picture_figures) {
+      left: calc(50% + 6px);
+    }
   }
 `
 
@@ -100,6 +120,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints, colors })}
-    ${props.isIe11 && ie11Styles}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

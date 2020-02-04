@@ -5,6 +5,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     cursor: pointer;
   }
 
@@ -12,6 +13,9 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     order: 1;
     width: 100%;
     flex-shrink: 0;
+    img {
+      height: auto;
+    }
   }
 
   .card-title,

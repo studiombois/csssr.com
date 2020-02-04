@@ -126,6 +126,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     .service-icon {
       left: 28px;
     }
+
+    .service_outsourcing .service-subtitle,
+    .service_express .service-subtitle {
+      white-space: nowrap;
+    }
   }
 
   ${tablet.all} {
@@ -182,6 +187,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
         stroke: #8BD9B9;
       }
     }
+
+    .service_outsourcing .service-subtitle,
+    .service_express .service-subtitle {
+      white-space: nowrap;
+    }
   }
 
   ${mobile.all} {
@@ -211,7 +221,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service_outsourcing::before {
       top: ${calcRem(-24)};
-      left: ${calcRem(-128)};
+      left: ${calcRem(-118)};
       width: ${calcRem(197)};
       height: ${calcRem(197)};
       transform: scaleX(-1)
@@ -227,7 +237,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service_mvp::before {
       top: ${calcRem(-40)};
-      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-136)})` : calcRem(-136)};
+      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-150)})` : calcRem(-150)};
       width: ${calcRem(218)};
       height: ${calcRem(218)};
       transform: ${lng === 'ru' ? `scaleY(-1)` : `scale(-1)`};
@@ -281,9 +291,9 @@ export const mobileBackgroundImagesStyles = theme => {
 
   return css`
     ${mobile.all} {
-      ${getBackgroundImageSrcSet({ png: square, webp: square_webp}, '.service_outsourcing::before')}
+      ${getBackgroundImageSrcSet({ png: circle, webp: circle_webp}, '.service_outsourcing::before')}
       ${getBackgroundImageSrcSet({ png: triangle, webp: triangle_webp}, '.service_express::before')}
-      ${getBackgroundImageSrcSet({ png: circle, webp: circle_webp}, '.service_mvp::before')}
+      ${getBackgroundImageSrcSet({ png: square, webp: square_webp}, '.service_mvp::before')}
     }
   `
 }

@@ -2,10 +2,14 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../../utils/style/getGridValueForMs'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   & {
     outline: 1px solid red;
     margin-top: 210px;
+  }
+
+  .feature {
+    color: ${colors.secondary.darken100};
   }
 
   .feature_1,
@@ -190,9 +194,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

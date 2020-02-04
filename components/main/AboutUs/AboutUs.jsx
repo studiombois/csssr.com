@@ -21,9 +21,9 @@ import unescapeHtmlEntities from '../../../utils/unescapeHtmlEntities'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const AboutUs = ({ className, isMobile, isTablet, t, lng }) => {
+const AboutUs = ({ className, isMobile, t }) => {
   const [visibleImage, setVisibleImage] = useState(null)
-  const isDesktop = !isMobile && !isTablet
+  const isDesktop = !isMobile
   const handleHover = visibleImage => event => {
     if (!isDesktop) {
       event.preventDefault()

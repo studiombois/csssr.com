@@ -144,6 +144,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .link {
+      font-size: ${calcRem(18)};
       grid-row: auto;
       margin-top: ${calcRem(24)};
     }

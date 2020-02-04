@@ -112,6 +112,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .text {
       margin-top: ${calcRem(27)};
+      font-size: ${calcRem(14)};
     }
 
     .image {

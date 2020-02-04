@@ -2,6 +2,7 @@ import React from 'react'
 import { func } from 'prop-types'
 import Layout from '../Layout'
 import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 
 import Greeting from './Greeting'
 import OurClients from './OurClients'
@@ -17,19 +18,10 @@ import coreValues from '../../data/industry/ecommerce/coreValues'
 import facts from '../../data/industry/ecommerce/facts'
 import projects from '../../data/industry/ecommerce/projects'
 
-const IndustryPage = () => {
+const IndustryPage = ({ t }) => {
   return (
     <Layout>
-      <Head
-        //to-do заменить meta как только они будут известны
-        title="demo-title"
-        description="demo-description"
-        ogImage={{
-          url: require('../../static/images/jobs/1920/cover@2x.jpg'),
-          width: 1266,
-          height: 2000,
-        }}
-      />
+      <Head title={t('ecommerce:meta.title')} description={t('ecommerce:meta.description')} />
 
       <Greeting id="greeting" content={greeting} />
 
@@ -50,4 +42,4 @@ IndustryPage.propTypes = {
   t: func,
 }
 
-export default withI18next(['ecommerce'])(IndustryPage)
+export default withI18next(['ecommerce'])(translate()(IndustryPage))

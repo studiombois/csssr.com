@@ -33,6 +33,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(224)};
 
     .image {
+      margin-left: ${calcRem(-15)};
       margin-top: ${calcRem(82)};
     }
   }

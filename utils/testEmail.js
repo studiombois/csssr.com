@@ -1,1 +1,1 @@
-export default 'testtest@csssr.com'
+export default 'test@csssr.io'

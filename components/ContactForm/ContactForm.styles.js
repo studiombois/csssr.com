@@ -162,6 +162,20 @@ const base = ({ shouldShowSubHeading }) => css`
     }
   }
 
+  .button {
+    margin-top: 2.5625rem;
+    grid-column: 6 / span 2;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      grid-column: 5 / span 4;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 3.4375rem;
+      grid-column: 2 / span 4;
+    }
+  }
+
   ${shouldShowSubHeading && `
     h2 {
       margin-bottom: ${calcRem(31)};
@@ -173,6 +187,22 @@ const base = ({ shouldShowSubHeading }) => css`
       margin-bottom: ${calcRem(132)};
     }
 
+    .button {
+      grid-column: 6 / span 2;
+    }
+
+    @media (min-width: 1360px) and (max-width: 1919px) {
+      .button {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @media (min-width: 1280px) and (max-width: 1359px) {
+      .button {
+        grid-column: 5 / span 4;
+      }
+    } 
+
     @media (min-width: 768px) and (max-width: 1279px) {
       h2 {
         margin-bottom: ${calcRem(10)};
@@ -180,6 +210,9 @@ const base = ({ shouldShowSubHeading }) => css`
       .sub-heading {
         grid-column: 4 / span 6;
         margin-bottom: ${calcRem(55)};
+      }
+      .button {
+        grid-column: 5 / span 4;
       }
     }
 
@@ -194,22 +227,12 @@ const base = ({ shouldShowSubHeading }) => css`
         text-align: start;
         margin-bottom: ${calcRem(87)};
       }
+
+      .button {
+        grid-column: 1 / span 6;
+      }
     }
   `}
-
-  .button {
-    margin-top: 2.5625rem;
-    grid-column: 6 / span 2;
-
-    @media (min-width: 768px) and (max-width: 1279px) {
-      grid-column: 5 / span 4;
-    }
-
-    @media (max-width: 767px) {
-      margin-top: 3.4375rem;
-      grid-column: 2 / span 4;
-    }
-  }
 
   .message {
     grid-column: 4 / span 6;

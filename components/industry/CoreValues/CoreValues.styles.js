@@ -20,26 +20,37 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(31)};
   }
 
-  .image {
+  .card {
     grid-row: 3;
-    align-self: end;
-    margin-top: ${calcRem(148)};
+  }
+
+  .image {
+    display: flex;
+    align-items: flex-end;
     img {
       height: auto;
     }
   }
 
-  .link {
-    font-size: ${calcRem(24)};
-    font-weight: 900;
-    grid-row: 4;
+  .title {
     margin-top: ${calcRem(56)};
-    text-decoration: none;
     color: ${colors.secondary.darken100};
+    svg {
+      margin-left: ${calcRem(16)};
+      opacity: 0;
+      transition: opacity 100ms ease-out;
+    }
+  }
+
+  @media not screen and (pointer: coarse) {
+    .card:hover {
+    .title svg {
+        opacity: 1;
+      }
+    }
   }
 
   .text {
-    grid-row: 5;
     margin-top: ${calcRem(22)};
     color: ${colors.secondary.darken100};
   }
@@ -54,6 +65,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .third-item {
     grid-column: 10 / span 3;
+  }
+
+  .first-item.card,
+  .third-item.card {
+    margin-top: ${calcRem(324)};
+  }
+
+  .second-item.card {
+    margin-top: ${calcRem(145)};
   }
 
   ${desktop.m} {
@@ -73,8 +93,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(31)};
     }
 
-    .image {
-      margin-top: ${calcRem(92)};
+    .first-item.card,
+    .third-item.card {
+      margin-top: ${calcRem(220)};
+    }
+
+    .second-item.card {
+      margin-top: ${calcRem(89)};
     }
   }
 
@@ -82,15 +107,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     & {
       margin-top: ${calcRem(312)};
     }
+
+    .first-item.card,
+    .third-item.card {
+      margin-top: ${calcRem(220)};
+    }
+
+    .second-item.card {
+      margin-top: ${calcRem(98)};
+    }
     
     .heading {
       grid-column: 1 / span 12;
       grid-row: 1;
       text-align: center;
-    }
-
-    .image {
-      margin-top: ${calcRem(99)};
     }
   }
 
@@ -101,14 +131,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .sub-heading {
       margin-top: ${calcRem(10)};
+      margin-bottom: ${calcRem(71)};
     }
 
-    .image {
-      margin-top: ${calcRem(71)};
+    .first-item.card::before,
+    .third-item.card::before {
+      content: '';
+      display: block;
+      height: ${calcRem(92)};
     }
 
-    .link {
-      font-size: ${calcRem(18)};
+    .title {
       margin-top: ${calcRem(58)};
     }
 
@@ -125,9 +158,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .heading,
     .sub-heading,
-    .image,
-    .link,
-    .text {
+    .card {
       grid-column: 1 / span 6;
     }
     
@@ -140,19 +171,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(10)};
     }
 
+    .first-item {
+      grid-row: 3;
+    }
+
+    .second-item {
+      grid-row: 4;
+    }
+
+    .third-item {
+      grid-row: 5;
+    }
+
     .image {
-      grid-row: auto;
       margin-top: ${calcRem(89)};
     }
 
-    .link {
-      font-size: ${calcRem(18)};
-      grid-row: auto;
+    .title {
       margin-top: ${calcRem(24)};
     }
 
     .text {
-      grid-row: auto;
       margin-top: ${calcRem(13)};
       font-size: ${calcRem(14)};
     }
@@ -172,13 +211,17 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
     -ms-grid-row: 2;
   }
 
+  .card {
+    display: block;
+  }
+
   .image {
     display: flex;
     align-items: flex-end;
     -ms-grid-row: 3;
   }
 
-  .link {
+  .title {
     display: block;
     -ms-grid-row: 4;
   }

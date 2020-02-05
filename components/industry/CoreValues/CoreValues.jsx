@@ -24,14 +24,14 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
       className="sub-heading"
     />
 
-    {coreValuesItems.map(({ images, imgAlt, link, text, className }) => (
+    {coreValuesItems.map(({ images, imgAlt, title, text, className }) => (
       <CoreValuesItem
         images={images}
         imgAlt={imgAlt}
-        link={link}
+        title={title}
         text={text}
         itemClassName={className}
-        key={link}
+        key={title}
       />
     ))}
   </Grid>

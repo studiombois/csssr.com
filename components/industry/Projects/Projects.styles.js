@@ -54,7 +54,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .sub-heading {
-      grid-column: 3 / span 8;
+      grid-column: 2 / span 10;
       text-align: center;
       padding: 0 ${calcRem(12)};
       margin-top: ${calcRem(31)};

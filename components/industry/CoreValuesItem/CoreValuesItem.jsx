@@ -15,11 +15,7 @@ const CoreValuesItem = ({ t, images, imgAlt, link, text, itemClassName }) => (
       className={cn(itemClassName, 'image')}
     />
 
-    <Link
-      size="l"
-      dangerouslySetInnerHTML={{ __html: t(link) }}
-      className={cn(itemClassName, 'link')}
-    />
+    <Link dangerouslySetInnerHTML={{ __html: t(link) }} className={cn(itemClassName, 'link')} />
 
     <Text
       type="regular"

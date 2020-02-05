@@ -30,6 +30,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .link {
+    font-size: ${calcRem(24)};
     font-weight: 900;
     grid-row: 4;
     margin-top: ${calcRem(56)};
@@ -107,6 +108,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .link {
+      font-size: ${calcRem(18)};
       margin-top: ${calcRem(58)};
     }
 

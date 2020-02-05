@@ -23,7 +23,7 @@ const Greeting = ({ t, className, id, content: { heading, text, button, images, 
 
     <PictureForAllResolutions
       images={images}
-      fallback={images['desktop.all'].png}
+      fallback={images['desktop.l'].png}
       alt={t(imgAlt)}
       className="image"
     />

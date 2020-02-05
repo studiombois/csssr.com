@@ -85,6 +85,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(312)};
       margin-bottom: ${calcRem(173)};
     }
+
+    .second-item {
+      margin-top: ${calcRem(226)};
+    }
+
+    .third-item {
+      margin-top: ${calcRem(226)};
+    }
+
+    .sub-heading {
+      grid-column: 2 / span 10;
+    }
     
     .heading {
       grid-column: 1 / span 12;
@@ -95,8 +107,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(215)};
+      margin-top: ${calcRem(236)};
       margin-bottom: ${calcRem(117)};
+    }
+
+    .first-item {
+      margin-top: ${calcRem(70)};
+    }
+
+    .second-item {
+      margin-top: ${calcRem(84)};
+    }
+
+    .third-item {
+      margin-top: ${calcRem(99)};
     }
 
     .sub-heading {

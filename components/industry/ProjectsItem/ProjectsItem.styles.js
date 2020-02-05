@@ -206,7 +206,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 // после этого приема можно использовать положительный margin-top для отступов
 // firefox применяет max-content только внутри функции minmax
 const base = (imgMaxWidth, { colors,  breakpoints: { mobile }}) => css`
-  grid-template-rows: minmax(0, max-content) minmax(0, max-content) minmax(0, max-content);
+  grid-template-rows: minmax(0,max-content) minmax(0,max-content) minmax(0,max-content) 1fr;
 
   .image {
     max-width: ${imgMaxWidth};

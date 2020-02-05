@@ -9,7 +9,6 @@ export default {
     {
       images: projects_1,
       imgAlt: 'ecommerce:imgAlt.projects_1',
-      imgMaxWidth: '29.1875rem',
       heading: 'ecommerce:projects.firstItem.heading',
       text: 'ecommerce:projects.firstItem.text',
       className: 'first-item',
@@ -27,7 +26,6 @@ export default {
     {
       images: projects_2,
       imgAlt: 'ecommerce:imgAlt.projects_2',
-      imgMaxWidth: '28.5rem',
       heading: 'ecommerce:projects.secondItem.heading',
       text: 'ecommerce:projects.secondItem.text',
       className: 'second-item',
@@ -46,7 +44,6 @@ export default {
     {
       images: projects_3,
       imgAlt: 'ecommerce:imgAlt.projects_3',
-      imgMaxWidth: '30.6875rem',
       heading: 'ecommerce:projects.thirdItem.heading',
       text: 'ecommerce:projects.thirdItem.text',
       className: 'third-item',

@@ -19,16 +19,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .third-item {
     margin-top: ${calcRem(218)};
   }
-
-  .first-item .image {
-    margin-left: ${calcRem(-45)};
-  }
-
-  .third-item .image {
-    margin-top: ${calcRem(-17)};
-    margin-left: ${calcRem(-33)};
-  }
-
   
   .heading {
     grid-column: 1 / span 12;
@@ -56,15 +46,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .third-item {
       margin-top: ${calcRem(226)};
-    }
-
-    .first-item .image {
-      margin-left: ${calcRem(-12)};
-    }
-
-    .third-item .image {
-      margin-top: ${calcRem(-17)};
-      margin-left: 0;
     }
 
     .heading {
@@ -126,19 +107,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .sub-heading {
       margin-top: ${calcRem(10)};
     }
-
-    .first-item .image {
-      margin-left: ${calcRem(-41)};
-    }
-
-    .second-item .image {
-      margin-right: ${calcRem(-35)};
-    }
-
-    .third-item .image {
-      margin-top: ${calcRem(-17)};
-      margin-left: ${calcRem(-27)};
-    }
   }
 
   ${mobile.all} {
@@ -166,20 +134,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .third-item {
       margin-top: ${calcRem(106)};
-    }
-
-    .first-item .image {
-      margin-left: ${calcRem(-9)};
-    }
-
-    .second-item .image {
-      width: ${calcRem(339)};
-    }
-
-    .third-item .image {
-      margin-top: 0;
-      margin-left: ${calcRem(-12)};
-      width: ${calcRem(350)};
     }
   }
 `

@@ -8,7 +8,7 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 // firefox применяет max-content только внутри функции minmax
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
-    grid-template-rows: minmax(0, max-content) minmax(0, max-content);
+    grid-template-rows: minmax(0, max-content) minmax(0, max-content) 1fr;
     margin-top: ${calcRem(352)};
   }
 

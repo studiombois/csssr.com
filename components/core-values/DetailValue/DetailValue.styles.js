@@ -53,20 +53,20 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
 
 const ie11Styles = () => css`
   .image {
-    -ms-rid-column: ${getGridValueForMs(2)};
+    -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
     -ms-grid-row: 1;
     -ms-grid-row-span: 3;
   }
 
   .heading {
-    -ms-rid-column: ${getGridValueForMs(7)};
+    -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
     -ms-grid-row: 2;
   }
 
   .sub-heading {
-    -ms-rid-column: ${getGridValueForMs(7)};
+    -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
     -ms-grid-row: 3;
   }

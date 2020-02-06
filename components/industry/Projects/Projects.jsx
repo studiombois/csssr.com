@@ -26,21 +26,18 @@ const Projects = ({ t, className, id, content: { heading, subHeading, projectsIt
       />
     </Grid>
 
-    {projectsItems.map(
-      ({ images, imgAlt, heading, text, numericData, direction, imgMaxWidth, className }) => (
-        <ProjectsItem
-          images={images}
-          imgAlt={imgAlt}
-          heading={heading}
-          text={text}
-          numericData={numericData}
-          itemClassName={className}
-          direction={direction}
-          imgMaxWidth={imgMaxWidth}
-          key={text}
-        />
-      ),
-    )}
+    {projectsItems.map(({ images, imgAlt, heading, text, numericData, direction, className }) => (
+      <ProjectsItem
+        images={images}
+        imgAlt={imgAlt}
+        heading={heading}
+        text={text}
+        numericData={numericData}
+        itemClassName={className}
+        direction={direction}
+        key={text}
+      />
+    ))}
   </section>
 )
 

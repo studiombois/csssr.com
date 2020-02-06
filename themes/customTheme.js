@@ -27,6 +27,8 @@ const customTheme = {
       origin: secondary.hex(),
       darken100: '#18191B',
       lighten110: secondary.lighten(1.1).hex(),
+      gray: '#9B9B9B',
+      lightGray: '#C0C0C0',
     },
   },
   baseSize: 16,

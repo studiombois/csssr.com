@@ -121,7 +121,7 @@ const ie11Styles = ({ shouldShowSubHeading }) => css`
 `
 
 
-const base = ({ shouldShowSubHeading }) => css`
+const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
   position: relative;
   margin-right: auto;
   margin-left: auto;
@@ -161,35 +161,6 @@ const base = ({ shouldShowSubHeading }) => css`
       grid-column: 1 / span 6;
     }
   }
-
-  ${shouldShowSubHeading && `
-    h2 {
-      margin-bottom: ${calcRem(31)};
-    }
-
-    .sub-heading {
-      grid-column: 3 / span 8;
-      text-align: center;
-      margin-bottom: ${calcRem(132)};
-    }
-
-    @media (min-width: 768px) and (max-width: 1279px) {
-      .sub-heading {
-        grid-column: 4 / span 6;
-      }
-    }
-
-    @media (max-width: 767px) {
-      h2 {
-        text-align: start;
-      }
-
-      .sub-heading {
-        grid-column: 1 / span 6;
-        text-align: start;
-      }
-    }
-  `}
 
   .button {
     margin-top: 2.5625rem;
@@ -263,6 +234,85 @@ const base = ({ shouldShowSubHeading }) => css`
   .field_type_no-margin {
     margin: 0;
   }
+
+  ${shouldShowSubHeading && `
+    h2 {
+      margin-bottom: ${calcRem(31)};
+      color: ${colors.secondary.darken100};
+    }
+
+    input {
+      color: ${colors.secondary.darken100};
+      caret-color: ${colors.secondary.darken100};
+    }
+
+    input::placeholder {
+      color: ${colors.secondary.lightGray};
+    }
+
+    label {
+      color: ${colors.secondary.gray};
+    }
+
+    label span {
+      color: ${colors.secondary.darken100};
+    }
+
+
+
+    .sub-heading {
+      grid-column: 3 / span 8;
+      text-align: center;
+      margin-bottom: ${calcRem(132)};
+      color: ${colors.secondary.darken100};
+    }
+
+    .button {
+      grid-column: 6 / span 2;
+    }
+
+    @media (min-width: 1360px) and (max-width: 1919px) {
+      .button {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @media (min-width: 1280px) and (max-width: 1359px) {
+      .button {
+        grid-column: 5 / span 4;
+      }
+    } 
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      h2 {
+        margin-bottom: ${calcRem(10)};
+      }
+      .sub-heading {
+        grid-column: 4 / span 6;
+        margin-bottom: ${calcRem(55)};
+      }
+      .button {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @media (max-width: 767px) {
+      h2 {
+        text-align: start;
+        margin-bottom: ${calcRem(10)};
+      }
+
+      .sub-heading {
+        grid-column: 1 / span 6;
+        text-align: start;
+        margin-bottom: ${calcRem(87)};
+      }
+
+      .button {
+        grid-column: 1 / span 6;
+      }
+    }
+  `}
 `
 
 export default props => css`

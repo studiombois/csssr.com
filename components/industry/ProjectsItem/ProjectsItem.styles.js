@@ -7,7 +7,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
     return (
       css`
         .image {
-          grid-column: 8 / span 5;
+          grid-column: 8 / span 4;
         }
 
         .item-heading {
@@ -27,6 +27,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         ${desktop.m} {
+          .image {
+            grid-column: 8 / span 4;
+          }
+
           .item-heading {
             grid-column: 2 / span 2;
           }
@@ -45,6 +49,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         ${desktop.s} {
+          .image {
+            grid-column: 8 / span 5;
+          }
+
           .item-heading {
             grid-column: 2 / span 2;
           }
@@ -64,7 +72,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 
         ${tablet.all} {
           .image {
-            grid-column: 7 / span 5;
+            grid-column: 8 / span 5;
           }
 
           .item-heading {
@@ -128,10 +136,6 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
       ${desktop.m} {
         .text {
           grid-column: 7 / span 5;
-        }
-        
-        &.third-item .text {
-          grid-column: 7 / span 4;
         }
 
         .image {
@@ -205,11 +209,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 // хак для grid-template-rows обеспечивает рамер по контенту для всех строк кроме последней
 // после этого приема можно использовать положительный margin-top для отступов
 // firefox применяет max-content только внутри функции minmax
-const base = (imgMaxWidth, { colors,  breakpoints: { mobile }}) => css`
-  grid-template-rows: minmax(0, max-content) minmax(0, max-content) minmax(0, max-content);
+const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
+  grid-template-rows: minmax(0,max-content) minmax(0,max-content) minmax(0,max-content) 1fr;
 
   .image {
-    max-width: ${imgMaxWidth};
     img {
       height: auto;
     }
@@ -217,6 +220,21 @@ const base = (imgMaxWidth, { colors,  breakpoints: { mobile }}) => css`
 
   .image {
     grid-row: 1 / span 4;
+  }
+
+  &.first-item .image {
+    max-width: ${calcRem(467)};
+    margin-left: ${calcRem(-45)};
+  }
+
+  &.second-item .image {
+    max-width: ${calcRem(456)};
+  }
+
+  &.third-item .image {
+    max-width: ${calcRem(491)};
+    margin-top: ${calcRem(-17)};
+    margin-left: ${calcRem(-33)};
   }
 
   .item-heading {
@@ -240,9 +258,77 @@ const base = (imgMaxWidth, { colors,  breakpoints: { mobile }}) => css`
     color: ${colors.secondary.darken100};
   }
 
+  ${desktop.m} {
+    &.first-item .image {
+      max-width: ${calcRem(445)};
+      margin-left: ${calcRem(-12)};
+    }
+
+    &.second-item .image {
+      max-width: none;
+    }
+
+    &.third-item .image {
+      max-width: ${calcRem(470)};
+      margin-top: ${calcRem(-17)};
+      margin-left: 0;
+    }
+
+    &.third-item .text {
+      grid-column: 7 / span 4;
+    }
+  }
+
+  ${desktop.s} {
+    &.first-item .image {
+      max-width: ${calcRem(446)};
+    }
+
+    &.second-item .image {
+      max-width: ${calcRem(435)};
+    }
+
+    &.third-item .image {
+      max-width: ${calcRem(470)};
+    }
+  }
+
+  ${tablet.all} {
+    &.first-item .image {
+      max-width: ${calcRem(346)};
+      margin-left: ${calcRem(-41)};
+    }
+
+    &.second-item .image {
+      max-width: ${calcRem(332)};
+      margin-right: ${calcRem(-35)};
+    }
+
+    &.third-item .image {
+      max-width: ${calcRem(360)};
+      margin-top: ${calcRem(-17)};
+      margin-left: ${calcRem(-27)};
+    }
+  }
+
   ${mobile.all} {
     .image {
       grid-row: 1;
+    }
+
+    &.first-item .image {
+      width: ${calcRem(336)};
+      margin-left: ${calcRem(-9)};
+    }
+
+    &.second-item .image {
+      width: ${calcRem(340)};
+    }
+
+    &.third-item .image {
+      margin-top: 0;
+      margin-left: ${calcRem(-12)};
+      width: ${calcRem(350)};
     }
 
     .item-heading {
@@ -513,7 +599,7 @@ export default props => {
 
   return css`
     ${dynamicStyles(props.direction, { breakpoints })}
-    ${base(props.imgMaxWidth, { colors, breakpoints })}
+    ${base({ colors, breakpoints })}
     ${props.isIe11 && ie11DynamicStyles(props.direction, { breakpoints })}
     ${props.isIe11 && ie11BaseStyles()}
   `

@@ -35,18 +35,69 @@ const dynamicStyles = description => css`
 `
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
-  & {
+  &.code {
+    margin-top: ${calcRem(135)};
+  }
+
+  &.reliability {
     margin-top: ${calcRem(143)};
   }
 
-  .text {
-    color: ${colors.secondary.darken100};
+  &.accessibility {
+    margin-top: ${calcRem(143)};
+  }
+
+  &.ux {
+    margin-top: ${calcRem(162)};
+  }
+
+  &.security {
+    margin-top: ${calcRem(143)};
+  }
+
+  ${desktop.m} {
+    &.code {
+      margin-top: ${calcRem(143)};
+    }
+
+    &.reliability {
+      margin-top: ${calcRem(142)};
+    }
+
+    &.accessibility {
+      margin-top: ${calcRem(143)};
+    }
+
+    &.ux {
+      margin-top: ${calcRem(119)};
+    }
+
   }
 
   ${desktop.s} {
     & {
       margin-top: ${calcRem(120)};
     }
+
+    &.code {
+      margin-top: ${calcRem(119)};
+    }
+
+    &.reliability {
+      margin-top: ${calcRem(120)};
+    }
+
+    &.accessibility {
+      margin-top: ${calcRem(119)};
+    }
+
+    &.ux {
+      margin-top: ${calcRem(119)};
+    }
+  }
+
+  .text {
+    color: ${colors.secondary.darken100};
   }
 
   ${tablet.all} {

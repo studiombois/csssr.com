@@ -8,8 +8,8 @@ import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Description = ({ t, className, description }) => (
-  <Grid className={className}>
+const Description = ({ t, parentClassName, className, description }) => (
+  <Grid className={cn(className, parentClassName)}>
     {description.map(({ icon: Icon, text }, index) => (
       <Fragment key={text}>
         <Icon className={`icon-column-${index + 1}`} />

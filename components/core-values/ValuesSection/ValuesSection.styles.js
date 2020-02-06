@@ -11,15 +11,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   article:nth-of-type(3) {
-    margin-top: ${calcRem(340)};
+    margin-top: ${calcRem(329)};
   }
 
   article:nth-of-type(4) {
-    margin-top: ${calcRem(377)};
+    margin-top: ${calcRem(358)};
   }
 
   article:nth-of-type(5) {
-    margin-top: ${calcRem(415)};
+    margin-top: ${calcRem(377)};
     margin-bottom: ${calcRem(286)};
   }
 
@@ -37,7 +37,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(404)};
+      margin-top: ${calcRem(335)};
     }
 
     article:nth-of-type(5) {
@@ -51,15 +51,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(265)};
+      margin-top: ${calcRem(289)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(269)};
+      margin-top: ${calcRem(264)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(313)};
+      margin-top: ${calcRem(361)};
     }
 
     article:nth-of-type(5) {
@@ -74,7 +74,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(230)};
+      margin-top: ${calcRem(225)};
     }
 
     article:nth-of-type(3) {

@@ -70,7 +70,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.l} {
     & {
-      background-image: url(${require('../../../static/icons/technologies/hero/dashline_desktop_l.svg').default});
+      background-image: url(${require('../../../static/icons/technologies/hero/lines_desktop_l.svg').default});
       background-position-y: 475px;
     }
 
@@ -90,7 +90,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.m} {
     & {
-      background-image: url(${require('../../../static/icons/technologies/hero/dashline_desktop_m.svg').default});
+      background-image: url(${require('../../../static/icons/technologies/hero/lines_desktop_m.svg').default});
       background-position-y: 640px;
     }
 
@@ -110,7 +110,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.s} {
     & {
-      background-image: url(${require('../../../static/icons/technologies/hero/dashline_desktop_s.svg').default});
+      background-image: url(${require('../../../static/icons/technologies/hero/lines_desktop_s.svg').default});
       background-position-y: 649px;
     }
 
@@ -130,7 +130,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      background-image: url(${require('../../../static/icons/technologies/hero/dashline_tablet_all.svg').default});
+      background-image: url(${require('../../../static/icons/technologies/hero/lines_tablet_all.svg').default});
       background-position-y: ${calcRem(382)};
     }
 
@@ -166,7 +166,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${mobile.all} {
     & {
-      background-image: url(${require('../../../static/icons/technologies/hero/dashline_mobile_all.svg').default});
+      background-image: url(${require('../../../static/icons/technologies/hero/lines_mobile_all.svg').default});
       background-position-y: ${calcRem(381)};
       background-repeat: no-repeat;
       background-size: 100%;

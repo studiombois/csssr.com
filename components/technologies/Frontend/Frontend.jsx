@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Frontend.styles'
 import translate from '../../../utils/translate-wrapper'
-import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
@@ -81,9 +80,7 @@ Frontend.propTypes = {
 }
 
 export default translate()(
-  DeviceConsumer(
-    MsBrowserConsumer(styled(Frontend)`
-      ${styles}
-    `),
-  ),
+  MsBrowserConsumer(styled(Frontend)`
+    ${styles}
+  `),
 )

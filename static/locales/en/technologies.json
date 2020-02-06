@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Technology Stack"
+  },
+  "hero": {
+    "title": "Technology Stack",
+    "description": "We&nbsp;use open-source tools and resources that are supported and continuously improved by&nbsp;the community, and thus are the most reliable and flexible. We&nbsp;keep a&nbsp;close eye on&nbsp;web development novelties, but do&nbsp;not forget about the best standards.",
+    "javascript": "We&nbsp;use all modern features of&nbsp;<span style=\"font-weight: bold;\">JavaScript</span>, but we&nbsp;also apply tools that allow our projects to&nbsp;work in&nbsp;old versions of&nbsp;browsers, including old versions of&nbsp;IE.",
+    "typescript": "We&nbsp;also use <span style=\"font-weight: bold;\">TypeScript</span> and <span style=\"font-weight: bold;\">Flow</span> to&nbsp;add static typing support in&nbsp;JS. This helps&nbsp;us to&nbsp;write flexible and reliable code."
+  },
+  "imageAlt": {
+    "javascript": "Happy astronaut with Javascript logo",
+    "typescript": "Happy astronauts with Typescript logo"
+  }
+}

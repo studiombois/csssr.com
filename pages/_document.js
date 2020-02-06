@@ -13,7 +13,9 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       // https://github.com/isaachinman/next-i18next/issues/374#issuecomment-529196313
-      language: i18n.services.languageUtils.getLanguagePartFromCode(ctx.req.i18n ? ctx.req.i18n.language : undefined),
+      language: i18n.services.languageUtils.getLanguagePartFromCode(
+        ctx.req.i18n ? ctx.req.i18n.language : undefined,
+      ),
       userAgent,
     }
   }

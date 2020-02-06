@@ -142,6 +142,36 @@ const sitemapUrlsSettings = [
     changefreq: 'yearly',
     priority: 0.6,
   },
+  {
+    url: 'https://csssr.com/ru/tech-stack',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/tech-stack',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/tech-stack',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/tech-stack',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/tech-stack',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/tech-stack',
+      },
+    ],
+  },
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>

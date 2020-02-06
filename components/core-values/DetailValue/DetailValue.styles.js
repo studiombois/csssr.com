@@ -12,6 +12,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   .heading {
     grid-column: 7 / span 3;
     grid-row: 2;
+    white-space: nowrap;
   }
 
   .sub-heading {

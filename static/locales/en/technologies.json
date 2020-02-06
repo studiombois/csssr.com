@@ -8,8 +8,16 @@
     "javascript": "We&nbsp;use all modern features of&nbsp;<span style=\"font-weight: bold;\">JavaScript</span>, but we&nbsp;also apply tools that allow our projects to&nbsp;work in&nbsp;old versions of&nbsp;browsers, including old versions of&nbsp;IE.",
     "typescript": "We&nbsp;also use <span style=\"font-weight: bold;\">TypeScript</span> and <span style=\"font-weight: bold;\">Flow</span> to&nbsp;add static typing support in&nbsp;JS. This helps&nbsp;us to&nbsp;write flexible and reliable code."
   },
+  "frontend":{
+    "react": "is&nbsp;one of&nbsp;the most popular libraries for solving various development tasks. It&nbsp;is&nbsp;good for large and complex web applications, as&nbsp;it&nbsp;can be&nbsp;easily used together with many other libraries. But React can be&nbsp;well applied to&nbsp;small projects, including landing pages, as&nbsp;well.",
+    "angular": "is&nbsp;a&nbsp;framework that provides a&nbsp;large number of&nbsp;ready-made solutions to&nbsp;standard problems. It&nbsp;is&nbsp;best suited for typical projects where a&nbsp;serious customization of&nbsp;the application architecture is&nbsp;not required.",
+    "vue": "is&nbsp;a&nbsp;library that is&nbsp;very similar to&nbsp;React in&nbsp;its ideology, but close to&nbsp;Angular in&nbsp;syntax. It&nbsp;has difficulties with TypeScript and FlowType support, so&nbsp;we&nbsp;don&rsquo;t use it&nbsp;very often."
+  },
   "imageAlt": {
     "javascript": "Happy astronaut with Javascript logo",
-    "typescript": "Happy astronauts with Typescript logo"
+    "typescript": "Happy astronauts with Typescript logo",
+    "react": "React Logo",
+    "angular": "Angular logo",
+    "vue": "Vue logo"
   }
 }

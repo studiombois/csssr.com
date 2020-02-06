@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { string, func } from 'prop-types'
+import cn from 'classnames'
 import translate from '../../../utils/translate-wrapper'
 import styled from '@emotion/styled'
 import styles from './Description.styles'
@@ -17,7 +18,7 @@ const Description = ({ t, className, description }) => (
           type="regular"
           size="m"
           dangerouslySetInnerHTML={{ __html: t(text) }}
-          className={`text-column-${index + 1}`}
+          className={cn(`text-column-${index + 1} `, 'text')}
         />
       </Fragment>
     ))}

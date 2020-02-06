@@ -34,9 +34,13 @@ const dynamicStyles = description => css`
   }
 `
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(143)};
+  }
+
+  .text {
+    color: ${colors.secondary.darken100};
   }
 
   ${desktop.s} {
@@ -116,11 +120,12 @@ const ie11Styles = ({ description }) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
   const description = props.description
 
   return css`
     ${dynamicStyles(description)}
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints, description })}
   `
 }

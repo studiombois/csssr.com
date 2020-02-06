@@ -15,6 +15,7 @@ const Description = ({ t, className, description }) => (
 
         <Text
           type="regular"
+          size="m"
           dangerouslySetInnerHTML={{ __html: t(text) }}
           className={`text-column-${index + 1}`}
         />

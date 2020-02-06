@@ -35,6 +35,11 @@ const dynamicStyles = description => css`
 `
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+  & svg {
+    width: ${calcRem(64)};
+    height: ${calcRem(64)};
+  }
+
   &.code {
     margin-top: ${calcRem(135)};
   }

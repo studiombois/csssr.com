@@ -42,7 +42,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  @media not screen and (pointer: coarse) {
+  @media (pointer: fine) {
     .card:hover {
     .title svg {
         opacity: 1;
@@ -69,7 +69,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .first-item.card,
   .third-item.card {
-    margin-top: ${calcRem(324)};
+    margin-top: ${calcRem(323)};
   }
 
   .second-item.card {
@@ -133,6 +133,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(10)};
       margin-bottom: ${calcRem(71)};
     }
+    .first-item.card,
+    .third-item.card {
+      margin-top: ${calcRem(146)};
+    }
 
     .first-item.card::before,
     .third-item.card::before {
@@ -183,7 +187,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-row: 5;
     }
 
-    .image {
+    .first-item.card,
+    .second-item.card,
+    .third-item.card {
       margin-top: ${calcRem(89)};
     }
 
@@ -213,21 +219,17 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
 
   .card {
     display: block;
+    -ms-grid-row: 3;
   }
 
   .image {
     display: flex;
     align-items: flex-end;
-    -ms-grid-row: 3;
+    
   }
 
   .title {
     display: block;
-    -ms-grid-row: 4;
-  }
-
-  .text {
-    -ms-grid-row: 5;
   }
 
   .first-item {
@@ -243,6 +245,12 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
   .third-item {
     -ms-grid-column: ${getGridValueForMs(10)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
+  }
+
+  .card:hover {
+    .title svg {
+      opacity: 1;
+    }
   }
 
   ${desktop.m} {

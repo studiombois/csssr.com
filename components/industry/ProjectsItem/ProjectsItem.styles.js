@@ -237,6 +237,7 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
   .item-heading {
     grid-row: 1;
     color: ${colors.secondary.darken100};
+    white-space: nowrap;
   }
 
   .text {
@@ -292,8 +293,8 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     &.first-item .image {
-      max-width: ${calcRem(346)};
-      margin-left: ${calcRem(-41)};
+      max-width: ${calcRem(336)};
+      margin-left: ${calcRem(-32)};
     }
 
     &.second-item .image {
@@ -302,9 +303,9 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.third-item .image {
-      max-width: ${calcRem(360)};
+      max-width: ${calcRem(352)};
       margin-top: ${calcRem(-17)};
-      margin-left: ${calcRem(-27)};
+      margin-left: ${calcRem(-24)};
     }
   }
 
@@ -379,28 +380,11 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
         }
 
         ${desktop.m} {
-          .item-heading {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-
-          .text {
-            -ms-grid-column: ${getGridValueForMs(2)};
+          .image {
+            -ms-grid-column: ${getGridValueForMs(8)};
             -ms-grid-column-span: ${getGridValueForMs(4)};
           }
 
-          .column-1 {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-
-          .column-2 {
-            -ms-grid-column: ${getGridValueForMs(4)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-        }
-
-        ${desktop.s} {
           .item-heading {
             -ms-grid-column: ${getGridValueForMs(2)};
             -ms-grid-column-span: ${getGridValueForMs(2)};
@@ -424,12 +408,17 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
         ${desktop.s} {
           .image {
+            -ms-grid-column: ${getGridValueForMs(8)};
+            -ms-grid-column-span: ${getGridValueForMs(5)};
+          }
+
+          .item-heading {
             -ms-grid-column: ${getGridValueForMs(2)};
             -ms-grid-column-span: ${getGridValueForMs(2)};
           }
 
           .text {
-            -ms-grid-column: ${getGridValueForMs(4)};
+            -ms-grid-column: ${getGridValueForMs(2)};
             -ms-grid-column-span: ${getGridValueForMs(4)};
           }
 
@@ -566,7 +555,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 }
 
 const ie11BaseStyles = () => css`
-  -ms-grid-rows: minmax(10px, max-content) minmax(10px, max-content) minmax(10px, max-content);
+  -ms-grid-rows: auto auto auto 1fr;
 
   .image {
     -ms-grid-row: 1;

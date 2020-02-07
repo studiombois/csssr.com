@@ -225,7 +225,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
   & {
-    -ms-grid-template-rows: minmax(0, max-content) minmax(0, max-content);
+    -ms-grid-template-rows: auto auto 1fr;
   }
 
   .heading {

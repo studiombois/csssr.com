@@ -11,13 +11,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .heading {
     grid-column: 2 / span 5;
     grid-row: 1;
-    color: ${colors.secondary.darken100};
   }
 
   .text {
     grid-column: 2 / span 5;
     grid-row: 2;
     margin-top: ${calcRem(77)};
+    color: ${colors.secondary.darken100};
   }
 
   .image {

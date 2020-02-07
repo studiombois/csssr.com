@@ -7,6 +7,7 @@ import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../utils/client/getGaCid'
+import testEmail from '../../utils/testEmail'
 
 const ContactFormForDev = props => <ContactForm
   imageName='letter'
@@ -22,6 +23,8 @@ const onSubmit = (t, lng) => async values => {
   values.language = lng
   let res
 
+  const isTestEmail = values.email === testEmail
+
   try {
     res = await fetch('/api/submit-form', {
       method: 'POST',
@@ -32,7 +35,7 @@ const onSubmit = (t, lng) => async values => {
       body: JSON.stringify(values),
     })
   } catch {
-    if (window.dataLayer) {
+    if (window.dataLayer && !isTestEmail) {
       window.dataLayer.push({ event: 'form_fail' })
     }
 
@@ -40,7 +43,7 @@ const onSubmit = (t, lng) => async values => {
   }
 
   if (res.status === 201) {
-    if (window.dataLayer) {
+    if (window.dataLayer && !isTestEmail) {
       window.dataLayer.push({ event: 'form_success' })
     }
   } else {
@@ -52,7 +55,7 @@ const onSubmit = (t, lng) => async values => {
       error = t('common:form.errors.general')
     }
 
-    if (window.dataLayer) {
+    if (window.dataLayer && !isTestEmail) {
       window.dataLayer.push({ event: 'form_fail' })
     }
 

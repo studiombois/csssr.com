@@ -206,11 +206,8 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
   )
 }
 
-// хак для grid-template-rows обеспечивает рамер по контенту для всех строк кроме последней
-// после этого приема можно использовать положительный margin-top для отступов
-// firefox применяет max-content только внутри функции minmax
 const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
-  grid-template-rows: minmax(0,max-content) minmax(0,max-content) minmax(0,max-content) 1fr;
+  grid-template-rows: auto auto auto 1fr;
 
   .image {
     img {

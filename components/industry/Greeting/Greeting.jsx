@@ -6,7 +6,7 @@ import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import Button from '../../ui-kit/core-design/Button'
+import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
@@ -28,7 +28,9 @@ const Greeting = ({ t, className, id, content: { heading, text, button, images, 
       className="image"
     />
 
-    <Button className="button">{t(button)}</Button>
+    <ButtonLink className="button" kind="primary" href="#hire-us">
+      {t(button)}
+    </ButtonLink>
   </Grid>
 )
 

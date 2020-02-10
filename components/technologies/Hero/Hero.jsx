@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Hero.styles'
 import translate from '../../../utils/translate-wrapper'
-import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
@@ -72,9 +71,7 @@ Hero.propTypes = {
 }
 
 export default translate()(
-  DeviceConsumer(
-    MsBrowserConsumer(styled(Hero)`
-      ${styles}
-    `),
-  ),
+  MsBrowserConsumer(styled(Hero)`
+    ${styles}
+  `),
 )

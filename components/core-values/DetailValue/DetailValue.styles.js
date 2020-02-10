@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { tablet, mobile }}) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .image {
     grid-column: 2 / span 4;
@@ -12,6 +12,7 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
   .heading {
     grid-column: 7 / span 3;
     grid-row: 2;
+    white-space: nowrap;
   }
 
   .sub-heading {
@@ -19,6 +20,7 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
     grid-row: 3;
     margin-top: ${calcRem(31)};
     margin-bottom: ${calcRem(-11)};
+    color: ${colors.secondary.darken100};
   }
 
   ${tablet.all} {
@@ -53,20 +55,20 @@ const base = ({ breakpoints: { tablet, mobile }}) => css`
 
 const ie11Styles = () => css`
   .image {
-    -ms-rid-column: ${getGridValueForMs(2)};
+    -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
     -ms-grid-row: 1;
     -ms-grid-row-span: 3;
   }
 
   .heading {
-    -ms-rid-column: ${getGridValueForMs(7)};
+    -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
     -ms-grid-row: 2;
   }
 
   .sub-heading {
-    -ms-rid-column: ${getGridValueForMs(7)};
+    -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
     -ms-grid-row: 3;
   }
@@ -74,9 +76,10 @@ const ie11Styles = () => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles()}
   `
 }

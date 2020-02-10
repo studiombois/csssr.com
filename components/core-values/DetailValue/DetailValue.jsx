@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, object, array, func } from 'prop-types'
+import { string, object, func } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import styled from '@emotion/styled'
 import styles from './DetailValue.styles'
@@ -19,7 +19,7 @@ const DetailValue = ({
     <Grid className={className}>
       <PictureForAllResolutions
         images={images}
-        fallback={images['desktop.all'].png}
+        fallback={images['desktop.m'].png}
         alt={t(imgAlt)}
         className="image"
       />
@@ -38,7 +38,7 @@ const DetailValue = ({
       />
     </Grid>
 
-    <Description description={description} />
+    <Description description={description} parentClassName={id} />
   </article>
 )
 

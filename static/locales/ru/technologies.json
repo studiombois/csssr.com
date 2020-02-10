@@ -17,12 +17,20 @@
     "title": "Автотесты",
     "text": "Чтобы быть уверенными в&nbsp;работоспособности кода на&nbsp;протяжении всего процесса разработки, внедрять новые фичи быстрее и&nbsp;упростить рефакторинг, мы&nbsp;пишем различные автотесты: unit, integration, end-to-end."
   },
+  "backend": {
+    "node": "среда выполнения JavaScript на&nbsp;сервере. Мы&nbsp;используем её&nbsp;для написания так называемого Middle-end (проксирующего бэкенда), либо для реализации несложных сервисов.",
+    "dbs": "мы&nbsp;выбираем базы данных в&nbsp;зависимости от&nbsp;потребностей проекта и&nbsp;особенностей задач: MongoDB&nbsp;&mdash; нереляционная база данных (NoSQL) или PostgreSQL&nbsp;&mdash; реляционная база данных.",
+    "kotlin": "на&nbsp;этих языках мы&nbsp;разрабатываем бэкенд для наших клиентов. Можем писать на&nbsp;проверенном временем Java, но&nbsp;предпочитаем Kotlin&nbsp;&mdash; современный язык, работающий на&nbsp;JVM (Java Virtual Machine)."
+  },
   "imageAlt": {
     "javascript": "Счастливый космонавт c лого Javascript",
     "typescript": "Счастливые космонавты c лого Typescript",
     "react": "Лого React",
     "angular": "Лого Angular",
     "vue": "Лого Vue",
-    "autotests": "Балансирующий человек"
+    "autotests": "Балансирующий человек",
+    "node": "Лого Node",
+    "dbs": "Лого MongoDB и PostgreSQL",
+    "kotlin": "Лого Kotlin"
   }
 }

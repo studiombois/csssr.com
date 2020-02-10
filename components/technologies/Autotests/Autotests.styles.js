@@ -43,7 +43,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.l} {
     & {
       margin-top: 175px;
-      min-height: 701px;
+      min-height: 703px;
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_desktop_l.svg').default});
     }
 
@@ -64,7 +64,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.m} {
     & {
       margin-top: 119px;
-      min-height: 715px;
+      min-height: 716px;
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_desktop_m.svg').default});
     }
 
@@ -84,7 +84,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.s} {
     & {
       margin-top: 132px;
-      min-height: 695px;
+      min-height: 697px;
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_desktop_s.svg').default});
     }
 
@@ -104,7 +104,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${tablet.all} {
     & {
       margin-top: ${calcRem(137)};
-      min-height: ${calcRem(483)};
+      min-height: ${calcRem(485)};
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_tablet_all.svg').default});
     }
 

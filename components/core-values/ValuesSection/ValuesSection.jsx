@@ -8,8 +8,8 @@ import detailValue from '../../../data/core-values/detail-value'
 
 const ValuesSection = ({ className }) => (
   <section className={className}>
-    {detailValue.map((item, index) => (
-      <DetailValue key={item.title} content={item} index={index} />
+    {detailValue.map(item => (
+      <DetailValue key={item.title} content={item} />
     ))}
   </section>
 )

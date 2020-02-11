@@ -3,7 +3,6 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
-
   .image {
     grid-column: 2 / span 4;
     grid-row: 1 / span 3;
@@ -38,6 +37,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
     .image {
       grid-row: 1;
+    }
+
+    &.reliability .image {
+      height: ${calcRem(244)};
     }
 
     .heading {

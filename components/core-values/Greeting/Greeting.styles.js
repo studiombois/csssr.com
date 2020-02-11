@@ -3,7 +3,6 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-
   & {
     margin-top: ${calcRem(213)};
   }
@@ -20,7 +19,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 2 / span 5;
     margin-top: ${calcRem(31)};
   }
-  
+
   ${desktop.m} {
     & {
       margin-top: ${calcRem(200)};
@@ -54,12 +53,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(104)};
+      margin-top: ${calcRem(76)};
     }
 
     .heading {
+      margin-top: 0;
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(-24)};
+    }
+
+    .image {
+      margin-top: ${calcRem(26)};
     }
   }
 `

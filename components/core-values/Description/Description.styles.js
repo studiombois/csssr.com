@@ -121,6 +121,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       height: ${calcRem(48)};
     }
 
+    &.code,
+    &.reliability,
+    &.accessibility,
+    &.ux,
+    &.security {
+      margin-top: ${calcRem(0)};
+    }
+
     .icon-column-1,
     .icon-column-2,
     .text-column-1,
@@ -131,7 +139,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .icon-column-1,
     .icon-column-2 {
-      margin-top: ${calcRem(55)};
+      margin-top: ${calcRem(56)};
     }
 
     .text-column-1,

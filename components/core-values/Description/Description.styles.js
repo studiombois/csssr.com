@@ -116,6 +116,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: 0;
     }
 
+    & svg {
+      width: ${calcRem(48)};
+      height: ${calcRem(48)};
+    }
+
     .icon-column-1,
     .icon-column-2,
     .text-column-1,

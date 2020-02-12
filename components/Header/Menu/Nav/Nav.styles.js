@@ -191,6 +191,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       letter-spacing: ${calcRem(1.25)};
       text-transform: uppercase;
       color: #7E8FA4;
+      background-color: transparent;
+      border: none;
     }
 
     .nav ul {

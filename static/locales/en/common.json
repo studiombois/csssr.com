@@ -19,15 +19,15 @@
         "title": "Services",
         "outsourcing": {
           "title": "Outsourcing Front&#8209;end",
-          "description": "Front-end development for large companies"
+          "description": "Web development to&nbsp;complement core competencies."
         },
         "express": {
           "title": "Express Front&#8209;end",
-          "description": "Fixed-cost service for fast web projects"
+          "description": "Fixed rates for straight-forward, time-sensitive services."
         },
         "mvp": {
           "title": "MVP Development",
-          "description": "Only essential functionality to&nbsp;test business ideas"
+          "description": "Development of&nbsp;core functionality for testing purposes."
         }
       },
       "industries": {
@@ -36,24 +36,24 @@
           "title": "Fintech"
         },
         "eCommerce": {
-          "title": "eCommerce"
+          "title": "E-Commerce"
         },
         "information": {
           "title": "Information Technology"
         },
         "mediaAndMarketing": {
-          "title": "Media and Marketing"
+          "title": "Media & Marketing"
         }
       },
       "howWeWork": {
         "title": "How we work",
         "technologies": {
-          "title": "Technologies",
-          "description": "It&nbsp;is&nbsp;attention to&nbsp;detail and well-established processes that makes the difference between average and successful projects"
+          "title": "Technology Stack",
+          "description": "We&nbsp;keep a&nbsp;careful eye on&nbsp;emerging web development trends and never compromise best practice."
         },
         "processes": {
-          "title": "Processes",
-          "description": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tool"
+          "title": "Our Process",
+          "description": "Attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average."
         }
       }
     },

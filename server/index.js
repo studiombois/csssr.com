@@ -47,6 +47,8 @@ i18n
         'privacyPolicy',
         'cookiesPolicy',
         'mvp',
+        'ecommerce',
+        'coreValues',
         'main',
         'technologies',
       ],

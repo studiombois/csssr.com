@@ -5,6 +5,7 @@ import Hero from './Hero'
 import Frontend from './Frontend'
 import Autotests from './Autotests'
 import Backend from './Backend'
+import Form from './Form'
 import withI18next from '../../utils/withI18next'
 
 const TechnologiesPage = ({ t }) => (
@@ -14,6 +15,7 @@ const TechnologiesPage = ({ t }) => (
     <Frontend />
     <Autotests />
     <Backend />
+    <Form pageName="technologies" />
   </Layout>
 )
 

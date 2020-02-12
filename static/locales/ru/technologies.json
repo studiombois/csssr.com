@@ -22,6 +22,17 @@
     "dbs": "мы&nbsp;выбираем базы данных в&nbsp;зависимости от&nbsp;потребностей проекта и&nbsp;особенностей задач: MongoDB&nbsp;&mdash; нереляционная база данных (NoSQL) или PostgreSQL&nbsp;&mdash; реляционная база данных.",
     "kotlin": "на&nbsp;этих языках мы&nbsp;разрабатываем бэкенд для наших клиентов. Можем писать на&nbsp;проверенном временем Java, но&nbsp;предпочитаем Kotlin&nbsp;&mdash; современный язык, работающий на&nbsp;JVM (Java Virtual Machine)."
   },
+  "form": {
+    "title": "Давайте поговорим",
+    "subTitle": "пожалуйста, предоставьте свои контактные данные, и мы ответим в ближайшее время",
+    "namePlaceholder": "Джон Ленин",
+    "emailPlaceholder": "lenin@gmail.com",
+    "messagePlaceholder": "Коментарий",
+    "messageLabel": "коментарий",
+    "emailLabel": "E-mail",
+    "nameLabel": "Ваше Имя",
+    "submitText": "Отправить"
+  },
   "imageAlt": {
     "javascript": "Счастливый космонавт c лого Javascript",
     "typescript": "Счастливые космонавты c лого Typescript",

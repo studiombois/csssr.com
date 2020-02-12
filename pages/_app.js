@@ -8,15 +8,11 @@ import { customTheme } from '../themes/customTheme'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
+import { detectMobileByUserAgent, detectTabletByUserAgent } from '../utils/detectDeviceByUserAgent'
 import MsBrowserProvider from '../utils/msBrowserProvider'
 import DeviceProvider from '../utils/deviceProvider'
 
 export default class MyApp extends App {
-  state = {
-    isMobile: false,
-    isTablet: false,
-  }
-
   // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
@@ -65,10 +61,17 @@ export default class MyApp extends App {
     }
 
     pageProps.userAgent = userAgent
+    pageProps.isMobile = detectMobileByUserAgent(userAgent)
+    pageProps.isTablet = detectTabletByUserAgent(userAgent)
 
     return {
       pageProps,
     }
+  }
+
+  state = {
+    isMobile: this.props.pageProps.isMobile,
+    isTablet: this.props.pageProps.isTablet,
   }
 
   // This reports errors thrown while rendering components

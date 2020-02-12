@@ -45,7 +45,6 @@ const base = css`
 
   .half-page-picture {
     position: fixed;
-    z-index: 10000;
     top: 0;
     left: 0;
     display: flex;
@@ -356,7 +355,6 @@ const base = css`
     }
 
     .half-page-picture {
-      z-index: -1;
       width: 100vw;
       height: 15.5rem;
       background-image: url('${require('../../../static/images/jobs/360/cover@1x.jpg')}');

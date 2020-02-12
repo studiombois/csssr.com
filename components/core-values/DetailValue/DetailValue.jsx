@@ -1,5 +1,6 @@
 import React from 'react'
 import { string, object, func } from 'prop-types'
+import cn from 'classnames'
 import translate from '../../../utils/translate-wrapper'
 import styled from '@emotion/styled'
 import styles from './DetailValue.styles'
@@ -16,7 +17,7 @@ const DetailValue = ({
   content: { id, images, imgAlt, title, subTitle, description },
 }) => (
   <article id={id}>
-    <Grid className={className}>
+    <Grid className={cn(className, id)}>
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.m'].png}

@@ -89,6 +89,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .text {
       grid-column: 2 / span 5;
       margin-top: ${calcRem(27)};
+      font-size: ${calcRem(14)};
     }
 
     .image {

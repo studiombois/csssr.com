@@ -77,6 +77,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       justify-content: flex-start;
       width: 100%;
       height: calc(100vh - 100%);
+      height: calc(var(--vh, 1vh) * 100 - 100%);
       background-color: ${colors.secondary.darken100};
       transition: height 125ms ease-out;
     }

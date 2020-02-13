@@ -100,13 +100,27 @@ export default class MyApp extends App {
     })
 
     Router.events.on('routeChangeComplete', this.handleRouteChange)
+
+    /**
+     * Определяем кастомный vh для правильного отображения Header на мобилках
+     * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+     */
+    this.getVhSize()
+
+    window.addEventListener('resize', this.getVhSize)
   }
 
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMobileMediaMatch)
     this.tabletMediaQuery.removeListener(this.handleTableMediaMatch)
+    window.removeListener('resize', this.getVhSize)
 
     Router.events.off('routeChangeComplete', this.handleRouteChange)
+  }
+
+  getVhSize = () => {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
   }
 
   handleMobileMediaMatch = ({ matches }) =>

@@ -249,6 +249,8 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
   .number-data {
     grid-row: 3;
     margin-top: ${calcRem(30)};
+    font-size: ${calcRem(48)};
+    line-height: ${calcRem(64)};
   }
 
   .text-data {
@@ -307,6 +309,15 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(-17)};
       margin-left: ${calcRem(-24)};
     }
+
+    .number-data {
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
+    }
+
+    .text-data{
+      margin-top: ${calcRem(9)}
+    }
   }
 
   ${mobile.all} {
@@ -342,6 +353,8 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     .number-data {
       grid-row: 4;
       margin-top: ${calcRem(14)};
+      font-size: ${calcRem(32)};
+      line-height: ${calcRem(48)};
     }
 
     .text-data {

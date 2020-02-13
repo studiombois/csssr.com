@@ -6,7 +6,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(352)};
   }
-  
+
   .heading {
     grid-column: 1 / span 12;
     grid-row: 1;
@@ -80,7 +80,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     & {
       margin-top: ${calcRem(307)};
     }
-    
+
     .heading {
       grid-column: 1 / span 12;
       text-align: center;
@@ -116,7 +116,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .second-item.card {
       margin-top: ${calcRem(98)};
     }
-    
+
     .heading {
       grid-column: 1 / span 12;
       grid-row: 1;
@@ -131,11 +131,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .sub-heading {
       margin-top: ${calcRem(10)};
-      margin-bottom: ${calcRem(71)};
+      margin-bottom: ${calcRem(2)};
     }
+
+    .second-item.card {
+      margin-top: ${calcRem(68)};
+    }
+
     .first-item.card,
     .third-item.card {
-      margin-top: ${calcRem(146)};
+      margin-top: ${calcRem(68)};
     }
 
     .first-item.card::before,
@@ -146,11 +151,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(58)};
+      margin-top: ${calcRem(62)};
     }
 
     .text {
-      margin-top: ${calcRem(13)};
+      margin-top: ${calcRem(16)};
       font-size: ${calcRem(14)};
     }
   }
@@ -165,7 +170,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .card {
       grid-column: 1 / span 6;
     }
-    
+
     .heading {
       text-align: start;
     }
@@ -194,7 +199,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(30)};
     }
 
     .text {
@@ -225,7 +230,7 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
   .image {
     display: flex;
     align-items: flex-end;
-    
+
   }
 
   .title {

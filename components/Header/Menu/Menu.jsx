@@ -32,6 +32,8 @@ const Menu = ({ className, isMobile, t }) => {
     setActiveItem(item)
   }
 
+  const handleResetActiveItem = () => setActiveItem(null)
+
   const handleMouseOut = event => {
     if (isMobile) {
       event.preventDefault()
@@ -39,7 +41,7 @@ const Menu = ({ className, isMobile, t }) => {
     }
 
     if (activeItem !== null && !menuRef.current.contains(event.relatedTarget)) {
-      setActiveItem(null)
+      handleResetActiveItem()
     }
   }
 
@@ -53,7 +55,7 @@ const Menu = ({ className, isMobile, t }) => {
   }
 
   return (
-    <ClickOutside onOutsideClick={() => setActiveItem(null)}>
+    <ClickOutside onOutsideClick={handleResetActiveItem}>
       <div className={className} onMouseOut={handleMouseOut} ref={menuRef}>
         <ul className="menu">
           {menu.map(({ id, title }) => (
@@ -74,7 +76,7 @@ const Menu = ({ className, isMobile, t }) => {
         <Nav
           activeItem={activeItem}
           animationDirection={animationDirection}
-          onBackButtonClick={() => setActiveItem(null)}
+          onBackButtonClick={handleResetActiveItem}
         />
       </div>
     </ClickOutside>

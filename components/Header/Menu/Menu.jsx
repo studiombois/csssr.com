@@ -6,6 +6,7 @@ import styles from './Menu.styles'
 
 import Link from '../../ui-kit/core-design/Link'
 import Nav from './Nav'
+import ClickOutside from '../../ClickOutside'
 
 import headerLinks from '../../../data/headerLinks'
 
@@ -52,29 +53,31 @@ const Menu = ({ className, isMobile, t }) => {
   }
 
   return (
-    <div className={className} onMouseOut={handleMouseOut} ref={menuRef}>
-      <ul className="menu">
-        {menu.map(({ id, title }) => (
-          <Link
-            className={cn('menu-item', {
-              'menu-item_active': id === activeItem,
-            })}
-            as={isMobile ? 'button' : 'li'}
-            key={title}
-            type="top_menu"
-            onMouseOver={handleMouseOver(id)}
-            onClick={handleClick(id)}
-            dangerouslySetInnerHTML={{ __html: t(title) }}
-          />
-        ))}
-      </ul>
+    <ClickOutside onOutsideClick={() => setActiveItem(null)}>
+      <div className={className} onMouseOut={handleMouseOut} ref={menuRef}>
+        <ul className="menu">
+          {menu.map(({ id, title }) => (
+            <Link
+              className={cn('menu-item', {
+                'menu-item_active': id === activeItem,
+              })}
+              as={isMobile ? 'button' : 'li'}
+              key={title}
+              type="top_menu"
+              onMouseOver={handleMouseOver(id)}
+              onClick={handleClick(id)}
+              dangerouslySetInnerHTML={{ __html: t(title) }}
+            />
+          ))}
+        </ul>
 
-      <Nav
-        activeItem={activeItem}
-        animationDirection={animationDirection}
-        onBackButtonClick={() => setActiveItem(null)}
-      />
-    </div>
+        <Nav
+          activeItem={activeItem}
+          animationDirection={animationDirection}
+          onBackButtonClick={() => setActiveItem(null)}
+        />
+      </div>
+    </ClickOutside>
   )
 }
 

@@ -108,7 +108,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .sub-heading {
       grid-column: 7 / span 5;
-      margin-top: ${calcRem(2)};
+      margin-top: ${calcRem(14)};
     }
 
     .image {

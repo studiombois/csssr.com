@@ -125,7 +125,6 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
   position: relative;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 8.5rem;
   width: 1792px;
   align-items: center;
   border: none;

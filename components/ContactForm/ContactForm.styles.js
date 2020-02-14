@@ -261,7 +261,7 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
     .sub-heading {
       grid-column: 3 / span 8;
       text-align: center;
-      margin-bottom: ${calcRem(132)};
+      margin-bottom: ${calcRem(84)};
       color: ${colors.secondary.darken100};
     }
 

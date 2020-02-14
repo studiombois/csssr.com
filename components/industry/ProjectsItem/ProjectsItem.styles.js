@@ -531,22 +531,22 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
         }
 
         .item-heading {
-          -ms-grid-column: ${getGridValueForMs(8)};
+          -ms-grid-column: ${getGridValueForMs(7)};
           -ms-grid-column-span: ${getGridValueForMs(2)};
         }
 
         .text {
-          -ms-grid-column: ${getGridValueForMs(8)};
+          -ms-grid-column: ${getGridValueForMs(7)};
           -ms-grid-column-span: ${getGridValueForMs(4)};
         }
 
         .column-1 {
-          -ms-grid-column: ${getGridValueForMs(8)};
+          -ms-grid-column: ${getGridValueForMs(7)};
           -ms-grid-column-span: ${getGridValueForMs(2)};
         }
 
         .column-2 {
-          -ms-grid-column: ${getGridValueForMs(10)};
+          -ms-grid-column: ${getGridValueForMs(9)};
           -ms-grid-column-span: ${getGridValueForMs(2)};
         }
       }

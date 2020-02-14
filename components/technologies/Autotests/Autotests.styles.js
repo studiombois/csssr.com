@@ -106,6 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: ${calcRem(137)};
       min-height: ${calcRem(485)};
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_tablet_all.svg').default});
+      background-size: 100%;
     }
 
     .title {
@@ -126,6 +127,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     & {
       margin-top: ${calcRem(99)};
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_mobile_all_top.svg').default});
+      background-size: 100%;
     }
 
     .title {
@@ -149,6 +151,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
         width: ${calcRem(161)};
         height: ${calcRem(72)};
         background-image: url(${require('../../../static/icons/technologies/autotests/lines_mobile_all_bottom.svg').default});
+        background-repeat: no-repeat;
+        background-size: 100%;
       }
     }
 

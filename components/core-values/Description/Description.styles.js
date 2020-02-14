@@ -41,23 +41,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   &.code {
-    margin-top: ${calcRem(135)};
+    margin-top: ${calcRem(86)};
   }
 
   &.reliability {
-    margin-top: ${calcRem(143)};
+    margin-top: ${calcRem(90)};
   }
 
   &.accessibility {
-    margin-top: ${calcRem(143)};
+    margin-top: ${calcRem(90)};
   }
 
   &.ux {
-    margin-top: ${calcRem(162)};
+    margin-top: ${calcRem(86)};
   }
 
   &.security {
-    margin-top: ${calcRem(143)};
+    margin-top: ${calcRem(86)};
   }
 
   ${desktop.m} {

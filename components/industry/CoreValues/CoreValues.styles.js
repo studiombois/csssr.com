@@ -6,7 +6,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(352)};
   }
-  
+
   .heading {
     grid-column: 1 / span 12;
     grid-row: 1;
@@ -18,6 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-row: 2;
     text-align: center;
     margin-top: ${calcRem(31)};
+    color: ${colors.secondary.darken100};
   }
 
   .card {
@@ -80,7 +81,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     & {
       margin-top: ${calcRem(307)};
     }
-    
+
     .heading {
       grid-column: 1 / span 12;
       text-align: center;
@@ -116,7 +117,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .second-item.card {
       margin-top: ${calcRem(98)};
     }
-    
+
     .heading {
       grid-column: 1 / span 12;
       grid-row: 1;
@@ -165,7 +166,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .card {
       grid-column: 1 / span 6;
     }
-    
+
     .heading {
       text-align: start;
     }
@@ -225,7 +226,7 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
   .image {
     display: flex;
     align-items: flex-end;
-    
+
   }
 
   .title {

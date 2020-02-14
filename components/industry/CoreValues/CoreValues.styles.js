@@ -132,11 +132,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .sub-heading {
       margin-top: ${calcRem(10)};
-      margin-bottom: ${calcRem(71)};
+      margin-bottom: ${calcRem(2)};
     }
+
+    .second-item.card {
+      margin-top: ${calcRem(68)};
+    }
+
     .first-item.card,
     .third-item.card {
-      margin-top: ${calcRem(146)};
+      margin-top: ${calcRem(68)};
     }
 
     .first-item.card::before,
@@ -147,11 +152,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(58)};
+      margin-top: ${calcRem(62)};
     }
 
     .text {
-      margin-top: ${calcRem(13)};
+      margin-top: ${calcRem(16)};
       font-size: ${calcRem(14)};
     }
   }
@@ -195,7 +200,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(30)};
     }
 
     .text {

@@ -73,7 +73,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .third-item {
-      margin-top: ${calcRem(226)};
+      margin-top: ${calcRem(237)};
     }
 
     .sub-heading {

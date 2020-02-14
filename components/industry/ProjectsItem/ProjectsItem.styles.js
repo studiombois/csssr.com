@@ -307,6 +307,10 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(-17)};
       margin-left: ${calcRem(-24)};
     }
+
+    .text-data{
+      margin-top: ${calcRem(9)}
+    }
   }
 
   ${mobile.all} {

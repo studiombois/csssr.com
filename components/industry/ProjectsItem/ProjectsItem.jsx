@@ -42,7 +42,7 @@ const ProjectsItem = ({
       <Fragment key={textData}>
         <Heading
           as="p"
-          size="l"
+          size="m"
           dangerouslySetInnerHTML={{ __html: t(numberData) }}
           className={cn(`column-${index + 1}`, 'number-data')}
         />

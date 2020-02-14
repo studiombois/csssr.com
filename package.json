@@ -4,7 +4,7 @@
     "node": ">=11.7.0"
   },
   "scripts": {
-    "dev": "nodemon --exec node -r esm $NODE_DEBUG_OPTION ./server/index.js",
+    "dev": "nodemon --exec node -r esm ./server/index.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "lint:js": "eslint \"**/*.js\" --fix --max-warnings=0",

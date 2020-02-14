@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .image {
     grid-column: 2 / span 4;
     grid-row: 1 / span 3;
@@ -18,13 +18,19 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     grid-column: 7 / span 5;
     grid-row: 3;
     margin-top: ${calcRem(31)};
-    margin-bottom: ${calcRem(-11)};
+    margin-bottom: ${calcRem(-12.5)};
     color: ${colors.secondary.darken100};
   }
 
   ${tablet.all} {
     .sub-heading {
-      margin-top: ${calcRem(17)};
+      margin-top: ${calcRem(31)};
+    }
+  }
+
+  ${desktop.s} {
+    .sub-heading {
+      margin-bottom: ${calcRem(0)};
     }
   }
 

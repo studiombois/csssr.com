@@ -170,10 +170,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       top: 0;
       padding-left: ${calcRem(32)};
       padding-right: ${calcRem(32)};
+      margin-bottom: ${calcRem(64)};
     }
 
     &.visible {
-      height: calc(100% - ${calcRem(64)});
+      position: static;
+      height: auto;
     }
 
     .icon_back {

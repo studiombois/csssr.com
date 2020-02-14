@@ -95,6 +95,7 @@ const Header = ({ className, t, isIe11, isMobile }) => {
             className={cn('dropdown', {
               dropdown_closed: !isDropdownOpened,
             })}
+            data-scroll-lock-scrollable
           >
             <CommonHeaderContent />
           </div>

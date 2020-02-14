@@ -56,7 +56,14 @@ const Menu = ({ className, isMobile, t }) => {
 
   return (
     <ClickOutside onOutsideClick={handleResetActiveItem}>
-      <div className={className} onMouseOut={handleMouseOut} ref={menuRef}>
+      <div
+        className={cn(className, {
+          with_hidden_menu: activeItem,
+        })}
+        onMouseOut={handleMouseOut}
+        ref={menuRef}
+        data-scroll-lock-scrollable
+      >
         <ul className="menu">
           {menu.map(({ id, title }) => (
             <Link

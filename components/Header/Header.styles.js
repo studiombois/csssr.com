@@ -80,6 +80,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       height: calc(var(--vh, 1vh) * 100 - 100%);
       background-color: ${colors.secondary.darken100};
       transition: height 125ms ease-out;
+      overflow: auto;
     }
 
     .dropdown_closed {
@@ -92,6 +93,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       margin-top: auto;
       width: 100%;
       height: ${calcRem(64)};
+      flex-shrink: 0;
     }
   }
 `

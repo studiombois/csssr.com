@@ -5,6 +5,7 @@ const base = ({ breakpoints: { mobile }}) => css`
   & {
     margin-left: auto;
     display: flex;
+    flex-shrink: 0;
     order: 3;
   }
 
@@ -26,6 +27,7 @@ const base = ({ breakpoints: { mobile }}) => css`
     & {
       margin-top: ${calcRem(16)};
       margin-left: 0;
+      margin-bottom: ${calcRem(32)};
       padding-left: ${calcRem(32)};
       padding-right: ${calcRem(32)};
       flex-direction: column;

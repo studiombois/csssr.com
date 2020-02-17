@@ -18,7 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-column: 7 / span 5;
     grid-row: 3;
     margin-top: ${calcRem(31)};
-    margin-bottom: ${calcRem(-12.5)};
+    margin-bottom: ${calcRem(-8.8)};
     color: ${colors.secondary.darken100};
   }
 

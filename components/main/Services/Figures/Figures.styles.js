@@ -112,6 +112,10 @@ const ie11Styles = ({ breakpoints: { tablet } }) => css`
     transform: translate(-50%);
   }
 
+  .picture_figures {
+    height: 100%;
+  }
+
   ${tablet.all} {
     .picture:not(.picture_figures) {
       left: calc(50% + 6px);

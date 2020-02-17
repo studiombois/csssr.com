@@ -49,6 +49,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       height: ${calcRem(244)};
     }
 
+    &.accessibility .image {
+      height: ${calcRem(246)};
+    }
+
+    &.ux .image {
+      height: ${calcRem(248)};
+    }
+
+    &.security .image {
+      height: ${calcRem(248)};
+    }
+
     .heading {
       grid-row: 2;
       margin-top: ${calcRem(47)};

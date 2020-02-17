@@ -112,7 +112,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(143)};
+      margin-top: ${calcRem(131)};
       margin-bottom: ${calcRem(93)};
     }
 

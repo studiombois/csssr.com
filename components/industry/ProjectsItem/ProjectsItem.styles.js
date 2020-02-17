@@ -335,7 +335,7 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
 
     .item-heading {
       grid-row: 2;
-      margin-top: ${calcRem(19)};
+      margin-top: ${calcRem(26)};
     }
 
     .text {

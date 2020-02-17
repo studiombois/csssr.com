@@ -78,6 +78,81 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/industry/ecommerce',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/ecommerce',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/ecommerce',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/ecommerce',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/ecommerce',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/ecommerce',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/core-values',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/core-values',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/core-values',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/core-values',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/core-values',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/core-values',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/express',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://express.csssr.com/',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/express',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/mvp',
     changefreq: 'weekly',
     priority: 1,

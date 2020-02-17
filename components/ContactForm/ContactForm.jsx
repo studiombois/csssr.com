@@ -7,6 +7,7 @@ import styles from './ContactForm.styles'
 import translate from '../../utils/translate-wrapper'
 import { equals } from 'ramda'
 import Grid from '../ui-kit/core-design/Grid'
+import SubHeading from '../ui-kit/core-design/SubHeading'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 import TextareaField from '../ui-kit/TextareaField'
@@ -37,6 +38,7 @@ class ContactForm extends PureComponent {
     formName: 'contact',
     shouldScroll: true,
     shouldShowStatusMessage: true,
+    shouldShowSubHeading: false,
   }
 
   state = {
@@ -233,6 +235,7 @@ class ContactForm extends PureComponent {
       pageName,
       formName,
       className,
+      shouldShowSubHeading,
       shouldShowStatusMessage,
       headerId,
       fields,
@@ -253,6 +256,14 @@ class ContactForm extends PureComponent {
           dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.title`) }}
         />
 
+        {shouldShowSubHeading && (
+          <SubHeading
+            type="slab"
+            dangerouslySetInnerHTML={{ __html: t(`${pageName}:form.subTitle`) }}
+            className="sub-heading"
+          />
+        )}
+
         {fields.map(this.renderField)}
         {this.renderField('privacyPolicy')}
         {this.renderField('newsletter')}
@@ -262,7 +273,6 @@ class ContactForm extends PureComponent {
             type="submit"
             status={status}
             testid={`${formName}:button.callbackForm.submit`}
-            btnContainerTestid={`${formName}:block.btnContainer`}
           >
             <Text type="perforator" size="m" className="button-content" as="span">
               {t(`${pageName}:form.submitText`)}

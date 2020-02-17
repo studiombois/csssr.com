@@ -1,9 +1,10 @@
 import { css } from '@emotion/core'
 import AnimatedButton from '../ui-kit/core-design/AnimatedButton'
 import Text from '../ui-kit/core-design/Text'
+import calcRem from '../../utils/style/calcRem'
 
-const ie11Styles = css`
-  -ms-grid-rows: (auto)[9];
+const ie11Styles = ({ shouldShowSubHeading }) => css`
+  -ms-grid-rows: (auto)${shouldShowSubHeading ? '[10]' : '[9]'};
 
   h2 {
     -ms-grid-column: 7;
@@ -82,16 +83,48 @@ const ie11Styles = css`
     -ms-grid-row: 7;
   }
 
+  ${shouldShowSubHeading && `
+    .sub-heading {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 23;
+      -ms-grid-row: 2;
+    }
+
+    .field:nth-of-type(1) {
+      -ms-grid-row: 3;
+    }
+
+    .field:nth-of-type(2) {
+      -ms-grid-row: 4;
+    }
+
+    .field:nth-of-type(3) {
+      -ms-grid-row: 5;
+    }
+
+    .field:nth-of-type(4) {
+      -ms-grid-row: 6;
+    }
+
+    .field:nth-of-type(5) {
+      -ms-grid-row: 7;
+    }
+
+    .field:nth-of-type(6) {
+      -ms-grid-row: 8;
+    }
+  `}
+
   ${AnimatedButton} ${Text} {
     color: white;
   }
 `
 
-const base = css`
+
+const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
   position: relative;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 8.5rem;
   width: 1792px;
   align-items: center;
   border: none;
@@ -200,9 +233,90 @@ const base = css`
   .field_type_no-margin {
     margin: 0;
   }
+
+  ${shouldShowSubHeading && `
+    h2 {
+      margin-bottom: ${calcRem(29)};
+      color: ${colors.secondary.darken100};
+    }
+
+    input {
+      color: ${colors.secondary.darken100};
+      caret-color: ${colors.secondary.darken100};
+    }
+
+    input::placeholder {
+      color: ${colors.secondary.lightGray};
+    }
+
+    label {
+      color: ${colors.secondary.gray};
+    }
+
+    label span {
+      color: ${colors.secondary.darken100};
+    }
+
+    .sub-heading {
+      grid-column: 3 / span 8;
+      text-align: center;
+      margin-bottom: ${calcRem(84)};
+      color: ${colors.secondary.darken100};
+    }
+
+    .button {
+      grid-column: 6 / span 2;
+    }
+
+    @media (min-width: 1360px) and (max-width: 1919px) {
+      .button {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @media (min-width: 1280px) and (max-width: 1359px) {
+      .sub-heading {
+        margin-bottom: ${calcRem(92)};
+      }
+
+      .button {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      h2 {
+        margin-bottom: ${calcRem(10)};
+      }
+      .sub-heading {
+        grid-column: 4 / span 6;
+        margin-bottom: ${calcRem(55)};
+      }
+      .button {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @media (max-width: 767px) {
+      h2 {
+        text-align: start;
+        margin-bottom: ${calcRem(10)};
+      }
+
+      .sub-heading {
+        grid-column: 1 / span 6;
+        text-align: start;
+        margin-bottom: ${calcRem(87)};
+      }
+
+      .button {
+        grid-column: 1 / span 6;
+      }
+    }
+  `}
 `
 
-export default css`
-  ${base}
-  ${ie11Styles}
+export default props => css`
+  ${base(props)}
+  ${ie11Styles(props)}
 `

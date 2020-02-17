@@ -316,26 +316,25 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
   ${mobile.all} {
     .image {
       grid-row: 1;
+      width: ${calcRem(360)};
+      margin-bottom: ${calcRem(14)};
     }
 
     &.first-item .image {
-      width: ${calcRem(336)};
-      margin-left: ${calcRem(-9)};
+      margin-left: ${calcRem(-16)};
     }
 
     &.second-item .image {
-      width: ${calcRem(340)};
+      margin-left: ${calcRem(-16)};
     }
 
     &.third-item .image {
       margin-top: 0;
-      margin-left: ${calcRem(-12)};
-      width: ${calcRem(350)};
+      margin-left: ${calcRem(-16)};
     }
 
     .item-heading {
       grid-row: 2;
-      margin-top: ${calcRem(19)};
     }
 
     .text {

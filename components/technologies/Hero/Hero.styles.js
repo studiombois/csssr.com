@@ -132,6 +132,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     & {
       background-image: url(${require('../../../static/icons/technologies/hero/lines_tablet_all.svg').default});
       background-position-y: ${calcRem(382)};
+      background-size: 100%;
     }
 
     .grid {

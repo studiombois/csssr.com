@@ -23,6 +23,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-bottom: ${calcRem(286)};
   }
 
+  ${desktop.l} {
+    article:nth-of-type(5) {
+      margin-bottom: ${calcRem(422)};
+    }
+  }
+
   ${desktop.m} {
     & {
       margin-top: ${calcRem(151)};

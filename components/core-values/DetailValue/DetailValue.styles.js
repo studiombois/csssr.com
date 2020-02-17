@@ -32,10 +32,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .sub-heading {
       margin-bottom: ${calcRem(0)};
     }
-
-    &.ux .sub-heading {
-      margin-bottom: ${calcRem(10)};
-    }
   }
 
   ${tablet.all} {

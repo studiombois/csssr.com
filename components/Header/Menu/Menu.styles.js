@@ -38,8 +38,18 @@ const base = ({ breakpoints: { mobile }}) => css`
   ${mobile.all} {
     & {
       margin-top: ${calcRem(52)};
+      width: 100%;
       height: auto;
       flex-grow: 0;
+    }
+
+    &.with_hidden_menu {
+      margin-top: 0;
+    }
+
+    &.with_hidden_menu .menu,
+    &.with_hidden_menu + ul {
+      display: none;
     }
 
     .menu {

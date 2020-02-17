@@ -51,40 +51,46 @@ const Nav = ({
         </button>
       )}
 
-      <nav className={cn('nav', `nav_${activeItem}`)}>
+      <nav className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${lng}`)}>
         <ul>
           {activeItem &&
             menu
               .find(({ id }) => id === activeItem)
-              .links.map(({ id, icon: Icon, title, description, href }) => (
-                <Fade key={id} {...animationProps}>
-                  <li className="nav-item">
-                    <Link className="link" href={`${lng}/${href}`} isNextLink>
-                      <Icon className="icon" />
+              .links.map(({ id, icon: Icon, title, description, href }) => {
+                if (lng === 'ru' && id === 'express') {
+                  return
+                }
 
-                      <Heading
-                        className="title"
-                        as="div"
-                        type="regular"
-                        size="m"
-                        dangerouslySetInnerHTML={{
-                          __html: t(title),
-                        }}
-                      />
+                return (
+                  <Fade key={id} {...animationProps}>
+                    <li className="nav-item">
+                      <Link className="link" href={`${lng}/${href}`} isNextLink>
+                        <Icon className="icon" />
 
-                      {description && (
-                        <Text
-                          className="description"
-                          as="p"
+                        <Heading
+                          className="title"
+                          as="div"
                           type="regular"
                           size="m"
-                          dangerouslySetInnerHTML={{ __html: t(description) }}
+                          dangerouslySetInnerHTML={{
+                            __html: t(title),
+                          }}
                         />
-                      )}
-                    </Link>
-                  </li>
-                </Fade>
-              ))}
+
+                        {description && (
+                          <Text
+                            className="description"
+                            as="p"
+                            type="regular"
+                            size="m"
+                            dangerouslySetInnerHTML={{ __html: t(description) }}
+                          />
+                        )}
+                      </Link>
+                    </li>
+                  </Fade>
+                )
+              })}
         </ul>
       </nav>
     </div>

@@ -49,6 +49,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     line-height: ${calcRem(24)};
   }
 
+  .nav_services_ru,
   .nav_howWeWork,
   .nav_industries {
     .nav-item {
@@ -79,6 +80,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
   }
 
+  .nav_services_ru,
   .nav_howWeWork {
     .icon {
       top: ${calcRem(68)};
@@ -89,7 +91,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
   }
 
-  .nav_services {
+  .nav_services_en {
     .nav-item {
       width: 33%;
     }
@@ -155,6 +157,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       line-height: ${calcRem(32)};
     }
 
+    .nav_services_ru,
     .nav_howWeWork {
       .description {
         width: calc(100% - ${calcRem(92)});
@@ -167,10 +170,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       top: 0;
       padding-left: ${calcRem(32)};
       padding-right: ${calcRem(32)};
+      margin-bottom: ${calcRem(64)};
     }
 
     &.visible {
-      height: calc(100% - ${calcRem(64)});
+      position: static;
+      height: auto;
     }
 
     .icon_back {
@@ -191,6 +196,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       letter-spacing: ${calcRem(1.25)};
       text-transform: uppercase;
       color: #7E8FA4;
+      background-color: transparent;
+      border: none;
     }
 
     .nav ul {

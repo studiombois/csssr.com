@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, Fragment } from 'react'
 import { string, func, bool } from 'prop-types'
+import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
@@ -78,7 +79,11 @@ const Header = ({ className, t, isIe11, isMobile }) => {
         invisible: !isHeaderVisible,
       })}
     >
-      <Logo className="logo" />
+      <NextLink href="/">
+        <a>
+          <Logo className="logo" />
+        </a>
+      </NextLink>
 
       {isMobile ? (
         <Fragment>
@@ -90,6 +95,7 @@ const Header = ({ className, t, isIe11, isMobile }) => {
             className={cn('dropdown', {
               dropdown_closed: !isDropdownOpened,
             })}
+            data-scroll-lock-scrollable
           >
             <CommonHeaderContent />
           </div>

@@ -5,21 +5,21 @@ import calcRem from '../../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet }}) => css`
   & {
     position: sticky;
-    top: 129px;
+    top: 5vh;
     margin-top: 129px;
     grid-column: 8;
-    width: 456px;
-  }
-
-  @media (max-height: 800px) and (min-width: 1280px) {
-    top: 5vh;
+    /* Вычисляем ширину по aspect ration */
+    width: calc(90vh * 456 / 588);
+    max-width: 456px;
+    display: inline-flex;
+    max-height: 90vh;
   }
 
   .picture:not(.picture_figures) {
     position: absolute;
     left: 50%;
     opacity: 0;
-    transform: translateX(calc(-50% + 8px));
+    transform: translateX(-46.5%);
     transition: opacity 100ms ease-out;
 
     &.picture_is_visible {
@@ -27,22 +27,30 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     }
   }
 
+  .picture_figures {
+    display: block;
+    width: 100%;
+  }
+
   .picture_square {
     top: 0;
     z-index: 1;
-    width: 186px;
+    /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+    width: calc(190 / 456 * 100%);
   }
 
   .picture_triangle {
-    top: 174px;
+    top: 29.5%;
     z-index: 2;
-    width: 246px;
+    /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+    width: calc(248 / 456 * 100%);
   }
 
   .picture_circle {
-    top: 367px;
+    top: 62%;
     z-index: 3;
-    width: 223px;
+    /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+    width: calc(225 / 456 * 100%);
   }
 
   ${desktop.m} {
@@ -59,14 +67,11 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
   ${tablet.all} {
     & {
-      top: ${calcRem(105)};
+      /* Вычисляем top таким образом, что бы он был равен bottom */
+      top: calc((100vh - ${calcRem(420)}) / 2);
       margin-top: ${calcRem(105)};
       margin-left: ${calcRem(-26)};
       width: ${calcRem(324)};
-    }
-
-    @media (max-height: 600px) {
-      top: 7vh;
     }
 
     .picture_figures {
@@ -80,17 +85,17 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
     .picture_square {
       top: 0;
-      width: ${calcRem(132)};
+      width: ${calcRem(134)};
     }
 
     .picture_triangle {
       top: ${calcRem(123)};
-      width: ${calcRem(176)};
+      width: ${calcRem(178)};
     }
 
     .picture_circle {
       top: ${calcRem(260)};
-      width: ${calcRem(158)}
+      width: ${calcRem(160)}
     }
   }
 `

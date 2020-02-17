@@ -102,6 +102,9 @@ import ultramarine_mobile_all_webp from '../../static/images/main/mobile.all/ult
 
 Все динамические тексты на страницах вставляются с помощью функции t и лежат в файлах локалей, которые расположены в `./locales`
 
+## Работа с вакансиями
+
+По дефолту вакансии подтягиваются с https://csssr.space. Что бы это изменить нужно поменять переменную окружения CSSSR_SPACE_ORIGIN в файле nodemon.json и перезапустить проект
 
 ## AmoCRM
 

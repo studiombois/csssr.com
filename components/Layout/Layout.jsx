@@ -4,6 +4,7 @@ import { withRouter } from 'next/router'
 import { string } from 'prop-types'
 import { Global, css } from '@emotion/core'
 import styles from './Layout.styles'
+import Header from '../Header'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 
 const Layout = props => {
@@ -11,6 +12,7 @@ const Layout = props => {
 
   return (
     <Fragment>
+      <Header />
       <Global styles={styles.base} />
       <Global styles={styles.font_faces} />
       <Global styles={styles.fonts} />

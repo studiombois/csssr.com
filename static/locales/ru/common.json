@@ -17,6 +17,60 @@
     "privacyPolicy": "Политика конфиденциальности",
     "alliancePartText": "CSSSR является частью"
   },
+  "header": {
+    "menu": {
+      "services": {
+        "title": "Сервисы",
+        "outsourcing": {
+          "title": "Фронтенд аутсорсинг",
+          "description": "Работа над веб-проектами для крупных компаний."
+        },
+        "mvp": {
+          "title": "Разработка MVP",
+          "description": "Ключевой функционал для проверки бизнес-идей."
+        }
+      },
+      "industries": {
+        "title": "Индустрии",
+        "fintech": {
+          "title": "Финтех"
+        },
+        "eCommerce": {
+          "title": "E-Commerce"
+        },
+        "information": {
+          "title": "Информационные технологии"
+        },
+        "mediaAndMarketing": {
+          "title": "Медиа и&nbsp;маркетинг"
+        }
+      },
+      "howWeWork": {
+        "title": "Как мы&nbsp;работаем",
+        "technologies": {
+          "title": "Технологии",
+          "description": "Мы&nbsp;внимательно следим за&nbsp;новинками веб-разработки и&nbsp;не&nbsp;забываем про лучшие стандарты."
+        },
+        "processes": {
+          "title": "Процессы",
+          "description": "Отлаженные процессы, опыт и&nbsp;внимание к&nbsp;деталям помогают нам создавать успешные проекты."
+        }
+      }
+    },
+    "links": {
+      "blog": {
+        "title": "Блог"
+      },
+      "aboutUs": {
+        "title": "О нас"
+      },
+      "careers": {
+        "title": "Вакансии"
+      }
+    },
+    "action": "Нанять нас",
+    "backLink": "Наши сервисы"
+  },
   "noPage": "Данная страница не доступна на русском языке.",
   "checkBoxesText": {
     "privacyPolicyText": "я согласен на обработку моих персональных данных в соответствии с ",

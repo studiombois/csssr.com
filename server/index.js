@@ -50,6 +50,7 @@ i18n
         'ecommerce',
         'coreValues',
         'main',
+        'technologies',
       ],
       detection: {
         order: ['pathCookieHeader'],

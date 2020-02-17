@@ -138,21 +138,6 @@ const sitemapUrlsSettings = [
     ],
   },
   {
-    url: 'https://csssr.com/ru/express',
-    changefreq: 'weekly',
-    priority: 1,
-    links: [
-      {
-        lang: 'en',
-        url: 'https://express.csssr.com/',
-      },
-      {
-        lang: 'ru',
-        url: 'https://csssr.com/ru/express',
-      },
-    ],
-  },
-  {
     url: 'https://csssr.com/ru/mvp',
     changefreq: 'weekly',
     priority: 1,
@@ -216,6 +201,36 @@ const sitemapUrlsSettings = [
     url: 'https://csssr.com/en/cookies-policy',
     changefreq: 'yearly',
     priority: 0.6,
+  },
+  {
+    url: 'https://csssr.com/ru/tech-stack',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/tech-stack',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/tech-stack',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/tech-stack',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/tech-stack',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/tech-stack',
+      },
+    ],
   },
 ].concat(getJobsSitemapUrlsSettings())
 

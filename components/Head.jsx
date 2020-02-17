@@ -78,7 +78,9 @@ const Head = props => {
       {/* // } */}
       <meta charSet="utf-8" />
       <title>{`${props.title}${props.templateTitle}`}</title>
-      <meta name="description" content={unescapeHtmlEntities(props.description)} />
+      {props.description && (
+        <meta name="description" content={unescapeHtmlEntities(props.description)} />
+      )}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* <link rel='icon' sizes='192x192' href='/static/icons/touch-icon.png' />*/}
       {/* <link rel='apple-touch-icon' href='/static/icons/touch-icon.png' />*/}
@@ -87,7 +89,9 @@ const Head = props => {
       <meta property="og:title" content={props.title || ''} />
       <meta property="og:url" content={`${origin}${props.router.asPath}`} />
       <meta property="og:type" content="website" />
-      <meta property="og:description" content={unescapeHtmlEntities(props.description)} />
+      {props.description && (
+        <meta property="og:description" content={unescapeHtmlEntities(props.description)} />
+      )}
       <meta name="twitter:site" content={`${origin}${props.router.asPath}`} />
       <meta name="twitter:card" content="summary_large_image" />
       {props.ogImage && (

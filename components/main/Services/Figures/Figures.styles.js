@@ -56,6 +56,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   @media (min-height: 654px) {
     & {
       top: calc((100vh - 588px) / 2);
+      max-height: 588px;
     }
   }
 

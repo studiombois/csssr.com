@@ -22,15 +22,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     color: ${colors.secondary.darken100};
   }
 
-  ${tablet.all} {
-    .sub-heading {
-      margin-top: ${calcRem(31)};
+  ${desktop.all} {
+    &.ux .sub-heading {
+      margin-bottom: ${calcRem(10)};
     }
   }
 
   ${desktop.s} {
     .sub-heading {
       margin-bottom: ${calcRem(0)};
+    }
+
+    &.ux .sub-heading {
+      margin-bottom: ${calcRem(10)};
+    }
+  }
+
+  ${tablet.all} {
+    .sub-heading {
+      margin-top: ${calcRem(31)};
     }
   }
 

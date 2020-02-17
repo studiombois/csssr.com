@@ -60,23 +60,48 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(86)};
   }
 
-  ${desktop.m} {
+  ${desktop.l} {
     &.code {
-      margin-top: ${calcRem(143)};
+      margin-top: ${calcRem(131)};
     }
 
     &.reliability {
-      margin-top: ${calcRem(142)};
+      margin-top: ${calcRem(127)};
     }
 
     &.accessibility {
-      margin-top: ${calcRem(143)};
+      margin-top: ${calcRem(131)};
     }
 
     &.ux {
-      margin-top: ${calcRem(119)};
+      margin-top: ${calcRem(131)};
     }
 
+    &.security {
+      margin-top: ${calcRem(131)};
+    }
+  }
+
+  ${desktop.m} {
+    &.code {
+      margin-top: ${calcRem(131)};
+    }
+
+    &.reliability {
+      margin-top: ${calcRem(126)};
+    }
+
+    &.accessibility {
+      margin-top: ${calcRem(131)};
+    }
+
+    &.ux {
+      margin-top: ${calcRem(131)};
+    }
+    
+    &.security {
+      margin-top: ${calcRem(131)};
+    }
   }
 
   ${desktop.s} {

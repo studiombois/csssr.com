@@ -19,7 +19,7 @@ const Greeting = ({ t, className, id, content: { heading, text, button, images, 
       className="heading"
     />
 
-    <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
+    <Text type="regular" size="m" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
 
     <PictureForAllResolutions
       images={images}

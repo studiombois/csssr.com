@@ -13,9 +13,9 @@ ENV IS_PRODUCTION=$isProduction
 ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 ENV PROCESS_IMAGES=$processImages
 
-COPY .npmrc package.json yarn.lock /app/
+COPY package.json yarn.lock /app/
 
-RUN npm set //nexus.csssr.space/repository/csssr/:_authToken "${NPM_TOKEN}" && \
+RUN npm set //nexus.csssr.space/repository/csssr/:_auth "${NPM_TOKEN}" && \
     npm config set @dreamteam:registry https://nexus.csssr.space/repository/csssr/ && \
     yarn --frozen-lockfile && \
     npm config rm //nexus.csssr.space/repository/csssr/:_authToken

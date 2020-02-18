@@ -1,4 +1,5 @@
 FROM node:11.10.1 AS build
+RUN yarn policies set-version v1 && yarn --version
 
 ARG isProduction
 ARG csssrSpaceOrigin
@@ -13,9 +14,11 @@ ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 ENV PROCESS_IMAGES=$processImages
 
 COPY .npmrc package.json yarn.lock /app/
-RUN echo "\n//nexus.csssr.space/repository/csssr/:_authToken=${NPM_TOKEN}" >> .npmrc && \
+
+RUN npm set //nexus.csssr.space/repository/csssr/:_authToken "${NPM_TOKEN}" && \
+    npm config set @dreamteam:registry https://nexus.csssr.space/repository/csssr/ && \
     yarn --frozen-lockfile && \
-    sed '/\/\/nexus.csssr.space\/repository\/csssr\/:_authToken=/d' .npmrc
+    npm config rm //nexus.csssr.space/repository/csssr/:_authToken
 COPY . .
 RUN yarn build
 

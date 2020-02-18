@@ -3,7 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    margin-top: ${calcRem(106)};
+    margin-top: ${calcRem(114)};
   }
 
   article:nth-of-type(2) {
@@ -21,6 +21,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   article:nth-of-type(5) {
     margin-top: ${calcRem(377)};
     margin-bottom: ${calcRem(286)};
+  }
+
+  ${desktop.l} {
+    article:nth-of-type(5) {
+      margin-bottom: ${calcRem(422)};
+    }
   }
 
   ${desktop.m} {
@@ -41,7 +47,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(346)};
+      margin-top: ${calcRem(312)};
     }
   }
 

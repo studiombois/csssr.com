@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .image {
     grid-column: 2 / span 4;
     grid-row: 1 / span 3;
@@ -18,13 +18,25 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     grid-column: 7 / span 5;
     grid-row: 3;
     margin-top: ${calcRem(31)};
-    margin-bottom: ${calcRem(-11)};
+    margin-bottom: ${calcRem(-9)};
     color: ${colors.secondary.darken100};
+  }
+
+  ${desktop.all} {
+    &.ux .sub-heading {
+      margin-bottom: ${calcRem(10)};
+    }
+  }
+
+  ${desktop.s} {
+    .sub-heading {
+      margin-bottom: ${calcRem(0)};
+    }
   }
 
   ${tablet.all} {
     .sub-heading {
-      margin-top: ${calcRem(17)};
+      margin-top: ${calcRem(31)};
     }
   }
 
@@ -41,6 +53,18 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
     &.reliability .image {
       height: ${calcRem(244)};
+    }
+
+    &.accessibility .image {
+      height: ${calcRem(246)};
+    }
+
+    &.ux .image {
+      height: ${calcRem(248)};
+    }
+
+    &.security .image {
+      height: ${calcRem(248)};
     }
 
     .heading {

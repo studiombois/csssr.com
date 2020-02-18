@@ -12,7 +12,7 @@ import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import translate from '../../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
-const OurFeatures = ({ className, t }) => {
+const OurFeatures = ({ className, t, lng }) => {
   return (
     <Grid as="section" className={cn('our-features', className)}>
       <SubHeading
@@ -23,7 +23,7 @@ const OurFeatures = ({ className, t }) => {
       />
       <Link
         className="link"
-        href="/"
+        href={`${lng}/processes`}
         type="list"
         size="m"
         dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature1.link') }}
@@ -45,7 +45,7 @@ const OurFeatures = ({ className, t }) => {
       />
       <Link
         className="link"
-        href="/"
+        href={`${lng}/tech-stack`}
         type="list"
         size="m"
         dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature2.link') }}

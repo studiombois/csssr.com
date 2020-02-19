@@ -1,3 +1,4 @@
-export const сookiesLinkEn = '/en/cookies-policy'
-
-export const сookiesLinkRu = '/ru/privacy-policy'
+export default {
+  en: '/en/cookies-policy',
+  ru: '/ru/privacy-policy',
+}

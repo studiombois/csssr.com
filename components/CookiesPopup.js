@@ -3,10 +3,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
 
-import {
-  сookiesLinkEn,
-  сookiesLinkRu,
-} from '../data/сookies-popup/сookiesLinks'
+import сookiesLinks from '../data/сookies-popup/сookiesLinks'
 
 import CrossIcon from '../static/icons/cross_white.svg'
 
@@ -24,13 +21,7 @@ const CookiesPopup = ({ t, lng }) => {
     setIsActive(localStorage.getItem('cookies_policy'))
   }, [])
 
-  let url = ''
-  if (lng === 'ru') {
-    url = сookiesLinkRu
-  }
-  if (lng === 'en') {
-    url = сookiesLinkEn
-  }
+  const url = сookiesLinks[lng]
 
   return (
     <div className={cn('cookies-popup', { hide: isActive })}>

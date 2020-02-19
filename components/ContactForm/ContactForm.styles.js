@@ -130,12 +130,7 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
   border: none;
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    padding-top: 6.1875rem;
     background-position: 50% calc(100% - 8.45rem);
-  }
-
-  @media (max-width: 767px) {
-    padding-top: 3rem;
   }
 
   h2 {

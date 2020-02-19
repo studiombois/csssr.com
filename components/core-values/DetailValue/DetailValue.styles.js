@@ -8,6 +8,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-row: 1 / span 3;
   }
 
+  .image img {
+    height: auto;
+  }
+
   .heading {
     grid-column: 7 / span 3;
     grid-row: 2;
@@ -22,21 +26,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     color: ${colors.secondary.darken100};
   }
 
-  ${desktop.all} {
-    &.ux .sub-heading {
-      margin-bottom: ${calcRem(10)};
+  ${desktop.m} {
+    &.ux .image {
+      margin-bottom: ${calcRem(-18)};
     }
   }
 
   ${desktop.s} {
-    .sub-heading {
-      margin-bottom: ${calcRem(0)};
+    &.ux .image {
+      margin-bottom: ${calcRem(-10)};
     }
   }
 
   ${tablet.all} {
     .sub-heading {
       margin-top: ${calcRem(31)};
+    }
+
+    &.ux .image {
+      margin-bottom: ${calcRem(-18)};
     }
   }
 

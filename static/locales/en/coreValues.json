@@ -46,9 +46,9 @@
   "form": {
     "title": "Let’s Talk",
     "subTitle": "please provide your contact details and we will respond&nbsp;shortly",
-    "namePlaceholder": "Jhon Lenin",
-    "emailPlaceholder": "lenin@gmail.com",
-    "messagePlaceholder": "Comment",
+    "namePlaceholder": "Tim Berners-Lee",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "How can we help?",
     "messageLabel": "comment",
     "emailLabel": "E-mail",
     "nameLabel": "YOUR NAME",

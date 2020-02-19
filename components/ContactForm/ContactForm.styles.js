@@ -268,19 +268,9 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
       grid-column: 6 / span 2;
     }
 
-    @media (min-width: 1360px) and (max-width: 1919px) {
-      .button {
-        grid-column: 5 / span 4;
-      }
-    }
-
     @media (min-width: 1280px) and (max-width: 1359px) {
       .sub-heading {
         margin-bottom: ${calcRem(92)};
-      }
-
-      .button {
-        grid-column: 5 / span 4;
       }
     }
 
@@ -310,7 +300,7 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
       }
 
       .button {
-        grid-column: 1 / span 6;
+        grid-column: 2 / span 4;
       }
     }
   `}

@@ -29,7 +29,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-left: ${calcRem(-33)};
   }
 
-  
+
   .heading {
     grid-column: 1 / span 12;
     grid-row: 1;
@@ -85,7 +85,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(312)};
       margin-bottom: ${calcRem(173)};
     }
-    
+
     .heading {
       grid-column: 1 / span 12;
       grid-row: 1;
@@ -137,11 +137,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .second-item {
-      margin-top: ${calcRem(112)};
+      margin-top: ${calcRem(105)};
     }
 
     .third-item {
-      margin-top: ${calcRem(106)};
+      margin-top: ${calcRem(105)};
     }
 
     .first-item .image {

@@ -266,6 +266,7 @@ const base = (imgMaxWidth, { breakpoints: { mobile }}) => css`
 
     .text-data {
       grid-row: 5;
+      margin-top: ${calcRem(-5)};
     }
   }
 `

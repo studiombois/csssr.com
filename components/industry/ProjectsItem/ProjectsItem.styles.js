@@ -175,7 +175,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .text {
-          grid-column: 7 / span 4;
+          grid-column: 7 / span 5;
         }
 
         .column-1 {
@@ -293,23 +293,32 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     &.first-item .image {
-      max-width: ${calcRem(336)};
-      margin-left: ${calcRem(-32)};
+      max-width: ${calcRem(338)};
+      margin-left: ${calcRem(-33)};
     }
 
     &.second-item .image {
       max-width: ${calcRem(332)};
+      margin-top: ${calcRem(2)};
       margin-right: ${calcRem(-35)};
     }
 
     &.third-item .image {
       max-width: ${calcRem(352)};
-      margin-top: ${calcRem(-17)};
-      margin-left: ${calcRem(-24)};
+      margin-top: ${calcRem(-10)};
+      margin-left: ${calcRem(-23)};
+    }
+
+    .text {
+      margin-top: ${calcRem(17)};
+    }
+
+    .number-data {
+      margin-top: ${calcRem(40)};
     }
 
     .text-data{
-      margin-top: ${calcRem(9)}
+      margin-top: ${calcRem(9)};
     }
   }
 
@@ -480,7 +489,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
       .text {
         -ms-grid-column: ${getGridValueForMs(7)};
-        -ms-grid-column-span: ${getGridValueForMs(4)};
+        -ms-grid-column-span: ${getGridValueForMs(5)};
       }
 
       .column-1 {

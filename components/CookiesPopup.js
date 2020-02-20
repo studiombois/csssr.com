@@ -20,7 +20,7 @@ const CookiesPopup = ({ t, lng }) => {
     setIsActive(localStorage.getItem('cookies_policy'))
   }, [])
 
-  const url = сookiesLinks[lng]
+  const links = сookiesLinks[lng]
 
   return (
     <div className={cn('cookies-popup', { hide: isActive })}>
@@ -33,14 +33,17 @@ const CookiesPopup = ({ t, lng }) => {
             dangerouslySetInnerHTML={{ __html: t('common:сookiesPopup.text') }}
           />
 
-          <a
-            href={url}
-            target='_blank'
-            className='link'
-            dangerouslySetInnerHTML={{
-              __html: t('common:сookiesPopup.link'),
-            }}
-          />
+          {links.map((url, index) => (
+            <a
+              key={url}
+              href={url}
+              target='_blank'
+              className='link'
+              dangerouslySetInnerHTML={{
+                __html: t(`common:сookiesPopup.link.${index}`),
+              }}
+            />
+          ))}
         </p>
       </div>
 
@@ -64,6 +67,7 @@ const CookiesPopup = ({ t, lng }) => {
           cursor: pointer;
           color: #ffffff;
           text-decoration: underline;
+          margin-left: 0.25rem;
         }
 
         .hide {
@@ -103,7 +107,7 @@ const CookiesPopup = ({ t, lng }) => {
 
         @media (min-width: 1280px) {
           .wrap {
-            max-width: 45rem;
+            max-width: 49rem;
           }
         }
       `}</style>

@@ -87,6 +87,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .picture_love {
     position: absolute;
+    width: 100%;
     z-index: 1;
   }
 
@@ -253,6 +254,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .picture-wrapper {
+      position: relative;
       margin-top: ${calcRem(26)};
       background: none;
       grid-row: auto;
@@ -284,6 +286,7 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
   }
 
   .picture-wrapper {
+    position: relative;
     -ms-grid-column: ${getGridValueForMs(1)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
     -ms-grid-row: 2;

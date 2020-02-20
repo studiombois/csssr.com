@@ -1,5 +1,5 @@
 const Sentry = require('@sentry/node')
-const { sales, TEST_TAG } = require('@dreamteam/csssr-amo')
+const { sales, TEST_TAG } = require('@csssr/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
 

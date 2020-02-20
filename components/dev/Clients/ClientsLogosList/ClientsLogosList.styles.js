@@ -67,11 +67,9 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) ul {
     -ms-grid-column: 5;
     -ms-grid-column-span: 15;
     -ms-grid-row: 4;
-  }
 `
 
 const dynamic = clients => {
@@ -96,8 +94,8 @@ const dynamic = clients => {
   `
 }
 
-export default props => css`
+export default ({ clients, isIe11 }) => css`
   ${base}
-  ${ie11Styles}
-  ${dynamic(props.clients)}
+  ${isIe11 && ie11Styles}
+  ${dynamic(clients)}
 `

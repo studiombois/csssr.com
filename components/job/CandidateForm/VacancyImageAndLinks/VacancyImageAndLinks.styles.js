@@ -92,7 +92,7 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) & {
+  & {
     -ms-grid-column: ${getGridValueForMs(9)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
   }
@@ -149,12 +149,12 @@ const faqImageStyles = css`
     object-position: 82%;
   }
 
-  :global(.ie11) & {
+  & {
     position: relative;
     overflow: hidden;
   }
 
-  :global(.ie11) img {
+  img {
     max-width: none;
     position: absolute;
     right: -2.9375rem;
@@ -180,7 +180,7 @@ const faqImageStyles = css`
       height: 8.75rem;
     }
 
-    :global(.ie11) & {
+    & {
       -ms-grid-column: ${getGridValueForMs(1)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
     }
@@ -202,13 +202,14 @@ const faqImageStyles = css`
     }
   }
 `
-
+//todo эти стили используются в нескольких компонентах, 
+//думаю стоит вынести такие компоненты в отдельные директории
 export {
   vacancyImageStyles,
   faqImageStyles,
 }
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

@@ -104,7 +104,7 @@ const ie11Styles = css`
     -ms-grid-row: 2;
   }
 
-  :global(.ie11) picture {
+  picture {
     -ms-grid-column: 5;
     -ms-grid-column-span: 15;
     -ms-grid-row: 1;
@@ -132,7 +132,7 @@ const ie11Styles = css`
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

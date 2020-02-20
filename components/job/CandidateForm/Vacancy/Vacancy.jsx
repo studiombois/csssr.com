@@ -3,6 +3,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Vacancy.styles'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 const Vacancy = ({ className, locale, vacancy }) => (
   <li className={className}>
@@ -21,6 +22,6 @@ const Vacancy = ({ className, locale, vacancy }) => (
   </li>
 )
 
-export default styled(Vacancy)`
+export default MsBrowserConsumer(styled(Vacancy)`
   ${styles}
-`
+`)

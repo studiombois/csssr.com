@@ -3,6 +3,7 @@ import { string, bool, func } from 'prop-types'
 import ContactForm from '../../ContactForm'
 import StatusMessage from './StatusMessage'
 import styles from './Form.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Form = props => {
   const {
@@ -53,4 +54,4 @@ Form.propTypes = {
   onStatusButtonClick: func,
 }
 
-export default Form
+export default MsBrowserConsumer(Form)

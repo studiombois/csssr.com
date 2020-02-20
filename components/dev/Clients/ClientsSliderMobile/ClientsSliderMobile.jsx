@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import styles from './ClientsSliderMobile.styles'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Grid from '../../../ui-kit/core-design/Grid'
 import ClientsLogosListMobile from '../ClientsLogosListMobile'
 
@@ -12,6 +13,6 @@ const ClientsSliderMobile = ({ className }) => (
   </div>
 )
 
-export default styled(ClientsSliderMobile)`
+export default MsBrowserConsumer(styled(ClientsSliderMobile)`
   ${styles}
-`
+`)

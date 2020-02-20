@@ -296,8 +296,8 @@ const dynamic = hasFailOrSuccessStatus => css`
   }
 `
 
-export default hasFailOrSuccessStatus => () => css`
+export default ({ hasFailOrSuccessStatus, isIe11 }) => () => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
   ${dynamic(hasFailOrSuccessStatus)}
 `

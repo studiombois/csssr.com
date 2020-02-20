@@ -150,30 +150,30 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) header {
+  header {
     -ms-grid-column: 3;
     -ms-grid-column-span: 5;
   }
 
-  :global(.ie11) div {
+  div {
     -ms-grid-column: 11;
     -ms-grid-column-span: 11;
   }
 
   @media (max-width: 767px) {
-    :global(.ie11) header {
+    header {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
 
-    :global(.ie11) div {
+    div {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

@@ -142,40 +142,40 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) & {
+  & {
     overflow: hidden;
     height: 1500px;
   }
 
   @media (min-width: 1024px) and (max-width: 1279px) {
-    :global(.ie11) & {
+    & {
       height: 1200px;
     }
   }
 
-  :global(.ie11) h2 {
+  h2 {
     -ms-grid-column: 3;
     -ms-grid-column-span: 21;
     -ms-grid-row: 1;
   }
 
   @media (max-width: 767px) {
-    :global(.ie11) h2 {
+    h2 {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
   }
 
-  :global(.ie11) .planets {
+  .planets {
     height: 88%;
   }
 
-  :global(.ie11) .sputnik {
+  .sputnik {
     height: 88%;
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

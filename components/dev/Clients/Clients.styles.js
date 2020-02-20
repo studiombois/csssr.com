@@ -70,43 +70,43 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) section {
+  section {
     -ms-grid-rows: auto auto auto auto;
   }
 
-  :global(.ie11) h2 {
+  h2 {
     -ms-grid-column: 7;
     -ms-grid-column-span: 11;
   }
 
-  :global(.ie11) .font_subhead-regular {
+  .font_subhead-regular {
     -ms-grid-column: 3;
     -ms-grid-column-span: 19;
   }
 
-  :global(.ie11) .font_p24-strong {
+  .font_p24-strong {
     -ms-grid-column: 3;
     -ms-grid-column-span: 19;
   }
 
   @media (min-width: 1024px) {
-    :global(.ie11) h2 {
+    h2 {
       -ms-grid-column: 5;
       -ms-grid-column-span: 15;
       -ms-grid-row: 1;
     }
 
-    :global(.ie11) p {
+    p {
       -ms-grid-row: 2;
     }
 
-    :global(.ie11) .ul {
+    .ul {
       -ms-grid-row: 3;
     }
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

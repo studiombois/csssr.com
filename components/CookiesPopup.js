@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 import cn from 'classnames'
 import translate from '../utils/translate-wrapper'
 
@@ -34,16 +33,17 @@ const CookiesPopup = ({ t, lng }) => {
             dangerouslySetInnerHTML={{ __html: t('common:сookiesPopup.text') }}
           />
 
-          <Link href={url}>
-            <span
-              className='link'
-              dangerouslySetInnerHTML={{
-                __html: t('common:сookiesPopup.link'),
-              }}
-            />
-          </Link>
+          <a
+            href={url}
+            target='_blank'
+            className='link'
+            dangerouslySetInnerHTML={{
+              __html: t('common:сookiesPopup.link'),
+            }}
+          />
         </p>
       </div>
+
       <style jsx>{`
         .cookies-popup {
           z-index: 99999;

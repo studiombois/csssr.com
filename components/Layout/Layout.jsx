@@ -6,6 +6,7 @@ import { Global, css } from '@emotion/core'
 import styles from './Layout.styles'
 import Header from '../Header'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
+import CookiesPopup from '../CookiesPopup'
 
 const Layout = props => {
   const { children, isIe } = props
@@ -30,6 +31,8 @@ const Layout = props => {
       <DevTools />
 
       <main id="main">{children}</main>
+
+      <CookiesPopup />
     </Fragment>
   )
 }

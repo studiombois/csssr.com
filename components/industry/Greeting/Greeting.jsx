@@ -9,28 +9,45 @@ import Heading from '../../ui-kit/core-design/Heading'
 import Button from '../../ui-kit/core-design/Button'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Greeting = ({ t, className, id, content: { heading, text, button, images, imgAlt } }) => (
-  <Grid className={className} as="section" id={id}>
-    <Heading.H1
-      type="slab"
-      size="l"
-      dangerouslySetInnerHTML={{ __html: t(heading) }}
-      className="heading"
-    />
+const Greeting = ({
+  t,
+  className,
+  id,
+  content: { heading, text, button, images, imgAlt },
+  isMobile,
+  isTablet,
+}) => {
+  const textType = isMobile || isTablet ? 'regular' : 'strong'
 
-    <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
+  return (
+    <Grid className={className} as="section" id={id}>
+      <Heading.H1
+        type="slab"
+        size="l"
+        dangerouslySetInnerHTML={{ __html: t(heading) }}
+        className="heading"
+      />
 
-    <PictureForAllResolutions
-      images={images}
-      fallback={images['desktop.all'].png}
-      alt={t(imgAlt)}
-      className="image"
-    />
+      <Text
+        type={textType}
+        size="m"
+        dangerouslySetInnerHTML={{ __html: t(text) }}
+        className="text"
+      />
 
-    <Button className="button">{t(button)}</Button>
-  </Grid>
-)
+      <PictureForAllResolutions
+        images={images}
+        fallback={images['desktop.all'].png}
+        alt={t(imgAlt)}
+        className="image"
+      />
+
+      <Button className="button">{t(button)}</Button>
+    </Grid>
+  )
+}
 
 Greeting.propTypes = {
   t: func,
@@ -40,7 +57,9 @@ Greeting.propTypes = {
 }
 
 export default translate()(
-  MsBrowserConsumer(styled(Greeting)`
-    ${styles}
-  `),
+  DeviceConsumer(
+    MsBrowserConsumer(styled(Greeting)`
+      ${styles}
+    `),
+  ),
 )

@@ -2,11 +2,11 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(352)};
   }
-  
+
   .heading {
     grid-column: 1 / span 12;
     grid-row: 1;
@@ -18,26 +18,42 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-row: 2;
     text-align: center;
     margin-top: ${calcRem(31)};
+    color: ${colors.secondary.darken100};
+  }
+
+  .card {
+    grid-row: 3;
   }
 
   .image {
-    grid-row: 3;
-    align-self: end;
-    margin-top: ${calcRem(148)};
+    display: flex;
+    align-items: flex-end;
     img {
       height: auto;
     }
   }
 
-  .link {
-    font-weight: 900;
-    grid-row: 4;
+  .title {
     margin-top: ${calcRem(56)};
+    color: ${colors.secondary.darken100};
+    svg {
+      margin-left: ${calcRem(16)};
+      opacity: 0;
+      transition: opacity 100ms ease-out;
+    }
+  }
+
+  @media (pointer: fine) {
+    .card:hover {
+    .title svg {
+        opacity: 1;
+      }
+    }
   }
 
   .text {
-    grid-row: 5;
     margin-top: ${calcRem(22)};
+    color: ${colors.secondary.darken100};
   }
 
   .first-item {
@@ -52,11 +68,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 10 / span 3;
   }
 
+  .first-item.card,
+  .third-item.card {
+    margin-top: ${calcRem(323)};
+  }
+
+  .second-item.card {
+    margin-top: ${calcRem(145)};
+  }
+
   ${desktop.m} {
     & {
       margin-top: ${calcRem(307)};
     }
-    
+
     .heading {
       grid-column: 1 / span 12;
       text-align: center;
@@ -69,8 +94,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(31)};
     }
 
-    .image {
-      margin-top: ${calcRem(92)};
+    .first-item.card,
+    .third-item.card {
+      margin-top: ${calcRem(220)};
+    }
+
+    .second-item.card {
+      margin-top: ${calcRem(89)};
     }
   }
 
@@ -78,15 +108,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     & {
       margin-top: ${calcRem(312)};
     }
-    
+
+    .first-item.card,
+    .third-item.card {
+      margin-top: ${calcRem(220)};
+    }
+
+    .second-item.card {
+      margin-top: ${calcRem(98)};
+    }
+
     .heading {
       grid-column: 1 / span 12;
       grid-row: 1;
       text-align: center;
-    }
-
-    .image {
-      margin-top: ${calcRem(99)};
     }
   }
 
@@ -97,18 +132,32 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .sub-heading {
       margin-top: ${calcRem(10)};
+      margin-bottom: ${calcRem(2)};
     }
 
-    .image {
-      margin-top: ${calcRem(71)};
+    .second-item.card {
+      margin-top: ${calcRem(68)};
     }
 
-    .link {
-      margin-top: ${calcRem(58)};
+    .first-item.card,
+    .third-item.card {
+      margin-top: ${calcRem(68)};
+    }
+
+    .first-item.card::before,
+    .third-item.card::before {
+      content: '';
+      display: block;
+      height: ${calcRem(92)};
+    }
+
+    .title {
+      margin-top: ${calcRem(62)};
     }
 
     .text {
-      margin-top: ${calcRem(13)};
+      margin-top: ${calcRem(16)};
+      font-size: ${calcRem(14)};
     }
   }
 
@@ -119,12 +168,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .heading,
     .sub-heading,
-    .image,
-    .link,
-    .text {
+    .card {
       grid-column: 1 / span 6;
     }
-    
+
     .heading {
       text-align: start;
     }
@@ -134,19 +181,31 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(10)};
     }
 
-    .image {
-      grid-row: auto;
+    .first-item {
+      grid-row: 3;
+    }
+
+    .second-item {
+      grid-row: 4;
+    }
+
+    .third-item {
+      grid-row: 5;
+    }
+
+    .first-item.card,
+    .second-item.card,
+    .third-item.card {
       margin-top: ${calcRem(89)};
     }
 
-    .link {
-      grid-row: auto;
-      margin-top: ${calcRem(24)};
+    .title {
+      margin-top: ${calcRem(30)};
     }
 
     .text {
-      grid-row: auto;
       margin-top: ${calcRem(13)};
+      font-size: ${calcRem(14)};
     }
   }
 `
@@ -164,16 +223,19 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
     -ms-grid-row: 2;
   }
 
-  .image {
+  .card {
+    display: block;
     -ms-grid-row: 3;
   }
 
-  .link {
-    -ms-grid-row: 4;
+  .image {
+    display: flex;
+    align-items: flex-end;
+
   }
 
-  .text {
-    -ms-grid-row: 5;
+  .title {
+    display: block;
   }
 
   .first-item {
@@ -189,6 +251,12 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
   .third-item {
     -ms-grid-column: ${getGridValueForMs(10)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
+  }
+
+  .card:hover {
+    .title svg {
+      opacity: 1;
+    }
   }
 
   ${desktop.m} {
@@ -214,9 +282,10 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

@@ -6,7 +6,7 @@ import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import ButtonLink from '../../ui-kit/core-design/ButtonLink'
+import Button from '../../ui-kit/core-design/ButtonLink'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
@@ -39,12 +39,14 @@ const Greeting = ({
 
       <PictureForAllResolutions
         images={images}
-        fallback={images['desktop.all'].png}
+        fallback={images['desktop.l'].png}
         alt={t(imgAlt)}
         className="image"
       />
 
-      <Button className="button">{t(button)}</Button>
+      <Button className="button" kind="primary">
+        {t(button)}
+      </Button>
     </Grid>
   )
 }

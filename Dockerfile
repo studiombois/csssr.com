@@ -15,10 +15,10 @@ ENV PROCESS_IMAGES=$processImages
 
 COPY package.json yarn.lock /app/
 
-RUN npm set //nexus.csssr.space/repository/csssr/:_auth "${NPM_TOKEN}" && \
-    npm config set @dreamteam:registry https://nexus.csssr.space/repository/csssr/ && \
+RUN npm config set //npm.pkg.github.com/:_authToken "${NPM_TOKEN}" && \
+    npm config set @csssr:registry https://npm.pkg.github.com && \
     yarn --frozen-lockfile && \
-    npm config rm //nexus.csssr.space/repository/csssr/:_authToken
+    npm config rm //npm.pkg.github.com/:_authToken
 COPY . .
 RUN yarn build
 

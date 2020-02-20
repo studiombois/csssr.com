@@ -12,6 +12,7 @@ import Form from './Form'
 import OutsideClickHandler from 'react-outside-click-handler'
 import FocusLock from 'react-focus-lock'
 import styles from './ContactModal.styles'
+import testEmail from '../../utils/testEmail'
 
 const formName = 'contact-modal'
 const focusOnErrors = createDecorator(getFormInputs(formName))
@@ -50,8 +51,10 @@ class ContactModal extends PureComponent {
       return { [FORM_ERROR]: t('common:form.errors.general') }
     }
 
+    const isTestEmail = values.email === testEmail
+
     if (res.status === 201) {
-      if (window.dataLayer) {
+      if (window.dataLayer && !isTestEmail) {
         window.dataLayer.push({ event: 'form_success' })
       }
     } else {
@@ -63,7 +66,7 @@ class ContactModal extends PureComponent {
         error = t('common:form.errors.general')
       }
 
-      if (window.dataLayer) {
+      if (window.dataLayer && !isTestEmail) {
         window.dataLayer.push({ event: 'form_fail' })
       }
 

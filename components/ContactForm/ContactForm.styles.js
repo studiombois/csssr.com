@@ -231,7 +231,7 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
 
   ${shouldShowSubHeading && `
     h2 {
-      margin-bottom: ${calcRem(29)};
+      margin-bottom: ${calcRem(31)};
       color: ${colors.secondary.darken100};
     }
 
@@ -252,10 +252,12 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
       color: ${colors.secondary.darken100};
     }
 
+
+
     .sub-heading {
       grid-column: 3 / span 8;
       text-align: center;
-      margin-bottom: ${calcRem(84)};
+      margin-bottom: ${calcRem(132)};
       color: ${colors.secondary.darken100};
     }
 
@@ -270,10 +272,6 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
     }
 
     @media (min-width: 1280px) and (max-width: 1359px) {
-      .sub-heading {
-        margin-bottom: ${calcRem(92)};
-      }
-
       .button {
         grid-column: 5 / span 4;
       }

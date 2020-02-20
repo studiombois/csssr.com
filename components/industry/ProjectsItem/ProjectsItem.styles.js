@@ -7,7 +7,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
     return (
       css`
         .image {
-          grid-column: 8 / span 5;
+          grid-column: 8 / span 4;
         }
 
         .item-heading {
@@ -15,7 +15,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .text {
-          grid-column: 3 / span 4;
+          grid-column: 3 / span 3;
         }
 
         .column-1 {
@@ -27,24 +27,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         ${desktop.m} {
-          .item-heading {
-            grid-column: 2 / span 2;
+          .image {
+            grid-column: 8 / span 4;
           }
 
-          .text {
-            grid-column: 2 / span 4;
-          }
-
-          .column-1 {
-            grid-column: 2 / span 2;
-          }
-
-          .column-2 {
-            grid-column: 4 / span 2;
-          }
-        }
-
-        ${desktop.s} {
           .item-heading {
             grid-column: 2 / span 2;
           }
@@ -64,11 +50,15 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 
         ${desktop.s} {
           .image {
+            grid-column: 8 / span 5;
+          }
+
+          .item-heading {
             grid-column: 2 / span 2;
           }
 
           .text {
-            grid-column: 2 / span 4;
+            grid-column: 2 / span 5;
           }
 
           .column-1 {
@@ -82,7 +72,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 
         ${tablet.all} {
           .image {
-            grid-column: 7 / span 5;
+            grid-column: 8 / span 5;
           }
 
           .item-heading {
@@ -144,6 +134,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
       }
 
       ${desktop.m} {
+        .text {
+          grid-column: 7 / span 5;
+        }
+
         .image {
           grid-column: 2 / span 5;
         }
@@ -155,19 +149,19 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .item-heading {
-          grid-column: 8 / span 2;
+          grid-column: 7 / span 2;
         }
 
         .text {
-          grid-column: 8 / span 4;
+          grid-column: 7 / span 5;
         }
 
         .column-1 {
-          grid-column: 8 / span 2;
+          grid-column: 7 / span 2;
         }
 
         .column-2 {
-          grid-column: 10 / span 2;
+          grid-column: 9 / span 2;
         }
       }
 
@@ -177,19 +171,19 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .item-heading {
-          grid-column: 8 / span 2;
+          grid-column: 7 / span 2;
         }
 
         .text {
-          grid-column: 8 / span 4;
+          grid-column: 7 / span 5;
         }
 
         .column-1 {
-          grid-column: 8 / span 2;
+          grid-column: 7 / span 2;
         }
 
         .column-2 {
-          grid-column: 10 / span 2;
+          grid-column: 9 / span 2;
         }
       }
 
@@ -212,11 +206,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
   )
 }
 
-const base = (imgMaxWidth, { breakpoints: { mobile }}) => css`
-  grid-template-rows: max-content max-content max-content;
+const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
+  grid-template-rows: auto auto auto 1fr;
 
   .image {
-    max-width: ${imgMaxWidth};
     img {
       height: auto;
     }
@@ -226,13 +219,31 @@ const base = (imgMaxWidth, { breakpoints: { mobile }}) => css`
     grid-row: 1 / span 4;
   }
 
+  &.first-item .image {
+    max-width: ${calcRem(467)};
+    margin-left: ${calcRem(-45)};
+  }
+
+  &.second-item .image {
+    max-width: ${calcRem(456)};
+  }
+
+  &.third-item .image {
+    max-width: ${calcRem(491)};
+    margin-top: ${calcRem(-17)};
+    margin-left: ${calcRem(-33)};
+  }
+
   .item-heading {
     grid-row: 1;
+    color: ${colors.secondary.darken100};
+    white-space: nowrap;
   }
 
   .text {
     grid-row: 2;
     margin-top: ${calcRem(21)};
+    color: ${colors.secondary.darken100};
   }
 
   .number-data {
@@ -242,16 +253,97 @@ const base = (imgMaxWidth, { breakpoints: { mobile }}) => css`
 
   .text-data {
     grid-row: 4;
+    color: ${colors.secondary.darken100};
+  }
+
+  ${desktop.m} {
+    &.first-item .image {
+      max-width: ${calcRem(445)};
+      margin-left: ${calcRem(-12)};
+    }
+
+    &.second-item .image {
+      max-width: none;
+    }
+
+    &.third-item .image {
+      max-width: ${calcRem(470)};
+      margin-top: ${calcRem(-17)};
+      margin-left: 0;
+    }
+
+    &.third-item .text {
+      grid-column: 7 / span 4;
+    }
+  }
+
+  ${desktop.s} {
+    &.first-item .image {
+      max-width: ${calcRem(446)};
+    }
+
+    &.second-item .image {
+      max-width: ${calcRem(435)};
+    }
+
+    &.third-item .image {
+      max-width: ${calcRem(470)};
+    }
+  }
+
+  ${tablet.all} {
+    &.first-item .image {
+      max-width: ${calcRem(338)};
+      margin-left: ${calcRem(-33)};
+    }
+
+    &.second-item .image {
+      max-width: ${calcRem(332)};
+      margin-top: ${calcRem(2)};
+      margin-right: ${calcRem(-35)};
+    }
+
+    &.third-item .image {
+      max-width: ${calcRem(352)};
+      margin-top: ${calcRem(-10)};
+      margin-left: ${calcRem(-23)};
+    }
+
+    .text {
+      margin-top: ${calcRem(17)};
+    }
+
+    .number-data {
+      margin-top: ${calcRem(40)};
+    }
+
+    .text-data{
+      margin-top: ${calcRem(9)};
+    }
   }
 
   ${mobile.all} {
     .image {
       grid-row: 1;
+      width: ${calcRem(360)};
+      margin-bottom: ${calcRem(14)};
+    }
+
+    &.first-item .image {
+      margin-left: ${calcRem(-16)};
+    }
+
+    &.second-item .image {
+      margin-left: ${calcRem(-16)};
+    }
+
+    &.third-item .image {
+      margin-top: 0;
+      margin-left: ${calcRem(-16)};
     }
 
     .item-heading {
       grid-row: 2;
-      margin-top: ${calcRem(19)};
     }
 
     .text {
@@ -301,28 +393,11 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
         }
 
         ${desktop.m} {
-          .item-heading {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-
-          .text {
-            -ms-grid-column: ${getGridValueForMs(2)};
+          .image {
+            -ms-grid-column: ${getGridValueForMs(8)};
             -ms-grid-column-span: ${getGridValueForMs(4)};
           }
 
-          .column-1 {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-
-          .column-2 {
-            -ms-grid-column: ${getGridValueForMs(4)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-        }
-
-        ${desktop.s} {
           .item-heading {
             -ms-grid-column: ${getGridValueForMs(2)};
             -ms-grid-column-span: ${getGridValueForMs(2)};
@@ -346,12 +421,17 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
         ${desktop.s} {
           .image {
+            -ms-grid-column: ${getGridValueForMs(8)};
+            -ms-grid-column-span: ${getGridValueForMs(5)};
+          }
+
+          .item-heading {
             -ms-grid-column: ${getGridValueForMs(2)};
             -ms-grid-column-span: ${getGridValueForMs(2)};
           }
 
           .text {
-            -ms-grid-column: ${getGridValueForMs(4)};
+            -ms-grid-column: ${getGridValueForMs(2)};
             -ms-grid-column-span: ${getGridValueForMs(4)};
           }
 
@@ -410,7 +490,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
       .text {
         -ms-grid-column: ${getGridValueForMs(7)};
-        -ms-grid-column-span: ${getGridValueForMs(4)};
+        -ms-grid-column-span: ${getGridValueForMs(5)};
       }
 
       .column-1 {
@@ -464,22 +544,22 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
         }
 
         .item-heading {
-          -ms-grid-column: ${getGridValueForMs(8)};
+          -ms-grid-column: ${getGridValueForMs(7)};
           -ms-grid-column-span: ${getGridValueForMs(2)};
         }
 
         .text {
-          -ms-grid-column: ${getGridValueForMs(8)};
+          -ms-grid-column: ${getGridValueForMs(7)};
           -ms-grid-column-span: ${getGridValueForMs(4)};
         }
 
         .column-1 {
-          -ms-grid-column: ${getGridValueForMs(8)};
+          -ms-grid-column: ${getGridValueForMs(7)};
           -ms-grid-column-span: ${getGridValueForMs(2)};
         }
 
         .column-2 {
-          -ms-grid-column: ${getGridValueForMs(10)};
+          -ms-grid-column: ${getGridValueForMs(9)};
           -ms-grid-column-span: ${getGridValueForMs(2)};
         }
       }
@@ -488,7 +568,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 }
 
 const ie11BaseStyles = () => css`
-  -ms-grid-template-rows: max-content max-content max-content;
+  -ms-grid-rows: auto auto auto 1fr;
 
   .image {
     -ms-grid-row: 1;
@@ -514,10 +594,11 @@ const ie11BaseStyles = () => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
     ${dynamicStyles(props.direction, { breakpoints })}
-    ${base(props.imgMaxWidth, { breakpoints })}
+    ${base({ colors, breakpoints })}
     ${props.isIe11 && ie11DynamicStyles(props.direction, { breakpoints })}
     ${props.isIe11 && ie11BaseStyles()}
   `

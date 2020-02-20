@@ -13,7 +13,7 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
   <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"
-      size="l"
+      size="m"
       dangerouslySetInnerHTML={{ __html: t(heading) }}
       className="heading"
     />
@@ -24,15 +24,14 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
       className="sub-heading"
     />
 
-    {coreValuesItems.map(({ images, imgAlt, link, href, text, className }) => (
+    {coreValuesItems.map(({ images, imgAlt, title, text, className }) => (
       <CoreValuesItem
         images={images}
         imgAlt={imgAlt}
-        link={link}
-        href={href}
+        title={title}
         text={text}
         itemClassName={className}
-        key={link}
+        key={title}
       />
     ))}
   </Grid>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import NextLink from 'next/link'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 
@@ -25,7 +24,7 @@ const CookiesPopup = ({ className, t, lng }) => {
     setIsActive(localStorage.getItem('cookies_policy'))
   }, [])
 
-  const url = сookiesLinks[lng]
+  const links = сookiesLinks[lng]
 
   return (
     <div className={cn(className, { hide: isActive })}>
@@ -36,14 +35,18 @@ const CookiesPopup = ({ className, t, lng }) => {
         <Text type="regular" size="m" className="cookies-text">
           <span dangerouslySetInnerHTML={{ __html: t('common:сookiesPopup.text') }} />
 
-          <NextLink href={url}>
-            <span
+          {links.map((url, index) => (
+            <a
+              key={url}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="cookies-link"
               dangerouslySetInnerHTML={{
-                __html: t('common:сookiesPopup.link'),
+                __html: t(`common:сookiesPopup.link.${index}`),
               }}
             />
-          </NextLink>
+          ))}
         </Text>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 
 const base = ({ media }) => css`
   & {
-    z-index: 9999;
+    z-index: 99999;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -44,6 +44,8 @@ const base = ({ media }) => css`
   .cookies-link {
     text-decoration: underline;
     cursor: pointer;
+    color: #ffffff;
+    margin-left: 0.25rem;
   }
 
   ${media.from('1024px')} {
@@ -60,7 +62,7 @@ const base = ({ media }) => css`
     }
 
     .wrap {
-      max-width: 46rem;
+      max-width: 49rem;
     }
   }
 `

@@ -7,6 +7,7 @@ import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../utils/client/getGaCid'
+import testEmail from '../../utils/testEmail'
 
 const pageName = 'sborka'
 const onSubmit = (t, lng) => async values => {
@@ -28,9 +29,11 @@ const onSubmit = (t, lng) => async values => {
     return { [FORM_ERROR]: t('common:form.errors.general') }
   }
 
+  const isTestEmail = values.email === testEmail
+
   if (res.status === 201) {
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'sborka_form_success' })
+    if (window.dataLayer && !isTestEmail) {
+      window.dataLayer.push({ event: 'form_success' })
     }
   } else {
     let error
@@ -41,8 +44,8 @@ const onSubmit = (t, lng) => async values => {
       error = t('common:form.errors.general')
     }
 
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: 'sborka_form_fail' })
+    if (window.dataLayer && !isTestEmail) {
+      window.dataLayer.push({ event: 'form_fail' })
     }
 
     return { [FORM_ERROR]: error }

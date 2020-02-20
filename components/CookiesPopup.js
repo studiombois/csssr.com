@@ -46,7 +46,7 @@ const CookiesPopup = ({ t, lng }) => {
       </div>
       <style jsx>{`
         .cookies-popup {
-          z-index: 9999;
+          z-index: 99999;
           position: fixed;
           bottom: 0;
           left: 0;

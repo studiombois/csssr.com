@@ -100,6 +100,12 @@ const CookiesPopup = ({ t, lng }) => {
             height: 1.5rem;
           }
         }
+
+        @media (min-width: 1280px) {
+          .wrap {
+            max-width: 45rem;
+          }
+        }
       `}</style>
     </div>
   )

@@ -550,6 +550,12 @@ const Text = () =>
         display: none;
       }
     }
+
+    @media (min-width: 1280px) {
+      .font_cookies {
+        font-size: 1rem;
+      }
+    }
   `}</style>
 
 export default Text

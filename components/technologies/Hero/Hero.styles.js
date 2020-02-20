@@ -4,7 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   & {
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-position-x: center;
   }
 
@@ -71,7 +71,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.l} {
     & {
       background-image: url(${require('../../../static/icons/technologies/hero/lines_desktop_l.svg').default});
-      background-position-y: 475px;
+      background-position-y: 535px;
+      background-position-x: calc(50% - 50px);
     }
 
     .grid {
@@ -91,7 +92,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.m} {
     & {
       background-image: url(${require('../../../static/icons/technologies/hero/lines_desktop_m.svg').default});
-      background-position-y: 640px;
+      background-position-y: 500px;
+      background-position-x: calc(50% - 11px);
     }
 
     .grid {
@@ -111,7 +113,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.s} {
     & {
       background-image: url(${require('../../../static/icons/technologies/hero/lines_desktop_s.svg').default});
-      background-position-y: 649px;
+      background-position-y: 660px;
     }
 
     .grid {
@@ -131,8 +133,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${tablet.all} {
     & {
       background-image: url(${require('../../../static/icons/technologies/hero/lines_tablet_all.svg').default});
-      background-position-y: ${calcRem(382)};
-      background-size: 100%;
+      background-position-y: ${calcRem(242)};
     }
 
     .grid {
@@ -162,6 +163,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .typescript {
       margin-top: ${calcRem(41)};
+    }
+  }
+
+  ${tablet.s} {
+    & {
+      background-size: ${calcRem(1280)};
     }
   }
 

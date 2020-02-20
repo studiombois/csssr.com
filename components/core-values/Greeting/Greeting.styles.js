@@ -4,7 +4,7 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    margin-top: ${calcRem(213)};
+    margin-top: ${calcRem(168)};
   }
 
   .grid-heading {

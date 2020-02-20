@@ -1031,6 +1031,13 @@
     emotion-theming "^10.0.10"
     ramda "^0.26.1"
 
+"@csssr/csssr-amo@^1.1.4":
+  version "1.1.4"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/1.1.4/3bc010dd181338780cfe1e2701db32287cde12427e8e0ee5513993b640493445#09d66e5d11235ece08073b8543796c363f38c5fd"
+  integrity sha512-IpXgfHDXw2oOpHX2aHwfJSgcNKT5S3NbzcXxTyC48Hb12UPpQ4Mfacf9gzgO+Wo37lGPf8MLOu7q3tQx5xrp2Q==
+  dependencies:
+    isomorphic-unfetch "^3.0.0"
+
 "@csssr/eslint-config-core@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@csssr/eslint-config-core/-/eslint-config-core-1.0.2.tgz#a7cada15058f3dd14591ad8b832c1e093837af61"
@@ -1043,13 +1050,6 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
-
-"@dreamteam/csssr-amo@^1.0.1":
-  version "1.0.1"
-  resolved "https://nexus.csssr.space/repository/csssr/@dreamteam/csssr-amo/-/csssr-amo-1.0.1.tgz#479ca898b60c5a2e4010c44de2e10eb058897555"
-  integrity sha512-7J/h2aYURimyHn1mOVNjcmjixnoqHR/xEsPNZ9loNCQXeWjN3MdAaHahdkBtm535ggYJJSrJKxbcrOT9uGg9rg==
-  dependencies:
-    isomorphic-unfetch "^3.0.0"
 
 "@emotion/babel-plugin-jsx-pragmatic@^0.1.5":
   version "0.1.5"

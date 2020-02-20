@@ -4,8 +4,9 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   & {
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-position-x: center;
+    box-sizing: content-box;
   }
 
   .title,
@@ -42,9 +43,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.l} {
     & {
-      margin-top: 175px;
+      padding-top: 175px;
       min-height: 703px;
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_desktop_l.svg').default});
+      background-position-y: 248px;
+      background-position-x: calc(50% - 228px);
     }
 
     .title {
@@ -63,9 +66,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.m} {
     & {
-      margin-top: 119px;
+      padding-top: 119px;
       min-height: 716px;
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_desktop_m.svg').default});
+      background-position-y: 44px;
     }
 
     .title {
@@ -83,9 +87,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.s} {
     & {
-      margin-top: 132px;
+      padding-top: 132px;
       min-height: 697px;
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_desktop_s.svg').default});
+      background-position-y: 80px;
     }
 
     .title {
@@ -103,10 +108,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(137)};
-      min-height: ${calcRem(485)};
+      padding-top: ${calcRem(137)};
+      min-height: ${calcRem(517)};
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_tablet_all.svg').default});
-      background-size: 100%;
+      background-size: ${calcRem(1280)};
+      background-position-y: ${calcRem(32)};
     }
 
     .title {
@@ -125,7 +131,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(99)};
+      padding-top: ${calcRem(99)};
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_mobile_all_top.svg').default});
       background-size: 100%;
     }

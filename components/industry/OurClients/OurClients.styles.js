@@ -10,7 +10,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .heading {
     grid-column: 1 / span 12;
     grid-row: 1;
-    justify-self: center;
+    text-align: center;
   }
 
   .image {
@@ -18,6 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 2 / span 11;
     grid-row: 2;
     z-index: -1;
+    max-width: ${calcRem(1562)};
     margin-top: ${calcRem(119)};
   }
 
@@ -25,6 +26,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(308)};
 
     .image {
+      max-width: ${calcRem(1115)};
       margin-top: ${calcRem(69)};
     }
   }
@@ -33,6 +35,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(224)};
 
     .image {
+      max-width: ${calcRem(1089)};
+      margin-left: ${calcRem(-15)};
       margin-top: ${calcRem(82)};
     }
   }
@@ -41,6 +45,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(215)};
 
     .image {
+      max-width: ${calcRem(869)};
       margin-top: ${calcRem(78)};
       margin-left: -3.5rem;
     }
@@ -50,7 +55,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(135)};
 
     .heading {
-      justify-self: start;
+      text-align: start;
     }
 
     .image {
@@ -60,54 +65,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
+const ie11Styles = () => css`
   .heading {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
+    -ms-grid-column: ${getGridValueForMs(1)};
+    -ms-grid-column-span: ${getGridValueForMs(12)};
     -ms-grid-row: 1;
   }
 
   .image {
-    -ms-grid-column: ${getGridValueForMs(7)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-  }
-
-  ${desktop.m} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-  }
-
-  ${desktop.s} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-  }
-
-  ${tablet.all} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(11)};
+    -ms-grid-row: 2;
   }
 `
 
@@ -116,6 +84,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints })}
-    ${props.isIe11 && ie11Styles({ breakpoints })}
+    ${props.isIe11 && ie11Styles()}
   `
 }

@@ -2,9 +2,9 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
-    grid-template-rows: max-content max-content;
+    grid-template-rows: auto auto 1fr;
     margin-top: ${calcRem(352)};
   }
 
@@ -16,12 +16,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .sub-heading {
     grid-column: 8 / span 4;
     grid-row: 1;
+    color: ${colors.secondary.darken100};
+    margin-top: ${calcRem(14)};
   }
 
   .image {
     grid-column: 2 / span 4;
     grid-row: 2 / span 2;
-    margin-top: ${calcRem(91)};
+    margin-top: ${calcRem(44)};
   }
 
   .first-item,
@@ -50,6 +52,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     white-space: nowrap;
   }
 
+  .fact-text {
+    color: ${colors.secondary.darken100};
+  }
+
   ${desktop.m} {
     & {
       margin-top: ${calcRem(278)};
@@ -65,7 +71,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .image {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(94)};
+      margin-top: ${calcRem(46 )};
     }
 
     .first-item,
@@ -102,11 +108,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .sub-heading {
       grid-column: 7 / span 5;
+      margin-top: ${calcRem(14)};
     }
 
     .image {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(61)};
+      margin-top: ${calcRem(48)};
     }
 
     .first-item,
@@ -141,11 +148,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .sub-heading {
       grid-column: 7 / span 5;
+      margin-top: ${calcRem(2)};
     }
 
     .image {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(28)};
+      margin-top: ${calcRem(23)};
     }
 
     .first-item,
@@ -217,7 +225,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
   & {
-    -ms-grid-template-rows: max-content max-content;
+    -ms-grid-template-rows: auto auto 1fr;
   }
 
   .heading {
@@ -351,9 +359,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

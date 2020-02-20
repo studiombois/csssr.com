@@ -1,5 +1,6 @@
 pipeline {
   environment {
+    registryCredential = "space-nexus"
     branch = ""
     commit = ""
   }

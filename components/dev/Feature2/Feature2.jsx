@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import styles from './Feature2.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 
@@ -13,6 +14,6 @@ const Feature2 = ({ className, title, text, image }) => (
   </Grid>
 )
 
-export default styled(Feature2)`
+export default MsBrowserConsumer(styled(Feature2)`
   ${styles}
-`
+`)

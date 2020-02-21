@@ -1,5 +1,4 @@
 import { css } from '@emotion/core'
-import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = css`
   & {
@@ -21,14 +20,6 @@ const base = css`
   }
 `
 
-const ie11Styles = css`
-  :global(.ie11) .cell {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(6)};
-  }
-`
-
 export default css`
   ${base}
-  ${ie11Styles}
 `

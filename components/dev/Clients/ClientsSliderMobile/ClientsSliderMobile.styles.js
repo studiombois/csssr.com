@@ -35,8 +35,8 @@ const ie11Styles = css`
  }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
   ${dynamic}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

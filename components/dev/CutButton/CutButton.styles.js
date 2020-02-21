@@ -73,39 +73,39 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) & {
+  & {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 23;
   }
 
-  :global(.ie11) button {
+  button {
     -ms-grid-column: 11;
     -ms-grid-column-span: 3;
   }
 
-  :global(.ie11) .border-bottom {
+  .border-bottom {
     -ms-grid-column: 3;
     -ms-grid-column-span: 19;
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) .border-bottom {
+    .border-bottom {
       -ms-grid-column: 3;
       -ms-grid-column-span: 19;
     }
   }
 `
 
-const dynamic = ({ isCut }) => css`
+const dynamic = isCut => css`
   .fold-arrow {
     margin-left: '0.375rem';
     transform: ${isCut ? 'rotate(0deg)' : 'rotate(180deg)'};
   }
 `
 
-export default props => css`
+export default ({ isCut, isIe11 }) => css`
   ${base}
-  ${ie11Styles}
-  ${dynamic(props)}
+  ${isIe11 && ie11Styles}
+  ${dynamic(isCut)}
 `

@@ -2,6 +2,7 @@ import React from 'react'
 import translate from '../../utils/translate-wrapper'
 import styled from '@emotion/styled'
 import common_styles_for_policy_pages from './PrivacyPolicy.styles'
+import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import Grid from '../ui-kit/core-design/Grid'
 
 const PrivacyPolicyContentEn = ({ className, t }) => (
@@ -444,6 +445,8 @@ const PrivacyPolicyContentEn = ({ className, t }) => (
   </Grid>
 )
 
-export default styled(translate()(PrivacyPolicyContentEn))`
-  ${common_styles_for_policy_pages}
-`
+export default translate()(
+  MsBrowserConsumer(styled(PrivacyPolicyContentEn)`
+    ${common_styles_for_policy_pages}
+  `),
+)

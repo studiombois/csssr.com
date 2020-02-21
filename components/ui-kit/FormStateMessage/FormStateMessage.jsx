@@ -7,6 +7,7 @@ import styles, {
   textDataStyles,
 } from './FormStateMessage.styles'
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { oneOf, string, func } from 'prop-types'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 import Picture from '../../Picture'
@@ -94,6 +95,8 @@ class FormStateMessage extends PureComponent {
   }
 }
 
-export default styled(translate()(FormStateMessage))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(FormStateMessage)`
+    ${styles}
+  `),
+)

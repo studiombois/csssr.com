@@ -4,8 +4,9 @@ import * as Sentry from '@sentry/node'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import styles, { pictureStyles } from './ErrorPage.styles'
+import styles from './ErrorPage.styles'
 import Grid from '../ui-kit/core-design/Grid'
+import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import DevTools from '../DevTools'
 import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
@@ -84,7 +85,7 @@ class ErrorPage extends React.Component {
           />
 
           <PictureForAllResolutions
-            css={pictureStyles}
+            className="picture"
             image={{ namespace: 'error', key: `${statusCode}`, alt: `${statusCode}` }}
           />
 
@@ -119,6 +120,6 @@ class ErrorPage extends React.Component {
   }
 }
 
-export default styled(ErrorPage)`
+export default MsBrowserConsumer(styled(ErrorPage)`
   ${styles}
-`
+`)

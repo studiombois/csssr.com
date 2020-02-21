@@ -39,7 +39,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(327)};
+      margin-top: ${calcRem(313)};
     }
 
     article:nth-of-type(4) {
@@ -94,7 +94,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     article:nth-of-type(5) {
       margin-top: ${calcRem(225)};
-      margin-bottom: ${calcRem(221)};
+      margin-bottom: ${calcRem(320)};
     }
   }
 

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 import styles, { vacancyImageStyles, faqImageStyles } from './VacancyImageAndLinks.styles'
 import withI18next from '../../../../utils/withI18next'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import PictureForAllResolutions from '../../../PictureForAllResolutions'
 import Picture from '../../../Picture'
 import Vacancy from '../Vacancy'
@@ -42,6 +43,8 @@ const VacancyImageAndLinks = ({ lng, t, locale, className, vacancies, pictureNam
   </div>
 )
 
-export default styled(withI18next(['job'])(VacancyImageAndLinks))`
-  ${styles}
-`
+export default withI18next(['job'])(
+  MsBrowserConsumer(styled(VacancyImageAndLinks)`
+    ${styles}
+  `),
+)

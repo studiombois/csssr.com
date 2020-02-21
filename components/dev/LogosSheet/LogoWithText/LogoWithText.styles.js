@@ -23,21 +23,6 @@ const base = css`
     }
   }
 
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    & {
-      max-width: 100%;
-      width: auto;
-      height: auto;
-    }
-  }
-
-  @media screen and (max-width: 1024px) and (-ms-high-contrast: none),
-    (-ms-high-contrast: active) {
-    & {
-      max-width: 80%;
-    }
-  }
-
   @media (min-width: 768px) and (max-width: 1279px) {
     & + figcaption {
       margin-top: 0rem;
@@ -56,6 +41,21 @@ const base = css`
   }
 `
 
-export default css`
+const ie11Styles = css`
+  & {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  @media screen and (max-width: 1024px) {
+    & {
+      max-width: 80%;
+    }
+  }
+`
+
+export default ({ isIe11 }) => css`
   ${base}
+  ${isIe11 && ie11Styles}
 `

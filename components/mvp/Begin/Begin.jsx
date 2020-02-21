@@ -5,6 +5,7 @@ import Rocket from '../Rocket'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 import Grid from '../../ui-kit/core-design/Grid'
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Begin = ({ className, t }) => (
   <Grid as="article" id="what-is-mvp" className={className}>
@@ -27,6 +28,8 @@ const Begin = ({ className, t }) => (
   </Grid>
 )
 
-export default styled(translate()(Begin))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Begin)`
+    ${styles}
+  `),
+)

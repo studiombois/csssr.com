@@ -183,75 +183,45 @@ const ie11Styles = css`
     -ms-grid-rows: auto auto 31.75rem auto;
   }
 
-  :global(.ie11) h2 {
+  h2 {
     -ms-grid-column: 3;
     -ms-grid-column-span: 21;
     -ms-grid-row: 1;
   }
 
-  :global(.ie11) p {
+  p {
     -ms-grid-column: 13;
     -ms-grid-column-span: 9;
     -ms-grid-row: 4;
   }
 
-  :global(.ie11) .toggler {
+  .toggler {
     -ms-grid-column: 3;
     -ms-grid-column-span: 21;
     -ms-grid-row: 2;
   }
 
-  :global(.ie11) .images {
+  .images {
     -ms-grid-column: 1;
     -ms-grid-column-span: 23;
     -ms-grid-row: 3;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    :global(.ie11) .wrapper {
+    .wrapper {
       -ms-grid-rows: auto auto 22.8125rem auto;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    :global(.ie11) .wrapper {
+    .wrapper {
       -ms-grid-rows: auto auto 21.1875rem auto;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) .wrapper {
+    .wrapper {
       -ms-grid-rows: auto auto 15.5625rem auto;
-    }
-  }
-
-  @media (max-width: 767px) {
-    :global(.ie11) .wrapper {
-      -ms-grid-rows: auto 11.1rem auto auto;
-    }
-
-    :global(.ie11) h2 {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-    }
-
-    :global(.ie11) .images {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-      -ms-grid-row: 2;
-      -ms-grid-row-span: 1;
-    }
-
-    :global(.ie11) .toggler {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 9;
-      -ms-grid-row: 3;
-      -ms-grid-row-span: 1;
-    }
-
-    :global(.ie11) p {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
     }
   }
 `
@@ -280,7 +250,7 @@ const dynamic = togglerIndex => css`
 
 export { dynamic }
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

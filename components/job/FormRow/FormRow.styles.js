@@ -15,13 +15,13 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) .cell {
+  .cell {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

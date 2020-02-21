@@ -228,39 +228,39 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) h2 {
+  h2 {
     -ms-grid-column: 9;
     -ms-grid-column-span: 7;
     -ms-grid-row: 1;
   }
 
-  :global(.ie11) p {
+  p {
     -ms-grid-column: 5;
     -ms-grid-column-span: 7;
     -ms-grid-row: 2;
   }
 
-  :global(.ie11) .picture-wrapper {
+  .picture-wrapper {
     -ms-grid-column: 3;
     -ms-grid-column-span: 19;
     -ms-grid-row: 2;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    :global(.ie11) h2 {
+    h2 {
       -ms-grid-column: 7;
       -ms-grid-column-span: 11;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    :global(.ie11) h2 {
+    h2 {
       -ms-grid-column: 7;
       -ms-grid-column-span: 11;
     }
   }
 `
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

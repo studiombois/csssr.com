@@ -333,13 +333,13 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) blockquote {
+  blockquote {
     -ms-grid-column: 17;
     -ms-grid-column-span: 5;
     -ms-grid-row: 1;
   }
 
-  :global(.ie11) h1 {
+  h1 {
     -ms-grid-column: 5;
     -ms-grid-column-span: 11;
     -ms-grid-row: 1;
@@ -353,7 +353,7 @@ const ie11Styles = css`
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) h1 {
+    h1 {
       -ms-grid-column: 5;
       -ms-grid-column-span: 7;
     }
@@ -368,7 +368,7 @@ const ie11Styles = css`
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

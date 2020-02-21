@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import common_styles_for_policy_pages from '../privacy-policy/PrivacyPolicy.styles'
 import translate from '../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import Grid from '../ui-kit/core-design/Grid'
 
 const CookiesPolicyContent = ({ className, t }) => (
@@ -135,6 +136,8 @@ const CookiesPolicyContent = ({ className, t }) => (
   </Grid>
 )
 
-export default styled(translate()(CookiesPolicyContent))`
-  ${common_styles_for_policy_pages}
-`
+export default translate()(
+  MsBrowserConsumer(styled(CookiesPolicyContent)`
+    ${common_styles_for_policy_pages}
+  `),
+)

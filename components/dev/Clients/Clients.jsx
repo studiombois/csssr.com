@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import styles from './Clients.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import ClientsSlider from './ClientsSlider/ClientsSlider'
 import ClientsSliderMobile from './ClientsSliderMobile/ClientsSliderMobile'
@@ -26,6 +27,8 @@ Clients.propTypes = {
   isMobile: bool,
 }
 
-export default styled(translate()(Clients))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Clients)`
+    ${styles}
+  `),
+)

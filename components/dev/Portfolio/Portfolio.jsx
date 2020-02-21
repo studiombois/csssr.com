@@ -3,6 +3,7 @@ import { bool, arrayOf, shape, string, number } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Portfolio.styles'
 import Grid from '../../ui-kit/core-design/Grid'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import translate from '../../../utils/translate-wrapper'
 import ProjectsList from './ProjectsList/ProjectsList'
 import ProjectsListMobile from './ProjectsListMobile/ProjectsListMobile'
@@ -46,6 +47,8 @@ Portfolio.propTypes = {
   ),
 }
 
-export default styled(translate()(Portfolio))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Portfolio)`
+    ${styles}
+  `),
+)

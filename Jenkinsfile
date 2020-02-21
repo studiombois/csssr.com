@@ -8,6 +8,7 @@ pipeline {
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
+    booleanParam(defaultValue: false, description: 'Включить обработку изображений', name: 'processImages')
   }
 
   stages {
@@ -17,6 +18,7 @@ pipeline {
 
         echo "Branch: ${GIT_BRANCH}"
         echo "CSSSR_SPACE_ORIGIN: ${params.csssrSpaceOrigin}"
+        echo "PROCESS_IMAGES: ${params.processImages}"
 
         script {
           branch = GIT_BRANCH
@@ -30,7 +32,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          withCredentials([string(credentialsId: 'csssr-nexus-npm-basic-auth', variable: 'NPM_TOKEN')]) {
+          withCredentials([string(credentialsId: 'github-registry-read-only-token', variable: 'NPM_TOKEN')]) {
             sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --network host . -t docker.csssr.space/csssr-com:${commit}"
           }
         }
@@ -71,7 +73,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} express=csssr-express-fix-com-987
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages} express=csssr-express-fix-com-987
             """
           }
         }

@@ -7,6 +7,7 @@ import Footer from './Footer'
 import { withRouter } from 'next/router'
 import { string, shape, bool, arrayOf } from 'prop-types'
 import { allSocialLinks } from '../data/jobs/footerLinks'
+import CookiesPopup from './CookiesPopup'
 
 const Layout = props => {
   const { children } = props
@@ -22,6 +23,7 @@ const Layout = props => {
     {!props.footerProps.noFooter &&
       <Footer {...props.footerProps}/>
     }
+    <CookiesPopup />
     <style jsx global>{`
       #main {
         overflow-x: hidden;

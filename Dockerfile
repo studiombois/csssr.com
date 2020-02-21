@@ -1,4 +1,5 @@
 FROM node:11.7.0 AS build
+RUN yarn policies set-version v1 && yarn --version
 
 ARG isProduction
 ARG csssrSpaceOrigin
@@ -10,13 +11,14 @@ ENV NODE_ENV=production
 ENV IS_PRODUCTION=$isProduction
 ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 
-COPY .npmrc package.json yarn.lock /app/
-RUN echo "//nexus.csssr.space/repository/csssr/:_authToken=${NPM_TOKEN}" >> .npmrc
-RUN yarn --frozen-lockfile
+COPY package.json yarn.lock /app/
+
+RUN npm set //nexus.csssr.space/repository/csssr/:_auth "${NPM_TOKEN}" && \
+    npm config set @dreamteam:registry https://nexus.csssr.space/repository/csssr/ && \
+    yarn --frozen-lockfile && \
+    npm config rm //nexus.csssr.space/repository/csssr/:_authToken
 COPY . .
 RUN yarn build
-
-RUN sed '/\/\/nexus.csssr.space\/repository\/csssr\/:_authToken=/d' .npmrc
 
 FROM node:11.7.0-alpine AS release
 ARG isProduction

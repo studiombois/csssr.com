@@ -406,6 +406,17 @@ const Text = () =>
       color: #000000;
     }
 
+    .font_cookies {
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5rem;
+      letter-spacing: normal;
+      color: #ffffff;
+    }
+
     @media (max-width: 1279px) {
       .font_h1-slab {
         margin-top: -0.1875rem;
@@ -537,6 +548,12 @@ const Text = () =>
       .font_link-list_24:hover::after,
       .font_link-list_28:hover::after {
         display: none;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .font_cookies {
+        font-size: 1rem;
       }
     }
   `}</style>

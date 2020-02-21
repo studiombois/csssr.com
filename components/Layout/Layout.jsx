@@ -6,6 +6,7 @@ import { Global } from '@emotion/core'
 import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
+import CookiesPopup from '../CookiesPopup'
 
 const Layout = ({ children, isIe11 }) => (
   <Fragment>
@@ -14,6 +15,7 @@ const Layout = ({ children, isIe11 }) => (
     {isIe11 && <Global styles={ie11Styles} />}
 
     <main id="main">{children}</main>
+    <CookiesPopup />
     <DevTools />
   </Fragment>
 )

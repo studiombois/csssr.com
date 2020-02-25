@@ -108,6 +108,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/industry/fintech',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/fintech',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/fintech',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/fintech',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/fintech',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/fintech',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,

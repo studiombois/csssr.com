@@ -1,10 +1,10 @@
-import greeting_desktop_l from '../../../static/images/industry/ecommerce/desktop.l/greeting.png?responsive'
+import greeting_desktop_l from '../../../static/images/industry/fintech/desktop.l/greeting.png?responsive'
 import greeting_desktop_m from '../../../static/images/industry/ecommerce/desktop.m/greeting.png?responsive'
 import greeting_desktop_s from '../../../static/images/industry/ecommerce/desktop.s/greeting.png?responsive'
 import greeting_tablet_all from '../../../static/images/industry/ecommerce/tablet.all/greeting.png?responsive'
 import greeting_mobile_all from '../../../static/images/industry/ecommerce/mobile.all/greeting.png?responsive'
 
-import greeting_desktop_l_webp from '../../../static/images/industry/ecommerce/desktop.l/greeting.png?responsive_and_webp'
+import greeting_desktop_l_webp from '../../../static/images/industry/fintech/desktop.l/greeting.png?responsive_and_webp'
 import greeting_desktop_m_webp from '../../../static/images/industry/ecommerce/desktop.m/greeting.png?responsive_and_webp'
 import greeting_desktop_s_webp from '../../../static/images/industry/ecommerce/desktop.s/greeting.png?responsive_and_webp'
 import greeting_tablet_all_webp from '../../../static/images/industry/ecommerce/tablet.all/greeting.png?responsive_and_webp'
@@ -20,8 +20,8 @@ const greetingImages = {
 
 export default {
   images: greetingImages,
-  heading: 'industry:greeting.ecommerce.title',
-  text: 'industry:greeting.ecommerce.paragraph',
-  button: 'industry:greeting.ecommerce.button',
-  imgAlt: 'industry:greeting.ecommerce.imgAlt',
+  heading: 'industry:greeting.fintech.title',
+  text: 'industry:greeting.fintech.paragraph',
+  button: 'industry:greeting.fintech.button',
+  imgAlt: 'industry:greeting.fintech.imgAlt',
 }

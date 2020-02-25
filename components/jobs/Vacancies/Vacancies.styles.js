@@ -383,40 +383,68 @@ const base = css`
 `
 
 const ie11Styles = css`
-  & *:nth-of-type(1) {
+  & header {
     -ms-grid-row: 1;
   }
 
-  & *:nth-of-type(2) {
+  & ul {
     -ms-grid-row: 2;
   }
 
-  & *:nth-of-type(4) {
+  & picture:nth-of-type(1) {
     -ms-grid-row: 4;
   }
 
-  & *:nth-of-type(5) {
+  & h2:nth-of-type(1) {
     -ms-grid-row: 5;
   }
 
-  & *:nth-of-type(7) {
+  & p:nth-of-type(1) {
     -ms-grid-row: 7;
   }
 
-  & *:nth-of-type(8) {
+  & picture:nth-of-type(2) {
     -ms-grid-row: 8;
   }
 
-  & *:nth-of-type(10) {
+  & h2:nth-of-type(2) {
     -ms-grid-row: 10;
   }
 
-  & *:nth-of-type(11) {
+  & p:nth-of-type(2) {
     -ms-grid-row: 11;
   }
 
-  & *:nth-of-type(12) {
+  & picture:nth-of-type(3) {
     -ms-grid-row: 12;
+  }
+
+  & h2:nth-of-type(3) {
+    -ms-grid-row: 13;
+  }
+
+  & p:nth-of-type(3) {
+    -ms-grid-row: 14;
+  }
+
+  & p:nth-of-type(4) {
+    -ms-grid-row: 15;
+  }
+
+  & picture:nth-of-type(4) {
+    -ms-grid-row: 16;
+  }
+
+  & p:nth-of-type(5) {
+    -ms-grid-row: 16;
+  }
+
+  & picture:nth-of-type(5) {
+    -ms-grid-row: 17;
+  }
+
+  & p:nth-of-type(6) {
+    -ms-grid-row: 17;
   }
 
   header,

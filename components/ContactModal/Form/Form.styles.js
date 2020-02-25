@@ -240,13 +240,13 @@ const ie11Styles = css`
     -ms-grid-columns: 4rem (1rem 4rem)[7];
 
     h2 {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 11;
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 12;
     }
 
     .field {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 11;
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 12;
     }
 
     .button {

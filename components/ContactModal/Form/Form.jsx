@@ -15,6 +15,7 @@ const Form = props => {
     onSubmitResolve,
     submitError,
     onStatusButtonClick,
+    isIe11,
   } = props
 
   return (
@@ -30,7 +31,7 @@ const Form = props => {
         shouldShowStatusMessage={false}
         onSubmitResolve={onSubmitResolve}
         hasFailOrSuccessStatus={hasFailOrSuccessStatus}
-        css={styles(hasFailOrSuccessStatus)}
+        css={styles({hasFailOrSuccessStatus, isIe11})}
         {...props}
       />
 

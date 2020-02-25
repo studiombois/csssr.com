@@ -34,17 +34,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.s} {
     &.ux .image {
-      margin-bottom: ${calcRem(-10)};
+      margin-bottom: ${calcRem(-18)};
     }
   }
 
   ${tablet.all} {
     .sub-heading {
-      margin-top: ${calcRem(31)};
+      margin-top: ${calcRem(18)};
     }
 
     &.ux .image {
-      margin-bottom: ${calcRem(-18)};
+      margin-bottom: ${calcRem(-14)};
     }
   }
 

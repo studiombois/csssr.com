@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import styles, { pictureStyles, pictureFaqStyles, pictureHunterStyles, ie11Styles } from './Vacancies.styles'
+import styles, { pictureStyles, pictureFaqStyles, pictureHunterStyles} from './Vacancies.styles'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Picture from '../../Picture'
@@ -11,10 +11,10 @@ import PictureForAllResolutions from '../../PictureForAllResolutions'
 
 class Vacancies extends PureComponent {
   render() {
-    const { className, lng, locale, t, isIe11 } = this.props
+    const { className, lng, locale, t} = this.props
 
     return (
-      <Grid as="article" className={className} isIe11={isIe11}>
+      <Grid as="article" className={className}>
         <header>
           <h1 className="font_h1-regular">
             <div dangerouslySetInnerHTML={{ __html: t('jobs:title') }} />

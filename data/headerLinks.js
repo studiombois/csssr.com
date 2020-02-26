@@ -85,7 +85,7 @@ export default {
           icon: Repeat,
           title: 'common:header.menu.howWeWork.processes.title',
           description: 'common:header.menu.howWeWork.processes.description',
-          href: 'express-front-end',
+          href: 'way-of-work',
         },
       ],
     },

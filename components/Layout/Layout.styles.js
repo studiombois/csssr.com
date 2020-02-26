@@ -43,10 +43,6 @@ export const base = css`
     position: relative;
   }
 
-  #main {
-    overflow-x: hidden;
-  }
-
   .grid-container {
     display: grid;
     align-content: start;
@@ -156,7 +152,8 @@ export const base = css`
 
 export const ie11Styles = css`
   html,
-  body {
+  body,
+  #main {
     overflow-x: hidden;
   }
 

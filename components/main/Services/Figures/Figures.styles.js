@@ -83,6 +83,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
     .picture_figures {
       width: 100%;
+      height: 100%;
     }
 
     .picture:not(.picture_figures) {

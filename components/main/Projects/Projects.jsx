@@ -52,7 +52,7 @@ const Projects = ({ className, t, lng }) => {
             href={href}
             images={images}
             fallback={fallback}
-            isLink={id !== 'radio'}
+            isLink
           >
             {id === 'radio' ? <Player /> : null}
           </Card>

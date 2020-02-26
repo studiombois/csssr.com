@@ -155,11 +155,6 @@ export const base = css`
 `
 
 export const ie11Styles = css`
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
   .grid-container {
     display: -ms-grid;
     -ms-grid-template-columns: 120px (32px, 120px)[11];

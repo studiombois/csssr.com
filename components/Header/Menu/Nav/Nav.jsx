@@ -64,7 +64,7 @@ const Nav = ({
                 return (
                   <Fade key={id} {...animationProps}>
                     <li className="nav-item">
-                      <Link className="link" href={`${lng}/${href}`} isNextLink>
+                      <Link className="link" href={`/${lng}/${href}`} isNextLink>
                         <Icon className="icon" />
 
                         <Heading

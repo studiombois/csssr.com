@@ -16,7 +16,7 @@ const Links = ({ className, t, lng }) => (
     {links.map(({ title, href }) => (
       <li key={title}>
         {linkRegExp.test(href) ? (
-          <Link href={href} type="top_menu" target="_blank">
+          <Link href={`${href}/${lng}`} type="top_menu" target="_blank">
             {t(title)}
           </Link>
         ) : (

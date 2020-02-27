@@ -1,5 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Toggler from '../Toggler'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 import styled from '@emotion/styled'
@@ -71,6 +72,8 @@ class RiskMinimization extends PureComponent {
   }
 }
 
-export default styled(translate()(RiskMinimization))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(RiskMinimization)`
+    ${styles}
+  `),
+)

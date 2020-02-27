@@ -16,7 +16,7 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) & {
+  & {
     -ms-grid-column: ${getGridValueForMs(10)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
     -ms-grid-row: 1;
@@ -24,7 +24,7 @@ const ie11Styles = css`
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

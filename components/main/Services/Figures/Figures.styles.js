@@ -9,9 +9,9 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     margin-top: 129px;
     grid-column: 8;
     /* Вычисляем ширину по aspect ration */
+    display: inline-flex;
     width: calc(90vh * 456 / 588);
     max-width: 456px;
-    display: inline-flex;
     max-height: 90vh;
   }
 
@@ -51,6 +51,13 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     z-index: 3;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
     width: calc(225 / 456 * 100%);
+  }
+
+  @media (min-height: 654px) {
+    & {
+      top: calc((100vh - 588px) / 2);
+      max-height: 588px;
+    }
   }
 
   ${desktop.m} {
@@ -110,6 +117,10 @@ const ie11Styles = ({ breakpoints: { tablet } }) => css`
   .picture:not(.picture_figures) {
     left: calc(50% + 8px);
     transform: translate(-50%);
+  }
+
+  .picture_figures {
+    height: 100%;
   }
 
   ${tablet.all} {

@@ -1,4 +1,5 @@
 FROM node:11.10.1 AS build
+RUN yarn policies set-version v1 && yarn --version
 
 ARG isProduction
 ARG csssrSpaceOrigin
@@ -12,10 +13,12 @@ ENV IS_PRODUCTION=$isProduction
 ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 ENV PROCESS_IMAGES=$processImages
 
-COPY .npmrc package.json yarn.lock /app/
-RUN echo "\n//nexus.csssr.space/repository/csssr/:_authToken=${NPM_TOKEN}" >> .npmrc && \
+COPY package.json yarn.lock /app/
+
+RUN npm config set //npm.pkg.github.com/:_authToken "${NPM_TOKEN}" && \
+    npm config set @csssr:registry https://npm.pkg.github.com && \
     yarn --frozen-lockfile && \
-    sed '/\/\/nexus.csssr.space\/repository\/csssr\/:_authToken=/d' .npmrc
+    npm config rm //npm.pkg.github.com/:_authToken
 COPY . .
 RUN yarn build
 

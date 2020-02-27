@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './LogoWithText.styles'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 const LogoWithText = ({ className, iconName, altText, logoCaption }) => (
   <Fragment>
@@ -20,6 +21,6 @@ LogoWithText.propTypes = {
   logoCaption: string,
 }
 
-export default styled(LogoWithText)`
+export default MsBrowserConsumer(styled(LogoWithText)`
   ${styles}
-`
+`)

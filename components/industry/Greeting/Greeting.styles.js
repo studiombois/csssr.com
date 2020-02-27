@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     grid-template-rows: max-content max-content;
     padding-top: ${calcRem(240)};
@@ -17,6 +17,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-column: 2 / span 5;
     grid-row: 2;
     margin-top: ${calcRem(77)};
+    color: ${colors.secondary.darken100};
   }
 
   .image {
@@ -95,8 +96,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .button {
-      grid-column: 2 / span 3;
+      grid-column: 2 / span 4;
       margin-top: ${calcRem(74)};
+      height: 3rem;
     }
   }
 
@@ -111,6 +113,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .text {
       margin-top: ${calcRem(27)};
+      font-size: ${calcRem(14)};
     }
 
     .image {
@@ -119,6 +122,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .button {
       margin-top: ${calcRem(49)};
+      height: 3rem;
     }
   }
 `
@@ -217,9 +221,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

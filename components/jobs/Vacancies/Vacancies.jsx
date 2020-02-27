@@ -2,15 +2,16 @@ import React, { PureComponent, Fragment } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import styles, { pictureStyles, pictureFaqStyles, pictureHunterStyles } from './Vacancies.styles'
+import styles, { pictureStyles, pictureFaqStyles, pictureHunterStyles} from './Vacancies.styles'
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Picture from '../../Picture'
 import Grid from '../../ui-kit/core-design/Grid'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 
 class Vacancies extends PureComponent {
   render() {
-    const { className, lng, locale, t } = this.props
+    const { className, lng, locale, t} = this.props
 
     return (
       <Grid as="article" className={className}>
@@ -145,6 +146,8 @@ class Vacancies extends PureComponent {
   }
 }
 
-export default styled(translate()(Vacancies))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Vacancies)`
+    ${styles}
+  `),
+)

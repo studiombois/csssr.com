@@ -182,11 +182,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture_dbs {
-      margin-top: ${calcRem(224)};
+      margin-top: ${calcRem(192)};
     }
 
     .picture_node {
-      margin-top: ${calcRem(394)};
+      margin-top: ${calcRem(362)};
       width: ${calcRem(64)};
       height: ${calcRem(64)};
     }

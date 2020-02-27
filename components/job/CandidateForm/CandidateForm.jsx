@@ -14,7 +14,7 @@ import AnimatedButton from '../../ui-kit/core-design/AnimatedButton'
 import Text from '../../ui-kit/core-design/Text'
 import FormStateMessage from '../../ui-kit/FormStateMessage/FormStateMessage'
 import Picture from '../../Picture'
-import { MsBrowserContext } from '../../../utils/msBrowserProvider'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const picturesMap = {
   'project-manager-ru': 'Project_manager',
@@ -66,8 +66,6 @@ const divideSections = sections => {
 class CandidateForm extends PureComponent {
   messageRef = React.createRef()
 
-  static contextType = MsBrowserContext
-
   state = {
     // такой же элемент стейта есть в ContactForm
     submittedToServer: false,
@@ -81,7 +79,7 @@ class CandidateForm extends PureComponent {
     const elemRect = messageNode.getBoundingClientRect()
     const offset = elemRect.top - bodyRect.top - 20
 
-    const isMsBrowser = this.context
+    const isMsBrowser = this.props.isMsBrowser
     if (isMsBrowser) {
       document.documentElement.scrollTop = offset
     } else {
@@ -284,6 +282,8 @@ class CandidateForm extends PureComponent {
   }
 }
 
-export default styled(withI18next(['job'])(CandidateForm))`
-  ${styles}
-`
+export default withI18next(['job'])(
+  MsBrowserConsumer(styled(CandidateForm)`
+    ${styles}
+  `),
+)

@@ -62,18 +62,18 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) .icon-wrapper {
+  .icon-wrapper {
     -ms-grid-column: ${getGridValueForMs(10)};
     -ms-grid-column-span: ${getGridValueForMs(1)};
   }
 
-  :global(.ie11) .file-info {
+  .file-info {
     -ms-grid-column: ${getGridValueForMs(11)};
     -ms-grid-column-span: ${getGridValueForMs(1)};
   }
 `
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

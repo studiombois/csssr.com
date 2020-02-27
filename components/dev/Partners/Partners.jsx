@@ -16,6 +16,7 @@ import {
 import styled from '@emotion/styled'
 import styles from './Partners.styles'
 import Grid from '../../ui-kit/core-design/Grid'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Partners = ({ className, t, lng }) => (
   <Grid className={className} as="section">
@@ -75,6 +76,8 @@ const Partners = ({ className, t, lng }) => (
   </Grid>
 )
 
-export default styled(translate()(Partners))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Partners)`
+    ${styles}
+  `),
+)

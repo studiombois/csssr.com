@@ -3,6 +3,7 @@ import { string, bool, func } from 'prop-types'
 import ContactForm from '../../ContactForm'
 import StatusMessage from './StatusMessage'
 import styles from './Form.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Form = props => {
   const {
@@ -14,6 +15,7 @@ const Form = props => {
     onSubmitResolve,
     submitError,
     onStatusButtonClick,
+    isIe11,
   } = props
 
   return (
@@ -29,7 +31,7 @@ const Form = props => {
         shouldShowStatusMessage={false}
         onSubmitResolve={onSubmitResolve}
         hasFailOrSuccessStatus={hasFailOrSuccessStatus}
-        css={styles(hasFailOrSuccessStatus)}
+        css={styles({hasFailOrSuccessStatus, isIe11})}
         {...props}
       />
 
@@ -53,4 +55,4 @@ Form.propTypes = {
   onStatusButtonClick: func,
 }
 
-export default Form
+export default MsBrowserConsumer(Form)

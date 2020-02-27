@@ -240,13 +240,13 @@ const ie11Styles = css`
     -ms-grid-columns: 4rem (1rem 4rem)[7];
 
     h2 {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 11;
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 12;
     }
 
     .field {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 11;
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 12;
     }
 
     .button {
@@ -296,8 +296,8 @@ const dynamic = hasFailOrSuccessStatus => css`
   }
 `
 
-export default hasFailOrSuccessStatus => () => css`
+export default ({ hasFailOrSuccessStatus, isIe11 }) => () => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
   ${dynamic(hasFailOrSuccessStatus)}
 `

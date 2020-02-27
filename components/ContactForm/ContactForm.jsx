@@ -15,12 +15,10 @@ import AnimatedButton from '../ui-kit/core-design/AnimatedButton'
 import Text from '../ui-kit/core-design/Text'
 import FormStateMessage from '../ui-kit/FormStateMessage'
 import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
-import { MsBrowserContext } from '../../utils/msBrowserProvider'
+import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 
 class ContactForm extends PureComponent {
   messageRef = React.createRef()
-
-  static contextType = MsBrowserContext
 
   static proptypes = {
     imageName: string,
@@ -54,7 +52,7 @@ class ContactForm extends PureComponent {
     const elemRect = messageNode.getBoundingClientRect()
     const offset = elemRect.top - bodyRect.top - 20
 
-    if (this.context) {
+    if (this.props.isIe11) {
       document.documentElement.scrollTop = offset
     } else {
       window.scrollTo({
@@ -297,6 +295,8 @@ class ContactForm extends PureComponent {
   }
 }
 
-export default styled(translate()(ContactForm))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(ContactForm)`
+    ${styles}
+  `),
+)

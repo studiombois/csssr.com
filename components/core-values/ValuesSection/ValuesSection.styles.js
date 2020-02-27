@@ -3,7 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    margin-top: ${calcRem(106)};
+    margin-top: ${calcRem(114)};
   }
 
   article:nth-of-type(2) {
@@ -23,6 +23,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-bottom: ${calcRem(286)};
   }
 
+  ${desktop.l} {
+    article:nth-of-type(5) {
+      margin-bottom: ${calcRem(422)};
+    }
+  }
+
   ${desktop.m} {
     & {
       margin-top: ${calcRem(151)};
@@ -33,7 +39,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(327)};
+      margin-top: ${calcRem(313)};
     }
 
     article:nth-of-type(4) {
@@ -41,7 +47,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(346)};
+      margin-top: ${calcRem(312)};
+      margin-bottom: ${calcRem(422)};
     }
   }
 
@@ -55,7 +62,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(264)};
+      margin-top: ${calcRem(269)};
     }
 
     article:nth-of-type(4) {
@@ -63,14 +70,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(313)};
+      margin-top: ${calcRem(289)};
       margin-bottom: ${calcRem(366)};
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(122)};
+      margin-top: ${calcRem(116)};
     }
 
     article:nth-of-type(2) {
@@ -78,7 +85,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(192)};
+      margin-top: ${calcRem(196)};
     }
 
     article:nth-of-type(4) {
@@ -87,7 +94,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     article:nth-of-type(5) {
       margin-top: ${calcRem(225)};
-      margin-bottom: ${calcRem(221)};
+      margin-bottom: ${calcRem(320)};
     }
   }
 
@@ -97,20 +104,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(198)};
+      margin-top: ${calcRem(196)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(186)};
+      margin-top: ${calcRem(195)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(186)};
+      margin-top: ${calcRem(193)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(186)};
-      margin-bottom: ${calcRem(71)};
+      margin-top: ${calcRem(194)};
+      margin-bottom: ${calcRem(119)};
     }
   }
 `

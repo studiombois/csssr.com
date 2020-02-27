@@ -41,63 +41,88 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   &.code {
-    margin-top: ${calcRem(86)};
+    margin-top: ${calcRem(95)};
   }
 
   &.reliability {
-    margin-top: ${calcRem(90)};
+    margin-top: ${calcRem(95)};
   }
 
   &.accessibility {
-    margin-top: ${calcRem(90)};
+    margin-top: ${calcRem(95)};
   }
 
   &.ux {
-    margin-top: ${calcRem(86)};
+    margin-top: ${calcRem(95)};
   }
 
   &.security {
-    margin-top: ${calcRem(86)};
+    margin-top: ${calcRem(95)};
+  }
+
+  ${desktop.l} {
+    &.code {
+      margin-top: ${calcRem(140)};
+    }
+
+    &.reliability {
+      margin-top: ${calcRem(140)};
+    }
+
+    &.accessibility {
+      margin-top: ${calcRem(140)};
+    }
+
+    &.ux {
+      margin-top: ${calcRem(140)};
+    }
+
+    &.security {
+      margin-top: ${calcRem(140)};
+    }
   }
 
   ${desktop.m} {
     &.code {
-      margin-top: ${calcRem(143)};
+      margin-top: ${calcRem(140)};
     }
 
     &.reliability {
-      margin-top: ${calcRem(142)};
+      margin-top: ${calcRem(140)};
     }
 
     &.accessibility {
-      margin-top: ${calcRem(143)};
+      margin-top: ${calcRem(140)};
     }
 
     &.ux {
-      margin-top: ${calcRem(119)};
+      margin-top: ${calcRem(140)};
     }
-
+    
+    &.security {
+      margin-top: ${calcRem(140)};
+    }
   }
 
   ${desktop.s} {
     & {
-      margin-top: ${calcRem(120)};
+      margin-top: ${calcRem(95)};
     }
 
     &.code {
-      margin-top: ${calcRem(119)};
+      margin-top: ${calcRem(95)};
     }
 
     &.reliability {
-      margin-top: ${calcRem(120)};
+      margin-top: ${calcRem(95)};
     }
 
     &.accessibility {
-      margin-top: ${calcRem(119)};
+      margin-top: ${calcRem(95)};
     }
 
     &.ux {
-      margin-top: ${calcRem(119)};
+      margin-top: ${calcRem(95)};
     }
   }
 

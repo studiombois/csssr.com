@@ -25,6 +25,12 @@
       "paragraph": "The financial industry is&nbsp;expanding its digital presence, moving more and more services online to&nbsp;meet rising consumer demand. With this transition comes a&nbsp;growing need for higher digital security standards. Find out how we&nbsp;can help.",
       "button": "Get in touch",
       "imgAlt": ""
+    },
+    "informationTechnology": {
+      "title": "Web Development Services<br/> for IT Companies",
+      "paragraph": "The IT&nbsp;industry is&nbsp;always on&nbsp;the cutting edge of&nbsp;technological progress. The effort to&nbsp;adapt to&nbsp;new technologies as&nbsp;quickly as&nbsp;possible is&nbsp;not only a&nbsp;desire but also the key to&nbsp;success in&nbsp;this industry. We&nbsp;help these companies become market leaders.",
+      "button": "Get in touch",
+      "imgAlt": ""
     }
   },
   "ourClients": {
@@ -99,7 +105,7 @@
     },
     "thirdItem": {
       "heading": "Telecom Provider",
-      "text": "Interface of&nbsp;self service terminal system for one of&nbsp;the largest Russian online electronics retailers",
+      "text": "Interface of&nbsp;self service terminal system for one of&nbsp;the largest Russian online electronics retailers",
       "numericData": {
         "firstItem": {
           "number": "14",

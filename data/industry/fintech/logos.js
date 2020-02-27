@@ -1,14 +1,14 @@
-import logos_desktop_l from '../../../static/images/industry/ecommerce/desktop.l/logos.png?responsive'
-import logos_desktop_m from '../../../static/images/industry/ecommerce/desktop.m/logos.png?responsive'
-import logos_desktop_s from '../../../static/images/industry/ecommerce/desktop.s/logos.png?responsive'
-import logos_tablet_all from '../../../static/images/industry/ecommerce/tablet.all/logos.png?responsive'
-import logos_mobile_all from '../../../static/images/industry/ecommerce/mobile.all/logos.png?responsive'
+import logos_desktop_l from '../../../static/images/industry/fintech/desktop.l/logos.png?responsive'
+import logos_desktop_m from '../../../static/images/industry/fintech/desktop.m/logos.png?responsive'
+import logos_desktop_s from '../../../static/images/industry/fintech/desktop.s/logos.png?responsive'
+import logos_tablet_all from '../../../static/images/industry/fintech/tablet.all/logos.png?responsive'
+import logos_mobile_all from '../../../static/images/industry/fintech/mobile.all/logos.png?responsive'
 
-import logos_desktop_l_webp from '../../../static/images/industry/ecommerce/desktop.l/logos.png?responsive_and_webp'
-import logos_desktop_m_webp from '../../../static/images/industry/ecommerce/desktop.m/logos.png?responsive_and_webp'
-import logos_desktop_s_webp from '../../../static/images/industry/ecommerce/desktop.s/logos.png?responsive_and_webp'
-import logos_tablet_all_webp from '../../../static/images/industry/ecommerce/tablet.all/logos.png?responsive_and_webp'
-import logos_mobile_all_webp from '../../../static/images/industry/ecommerce/mobile.all/logos.png?responsive_and_webp'
+import logos_desktop_l_webp from '../../../static/images/industry/fintech/desktop.l/logos.png?responsive_and_webp'
+import logos_desktop_m_webp from '../../../static/images/industry/fintech/desktop.m/logos.png?responsive_and_webp'
+import logos_desktop_s_webp from '../../../static/images/industry/fintech/desktop.s/logos.png?responsive_and_webp'
+import logos_tablet_all_webp from '../../../static/images/industry/fintech/tablet.all/logos.png?responsive_and_webp'
+import logos_mobile_all_webp from '../../../static/images/industry/fintech/mobile.all/logos.png?responsive_and_webp'
 
 const ourClientsImages = {
   'desktop.l': { png: logos_desktop_l, webp: logos_desktop_l_webp },

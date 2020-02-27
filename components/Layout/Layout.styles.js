@@ -44,6 +44,10 @@ export default {
       position: relative;
     }
 
+    #main {
+      background-color: white;
+    }
+
     .grid-container {
       display: grid;
       align-content: start;

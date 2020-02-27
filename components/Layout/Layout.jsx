@@ -5,6 +5,7 @@ import { string } from 'prop-types'
 import { Global, css } from '@emotion/core'
 import styles from './Layout.styles'
 import Header from '../Header'
+import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 
 const Layout = props => {
@@ -30,6 +31,7 @@ const Layout = props => {
       <DevTools />
 
       <main id="main">{children}</main>
+      <Footer />
     </Fragment>
   )
 }

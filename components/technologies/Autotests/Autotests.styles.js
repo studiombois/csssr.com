@@ -108,11 +108,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      padding-top: ${calcRem(137)};
+      padding-top: ${calcRem(129)};
       min-height: ${calcRem(517)};
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_tablet_all.svg').default});
       background-size: ${calcRem(1280)};
-      background-position-y: ${calcRem(32)};
+      background-position-y: ${calcRem(24)};
     }
 
     .title {
@@ -131,7 +131,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${mobile.all} {
     & {
-      padding-top: ${calcRem(99)};
+      margin-top: ${calcRem(98)};
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_mobile_all_top.svg').default});
       background-size: 100%;
     }
@@ -151,7 +151,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       &::after {
         content: '';
         position: absolute;
-        top: calc(100 + ${calcRem(6)});
+        bottom:${calcRem(-78)};
         left: ${calcRem(112)};
         display: block;
         width: ${calcRem(161)};

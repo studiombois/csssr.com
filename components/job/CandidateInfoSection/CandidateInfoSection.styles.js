@@ -34,35 +34,35 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) h2,
-  :global(.ie11) p {
+  h2,
+  p {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
-  :global(.ie11 .input-firstname) {
+  .ie11 .input-firstname {
     -ms-grid-row: 2;
   }
 
-  :global(.ie11 .input-lastname) {
+  .ie11 .input-lastname {
     -ms-grid-row: 2;
   }
-  :global(.ie11 .input-age) {
+  .ie11 .input-age {
     -ms-grid-row: 3;
   }
-  :global(.ie11 .input-location) {
+  .ie11 .input-location {
     -ms-grid-row: 4;
   }
-  :global(.ie11 .input-email) {
+  .ie11 .input-email {
     -ms-grid-row: 5;
   }
-  :global(.ie11 .input-resume) {
+  .ie11 .input-resume {
     -ms-grid-row: 6;
   }
-  :global(.ie11 .seventh-line) {
+  .ie11 .seventh-line {
     -ms-grid-row: 7;
   }
-  :global(.ie11 .input-checkbox) {
+  .ie11 .input-checkbox {
     -ms-grid-row: 8;
   }
 `
@@ -73,7 +73,7 @@ const stylesForFullWidthField = css`
     grid-column: 2 / span 6;
   }
 
-  :global(.ie11) & {
+  & {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
@@ -91,7 +91,7 @@ const stylesForFirstHalfWidthField = css`
     grid-column: 2 / span 3;
   }
 
-  :global(.ie11) & {
+  & {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
   }
@@ -110,7 +110,7 @@ const stylesForSecondHalfWidthField = css`
     grid-column: 5 / span 3;
   }
 
-  :global(.ie11) & {
+  & {
     -ms-grid-column: ${getGridValueForMs(5)};
     -ms-grid-column-span: ${getGridValueForMs(3)};
   }
@@ -129,12 +129,12 @@ const stylesForTextareaField = css`
     grid-column: 2 / span 6;
   }
 
-  :global(.ie11) & {
+  & {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
-  :global(.ie11 textarea) {
+  .ie11 textarea {
     overflow: auto;
   }
 
@@ -151,7 +151,7 @@ const stylesForCheckboxField = css`
     grid-column: 2 / span 6;
   }
 
-  :global(.ie11) & {
+  & {
     display: block;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
@@ -171,7 +171,7 @@ const stylesForFileField = css`
     grid-column: 2 / span 4;
   }
 
-  :global(.ie11) & {
+  & {
     margin-top: 3rem;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
@@ -182,7 +182,7 @@ const stylesForFileField = css`
     grid-column: 6 / span 2;
   }
 
-  :global(.ie11) .button {
+  .button {
     height: 4rem;
     -ms-grid-column: ${getGridValueForMs(6)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
@@ -209,7 +209,7 @@ export {
   stylesForFileField,
 }
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

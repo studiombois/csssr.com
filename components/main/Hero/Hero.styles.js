@@ -28,12 +28,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
       :hover + .picture {
         background-color: black;
-        transition: background-color 100ms ease-out;
       }
     }
 
   .picture {
     width: 100%;
+    transition: background-color 100ms ease-out;
   }
 
   .description {
@@ -127,16 +127,19 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
   .title {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 1;
   }
 
   .picture-wrapper  {
     -ms-grid-column: ${getGridValueForMs(1)};
-    -ms-grid-column-span: ${getGridValueForMs(11)};
+    -ms-grid-column-span: ${getGridValueForMs(12)};
+    -ms-grid-row: 2;
   }
 
   .description {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 3;
   }
 
   ${desktop.l} {

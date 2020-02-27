@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import styled from '@emotion/styled'
 import styles from './Process.styles'
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 class Process extends PureComponent {
   planetsRef = React.createRef()
@@ -85,6 +86,8 @@ class Process extends PureComponent {
   }
 }
 
-export default styled(translate()(Process))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Process)`
+    ${styles}
+  `),
+)

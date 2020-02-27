@@ -4,7 +4,7 @@ const fetch = require('isomorphic-unfetch')
 const sitemap = require('sitemap')
 const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
 
-const oneDay = 24 * 60 * 60 * 1000
+const thirtyMinutes = 30 * 60 * 1000
 
 const cache = (asyncFunc, time) => {
   let cached
@@ -26,7 +26,7 @@ const getVacancies = () =>
   fetch(`${csssrSpaceOrigin}/api/public/vacancies/active`).then(res =>
     res.json().then(vacancies =>
       vacancies.map(vacancy => ({
-        url: `https://csssr.com/${vacancy.language}/jobs/${vacancy.pathName}`,
+        url: `https://csssr.com/${vacancy.locale}/jobs/${vacancy.pathName}`,
         changefreq: 'weekly',
         priority: 0.8,
       })),
@@ -108,17 +108,62 @@ const sitemapUrlsSettings = [
     ],
   },
   {
-    url: 'https://csssr.com/ru/express',
+    url: 'https://csssr.com/ru/industry/fintech',
     changefreq: 'weekly',
     priority: 1,
     links: [
       {
         lang: 'en',
-        url: 'https://express.csssr.com/',
+        url: 'https://csssr.com/en/industry/fintech',
       },
       {
         lang: 'ru',
-        url: 'https://csssr.com/ru/express',
+        url: 'https://csssr.com/ru/industry/fintech',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/fintech',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/fintech',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/fintech',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/core-values',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/core-values',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/core-values',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/core-values',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/core-values',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/core-values',
       },
     ],
   },
@@ -187,6 +232,36 @@ const sitemapUrlsSettings = [
     changefreq: 'yearly',
     priority: 0.6,
   },
+  {
+    url: 'https://csssr.com/ru/tech-stack',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/tech-stack',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/tech-stack',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/tech-stack',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/tech-stack',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/tech-stack',
+      },
+    ],
+  },
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>
@@ -200,5 +275,5 @@ const sitemapUrls = sitemapUrlsSettings.map(sitemapUrlSettings => sitemapUrlSett
 
 module.exports = {
   sitemapUrls,
-  generateSitemap: cache(generateSitemap, oneDay),
+  generateSitemap: cache(generateSitemap, thirtyMinutes),
 }

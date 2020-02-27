@@ -4,6 +4,7 @@ import { GtmScript, GtmNoScript } from 'react-gtm-components'
 import getGtmId from '../utils/getGtmId'
 import cn from 'classnames'
 import detectMsBrowser, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
+import i18n from '../common/i18n'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -12,7 +13,9 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       // https://github.com/isaachinman/next-i18next/issues/374#issuecomment-529196313
-      language: ctx.req.i18n ? ctx.req.i18n.language : undefined,
+      language: i18n.services.languageUtils.getLanguagePartFromCode(
+        ctx.req.i18n ? ctx.req.i18n.language : undefined,
+      ),
       userAgent,
     }
   }

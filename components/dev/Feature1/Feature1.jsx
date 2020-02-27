@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import styles from './Feature1.styles'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import translate from '../../../utils/translate-wrapper'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
@@ -31,6 +32,8 @@ const Feature1 = ({ className, t, image }) => (
   </Grid>
 )
 
-export default styled(translate()(Feature1))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Feature1)`
+    ${styles}
+  `),
+)

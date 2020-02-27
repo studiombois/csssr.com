@@ -32,7 +32,9 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh "docker build --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          withCredentials([string(credentialsId: 'github-registry-read-only-token', variable: 'NPM_TOKEN')]) {
+            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} --network host . -t docker.csssr.space/csssr-com:${commit}"
+          }
         }
       }
     }

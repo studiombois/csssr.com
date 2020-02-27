@@ -358,6 +358,7 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
 
     .text-data {
       grid-row: 5;
+      margin-top: ${calcRem(-5)};
     }
   }
 `

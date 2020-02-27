@@ -7,6 +7,8 @@ Find the most recent version of this guide at [here](https://github.com/segmenti
 
 ## Запуск проекта
 
+Среди зависимостей проекта есть наши приватные npm пакеты, чтобы их установить, надо выполнить инструкцию из статьи https://confluence.csssr.io/display/DT/Nexus
+
 `yarn install`
 
 `yarn dev`
@@ -100,13 +102,13 @@ import ultramarine_mobile_all_webp from '../../static/images/main/mobile.all/ult
 
 Все динамические тексты на страницах вставляются с помощью функции t и лежат в файлах локалей, которые расположены в `./locales`
 
+## Работа с вакансиями
+
+По дефолту вакансии подтягиваются с https://csssr.space. Что бы это изменить нужно поменять переменную окружения CSSSR_SPACE_ORIGIN в файле nodemon.json и перезапустить проект
 
 ## AmoCRM
 
-Доступы к Amo можно посмотреть в deplomat'е.
-В Amo все поля динамические, поэтому обращение к ним идёт по уникальным числовым id, захардкоженным в коде проекта.
-Если эти поля поменяются, то их id надо перезапросить у AmoCRM и поменять хардкод в проекте.
-Больше об этом в файлах server/get-amo-crm-custom-fields.js и server/amo-config.js
+Логика работы с amo-crm вынесена в библиотеку [csssr-amo](https://github.com/csssr-dreamteam/csssr-amo)
 
 ## Title/Description для meta тегов
 

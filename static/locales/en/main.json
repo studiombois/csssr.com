@@ -7,7 +7,120 @@
     "title": "We Code for Good",
     "description": "We&nbsp;are an&nbsp;international&nbsp;IT company that specializes in&nbsp;<span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> web development service and dreams of&nbsp;the stars."
   },
+  "services": {
+    "title": "We&nbsp;Create Web Services<br />for Millions to&nbsp;Use",
+    "link": "more",
+    "outsourcing": {
+      "title": "<span style=\"font-weight: bold;\">Outsourcing</span><span style=\"white-space: nowrap; display: block;\">Front-end</span>",
+      "subtitle": "Front-end development for large companies"
+    },
+    "express": {
+      "title": "<span style=\"font-weight: bold;\">Express</span> Front-end",
+      "subtitle": "Fixed-cost service for fast web projects"
+    },
+    "mvp": {
+      "title": "<span style=\"font-weight: bold;\">MVP</span> Development",
+      "subtitle": "Only essential functionality to&nbsp;test business ideas"
+    },
+    "ourFeatures": {
+      "feature1": {
+        "text": "It&nbsp;is&nbsp;attention to&nbsp;detail and well-established processes that makes the difference between average and successful projects.",
+        "link": "Read about processes"
+      },
+      "feature2": {
+        "text": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tool. We&nbsp;keep a&nbsp;close eye on&nbsp;emerging web development trends, but do&nbsp;not forget about best practices",
+        "link": "Read about technologies"
+      }
+    }
+  },
+  "industries": {
+    "title": "Industries",
+    "subtitle": "We&nbsp;work for a&nbsp;wide range of&nbsp;industries to&nbsp;help them achieve their goals",
+    "fintech": {
+      "title": "Fintech",
+      "description": "We&nbsp;built a&nbsp;strong digital presence for financial and banking services"
+    },
+    "eCommerce": {
+      "title": "eCommerce Development",
+      "description": "We&nbsp;help highly competitive e-commerce industry to&nbsp;win every client"
+    },
+    "information": {
+      "title": "Information Technology",
+      "description": "We&nbsp;drive IT-companies to&nbsp;the edge of&nbsp;technological progress"
+    },
+    "mediaAndMarketing": {
+      "title": "Media and Marketing",
+      "description": "We&nbsp;deliver a&nbsp;high-quality viewer experience with zero-fault approach"
+    }
+  },
+  "aboutUs": {
+    "title": "We&nbsp;Really Love<br />What We",
+    "description": "CSSSR.Pte.Ltd is&nbsp;a&nbsp;group of&nbsp;companies. Headquartered in&nbsp;Singapore, we&nbsp;work in&nbsp;a&nbsp;fully distributed way, which helps&nbsp;us to&nbsp;make projects better and stay happy",
+    "fact1": {
+      "title": "2012",
+      "description": "year of&nbsp;foundation"
+    },
+    "fact2": {
+      "title": "500+",
+      "description": "projects are completed"
+    },
+    "fact3": {
+      "title": "150+",
+      "description": "people are involved"
+    },
+    "fact4": {
+      "title": "1",
+      "hero": "flag",
+      "description": " on&nbsp;top of&nbsp;Elbrus is&nbsp;set"
+    },
+    "link": "Read more"
+  },
+  "projects": {
+    "title": "Our projects",
+    "tracker": {
+      "title": "CSSSR.Tracker",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+    },
+    "school": {
+      "title": "CSSSR.School",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+    },
+    "blog": {
+      "title": "CSSSR.Blog",
+      "description": "Здесь нет менеджеров,  фронтенд-разработчиков  и тестировщиков.",
+      "post1": {
+        "title": "10 Tips and Best Practices for Accurately Task Estimating",
+        "description": "Над каждым проектом трудится минимум три специалиста - менеджер, фронтенд-разработчик и тестировщик.",
+        "link": "Read more"
+      },
+      "post2": {
+        "title": "Stimulators of the Programmer's Work. Environment",
+        "description": "Над каждым проектом трудится минимум три специалиста - менеджер, фронтенд-разработчик и тестировщик.",
+        "link": "Read more"
+      }
+    }
+  },
+  "vacancies": {
+    "title": "Ready to&nbsp;<span style=\"font-style: italic; font-weight: normal;\">join our team</span> and and enjoy all the benefits of&nbsp;remote work on&nbsp;a&nbsp;full-time basis?",
+    "link": "All our vacancies"
+  },
   "imageAlt": {
-    "hero": "Happy astronauts in front of CSSSR logo"
+    "hero": "Happy astronauts in front of CSSSR logo",
+    "square": "Square figure",
+    "triangle": "Triangle figure",
+    "circle": "Circle figure",
+    "figures": "Square, Triangle and Circle figures in a pile",
+    "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly",
+    "fintech": "Woman holding credit cards",
+    "eCommerce": "Two people helping each other carry the product",
+    "information": "Browser window",
+    "mediaAndMarketing": "Several people interacting with each other in front of computer",
+    "aboutUs": "A man hugging a heart with «Do» written on him",
+    "volleyball": "CSSSR Teams after Volleyball Tournament",
+    "elbrus": "CSSSR flag on Elbrus",
+    "tracker": "A man who does his job productively",
+    "school": "Robot in a bachelor's hat",
+    "blog": "The man who reads the news",
+    "vacancies": "Happy faces of people"
   }
 }

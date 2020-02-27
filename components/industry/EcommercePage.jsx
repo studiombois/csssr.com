@@ -14,14 +14,14 @@ import Projects from './Projects'
 import Head from '../Head'
 import greeting from '../../data/industry/ecommerce/greeting'
 import ourClients from '../../data/industry/ecommerce/logos'
-import coreValues from '../../data/industry/ecommerce/coreValues'
-import facts from '../../data/industry/ecommerce/facts'
-import projects from '../../data/industry/ecommerce/projects'
+import coreValues from '../../data/industry/coreValues'
+import facts from '../../data/industry/facts'
+import projects from '../../data/industry/projects'
 
 const IndustryPage = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('ecommerce:meta.title')} description={t('ecommerce:meta.description')} />
+      <Head title={t('industry:meta.title')} description={t('industry:meta.description')} />
 
       <Greeting id="greeting" content={greeting} />
 
@@ -33,7 +33,7 @@ const IndustryPage = ({ t }) => {
 
       <Projects id="projects" content={projects} />
 
-      <Form pageName="ecommerce" />
+      <Form pageName="industry" />
     </Layout>
   )
 }
@@ -42,4 +42,4 @@ IndustryPage.propTypes = {
   t: func,
 }
 
-export default withI18next(['ecommerce'])(translate()(IndustryPage))
+export default withI18next(['industry'])(translate()(IndustryPage))

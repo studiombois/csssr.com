@@ -81,93 +81,85 @@ const base = css`
   }
 `
 
-const ie11Styles = css`
-  :global(.ie11) h2 {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 21;
-    -ms-grid-row: 1;
-  }
-
-  :global(.ie11) p {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 11;
-    -ms-grid-row: 2;
-  }
-
-  @media (max-width: 767px) {
-    :global(.ie11) h2 {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-      -ms-grid-row: 2;
-    }
-
-    :global(.ie11) p {
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 11;
-      -ms-grid-row: 3;
-    }
-  }
-`
-
 const pictureStyles = css`
-  & {
+  .picture {
     margin-top: -3.5rem;
     grid-column: 7 / span 5;
     grid-row: 2;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    & {
+    .picture {
       margin-top: -3.8125rem;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    & {
+    .picture {
       margin-top: -0.8125rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    & {
+    .picture {
       margin-top: -2.8125rem;
       grid-column: 8 / span 5;
     }
   }
 
   @media (max-width: 767px) {
-    & {
+    .picture {
       margin-top: -3.375rem;
       grid-column: 2 / span 4;
       grid-row: 1;
     }
   }
+`
 
-  :global(.ie11) & {
+const ie11Styles = css`
+  h2 {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 21;
+    -ms-grid-row: 1;
+  }
+
+  p {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 11;
+    -ms-grid-row: 2;
+  }
+
+  .picture {
     display: block;
     -ms-grid-column: 13;
     -ms-grid-column-span: 9;
     -ms-grid-row: 2;
   }
 
+  @media (max-width: 767px) {
+    h2 {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+      -ms-grid-row: 2;
+    }
+
+    p {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 11;
+      -ms-grid-row: 3;
+    }
+  }
+
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) & {
+    .picture {
       -ms-grid-column: 15;
       -ms-grid-column-span: 9;
     }
   }
-
-  @media (max-width: 767px) {
-    :global(.ie11) & {
-      -ms-grid-column: 3;
-      -ms-grid-column-span: 7;
-      -ms-grid-row: 1;
-    }
-  }
 `
-export { pictureStyles }
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${pictureStyles}
+  ${isIe11 && ie11Styles}
 `

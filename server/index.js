@@ -11,7 +11,6 @@ const { pick } = require('ramda')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const generateSitemap = require('./generate-sitemap').generateSitemap
-const updateGaDataByAmoHooks = require('./update-ga-data-by-amo-hooks')
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 
 import {
@@ -48,8 +47,10 @@ i18n
         'privacyPolicy',
         'cookiesPolicy',
         'mvp',
-        'ecommerce',
+        'industry',
+        'coreValues',
         'main',
+        'technologies',
       ],
       detection: {
         order: ['pathCookieHeader'],
@@ -142,8 +143,6 @@ i18n
           }),
         )
         server.use(cookieParser())
-
-        server.post('/api/update-ga-data', updateGaDataByAmoHooks)
 
         server.use(
           i18nextMiddleware.handle(i18n, {

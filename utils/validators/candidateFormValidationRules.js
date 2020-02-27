@@ -11,20 +11,32 @@ export default (vacancy, t) => values => {
   errors.privacyPolicy = required(t)(values.privacyPolicy)
   errors.age = integer(t)(values.age)
 
-  if (vacancy.hasGithub) {
-    errors.github = composeValidators(required(t), link(t))(values.github)
+  if (vacancy.hasGithub && values.github) {
+    errors.github = link(t)(values.github)
   }
 
-  if (vacancy.hasPortfolio) {
-    errors.portfolio = composeValidators(required(t), link(t))(values.portfolio)
+  if (vacancy.hasPortfolio && values.portfolio) {
+    errors.portfolio = link(t)(values.portfolio)
   }
 
   if (vacancy.hasResume) {
-    errors.resume = composeValidators(required(t), link(t))(values.resume)
+    if (!values.file) {
+      errors.resume = composeValidators(required(t), link(t))(values.resume)
+    }
+
+    if (values.resume) {
+      errors.resume = link(t)(values.resume)
+    }
   }
 
   if (vacancy.hasFile && vacancy.fileExt) {
-    errors.file = composeValidators(required(t), file(vacancy.fileExt, t))(values.file)
+    if (values.file) {
+      errors.file = file(vacancy.fileExt, t)(values.file)
+    }
+
+    if (!values.resume) {
+      errors.file = composeValidators(required(t), file(vacancy.fileExt, t))(values.file)
+    }
   }
 
   return errors

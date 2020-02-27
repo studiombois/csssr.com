@@ -8,14 +8,11 @@ import { customTheme } from '../themes/customTheme'
 import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
+import { detectMobileByUserAgent, detectTabletByUserAgent } from '../utils/detectDeviceByUserAgent'
 import MsBrowserProvider from '../utils/msBrowserProvider'
 import DeviceProvider from '../utils/deviceProvider'
 
 export default class MyApp extends App {
-  state = {
-    isMobile: false,
-  }
-
   // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
@@ -64,10 +61,17 @@ export default class MyApp extends App {
     }
 
     pageProps.userAgent = userAgent
+    pageProps.isMobile = detectMobileByUserAgent(userAgent)
+    pageProps.isTablet = detectTabletByUserAgent(userAgent)
 
     return {
       pageProps,
     }
+  }
+
+  state = {
+    isMobile: this.props.pageProps.isMobile,
+    isTablet: this.props.pageProps.isTablet,
   }
 
   // This reports errors thrown while rendering components
@@ -78,8 +82,13 @@ export default class MyApp extends App {
 
   componentDidMount() {
     this.mobileMediaQuery = window.matchMedia('(max-width: 767px)')
-    this.mobileMediaQuery.addListener(this.handleMediaMatch)
-    this.handleMediaMatch(this.mobileMediaQuery)
+    this.mobileMediaQuery.addListener(this.handleMobileMediaMatch)
+    this.handleMobileMediaMatch(this.mobileMediaQuery)
+
+    this.tabletMediaQuery = window.matchMedia('(max-width: 1279px)')
+    this.tabletMediaQuery.addListener(this.handleTableMediaMatch)
+    this.handleTableMediaMatch(this.tabletMediaQuery)
+
     window.addEventListener('keydown', function(event) {
       if (event.which === 9) {
         document.body.classList.add('outline')
@@ -91,7 +100,38 @@ export default class MyApp extends App {
     })
 
     Router.events.on('routeChangeComplete', this.handleRouteChange)
+
+    /**
+     * Определяем кастомный vh для правильного отображения Header на мобилках
+     * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+     */
+    this.getVhSize()
+
+    window.addEventListener('resize', this.getVhSize)
   }
+
+  componentWillUnmount() {
+    this.mobileMediaQuery.removeListener(this.handleMobileMediaMatch)
+    this.tabletMediaQuery.removeListener(this.handleTableMediaMatch)
+    window.removeListener('resize', this.getVhSize)
+
+    Router.events.off('routeChangeComplete', this.handleRouteChange)
+  }
+
+  getVhSize = () => {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+
+  handleMobileMediaMatch = ({ matches }) =>
+    this.setState({
+      isMobile: matches,
+    })
+
+  handleTableMediaMatch = ({ matches }) =>
+    this.setState({
+      isTablet: matches,
+    })
 
   handleRouteChange = () => {
     if (window.dataLayer) {
@@ -99,16 +139,6 @@ export default class MyApp extends App {
       setTimeout(() => window.dataLayer.push({ event: 'route_change_complete' }))
     }
   }
-
-  componentWillUnmount() {
-    this.mobileMediaQuery.removeListener(this.handleMediaMatch)
-    Router.events.off('routeChangeComplete', this.handleRouteChange)
-  }
-
-  handleMediaMatch = ({ matches }) =>
-    this.setState({
-      isMobile: matches,
-    })
 
   render() {
     const { Component, pageProps } = this.props
@@ -123,8 +153,10 @@ export default class MyApp extends App {
         initialLanguage={initialLanguage}
       >
         <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
-          <DeviceProvider isMobile={this.state.isMobile}>
+          <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
             <ThemeProvider theme={customTheme}>
+              {/* У Component isMobile прокидывается явно для обратной совместимости  */}
+              {/* TODO: перевести все компоненты на isMobile из контекста */}
               <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
             </ThemeProvider>
           </DeviceProvider>

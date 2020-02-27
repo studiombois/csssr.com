@@ -157,35 +157,35 @@ const base = css`
 `
 
 const ie11Styles = css`
-  :global(.ie11) & {
+  & {
     overflow: hidden;
   }
 
-  :global(.ie11) h1 {
+  h1 {
     -ms-grid-column: 11;
     -ms-grid-column-span: 5;
     -ms-grid-row: 1;
   }
 
-  :global(.ie11) .begin-text {
+  .begin-text {
     -ms-grid-column: 3;
     -ms-grid-column-span: 11;
     -ms-grid-row: 2;
   }
 
-  :global(.ie11) .rocket-text {
+  .rocket-text {
     -ms-grid-column: 15;
     -ms-grid-column-span: 7;
     -ms-grid-row: 4;
   }
 
-  :global(.ie11) .planet {
+  .planet {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     -ms-grid-row: 4;
   }
 
-  :global(.ie11) .rocket {
+  .rocket {
     -ms-grid-column: 7;
     -ms-grid-column-span: 11;
     -ms-grid-row: 3;
@@ -193,52 +193,52 @@ const ie11Styles = css`
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    :global(.ie11) h1 {
+    h1 {
       -ms-grid-column: 9;
       -ms-grid-column-span: 9;
     }
 
-    :global(.ie11) .rocket-text {
+    .rocket-text {
       -ms-grid-column: 15;
       -ms-grid-column-span: 7;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    :global(.ie11) h1 {
+    h1 {
       -ms-grid-column: 9;
       -ms-grid-column-span: 9;
     }
 
-    :global(.ie11) .begin-text {
+    .begin-text {
       -ms-grid-column: 3;
       -ms-grid-column-span: 13;
     }
 
-    :global(.ie11) .rocket-text {
+    .rocket-text {
       -ms-grid-column: 15;
       -ms-grid-column-span: 7;
     }
   }
 
   @media (max-width: 767px) {
-    :global(.ie11) h1 {
+    h1 {
       -ms-grid-column: 3;
       -ms-grid-column-span: 7;
     }
 
-    :global(.ie11) .begin-text {
+    .begin-text {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
 
-    :global(.ie11) .rocket {
+    .rocket {
       -ms-grid-column: 3;
       -ms-grid-column-span: 7;
       -ms-grid-row: 1;
     }
 
-    :global(.ie11) .rocket-text {
+    .rocket-text {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
@@ -327,7 +327,7 @@ const planetStyles = css`
 
 export { pictureStyles, planetStyles }
 
-export default css`
+export default ({ isIe11 }) => css`
   ${base}
-  ${ie11Styles}
+  ${isIe11 && ie11Styles}
 `

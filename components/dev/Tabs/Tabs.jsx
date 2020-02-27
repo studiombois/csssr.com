@@ -4,6 +4,7 @@ import { arrayOf, string, func } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Tabs.styles'
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Tabs = ({ className, t, tabs, activeTabId, onClick }) => (
   <ul className={className}>
@@ -24,6 +25,8 @@ Tabs.propTypes = {
   onClick: func,
 }
 
-export default styled(translate()(Tabs))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Tabs)`
+    ${styles}
+  `),
+)

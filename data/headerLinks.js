@@ -101,7 +101,7 @@ export default {
     },
     {
       title: 'common:header.links.careers.title',
-      href: 'careers',
+      href: 'jobs',
     },
   ],
 }

@@ -1,14 +1,14 @@
-import facts_desktop_l from '../../static/images/industry/ecommerce/desktop.l/facts.png?responsive'
-import facts_desktop_m from '../../static/images/industry/ecommerce/desktop.m/facts.png?responsive'
-import facts_desktop_s from '../../static/images/industry/ecommerce/desktop.s/facts.png?responsive'
-import facts_tablet_all from '../../static/images/industry/ecommerce/tablet.all/facts.png?responsive'
-import facts_mobile_all from '../../static/images/industry/ecommerce/mobile.all/facts.png?responsive'
+import facts_desktop_l from '../../static/images/industry/common-pics/desktop.l/facts.png?responsive'
+import facts_desktop_m from '../../static/images/industry/common-pics/desktop.m/facts.png?responsive'
+import facts_desktop_s from '../../static/images/industry/common-pics/desktop.s/facts.png?responsive'
+import facts_tablet_all from '../../static/images/industry/common-pics/tablet.all/facts.png?responsive'
+import facts_mobile_all from '../../static/images/industry/common-pics/mobile.all/facts.png?responsive'
 
-import facts_desktop_l_webp from '../../static/images/industry/ecommerce/desktop.l/facts.png?responsive_and_webp'
-import facts_desktop_m_webp from '../../static/images/industry/ecommerce/desktop.m/facts.png?responsive_and_webp'
-import facts_desktop_s_webp from '../../static/images/industry/ecommerce/desktop.s/facts.png?responsive_and_webp'
-import facts_tablet_all_webp from '../../static/images/industry/ecommerce/tablet.all/facts.png?responsive_and_webp'
-import facts_mobile_all_webp from '../../static/images/industry/ecommerce/mobile.all/facts.png?responsive_and_webp'
+import facts_desktop_l_webp from '../../static/images/industry/common-pics/desktop.l/facts.png?responsive_and_webp'
+import facts_desktop_m_webp from '../../static/images/industry/common-pics/desktop.m/facts.png?responsive_and_webp'
+import facts_desktop_s_webp from '../../static/images/industry/common-pics/desktop.s/facts.png?responsive_and_webp'
+import facts_tablet_all_webp from '../../static/images/industry/common-pics/tablet.all/facts.png?responsive_and_webp'
+import facts_mobile_all_webp from '../../static/images/industry/common-pics/mobile.all/facts.png?responsive_and_webp'
 
 const factsImages = {
   'desktop.l': { png: facts_desktop_l, webp: facts_desktop_l_webp },

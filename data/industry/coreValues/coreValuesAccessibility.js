@@ -1,8 +1,8 @@
-import coreValuesAccessibility_desktop_all from '../../../static/images/industry/ecommerce/desktop.all/coreValuesAccessibility.png?responsive'
-import coreValuesAccessibility_mobile_all from '../../../static/images/industry/ecommerce/mobile.all/coreValuesAccessibility.png?responsive'
+import coreValuesAccessibility_desktop_all from '../../../static/images/industry/common-pics/desktop.all/coreValuesAccessibility.png?responsive'
+import coreValuesAccessibility_mobile_all from '../../../static/images/industry/common-pics/mobile.all/coreValuesAccessibility.png?responsive'
 
-import coreValuesAccessibility_desktop_all_webp from '../../../static/images/industry/ecommerce/desktop.all/coreValuesAccessibility.png?responsive_and_webp'
-import coreValuesAccessibility_mobile_all_webp from '../../../static/images/industry/ecommerce/mobile.all/coreValuesAccessibility.png?responsive_and_webp'
+import coreValuesAccessibility_desktop_all_webp from '../../../static/images/industry/common-pics/desktop.all/coreValuesAccessibility.png?responsive_and_webp'
+import coreValuesAccessibility_mobile_all_webp from '../../../static/images/industry/common-pics/mobile.all/coreValuesAccessibility.png?responsive_and_webp'
 
 export default {
   'desktop.all': {

@@ -21,7 +21,7 @@ import projects from '../../data/industry/projects'
 const InformationTechnologyPage = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('industry:meta.title')} description={t('industry:meta.description')} />
+      <Head title={t('industry:meta.informationTechnology.title')} description={t('industry:meta.informationTechnology.description')} />
 
       <Greeting id="greeting" content={greeting} />
 

@@ -1,7 +1,17 @@
 {
   "meta": {
-    "title": "Custom eCommerce Development Services",
-    "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+    "ecommerce": {
+      "title": "Custom eCommerce Development Services",
+      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+    },
+    "fintech": {
+      "title": "Fintech and Banking Web Development",
+      "description": "We built a strong digital presence for banking and financial services."
+    },
+    "informationTechnology": {
+      "title": "Web Development Services for IT Companies",
+      "description": "We push IT-companies to the cutting edge of technological progress."
+    }
   },
   "imgAlt": {
     "ourClients": "Сompany logos of our customers",

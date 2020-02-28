@@ -1,7 +1,17 @@
 {
   "meta": {
-    "title": "Веб-разработка для электронной коммерции",
-    "description": "Боремся за каждого клиента в высококонкурентной индустрии интернет-торговли."
+    "ecommerce": {
+      "title": "Веб-разработка для электронной коммерции | CSSSR",
+      "description": "Боремся за каждого клиента в высококонкурентной индустрии интернет-торговли."
+    },
+    "fintech": {
+      "title": "Веб-разработка для финансового сектора | CSSSR",
+      "description": "We built a strong digital presence for banking and financial services."
+    },
+    "informationTechnology": {
+      "title": "Веб-разработка для IT-компаний | CSSSR",
+      "description": "Выводим IT-компании на новый технологический уровень"
+    }
   },
   "imgAlt": {
     "ourClients": "Логотипы компаний нашихх клиентов",

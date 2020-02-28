@@ -96,6 +96,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
   }
 
+  ${tablet.s} {
+    @media (pointer: coarse) {
+      .picture {
+        background-color: black;
+      }
+
+      .picture-hover-area {
+        display: none;
+      }
+    }
+  }
+
   ${mobile.all} {
     .title,
     .picture-wrapper,

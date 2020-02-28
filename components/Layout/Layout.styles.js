@@ -43,10 +43,6 @@ export const base = css`
     position: relative;
   }
 
-  #main {
-    overflow-x: hidden;
-  }
-
   .grid-container {
     display: grid;
     align-content: start;
@@ -155,6 +151,12 @@ export const base = css`
 `
 
 export const ie11Styles = css`
+  html,
+  body,
+  #main {
+    overflow-x: hidden;
+  }
+
   .grid-container {
     display: -ms-grid;
     -ms-grid-template-columns: 120px (32px, 120px)[11];

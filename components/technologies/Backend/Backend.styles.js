@@ -206,7 +206,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .title_node {
-      margin-top: ${calcRem(46)};
+      margin-top: ${calcRem(15)};
     }
 
     .text_kotlin {

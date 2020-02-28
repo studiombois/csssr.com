@@ -33,6 +33,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.l} {
+    & {
+      padding-bottom: 176px;
+    }
+
     .title,
     .list,
     .link {
@@ -47,6 +51,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.m} {
+    & {
+      padding-bottom: 176px;
+    }
+
     .picture {
       margin-left: -112px;
       grid-column: 7 / span 5;
@@ -55,6 +63,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
+    & {
+      padding-bottom: 225px;
+    }
+
     .picture {
       margin-left: -104px;
       grid-column: 7 / span 6;
@@ -63,6 +75,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
+    & {
+      padding-bottom: ${calcRem(144)};
+    }
+
     .title {
       margin-top: ${calcRem(162)};
     }
@@ -84,6 +100,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${mobile.all} {
+    & {
+      padding-bottom: ${calcRem(136)};
+    }
+
     .title,
     .list,
     .link {

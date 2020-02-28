@@ -23,7 +23,7 @@ const OurFeatures = ({ className, t, lng }) => {
       />
       <Link
         className="link"
-        href={`${lng}/processes`}
+        href={`${lng}/way-of-work`}
         type="list"
         size="m"
         dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature1.link') }}

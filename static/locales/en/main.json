@@ -79,23 +79,23 @@
     "title": "Our projects",
     "tracker": {
       "title": "CSSSR.Tracker",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков."
     },
     "school": {
       "title": "CSSSR.School",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков."
     },
     "blog": {
       "title": "CSSSR.Blog",
-      "description": "Здесь нет менеджеров,  фронтенд-разработчиков  и тестировщиков.",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков.",
       "post1": {
-        "title": "10 Tips and Best Practices for Accurately Task Estimating",
-        "description": "Над каждым проектом трудится минимум три специалиста - менеджер, фронтенд-разработчик и тестировщик.",
+        "title": "10&nbsp;Tips and Best Practices for Accurately Estimating Tasks",
+        "description": "How do&nbsp;you stop guessing and start progressing: through trial and error, we&nbsp;have created a&nbsp;set of&nbsp;rules to&nbsp;improve the accuracy of&nbsp;estimates.",
         "link": "Read more"
       },
       "post2": {
-        "title": "Stimulators of the Programmer's Work. Environment",
-        "description": "Над каждым проектом трудится минимум три специалиста - менеджер, фронтенд-разработчик и тестировщик.",
+        "title": "Some Advantages of&nbsp;Separating Front-end from Back-end",
+        "description": "The trend to&nbsp;divide the development process into two parts is&nbsp;rising. The key question is&nbsp;whether it&rsquo;s a&nbsp;good idea.",
         "link": "Read more"
       }
     }

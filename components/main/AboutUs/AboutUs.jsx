@@ -21,7 +21,7 @@ import unescapeHtmlEntities from '../../../utils/unescapeHtmlEntities'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const AboutUs = ({ className, isMobile, t }) => {
+const AboutUs = ({ className, isMobile, t, lng }) => {
   const [visibleImage, setVisibleImage] = useState(null)
   const isDesktop = !isMobile
   const handleHover = visibleImage => event => {
@@ -105,7 +105,7 @@ const AboutUs = ({ className, isMobile, t }) => {
 
       <Link
         className="link"
-        href="/about-us"
+        href={`${lng}/about-us`}
         type="list"
         size="m"
         dangerouslySetInnerHTML={{ __html: t('main:aboutUs.link') }}

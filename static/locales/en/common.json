@@ -18,11 +18,11 @@
       "services": {
         "title": "Services",
         "outsourcing": {
-          "title": "Outsourcing Front&#8209;end",
+          "title": "Outsourcing Front&#8209;End",
           "description": "Web development to&nbsp;complement core competencies."
         },
         "express": {
-          "title": "Express Front&#8209;end",
+          "title": "Express Front&#8209;End",
           "description": "Fixed rates for straight-forward, time-sensitive services."
         },
         "mvp": {

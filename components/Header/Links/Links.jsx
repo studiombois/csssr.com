@@ -11,21 +11,25 @@ import translate from '../../../utils/translate-wrapper'
 
 const { links } = headerLinks
 const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-const Links = ({ className, t, lng }) => (
+const Links = ({ className, t, lng, locale }) => (
   <ul className={className}>
-    {links.map(({ title, href }) => (
-      <li key={title}>
-        {linkRegExp.test(href) ? (
-          <Link href={href} type="top_menu">
-            {t(title)}
-          </Link>
-        ) : (
-          <Link href={`/${lng}/${href}`} isNextLink type="top_menu">
-            {t(title)}
-          </Link>
-        )}
-      </li>
-    ))}
+    {links.map(({ title, href }) => {
+      const loc = href === 'jobs' ? locale : lng
+
+      return (
+        <li key={title}>
+          {linkRegExp.test(href) ? (
+            <Link href={`${href}/${lng}`} type="top_menu" target="_blank">
+              {t(title)}
+            </Link>
+          ) : (
+            <Link href={`/${loc}/${href}`} isNextLink type="top_menu">
+              {t(title)}
+            </Link>
+          )}
+        </li>
+      )
+    })}
   </ul>
 )
 

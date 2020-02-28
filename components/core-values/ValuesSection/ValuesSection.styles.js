@@ -77,7 +77,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(161)};
+      margin-top: ${calcRem(116)};
     }
 
     article:nth-of-type(2) {

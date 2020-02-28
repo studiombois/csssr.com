@@ -232,6 +232,11 @@ const sitemapUrlsSettings = [
       },
     ],
   },
+  {
+    url: 'https://csssr.com/ru/jobs-faq',
+    changefreq: 'yearly',
+    priority: 0.6,
+  },
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>

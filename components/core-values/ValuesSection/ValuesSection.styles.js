@@ -27,6 +27,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     article:nth-of-type(5) {
       margin-bottom: ${calcRem(422)};
     }
+
+    article:nth-of-type(4) {
+      margin-top: ${calcRem(376)};
+    }
   }
 
   ${desktop.m} {
@@ -70,14 +74,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(289)};
+      margin-top: ${calcRem(264)};
       margin-bottom: ${calcRem(366)};
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(116)};
+      margin-top: ${calcRem(122)};
     }
 
     article:nth-of-type(2) {
@@ -100,7 +104,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(72)};
+      margin-top: ${calcRem(81)};
     }
 
     article:nth-of-type(2) {

@@ -9,15 +9,15 @@ import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import CookiesPopup from '../CookiesPopup'
 
 const Layout = ({ children, isIe11 }) => (
-  <Fragment>
-    <Header />
-    <Global styles={styles} />
-    {isIe11 && <Global styles={ie11Styles} />}
+    <Fragment>
+      <Header />
+      <Global styles={styles} />
+      {isIe11 && <Global styles={ie11Styles} />}
 
-    <main id="main">{children}</main>
-    <CookiesPopup />
-    <DevTools />
-  </Fragment>
+      {isIe11 ? <div id="main">{children}</div> : <main id="main">{children}</main>}
+      <CookiesPopup />
+      <DevTools />
+    </Fragment>
 )
 
 Layout.propTypes = {

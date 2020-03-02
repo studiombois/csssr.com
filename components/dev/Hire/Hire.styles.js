@@ -206,6 +206,7 @@ export const devLine = css`
     #main {
       background-size: 1360px 640px;
       background-position: 50% 20rem;
+      background-repeat: repeat-x;
     }
   }
 
@@ -215,6 +216,7 @@ export const devLine = css`
     #main {
       background-size: 1280px 640px;
       background-position: 50% 20rem;
+      background-repeat: repeat-x;
     }
   }
 
@@ -224,6 +226,7 @@ export const devLine = css`
     #main {
       background-size: 1024px 480px;
       background-position: 50% 22rem;
+      background-repeat: repeat-x;
     }
   }
 
@@ -239,6 +242,7 @@ export const devLine = css`
     #main {
       background-size: 22.5rem 10.5rem;
       background-position: 50% 18rem;
+      background-repeat: repeat-x;
     }
   }
 

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { string, func } from 'prop-types'
+import { string, func, array } from 'prop-types'
 import cn from 'classnames'
 import translate from '../../../utils/translate-wrapper'
 import styled from '@emotion/styled'
@@ -28,7 +28,7 @@ const Description = ({ t, parentClassName, className, description }) => (
 Description.propTypes = {
   t: func,
   className: string,
-  description: string,
+  description: array,
 }
 
 export default translate()(

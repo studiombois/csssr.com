@@ -12,8 +12,8 @@ import Form from './Form'
 import Projects from './Projects'
 
 import Head from '../Head'
-import greeting from '../../data/industry/ecommerce/greeting'
-import ourClients from '../../data/industry/ecommerce/logos'
+import greeting from '../../data/industry/fintech/greeting'
+import ourClients from '../../data/industry/fintech/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 import projects from '../../data/industry/projects'
@@ -21,7 +21,7 @@ import projects from '../../data/industry/projects'
 const IndustryPage = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('industry:meta.ecommerce.title')} description={t('industry:meta.ecommerce.description')} />
+      <Head title={t('industry:meta.fintech.title')} description={t('industry:meta.fintech.description')} />
 
       <Greeting id="greeting" content={greeting} />
 

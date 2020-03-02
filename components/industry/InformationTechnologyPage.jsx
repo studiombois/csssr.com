@@ -12,16 +12,16 @@ import Form from './Form'
 import Projects from './Projects'
 
 import Head from '../Head'
-import greeting from '../../data/industry/ecommerce/greeting'
-import ourClients from '../../data/industry/ecommerce/logos'
+import greeting from '../../data/industry/informationTechnology/greeting'
+import ourClients from '../../data/industry/informationTechnology/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 import projects from '../../data/industry/projects'
 
-const IndustryPage = ({ t }) => {
+const InformationTechnologyPage = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('industry:meta.ecommerce.title')} description={t('industry:meta.ecommerce.description')} />
+      <Head title={t('industry:meta.informationTechnology.title')} description={t('industry:meta.informationTechnology.description')} />
 
       <Greeting id="greeting" content={greeting} />
 
@@ -38,8 +38,8 @@ const IndustryPage = ({ t }) => {
   )
 }
 
-IndustryPage.propTypes = {
+InformationTechnologyPage.propTypes = {
   t: func,
 }
 
-export default withI18next(['industry'])(translate()(IndustryPage))
+export default withI18next(['industry'])(translate()(InformationTechnologyPage))

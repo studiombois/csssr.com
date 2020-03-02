@@ -20,8 +20,8 @@ const greetingImages = {
 
 export default {
   images: greetingImages,
-  heading: 'ecommerce:greeting.title',
-  text: 'ecommerce:greeting.paragraph',
-  button: 'ecommerce:greeting.button',
-  imgAlt: 'ecommerce:imgAlt.greeting',
+  heading: 'industry:greeting.ecommerce.title',
+  text: 'industry:greeting.ecommerce.paragraph',
+  button: 'industry:greeting.ecommerce.button',
+  imgAlt: 'industry:greeting.ecommerce.imgAlt',
 }

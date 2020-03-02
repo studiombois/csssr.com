@@ -1,10 +1,19 @@
 {
   "meta": {
-    "title": "Custom eCommerce Development Services",
-    "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+    "ecommerce": {
+      "title": "Custom eCommerce Development Services",
+      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+    },
+    "fintech": {
+      "title": "Fintech and Banking Web Development",
+      "description": "We built a strong digital presence for banking and financial services."
+    },
+    "informationTechnology": {
+      "title": "Web Development Services for IT Companies",
+      "description": "We push IT-companies to the cutting edge of technological progress."
+    }
   },
   "imgAlt": {
-    "greeting": "Illustration with two figures of people, a man conveys something to a girl",
     "ourClients": "Сompany logos of our customers",
     "facts": "Alt text for illustartion",
     "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
@@ -15,9 +24,24 @@
     "projects_3": "Schematic illustration of a web portal"
   },
   "greeting": {
-    "title": "Custom eCommerce <br/>Development Services",
-    "paragraph": "In&nbsp;the constantly growing and highly competitive industry of&nbsp;eCommerce every page, every metric, and every user&rsquo;s opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing web site, that will boost your sales.",
-    "button": "Get in touch"
+    "ecommerce": {
+      "title": "Custom eCommerce <br/>Development Services",
+      "paragraph": "In&nbsp;the constantly growing and highly competitive industry of&nbsp;eCommerce every page, every metric, and every user&rsquo;s opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing web site, that will boost your sales.",
+      "button": "Get in touch",
+      "imgAlt": "Illustration with two figures of people, a man conveys something to a girl"
+    },
+    "fintech": {
+      "title": "Fintech and Banking<br /> Web Development",
+      "paragraph": "The financial industry is&nbsp;expanding its digital presence, moving more and more services online to&nbsp;meet rising consumer demand. With this transition comes a&nbsp;growing need for higher digital security standards. Find out how we&nbsp;can help.",
+      "button": "Get in touch",
+      "imgAlt": ""
+    },
+    "informationTechnology": {
+      "title": "Web Development Services<br/> for IT Companies",
+      "paragraph": "The IT&nbsp;industry is&nbsp;always on&nbsp;the cutting edge of&nbsp;technological progress. The effort to&nbsp;adapt to&nbsp;new technologies as&nbsp;quickly as&nbsp;possible is&nbsp;not only a&nbsp;desire but also the key to&nbsp;success in&nbsp;this industry. We&nbsp;help these companies become market leaders.",
+      "button": "Get in touch",
+      "imgAlt": ""
+    }
   },
   "ourClients": {
     "title": "Our Clients"
@@ -91,7 +115,7 @@
     },
     "thirdItem": {
       "heading": "Telecom Provider",
-      "text": "Interface of&nbsp;self service terminal system for one of&nbsp;the largest Russian online electronics retailers",
+      "text": "Interface of&nbsp;self service terminal system for one of&nbsp;the largest Russian online electronics retailers",
       "numericData": {
         "firstItem": {
           "number": "14",

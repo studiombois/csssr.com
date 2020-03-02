@@ -19,7 +19,7 @@ const ourClientsImages = {
 }
 
 export default {
-  heading: 'ecommerce:ourClients.title',
+  heading: 'industry:ourClients.title',
   images: ourClientsImages,
-  altImg: 'ecommerce:imgAlt.ourClients',
+  altImg: 'industry:imgAlt.ourClients',
 }

@@ -18,7 +18,7 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 import projects from '../../data/industry/projects'
 
-const IndustryPage = ({ t }) => {
+const FintechPage = ({ t }) => {
   return (
     <Layout>
       <Head title={t('industry:meta.fintech.title')} description={t('industry:meta.fintech.description')} />
@@ -38,8 +38,8 @@ const IndustryPage = ({ t }) => {
   )
 }
 
-IndustryPage.propTypes = {
+FintechPage.propTypes = {
   t: func,
 }
 
-export default withI18next(['industry'])(translate()(IndustryPage))
+export default withI18next(['industry'])(translate()(FintechPage))

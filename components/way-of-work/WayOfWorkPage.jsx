@@ -5,6 +5,7 @@ import Head from '../Head'
 import Layout from '../Layout'
 import Greeting from './Greeting'
 import Organized from './Organized'
+import Development from './Development'
 
 const WayOfWork = ({ t }) => {
   return (
@@ -14,6 +15,8 @@ const WayOfWork = ({ t }) => {
       <Greeting title={t('wayOfWork:greeting.title')} />
 
       <Organized />
+
+      <Development />
     </Layout>
   )
 }

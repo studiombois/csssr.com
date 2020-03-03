@@ -15,5 +15,21 @@
       "skydiver" : "skydiver",
       "skydivers" : "skydivers"
     }
+  },
+  "development": {
+    "title": "Standard Development Methodology",
+    "scrumban": {
+      "imageAlt": "Scrumban",
+      "title": "Scrumban",
+      "description": "We&nbsp;work with Agile methodologies, but do&nbsp;not blindly follow a&nbsp;particular doctrine.",
+      "text": "We&nbsp;use a&nbsp;mix of&nbsp;scrum and kanban, employing weekly sprints that are convenient for clients.",
+      "text_2": "In&nbsp;a&nbsp;classic scrum, at&nbsp;the end of&nbsp;a&nbsp;sprint a&nbsp;set of&nbsp;functionality is&nbsp;rolled out for production. Our weekly sprints, on&nbsp;the other hand, are fixed agreements on&nbsp;a&nbsp;certain amount of&nbsp;work that must be&nbsp;completed within a&nbsp;given timeframe. For example, we&nbsp;may complete some features, but testing could be&nbsp;scheduled and completed in&nbsp;the next sprint."
+    },
+    "review": {
+      "imageAlt": "Code Review",
+      "title": "Code review",
+      "description": "To&nbsp;control code quality, we&nbsp;employ a&nbsp;code-review process that the whole development team participates&nbsp;in, with specific rules.",
+      "text": "For example, each pull request must be&nbsp;approved by&nbsp;at&nbsp;least two developers. Only after approval can the code be&nbsp;put into a&nbsp;stable branch. In&nbsp;code review, we&nbsp;focus on&nbsp;business logic, code readability, architecture and APIs."
+    }
   }
 }

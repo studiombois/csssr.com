@@ -4,7 +4,7 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet }}) => css`
   & {
-
+    margin-bottom: ${calcRem(168)};
   }
 
   .header {
@@ -51,7 +51,6 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   .skydiversWrap {
     grid-column: 1 / span 4;
     grid-row: 5;
-    margin-bottom: ${calcRem(140)};
   }
 
   .skydivers {
@@ -67,6 +66,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       background-repeat: no-repeat;
       background-size: 54%;
       padding-top: ${calcRem(129)};
+      margin-bottom: ${calcRem(165)};
     }
 
     .header {
@@ -107,6 +107,12 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     }
   }
 
+  ${desktop.all} {
+    & {
+      margin-bottom: ${calcRem(346)};
+    }
+  }
+
   ${desktop.s} {
     & {
       background-image: url(${require('../../../static/icons/way-of-work/organized/bg-desktop-s.svg').default});
@@ -142,7 +148,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       margin-top: ${calcRem(150)};
     }
 
-    .firstParagraph{
+    .firstParagraph {
       margin-bottom: ${calcRem(22)};
     }
 
@@ -285,9 +291,29 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
 const ie11Styles = () => css`
 
-  .heading {
+  .header {
+    -ms-grid-column: ${getGridValueForMs(1)};
+    -ms-grid-column-span: ${getGridValueForMs(6)};
+  }
+
+  .skydiverWrap {
+    -ms-grid-column: ${getGridValueForMs(8)};
+    -ms-grid-column-span: ${getGridValueForMs(4)};
+  }
+
+  .skydiversWrap {
     -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(10)};
+    -ms-grid-column-span: ${getGridValueForMs(5)};
+  }
+
+  .textWrap {
+    -ms-grid-column: ${getGridValueForMs(7)};
+    -ms-grid-column-span: ${getGridValueForMs(5)};
+  }
+
+  .footer {
+    -ms-grid-column: ${getGridValueForMs(4)};
+    -ms-grid-column-span: ${getGridValueForMs(5)};
   }
 `
 

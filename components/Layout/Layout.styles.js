@@ -11,6 +11,10 @@ export const base = css`
     scroll-behavior: smooth;
   }
 
+  #main {
+    background-color: white;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;

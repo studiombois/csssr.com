@@ -79,29 +79,29 @@
     "title": "Наши проекты",
     "tracker": {
       "title": "CSSSR.Tracker",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков."
     },
     "school": {
       "title": "CSSSR.School",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков."
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков."
     },
     "blog": {
       "title": "CSSSR.Blog",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков  и тестировщиков.",
+      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков.",
       "post1": {
-        "title": "Точная оценка задач: 10 советов и рекомендаций",
-        "description": "How do you stop guessing and start progressing: through trial and error, we have created a set of rules to improve the accuracy of our estimates. ",
-        "link": "Read more"
+        "title": "Точная оценка задач: 10&nbsp;советов и&nbsp;рекомендаций",
+        "description": "Как перестать гадать и&nbsp;начать угадывать: советы для повышения точности оценок.",
+        "link": "Подробнее"
       },
       "post2": {
-        "title": "Stimulators of the Programmer's Work. Environment",
-        "description": "Split-stack web development is a rising trend. The key question is whether it is a good idea.",
-        "link": "Read more"
+        "title": "Итоги 2019 от&nbsp;CSSSR",
+        "description": "Декада JavaScript&nbsp;&mdash; от&nbsp;игрушки до&nbsp;символа опенсорс-разработки.",
+        "link": "Подробнее"
       }
     },
     "radio": {
-      "title": "<a href=\"/\" target=\"_blank\" rel\"noopener nofollow\" style=\"color: inherit;\">CSSSR.Radio</a>",
-      "description": "<a href=\"/\" target=\"_blank\" rel\"noopener nofollow\" style=\"color: inherit;\">Еженедельные подборки новостей, интервью с представителями индустрии и советы путешественниками</a>"
+      "title": "CSSSR.Radio",
+      "description": "Еженедельные подборки новостей, интервью с представителями индустрии и советы путешественниками"
     }
   },
   "vacancies": {

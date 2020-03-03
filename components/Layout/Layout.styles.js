@@ -43,10 +43,6 @@ export const base = css`
     position: relative;
   }
 
-  #main {
-    overflow-x: hidden;
-  }
-
   .grid-container {
     display: grid;
     align-content: start;
@@ -84,6 +80,10 @@ export const base = css`
   @media (min-width: 1280px) and (max-width: 1359px) {
     body {
       min-width: 1232px;
+    }
+
+    #main {
+      background-color: white;
     }
 
     .grid-container {
@@ -155,6 +155,12 @@ export const base = css`
 `
 
 export const ie11Styles = css`
+  html,
+  body,
+  #main {
+    overflow-x: hidden;
+  }
+
   .grid-container {
     display: -ms-grid;
     -ms-grid-template-columns: 120px (32px, 120px)[11];

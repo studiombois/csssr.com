@@ -48,6 +48,13 @@ module.exports = withSourceMaps(
         })
       }
 
+      const withVideo = () => {
+        config.module.rules.push({
+          test: /\.(mp4)$/,
+          use: [fileLoaderConfig],
+        })
+      }
+
       const responsiveLoaderConfig = {
         loader: 'image-resolution-loader',
         options: {
@@ -164,6 +171,7 @@ module.exports = withSourceMaps(
 
       withSentry()
       withFonts()
+      withVideo()
       withSvg()
       withResponsiveImages()
       withCompression()

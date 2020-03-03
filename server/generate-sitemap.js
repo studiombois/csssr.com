@@ -108,6 +108,96 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/industry/fintech',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/fintech',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/fintech',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/fintech',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/fintech',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/fintech',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/industry/information-technology',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/information-technology',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/information-technology',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/information-technology',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/information-technology',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/information-technology',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/industry/media-and-marketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/media-and-marketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/media-and-marketing',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/media-and-marketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/media-and-marketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/media-and-marketing',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,
@@ -138,32 +228,32 @@ const sitemapUrlsSettings = [
     ],
   },
   {
-    url: 'https://csssr.com/ru/mvp',
+    url: 'https://csssr.com/ru/service/mvp-development',
     changefreq: 'weekly',
     priority: 1,
     links: [
       {
         lang: 'en',
-        url: 'https://csssr.com/en/mvp',
+        url: 'https://csssr.com/en/service/mvp-development',
       },
       {
         lang: 'ru',
-        url: 'https://csssr.com/ru/mvp',
+        url: 'https://csssr.com/ru/service/mvp-development',
       },
     ],
   },
   {
-    url: 'https://csssr.com/en/mvp',
+    url: 'https://csssr.com/en/service/mvp-development',
     changefreq: 'weekly',
     priority: 1,
     links: [
       {
         lang: 'en',
-        url: 'https://csssr.com/en/mvp',
+        url: 'https://csssr.com/en/service/mvp-development',
       },
       {
         lang: 'ru',
-        url: 'https://csssr.com/ru/mvp',
+        url: 'https://csssr.com/ru/service/mvp-development',
       },
     ],
   },

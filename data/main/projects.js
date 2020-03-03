@@ -97,7 +97,7 @@ export default [
     id: 'radio',
     title: 'main:projects.radio.title',
     description: 'main:projects.radio.description',
-    href: '/',
+    href: 'https://soundcloud.com/csssr',
     images: radioImages,
     fallback: radio_desktop_all,
   },

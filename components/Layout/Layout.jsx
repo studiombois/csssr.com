@@ -5,6 +5,7 @@ import { string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'
+import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import CookiesPopup from '../CookiesPopup'
 
@@ -17,11 +18,11 @@ const Layout = ({ children, isIe11 }) => {
       {isIe11 && <Global styles={ie11Styles} />}
 
       {React.createElement(dynamicTag, { id: 'main' }, children)}
-      <CookiesPopup />
-      <DevTools />
-    </Fragment>
-  )
-}
+    <Footer />
+    <CookiesPopup />
+    <DevTools />
+  </Fragment>
+)
 
 Layout.propTypes = {
   title: string,

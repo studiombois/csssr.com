@@ -13,14 +13,10 @@
   "languageRedirect": {
     "text": "Switch to English"
   },
-  "footer": {
-    "privacyPolicy": "Политика конфиденциальности",
-    "alliancePartText": "CSSSR является частью"
-  },
   "header": {
     "menu": {
       "services": {
-        "title": "Сервисы",
+        "title": "Услуги",
         "outsourcing": {
           "title": "Фронтенд аутсорсинг",
           "description": "Работа над веб-проектами для крупных компаний."
@@ -70,6 +66,53 @@
     },
     "action": "Нанять нас",
     "backLink": "Наши сервисы"
+  },
+  "footer": {
+    "actionPhrase": "Давайте поработаем!",
+    "services": {
+      "title": "Сервисы",
+      "outsourcing": "Aутсорсинг",
+      "mvp": "MVP"
+    },
+    "industries": {
+      "title": "Индустрии",
+      "fintech": "Финтех",
+      "eCommerce": "E-Commerce",
+      "information": "Информационные технологии",
+      "mediaAndMarketing": "Медиа и&nbsp;маркетинг"
+    },
+    "howWeWork": {
+      "title": "Как мы&nbsp;работаем",
+      "technologies": "Технологии",
+      "processes": "Процессы",
+      "coreValues": "Основные ценности"
+    },
+    "company": {
+      "title": "Компания",
+      "blog": "Блог",
+      "aboutUs": "О нас",
+      "careers": "Вакансии"
+    },
+    "privacy": "Политика конфиденциальности",
+    "addresses": {
+      "singapore": {
+        "title": "Headquarters",
+        "address": "68 Circular Road #02-01</br>Singapore, 049422",
+        "phone": "+65 6332 3659"
+      },
+      "russia": {
+        "title": "Offices",
+        "address": "Летниковская ул., 2 стр. 3, а/я № 33</br>Москва, 115114",
+        "phone": "+7 (499) 113-16-17"
+      },
+      "estonia": {
+        "address": "Majaka 26</br>11412, Tallinn, Estonia"
+      }
+    },
+    "imageAlt": {
+      "continents": "Карта, на которой отмечены положения всех офисов CSSSR"
+    },
+    "videoError": "Этот браузер не поддерживает загрузку видеофайлов"
   },
   "noPage": "Данная страница не доступна на русском языке.",
   "checkBoxesText": {

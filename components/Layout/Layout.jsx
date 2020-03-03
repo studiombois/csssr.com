@@ -22,8 +22,8 @@ const Layout = ({ children, isIe11 }) => {
     <CookiesPopup />
     <DevTools />
   </Fragment>
-)
-
+  )
+}
 Layout.propTypes = {
   title: string,
   description: string,

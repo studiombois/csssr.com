@@ -9,14 +9,12 @@ import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
 import Form from './Form'
-import Projects from './Projects'
 
 import Head from '../Head'
 import greeting from '../../data/industry/fintech/greeting'
 import ourClients from '../../data/industry/fintech/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
-import projects from '../../data/industry/projects'
 
 const FintechPage = ({ t }) => {
   return (
@@ -30,8 +28,6 @@ const FintechPage = ({ t }) => {
       <Facts id="facts" content={facts} />
 
       <CoreValues id="core-values" content={coreValues} />
-
-      <Projects id="projects" content={projects} />
 
       <Form pageName="industry" />
     </Layout>

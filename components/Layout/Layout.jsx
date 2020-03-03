@@ -8,17 +8,20 @@ import Header from '../Header'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import CookiesPopup from '../CookiesPopup'
 
-const Layout = ({ children, isIe11 }) => (
+const Layout = ({ children, isIe11 }) => {
+  const dynamicTag = isIe11 ? 'div' : 'main';
+  return (
     <Fragment>
       <Header />
       <Global styles={styles} />
       {isIe11 && <Global styles={ie11Styles} />}
 
-      {isIe11 ? <div id="main">{children}</div> : <main id="main">{children}</main>}
+      {React.createElement(dynamicTag, { id: 'main' }, children)}
       <CookiesPopup />
       <DevTools />
     </Fragment>
-)
+  )
+}
 
 Layout.propTypes = {
   title: string,

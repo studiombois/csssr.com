@@ -31,5 +31,19 @@
       "description": "To&nbsp;control code quality, we&nbsp;employ a&nbsp;code-review process that the whole development team participates&nbsp;in, with specific rules.",
       "text": "For example, each pull request must be&nbsp;approved by&nbsp;at&nbsp;least two developers. Only after approval can the code be&nbsp;put into a&nbsp;stable branch. In&nbsp;code review, we&nbsp;focus on&nbsp;business logic, code readability, architecture and APIs."
     }
+  },
+  "transparency": {
+    "title": "Transparency",
+    "square": "We&nbsp;work on&nbsp;an&nbsp;hourly basis. For this purpose we&nbsp;have developed our own time tracker that helps&nbsp;us pay salaries and generate client reports.",
+    "circle": "We&nbsp;provide weekly reports so&nbsp;that clients are always aware of&nbsp;the current workload and can adjust the process. We&nbsp;can generate reports in&nbsp;various formats on&nbsp;request: by&nbsp;task, project, working day, specialist, sprint, etc.",
+    "arc": "All documentation is&nbsp;automatically generated according to&nbsp;a&nbsp;template, which minimizes the risk of&nbsp;errors.",
+    "triangle": "We&nbsp;have a&nbsp;dedicated manager who is&nbsp;responsible for the documentation and promptly assists with any questions.",
+    "imagesAlt": {
+      "highlight": "Transparency",
+      "square": "square",
+      "circle": "circle",
+      "arc": "arc",
+      "triangle": "triangle"
+    }
   }
 }

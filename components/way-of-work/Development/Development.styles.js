@@ -70,7 +70,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      margin-bottom: ${calcRem(168)};
+      margin-bottom: ${calcRem(216)};
     }
 
     .heading {
@@ -137,7 +137,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      margin-bottom: ${calcRem(168)};
+      margin-bottom: ${calcRem(393)};
     }
 
     .heading {

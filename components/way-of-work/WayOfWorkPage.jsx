@@ -6,6 +6,7 @@ import Layout from '../Layout'
 import Greeting from './Greeting'
 import Organized from './Organized'
 import Development from './Development'
+import Transparency from './Transparency'
 
 const WayOfWork = ({ t }) => {
   return (
@@ -17,6 +18,8 @@ const WayOfWork = ({ t }) => {
       <Organized />
 
       <Development />
+
+      <Transparency />
     </Layout>
   )
 }

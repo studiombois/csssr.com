@@ -168,6 +168,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/industry/media-and-marketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/media-and-marketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/media-and-marketing',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/industry/media-and-marketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/industry/media-and-marketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/industry/media-and-marketing',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,

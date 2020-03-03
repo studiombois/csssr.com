@@ -1,16 +1,20 @@
 {
   "meta": {
     "ecommerce": {
-      "title": "Custom eCommerce Development Services",
+      "title": "Custom eCommerce Development Services | CSSSR",
       "description": "We help clients in the highly competitive e-commerce industry win each new customer."
     },
     "fintech": {
-      "title": "Fintech and Banking Web Development",
+      "title": "Fintech and Banking Web Development | CSSSR",
       "description": "We built a strong digital presence for banking and financial services."
     },
     "informationTechnology": {
-      "title": "Web Development Services for IT Companies",
+      "title": "Web Development Services for IT Companies | CSSSR",
       "description": "We push IT-companies to the cutting edge of technological progress."
+    },
+    "mediaAndMarketing": {
+      "title": "Custom Development for Media-Related Companies | CSSSR",
+      "description": "We deliver high-quality experiences capable of handling large-scale data and any scale of concurrent users."
     }
   },
   "imgAlt": {
@@ -39,6 +43,12 @@
     "informationTechnology": {
       "title": "Web Development Services<br/> for IT Companies",
       "paragraph": "The IT&nbsp;industry is&nbsp;always on&nbsp;the cutting edge of&nbsp;technological progress. The effort to&nbsp;adapt to&nbsp;new technologies as&nbsp;quickly as&nbsp;possible is&nbsp;not only a&nbsp;desire but also the key to&nbsp;success in&nbsp;this industry. We&nbsp;help these companies become market leaders.",
+      "button": "Get in touch",
+      "imgAlt": ""
+    },
+    "mediaAndMarketing": {
+      "title": "Custom Development<br/> for Media-Related Companies",
+      "paragraph": "Throughout history, entertainment has been intertwined with culture, so&nbsp;it&rsquo;s unsurprising that it&nbsp;has a&nbsp;vast presence on&nbsp;the web. We&rsquo;ve helped many media companies grow and evolve. Reach out to&nbsp;us to&nbsp;find out how we&nbsp;can help you.",
       "button": "Get in touch",
       "imgAlt": ""
     }

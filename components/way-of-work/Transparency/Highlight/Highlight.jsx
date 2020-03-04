@@ -1,5 +1,6 @@
 import React from 'react'
-import { string, bool } from 'prop-types'
+import { string, bool, oneOf } from 'prop-types'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
@@ -16,15 +17,38 @@ import {
   triangleImages,
 } from '../../../../data/way-of-work/transparency'
 
-const Highlight = ({ className, id, t, isMobile }) => {
+const Highlight = ({ className, id, t, isMobile, active }) => {
+  const figures = [
+    {
+      name: 'square',
+      images: squareImages,
+    },
+    {
+      name: 'circle',
+      images: circleImages,
+    },
+    {
+      name: 'arc',
+      images: arcImages,
+    },
+    {
+      name: 'triangle',
+      images: triangleImages,
+    },
+  ]
+
   return (
     <div className={className} id={id}>
       {isMobile ? (
         <>
-          <span className="square figure" />
-          <span className="circle figure" />
-          <span className="arc figure" />
-          <span className="triangle figure" />
+          {figures.map(figure => (
+            <span
+              key={figure.name}
+              className={cn('figure', figure.name, {
+                active: figure.name === active,
+              })}
+            />
+          ))}
         </>
       ) : (
         <>
@@ -35,33 +59,17 @@ const Highlight = ({ className, id, t, isMobile }) => {
             className="image"
           />
 
-          <PictureForAllResolutions
-            images={squareImages}
-            fallback={squareImages['desktop.all'].png}
-            alt={t('wayOfWork:transparency.imagesAlt.square')}
-            className="figure square"
-          />
-
-          <PictureForAllResolutions
-            images={circleImages}
-            fallback={circleImages['desktop.all'].png}
-            alt={t('wayOfWork:transparency.imagesAlt.circle')}
-            className="figure circle"
-          />
-
-          <PictureForAllResolutions
-            images={arcImages}
-            fallback={arcImages['desktop.all'].png}
-            alt={t('wayOfWork:transparency.imagesAlt.arc')}
-            className="figure arc"
-          />
-
-          <PictureForAllResolutions
-            images={triangleImages}
-            fallback={triangleImages['desktop.all'].png}
-            alt={t('wayOfWork:transparency.imagesAlt.triangle')}
-            className="figure triangle"
-          />
+          {figures.map(figure => (
+            <PictureForAllResolutions
+              key={figure.name}
+              images={figure.images}
+              fallback={figure.images['desktop.all'].png}
+              alt={t('wayOfWork:transparency.imagesAlt.square')}
+              className={cn('figure', figure.name, {
+                active: figure.name === active,
+              })}
+            />
+          ))}
         </>
       )}
     </div>
@@ -72,6 +80,7 @@ Highlight.propTypes = {
   className: string,
   id: string,
   isMobile: bool,
+  active: oneOf(['square', 'circle', 'arc', 'triangle']),
 }
 
 export default translate()(

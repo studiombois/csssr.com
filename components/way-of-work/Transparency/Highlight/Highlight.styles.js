@@ -32,7 +32,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         background-position: 50% 0;
         background-repeat: no-repeat;
         opacity: 0;
+        transition: 700ms ease-out;
       }
+    }
+
+    .figure.active::before {
+      opacity: 1;
     }
 
     .square {
@@ -80,6 +85,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .figure {
       position: absolute;
+      opacity: 0;
+      transition: 700ms ease-out;
+    }
+
+    .figure.active {
+      opacity: 1;
     }
 
     .square {
@@ -120,6 +131,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .figure {
       position: absolute;
+      opacity: 0;
+      transition: 700ms ease-out;
+    }
+
+    .figure.active {
+      opacity: 1;
     }
 
     .square {

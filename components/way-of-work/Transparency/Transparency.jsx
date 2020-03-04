@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 
 import Highlight from './Highlight'
+import Observer from './Observer'
 
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
@@ -15,6 +16,12 @@ import { list } from '../../../data/way-of-work/transparency'
 import styles from './Transparency.styles'
 
 const Transparency = ({ className, id, t }) => {
+  const [activeItem, setActiveItem] = useState('triangle')
+
+  const handleActive = name => {
+    setActiveItem(name)
+  }
+
   return (
     <section className={className} id={id}>
       <Grid>
@@ -27,19 +34,24 @@ const Transparency = ({ className, id, t }) => {
 
         <ul className="list">
           {list.map(item => (
-            <li key={item.id} className={`listItem ${item.id}Item`}>
+            <Observer
+              key={item.id}
+              name={item.id}
+              handleActive={handleActive}
+              className={`listItem ${item.id}Item`}
+            >
               <SubHeading
                 type="regular"
                 dangerouslySetInnerHTML={{
                   __html: t(item.label),
                 }}
               />
-            </li>
+            </Observer>
           ))}
         </ul>
 
         <div className="figures">
-          <Highlight />
+          <Highlight active={activeItem} />
         </div>
       </Grid>
     </section>

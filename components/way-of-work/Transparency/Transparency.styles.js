@@ -32,7 +32,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      margin-bottom: ${calcRem(200)};
+      padding-bottom: ${calcRem(200)};
     }
 
     .heading {
@@ -89,7 +89,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     & {
-      margin-bottom: ${calcRem(320)};
+      padding-bottom: ${calcRem(320)};
     }
 
     .heading {

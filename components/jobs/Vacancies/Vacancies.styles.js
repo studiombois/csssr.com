@@ -5,6 +5,7 @@ const base = css`
   & {
     position: relative;
     padding-top: 13.5rem;
+    z-index: 0;
   }
 
   header,

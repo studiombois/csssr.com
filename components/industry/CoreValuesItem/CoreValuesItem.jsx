@@ -8,8 +8,8 @@ import Heading from '../../ui-kit/core-design/Heading'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import ArrowIcon from '../../../static/icons/main/arrow.svg'
 
-const CoreValuesItem = ({ t, images, imgAlt, title, text, itemClassName }) => (
-  <NextLink href="/">
+const CoreValuesItem = ({ t, href, images, imgAlt, title, text, itemClassName }) => (
+  <NextLink href={t(href)}>
     <a className={cn('card', itemClassName)}>
       <PictureForAllResolutions
         images={images}

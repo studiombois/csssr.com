@@ -51,6 +51,7 @@ i18n
         'coreValues',
         'main',
         'technologies',
+        'wayOfWork',
       ],
       detection: {
         order: ['pathCookieHeader'],

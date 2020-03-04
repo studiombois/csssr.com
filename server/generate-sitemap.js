@@ -322,6 +322,36 @@ const sitemapUrlsSettings = [
       },
     ],
   },
+  {
+    url: 'https://csssr.com/ru/way-of-work',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/way-of-work',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/way-of-work',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/way-of-work',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/way-of-work',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/way-of-work',
+      },
+    ],
+  },
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>

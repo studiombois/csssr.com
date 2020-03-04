@@ -17,7 +17,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     position: relative;
     grid-column: 2 / span 11;
     grid-row: 2;
-    z-index: -1;
     max-width: ${calcRem(1562)};
     margin-top: ${calcRem(119)};
   }

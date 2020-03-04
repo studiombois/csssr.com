@@ -3,6 +3,16 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
+  .figure {
+    position: absolute;
+    opacity: 0;
+    transition: 700ms ease-out;
+  }
+
+  .figure.active {
+    opacity: 1;
+  }
+
   ${mobile.all} {
     & {
       position: sticky;
@@ -16,6 +26,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .figure {
       position: relative;
       flex-shrink: 0;
+      opacity: 1;
       background-position: 50% 0;
       background-repeat: no-repeat;
       padding-top: ${calcRem(1)};
@@ -83,16 +94,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       height: ${calcRem(386)};
     }
 
-    .figure {
-      position: absolute;
-      opacity: 0;
-      transition: 700ms ease-out;
-    }
-
-    .figure.active {
-      opacity: 1;
-    }
-
     .square {
       top: 0;
       left: ${calcRem(226)};
@@ -127,16 +128,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .image {
       max-width: 400px;
-    }
-
-    .figure {
-      position: absolute;
-      opacity: 0;
-      transition: 700ms ease-out;
-    }
-
-    .figure.active {
-      opacity: 1;
     }
 
     .square {

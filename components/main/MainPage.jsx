@@ -8,6 +8,7 @@ import AboutUs from './AboutUs'
 import Projects from './Projects'
 import Vacancies from './Vacancies'
 import Head from '../Head'
+import Form from './Form'
 import withI18next from '../../utils/withI18next'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import i18n from '../../common/i18n'
@@ -32,6 +33,7 @@ class MainPage extends PureComponent {
         <AboutUs />
         <Projects />
         <Vacancies vacancies={vacancies} />
+        <Form pageName="main" />
       </Layout>
     )
   }

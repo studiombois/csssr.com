@@ -1,4 +1,20 @@
 import { css } from '@emotion/core'
+import getBackgroundImageSrcSet from '../../../utils/style/getBackgroundImageSrcSet'
+
+import line_1920 from '../../../static/images/dev/1920/dev_line.png?responsive'
+import line_1920_webp from '../../../static/images/dev/1920/dev_line.png?responsive_and_webp'
+
+import line_1360 from '../../../static/images/dev/1360/dev_line.png?responsive'
+import line_1360_webp from '../../../static/images/dev/1360/dev_line.png?responsive_and_webp'
+
+import line_1280 from '../../../static/images/dev/1280/dev_line.png?responsive'
+import line_1280_webp from '../../../static/images/dev/1280/dev_line.png?responsive_and_webp'
+
+import line_1024 from '../../../static/images/dev/1024/dev_line.png?responsive'
+import line_1024_webp from '../../../static/images/dev/1024/dev_line.png?responsive_and_webp'
+
+import line_360 from '../../../static/images/dev/360/dev_line.png?responsive'
+import line_360_webp from '../../../static/images/dev/360/dev_line.png?responsive_and_webp'
 
 const base = css`
   & {
@@ -46,43 +62,6 @@ const base = css`
     height: auto;
   }
 
-  :global(#main) {
-    background-image: url('${require('../../../static/images/dev/1920/dev_line@1x.png')}');
-    background-size: 1920px 640px;
-    background-position: 50% 24rem;
-    background-repeat: repeat-x;
-  }
-
-  :global(html.webp #main) {
-    background-image: url('${require('../../../static/images/dev/1920/dev_line@1x.webp')}');
-  }
-
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1920/dev_line@2x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1920/dev_line@2x.webp')}');
-    }
-  }
-
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1920/dev_line@3x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1920/dev_line@3x.webp')}');
-    }
-  }
-
   @media (min-width: 1360px) and (max-width: 1919px) {
     & {
       padding-top: 12rem;
@@ -91,44 +70,6 @@ const base = css`
     picture {
       margin-left: -1rem;
       width: 1360px;
-    }
-
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1360/dev_line@1x.png')}');
-      background-size: 1360px 640px;
-      background-position: 50% 20rem;
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1360/dev_line@1x.webp')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 1360px) and (max-width: 1919px),
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1360/dev_line@2x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1360/dev_line@2x.webp')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 1360px) and (max-width: 1919px),
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1360/dev_line@3x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1360/dev_line@3x.webp')}');
     }
   }
 
@@ -141,44 +82,6 @@ const base = css`
       margin-top: -14rem;
       margin-left: -1.5rem;
       width: 1280px;
-    }
-
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1280/dev_line@1x.png')}');
-      background-size: 1280px 640px;
-      background-position: 50% 20rem;
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1280/dev_line@1x.webp')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 1280px) and (max-width: 1359px),
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1280/dev_line@2x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1280/dev_line@2x.webp')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 1280px) and (max-width: 1359px),
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1280/dev_line@3x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1280/dev_line@3x.webp')}');
     }
   }
 
@@ -206,54 +109,12 @@ const base = css`
       width: 1024px;
       height: 480px;
     }
-
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1024/dev_line@1x.png')}');
-      background-size: 1024px 480px;
-      background-position: 50% 22rem;
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1024/dev_line@1x.webp')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 768px) and (max-width: 1279px),
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1024/dev_line@2x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1024/dev_line@2x.webp')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 768px) and (max-width: 1279px),
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/1024/dev_line@3x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/1024/dev_line@3x.webp')}');
-    }
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
     picture {
       width: 64rem;
       height: 30rem;
-    }
-
-    :global(#main) {
-      background-size: 80rem 30rem;
     }
   }
 
@@ -290,44 +151,6 @@ const base = css`
       margin-top: 0;
       margin-left: -1rem;
       width: 22.5rem;
-    }
-
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/360/dev_line@1x.png')}');
-      background-size: 22.5rem 10.5rem;
-      background-position: 50% 18rem;
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/360/dev_line@1x.webp')}');
-    }
-  }
-
-  @media
-  screen and (max-width: 767px),
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/360/dev_line@2x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/360/dev_line@2x.webp')}');
-    }
-  }
-
-  @media
-  screen and (max-width: 767px),
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    :global(#main) {
-      background-image: url('${require('../../../static/images/dev/360/dev_line@3x.png')}');
-    }
-
-    :global(html.webp #main) {
-      background-image: url('${require('../../../static/images/dev/360/dev_line@3x.webp')}');
     }
   }
 `
@@ -366,6 +189,63 @@ const ie11Styles = css`
       -ms-grid-row: 2;
     }
   }
+`
+
+export const devLine = css`
+  ${getBackgroundImageSrcSet({png: line_1920, webp: line_1920_webp}, '#main')};
+
+  #main {
+    background-size: 1920px 640px;
+    background-position: 50% 18rem;
+    background-repeat: repeat-x;
+  }
+
+  @media (min-width: 1360px) and (max-width: 1919px) {
+    ${getBackgroundImageSrcSet({png: line_1360, webp: line_1360_webp}, '#main')};
+
+    #main {
+      background-size: 1360px 640px;
+      background-position: 50% 20rem;
+      background-repeat: repeat-x;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1359px) {
+    ${getBackgroundImageSrcSet({png: line_1280, webp: line_1280_webp}, '#main')};
+    
+    #main {
+      background-size: 1280px 640px;
+      background-position: 50% 20rem;
+      background-repeat: repeat-x;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    ${getBackgroundImageSrcSet({png: line_1024, webp: line_1024_webp}, '#main')};
+
+    #main {
+      background-size: 1024px 480px;
+      background-position: 50% 22rem;
+      background-repeat: repeat-x;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #main {
+      background-size: 80rem 30rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    ${getBackgroundImageSrcSet({png: line_360, webp: line_360_webp}, '#main')};
+
+    #main {
+      background-size: 22.5rem 10.5rem;
+      background-position: 50% 18rem;
+      background-repeat: repeat-x;
+    }
+  }
+
 `
 
 export default ({ isIe11 }) => css`

@@ -72,8 +72,53 @@
     "backLink": "Our services"
   },
   "footer": {
-    "privacyPolicy": "Privacy policy",
-    "alliancePartText": "CSSSR is a part of"
+    "actionPhrase": "Let’s work together!",
+    "services": {
+      "title": "Services",
+      "outsourcing": "Outsourcing",
+      "express": "Express",
+      "mvp": "MVP"
+    },
+    "industries": {
+      "title": "Industries",
+      "fintech": "Fintech",
+      "eCommerce": "E-Commerce",
+      "information": "IT Development",
+      "mediaAndMarketing": "Media and Marketing"
+    },
+    "howWeWork": {
+      "title": "How we work",
+      "technologies": "Technology Stack",
+      "processes": "Process",
+      "coreValues": "Core values"
+    },
+    "company": {
+      "title": "Company",
+      "blog": "Blog",
+      "aboutUs": "About us",
+      "careers": "Careers"
+    },
+    "privacy": "Privacy policy",
+    "cookies": "Website cookie policy",
+    "addresses": {
+      "singapore": {
+        "title": "Headquarters",
+        "address": "68 Circular Road #02-01</br>Singapore, 049422",
+        "phone": "+65 6332 3659"
+      },
+      "russia": {
+        "title": "Offices",
+        "address": "Letnikovskaya str, 2 str. 3, a/ya 33</br>Mosсow, 115114, Russia",
+        "phone": "+7 (499) 113-16-17"
+      },
+      "estonia": {
+        "address": "Majaka 26</br>11412, Tallinn, Estonia"
+      }
+    },
+    "imageAlt": {
+      "continents": "This browser does not support downloading video files"
+    },
+    "videoError": "Этот браузер не поддерживает загрузку видеофайлов"
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {

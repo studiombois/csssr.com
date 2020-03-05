@@ -11,6 +11,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .heading {
     grid-column: 2 / span 5;
     grid-row: 1;
+    z-index: 1;
   }
 
   .text {
@@ -18,13 +19,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-row: 2;
     margin-top: ${calcRem(77)};
     color: ${colors.secondary.darken100};
+    z-index: 1;
   }
 
   .image {
     position: relative;
     grid-column: 7 / span 5;
     grid-row: 1 / 4;
-    z-index: -1;
   }
 
   .button {

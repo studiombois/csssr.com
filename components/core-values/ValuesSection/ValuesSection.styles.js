@@ -20,12 +20,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   article:nth-of-type(5) {
     margin-top: ${calcRem(377)};
-    margin-bottom: ${calcRem(286)};
   }
 
   ${desktop.l} {
-    article:nth-of-type(5) {
-      margin-bottom: ${calcRem(422)};
+    article:nth-of-type(4) {
+      margin-top: ${calcRem(376)};
     }
   }
 
@@ -48,7 +47,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     article:nth-of-type(5) {
       margin-top: ${calcRem(312)};
-      margin-bottom: ${calcRem(422)};
     }
   }
 
@@ -70,14 +68,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(289)};
-      margin-bottom: ${calcRem(366)};
+      margin-top: ${calcRem(264)};
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(116)};
+      margin-top: ${calcRem(122)};
     }
 
     article:nth-of-type(2) {
@@ -94,13 +91,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     article:nth-of-type(5) {
       margin-top: ${calcRem(225)};
-      margin-bottom: ${calcRem(320)};
     }
   }
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(72)};
+      margin-top: ${calcRem(81)};
     }
 
     article:nth-of-type(2) {
@@ -117,7 +113,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     article:nth-of-type(5) {
       margin-top: ${calcRem(194)};
-      margin-bottom: ${calcRem(119)};
     }
   }
 `

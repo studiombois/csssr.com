@@ -79,6 +79,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
       margin-top: ${calcRem(105)};
       margin-left: ${calcRem(-26)};
       width: ${calcRem(324)};
+      max-height: ${calcRem(421)};
     }
 
     .picture_figures {
@@ -110,7 +111,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
 const ie11Styles = ({ breakpoints: { tablet } }) => css`
   & {
-    position: relative;
+    position: absolute;
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-row: 2;
   }

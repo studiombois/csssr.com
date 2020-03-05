@@ -95,10 +95,10 @@ export default {
       title: 'common:header.links.blog.title',
       href: 'https://blog.csssr.com',
     },
-    {
-      title: 'common:header.links.aboutUs.title',
-      href: 'about-us',
-    },
+    // {
+    //   title: 'common:header.links.aboutUs.title',
+    //   href: 'about-us',
+    // },
     {
       title: 'common:header.links.careers.title',
       href: 'jobs',

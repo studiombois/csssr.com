@@ -48,11 +48,12 @@ i18n
         'privacyPolicy',
         'cookiesPolicy',
         'mvp',
-        'ecommerce',
+        'industry',
         'coreValues',
         'main',
         'technologies',
         'express',
+        'wayOfWork',
       ],
       detection: {
         order: ['pathCookieHeader'],

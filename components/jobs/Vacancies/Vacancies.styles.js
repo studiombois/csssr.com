@@ -56,7 +56,7 @@ const base = css`
     background-position: 50%;
     background-size: auto 100%;
     overflow: hidden;
-    z-index: -1;
+    z-index: -1000;
   }
 
   .hunter-text {
@@ -629,6 +629,7 @@ const pictureHunterStyles = css`
     grid-column: 8 / span 1;
     grid-row: 14;
     margin-top: 10.75rem;
+    margin-bottom: 6rem;
   }
 
   & {

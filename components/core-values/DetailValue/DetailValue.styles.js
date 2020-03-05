@@ -33,8 +33,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
-    &.ux .image {
-      margin-bottom: ${calcRem(-18)};
+    &.security .image {
+      margin-bottom: ${calcRem(-43)};
     }
   }
 
@@ -45,6 +45,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     &.ux .image {
       margin-bottom: ${calcRem(-14)};
+    }
+
+    &.ux .heading {
+      margin-top: ${calcRem(96)};
     }
   }
 

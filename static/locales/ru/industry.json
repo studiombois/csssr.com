@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "ecommerce": {
+      "title": "Веб-разработка для электронной коммерции | CSSSR",
+      "description": "Боремся за каждого клиента в высококонкурентной индустрии интернет-торговли."
+    },
+    "fintech": {
+      "title": "Веб-разработка для финансового сектора | CSSSR",
+      "description": "We built a strong digital presence for banking and financial services."
+    },
+    "informationTechnology": {
+      "title": "Веб-разработка для IT-компаний | CSSSR",
+      "description": "Выводим IT-компании на новый технологический уровень"
+    },
+    "mediaAndMarketing": {
+      "title": "Веб-разработка для медиа-компаний | CSSSR",
+      "description": "Становимся надёжными партнёрами медиа-компаний в борьбе за внимание пользователей."
+    }
+  },
+  "imgAlt": {
+    "ourClients": "Логотипы компаний нашихх клиентов",
+    "facts": "Альтернативный текст для иллюстрации",
+    "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
+    "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
+    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat.",
+    "projects_1": "Schematic illustration of a web portal",
+    "projects_2": "Schematic illustration of a web portal",
+    "projects_3": "Schematic illustration of a web portal"
+  },
+  "greeting": {
+    "ecommerce": {
+      "title": "Веб-сервисы для электронной коммерции",
+      "paragraph": "Общее впечатление от&nbsp;сервиса складывается из&nbsp;мелочей. Мы&nbsp;обеспечиваем индустрии электронной коммерции рост продаж, разрабатывая сайты с&nbsp;фирменным вниманием к&nbsp;деталям.",
+      "button": "Нанять нас",
+      "imgAlt": "Иллюстрация с двумя фигурами людей, мужчина передает что-то девушке"
+    },
+    "fintech": {
+      "title": "Веб-разработка для <br /> финансового сектора",
+      "paragraph": "Обеспечиваем мощное цифровое присутствие для клиентов финансовой сферы. Создаём удобные и&nbsp;безопасные сервисы, опережающие запросы клиентов.",
+      "button": "Нанять нас",
+      "imgAlt": ""
+    },
+    "informationTechnology": {
+      "title": "Веб-разработка <br/> для IT-компаний",
+      "paragraph": "Чтобы удерживать позиции в&nbsp;высококонкурентной среде, необходимо развиваться, и&nbsp;делать это быстро. Мы&nbsp;помогаем IT-компании адаптироваться к&nbsp;новым технологиям и&nbsp;использовать их&nbsp;для развития бизнеса.",
+      "button": "Нанять нас",
+      "imgAlt": ""
+    },
+    "mediaAndMarketing": {
+      "title": "Индивидуальная разработка для<br/> медиа-компаний",
+      "paragraph": "Становимся надёжными партнёрами медиа-компаний в&nbsp;борьбе за&nbsp;внимание пользователей. Мы&nbsp;разрабатываем ресурсы, к&nbsp;которым хочется возвращаться снова и&nbsp;снова.",
+      "button": "Нанять нас",
+      "imgAlt": ""
+    }
+  },
+  "ourClients": {
+    "title": "Наши клиенты"
+  },
+  "facts": {
+    "heading": "Всё обсуждаемо. Кроме качества кода",
+    "subHeading": "Гибкие условия и&nbsp;индивидуальный подход вне зависимости от&nbsp;размера или продолжительности вашего проекта.",
+    "firstItem": {
+      "number": "3-7",
+      "text": "специалистов <br/>в&nbsp;команде"
+    },
+    "secondItem": {
+      "number": "2 нед. - ∞",
+      "text": "средняя продолжительность <br/>проекта"
+    },
+    "thirdItem": {
+      "number": "150+",
+      "text": "профессионалов"
+    },
+    "fourthItem": {
+      "number": "500+",
+      "text": "завершённых проектов"
+    }
+  },
+  "coreValues": {
+    "heading": "Наши ценности",
+    "subHeading": "Мы&nbsp;придерживаемся самых высоких стандартов веб-разработки и&nbsp;не&nbsp;забываем о&nbsp;лучших практиках.",
+    "firstItem": {
+      "href": "/ru/core-values#accessibility",
+      "title": "Доступность",
+      "text": "Знаете&nbsp;ли вы, что до&nbsp;15% пользователей имеют особые потребности при использовании интернета? Нам не&nbsp;все равно, поэтому мы&nbsp;следуем необходимым стандартам веб-доступности."
+    },
+    "secondItem": {
+      "href": "/ru/core-values#security",
+      "title": "Безопасность",
+      "text": "Даже незначительная уязвимость приложения может привести к&nbsp;существенным финансовым и&nbsp;репутационным издержкам. Мы&nbsp;внимательно продумываем архитектуру и&nbsp;уделяем вопросу безопасности особое внимание."
+    },
+    "thirdItem": {
+      "href": "/ru/core-values#ux",
+      "title": "UX",
+      "text": "Перфекционизм должен быть умным. Мы&nbsp;всегда ставим себя на&nbsp;место пользователя и&nbsp;обращаем внимание на&nbsp;мелочи, которые могут повлиять на&nbsp;впечатление от&nbsp;конечного продукта."
+    }
+  },
+  "projects": {
+    "heading": "Наши Проекты",
+    "subHeading": "Это правдивые истории. Описанные здесь события произошли в CSSSR в 20XX году. По просьбе клиентов все имена и важные детали были скрыты. Из уважения к команде, остальное было сказано точно так, как это произошло",
+    "firstItem": {
+      "heading": "Телеком Провайдер",
+      "text": "Сайт для крупнейшего модного универмага в Восточной Европе.",
+      "numericData": {
+        "firstItem": {
+          "number": "9",
+          "text": "размер команды"
+        },
+        "secondItem": {
+          "number": "12",
+          "text": "месяцев"
+        }
+      }
+    },
+    "secondItem": {
+      "heading": "Телеком Провайдер",
+      "text": "Интернет-витрина для импортера и дистрибьютора вина",
+      "numericData": {
+        "firstItem": {
+          "number": "4",
+          "text": "размер команды"
+        },
+        "secondItem": {
+          "number": "7",
+          "text": "месяцев"
+        }
+      }
+    },
+    "thirdItem": {
+      "heading": "Телеком Провайдер",
+      "text": "Интерфейс системы терминалов самообслуживания для одного из крупнейших российских интернет-магазинов электроники",
+      "numericData": {
+        "firstItem": {
+          "number": "14",
+          "text": "размер команды"
+        },
+        "secondItem": {
+          "number": "17",
+          "text": "месяцев"
+        }
+      }
+    }
+  },
+  "form": {
+    "title": "Давайте пообщаемся",
+    "namePlaceholder": "Тим Бернерс-Ли",
+    "phonePlaceholder": "+7-987-654-32-10",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "Чем мы могли бы помочь вам?",
+    "messageLabel": "коментарий",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Телефон",
+    "nameLabel": "Имя",
+    "submitText": "Отправить"
+  }
+}

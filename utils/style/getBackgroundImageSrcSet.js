@@ -5,7 +5,7 @@ export default (images, selector) => {
   const srcSets = extensions.map(
     extension => `
       ${extension === 'webp' ? `html.webp ${selector}` : `${selector}`} {
-        background-image: url(${images[extension]['3x']});
+        background-image: url(${images[extension]['1x']});
         background-size: 100%;
         background-repeat: no-repeat;
       }
@@ -22,7 +22,7 @@ export default (images, selector) => {
         only screen and (min-resolution: 288dpi),
         only screen and (min-resolution: 3dppx) {
         ${extension === 'webp' ? `html.webp ${selector}` : `${selector}`} {
-          background-image: url(${images[extension]['1x']});
+          background-image: url(${images[extension]['3x']});
         }
       }
     `,

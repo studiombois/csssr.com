@@ -2,19 +2,22 @@ import React from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
-import translate from '../../../utils/translate-wrapper'
+import styled from '@emotion/styled'
 import fetch from 'isomorphic-unfetch'
+
+import translate from '../../../utils/translate-wrapper'
 import ContactForm from '../../ContactForm'
 import contactFormValidationRules from '../../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../../utils/client/getGaCid'
+
+import styles from './Form.styles'
 
 const ContactFormForIndustry = props => (
   <ContactForm
     imageName="letter"
     headerId="hire-us"
-    fields={['name', 'email', 'message']}
+    fields={['name', 'phone', 'email', 'message']}
     feedbackEmail="sales@csssr.io"
-    shouldShowSubHeading
     {...props}
   />
 )
@@ -64,15 +67,21 @@ const onSubmit = (t, lng) => async values => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, lng, pageName }) => (
+const Form = ({ t, lng, pageName, className }) => (
   <ReactFinalForm
     onSubmit={onSubmit(t, lng)}
     validate={contactFormValidationRules(t)}
     decorators={[focusOnErrors]}
     component={ContactFormForIndustry}
+    className={className}
     pageName={pageName}
   />
 )
 
-export default translate()(Form)
+export default translate()(
+  styled(Form)`
+    ${styles}
+  `,
+)
+
 export { onSubmit }

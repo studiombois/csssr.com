@@ -1,16 +1,11 @@
 import React, { PureComponent, Fragment } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
-import styles, {
-  pictureStyles,
-  hideMessagePictureStyles,
-  textDataStyles,
-} from './FormStateMessage.styles'
+import styles, { pictureStyles, textDataStyles } from './FormStateMessage.styles'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { oneOf, string, func } from 'prop-types'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
-import Picture from '../../Picture'
 
 class FormStateMessage extends PureComponent {
   static propTypes = {
@@ -58,13 +53,6 @@ class FormStateMessage extends PureComponent {
 
     return (
       <Fragment>
-        {!messageShown && (
-          <Picture
-            css={hideMessagePictureStyles}
-            image={{ namespace: 'dev', key: 'letter', alt: '' }}
-            customResolutions={['360']}
-          />
-        )}
         <div
           className={cn('body', className, {
             body_state_visible: messageShown,

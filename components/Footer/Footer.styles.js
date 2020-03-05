@@ -31,6 +31,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     opacity: 0;
     transform: translateY(-50%);
     transition: opacity 100ms ease-out;
+    pointer-events: none;
   }
 
   @media (pointer: fine) {

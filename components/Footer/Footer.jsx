@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { string, func } from 'prop-types'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
@@ -15,44 +15,66 @@ import Logo from '../../static/icons/csssr_logo.svg'
 import translate from '../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const Footer = ({ className, isMobile, t }) => (
-  <footer className={className}>
-    <div className="top-content-left-wrapper">
-      <NextLink href="/">
-        <a className="logo">
-          <Logo />
-        </a>
-      </NextLink>
+const Footer = ({ className, isMobile, t }) => {
+  const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
+  const footerRef = useRef()
 
-      {!isMobile && (
-        <video className="video" autoPlay loop muted>
-          <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
+  useEffect(() => {
+    const listener = () => {
+      const { top, bottom, height } = footerRef.current.getBoundingClientRect()
 
-          <p>{t('common:footer.videoError')}</p>
-        </video>
-      )}
+      if (top + height < window.innerHeight && bottom >= 0) {
+        if (!IsDoubleBottomVisible) setDoubleBottomVisibility(true)
+      } else {
+        if (IsDoubleBottomVisible) setDoubleBottomVisibility(false)
+      }
+    }
 
-      <Heading
-        as="p"
-        className="action-phrase"
-        type="regular"
-        size="s"
-        dangerouslySetInnerHTML={{ __html: t('common:footer.actionPhrase') }}
-      />
+    window.addEventListener('scroll', listener)
+    return () => {
+      window.removeEventListener('scroll', listener)
+    }
+  })
 
-      <Link className="email" href="mailto:sales@csssr.com">
-        sales@csssr.com
-      </Link>
+  return (
+    <footer className={className} ref={footerRef}>
+      <div className="top-content-left-wrapper">
+        <NextLink href="/">
+          <a className="logo">
+            <Logo />
+          </a>
+        </NextLink>
 
-      <SocialLinks />
-      <PrivacyAndLanguageLinks />
-    </div>
+        {!isMobile && (
+          <video className="video" autoPlay loop muted>
+            <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
 
-    <Nav />
+            <p>{t('common:footer.videoError')}</p>
+          </video>
+        )}
 
-    <DoubleBottom />
-  </footer>
-)
+        <Heading
+          as="p"
+          className="action-phrase"
+          type="regular"
+          size="s"
+          dangerouslySetInnerHTML={{ __html: t('common:footer.actionPhrase') }}
+        />
+
+        <Link className="email" href="mailto:sales@csssr.com">
+          sales@csssr.com
+        </Link>
+
+        <SocialLinks />
+        <PrivacyAndLanguageLinks />
+      </div>
+
+      <Nav />
+
+      {IsDoubleBottomVisible && <DoubleBottom />}
+    </footer>
+  )
+}
 
 Footer.propTypes = {
   className: string,

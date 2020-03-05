@@ -323,6 +323,16 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/jobs-faq',
+    changefreq: 'yearly',
+    priority: 0.6,
+  },
+  {
+    url: 'https://csssr.com/en/service/express-front-end',
+    changefreq: 'yearly',
+    priority: 0.6,
+  },
+  {
     url: 'https://csssr.com/ru/way-of-work',
     changefreq: 'yearly',
     priority: 0.6,

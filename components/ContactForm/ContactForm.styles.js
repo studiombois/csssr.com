@@ -241,7 +241,7 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
     }
 
     input::placeholder {
-      color: ${colors.secondary.lightGray};
+      color: ${colors.secondary.gray};
     }
 
     label {

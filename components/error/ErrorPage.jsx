@@ -78,9 +78,6 @@ class ErrorPage extends React.Component {
 
     return (
       <Fragment>
-        {/* <Global styles={globalStyles.base} />
-        <Global styles={globalStyles.font_faces} />
-        <Global styles={globalStyles.fonts} /> */}
         <Global styles={globalStyles} />
         <DevTools />
 

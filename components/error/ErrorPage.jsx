@@ -4,20 +4,21 @@ import * as Sentry from '@sentry/node'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+
 import styles from './ErrorPage.styles'
 import Grid from '../ui-kit/core-design/Grid'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import DevTools from '../DevTools'
 import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
+
 import LogoIcon from '../../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../../static/icons/notFound.svg'
 import ServerError from '../../static/icons/serverError.svg'
-/**
- * Прописать NavItems как в Header когда мы его начнем делать
- */
+
 import navItems from '../../data/error/navItems'
+
 import globalStyles from '../Layout/Layout.styles'
 
 const titleLocalesByStatusCode = {
@@ -36,15 +37,29 @@ const codeIconByStatusCode = {
 }
 
 class ErrorPage extends React.Component {
-  //   renderNav = ({ sectionTitle, href }) => (
-  //     <li key={sectionTitle}>
-  //       <a
-  //         href={href}
-  //         className="font_burger-menu"
-  //         dangerouslySetInnerHTML={{ __html: this.props.t(`${sectionTitle}`) }}
-  //       />
-  //     </li>
-  //   )
+  renderNav = ({ lng, items: { title, id, links } }) => (
+    <span key={id}>
+      <h3 className="font_burger-menu" dangerouslySetInnerHTML={{ __html: this.props.t(title) }} />
+
+      {links && (
+        <ul className="menu">
+          {links.map(({ id, title, href }) => {
+            if (id === 'express' && lng === 'ru') return
+
+            return (
+              <li key={id}>
+                <a
+                  href={`/${lng}/${href}`}
+                  className="menu-item"
+                  dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </span>
+  )
 
   render() {
     const { className, t, lng: lngCodeFromI18n, statusCode = 500, i18n } = this.props
@@ -63,9 +78,10 @@ class ErrorPage extends React.Component {
 
     return (
       <Fragment>
-        <Global styles={globalStyles.base} />
+        {/* <Global styles={globalStyles.base} />
         <Global styles={globalStyles.font_faces} />
-        <Global styles={globalStyles.fonts} />
+        <Global styles={globalStyles.fonts} /> */}
+        <Global styles={globalStyles} />
         <DevTools />
 
         <Head title={t('error:meta.title')} description={t('error:meta.description')} />
@@ -108,10 +124,7 @@ class ErrorPage extends React.Component {
                 <LineFromTopToBottomIcon width="100%" height="100%" />
               </div>
 
-              {/**
-               * Прописать NavItems как в Header когда мы его начнем делать
-               */}
-              {/* <ul>{navItems[lng].map(this.renderNav)}</ul> */}
+              <div className="navList">{navItems.map(items => this.renderNav({ lng, items }))}</div>
             </Fragment>
           )}
         </Grid>

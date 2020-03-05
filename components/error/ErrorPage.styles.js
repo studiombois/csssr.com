@@ -30,8 +30,7 @@ const base = css`
     grid-row: 1;
   }
 
-  h2,
-  ul {
+  h2{
     grid-column: 10 / span 2;
   }
 
@@ -40,9 +39,26 @@ const base = css`
     grid-row: 2;
   }
 
-  ul {
-    margin-top: -0.125rem;
+
+  .navList {
+    grid-column: 10 / span 2;
     grid-row: 4;
+    margin-top: 1rem;
+  }
+
+  .menu {
+    margin-bottom: 1rem;
+  }
+
+
+  .menu-item{
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    color: #a9a9A9;
   }
 
   .code-wrapper {
@@ -62,7 +78,7 @@ const base = css`
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    ul {
+    .navList {
       grid-column: 10 / span 3;
     }
 
@@ -74,7 +90,7 @@ const base = css`
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    ul {
+    .navList {
       grid-column: 10 / span 3;
     }
 
@@ -95,7 +111,7 @@ const base = css`
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    ul {
+    .navList {
       grid-column: 10 / span 3;
     }
 
@@ -152,7 +168,7 @@ const base = css`
       grid-row: 3;
     }
 
-    ul {
+    .navList {
       grid-column: 1 / span 4;
       grid-row: 5;
       margin-top: 0.1875rem;

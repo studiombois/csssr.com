@@ -73,7 +73,7 @@ export default [
     id: 'tracker',
     title: 'main:projects.tracker.title',
     description: 'main:projects.tracker.description',
-    href: 'https://worklogtracker.com/',
+    href: 'https://tracker.csssr.com/',
     images: trackerImages,
     fallback: tracker_desktop_l,
   },

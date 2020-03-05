@@ -1049,10 +1049,10 @@
     emotion-theming "^10.0.10"
     ramda "^0.26.1"
 
-"@csssr/csssr-amo@^1.1.4":
-  version "1.1.4"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/1.1.4/3bc010dd181338780cfe1e2701db32287cde12427e8e0ee5513993b640493445#09d66e5d11235ece08073b8543796c363f38c5fd"
-  integrity sha512-IpXgfHDXw2oOpHX2aHwfJSgcNKT5S3NbzcXxTyC48Hb12UPpQ4Mfacf9gzgO+Wo37lGPf8MLOu7q3tQx5xrp2Q==
+"@csssr/csssr-amo@^3.1.0":
+  version "3.1.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/3.1.0/766fa6ac8815bd59c0acc49a3bcb0b8efbb1a10c4027353822f995c4080bde3e#b831f80c3a846269d73e07c53a1c5f2a9b39da01"
+  integrity sha512-TR5z+rFROFvj0HgF/Itt9R7MvcLwq9ym/fCs1Q4NkZSpF1wlpVqpzbBVH9Ueobh0mB/cE7Bqik+BvEmvMlTW7Q==
   dependencies:
     isomorphic-unfetch "^3.0.0"
 

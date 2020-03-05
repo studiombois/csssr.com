@@ -159,6 +159,11 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       -ms-grid-column-span: ${getGridValueForMs(5)};
       -ms-grid-row: 2;
     }
+
+    .figures {
+      -ms-grid-column: ${getGridValueForMs(6)};
+      -ms-grid-column-span: ${getGridValueForMs(2)};
+    }
   }
 
   ${tablet.all} {
@@ -207,6 +212,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints })}
-    ${props.isIe11 && ie11Styles()}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

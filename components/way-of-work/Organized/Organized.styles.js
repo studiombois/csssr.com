@@ -289,31 +289,162 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
 
 `
 
-const ie11Styles = () => css`
+const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
 
   .header {
     -ms-grid-column: ${getGridValueForMs(1)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 1;
   }
 
   .skydiverWrap {
-    -ms-grid-column: ${getGridValueForMs(8)};
+    -ms-grid-column: ${getGridValueForMs(3)};
     -ms-grid-column-span: ${getGridValueForMs(4)};
+    -ms-grid-row: 2;
   }
 
-  .skydiversWrap {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
-  }
-
-  .textWrap {
-    -ms-grid-column: ${getGridValueForMs(7)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
+  .textWrap{
+    -ms-grid-column: ${getGridValueForMs(1)};
+    -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 3;
   }
 
   .footer {
-    -ms-grid-column: ${getGridValueForMs(4)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
+    -ms-grid-column: ${getGridValueForMs(1)};
+    -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 4;
+  }
+
+  .skydiversWrap  {
+    -ms-grid-column: ${getGridValueForMs(1)};
+    -ms-grid-column-span: ${getGridValueForMs(4)};
+    -ms-grid-row: 5;
+  }
+
+  ${tablet.all} {
+    .header {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 1;
+    }
+
+    .skydiverWrap {
+      -ms-grid-column: ${getGridValueForMs(8)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+      -ms-grid-row: 1;
+    }
+
+    .textWrap {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .skydiversWrap {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .footer {
+      -ms-grid-column: ${getGridValueForMs(4)};
+      -ms-grid-column-span: ${getGridValueForMs(7)};
+      -ms-grid-row: 3;
+    }
+  }
+
+  ${desktop.s} {
+    .header {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 1;
+    }
+
+    .skydiverWrap {
+      -ms-grid-column: ${getGridValueForMs(8)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+      -ms-grid-row: 1;
+    }
+
+    .textWrap {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .skydiversWrap {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .footer {
+      -ms-grid-column: ${getGridValueForMs(4)};
+      -ms-grid-column-span: ${getGridValueForMs(7)};
+      -ms-grid-row: 3;
+    }
+  }
+
+  ${desktop.m} {
+    .header {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+    }
+
+    .skydiverWrap {
+      -ms-grid-column: ${getGridValueForMs(8)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+      -ms-grid-row: 1;
+    }
+
+    .textWrap {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .skydiversWrap {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .footer {
+      -ms-grid-column: ${getGridValueForMs(4)};
+      -ms-grid-column-span: ${getGridValueForMs(7)};
+      -ms-grid-row: 3;
+    }
+  }
+
+  ${desktop.l} {
+    .header {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+    }
+
+    .skydiverWrap {
+      -ms-grid-column: ${getGridValueForMs(8)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+      -ms-grid-row: 1;
+    }
+
+    .textWrap {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .skydiversWrap {
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 2;
+    }
+
+    .footer {
+      -ms-grid-column: ${getGridValueForMs(4)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 3;
+    }
   }
 `
 
@@ -322,6 +453,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints })}
-    ${props.isIe11 && ie11Styles()}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

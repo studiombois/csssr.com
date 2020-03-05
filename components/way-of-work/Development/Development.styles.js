@@ -357,39 +357,47 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .scrumbanSubHeading {
-      -ms-grid-column: ${getGridValueForMs(1)};
-      -ms-grid-column-span: ${getGridValueForMs(6)};
-      -ms-grid-row: 4;
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 3;
+    }
+
+    .scrumbanImg {
+      -ms-grid-column: ${getGridValueForMs(8)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 3;
     }
 
     .scrumbanTextWrap {
-      -ms-grid-column: ${getGridValueForMs(1)};
-      -ms-grid-column-span: ${getGridValueForMs(6)};
-      -ms-grid-row: 5;
-    }
-
-    .reviewImg {
-      -ms-grid-column: ${getGridValueForMs(1)};
-      -ms-grid-column-span: ${getGridValueForMs(6)};
-      -ms-grid-row: 6;
+      -ms-grid-column: ${getGridValueForMs(3)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 4;
     }
 
     .reviewTitle {
-      -ms-grid-column: ${getGridValueForMs(1)};
-      -ms-grid-column-span: ${getGridValueForMs(6)};
-      -ms-grid-row: 7;
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(3)};
+      -ms-grid-row: 5;
     }
 
     .reviewSubHeading {
-      -ms-grid-column: ${getGridValueForMs(1)};
-      -ms-grid-column-span: ${getGridValueForMs(6)};
-      -ms-grid-row: 8;
+      -ms-grid-column: ${getGridValueForMs(2)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+      -ms-grid-row: 6;
     }
 
     .reviewText {
-      -ms-grid-column: ${getGridValueForMs(1)};
+      -ms-grid-column: ${getGridValueForMs(3)};
+      -ms-grid-column-span: ${getGridValueForMs(7)};
+      -ms-grid-row: 7;
+    }
+
+    .reviewImg {
+      -ms-grid-column: ${getGridValueForMs(6)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
-      -ms-grid-row: 9;
+      -ms-grid-row: 5;
+      -ms-grid-row-span: 3;
     }
   }
 
@@ -482,6 +490,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints })}
-    ${props.isIe11 && ie11Styles()}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

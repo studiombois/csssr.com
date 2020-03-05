@@ -266,6 +266,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 `
 
 const ie11Styles = ({ breakpoints: { mobile }}) => css`
+  & {
+    position: relative;
+  }
+
   .title_main {
     -ms-grid-column: ${getGridValueForMs(3)};
     -ms-grid-column-span: ${getGridValueForMs(8)};

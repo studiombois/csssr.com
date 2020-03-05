@@ -5,7 +5,6 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(352)};
-    margin-bottom: ${calcRem(343)};
   }
 
   .heading {
@@ -81,7 +80,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${desktop.m} {
     & {
       margin-top: ${calcRem(307)};
-      margin-bottom: ${calcRem(309)};
     }
 
     .heading {
@@ -109,7 +107,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${desktop.s} {
     & {
       margin-top: ${calcRem(312)};
-      margin-bottom: ${calcRem(309)};
     }
 
     .first-item.card,
@@ -131,7 +128,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${tablet.all} {
     & {
       margin-top: ${calcRem(215)};
-      margin-bottom: ${calcRem(215)};
     }
 
     .sub-heading {
@@ -168,7 +164,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${mobile.all} {
     & {
       margin-top: ${calcRem(143)};
-      margin-bottom: ${calcRem(138)};
     }
 
     .heading,

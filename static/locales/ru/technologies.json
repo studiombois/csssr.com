@@ -23,14 +23,15 @@
     "kotlin": "на&nbsp;этих языках мы&nbsp;разрабатываем бэкенд для наших клиентов. Можем писать на&nbsp;проверенном временем Java, но&nbsp;предпочитаем Kotlin&nbsp;&mdash; современный язык, работающий на&nbsp;JVM (Java Virtual Machine)."
   },
   "form": {
-    "title": "Давайте поговорим",
-    "subTitle": "пожалуйста, предоставьте свои контактные данные, и мы ответим в ближайшее время",
-    "namePlaceholder": "Джон Ленин",
-    "emailPlaceholder": "lenin@gmail.com",
-    "messagePlaceholder": "Коментарий",
+    "title": "Давайте пообщаемся",
+    "namePlaceholder": "Тим Бернерс-Ли",
+    "phonePlaceholder": "+7-987-654-32-10",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "Чем мы могли бы помочь вам?",
     "messageLabel": "коментарий",
     "emailLabel": "E-mail",
-    "nameLabel": "Ваше Имя",
+    "phoneLabel": "Телефон",
+    "nameLabel": "Имя",
     "submitText": "Отправить"
   },
   "imageAlt": {

@@ -5,9 +5,6 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
-    & {
-      margin-bottom: ${calcRem(168)};
-    }
 
     .heading {
       grid-column: 1 / span 4;
@@ -31,10 +28,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${tablet.all} {
-    & {
-      padding-bottom: ${calcRem(200)};
-    }
-
     .heading {
       grid-column: 3 / span 5;
       grid-row: 1;
@@ -88,10 +81,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.all} {
-    & {
-      padding-bottom: ${calcRem(320)};
-    }
-
     .heading {
       grid-column: 3 / span 6;
       grid-row: 1;

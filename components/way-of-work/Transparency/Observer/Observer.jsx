@@ -13,12 +13,13 @@ const Observer = ({ children, name, handleActive, className }) => {
       rootMargin: '-5% 0px',
       threshold: 1,
     }
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(callback, options)
+      observer.observe(itemRef.current)
 
-    const observer = new IntersectionObserver(callback, options)
-    observer.observe(itemRef.current)
-
-    return () => {
-      observer.disconnect()
+      return () => {
+        observer.disconnect()
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

@@ -196,7 +196,7 @@ export const devLine = css`
 
   #main {
     background-size: 1920px 640px;
-    background-position: 50% 24rem;
+    background-position: 50% 18rem;
     background-repeat: repeat-x;
   }
 

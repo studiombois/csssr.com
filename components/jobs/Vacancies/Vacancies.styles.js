@@ -56,7 +56,6 @@ const base = css`
     background-position: 50%;
     background-size: auto 100%;
     overflow: hidden;
-    z-index: -1;
   }
 
   .hunter-text {

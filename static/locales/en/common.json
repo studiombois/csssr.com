@@ -89,7 +89,7 @@
     "howWeWork": {
       "title": "How we work",
       "technologies": "Technology Stack",
-      "processes": "Our Process",
+      "processes": "Process",
       "coreValues": "Core values"
     },
     "company": {
@@ -108,7 +108,7 @@
       },
       "russia": {
         "title": "Offices",
-        "address": "Letnikovskaya str, 2/3, P.O. box 33</br>Mosсow, 115114, Russia",
+        "address": "Letnikovskaya str, 2 str. 3, a/ya 33</br>Mosсow, 115114, Russia",
         "phone": "+7 (499) 113-16-17"
       },
       "estonia": {

@@ -7,6 +7,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     padding-top: ${calcRem(55)};
     height: 100%;
     display: flex;
+    justify-content: space-between;
   }
 
   .title {
@@ -18,36 +19,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-right: 69px;
       width: 636px;
     }
-
-    .nav-item:nth-of-type(1) {
-      margin-right: 90px;
-    }
-
-    .nav-item:nth-of-type(2) {
-      margin-right: auto;
-    }
-
-    .nav-item:nth-of-type(3) {
-      margin-right: 76px;
-    }
   }
 
   ${tablet.all} {
     & {
       margin-right: ${calcRem(9)};
       width: ${calcRem(543)};
-    }
-
-    .nav-item:nth-of-type(1) {
-      margin-right: ${calcRem(66)};
-    }
-
-    .nav-item:nth-of-type(2) {
-      margin-right: auto;
-    }
-
-    .nav-item:nth-of-type(3) {
-      margin-right: ${calcRem(36)};
     }
   }
 

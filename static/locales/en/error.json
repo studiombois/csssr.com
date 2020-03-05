@@ -6,7 +6,7 @@
   "errors": {
     "notFound": {
       "title": "Not found",
-      "subtitle": "Learn our&nbsp;sections"
+      "subtitle": "Explore other pages"
     },
     "serverError": {
       "title": "Server Error",

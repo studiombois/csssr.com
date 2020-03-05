@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { string, func } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Calculator.styles'
 import CalculatorForm from './CalculatorForm'
@@ -26,6 +26,7 @@ const Calculator = ({ className, t }) => (
 
 Calculator.propTypes = {
   className: string,
+  t: func,
 }
 
 export default translate()(styled(Calculator)`

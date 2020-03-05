@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { string, oneOf, node } from 'prop-types'
+import { string, oneOf, node, object } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Note.styles'
 import Text from '../../../../ui-kit/core-design/Text'
@@ -17,6 +17,7 @@ const OriginNote = ({ className, children, dangerouslySetInnerHTML }) => {
 OriginNote.propTypes = {
   className: string,
   children: node,
+  dangerouslySetInnerHTML: object,
   colorTheme: oneOf(['primary', '']),
 }
 

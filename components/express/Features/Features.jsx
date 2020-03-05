@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { string } from 'prop-types'
+import { string, func } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Features.styles'
 import FeatureItem from './FeatureItem'
@@ -66,6 +66,7 @@ const Features = ({ className, t }) => (
 
 Features.propTypes = {
   className: string,
+  t: func,
 }
 
 export default translate()(styled(Features)`

@@ -3,7 +3,7 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 export default {
   base: props => css`
-    margin-bottom: 0rem;
+    margin-bottom: 0;
 
     .greeting_heading,
     .greeting_subheading {
@@ -42,7 +42,7 @@ export default {
     return (
       props.isIe11 &&
       css`
-        margin-bottom: 0rem;
+        margin-bottom: 0;
         -ms-grid-row: auto auto;
 
         .greeting_heading,

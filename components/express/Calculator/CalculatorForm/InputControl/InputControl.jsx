@@ -61,7 +61,6 @@ OriginInputControl.propTypes = {
   label: string,
   maxLength: string,
   onChange: func,
-  input: object,
   testidInput: string,
   testidBtnIncrement: string,
   testidBtnDecrement: string,

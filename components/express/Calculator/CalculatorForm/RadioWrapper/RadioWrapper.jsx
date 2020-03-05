@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { string } from 'prop-types'
+import { string, func } from 'prop-types'
 import { Field } from 'react-final-form'
 import styles from './RadioWrapper.styles'
 
@@ -52,6 +52,7 @@ const RadioWrapper = ({ className, whatGroup, t }) => {
 RadioWrapper.propTypes = {
   className: string,
   whatGroup: string,
+  t: func,
 }
 
 export default translate()(styled(RadioWrapper)`

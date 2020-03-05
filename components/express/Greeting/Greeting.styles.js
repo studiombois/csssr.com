@@ -146,8 +146,6 @@ export default {
         }
       }
 
-
-
       .button {
         margin-bottom: 2.5rem;
       }

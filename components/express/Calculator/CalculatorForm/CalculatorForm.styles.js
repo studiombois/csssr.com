@@ -304,7 +304,7 @@ export default {
         font-weight: bold;
         box-sizing: border-box;
         color: ${colors.primary.origin};
-        background: transparent;
+        background-color: transparent;
         border: none;
         text-align: right;
 

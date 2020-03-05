@@ -11,6 +11,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     display: flex;
     width: 100%;
     height: ${calcRem(344)};
+    background-color: white;
   }
 
   ${desktop.all} {

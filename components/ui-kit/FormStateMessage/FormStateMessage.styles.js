@@ -7,7 +7,7 @@ const base = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 31.5rem;
+    height: auto;
     transform: scale(0);
     transition: transform 0.3s ease-out;
   }
@@ -30,7 +30,7 @@ const base = css`
 
   @media (max-width: 767px) {
     &.body {
-      height: 28rem;
+      height: auto;
     }
 
     .text {

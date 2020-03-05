@@ -142,14 +142,15 @@
     }
   },
   "form": {
-    "title": "Давайте поговорим",
-    "subTitle": "пожалуйста, предоставьте свои контактные данные, и мы ответим в ближайшее время",
-    "namePlaceholder": "Джон Ленин",
-    "emailPlaceholder": "lenin@gmail.com",
-    "messagePlaceholder": "Коментарий",
+    "title": "Давайте пообщаемся",
+    "namePlaceholder": "Тим Бернерс-Ли",
+    "phonePlaceholder": "+7-987-654-32-10",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "Чем мы могли бы помочь вам?",
     "messageLabel": "коментарий",
     "emailLabel": "E-mail",
-    "nameLabel": "Ваше Имя",
-    "submitText": "ОТПРАВИТЬ"
+    "phoneLabel": "Телефон",
+    "nameLabel": "Имя",
+    "submitText": "Отправить"
   }
 }

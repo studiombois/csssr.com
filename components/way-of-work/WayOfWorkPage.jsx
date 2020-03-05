@@ -7,6 +7,7 @@ import Greeting from './Greeting'
 import Organized from './Organized'
 import Development from './Development'
 import Transparency from './Transparency'
+import Form from './Form'
 
 const WayOfWork = ({ t }) => {
   return (
@@ -20,6 +21,8 @@ const WayOfWork = ({ t }) => {
       <Development />
 
       <Transparency />
+
+      <Form pageName="wayOfWork" />
     </Layout>
   )
 }

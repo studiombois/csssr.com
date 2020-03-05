@@ -143,13 +143,14 @@
   },
   "form": {
     "title": "Let’s Talk",
-    "subTitle": "please provide your contact details and we will respond&nbsp;shortly",
-    "namePlaceholder": "Jhon Lenin",
-    "emailPlaceholder": "lenin@gmail.com",
-    "messagePlaceholder": "Comment",
+    "namePlaceholder": "Tim Berners-Lee",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "How can we help?",
     "messageLabel": "comment",
     "emailLabel": "E-mail",
-    "nameLabel": "YOUR NAME",
-    "submitText": "SEND"
+    "phoneLabel": "Phone",
+    "nameLabel": "Name",
+    "submitText": "Submit"
   }
 }

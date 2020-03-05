@@ -51,17 +51,17 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
       >
         <PictureForAllResolutions
           className={cn('picture', 'picture_love')}
-          images={images.love}
-          fallback={images.love['desktop.all'].png}
+          images={lng === 'ru' ? images.love_ru : images.love_en}
+          fallback={lng === 'ru' ? images.love_ru['desktop.all'].png : images.love_en['desktop.all'].png}
           alt={t('main:imageAlt.aboutUs')}
         />
 
-        <Picture
+        {/* <Picture
           className={cn('picture', 'picture_volleyball')}
           images={images.volleyball}
           fallback={images.volleyball.jpg}
           alt={t('main:imageAlt.volleyball')}
-        />
+        /> */}
 
         <Picture
           className={cn('picture', 'picture_elbrus')}

@@ -103,17 +103,6 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
         </div>
       ))}
 
-      <Link
-        className="link"
-        href={`${lng}/about-us`}
-        type="list"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: t('main:aboutUs.link') }}
-        onMouseOver={handleHover('volleyball')}
-        onMouseLeave={handleHover(null)}
-        isNextLink
-      />
-
       <Global styles={loveBackgroundImagesStyles} />
     </Grid>
   )

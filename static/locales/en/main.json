@@ -1,61 +1,61 @@
 {
   "meta": {
     "title": "We Code for Good",
-    "description": "We&nbsp;are an&nbsp;international&nbsp;IT company that specializes in&nbsp;front-end web development service and dreams of&nbsp;the stars."
+    "description": "We&rsquo;re an&nbsp;international&nbsp;IT company that specializes in&nbsp;front-end web development services to&nbsp;help our clients build reliable web solutions."
   },
   "hero": {
     "title": "We Code for Good",
-    "description": "We&nbsp;are an&nbsp;international&nbsp;IT company that specializes in&nbsp;<span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> web development service and dreams of&nbsp;the stars."
+    "description": "We&rsquo;re an&nbsp;international&nbsp;IT company that specializes in&nbsp;<span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> web development services to&nbsp;help our clients build reliable web solutions."
   },
   "services": {
-    "title": "We&nbsp;Create Web Services<br />for Millions to&nbsp;Use",
-    "link": "more",
+    "title": "We&nbsp;Create Web Services for Millions",
+    "link": "More",
     "outsourcing": {
       "title": "<span style=\"font-weight: bold;\">Outsourcing</span><span style=\"white-space: nowrap; display: block;\">Front-end</span>",
-      "subtitle": "Front-end development for large companies"
+      "subtitle": "Web development to&nbsp;complement core competencies."
     },
     "express": {
       "title": "<span style=\"font-weight: bold;\">Express</span> Front-end",
-      "subtitle": "Fixed-cost service for fast web projects"
+      "subtitle": "Fixed rates for straight-forward, time-sensitive services."
     },
     "mvp": {
       "title": "<span style=\"font-weight: bold;\">MVP</span> Development",
-      "subtitle": "Only essential functionality to&nbsp;test business ideas"
+      "subtitle": "Development of&nbsp;core functionality for testing purposes."
     },
     "ourFeatures": {
       "feature1": {
-        "text": "It&nbsp;is&nbsp;attention to&nbsp;detail and well-established processes that makes the difference between average and successful projects.",
+        "text": "We&nbsp;believe attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average.",
         "link": "Read about processes"
       },
       "feature2": {
-        "text": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tool. We&nbsp;keep a&nbsp;close eye on&nbsp;emerging web development trends, but do&nbsp;not forget about best practices",
+        "text": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tools. We&nbsp;keep a&nbsp;careful eye on&nbsp;emerging web development trends and never compromise best practice.",
         "link": "Read about technologies"
       }
     }
   },
   "industries": {
     "title": "Industries",
-    "subtitle": "We&nbsp;work for a&nbsp;wide range of&nbsp;industries to&nbsp;help them achieve their goals",
+    "subtitle": "We&nbsp;take a&nbsp;goal-oriented approach across a&nbsp;wide range of&nbsp;industries",
     "fintech": {
       "title": "Fintech",
-      "description": "We&nbsp;built a&nbsp;strong digital presence for financial and banking services"
+      "description": "We&rsquo;ve built a&nbsp;strong digital presence for many banking and financial services."
     },
     "eCommerce": {
-      "title": "eCommerce Development",
-      "description": "We&nbsp;help highly competitive e-commerce industry to&nbsp;win every client"
+      "title": "E-Commerce",
+      "description": "We&nbsp;help our clients in&nbsp;the highly competitive e-commerce industry win each new customer."
     },
     "information": {
       "title": "Information Technology",
-      "description": "We&nbsp;drive IT-companies to&nbsp;the edge of&nbsp;technological progress"
+      "description": "We&nbsp;push IT-companies to&nbsp;the cutting edge of&nbsp;technological progress."
     },
     "mediaAndMarketing": {
-      "title": "Media and Marketing",
-      "description": "We&nbsp;deliver a&nbsp;high-quality viewer experience with zero-fault approach"
+      "title": "Media &amp;&nbsp;Marketing",
+      "description": "We&nbsp;deliver high-quality experiences capable of&nbsp;handling large-scale data and any scale of&nbsp;concurrent users."
     }
   },
   "aboutUs": {
     "title": "We&nbsp;Really Love<br />What We",
-    "description": "CSSSR.Pte.Ltd is&nbsp;a&nbsp;group of&nbsp;companies. Headquartered in&nbsp;Singapore, we&nbsp;work in&nbsp;a&nbsp;fully distributed way, which helps&nbsp;us to&nbsp;make projects better and stay happy",
+    "description": "Headquartered in&nbsp;Singapore, CSSSR is&nbsp;a&nbsp;group of&nbsp;companies that brings together top talent based around the globe to&nbsp;produce the highest quality results.",
     "fact1": {
       "title": "2012",
       "description": "year of&nbsp;foundation"
@@ -76,18 +76,18 @@
     "link": "Read more"
   },
   "projects": {
-    "title": "Our projects",
+    "title": "Our Other Projects",
     "tracker": {
       "title": "CSSSR.Tracker",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков."
+      "description": "We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give it&nbsp;a&nbsp;try."
     },
     "school": {
       "title": "CSSSR.School",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков."
+      "description": "A&nbsp;front-end e-learning platform developed by&nbsp;CSSSR. Currently available only in&nbsp;Russian language."
     },
     "blog": {
       "title": "CSSSR.Blog",
-      "description": "Здесь нет менеджеров, фронтенд-разработчиков и&nbsp;тестировщиков.",
+      "description": "Our thoughts about web development, business processes and remote culture.",
       "post1": {
         "title": "10&nbsp;Tips and Best Practices for Accurately Estimating Tasks",
         "description": "How do&nbsp;you stop guessing and start progressing: through trial and error, we&nbsp;have created a&nbsp;set of&nbsp;rules to&nbsp;improve the accuracy of&nbsp;estimates.",
@@ -101,7 +101,7 @@
     }
   },
   "vacancies": {
-    "title": "Ready to&nbsp;<span style=\"font-style: italic; font-weight: normal;\">join our team</span> and and enjoy all the benefits of&nbsp;remote work on&nbsp;a&nbsp;full-time basis?",
+    "title": "Ready to&nbsp;<span style=\"font-style: italic; font-weight: normal;\">join our team</span> and enjoy all the benefits of&nbsp;remote work on&nbsp;a&nbsp;full-time basis?",
     "link": "All our vacancies"
   },
   "imageAlt": {

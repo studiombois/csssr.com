@@ -109,10 +109,10 @@ export const nav = [
   {
     id: 'company',
     links: [
-      {
-        id: 'aboutUs',
-        href: 'about-us',
-      },
+      // {
+      //   id: 'aboutUs',
+      //   href: 'about-us',
+      // },
       {
         id: 'careers',
         href: 'careers',

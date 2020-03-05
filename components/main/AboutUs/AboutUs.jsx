@@ -103,7 +103,7 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
         </div>
       ))}
 
-      <Link
+      {/* <Link
         className="link"
         href={`${lng}/about-us`}
         type="list"
@@ -112,7 +112,7 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
         onMouseOver={handleHover('volleyball')}
         onMouseLeave={handleHover(null)}
         isNextLink
-      />
+      /> */}
 
       <Global styles={loveBackgroundImagesStyles} />
     </Grid>

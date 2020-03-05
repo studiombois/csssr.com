@@ -8,7 +8,6 @@ import Feature2 from '../../components/dev/Feature2'
 import Clients from '../../components/dev/Clients'
 import Portfolio from '../../components/dev/Portfolio'
 import Layout from '../../components/Layout'
-import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
 import withI18next from '../../utils/withI18next'
 import shuffleArray from '../../utils/shuffleArray'
 import portfolio from '../../data/dev/portfolio'
@@ -55,13 +54,6 @@ class Dev extends PureComponent {
           image={{ namespace: 'dev', key: 'perfect', alt: t('dev:imgAlt.perfect') }}
         />
         <Form />
-        <ButtonSelect
-          isMobile={isMobile}
-          showButtonOnNode="feature1"
-          hideButtonOnNode="hire-us"
-          buttonText={t('dev:hire.buttonText')}
-          pageName="dev"
-        />
       </Layout>
     )
   }

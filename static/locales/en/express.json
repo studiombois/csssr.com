@@ -110,12 +110,14 @@
   "form": {
     "title": "Let’s Talk",
     "namePlaceholder": "Tim Berners-Lee",
+    "phonePlaceholder": "+1-612-566-34-43",
     "emailPlaceholder": "name@example.com",
     "messagePlaceholder": "How can we help?",
     "messageLabel": "comment",
     "emailLabel": "E-mail",
-    "nameLabel": "Your name",
-    "submitText": "Send"
+    "phoneLabel": "Phone",
+    "nameLabel": "Name",
+    "submitText": "Submit"
   },
   "imageAlt": {
     "rocket": "A rocket pointed upward",

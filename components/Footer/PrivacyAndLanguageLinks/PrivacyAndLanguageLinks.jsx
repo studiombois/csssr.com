@@ -13,7 +13,7 @@ const PrivacyAndLanguageLinks = ({ className, lng, t }) => {
   return (
     <ul className={className}>
       <li>
-        <Link className="link" href={`/${lngToRedirect}`} isNextLink>
+        <Link className="link" href={`/${lngToRedirect}`}>
           <Text
             className="link-text"
             dangerouslySetInnerHTML={{ __html: lngToRedirect }}

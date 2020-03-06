@@ -14,7 +14,7 @@ const ContactFormForExpress = props => (
   <ContactForm
     imageName="letter"
     headerId="hire-us"
-    fields={['name', 'email', 'message']}
+    fields={['name', 'phone', 'email', 'message']}
     feedbackEmail="sales@csssr.io"
     {...props}
   />

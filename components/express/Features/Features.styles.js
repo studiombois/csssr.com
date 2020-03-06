@@ -7,30 +7,25 @@ export default {
     return css`
       padding-top: 2rem;
 
-      ${breakpoints.desktop.all} {
-        padding-bottom: 3rem;
-      }
-
       ${breakpoints.desktop.l} {
         padding: 0 14rem;
+        padding-bottom: 0;
         max-width: 1328px;
       }
 
       ${breakpoints.desktop.m} {
         padding: 0 14rem;
+        padding-bottom: 0;
       }
 
       ${breakpoints.desktop.s} {
         padding: 0 13rem;
+        padding-bottom: 0;
       }
 
       ${breakpoints.tablet.all} {
         padding: 0 10rem;
-        padding-bottom: 1rem;
-      }
-
-      ${breakpoints.mobile.all} {
-        padding-bottom: 0.5rem;
+        padding-bottom: 0;
       }
 
       .section_heading {

@@ -17,7 +17,7 @@ import translate from '../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const Header = ({ className, t, isIe11, isMobile, isButton }) => {
+const Header = ({ className, t, isIe11, isMobile, isButtonVisible }) => {
   let lastScrollTopValue = useRef(0)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
   const [isDropdownOpened, toggleDropdown] = useState(false)
@@ -69,7 +69,7 @@ const Header = ({ className, t, isIe11, isMobile, isButton }) => {
     <Fragment>
       <Menu />
       <Links />
-      {isButton && (
+      {isButtonVisible && (
         <ButtonLink
           href="#hire-us"
           kind="primary"
@@ -121,7 +121,7 @@ Header.propTypes = {
   isIe11: bool,
   isMobile: bool,
   t: func,
-  isButton: bool,
+  isButtonVisible: bool,
 }
 
 export default translate()(

@@ -4,6 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 export default {
   base: props => {
     const breakpoints = props.theme.breakpoints
+    const colors = props.theme.colors
 
     return css`
       padding-left: 14rem;
@@ -286,15 +287,17 @@ export default {
         }
       }
 
-      .button {
+      .wrapper a {
+        padding: 0 0.3125rem;
         display: inline-block;
+        height: auto;
+        width: auto;
         font-size: inherit;
         line-height: 1.75rem;
         font-weight: inherit;
         text-transform: none;
-        height: auto;
-        width: auto;
-        padding: 0 0.3125rem;
+        color: white;
+        background-color: ${colors.primary.origin};
       }
     `
   },

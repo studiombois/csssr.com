@@ -6,7 +6,7 @@ import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import Button from '../../ui-kit/core-design/ButtonLink'
+import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
@@ -44,9 +44,12 @@ const Greeting = ({
         className="image"
       />
 
-      <Button className="button" kind="primary">
-        {t(button)}
-      </Button>
+      <ButtonLink
+        href="#hire-us"
+        className="button"
+        kind="primary"
+        dangerouslySetInnerHTML={{ __html: t(button) }}
+      />
     </Grid>
   )
 }

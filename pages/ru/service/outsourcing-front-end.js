@@ -34,7 +34,7 @@ class Dev extends PureComponent {
           title={t('dev:meta.title')}
           description={t('dev:meta.description')}
           ogImage={{
-            url: require('../../static/images/dev/1920/dev@2x.png'),
+            url: require('../../../static/images/dev/1920/dev@2x.png'),
             width: 3840,
             height: 1280,
           }}

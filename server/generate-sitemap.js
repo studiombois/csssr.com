@@ -258,6 +258,41 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/service/outsourcing-front-end',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/service/outsourcing-front-end',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/service/outsourcing-front-end',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/service/outsourcing-front-end',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/service/outsourcing-front-end',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/service/outsourcing-front-end',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/service/express-front-end',
+    changefreq: 'yearly',
+    priority: 0.6,
+  },
+  {
     url: 'https://csssr.com/en/privacy-policy',
     changefreq: 'yearly',
     priority: 0.6,
@@ -321,6 +356,11 @@ const sitemapUrlsSettings = [
         url: 'https://csssr.com/ru/tech-stack',
       },
     ],
+  },
+  {
+    url: 'https://csssr.com/ru/jobs-faq',
+    changefreq: 'yearly',
+    priority: 0.6,
   },
   {
     url: 'https://csssr.com/ru/way-of-work',

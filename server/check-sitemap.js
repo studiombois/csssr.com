@@ -29,12 +29,6 @@ const walkSync = dir => {
         'https://csssr.com/fonts',
         'https://csssr.com/en/school',
         'https://csssr.com/ru/express',
-        /**
-         * убрать dev из исключений перед выпуском нового дизайна на прод
-         * или когда будет известен его url
-         * */
-        'https://csssr.com/en/dev',
-        'https://csssr.com/ru/dev',
       ].join(supportedLocales.map(locale => `https://csssr.com/${locale}/job`))
 
       if (excludedPagesUrls.includes(url)) {

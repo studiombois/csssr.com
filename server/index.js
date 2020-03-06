@@ -10,6 +10,7 @@ const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const { pick } = require('ramda')
 const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
+const submitCalculatorForm = require('./submit-calculator-form')
 const generateSitemap = require('./generate-sitemap').generateSitemap
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 
@@ -51,6 +52,7 @@ i18n
         'coreValues',
         'main',
         'technologies',
+        'express',
         'wayOfWork',
       ],
       detection: {
@@ -152,6 +154,7 @@ i18n
         )
 
         server.post('/api/submit-form', submitForm)
+        server.post('/api/submit-calculator-form', submitCalculatorForm)
 
         server.get('/', function(req, res) {
           const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)

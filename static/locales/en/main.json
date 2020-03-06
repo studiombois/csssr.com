@@ -16,7 +16,7 @@
     },
     "express": {
       "title": "<span style=\"font-weight: bold;\">Express</span> Front-end",
-      "subtitle": "Fixed rates for straight-forward, time-sensitive services."
+      "subtitle": "Fixed rates for straight-forward, <span style=\"white-space: nowrap;\">time-sensitive</span> services."
     },
     "mvp": {
       "title": "<span style=\"font-weight: bold;\">MVP</span> Development",

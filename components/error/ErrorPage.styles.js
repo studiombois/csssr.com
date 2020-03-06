@@ -10,7 +10,7 @@ const base = css`
     grid-column: 9 / span 4;
   }
 
-  a {
+  .logo {
     grid-column: 2 / span 2;
     margin-top: 5.25rem;
     width: 11.5rem;
@@ -39,7 +39,6 @@ const base = css`
     grid-row: 2;
   }
 
-
   .navList {
     grid-column: 10 / span 2;
     grid-row: 4;
@@ -49,7 +48,6 @@ const base = css`
   .menu {
     margin-bottom: 1rem;
   }
-
 
   .menu-item{
     font-family: 'Roboto', 'Arial', sans-serif;
@@ -148,7 +146,7 @@ const base = css`
       height: 8.9375rem;
     }
 
-    a {
+   .logo {
       grid-column: 1 / span 3;
       margin-top: 3.625rem;
       width: 10rem;
@@ -195,7 +193,7 @@ const base = css`
 `
 
 const ie11Styles = css`
-  a {
+.logo {
     display: block;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
@@ -207,13 +205,9 @@ const ie11Styles = css`
     -ms-grid-row: 1;
   }
 
-  h2,
-  ul {
+  h2{
     -ms-grid-column: ${getGridValueForMs(10)};
     -ms-grid-column-span: ${getGridValueForMs(2)};
-  }
-
-  h2 {
     -ms-grid-row: 2;
   }
 
@@ -222,9 +216,6 @@ const ie11Styles = css`
     -ms-grid-column-span: ${getGridValueForMs(4)};
   }
 
-  ul {
-    -ms-grid-row: 4;
-  }
 
   .code-wrapper {
     -ms-grid-column: ${getGridValueForMs(2)};
@@ -244,20 +235,22 @@ const ie11Styles = css`
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(7)};
     -ms-grid-row: 2;
-    -ms-grid-row-span: 10;
+    -ms-grid-row-span: 3;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    ul {
+    .navList {
       -ms-grid-column: ${getGridValueForMs(10)};
-      -ms-grid-column-span: ${getGridValueForMs(3)};
+      -ms-grid-column-span: ${getGridValueForMs(2)};
+      -ms-grid-row: 4;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    ul {
+    .navList {
       -ms-grid-column: ${getGridValueForMs(10)};
       -ms-grid-column-span: ${getGridValueForMs(3)};
+      -ms-grid-row: 4;
     }
 
     .arrow-wrapper {
@@ -268,9 +261,10 @@ const ie11Styles = css`
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    ul {
+    .navList {
       -ms-grid-column: ${getGridValueForMs(10)};
       -ms-grid-column-span: ${getGridValueForMs(3)};
+      -ms-grid-row: 4;
     }
   }
 `

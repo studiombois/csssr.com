@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react'
-import Head from '../../components/Head'
-import Form from '../../components/dev/Form'
-import Hire from '../../components/dev/Hire'
-import Feature1 from '../../components/dev/Feature1'
-import Competences from '../../components/dev/Competences'
-import Feature2 from '../../components/dev/Feature2'
-import Clients from '../../components/dev/Clients'
-import Portfolio from '../../components/dev/Portfolio'
-import Layout from '../../components/Layout'
-import ButtonSelect from '../../components/ui-kit/ButtonSelect/ButtonSelect'
-import withI18next from '../../utils/withI18next'
-import shuffleArray from '../../utils/shuffleArray'
-import portfolio from '../../data/dev/portfolio'
+import Head from '../../../components/Head'
+import Form from '../../../components/dev/Form'
+import Hire from '../../../components/dev/Hire'
+import Feature1 from '../../../components/dev/Feature1'
+import Competences from '../../../components/dev/Competences'
+import Feature2 from '../../../components/dev/Feature2'
+import Clients from '../../../components/dev/Clients'
+import Portfolio from '../../../components/dev/Portfolio'
+import Layout from '../../../components/Layout'
+import ButtonSelect from '../../../components/ui-kit/ButtonSelect/ButtonSelect'
+import withI18next from '../../../utils/withI18next'
+import shuffleArray from '../../../utils/shuffleArray'
+import portfolio from '../../../data/dev/portfolio'
 
 class Dev extends PureComponent {
   static async getInitialProps() {
@@ -34,7 +34,7 @@ class Dev extends PureComponent {
           title={t('dev:meta.title')}
           description={t('dev:meta.description')}
           ogImage={{
-            url: require('../../static/images/dev/1920/dev@2x.png'),
+            url: require('../../../static/images/dev/1920/dev@2x.png'),
             width: 3840,
             height: 1280,
           }}

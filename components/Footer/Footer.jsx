@@ -20,6 +20,12 @@ const Footer = ({ className, isMobile, t }) => {
   const footerRef = useRef()
 
   useEffect(() => {
+    if (isMobile) {
+      setDoubleBottomVisibility(true)
+
+      return
+    }
+
     const listener = () => {
       const { top, bottom, height } = footerRef.current.getBoundingClientRect()
 
@@ -34,7 +40,7 @@ const Footer = ({ className, isMobile, t }) => {
     return () => {
       window.removeEventListener('scroll', listener)
     }
-  })
+  }, [isMobile, IsDoubleBottomVisible])
 
   return (
     <footer className={className} ref={footerRef}>

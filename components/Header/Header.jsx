@@ -8,7 +8,7 @@ import styles from './Header.styles'
 
 import Menu from './Menu'
 import Links from './Links'
-import Button from '../ui-kit/core-design/Button'
+import ButtonLink from '../ui-kit/core-design/ButtonLink'
 import Logo from '../../static/icons/csssr_logo.svg'
 import Burger from '../../static/icons/header/burger.svg'
 import Cross from '../../static/icons/header/close.svg'
@@ -17,7 +17,7 @@ import translate from '../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const Header = ({ className, t, isIe11, isMobile }) => {
+const Header = ({ className, t, isIe11, isMobile, isButtonVisible }) => {
   let lastScrollTopValue = useRef(0)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
   const [isDropdownOpened, toggleDropdown] = useState(false)
@@ -60,15 +60,24 @@ const Header = ({ className, t, isIe11, isMobile }) => {
     }
   })
 
+  const handleClick = () => {
+    if (isMobile) toggleDropdown(false)
+  }
+
   const Icon = isDropdownOpened ? Cross : Burger
   const CommonHeaderContent = () => (
     <Fragment>
       <Menu />
       <Links />
-      <Button
-        className="button_action"
-        dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
-      />
+      {isButtonVisible && (
+        <ButtonLink
+          href="#hire-us"
+          kind="primary"
+          onClick={handleClick}
+          className="button_action"
+          dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+        />
+      )}
     </Fragment>
   )
 
@@ -112,6 +121,7 @@ Header.propTypes = {
   isIe11: bool,
   isMobile: bool,
   t: func,
+  isButtonVisible: bool,
 }
 
 export default translate()(

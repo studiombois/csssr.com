@@ -9,19 +9,21 @@ import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import CookiesPopup from '../CookiesPopup'
 
-const Layout = ({ children, isIe11 }) => {
-  const dynamicTag = isIe11 ? 'div' : 'main';
+const Layout = ({ children, isIe11, router: { asPath } }) => {
+  const dynamicTag = isIe11 ? 'div' : 'main'
+  const pathsNoButton = ['jobs', 'privacy-policy', 'cookies-policy']
+  const isButtonVisible = !pathsNoButton.some(string => asPath.indexOf(string) + 1)
   return (
     <Fragment>
-      <Header />
+      <Header isButtonVisible={isButtonVisible} />
       <Global styles={styles} />
       {isIe11 && <Global styles={ie11Styles} />}
 
       {React.createElement(dynamicTag, { id: 'main' }, children)}
-    <Footer />
-    <CookiesPopup />
-    <DevTools />
-  </Fragment>
+      <Footer />
+      <CookiesPopup />
+      <DevTools />
+    </Fragment>
   )
 }
 Layout.propTypes = {

@@ -16,7 +16,7 @@
     },
     "express": {
       "title": "<span style=\"font-weight: bold;\">Express</span> Front-end",
-      "subtitle": "Fixed rates for straight-forward, time-sensitive services."
+      "subtitle": "Fixed rates for straight-forward, <span style=\"white-space: nowrap;\">time-sensitive</span> services."
     },
     "mvp": {
       "title": "<span style=\"font-weight: bold;\">MVP</span> Development",
@@ -42,7 +42,7 @@
     },
     "eCommerce": {
       "title": "E-Commerce",
-      "description": "We&nbsp;help our clients in&nbsp;the highly competitive e-commerce industry win each new customer."
+      "description": "We&nbsp;help our clients in&nbsp;the highly competitive <span style=\"white-space: nowrap;\">e-commerce</span> industry win each new customer."
     },
     "information": {
       "title": "Information Technology",
@@ -71,7 +71,7 @@
     "fact4": {
       "title": "1",
       "hero": "flag",
-      "description": " on&nbsp;top of&nbsp;Elbrus is&nbsp;set"
+      "description": " planted atop Mt. Elbrus"
     },
     "link": "Read more"
   },

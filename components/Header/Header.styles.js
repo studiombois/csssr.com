@@ -37,7 +37,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   }
 
   .button_action {
-    margin-left: ${calcRem(25)};
     padding-left: ${calcRem(25)};
     padding-right: ${calcRem(25)};
     width: auto;
@@ -89,7 +88,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     }
 
     .button_action {
-      margin-left: 0;
       margin-top: auto;
       width: 100%;
       height: ${calcRem(64)};

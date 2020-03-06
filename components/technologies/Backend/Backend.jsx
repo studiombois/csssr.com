@@ -24,7 +24,7 @@ const Backend = ({ className, t, lng }) => (
     />
 
     <Heading className={cn('title', 'title_dbs')} as="h2" type="slab" size="m">
-      {`MongoDB ${lng === 'ru' ? 'или' : 'or'} PostgreSQL`}
+      {`MongoDB ${lng === 'ru' ? 'или' : '&'} PostgreSQL`}
     </Heading>
 
     <SubHeading
@@ -61,7 +61,7 @@ const Backend = ({ className, t, lng }) => (
     />
 
     <Heading className={cn('title', 'title_kotlin')} as="h2" type="regular" size="m">
-      Kotlin
+      {lng === 'ru' ? 'Бэкенд' : 'Back-end'}
     </Heading>
 
     <Text

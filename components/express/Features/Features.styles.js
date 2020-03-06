@@ -28,6 +28,11 @@ export default {
         padding-bottom: 0;
       }
 
+      ${breakpoints.mobile.all} {
+        padding-bottom: 0.5rem;
+        overflow-x: hidden;
+      }
+
       .section_heading {
         text-align: center;
 

@@ -3,7 +3,7 @@ import Head from '../Head'
 import Layout from '../Layout'
 import Begin from './Begin'
 import RiskMinimization from './RiskMinimization'
-import ButtonSelect from '../ui-kit/ButtonSelect/ButtonSelect'
+// import ButtonSelect from '../ui-kit/ButtonSelect/ButtonSelect'
 import Money from './Money'
 import Process from './Process'
 import HireUs from './HireUs'
@@ -31,7 +31,7 @@ class MVPPage extends PureComponent {
 
   render() {
     const { t } = this.props
-    const { isMobile } = this.state
+    // const { isMobile } = this.state
 
     return (
       <Layout>
@@ -49,13 +49,13 @@ class MVPPage extends PureComponent {
         <Money />
         <Process />
         <HireUs />
-        <ButtonSelect
+        {/* <ButtonSelect
           isMobile={isMobile}
           showButtonOnNode="advantages"
           hideButtonOnNode="hire-us"
           buttonText={t('mvp:buttonText')}
           pageName="mvp"
-        />
+        /> */}
       </Layout>
     )
   }

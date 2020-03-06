@@ -69,7 +69,7 @@ export default {
         }
 
         .radio-custom .radio-inner {
-          box-sizing: unset;
+          box-sizing: content-box;
           border: 0.3125rem solid #fff;
         }
       }

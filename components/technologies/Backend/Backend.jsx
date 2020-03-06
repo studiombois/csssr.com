@@ -61,7 +61,7 @@ const Backend = ({ className, t, lng }) => (
     />
 
     <Heading className={cn('title', 'title_kotlin')} as="h2" type="regular" size="m">
-      Kotlin
+      Бэкенд
     </Heading>
 
     <Text

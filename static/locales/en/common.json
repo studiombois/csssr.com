@@ -48,7 +48,7 @@
       "howWeWork": {
         "title": "How we work",
         "technologies": {
-          "title": "Technology Stack",
+          "title": "Technologies",
           "description": "We&nbsp;keep a&nbsp;careful eye on&nbsp;emerging web development trends and never compromise best practice."
         },
         "processes": {
@@ -108,7 +108,7 @@
       },
       "russia": {
         "title": "Offices",
-        "address": "Letnikovskaya str, 2 str. 3, a/ya 33</br>Mosсow, 115114, Russia",
+        "address": "Ul. Letnikovskaya, 2 str. 3, a/ya 33</br>Mosсow, 115114, Russia",
         "phone": "+7 (499) 113-16-17"
       },
       "estonia": {

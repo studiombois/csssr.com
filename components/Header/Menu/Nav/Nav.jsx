@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { string, func, bool } from 'prop-types'
 import cn from 'classnames'
 import Fade from 'react-reveal/Fade'
@@ -14,6 +14,7 @@ import headerLinks from '../../../../data/headerLinks'
 
 import translate from '../../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 const { menu } = headerLinks
 const Nav = ({
@@ -22,9 +23,11 @@ const Nav = ({
   animationDirection,
   onBackButtonClick,
   isMobile,
+  isIe11,
   t,
   lng,
 }) => {
+  const Wrapper = isIe11 ? Fragment : Fade
   const animationProps = isMobile
     ? {
         right: true,
@@ -62,7 +65,7 @@ const Nav = ({
                 }
 
                 return (
-                  <Fade key={id} {...animationProps}>
+                  <Wrapper key={id} {...animationProps}>
                     <li className="nav-item">
                       <Link className="link" href={`/${lng}/${href}`} isNextLink>
                         <Icon className="icon" />
@@ -88,7 +91,7 @@ const Nav = ({
                         )}
                       </Link>
                     </li>
-                  </Fade>
+                  </Wrapper>
                 )
               })}
         </ul>
@@ -103,12 +106,15 @@ Nav.propTypes = {
   animationDirection: string,
   onBackButtonClick: func,
   isMobile: bool,
+  isIe11: bool,
   lng: string,
   t: func,
 }
 
 export default translate()(
-  DeviceConsumer(styled(Nav)`
-    ${styles}
-  `),
+  MsBrowserConsumer(
+    DeviceConsumer(styled(Nav)`
+      ${styles}
+    `),
+  ),
 )

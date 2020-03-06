@@ -17,30 +17,30 @@
   "detailValue": {
     "cleanCode": {
       "title": "Clean Code",
-      "subTitle": "A&nbsp;good code is&nbsp;a&nbsp;clean code. What matters is&nbsp;not only what the code does, but also how it&nbsp;looks",
-      "text": "Clean and clear code makes it&nbsp;easy to&nbsp;support, quickly add new functionality and make changes with less costs. A&nbsp;messy code with a&nbsp;high complexity brings a&nbsp;lot of&nbsp;problems to&nbsp;the team, reduces productivity, and makes the life of&nbsp;those who will work with it&nbsp;later much more complicated.",
-      "text_2": "Whether we&nbsp;are working on&nbsp;a&nbsp;large project that has started long before&nbsp;us and will continue to&nbsp;exist after, or&nbsp;launching a&nbsp;completely new product, we&nbsp;are particularly mindful of&nbsp;putting things in&nbsp;order. Regular code reviews and capturing the best practices help&nbsp;us do&nbsp;this."
+      "subTitle": "Clean code is&nbsp;good code. It&rsquo;s important not just what the code does, but also how it&nbsp;looks.",
+      "text": "Clean and clear code makes it&nbsp;easy to&nbsp;support, quickly add new functionality and make changes at&nbsp;lower costs. Messy, overly complex code causes problems for teams, reduces productivity, and makes the lives of&nbsp;those who work with it&nbsp;later much more complicated.",
+      "text_2": "Whether we&nbsp;are working on&nbsp;a&nbsp;large-scale project that started long before we&nbsp;were involved or&nbsp;are launching a&nbsp;completely new product, we&nbsp;are mindful of&nbsp;putting things in&nbsp;good order. Regular code reviews and technical debt management help&nbsp;us achieve this."
     },
     "reliability": {
       "title": "Reliability",
-      "subTitle": "We&nbsp;care about our clients&rsquo; reputation and therefore we&nbsp;pay special attention to&nbsp;the testing",
-      "text": "Having QA-specialists in&nbsp;each team ensures a&nbsp;normal development process. We&nbsp;apply auto-tests, unit-tests, integration and manual testing depending on&nbsp;project needs. Our QA&nbsp;engineers help&nbsp;us minimize the risk of&nbsp;errors occurring in&nbsp;the final product. And knowing that our code is&nbsp;tested and reliable, we&nbsp;can safely develop new features if&nbsp;necessary, and be&nbsp;certain that the already existing code will not be&nbsp;surprisingly affected."
+      "subTitle": "We&nbsp;care about final product quality and the reputations of&nbsp;our clients, so&nbsp;we&nbsp;pay special attention to&nbsp;testing.",
+      "text": "We&nbsp;have&nbsp;QA specialists on&nbsp;each team to&nbsp;ensure a&nbsp;strong development process and minimize the risk of&nbsp;errors in&nbsp;the final product. We&nbsp;apply manual testing and, depending on&nbsp;project needs, automatic tests: end-to-end, unit, and integration testing. Knowing that our code is&nbsp;tested and reliable, we&nbsp;can be&nbsp;sure it&nbsp;will work perfectly and can be&nbsp;easily supported later."
     },
     "accessibility": {
       "title": "Accessibility",
-      "subTitle": "Do&nbsp;you know how many users have special needs when using the Internet?",
-      "text": "A&nbsp;web site designed without applying accessibility principles may lose up&nbsp;to&nbsp;15% of&nbsp;its audience. Every page and every block should not only be&nbsp;well written, so&nbsp;that only developers can appreciate&nbsp;it, but first of&nbsp;all, should be&nbsp;well delivered, so&nbsp;that every user can enjoy it&nbsp;on&nbsp;every level. We&nbsp;care.",
-      "text_2": "By&nbsp;dividing the site into functional blocks and working with tags, we&nbsp;provide equal access to&nbsp;your product for everybody."
+      "subTitle": "More Internet users have special needs than most people are aware&nbsp;of.",
+      "text": "A&nbsp;website designed without applying accessibility principles could lose up&nbsp;to&nbsp;15% of&nbsp;its audience. Each page and block should be&nbsp;appropriately delivered, so&nbsp;that every user can enjoy&nbsp;it.",
+      "text_2": "We&nbsp;employ web accessibility standards, including but not limited to&nbsp;writing text alternatives for non-text content and making all functionality available from a&nbsp;keyboard."
     },
     "ux": {
       "title": "UX",
-      "subTitle": "We&nbsp;understand how important little things in&nbsp;design are, and we&nbsp;can do&nbsp;pixel-perfect development",
-      "text": "But we&nbsp;never forget about user-friendliness. Developing your designs we&nbsp;are basically the first users of&nbsp;your product, so&nbsp;we&nbsp;are not just blindly executing but always care and draw your attention to&nbsp;the things that can affect the product in&nbsp;future. Perfectionism must be&nbsp;smart."
+      "subTitle": "We&nbsp;understand how important the little things in&nbsp;design are, and we&nbsp;employ pixel-perfect development.",
+      "text": "But we&nbsp;never forget about being user-friendly. Developers are, in&nbsp;fact, the first users, so&nbsp;it&nbsp;is&nbsp;important to&nbsp;not just blindly transfer mock-ups to&nbsp;the web, and always think about the user experience. We&nbsp;always draw clients&rsquo; attention to&nbsp;things that may affect the product in&nbsp;the future. Perfectionism has to&nbsp;be&nbsp;smart."
     },
     "webSecurity": {
       "title": "Web Security",
-      "subTitle": "Web applications should not only be&nbsp;well written, reliable, user-friendly but also business secure",
-      "text": "We&nbsp;understand that a&nbsp;small vulnerability in&nbsp;an&nbsp;application can lead to&nbsp;significant financial and reputational risks. One incorrectly implemented authorization or&nbsp;payment form can lead to&nbsp;hacking and extraction of&nbsp;user or&nbsp;company data. From the very beginning, we&nbsp;think very carefully about the code architecture and pay special attention to&nbsp;this issue, even if&nbsp;there is&nbsp;a&nbsp;security audit on&nbsp;the client side."
+      "subTitle": "In&nbsp;addition to&nbsp;being well written, reliable, and user-friendly, web applications must also be&nbsp;secure.",
+      "text": "We&nbsp;understand a&nbsp;small vulnerability in&nbsp;an&nbsp;application can lead to&nbsp;significant financial and reputational risks. One incorrectly implemented authorization or&nbsp;payment form can lead to&nbsp;a&nbsp;hack and extraction of&nbsp;user and/or company data. From the beginning, we&nbsp;think carefully about code architecture and pay special attention to&nbsp;security issues, even when client-side security audits are in&nbsp;place."
     }
   },
   "form": {

@@ -4,6 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 const base = ({ breakpoints: { mobile }}) => css`
   & {
     margin-left: auto;
+    margin-right: ${calcRem(25)};
     display: flex;
     flex-shrink: 0;
     order: 3;
@@ -27,6 +28,7 @@ const base = ({ breakpoints: { mobile }}) => css`
     & {
       margin-top: ${calcRem(16)};
       margin-left: 0;
+      margin-right: 0;
       margin-bottom: ${calcRem(32)};
       padding-left: ${calcRem(32)};
       padding-right: ${calcRem(32)};

@@ -43,7 +43,10 @@ const Header = ({ className, t, isIe11, isMobile, isButtonVisible }) => {
       if (isScrollingDown) {
         if (isHeaderVisible) toggleHeaderVisibility(false)
       } else {
-        if (!isHeaderVisible) toggleHeaderVisibility(true)
+        if (!isHeaderVisible) {
+          toggleHeaderVisibility(true)
+          toggleDropdown(false)
+        }
       }
 
       if (scrollTopValue === lastScrollTopValue.current) {

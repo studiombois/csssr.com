@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   & {
     position: relative;
     margin-bottom: ${calcRem(344)};
@@ -52,6 +52,12 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   .email {
     margin-top: ${calcRem(8)};
     display: block;
+  }
+
+  ${tablet.all} {
+    & {
+      margin-bottom: ${calcRem(304)};
+    }
   }
 
   ${mobile.all} {

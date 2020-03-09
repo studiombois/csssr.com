@@ -86,10 +86,6 @@ export const base = css`
       min-width: 1232px;
     }
 
-    #main {
-      background-color: white;
-    }
-
     .grid-container {
       grid-template-columns: repeat(12, 88px);
       grid-gap: 0 16px;

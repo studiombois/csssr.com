@@ -5,10 +5,16 @@ import withI18next from '../../utils/withI18next'
 import Greeting from './Greeting'
 import ValuesSection from './ValuesSection'
 import Form from './Form'
+import Head from '../Head'
 
-const CoreValues = () => {
+const CoreValues = ({ t }) => {
   return (
     <Layout>
+      <Head
+        title={t('coreValues:meta.title')}
+        description={t('coreValues:greeting.description')}
+      />
+
       <Greeting />
 
       <ValuesSection />

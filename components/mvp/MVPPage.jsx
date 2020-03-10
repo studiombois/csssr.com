@@ -35,27 +35,29 @@ class MVPPage extends PureComponent {
 
     return (
       <Layout>
-        <Head
-          title={t('mvp:meta.title')}
-          description={t('mvp:meta.description')}
-          ogImage={{
-            url: require('../../static/images/mvp/ogImage.jpg'),
-            width: 2400,
-            height: 1260,
-          }}
-        />
-        <Begin />
-        <RiskMinimization />
-        <Money />
-        <Process />
-        <HireUs />
-        {/* <ButtonSelect
-          isMobile={isMobile}
-          showButtonOnNode="advantages"
-          hideButtonOnNode="hire-us"
-          buttonText={t('mvp:buttonText')}
-          pageName="mvp"
-        /> */}
+        <div style={{overflowX: 'hidden'}}>
+          <Head
+            title={t('mvp:meta.title')}
+            description={t('mvp:meta.description')}
+            ogImage={{
+              url: require('../../static/images/mvp/ogImage.jpg'),
+              width: 2400,
+              height: 1260,
+            }}
+          />
+          <Begin />
+          <RiskMinimization />
+          <Money />
+          <Process />
+          <HireUs />
+          {/* <ButtonSelect
+            isMobile={isMobile}
+            showButtonOnNode="advantages"
+            hideButtonOnNode="hire-us"
+            buttonText={t('mvp:buttonText')}
+            pageName="mvp"
+          /> */}
+        </div>
       </Layout>
     )
   }

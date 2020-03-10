@@ -110,7 +110,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     &.code {
-      margin-top: ${calcRem(160)};
+      margin-top: ${calcRem(120)};
     }
 
     &.reliability {

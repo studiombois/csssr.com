@@ -149,7 +149,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture_javascript {
-      margin-top: ${calcRem(105)};
+      margin-top: ${calcRem(110)};
       height: ${calcRem(168)};
     }
 

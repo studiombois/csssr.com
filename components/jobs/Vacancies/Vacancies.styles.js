@@ -273,22 +273,6 @@ const base = css`
       background-color: white;
     }
 
-    &::after {
-      position: fixed;
-      left: 0;
-      right: 0;
-      z-index: -2;
-      bottom: 0;
-      content: '';
-      display: block;
-      height: 80vh;
-      background-color: white;
-    }
-
-    &.hide-fixed-image::after {
-      z-index: -1;
-    }
-
     h1 span {
       padding-top: 2.375rem;
       display: block;

@@ -7,7 +7,7 @@ import Grid from '../../ui-kit/core-design/Grid'
 import translate from '../../../utils/translate-wrapper'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 
-const Feature1 = ({ className, t, image }) => (
+const Feature1 = ({ className, t, lng, image }) => (
   <Grid className={className} as="section" id="feature1">
     <h2
       id="services"
@@ -22,7 +22,7 @@ const Feature1 = ({ className, t, image }) => (
       <PictureForAllResolutions image={image} />
 
       <p className="font_feature_1">
-        <Link href={t('dev:service.mvpLink')}>
+        <Link href={`/${lng}/service/mvp-development`}>
           <a className="mvp-link">{t('dev:service.mvp')}</a>
         </Link>
       </p>

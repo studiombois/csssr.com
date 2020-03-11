@@ -2,7 +2,6 @@
   "verbose": true,
   "watch": ["server/**/*.js", "common/**/*.js", "static/locales/**/*.json", "nodemon.json"],
   "env": {
-    "NODE_ENV": "development",
-    "CSSSR_SPACE_ORIGIN": "https://csssr.space"
+    "NODE_ENV": "development"
   }
 }

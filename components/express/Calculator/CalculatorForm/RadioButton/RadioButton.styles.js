@@ -41,9 +41,10 @@ export default {
 
 
       .radio-custom {
+        position: relative;
         flex: none;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.625rem;
+        height: 1.625rem;
         border: 1px solid #dedede;
         border-radius: 50%;
         margin-right: 0.5rem;
@@ -53,12 +54,11 @@ export default {
       .radio-inner {
         display: block;
         position: absolute;
-        left: 1px;
-        top: 1px;
-        width: 0.75rem;
-        height: 0.75rem;
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
-        background-color: transparent;
+        background: radial-gradient(circle, transparent 0%, transparent 40%, #fff  40%, #fff  100%);
+        border: 1px solid transparent;
         transition: background-color 0.1s ease;
       }
 
@@ -66,11 +66,6 @@ export default {
         .radio-custom {
           border: 1px solid ${colors.primary.origin};
           background-color: ${colors.primary.origin};
-        }
-
-        .radio-custom .radio-inner {
-          box-sizing: content-box;
-          border: 0.3125rem solid #fff;
         }
       }
 

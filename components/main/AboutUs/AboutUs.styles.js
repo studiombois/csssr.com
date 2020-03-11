@@ -109,6 +109,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     font-style: italic;
   }
 
+  ${desktop.all} {
+    .picture-wrapper {
+      height: 460px;
+      width: 656px;
+      z-index: -1;
+    }
+
+    .picture {
+      height: 100%;
+    }
+  }
+
   ${desktop.l} {
     .picture-wrapper {
       margin-top: 46px;
@@ -184,7 +196,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .picture-wrapper {
       margin-top: ${calcRem(25)};
       margin-left: ${calcRem(-20)};
-      height: ${calcRem(352)};
+      height: ${calcRem(340)};
       background-position: ${calcRem(5)} 0;
     }
 

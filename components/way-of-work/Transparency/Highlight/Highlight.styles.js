@@ -107,7 +107,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .arc {
-      top: ${calcRem(219)};
+      top: ${calcRem(149)};
       left: ${calcRem(20)};
       width: ${calcRem(95)};
     }
@@ -143,7 +143,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .arc {
-      top: ${calcRem(281)};
+      top: ${calcRem(198)};
       left: ${calcRem(27)};
       width: ${calcRem(125)};
     }

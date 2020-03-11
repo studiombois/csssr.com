@@ -24,7 +24,7 @@ const Backend = ({ className, t, lng }) => (
     />
 
     <Heading className={cn('title', 'title_dbs')} as="h2" type="slab" size="m">
-      {`MongoDB ${lng === 'ru' ? 'или' : '&'} PostgreSQL`}
+      {`MongoDB ${lng === 'ru' ? 'и' : '&'} PostgreSQL`}
     </Heading>
 
     <SubHeading
@@ -46,7 +46,7 @@ const Backend = ({ className, t, lng }) => (
     </Heading>
 
     <Text
-            className={cn('text', 'text_node')}
+      className={cn('text', 'text_node')}
       as="p"
       type="strong"
       size="m"

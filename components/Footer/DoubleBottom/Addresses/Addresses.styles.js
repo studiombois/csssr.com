@@ -20,7 +20,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     color: #7E8FA4;
   }
 
-  .address-item:nth-child(3) .address {
+  .address-item:nth-of-type(3) .address {
     margin-top: ${calcRem(40)};
   }
 
@@ -41,11 +41,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(47)};
     }
 
-    .address-item:nth-child(1) {
+    .address-item:nth-of-type(1) {
       margin-right: ${calcRem(58)};
     }
 
-    .address-item:nth-child(2) {
+    .address-item:nth-of-type(2) {
       margin-right: ${calcRem(50)};
     }
   }
@@ -67,11 +67,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(31)};
     }
 
-    .address-item:nth-child(1) {
+    .address-item:nth-of-type(1) {
       margin-right: ${calcRem(42)};
     }
 
-    .address-item:nth-child(2) {
+    .address-item:nth-of-type(2) {
       margin-right: ${calcRem(38)};
     }
   }
@@ -104,7 +104,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(24)};
     }
 
-    .address-item:nth-child(3) .address {
+    .address-item:nth-of-type(3) .address {
       margin-top: ${calcRem(0)};
     }
   }

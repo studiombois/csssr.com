@@ -31,10 +31,6 @@ export const base = css`
     border: 0;
   }
 
-  #main {
-    overflow-x: hidden;
-  }
-
   ul {
     list-style: none;
   }

@@ -14,6 +14,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     z-index: 1;
   }
 
+  .heading > .br_hidden {
+    display: none;
+  }
+
   .text {
     grid-column: 2 / span 5;
     grid-row: 2;
@@ -85,6 +89,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .heading {
       grid-column: 2 / span 7;
       margin-top: 1rem;
+    }
+
+    .heading > .br_hidden {
+      display: block;
+    }
+
+    .heading > .br {
+      display: none;
     }
 
     .text {

@@ -97,8 +97,8 @@ export const nav = [
         href: 'tech-stack',
       },
       {
-        id: 'processes',
-        href: 'processes',
+        id: 'wayOfWork',
+        href: 'way-of-work',
       },
       {
         id: 'coreValues',
@@ -115,7 +115,7 @@ export const nav = [
       // },
       {
         id: 'careers',
-        href: 'careers',
+        href: 'jobs',
       },
       {
         id: 'blog',

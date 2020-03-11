@@ -2,6 +2,14 @@ import { css } from '@emotion/core'
 
 export default {
   base: props => css`
+    h2 {
+      line-height: 3rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+    }
+
     .picture {
       margin-bottom: 2rem;
     }

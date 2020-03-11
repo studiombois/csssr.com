@@ -11,6 +11,10 @@ export default {
         padding-right: 0;
       }
 
+      ${desktop.m} {
+        max-width: none;
+      }
+
       ${desktop.s} {
         max-width: none;
       }

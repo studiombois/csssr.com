@@ -14,6 +14,7 @@ const base = ({ breakpoints: { mobile }}) => css`
     display: flex;
     align-items: center;
     height: 100%;
+    cursor: pointer;
   }
 
   .menu-item {

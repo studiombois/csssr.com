@@ -15,7 +15,7 @@ import Logo from '../../static/icons/csssr_logo.svg'
 import translate from '../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const Footer = ({ className, isMobile, t }) => {
+const Footer = ({ className, isMobile, lng, t }) => {
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const footerRef = useRef()
 
@@ -45,7 +45,7 @@ const Footer = ({ className, isMobile, t }) => {
   return (
     <footer className={className} ref={footerRef}>
       <div className="top-content-left-wrapper">
-        <NextLink href="/">
+        <NextLink href={`/${lng}`}>
           <a className="logo">
             <Logo />
           </a>

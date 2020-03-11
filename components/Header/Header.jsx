@@ -17,7 +17,7 @@ import translate from '../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const Header = ({ className, t, isIe11, isMobile, isButtonVisible }) => {
+const Header = ({ className, lng, t, isIe11, isMobile, isButtonVisible }) => {
   let lastScrollTopValue = useRef(0)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
   const [isDropdownOpened, toggleDropdown] = useState(false)
@@ -91,7 +91,7 @@ const Header = ({ className, t, isIe11, isMobile, isButtonVisible }) => {
         invisible: !isHeaderVisible,
       })}
     >
-      <NextLink href="/">
+      <NextLink href={`/${lng}`}>
         <a>
           <Logo className="logo" />
         </a>

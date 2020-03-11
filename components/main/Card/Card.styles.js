@@ -85,32 +85,37 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 `
 
-const dynamic = canHoverAllCard => css`
-  @media (pointer: fine) {
-    ${canHoverAllCard
-      ? `
-        &:hover .card-icon {
-          opacity: 1;
-        }
-      `
-      : `
-        .card-description:hover ~ .card-icon,
-        .card-title:hover ~ .card-icon{
-          opacity: 1;
-        }
-      `
-    }
-  }
-`
+const dynamic = (canHoverAllCard, isIe11) => {
+  const styles = canHoverAllCard
+    ? `
+      &:hover .card-icon {
+        opacity: 1;
+      }
+    `
+    : `
+      .card-description:hover ~ .card-icon,
+      .card-title:hover ~ .card-icon{
+        opacity: 1;
+      }
+    `
+
+  return isIe11
+    ? css`${styles}`
+    : css`
+      @media (pointer: fine) {
+        ${styles}
+      }
+    `
+}
 
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const { isLink, isNextLink } = props
+  const { isLink, isNextLink, isIe11 } = props
   const canHoverAllCard = isLink || isNextLink
 
   return css`
     ${base({ breakpoints, colors })}
-    ${dynamic(canHoverAllCard)}
+    ${dynamic(canHoverAllCard, isIe11 )}
   `
 }

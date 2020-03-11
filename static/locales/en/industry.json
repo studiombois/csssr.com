@@ -30,7 +30,7 @@
   "greeting": {
     "ecommerce": {
       "title": "Custom E-Commerce <br/>Development Services",
-      "paragraph": "In&nbsp;the constantly growing and highly competitive e-commerce industry every page, every metric, and every customer opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales.",
+      "paragraph": "In&nbsp;the constantly growing and highly competitive <span style=\"white-space: nowrap\">e-commerce</span> industry every page, every metric, and every customer opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales.",
       "button": "Hire us",
       "imgAlt": "Illustration with two figures of people, a man conveys something to a girl"
     },

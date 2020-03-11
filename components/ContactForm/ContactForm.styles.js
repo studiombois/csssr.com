@@ -123,6 +123,8 @@ const ie11Styles = ({ shouldShowSubHeading }) => css`
 
 const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
   position: relative;
+  padding-top: 16rem;
+  padding-bottom: 10rem;
   margin-right: auto;
   margin-left: auto;
   width: 1792px;
@@ -131,6 +133,10 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
 
   @media (min-width: 768px) and (max-width: 1279px) {
     background-position: 50% calc(100% - 8.45rem);
+  }
+
+  @media screen and (max-width: 360px) {
+    padding-top: 160px;
   }
 
   h2 {

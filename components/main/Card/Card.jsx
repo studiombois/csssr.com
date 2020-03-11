@@ -12,6 +12,7 @@ import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import ArrowIcon from '../../../static/icons/main/arrow.svg'
 
 import translate from '../../../utils/translate-wrapper'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Card = ({
   className,
@@ -96,6 +97,8 @@ Card.propTypes = {
   t: func,
 }
 
-export default styled(translate()(Card))`
-  ${styles}
-`
+export default translate()(
+  MsBrowserConsumer(styled(Card)`
+    ${styles}
+  `),
+)

@@ -28,7 +28,9 @@ const Nav = ({
   lng,
 }) => {
   const Wrapper = isIe11 ? Fragment : Fade
-  const animationProps = isMobile
+  const animationProps = isIe11
+    ? {}
+    : isMobile
     ? {
         right: true,
         duration: 200,

@@ -176,16 +176,9 @@ export default {
       }
 
       .text-price-mention {
+        margin-top: 1rem;
         font-size: 0.875rem;
         margin-bottom: 2rem;
-
-        ${breakpoints.tablet.all} {
-          margin-top: 1rem;
-        }
-
-        ${breakpoints.mobile.all} {
-          margin-top: 1rem;
-        }
       }
 
       .text-price_color_blue {
@@ -323,6 +316,10 @@ export default {
         ${breakpoints.below.desktop} {
           font-size: 	1.1875rem;
         }
+      }
+
+      h3 {
+        line-height: 3rem;
       }
     `
   },

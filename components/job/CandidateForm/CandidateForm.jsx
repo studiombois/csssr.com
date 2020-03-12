@@ -57,11 +57,10 @@ const picturesMap = {
 }
 
 const divideSections = sections => {
-  const firstQuestIndex = sections.find((section, index) => {
-    if (['quest', 'questBox'].includes(section.type)) return index
+  const firstQuestIndex = sections.findIndex(section =>
+    ['quest', 'questBox'].includes(section.type),
+  )
 
-    return -1
-  })
   return [sections.slice(0, firstQuestIndex), sections.slice(firstQuestIndex)]
 }
 

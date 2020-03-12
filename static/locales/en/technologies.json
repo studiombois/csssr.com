@@ -10,7 +10,7 @@
     "typescript": "We&nbsp;also use <span style=\"font-weight: bold;\">TypeScript</span> and <span style=\"font-weight: bold;\">Flow</span> to&nbsp;add static typing support in&nbsp;JS. This helps&nbsp;us to&nbsp;write flexible and reliable code."
   },
   "frontend": {
-    "react": "Оne of&nbsp;the most popular libraries for solving various development tasks. It&nbsp;is&nbsp;good for large and complex web applications, as&nbsp;it&nbsp;can be&nbsp;easily used together with many other libraries. But React can be&nbsp;well applied to&nbsp;small projects, including landing pages, as&nbsp;well",
+    "react": "Оne of&nbsp;the most popular libraries for solving various development tasks. It&nbsp;is&nbsp;good for large and complex web applications, as&nbsp;it&nbsp;can be&nbsp;easily used together with many other libraries. But React can be&nbsp;well applied to&nbsp;small projects, including landing pages, as&nbsp;well.",
     "angular": "A&nbsp;framework that provides a&nbsp;large number of&nbsp;ready-made solutions to&nbsp;standard problems. It&nbsp;is&nbsp;best suited for typical projects where a&nbsp;serious customization of&nbsp;the application architecture is&nbsp;not required.",
     "vue": "A&nbsp;library that is&nbsp;very similar to&nbsp;React in&nbsp;its ideology, but close to&nbsp;Angular in&nbsp;syntax. It&nbsp;has difficulties with TypeScript and FlowType support, so&nbsp;we&nbsp;don&rsquo;t use it&nbsp;very often."
   },
@@ -20,7 +20,7 @@
   },
   "backend": {
     "node": "Server-side JavaScript runtime environment. We&nbsp;use it&nbsp;to&nbsp;write proxying back-end, or&nbsp;to&nbsp;implement simple services. ",
-    "dbs": "We&nbsp;select databases depending on&nbsp;the project needs and specific tasks: MongoDB&nbsp;&mdash; non-relational database (NoSQL)&nbsp;&mdash; or&nbsp;PostgreSQL&nbsp;&mdash; relational database.",
+    "dbs": "We&nbsp;select databases depending on&nbsp;the project needs and specific tasks: MongoDB&nbsp (NoSQL) or&nbsp;PostgreSQL.",
     "kotlin": "We&nbsp;develop back-end for our clients as&nbsp;well. We&nbsp;can write on&nbsp;well-proven Java, but we&nbsp;prefer Kotlin&nbsp;&mdash; a&nbsp;modern language working on&nbsp;JVM (Java Virtual Machine)."
   },
   "form": {

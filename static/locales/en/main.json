@@ -62,11 +62,11 @@
     },
     "fact2": {
       "title": "500+",
-      "description": "projects are completed"
+      "description": "projects completed"
     },
     "fact3": {
       "title": "150+",
-      "description": "people are involved"
+      "description": "people involved"
     },
     "fact4": {
       "title": "1",
@@ -79,7 +79,7 @@
     "title": "Our Other Projects",
     "tracker": {
       "title": "CSSSR.Tracker",
-      "description": "We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give it&nbsp;a&nbsp;try."
+      "description": "We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give&nbsp;it&nbsp;a&nbsp;try."
     },
     "school": {
       "title": "CSSSR.School",

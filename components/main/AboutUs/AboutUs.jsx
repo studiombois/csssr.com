@@ -52,7 +52,9 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
         <PictureForAllResolutions
           className={cn('picture', 'picture_love')}
           images={lng === 'ru' ? images.love_ru : images.love_en}
-          fallback={lng === 'ru' ? images.love_ru['desktop.all'].png : images.love_en['desktop.all'].png}
+          fallback={
+            lng === 'ru' ? images.love_ru['desktop.all'].png : images.love_en['desktop.all'].png
+          }
           alt={t('main:imageAlt.aboutUs')}
         />
 

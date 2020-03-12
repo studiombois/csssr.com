@@ -84,9 +84,11 @@ export default {
       }
 
       .subheading {
+        margin-top: 1rem;
         margin-left: 21rem;
 
         ${breakpoints.desktop.all} {
+          margin-top: 1.5rem;
           max-width: 48rem;
         }
 

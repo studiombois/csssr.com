@@ -294,6 +294,7 @@ export default {
         width: auto;
         font-size: inherit;
         line-height: 1.75rem;
+        letter-spacing: 0.1rem;
         font-weight: inherit;
         text-transform: none;
         color: white;

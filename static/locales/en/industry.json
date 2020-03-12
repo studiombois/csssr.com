@@ -1,19 +1,19 @@
 {
   "meta": {
     "ecommerce": {
-      "title": "Custom E-Commerce Development Services | CSSSR",
-      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+      "title": "Custom eCommerce Development Services",
+      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
     },
     "fintech": {
-      "title": "Fintech and Banking Web Development | CSSSR",
+      "title": "FinTech and Banking Web Development",
       "description": "We built a strong digital presence for banking and financial services."
     },
     "informationTechnology": {
-      "title": "Web Development Services for IT Companies | CSSSR",
+      "title": "Web Development Services for IT Companies",
       "description": "We push IT-companies to the cutting edge of technological progress."
     },
     "mediaAndMarketing": {
-      "title": "Custom Development for Media-Related Companies | CSSSR",
+      "title": "Custom Development for Media-Related Companies",
       "description": "We deliver high-quality experiences capable of handling large-scale data and any scale of concurrent users."
     }
   },

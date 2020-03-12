@@ -26,7 +26,11 @@ class MainPage extends PureComponent {
     const { vacancies, t } = this.props
     return (
       <Layout>
-        <Head title={t('main:meta.title')} description={t('main:meta.description')} />
+        <Head
+          title={t('main:meta.title')}
+          templateTitle=''
+          description={t('main:meta.description')}
+        />
         <Hero />
         <Services />
         <Industries />

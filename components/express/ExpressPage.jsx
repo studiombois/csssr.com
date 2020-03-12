@@ -14,7 +14,7 @@ const ExpressPage = ({ t }) => (
   <Layout>
     <Head
       title={t('express:meta.title')}
-      description={t('express:greeting.description')}
+      description={t('express:meta.description')}
       ogImage={{
         url: require('../../static/images/express/ogImage.jpg'),
         width: 2400,

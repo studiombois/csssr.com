@@ -257,7 +257,7 @@ const OriginCalculatorForm = props => {
                 type="checkbox"
                 key={browsers.name}
                 component={Checkbox}
-                isToggleInputCheckbox={browsers.toggleField && browsers.toggleField}
+                isToggleInputCheckbox={browsers.toggleField}
                 toggleBrowserField={toggleBrowserField}
                 toggleOtherBrowsersDropdown={toggleOtherBrowsersDropdown}
                 testId={`calculator:field:checkbox.${browsers.name.split('_')[1]}`}

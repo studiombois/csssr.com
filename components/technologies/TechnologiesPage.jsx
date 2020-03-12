@@ -10,7 +10,7 @@ import withI18next from '../../utils/withI18next'
 
 const TechnologiesPage = ({ t }) => (
   <Layout>
-    <Head title={t('technologies:meta.title')} />
+    <Head title={t('technologies:meta.title')} description={t('technologies:meta.description')} />
     <Hero />
     <Frontend />
     <Autotests />

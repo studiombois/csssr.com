@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Get Your Code Boosted!",
-    "description": "Turning mock-ups into HTML&nbsp;is our super power. We&nbsp;create HTML&nbsp;layouts, make blocks and elements animated, and web pages&mdash;adaptive."
+    "description": "Turning mock-ups into HTML is our super power. We create HTML layouts, make blocks and elements animated, and web pages — adaptive."
   },
   "greeting": {
     "title": "Get Your Code Boosted!",
@@ -49,7 +49,7 @@
         "checkboxLabel4": "Internet Explorer 9",
         "checkboxLabel5": "Android Default Browsers",
         "checkboxLabel6": "Other requirements",
-        "checkboxLabel7": "iOS Google Chromes",
+        "checkboxLabel7": "iOS Google Chrome",
         "note": "Please enter any additional browsers that you want to&nbsp;be&nbsp;supported.",
         "fieldLabel": "Additional browsers to be supported"
       },
@@ -96,7 +96,7 @@
     },
     "feature3": {
       "title": "Accessibility",
-      "text": "Illustration that descripes accessibility block"
+      "text": "Did you know that over 10% of users have special needs when using the Internet? We’ve got you covered. We apply a11y principles to all our projects."
     },
     "feature4": {
       "title": "Quality&nbsp;Control",
@@ -127,10 +127,10 @@
     "workflow3": "illustration of the number three, for the third stage",
     "workflow4": "illustration of the number four, for the fourth stage",
     "workflow5": "illustration of the number five, for the fifth stage",
-    "feature1": "Illustration that descripes design friendly block",
-    "feature2": "Illustration that descripes modern stack block",
-    "feature3": "Illustration that descripes accessibility block",
-    "feature4": "Illustration that descripes quality control block",
-    "feature5": "Illustration that descripes quality guarantees block"
+    "feature1": "Illustration that describes design friendly block",
+    "feature2": "Illustration that describes modern stack block",
+    "feature3": "Illustration that describes accessibility block",
+    "feature4": "Illustration that describes quality control block",
+    "feature5": "Illustration that describes quality guarantees block"
   }
 }

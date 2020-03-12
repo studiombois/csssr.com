@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import DevTools from '../DevTools'
 import { withRouter } from 'next/router'
-import { string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'

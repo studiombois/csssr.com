@@ -7,6 +7,7 @@ import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 
+// Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
 
 const Head = props => {
@@ -75,7 +76,6 @@ const Head = props => {
         </Fragment>
       )}
 
-      {/* // } */}
       <meta charSet="utf-8" />
       <title>{`${props.title}${props.templateTitle}`}</title>
       {props.description && (
@@ -110,6 +110,7 @@ const Head = props => {
 
 Head.propTypes = {
   title: string,
+  templateTitle: string,
   description: string,
   ogImage: shape({
     url: string,

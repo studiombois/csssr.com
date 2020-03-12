@@ -189,7 +189,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
       padding-left: 1rem;
       padding-right: 1rem;
       width: 22.5rem;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     .title_main {

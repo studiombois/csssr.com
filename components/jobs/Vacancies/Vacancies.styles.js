@@ -463,6 +463,10 @@ const ie11Styles = css`
     -ms-grid-row: 13;
   }
 
+  .half-page-picture {
+    z-index: 0;
+  }
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     .hunter-text {
       -ms-grid-column: ${getGridValueForMs(9)};

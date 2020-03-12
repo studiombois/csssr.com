@@ -19,7 +19,7 @@ const Checkbox = props => {
   const hasError = meta.touched && !!meta.error
 
   if (isToggleInputCheckbox) {
-    toggleBrowserField(input.value, toggleOtherBrowsersDropdown)
+    toggleBrowserField(input.checked, toggleOtherBrowsersDropdown)
   }
 
   return (

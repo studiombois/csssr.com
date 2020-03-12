@@ -12,7 +12,7 @@ import Form from './Form'
 const WayOfWork = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('wayOfWork:meta.title')} />
+      <Head title={t('wayOfWork:meta.title')} description={t('wayOfWork:meta.description')} />
 
       <Greeting title={t('wayOfWork:greeting.title')} />
 

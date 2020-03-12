@@ -12,7 +12,7 @@ const CoreValues = ({ t }) => {
     <Layout>
       <Head
         title={t('coreValues:meta.title')}
-        description={t('coreValues:greeting.description')}
+        description={t('coreValues:meta.description')}
       />
 
       <Greeting />

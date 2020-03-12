@@ -75,7 +75,6 @@ const Head = props => {
         </Fragment>
       )}
 
-      {/* // } */}
       <meta charSet="utf-8" />
       <title>{`${props.title}${props.templateTitle}`}</title>
       {props.description && (

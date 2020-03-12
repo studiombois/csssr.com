@@ -62,6 +62,8 @@ const Menu = ({ className, isMobile, t }) => {
     setActiveItem(item)
   }
 
+  const MenuWrapperTag = isMobile ? 'div' : 'ul'
+
   return (
     <ClickOutside onOutsideClick={handleResetActiveItem}>
       <div
@@ -72,7 +74,7 @@ const Menu = ({ className, isMobile, t }) => {
         ref={menuRef}
         data-scroll-lock-scrollable
       >
-        <ul className="menu">
+        <MenuWrapperTag className="menu">
           {menu.map(({ id, title }) => (
             <Link
               className={cn('menu-item', {
@@ -86,7 +88,7 @@ const Menu = ({ className, isMobile, t }) => {
               dangerouslySetInnerHTML={{ __html: t(title) }}
             />
           ))}
-        </ul>
+        </MenuWrapperTag>
 
         <Nav
           activeItem={activeItem}

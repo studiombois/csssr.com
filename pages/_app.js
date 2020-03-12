@@ -11,11 +11,14 @@ import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowser
 import { detectMobileByUserAgent, detectTabletByUserAgent } from '../utils/detectDeviceByUserAgent'
 import MsBrowserProvider from '../utils/msBrowserProvider'
 import DeviceProvider from '../utils/deviceProvider'
+import PagesListProvider from '../utils/pagesListProvider'
 
 export default class MyApp extends App {
   // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
     const { Component, ctx } = appContext
+
+    const pagesList = ctx.res ? ctx.res.locals.pagesList : window.__NEXT_DATA__.props.pagesList
 
     const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
 
@@ -66,6 +69,7 @@ export default class MyApp extends App {
 
     return {
       pageProps,
+      pagesList,
     }
   }
 
@@ -141,7 +145,7 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, pagesList } = this.props
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {}
     const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
     const isIe11Browser = detectIe11(pageProps.userAgent)
@@ -155,9 +159,15 @@ export default class MyApp extends App {
         <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
           <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
             <ThemeProvider theme={customTheme}>
-              {/* У Component isMobile прокидывается явно для обратной совместимости  */}
-              {/* TODO: перевести все компоненты на isMobile из контекста */}
-              <Component {...pageProps} isMobile={this.state.isMobile} isMsBrowser={isMsBrowser} />
+              <PagesListProvider pagesList={pagesList}>
+                {/* У Component isMobile прокидывается явно для обратной совместимости  */}
+                {/* TODO: перевести все компоненты на isMobile из контекста */}
+                <Component
+                  {...pageProps}
+                  isMobile={this.state.isMobile}
+                  isMsBrowser={isMsBrowser}
+                />
+              </PagesListProvider>
             </ThemeProvider>
           </DeviceProvider>
         </MsBrowserProvider>

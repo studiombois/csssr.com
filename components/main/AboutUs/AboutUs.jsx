@@ -100,7 +100,7 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
                 {t(`main:aboutUs.${id}.hero`)}
               </span>
             )}
-            {unescapeHtmlEntities(t(`main:aboutUs.${id}.description`))}
+            <span dangerouslySetInnerHTML={{ __html: t(`main:aboutUs.${id}.description`) }} />
           </Text>
         </div>
       ))}

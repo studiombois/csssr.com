@@ -54,6 +54,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(135)};
 
     .heading {
+      grid-column: 1 / span 6;
       text-align: start;
     }
 

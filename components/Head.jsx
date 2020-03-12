@@ -7,6 +7,7 @@ import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 
+// Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
 
 const Head = props => {
@@ -109,6 +110,7 @@ const Head = props => {
 
 Head.propTypes = {
   title: string,
+  templateTitle: string,
   description: string,
   ogImage: shape({
     url: string,
@@ -120,6 +122,11 @@ Head.propTypes = {
 Head.defaultProps = {
   structuredData: <StructuredData />,
   templateTitle: ' | CSSSR',
+  ogImage: {
+    url: require('../static/images/dev/1920/dev@2x.png'),
+    width: 3840,
+    height: 1280,
+  },
 }
 
 export default withRouter(translate()(Head))

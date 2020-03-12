@@ -45,6 +45,10 @@ const base = css`
   }
 
   @media (max-width: 767px) {
+    & {
+      margin-top: 3.5rem;
+    }
+
     h1 {
       margin-top: 2.125rem;
     }

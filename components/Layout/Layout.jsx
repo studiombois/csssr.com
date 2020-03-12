@@ -26,11 +26,5 @@ const Layout = ({ children, isIe11, router: { asPath } }) => {
     </Fragment>
   )
 }
-Layout.propTypes = {
-  title: string,
-  description: string,
-  url: string,
-  ogImage: string,
-}
 
 export default withRouter(MsBrowserConsumer(Layout))

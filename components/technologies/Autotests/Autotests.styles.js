@@ -89,7 +89,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.s} {
     & {
       padding-top: 132px;
-      min-height: 697px;
+      min-height: 710px;
       background-image: url(${require('../../../static/icons/technologies/autotests/lines_desktop_s.svg').default});
       background-position-y: 120px;
     }

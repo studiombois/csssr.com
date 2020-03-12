@@ -181,8 +181,15 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       height: ${calcRem(12)};
     }
 
+    .nav-item {
+      padding-right: ${calcRem(32)};
+      padding-left: ${calcRem(32)};
+    }
+
     .button_back {
       margin-top: ${calcRem(12)};
+      padding-right: ${calcRem(32)};
+      padding-left: ${calcRem(32)};
       display: flex;
       align-items: center;
       height: ${calcRem(48)};

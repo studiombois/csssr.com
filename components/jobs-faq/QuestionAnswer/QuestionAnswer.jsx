@@ -27,7 +27,11 @@ const OriginQuestionAnswer = ({ answer, className, isContentVisible }) => {
         return (
           <List className="list" key={index}>
             {answerObject.map((answerItem, index) => (
-              <ListItem key={index} dangerouslySetInnerHTML={{ __html: answerItem }} />
+              <ListItem
+                className="list-item"
+                key={index}
+                dangerouslySetInnerHTML={{ __html: answerItem }}
+              />
             ))}
           </List>
         )
@@ -45,7 +49,7 @@ OriginQuestionAnswer.propTypes = {
 
 const QuestionAnswer = MsBrowserConsumer(styled(OriginQuestionAnswer)`
   ${styles.base}
-  ${styles.ie11}s
+  ${styles.ie11}
 `)
 
 export { QuestionAnswer }

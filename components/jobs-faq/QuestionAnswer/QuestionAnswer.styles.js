@@ -16,6 +16,10 @@ export default {
       max-height: 500px; /* так нужно для плавного изменения высоты https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css */
     }
 
+    .list-item {
+      margin-top: 1rem;
+    }
+
     ${props.theme.breakpoints.tablet.all} {
       grid-column: 3 / span 8;
 

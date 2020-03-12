@@ -10,12 +10,20 @@ export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     const userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent
+
+    let language
+    if (ctx.asPath === '/en/service/express-front-end') {
+      language = 'en-sg'
+    } else {
+      language = i18n.services.languageUtils.getLanguagePartFromCode(
+        ctx.req.i18n ? ctx.req.i18n.language : undefined,
+      )
+    }
+
     return {
       ...initialProps,
       // https://github.com/isaachinman/next-i18next/issues/374#issuecomment-529196313
-      language: i18n.services.languageUtils.getLanguagePartFromCode(
-        ctx.req.i18n ? ctx.req.i18n.language : undefined,
-      ),
+      language,
       userAgent,
     }
   }

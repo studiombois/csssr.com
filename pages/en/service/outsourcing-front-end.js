@@ -34,15 +34,7 @@ class Dev extends PureComponent {
 
     return (
       <Layout>
-        <Head
-          title={t('dev:meta.title')}
-          description={t('dev:meta.description')}
-          ogImage={{
-            url: require('../../../static/images/dev/1920/dev@2x.png'),
-            width: 3840,
-            height: 1280,
-          }}
-        />
+        <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
         <Hire />
         <Feature1 image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }} />
         {/* <Competences />*/}

@@ -121,6 +121,11 @@ Head.propTypes = {
 Head.defaultProps = {
   structuredData: <StructuredData />,
   templateTitle: ' | CSSSR',
+  ogImage: {
+    url: require('../static/images/dev/1920/dev@2x.png'),
+    width: 3840,
+    height: 1280,
+  },
 }
 
 export default withRouter(translate()(Head))

@@ -25,16 +25,8 @@ const Menu = ({ className, isMobile, t }) => {
       return
     }
 
-    const prevActiveItemIndex = menu.find(({ id }, index) => {
-      if (id === activeItem) return index
-
-      return -1
-    })
-    const activeItemIndex = menu.find(({ id }, index) => {
-      if (id === item) return index
-
-      return -1
-    })
+    const prevActiveItemIndex = menu.findIndex(({ id }) => id === activeItem)
+    const activeItemIndex = menu.find(({ id }) => id === item)
 
     setAnimationDirection(prevActiveItemIndex < activeItemIndex ? 'right' : 'left')
     setActiveItem(item)

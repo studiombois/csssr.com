@@ -239,6 +239,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(36)};
 
       &:nth-of-type(2n+1) {
+        padding-right: ${calcRem(16)};
         grid-column-start: 2;
       }
 

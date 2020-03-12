@@ -54,11 +54,15 @@ const base = ({ breakpoints: { mobile }}) => css`
     }
 
     .menu {
+      padding-left: 0;
+      padding-right: 0;
       flex-direction: column;
       align-items: flex-start;
     }
 
     .menu-item {
+      padding-left: ${calcRem(32)};
+      padding-right: ${calcRem(32)};
       letter-spacing: ${calcRem(1)};
       border: none;
       background-color: transparent;

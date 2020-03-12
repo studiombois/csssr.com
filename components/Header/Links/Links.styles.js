@@ -30,8 +30,6 @@ const base = ({ breakpoints: { mobile }}) => css`
       margin-left: 0;
       margin-right: 0;
       margin-bottom: ${calcRem(32)};
-      padding-left: ${calcRem(32)};
-      padding-right: ${calcRem(32)};
       flex-direction: column;
     }
 
@@ -41,6 +39,10 @@ const base = ({ breakpoints: { mobile }}) => css`
     }
 
     a {
+      padding-left: ${calcRem(32)};
+      padding-right: ${calcRem(32)};
+      display: block;
+      height: 100%;
       letter-spacing: ${calcRem(1)};
     }
   }

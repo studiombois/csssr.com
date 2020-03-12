@@ -1,6 +1,6 @@
 import React from 'react'
 
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 import Head from '../Head'
 import Layout from '../Layout'
 import Greeting from './Greeting'
@@ -27,4 +27,4 @@ const WayOfWork = ({ t }) => {
   )
 }
 
-export default withI18next(['wayOfWork'])(WayOfWork)
+export default translate(WayOfWork)

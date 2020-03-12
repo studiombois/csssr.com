@@ -111,6 +111,6 @@ class Slider extends PureComponent {
   }
 }
 
-export default styled(translate()(Slider))`
+export default styled(translate(Slider))`
   ${styles}
 `

@@ -48,6 +48,6 @@ PrivacyPolicyCheckbox.propTypes = {
   t: func,
 }
 
-export default styled(translate()(PrivacyPolicyCheckbox))`
+export default styled(translate(PrivacyPolicyCheckbox))`
   ${styles}
 `

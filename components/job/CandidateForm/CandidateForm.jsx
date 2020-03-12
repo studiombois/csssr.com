@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { FormSpy } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './CandidateForm.styles'
-import withI18next from '../../../utils/withI18next'
+import translate from '../../../utils/translate-wrapper'
 import FormRow from '../FormRow'
 import Section from '../Section'
 import VacancyImageAndLinks from './VacancyImageAndLinks'
@@ -283,7 +283,7 @@ class CandidateForm extends PureComponent {
   }
 }
 
-export default withI18next(['job'])(
+export default translate(
   MsBrowserConsumer(styled(CandidateForm)`
     ${styles}
   `),

@@ -139,6 +139,6 @@ Form.propTypes = {
   onClose: func,
 }
 
-export default styled(translate()(ContactModal))`
+export default styled(translate(ContactModal))`
   ${styles}
 `

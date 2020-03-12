@@ -73,6 +73,6 @@ QuestionAndAnswer.propTypes = {
   title: string,
 }
 
-export default styled(translate()(QuestionAndAnswer))`
+export default styled(translate(QuestionAndAnswer))`
   ${styles}
 `

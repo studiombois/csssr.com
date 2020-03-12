@@ -113,7 +113,7 @@ Nav.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(
     DeviceConsumer(styled(Nav)`
       ${styles}

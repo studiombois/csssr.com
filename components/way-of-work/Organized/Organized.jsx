@@ -84,7 +84,7 @@ Organized.propTypes = {
   id: string,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Organized)`
     ${styles}
   `),

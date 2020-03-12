@@ -214,6 +214,6 @@ class ButtonSelect extends PureComponent {
   }
 }
 
-export default styled(translate()(ButtonSelect))`
+export default styled(translate(ButtonSelect))`
   ${styles}
 `

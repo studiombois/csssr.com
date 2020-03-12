@@ -47,6 +47,6 @@ ButtonSelectLinksApple.propTypes = {
   ),
 }
 
-export default styled(translate()(ButtonSelectLinksApple))`
+export default styled(translate(ButtonSelectLinksApple))`
   ${styles}
 `

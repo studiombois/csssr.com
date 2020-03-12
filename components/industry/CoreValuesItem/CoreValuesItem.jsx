@@ -40,4 +40,4 @@ CoreValuesItem.propTypes = {
   factItems: array,
 }
 
-export default translate()(CoreValuesItem)
+export default translate(CoreValuesItem)

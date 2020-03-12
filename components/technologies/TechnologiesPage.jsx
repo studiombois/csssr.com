@@ -6,7 +6,7 @@ import Frontend from './Frontend'
 import Autotests from './Autotests'
 import Backend from './Backend'
 import Form from './Form'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 
 const TechnologiesPage = ({ t }) => (
   <Layout>
@@ -19,4 +19,4 @@ const TechnologiesPage = ({ t }) => (
   </Layout>
 )
 
-export default withI18next(['technologies'])(TechnologiesPage)
+export default translate(TechnologiesPage)

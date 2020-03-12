@@ -9,7 +9,7 @@ import Projects from './Projects'
 import Vacancies from './Vacancies'
 import Head from '../Head'
 import Form from './Form'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import i18n from '../../common/i18n'
 
@@ -47,4 +47,4 @@ MainPage.propTypes = {
   className: string,
 }
 
-export default withI18next(['main'])(MainPage)
+export default translate(MainPage)

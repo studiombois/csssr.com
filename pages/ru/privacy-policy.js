@@ -1,7 +1,7 @@
 import React from 'react'
 import PrivacyPolicyPage from '../../components/privacy-policy/PrivacyPolicyPage'
 import PrivacyPolicyContent from '../../components/privacy-policy/PrivacyPolicyContentRu'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 
 const PrivacyPolicy = props => (
   <PrivacyPolicyPage {...props}>
@@ -9,4 +9,4 @@ const PrivacyPolicy = props => (
   </PrivacyPolicyPage>
 )
 
-export default withI18next(['privacyPolicy'])(PrivacyPolicy)
+export default translate(PrivacyPolicy)

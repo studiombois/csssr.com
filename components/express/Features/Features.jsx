@@ -69,6 +69,6 @@ Features.propTypes = {
   t: func,
 }
 
-export default translate()(styled(Features)`
+export default translate(styled(Features)`
   ${styles.base}
 `)

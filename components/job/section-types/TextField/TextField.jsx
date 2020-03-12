@@ -36,6 +36,6 @@ JobSectionTextField.propTypes = {
   required: bool,
 }
 
-export default styled(translate()(JobSectionTextField))`
+export default styled(translate(JobSectionTextField))`
   ${styles}
 `

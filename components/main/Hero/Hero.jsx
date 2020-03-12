@@ -52,7 +52,7 @@ Hero.propTypes = {
   className: string,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(
     MsBrowserConsumer(styled(Hero)`
       ${styles}

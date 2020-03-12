@@ -47,7 +47,7 @@ Portfolio.propTypes = {
   ),
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Portfolio)`
     ${styles}
   `),

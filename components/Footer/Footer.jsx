@@ -87,7 +87,7 @@ Footer.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(styled(Footer)`
     ${styles}
   `),

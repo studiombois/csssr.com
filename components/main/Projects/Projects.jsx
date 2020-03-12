@@ -73,7 +73,7 @@ Projects.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Projects)`
     ${styles}
   `),

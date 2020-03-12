@@ -48,6 +48,6 @@ ButtonSelectLinksDefault.propTypes = {
   ),
 }
 
-export default styled(translate()(ButtonSelectLinksDefault))`
+export default styled(translate(ButtonSelectLinksDefault))`
   ${styles}
 `

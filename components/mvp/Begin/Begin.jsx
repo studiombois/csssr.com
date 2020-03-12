@@ -28,7 +28,7 @@ const Begin = ({ className, t }) => (
   </Grid>
 )
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Begin)`
     ${styles}
   `),

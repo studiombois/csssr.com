@@ -1,7 +1,6 @@
 import React from 'react'
 import { func } from 'prop-types'
 import Layout from '../Layout'
-import withI18next from '../../utils/withI18next'
 import translate from '../../utils/translate-wrapper'
 
 import Greeting from './Greeting'
@@ -38,4 +37,4 @@ EcommercePage.propTypes = {
   t: func,
 }
 
-export default withI18next(['industry'])(translate()(EcommercePage))
+export default translate(EcommercePage)

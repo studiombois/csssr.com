@@ -5,7 +5,7 @@ import styles from './Competences.styles'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import LogosSheet from '../LogosSheet'
-import withI18next from '../../../utils/withI18next'
+import translate from '../../../utils/translate-wrapper'
 import CutButton from '../CutButton'
 
 class Competences extends PureComponent {
@@ -105,7 +105,7 @@ class Competences extends PureComponent {
   }
 }
 
-export default withI18next(['dev'])(
+export default translate(
   MsBrowserConsumer(styled(Competences)`
     ${styles}
   `),

@@ -101,7 +101,7 @@ Development.propTypes = {
   id: string,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Development)`
     ${styles}
   `),

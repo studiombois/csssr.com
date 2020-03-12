@@ -351,7 +351,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
   </Grid>
 )
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(PrivacyPolicyContentRu)`
     ${common_styles_for_policy_pages}
   `),

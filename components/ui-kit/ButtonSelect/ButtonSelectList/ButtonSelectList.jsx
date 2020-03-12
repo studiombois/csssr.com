@@ -80,6 +80,6 @@ ButtonSelectList.propTypes = {
   t: func,
 }
 
-export default translate()(styled(ButtonSelectList)`
+export default translate(styled(ButtonSelectList)`
   ${styles}
 `)

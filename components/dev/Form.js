@@ -76,5 +76,5 @@ const Form = ({ t, lng }) => (
   />
 )
 
-export default translate()(Form)
+export default translate(Form)
 export { onSubmit }

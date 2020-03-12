@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import fetch from 'isomorphic-unfetch'
 import Head from '../../components/Head'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 import Layout from '../../components/Layout'
 import Vacancies from '../../components/jobs/Vacancies'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
@@ -36,4 +36,4 @@ class JobsPage extends PureComponent {
   }
 }
 
-export default withI18next(['jobs'])(JobsPage)
+export default translate(JobsPage)

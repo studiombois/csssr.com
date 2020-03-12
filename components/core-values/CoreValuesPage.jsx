@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../Layout'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 
 import Greeting from './Greeting'
 import ValuesSection from './ValuesSection'
@@ -24,4 +24,4 @@ const CoreValues = ({ t }) => {
   )
 }
 
-export default withI18next(['coreValues'])(CoreValues)
+export default translate(CoreValues)

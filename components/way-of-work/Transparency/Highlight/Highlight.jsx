@@ -83,7 +83,7 @@ Highlight.propTypes = {
   active: oneOf(['square', 'circle', 'arc', 'triangle']),
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(styled(Highlight)`
     ${styles}
   `),

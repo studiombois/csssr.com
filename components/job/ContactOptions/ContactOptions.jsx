@@ -4,7 +4,7 @@ import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './ContactOptions.styles'
 import { css } from '@emotion/core'
-import withI18next from '../../../utils/withI18next'
+import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Checkbox from '../../ui-kit/Checkbox/Checkbox'
 import TextField from '../../ui-kit/TextField/TextField'
@@ -58,7 +58,7 @@ ContactOptions.propTypes = {
   t: func,
 }
 
-export default withI18next(['job'])(
+export default translate(
   MsBrowserConsumer(styled(ContactOptions)`
     ${styles}
   `),

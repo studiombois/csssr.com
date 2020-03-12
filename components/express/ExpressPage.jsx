@@ -2,7 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import Layout from '../Layout'
 import Head from '../Head'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 import Greeting from './Greeting'
 import About from './About'
 import Workflow from './Workflow'
@@ -35,4 +35,4 @@ ExpressPage.propTypes = {
   className: string,
 }
 
-export default withI18next(['express'])(ExpressPage)
+export default translate(ExpressPage)

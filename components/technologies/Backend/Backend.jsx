@@ -80,7 +80,7 @@ Backend.propTypes = {
   lng: string,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Backend)`
     ${styles}
   `),

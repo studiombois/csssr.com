@@ -126,7 +126,7 @@ AboutUs.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(
     MsBrowserConsumer(styled(AboutUs)`
       ${styles}

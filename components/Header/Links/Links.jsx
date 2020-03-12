@@ -38,6 +38,6 @@ Links.propTypes = {
   t: func,
 }
 
-export default translate()(styled(Links)`
+export default translate(styled(Links)`
   ${styles}
 `)

@@ -2,7 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import Layout from '../Layout'
 import Head from '../Head'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 import Greeting from './Greeting'
 import ImageBlock from './ImageBlock'
 import QuestionHeader from './QuestionHeader'
@@ -16,7 +16,7 @@ import roads_webp from '../../static/images/jobs-faq/roads.png?responsive_and_we
 import puzzle from '../../static/images/jobs-faq/puzzle.png?responsive'
 import puzzle_webp from '../../static/images/jobs-faq/puzzle.png?responsive_and_webp'
 
-const JobsFaqPage = ({ t }) => (
+const JobsFaqPage = () => (
   <Layout>
     <Head
       title="Как устроиться сюда ➡️"
@@ -53,4 +53,4 @@ JobsFaqPage.propTypes = {
   className: string,
 }
 
-export default withI18next(['main'])(JobsFaqPage)
+export default translate(JobsFaqPage)

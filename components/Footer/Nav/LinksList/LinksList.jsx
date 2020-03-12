@@ -54,6 +54,6 @@ LinksList.propTypes = {
   lng: string,
 }
 
-export default translate()(styled(LinksList)`
+export default translate(styled(LinksList)`
   ${styles}
 `)

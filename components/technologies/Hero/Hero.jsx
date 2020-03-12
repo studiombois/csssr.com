@@ -70,7 +70,7 @@ Hero.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Hero)`
     ${styles}
   `),

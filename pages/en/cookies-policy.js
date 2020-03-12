@@ -2,7 +2,7 @@ import React from 'react'
 import Head from '../../components/Head'
 import Layout from '../../components/Layout'
 import CookiesPolicyContent from '../../components/cookies-policy/CookiesPolicyContent'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 
 const PrivacyPolicy = ({ t }) => (
   <Layout>
@@ -11,4 +11,4 @@ const PrivacyPolicy = ({ t }) => (
   </Layout>
 )
 
-export default withI18next(['cookiesPolicy'])(PrivacyPolicy)
+export default translate(PrivacyPolicy)

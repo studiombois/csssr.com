@@ -146,7 +146,7 @@ class Vacancies extends PureComponent {
   }
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Vacancies)`
     ${styles}
   `),

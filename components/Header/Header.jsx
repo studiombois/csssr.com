@@ -127,7 +127,7 @@ Header.propTypes = {
   isButtonVisible: bool,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(
     MsBrowserConsumer(styled(Header)`
       ${styles}

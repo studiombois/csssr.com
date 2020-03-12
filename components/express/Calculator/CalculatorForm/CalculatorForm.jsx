@@ -468,7 +468,7 @@ const CalculatorForm = ({ t, lng }) => (
     subscription={{ values: true }}
     decorators={[calculator, focusOnErrorsDecorator]}
     validate={calculatorFormValidationRules(t)}
-    component={translate()(styled(OriginCalculatorForm)`
+    component={translate(styled(OriginCalculatorForm)`
       ${styles.base}
     `)}
   />
@@ -483,4 +483,4 @@ OriginCalculatorForm.propTypes = {
   submitFailed: bool,
 }
 
-export default translate()(CalculatorForm)
+export default translate(CalculatorForm)

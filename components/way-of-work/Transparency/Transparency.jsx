@@ -63,7 +63,7 @@ Transparency.propTypes = {
   id: string,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Transparency)`
     ${styles}
   `),

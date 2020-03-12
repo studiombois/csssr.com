@@ -8,7 +8,6 @@ const next = require('next')
 const i18nextMiddleware = require('i18next-express-middleware')
 const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const { pick } = require('ramda')
-const i18n = require('../common/i18n')
 const submitForm = require('./submit-form')
 const submitCalculatorForm = require('./submit-calculator-form')
 const generateSitemap = require('./generate-sitemap').generateSitemap
@@ -21,6 +20,8 @@ import {
 } from '../common/locales-settings'
 import pathCookieHeaderDetector from './path-cookie-header-detector'
 import getPagesList from './get-pages-list'
+import allNamespaces from '../common/all-namespaces'
+import i18n from '../common/i18n'
 
 const languageDetector = new i18nextMiddleware.LanguageDetector()
 languageDetector.addDetector(pathCookieHeaderDetector)
@@ -43,22 +44,7 @@ const startApp = async () => {
         whitelist: [...supportedLanguages, ...supportedLocales],
         preload: [...supportedLanguages, ...supportedLocales],
         lowerCaseLng: true,
-        ns: [
-          'common',
-          'dev',
-          'jobs',
-          'job',
-          'error',
-          'privacyPolicy',
-          'cookiesPolicy',
-          'mvp',
-          'industry',
-          'coreValues',
-          'main',
-          'technologies',
-          'express',
-          'wayOfWork',
-        ],
+        ns: allNamespaces,
         detection: {
           order: ['pathCookieHeader'],
           lookupCookie: 'locale',
@@ -209,6 +195,11 @@ const startApp = async () => {
             )
           })
 
+          server.use((req, res, nextHandler) => {
+            res.locals.pagesList = pagesList
+            nextHandler()
+          })
+
           /* eslint-disable no-prototype-builtins */
           server.get('/:locale/jobs/:jobPathName', (req, res) => {
             const params = {
@@ -219,11 +210,6 @@ const startApp = async () => {
             return app.render(req, res, `/${req.params.locale}/job`, params)
           })
           /* eslint-enable no-prototype-builtins */
-
-          server.use((req, res, nextHandler) => {
-            res.locals.pagesList = pagesList
-            nextHandler()
-          })
 
           server.get('*', (req, res) => {
             return handle(req, res)

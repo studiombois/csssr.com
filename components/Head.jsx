@@ -129,4 +129,4 @@ Head.defaultProps = {
   },
 }
 
-export default withRouter(translate()(Head))
+export default withRouter(translate(Head))

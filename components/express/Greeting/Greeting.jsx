@@ -69,7 +69,7 @@ Greeting.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Greeting)`
     ${styles.base}
   `),

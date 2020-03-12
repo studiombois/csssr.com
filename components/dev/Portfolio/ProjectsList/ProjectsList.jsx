@@ -181,7 +181,7 @@ ProjectsList.contextTypes = {
   isMsBrowser: bool,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(ProjectsList)`
     ${styles}
   `),

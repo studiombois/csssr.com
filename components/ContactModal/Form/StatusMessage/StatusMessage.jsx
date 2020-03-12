@@ -44,6 +44,6 @@ StatusMessage.propTypes = {
   onClick: func,
 }
 
-export default styled(translate()(StatusMessage))`
+export default styled(translate(StatusMessage))`
   ${styles}
 `

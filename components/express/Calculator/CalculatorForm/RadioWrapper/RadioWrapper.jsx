@@ -55,6 +55,6 @@ RadioWrapper.propTypes = {
   t: func,
 }
 
-export default translate()(styled(RadioWrapper)`
+export default translate(styled(RadioWrapper)`
   ${styles.base}
 `)

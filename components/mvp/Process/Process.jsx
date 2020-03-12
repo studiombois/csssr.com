@@ -86,7 +86,7 @@ class Process extends PureComponent {
   }
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Process)`
     ${styles}
   `),

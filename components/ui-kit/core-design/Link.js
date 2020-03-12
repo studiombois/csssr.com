@@ -50,20 +50,28 @@ LinkWithNextLink.defaultProps = {
   size: 's',
 }
 
-const LinkWrapper = ({ isNextLink, passHref, prefetch, replace, scroll, ...props }) => {
+const LinkWrapper = ({ /* isNextLink, passHref, prefetch, replace, scroll, */ ...props }) => {
   // Все ссылки на проекте имеют одинаковый вид
   // Для ссылок внутри проекта следует использовать isNextLink
-  if (isNextLink) {
-    return (
-      <LinkWithNextLink
-        passHref={passHref}
-        prefetch={prefetch}
-        replace={replace}
-        scroll={scroll}
-        {...props}
-      />
-    )
-  }
+
+  // Next.js раньше не умел переходить по hash ссылкам:
+  // - https://github.com/zeit/next.js/issues/5161
+  // - https://github.com/arielsvn/arielsvn.github.io/issues/7
+  // - https://github.com/zeit/next.js/issues/5008
+  // Но вроде как сейчас должен уметь, однако у нас на проекте это почему-то не происходит
+  // Я пока просто уберу выбор isNextLink, выяснение причин потребует много времени, пофиксим это после релиза
+
+  // if (isNextLink) {
+  //   return (
+  //     <LinkWithNextLink
+  //       passHref={passHref}
+  //       prefetch={prefetch}
+  //       replace={replace}
+  //       scroll={scroll}
+  //       {...props}
+  //     />
+  //   )
+  // }
 
   // Для ссылок на другие ресурсы подойдут и обычные ссылки
   return <CoreDesignLink {...props} />

@@ -146,12 +146,14 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
   }
 
   .heading {
+    position: relative;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
     -ms-grid-row: 1;
   }
 
   .text {
+    position: relative;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
     -ms-grid-row: 2;

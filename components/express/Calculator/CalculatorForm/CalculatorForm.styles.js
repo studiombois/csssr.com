@@ -305,6 +305,14 @@ export default {
           font-size: 1.5rem;
         }
 
+        ${breakpoints.desktop.m} {
+          max-width: 7.75rem;
+        }
+
+        ${breakpoints.desktop.s} {
+          max-width: 7.75rem;
+        }
+
         ${breakpoints.mobile.all} {
           max-width: 56%;
         }

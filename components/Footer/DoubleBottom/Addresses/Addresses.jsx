@@ -21,9 +21,11 @@ const Addresses = ({ className, isTablet, isMobile, t }) => {
   const [time, setTime] = useState(() => moment())
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setTime(() => moment())
     }, 1000)
+
+    return () => clearTimeout(timeout)
   })
 
   const textSize = isTablet || isMobile ? 'm' : 's'

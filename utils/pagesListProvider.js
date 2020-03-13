@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const PagesListContext = React.createContext({ isTablet: false, isMobile: false })
+export const PagesListContext = React.createContext([])
 
 export const PagesListConsumer = Component => props => (
   <PagesListContext.Consumer>

@@ -6,7 +6,7 @@ import Text from '../ui-kit/core-design/Text'
 import translate from '../../utils/translate-wrapper'
 import styles from './CookiesPopup.styles'
 
-import сookiesLinks from '../../data/сookies-popup/сookiesLinks'
+import cookiesLinks from '../../data/сookies-popup/cookiesLinks'
 
 import CrossIcon from '../../static/icons/cross_white.svg'
 
@@ -24,7 +24,7 @@ const CookiesPopup = ({ className, t, lng }) => {
     setIsActive(localStorage.getItem('cookies_policy'))
   }, [])
 
-  const links = сookiesLinks[lng]
+  const links = cookiesLinks[lng]
 
   return (
     <div className={cn(className, { hide: isActive })}>

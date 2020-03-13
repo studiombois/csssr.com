@@ -1,3 +1,5 @@
+import { defaultLocaleByLanguage } from './locales-settings'
+
 export default (fullPathname, newLanguage, pagesList) => {
   const {
     groups: { pathname },
@@ -9,7 +11,7 @@ export default (fullPathname, newLanguage, pagesList) => {
   }
 
   if (['job', 'jobs', 'jobs-faq'].includes(pathname)) {
-    return `/${newLanguage}/jobs`
+    return `/${defaultLocaleByLanguage[newLanguage]}/jobs`
   }
 
   if (pagesList.some(page => page.pathname === pathname && page.language === newLanguage)) {

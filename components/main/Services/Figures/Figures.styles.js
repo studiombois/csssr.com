@@ -90,21 +90,22 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     .picture:not(.picture_figures) {
       transform: translateX(calc(-50% + 0.375rem));
       opacity: 1;
+      z-index: -1;
     }
 
     .picture_square {
       top: 0;
-      width: ${calcRem(134)};
+      width: ${calcRem(130)};
     }
 
     .picture_triangle {
-      top: ${calcRem(123)};
-      width: ${calcRem(178)};
+      top: ${calcRem(125)};
+      width: ${calcRem(172)};
     }
 
     .picture_circle {
-      top: ${calcRem(260)};
-      width: ${calcRem(160)}
+      top: ${calcRem(262)};
+      width: ${calcRem(154)}
     }
   }
 `

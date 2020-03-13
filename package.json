@@ -20,7 +20,7 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@emotion/styled-base": "^10.0.30",
-    "@sentry/browser": "^5.14.0",
+    "@sentry/browser": "^5.14.1",
     "@sentry/node": "^5.14.0",
     "@svgr/webpack": "^5.2.0",
     "@zeit/next-source-maps": "0.0.4-canary.1",

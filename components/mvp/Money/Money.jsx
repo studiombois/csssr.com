@@ -19,7 +19,7 @@ const Money = ({ className, t }) => (
   </Grid>
 )
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Money)`
     ${styles}
   `),

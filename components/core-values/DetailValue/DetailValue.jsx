@@ -49,7 +49,7 @@ DetailValue.propTypes = {
   content: object,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(DetailValue)`
     ${styles}
   `),

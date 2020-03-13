@@ -71,7 +71,7 @@ ProjectsItem.propTypes = {
   factItems: array,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(
     MsBrowserConsumer(styled(ProjectsItem)`
       ${styles}

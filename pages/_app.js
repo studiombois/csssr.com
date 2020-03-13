@@ -12,6 +12,36 @@ import { detectMobileByUserAgent, detectTabletByUserAgent } from '../utils/detec
 import MsBrowserProvider from '../utils/msBrowserProvider'
 import DeviceProvider from '../utils/deviceProvider'
 import PagesListProvider from '../utils/pagesListProvider'
+import allNamespaces from '../common/all-namespaces'
+
+const getI18nInitialProps = ctx => {
+  let i18nInitialProps = {}
+
+  if (ctx.req) {
+    if (!ctx.req.i18n) {
+      return {}
+    }
+
+    ctx.req.i18n.toJSON = () => null // do not serialize i18next instance and send to client
+
+    const initialI18nStore = {}
+    ctx.req.i18n.languages.forEach(language => {
+      initialI18nStore[language] = {}
+      allNamespaces.forEach(ns => {
+        initialI18nStore[language][ns] =
+          (ctx.req.i18n.services.resourceStore.data[language] || {})[ns] || {}
+      })
+    })
+
+    i18nInitialProps = {
+      i18n: ctx.req.i18n, // use the instance on req - fixed language on request (avoid issues in race conditions with lngs of different users)
+      initialI18nStore,
+      initialLanguage: ctx.req.i18n.language,
+    }
+  }
+
+  return i18nInitialProps
+}
 
 export default class MyApp extends App {
   // This reports errors before rendering, when fetching initial props
@@ -19,14 +49,18 @@ export default class MyApp extends App {
     const { Component, ctx } = appContext
 
     const pagesList = ctx.res ? ctx.res.locals.pagesList : window.__NEXT_DATA__.props.pagesList
-
     const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
 
-    let pageProps = {}
+    let pageProps = getI18nInitialProps(ctx)
 
     try {
       if (Component.getInitialProps) {
-        pageProps = await Component.getInitialProps(ctx)
+        const componentProps = await Component.getInitialProps(ctx)
+
+        pageProps = {
+          ...pageProps,
+          ...componentProps,
+        }
       }
     } catch (error) {
       Sentry.withScope(scope => {

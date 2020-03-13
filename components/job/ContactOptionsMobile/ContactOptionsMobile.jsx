@@ -4,7 +4,7 @@ import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './ContactOptionsMobile.styles'
 import { css } from '@emotion/core'
-import withI18next from '../../../utils/withI18next'
+import translate from '../../../utils/translate-wrapper'
 import SelectField from '../../ui-kit/SelectField/SelectField'
 import TextField from '../../ui-kit/TextField/TextField'
 import getContactOptionsByI18N from '../../../data/job/getContactOptionsByI18N'
@@ -49,6 +49,6 @@ ContactOptionsMobile.propTypes = {
   t: func,
 }
 
-export default styled(withI18next(['job'])(ContactOptionsMobile))`
+export default styled(translate(ContactOptionsMobile))`
   ${styles}
 `

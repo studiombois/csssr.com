@@ -33,7 +33,7 @@ FactItem.propTypes = {
   itemClassName: string,
 }
 
-export default translate()(
+export default translate(
   styled(FactItem)`
     ${styles}
   `,

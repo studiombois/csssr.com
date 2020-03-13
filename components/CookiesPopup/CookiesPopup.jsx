@@ -53,6 +53,6 @@ const CookiesPopup = ({ className, t, lng }) => {
   )
 }
 
-export default styled(translate()(CookiesPopup))`
+export default styled(translate(CookiesPopup))`
   ${styles}
 `

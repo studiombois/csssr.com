@@ -51,7 +51,7 @@ Facts.propTypes = {
   factItems: array,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(
     styled(Facts)`
       ${styles}

@@ -60,6 +60,6 @@ ProjectsListMobile.propTypes = {
   ),
 }
 
-export default styled(translate()(ProjectsListMobile))`
+export default styled(translate(ProjectsListMobile))`
   ${styles}
 `

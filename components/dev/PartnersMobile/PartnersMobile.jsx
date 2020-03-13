@@ -48,6 +48,6 @@ const Partners = ({ className, t, lng }) => (
   </Grid>
 )
 
-export default styled(translate()(Partners))`
+export default styled(translate(Partners))`
   ${styles}
 `

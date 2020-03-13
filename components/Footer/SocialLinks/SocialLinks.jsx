@@ -30,6 +30,6 @@ SocialLinks.propTypes = {
   lng: string,
 }
 
-export default translate()(styled(SocialLinks)`
+export default translate(styled(SocialLinks)`
   ${styles}
 `)

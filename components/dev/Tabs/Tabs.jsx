@@ -25,7 +25,7 @@ Tabs.propTypes = {
   onClick: func,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Tabs)`
     ${styles}
   `),

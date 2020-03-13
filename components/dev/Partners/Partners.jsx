@@ -76,7 +76,7 @@ const Partners = ({ className, t, lng }) => (
   </Grid>
 )
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Partners)`
     ${styles}
   `),

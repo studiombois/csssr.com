@@ -42,7 +42,7 @@ const Feature1 = ({ className, t, lng, image }) => (
   </section>
 )
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Feature1)`
     ${styles}
   `),

@@ -1,0 +1,16 @@
+export default [
+  'common',
+  'dev',
+  'jobs',
+  'job',
+  'error',
+  'privacyPolicy',
+  'cookiesPolicy',
+  'mvp',
+  'industry',
+  'coreValues',
+  'main',
+  'technologies',
+  'express',
+  'wayOfWork',
+]

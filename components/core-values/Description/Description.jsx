@@ -31,7 +31,7 @@ Description.propTypes = {
   description: array,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Description)`
     ${styles}
   `),

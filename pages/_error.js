@@ -1,6 +1,6 @@
 import ErrorPage from '../components/error/ErrorPage'
 import React from 'react'
-import withI18next from '../utils/withI18next'
+import translate from '../utils/translate-wrapper'
 
 class MyError extends React.Component {
   static getInitialProps({ res, err }) {
@@ -13,4 +13,4 @@ class MyError extends React.Component {
   }
 }
 
-export default withI18next(['error'])(MyError)
+export default translate(MyError)

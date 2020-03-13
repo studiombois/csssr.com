@@ -60,7 +60,7 @@ PrivacyAndLanguageLinks.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   withRouter(
     PagesListConsumer(
       styled(PrivacyAndLanguageLinks)`

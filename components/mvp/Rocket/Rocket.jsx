@@ -121,6 +121,6 @@ class Rocket extends PureComponent {
   }
 }
 
-export default styled(translate()(Rocket))`
+export default styled(translate(Rocket))`
   ${styles}
 `

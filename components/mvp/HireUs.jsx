@@ -75,4 +75,4 @@ const HireUs = ({ t, lng }) => (
   />
 )
 
-export default translate()(HireUs)
+export default translate(HireUs)

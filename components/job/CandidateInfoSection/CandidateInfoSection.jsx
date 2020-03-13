@@ -10,7 +10,7 @@ import styles, {
   stylesForFileField,
 } from './CandidateInfoSection.styles'
 import { css } from '@emotion/core'
-import withI18next from '../../../utils/withI18next'
+import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import ContactOptions from '../ContactOptions'
 import ContactOptionsMobile from '../ContactOptionsMobile'
@@ -154,7 +154,7 @@ const CandidateInfoSection = props => {
   )
 }
 
-export default withI18next(['job'])(
+export default translate(
   MsBrowserConsumer(styled(CandidateInfoSection)`
     ${styles}
   `),

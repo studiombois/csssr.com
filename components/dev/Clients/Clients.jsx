@@ -27,7 +27,7 @@ Clients.propTypes = {
   isMobile: bool,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Clients)`
     ${styles}
   `),

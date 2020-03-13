@@ -33,7 +33,7 @@ OurClients.propTypes = {
   content: object,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(OurClients)`
     ${styles}
   `),

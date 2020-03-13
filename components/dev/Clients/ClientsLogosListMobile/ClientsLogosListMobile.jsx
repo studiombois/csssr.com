@@ -29,6 +29,6 @@ const ClientsLogosListMobile = ({ className, t }) =>
     </li>
   ))
 
-export default styled(translate()(ClientsLogosListMobile))`
+export default styled(translate(ClientsLogosListMobile))`
   ${styles}
 `

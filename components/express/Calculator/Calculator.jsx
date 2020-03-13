@@ -29,6 +29,6 @@ Calculator.propTypes = {
   t: func,
 }
 
-export default translate()(styled(Calculator)`
+export default translate(styled(Calculator)`
   ${styles.base}
 `)

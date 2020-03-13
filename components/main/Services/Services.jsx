@@ -107,7 +107,7 @@ Services.propTypes = {
   isMobile: bool,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(
     MsBrowserConsumer(styled(Services)`
       ${styles}

@@ -46,7 +46,7 @@ Autotests.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(
     MsBrowserConsumer(styled(Autotests)`
       ${styles}

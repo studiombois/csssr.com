@@ -83,7 +83,7 @@ class FormStateMessage extends PureComponent {
   }
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(FormStateMessage)`
     ${styles}
   `),

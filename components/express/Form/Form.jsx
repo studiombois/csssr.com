@@ -77,7 +77,7 @@ const Form = ({ t, lng, className }) => (
   />
 )
 
-export default translate()(
+export default translate(
   styled(Form)`
     ${styles}
   `,

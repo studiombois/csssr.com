@@ -28,6 +28,6 @@ DoubleBottom.propTypes = {
   t: func,
 }
 
-export default translate()(styled(DoubleBottom)`
+export default translate(styled(DoubleBottom)`
   ${styles}
 `)

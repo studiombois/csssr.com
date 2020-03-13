@@ -7,7 +7,7 @@ import RiskMinimization from './RiskMinimization'
 import Money from './Money'
 import Process from './Process'
 import HireUs from './HireUs'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 
 class MVPPage extends PureComponent {
   state = {
@@ -63,4 +63,4 @@ class MVPPage extends PureComponent {
   }
 }
 
-export default withI18next(['mvp'])(MVPPage)
+export default translate(MVPPage)

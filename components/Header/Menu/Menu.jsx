@@ -99,7 +99,7 @@ Menu.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(styled(Menu)`
     ${styles}
   `),

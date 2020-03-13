@@ -16,6 +16,6 @@ ClientLogo.propTypes = {
   clientId: string,
 }
 
-export default styled(translate()(ClientLogo))`
+export default styled(translate(ClientLogo))`
   ${styles}
 `

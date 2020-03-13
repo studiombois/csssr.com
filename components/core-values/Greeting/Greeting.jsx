@@ -37,7 +37,7 @@ Greeting.propTypes = {
   id: string,
 }
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(Greeting)`
     ${styles}
   `),

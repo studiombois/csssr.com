@@ -136,7 +136,7 @@ const CookiesPolicyContent = ({ className, t }) => (
   </Grid>
 )
 
-export default translate()(
+export default translate(
   MsBrowserConsumer(styled(CookiesPolicyContent)`
     ${common_styles_for_policy_pages}
   `),

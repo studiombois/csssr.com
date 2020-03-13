@@ -75,7 +75,7 @@ Addresses.propTypes = {
   t: func,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(styled(Addresses)`
     ${styles}
   `),

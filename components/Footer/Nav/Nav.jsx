@@ -32,6 +32,6 @@ Nav.propTypes = {
   t: func,
 }
 
-export default translate()(styled(Nav)`
+export default translate(styled(Nav)`
   ${styles}
 `)

@@ -11,7 +11,7 @@ import PartnersMobile from '../../../components/dev/PartnersMobile'
 // import Portfolio from '../../components/dev/Portfolio'
 import Layout from '../../../components/Layout'
 // import ButtonSelect from '../../../components/ui-kit/ButtonSelect/ButtonSelect'
-import withI18next from '../../../utils/withI18next'
+import translate from '../../../utils/translate-wrapper'
 // import shuffleArray from '../../utils/shuffleArray'
 // import portfolio from '../../data/dev/portfolio'
 
@@ -64,4 +64,4 @@ class Dev extends PureComponent {
   }
 }
 
-export default withI18next(['dev'])(Dev)
+export default translate(Dev)

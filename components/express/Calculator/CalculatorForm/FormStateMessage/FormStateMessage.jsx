@@ -74,6 +74,6 @@ class FormStateMessage extends PureComponent {
   }
 }
 
-export default translate()(styled(FormStateMessage)`
+export default translate(styled(FormStateMessage)`
   ${styles.base}
 `)

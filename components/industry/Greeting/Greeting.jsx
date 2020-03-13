@@ -61,7 +61,7 @@ Greeting.propTypes = {
   content: object,
 }
 
-export default translate()(
+export default translate(
   DeviceConsumer(
     MsBrowserConsumer(styled(Greeting)`
       ${styles}

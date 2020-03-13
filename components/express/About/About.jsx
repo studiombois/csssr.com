@@ -54,6 +54,6 @@ About.propTypes = {
   t: func,
 }
 
-export default translate()(styled(About)`
+export default translate(styled(About)`
   ${styles.base}
 `)

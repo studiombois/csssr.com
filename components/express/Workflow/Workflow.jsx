@@ -49,6 +49,6 @@ Workflow.propTypes = {
   t: func,
 }
 
-export default translate()(styled(Workflow)`
+export default translate(styled(Workflow)`
   ${styles.base}
 `)

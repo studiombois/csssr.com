@@ -8,7 +8,7 @@ import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Head from '../Head'
 import CandidateForm from './CandidateForm'
-import withI18next from '../../utils/withI18next'
+import translate from '../../utils/translate-wrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../utils/validators/candidateFormValidationRules'
 import withError from '../../utils/withError'
@@ -214,4 +214,4 @@ class JobPage extends PureComponent {
   }
 }
 
-export default withError(withI18next(['job'])(JobPage))
+export default withError(translate(JobPage))

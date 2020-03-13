@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { string, bool, func } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './FileField.styles'
-import withI18next from '../../../utils/withI18next'
+import translate from '../../../utils/translate-wrapper'
 
 class FileField extends PureComponent {
   static propTypes = {
@@ -92,6 +92,6 @@ class FileField extends PureComponent {
   }
 }
 
-export default styled(withI18next('job')(FileField))`
+export default styled(translate(FileField))`
   ${styles}
 `

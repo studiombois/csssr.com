@@ -46,6 +46,6 @@ Post.propTypes = {
   t: func,
 }
 
-export default styled(translate()(Post))`
+export default styled(translate(Post))`
   ${styles}
 `

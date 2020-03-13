@@ -137,7 +137,9 @@ export default class MyApp extends App {
       document.body.classList.remove('outline')
     })
 
-    Router.events.on('routeChangeComplete', this.handleRouteChange)
+    Router.events.on('routeChangeStart', this.handleRouteChangeStart)
+
+    Router.events.on('routeChangeComplete', this.handleRouteChangeComplete)
 
     /**
      * Определяем кастомный vh для правильного отображения Header на мобилках
@@ -153,7 +155,8 @@ export default class MyApp extends App {
     this.tabletMediaQuery.removeListener(this.handleTableMediaMatch)
     window.removeListener('resize', this.getVhSize)
 
-    Router.events.off('routeChangeComplete', this.handleRouteChange)
+    Router.events.off('routeChangeStart', this.handleRouteChangeStart)
+    Router.events.off('routeChangeComplete', this.handleRouteChangeComplete)
   }
 
   getVhSize = () => {
@@ -171,11 +174,19 @@ export default class MyApp extends App {
       isTablet: matches,
     })
 
-  handleRouteChange = () => {
+  handleRouteChangeStart = () => {
+    document.documentElement.classList.add('disable-smooth-scroll')
+  }
+
+  handleRouteChangeComplete = () => {
     if (window.dataLayer) {
       // setTimeout для того чтобы страница успела отрендериться и поменялся title
       setTimeout(() => window.dataLayer.push({ event: 'route_change_complete' }))
     }
+
+    setTimeout(() => {
+      document.documentElement.classList.remove('disable-smooth-scroll')
+    })
   }
 
   render() {

@@ -7,7 +7,7 @@ export const base = css`
     padding: 0;
   }
 
-  html {
+  html:not(.disable-smooth-scroll) {
     scroll-behavior: smooth;
   }
 

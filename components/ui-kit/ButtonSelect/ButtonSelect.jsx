@@ -134,10 +134,10 @@ class ButtonSelect extends PureComponent {
   }
 
   handlePreventSmoothScroll = () => {
-    document.documentElement.style.scrollBehavior = 'auto'
+    document.documentElement.classList.add('disable-smooth-scroll')
 
     const scrollStylesTimer = setTimeout(() => {
-      document.documentElement.style.scrollBehavior = 'smooth'
+      document.documentElement.classList.remove('disable-smooth-scroll')
 
       clearTimeout(scrollStylesTimer)
     })

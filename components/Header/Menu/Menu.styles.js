@@ -58,6 +58,7 @@ const base = ({ breakpoints: { mobile }}) => css`
       padding-right: 0;
       flex-direction: column;
       align-items: flex-start;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .menu-item {

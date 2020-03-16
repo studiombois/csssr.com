@@ -70,7 +70,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.all} {
     & {
-      margin-top: -70px;
+      margin-top: ${calcRem(-70)};
     }
 
     .title_node {
@@ -92,6 +92,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.l} {
     & {
+      margin-top: ${calcRem(-83)};
       grid-template-rows: 737px max-content max-content max-content 302px max-content;
     }
 

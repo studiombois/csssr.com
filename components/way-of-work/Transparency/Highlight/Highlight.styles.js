@@ -119,6 +119,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  ${desktop.l} {
+    & {
+      margin-left: ${calcRem(90)};
+    }
+  }
+
+  ${desktop.m} {
+    & {
+      margin-left: ${calcRem(16)};
+    }
+  }
+
   ${desktop.all} {
     & {
       top: calc((100vh - 507px) / 2);

@@ -5,7 +5,6 @@ import styled from '@emotion/styled'
 import styles from './PrivacyPolicyCheckbox.styles'
 import translate from '../../utils/translate-wrapper'
 import Checkbox from '../ui-kit/Checkbox/Checkbox'
-import privacyPolicyLinkClick from '../../utils/privacyPolicyLinkClick'
 
 const PrivacyPolicyCheckbox = ({
   id = 'privacyPolicyCheckbox',
@@ -32,7 +31,6 @@ const PrivacyPolicyCheckbox = ({
       href={`/${lng}/privacy-policy`}
       target="_blank"
       rel="noopener"
-      onClick={privacyPolicyLinkClick}
       className="font_link-list_16"
       data-testid={linkTestId}
       tabIndex={tabIndex}

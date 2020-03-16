@@ -92,7 +92,7 @@ const Header = ({ className, lng, t, isIe11, isMobile, isButtonVisible }) => {
       })}
     >
       <NextLink href={`/${lng}`}>
-        <a>
+        <a className="logo-wrapper">
           <Logo className="logo" />
         </a>
       </NextLink>

@@ -8,13 +8,13 @@ import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import CookiesPopup from '../CookiesPopup'
 
-const Layout = ({ children, isIe11, router: { asPath } }) => {
+const Layout = ({ children, isIe11, pageName = 'main', router: { asPath } }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
   const pathsNoButton = ['jobs', 'privacy-policy', 'cookies-policy']
   const isButtonVisible = !pathsNoButton.some(string => asPath.indexOf(string) + 1)
   return (
     <Fragment>
-      <Header isButtonVisible={isButtonVisible} />
+      <Header isButtonVisible={isButtonVisible} pageName={pageName} />
       <Global styles={styles} />
       {isIe11 && <Global styles={ie11Styles} />}
 

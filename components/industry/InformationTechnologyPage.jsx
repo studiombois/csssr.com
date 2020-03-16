@@ -16,9 +16,13 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
 const InformationTechnologyPage = ({ t }) => {
+  const pageName = 'industry'
   return (
-    <Layout>
-      <Head title={t('industry:meta.informationTechnology.title')} description={t('industry:meta.informationTechnology.description')} />
+    <Layout pageName={pageName}>
+      <Head
+        title={t('industry:meta.informationTechnology.title')}
+        description={t('industry:meta.informationTechnology.description')}
+      />
 
       <Greeting id="greeting" content={greeting} />
 
@@ -28,7 +32,7 @@ const InformationTechnologyPage = ({ t }) => {
 
       <CoreValues id="core-values" content={coreValues} />
 
-      <Form pageName="industry" />
+      <Form pageName={pageName} />
     </Layout>
   )
 }

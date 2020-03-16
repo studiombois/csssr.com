@@ -16,9 +16,13 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
 const MediaAndMarketingPage = ({ t }) => {
+  const pageName = 'industry'
   return (
-    <Layout>
-      <Head title={t('industry:meta.mediaAndMarketing.title')} description={t('industry:meta.mediaAndMarketing.description')} />
+    <Layout pageName={pageName}>
+      <Head
+        title={t('industry:meta.mediaAndMarketing.title')}
+        description={t('industry:meta.mediaAndMarketing.description')}
+      />
 
       <Greeting id="greeting" content={greeting} />
 
@@ -28,7 +32,7 @@ const MediaAndMarketingPage = ({ t }) => {
 
       <CoreValues id="core-values" content={coreValues} />
 
-      <Form pageName="industry" />
+      <Form pageName={pageName} />
     </Layout>
   )
 }

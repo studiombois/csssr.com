@@ -12,22 +12,31 @@ import CrossIcon from '../../static/icons/cross_white.svg'
 
 const crossIcon = <CrossIcon width="100%" height="100%" />
 
+const COOKIES_POLICY_ALERT_HIDDEN = 'hidden'
+
 const CookiesPopup = ({ className, t, lng }) => {
-  const [isActive, setIsActive] = useState(true)
+  const [isHidden, setIsHidden] = useState(true)
 
   const handleClick = () => {
-    localStorage.setItem('cookies_policy', true)
-    setIsActive(true)
+    if (localStorage) {
+      localStorage.setItem('cookies_policy', COOKIES_POLICY_ALERT_HIDDEN)
+    }
+    setIsHidden(true)
   }
 
   useEffect(() => {
-    setIsActive(localStorage.getItem('cookies_policy'))
+    if (localStorage) {
+      const isHidden = localStorage.getItem('cookies_policy') === COOKIES_POLICY_ALERT_HIDDEN
+      setIsHidden(isHidden)
+    } else {
+      setIsHidden(false)
+    }
   }, [])
 
   const links = cookiesLinks[lng]
 
   return (
-    <div className={cn(className, { hide: isActive })}>
+    <div className={cn(className, { hide: isHidden })}>
       <button className="close" onClick={handleClick}>
         {crossIcon}
       </button>

@@ -212,8 +212,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     .service_outsourcing::before {
       top: ${calcRem(-24)};
       left: ${calcRem(-118)};
-      width: ${calcRem(197)};
-      height: ${calcRem(197)};
+      width: ${calcRem(217)};
+      height: ${calcRem(215)};
       transform: scaleX(-1)
     }
 
@@ -226,10 +226,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
 
     .service_mvp::before {
-      top: ${calcRem(-40)};
+      top: ${calcRem(-26)};
       left: ${lng === 'ru' ? `calc(100% + ${calcRem(-150)})` : calcRem(-150)};
-      width: ${calcRem(218)};
-      height: ${calcRem(218)};
+      width: ${calcRem(197)};
+      height: ${calcRem(194)};
       transform: ${lng === 'ru' ? `scaleY(-1)` : `scale(-1)`};
     }
 

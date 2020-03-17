@@ -69,6 +69,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       height: 100%;
       border: none;
       background-color: transparent;
+      cursor: pointer;
     }
 
     .dropdown {

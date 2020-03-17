@@ -15,6 +15,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     color: ${colors.secondary.darken100};
     font-weight: normal;
   }
+  
+  .phone {
+    display: block;
+  }
 
   .time {
     color: #7E8FA4;
@@ -57,6 +61,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .phone {
       margin-top: ${calcRem(8)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
 
     .time {
@@ -80,6 +86,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     & {
       flex-direction: column;
       align-items: center;
+    }
+
+    .phone {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
 
     .title,

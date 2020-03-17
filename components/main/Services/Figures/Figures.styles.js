@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../../utils/style/getGridValueForMs'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet }}) => css`
+const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
   & {
     position: sticky;
     top: 5vh;
@@ -10,8 +10,8 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     grid-column: 8;
     /* Вычисляем ширину по aspect ration */
     display: inline-flex;
-    width: calc(90vh * 456 / 588);
-    max-width: 456px;
+    width: ${lng === 'ru' ? `calc(90vh * 504 / 424)` : `calc(90vh * 456 / 588)`};
+    max-width: ${lng === 'ru' ? `504px` : `456px`};
     max-height: 90vh;
   }
 
@@ -39,6 +39,14 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     width: calc(190 / 456 * 100%);
   }
 
+  .picture_square.picture_square_ru {
+    top: 49.1%;
+    left: 44.3%;
+    z-index: 1;
+    /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+    width: calc(197 / 504 * 100%);
+  }
+
   .picture_triangle {
     top: 29.5%;
     z-index: 2;
@@ -51,6 +59,14 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     z-index: 3;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
     width: calc(225 / 456 * 100%);
+  }
+
+  .picture_circle.picture_circle_ru {
+    top: 1%;
+    left: 53%;
+    z-index: 3;
+    /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+    width: calc(210 / 504 * 100%);
   }
 
   @media (min-height: 654px) {
@@ -75,11 +91,11 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
   ${tablet.all} {
     & {
       /* Вычисляем top таким образом, что бы он был равен bottom */
-      top: calc((100vh - ${calcRem(420)}) / 2);
+      top: calc((100vh - ${calcRem(303)}) / 2);
       margin-top: ${calcRem(105)};
       margin-left: ${calcRem(-26)};
-      width: ${calcRem(324)};
-      max-height: ${calcRem(421)};
+      width: ${lng === 'ru' ? calcRem(304) : calcRem(324)};
+      max-height: ${lng === 'ru' ? calcRem(303) : calcRem(421)};
     }
 
     .picture_figures {
@@ -90,12 +106,19 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     .picture:not(.picture_figures) {
       transform: translateX(calc(-50% + 0.375rem));
       opacity: 1;
-      z-index: -1;
+      z-index: ${lng === 'ru' ? '0' : '-1'};
     }
 
     .picture_square {
       top: 0;
       width: ${calcRem(130)};
+    }
+
+    .picture_square.picture_square_ru {
+      top: 50%;
+      left: 43.7%;
+      /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+      width: calc(113 / 304 * 100%);
     }
 
     .picture_triangle {
@@ -106,6 +129,13 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     .picture_circle {
       top: ${calcRem(262)};
       width: ${calcRem(154)}
+    }
+
+    .picture_circle.picture_circle_ru {
+      top: 2.7%;
+      left: 52.3%;
+      /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+      width: calc(119 / 304 * 100%);
     }
   }
 `
@@ -136,9 +166,10 @@ const ie11Styles = ({ breakpoints: { tablet } }) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { lng } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, lng })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

@@ -1,30 +1,39 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
+// Часть отсупа между блоками переносим в padding,
+// чтобы при переходах на хэш якоря был приятный отступ сверху
+// и контент не перекрывался выплывающим хедером.
+const articlePaddingForHashLinks = 64
+
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     margin-top: ${calcRem(114)};
   }
+  
+  article:not(:first-of-type) {
+    padding-top: ${calcRem(articlePaddingForHashLinks)};
+  }
 
   article:nth-of-type(2) {
-    margin-top: ${calcRem(329)};
+    margin-top: ${calcRem(329 - articlePaddingForHashLinks)};
   }
 
   article:nth-of-type(3) {
-    margin-top: ${calcRem(329)};
+    margin-top: ${calcRem(329 - articlePaddingForHashLinks)};
   }
 
   article:nth-of-type(4) {
-    margin-top: ${calcRem(358)};
+    margin-top: ${calcRem(358 - articlePaddingForHashLinks)};
   }
 
   article:nth-of-type(5) {
-    margin-top: ${calcRem(377)};
+    margin-top: ${calcRem(377 - articlePaddingForHashLinks)};
   }
 
   ${desktop.l} {
     article:nth-of-type(4) {
-      margin-top: ${calcRem(376)};
+      margin-top: ${calcRem(376 - articlePaddingForHashLinks)};
     }
   }
 
@@ -34,19 +43,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(313)};
+      margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(313)};
+      margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(335)};
+      margin-top: ${calcRem(335 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(312)};
+      margin-top: ${calcRem(312 - articlePaddingForHashLinks)};
     }
   }
 
@@ -56,19 +65,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(289)};
+      margin-top: ${calcRem(289 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(269)};
+      margin-top: ${calcRem(269 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(361)};
+      margin-top: ${calcRem(361 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(264)};
+      margin-top: ${calcRem(264 - articlePaddingForHashLinks)};
     }
   }
 
@@ -78,19 +87,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(225)};
+      margin-top: ${calcRem(225 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(196)};
+      margin-top: ${calcRem(196 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(225)};
+      margin-top: ${calcRem(225 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(225)};
+      margin-top: ${calcRem(225 - articlePaddingForHashLinks)};
     }
   }
 
@@ -100,19 +109,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(196)};
+      margin-top: ${calcRem(196 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(195)};
+      margin-top: ${calcRem(195 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(193)};
+      margin-top: ${calcRem(193 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(194)};
+      margin-top: ${calcRem(194 - articlePaddingForHashLinks)};
     }
   }
 `

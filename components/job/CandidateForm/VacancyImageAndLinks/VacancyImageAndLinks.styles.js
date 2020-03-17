@@ -168,6 +168,8 @@ const faqImageStyles = css`
 
     img {
       object-position: 71%;
+      max-width: 100%;
+      right: 0;
     }
   }
 

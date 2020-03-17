@@ -8,7 +8,9 @@ const PrivacyPolicyPage = ({ t, isMsBrowser, children }) => (
       title={t('privacyPolicy:meta.title')}
       description={t('privacyPolicy:meta.description')}
       isMsBrowser={isMsBrowser}
-    />
+    >
+      <meta name="robots" content="noindex" />
+    </Head>
 
     {children}
   </Layout>

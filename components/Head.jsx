@@ -125,6 +125,7 @@ const Head = props => {
       )}
       <meta property="fb:app_id" content="416195255787519" />
       <StructuredData />
+      {props.children}
     </NextHead>
   )
 }

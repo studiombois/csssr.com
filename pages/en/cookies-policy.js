@@ -6,7 +6,9 @@ import translate from '../../utils/translate-wrapper'
 
 const PrivacyPolicy = ({ t }) => (
   <Layout>
-    <Head title={t('cookiesPolicy:meta.title')} description={t('cookiesPolicy:meta.description')} />
+    <Head title={t('cookiesPolicy:meta.title')} description={t('cookiesPolicy:meta.description')}>
+      <meta name="robots" content="noindex" />
+    </Head>
     <CookiesPolicyContent />
   </Layout>
 )

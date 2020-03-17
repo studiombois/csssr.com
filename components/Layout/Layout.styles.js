@@ -690,7 +690,7 @@ export const fonts =  css`
   }
 
   .font_input-small-label {
-    color: #4a4a4a;
+    color: #9b9b9b;
   }
 
   .font_input-small-focus-label {

@@ -33,7 +33,7 @@ class Dev extends PureComponent {
     const { t /* , shuffledPortfolio*/, isMobile } = this.props
 
     return (
-      <Layout>
+      <Layout pageName="dev">
         <Head title={t('dev:meta.title')} description={t('dev:meta.description')} />
         <Hire />
         <Feature1 image={{ namespace: 'dev', key: 'geometry', alt: t('dev:imgAlt.geometry') }} />

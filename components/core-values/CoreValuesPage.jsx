@@ -8,18 +8,17 @@ import Form from './Form'
 import Head from '../Head'
 
 const CoreValues = ({ t }) => {
+  const pageName = 'coreValues'
+
   return (
-    <Layout>
-      <Head
-        title={t('coreValues:meta.title')}
-        description={t('coreValues:meta.description')}
-      />
+    <Layout pageName={pageName}>
+      <Head title={t('coreValues:meta.title')} description={t('coreValues:meta.description')} />
 
       <Greeting />
 
       <ValuesSection />
 
-      <Form pageName="coreValues" />
+      <Form pageName={pageName} />
     </Layout>
   )
 }

@@ -10,8 +10,9 @@ import Transparency from './Transparency'
 import Form from './Form'
 
 const WayOfWork = ({ t }) => {
+  const pageName = 'wayOfWork'
   return (
-    <Layout>
+    <Layout pageName={pageName}>
       <Head title={t('wayOfWork:meta.title')} description={t('wayOfWork:meta.description')} />
 
       <Greeting title={t('wayOfWork:greeting.title')} />
@@ -22,7 +23,7 @@ const WayOfWork = ({ t }) => {
 
       <Transparency />
 
-      <Form pageName="wayOfWork" />
+      <Form pageName={pageName} />
     </Layout>
   )
 }

@@ -8,15 +8,19 @@ import Backend from './Backend'
 import Form from './Form'
 import translate from '../../utils/translate-wrapper'
 
-const TechnologiesPage = ({ t }) => (
-  <Layout>
-    <Head title={t('technologies:meta.title')} description={t('technologies:meta.description')} />
-    <Hero />
-    <Frontend />
-    <Autotests />
-    <Backend />
-    <Form pageName="technologies" />
-  </Layout>
-)
+const TechnologiesPage = ({ t }) => {
+  const pageName = 'technologies'
+
+  return (
+    <Layout pageName={pageName}>
+      <Head title={t('technologies:meta.title')} description={t('technologies:meta.description')} />
+      <Hero />
+      <Frontend />
+      <Autotests />
+      <Backend />
+      <Form pageName={pageName} />
+    </Layout>
+  )
+}
 
 export default translate(TechnologiesPage)

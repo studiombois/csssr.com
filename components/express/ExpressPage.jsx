@@ -11,7 +11,7 @@ import Features from './Features'
 import Form from './Form'
 
 const ExpressPage = ({ t }) => (
-  <Layout>
+  <Layout pageName="express">
     <Head
       title={t('express:meta.title')}
       description={t('express:meta.description')}

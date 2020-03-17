@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, Fragment } from 'react'
 import { string, func, bool } from 'prop-types'
+import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -9,6 +10,8 @@ import styles from './Header.styles'
 import Menu from './Menu'
 import Links from './Links'
 import ButtonLink from '../ui-kit/core-design/ButtonLink'
+import Button from '../ui-kit/core-design/Button'
+import ContactModal from '../ContactModal'
 import Logo from '../../static/icons/csssr_logo.svg'
 import Burger from '../../static/icons/header/burger.svg'
 import Cross from '../../static/icons/header/close.svg'
@@ -17,16 +20,19 @@ import translate from '../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const Header = ({ className, lng, t, isIe11, isMobile, isButtonVisible }) => {
+const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible = true }) => {
   let lastScrollTopValue = useRef(0)
-  const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
   const [isDropdownOpened, toggleDropdown] = useState(false)
+  const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
+  const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
   useEffect(() => {
-    if (isDropdownOpened) {
-      disablePageScroll(document.body)
-    } else {
-      enablePageScroll(document.body)
+    if (isMobile) {
+      if (isDropdownOpened) {
+        disablePageScroll(document.body)
+      } else {
+        enablePageScroll(document.body)
+      }
     }
 
     const handleScroll = event => {
@@ -63,8 +69,14 @@ const Header = ({ className, lng, t, isIe11, isMobile, isButtonVisible }) => {
     }
   })
 
-  const handleClick = () => {
-    if (isMobile) toggleDropdown(false)
+  const handleButtonLinkClick = () => toggleDropdown(false)
+  const handleButtonClick = () => {
+    disablePageScroll(document.body)
+    toggleContactModalVisibility(true)
+  }
+  const handleHideContactModal = () => {
+    enablePageScroll(document.body)
+    toggleContactModalVisibility(false)
   }
 
   const Icon = isDropdownOpened ? Cross : Burger
@@ -72,15 +84,22 @@ const Header = ({ className, lng, t, isIe11, isMobile, isButtonVisible }) => {
     <Fragment>
       <Menu />
       <Links />
-      {isButtonVisible && (
-        <ButtonLink
-          href="#hire-us"
-          kind="primary"
-          onClick={handleClick}
-          className="button_action"
-          dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
-        />
-      )}
+      {isButtonVisible &&
+        (isMobile ? (
+          <ButtonLink
+            href="#hire-us"
+            kind="primary"
+            onClick={handleButtonLinkClick}
+            className="button_action"
+            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+          />
+        ) : (
+          <Button
+            onClick={handleButtonClick}
+            className="button_action"
+            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+          />
+        ))}
     </Fragment>
   )
 
@@ -115,6 +134,13 @@ const Header = ({ className, lng, t, isIe11, isMobile, isButtonVisible }) => {
       ) : (
         <CommonHeaderContent />
       )}
+
+      {typeof window !== 'undefined' &&
+        isContactModalVisible &&
+        ReactDOM.createPortal(
+          <ContactModal onClose={handleHideContactModal} pageName={pageName} />,
+          document.getElementById('main'),
+        )}
     </header>
   )
 }

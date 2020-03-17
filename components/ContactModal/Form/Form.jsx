@@ -31,7 +31,7 @@ const Form = props => {
         shouldShowStatusMessage={false}
         onSubmitResolve={onSubmitResolve}
         hasFailOrSuccessStatus={hasFailOrSuccessStatus}
-        css={styles({hasFailOrSuccessStatus, isIe11})}
+        css={styles({ hasFailOrSuccessStatus, isIe11 })}
         {...props}
       />
 

@@ -18,7 +18,10 @@ import facts from '../../data/industry/facts'
 const FintechPage = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('industry:meta.fintech.title')} description={t('industry:meta.fintech.description')} />
+      <Head
+        title={t('industry:meta.fintech.title')}
+        description={t('industry:meta.fintech.description')}
+      />
 
       <Greeting id="greeting" content={greeting} />
 

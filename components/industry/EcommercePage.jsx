@@ -18,7 +18,10 @@ import facts from '../../data/industry/facts'
 const EcommercePage = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('industry:meta.ecommerce.title')} description={t('industry:meta.ecommerce.description')} />
+      <Head
+        title={t('industry:meta.ecommerce.title')}
+        description={t('industry:meta.ecommerce.description')}
+      />
 
       <Greeting id="greeting" content={greeting} />
 

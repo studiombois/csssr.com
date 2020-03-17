@@ -6,7 +6,16 @@ import { string, object } from 'prop-types'
 import styles from './PictureForAllResolutions.styles'
 import flattenObjDeep from '../../../utils/client/flattenObjDeep'
 
-const PictureForAllResolutions = ({ className, testid, images, fallback, alt, theme }) => {
+const PictureForAllResolutions = ({
+  className,
+  children,
+  testid,
+  images,
+  fallback,
+  type,
+  alt,
+  theme,
+}) => {
   if (isEmpty(theme) || isEmpty(theme.breakpoints)) {
     throw new Error(
       'Компонент <PictureForAllResolutions /> не получил пропс `theme` или в `theme` нет свойства `breakpoints`',
@@ -20,7 +29,7 @@ const PictureForAllResolutions = ({ className, testid, images, fallback, alt, th
       <picture className={className}>
         {Object.keys(images).map(resolution => {
           const mediaRule = mediaRulesByResoluton[resolution].slice(7)
-          const extensions = ['webp', 'png', 'jpeg', 'jpg']
+          const extensions = ['webp', 'png', 'jpeg', 'jpg', 'svg']
 
           return extensions.map(
             extension =>
@@ -28,14 +37,20 @@ const PictureForAllResolutions = ({ className, testid, images, fallback, alt, th
                 <source
                   key={`${resolution}_${extension}`}
                   media={mediaRule}
-                  type={`image/${extension}`}
-                  srcSet={images[resolution][extension].srcSet}
+                  type={type || `image/${extension}`}
+                  srcSet={
+                    images[resolution][extension].srcSet
+                      ? images[resolution][extension].srcSet
+                      : images[resolution][extension]
+                  }
                 />
               ),
           )
         })}
-
-        <img srcSet={fallback.srcSet} src={fallback['1x']} data-testid={testid} alt={alt} />
+        {!children && (
+          <img srcSet={fallback.srcSet} src={fallback['1x']} data-testid={testid} alt={alt} />
+        )}
+        {children}
       </picture>
     </Fragment>
   )

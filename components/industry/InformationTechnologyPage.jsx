@@ -18,7 +18,10 @@ import facts from '../../data/industry/facts'
 const InformationTechnologyPage = ({ t }) => {
   return (
     <Layout>
-      <Head title={t('industry:meta.informationTechnology.title')} description={t('industry:meta.informationTechnology.description')} />
+      <Head
+        title={t('industry:meta.informationTechnology.title')}
+        description={t('industry:meta.informationTechnology.description')}
+      />
 
       <Greeting id="greeting" content={greeting} />
 

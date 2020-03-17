@@ -17,12 +17,9 @@ const OurClients = ({ t, className, id, content: { heading, images, altImg } }) 
       className="heading"
     />
 
-    <PictureForAllResolutions
-      images={images}
-      fallback={images['desktop.l'].png}
-      alt={t(altImg)}
-      className="image"
-    />
+    <PictureForAllResolutions images={images} className="image" type="image/svg+xml">
+      <img src={images['desktop.l'].svg} alt={t(altImg)} />
+    </PictureForAllResolutions>
   </Grid>
 )
 

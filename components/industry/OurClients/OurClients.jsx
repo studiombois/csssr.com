@@ -8,7 +8,7 @@ import Heading from '../../ui-kit/core-design/Heading'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const OurClients = ({ t, className, id, content: { heading, images, altImg } }) => (
+const OurClients = ({ t, lng, className, id, content: { heading, images, altImg } }) => (
   <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"
@@ -17,8 +17,8 @@ const OurClients = ({ t, className, id, content: { heading, images, altImg } }) 
       className="heading"
     />
 
-    <PictureForAllResolutions images={images} className="image" type="image/svg+xml">
-      <img src={images['desktop.l'].svg} alt={t(altImg)} />
+    <PictureForAllResolutions images={images[lng]} className="image" type="image/svg+xml">
+      <img src={images[lng]['desktop.l'].svg} alt={t(altImg)} />
     </PictureForAllResolutions>
   </Grid>
 )

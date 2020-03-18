@@ -10,7 +10,7 @@ import CookiesPopup from '../CookiesPopup'
 
 const Layout = ({ children, isIe11, pageName = 'main', router: { asPath } }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
-  const pathsNoButton = ['jobs', 'privacy-policy', 'cookies-policy']
+  const pathsNoButton = ['jobs']
   const isButtonVisible = !pathsNoButton.some(string => asPath.indexOf(string) + 1)
   return (
     <Fragment>

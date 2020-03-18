@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 
-const base = css`
+const base = colors => css`
   position: fixed;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@ const base = css`
     grid-template-columns: repeat(10, 120px);
     width: 93rem;
     max-height: 86vh;
-    background-color: white;
+    background-color: ${colors.secondary.darken100};
     overflow-y: auto;
   }
 
@@ -94,7 +94,10 @@ const dynamic = ({ hasFailOrSuccessStatus }) => css`
   }
 `
 
-export default props => css`
-  ${base}
+export default props => {
+  const { colors } = props.theme
+
+  return css`
+  ${base(colors)}
   ${dynamic(props)}
-`
+`}

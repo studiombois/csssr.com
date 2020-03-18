@@ -55,7 +55,7 @@ pipeline {
           sshagent(credentials: ['csssr-com-chart']) {
             sh """
             rm -rf csssr.com-chart
-            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
+            git clone --single-branch --branch COM-1370 git@github.com:csssr-dreamteam/csssr.com-chart.git
             """
           }
 
@@ -73,7 +73,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages} express=csssr-express-fix-com-987
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages}
             """
           }
         }

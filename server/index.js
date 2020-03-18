@@ -60,30 +60,6 @@ const startApp = async () => {
 
           server.use(Sentry.Handlers.requestHandler())
 
-          server.get('/ru/express', (req, res) => res.redirect(302, '/ru'))
-
-          const oldPaths = [
-            '/jobs/index.html',
-            '/jobs/pixel-perfectionist/index.html',
-            '/jobs/technical-manager/index.html',
-            '/thanks/index.html',
-            '/company.html',
-            '/confidential.html',
-            '/de-index.html',
-            '/de-thanks.html',
-            '/en-index.html',
-            '/en-thanks.html',
-            '/index.html',
-            '/offert.html',
-            '/order.html',
-            '/outsource.html',
-            '/portfolio.html',
-            '/thanks.html',
-            '/timeline.html',
-            '/view-project.html',
-          ]
-          oldPaths.forEach(url => server.get(url, (req, res) => res.redirect(301, '/')))
-
           server.get('/:lng(ru|en)/jobs', (req, res) => {
             const locale = defaultLocaleByLanguage[req.params.lng]
             res.redirect(301, `/${locale}/jobs`)

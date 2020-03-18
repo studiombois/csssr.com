@@ -10,29 +10,58 @@ const logos_mobile_all = require('../../../static/images/industry/media-and-mark
   .default
 
 const ourClientsImages = {
-  'desktop.l': {
-    svg: {
-      srcSet: logos_desktop_l,
+  en: {
+    'desktop.l': {
+      svg: {
+        srcSet: logos_desktop_l,
+      },
+    },
+    'desktop.m': {
+      svg: {
+        srcSet: logos_desktop_m,
+      },
+    },
+    'desktop.s': {
+      svg: {
+        srcSet: logos_desktop_s,
+      },
+    },
+    'tablet.all': {
+      svg: {
+        srcSet: logos_tablet_all,
+      },
+    },
+    'mobile.all': {
+      svg: {
+        srcSet: logos_mobile_all,
+      },
     },
   },
-  'desktop.m': {
-    svg: {
-      srcSet: logos_desktop_m,
+  ru: {
+    'desktop.l': {
+      svg: {
+        srcSet: logos_desktop_l,
+      },
     },
-  },
-  'desktop.s': {
-    svg: {
-      srcSet: logos_desktop_s,
+    'desktop.m': {
+      svg: {
+        srcSet: logos_desktop_m,
+      },
     },
-  },
-  'tablet.all': {
-    svg: {
-      srcSet: logos_tablet_all,
+    'desktop.s': {
+      svg: {
+        srcSet: logos_desktop_s,
+      },
     },
-  },
-  'mobile.all': {
-    svg: {
-      srcSet: logos_mobile_all,
+    'tablet.all': {
+      svg: {
+        srcSet: logos_tablet_all,
+      },
+    },
+    'mobile.all': {
+      svg: {
+        srcSet: logos_mobile_all,
+      },
     },
   },
 }

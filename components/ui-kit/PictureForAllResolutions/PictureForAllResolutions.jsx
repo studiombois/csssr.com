@@ -60,8 +60,8 @@ PictureForAllResolutions.propTypes = {
   className: string,
   testid: string,
   images: object.isRequired,
-  fallback: object.isRequired,
-  alt: string.isRequired,
+  fallback: object,
+  alt: string,
   theme: object.isRequired,
 }
 

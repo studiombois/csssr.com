@@ -1,38 +1,78 @@
-const logos_desktop_l = require('../../../static/images/industry/information-technology/desktop.l/logos.svg')
+const logos_en_desktop_l = require('../../../static/images/industry/information-technology/desktop.l/en/logos.svg')
   .default
-const logos_desktop_m = require('../../../static/images/industry/information-technology/desktop.m/logos.svg')
+const logos_en_desktop_m = require('../../../static/images/industry/information-technology/desktop.m/en/logos.svg')
   .default
-const logos_desktop_s = require('../../../static/images/industry/information-technology/desktop.s/logos.svg')
+const logos_en_desktop_s = require('../../../static/images/industry/information-technology/desktop.s/en/logos.svg')
   .default
-const logos_tablet_all = require('../../../static/images/industry/information-technology/tablet.all/logos.svg')
+const logos_en_tablet_all = require('../../../static/images/industry/information-technology/tablet.all/en/logos.svg')
   .default
-const logos_mobile_all = require('../../../static/images/industry/information-technology/mobile.all/logos.svg')
+const logos_en_mobile_all = require('../../../static/images/industry/information-technology/mobile.all/en/logos.svg')
+  .default
+
+const logos_ru_desktop_l = require('../../../static/images/industry/information-technology/desktop.l/ru/logos.svg')
+  .default
+const logos_ru_desktop_m = require('../../../static/images/industry/information-technology/desktop.m/ru/logos.svg')
+  .default
+const logos_ru_desktop_s = require('../../../static/images/industry/information-technology/desktop.s/ru/logos.svg')
+  .default
+const logos_ru_tablet_all = require('../../../static/images/industry/information-technology/tablet.all/ru/logos.svg')
+  .default
+const logos_ru_mobile_all = require('../../../static/images/industry/information-technology/mobile.all/ru/logos.svg')
   .default
 
 const ourClientsImages = {
-  'desktop.l': {
-    svg: {
-      srcSet: logos_desktop_l,
+  en: {
+    'desktop.l': {
+      svg: {
+        srcSet: logos_en_desktop_l,
+      },
+    },
+    'desktop.m': {
+      svg: {
+        srcSet: logos_en_desktop_m,
+      },
+    },
+    'desktop.s': {
+      svg: {
+        srcSet: logos_en_desktop_s,
+      },
+    },
+    'tablet.all': {
+      svg: {
+        srcSet: logos_en_tablet_all,
+      },
+    },
+    'mobile.all': {
+      svg: {
+        srcSet: logos_en_mobile_all,
+      },
     },
   },
-  'desktop.m': {
-    svg: {
-      srcSet: logos_desktop_m,
+  ru: {
+    'desktop.l': {
+      svg: {
+        srcSet: logos_ru_desktop_l,
+      },
     },
-  },
-  'desktop.s': {
-    svg: {
-      srcSet: logos_desktop_s,
+    'desktop.m': {
+      svg: {
+        srcSet: logos_ru_desktop_m,
+      },
     },
-  },
-  'tablet.all': {
-    svg: {
-      srcSet: logos_tablet_all,
+    'desktop.s': {
+      svg: {
+        srcSet: logos_ru_desktop_s,
+      },
     },
-  },
-  'mobile.all': {
-    svg: {
-      srcSet: logos_mobile_all,
+    'tablet.all': {
+      svg: {
+        srcSet: logos_ru_tablet_all,
+      },
+    },
+    'mobile.all': {
+      svg: {
+        srcSet: logos_ru_mobile_all,
+      },
     },
   },
 }

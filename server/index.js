@@ -151,6 +151,11 @@ const startApp = async () => {
             res.redirect(`/${language}`)
           })
 
+          server.get('/en/service/express-front-end', (req, res, nextHandler) => {
+            res.setHeader('Content-Language', 'en-SG')
+            nextHandler()
+          })
+
           if (!isDevelopment) {
             server.get(/^\/_next\/static\/(fonts|icons|images)\//, (req, res, nextHandler) => {
               res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')

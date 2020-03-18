@@ -106,7 +106,7 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     .picture:not(.picture_figures) {
       transform: translateX(calc(-50% + 0.375rem));
       opacity: 1;
-      z-index: ${lng === 'ru' ? '0' : '-1'};
+      z-index: -1;
     }
 
     .picture_square {

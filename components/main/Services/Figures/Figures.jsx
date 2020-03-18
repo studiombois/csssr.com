@@ -25,7 +25,6 @@ const Figures = ({ className, t, hoveredService, lng }) => (
         src={figuresByLng[lng]}
         alt={t('main:imageAlt.figures')}
       />
-    }
 
     {figureByLng[lng].map(({ name, images, fallback, lng }) => (
       <Picture

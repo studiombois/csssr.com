@@ -10,6 +10,12 @@ const base = css`
   h2 {
     grid-column: 3 / span 6;
     margin-bottom: 4.5rem;
+    color: white;
+  }
+
+  .field input,
+  .field_type_textarea textarea {
+    background-color: transparent;
   }
 
   .field {
@@ -31,11 +37,12 @@ const base = css`
 
   .field_type_checkbox {
     margin-bottom: 1rem;
-  }
-
-  .field_type_checkbox {
     grid-column: 2 / span 8;
     margin-bottom: 1rem;
+  }
+
+  .field_type_checkbox label {
+    color: white;
   }
 
   .field_type_checkbox + .field_type_checkbox {

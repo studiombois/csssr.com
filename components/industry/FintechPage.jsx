@@ -16,8 +16,9 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
 const FintechPage = ({ t }) => {
+  const pageName = 'industry'
   return (
-    <Layout>
+    <Layout pageName={pageName}>
       <Head
         title={t('industry:meta.fintech.title')}
         description={t('industry:meta.fintech.description')}
@@ -31,7 +32,7 @@ const FintechPage = ({ t }) => {
 
       <CoreValues id="core-values" content={coreValues} />
 
-      <Form pageName="industry" />
+      <Form pageName={pageName} />
     </Layout>
   )
 }

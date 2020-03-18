@@ -35,7 +35,7 @@ class MVPPage extends PureComponent {
 
     return (
       <Layout>
-        <div style={{overflowX: 'hidden'}}>
+        <div style={{ overflowX: 'hidden' }}>
           <Head
             title={t('mvp:meta.title')}
             description={t('mvp:meta.description')}

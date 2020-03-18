@@ -16,6 +16,10 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     background-color: ${colors.secondary.darken100};
   }
 
+  .logo-wrapper {
+    font-size: 0;
+  }
+
   &.invisible,
   &.visible  {
     position: fixed;

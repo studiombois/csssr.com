@@ -269,6 +269,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .picture-wrapper {
       position: relative;
+      top: 0;
       margin-top: ${calcRem(26)};
       background: none;
       grid-row: auto;

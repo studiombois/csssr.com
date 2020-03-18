@@ -82,6 +82,11 @@ const base = css`
       width: 100%;
     }
 
+    .faq-picture {
+      left: -14%;
+      overflow: unset;
+    }
+
     .faq-text {
       display: block;
     }

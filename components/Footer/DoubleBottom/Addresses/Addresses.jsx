@@ -9,8 +9,10 @@ import Text from '../../../ui-kit/core-design/Text'
 
 import translate from '../../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import Link from '../../../ui-kit/core-design/Link'
 
 const addressesIds = ['singapore', 'russia', 'estonia']
+// TODO это может поменяться в будущем
 const timezoneOffsetsByAddressId = {
   singapore: 8,
   russia: 3,
@@ -51,11 +53,12 @@ const Addresses = ({ className, isTablet, isMobile, t }) => {
           />
 
           {id !== 'estonia' && (
-            <Text
+            <Link
               className="phone"
               dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.phone`) }}
+              href={`tel:${t(`common:footer.addresses.${id}.phone`)}`}
               size={textSize}
-              type="regular"
+              type="list"
             />
           )}
 

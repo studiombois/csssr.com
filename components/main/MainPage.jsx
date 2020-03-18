@@ -24,11 +24,12 @@ class MainPage extends PureComponent {
 
   render() {
     const { vacancies, t } = this.props
+    const pageName = 'main'
     return (
-      <Layout>
+      <Layout pageName={pageName}>
         <Head
           title={t('main:meta.title')}
-          templateTitle=''
+          templateTitle=""
           description={t('main:meta.description')}
         />
         <Hero />
@@ -37,7 +38,7 @@ class MainPage extends PureComponent {
         <AboutUs />
         <Projects />
         <Vacancies vacancies={vacancies} />
-        <Form pageName="main" />
+        <Form pageName={pageName} />
       </Layout>
     )
   }

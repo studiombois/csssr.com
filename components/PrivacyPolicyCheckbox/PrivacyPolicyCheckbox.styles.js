@@ -15,8 +15,8 @@ const base = css`
   @media (max-width: 767px) {
     .font_link-list_16 {
       padding-bottom: 0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 0.75rem;
+      line-height: 1rem;
     }
   }
 `

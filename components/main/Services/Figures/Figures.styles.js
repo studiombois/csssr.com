@@ -133,9 +133,9 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
 
     .picture_circle.picture_circle_ru {
       top: 2.7%;
-      left: 52.3%;
+      left: 52.5%;
       /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-      width: calc(119 / 304 * 100%);
+      width: calc(119.5 / 304 * 100%);
     }
   }
 `

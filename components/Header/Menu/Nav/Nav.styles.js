@@ -25,6 +25,18 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     height: 100%;
   }
 
+  .nav-item_active {
+    pointer-events: none;
+  }
+
+  .nav-item_active a {
+    color: #5695ED;
+  }
+
+  .nav-item_active .icon path {
+    stroke: #5695ED;
+  }
+
   .nav {
     margin-left: auto;
     margin-right: auto;

@@ -8,18 +8,28 @@ import figures from '../../../../data/main/figures'
 import translate from '../../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
-const Figures = ({ className, t, hoveredService }) => (
-  <aside className={cn('picture-wrapper', className)}>
-    <img
-      className={cn('picture', 'picture_figures')}
-      src={require('../../../../static/icons/main/figures.svg').default}
-      alt={t('main:imageAlt.figures')}
-    />
+const figuresByLng = {
+  en: require('../../../../static/icons/main/figures_en.svg').default,
+  ru: require('../../../../static/icons/main/figures_ru.svg').default,  
+}
 
-    {figures.map(({ name, images, fallback }) => (
+const figureByLng = {
+  en: figures.figures_en,
+  ru: figures.figures_ru,
+}
+
+const Figures = ({ className, t, hoveredService, lng }) => (
+  <aside className={cn('picture-wrapper', className)}>
+      <img
+        className={cn('picture', 'picture_figures')}
+        src={figuresByLng[lng]}
+        alt={t('main:imageAlt.figures')}
+      />
+
+    {figureByLng[lng].map(({ name, images, fallback, lng }) => (
       <Picture
         key={name}
-        className={cn('picture', `picture_${name}`, {
+        className={cn('picture', `picture_${name}`, `picture_${name}_${lng}` , {
           picture_is_visible: name === hoveredService,
         })}
         images={images}

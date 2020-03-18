@@ -7,20 +7,39 @@ import triangle_webp from '../../static/images/main/triangle.png?responsive_and_
 import circle from '../../static/images/main/circle.png?responsive'
 import circle_webp from '../../static/images/main/circle.png?responsive_and_webp'
 
-export default [
-  {
-    name: 'square',
-    images: { png: square, webp: square_webp },
-    fallback: square,
-  },
-  {
-    name: 'triangle',
-    images: { png: triangle, webp: triangle_webp },
-    fallback: triangle,
-  },
-  {
-    name: 'circle',
-    images: { png: circle, webp: circle_webp },
-    fallback: circle,
-  },
-]
+export default {
+  figures_en: [
+    {
+      name: 'square',
+      lng: 'en',
+      images: { png: square, webp: square_webp },
+      fallback: square,
+    },
+    {
+      name: 'triangle',
+      lng: 'en',
+      images: { png: triangle, webp: triangle_webp },
+      fallback: triangle,
+    },
+    {
+      name: 'circle',
+      lng: 'en',
+      images: { png: circle, webp: circle_webp },
+      fallback: circle,
+    },
+  ],
+  figures_ru: [
+    {
+      name: 'square',
+      lng: 'ru',
+      images: { png: square, webp: square_webp },
+      fallback: square,
+    },
+    {
+      name: 'circle',
+      lng: 'ru',
+      images: { png: circle, webp: circle_webp },
+      fallback: circle,
+    },
+  ],
+}

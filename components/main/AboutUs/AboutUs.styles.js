@@ -124,7 +124,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${desktop.l} {
     .picture-wrapper {
       margin-top: 35px;
-      margin-left: -50px;
+      margin-left: -55px;
       grid-column: 2 / span 4;
     }
 

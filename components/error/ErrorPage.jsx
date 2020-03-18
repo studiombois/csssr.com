@@ -81,7 +81,9 @@ class ErrorPage extends React.Component {
         <Global styles={globalStyles} />
         <DevTools />
 
-        <Head title={t('error:meta.title')} description={t('error:meta.description')} />
+        <Head title={t('error:meta.title')} description={t('error:meta.description')}>
+          <meta name="robots" content="noindex" />
+        </Head>
 
         <Grid as="header" className={className}>
           <Link href={rootUrl}>

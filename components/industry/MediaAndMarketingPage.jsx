@@ -24,7 +24,7 @@ const MediaAndMarketingPage = ({ t }) => {
         description={t('industry:meta.mediaAndMarketing.description')}
       />
 
-      <Greeting id="greeting" content={greeting} />
+      <Greeting id="greeting" content={greeting} pageName={pageName} />
 
       <OurClients id="ourClients" content={ourClients} />
 

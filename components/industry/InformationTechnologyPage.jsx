@@ -24,7 +24,7 @@ const InformationTechnologyPage = ({ t }) => {
         description={t('industry:meta.informationTechnology.description')}
       />
 
-      <Greeting id="greeting" content={greeting} />
+      <Greeting id="greeting" content={greeting} pageName={pageName} />
 
       <OurClients id="ourClients" content={ourClients} />
 

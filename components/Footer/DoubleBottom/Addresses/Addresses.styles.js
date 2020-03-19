@@ -19,9 +19,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .phone {
     display: block;
   }
-  
-  .phone:hover {
-    color: #0254D8;
+
+  @media (hover: hover) and (pointer: fine) {
+    .phone:hover {
+      color: #0254D8;
+    }
   }
 
   .time {

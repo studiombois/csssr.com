@@ -1130,10 +1130,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.0.2.tgz#fde11096f67d9fb333fb54321feff198a9074509"
-  integrity sha512-0YOcRcS31gh03PrLBAXf7jOnDDNMow5cLjCMeW46MmBhaH0bPb/lanenKG6lXpp9dVfPKbovRL+FnRx5+SLFcg==
+"@csssr/core-design@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.0.3.tgz#afaf868b58382ae45794016a8911528b84468fc5"
+  integrity sha512-eASmymYyRHEoFLpZi0dmZh5kfn26/VSQiOLZKZoXk0wlj0VeHqC4p1MvfvExicuFb1D8YIT+DZ2/6QJFYmnJvw==
   dependencies:
     "@emotion/styled-base" "^10.0.10"
     color "^3.1.1"

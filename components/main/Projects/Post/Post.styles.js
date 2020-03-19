@@ -23,7 +23,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   .post-link {
-    display: block;
+    display: inline-block;
     margin-top: 16px;
   }
 

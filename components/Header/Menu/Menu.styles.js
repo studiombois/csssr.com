@@ -14,12 +14,12 @@ const base = ({ breakpoints: { mobile }}) => css`
     display: flex;
     align-items: center;
     height: 100%;
-    cursor: pointer;
   }
 
   .menu-item {
     color: white;
     letter-spacing: 0;
+    cursor: pointer;
 
     &:not(:first-of-type) {
       margin-left: ${calcRem(17)};

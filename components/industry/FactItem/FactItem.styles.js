@@ -1,9 +1,22 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   .fact-number {
+    line-height: ${calcRem(84)};
     font-weight: normal;
+  }
+
+  ${tablet.all} {
+    .fact-number {
+      line-height: ${calcRem(48)};
+    }
+  }
+
+  ${mobile.all} {
+    .fact-number {
+      line-height: ${calcRem(48)};
+    }
   }
 
   .fact-text {
@@ -12,7 +25,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
   ${mobile.all} {
     .fact-text {
-      margin-top: ${calcRem(-4)}
+      margin-top: ${calcRem(-4)};
     }
   }
 `

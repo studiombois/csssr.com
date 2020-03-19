@@ -31,12 +31,12 @@ export default css`
     border: none;
     border-bottom: solid 0.0625rem #e1e1e1;
     border-radius: 0;
-    caret-color: #4a4a4a;
+    caret-color: #000000;
   }
 
   input::placeholder {
     font-weight: 100;
-    color: #c0c0c0;
+    color: #9b9b9b;
   }
 
   label {

@@ -723,7 +723,7 @@ export const fonts =  css`
   }
 
   .font_inputted-text-regular {
-    color: #4a4a4a;
+    color: #000000;
   }
 
   .font_inputted-text-error {

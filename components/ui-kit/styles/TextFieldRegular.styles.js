@@ -41,7 +41,7 @@ export default css`
 
   input::placeholder {
     font-weight: 100;
-    color: #c0c0c0;
+    color: #9b9b9b;
   }
 
   label {

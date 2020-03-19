@@ -4,7 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .title {
-    margin-top: 197px;
+    margin-top: 188px;
     grid-column: 3 / span 8;
     text-align: center;
   }

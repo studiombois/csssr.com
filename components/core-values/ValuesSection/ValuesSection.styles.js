@@ -16,19 +16,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   article:nth-of-type(2) {
-    margin-top: ${calcRem(329 - articlePaddingForHashLinks)};
+    margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
   }
 
   article:nth-of-type(3) {
-    margin-top: ${calcRem(329 - articlePaddingForHashLinks)};
+    margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
   }
 
   article:nth-of-type(4) {
-    margin-top: ${calcRem(358 - articlePaddingForHashLinks)};
+    margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
   }
 
   article:nth-of-type(5) {
-    margin-top: ${calcRem(377 - articlePaddingForHashLinks)};
+    margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
   }
 
   ${desktop.l} {
@@ -39,7 +39,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.m} {
     & {
-      margin-top: ${calcRem(151)};
+      margin-top: ${calcRem(150)};
     }
 
     article:nth-of-type(2) {
@@ -51,11 +51,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(335 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(312 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
     }
   }
 
@@ -69,59 +69,59 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(269 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(289 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(361 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(289 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(264 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(289 - articlePaddingForHashLinks)};
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(122)};
+      margin-top: ${calcRem(161)};
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(225 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(249 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(196 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(249 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(225 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(249 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(225 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(249 - articlePaddingForHashLinks)};
     }
   }
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(81)};
+      margin-top: ${calcRem(123)};
     }
 
     article:nth-of-type(2) {
-      margin-top: ${calcRem(196 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(217 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(3) {
-      margin-top: ${calcRem(195 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(217 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(4) {
-      margin-top: ${calcRem(193 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(217 - articlePaddingForHashLinks)};
     }
 
     article:nth-of-type(5) {
-      margin-top: ${calcRem(194 - articlePaddingForHashLinks)};
+      margin-top: ${calcRem(217 - articlePaddingForHashLinks)};
     }
   }
 `

@@ -47,9 +47,6 @@ const base = css`
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     width: calc(50vw - 1rem);
     background-image: url('${require('../../../static/images/jobs/1920/cover@1x.jpg')}');
@@ -368,6 +365,10 @@ const base = css`
 `
 
 const ie11Styles = css`
+  & {
+    position: static;
+  }
+
   & header {
     -ms-grid-row: 1;
   }
@@ -464,7 +465,9 @@ const ie11Styles = css`
   }
 
   .half-page-picture {
-    z-index: 0;
+    position: absolute;
+    height: 100%;
+    background-size: auto;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
@@ -610,6 +613,7 @@ const pictureFaqStyles = css`
       object-position: 40%;
     }
   }
+
 `
 
 const pictureHunterStyles = css`

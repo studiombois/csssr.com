@@ -14,7 +14,7 @@ export default {
       height: 6.25rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      background-size: 50rem;
+      background-size: 50rem !important;
     }
   `,
 }

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { withRouter } from 'next/router'
 import { string, func, bool } from 'prop-types'
 import cn from 'classnames'
 import Fade from 'react-reveal/Fade'
@@ -24,6 +25,7 @@ const Nav = ({
   onBackButtonClick,
   isMobile,
   isIe11,
+  router,
   t,
   lng,
 }) => {
@@ -68,7 +70,11 @@ const Nav = ({
 
                 return (
                   <Wrapper key={id} {...animationProps}>
-                    <li className="nav-item">
+                    <li
+                      className={cn('nav-item', {
+                        'nav-item_active': router.asPath === `/${lng}/${href}`,
+                      })}
+                    >
                       <Link className="link" href={`/${lng}/${href}`} isNextLink>
                         <Icon className="icon" />
 
@@ -113,10 +119,12 @@ Nav.propTypes = {
   t: func,
 }
 
-export default translate(
-  MsBrowserConsumer(
-    DeviceConsumer(styled(Nav)`
-      ${styles}
-    `),
+export default withRouter(
+  translate(
+    MsBrowserConsumer(
+      DeviceConsumer(styled(Nav)`
+        ${styles}
+      `),
+    ),
   ),
 )

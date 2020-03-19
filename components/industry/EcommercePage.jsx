@@ -24,7 +24,7 @@ const EcommercePage = ({ t }) => {
         description={t('industry:meta.ecommerce.description')}
       />
 
-      <Greeting id="greeting" content={greeting} />
+      <Greeting id="greeting" content={greeting} pageName={pageName} />
 
       <OurClients id="ourClients" content={ourClients} />
 

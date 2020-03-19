@@ -147,14 +147,12 @@ const stylesForTextareaField = css`
 
 const stylesForCheckboxField = css`
   & {
+    display: block;
     margin-top: 3.4375rem;
     grid-column: 2 / span 6;
-  }
-
-  & {
-    display: block;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 2;
   }
 
   @media (max-width: 767px) {

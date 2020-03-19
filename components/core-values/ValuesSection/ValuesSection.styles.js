@@ -31,12 +31,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(313 - articlePaddingForHashLinks)};
   }
 
-  ${desktop.l} {
-    article:nth-of-type(4) {
-      margin-top: ${calcRem(376 - articlePaddingForHashLinks)};
-    }
-  }
-
   ${desktop.m} {
     & {
       margin-top: ${calcRem(150)};

@@ -228,16 +228,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture_angular {
-      margin-top: ${calcRem(158)};
+      margin-top: ${calcRem(119)};
       height: ${calcRem(152)};
     }
 
     .title_angular {
-      margin-top: ${calcRem(133)};
+      margin-top: ${calcRem(101)};
     }
 
     .text_angular {
-      margin-top: ${calcRem(57)};
+      margin-top: ${calcRem(25)};
     }
   }
 

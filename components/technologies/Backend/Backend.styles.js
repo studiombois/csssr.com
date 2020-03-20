@@ -192,7 +192,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture_node {
-      margin-top: ${calcRem(362)};
+      margin-top: ${calcRem(347)};
       width: ${calcRem(64)};
       height: ${calcRem(64)};
     }
@@ -212,7 +212,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .title_node {
-      margin-top: ${calcRem(15)};
+      margin-top: ${calcRem(18)};
     }
 
     .text_kotlin {

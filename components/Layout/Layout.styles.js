@@ -131,6 +131,7 @@ export const base = css`
   @media (max-width: 767px) {
     html {
       font-size: 4.44444444444444444444444444444444vw;
+      scroll-behavior: auto;
     }
 
     body {

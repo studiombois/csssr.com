@@ -24,6 +24,11 @@ const base = ({ breakpoints: { mobile }}) => css`
     color: #5695ED;
   }
 
+  .link_active {
+    color: #5695ED;
+    pointer-events: none;
+  }
+
   ${mobile.all} {
     & {
       margin-top: ${calcRem(16)};

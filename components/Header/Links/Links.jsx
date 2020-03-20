@@ -1,5 +1,7 @@
 import React from 'react'
+import { withRouter } from 'next/router'
 import { string, func } from 'prop-types'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Links.styles'
 
@@ -11,7 +13,7 @@ import translate from '../../../utils/translate-wrapper'
 
 const { links } = headerLinks
 const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-const Links = ({ className, t, lng, locale }) => (
+const Links = ({ className, router, t, lng, locale }) => (
   <ul className={className}>
     {links.map(({ title, href }) => {
       const loc = href === 'jobs' ? locale : lng
@@ -23,7 +25,14 @@ const Links = ({ className, t, lng, locale }) => (
               {t(title)}
             </Link>
           ) : (
-            <Link href={`/${loc}/${href}`} isNextLink type="top_menu">
+            <Link
+              href={`/${loc}/${href}`}
+              className={cn('link', {
+                link_active: router.asPath === `/${loc}/${href}`,
+              })}
+              isNextLink
+              type="top_menu"
+            >
               {t(title)}
             </Link>
           )}
@@ -38,6 +47,8 @@ Links.propTypes = {
   t: func,
 }
 
-export default translate(styled(Links)`
-  ${styles}
-`)
+export default withRouter(
+  translate(styled(Links)`
+    ${styles}
+  `),
+)

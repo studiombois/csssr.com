@@ -10,7 +10,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .title {
-    margin-top: 213px;
+    margin-top: 188px;
     color: ${colors.secondary.darken100};
     z-index: 1;
   }

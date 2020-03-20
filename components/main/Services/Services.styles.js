@@ -116,7 +116,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
   ${desktop.s} {
     .title_main {
-      margin-top: 158px;
+      margin-top: 188px;
     }
 
     .service {

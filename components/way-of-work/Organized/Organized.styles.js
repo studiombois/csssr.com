@@ -167,7 +167,7 @@ const base = ({ breakpoints: { desktop, tablet }}) => css`
     .footer {
       grid-column: 4 / span 7;
       grid-row: 3;
-      margin-top: ${calcRem(80)}
+      margin-top: ${calcRem(92)}
     }
   }
 

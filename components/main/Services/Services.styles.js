@@ -210,11 +210,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
 
     .service_outsourcing::before {
-      top: ${calcRem(-24)};
-      left: ${calcRem(-118)};
+      top: ${calcRem(-32)};
+      left: ${calcRem(-136)};
       width: ${calcRem(217)};
       height: ${calcRem(215)};
-      transform: scaleX(-1)
+      transform: rotateZ(-180deg);
     }
 
     .service_express::before {
@@ -227,10 +227,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service_mvp::before {
       top: ${calcRem(-26)};
-      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-150)})` : calcRem(-150)};
+      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-128)})` : calcRem(-128)};
       width: ${calcRem(197)};
       height: ${calcRem(194)};
-      transform: ${lng === 'ru' ? `scaleY(-1)` : `scale(-1)`};
+      transform: ${lng === 'ru' ? `rotateZ(0)` : `rotateZ(90deg)`};
     }
 
     .service-icon {

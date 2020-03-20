@@ -285,9 +285,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: ${calcRem(88)};
     }
 
-    .title_vue,
-    .title_angular {
+    .title_vue {
       margin-top: ${calcRem(46)};
+    }
+
+    
+    .title_angular {
+      margin-top: ${calcRem(33)};
     }
 
     .text_vue,

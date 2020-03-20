@@ -10,7 +10,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .title {
-    margin-top: 188px;
+    margin-top: ${calcRem(197)};
   }
 
   .subtitle {
@@ -42,6 +42,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
+    .title {
+      margin-top: ${calcRem(188)};
+    }
+
     .subtitle {
       grid-column: 3 / span 8;
     }
@@ -54,7 +58,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(160)};
+      margin-top: ${calcRem(162)};
     }
 
     .subtitle {
@@ -83,7 +87,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(103)};
+      margin-top: ${calcRem(106)};
     }
 
     .subtitle {

@@ -197,7 +197,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .picture-wrapper {
       margin-top: ${calcRem(25)};
       margin-left: ${calcRem(-20)};
-      height: ${calcRem(340)};
+      height: ${calcRem(352)};
       background-position: ${calcRem(5)} 0;
     }
 

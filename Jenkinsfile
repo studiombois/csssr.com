@@ -7,7 +7,7 @@ pipeline {
   agent any
 
   parameters {
-    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
+    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space (без слэша на конце)', name: 'csssrSpaceOrigin', trim: true)
     booleanParam(defaultValue: false, description: 'Включить обработку изображений', name: 'processImages')
   }
 

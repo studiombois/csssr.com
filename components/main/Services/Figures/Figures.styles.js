@@ -132,10 +132,10 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     }
 
     .picture_circle.picture_circle_ru {
-      top: 2.7%;
-      left: 52.5%;
+      top: 2%;
+      left: 52%;
       /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-      width: calc(119.5 / 304 * 100%);
+      width: calc(122 / 304 * 100%);
     }
   }
 `

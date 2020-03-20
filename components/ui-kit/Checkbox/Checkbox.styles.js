@@ -58,6 +58,7 @@ const base = css`
     padding-left: 0.5rem;
     font-size: inherit;
     line-height: inherit;
+    color: #18191b;
   }
 
   span.border {

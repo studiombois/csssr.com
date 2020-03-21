@@ -55,7 +55,7 @@ pipeline {
           sshagent(credentials: ['csssr-com-chart']) {
             sh """
             rm -rf csssr.com-chart
-            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
+            git clone --single-branch --branch prod-before-redesign git@github.com:csssr-dreamteam/csssr.com-chart.git
             """
           }
 

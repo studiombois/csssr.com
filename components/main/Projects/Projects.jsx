@@ -59,11 +59,11 @@ const Projects = ({ className, t, lng }) => {
         )
       })}
 
-      <ul className="posts">
+      {/* <ul className="posts">
         {posts[lng].map(({ id, href }) => (
           <Post key={id} id={id} href={href} />
         ))}
-      </ul>
+      </ul> */}
     </Grid>
   )
 }

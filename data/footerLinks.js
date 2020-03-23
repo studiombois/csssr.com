@@ -117,10 +117,10 @@ export const nav = [
         id: 'careers',
         href: 'jobs',
       },
-      {
-        id: 'blog',
-        href: 'https://blog.csssr.com',
-      },
+      // {
+      //   id: 'blog',
+      //   href: 'https://blog.csssr.com',
+      // },
     ],
   },
 ]

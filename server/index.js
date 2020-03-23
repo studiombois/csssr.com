@@ -165,15 +165,11 @@ const startApp = async () => {
           )
 
           server.get('/sitemap.xml', (req, res) => {
-            generateSitemap().then(sitemap =>
-              sitemap.toXML((err, xml) => {
-                if (err) {
-                  return res.status(500).send(err)
-                }
-                res.header('Content-Type', 'application/xml')
-                res.send(xml)
-              }),
-            )
+            generateSitemap().then(sitemap => {
+              const xml = sitemap.toXML()
+              res.header('Content-Type', 'application/xml')
+              res.send(xml)
+            })
           })
 
           server.use((req, res, nextHandler) => {

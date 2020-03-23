@@ -183,7 +183,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture_angular {
-      margin-top: 188px;
+      margin-top: 209px;
       height: 200px;
     }
 

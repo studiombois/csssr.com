@@ -29,6 +29,19 @@ const base = colors => css`
     overflow-y: auto;
   }
 
+  .modal-wrapper .content {
+    color: #ffffff;
+  }
+
+  .modal-wrapper input {
+    color: #ffffff;
+    caret-color: #ffffff;
+  }
+
+  .modal-wrapper .input-label::before {
+    border: 1px solid #9b9b9b;
+  }
+
   button[aria-label="close modal"] {
     position: absolute;
     top: 1rem;

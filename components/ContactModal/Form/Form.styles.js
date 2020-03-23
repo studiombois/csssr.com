@@ -106,7 +106,7 @@ const base = css`
   }
 
   @media (max-width: 767px) {
-    padding-top: 2.8125rem;
+    padding-top: 3.75rem;
     grid-template-columns: repeat(6, 3rem);
     width: 100%;
 

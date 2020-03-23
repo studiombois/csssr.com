@@ -10,8 +10,6 @@ const base = colors => css`
   left: 0;
   bottom: 0;
   right: 0;
-  padding-top: 3.5px;
-  padding-bottom: 3.5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +63,6 @@ const base = colors => css`
   }
 
   @media (max-width: 767px) {
-    padding-top: 0;
     padding-bottom: 0;
     height: 100%;
 
@@ -74,14 +71,15 @@ const base = colors => css`
       padding-left: 1rem;
       padding-right: 1rem;
       padding-bottom: 2rem;
-      width: 20.5rem;
+      width: 22.5rem;
       max-height: 100vh;
-      box-sizing: content-box;
+      box-sizing: border-box;
       height: calc(100% - 2rem);
     }
 
     button[aria-label="close modal"] {
-      right: 2rem;
+      top: 1rem;
+      right: 1rem;
     }
   }
 `

@@ -5,7 +5,7 @@ import calcRem from '../../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   & {
     outline: 1px solid red;
-    margin-top: 210px;
+    margin-top: ${calcRem(212)};
   }
 
   .feature {
@@ -45,6 +45,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.m} {
+    & {
+      margin-top: ${calcRem(212)};
+    }
+
     .picture {
       margin-top: -167px;
       grid-column: 4 / span 7;
@@ -52,6 +56,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.s} {
+    & {
+      margin-top: ${calcRem(188)};
+    }
+
     .picture {
       margin-top: -216px;
       grid-column: 4 / span 8;

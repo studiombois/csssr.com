@@ -157,13 +157,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .picture_dbs {
-      margin-top: 174px;
+      margin-top: 239px;
     }
 
     .picture_node {
-      margin-top: 425px;
+      margin-top: 508px;
       width: 88px;
       height: 88px;
+    }
+
+    .title_node {
+      margin-top: 123px;
     }
 
     .text_node {

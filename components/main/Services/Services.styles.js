@@ -227,10 +227,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service_mvp::before {
       top: ${calcRem(24)};
-      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-75)})` : calcRem(-75)};
+      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-112)})` : calcRem(-75)};
       width: ${calcRem(87)};
       height: ${calcRem(87)};
-      transform: ${lng === 'ru' ? `rotateZ(0)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
+      transform: ${lng === 'ru' ? `rotateZ(180deg)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
     }
 
     .service-icon {

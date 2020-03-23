@@ -27,7 +27,7 @@ const StatusMessage = ({
         />
       )}
 
-      <p className="font_p16-regular">{messageText}</p>
+      <p className="font_p16-regular status_text">{messageText}</p>
 
       <Button tabIndex={tabIndex} onClick={onClick}>
         {t(`common:form.message.${status}.action`)}

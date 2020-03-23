@@ -38,6 +38,11 @@ const base = colors => css`
     caret-color: #ffffff;
   }
 
+  .modal-wrapper textarea {
+    color: #ffffff;
+    caret-color: #ffffff;
+  }
+
   .modal-wrapper .input-label::before {
     border: 1px solid #9b9b9b;
   }

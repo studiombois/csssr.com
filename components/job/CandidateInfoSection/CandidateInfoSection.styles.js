@@ -40,30 +40,40 @@ const ie11Styles = css`
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
-  .ie11 .input-firstname {
+  .input-firstname {
     -ms-grid-row: 2;
   }
 
-  .ie11 .input-lastname {
+  .input-lastname {
     -ms-grid-row: 2;
   }
-  .ie11 .input-age {
+
+  .input-age {
     -ms-grid-row: 3;
   }
-  .ie11 .input-location {
+
+  .input-location {
     -ms-grid-row: 4;
   }
-  .ie11 .input-email {
+
+  .input-email {
     -ms-grid-row: 5;
   }
-  .ie11 .input-resume {
+
+  .input-resume {
     -ms-grid-row: 6;
   }
-  .ie11 .seventh-line {
+
+  .input-github {
     -ms-grid-row: 7;
   }
-  .ie11 .input-checkbox {
-    -ms-grid-row: 8;
+
+  .line-nine {
+    -ms-grid-row: 9;
+  }
+
+  .input-checkbox {
+    -ms-grid-row: 10;
   }
 `
 
@@ -134,7 +144,7 @@ const stylesForTextareaField = css`
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 
-  .ie11 textarea {
+  textarea {
     overflow: auto;
   }
 
@@ -165,25 +175,11 @@ const stylesForCheckboxField = css`
 
 const stylesForFileField = css`
   & {
-    margin-top: 2.5rem;
-    grid-column: 2 / span 4;
-  }
-
-  & {
     margin-top: 3rem;
+    grid-column: 2 / span 6;
     -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(4)};
-  }
-
-  .button {
-    margin-top: 3rem;
-    grid-column: 6 / span 2;
-  }
-
-  .button {
-    height: 4rem;
-    -ms-grid-column: ${getGridValueForMs(6)};
-    -ms-grid-column-span: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(6)};
+    -ms-grid-row: 8;
   }
 
   @media (max-width: 767px) {
@@ -193,7 +189,6 @@ const stylesForFileField = css`
 
     .button {
       margin-top: 2rem;
-      grid-column: 2 / span 4;
     }
   }
 `

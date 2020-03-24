@@ -23,6 +23,10 @@ const base = css`
     text-align: center;
   }
 
+  .status_text {
+    color: #ffffff;
+  }
+
   ${Button} {
     margin-top: auto;
     padding-left: 1rem;

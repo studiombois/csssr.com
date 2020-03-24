@@ -19,7 +19,7 @@ const timezoneOffsetsByAddressId = {
   estonia: 2,
 }
 
-const Addresses = ({ className, isTablet, isMobile, t }) => {
+const Addresses = ({ className, isTablet, isMobile, t, lng }) => {
   const [time, setTime] = useState(() => moment())
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Addresses = ({ className, isTablet, isMobile, t }) => {
           )}
 
           <Text className="time" type="regular" size={textSize}>
-            {time.utcOffset(timezoneOffsetsByAddressId[id]).format('hh:mm:ss A')}
+            {time.utcOffset(timezoneOffsetsByAddressId[id]).format(`${lng==='ru' ? 'HH:mm': 'hh:mm A' }`)}
           </Text>
         </div>
       ))}

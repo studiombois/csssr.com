@@ -99,7 +99,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(123)};
+      margin-top: ${calcRem(80)};
     }
 
     article:nth-of-type(2) {

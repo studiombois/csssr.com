@@ -23,6 +23,7 @@
   "xlsxFormat": "XLSX format",
   "sketchFormat": "Sketch format",
   "jpgFormat": "JPG format",
+  "pdfFormat": "PDF format",
   "chooseFile": "Choose File",
   "moreLinks": "More links",
   "contactOptions": {

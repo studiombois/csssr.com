@@ -24,6 +24,7 @@
   "xlsxFormat": "в формате XLSX",
   "sketchFormat": "в формате Sketch",
   "jpgFormat": "в формате JPG",
+  "pdfFormat": "в формате PDF",
   "chooseFile": "Обзор",
   "moreLinks": "Больше ссылок",
   "contactOptions": {

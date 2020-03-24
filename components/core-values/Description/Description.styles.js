@@ -168,7 +168,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .icon-column-1,
     .icon-column-2 {
-      margin-top: ${calcRem(64)};
+      margin-top: ${calcRem(55)};
     }
 
     .text-column-1,

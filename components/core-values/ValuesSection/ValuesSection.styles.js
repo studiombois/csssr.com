@@ -8,7 +8,7 @@ const articlePaddingForHashLinks = 64
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    margin-top: ${calcRem(114)};
+    margin-top: ${calcRem(106)};
   }
   
   article:not(:first-of-type) {
@@ -77,7 +77,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(161)};
+      margin-top: ${calcRem(123)};
     }
 
     article:nth-of-type(2) {

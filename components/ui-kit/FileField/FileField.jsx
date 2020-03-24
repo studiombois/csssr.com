@@ -47,7 +47,7 @@ class FileField extends PureComponent {
     const showError = invalid && submitFailed
 
     return (
-      <Fragment>
+      <div className={className}>
         <input
           id={id}
           accept={`.${fileAccept}`}
@@ -63,7 +63,7 @@ class FileField extends PureComponent {
           aria-label={label}
         />
         <div
-          className={cn(className, {
+          className={cn({
             'font_inputted-text-error': showError,
             'font_inputted-text-regular': !showError,
             textfield_filled: value,
@@ -80,14 +80,14 @@ class FileField extends PureComponent {
         </div>
         <label
           htmlFor={id}
-          className={cn('font_button-label button', {
+          className={cn('font_button-label', 'button', {
             button_state_disabled: disabled,
           })}
         >
           {t('job:chooseFile')}
         </label>
         {showError && <span className="font_input-small-error-label error">{error}</span>}
-      </Fragment>
+      </div>
     )
   }
 }

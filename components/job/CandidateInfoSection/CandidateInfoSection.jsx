@@ -134,7 +134,7 @@ const CandidateInfoSection = props => {
             id="comment"
             name="comment"
             label={t('job:tellUsMoreAboutYourself')}
-            className="seventh-line"
+            className="line-nine"
             css={css`
               ${stylesForTextareaField}
             `}

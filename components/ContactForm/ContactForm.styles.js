@@ -140,7 +140,9 @@ const base = ({ shouldShowSubHeading, theme: { colors } }) => css`
   }
 
   h2 {
+    margin-top: -6rem;
     margin-bottom: 5.5rem;
+    padding-top: 6rem;
     grid-column: 4 / span 6;
     text-align: center;
 

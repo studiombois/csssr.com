@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { string, func } from 'prop-types'
 import NextLink from 'next/link'
-import Router from 'next/router'
 import styled from '@emotion/styled'
 import styles from './Footer.styles'
 
@@ -36,13 +35,10 @@ const Footer = ({ className, isMobile, lng, t }) => {
         if (IsDoubleBottomVisible) setDoubleBottomVisibility(false)
       }
     }
-
     window.addEventListener('scroll', listener)
-    Router.events.on('routeChangeStart', listener)
     window.addEventListener('resize', listener)
     return () => {
       window.removeEventListener('scroll', listener)
-      Router.events.off('routeChangeStart', listener)
       window.removeEventListener('resize', listener)
     }
   }, [isMobile, IsDoubleBottomVisible])

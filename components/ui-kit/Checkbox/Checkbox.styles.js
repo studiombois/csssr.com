@@ -38,7 +38,7 @@ const base = css`
   }
 
   label.input-label_warning::before {
-    border-color: #ffc045;
+    border-color: #ffc045 !important;
   }
 
   label::after {

@@ -19,8 +19,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: -8px;
       margin-left: auto;
       margin-right: 32px;
-      width: 520px;
-      height: 296px;
+      width: 492px;
+      height: 280px;
     }
   }
 

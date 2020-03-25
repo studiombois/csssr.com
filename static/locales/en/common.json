@@ -82,9 +82,9 @@
     "industries": {
       "title": "Industries",
       "fintech": "Fintech",
+      "information": "IT companies",
       "eCommerce": "E-Commerce",
-      "information": "IT Development",
-      "mediaAndMarketing": "Media and Marketing"
+      "mediaAndMarketing": "Media and marketing"
     },
     "howWeWork": {
       "title": "How we work",

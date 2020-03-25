@@ -35,6 +35,8 @@ export default {
       }
       .greeting_subheading {
         margin-top: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
       }
     }
   `,

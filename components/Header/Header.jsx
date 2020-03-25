@@ -10,6 +10,7 @@ import styles from './Header.styles'
 import Menu from './Menu'
 import Links from './Links'
 import Button from '../ui-kit/core-design/Button'
+import ButtonLink from '../ui-kit/core-design/ButtonLink'
 import ContactModal from '../ContactModal'
 import Logo from '../../static/icons/csssr_logo.svg'
 import Burger from '../../static/icons/header/burger.svg'
@@ -27,14 +28,14 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
 
   useEffect(() => {
     if (isMobile) {
-      if (isDropdownOpened) {
+      if (isDropdownOpened || isContactModalVisible) {
         disablePageScroll(document.body)
       } else {
         enablePageScroll(document.body)
       }
     }
 
-    const handleScroll = event => {
+    const handleScroll = (event) => {
       const headerHeight = 64
       const {
         target: { scrollingElement },
@@ -77,6 +78,7 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
 
     toggleContactModalVisibility(true)
   }
+
   const handleHideContactModal = () => {
     enablePageScroll(document.body)
     toggleContactModalVisibility(false)
@@ -88,12 +90,20 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
       <Menu />
       <Links />
       {isButtonVisible &&
-        <Button
-          onClick={handleButtonClick}
-          className="button_action"
-          dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
-        />
-      }
+        (isIe11 ? (
+          <ButtonLink
+            href="#hire-us"
+            kind="primary"
+            className="button_action"
+            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+          />
+        ) : (
+          <Button
+            onClick={handleButtonClick}
+            className="button_action"
+            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+          />
+        ))}
     </Fragment>
   )
 

@@ -27,14 +27,14 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
 
   useEffect(() => {
     if (isMobile) {
-      if (isDropdownOpened) {
+      if (isDropdownOpened || isContactModalVisible) {
         disablePageScroll(document.body)
       } else {
         enablePageScroll(document.body)
       }
     }
 
-    const handleScroll = event => {
+    const handleScroll = (event) => {
       const headerHeight = 64
       const {
         target: { scrollingElement },
@@ -87,13 +87,13 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
     <Fragment>
       <Menu />
       <Links />
-      {isButtonVisible &&
+      {isButtonVisible && (
         <Button
           onClick={handleButtonClick}
           className="button_action"
           dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
         />
-      }
+      )}
     </Fragment>
   )
 

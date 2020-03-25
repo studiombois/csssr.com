@@ -28,14 +28,14 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
 
   useEffect(() => {
     if (isMobile) {
-      if (isDropdownOpened) {
+      if (isDropdownOpened || isContactModalVisible) {
         disablePageScroll(document.body)
       } else {
         enablePageScroll(document.body)
       }
     }
 
-    const handleScroll = event => {
+    const handleScroll = (event) => {
       const headerHeight = 64
       const {
         target: { scrollingElement },

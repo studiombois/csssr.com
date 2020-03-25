@@ -90,9 +90,11 @@ const base = colors => css`
       padding-right: 1rem;
       padding-bottom: 2rem;
       width: 22.5rem;
-      max-height: 100vh;
       box-sizing: border-box;
-      height: calc(100% - 2rem);
+      max-height: 100vh;
+      max-height: calc(var(--vh, 1vh) * 100);
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
     }
 
     button[aria-label="close modal"] {

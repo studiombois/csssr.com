@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
   & {
     display: flex;
   }
@@ -26,12 +26,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  .time {
+  .time,
+  .status {
     color: #7E8FA4;
-  }
-
-  .address-item:nth-of-type(3) .address {
-    margin-top: ${calcRem(40)};
   }
 
   ${desktop.all} {
@@ -40,11 +37,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .phone {
-      margin-top: ${calcRem(16)};
+      margin-top: ${calcRem(8)};
     }
 
-    .time {
-      margin-top: ${calcRem(16)};
+    .time,
+    .status {
+      margin-top: ${calcRem(8)};
     }
 
     .address-item {
@@ -63,15 +61,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${tablet.all} {
     .address {
       margin-top: ${calcRem(16)};
+      font-size: ${calcRem(12)};
+      line-height: ${calcRem(16)};
     }
 
     .phone {
       margin-top: ${calcRem(8)};
-      font-size: ${calcRem(14)};
+      font-size: ${calcRem(12)};
       line-height: ${calcRem(24)};
     }
 
     .time {
+      font-size: ${calcRem(12)};
+      line-height: ${calcRem(16)};
+    }
+
+    .time,
+    .status {
       margin-top: ${calcRem(8)};
     }
 
@@ -80,11 +86,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .address-item:nth-of-type(1) {
-      margin-right: ${calcRem(42)};
+      margin-right: ${lng === 'ru' ? calcRem(25) : calcRem(42)};
     }
 
     .address-item:nth-of-type(2) {
-      margin-right: ${calcRem(38)};
+      margin-right: ${calcRem(25)};
+    }
+
+    .address-item:nth-of-type(3) {
+      margin-top: ${calcRem(72)};
+      margin-right: ${lng === 'ru' ? calcRem(25) : calcRem(42)};
+    }
+
+    .address-item:nth-of-type(3) .address {
+      margin-top: ${calcRem(0)};
     }
   }
 
@@ -102,7 +117,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .title,
     .address,
     .phone,
-    .time {
+    .time,
+    .status {
       width: 100%;
       text-align: center;
     }
@@ -113,8 +129,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(8)};
     }
 
+    .status {
+      margin-top: ${calcRem(12)};
+    }
+
     .address-item:not(:first-of-type) {
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(24)};
     }
 
     .address-item:last-of-type {
@@ -130,8 +150,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { lng } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, lng })}
   `
 }

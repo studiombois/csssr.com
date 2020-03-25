@@ -77,8 +77,8 @@
     "industries": {
       "title": "Индустрии",
       "fintech": "Финтех",
-      "eCommerce": "E-Commerce",
-      "information": "IT-компании",
+      "eCommerce": "Электронная коммерция",
+      "information": "ИТ компании",
       "mediaAndMarketing": "Медиа и&nbsp;маркетинг"
     },
     "howWeWork": {
@@ -96,17 +96,23 @@
     "privacy": "Политика конфиденциальности",
     "addresses": {
       "singapore": {
-        "title": "Headquarters",
-        "address": "68 Circular Road #02-01</br>Singapore, 049422",
+        "title": "Сингапур",
+        "address": "68 Circular Road</br> #02-01</br>Singapore, 049422",
+        "status": "Головной офис",
         "phone": "+65 3159 4531"
       },
       "russia": {
-        "title": "Offices",
-        "address": "Летниковская ул., 2 стр. 3, а/я № 33</br>Москва, 115114",
+        "title": "Россия",
+        "address": "22 Большой Козихинский пер.,</br>стр. 2, офис 28,</br> Москва, 123001,</br>Россия",
+        "phone": "+7 (499) 113-16-17"
+      },
+      "russia_2": {
+        "address": "30 Лесная ул.,</br>стр. 1, офис 303,</br> г. Дзержинский, 140090,</br>Россия",
         "phone": "+7 (499) 113-16-17"
       },
       "estonia": {
-        "address": "Majaka 26</br>11412, Tallinn, Estonia"
+        "title": "Эстония",
+        "address": "26 Majaka St.,</br>bld.1, office 14,<br/>Tallinn, 11412,</br>Estonia"
       }
     },
     "imageAlt": {

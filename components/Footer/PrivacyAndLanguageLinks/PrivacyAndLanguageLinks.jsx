@@ -12,16 +12,29 @@ import getPagePathnameInLanguage from '../../../common/get-page-pathname-in-lang
 
 const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathname } }) => {
   const lngToRedirect = lng === 'ru' ? 'en' : 'ru'
+  const lngChange = {
+    en: 'en',
+    ru: 'ru'
+  }
 
   const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
 
   return (
     <ul className={className}>
       <li>
-        <Link className="link" href={otherLanguagePathname}>
+        <Link className="link ru-link" href={otherLanguagePathname}>
           <Text
             className="link-text"
-            dangerouslySetInnerHTML={{ __html: lngToRedirect }}
+            dangerouslySetInnerHTML={{ __html: lngChange.ru }}
+            type="perforator"
+            size="s"
+          />
+        </Link>
+
+        <Link className="link en-link" href={otherLanguagePathname}>
+          <Text
+            className="link-text"
+            dangerouslySetInnerHTML={{ __html: lngChange.en }}
             type="perforator"
             size="s"
           />
@@ -37,11 +50,9 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
             size="s"
           />
         </Link>
-      </li>
 
-      {lng === 'en' && (
-        <li>
-          <Link className="link" href={`/${lng}/cookies-policy`} isNextLink>
+        {lng === 'en' && (
+          <Link className="link policy-link" href={`/${lng}/cookies-policy`} isNextLink>
             <Text
               className="link-text"
               dangerouslySetInnerHTML={{ __html: t('common:footer.cookies') }}
@@ -49,8 +60,8 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
               size="s"
             />
           </Link>
-        </li>
-      )}
+        )}
+      </li>
     </ul>
   )
 }

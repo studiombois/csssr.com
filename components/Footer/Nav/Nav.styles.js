@@ -17,7 +17,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.all} {
     & {
-      margin-right: 69px;
       width: 636px;
     }
   }

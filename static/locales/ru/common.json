@@ -77,8 +77,8 @@
     "industries": {
       "title": "Индустрии",
       "fintech": "Финтех",
-      "eCommerce": "E-Commerce",
-      "information": "IT-компании",
+      "eCommerce": "Электронная коммерция",
+      "information": "ИТ компании",
       "mediaAndMarketing": "Медиа и&nbsp;маркетинг"
     },
     "howWeWork": {
@@ -97,7 +97,7 @@
     "addresses": {
       "singapore": {
         "title": "Headquarters",
-        "address": "68 Circular Road #02-01</br>Singapore, 049422",
+        "address": "68 Circular Road,</br> #02-01</br>Singapore, 049422",
         "phone": "+65 3159 4531"
       },
       "russia": {

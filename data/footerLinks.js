@@ -76,12 +76,12 @@ export const nav = [
         href: 'industry/fintech',
       },
       {
-        id: 'eCommerce',
-        href: 'industry/ecommerce',
-      },
-      {
         id: 'information',
         href: 'industry/information-technology',
+      },
+      {
+        id: 'eCommerce',
+        href: 'industry/ecommerce',
       },
       {
         id: 'mediaAndMarketing',

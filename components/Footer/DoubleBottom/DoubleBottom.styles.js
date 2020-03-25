@@ -41,8 +41,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       position: absolute;
       right: ${calcRem(11)};
       margin-top: ${calcRem(-5)};
-      width: ${calcRem(450)};
-      height: ${calcRem(256)};
+      width: ${calcRem(386)};
+      height: ${calcRem(225)};
       z-index: -1;
     }
   }

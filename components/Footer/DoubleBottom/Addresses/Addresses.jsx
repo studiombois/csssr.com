@@ -11,15 +11,16 @@ import translate from '../../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import Link from '../../../ui-kit/core-design/Link'
 
-const addressesIds = ['singapore', 'russia', 'estonia']
+const addressesIds = ['singapore', 'russia', 'russia_2', 'estonia']
 // TODO это может поменяться в будущем
 const timezoneOffsetsByAddressId = {
   singapore: 8,
   russia: 3,
+  russia_2: 3,
   estonia: 2,
 }
 
-const Addresses = ({ className, isTablet, isMobile, t }) => {
+const Addresses = ({ className, isTablet, isMobile, t, lng }) => {
   const [time, setTime] = useState(() => moment())
 
   useEffect(() => {
@@ -35,7 +36,8 @@ const Addresses = ({ className, isTablet, isMobile, t }) => {
     <div className={className}>
       {addressesIds.map(id => (
         <div key={id} className="address-item">
-          {id !== 'estonia' && (
+
+          {id !== 'russia_2' && (
             <Heading
               as="p"
               className="title"
@@ -44,14 +46,14 @@ const Addresses = ({ className, isTablet, isMobile, t }) => {
               dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.title`) }}
             />
           )}
-
+          
           <Text
             className="address"
             dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.address`) }}
             size={textSize}
             type="regular"
           />
-
+          
           {id !== 'estonia' && (
             <Link
               className="phone"
@@ -62,8 +64,18 @@ const Addresses = ({ className, isTablet, isMobile, t }) => {
             />
           )}
 
+          {id === 'singapore' && (
+            <Text
+              className="status"
+              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.status`) }}
+              type="regular"
+              size={textSize}
+              Head Office
+            />
+          )}
+
           <Text className="time" type="regular" size={textSize}>
-            {time.utcOffset(timezoneOffsetsByAddressId[id]).format('hh:mm:ss A')}
+            {time.utcOffset(timezoneOffsetsByAddressId[id]).format(`${lng==='ru' ? 'HH:mm': 'hh:mm A' }`)}
           </Text>
         </div>
       ))}

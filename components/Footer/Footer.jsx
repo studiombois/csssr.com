@@ -45,38 +45,42 @@ const Footer = ({ className, isMobile, lng, t }) => {
 
   return (
     <footer className={className} ref={footerRef}>
-      <div className="top-content-left-wrapper">
-        <NextLink href={`/${lng}`}>
-          <a className="logo">
-            <Logo />
-          </a>
-        </NextLink>
+      <div className="top-content">
+        <div className="top-content-left-wrapper">
+          <NextLink href={`/${lng}`}>
+            <a className="logo">
+              <Logo />
+            </a>
+          </NextLink>
 
-        {!isMobile && (
-          <video className="video" autoPlay loop muted>
-            <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
+          {!isMobile && (
+            <video className="video" autoPlay loop muted>
+              <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
 
-            <p>{t('common:footer.videoError')}</p>
-          </video>
-        )}
+              <p>{t('common:footer.videoError')}</p>
+            </video>
+          )}
 
-        <Heading
-          as="p"
-          className="action-phrase"
-          type="regular"
-          size="s"
-          dangerouslySetInnerHTML={{ __html: t('common:footer.actionPhrase') }}
-        />
+          <Heading
+            as="p"
+            className="action-phrase"
+            type="regular"
+            size="s"
+            dangerouslySetInnerHTML={{ __html: t('common:footer.actionPhrase') }}
+          />
 
-        <Link className="email" href="mailto:sales@csssr.com">
-          sales@csssr.com
-        </Link>
+          <Link className="email" href="mailto:sales@csssr.com">
+            sales@csssr.com
+          </Link>
 
-        <SocialLinks />
+          <SocialLinks />
+        </div>
+
+        <Nav />
+      </div>
+      <div className="bottom-content">
         <PrivacyAndLanguageLinks />
       </div>
-
-      <Nav />
 
       {IsDoubleBottomVisible && <DoubleBottom />}
     </footer>

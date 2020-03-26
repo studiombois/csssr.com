@@ -3,16 +3,26 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ colors }) => css`
   & {
-    margin-top: ${calcRem(40)};
+    margin-top: ${calcRem(52)};
     display: flex;
-  }
+    flex-direction: row-reverse;
+    justify-content: space-between;
 
-  li:not(:first-of-type) {
-    margin-left: ${calcRem(16)};
+    & > li {
+      display: flex;
+    }
   }
 
   .link {
     text-decoration: none;
+  }
+
+  .ru-link {
+    margin-right: 7px;
+  }
+
+  .policy-link {
+    margin-left: 16px;
   }
 
   .link-text {

@@ -90,7 +90,7 @@
       "title": "How we work",
       "technologies": "Technologies",
       "wayOfWork": "Process",
-      "coreValues": "Core Values"
+      "coreValues": "Core values"
     },
     "company": {
       "title": "Company",
@@ -103,13 +103,13 @@
     "addresses": {
       "singapore": {
         "title": "Singapore",
-        "address": "68 Circular Road</br> #02-01</br>Singapore, 049422",
+        "address": "68 Circular Road,</br> #02-01,</br>Singapore, 049422",
         "status": "Head Office",
         "phone": "+65 3159 4531"
       },
       "russia": {
         "title": "Russia",
-        "address": "22 Bol'shoj Kozihinskij Lane,</br>bld. 2, office 28, Moscow, 123001,</br>Russia",
+        "address": "22 Bol'shoj Kozihinskij Lane,</br>bld. 2, office 28,</br> Moscow, 123001,</br>Russia",
         "phone": "+7 (499) 113-16-17"
       },
       "russia_2": {

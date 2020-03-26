@@ -18,7 +18,7 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
   return (
     <ul className={className}>
       <li>
-        <Link className="link" href={otherLanguagePathname}>
+        <Link className="link ru-link" href={otherLanguagePathname}>
           <Text
             className="link-text"
             dangerouslySetInnerHTML={{ __html: lngToRedirect }}
@@ -37,11 +37,9 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
             size="s"
           />
         </Link>
-      </li>
 
-      {lng === 'en' && (
-        <li>
-          <Link className="link" href={`/${lng}/cookies-policy`} isNextLink>
+        {lng === 'en' && (
+          <Link className="link policy-link" href={`/${lng}/cookies-policy`} isNextLink>
             <Text
               className="link-text"
               dangerouslySetInnerHTML={{ __html: t('common:footer.cookies') }}
@@ -49,8 +47,8 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
               size="s"
             />
           </Link>
-        </li>
-      )}
+        )}
+      </li>
     </ul>
   )
 }

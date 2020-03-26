@@ -5,12 +5,20 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   & {
     position: relative;
     margin-bottom: ${calcRem(344)};
-    padding: ${calcRem(32)};
+    padding-top: ${calcRem(32)};
+    padding-right: ${calcRem(102)};
+    padding-bottom: ${calcRem(55)};
+    padding-left: ${calcRem(32)};
     display: flex;
-    height: ${calcRem(344)};
+    flex-direction: column;
+    height: ${calcRem(360)};
     background-color: white;
     box-shadow: 0px 8px 12px rgba(50, 60, 72, 0.15);
     overflow: hidden;
+  }
+
+  .top-content {
+    display: flex;
   }
 
   .logo {
@@ -45,12 +53,12 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   }
 
   .action-phrase {
-    margin-top: ${calcRem(28)};
+    margin-top: ${calcRem(30)};
     color: ${colors.secondary.darken100};
   }
 
   .email {
-    margin-top: ${calcRem(8)};
+    margin-top: ${calcRem(20)};
     display: block;
   }
 
@@ -62,7 +70,9 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
 
   ${mobile.all} {
     & {
+      padding-right: ${calcRem(16)};
       padding-bottom: ${calcRem(16)};
+      padding-left: ${calcRem(16)};
       margin-bottom: 0;
       height: auto;
       flex-direction: column;

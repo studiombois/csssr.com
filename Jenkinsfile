@@ -4,7 +4,7 @@ pipeline {
     branch = ""
     commit = ""
   }
-  agent any
+  agent { label 'master' }
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)

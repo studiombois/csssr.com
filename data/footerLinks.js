@@ -2,10 +2,10 @@ import Facebook from '../static/icons/facebook.svg'
 import Linkedin from '../static/icons/linkedin.svg'
 import Instagram from '../static/icons/instagram.svg'
 import Youtube from '../static/icons/youtube.svg'
-// import Soundcloud from '../static/icons/soundcloud.svg'
-// import Telegram from '../static/icons/telegram.svg'
-// import Twitter from '../static/icons/twitter.svg'
-// import Vk from '../static/icons/vk.svg'
+import Soundcloud from '../static/icons/soundcloud.svg'
+import Telegram from '../static/icons/telegram.svg'
+import Twitter from '../static/icons/twitter.svg'
+import Vk from '../static/icons/vk.svg'
 
 export const socials = [
   {
@@ -28,26 +28,26 @@ export const socials = [
     href: 'https://www.youtube.com/channel/UCdkZ6ckHOJ3DjAYxoGeMG0w',
     icon: Youtube,
   },
-  // {
-  //   id: 'soundcloud',
-  //   href: 'https://soundcloud.com/csssr',
-  //   icon: Soundcloud,
-  // },
-  // {
-  //   id: 'telegram',
-  //   href: 'https://t.me/csssr',
-  //   icon: Telegram,
-  // },
-  // {
-  //   id: 'twitter',
-  //   href: 'https://twitter.com/csssr_dev',
-  //   icon: Twitter,
-  // },
-  // {
-  //   id: 'vk',
-  //   href: 'https://vk.com/csssr_dev',
-  //   icon: Vk,
-  // },
+  {
+    id: 'soundcloud',
+    href: 'https://soundcloud.com/csssr',
+    icon: Soundcloud,
+  },
+  {
+    id: 'telegram',
+    href: 'https://t.me/csssr',
+    icon: Telegram,
+  },
+  {
+    id: 'twitter',
+    href: 'https://twitter.com/csssr_dev',
+    icon: Twitter,
+  },
+  {
+    id: 'vk',
+    href: 'https://vk.com/csssr_dev',
+    icon: Vk,
+  },
 ]
 
 export const nav = [

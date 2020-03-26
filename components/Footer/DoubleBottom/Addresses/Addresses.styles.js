@@ -67,6 +67,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
   }
 
+  ${desktop.s} {
+    .address-item:nth-of-type(1) {
+      margin-right: ${calcRem(65)};
+    }
+
+    .address-item:nth-of-type(3) {
+      margin-right: ${calcRem(65)};
+    }
+
+    .address,
+    .phone,
+    .status,
+    .time {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(22)};
+    }
+  }
+
   ${tablet.all} {
     .address {
       margin-top: ${calcRem(16)};

@@ -70,7 +70,9 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
 
   ${mobile.all} {
     & {
+      padding-right: ${calcRem(16)};
       padding-bottom: ${calcRem(16)};
+      padding-left: ${calcRem(16)};
       margin-bottom: 0;
       height: auto;
       flex-direction: column;

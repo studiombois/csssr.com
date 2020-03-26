@@ -12,10 +12,6 @@ import getPagePathnameInLanguage from '../../../common/get-page-pathname-in-lang
 
 const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathname } }) => {
   const lngToRedirect = lng === 'ru' ? 'en' : 'ru'
-  const lngChange = {
-    en: 'en',
-    ru: 'ru'
-  }
 
   const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
 
@@ -25,16 +21,7 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
         <Link className="link ru-link" href={otherLanguagePathname}>
           <Text
             className="link-text"
-            dangerouslySetInnerHTML={{ __html: lngChange.ru }}
-            type="perforator"
-            size="s"
-          />
-        </Link>
-
-        <Link className="link en-link" href={otherLanguagePathname}>
-          <Text
-            className="link-text"
-            dangerouslySetInnerHTML={{ __html: lngChange.en }}
+            dangerouslySetInnerHTML={{ __html: lngToRedirect }}
             type="perforator"
             size="s"
           />

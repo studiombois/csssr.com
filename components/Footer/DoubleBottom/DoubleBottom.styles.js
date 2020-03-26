@@ -18,13 +18,28 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       margin-top: -8px;
       margin-left: auto;
-      margin-right: 32px;
       width: 492px;
       height: 280px;
     }
   }
 
+  ${desktop.l} {
+    & {
+      padding-right: ${calcRem(42)};
+    }
+  }
+
+  ${desktop.m} {
+    & {
+      padding-right: ${calcRem(48)};
+    }
+  }
+
   ${desktop.s} {
+    & {
+      padding-right: ${calcRem(52)};
+    }
+
     .picture {
       position: absolute;
       right: 32px;
@@ -35,6 +50,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${tablet.all} {
     & {
       height: ${calcRem(304)};
+      padding-top: ${calcRem(40)};
+      padding-right: ${calcRem(21)};
+      padding-bottom: ${calcRem(28)};
+      padding-left: ${calcRem(30)};
     }
 
     .picture {
@@ -59,7 +78,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: ${calcRem(22)};
-      margin-left: ${calcRem(-16)};
       width: ${calcRem(328)};
     }
   }

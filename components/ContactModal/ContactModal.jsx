@@ -52,11 +52,14 @@ class ContactModal extends PureComponent {
         body: JSON.stringify(values),
       })
     } catch {
+      if (window.dataLayer && !isTestEmail) {
+        window.dataLayer.push({ event: 'form_fail' })
+      }
+
       return { [FORM_ERROR]: t('common:form.errors.general') }
     }
 
     const isTestEmail = values.email === testEmail
-
     if (res.status === 201) {
       if (window.dataLayer && !isTestEmail) {
         window.dataLayer.push({ event: 'form_success' })

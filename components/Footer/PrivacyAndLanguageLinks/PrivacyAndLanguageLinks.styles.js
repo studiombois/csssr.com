@@ -18,7 +18,7 @@ const base = ({ colors }) => css`
   }
 
   .ru-link {
-    margin-right: 7px;
+    margin-left: ${calcRem(50)};
   }
 
   .policy-link {

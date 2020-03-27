@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Core Values",
+    "description": "We follow the best practices in everything we do."
+  },
+  "imgAlt": {
+    "greeting": "Illustration with wavy horizontal lines, geometric figures and a small rocket flying along the lines.",
+    "cleanCode": "Illustration: a programmer writes and writes code on a laptop",
+    "reliability": "Illustration: a man folds a wall of lego",
+    "accessibility": "Illustration of a girl from mosaic running with a laptop in her hand",
+    "ux": "Illustration: a man lies and reads a newspaper",
+    "webSecurity": "Illustration: a programmer writes code while sitting at a table"
+  },
+  "greeting": {
+    "title": "Core Values"
+  },
+  "detailValue": {
+    "cleanCode": {
+      "title": "Clean Code",
+      "subTitle": "Clean code is&nbsp;good code. It&rsquo;s important not just what the code does, but also how it&nbsp;looks.",
+      "text": "Clean and clear code makes it&nbsp;easy to&nbsp;support, quickly add new functionality and make changes at&nbsp;lower costs. Messy, overly complex code causes problems for teams, reduces productivity, and makes the lives of&nbsp;those who work with it&nbsp;later much more complicated.",
+      "text_2": "Whether we&nbsp;are working on&nbsp;a&nbsp;large-scale project that started long before we&nbsp;were involved or&nbsp;are launching a&nbsp;completely new product, we&nbsp;are mindful of&nbsp;putting things in&nbsp;good order. Regular code reviews and technical debt management help&nbsp;us achieve this."
+    },
+    "reliability": {
+      "title": "Reliability",
+      "subTitle": "We&nbsp;care about final product quality and the reputations of&nbsp;our clients, so&nbsp;we&nbsp;pay special attention to&nbsp;testing.",
+      "text": "We&nbsp;have&nbsp;QA specialists on&nbsp;each team to&nbsp;ensure a&nbsp;strong development process and minimize the risk of&nbsp;errors in&nbsp;the final product. We&nbsp;apply manual testing and, depending on&nbsp;project needs, automatic tests: end-to-end, unit, and integration testing. Knowing that our code is&nbsp;tested and reliable, we&nbsp;can be&nbsp;sure it&nbsp;will work perfectly and can be&nbsp;easily supported later."
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "subTitle": "More Internet users have special needs than most people are aware&nbsp;of.",
+      "text": "A&nbsp;website designed without applying accessibility principles could lose up&nbsp;to&nbsp;15% of&nbsp;its audience. Each page and block should be&nbsp;appropriately delivered, so&nbsp;that every user can enjoy&nbsp;it.",
+      "text_2": "We&nbsp;employ web accessibility standards, including but not limited to&nbsp;writing text alternatives for non-text content and making all functionality available from a&nbsp;keyboard."
+    },
+    "ux": {
+      "title": "UX",
+      "subTitle": "We&nbsp;understand how important the little things in&nbsp;design are, and we&nbsp;employ pixel-perfect development.",
+      "text": "But we&nbsp;never forget about being user-friendly. Developers are, in&nbsp;fact, the first users, so&nbsp;it&nbsp;is&nbsp;important to&nbsp;not just blindly transfer mock-ups to&nbsp;the web, and always think about the user experience. We&nbsp;always draw clients&rsquo; attention to&nbsp;things that may affect the product in&nbsp;the future. Perfectionism has to&nbsp;be&nbsp;smart."
+    },
+    "webSecurity": {
+      "title": "Web Security",
+      "subTitle": "In&nbsp;addition to&nbsp;being well written, reliable, and user-friendly, web applications must also be&nbsp;secure.",
+      "text": "We&nbsp;understand a&nbsp;small vulnerability in&nbsp;an&nbsp;application can lead to&nbsp;significant financial and reputational risks. One incorrectly implemented authorization or&nbsp;payment form can lead to&nbsp;a&nbsp;hack and extraction of&nbsp;user and/or company data. From the beginning, we&nbsp;think carefully about code architecture and pay special attention to&nbsp;security issues, even when client-side security audits are in&nbsp;place."
+    }
+  },
+  "form": {
+    "title": "Let’s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "comment",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Phone",
+    "nameLabel": "Name",
+    "submitText": "Submit"
+  }
+}

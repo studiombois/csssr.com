@@ -9,16 +9,18 @@ import contactFormValidationRules from '../../utils/validators/contactFormValida
 import getGaCid from '../../utils/client/getGaCid'
 import testEmail from '../../utils/testEmail'
 
-const ContactFormForDev = props => <ContactForm
-  imageName='letter'
-  pageName='dev'
-  headerId='hire-us'
-  fields={['name', 'phone', 'email', 'message']}
-  feedbackEmail='sales@csssr.io'
-  {...props}
-/>
+const ContactFormForDev = (props) => (
+  <ContactForm
+    imageName="letter"
+    pageName="dev"
+    headerId="hire-us"
+    fields={['name', 'phone', 'email', 'message']}
+    feedbackEmail="sales@csssr.io"
+    {...props}
+  />
+)
 
-const onSubmit = (t, lng) => async values => {
+const onSubmit = (t, lng) => async (values) => {
   values.gacid = getGaCid()
   values.language = lng
   let res
@@ -65,12 +67,14 @@ const onSubmit = (t, lng) => async values => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, lng }) => <ReactFinalForm
-  onSubmit={onSubmit(t, lng)}
-  validate={contactFormValidationRules(t)}
-  decorators={[ focusOnErrors ]}
-  component={ContactFormForDev}
-/>
+const Form = ({ t, lng }) => (
+  <ReactFinalForm
+    onSubmit={onSubmit(t, lng)}
+    validate={contactFormValidationRules(t)}
+    decorators={[focusOnErrors]}
+    component={ContactFormForDev}
+  />
+)
 
-export default translate()(Form)
+export default translate(Form)
 export { onSubmit }

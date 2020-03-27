@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "CSSSR",
+    "description": "International IT company that specializes in front-end web development services. We help a wide range of industries build reliable web solutions."
+  },
+  "hero": {
+    "title": "We Code for Good",
+    "description": "We&rsquo;re an&nbsp;international&nbsp;IT company that specializes in&nbsp;<span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> web development services to&nbsp;help our clients build reliable web solutions."
+  },
+  "services": {
+    "title": "We&nbsp;Create Web Services for Millions",
+    "link": "More",
+    "outsourcing": {
+      "title": "<span style=\"font-weight: bold;\">Outsourcing</span><span style=\"white-space: nowrap; display: block;\">Front-end</span>",
+      "subtitle": "Web development to&nbsp;complement core competencies."
+    },
+    "express": {
+      "title": "<span style=\"font-weight: bold;\">Express</span> Front-end",
+      "subtitle": "Fixed rates for straight-forward, <span style=\"white-space: nowrap;\">time-sensitive</span> services."
+    },
+    "mvp": {
+      "title": "<span style=\"font-weight: bold;\">MVP</span> Development",
+      "subtitle": "Development of&nbsp;core functionality for testing purposes."
+    },
+    "ourFeatures": {
+      "feature1": {
+        "text": "We&nbsp;believe attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average.",
+        "link": "Read about processes"
+      },
+      "feature2": {
+        "text": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tools. We&nbsp;keep a&nbsp;careful eye on&nbsp;emerging web development trends and never compromise best practice.",
+        "link": "Read about technologies"
+      }
+    }
+  },
+  "industries": {
+    "title": "Industries",
+    "subtitle": "We&nbsp;take a&nbsp;goal-oriented approach across a&nbsp;wide range of&nbsp;industries",
+    "fintech": {
+      "title": "Fintech",
+      "description": "We&rsquo;ve built a&nbsp;strong digital presence for many banking and financial services."
+    },
+    "eCommerce": {
+      "title": "E-Commerce",
+      "description": "We&nbsp;help our clients in&nbsp;the highly competitive <span style=\"white-space: nowrap;\">e-commerce</span> industry win each new customer."
+    },
+    "information": {
+      "title": "Information Technology",
+      "description": "We&nbsp;push IT-companies to&nbsp;the cutting edge of&nbsp;technological progress."
+    },
+    "mediaAndMarketing": {
+      "title": "Media &amp;&nbsp;Marketing",
+      "description": "We&nbsp;deliver high-quality experiences capable of&nbsp;handling large-scale data and any scale of&nbsp;concurrent users."
+    }
+  },
+  "aboutUs": {
+    "title": "We&nbsp;Really Love<br />What We",
+    "description": "Headquartered in&nbsp;Singapore, CSSSR is&nbsp;a&nbsp;group of&nbsp;companies that brings together top talent based around the globe to&nbsp;produce the highest quality results.",
+    "fact1": {
+      "title": "2012",
+      "description": "year of&nbsp;foundation"
+    },
+    "fact2": {
+      "title": "500+",
+      "description": "projects completed"
+    },
+    "fact3": {
+      "title": "150+",
+      "description": "people</br>involved"
+    },
+    "fact4": {
+      "title": "1",
+      "hero": "flag",
+      "description": " planted atop Mt. Elbrus"
+    },
+    "link": "Read more"
+  },
+  "projects": {
+    "title": "Our Other Projects",
+    "tracker": {
+      "title": "CSSSR.Tracker",
+      "description": "We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give&nbsp;it&nbsp;a&nbsp;try."
+    },
+    "school": {
+      "title": "CSSSR.School",
+      "description": "A&nbsp;front-end e-learning platform developed by&nbsp;CSSSR. Currently available only in&nbsp;Russian language."
+    },
+    "blog": {
+      "title": "CSSSR.Blog",
+      "description": "Our thoughts about web development, business processes and remote culture.",
+      "post1": {
+        "title": "10&nbsp;Tips and Best Practices for Accurately Estimating Tasks",
+        "description": "How do&nbsp;you stop guessing and start progressing: through trial and error, we&nbsp;have created a&nbsp;set of&nbsp;rules to&nbsp;improve the accuracy of&nbsp;estimates.",
+        "link": "Read more"
+      },
+      "post2": {
+        "title": "Some Advantages of&nbsp;Separating Front-end from Back-end",
+        "description": "The trend to&nbsp;divide the development process into two parts is&nbsp;rising. The key question is&nbsp;whether it&rsquo;s a&nbsp;good idea.",
+        "link": "Read more"
+      }
+    }
+  },
+  "vacancies": {
+    "title": "Ready to&nbsp;<span style=\"font-style: italic; font-weight: normal;\">join our team</span> and enjoy all the benefits of&nbsp;remote work on&nbsp;a&nbsp;full-time basis?",
+    "link": "All our vacancies"
+  },
+  "imageAlt": {
+    "hero": "Happy astronauts in front of CSSSR logo",
+    "square": "Square figure",
+    "triangle": "Triangle figure",
+    "circle": "Circle figure",
+    "figures": "Square, Triangle and Circle figures in a pile",
+    "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly",
+    "fintech": "Woman holding credit cards",
+    "eCommerce": "Two people helping each other carry the product",
+    "information": "Browser window",
+    "mediaAndMarketing": "Several people interacting with each other in front of computer",
+    "aboutUs": "A man hugging a heart with «Do» written on him",
+    "volleyball": "CSSSR Teams after Volleyball Tournament",
+    "elbrus": "CSSSR flag on Elbrus",
+    "tracker": "A man who does his job productively",
+    "school": "Robot in a bachelor's hat",
+    "blog": "The man who reads the news",
+    "vacancies": "Happy faces of people"
+  },
+  "form": {
+    "title": "Let’s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "comment",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Phone",
+    "nameLabel": "Name",
+    "submitText": "Submit"
+  }
+}

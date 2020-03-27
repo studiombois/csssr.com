@@ -1,15 +1,6 @@
 {
   "hello": "Привет!",
   "headerLogoAlt": "CSSSR логотип",
-  "menu": {
-    "dev": "Фронтенд разработка",
-    "html": "Вёрстка",
-    "jobs": "Вакансии",
-    "job": "Вакансии",
-    "school": "Школа",
-    "privacy-policy": "Политика конфиденциальности",
-    "mvp": "MVP"
-  },
   "floatingButton": {
     "question": "Как вам удобнее связаться с нами?",
     "facebookMessenger": "Facebook Messenger",
@@ -22,23 +13,118 @@
   "languageRedirect": {
     "text": "Switch to English"
   },
-  "footer": {
-    "privacyPolicy": "Политика конфиденциальности",
-    "alliancePartText": "CSSSR является частью"
+  "header": {
+    "menu": {
+      "services": {
+        "title": "Услуги",
+        "outsourcing": {
+          "title": "Фронтенд аутсорсинг",
+          "description": "Работа над веб-проектами для крупных компаний."
+        },
+        "mvp": {
+          "title": "Разработка MVP",
+          "description": "Ключевой функционал для проверки бизнес-идей."
+        }
+      },
+      "industries": {
+        "title": "Индустрии",
+        "fintech": {
+          "title": "Финтех"
+        },
+        "eCommerce": {
+          "title": "E-Commerce"
+        },
+        "information": {
+          "title": "Информационные технологии"
+        },
+        "mediaAndMarketing": {
+          "title": "Медиа и&nbsp;маркетинг"
+        }
+      },
+      "howWeWork": {
+        "title": "Как мы&nbsp;работаем",
+        "technologies": {
+          "title": "Технологии",
+          "description": "Мы&nbsp;внимательно следим за&nbsp;новинками веб-разработки и&nbsp;не&nbsp;забываем про лучшие стандарты."
+        },
+        "processes": {
+          "title": "Процессы",
+          "description": "Отлаженные процессы, опыт и&nbsp;внимание к&nbsp;деталям помогают нам создавать успешные проекты."
+        }
+      }
+    },
+    "links": {
+      "blog": {
+        "title": "Блог"
+      },
+      "aboutUs": {
+        "title": "О нас"
+      },
+      "careers": {
+        "title": "Вакансии"
+      }
+    },
+    "action": "Нанять нас",
+    "backLink": "Наши сервисы"
   },
-  "sectionName": {
-    "dev": "Фронтенд разработка",
-    "express": "Вёрстка",
-    "jobs": "Вакансии",
-    "job": "Вакансии",
-    "privacy-policy": "Политика конфиденциальности",
-    "mvp": "Фронтенд разработка"
+  "footer": {
+    "actionPhrase": "Давайте поработаем!",
+    "services": {
+      "title": "Сервисы",
+      "outsourcing": "Aутсорсинг",
+      "mvp": "MVP"
+    },
+    "industries": {
+      "title": "Индустрии",
+      "fintech": "Финтех",
+      "eCommerce": "Электронная</br> коммерция",
+      "information": "ИТ компании",
+      "mediaAndMarketing": "Медиа и&nbsp;маркетинг"
+    },
+    "howWeWork": {
+      "title": "Как мы&nbsp;работаем",
+      "technologies": "Технологии",
+      "wayOfWork": "Процессы",
+      "coreValues": "Ценности"
+    },
+    "company": {
+      "title": "Компания",
+      "blog": "Блог",
+      "aboutUs": "О нас",
+      "careers": "Вакансии"
+    },
+    "privacy": "Политика конфиденциальности",
+    "addresses": {
+      "singapore": {
+        "title": "Сингапур",
+        "address": "68 Circular Road,</br> #02-01,</br>Singapore, 049422",
+        "status": "Головной офис",
+        "phone": "+65 3159 4531"
+      },
+      "russia": {
+        "title": "Россия",
+        "address": "22 Большой Козихинский пер.,</br>стр. 2, офис 28,</br> Москва, 123001,</br>Россия",
+        "phone": "+7 (499) 113-16-17"
+      },
+      "russia_2": {
+        "address": "30 Лесная ул.,</br>стр. 1, офис 303,</br> г. Дзержинский, 140090,</br>Россия",
+        "phone": "+7 (499) 113-16-17"
+      },
+      "estonia": {
+        "title": "Эстония",
+        "address": "26 Majaka St.,</br>bld.1, office 14,<br/>Tallinn, 11412,</br>Estonia"
+      }
+    },
+    "imageAlt": {
+      "continents": "Карта, на которой отмечены положения всех офисов CSSSR"
+    },
+    "videoError": "Этот браузер не поддерживает загрузку видеофайлов"
   },
   "noPage": "Данная страница не доступна на русском языке.",
   "checkBoxesText": {
-    "privacyPolicyText": "я согласен на обработку моих персональных данных в соответствии с ",
-    "privacyPolicyLinkText": "Политикой конфиденциальности",
-    "newsletterText": "я согласен получать информацию об акциях и коммерческих спецпредложениях"
+    "privacyPolicyText": "Я согласен(-на) на обработку моих персональных данных в соответствии с ",
+    "privacyPolicyLinkText": "Политикой конфиденциальности.",
+    "newsletterText": "Я согласен(-на) получать информацию об акциях и коммерческих предложениях."
   },
   "form": {
     "errors": {

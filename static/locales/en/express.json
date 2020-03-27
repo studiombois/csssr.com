@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Get Your Code Boosted!",
+    "description": "Turning mock-ups into HTML is our super power. We create HTML layouts, make blocks and elements animated, and web pages — adaptive."
+  },
+  "greeting": {
+    "title": "Get Your Code Boosted!",
+    "description": "Turning mock-ups into HTML&nbsp;is our super power. If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
+    "button": "Get a quote"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "text1": "Since 2012, CSSSR has been doing <span className=\"text-nowrap\">front-end</span> web development for Asian and European companies. We provide fixed-cost services for web projects from any kind of business: <span className=\"text-nowrap\">start-ups</span>, digital or creative agencies, IT companies and anybody else that needs our help.",
+    "text2": "Our core service is&nbsp;creating HTML&nbsp;layouts, JavaScript animations and Retina Ready adaptive web pages from PSD, Sketch and Figma."
+  },
+  "workflow": {
+    "title": "Two Days to&nbsp;Start",
+    "text1": "Estimate the cost of&nbsp;your project using <a className=\"button\" href=\"#calculator\">our Calculator</a> and fill out the application form.",
+    "text2": "Within one working day we&rsquo;ll give you an&nbsp;estimate, and send you contract and NDA templates as&nbsp;well as&nbsp;some additional questions.",
+    "text3": "You provide&nbsp;us your company details, answer our questions and ask any of&nbsp;your own.",
+    "text4": "Within a&nbsp;day we&rsquo;ll send you a&nbsp;finalized contract, a&nbsp;commercial offer and a&nbsp;prepayment invoice.",
+    "text5": "Once the documents are signed and prepayment received, we&rsquo;ll quickly assemble a&nbsp;team and begin work."
+  },
+  "calculator": {
+    "title": "Have an&nbsp;Idea for a&nbsp;Web Project?",
+    "form": {
+      "fieldset1": {
+        "title": "Basic Parameters",
+        "fieldLabel": "Number of pages",
+        "checkboxLabel": "Hot project"
+      },
+      "fieldset2": {
+        "title": "Layout",
+        "note": "If&nbsp;your site has differing layouts for different versions (mobile, alternative desktop,etc), please specify the number of&nbsp;layouts per page.",
+        "fieldLabel": "Design per page",
+        "dynamicText": {
+          "base": "Looks like your site is ",
+          "option1": "Static",
+          "option2": "Adaptive",
+          "price": "Free"
+        }
+      },
+      "fieldset3": {
+        "title": "Browser Support",
+        "subtitle": "Last versions of&nbsp;Google Chrome, Firefox, Apple Safari, Microsoft Edge + iOS&nbsp;&mdash; Safari and Android&nbsp;&mdash; Chrome",
+        "checkboxLabel1": "Our recommendations",
+        "checkboxLabel2": "Internet Explorer 11",
+        "checkboxLabel3": "Internet Explorer 10",
+        "checkboxLabel4": "Internet Explorer 9",
+        "checkboxLabel5": "Android Default Browsers",
+        "checkboxLabel6": "Other requirements",
+        "checkboxLabel7": "iOS Google Chrome",
+        "note": "Please enter any additional browsers that you want to&nbsp;be&nbsp;supported.",
+        "fieldLabel": "Additional browsers to be supported"
+      },
+      "fieldset4": {
+        "title": "Retina",
+        "radioLabel1": "None",
+        "radioLabel2": "Vector only",
+        "radioLabel3": "+ Photos"
+      },
+      "fieldset5": {
+        "title": "Interactivity Options",
+        "note": "Websites are complex, with hundreds of&nbsp;variables.<br />This is&nbsp;an&nbsp;approximate estimate based on&nbsp;previous projects. <a href=\"mailto:sales@csssr.io\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"contact-link\" data-testid=\"calculator:link:hireUs\">Hire&nbsp;us</a> for a&nbsp;more refined estimate.",
+        "radioLabel1": "None",
+        "radioLabel2": "Basic",
+        "radioLabel3": "Advanced"
+      },
+      "fieldset6": {
+        "title1": "Something Missing?",
+        "title2": "Write us About Your Project",
+        "fieldLabel": "Project brief"
+      },
+      "fieldset7": {
+        "title": "Estimated Price",
+        "subtitle": "The price is&nbsp;in&nbsp;Singapore dollars (SGD)",
+        "fieldLabel1": "Your name",
+        "fieldLabel2": "Email",
+        "fieldLabel3": "Phone",
+        "fieldLabel4": "Messenger",
+        "fieldLabel5": "Link to your design"
+      },
+      "submit": "Get a&nbsp;quote"
+    }
+  },
+  "features": {
+    "title": "Core Features",
+    "feature1": {
+      "title": "Design&#8209;Friendly",
+      "text": "Your project will look exactly like it’s supposed to. We understand the design processes and respect every pixel in your mock-ups."
+    },
+    "feature2": {
+      "title": "Modern&nbsp;Stack",
+      "text1": "We use only modern stack from open-source technologies to make your project work quickly and efficiently, and allow for easy future support.",
+      "text2": "HTML5, CSS3, Stylus, Pug, BEM, PostCSS"
+    },
+    "feature3": {
+      "title": "Accessibility",
+      "text": "Did you know that over 10% of users have special needs when using the Internet? We’ve got you covered. We apply a11y principles to all our projects."
+    },
+    "feature4": {
+      "title": "Quality&nbsp;Control",
+      "text": "At least three specialists are assigned to your project regardless of its size: a manager, a developer and a QA-engineer."
+    },
+    "feature5": {
+      "title": "Guarantees",
+      "text": "Our in-house lawyer customizes contracts and NDAs for each project."
+    }
+  },
+  "form": {
+    "title": "Let’s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "comment",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Phone",
+    "nameLabel": "Name",
+    "submitText": "Submit"
+  },
+  "imageAlt": {
+    "rocket": "A rocket pointed upward",
+    "aboutUs": "Illustrated figures of developers",
+    "workflow1": "illustration of the number one for the first stage",
+    "workflow2": "illustration of the number two, for the second stage",
+    "workflow3": "illustration of the number three, for the third stage",
+    "workflow4": "illustration of the number four, for the fourth stage",
+    "workflow5": "illustration of the number five, for the fifth stage",
+    "feature1": "Illustration that describes design friendly block",
+    "feature2": "Illustration that describes modern stack block",
+    "feature3": "Illustration that describes accessibility block",
+    "feature4": "Illustration that describes quality control block",
+    "feature5": "Illustration that describes quality guarantees block"
+  }
+}

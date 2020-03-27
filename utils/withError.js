@@ -2,7 +2,7 @@ import React from 'react'
 import { number } from 'prop-types'
 import ErrorPage from '../pages/_error'
 
-export default Component => {
+export default (Component) => {
   class Extended extends React.Component {
     static async getInitialProps(ctx) {
       const props = await Component.getInitialProps(ctx)

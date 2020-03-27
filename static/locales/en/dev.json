@@ -1,13 +1,7 @@
 {
   "meta": {
-    "title": "We Create Web Services for Millions",
-    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript. And dream of the stars."
-  },
-  "headerNav": {
-    "competence": "Competencies",
-    "services": "Services",
-    "clients": "Clients",
-    "hireUs": "Hire us"
+    "title": "We Create Web Services for Millions",
+    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript."
   },
   "imgAlt": {
     "dev": "picture that represents our CSSSR team",
@@ -29,7 +23,6 @@
     "text": "First and foremost, we&rsquo;re engineers. Our calling card is&nbsp;finding top-tier, elegant and economical business solutions. We&nbsp;use a&nbsp;variety of&nbsp;tools, technologies and programming languages&nbsp;&mdash; most commonly, JavaScript.",
     "app": "Development and support of&nbsp;high-load web applications",
     "mvp": "MVP",
-    "mvpLink": "en/mvp",
     "stack": "Stack Migration"
   },
   "time": {

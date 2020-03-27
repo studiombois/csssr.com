@@ -1,1 +1,1 @@
-export default number => !!(number % 2)
+export default (number) => !!(number % 2)

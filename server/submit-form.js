@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
     privacyPolicy,
   } = req.body
 
-  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), {
+  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), 'contactForm', {
     name,
     email,
     privacyPolicy,
@@ -73,7 +73,7 @@ module.exports = async (req, res) => {
   } catch (e) {
     console.error('server/submit-form.js ERROR', JSON.stringify(req.body), e)
 
-    Sentry.withScope(scope => {
+    Sentry.withScope((scope) => {
       scope.setExtra('reqBody', req.body)
       Sentry.captureException(e)
     })

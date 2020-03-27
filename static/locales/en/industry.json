@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "ecommerce": {
+      "title": "Custom E-Commerce Development Services",
+      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+    },
+    "fintech": {
+      "title": "FinTech and Banking Web Development",
+      "description": "We built a strong digital presence for banking and financial services."
+    },
+    "informationTechnology": {
+      "title": "Web Development Services for IT Companies",
+      "description": "We push IT-companies to the cutting edge of technological progress."
+    },
+    "mediaAndMarketing": {
+      "title": "Custom Development for Media-Related Companies",
+      "description": "We deliver high-quality experiences capable of handling large-scale data and any scale of concurrent users."
+    }
+  },
+  "imgAlt": {
+    "ourClients": "Сompany logos of our customers",
+    "facts": "Alt text for illustartion",
+    "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
+    "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
+    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat.",
+    "projects_1": "Schematic illustration of a web portal",
+    "projects_2": "Schematic illustration of a web portal",
+    "projects_3": "Schematic illustration of a web portal"
+  },
+  "greeting": {
+    "ecommerce": {
+      "title": "Custom E-Commerce <br/>Development Services",
+      "paragraph": "In&nbsp;the constantly growing and highly competitive <span style=\"white-space: nowrap\">e-commerce</span> industry every page, every metric, and every customer opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales.",
+      "button": "Hire us",
+      "imgAlt": "Illustration with two figures of people, a man conveys something to a girl"
+    },
+    "fintech": {
+      "title": "Fintech and Banking<br /> Web Development",
+      "paragraph": "The financial industry is&nbsp;expanding its digital presence, moving more and more services online to&nbsp;meet rising consumer demand. With this transition comes a&nbsp;growing need for higher digital security standards. Find out how we&nbsp;can help.",
+      "button": "Hire us",
+      "imgAlt": ""
+    },
+    "informationTechnology": {
+      "title": "Web Development Services<br/> for IT Companies",
+      "paragraph": "The IT&nbsp;industry is&nbsp;always on&nbsp;the cutting edge of&nbsp;technological progress. The effort to&nbsp;adapt to&nbsp;new technologies as&nbsp;quickly as&nbsp;possible is&nbsp;not only a&nbsp;desire but also the key to&nbsp;success in&nbsp;this industry. We&nbsp;help these companies become market leaders.",
+      "button": "Hire us",
+      "imgAlt": ""
+    },
+    "mediaAndMarketing": {
+      "title": "Custom Development<br/> for Media-Related Companies",
+      "paragraph": "Throughout history, entertainment has been intertwined with culture, so&nbsp;it&rsquo;s unsurprising that it&nbsp;has a&nbsp;vast presence on&nbsp;the web. We&rsquo;ve helped many media companies grow and evolve. Reach out to&nbsp;us to&nbsp;find out how we&nbsp;can help you.",
+      "button": "Hire us",
+      "imgAlt": ""
+    }
+  },
+  "ourClients": {
+    "title": "Our Clients"
+  },
+  "facts": {
+    "heading": "Development With a&nbsp;Personal Approach",
+    "subHeading": "Regardless of&nbsp;the size or&nbsp;duration of&nbsp;your project, we&nbsp;provide personalized services and flexible terms.",
+    "firstItem": {
+      "number": "3-7",
+      "text": "specialists <br/>per team"
+    },
+    "secondItem": {
+      "number": "2 wks - ∞",
+      "text": "possible project <br/>duration"
+    },
+    "thirdItem": {
+      "number": "150+",
+      "text": "professionals"
+    },
+    "fourthItem": {
+      "number": "500+",
+      "text": "completed projects"
+    }
+  },
+  "coreValues": {
+    "heading": "Core Values",
+    "subHeading": "We&nbsp;maintain the highest standards of&nbsp;web development and apply best practices to&nbsp;each project.",
+    "firstItem": {
+      "href": "/en/core-values#accessibility",
+      "title": "Accessibility",
+      "text": "Did you know that up&nbsp;to&nbsp;15% of&nbsp;all users have special needs when using the Internet? Each page and block should not only be&nbsp;well written, but should also be&nbsp;appropriately delivered, so&nbsp;that every user can enjoy&nbsp;it."
+    },
+    "secondItem": {
+      "href": "/en/core-values#security",
+      "title": "Web Security",
+      "text": "Even a&nbsp;small vulnerability can lead to&nbsp;significant financial and reputational risks. From the beginning, we&nbsp;think carefully about code architecture and pay special attention to&nbsp;security issues."
+    },
+    "thirdItem": {
+      "href": "/en/core-values#ux",
+      "title": "UX",
+      "text": "Perfectionism has to&nbsp;be&nbsp;smart. We&nbsp;always put ourselves in&nbsp;the place of&nbsp;the user and pay attention to&nbsp;the little things that can affect users&rsquo; opinions about the final product."
+    }
+  },
+  "projects": {
+    "heading": "Our projects",
+    "subHeading": "This is&nbsp;the true stories. The events described here took place in&nbsp;CSSSR in&nbsp;20XX. At&nbsp;the request of&nbsp;the clients, all names and important details have been hidden. Out of&nbsp;respect for the team, the rest has been told exactly as&nbsp;it&nbsp;occurred",
+    "firstItem": {
+      "heading": "Telecom Provider",
+      "text": "Website for the largest fashion department store in&nbsp;Eastern Europe.",
+      "numericData": {
+        "firstItem": {
+          "number": "9",
+          "text": "team size"
+        },
+        "secondItem": {
+          "number": "12",
+          "text": "month"
+        }
+      }
+    },
+    "secondItem": {
+      "heading": "Telecom Provider",
+      "text": "Online storefront for wine importer and distributor",
+      "numericData": {
+        "firstItem": {
+          "number": "4",
+          "text": "team size"
+        },
+        "secondItem": {
+          "number": "7",
+          "text": "month"
+        }
+      }
+    },
+    "thirdItem": {
+      "heading": "Telecom Provider",
+      "text": "Interface of&nbsp;self service terminal system for one of&nbsp;the largest Russian online electronics retailers",
+      "numericData": {
+        "firstItem": {
+          "number": "14",
+          "text": "team size"
+        },
+        "secondItem": {
+          "number": "17",
+          "text": "month"
+        }
+      }
+    }
+  },
+  "form": {
+    "title": "Let’s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "comment",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Phone",
+    "nameLabel": "Name",
+    "submitText": "Submit"
+  }
+}

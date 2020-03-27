@@ -38,9 +38,10 @@ const log = (...args) => {
 // Мы поддерживаем следующие локали:
 // ru-ru, ru-ee, en-ee, en-sg, en-us
 
-const isLocaleLanguage = locale => locale === i18n.services.languageUtils.getLanguagePartFromCode(locale)
-const isLocaleInWhitelist = locale => supportedLocales.includes(locale)
-const isLanguageInWhitelist = locale => supportedLanguages.includes(locale)
+const isLocaleLanguage = (locale) =>
+  locale === i18n.services.languageUtils.getLanguagePartFromCode(locale)
+const isLocaleInWhitelist = (locale) => supportedLocales.includes(locale)
+const isLanguageInWhitelist = (locale) => supportedLanguages.includes(locale)
 
 export default {
   name: 'pathCookieHeader',
@@ -67,12 +68,16 @@ export default {
         isLocaleInWhitelist(localeFromCookie) &&
         i18n.services.languageUtils.getLanguagePartFromCode(localeFromCookie) === localeFromPath
       ) {
-        log(`locale detector: ${localeFromPath} was found in path, it was parsed as language part of full locale, ${localeFromCookie} was found in cookie, it is in whitelist, so locale was set to ${localeFromCookie}`)
+        log(
+          `locale detector: ${localeFromPath} was found in path, it was parsed as language part of full locale, ${localeFromCookie} was found in cookie, it is in whitelist, so locale was set to ${localeFromCookie}`,
+        )
         return localeFromCookie
       }
 
       const locale = defaultLocaleByLanguage[localeFromPath]
-      log(`locale detector: ${localeFromPath} was found in path, it was parsed as language part of full locale, ${localeFromCookie} was found in cookie, is doesn't match for some reason, so locale was set to ${locale} by default`)
+      log(
+        `locale detector: ${localeFromPath} was found in path, it was parsed as language part of full locale, ${localeFromCookie} was found in cookie, is doesn't match for some reason, so locale was set to ${locale} by default`,
+      )
       return locale
     }
 
@@ -83,11 +88,16 @@ export default {
     }
 
     const acceptLanguageHeader = req.headers['accept-language']
-    const localeFromHeader = acceptLanguageParser.pick([...supportedLocales, ...estonianLanguageAndLocale], acceptLanguageHeader)
+    const localeFromHeader = acceptLanguageParser.pick(
+      [...supportedLocales, ...estonianLanguageAndLocale],
+      acceptLanguageHeader,
+    )
 
     // 4
     if (estonianLanguageAndLocale.includes(localeFromHeader)) {
-      log(`locale detector: ${localeFromHeader} was found in header ${acceptLanguageHeader}, so ${defaultEstonianLocale} is set as locale`)
+      log(
+        `locale detector: ${localeFromHeader} was found in header ${acceptLanguageHeader}, so ${defaultEstonianLocale} is set as locale`,
+      )
       return defaultEstonianLocale
     }
 
@@ -113,7 +123,9 @@ export default {
     // 6, 7
     if (whitelistedLanguage) {
       const locale = defaultLocaleByLanguage[whitelistedLanguage]
-      log(`locale detector: ${locale} is set because following languages were detected ${detectedLanguages}`)
+      log(
+        `locale detector: ${locale} is set because following languages were detected ${detectedLanguages}`,
+      )
       return locale
     }
 

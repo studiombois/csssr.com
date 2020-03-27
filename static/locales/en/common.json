@@ -1,16 +1,6 @@
 {
   "hello": "Hello!",
   "headerLogoAlt": "CSSSR logo",
-  "menu": {
-    "dev": "FRONT-END DEVELOPMENT",
-    "html": "Express front-end",
-    "jobs": "Jobs",
-    "job": "Job",
-    "school": "School",
-    "privacy-policy": "Privacy Policy",
-    "cookies-policy": "Cookies Policy",
-    "mvp": "mvp"
-  },
   "floatingButton": {
     "question": "How would you like to&nbsp;contact&nbsp;us?",
     "facebookMessenger": "Facebook Messenger",
@@ -23,18 +13,118 @@
   "languageRedirect": {
     "text": "Переключиться на русский"
   },
-  "footer": {
-    "privacyPolicy": "Privacy policy",
-    "alliancePartText": "CSSSR is a part of"
+  "header": {
+    "menu": {
+      "services": {
+        "title": "Services",
+        "outsourcing": {
+          "title": "Outsourcing Front&#8209;end",
+          "description": "Web development to&nbsp;complement core competencies."
+        },
+        "express": {
+          "title": "Express Front&#8209;end",
+          "description": "Fixed rates for straight-forward, time-sensitive services."
+        },
+        "mvp": {
+          "title": "MVP Development",
+          "description": "Development of&nbsp;core functionality for testing purposes."
+        }
+      },
+      "industries": {
+        "title": "Industries",
+        "fintech": {
+          "title": "Fintech"
+        },
+        "eCommerce": {
+          "title": "E-Commerce"
+        },
+        "information": {
+          "title": "Information Technology"
+        },
+        "mediaAndMarketing": {
+          "title": "Media & Marketing"
+        }
+      },
+      "howWeWork": {
+        "title": "How we work",
+        "technologies": {
+          "title": "Technologies",
+          "description": "We&nbsp;keep a&nbsp;careful eye on&nbsp;emerging web development trends and never compromise best practice."
+        },
+        "processes": {
+          "title": "Our Process",
+          "description": "Attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average."
+        }
+      }
+    },
+    "links": {
+      "blog": {
+        "title": "Blog"
+      },
+      "aboutUs": {
+        "title": "About us"
+      },
+      "careers": {
+        "title": "Careers"
+      }
+    },
+    "action": "Contact us",
+    "backLink": "Our services"
   },
-  "sectionName": {
-    "dev": "FRONT-END DEVELOPMENT",
-    "express": "Express frontend",
-    "jobs": "Jobs",
-    "job": "Job",
-    "privacy-policy": "Privacy Policy",
-    "cookies-policy": "Cookies Policy",
-    "mvp": "FRONT-END DEVELOPMENT"
+  "footer": {
+    "actionPhrase": "Let’s work together!",
+    "services": {
+      "title": "Services",
+      "outsourcing": "Outsourcing",
+      "express": "Express",
+      "mvp": "MVP"
+    },
+    "industries": {
+      "title": "Industries",
+      "fintech": "Fintech",
+      "information": "IT companies",
+      "eCommerce": "E-Commerce",
+      "mediaAndMarketing": "Media and marketing"
+    },
+    "howWeWork": {
+      "title": "How we work",
+      "technologies": "Technologies",
+      "wayOfWork": "Process",
+      "coreValues": "Core values"
+    },
+    "company": {
+      "title": "Company",
+      "blog": "Blog",
+      "aboutUs": "About us",
+      "careers": "Careers"
+    },
+    "privacy": "Privacy policy",
+    "cookies": "Website cookie policy",
+    "addresses": {
+      "singapore": {
+        "title": "Singapore",
+        "address": "68 Circular Road,</br> #02-01,</br>Singapore, 049422",
+        "status": "Head Office",
+        "phone": "+65 3159 4531"
+      },
+      "russia": {
+        "title": "Russia",
+        "address": "22 Bol'shoj Kozihinskij Lane,</br>bld. 2, office 28,</br> Moscow, 123001,</br>Russia",
+        "phone": "+7 (499) 113-16-17"
+      },
+      "russia_2": {
+        "address": "30 Lesnaya St.,</br>bld. 1, office 303,</br> Dzerzhinsky, 140090, </br>Russia",
+        "phone": "+7 (499) 113-16-17"
+      },
+      "estonia": {
+        "title": "Estonia",
+        "address": "26 Majaka St.,</br>bld.1, office 14,<br/>Tallinn, 11412,</br>Estonia"
+      }
+    },
+    "imageAlt": {
+      "continents": "This browser does not support downloading video files"
+    },
+    "videoError": "Этот браузер не поддерживает загрузку видеофайлов"
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {

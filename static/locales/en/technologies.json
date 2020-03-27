@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Technology Stack",
+    "description": "There is no perfect framework or library. Depending on the type of task, we choose the most appropriate tools."
+  },
+  "hero": {
+    "title": "Technologies",
+    "description": "We&nbsp;use open-source tools and resources that are supported and continuously improved by&nbsp;the community, and thus are the most reliable and flexible. We&nbsp;keep a&nbsp;close eye on&nbsp;web development novelties, but do&nbsp;not forget about the best standards.",
+    "javascript": "We&nbsp;use all modern features of&nbsp;<span style=\"font-weight: bold;\">JavaScript</span>, but we&nbsp;also apply tools that allow our projects to&nbsp;work in&nbsp;old versions of&nbsp;browsers, including old versions of&nbsp;IE.",
+    "typescript": "We&nbsp;also use <span style=\"font-weight: bold;\">TypeScript</span> and <span style=\"font-weight: bold;\">Flow</span> to&nbsp;add static typing support in&nbsp;JS. This helps&nbsp;us to&nbsp;write flexible and reliable code."
+  },
+  "frontend": {
+    "react": "Оne of&nbsp;the most popular libraries for solving various development tasks. It&nbsp;is&nbsp;good for large and complex web applications, as&nbsp;it&nbsp;can be&nbsp;easily used together with many other libraries. But React can be&nbsp;well applied to&nbsp;small projects, including landing pages, as&nbsp;well.",
+    "angular": "A&nbsp;framework that provides a&nbsp;large number of&nbsp;ready-made solutions to&nbsp;standard problems. It&nbsp;is&nbsp;best suited for typical projects where a&nbsp;serious customization of&nbsp;the application architecture is&nbsp;not required.",
+    "vue": "A&nbsp;library that is&nbsp;very similar to&nbsp;React in&nbsp;its ideology, but close to&nbsp;Angular in&nbsp;syntax. It&nbsp;has difficulties with TypeScript and FlowType support, so&nbsp;we&nbsp;don&rsquo;t use it&nbsp;very often."
+  },
+  "autotests": {
+    "title": "Automated Testing",
+    "text": "To&nbsp;make our code work consistently throughout the whole development process, to&nbsp;deploy new features faster and to&nbsp;simplify refactoring, we&nbsp;write various auto-tests: unit, integration, end-to-end."
+  },
+  "backend": {
+    "node": "Server-side JavaScript runtime environment. We&nbsp;use it&nbsp;to&nbsp;write proxying back-end, or&nbsp;to&nbsp;implement simple services. ",
+    "dbs": "We&nbsp;select databases depending on&nbsp;the project needs and specific tasks: MongoDB&nbsp (NoSQL) or&nbsp;PostgreSQL.",
+    "kotlin": "We&nbsp;develop back-end for our clients as&nbsp;well. We&nbsp;can write on&nbsp;well-proven Java, but we&nbsp;prefer Kotlin&nbsp;&mdash; a&nbsp;modern language working on&nbsp;JVM (Java Virtual Machine)."
+  },
+  "form": {
+    "title": "Let’s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "emailPlaceholder": "name@example.com",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "comment",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Phone",
+    "nameLabel": "Name",
+    "submitText": "Submit"
+  },
+  "imageAlt": {
+    "javascript": "Happy astronaut with Javascript logo",
+    "typescript": "Happy astronauts with Typescript logo",
+    "react": "React Logo",
+    "angular": "Angular logo",
+    "vue": "Vue logo",
+    "autotests": "Balancing Man",
+    "node": "Node logo",
+    "dbs": "MongoDB PostgreSQL logos",
+    "kotlin": "Kotlin logo"
+  }
+}

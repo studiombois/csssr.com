@@ -66,7 +66,7 @@ class ErrorPage extends React.Component {
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`
 
-    if (!navItems[lng]) {
+    if (!lng) {
       Sentry.withScope(scope => {
         scope.setExtra('lngCodeFromI18n', lngCodeFromI18n)
         scope.setExtra('lng', lng)

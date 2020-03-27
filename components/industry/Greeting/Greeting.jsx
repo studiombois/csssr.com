@@ -9,6 +9,7 @@ import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
 import Button from '../../ui-kit/core-design/Button'
+import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import ContactModal from '../../ContactModal'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
@@ -20,6 +21,7 @@ const Greeting = ({
   pageName,
   id,
   content: { heading, text, button, images, imgAlt },
+  isIe11,
   isMobile,
   isTablet,
 }) => {
@@ -43,14 +45,12 @@ const Greeting = ({
         dangerouslySetInnerHTML={{ __html: t(heading) }}
         className="heading"
       />
-
       <Text
         type={textType}
         size="m"
         dangerouslySetInnerHTML={{ __html: t(text) }}
         className="text"
       />
-
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.l'].png}
@@ -58,12 +58,21 @@ const Greeting = ({
         className="image"
       />
 
-      <Button
-        className="button"
-        kind="primary"
-        dangerouslySetInnerHTML={{ __html: t(button) }}
-        onClick={handleButtonClick}
-      />
+      {isIe11 ? (
+        <ButtonLink
+          href="#hire-us"
+          kind="primary"
+          className="button"
+          dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+        />
+      ) : (
+        <Button
+          className="button"
+          kind="primary"
+          dangerouslySetInnerHTML={{ __html: t(button) }}
+          onClick={handleButtonClick}
+        />
+      )}
 
       {typeof window !== 'undefined' &&
         isContactModalVisible &&

@@ -17,8 +17,8 @@ const base = ({ colors }) => css`
     text-decoration: none;
   }
 
-  .ru-link {
-    margin-right: 7px;
+  .lng-link {
+    margin-left: ${calcRem(50)};
   }
 
   .policy-link {

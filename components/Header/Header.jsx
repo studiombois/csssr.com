@@ -48,7 +48,11 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
         scrollTopValue > lastScrollTopValue.current && scrollTopValue > headerHeight
 
       if (isScrollingDown) {
-        if (isHeaderVisible) toggleHeaderVisibility(false)
+        if (isMobile && isDropdownOpened) {
+          toggleHeaderVisibility(true)
+        } else if (isHeaderVisible) {
+          toggleHeaderVisibility(false)
+        }
       } else {
         if (!isHeaderVisible) {
           toggleHeaderVisibility(true)

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { string, func } from 'prop-types'
 import styled from '@emotion/styled'
+import cn from 'classnames'
 import { Form as ReactFinalForm } from 'react-final-form'
 import createDecorator, { getFormInputs } from 'final-form-focus'
 import { FORM_ERROR } from 'final-form'
@@ -30,7 +31,7 @@ class ContactModal extends PureComponent {
     submitStatus: '',
   }
 
-  handleSubmit = (t, lng) => async values => {
+  handleSubmit = (t, lng) => async (values) => {
     this.setState({ submitStatus: '' })
 
     values.pageName = this.props.pageName
@@ -74,7 +75,7 @@ class ContactModal extends PureComponent {
     }
   }
 
-  handleSubmitResolve = submitStatus => {
+  handleSubmitResolve = (submitStatus) => {
     this.setState({ submitStatus })
   }
 
@@ -90,7 +91,7 @@ class ContactModal extends PureComponent {
     }
   }
 
-  handleKeyDown = event => {
+  handleKeyDown = (event) => {
     if (event.keyCode === 27) {
       this.props.onClose()
     }
@@ -102,10 +103,15 @@ class ContactModal extends PureComponent {
     const hasFailOrSuccessStatus = submitStatus === 'success' || submitStatus === 'fail'
 
     return (
-      <div className={className} onKeyDown={e => this.handleKeyDown(e)}>
+      <div className={className} onKeyDown={(e) => this.handleKeyDown(e)}>
         <FocusLock>
           <OutsideClickHandler onOutsideClick={onClose}>
-            <div data-scroll-lock-scrollable className="modal-wrapper">
+            <div
+              data-scroll-lock-scrollable
+              className={cn('modal-wrapper', {
+                'normal-height': hasFailOrSuccessStatus,
+              })}
+            >
               <ReactFinalForm
                 component={Form}
                 pageName={pageName}

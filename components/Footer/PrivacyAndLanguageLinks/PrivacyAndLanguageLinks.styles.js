@@ -17,7 +17,7 @@ const base = ({ colors }) => css`
     text-decoration: none;
   }
 
-  .ru-link {
+  .lng-link {
     margin-left: ${calcRem(50)};
   }
 

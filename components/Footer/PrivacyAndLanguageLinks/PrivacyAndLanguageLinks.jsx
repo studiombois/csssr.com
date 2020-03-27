@@ -18,7 +18,7 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
   return (
     <ul className={className}>
       <li>
-        <Link className="link ru-link" href={otherLanguagePathname}>
+        <Link className="link lng-link" href={otherLanguagePathname}>
           <Text
             className="link-text"
             dangerouslySetInnerHTML={{ __html: lngToRedirect }}

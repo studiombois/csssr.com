@@ -97,6 +97,12 @@ const base = colors => css`
       height: calc(var(--vh, 1vh) * 100);
     }
 
+    .modal-wrapper.normal-height form {
+      max-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
+    }
+
     button[aria-label="close modal"] {
       top: 1rem;
       right: 1rem;

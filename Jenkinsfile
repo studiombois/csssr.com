@@ -7,7 +7,7 @@ pipeline {
   agent { label 'master' }
 
   parameters {
-    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space', name: 'csssrSpaceOrigin', trim: true)
+    string(defaultValue: "https://csssr.space", description: 'Хост csssr.space (без слэша на конце)', name: 'csssrSpaceOrigin', trim: true)
     booleanParam(defaultValue: false, description: 'Включить обработку изображений', name: 'processImages')
   }
 
@@ -55,7 +55,7 @@ pipeline {
           sshagent(credentials: ['csssr-com-chart']) {
             sh """
             rm -rf csssr.com-chart
-            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
+            git clone --single-branch --branch prod-before-redesign git@github.com:csssr-dreamteam/csssr.com-chart.git
             """
           }
 

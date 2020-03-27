@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import { disablePageScroll, enablePageScroll } from 'scroll-lock'
+import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock'
 import styles from './Header.styles'
 
 import Menu from './Menu'
@@ -29,6 +29,7 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
   useEffect(() => {
     if (isMobile) {
       if (isDropdownOpened || isContactModalVisible) {
+        clearQueueScrollLocks()
         disablePageScroll(document.body)
       } else {
         enablePageScroll(document.body)

@@ -29,7 +29,7 @@ export default {
         content: '';
         position: absolute;
         top: calc(50% - ${props.isExpanded ? '0' : '5px'});
-        right: -5px;
+        right: -10px;
         display: block;
         width: 5px;
         height: 5px;

@@ -10,6 +10,10 @@ export default (t) => (accept) => {
       return `(${t('job:sketchFormat')})`
     case 'jpg':
       return `(${t('job:jpgFormat')})`
+    case 'pdf':
+      return `(${t('job:pdfFormat')})`
+    case 'psd':
+      return `(${t('job:psdFormat')})`
     default:
       return ''
   }

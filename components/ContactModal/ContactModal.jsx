@@ -9,11 +9,12 @@ import fetch from 'isomorphic-unfetch'
 import getGaCid from '../../utils/client/getGaCid'
 import translate from '../../utils/translate-wrapper'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
+import { DeviceConsumer } from '../../utils/deviceProvider'
+import testEmail from '../../utils/testEmail'
 import Form from './Form'
 import OutsideClickHandler from 'react-outside-click-handler'
 import FocusLock from 'react-focus-lock'
 import styles from './ContactModal.styles'
-import testEmail from '../../utils/testEmail'
 
 const formName = 'contact-modal'
 const focusOnErrors = createDecorator(getFormInputs(formName))
@@ -30,6 +31,8 @@ class ContactModal extends PureComponent {
   state = {
     submitStatus: '',
   }
+
+  modalWrapperRef = React.createRef()
 
   handleSubmit = (t, lng) => async (values) => {
     this.setState({ submitStatus: '' })
@@ -98,9 +101,13 @@ class ContactModal extends PureComponent {
   }
 
   render() {
-    const { t, lng, className, feedbackEmail, pageName, onClose } = this.props
+    const { t, lng, className, feedbackEmail, pageName, isMobile, onClose } = this.props
     const { submitStatus } = this.state
     const hasFailOrSuccessStatus = submitStatus === 'success' || submitStatus === 'fail'
+
+    if (hasFailOrSuccessStatus && isMobile) {
+      this.modalWrapperRef.current.scrollTo({ top: 0 })
+    }
 
     return (
       <div className={className} onKeyDown={(e) => this.handleKeyDown(e)}>
@@ -111,6 +118,7 @@ class ContactModal extends PureComponent {
               className={cn('modal-wrapper', {
                 'normal-height': hasFailOrSuccessStatus,
               })}
+              ref={this.modalWrapperRef}
             >
               <ReactFinalForm
                 component={Form}
@@ -145,6 +153,6 @@ Form.propTypes = {
   onClose: func,
 }
 
-export default styled(translate(ContactModal))`
+export default DeviceConsumer(styled(translate(ContactModal))`
   ${styles}
-`
+`)

@@ -2,9 +2,9 @@ import React from 'react'
 
 export const PagesListContext = React.createContext([])
 
-export const PagesListConsumer = Component => props => (
+export const PagesListConsumer = (Component) => (props) => (
   <PagesListContext.Consumer>
-    {pagesList => <Component {...props} pagesList={pagesList} />}
+    {(pagesList) => <Component {...props} pagesList={pagesList} />}
   </PagesListContext.Consumer>
 )
 

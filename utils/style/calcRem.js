@@ -1,4 +1,4 @@
-const calcRem = size => {
+const calcRem = (size) => {
   return `${size / 16}rem`
 }
 

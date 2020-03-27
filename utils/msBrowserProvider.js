@@ -3,11 +3,11 @@ import React from 'react'
 export const Ie11BrowserContext = React.createContext(false)
 export const MsBrowserContext = React.createContext(false)
 
-export const MsBrowserConsumer = Component => props => (
+export const MsBrowserConsumer = (Component) => (props) => (
   <MsBrowserContext.Consumer>
-    {isMsBrowser => (
+    {(isMsBrowser) => (
       <Ie11BrowserContext.Consumer>
-        {isIe11 => <Component {...props} isIe11={isIe11} isMsBrowser={isMsBrowser} />}
+        {(isIe11) => <Component {...props} isIe11={isIe11} isMsBrowser={isMsBrowser} />}
       </Ie11BrowserContext.Consumer>
     )}
   </MsBrowserContext.Consumer>

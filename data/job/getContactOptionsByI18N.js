@@ -1,4 +1,4 @@
-export default t => [
+export default (t) => [
   {
     id: 'telegram',
     checkboxText: 'Telegram',

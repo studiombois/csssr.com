@@ -14,7 +14,7 @@ const cache = (asyncFunc, time) => {
     if (cached && now < cachedTs + time) {
       return Promise.resolve(cached)
     }
-    return asyncFunc().then(result => {
+    return asyncFunc().then((result) => {
       cached = result
       cachedTs = Date.now()
       return result
@@ -23,9 +23,9 @@ const cache = (asyncFunc, time) => {
 }
 
 const getVacancies = () =>
-  fetch(`${csssrSpaceOrigin}/api/public/vacancies/active`).then(res =>
-    res.json().then(vacancies =>
-      vacancies.map(vacancy => ({
+  fetch(`${csssrSpaceOrigin}/api/public/vacancies/active`).then((res) =>
+    res.json().then((vacancies) =>
+      vacancies.map((vacancy) => ({
         url: `https://csssr.com/${vacancy.locale}/jobs/${vacancy.pathName}`,
         changefreq: 'weekly',
         priority: 0.8,
@@ -34,11 +34,11 @@ const getVacancies = () =>
   )
 
 const getJobsSitemapUrlsSettings = () => {
-  const links = supportedLocales.map(locale => ({
+  const links = supportedLocales.map((locale) => ({
     lang: locale,
     url: `https://csssr.com/${locale}/jobs`,
   }))
-  return supportedLocales.map(locale => ({
+  return supportedLocales.map((locale) => ({
     url: `https://csssr.com/${locale}/jobs`,
     changefreq: 'weekly',
     priority: 1,
@@ -395,13 +395,13 @@ const sitemapUrlsSettings = [
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>
-  getVacancies().then(vacanciesUrls =>
+  getVacancies().then((vacanciesUrls) =>
     sitemap.createSitemap({
       urls: [...sitemapUrlsSettings, ...vacanciesUrls],
     }),
   )
 
-const sitemapUrls = sitemapUrlsSettings.map(sitemapUrlSettings => sitemapUrlSettings.url)
+const sitemapUrls = sitemapUrlsSettings.map((sitemapUrlSettings) => sitemapUrlSettings.url)
 
 module.exports = {
   sitemapUrls,

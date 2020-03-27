@@ -1,6 +1,6 @@
 import { composeValidators, email, file, integer, link, maxLength, required } from './index'
 
-export default (vacancy, t) => values => {
+export default (vacancy, t) => (values) => {
   const errors = {}
 
   errors.firstname = required(t)(values.firstname)

@@ -14,7 +14,7 @@ import DeviceProvider from '../utils/deviceProvider'
 import PagesListProvider from '../utils/pagesListProvider'
 import allNamespaces from '../common/all-namespaces'
 
-const getI18nInitialProps = ctx => {
+const getI18nInitialProps = (ctx) => {
   let i18nInitialProps = {}
 
   if (ctx.req) {
@@ -25,9 +25,9 @@ const getI18nInitialProps = ctx => {
     ctx.req.i18n.toJSON = () => null // do not serialize i18next instance and send to client
 
     const initialI18nStore = {}
-    ctx.req.i18n.languages.forEach(language => {
+    ctx.req.i18n.languages.forEach((language) => {
       initialI18nStore[language] = {}
-      allNamespaces.forEach(ns => {
+      allNamespaces.forEach((ns) => {
         initialI18nStore[language][ns] =
           (ctx.req.i18n.services.resourceStore.data[language] || {})[ns] || {}
       })
@@ -63,7 +63,7 @@ export default class MyApp extends App {
         }
       }
     } catch (error) {
-      Sentry.withScope(scope => {
+      Sentry.withScope((scope) => {
         const { req, res, errorInfo, query, pathname } = ctx
 
         if (error.statusCode) {
@@ -127,13 +127,13 @@ export default class MyApp extends App {
     this.tabletMediaQuery.addListener(this.handleTableMediaMatch)
     this.handleTableMediaMatch(this.tabletMediaQuery)
 
-    window.addEventListener('keydown', function(event) {
+    window.addEventListener('keydown', function (event) {
       if (event.which === 9) {
         document.body.classList.add('outline')
       }
     })
 
-    window.addEventListener('click', function() {
+    window.addEventListener('click', function () {
       document.body.classList.remove('outline')
     })
 

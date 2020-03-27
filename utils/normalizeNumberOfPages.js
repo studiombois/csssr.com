@@ -1,4 +1,4 @@
-const normalizeNumberOfPages = value => {
+const normalizeNumberOfPages = (value) => {
   const regExpObj = /[^\d]/g
   if (value < 1 || !value || (value.length === 1 && regExpObj.test(value))) return 1
 

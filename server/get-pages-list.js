@@ -1,7 +1,7 @@
 import path from 'path'
 import fastGlob from 'fast-glob'
 
-export const parsePagePath = pagePath => {
+export const parsePagePath = (pagePath) => {
   const {
     groups: { locale, pathname },
   } = pagePath.match(/^(?<locale>.*?)\/(?<pathname>.*)\.js$/)

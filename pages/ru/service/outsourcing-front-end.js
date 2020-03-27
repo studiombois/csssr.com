@@ -15,7 +15,7 @@ import portfolio from '../../../data/dev/portfolio'
 
 class Dev extends PureComponent {
   static async getInitialProps() {
-    const portfolioWithShuffledProjects = portfolio.map(projectGroup => ({
+    const portfolioWithShuffledProjects = portfolio.map((projectGroup) => ({
       ...projectGroup,
       projects: shuffleArray(projectGroup.projects),
     }))

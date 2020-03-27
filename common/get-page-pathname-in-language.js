@@ -14,7 +14,7 @@ export default (fullPathname, newLanguage, pagesList) => {
     return `/${defaultLocaleByLanguage[newLanguage]}/jobs`
   }
 
-  if (pagesList.some(page => page.pathname === pathname && page.language === newLanguage)) {
+  if (pagesList.some((page) => page.pathname === pathname && page.language === newLanguage)) {
     return `/${newLanguage}/${pathname}`
   }
 

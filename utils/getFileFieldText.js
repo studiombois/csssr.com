@@ -1,4 +1,4 @@
-export default t => accept => {
+export default (t) => (accept) => {
   switch (accept) {
     case 'zip':
       return `(${t('job:zipPacked')})`

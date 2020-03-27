@@ -9,7 +9,7 @@ module.exports = (t, formName, fieldsValues) => {
       : contactFormValidationRules(t)(fieldsValues)
 
   const failedValidationFields = Object.keys(validationObject).filter(
-    field => validationObject[field],
+    (field) => validationObject[field],
   )
   const hasValidationErrors = failedValidationFields.length > 0
 

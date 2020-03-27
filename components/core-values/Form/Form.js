@@ -12,7 +12,7 @@ import getGaCid from '../../../utils/client/getGaCid'
 
 import styles from './Form.styles'
 
-const ContactFormForCoreValues = props => (
+const ContactFormForCoreValues = (props) => (
   <ContactForm
     imageName="letter"
     headerId="hire-us"
@@ -22,7 +22,7 @@ const ContactFormForCoreValues = props => (
   />
 )
 
-const onSubmit = (t, lng) => async values => {
+const onSubmit = (t, lng) => async (values) => {
   values.gacid = getGaCid()
   values.language = lng
   let res

@@ -1,6 +1,6 @@
 import { isProduction } from '../utils/app-environment'
 
-export default language => {
+export default (language) => {
   if (!isProduction) {
     return 'GTM-W23KLZB'
   }

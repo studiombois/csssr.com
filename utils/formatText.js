@@ -1,7 +1,7 @@
 const linkRegExp = /\[(.*?)\]\((.*?)(\s+"(.*?)")?\)/gi
 const strikeRegExp = /~/g
 
-const mdToHtmlLink = str =>
+const mdToHtmlLink = (str) =>
   str.replace(
     linkRegExp,
     (match, text, href, _, title) =>
@@ -16,7 +16,7 @@ const mdToHtmlLink = str =>
     `,
   )
 
-const mdToHtmlStrike = str => {
+const mdToHtmlStrike = (str) => {
   const strikes = str.match(strikeRegExp) || []
 
   if (strikes.length > 1) {
@@ -30,4 +30,4 @@ const mdToHtmlStrike = str => {
   return str
 }
 
-export default str => mdToHtmlStrike(mdToHtmlLink(str))
+export default (str) => mdToHtmlStrike(mdToHtmlLink(str))

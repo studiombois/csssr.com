@@ -73,7 +73,7 @@ module.exports = async (req, res) => {
   } catch (e) {
     console.error('server/submit-form.js ERROR', JSON.stringify(req.body), e)
 
-    Sentry.withScope(scope => {
+    Sentry.withScope((scope) => {
       scope.setExtra('reqBody', req.body)
       Sentry.captureException(e)
     })

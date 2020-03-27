@@ -96,7 +96,7 @@ const startApp = async () => {
 
             const ONE_YEAR = 365 * 24 * 60 * 60 * 1000
 
-            Object.keys(utmQueryParams).forEach(utmKey => {
+            Object.keys(utmQueryParams).forEach((utmKey) => {
               res.cookie(utmKey, utmQueryParams[utmKey], { maxAge: ONE_YEAR })
             })
 
@@ -122,7 +122,7 @@ const startApp = async () => {
           server.post('/api/submit-form', submitForm)
           server.post('/api/submit-calculator-form', submitCalculatorForm)
 
-          server.get('/', function(req, res) {
+          server.get('/', function (req, res) {
             const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
             res.redirect(`/${language}`)
           })
@@ -143,14 +143,14 @@ const startApp = async () => {
               expressStaticGzip(path.join(__dirname, '../.next'), {
                 enableBrotli: true,
                 orderPreference: ['br'],
-                setHeaders: res => {
+                setHeaders: (res) => {
                   res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
                 },
               }),
             )
           }
 
-          server.get('/robots.txt', function(req, res) {
+          server.get('/robots.txt', function (req, res) {
             res.type('text/plain')
             if (isProduction) {
               res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
@@ -165,7 +165,7 @@ const startApp = async () => {
           )
 
           server.get('/sitemap.xml', (req, res) => {
-            generateSitemap().then(sitemap => {
+            generateSitemap().then((sitemap) => {
               const xml = sitemap.toXML()
               res.header('Content-Type', 'application/xml')
               res.send(xml)
@@ -194,7 +194,7 @@ const startApp = async () => {
 
           server.use(Sentry.Handlers.errorHandler())
 
-          server.listen(port, err => {
+          server.listen(port, (err) => {
             if (err) throw err
             console.log(`> Ready on http://localhost:${port}`)
           })

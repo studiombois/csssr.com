@@ -13,7 +13,7 @@ const valuesByFieldNames = {
   'additional-option_3': 500,
 }
 
-const multiplier = num => {
+const multiplier = (num) => {
   return Number(num * 200)
 }
 

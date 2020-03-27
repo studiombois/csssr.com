@@ -38,10 +38,10 @@ const log = (...args) => {
 // Мы поддерживаем следующие локали:
 // ru-ru, ru-ee, en-ee, en-sg, en-us
 
-const isLocaleLanguage = locale =>
+const isLocaleLanguage = (locale) =>
   locale === i18n.services.languageUtils.getLanguagePartFromCode(locale)
-const isLocaleInWhitelist = locale => supportedLocales.includes(locale)
-const isLanguageInWhitelist = locale => supportedLanguages.includes(locale)
+const isLocaleInWhitelist = (locale) => supportedLocales.includes(locale)
+const isLanguageInWhitelist = (locale) => supportedLanguages.includes(locale)
 
 export default {
   name: 'pathCookieHeader',

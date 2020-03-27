@@ -1,4 +1,4 @@
-const normalizePrice = originValue => {
+const normalizePrice = (originValue) => {
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

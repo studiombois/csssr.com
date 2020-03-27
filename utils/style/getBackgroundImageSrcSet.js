@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 export default (images, selector) => {
   const extensions = Object.keys(images)
   const srcSets = extensions.map(
-    extension => `
+    (extension) => `
       ${extension === 'webp' ? `html.webp ${selector}` : `${selector}`} {
         background-image: url(${images[extension]['1x']});
         background-size: 100%;

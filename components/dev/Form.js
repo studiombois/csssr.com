@@ -9,7 +9,7 @@ import contactFormValidationRules from '../../utils/validators/contactFormValida
 import getGaCid from '../../utils/client/getGaCid'
 import testEmail from '../../utils/testEmail'
 
-const ContactFormForDev = props => (
+const ContactFormForDev = (props) => (
   <ContactForm
     imageName="letter"
     pageName="dev"
@@ -20,7 +20,7 @@ const ContactFormForDev = props => (
   />
 )
 
-const onSubmit = (t, lng) => async values => {
+const onSubmit = (t, lng) => async (values) => {
   values.gacid = getGaCid()
   values.language = lng
   let res

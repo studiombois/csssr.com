@@ -1,1 +1,1 @@
-export default url => /^https?:\/\/|^\/\//i.test(url)
+export default (url) => /^https?:\/\/|^\/\//i.test(url)

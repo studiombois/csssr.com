@@ -1,4 +1,4 @@
-export default array => {
+export default (array) => {
   let currentIndex = array.length
   let temporaryValue
   let randomIndex

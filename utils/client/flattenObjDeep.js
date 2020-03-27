@@ -1,6 +1,6 @@
 import { chain, type, map, toPairs, fromPairs } from 'ramda'
 
-const go = obj =>
+const go = (obj) =>
   chain(([key, value]) => {
     if (type(value) === 'Object' || type(value) === 'Array') {
       return map(([k, v]) => [`${key}.${k}`, v], go(value))
@@ -9,7 +9,7 @@ const go = obj =>
     }
   }, toPairs(obj))
 
-const flattenObjDeep = obj => fromPairs(go(obj))
+const flattenObjDeep = (obj) => fromPairs(go(obj))
 
 export default flattenObjDeep
 export { flattenObjDeep }

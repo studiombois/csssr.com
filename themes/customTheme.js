@@ -53,13 +53,13 @@ const customTheme = {
   },
   media: {
     points: breakpoints,
-    from: function(width) {
+    from: function (width) {
       return `@media (min-width: ${width})`
     },
-    to: function(width) {
+    to: function (width) {
       return `@media (max-width: ${width})`
     },
-    from_to: function(minWidth, maxWidth) {
+    from_to: function (minWidth, maxWidth) {
       return `@media (min-width: ${minWidth}) and (max-width: ${maxWidth})`
     },
   },

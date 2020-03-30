@@ -10,7 +10,7 @@ import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 // Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
 
-const Head = props => {
+const Head = (props) => {
   const isIe11 = useContext(Ie11BrowserContext)
 
   // При роутинге в ie11 picturefill не подгружает правильные размеры изображений.
@@ -83,29 +83,37 @@ const Head = props => {
       )}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/static/icons/favicon/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/static/icons/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/static/icons/favicon/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/static/icons/favicon/site.webmanifest" />
-      <link rel="mask-icon" href="/static/icons/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-      <link rel="shortcut icon" href="/static/icons/favicon/favicon.ico" />
-      <meta name="msapplication-TileColor" content="#00aba9" />
-      <meta name="msapplication-config" content="/static/icons/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#ffffff" />
+      {!props.customFavicons && (
+        <Fragment>
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/static/icons/favicon/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/static/icons/favicon/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/static/icons/favicon/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/static/icons/favicon/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/static/icons/favicon/safari-pinned-tab.svg"
+            color="#5bbad5"
+          />
+          <link rel="shortcut icon" href="/static/icons/favicon/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#00aba9" />
+          <meta name="msapplication-config" content="/static/icons/favicon/browserconfig.xml" />
+          <meta name="theme-color" content="#ffffff" />
+        </Fragment>
+      )}
 
       <meta property="og:title" content={props.title || ''} />
       <meta property="og:url" content={`${origin}${props.router.asPath}`} />

@@ -58,9 +58,9 @@ const Covid19Content = ({ className }) => (
           </a>
           and{' '}
           <a href="https://csssr.com/en/industry/media-and-marketing" className="font-p-link">
-            media.
+            media
           </a>
-          ,
+          .
         </p>
 
         <div className="experience-number">
@@ -210,9 +210,9 @@ const Covid19Content = ({ className }) => (
         <div className="benefit-5-description">
           <div className="benefit-5-title">
             <h3 className="font-heading-3">
-              4. We&nbsp;are ready to&nbsp;significantly
-              <span className="benefit-2-text-bold">reduce prices</span>
-              for any socially important projects
+              4. We&nbsp;are ready to&nbsp;significantly{' '}
+              <span className="benefit-2-text-bold">reduce prices</span> for any socially important
+              projects
             </h3>
           </div>
 

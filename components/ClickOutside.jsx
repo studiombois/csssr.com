@@ -16,15 +16,15 @@ export default class ClickOutside extends PureComponent {
   }
 
   componentDidMount() {
-    window.document.addEventListener('click', this.handleClick)
-    window.document.addEventListener('touchstart', this.handleClick)
-    window.document.addEventListener('keydown', this.handleKeypress)
+    window.document.addEventListener('click', this.handleClick, true)
+    window.document.addEventListener('touchstart', this.handleClick, true)
+    window.document.addEventListener('keydown', this.handleKeypress, true)
   }
 
   componentWillUnmount() {
-    window.document.removeEventListener('click', this.handleClick)
-    window.document.removeEventListener('touchstart', this.handleClick)
-    window.document.removeEventListener('keydown', this.handleKeypress)
+    window.document.removeEventListener('click', this.handleClick, true)
+    window.document.removeEventListener('touchstart', this.handleClick, true)
+    window.document.removeEventListener('keydown', this.handleKeypress, true)
   }
 
   handleClick = event => {

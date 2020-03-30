@@ -1,6 +1,11 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
 const base = css`
+  & {
+    margin-top: ${calcRem(-153)};
+  }
+
   .greeting {
       margin-top: 190px;
   }
@@ -503,6 +508,12 @@ const base = css`
           z-index: 0;
           margin-top: -70px;
       }
+  }
+
+  @media screen and (max-width: 767px) {
+    & {
+        margin-top: ${calcRem(-80)};
+    }
   }
 
   @media screen and (max-width: 720px) {

@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile }, colors }) => css`
+const base = ({ breakpoints: { mobile }}) => css`
   & {
     position: absolute;
     z-index: 9999;
@@ -13,7 +13,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     width: 100%;
     box-sizing: border-box;
     transition: top 300ms ease 0s;
-    background-color: ${colors.secondary.darken100};
   }
 
   .logo-wrapper {
@@ -82,7 +81,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       width: 100%;
       height: calc(100vh - 100%);
       height: calc(var(--vh, 1vh) * 100 - 100%);
-      background-color: ${colors.secondary.darken100};
       transition: height 125ms ease-out;
       overflow: auto;
     }
@@ -101,11 +99,19 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   }
 `
 
+const dynamic = ({asPath, colors }) => css`
+  & {
+    background-color: ${asPath === '/en/covid-19' ? '#3e3e3e' : colors.secondary.darken100};
+  }
+`
+
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const asPath = props.router.asPath
 
   return css`
     ${base({ breakpoints, colors })}
+    ${dynamic({ asPath, colors })}
   `
 }

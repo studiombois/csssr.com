@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import styles from './Covid19.styles'
+import styles from './Covid19Content.styles'
 import { Global, css } from '@emotion/core'
+import Header from '../Header'
+import Menu from '../Header/Menu'
 
 const Covid19Content = ({ className }) => (
   <article className={className}>
@@ -10,6 +12,14 @@ const Covid19Content = ({ className }) => (
         body,
         #main {
           background-color: #18191b;
+        }
+
+        ${Header} {
+          background-color: #3e3e3e;
+        }
+
+        ${Menu} {
+          background-color: #252525;
         }
       `}
     />
@@ -54,8 +64,8 @@ const Covid19Content = ({ className }) => (
           </a>
           ,{' '}
           <a href="https://csssr.com/en/industry/fintech" className="font-p-link">
-            fintech{' '}
-          </a>
+            fintech
+          </a>{' '}
           and{' '}
           <a href="https://csssr.com/en/industry/media-and-marketing" className="font-p-link">
             media

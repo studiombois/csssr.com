@@ -1,10 +1,15 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
 export const base = css`
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  #main {
+    padding-top: ${calcRem(153)};
   }
 
   html:not(.disable-smooth-scroll) {
@@ -141,6 +146,10 @@ export const base = css`
     .grid-container {
       grid-template-columns: repeat(6, 3rem);
       grid-gap: 0 0.5rem;
+    }
+
+    #main {
+      padding-top: ${calcRem(80)};
     }
   }
 

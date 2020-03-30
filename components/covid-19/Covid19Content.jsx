@@ -29,16 +29,16 @@ const Covid19Content = ({ className }) => (
 
         <div className="greeting-image">
           <img
-            srcSet="../../static/covid-19/greeting.png 1x, ../../static/covid-19/greeting@2x.png 2x, ../../static/covid-19/greeting@3x.png 3x"
-            src="../../static/covid-19/greeting.png"
+            srcSet={`${require('../../static/covid-19/greeting.png')} 1x, ${require('../../static/covid-19/greeting@2x.png')} 2x, ${require('../../static/covid-19/greeting@3x.png')} 3x`}
+            src={require('../../static/covid-19/greeting.png')}
             alt="Greeting"
           />
         </div>
 
         <div className="greeting-image-mobile">
           <img
-            srcSet="../../static/covid-19/greeting_mobile.png 1x, ../../static/covid-19/greeting_mobile@2x.png 2x, ../../static/covid-19/greeting_mobile@3x.png 3x"
-            src="../../static/covid-19/greeting_mobile.png"
+            srcSet={`${require('../../static/covid-19/greeting_mobile.png')} 1x, ${require('../../static/covid-19/greeting_mobile@2x.png')} 2x, ${require('../../static/covid-19/greeting_mobile@3x.png')} 3x`}
+            src={require('../../static/covid-19/greeting_mobile.png')}
             alt="Greeting"
           />
         </div>
@@ -52,13 +52,13 @@ const Covid19Content = ({ className }) => (
           <a href="https://csssr.com/en/industry/ecommerce" className="font-p-link">
             e-commerce
           </a>
-          ,
+          ,{' '}
           <a href="https://csssr.com/en/industry/fintech" className="font-p-link">
-            fintech
+            fintech{' '}
           </a>
-          and
+          and{' '}
           <a href="https://csssr.com/en/industry/media-and-marketing" className="font-p-link">
-            media
+            media.
           </a>
           ,
         </p>
@@ -72,9 +72,8 @@ const Covid19Content = ({ className }) => (
           countries and all of&nbsp;them have always been working remotely. For more than
           8&nbsp;years of&nbsp;our successful operations, we&nbsp;have never had a&nbsp;fixed
           office, which has made&nbsp;us agile, flexible, and cost effective. That is&nbsp;the
-          reason why we&nbsp;are not affected&nbsp;by
-          <span className="experience-description-virus-text">COVID-19</span>
-          now.
+          reason why we&nbsp;are not affected&nbsp;by{' '}
+          <span className="experience-description-virus-text">COVID-19</span> now.
         </p>
       </div>
     </div>
@@ -97,8 +96,8 @@ const Covid19Content = ({ className }) => (
 
         <div className="crisis-image">
           <img
-            srcSet="../../static/covid-19/crisis.png 1x, ../../static/covid-19/crisis@2x.png 2x, ../../static/covid-19/crisis@3x.png 3x"
-            src="../../static/covid-19/crisis.png"
+            srcSet={`${require('../../static/covid-19/crisis.png')} 1x, ${require('../../static/covid-19/crisis@2x.png')} 2x, ${require('../../static/covid-19/crisis@3x.png')} 3x`}
+            src={require('../../static/covid-19/crisis.png')}
           />
         </div>
       </div>
@@ -109,16 +108,15 @@ const Covid19Content = ({ className }) => (
         {/* <!-- 1 Benefit --> */}
         <div className="benefit-1-image">
           <img
-            srcSet="../../static/covid-19/benefits-1.png 1x, ../../static/covid-19/benefits-1@2x.png 2x, ../../static/covid-19/benefits-1@3x.png 3x"
-            src="../../static/covid-19/benefits-1.png"
+            srcSet={`${require('../../static/covid-19/benefits-1.png')} 1x, ${require('../../static/covid-19/benefits-1@2x.png')} 2x, ${require('../../static/covid-19/benefits-1@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-1.png')}
             alt="Speed up development"
           />
         </div>
-
         <div className="benefit-1-image-mobile">
           <img
-            srcSet="../../static/covid-19/benefits-1-mobile.png 1x, ../../static/covid-19/benefits-1-mobile@2x.png 2x, ../../static/covid-19/benefits-1-mobile@3x.png 3x"
-            src="../../static/covid-19/benefits-1-mobile.png"
+            srcSet={`${require('../../static/covid-19/benefits-1-mobile.png')} 1x, ${require('../../static/covid-19/benefits-1-mobile@2x.png')} 2x, ${require('../../static/covid-19/benefits-1-mobile@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-1-mobile.png')}
             alt="Speed up development"
           />
         </div>
@@ -140,8 +138,8 @@ const Covid19Content = ({ className }) => (
 
         <div className="benefit-2-image-mobile">
           <img
-            srcSet="../../static/covid-19/benefits-2.png 1x, ../../static/covid-19/benefits-2@2x.png 2x, ../../static/covid-19/benefits-2@3x.png 3x"
-            src="../../static/covid-19/benefits-2.png"
+            srcSet={`${require('../../static/covid-19/benefits-2.png')} 1x, ${require('../../static/covid-19/benefits-2@2x.png')} 2x, ${require('../../static/covid-19/benefits-2@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-2.png')}
             alt="New project development"
           />
         </div>
@@ -154,19 +152,18 @@ const Covid19Content = ({ className }) => (
           <p className="font-p-1">
             This crysis is&nbsp;not only a&nbsp;time of&nbsp;hardship but also great opportunities
             for exponential growth. Perhaps it&nbsp;is&nbsp;the right time to&nbsp;launch your
-            project. We&nbsp;would love to&nbsp;craft
-            <span className="benefit-2-text-bold">digital products</span>,
-            <span className="benefit-2-text-bold">services</span>,
-            <span className="benefit-2-text-bold">internal systems</span>
-            &amp;
+            project. We&nbsp;would love to&nbsp;craft{' '}
+            <span className="benefit-2-text-bold">digital products</span>,{' '}
+            <span className="benefit-2-text-bold">services</span>,{' '}
+            <span className="benefit-2-text-bold">internal systems</span> &amp;{' '}
             <span className="benefit-2-text-bold">ecosystems</span>.
           </p>
         </div>
 
         <div className="benefit-2-image">
           <img
-            srcSet="../../static/covid-19/benefits-2.png 1x, ../../static/covid-19/benefits-2@2x.png 2x, ../../static/covid-19/benefits-2@3x.png 3x"
-            src="../../static/covid-19/benefits-2.png"
+            srcSet={`${require('../../static/covid-19/benefits-2.png')} 1x, ${require('../../static/covid-19/benefits-2@2x.png')} 2x, ${require('../../static/covid-19/benefits-2@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-2.png')}
             alt="New project development"
           />
         </div>
@@ -175,16 +172,16 @@ const Covid19Content = ({ className }) => (
 
         <div className="benefit-4-image">
           <img
-            srcSet="../../static/covid-19/benefits-4.png 1x, ../../static/covid-19/benefits-4@2x.png 2x, ../../static/covid-19/benefits-4@3x.png 3x"
-            src="../../static/covid-19/benefits-1.png"
+            srcSet={`${require('../../static/covid-19/benefits-4.png')} 1x, ${require('../../static/covid-19/benefits-4@2x.png')} 2x, ${require('../../static/covid-19/benefits-4@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-4.png')}
             alt="Speed up development"
           />
         </div>
 
         <div className="benefit-4-image-mobile">
           <img
-            srcSet="../../static/covid-19/benefits-4-mobile.png 1x, ../../static/covid-19/benefits-4-mobile@2x.png 2x, ../../static/covid-19/benefits-4-mobile@3x.png 3x"
-            src="../../static/covid-19/benefits-4-mobile.png"
+            srcSet={`${require('../../static/covid-19/benefits-4-mobile.png')} 1x, ${require('../../static/covid-19/benefits-4-mobile@2x.png')} 2x, ${require('../../static/covid-19/benefits-4-mobile@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-4-mobile.png')}
             alt="Speed up development"
           />
         </div>
@@ -204,8 +201,8 @@ const Covid19Content = ({ className }) => (
 
         <div className="benefit-5-image-mobile">
           <img
-            srcSet="../../static/covid-19/benefits-5.png 1x, ../../static/covid-19/benefits-5@2x.png 2x, ../../static/covid-19/benefits-5@3x.png 3x"
-            src="../../static/covid-19/benefits-5.png"
+            srcSet={`${require('../../static/covid-19/benefits-5.png')} 1x, ${require('../../static/covid-19/benefits-5@2x.png')} 2x, ${require('../../static/covid-19/benefits-5@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-5.png')}
             alt="New project development"
           />
         </div>
@@ -227,8 +224,8 @@ const Covid19Content = ({ className }) => (
 
         <div className="benefit-5-image">
           <img
-            srcSet="../../static/covid-19/benefits-5.png 1x, ../../static/covid-19/benefits-5@2x.png 2x, ../../static/covid-19/benefits-5@3x.png 3x"
-            src="../../static/covid-19/benefits-5.png"
+            srcSet={`${require('../../static/covid-19/benefits-5.png')} 1x, ${require('../../static/covid-19/benefits-5@2x.png')} 2x, ${require('../../static/covid-19/benefits-5@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-5.png')}
             alt="New project development"
           />
         </div>
@@ -236,15 +233,14 @@ const Covid19Content = ({ className }) => (
         {/* <!-- 5 Benefit --> */}
 
         <h3 className="font-heading-5 benefit-3-title">
-          We&nbsp;offer
-          <span className="benefit-3-title-redbox">free remote work consulting</span>
+          We&nbsp;offer <span className="benefit-3-title-redbox">free remote work consulting</span>{' '}
           for companies from 20&nbsp;to&nbsp;200 employees
         </h3>
 
         <div className="benefit-3-image">
           <img
-            srcSet="../../static/covid-19/benefits-3.png 1x, ../../static/covid-19/benefits-3@2x.png 2x, ../../static/covid-19/benefits-3@3x.png 3x"
-            src="../../static/covid-19/benefits-3.png"
+            srcSet={`${require('../../static/covid-19/benefits-3.png')} 1x, ${require('../../static/covid-19/benefits-3@2x.png')} 2x, ${require('../../static/covid-19/benefits-3@3x.png')} 3x`}
+            src={require('../../static/covid-19/benefits-3.png')}
             alt="Remote Work Consultancy"
           />
         </div>

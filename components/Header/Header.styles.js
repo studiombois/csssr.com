@@ -103,6 +103,10 @@ const dynamic = ({asPath, colors }) => css`
   & {
     background-color: ${asPath === '/en/covid-19' ? '#3e3e3e' : colors.secondary.darken100};
   }
+
+  .dropdown {
+    background-color: ${asPath === '/en/covid-19' ? '#252525' : colors.secondary.darken100};
+  }
 `
 
 export default props => {

@@ -29,7 +29,7 @@ const Header = ({
   isIe11,
   isMobile,
   pageName,
-  router: { asPath },
+  router: { pathname },
   isButtonVisible = true,
 }) => {
   let lastScrollTopValue = useRef(0)
@@ -130,7 +130,7 @@ const Header = ({
         invisible: !isHeaderVisible,
       })}
     >
-      {lng === 'en' && asPath !== '/en/covid-19' && <Covid19Popup invisible={!isHeaderVisible} />}
+      {lng === 'en' && pathname !== '/en/covid-19' && <Covid19Popup invisible={!isHeaderVisible} />}
 
       <NextLink href={`/${lng}`}>
         <a className="logo-wrapper">

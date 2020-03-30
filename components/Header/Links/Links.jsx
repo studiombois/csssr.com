@@ -28,7 +28,7 @@ const Links = ({ className, router, t, lng, locale }) => (
             <Link
               href={`/${loc}/${href}`}
               className={cn('link', {
-                link_active: router.asPath === `/${loc}/${href}`,
+                link_active: router.pathname === `/${loc}/${href}`,
               })}
               isNextLink
               type="top_menu"

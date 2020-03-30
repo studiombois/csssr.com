@@ -72,7 +72,7 @@ const Nav = ({
                   <Wrapper key={id} {...animationProps}>
                     <li
                       className={cn('nav-item', {
-                        'nav-item_active': router.asPath === `/${lng}/${href}`,
+                        'nav-item_active': router.pathname === `/${lng}/${href}`,
                       })}
                     >
                       <Link className="link" href={`/${lng}/${href}`} isNextLink>

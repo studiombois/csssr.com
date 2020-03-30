@@ -122,7 +122,7 @@ const base = css`
       top: 6px;
       display: inline-block;
       position: relative;
-      background: url(../static/icons/virus.svg) no-repeat 50% 50%;
+      background: url(${require('../../static/covid-19/icons/virus.svg').default}) no-repeat 50% 50%;
       background-size: 24px 24px;
       width: 30px;
       height: 30px;
@@ -740,6 +740,7 @@ const fonts = css`
       font-family: "Roboto", sans-serif;
       font-size: 48px;
       color: #3557FF;
+      text-decoration: underline;
   }
 
   a:hover {

@@ -3,7 +3,6 @@ import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
 import translate from '../../../../utils/translate-wrapper'
-import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -18,7 +17,7 @@ import hero_desktop_webp from '../../../../static/images/service/outsourcing-fro
 import hero_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/hero.png?responsive'
 import hero_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/hero.png?responsive_and_webp'
 
-const Hero = ({ className, t, isMobile }) => (
+const Hero = ({ className, t }) => (
   <Grid as="article" className={className}>
     <Heading
       className="title"
@@ -58,9 +57,7 @@ Hero.propTypes = {
 }
 
 export default translate(
-  DeviceConsumer(
-    MsBrowserConsumer(styled(Hero)`
-      ${styles}
-    `),
-  ),
+  MsBrowserConsumer(styled(Hero)`
+    ${styles}
+  `),
 )

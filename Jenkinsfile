@@ -73,7 +73,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin}
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages}
             """
           }
         }

@@ -144,13 +144,62 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `;
 
-const ie11Styles = ({ breakpoints: { desktop } }) => css`
-  -ms-grid-column: ${getGridValueForMs(2)};
-  -ms-grid-column-span: ${getGridValueForMs(6)};
-
+const ie11Styles = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   ${desktop.l} {
+    .title,
+    .subtitle,
+    .description {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+    }
+  }
+
+  ${desktop.m} {
+    .title {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+    }
+
+    .subtitle,
+    .description {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+    }
+  }
+
+  ${desktop.s} {
+    .title {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(6)};
+    }
+
+    .subtitle,
+    .description {
+      -ms-grid-column: ${getGridValueForMs(7)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+    }
+  }
+
+  ${tablet.all} {
+    .title,
+    .subtitle,
+    .description {
+      -ms-grid-column: ${getGridValueForMs(8)};
+      -ms-grid-column-span: ${getGridValueForMs(5)};
+    }
+  }
+
+  ${mobile.all} {
+    .title,
+    .subtitle,
+    .description,
+    .picture {
+      -ms-grid-column: ${getGridValueForMs(1)};
+      -ms-grid-column-span: ${getGridValueForMs(6)};
+    }
   }
 `;
+
 export default props => {
   const breakpoints = props.theme.breakpoints;
   const colors = props.theme.colors;

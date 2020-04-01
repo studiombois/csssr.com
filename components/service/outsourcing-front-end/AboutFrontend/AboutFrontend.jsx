@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { string, func } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './AboutFrontend.styles'
 import translate from '../../../../utils/translate-wrapper'
@@ -17,7 +17,7 @@ import aboutFrontend_desktop_webp from '../../../../static/images/service/outsou
 import aboutFrontend_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/aboutFrontend.png?responsive'
 import aboutFrontend_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/aboutFrontend.png?responsive_and_webp'
 
-const Hero = ({ className, t }) => (
+const AboutFrontend = ({ className, t }) => (
   <Grid as="article" className={className}>
     <Heading
       className="title"
@@ -52,12 +52,13 @@ const Hero = ({ className, t }) => (
   </Grid>
 )
 
-Hero.propTypes = {
+AboutFrontend.propTypes = {
   className: string,
+  t: func,
 }
 
 export default translate(
-  MsBrowserConsumer(styled(Hero)`
+  MsBrowserConsumer(styled(AboutFrontend)`
     ${styles}
   `),
 )

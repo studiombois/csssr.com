@@ -8,6 +8,11 @@
     "description": "We&nbsp;specialize in&nbsp;front-end web development for a&nbsp;wide range of&nbsp;industries.",
     "button": "Let&rsquo;s Talk"
   },
+  "aboutFrontend": {
+    "title": "<span style=\"white-space: nowrap;\">Front-End</span> Development",
+    "subtitle": "We&nbsp;develop complex solutions for websites and web applications using JavaScript.",
+    "description": "User experiences primarily depend on&nbsp;how well the front-end of&nbsp;the product is&nbsp;made. Original design and ideas must look perfect across all major browsers, platforms and devices, as&nbsp;well as&nbsp;being accessible to&nbsp;most users and performing well."
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",
@@ -21,6 +26,7 @@
     "submitText": "Submit"
   },
   "imgAlt": {
-    "hero": "picture of balloon"
+    "hero": "Picture of balloon",
+    "aboutFrontend": "A group of people building a robot"
   }
 }

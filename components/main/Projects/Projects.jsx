@@ -26,7 +26,7 @@ const Projects = ({ className, t, lng }) => {
         size="m"
       />
 
-      {projects.map(({ id, title, description, href, images, fallback }) => {
+      {projects.map(({ id, title, description, href, images, imagesHovered, fallback }) => {
         const Player = () => (
           <div className="player-wrapper">
             <iframe
@@ -51,6 +51,7 @@ const Projects = ({ className, t, lng }) => {
             description={description}
             href={href}
             images={images}
+            imagesHovered={imagesHovered}
             fallback={fallback}
             isLink
           >

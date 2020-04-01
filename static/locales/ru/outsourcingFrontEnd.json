@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Мы создаем веб-сервисы, которыми пользуются миллионы",
+    "description": "Специализируемся на фронтенд аутсорсинге, пишем сложный код на JavaScript."
+  },
+  "hero": {
+    "title": "<span style=\"font-weight: bold;\">Аутсорсинг</span><br />веб-разработки",
+    "description": "Наша специализация&nbsp;&mdash; фронтенд любой сложности для широкого круга индустрий.",
+    "button": "Оставить заявку"
+  },
+  "form": {
+    "title": "Давайте пообщаемся",
+    "namePlaceholder": "Тим Бернерс-Ли",
+    "nameLabel": "Имя",
+    "phonePlaceholder": "+7-987-654-32-10",
+    "phoneLabel": "Телефон",
+    "emailPlaceholder": "name@example.com",
+    "emailLabel": "E-mail",
+    "messagePlaceholder": "Чем мы могли бы помочь вам?",
+    "messageLabel": "Чем мы могли бы помочь вам?",
+    "submitText": "Отправить"
+  },
+  "imgAlt": {
+    "hero": "рисунок воздушного шара"
+  }
+}

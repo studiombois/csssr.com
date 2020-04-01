@@ -49,6 +49,12 @@
   },
   "imgAlt": {
     "hero": "Picture of balloon",
-    "aboutFrontend": "A group of people building a robot"
+    "aboutFrontend": "A group of people building a robot",
+    "benefits": [
+      "Picture of number 1",
+      "Picture of number 2",
+      "Picture of number 3",
+      "Picture of number 4"
+    ]
   }
 }

@@ -31,7 +31,7 @@ const Item = ({ className, t, index, images }) => (
       className="picture"
       images={images}
       fallback={images.png}
-      alt={t('outsourcingFrontEnd:imageAlt.aboutFrontend')}
+      alt={t(`outsourcingFrontEnd:imageAlt.benefits.${index}`)}
     />
   </li>
 )

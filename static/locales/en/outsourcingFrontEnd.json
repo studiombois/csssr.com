@@ -13,6 +13,28 @@
     "subtitle": "We&nbsp;develop complex solutions for websites and web applications using JavaScript.",
     "description": "User experiences primarily depend on&nbsp;how well the front-end of&nbsp;the product is&nbsp;made. Original design and ideas must look perfect across all major browsers, platforms and devices, as&nbsp;well as&nbsp;being accessible to&nbsp;most users and performing well."
   },
+  "benefits": {
+    "title": "Reliable Outsourcing",
+    "description": "By&nbsp;entrusting web development tasks to&nbsp;a&nbsp;reliable contractor, you can significantly accelerate your business development and reduce costs.",
+    "list": [
+      {
+        "title": "Quick start",
+        "description": "By&nbsp;outsourcing your projects, you get access to&nbsp;a&nbsp;ready-built team immediately, without the exhausting process of&nbsp;hiring an&nbsp;in-house team."
+      },
+      {
+        "title": "Cost Savings",
+        "description": "With a&nbsp;remote team, you can save money on&nbsp;hiring, office space, developing processes and motivating your employees."
+      },
+      {
+        "title": "External Expertise",
+        "description": "We&nbsp;can provide you with a&nbsp;wide range of&nbsp;specialists with various qualifications, including rare expertise."
+      },
+      {
+        "title": "Flexibility",
+        "description": "Outsourced teams are easily adjusted, with the potential to&nbsp;quickly change in&nbsp;size and structure, giving you long-term convenience and security."
+      }
+    ]
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",

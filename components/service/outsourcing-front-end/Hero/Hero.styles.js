@@ -41,6 +41,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       right: 152px;
+      width: 728px;
     }
   }
 
@@ -55,6 +56,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       right: 0;
+      width: 728px;
     }
   }
 

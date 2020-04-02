@@ -55,6 +55,7 @@ const TechnologyStack = ({ className, t, lng }) => (
       href={`/${lng}/tech-stack`}
       type="list"
       size="m"
+      isNextLink
       dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:technologyStack.link') }}
     />
 

@@ -78,9 +78,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints;
-  const colors = props.theme.colors;
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints })}
   `;
 };

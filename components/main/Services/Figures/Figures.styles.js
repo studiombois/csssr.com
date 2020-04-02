@@ -171,20 +171,20 @@ const ie11Styles = ({ breakpoints: { tablet }, lng }) => css`
     }
 
     .picture_circle.picture_circle_ru {
-      left: calc(50% + 14px);
+      left: 54%;
     }
 
     .picture_square.picture_square_ru {
-      left: calc(50% - 13px);
+      left: 45.6%;
     }
 
     .picture_circle.picture_circle_en,
     .picture_square.picture_square_en {
-      left: calc(50% + 6px);
+      left: 52%;
     }
 
     .picture_triangle.picture_triangle_en {
-      left: calc(50% + 5px);
+      left: 51.5%;
     }
   }
 `

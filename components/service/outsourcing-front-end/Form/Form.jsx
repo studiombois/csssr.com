@@ -1,13 +1,15 @@
 import React from 'react'
+import styled from '@emotion/styled'
+import styles from './Form.styles'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
-import translate from '../../../utils/translate-wrapper'
+import translate from '../../../../utils/translate-wrapper'
 import fetch from 'isomorphic-unfetch'
-import ContactForm from '../../ContactForm'
-import contactFormValidationRules from '../../../utils/validators/contactFormValidationRules'
-import getGaCid from '../../../utils/client/getGaCid'
-import testEmail from '../../../utils/testEmail'
+import ContactForm from '../../../ContactForm'
+import contactFormValidationRules from '../../../../utils/validators/contactFormValidationRules'
+import getGaCid from '../../../../utils/client/getGaCid'
+import testEmail from '../../../../utils/testEmail'
 
 const ContactFormForDev = (props) => (
   <ContactForm
@@ -67,15 +69,20 @@ const onSubmit = (t, lng) => async (values) => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, lng, pageName = 'outsourcingFrontEnd' }) => (
+const Form = ({ t, lng, className, pageName = 'outsourcingFrontEnd' }) => (
   <ReactFinalForm
     onSubmit={onSubmit(t, lng)}
     validate={contactFormValidationRules(t)}
     decorators={[focusOnErrors]}
     component={ContactFormForDev}
     pageName={pageName}
+    className={className}
   />
 )
 
-export default translate(Form)
+export default translate(
+  styled(Form)`
+    ${styles}
+  `,
+)
 export { onSubmit }

@@ -150,7 +150,7 @@ const Covid19Content = ({ className }) => (
           </div>
 
           <p className="font-p-1">
-            This crysis is&nbsp;not only a&nbsp;time of&nbsp;hardship but also great opportunities
+            This crisis is&nbsp;not only a&nbsp;time of&nbsp;hardship but also great opportunities
             for exponential growth. Perhaps it&nbsp;is&nbsp;the right time to&nbsp;launch your
             project. We&nbsp;would love to&nbsp;craft{' '}
             <span className="benefit-2-text-bold">digital products</span>,{' '}

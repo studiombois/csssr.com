@@ -69,6 +69,15 @@
       "button": "Let&rsquo;s Talk"
     }
   },
+  "technologyStack": {
+    "title": "Technology Stack",
+    "subtitle": "For most projects we&nbsp;use React, Angular and Vue.",
+    "description": [
+      "Our proficiency in&nbsp;a&nbsp;wide range of&nbsp;front-end technologies helps&nbsp;us choose the right tools and libraries based on&nbsp;clients&rsquo; requirements and our expertise.",
+      "We&nbsp;can also pair your front-end with back-end technologies to&nbsp;provide a&nbsp;complete end-to-end solution."
+    ],
+    "link": "Read About Our Tech Stack"
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",
@@ -89,6 +98,7 @@
       "Picture of number 2",
       "Picture of number 3",
       "Picture of number 4"
-    ]
+    ],
+    "technologyStack": "Logos of some technologies we use: MongoDB, Kotlin, React, Vue Angular, NodeJS, PostgreSQL"
   }
 }

@@ -35,6 +35,40 @@
       }
     ]
   },
+  "whatWeDo": {
+    "title": "What We&nbsp;Do",
+    "list": [
+      {
+        "title": "Single-Page Apps",
+        "description": "SPAs render pages directly in&nbsp;browsers, prevent server overload, and feel much faster and more responsive to&nbsp;users."
+      },
+      {
+        "title": "Progressive Web Apps",
+        "description": "PWAs provide features that give them the same user experience advantages as&nbsp;native apps. They are fast, integrated, reliable, and engaging."
+      },
+      {
+        "title": "Real-Time Web Apps",
+        "description": "Such apps provide real-time information transfer between users and from users to&nbsp;servers. It&nbsp;can be&nbsp;messengers, newsfeeds, dashboards, etc."
+      },
+      {
+        "title": "API Integration",
+        "description": "API integration is&nbsp;necessary for building a&nbsp;strong network of&nbsp;data across different services, including third-party apps."
+      },
+      {
+        "title": "Stack Migration",
+        "description": "Sometimes it&nbsp;is&nbsp;necessary to&nbsp;migrate an&nbsp;entire project from inefficient and outdated technologies to&nbsp;modern ones. We&nbsp;can guide the process smoothly and without downtime."
+      },
+      {
+        "title": "Consulting",
+        "description": "We&rsquo;re happy to&nbsp;offer technical consulting advice on&nbsp;all matters related to&nbsp;our expertise."
+      }
+    ],
+    "contactUs": {
+      "title": "Already Have an&nbsp;Idea?",
+      "subtitle": "Tell&nbsp;us about your project and we&rsquo;ll find a&nbsp;solution.",
+      "button": "Let&rsquo;s Talk"
+    }
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",
@@ -49,6 +83,12 @@
   },
   "imgAlt": {
     "hero": "Picture of balloon",
-    "aboutFrontend": "A group of people building a robot"
+    "aboutFrontend": "A group of people building a robot",
+    "benefits": [
+      "Picture of number 1",
+      "Picture of number 2",
+      "Picture of number 3",
+      "Picture of number 4"
+    ]
   }
 }

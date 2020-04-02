@@ -18,60 +18,54 @@ import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Greeting = ({ isMsBrowser, isMobile, className, t }) => (
-  <Grid as="article" className={className}>
-    <div
-      className={cn('svg-animation', 'svg-animation-wrapper', {
-        'ms-style': isMsBrowser,
-      })}
-    >
-      <PictureForAllResolutions
-        className="rocket"
-        images={greetingImagesData.images}
-        fallback={greetingImagesData.images['desktop.l']}
-        alt={t('express:imgAlt.rocket')}
+const Greeting = ({ isMsBrowser, isMobile, className, t }) => {
+  const PlanetSvg = isMobile ? PlanetMobileSvg : PlanetDesktopSvg
+  return (
+    <Grid as="article" className={className}>
+      <div
+        className={cn('svg-animation', 'svg-animation-wrapper', {
+          'ms-style': isMsBrowser,
+        })}
+      >
+        <PictureForAllResolutions
+          className="rocket"
+          images={greetingImagesData.images}
+          fallback={greetingImagesData.images['desktop.l']}
+          alt={t('express:imgAlt.rocket')}
+        />
+
+        <PlanetSvg
+          className={cn('svg-animation-orbit', {
+            'svg-animation_visible': !isMsBrowser,
+            'svg-animation_invisible': isMsBrowser,
+          })}
+        />
+      </div>
+
+      <Heading
+        as="h1"
+        className="heading"
+        type="slab"
+        size="l"
+        dangerouslySetInnerHTML={{ __html: t('express:greeting.title') }}
       />
 
-      {isMobile ? (
-        <PlanetMobileSvg
-          className={cn('svg-animation-orbit', {
-            'svg-animation_visible': !isMsBrowser,
-            'svg-animation_invisible': isMsBrowser,
-          })}
-        />
-      ) : (
-        <PlanetDesktopSvg
-          className={cn('svg-animation-orbit', {
-            'svg-animation_visible': !isMsBrowser,
-            'svg-animation_invisible': isMsBrowser,
-          })}
-        />
-      )}
-    </div>
+      <Text
+        className="subheading"
+        type="strong"
+        size="m"
+        dangerouslySetInnerHTML={{ __html: t('express:greeting.description') }}
+      />
 
-    <Heading
-      as="h1"
-      className="heading"
-      type="slab"
-      size="l"
-      dangerouslySetInnerHTML={{ __html: t('express:greeting.title') }}
-    />
-
-    <Text
-      className="subheading"
-      type="strong"
-      size="m"
-      dangerouslySetInnerHTML={{ __html: t('express:greeting.description') }}
-    />
-
-    <ButtonLink
-      className="button"
-      kind="primary"
-      href="#calculator"
-      dangerouslySetInnerHTML={{ __html: t('express:greeting.button') }}
-    />
-  </Grid>
-)
+      <ButtonLink
+        className="button"
+        kind="primary"
+        href="#calculator"
+        dangerouslySetInnerHTML={{ __html: t('express:greeting.button') }}
+      />
+    </Grid>
+  )
+}
 
 Greeting.propTypes = {
   className: string,

@@ -67,12 +67,13 @@ const onSubmit = (t, lng) => async (values) => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, lng }) => (
+const Form = ({ t, lng, pageName = 'outsourcingFrontEnd' }) => (
   <ReactFinalForm
     onSubmit={onSubmit(t, lng)}
     validate={contactFormValidationRules(t)}
     decorators={[focusOnErrors]}
     component={ContactFormForDev}
+    pageName={pageName}
   />
 )
 

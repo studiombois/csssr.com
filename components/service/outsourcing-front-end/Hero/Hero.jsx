@@ -7,7 +7,7 @@ import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
-import Button from '../../../ui-kit/core-design/Button'
+import ContactButton from '../../../ContactButton'
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import Grid from '../../../ui-kit/core-design/Grid'
 
@@ -35,8 +35,9 @@ const Hero = ({ className, t }) => (
       dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:hero.description') }}
     />
 
-    <Button
+    <ContactButton
       className="button"
+      pageName="outsourcingFrontEnd"
       dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:hero.button') }}
     />
 

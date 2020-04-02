@@ -17,7 +17,7 @@ const Item = ({ className, t, lng, id, link, images }) => (
     <PictureForAllResolutions
       className="picture"
       images={images}
-      fallback={images['desktop.all']}
+      fallback={images['desktop.all'].png}
       alt={t(`outsourcingFrontEnd:imageAlt.ourAdvantages.${id}`)}
     />
 

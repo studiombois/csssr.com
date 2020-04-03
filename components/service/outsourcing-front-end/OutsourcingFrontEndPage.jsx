@@ -4,6 +4,7 @@ import Hero from '../../../components/service/outsourcing-front-end/Hero'
 import AboutFrontend from '../../../components/service/outsourcing-front-end/AboutFrontend'
 import Benefits from '../../../components/service/outsourcing-front-end/Benefits'
 import WhatWeDo from '../../../components/service/outsourcing-front-end/WhatWeDo'
+import TechnologyStack from '../../../components/service/outsourcing-front-end/TechnologyStack'
 import Form from '../../../components/service/outsourcing-front-end/Form'
 import Layout from '../../../components/Layout'
 import translate from '../../../utils/translate-wrapper'
@@ -20,6 +21,7 @@ const OutsourcingFrontEndPage = ({ t }) => (
     <AboutFrontend />
     <Benefits />
     <WhatWeDo />
+    <TechnologyStack />
 
     <Form pageName={pageName} />
   </Layout>

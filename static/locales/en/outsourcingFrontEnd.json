@@ -78,6 +78,28 @@
     ],
     "link": "Read About Our Tech Stack"
   },
+  "ourAdvantages": {
+    "title": "Our Advantages",
+    "advantages": [
+      [{
+        "title": "Well-Designed Processes",
+        "description": "We&nbsp;work completely remotely and have built remote processes, which we&nbsp;are extremely proud&nbsp;of. We&nbsp;work with Agile methodologies and have taken the best from various approaches. Therefore, it&nbsp;is&nbsp;simple for&nbsp;us to&nbsp;adapt our team size and ways of&nbsp;working to&nbsp;your needs.",
+        "link": "Read About Our Process "
+      }],
+      [{
+        "title": "Specialization",
+        "description": "We&rsquo;ve focused on&nbsp;the narrow niche of&nbsp;front-end development, which has allowed&nbsp;us to&nbsp;achieve the highest level of&nbsp;expertise through over 500&nbsp;projects.",
+        "link": "Read About Us"
+      }, {
+        "title": "Long-Term Relationship",
+        "description": [
+          "We&nbsp;can complete ",
+          " over just a&nbsp;few months, or&nbsp;we&nbsp;can stay on&nbsp;a&nbsp;project for years, developing and supporting it&nbsp;with a&nbsp;permanent team."
+        ],
+        "link": "short-term tasks"
+      }]
+    ]
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",
@@ -99,6 +121,10 @@
       "Picture of number 3",
       "Picture of number 4"
     ],
-    "technologyStack": "Logos of some technologies we use: MongoDB, Kotlin, React, Vue Angular, NodeJS, PostgreSQL"
+    "technologyStack": "Logos of some technologies we use: MongoDB, Kotlin, React, Vue Angular, NodeJS, PostgreSQL",
+    "ourAdvantages": [
+      ["A man in harmony in the middle of computer monitors"],
+      ["Printing code woman", "Two developers giving high five to each other"]
+    ]
   }
 }

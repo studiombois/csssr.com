@@ -81,10 +81,9 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints;
-  const colors = props.theme.colors;
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `;
 };

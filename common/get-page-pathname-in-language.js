@@ -2,7 +2,7 @@ import { defaultLocaleByLanguage } from './locales-settings'
 
 export default (fullPathname, newLanguage, pagesList) => {
   const {
-     pathname
+    groups: { pathname },
   } = fullPathname.match(/^\/(?<locale>.*?)(\/(?<pathname>.*))?$/)
 
   if (!pathname) {

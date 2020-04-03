@@ -14,7 +14,7 @@ const Covid19Popup = ({ className, isMobile }) => (
       to&nbsp;the outbreak
     </p>
     <p className="subtitle">
-      Free remote work consultanting
+      Free remote work consulting
       <br />
       Front-end performance optimization
       <br />

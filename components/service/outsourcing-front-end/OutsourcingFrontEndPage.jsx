@@ -7,7 +7,7 @@ import Benefits from '../../../components/service/outsourcing-front-end/Benefits
 import WhatWeDo from '../../../components/service/outsourcing-front-end/WhatWeDo'
 import TechnologyStack from '../../../components/service/outsourcing-front-end/TechnologyStack'
 import OurAdvantages from '../../../components/service/outsourcing-front-end/OurAdvantages'
-import Industires from '../../../components/service/outsourcing-front-end/Industires'
+import Industries from '../../../components/service/outsourcing-front-end/Industries'
 import Form from '../../../components/service/outsourcing-front-end/Form'
 
 import translate from '../../../utils/translate-wrapper'
@@ -19,15 +19,13 @@ const OutsourcingFrontEndPage = ({ t }) => (
       title={t('outsourcingFrontEnd:meta.title')}
       description={t('outsourcingFrontEnd:meta.description')}
     />
-
     <Hero />
     <AboutFrontend />
     <Benefits />
     <WhatWeDo />
     <TechnologyStack />
     <OurAdvantages />
-    <Industires />
-
+    <Industries />
     <Form pageName={pageName} />
   </Layout>
 )

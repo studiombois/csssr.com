@@ -312,12 +312,12 @@ const base = css`
 
     .contact-image {
         grid-column: 7 / span 2;
-        /* z-index: 0; */
         margin-top: -100px;
         display: block;
         position: absolute;
         right: -150px;
         top: -10px;
+        background-color: #18191b;
     }
 
     .contact-image img {

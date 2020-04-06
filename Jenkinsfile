@@ -4,7 +4,9 @@ pipeline {
     branch = ""
     commit = ""
   }
-  agent { label 'master' }
+  agent {
+    label params.processImages ? 'master' : ''
+  }
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space (без слэша на конце)', name: 'csssrSpaceOrigin', trim: true)

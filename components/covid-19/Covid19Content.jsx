@@ -139,7 +139,7 @@ const Covid19Content = ({ className }) => {
                 onMouseOut={() => setHoveredImage(null)}
               >
                 <a onClick={handleButtonClick}>
-                  1. Let&nbsp;us speed up&nbsp;your project development with our team and experience
+                  Let&nbsp;us speed up&nbsp;your project development with our team and experience
                 </a>
               </h3>
             </div>
@@ -164,9 +164,7 @@ const Covid19Content = ({ className }) => {
                 onMouseOver={() => setHoveredImage(2)}
                 onMouseOut={() => setHoveredImage(null)}
               >
-                <a onClick={handleButtonClick}>
-                  2. We&nbsp;can bring your business online right now
-                </a>
+                <a onClick={handleButtonClick}>We&nbsp;can bring your business online right now</a>
               </h3>
             </div>
 
@@ -226,9 +224,7 @@ const Covid19Content = ({ className }) => {
                 onMouseOver={() => setHoveredImage(4)}
                 onMouseOut={() => setHoveredImage(null)}
               >
-                <a onClick={handleButtonClick}>
-                  3. Let&nbsp;us optimize your web-service performance
-                </a>
+                <a onClick={handleButtonClick}>Let&nbsp;us optimize your web-service performance</a>
               </h3>
             </div>
 
@@ -254,7 +250,7 @@ const Covid19Content = ({ className }) => {
                 onMouseOut={() => setHoveredImage(null)}
               >
                 <a onClick={handleButtonClick}>
-                  4. We&nbsp;are ready to&nbsp;significantly{' '}
+                  We&nbsp;are ready to&nbsp;significantly{' '}
                   <span className="benefit-2-text-bold">reduce prices</span> for any socially
                   important projects
                 </a>

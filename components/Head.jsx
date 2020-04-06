@@ -22,6 +22,8 @@ const Head = (props) => {
     }
   })
 
+  const StructuredDataFromProps = props.structuredData
+
   return (
     <NextHead>
       <link
@@ -132,7 +134,7 @@ const Head = (props) => {
         </Fragment>
       )}
       <meta property="fb:app_id" content="416195255787519" />
-      <StructuredData />
+      <StructuredDataFromProps />
       {props.children}
     </NextHead>
   )

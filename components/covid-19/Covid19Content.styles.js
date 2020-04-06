@@ -610,7 +610,7 @@ const grid = css`
 const fonts = css`
     .font-heading-1 {
         font-family: 'Roboto Slab', serif;
-        font-weight: 300;
+        font-weight: 400;
         font-size: 64px;
         line-height: 80px;
         color: #ffffff;

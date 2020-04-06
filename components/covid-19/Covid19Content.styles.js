@@ -686,6 +686,11 @@ const fonts = css`
         color: #FFFFFF;
     }
 
+    .font-p-link:hover {
+        background-color: #B24372;
+        color: #FFFFFF;
+    }
+
     .link-big {
         font-family: "Roboto", sans-serif;
         font-size: 48px;

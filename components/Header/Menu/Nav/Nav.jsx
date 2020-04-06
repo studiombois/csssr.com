@@ -76,7 +76,7 @@ const Nav = ({
                       })}
                     >
                       <Link className="link" href={`/${lng}/${href}`} isNextLink>
-                        <Icon className="icon" />
+                        <Icon className={cn('icon', `icon_${id}`)} />
 
                         <Heading
                           className="title"

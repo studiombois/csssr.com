@@ -161,6 +161,34 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         stroke: #5695ED;
       }
     }
+
+    .nav_industries {
+      .link:hover .icon_fintech path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .link:hover .icon_eCommerce path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .link:hover .icon_information path:first-of-type {
+        fill: #5695ED;
+      }
+      
+      .link:hover .icon_mediaAndMarketing path:first-of-type {
+        fill: #5695ED;
+      }
+
+      .link:hover .icon_mediaAndMarketing path:last-of-type {
+        stroke: #18191B;
+      }
+    }
+
+    .nav_howWeWork {
+      .link:hover .icon_technologies {
+        fill: #5695ED;
+      }
+    }
   }
 
   ${tablet.all} {

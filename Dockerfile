@@ -17,7 +17,7 @@ COPY package.json yarn.lock /app/
 
 RUN npm config set //npm.pkg.github.com/:_authToken "${NPM_TOKEN}" && \
     npm config set @csssr:registry https://npm.pkg.github.com && \
-    yarn --frozen-lockfile && \
+    yarn --frozen-lockfile --network-timeout 600000 && \
     npm config rm //npm.pkg.github.com/:_authToken
 COPY . .
 RUN yarn build

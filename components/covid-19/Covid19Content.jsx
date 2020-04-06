@@ -49,7 +49,7 @@ const Covid19Content = ({ className }) => (
           a&nbsp;global workplace, the only way to&nbsp;communicate with other people and get goods
           and services. For eight years we&nbsp;have been building web services for various
           industries such&nbsp;
-          <a href="https://csssr.com/en/industry/ecommerce" className="font-p-link">
+          <a href="https://csssr.com/en/industry/ecommerce" className="font-p-link no-wrap">
             e-commerce
           </a>
           ,{' '}

@@ -343,6 +343,10 @@ const base = css`
       height: auto;
   }
 
+  .no-wrap {
+      white-space: nowrap;
+  }
+
   @media screen and (max-width: 1492px) {
       .greeting-red-box {
           grid-column: 9 / span 3;

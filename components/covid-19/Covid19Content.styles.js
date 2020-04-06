@@ -5,6 +5,10 @@ const base = css`
     & {
         margin-top: ${calcRem(-89)};
     }
+
+    .no-wrap {
+      white-space: nowrap;
+    }
     /* Greeting */
     .greeting {
         margin-top: 190px;
@@ -476,7 +480,7 @@ const base = css`
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 7px) {
         & {
            margin-top: ${calcRem(56)};
         }

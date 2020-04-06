@@ -69,7 +69,7 @@ const Covid19Content = ({ className }) => {
             Our group of&nbsp;companies employs more than 150 professionals in&nbsp;different
             countries and all of&nbsp;them have always been working remotely. For eight years
             we&nbsp;have been building web services for various industries such{' '}
-            <a href="https://csssr.com/en/industry/ecommerce" className="font-p-link">
+            <a href="https://csssr.com/en/industry/ecommerce" className="font-p-link no-wrap">
               e-commerce
             </a>
             ,{' '}

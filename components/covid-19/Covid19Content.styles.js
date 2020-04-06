@@ -480,7 +480,7 @@ const base = css`
         }
     }
 
-    @media screen and (max-width: 7px) {
+    @media screen and (max-width: 768px) {
         & {
            margin-top: ${calcRem(56)};
         }

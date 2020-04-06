@@ -3,7 +3,7 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = css`
     & {
-        margin-top: ${calcRem(-153)};
+        margin-top: ${calcRem(-89)};
     }
     /* Greeting */
     .greeting {
@@ -473,6 +473,12 @@ const base = css`
             margin-top: -70px;
             right: -150px;
             top: -40px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        & {
+           margin-top: ${calcRem(56)};
         }
     }
 

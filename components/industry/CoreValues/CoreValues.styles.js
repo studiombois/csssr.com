@@ -70,11 +70,37 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .first-item.card,
   .third-item.card {
-    margin-top: ${calcRem(323)};
+    margin-top: ${calcRem(164)};
   }
 
-  .second-item.card {
-    margin-top: ${calcRem(145)};
+  .button {
+    grid-row: 4;
+    grid-column: 6 / span 3;
+    max-width: 296px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    color: ${colors.secondary.origin};
+  }
+
+  .button:hover {
+    border-color: #E8178A;
+    background-color: #ffffff;
+  }
+
+  ${desktop.all} {
+    .second-item.card {
+      margin-top: ${calcRem(76)};
+    }
+
+    .button {
+      margin-top: ${calcRem(73)};
+    }
+  }
+
+  ${desktop.l} {
+    .second-item .image {
+      max-height: 568px;
+    }
   }
 
   ${desktop.m} {
@@ -96,11 +122,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .first-item.card,
     .third-item.card {
-      margin-top: ${calcRem(220)};
+      margin-top: ${calcRem(140)};
     }
 
-    .second-item.card {
-      margin-top: ${calcRem(89)};
+    .second-item .image {
+      max-height: 424px;
     }
   }
 
@@ -111,17 +137,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .first-item.card,
     .third-item.card {
-      margin-top: ${calcRem(220)};
-    }
-
-    .second-item.card {
-      margin-top: ${calcRem(98)};
+      margin-top: ${calcRem(132)};
     }
 
     .heading {
       grid-column: 1 / span 12;
       grid-row: 1;
       text-align: center;
+    }
+
+    .second-item .image {
+      max-height: 392px;
     }
   }
 
@@ -135,20 +161,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-bottom: ${calcRem(2)};
     }
 
-    .second-item.card {
-      margin-top: ${calcRem(68)};
-    }
-
     .first-item.card,
     .third-item.card {
-      margin-top: ${calcRem(68)};
+      margin-top: ${calcRem(96)};
     }
 
-    .first-item.card::before,
-    .third-item.card::before {
-      content: '';
-      display: block;
-      height: ${calcRem(92)};
+    .second-item.card {
+      margin-top: ${calcRem(55)};
+    }
+
+    .second-item .image {
+      max-height: 296px;
     }
 
     .title {
@@ -158,6 +181,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .text {
       margin-top: ${calcRem(16)};
       font-size: ${calcRem(14)};
+    }
+
+    .button {
+      margin-top: ${calcRem(49)};
     }
   }
 
@@ -193,10 +220,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-row: 5;
     }
 
-    .first-item.card,
     .second-item.card,
     .third-item.card {
       margin-top: ${calcRem(89)};
+    }
+
+    .first-item.card {
+      margin-top: ${calcRem(87)};
     }
 
     .title {
@@ -206,6 +236,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .text {
       margin-top: ${calcRem(13)};
       font-size: ${calcRem(14)};
+    }
+
+    .button {
+      grid-row: 6;
+      grid-column: 1 / span 6;
+      max-width: 100%;
+      margin-top: ${calcRem(57)};
     }
   }
 `

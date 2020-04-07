@@ -80,19 +80,20 @@
     "heading": "Core Values",
     "subHeading": "We&nbsp;maintain the highest standards of&nbsp;web development and apply best practices to&nbsp;each project.",
     "firstItem": {
-      "href": "/en/core-values#accessibility",
       "title": "Accessibility",
       "text": "Did you know that up&nbsp;to&nbsp;15% of&nbsp;all users have special needs when using the Internet? Each page and block should not only be&nbsp;well written, but should also be&nbsp;appropriately delivered, so&nbsp;that every user can enjoy&nbsp;it."
     },
     "secondItem": {
-      "href": "/en/core-values#security",
       "title": "Web Security",
       "text": "Even a&nbsp;small vulnerability can lead to&nbsp;significant financial and reputational risks. From the beginning, we&nbsp;think carefully about code architecture and pay special attention to&nbsp;security issues."
     },
     "thirdItem": {
-      "href": "/en/core-values#ux",
       "title": "UX",
       "text": "Perfectionism has to&nbsp;be&nbsp;smart. We&nbsp;always put ourselves in&nbsp;the place of&nbsp;the user and pay attention to&nbsp;the little things that can affect users&rsquo; opinions about the final product."
+    },
+    "button": {
+      "title": "All Core Values",
+      "href": "/en/core-values"
     }
   },
   "projects": {

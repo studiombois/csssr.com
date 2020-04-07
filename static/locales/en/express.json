@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Get Your Code Boosted!",
-    "description": "Turning mock-ups into HTML is our super power. We create HTML layouts, make blocks and elements animated, and web pages — adaptive."
+    "title": "Express Front-end",
+    "description": "If you need to build a solid, reliable HTML-layout for a website or e-mail newsletter based on your design, you came to the right place."
   },
   "greeting": {
-    "title": "Get Your Code Boosted!",
-    "description": "Turning mock-ups into HTML&nbsp;is our super power. If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
+    "title": "<strong>Express</strong> <br /> Front-end",
+    "description": "If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable<br /> HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
     "button": "Get a quote"
   },
   "aboutUs": {

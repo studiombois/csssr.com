@@ -4,7 +4,6 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
-    padding-bottom: 437px;
     position: relative;
   }
 
@@ -89,7 +88,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      padding-bottom:  ${calcRem(255)};
+      padding-bottom:  ${calcRem(263)};
     }
 
     .title {
@@ -145,9 +144,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 `
 
 const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-  -ms-grid-column: ${getGridValueForMs(2)};
-  -ms-grid-column-span: ${getGridValueForMs(6)};
-
   ${desktop.all} {
     .description {
       -ms-grid-column: ${getGridValueForMs(2)};

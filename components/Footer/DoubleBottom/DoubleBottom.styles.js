@@ -87,7 +87,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.m} {
     & {
+      padding-top: ${calcRem(59)};
       padding-right: ${calcRem(48)};
+      padding-bottom: ${calcRem(85)};
     }
 
     .pin_singapore {
@@ -127,9 +129,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${tablet.all} {
     & {
       height: ${calcRem(304)};
-      padding-top: ${calcRem(40)};
+      padding-top: ${calcRem(41)};
       padding-right: ${calcRem(21)};
-      padding-bottom: ${calcRem(28)};
+      padding-bottom: ${calcRem(29)};
       padding-left: ${calcRem(30)};
     }
 

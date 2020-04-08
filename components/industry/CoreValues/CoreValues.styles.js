@@ -77,14 +77,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-row: 4;
     grid-column: 6 / span 3;
     max-width: 296px;
-    background-color: #ffffff;
     border: 2px solid #000000;
-    color: ${colors.secondary.origin};
-  }
 
-  .button:hover {
-    border-color: #E8178A;
-    background-color: #ffffff;
+    &:hover {
+      color: #000000;
+    }
+
   }
 
   ${desktop.all} {

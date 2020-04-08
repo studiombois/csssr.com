@@ -38,7 +38,7 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
 
     <ButtonLink
       href={t('industry:coreValues.button.href')}
-      kind="primary"
+      kind="secondary"
       className="button"
       dangerouslySetInnerHTML={{ __html: t(button.title) }}
     />

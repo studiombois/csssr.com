@@ -3,18 +3,10 @@
     "title": "Outsourced MVP Development",
     "description": "We'll help you to test out your business ideas and demonstrate the product's potential to investors."
   },
-  "begin": {
-    "imageAlt": {
-      "title": "MVP",
-      "rocketBody": "Rocket body",
-      "rocketDress": "Rocket turbine",
-      "rocketJet": "Rocket jet",
-      "rocketDivider": "Rocket divider",
-      "rocketArrow": "Triangle symbol that point direction in in which the rocket travels"
-    },
-    "title": "MVP",
-    "text": "An MVP (Minimum Viable Product) is the most basic form of your product, with only the essential functionality. A well built MVP allows you to test out your business idea and demonstrate the product’s potential to investors.",
-    "rocketText": "In a highly competitive market, building a product quickly is crucial. We create core products for our clients in a short timeframe, helping them determine the best direction for future development."
+  "hero": {
+    "title": "<span style=\"font-weight: bold;\">MVP</span><br />Development",
+    "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;intended to&nbsp;help guide its future development.",
+    "button": "Start Your Project"
   },
   "riskMinimization": {
     "togglerOn": "With MVP",
@@ -25,14 +17,6 @@
     "textOn": "Simple and robust product in-hand that’s easy to modify and improve later.",
     "textOff": "Wasted time and resources developing a product, without knowing if it brings value to users.",
     "imageAltWaves": "Curves symbolizing the MVP development process"
-  },
-  "money": {
-    "imageAlt": "Man with coins in hand",
-    "title": "Cost Savings",
-    "text": "Invest your money only in the necessary functionality, giving you a working product that helps gain your first followers."
-  },
-  "process": {
-    "title": "Process"
   },
   "form": {
     "title": "Get in Touch",
@@ -45,6 +29,5 @@
     "messagePlaceholder": "How can we help?",
     "messageLabel": "How can we help?",
     "submitText": "Submit"
-  },
-  "buttonText": "Hire Us"
+  }
 }

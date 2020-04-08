@@ -13,11 +13,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
   .address,
   .phone {
     color: ${colors.secondary.darken100};
+  }
+
+  .address {
     font-weight: normal;
   }
   
   .phone {
     display: block;
+    font-weight: 300;
   }
 
   @media (hover: hover) and (pointer: fine) {

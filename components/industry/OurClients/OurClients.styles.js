@@ -15,9 +15,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   .image {
     position: relative;
-    grid-column: 2 / span 11;
+    grid-column: 1 / span 12;
     grid-row: 2;
-    max-width: ${calcRem(1562)};
+    max-width: ${calcRem(1792)};
     margin-top: ${calcRem(119)};
   }
 
@@ -25,7 +25,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(308)};
 
     .image {
-      max-width: ${calcRem(1115)};
       margin-top: ${calcRem(69)};
     }
   }
@@ -34,8 +33,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(224)};
 
     .image {
-      max-width: ${calcRem(1089)};
-      margin-left: ${calcRem(-15)};
       margin-top: ${calcRem(82)};
     }
   }
@@ -44,9 +41,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(215)};
 
     .image {
-      max-width: ${calcRem(869)};
       margin-top: ${calcRem(78)};
-      margin-left: -3.5rem;
     }
   }
 

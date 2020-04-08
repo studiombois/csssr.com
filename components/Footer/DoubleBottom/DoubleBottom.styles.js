@@ -10,7 +10,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     padding: ${calcRem(32)};
     display: flex;
     width: 100%;
-    height: ${calcRem(344)};
     background-color: white;
   }
 
@@ -109,6 +108,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.s} {
+    & {
+      padding-top: ${calcRem(59)};
+      padding-bottom: ${calcRem(61)};
+    }
+
     .pin_singapore {
       top: 41%;
       right: 15%;
@@ -128,7 +132,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      height: ${calcRem(304)};
       padding-top: ${calcRem(41)};
       padding-right: ${calcRem(21)};
       padding-bottom: ${calcRem(29)};
@@ -162,7 +165,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       z-index: 1;
       margin-top: ${calcRem(42)};
       padding: 0;
-      height: auto;
       flex-direction: column;
     }
 

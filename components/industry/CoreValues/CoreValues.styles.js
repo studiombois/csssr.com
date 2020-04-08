@@ -77,7 +77,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-row: 4;
     grid-column: 6 / span 3;
     max-width: 296px;
-    border: 2px solid #000000;
+    border-color: #000000;
 
     &:hover {
       color: #000000;

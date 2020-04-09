@@ -75,16 +75,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .button {
     grid-row: 4;
-    grid-column: 6 / span 3;
+    grid-column: 5 / span 4;
+    justify-self: center;
     max-width: 296px;
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    color: ${colors.secondary.origin};
-  }
+    border-color: #000000;
 
-  .button:hover {
-    border-color: #E8178A;
-    background-color: #ffffff;
+    &:hover {
+      color: #000000;
+    }
+
   }
 
   ${desktop.all} {
@@ -185,6 +184,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .button {
       margin-top: ${calcRem(49)};
+      width: 296px;
     }
   }
 

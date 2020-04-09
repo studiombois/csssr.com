@@ -90,7 +90,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .subtitle {
       margin-top: ${calcRem(6)};
-      width: ${calcRem(328)};
+      max-width: ${calcRem(220)};
+      margin-left: auto;
+      margin-right: auto;
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+      font-weight: 300;
     }
 
     .button {

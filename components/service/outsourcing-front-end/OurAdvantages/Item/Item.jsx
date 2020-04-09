@@ -65,7 +65,7 @@ const Item = ({ className, t, lng, id, link, images }) => (
           }}
         />
 
-        {link === '/en/service/express-front-end' && lng === 'ru' ? null : (
+        {!link || link === '/en/service/express-front-end' && lng === 'ru' ? null : (
           <Link
             className="link"
             href={`/${lng}/${link}`}

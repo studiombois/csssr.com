@@ -73,8 +73,33 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(323)};
   }
 
-  .second-item.card {
-    margin-top: ${calcRem(145)};
+  .button {
+    grid-row: 4;
+    grid-column: 5 / span 4;
+    justify-self: center;
+    max-width: 296px;
+    border-color: #000000;
+
+    &:hover {
+      color: #000000;
+    }
+
+  }
+
+  ${desktop.all} {
+    .second-item.card {
+      margin-top: ${calcRem(76)};
+    }
+
+    .button {
+      margin-top: ${calcRem(73)};
+    }
+  }
+
+  ${desktop.l} {
+    .second-item .image {
+      max-height: 568px;
+    }
   }
 
   ${desktop.m} {
@@ -158,6 +183,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .text {
       margin-top: ${calcRem(16)};
       font-size: ${calcRem(14)};
+    }
+
+    .button {
+      margin-top: ${calcRem(49)};
+      width: 296px;
     }
   }
 

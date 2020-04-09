@@ -35,6 +35,13 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
         key={title}
       />
     ))}
+
+    <ButtonLink
+      href={t('industry:coreValues.button.href')}
+      kind="secondary"
+      className="button"
+      dangerouslySetInnerHTML={{ __html: t(button.title) }}
+    />
   </Grid>
 )
 

@@ -153,12 +153,48 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         color: #5695ED;
       }
 
+      .nav-item_active .icon,
       .link:hover .icon {
         fill: #5695ED;
       }
 
+      .nav-item_active .icon path,
       .link:hover .icon path {
         stroke: #5695ED;
+      }
+    }
+
+    .nav_industries {
+      .nav-item_active .icon_fintech path:last-of-type,
+      .link:hover .icon_fintech path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_eCommerce path:last-of-type,
+      .link:hover .icon_eCommerce path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_information path:first-of-type,
+      .link:hover .icon_information path:first-of-type {
+        fill: #5695ED;
+      }
+      
+      .nav-item_active .icon_mediaAndMarketing path:first-of-type,
+      .link:hover .icon_mediaAndMarketing path:first-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_mediaAndMarketing path:last-of-type,
+      .link:hover .icon_mediaAndMarketing path:last-of-type {
+        stroke: #18191B;
+      }
+    }
+
+    .nav_howWeWork {
+      .nav-item_active .icon_technologies,
+      .link:hover .icon_technologies {
+        fill: #5695ED;
       }
     }
   }

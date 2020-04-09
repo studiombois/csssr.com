@@ -8,7 +8,7 @@ import Text from '../../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import styled from '@emotion/styled'
 import styles from './AboutMvp.styles'
-import cn from 'classNames'
+import cn from 'classnames'
 
 import { mvpOnImages, mvpOffImages } from '../../../../data/service/mvp/aboutMvp'
 

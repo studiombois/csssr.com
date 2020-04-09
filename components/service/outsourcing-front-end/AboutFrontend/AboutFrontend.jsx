@@ -30,6 +30,7 @@ const AboutFrontend = ({ className, t }) => (
     <SubHeading
       className="subtitle"
       as="p"
+      type="slab"
       dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:aboutFrontend.subtitle') }}
     />
 

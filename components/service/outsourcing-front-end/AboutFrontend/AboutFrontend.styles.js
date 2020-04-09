@@ -8,7 +8,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .subtitle {
-    font-family: 'Roboto Slab', serif;
     font-weight: 300;
   }
 

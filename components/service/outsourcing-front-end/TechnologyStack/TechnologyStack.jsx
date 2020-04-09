@@ -30,6 +30,7 @@ const TechnologyStack = ({ className, t, lng }) => (
 
     <SubHeading
       className="subtitle"
+      type="slab"
       as="p"
       dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:technologyStack.subtitle') }}
     />

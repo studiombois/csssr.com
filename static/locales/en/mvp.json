@@ -49,6 +49,27 @@
       "<span style=\"font-style: italic; font-weight: 900; font-family: 'Roboto', 'Arial', sans-serif;\">Outsourced development</span> by&nbsp;a&nbsp;team of&nbsp;professionals is&nbsp;the best solution."
     ]
   },
+  "ourAdvantages": {
+    "title": "Our Advantages",
+    "advantages": [
+      [{
+        "title": "Quick Start",
+        "description": "Finding good specialists and gathering a&nbsp;team can take months and cost can run high. With&nbsp;us, you can start development in&nbsp;less than a&nbsp;week."
+      }, {
+        "title": "Flexibility",
+        "description": "We&nbsp;assemble teams based on&nbsp;the appropriate technologies, scope of&nbsp;work and budget for each project, while our commitment to&nbsp;efficiency and our core development principles remains constant.",
+        "link": "Read about our core values "
+      }],
+      [{
+        "title": "High-Level Expertise",
+        "description": "We&rsquo;ve been doing front-end development since 2012, and we&nbsp;are meticulous about hiring. We&nbsp;continuously improve the quality of&nbsp;our work through a&nbsp;system of&nbsp;employee education. "
+      }, {
+        "title": "Transparency",
+        "description": "We&nbsp;work with Agile methodologies, employing weekly sprints that help&nbsp;us better plan load, easily break down tasks and provide better transparency.",
+        "link": "Read about how we work"
+      }]
+    ]
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",
@@ -63,6 +84,10 @@
   },
   "imageAlt": {
     "mvpOn": "Development process with MVP",
-    "mvpOff": "Development process without MVP"
+    "mvpOff": "Development process without MVP",
+    "ourAdvantages": [
+      ["Two men running in a race", "People performing acrobatic etudes with frontend technologies"],
+      ["Recursion of a man looking for something in a magnifying glass", "The frontend atlas, who has everything under control"]
+    ]
   }
 }

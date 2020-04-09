@@ -4,6 +4,7 @@ import Head from '../../Head'
 import Hero from './Hero'
 import AboutMvp from './AboutMvp'
 import Benefits from './Benefits'
+import OurAdvantages from './OurAdvantages'
 // import Form from './Form'
 
 import translate from '../../../utils/translate-wrapper'
@@ -15,6 +16,7 @@ const MvpDevelopmentPage = ({ t }) => (
     <Hero />
     <AboutMvp />
     <Benefits />
+    <OurAdvantages />
     {/* <Form pageName={pageName} /> */}
   </Layout>
 )

@@ -7,6 +7,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     position: relative;
   }
 
+  .subtitle {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+  }
+
   ${desktop.all} {
     .title {
       margin-top: 70px;

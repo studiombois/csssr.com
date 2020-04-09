@@ -36,19 +36,21 @@ const Item = ({ className, t, lng, id, link, images }) => (
         {unescapeHtmlEntities(
           t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.description.0`),
         )}
-        <Link
-          key="link"
-          href={link}
-          type="list"
-          size="m"
-          css={css`
-            display: inline-block;
-          `}
-          isNextLink
-          dangerouslySetInnerHTML={{
-            __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.link`),
-          }}
-        />
+        {link &&
+          <Link
+            key="link"
+            href={link}
+            type="list"
+            size="m"
+            css={css`
+              display: inline-block;
+            `}
+            isNextLink
+            dangerouslySetInnerHTML={{
+              __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.link`),
+            }}
+          />
+        }
         {unescapeHtmlEntities(
           t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.description.1`),
         )}
@@ -66,16 +68,17 @@ const Item = ({ className, t, lng, id, link, images }) => (
         />
 
         {link === '/en/service/express-front-end' && lng === 'ru' ? null : (
-          <Link
-            className="link"
-            href={`/${lng}/${link}`}
-            type="list"
-            size="m"
-            isNextLink
-            dangerouslySetInnerHTML={{
-              __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.link`),
-            }}
-          />
+          link &&
+            <Link
+              className="link"
+              href={`/${lng}/${link}`}
+              type="list"
+              size="m"
+              isNextLink
+              dangerouslySetInnerHTML={{
+                __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.link`),
+              }}
+            />
         )}
       </Fragment>
     )}

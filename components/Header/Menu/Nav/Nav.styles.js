@@ -211,6 +211,44 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         width: calc(100% - ${calcRem(92)});
       }
     }
+
+    .nav_services {
+      .nav-item_active .icon {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon path {
+        stroke: #5695ED;
+      }
+    }
+
+    .nav_industries {
+      .nav-item_active .icon_fintech path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_eCommerce path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_information path:first-of-type {
+        fill: #5695ED;
+      }
+      
+      .nav-item_active .icon_mediaAndMarketing path:first-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_mediaAndMarketing path:last-of-type {
+        stroke: #18191B;
+      }
+    }
+
+    .nav_howWeWork {
+      .nav-item_active .icon_technologies {
+        fill: #5695ED;
+      }
+    }
   }
 
   ${mobile.all} {
@@ -311,6 +349,16 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       }
     }
 
+    .nav_services {
+      .nav-item_active .icon {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon path {
+        stroke: #5695ED;
+      }
+    }
+
     .nav_industries {
       padding-top: ${calcRem(8)};
 
@@ -340,6 +388,32 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       .icon {
         width: ${calcRem(28)};
         height: ${calcRem(28)};
+      }
+
+      .nav-item_active .icon_fintech path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_eCommerce path:last-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_information path:first-of-type {
+        fill: #5695ED;
+      }
+      
+      .nav-item_active .icon_mediaAndMarketing path:first-of-type {
+        fill: #5695ED;
+      }
+
+      .nav-item_active .icon_mediaAndMarketing path:last-of-type {
+        stroke: #18191B;
+      }
+    }
+
+    .nav_howWeWork {
+      .nav-item_active .icon_technologies {
+        fill: #5695ED;
       }
     }
   }

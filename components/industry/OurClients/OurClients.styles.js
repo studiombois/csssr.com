@@ -21,6 +21,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(119)};
   }
 
+  ${desktop.l} {
+    .image_ourClients {
+      max-width: ${calcRem(1444)};
+      justify-self: center;
+    }
+  }
+
   ${desktop.m} {
     margin-top: ${calcRem(308)};
 

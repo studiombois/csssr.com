@@ -1,37 +1,43 @@
-<svg width="492" height="269" viewBox="0 0 492 269" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="492" height="269">
-<rect width="492" height="269" fill="#C4C4C4"/>
+<svg width="492" height="261" viewBox="0 0 492 261" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="492" height="261" fill="#F5F6FA"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="492" height="261">
+<rect width="492" height="261" fill="#F5F6FA"/>
 </mask>
 <g mask="url(#mask0)">
-<rect x="49.708" y="25" width="418.869" height="242" stroke="black" stroke-width="4"/>
-<rect x="204" y="121" width="42" height="42" rx="21" stroke="black" stroke-width="4"/>
-<rect x="198" y="182" width="54" height="7" fill="black" stroke="black" stroke-width="4"/>
-<rect x="323" y="160" width="21" height="30" fill="black" stroke="black" stroke-width="4"/>
-<rect x="407" y="173" width="21" height="17" fill="black" stroke="black" stroke-width="4"/>
-<rect x="281" y="138" width="21" height="52" fill="black" stroke="black" stroke-width="4"/>
-<rect x="365" y="126" width="21" height="64" fill="black" stroke="black" stroke-width="4"/>
-<rect x="49.708" y="25" width="32.8102" height="242" stroke="black" stroke-width="4"/>
-<rect x="-2" y="2" width="75.0073" height="168.38" transform="matrix(-1 0 0 1 155.935 96.6201)" stroke="black" stroke-width="4"/>
-<rect x="157.935" y="98.2114" width="75.0073" height="58.8467" transform="rotate(-180 157.935 98.2114)" stroke="black" stroke-width="4"/>
-<rect x="49.708" y="25" width="418.869" height="31.9124" fill="black" stroke="black" stroke-width="4"/>
-<rect x="57" y="32" width="18" height="18" rx="9" fill="white"/>
-<path d="M10 38.2627L75.0912 103.354" stroke="#D976FF" stroke-width="8"/>
-<circle cx="405.071" cy="22.0709" r="10.0709" stroke="#D976FF" stroke-width="8"/>
-<path d="M391.569 236.586L410.33 217.825L429.092 236.586L447.853 217.825L466.614 236.586L485.375 217.825" stroke="#3B96FF" stroke-width="8"/>
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="-8" width="492" height="269">
+<rect y="-8" width="492" height="269" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask1)">
+<rect x="49.708" y="17" width="418.869" height="242" stroke="black" stroke-width="4"/>
+<rect x="204" y="113" width="42" height="42" rx="21" stroke="black" stroke-width="4"/>
+<rect x="198" y="174" width="54" height="7" fill="black" stroke="black" stroke-width="4"/>
+<rect x="323" y="152" width="21" height="30" fill="black" stroke="black" stroke-width="4"/>
+<rect x="407" y="165" width="21" height="17" fill="black" stroke="black" stroke-width="4"/>
+<rect x="281" y="130" width="21" height="52" fill="black" stroke="black" stroke-width="4"/>
+<rect x="365" y="118" width="21" height="64" fill="black" stroke="black" stroke-width="4"/>
+<rect x="49.708" y="17" width="32.8102" height="242" stroke="black" stroke-width="4"/>
+<rect x="-2" y="2" width="75.0073" height="168.38" transform="matrix(-1 0 0 1 155.935 88.6201)" stroke="black" stroke-width="4"/>
+<rect x="157.935" y="90.2114" width="75.0073" height="58.8467" transform="rotate(-180 157.935 90.2114)" stroke="black" stroke-width="4"/>
+<rect x="49.708" y="17" width="418.869" height="31.9124" fill="black" stroke="black" stroke-width="4"/>
+<rect x="57" y="24" width="18" height="18" rx="9" fill="white"/>
+<path d="M10 30.2627L75.0912 95.3539" stroke="#D976FF" stroke-width="8"/>
+<circle cx="405.071" cy="14.0709" r="10.0709" stroke="#D976FF" stroke-width="8"/>
+<path d="M391.569 228.586L410.33 209.825L429.092 228.586L447.853 209.825L466.614 228.586L485.375 209.825" stroke="#3B96FF" stroke-width="8"/>
 </g>
 <g style="mix-blend-mode:lighten">
-<rect x="8" y="4" width="475" height="261" fill="url(#paint0_linear)"/>
+<rect x="13" width="475" height="261" fill="url(#paint0_linear)"/>
 </g>
 <g style="mix-blend-mode:lighten">
-<path d="M8 6.14502H483V265H8V6.14502Z" fill="url(#paint1_linear)"/>
+<path d="M13 2.14502H488V261H13V2.14502Z" fill="url(#paint1_linear)"/>
+</g>
 </g>
 <defs>
-<linearGradient id="paint0_linear" x1="146.63" y1="27.0061" x2="321.499" y2="326.684" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear" x1="151.63" y1="23.0061" x2="326.499" y2="322.684" gradientUnits="userSpaceOnUse">
 <stop stop-color="#0076FF" stop-opacity="0"/>
 <stop offset="0.444533" stop-color="#0076FF"/>
 <stop offset="1" stop-color="#0076FF" stop-opacity="0.4"/>
 </linearGradient>
-<linearGradient id="paint1_linear" x1="445.879" y1="234.252" x2="364.64" y2="103.257" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear" x1="450.879" y1="230.252" x2="369.64" y2="99.2572" gradientUnits="userSpaceOnUse">
 <stop stop-color="#D976FF"/>
 <stop offset="0.211217" stop-color="#BD76FF" stop-opacity="0.870665"/>
 <stop offset="1" stop-color="#0076FF" stop-opacity="0"/>

@@ -170,59 +170,89 @@ class ElearningPlatformContent extends PureComponent {
           <div className="grid">
             <h2 className="font-heading-2 features-heading">Core Modules</h2>
 
-            <div className="features-list-left">
-              <p className="font-heading-3 features-list-heading">Administration</p>
-
-              <ul className="features-list">
-                <li>
-                  <p className="font-p-3">Task assessment</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Rights and access management</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Reporting system</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Statistics and analytics</p>
-                </li>
-              </ul>
+            <div className="features-lines features-line-management">
+              <img
+                src={require('../../static/elearning-platform/icons/management.svg').default}
+                alt="line"
+              />
             </div>
 
-            <div className="features-list-center">
-              <p className="font-heading-3 features-list-heading">Learning</p>
-
-              <ul className="features-list">
-                <li>
-                  <p className="font-p-3">Interactive tasks and lessons</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Personal dashboard</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Progression system</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Discussion system</p>
-                </li>
-              </ul>
+            <div className="features-description features-description-first">
+              <h3 className="font-heading-3">Management</h3>
+              <p className="font-p-2">
+                When it's time to explore new possibilities for an existing product.
+              </p>
             </div>
 
-            <div className="features-list-right">
-              <p className=" font-heading-3 features-list-heading">Management</p>
+            <ul className="features-list-first features-list">
+              <li>
+                <p className="font-p-4">Course and task management systems</p>
+              </li>
+              <li>
+                <p className="font-p-4">Publishing</p>
+              </li>
+              <li>
+                <p className="font-p-4">Scheduled and automated deliveries</p>
+              </li>
+            </ul>
 
-              <ul className="features-list">
-                <li>
-                  <p className="font-p-3">Course and task management systems</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Publishing</p>
-                </li>
-                <li>
-                  <p className="font-p-3">Scheduled and automated deliveries</p>
-                </li>
-              </ul>
+            <div className="features-lines features-line-administration">
+              <img
+                src={require('../../static/elearning-platform/icons/administration.svg').default}
+                alt="line"
+              />
             </div>
+
+            <div className="features-description features-description-second">
+              <h3 className="font-heading-3">Administration</h3>
+              <p className="font-p-2">
+                When it's time to explore new possibilities for an existing product.
+              </p>
+            </div>
+
+            <ul className="features-list-second features-list">
+              <li>
+                <p className="font-p-4">Task assessment</p>
+              </li>
+              <li>
+                <p className="font-p-4">Rights and access management</p>
+              </li>
+              <li>
+                <p className="font-p-4">Reporting system</p>
+              </li>
+              <li>
+                <p className="font-p-4">Statistics and analytics</p>
+              </li>
+            </ul>
+
+            <div className="features-lines features-line-learning">
+              <img
+                src={require('../../static/elearning-platform/icons/learning.svg').default}
+                alt="line"
+              />
+            </div>
+
+            <div className="features-description features-description-third">
+              <h3 className="font-heading-3">Learning</h3>
+              <p className="font-p-2">
+                When it's time to explore new possibilities for an existing product.
+              </p>
+            </div>
+
+            <ul className="features-list-third features-list">
+              <li>
+                <p className="font-p-4">Interactive tasks and lessons</p>
+              </li>
+              <li>
+                <p className="font-p-4">Personal dashboard</p>
+              </li>
+              <li>
+                <p className="font-p-4">Progression system</p>
+              </li>
+              <li>
+                <p className="font-p-4">Discussion system</p>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -354,6 +384,7 @@ class ElearningPlatformContent extends PureComponent {
           <div className="advanced-feature-buttons">
             <FeatureButton
               i={require('../../static/elearning-platform/feature-payment.png')}
+              srcSet={`${require('../../static/elearning-platform/feature-payment.png')} 1x, ${require('../../static/elearning-platform/feature-payment@2x.png')} 2x, ${require('../../static/elearning-platform/feature-payment@3x.png')} 3x`}
               t="Payment Providers Integration"
               d="Add any payment provider you need"
               onClick={() => this.setState({ activeFeatureImage: 'payment' })}
@@ -361,6 +392,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <FeatureButton
               i={require('../../static/elearning-platform/feature-skill.png')}
+              srcSet={`${require('../../static/elearning-platform/feature-skill.png')} 1x, ${require('../../static/elearning-platform/feature-skill@2x.png')} 2x, ${require('../../static/elearning-platform/feature-skill@3x.png')} 3x`}
               t="Skill-Based Learning System"
               d="Configure learning programms based on skills"
               onClick={() => this.setState({ activeFeatureImage: 'skill' })}
@@ -368,6 +400,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <FeatureButton
               i={require('../../static/elearning-platform/feature-rating.png')}
+              srcSet={`${require('../../static/elearning-platform/feature-rating.png')} 1x, ${require('../../static/elearning-platform/feature-rating@2x.png')} 2x, ${require('../../static/elearning-platform/feature-rating@3x.png')} 3x`}
               t="Rating System"
               d="Choose the learning programm and see how skils grow"
               onClick={() => this.setState({ activeFeatureImage: 'rating' })}
@@ -375,6 +408,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <FeatureButton
               i={require('../../static/elearning-platform/feature-ecosystem.png')}
+              srcSet={`${require('../../static/elearning-platform/feature-ecosystem.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem@3x.png')} 3x`}
               t="Ecosystem integration"
               d="Connect the LMS to your existing tools and systems"
               onClick={() => this.setState({ activeFeatureImage: 'ecosystem' })}

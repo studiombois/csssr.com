@@ -40,7 +40,7 @@ const base = css`
     }
     
     .modules {
-        margin-top: 260px;
+        margin-top: 150px;
     }
 
     .modules-heading {
@@ -56,7 +56,7 @@ const base = css`
 
     .module-image-right {
         grid-column: 7 / span 4;
-        margin-top: 40px;
+        margin-top: 120px;
     }
 
     .module-image img {
@@ -73,6 +73,7 @@ const base = css`
     }
 
     .module-title-left {
+        margin-top: 160px;
         grid-column: 3 / span 4;
     }
 
@@ -89,7 +90,7 @@ const base = css`
     }
 
     .subdescription-first {
-        margin-top: 40px;
+        margin-top: 0px;
     }
 
     .subdescription-next {
@@ -106,26 +107,41 @@ const base = css`
         margin-bottom: 70px;
     }
 
-    .features-list-left {
-        grid-column: 2 / span 3;
+    .features-lines {
+        grid-column: 1 / span 2;
     }
 
-    .features-list-center {
-        grid-column: 6 / span 2;
+    .features-lines img {
+        max-width: 100%;
+        height: auto;
     }
 
-    .features-list-right {
-        grid-column: 9 / span 3;
+    .features-line-management {
+        margin-top: 20px;
+    }
+
+    .features-line-administration,
+    .features-line-learning {
+        margin-top: 80px;
+    }
+
+    .features-description {
+        grid-column: 4 / span 3;
+    }
+
+    .features-description-second,
+    .features-description-third {
+        margin-top: 72px;
+    }
+
+    .features-list-second,
+    .features-list-third {
+        margin-top: 72px;
     }
 
     .features-list {
-        margin-top: 24px;
-    }
-
-    .features-list li {
-        padding-left: 10px;
-        margin-left: -10px;
-        list-style-image: url(../../static/elearning-platform/icons/bullet.svg);
+        /* margin-top: 24px; */
+        grid-column: 8 / span 3;
     }
 
     .features-list li:not(:first-child) {
@@ -276,13 +292,21 @@ const base = css`
     }
 
     .advanced-feature-buttons {
-        margin-top: 150px;
+        
         position: relative;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
 
+    .advanced-feature-buttons > div {
+        margin-top: 150px;
+        transition: all 0.1s ease-out;
+    }
+
+    .advanced-feature-buttons > div:hover {
+        margin-top: 130px;
     }
 
     @media screen and (max-width: 1492px) {
@@ -416,7 +440,7 @@ const fonts = css`
 
     .font-p-4 {
         font-family: 'Roboto', sans-serif;
-        font-weight: 300;
+        font-weight: 600;
         font-size: 16px;
         line-height: 24px;
         color: #000000;

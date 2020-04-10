@@ -13,7 +13,7 @@ import PictureForAllResolutions from '../../../../ui-kit/PictureForAllResolution
 import unescapeHtmlEntities from '../../../../../utils/unescapeHtmlEntities'
 
 const Item = ({ className, t, lng, id, link, images }) => (
-  <div as="article" className={className}>
+  <div className={className}>
     <PictureForAllResolutions
       className="picture"
       images={images}

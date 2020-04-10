@@ -47,7 +47,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .beneficiary {
-      grid-template-rows: 64px auto;
+      grid-template-rows: max-content auto;
     }
 
     .benefits {
@@ -288,7 +288,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.all} {
     .beneficiary {
-      -ms-grid-rows: 64px auto;
+      -ms-grid-rows: auto auto;
     }
   }
 

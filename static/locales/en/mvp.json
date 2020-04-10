@@ -70,6 +70,27 @@
       }]
     ]
   },
+  "process": {
+    "title": "Process",
+    "stages": {
+      "start": {
+        "title": "Start",
+        "description": "Provide&nbsp;us with your design layouts and other required information."
+      },
+      "development": {
+        "title": "Development",
+        "description": [
+          "We&nbsp;help you choose the most suitable ",
+          ", assemble a&nbsp;team and start bringing your ideas to&nbsp;life."
+        ],
+        "link": "technology stack"
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "You collect feedback and determine the next steps."
+      }
+    }
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",
@@ -88,6 +109,7 @@
     "ourAdvantages": [
       ["Two men running in a race", "People performing acrobatic etudes with frontend technologies"],
       ["Recursion of a man looking for something in a magnifying glass", "The frontend atlas, who has everything under control"]
-    ]
+    ],
+    "process": "Solar system"
   }
 }

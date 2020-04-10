@@ -199,7 +199,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .beneficiary {
-      grid-template-rows: ${calcRem(32)} auto;
+      grid-template-rows: max-content auto;
     }
 
     .beneficiary::before {
@@ -380,7 +380,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .beneficiary {
-      -ms-grid-rows: ${calcRem(32)} auto;
+      -ms-grid-rows: auto auto;
     }
 
     .beneficiary .title,

@@ -14,4 +14,5 @@ export default [
   'express',
   'wayOfWork',
   'covid19',
+  'eLearningPlatform',
 ]

@@ -114,12 +114,12 @@ const Header = ({
             dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
           />
         ) : (
-          <Button
-            onClick={handleButtonClick}
-            className="button_action"
-            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
-          />
-        ))}
+            <Button
+              onClick={handleButtonClick}
+              className="button_action"
+              dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+            />
+          ))}
     </Fragment>
   )
 
@@ -130,7 +130,11 @@ const Header = ({
         invisible: !isHeaderVisible,
       })}
     >
-      {lng === 'en' && pathname !== '/en/covid-19' && <Covid19Popup invisible={!isHeaderVisible} />}
+      {lng === 'en' &&
+        pathname !== '/en/covid-19' &&
+        pathname !== '/en/products/e-learning-platform' && (
+          <Covid19Popup invisible={!isHeaderVisible} />
+        )}
 
       <NextLink href={`/${lng}`}>
         <a className="logo-wrapper">
@@ -154,8 +158,8 @@ const Header = ({
           </div>
         </Fragment>
       ) : (
-        <CommonHeaderContent />
-      )}
+          <CommonHeaderContent />
+        )}
 
       {typeof window !== 'undefined' &&
         isContactModalVisible &&

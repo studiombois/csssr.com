@@ -184,28 +184,93 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 const ie11Styles = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   ${desktop.all} {
+    h2.title {
+      -ms-grid-column: ${getGridValueForMs(6)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+    }
   }
 
   ${desktop.l} {
-    & > .title {
-      -ms-grid-column: ${getGridValueForMs(3)};
+    .stage {
       -ms-grid-column-span: ${getGridValueForMs(3)};
+    }
+
+    .stage_development {
+      -ms-grid-column: ${getGridValueForMs(7)};
+    }
+
+    .stage_start,
+    .stage_launch {
+      -ms-grid-column: ${getGridValueForMs(6)};
     }
   }
 
   ${desktop.m} {
+    .stage {
+      -ms-grid-column-span: ${getGridValueForMs(3)};
+    }
 
+    .stage_start {
+      -ms-grid-column: ${getGridValueForMs(7)};
+    }
+
+    .stage_development {
+      -ms-grid-column: ${getGridValueForMs(9)};
+    }
+
+    .stage_launch {
+      -ms-grid-column: ${getGridValueForMs(8)};
+    }
   }
 
   ${desktop.s} {
+    .stage {
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+    }
 
+    .stage_start {
+      -ms-grid-column: ${getGridValueForMs(6)};
+    }
+
+    .stage_development {
+      -ms-grid-column: ${getGridValueForMs(8)};
+    }
+
+    .stage_launch {
+      -ms-grid-column: ${getGridValueForMs(7)};
+    }
   }
 
   ${tablet.all} {
+    h2.title {
+      -ms-grid-column: ${getGridValueForMs(6)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+    }
 
+    .stage {
+      -ms-grid-column-span: ${getGridValueForMs(3)};
+    }
+
+    .stage_start {
+      -ms-grid-column: ${getGridValueForMs(6)};
+    }
+
+    .stage_development {
+      -ms-grid-column: ${getGridValueForMs(8)};
+    }
+
+    .stage_launch {
+      -ms-grid-column: ${getGridValueForMs(6)};
+    }
   }
 
   ${mobile.all} {
+
+    .stage,
+    h2.title {
+      -ms-grid-column: ${getGridValueForMs(3)};
+      -ms-grid-column-span: ${getGridValueForMs(4)};
+    }
   }
 `;
 

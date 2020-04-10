@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
+import calcRem from '../../../../../utils/style/calcRem'
 
-const base = ({ activeIndex }) => css`
+const base = ({ breakpoints: { tablet }, activeIndex}) => css`
   & {
     position: relative;
     display: inline-flex;
@@ -38,8 +39,20 @@ const base = ({ activeIndex }) => css`
     cursor: pointer;
     background: none;
   }
+
+  ${tablet.all} {
+    button {
+      padding-left: ${calcRem(10)};
+      padding-right: ${calcRem(10)};
+    }
+  }
 `
 
-export default props => css`
-  ${base(props)}
-`
+export default props =>  {
+  const breakpoints = props.theme.breakpoints
+  const activeIndex = props.activeIndex
+
+  return css`
+    ${base({ breakpoints, activeIndex })}
+  `
+}

@@ -31,7 +31,7 @@ const Item = ({ className, t, lng, id, link, images }) => (
       }}
     />
 
-    {link === '/en/service/express-front-end' && lng === 'en' ? (
+    {link && link === '/en/service/express-front-end' && lng === 'en' ? (
       <Text className="description" as="p" type="strong" size="m">
         {unescapeHtmlEntities(
           t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.description.0`),
@@ -65,7 +65,7 @@ const Item = ({ className, t, lng, id, link, images }) => (
           }}
         />
 
-        {link === '/en/service/express-front-end' && lng === 'ru' ? null : (
+        {!link || link === '/en/service/express-front-end' && lng === 'ru' ? null : (
           <Link
             className="link"
             href={`/${lng}/${link}`}

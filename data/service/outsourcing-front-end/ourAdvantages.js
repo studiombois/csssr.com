@@ -29,7 +29,7 @@ export default [
         'desktop.all': { png: advantage_two_desktop_all, webp: advantage_two_webp_desktop_all },
         'mobile.all': { png: advantage_two_mobile_all, webp: advantage_two_webp_mobile_all },
       },
-      link: 'about-us',
+      // link: 'about-us',
     },
     {
       images: {

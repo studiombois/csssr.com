@@ -15,6 +15,40 @@
     "descriptionOn": "An&nbsp;MVP based approach allows you to&nbsp;quickly validate your business idea, get real feedback, and build a&nbsp;roadmap for the final product.",
     "descriptionOff": "Attempting to&nbsp;build a&nbsp;fully finished product from scratch, can make determining its true value and performance difficult and risks losing time, money, and even your reputation."
   },
+  "benefits": {
+    "title": "It&nbsp;is&nbsp;generally good practice to&nbsp;launch products first as&nbsp;MVPs, while&nbsp;in&nbsp;some situations it&nbsp;is&nbsp;absolutely essential.",
+    "startups": {
+      "title": "Startups",
+      "description": "For those who at&nbsp;the beginning of&nbsp;their journeys.",
+      "benefits": [
+        "Test the viability of&nbsp;the idea",
+        "Engage with potential customers",
+        "Do&nbsp;so&nbsp;with minimal effort, while not sacrificing quality "
+      ]
+    },
+    "investors": {
+      "title": "Pitch Investors",
+      "description": "Prove that your product is&nbsp;worthy of&nbsp;funding.",
+      "benefits": [
+        "Build a&nbsp;real, functioning product",
+        "Show investors initial feedback and customer demand",
+        "Continue with the same team after raising funds"
+      ]
+    },
+    "newFeatures": {
+      "title": "New Features",
+      "description": "When it&rsquo;s time to&nbsp;explore new possibilities for an&nbsp;existing product.",
+      "benefits": [
+        "Launch new functions faster than competitors",
+        "Get customer feedback and collect data",
+        "Understand what to&nbsp;develop further"
+      ]
+    },
+    "paragraph": [
+      "Regardless of&nbsp;the project&rsquo;s goals, the speed and quality of&nbsp;the MVP launch play a&nbsp;crucial role in&nbsp;the future of&nbsp;the project.",
+      "<span style=\"font-style: italic; font-weight: 900; font-family: 'Roboto', 'Arial', sans-serif;\">Outsourced development</span> by&nbsp;a&nbsp;team of&nbsp;professionals is&nbsp;the best solution."
+    ]
+  },
   "form": {
     "title": "Get in Touch",
     "namePlaceholder": "Tim Berners-Lee",

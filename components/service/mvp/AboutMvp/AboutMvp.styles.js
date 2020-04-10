@@ -175,6 +175,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture-wrapper_with_bg {
       background-image: url(${require('../../../../static/icons/service/mvp/mobile.all/waves.svg').default});
+      background-size: contain;
       background-position-x: 50%;
       background-position-y: ${calcRem(25)};
       background-repeat: repeat no-repeat;

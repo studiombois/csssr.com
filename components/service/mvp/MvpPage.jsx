@@ -6,7 +6,7 @@ import AboutMvp from './AboutMvp'
 import Benefits from './Benefits'
 import OurAdvantages from './OurAdvantages'
 import Process from './Process'
-// import Form from './Form'
+import Form from './Form'
 
 import translate from '../../../utils/translate-wrapper'
 
@@ -19,7 +19,7 @@ const MvpDevelopmentPage = ({ t }) => (
     <Benefits />
     <OurAdvantages />
     <Process />
-    {/* <Form pageName={pageName} /> */}
+    <Form pageName={pageName} />
   </Layout>
 )
 

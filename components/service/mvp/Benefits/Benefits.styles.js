@@ -17,6 +17,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     display: block;
     height: ${calcRem(40)};
     width: ${calcRem(336)};
+    background-repeat: no-repeat;
+    background-position: 50%;
   }
 
   .beneficiary:nth-of-type(1)::before {

@@ -30,6 +30,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       top: -118px;
       left: calc(50% - 2025px);
+      width: 2008px;
     }
 
     .stage {
@@ -42,7 +43,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .stage_development {
       margin-top: 285px;
-      grid-column-start: 7
+      grid-column-start: 7;
     }
 
     .stage_launch {
@@ -51,7 +52,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .stage_start,
     .stage_launch {
-      grid-column-start: 6
+      grid-column-start: 6;
     }
   }
 
@@ -64,6 +65,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       top: -64px;
       left: calc(50% - 1610px);
+      width: 1714px;
     }
 
     .stage {
@@ -72,17 +74,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .stage_start {
       margin-top: 91px;
-      grid-column-start: 7
+      grid-column-start: 7;
     }
 
     .stage_development {
       margin-top: 208px;
-      grid-column-start: 9
+      grid-column-start: 9;
     }
 
     .stage_launch {
       margin-top: 280px;
-      grid-column-start: 8
+      grid-column-start: 8;
     }
   }
 
@@ -95,6 +97,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       top: -60px;
       left: calc(50% - 1619px);
+      width: 1612px;
     }
 
     .stage {
@@ -103,17 +106,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .stage_start {
       margin-top: 103px;
-      grid-column-start: 6
+      grid-column-start: 6;
     }
 
     .stage_development {
       margin-top: 264px;
-      grid-column-start: 8
+      grid-column-start: 8;
     }
 
     .stage_launch {
       margin-top: 240px;
-      grid-column-start: 7
+      grid-column-start: 7;
     }
   }
 
@@ -130,6 +133,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       top: -150px;
       left: calc(50% - 1397px);
+      width: ${calcRem(1486)};
     }
 
     .stage {
@@ -137,18 +141,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .stage_start {
-      margin-top:  ${calcRem(90)};
-      grid-column-start: 6
+      margin-top: ${calcRem(90)};
+      grid-column-start: 6;
     }
 
     .stage_development {
       margin-top:  ${calcRem(210)};
-      grid-column-start: 8
+      grid-column-start: 8;
     }
 
     .stage_launch {
       margin-top: ${calcRem(258)};
-      grid-column-start: 6
+      grid-column-start: 6;
     }
   }
 
@@ -161,6 +165,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       top: ${calcRem(10)};
       left: 0;
+      width: ${calcRem(120)};
     }
 
     .stage,

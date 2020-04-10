@@ -46,7 +46,7 @@ export default [
         'desktop.all': { png: advantage_four_desktop_all, webp: advantage_four_webp_desktop_all },
         'mobile.all': { png: advantage_four_mobile_all, webp: advantage_four_webp_mobile_all },
       },
-      link: 'how-we-work',
+      link: 'way-of-work',
     },
   ],
 ]

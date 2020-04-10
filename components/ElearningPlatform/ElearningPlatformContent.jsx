@@ -331,15 +331,15 @@ class ElearningPlatformContent extends PureComponent {
                     </div>
                 </div>
 
-                <div className="features">
+                <div className="advanced-features">
                     <div className="grid">
-                        <h3 className="font-heading-5 features-title">Advanced Feature Ideas</h3>
+                        <h3 className="font-heading-5 advanced-features-title">Advanced Feature Ideas</h3>
 
-                        <div className="feature-image">
+                        <div className="advanced-feature-image">
                             <img src={featureImages[this.state.activeFeatureImage].src} alt="Feature" />
                         </div>
 
-                        <div className="feature-description">
+                        <div className="advanced-feature-description">
                             <h4 className="font-heading-4">
                                 {featureImages[this.state.activeFeatureImage].heading}
                             </h4>
@@ -347,7 +347,7 @@ class ElearningPlatformContent extends PureComponent {
                         </div>
 
                     </div>
-                    <div className="feature-buttons">
+                    <div className="advanced-feature-buttons">
                         <FeatureButton
                             i={require('../../static/elearning-platform/feature-payment.png')}
                             t="Payment Providers Integration"

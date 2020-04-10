@@ -243,39 +243,39 @@ const base = css`
         height: auto;
     }
 
-    .features {
+    .advanced-features {
         margin-top: 80px;
         padding-top: 80px;
         padding-bottom: 80px;
         background-color: #EEf0f6;
     }
 
-    .features-title {
+    .advanced-features-title {
         grid-column: 2 / span 4;
     }
 
-    .feature-image {
+    .advanced-feature-image {
         margin-top: 90px;
         grid-column: 2 / span 5;
         /* grid-row: 2; */
     }
 
-    .feature-image img {
+    .advanced-feature-image img {
         max-width: 100%;
         height: auto;
     }
 
-    .feature-description {
+    .advanced-feature-description {
         margin-top: 125px;
         grid-column: 7 / span 5;
         /* grid-row: 2; */
     }
 
-    .feature-description p {
+    .advanced-feature-description p {
         margin-top: 24px;
     }
 
-    .feature-buttons {
+    .advanced-feature-buttons {
         margin-top: 150px;
         position: relative;
         display: flex;

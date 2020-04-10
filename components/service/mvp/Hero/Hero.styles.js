@@ -117,6 +117,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${mobile.all} {
+    & {
+      overflow: hidden;
+    }
+
     .title {
       margin-top: ${calcRem(196)};
     }
@@ -137,7 +141,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       top: ${calcRem(26)};
-      right: ${calcRem(-22)};
+      right: ${calcRem(-6)};
       width: ${calcRem(126)};
     }
   }

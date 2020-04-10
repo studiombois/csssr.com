@@ -18,39 +18,41 @@ import hero_mobile from '../../../../static/images/service/mvp/mobile.all/hero.p
 import hero_mobile_webp from '../../../../static/images/service/mvp/mobile.all/hero.png?responsive_and_webp'
 
 const Hero = ({ className, t }) => (
-  <Grid as="article" className={className}>
-    <Heading
-      className="title"
-      as="h1"
-      dangerouslySetInnerHTML={{ __html: t('mvp:hero.title') }}
-      type="slab"
-      size="l"
-    />
+  <article className={className}>
+    <Grid as="div">
+      <Heading
+        className="title"
+        as="h1"
+        dangerouslySetInnerHTML={{ __html: t('mvp:hero.title') }}
+        type="slab"
+        size="l"
+      />
 
-    <Text
-      className="description"
-      as="p"
-      type="strong"
-      size="m"
-      dangerouslySetInnerHTML={{ __html: t('mvp:hero.description') }}
-    />
+      <Text
+        className="description"
+        as="p"
+        type="strong"
+        size="m"
+        dangerouslySetInnerHTML={{ __html: t('mvp:hero.description') }}
+      />
 
-    <ContactButton
-      className="button"
-      pageName="outsourcingFrontEnd"
-      dangerouslySetInnerHTML={{ __html: t('mvp:hero.button') }}
-    />
+      <ContactButton
+        className="button"
+        pageName="outsourcingFrontEnd"
+        dangerouslySetInnerHTML={{ __html: t('mvp:hero.button') }}
+      />
 
-    <PictureForAllResolutions
-      className="picture"
-      images={{
-        'desktop.all': { png: hero_desktop, webp: hero_desktop_webp },
-        'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
-      }}
-      fallback={hero_desktop}
-      alt={t('mvp:imageAlt.hero')}
-    />
-  </Grid>
+      <PictureForAllResolutions
+        className="picture"
+        images={{
+          'desktop.all': { png: hero_desktop, webp: hero_desktop_webp },
+          'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
+        }}
+        fallback={hero_desktop}
+        alt={t('mvp:imageAlt.hero')}
+      />
+    </Grid>
+  </article>
 )
 
 Hero.propTypes = {

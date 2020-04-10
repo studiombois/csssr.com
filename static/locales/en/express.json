@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Express Front-end",
+    "title": "Express Web Development",
     "description": "If you need to build a solid, reliable HTML-layout for a website or e-mail newsletter based on your design, you came to the right place."
   },
   "greeting": {
-    "title": "<strong>Express</strong> <br /> Front-end",
+    "title": "<strong>Express</strong> <br /> Web Development",
     "description": "If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable<br /> HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
     "button": "Get a quote"
   },

@@ -241,10 +241,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .nav_services {
-      // .nav-item_active .icon {
-      //   fill: #5695ED;
-      // }
-
       .nav-item_active .icon path {
         stroke: #5695ED;
       }

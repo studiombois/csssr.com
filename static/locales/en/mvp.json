@@ -8,15 +8,12 @@
     "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;intended to&nbsp;help guide its future development.",
     "button": "Start Your Project"
   },
-  "riskMinimization": {
+  "aboutMvp": {
     "togglerOn": "With MVP",
     "togglerOff": "Without MVP",
-    "imageAltOn": "Development process with MVP",
-    "imageAltOff": "Development process without MVP",
-    "title": "Risk Minimization",
-    "textOn": "Simple and robust product in-hand that’s easy to modify and improve later.",
-    "textOff": "Wasted time and resources developing a product, without knowing if it brings value to users.",
-    "imageAltWaves": "Curves symbolizing the MVP development process"
+    "title": "About MVP",
+    "descriptionOn": "An&nbsp;MVP based approach allows you to&nbsp;quickly validate your business idea, get real feedback, and build a&nbsp;roadmap for the final product.",
+    "descriptionOff": "Attempting to&nbsp;build a&nbsp;fully finished product from scratch, can make determining its true value and performance difficult and risks losing time, money, and even your reputation."
   },
   "form": {
     "title": "Get in Touch",
@@ -29,5 +26,9 @@
     "messagePlaceholder": "How can we help?",
     "messageLabel": "How can we help?",
     "submitText": "Submit"
+  },
+  "imageAlt": {
+    "mvpOn": "Development process with MVP",
+    "mvpOff": "Development process without MVP"
   }
 }

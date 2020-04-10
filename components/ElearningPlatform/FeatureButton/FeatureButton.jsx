@@ -7,16 +7,16 @@ import cn from 'classnames'
 import styles from './FeatureButton.styles'
 
 const FeatureButton = ({ className, t, d, i, onClick }) => {
-    return (
-        <div className={className} onClick={onClick}>
-            <img src={i} alt="image" />
+  return (
+    <div className={className} onClick={onClick}>
+      <img src={i} alt="image" />
 
-            <div className="wrapper">
-                <p className="font-p-4 title">{t}</p>
-                <p className="font-p-2">{d}</p>
-            </div>
-        </div>
-    )
+      <div className="wrapper">
+        <p className="font-p-4 title">{t}</p>
+        <p className="font-p-2">{d}</p>
+      </div>
+    </div>
+  )
 }
 
 export default styled(FeatureButton)`

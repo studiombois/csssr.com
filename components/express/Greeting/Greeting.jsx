@@ -4,21 +4,44 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'
 
-import Wrapper from '../Wrapper'
+import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
-import SubHeading from '../../ui-kit/core-design/SubHeading'
+import Text from '../../ui-kit/core-design/Text'
 import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
-import PlanetSvg from '../../../static/images/express/planet-animation/hire-planets-and-satellites.svg'
+import { ReactComponent as PlanetMobileSvg } from '../../../static/images/express/planet-animation/orbits-mobile.svg?original'
+import { ReactComponent as PlanetDesktopSvg } from '../../../static/images/express/planet-animation/orbits-desktop.svg?original'
 import greetingImagesData from '../../../data/express/greeting'
 
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Greeting = ({ isMsBrowser, className, t }) => (
-  <article className={className}>
-    <Wrapper>
+const Greeting = ({ isMsBrowser, isMobile, className, t }) => {
+  const PlanetSvg = isMobile ? PlanetMobileSvg : PlanetDesktopSvg
+  return (
+    <Grid as="article" className={className}>
+      <div
+        className={cn('svg-animation', 'svg-animation-wrapper', {
+          'ms-style': isMsBrowser,
+        })}
+      >
+        <PictureForAllResolutions
+          className="rocket"
+          images={greetingImagesData.images}
+          fallback={greetingImagesData.images['desktop.l']}
+          alt={t('express:imgAlt.rocket')}
+        />
+
+        <PlanetSvg
+          className={cn('svg-animation-orbit', {
+            'svg-animation_visible': !isMsBrowser,
+            'svg-animation_invisible': isMsBrowser,
+          })}
+        />
+      </div>
+
       <Heading
         as="h1"
         className="heading"
@@ -27,9 +50,10 @@ const Greeting = ({ isMsBrowser, className, t }) => (
         dangerouslySetInnerHTML={{ __html: t('express:greeting.title') }}
       />
 
-      <SubHeading
+      <Text
         className="subheading"
-        type="regular"
+        type="strong"
+        size="m"
         dangerouslySetInnerHTML={{ __html: t('express:greeting.description') }}
       />
 
@@ -39,38 +63,21 @@ const Greeting = ({ isMsBrowser, className, t }) => (
         href="#calculator"
         dangerouslySetInnerHTML={{ __html: t('express:greeting.button') }}
       />
-    </Wrapper>
-
-    <div
-      className={cn('svg-animation', 'svg-animation-wrapper', {
-        'ms-style': isMsBrowser,
-      })}
-    >
-      <PictureForAllResolutions
-        className="rocket"
-        images={greetingImagesData.images}
-        fallback={greetingImagesData.images['desktop.l']}
-        alt={t('express:imgAlt.rocket')}
-      />
-
-      <PlanetSvg
-        className={cn('svg-animation', {
-          'svg-animation_visible': !isMsBrowser,
-          'svg-animation_invisible': isMsBrowser,
-        })}
-      />
-    </div>
-  </article>
-)
+    </Grid>
+  )
+}
 
 Greeting.propTypes = {
   className: string,
   isMsBrowser: bool,
+  isMobile: bool,
   t: func,
 }
 
 export default translate(
-  MsBrowserConsumer(styled(Greeting)`
-    ${styles.base}
-  `),
+  DeviceConsumer(
+    MsBrowserConsumer(styled(Greeting)`
+      ${styles}
+    `),
+  ),
 )

@@ -1,187 +1,223 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
+import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-export default {
-  base: props => {
-    const breakpoint = props.theme.breakpoints
+const base = ({breakpoints}) => css`
+  overflow: visible;
 
-    return css`
-      overflow: visible;
+  ${breakpoints.mobile.all} {
+    padding-top: 4.75rem;
+    margin-bottom: 2rem;
+  }
 
-      a {
-        color: #fff;
-      }
+  ${breakpoints.tablet.all} {
+    padding-top: 9.75rem;
+    margin-bottom: 12rem;
+  }
 
-      .heading {
-        position: relative;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 0.8125rem;
-        width: ${calcRem(880)};
+  ${breakpoints.desktop.all} {
+    padding-top: 12rem;
+    margin-bottom: 11rem;
+  }
 
-        &::after {
-          content: '';
-          position: absolute;
-          z-index: -1;
-          top: calc(100% - 26px);
-          left: 240px;
-          display: block;
-          width: 180px;
-          height: 86px;
-          background-color: #ffee1f;
-        }
+  a {
+    color: #fff;
+  }
 
-        ${breakpoint.desktop.m} {
-          width: ${calcRem(656)};
+  .heading {
+    position: relative;
+    margin-top: ${calcRem(120)};
+    grid-row: 1;
 
-          &::after {
-            left: 120px;
-          }
-        }
+    ${breakpoints.desktop.all} {
+      margin-top: ${calcRem(7)};
+      margin-bottom: ${calcRem(53)};
+      grid-column: 2 / span 4;
+    }
 
-        ${breakpoint.desktop.s} {
-          width: ${calcRem(816)};
+    ${breakpoints.tablet.all} {
+      margin-top: ${calcRem(52)};
+      margin-bottom: 1.6875rem;
+      grid-column: 2 / span 4;
+    }
 
-          &::after {
-            left: 210px;
-            width: 192px;
-            height: 80px;
-          }
-        }
+    ${breakpoints.mobile.all} {
+      margin-top: ${calcRem(120)};
+      margin-bottom: ${calcRem(27)};
+      grid-column: 1 / span 6;
+    }
+  }
 
-        ${breakpoint.tablet.all} {
-          margin-bottom: 1.6875rem;
-          width: ${calcRem(464)};
+  .subheading {
+    grid-row: 2;
 
-          &::after {
-            left: ${calcRem(80)};
-            width: ${calcRem(144)};
-            height: ${calcRem(64)};
-          }
-        }
+    ${breakpoints.desktop.all} {
+      grid-column: 2 / span 4;
+      margin-bottom: ${calcRem(60)};
+    }
 
-        ${breakpoint.mobile.all} {
-          margin-bottom: 0.375rem;
-          width: ${calcRem(328)};
+    ${breakpoints.desktop.l} {
+      grid-column: 2 / span 3;
+    }
 
-          &::after {
-            left: 5.625rem;
-            width: 8rem;
-            height: 3.5rem;
-          }
-        }
-      }
+    ${breakpoints.tablet.all} {
+      grid-column: 2 / span 4;
+      margin-bottom: ${calcRem(57)};
+    }
 
-      .subheading {
-        margin: 0 auto;
-        margin-bottom: 1.875rem;
-        width: ${calcRem(1488)};
+    ${breakpoints.mobile.all} {
+      grid-column: 1 / span 6;
+      max-width: ${calcRem(328)};
+      margin-bottom: ${calcRem(49)};
+    }
+  }
 
-        ${breakpoint.desktop.m} {
-          width: ${calcRem(1104)};
-        }
+  .button {
+    grid-row: 3;
+    position: relative;
+    z-index: 1;
 
-        ${breakpoint.desktop.s} {
-          width: ${calcRem(1024)};
-        }
+    ${breakpoints.desktop.all} {
+      grid-column: 2 / span 3;
+      max-width: ${calcRem(320)};
+    }
 
-        ${breakpoint.tablet.all} {
-          width: ${calcRem(764)};
-        }
+    ${breakpoints.tablet.all} {
+      grid-column: 2 / span 4;
+    }
 
-        ${breakpoint.mobile.all} {
-          width: ${calcRem(328)};
-        }
-      }
+    ${breakpoints.mobile.all} {
+      grid-column: 1 / span 6;
+    }
+  }
 
-      .heading,
-      .subheading {
-        text-align: center;
-      }
+  .svg-animation-wrapper {
+    margin-top: ${calcRem(56)};
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: ${calcRem(210)};
+    overflow: hidden;
 
-      .button {
-        position: relative;
-        z-index: 1;
-        max-width: 12.5rem;
-        margin-top: 2.75rem;
-        margin: 0 auto;
-      }
+    ${breakpoints.desktop.all} {
+      height: ${calcRem(550)};
+    }
 
-      .svg-animation-wrapper {
-        position: relative;
-        background-image: url(${require('../../../static/images/express/planet-animation/hire-orbits.svg').default});
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
+    ${breakpoints.desktop.l} {
+      height: ${calcRem(630)};
+    }
 
-        ${breakpoint.mobile.all} {
-          background-position: 50% center;
-          background-position-y: 0px;
-        }
-      }
+    ${breakpoints.tablet.all} {
+      height: ${calcRem(550)};
+    }
+  }
 
-      .ms-style {
-        overflow: hidden !important;
-        ${breakpoint.desktop.all} {
-          height: ${calcRem(568)};
-        }
-        ${breakpoint.tablet.all} {
-          height: ${calcRem(392)};
-        }
-        ${breakpoint.mobile.all} {
-          height: ${calcRem(336)};
-        }
-        .rocket {
-          top: 25% !important;
-        }
-      }
+  .svg-animation {
+    &_visible {
+      display: block;
+    }
 
-      .svg-animation {
-        overflow: visible;
-        &_visible {
-          display: block;
-        }
-        &_invisible {
-          display: none;
-        }
-      }
+    &_invisible {
+      display: none;
+    }
+  }
 
-      .button {
-        margin-bottom: 2.5rem;
-      }
+  .svg-animation-orbit {
+    position: absolute;
 
-      .rocket {
-        position: absolute;
-        left: 50%;
-        top: 29%;
-        display: block;
-        width: 85%;
-        transform: translateX(-50%) translateY(-50%);
-        ${breakpoint.mobile.all} {
-          width: ${calcRem(272)};
-        }
-      }
+    ${breakpoints.desktop.all} {
+      width: ${calcRem(982)};
+      height: ${calcRem(850)};
+    }
 
-      .rocket img {
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-      }
+    ${breakpoints.desktop.l} {
+      top: ${calcRem(-140)};
+      right: -1%;
+    }
 
-      ${breakpoint.mobile.all} {
-        padding-top: 4.75rem;
-        margin-bottom: 2rem;
-      }
+    ${breakpoints.desktop.m} {
+      top: ${calcRem(-218)};
+      right: ${calcRem(-334)};
+    }
 
-      ${breakpoint.tablet.all} {
-        padding-top: 9.75rem;
-        margin-bottom: 2rem;
-      }
+    ${breakpoints.desktop.s} {
+      top: ${calcRem(-218)};
+      right: ${calcRem(-382)};
+    }
 
-      ${breakpoint.desktop.all} {
-        padding-top: 12rem;
-        margin-bottom: 4rem;
-      }
-    `
-  },
+    ${breakpoints.tablet.all} {
+      top: ${calcRem(-219)};
+      right: ${calcRem(-534)};
+      width: ${calcRem(982)};
+      height: ${calcRem(850)};
+    }
+
+    ${breakpoints.mobile.all} {
+      top: ${calcRem(-112)};
+      right: ${calcRem(-213)};
+      width: ${calcRem(390)};
+      height: ${calcRem(338)};
+    }
+
+  }
+
+  .button {
+    margin-bottom: 2.5rem;
+  }
+
+  .rocket {
+    position: absolute;
+    display: block;
+
+    ${breakpoints.desktop.all} {
+      top: 7%;
+      left: 42.5%;
+      width: ${calcRem(376)};
+    }
+
+    ${breakpoints.desktop.l} {
+      transform: translate(2%, 19%);
+    }
+
+    ${breakpoints.tablet.all} {
+      width: ${calcRem(376)};
+      top: 7%;
+      left: 43%;
+    }
+
+    ${breakpoints.mobile.all} {
+      top: 0;
+      left: 36%;
+      width: ${calcRem(146)};
+    }
+  }
+`
+
+const ie11Styles = () => css`
+  .heading {
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(5)};
+    -ms-grid-row: 1;
+  }
+
+  .subheading {
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(4)};
+    -ms-grid-row: 2;
+  }
+
+  .button {
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(4)};
+    -ms-grid-row: 3;
+  }
+`
+export default props => {
+  const breakpoints = props.theme.breakpoints
+
+  return css`
+    ${base({ breakpoints })}
+    ${props.isIe11 && ie11Styles()}
+  `
 }

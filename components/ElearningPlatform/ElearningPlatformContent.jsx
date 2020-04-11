@@ -115,6 +115,14 @@ class ElearningPlatformContent extends PureComponent {
                 alt="Greeting image"
               />
             </div>
+
+            <div className="greeting-image-mobile">
+              <img
+                srcSet={`${require('../../static/elearning-platform/greeting-mob.png')} 1x, ${require('../../static/elearning-platform/greeting-mob@2x.png')} 2x, ${require('../../static/elearning-platform/greeting-mob@3x.png')} 3x`}
+                src={require('../../static/elearning-platform/greeting-mob.png')}
+                alt="Greeting image"
+              />
+            </div>
           </div>
         </div>
 

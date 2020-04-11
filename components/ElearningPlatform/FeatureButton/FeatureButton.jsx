@@ -6,10 +6,11 @@ import cn from 'classnames'
 
 import styles from './FeatureButton.styles'
 
-const FeatureButton = ({ className, t, d, i, srcSet, onClick, clicked }) => {
+const FeatureButton = ({ className, t, d, i, srcSet, onClick, clicked, onMouseOver, onMouseOut, mobileSrcSet, im }) => {
   return (
-    <div className={className} onClick={onClick}>
-      <img src={i} srcSet={srcSet} alt="image" />
+    <div className={className} onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+      <img src={i} srcSet={srcSet} alt="image" className="image"/>
+      <img src={im} srcSet={mobileSrcSet} alt="image" className="mobile-image" />
 
       <div
         className={cn('wrapper', {

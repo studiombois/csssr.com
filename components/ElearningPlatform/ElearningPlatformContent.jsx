@@ -47,28 +47,28 @@ class ElearningPlatformContent extends PureComponent {
         src: require(`../../static/elearning-platform/features-payment-image.png`),
         heading: 'Add any payment provider you like',
         description:
-          'Though we&nbsp;have the most popular providers built-in our system, we&rsquo;re aware that there is&nbsp;no&nbsp;perfect solution that fits all. We&nbsp;can make the module work with any payment provider or&nbsp;a&nbsp;bank, even a&nbsp;cryptocurrency. Whatever you need, as&nbsp;long as&nbsp;it&nbsp;is&nbsp;connected to&nbsp;the Internet.',
+          'Though we have the most popular providers built-in our system, we’re aware that there is no perfect solution that fits all. We can make the module work with any payment provider or a bank, even a cryptocurrency. Whatever you need, as long as it is connected to the Internet.',
       },
       skill: {
         srcSet: `${require(`../../static/elearning-platform/features-skill-image.png`)} 1x, ${require(`../../static/elearning-platform/features-skill-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/features-skill-image@3x.png`)} 3x`,
         src: require(`../../static/elearning-platform/features-skill-image.png`),
-        heading: 'Configure learning programs based on&nbsp;skills',
+        heading: 'Configure learning programs based on skills',
         description:
-          'Our skill-based system could help users to&nbsp;choose or&nbsp;configure the learning program based on&nbsp;skills they want to&nbsp;get or&nbsp;improve. As&nbsp;they make progress the system constantly monitors the way they improve and, taking into account multiple parameters from passed assessments to&nbsp;time and attempts made, indicates how skills are improving.',
+          'Our skill-based system could help users to choose or configure the learning program based on skills they want to get or improve. As they make progress the system constantly monitors the way they improve and, taking into account multiple parameters from passed assessments to time and attempts made, indicates how skills are improving.',
       },
       rating: {
         srcSet: `${require(`../../static/elearning-platform/feature-rating-image.png`)} 1x, ${require(`../../static/elearning-platform/feature-rating-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/feature-rating-image@3x.png`)} 3x`,
         src: require(`../../static/elearning-platform/feature-rating-image.png`),
-        heading: 'Choose a&nbsp;learning program and see how your skills grow',
+        heading: 'Choose a learning program and see how your skills grow',
         description:
-          'Most students want not just to&nbsp;complete tasks but to&nbsp;monitor their KPIs and find out how well they are doing as&nbsp;compared to&nbsp;the other ones. For that purpose we&nbsp;can develop a&nbsp;Rating System module. It&nbsp;could be&nbsp;a&nbsp;highly configurable system making your educational platform more competitive and more focused on&nbsp;individual advancement.',
+          'Most students want not just to complete tasks but to monitor their KPIs and find out how well they are doing as compared to the other ones. For that purpose we can develop a Rating System module. It could be a highly configurable system making your educational platform more competitive and more focused on individual advancement.',
       },
       ecosystem: {
         srcSet: `${require(`../../static/elearning-platform/feature-ecosystem-image.png`)} 1x, ${require(`../../static/elearning-platform/feature-ecosystem-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/feature-ecosystem-image@3x.png`)} 3x`,
         src: require(`../../static/elearning-platform/feature-ecosystem-image.png`),
-        heading: 'Connect the LMS to&nbsp;your existing tools and systems',
+        heading: 'Connect the LMS to your existing tools and systems',
         description:
-          'Each business is&nbsp;unique so&nbsp;we&rsquo;ve developed a&nbsp;platform that can be&nbsp;easily integrated with other products in&nbsp;your ecosystem. It&nbsp;could be&nbsp;anything from a&nbsp;communication hub, like Slack, to&nbsp;a&nbsp;learning platform to&nbsp;be&nbsp;integrated in&nbsp;your own product.',
+          'Each business is unique so we’ve developed a platform that can be easily integrated with other products in your ecosystem. It could be anything from a communication hub, like Slack, to a learning platform to be integrated in your own product.',
       },
     }
 
@@ -162,7 +162,7 @@ class ElearningPlatformContent extends PureComponent {
               />
             </div>
 
-            <p className="font-p-2 module-subdescription-left subdescription-first">
+            <p className="font-p-2 module-subdescription-left subdescription-first subdescription-first-tablet">
               Boost users motivation up&nbsp;with an&nbsp;achievements and rewards system.
               It&nbsp;could be&nbsp;customized to&nbsp;any level you want from a&nbsp;basic one
               to&nbsp;an&nbsp;advanced RPG like integrated with skill-system, quests and bonuses.
@@ -265,7 +265,7 @@ class ElearningPlatformContent extends PureComponent {
             <div className="design-content">
               <h2 className="font-heading-2 design-title">Custom Design</h2>
 
-              <p className="font-p-2 design-desription">
+              <p className="font-p-2 design-desription design-desription-second-first">
                 We&nbsp;have a&nbsp;design team that will customize LMS to&nbsp;match your brand
                 identity.
               </p>
@@ -333,25 +333,18 @@ class ElearningPlatformContent extends PureComponent {
           <div className="grid">
             <p className="font-p-1 team-subheading">Add anything you need with our</p>
             <h2 className="font-heading-1 team-title">Agile Development Team</h2>
-          </div>
-
-          <div className="team-image">
-            <img
-              srcSet={`${require('../../static/elearning-platform/team.png')} 1x, ${require('../../static/elearning-platform/team@2x.png')} 2x, ${require('../../static/elearning-platform/team@3x.png')} 3x`}
-              src={require('../../static/elearning-platform/team.png')}
-              alt="team"
-            />
-          </div>
-
-          <div className="grid">
-            <p className="font-p-4 team-description">
+            <div className="team-image">
+              <img
+                srcSet={`${require('../../static/elearning-platform/team.png')} 1x, ${require('../../static/elearning-platform/team@2x.png')} 2x, ${require('../../static/elearning-platform/team@3x.png')} 3x`}
+                src={require('../../static/elearning-platform/team.png')}
+                alt="team"
+              />
+            </div>
+            <p className="font-p-2 team-description">
               We&rsquo;ll provide you with a&nbsp;development team based on&nbsp;desired
-              functionality and timeline of&nbsp;the project.
-              <br />
-              <br />
-              During the years we&rsquo;ve established impeccable internal processes (link
-              processes). Our developers work with modern technologies (link tech stack)
-              to&nbsp;achieve excellent results.
+              functionality and timeline of&nbsp;the project. During the years we&rsquo;ve
+              established impeccable internal processes (link processes). Our developers work with
+              modern technologies (link tech stack) to&nbsp;achieve excellent results.
             </p>
 
             <div className="team-specialists">
@@ -375,8 +368,11 @@ class ElearningPlatformContent extends PureComponent {
             <h3 className="font-heading-5 advanced-features-title">Advanced Feature Ideas</h3>
 
             <div className="advanced-feature-image">
-              <img srcSet={featureImages[this.state.activeFeatureImage].srcSet}
-                    src={featureImages[this.state.activeFeatureImage].src} alt="Feature" />
+              <img
+                srcSet={featureImages[this.state.activeFeatureImage].srcSet}
+                src={featureImages[this.state.activeFeatureImage].src}
+                alt="Feature"
+              />
             </div>
 
             <div className="advanced-feature-description">
@@ -389,34 +385,46 @@ class ElearningPlatformContent extends PureComponent {
           <div className="advanced-feature-buttons">
             <FeatureButton
               i={require('../../static/elearning-platform/feature-payment.png')}
+              im={require('../../static/elearning-platform/feature-payment-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-payment.png')} 1x, ${require('../../static/elearning-platform/feature-payment@2x.png')} 2x, ${require('../../static/elearning-platform/feature-payment@3x.png')} 3x`}
+              mobileSrcSet={`${require('../../static/elearning-platform/feature-payment-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-payment-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-payment-mobile@3x.png')} 3x`}
               t="Payment Providers Integration"
               d="Add any payment provider you need"
-              onClick={() => this.setState({ activeFeatureImage: 'payment' })}
+              onMouseOver={() => this.setState({ activeFeatureImage: 'payment' })}
+              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
             />
 
             <FeatureButton
               i={require('../../static/elearning-platform/feature-skill.png')}
+              im={require('../../static/elearning-platform/feature-skill-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-skill.png')} 1x, ${require('../../static/elearning-platform/feature-skill@2x.png')} 2x, ${require('../../static/elearning-platform/feature-skill@3x.png')} 3x`}
+              mobileSrcSet={`${require('../../static/elearning-platform/feature-skill-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-skill-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-skill-mobile@3x.png')} 3x`}
               t="Skill-Based Learning System"
               d="Configure learning programms based on skills"
-              onClick={() => this.setState({ activeFeatureImage: 'skill' })}
+              onMouseOver={() => this.setState({ activeFeatureImage: 'skill' })}
+              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
             />
 
             <FeatureButton
               i={require('../../static/elearning-platform/feature-rating.png')}
+              im={require('../../static/elearning-platform/feature-rating-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-rating.png')} 1x, ${require('../../static/elearning-platform/feature-rating@2x.png')} 2x, ${require('../../static/elearning-platform/feature-rating@3x.png')} 3x`}
+              mobileSrcSet={`${require('../../static/elearning-platform/feature-rating-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-rating-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-rating-mobile@3x.png')} 3x`}
               t="Rating System"
               d="Choose the learning programm and see how skils grow"
-              onClick={() => this.setState({ activeFeatureImage: 'rating' })}
+              onMouseOver={() => this.setState({ activeFeatureImage: 'rating' })}
+              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
             />
 
             <FeatureButton
               i={require('../../static/elearning-platform/feature-ecosystem.png')}
+              im={require('../../static/elearning-platform/feature-ecosystem-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-ecosystem.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem@3x.png')} 3x`}
+              mobileSrcSet={`${require('../../static/elearning-platform/feature-ecosystem-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@3x.png')} 3x`}
               t="Ecosystem integration"
               d="Connect the LMS to your existing tools and systems"
-              onClick={() => this.setState({ activeFeatureImage: 'ecosystem' })}
+              onMouseOver={() => this.setState({ activeFeatureImage: 'ecosystem' })}
+              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
             />
           </div>
         </div>

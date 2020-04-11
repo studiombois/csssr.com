@@ -3,7 +3,6 @@ import { css } from '@emotion/core'
 const base = css`
 
     &{
-        /* position: absolute; */
         width: 292px;
     }
 
@@ -11,11 +10,14 @@ const base = css`
       white-space: nowrap;
     }
 
-    img {
+    .image {
         margin-bottom: -30px;
         display: block;
     }
 
+    .mobile-image {
+        display: none;
+    }
 
     .wrapper {
         background-color: #ffffff;
@@ -30,6 +32,10 @@ const base = css`
 
     &:hover .wrapper {
         box-shadow: 0px 25px 50px rgba(78, 81, 144, 0.07), 0px 4px 7px rgba(78, 81, 144, 0.4);
+        
+    }
+
+    .wrapper-active {
         border: 1px solid #3B95FF;
     }
 
@@ -54,9 +60,6 @@ const base = css`
     }
 
 
-
-
-
     @media screen and (max-width: 944px) {
         .font-p-2 {
             font-size: 0.875rem;
@@ -65,6 +68,26 @@ const base = css`
         .font-p-4 {
             font-size: 0.875rem;
             line-height: 1.5rem;
+        }
+
+        &{
+            width: 200px;
+        }
+
+        .image {
+            display: none;
+        }
+
+        .mobile-image {
+            margin-bottom: -30px;
+            display: block;
+        }
+
+        .wrapper {
+            padding-top: 40px;
+            padding-bottom: 20px;
+            padding-right: 30px;
+            padding-left: 15px;
         }
     }
 

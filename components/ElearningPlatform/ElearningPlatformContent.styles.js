@@ -57,6 +57,7 @@ const base = css`
     .module-image-right {
         grid-column: 7 / span 4;
         margin-top: 120px;
+        display: block;
     }
 
     .module-image img {
@@ -97,6 +98,10 @@ const base = css`
         margin-top: 20px;
     }
 
+    .subdescription-first-tablet {
+        margin-top: 0px;
+    }
+
     .features {
         margin-top: 160px;
     }
@@ -109,6 +114,7 @@ const base = css`
 
     .features-lines {
         grid-column: 1 / span 2;
+        display: block;
     }
 
     .features-lines img {
@@ -149,8 +155,8 @@ const base = css`
     }
 
     .design {
-        margin-top: 100px;
-        padding-top: 70px;
+        margin-top: 155px;
+        padding-top: 120px;
         padding-bottom: 80px;
         background-color: #EEf0f6;
     }
@@ -160,8 +166,7 @@ const base = css`
         grid-column: 2 / span 4;
     }
 
-
-    .design-desription {
+    .design-desription-second-first {
         margin-top: 40px;
     }
 
@@ -184,13 +189,13 @@ const base = css`
     }
 
     .design-button:nth-child(even) {
-        margin-left: 25px;
-        
+        margin-left: 25px;  
     }
 
     .design-image {
         grid-column: 6 / span 7;
         margin-top: 40px;
+        display: block;
     }
 
     .design-image img {
@@ -199,8 +204,8 @@ const base = css`
     }
 
     .banner {
-        margin-top: 80px;
-        margin-bottom: 120px;
+        margin-top: 150px;
+        margin-bottom: 175px;
     }
 
     .banner-title {
@@ -215,10 +220,12 @@ const base = css`
         text-align: center;
         text-decoration: none;
         border: 1px solid #4a4a4a;
+        transition: all 0.1s ease-in;
     }
 
     .banner-button:hover {
-        border: 1px solid #000;
+        border: 1px solid #0071F4;
+        color: #0071F4;
         cursor: pointer;
     }
 
@@ -229,28 +236,52 @@ const base = css`
 
     .team-title {
         margin-top: 14px;
-        margin-bottom: 12px;
+        margin-bottom: 40px;
         grid-column: 1 / span 12;
         text-align: center;
     }
 
+    .team-image {
+        grid-column: 1 / span 12;
+        position: relative;
+        display: block;
+    }
+
+    .team-image img::before{
+        content: '';
+        position: absolute;
+        bottom: 26px;
+        left: calc(100vw - 1fr);
+        /* left: 0); */
+        right: 0;
+        width: 100vw;
+        height: 4px;
+        z-index: 0;
+        background-image: url(../../static/elearning-platform/icons/team-line.svg);
+        /* background-position: center;
+        background-repeat: repeat-x;
+        background-size: cover; */
+    }
+
     .team-image img {
         /* height: 350px; */
+        z-index: 2;
         width: 100%;
     }
 
     .team-description {
+        margin-top: 40px;
         grid-column: 4 / span 6;
     }
 
     .team-specialists {
         margin-top: 80px;
-        grid-column: 5 / span 1;
+        grid-column: 5 / span 2;
     }
 
     .team-projects {
         margin-top: 80px;
-        grid-column: 8 / span 1;
+        grid-column: 8 / span 2;
     }
 
     .team-specialists img,
@@ -273,7 +304,7 @@ const base = css`
     .advanced-feature-image {
         margin-top: 90px;
         grid-column: 2 / span 5;
-        /* grid-row: 2; */
+        display: block;
     }
 
     .advanced-feature-image img {
@@ -284,7 +315,6 @@ const base = css`
     .advanced-feature-description {
         margin-top: 125px;
         grid-column: 7 / span 5;
-        /* grid-row: 2; */
     }
 
     .advanced-feature-description p {
@@ -292,12 +322,12 @@ const base = css`
     }
 
     .advanced-feature-buttons {
-        
         position: relative;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        align-items: flex-start;
     }
 
     .advanced-feature-buttons > div {
@@ -310,15 +340,225 @@ const base = css`
     }
 
     @media screen and (max-width: 1492px) {
-      
+        .advanced-feature-image {
+            grid-column: 1 / span 5;
+        }
+
+        .advanced-feature-description {
+            grid-column: 7 / span 5;
+        }
     }
 
     @media screen and (max-width: 1232px) {
-       
+        .greeting-text{
+            grid-column: 1 / span 5;
+        }
+
+        .greeting-image {
+            grid-column: 7 / span 6;
+        }
+
+        .module-image-left {
+            grid-column: 1 / span 3;
+        }  
+
+        .module-image-right {
+            grid-column: 8 / span 4;
+        }
+
+        .module-title-right {
+            grid-column: 4 / span 7;
+        }
+
+        .module-title-left {
+            margin-top: 160px;
+            grid-column: 1 / span 7;
+        }
+
+        .module-subdescription-right {
+            grid-column: 4 / span 7;
+        }
+
+        .module-subdescription-left {
+            grid-column: 1 / span 7;
+        }
+
+        .subdescription-first {
+            margin-top: 40px;
+        }
+
+        .features {
+            margin-top: 120px;
+        }
+
+        .features-list {
+            grid-column: 9 / span 4;
+        }
+
+        .features-description p {
+            margin-top: 20px;
+        }
+
+        .design-content {
+            grid-column: 1 / span 5;
+        }
+
+        .design-image {
+            margin-top: 80px;
+            grid-column: 7 / span 6;
+        }
+
+        .design-button:nth-child(even) {
+            margin-left: 40px;  
+        }
+
+        .banner {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .banner-title {
+            grid-column: 2 / span 4;
+        }
+
+        .banner-button {
+            grid-column: 7 / span 5;
+        }
+
+        .team-description {
+            grid-column: 4 / span 7;
+        }
+
+        .team-specialists {
+            margin-top: 60px;
+            grid-column: 4 / span 2;
+        }
+
+        .team-projects {
+            margin-top: 60px;
+            grid-column: 7 / span 2;
+        }
+
+        .advanced-features-title {
+            grid-column: 2 / span 5;
+        }
+
+        .advanced-feature-image {
+            /* margin-top: 90px; */
+            grid-column: 1 / span 5;
+        }
+
+        .advanced-feature-description {
+            margin-top: 80px;
+            grid-column: 7 / span 6;
+        }
+
+        .advanced-feature-buttons > div {
+            margin-top: 100px;
+        }
+
+        .advanced-feature-buttons > div:hover {
+            margin-top: 80px;
+        }
     }
 
     @media screen and (max-width: 944px) {
-       
+        .greeting {
+            margin-top: 100px;
+        }
+
+        .greeting-description {
+            margin-top: 30px;
+        }
+
+        .modules {
+            margin-top: 80px;
+        }
+
+        .module-image-left {
+            grid-column: 2 / span 2;
+            margin-top: 40px;
+        }   
+
+        .module-title {
+            margin-top: 60px;
+        }
+
+        .module-title p{
+            margin-top: 10px;
+        }
+
+        .module-title-right {
+            grid-column: 4 / span 6;
+        }
+
+        .subdescription-first {
+            margin-top: 10px;
+        }
+
+        .subdescription-first-tablet {
+            margin-top: -50px;
+        }
+
+        .module-image-right {
+            margin-top: 60px;
+        }
+
+        .features {
+            margin-top: 80px;
+        }
+
+        .features-lines {
+            grid-column: 1 / span 2;
+        }
+
+        .features-description {
+            grid-column: 4 / span 3;
+        }
+
+        .features-list {
+            /* margin-top: 24px; */
+            grid-column: 8 / span 4;
+        }
+
+        .features-line-management {
+            margin-top: 10px;
+        }
+
+        .design {
+            margin-top: 80px;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .banner {
+            margin-top: 80px;
+            margin-bottom: 100px;
+        }
+
+        .advanced-features {
+            margin-top: 80px;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .advanced-feature-image {
+            margin-top: 50px;
+            grid-column: 1 / span 5;
+        }
+
+        .advanced-feature-description {
+            margin-top: 50px;
+        }
+
+        .advanced-feature-buttons > div {
+            margin-top: 80px;
+            flex: 0 15%;
+        }
+
+        .advanced-feature-buttons > div:hover {
+            margin-top: 80px;
+        }
     }
 
     @media screen and (max-width: 768px) {

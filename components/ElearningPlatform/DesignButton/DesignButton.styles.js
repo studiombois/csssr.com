@@ -54,6 +54,10 @@ const base = css`
             line-height: 1.5rem;
         }
 
+        & {
+            width: 220px;
+        }
+
     }
 
 `

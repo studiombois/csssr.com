@@ -104,7 +104,7 @@ class ElearningPlatformContent extends PureComponent {
               <h1 className="font-heading-1">Modular Learning Management System</h1>
               <p className="font-p-1 greeting-description">
                 Build your solution from the modules, add anything you need with our development
-                team
+                team.
               </p>
             </div>
 
@@ -190,13 +190,13 @@ class ElearningPlatformContent extends PureComponent {
 
             <ul className="features-list-first features-list">
               <li>
-                <p className="font-p-4">Course and task management systems</p>
+                <p className="font-p-2">Course and task management systems</p>
               </li>
               <li>
-                <p className="font-p-4">Publishing</p>
+                <p className="font-p-2">Publishing</p>
               </li>
               <li>
-                <p className="font-p-4">Scheduled and automated deliveries</p>
+                <p className="font-p-2">Scheduled and automated deliveries</p>
               </li>
             </ul>
 
@@ -216,16 +216,16 @@ class ElearningPlatformContent extends PureComponent {
 
             <ul className="features-list-second features-list">
               <li>
-                <p className="font-p-4">Task assessment</p>
+                <p className="font-p-2">Task assessment</p>
               </li>
               <li>
-                <p className="font-p-4">Rights and access management</p>
+                <p className="font-p-2">Rights and access management</p>
               </li>
               <li>
-                <p className="font-p-4">Reporting system</p>
+                <p className="font-p-2">Reporting system</p>
               </li>
               <li>
-                <p className="font-p-4">Statistics and analytics</p>
+                <p className="font-p-2">Statistics and analytics</p>
               </li>
             </ul>
 
@@ -245,16 +245,16 @@ class ElearningPlatformContent extends PureComponent {
 
             <ul className="features-list-third features-list">
               <li>
-                <p className="font-p-4">Interactive tasks and lessons</p>
+                <p className="font-p-2">Interactive tasks and lessons</p>
               </li>
               <li>
-                <p className="font-p-4">Personal dashboard</p>
+                <p className="font-p-2">Personal dashboard</p>
               </li>
               <li>
-                <p className="font-p-4">Progression system</p>
+                <p className="font-p-2">Progression system</p>
               </li>
               <li>
-                <p className="font-p-4">Discussion system</p>
+                <p className="font-p-2">Discussion system</p>
               </li>
             </ul>
           </div>
@@ -267,10 +267,7 @@ class ElearningPlatformContent extends PureComponent {
 
               <p className="font-p-2 design-desription design-desription-second-first">
                 We&nbsp;have a&nbsp;design team that will customize LMS to&nbsp;match your brand
-                identity.
-              </p>
-              <p className="font-p-2 design-desription design-desription-second">
-                You can change everything you need. See how it&nbsp;works by&nbsp;clicking the icons
+                identity. You can change everything you need. See how it&nbsp;works by&nbsp;clicking the icons
                 below.
               </p>
 

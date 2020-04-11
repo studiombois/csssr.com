@@ -57,7 +57,7 @@ const base = css`
 
     .module-image-right {
         grid-column: 7 / span 4;
-        margin-top: 120px;
+        margin-top: 70px;
         display: block;
     }
 
@@ -88,6 +88,7 @@ const base = css`
     }
 
     .module-subdescription-left {
+        margin-top: 40px;
         grid-column: 4 / span 5;
     }
 
@@ -100,7 +101,7 @@ const base = css`
     }
 
     .subdescription-first-tablet {
-        margin-top: 0px;
+        margin-top: 40px;
     }
 
     .features {
@@ -125,11 +126,13 @@ const base = css`
 
     .features-line-management {
         margin-top: 20px;
+        margin-bottom: 0;
     }
 
     .features-line-administration,
     .features-line-learning {
         margin-top: 80px;
+        margin-bottom: 0;
     }
 
     .features-description {
@@ -163,7 +166,6 @@ const base = css`
     }
 
     .design-content {
-
         grid-column: 2 / span 4;
     }
 
@@ -215,6 +217,7 @@ const base = css`
     }
 
     .banner-button {
+        margin-top: 0px;
         padding-bottom: 15px;
         padding-top: 16px;
         grid-column: 7 / span 4;
@@ -587,6 +590,198 @@ const base = css`
 
         .greeting-image {
             display: none;
+        }
+
+        .greeting-description {
+            margin-top: 30px;
+        }
+
+        .modules {
+            margin-top: 60px;
+        }
+
+        .modules-heading {
+            grid-column: 1 / span 6;
+            text-align: left;
+        } 
+
+        .module-image-left {
+            grid-column: 1 / span 3;
+            margin-top: 60px;
+        }   
+
+        .module-title-right {
+            grid-column: 1 / span 6;
+        }
+
+        .module-subdescription-right {
+            grid-column: 1 / span 6;
+        }
+
+        .module-image-right {
+            grid-column: 1 / span 4;
+            margin-top: 120px;
+            grid-row: 6;
+        }
+
+        .subdescription-first-tablet {
+            margin-top: 0px;
+        }
+
+        .features-heading {
+            text-align: left;
+            grid-column: 1 / span 6;
+            margin-bottom: 70px;
+        }
+
+        .features-lines {
+            grid-column: 1 / span 3;
+        }
+
+        .features-description {
+            grid-column: 1 / span 6;
+        }
+
+        .features-list {
+            margin-top: 24px;
+            grid-column: 1 / span 6;
+        }
+
+        .features-line-management {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .features-line-administration,
+        .features-line-learning {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+
+        .features-description-second,
+        .features-description-third {
+            margin-top: 0px;
+        }
+
+        .features-list-second,
+        .features-list-third {
+            margin-top: 0px;
+        }
+
+        .design-content {
+            grid-column: 1 / span 6;
+        }
+
+        .design-buttons-row:last-child {
+            margin-top: 25px;
+        }
+
+        .design-button:nth-child(even) {
+            margin-left: 0;  
+        }
+
+        /* .design-button:not(:first-child) {
+            margin-left: 20px;  
+        } */
+
+        .design-buttons-row {
+            justify-content: space-evenly;
+        }
+
+        .design-buttons-row>div {
+            flex: 0 30%;
+        }
+
+        .design-image {
+            grid-column: 1 / span 6;
+            margin-top: 30px;
+            grid-row: 2;
+        }
+
+        .banner-title {
+            grid-column: 1 / span 6;
+            text-align: left;
+        }
+
+        .banner-button {
+            margin-top: 40px;
+            padding-bottom: 15px;
+            padding-top: 16px;
+            grid-column: 1 / span 6;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #4a4a4a;
+            transition: all 0.1s ease-in;
+        }
+
+        .team-subheading {
+            grid-column: 1 / span 6;
+            text-align: left;
+        }
+
+        .team-title {
+            margin-top: 14px;
+            margin-bottom: 40px;
+            grid-column: 1 / span 6;
+            text-align: left;
+        }
+
+        .team-image {
+            grid-column: 1 / span 6;
+        }
+
+        .team-description {
+            margin-top: 40px;
+            grid-column: 1 / span 6;
+        }
+
+        .team-specialists {
+            margin-top: 50px;
+            grid-column: 1 / span 2;
+        }
+
+        .team-projects {
+            margin-top: 50px;
+            grid-column: 4 / span 2;
+        }
+
+        .advanced-features {
+            margin-top: 50px;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .advanced-features-title {
+            grid-column: 1 / span 6;
+        }
+
+        .advanced-feature-image {
+            /* margin-top: 90px; */
+            grid-column: 1 / span 6;
+        }
+
+        .advanced-feature-description {
+            margin-top: 40px;
+            grid-column: 1 / span 6;
+        }
+
+        .advanced-feature-buttons {
+            flex-wrap: no-wrap;
+            overflow-x: auto;
+            /* width: 100%; */
+
+            /* justify-content: space-evenly; */
+            /* align-items: flex-start; */
+            /* flex: 1 1 100%; */
+        }
+
+        .advanced-feature-buttons > div {
+            margin-top: 40px;
+            /* flex: 1 1 100%; */
+        }
+
+        .advanced-feature-buttons > div:hover {
+            margin-top: 40px;
         }
     }
 `

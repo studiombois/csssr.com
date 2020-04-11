@@ -11,28 +11,28 @@ const base = css`
     }
     
     .greeting {
-        margin-top: 160px;
-    }
-
-    .greeting-text{
-        grid-column: 2 / span 5;
+        margin-top: 100px;
     }
 
     .greeting-perforator {
         text-transform: uppercase;
+        grid-column: 2 / span 5;
     }
 
     .greeting h1 {
         margin-top: 20px;
+        grid-column: 2 / span 5;
     }
 
     .greeting-description {
-        margin-top: 70px;
+        margin-top: 40px;
+        grid-column: 8 / span 4;
     }
 
     .greeting-image {
-        grid-column: 7 / span 5;
+        grid-column: 3 / span 9;
         display: block;
+        margin-top: 10px;
     }
 
     .greeting-image img {
@@ -115,7 +115,7 @@ const base = css`
     }
 
     .features-lines {
-        grid-column: 1 / span 2;
+        grid-column: 2 / span 2;
         display: block;
     }
 
@@ -136,7 +136,7 @@ const base = css`
     }
 
     .features-description {
-        grid-column: 4 / span 3;
+        grid-column: 5 / span 3;
     }
 
     .features-description-second,
@@ -151,7 +151,7 @@ const base = css`
 
     .features-list {
         /* margin-top: 24px; */
-        grid-column: 8 / span 3;
+        grid-column: 9 / span 3;
     }
 
     .features-list li:not(:first-child) {
@@ -197,7 +197,7 @@ const base = css`
 
     .design-image {
         grid-column: 6 / span 7;
-        margin-top: 40px;
+        margin-top: 0;
         display: block;
     }
 
@@ -318,7 +318,7 @@ const base = css`
 
     .advanced-feature-description {
         margin-top: 125px;
-        grid-column: 7 / span 5;
+        grid-column: 7 / span 4;
     }
 
     .advanced-feature-description p {
@@ -335,12 +335,12 @@ const base = css`
     }
 
     .advanced-feature-buttons > div {
-        margin-top: 150px;
+        margin-top: 120px;
         transition: all 0.1s ease-out;
     }
 
     .advanced-feature-buttons > div:hover {
-        margin-top: 130px;
+        margin-top: 100px;
     }
 
     @media screen and (max-width: 1492px) {
@@ -351,15 +351,30 @@ const base = css`
         .advanced-feature-description {
             grid-column: 7 / span 5;
         }
+
+        .module-image-right {
+            margin-top: 120px;
+        }
     }
 
     @media screen and (max-width: 1232px) {
-        .greeting-text{
+        .greeting-perforator {
+            text-transform: uppercase;
             grid-column: 1 / span 7;
         }
 
+        .greeting h1 {
+            margin-top: 20px;
+            grid-column: 1 / span 7;
+        }
+
+        .greeting-description {
+            margin-top: 40px;
+            grid-column: 9 / span 4;
+        }
+
         .greeting-image {
-            grid-column: 8 / span 5;
+            grid-column: 2 / span 9;
         }
 
         .greeting-description {
@@ -480,8 +495,23 @@ const base = css`
             margin-top: 100px;
         }
 
-        .greeting-text{
-            grid-column: 1 / span 6;
+        .greeting-perforator {
+            text-transform: uppercase;
+            grid-column: 1 / span 7;
+        }
+
+        .greeting h1 {
+            margin-top: 20px;
+            grid-column: 1 / span 7;
+        }
+
+        .greeting-description {
+            margin-top: 40px;
+            grid-column: 9 / span 4;
+        }
+
+        .greeting-image {
+            grid-column: 2 / span 9;
         }
 
         .greeting-description {
@@ -538,8 +568,28 @@ const base = css`
             grid-column: 8 / span 4;
         }
 
+        .features-heading {
+            margin-bottom: 60px;
+        }
+
         .features-line-management {
             margin-top: 10px;
+        }
+
+        .features-line-administration,
+        .features-line-learning {
+            margin-top: 50px;
+            margin-bottom: 0;
+        }
+
+        .features-description-second,
+        .features-description-third {
+            margin-top: 40px;
+        }
+
+        .features-list-second,
+        .features-list-third {
+            margin-top: 40px;
         }
 
         .design {
@@ -573,12 +623,12 @@ const base = css`
         }
 
         .advanced-feature-buttons > div {
-            margin-top: 80px;
+            margin-top: 60px;
             flex: 0 15%;
         }
 
         .advanced-feature-buttons > div:hover {
-            margin-top: 80px;
+            margin-top: 60px;
         }
     }
 
@@ -593,12 +643,23 @@ const base = css`
             margin-top: 40px;
         }
 
-        .greeting-text{
+        .greeting-perforator {
+            text-transform: uppercase;
+            grid-column: 1 / span 6;
+        }
+
+        .greeting h1 {
+            margin-top: 20px;
+            grid-column: 1 / span 6;
+        }
+
+        .greeting-description {
+            margin-top: 40px;
             grid-column: 1 / span 6;
         }
 
         .greeting-image {
-            display: none;
+            grid-column: 1 / span 6;
         }
 
         .greeting-description {
@@ -615,12 +676,12 @@ const base = css`
         } 
 
         .module-image-left {
-            grid-column: 1 / span 3;
-            margin-top: 60px;
+            grid-column: 5 / span 2;
+            margin-top: -10px;
         }   
 
         .module-title {
-            margin-top: 20px;
+            margin-top: -30px;
         }
 
         .module-title p{
@@ -632,17 +693,29 @@ const base = css`
         }
 
         .module-subdescription-right {
+            margin-top: 15px;
             grid-column: 1 / span 6;
         }
 
+        .subdescription-next {
+            margin-top: 5px;
+        }
+
         .module-image-right {
-            grid-column: 1 / span 4;
-            margin-top: 60px;
+            grid-column: 4 / span 3;
+            margin-top: 40px;
             grid-row: 6;
+            z-index: 0;
         }
 
         .subdescription-first-tablet {
-            margin-top: 0px;
+            margin-top: 15px;
+        }
+
+        .module-title-left {
+            z-index: 1;
+            background-color: transparent;
+            margin-top: -40px;
         }
 
         .features {
@@ -656,11 +729,12 @@ const base = css`
         }
 
         .features-lines {
-            grid-column: 1 / span 3;
+            grid-column: 4 / span 3;
         }
 
         .features-description {
             grid-column: 1 / span 6;
+            margin-top: -40px;
         }
 
         .features-list {
@@ -674,18 +748,18 @@ const base = css`
 
         .features-line-management {
             margin-top: 0;
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
         }
 
-        .features-line-administration,
+        /* .features-line-administration,
         .features-line-learning {
             margin-top: 60px;
             margin-bottom: 20px;
-        }
+        } */
 
         .features-description-second,
         .features-description-third {
-            margin-top: 0px;
+            margin-top: -35px;
         }
 
         .features-list-second,
@@ -694,7 +768,7 @@ const base = css`
         }
 
         .design {
-            padding-bottom: 40px;
+            padding-bottom: 80px;
         }
 
         .design-content {
@@ -718,13 +792,19 @@ const base = css`
         }
 
         .design-buttons-row>div {
-            flex: 0 30%;
+            flex: 0 40%;
         }
+
+        
 
         .design-image {
             grid-column: 1 / span 6;
             margin-top: 30px;
             grid-row: 2;
+            padding-right: 0;
+            padding-left: 0;
+            margin-left: 0;
+            margin-right: 0;
         }
 
         .banner {
@@ -801,18 +881,28 @@ const base = css`
         }
 
         .advanced-feature-buttons {
-            flex-wrap: no-wrap;
+            flex-wrap: nowrap;
             overflow-x: auto;
-            /* width: 100%; */
-
             /* justify-content: space-evenly; */
-            /* align-items: flex-start; */
-            /* flex: 1 1 100%; */
+            align-items: flex-start;
+            
+        }
+
+        .advanced-feature-buttons > div:not(:first-child) {
+            margin-right: 25px;
+        }
+
+        .advanced-feature-buttons > div:first-child {
+            padding-left: 24px;
+        }
+
+        .advanced-feature-buttons > div:last-child {
+            padding-right: 24px;
         }
 
         .advanced-feature-buttons > div {
             margin-top: 40px;
-            /* flex: 1 1 100%; */
+            flex: 1 1 30%;
         }
 
         .advanced-feature-buttons > div:hover {
@@ -944,8 +1034,18 @@ const fonts = css`
         letter-spacing: 1px;
     }
 
+    .font-p-bold {
+        font-weight: 500;
+    }
 
+    .font-p-link {
+        color: #4469E2; 
+        text-decoration: underline;
+    }
 
+    .font-p-link:hover {
+        color: #D976FF;
+    }
 
     @media screen and (max-width: 944px) {
         .font-heading-1 {

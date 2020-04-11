@@ -19,6 +19,16 @@ const base = css`
         display: none;
     }
 
+    .image img,
+    .mobile-image img{
+        width: 100%;
+        height: auto;
+    }
+
+    .mobile-image {
+        display: none;
+    }
+
     .wrapper {
         background-color: #ffffff;
         box-shadow: 0px 25px 50px rgba(78, 81, 144, 0.07), 0px 4px 7px rgba(78, 81, 144, 0.15);
@@ -99,6 +109,10 @@ const base = css`
         .font-p-4 {
             font-size: 0.875rem;
             line-height: 1.5rem;
+        }
+
+        .mobile-image {
+            width: 70%;
         }
 
     }

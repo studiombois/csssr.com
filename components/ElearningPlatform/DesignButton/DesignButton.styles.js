@@ -55,7 +55,7 @@ const base = css`
         }
 
         & {
-            width: 220px;
+            width: 300px;
         }
 
     }

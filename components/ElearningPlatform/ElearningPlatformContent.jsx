@@ -99,14 +99,14 @@ class ElearningPlatformContent extends PureComponent {
 
         <div className="greeting">
           <div className="grid">
-            <div className="greeting-text">
+            
               <p className="font-p-5 greeting-perforator">Start Your Online Education Business</p>
               <h1 className="font-heading-1">Modular Learning Management System</h1>
               <p className="font-p-1 greeting-description">
                 Build your solution from the modules, add anything you need with our development
                 team.
               </p>
-            </div>
+            
 
             <div className="greeting-image">
               <img
@@ -136,7 +136,8 @@ class ElearningPlatformContent extends PureComponent {
             </div>
 
             <p className="font-p-2 module-subdescription-right subdescription-first">
-              We&rsquo;ve built an&nbsp;assistant based on&nbsp;Google Dialogflow.
+              We&rsquo;ve built an&nbsp;assistant based on&nbsp;
+              <span className="font-p-bold">Google Dialogflow</span>.
               It&nbsp;gives&nbsp;us limitless possibilities to&nbsp;integrate our LMS with other
               apps enabling users to&nbsp;communicate with the platform the way they are
               used&nbsp;to.
@@ -165,7 +166,7 @@ class ElearningPlatformContent extends PureComponent {
             <p className="font-p-2 module-subdescription-left subdescription-first subdescription-first-tablet">
               Boost users motivation up&nbsp;with an&nbsp;achievements and rewards system.
               It&nbsp;could be&nbsp;customized to&nbsp;any level you want from a&nbsp;basic one
-              to&nbsp;an&nbsp;advanced RPG like integrated with skill-system, quests and bonuses.
+              to&nbsp;an&nbsp;advanced RPG like integrated with <span className="font-p-bold">skill-system, quests and bonuses</span>.
             </p>
           </div>
         </div>
@@ -190,13 +191,13 @@ class ElearningPlatformContent extends PureComponent {
 
             <ul className="features-list-first features-list">
               <li>
-                <p className="font-p-2">Course and task management systems</p>
+                <p className="font-p-4">Course and task management systems</p>
               </li>
               <li>
-                <p className="font-p-2">Publishing</p>
+                <p className="font-p-4">Publishing</p>
               </li>
               <li>
-                <p className="font-p-2">Scheduled and automated deliveries</p>
+                <p className="font-p-4">Scheduled and automated deliveries</p>
               </li>
             </ul>
 
@@ -216,16 +217,16 @@ class ElearningPlatformContent extends PureComponent {
 
             <ul className="features-list-second features-list">
               <li>
-                <p className="font-p-2">Task assessment</p>
+                <p className="font-p-4">Task assessment</p>
               </li>
               <li>
-                <p className="font-p-2">Rights and access management</p>
+                <p className="font-p-4">Rights and access management</p>
               </li>
               <li>
-                <p className="font-p-2">Reporting system</p>
+                <p className="font-p-4">Reporting system</p>
               </li>
               <li>
-                <p className="font-p-2">Statistics and analytics</p>
+                <p className="font-p-4">Statistics and analytics</p>
               </li>
             </ul>
 
@@ -245,16 +246,16 @@ class ElearningPlatformContent extends PureComponent {
 
             <ul className="features-list-third features-list">
               <li>
-                <p className="font-p-2">Interactive tasks and lessons</p>
+                <p className="font-p-4">Interactive tasks and lessons</p>
               </li>
               <li>
-                <p className="font-p-2">Personal dashboard</p>
+                <p className="font-p-4">Personal dashboard</p>
               </li>
               <li>
-                <p className="font-p-2">Progression system</p>
+                <p className="font-p-4">Progression system</p>
               </li>
               <li>
-                <p className="font-p-2">Discussion system</p>
+                <p className="font-p-4">Discussion system</p>
               </li>
             </ul>
           </div>
@@ -340,8 +341,8 @@ class ElearningPlatformContent extends PureComponent {
             <p className="font-p-2 team-description">
               We&rsquo;ll provide you with a&nbsp;development team based on&nbsp;desired
               functionality and timeline of&nbsp;the project. During the years we&rsquo;ve
-              established impeccable internal processes (link processes). Our developers work with
-              modern technologies (link tech stack) to&nbsp;achieve excellent results.
+              established impeccable internal <a className="font-p-link" target="_blank" rel="noopener noreferrer" href="https://csssr.com/en/way-of-work">processes</a>. Our developers work with
+              modern <a className="font-p-link" target="_blank" rel="noopener noreferrer" href="https://csssr.com/en/tech-stack">technologies</a> to&nbsp;achieve excellent results.
             </p>
 
             <div className="team-specialists">
@@ -419,7 +420,7 @@ class ElearningPlatformContent extends PureComponent {
               srcSet={`${require('../../static/elearning-platform/feature-ecosystem.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem@3x.png')} 3x`}
               mobileSrcSet={`${require('../../static/elearning-platform/feature-ecosystem-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@3x.png')} 3x`}
               t="Ecosystem integration"
-              d="Connect the LMS to your existing tools and systems"
+              d="Connect the LMS to your own and unique existing tools and systems"
               onMouseOver={() => this.setState({ activeFeatureImage: 'ecosystem' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
             />

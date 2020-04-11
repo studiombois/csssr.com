@@ -32,6 +32,7 @@ const base = css`
 
     .greeting-image {
         grid-column: 7 / span 5;
+        display: block;
     }
 
     .greeting-image img {
@@ -467,6 +468,10 @@ const base = css`
             margin-top: 100px;
         }
 
+        .greeting-text{
+            grid-column: 1 / span 6;
+        }
+
         .greeting-description {
             margin-top: 30px;
         }
@@ -531,6 +536,10 @@ const base = css`
             padding-bottom: 60px;
         }
 
+        .design-image {
+            grid-column: 6 / span 7;
+        }
+
         .banner {
             margin-top: 80px;
             margin-bottom: 100px;
@@ -568,7 +577,17 @@ const base = css`
     }
 
     @media screen and (max-width: 720px) {
-       
+        .greeting {
+            margin-top: 40px;
+        }
+
+        .greeting-text{
+            grid-column: 1 / span 6;
+        }
+
+        .greeting-image {
+            display: none;
+        }
     }
 `
 

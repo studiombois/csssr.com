@@ -42,6 +42,10 @@ const base = css`
             line-height: 1.5rem;
         }
 
+        & {
+            height: 56px;
+        }
+
     }
 
     @media screen and (max-width: 720px) {

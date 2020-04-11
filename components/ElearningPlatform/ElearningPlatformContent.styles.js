@@ -355,11 +355,15 @@ const base = css`
 
     @media screen and (max-width: 1232px) {
         .greeting-text{
-            grid-column: 1 / span 5;
+            grid-column: 1 / span 7;
         }
 
         .greeting-image {
-            grid-column: 7 / span 6;
+            grid-column: 8 / span 5;
+        }
+
+        .greeting-description {
+            margin-top: 40px;
         }
 
         .module-image-left {
@@ -368,6 +372,7 @@ const base = css`
 
         .module-image-right {
             grid-column: 8 / span 4;
+            margin-top: 140px;
         }
 
         .module-title-right {
@@ -393,6 +398,10 @@ const base = css`
 
         .features {
             margin-top: 120px;
+        }
+
+        .features-heading {
+            margin-bottom: 120px;
         }
 
         .features-list {
@@ -476,7 +485,7 @@ const base = css`
         }
 
         .greeting-description {
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .modules {
@@ -597,7 +606,7 @@ const base = css`
         }
 
         .modules {
-            margin-top: 60px;
+            margin-top: 120px;
         }
 
         .modules-heading {
@@ -610,6 +619,14 @@ const base = css`
             margin-top: 60px;
         }   
 
+        .module-title {
+            margin-top: 20px;
+        }
+
+        .module-title p{
+            margin-top: 5px;
+        }
+
         .module-title-right {
             grid-column: 1 / span 6;
         }
@@ -620,7 +637,7 @@ const base = css`
 
         .module-image-right {
             grid-column: 1 / span 4;
-            margin-top: 120px;
+            margin-top: 60px;
             grid-row: 6;
         }
 
@@ -628,10 +645,14 @@ const base = css`
             margin-top: 0px;
         }
 
+        .features {
+            margin-top: 120px;
+        }
+
         .features-heading {
             text-align: left;
             grid-column: 1 / span 6;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
         }
 
         .features-lines {
@@ -645,6 +666,10 @@ const base = css`
         .features-list {
             margin-top: 24px;
             grid-column: 1 / span 6;
+        }
+
+        .features-list li:not(:first-child) {
+            margin-top: 5px;
         }
 
         .features-line-management {
@@ -665,11 +690,19 @@ const base = css`
 
         .features-list-second,
         .features-list-third {
-            margin-top: 0px;
+            margin-top: 20px;
+        }
+
+        .design {
+            padding-bottom: 40px;
         }
 
         .design-content {
             grid-column: 1 / span 6;
+        }
+
+        .design-desription-second-first {
+            margin-top: 20px;
         }
 
         .design-buttons-row:last-child {
@@ -679,10 +712,6 @@ const base = css`
         .design-button:nth-child(even) {
             margin-left: 0;  
         }
-
-        /* .design-button:not(:first-child) {
-            margin-left: 20px;  
-        } */
 
         .design-buttons-row {
             justify-content: space-evenly;
@@ -698,13 +727,18 @@ const base = css`
             grid-row: 2;
         }
 
+        .banner {
+            margin-top: 60px;
+            margin-bottom: 120px;
+        }     
+
         .banner-title {
             grid-column: 1 / span 6;
             text-align: left;
         }
 
         .banner-button {
-            margin-top: 40px;
+            margin-top: 20px;
             padding-bottom: 15px;
             padding-top: 16px;
             grid-column: 1 / span 6;
@@ -720,7 +754,7 @@ const base = css`
         }
 
         .team-title {
-            margin-top: 14px;
+            margin-top: 20px;
             margin-bottom: 40px;
             grid-column: 1 / span 6;
             text-align: left;
@@ -757,7 +791,8 @@ const base = css`
 
         .advanced-feature-image {
             /* margin-top: 90px; */
-            grid-column: 1 / span 6;
+            /* grid-column: 1 / span 6; */
+            display: none;
         }
 
         .advanced-feature-description {
@@ -827,7 +862,7 @@ const fonts = css`
         font-family: 'Roboto Slab', serif;
         font-weight: 400;
         font-size: 64px;
-        line-height: 80px;
+        line-height: 84px;
         color: #000000;
         letter-spacing: 0;
     }
@@ -903,7 +938,7 @@ const fonts = css`
     .font-p-5 {
         font-family: 'Roboto', sans-serif;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 12px;
         line-height: 24px;
         color: #000000;
         letter-spacing: 1px;
@@ -914,15 +949,15 @@ const fonts = css`
 
     @media screen and (max-width: 944px) {
         .font-heading-1 {
-            font-size: 2rem;
-            line-height: 3rem;
+            font-size: 1.875rem;
+            line-height: 2.4rem;
         }
         .font-heading-2 {
-            font-size: 1.5rem;
-            line-height: 2rem;
+            font-size: 1.75rem;
+            line-height: 2.2rem;
         }
         .font-heading-3 {
-            font-size: 2rem;
+            font-size: 1.25rem;
             line-height: 2.5rem;
         }
         .font-heading-4 {
@@ -950,7 +985,7 @@ const fonts = css`
             line-height: 1.5rem;
         }
         .font-p-5 {
-            font-size: 1rem;
+            font-size: 0.75rem;
             line-height: 1.5rem;
         }
 
@@ -958,15 +993,15 @@ const fonts = css`
 
     @media screen and (max-width: 720px) {
         .font-heading-1 {
-            font-size: 2rem;
-            line-height: 3rem;
+            font-size: 1.875rem;
+            line-height: 2.4rem;
         }
         .font-heading-2 {
-            font-size: 1.5rem;
-            line-height: 2rem;
+            font-size: 1.75rem;
+            line-height: 2.2rem;
         }
         .font-heading-3 {
-            font-size: 2rem;
+            font-size: 1.25rem;
             line-height: 2.5rem;
         }
         .font-heading-4 {
@@ -994,7 +1029,7 @@ const fonts = css`
             line-height: 1.5rem;
         }
         .font-p-5 {
-            font-size: 1rem;
+            font-size: 0.75rem;
             line-height: 1.5rem;
         }
     }

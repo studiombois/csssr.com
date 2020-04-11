@@ -43,25 +43,29 @@ class ElearningPlatformContent extends PureComponent {
 
     const featureImages = {
       payment: {
-        src: require(`../../static/elearning-platform/icons/features-payment-image.svg`).default,
+        srcSet: `${require(`../../static/elearning-platform/features-payment-image.png`)} 1x, ${require(`../../static/elearning-platform/features-payment-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/features-payment-image@3x.png`)} 3x`,
+        src: require(`../../static/elearning-platform/features-payment-image.png`),
         heading: 'Add any payment provider you like',
         description:
           'Though we&nbsp;have the most popular providers built-in our system, we&rsquo;re aware that there is&nbsp;no&nbsp;perfect solution that fits all. We&nbsp;can make the module work with any payment provider or&nbsp;a&nbsp;bank, even a&nbsp;cryptocurrency. Whatever you need, as&nbsp;long as&nbsp;it&nbsp;is&nbsp;connected to&nbsp;the Internet.',
       },
       skill: {
-        src: require(`../../static/elearning-platform/icons/features-skill-image.svg`).default,
+        srcSet: `${require(`../../static/elearning-platform/features-skill-image.png`)} 1x, ${require(`../../static/elearning-platform/features-skill-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/features-skill-image@3x.png`)} 3x`,
+        src: require(`../../static/elearning-platform/features-skill-image.png`),
         heading: 'Configure learning programs based on&nbsp;skills',
         description:
           'Our skill-based system could help users to&nbsp;choose or&nbsp;configure the learning program based on&nbsp;skills they want to&nbsp;get or&nbsp;improve. As&nbsp;they make progress the system constantly monitors the way they improve and, taking into account multiple parameters from passed assessments to&nbsp;time and attempts made, indicates how skills are improving.',
       },
       rating: {
-        src: require(`../../static/elearning-platform/icons/feature-rating-image.svg`).default,
+        srcSet: `${require(`../../static/elearning-platform/feature-rating-image.png`)} 1x, ${require(`../../static/elearning-platform/feature-rating-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/feature-rating-image@3x.png`)} 3x`,
+        src: require(`../../static/elearning-platform/feature-rating-image.png`),
         heading: 'Choose a&nbsp;learning program and see how your skills grow',
         description:
           'Most students want not just to&nbsp;complete tasks but to&nbsp;monitor their KPIs and find out how well they are doing as&nbsp;compared to&nbsp;the other ones. For that purpose we&nbsp;can develop a&nbsp;Rating System module. It&nbsp;could be&nbsp;a&nbsp;highly configurable system making your educational platform more competitive and more focused on&nbsp;individual advancement.',
       },
       ecosystem: {
-        src: require(`../../static/elearning-platform/icons/feature-ecosystem-image.svg`).default,
+        srcSet: `${require(`../../static/elearning-platform/feature-ecosystem-image.png`)} 1x, ${require(`../../static/elearning-platform/feature-ecosystem-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/feature-ecosystem-image@3x.png`)} 3x`,
+        src: require(`../../static/elearning-platform/feature-ecosystem-image.png`),
         heading: 'Connect the LMS to&nbsp;your existing tools and systems',
         description:
           'Each business is&nbsp;unique so&nbsp;we&rsquo;ve developed a&nbsp;platform that can be&nbsp;easily integrated with other products in&nbsp;your ecosystem. It&nbsp;could be&nbsp;anything from a&nbsp;communication hub, like Slack, to&nbsp;a&nbsp;learning platform to&nbsp;be&nbsp;integrated in&nbsp;your own product.',
@@ -371,7 +375,8 @@ class ElearningPlatformContent extends PureComponent {
             <h3 className="font-heading-5 advanced-features-title">Advanced Feature Ideas</h3>
 
             <div className="advanced-feature-image">
-              <img src={featureImages[this.state.activeFeatureImage].src} alt="Feature" />
+              <img srcSet={featureImages[this.state.activeFeatureImage].srcSet}
+                    src={featureImages[this.state.activeFeatureImage].src} alt="Feature" />
             </div>
 
             <div className="advanced-feature-description">

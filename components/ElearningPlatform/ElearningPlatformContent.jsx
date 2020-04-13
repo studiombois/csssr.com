@@ -187,9 +187,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <div className="features-description features-description-first">
               <h3 className="font-heading-3">Management</h3>
-              <p className="font-p-2">
-                When it's time to explore new possibilities for an existing product.
-              </p>
+              <p className="font-p-2">All of the core tools for managing courses and tasks.</p>
             </div>
 
             <ul className="features-list-first features-list">
@@ -213,9 +211,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <div className="features-description features-description-second">
               <h3 className="font-heading-3">Administration</h3>
-              <p className="font-p-2">
-                When it's time to explore new possibilities for an existing product.
-              </p>
+              <p className="font-p-2">A set of instruments for tutors.</p>
             </div>
 
             <ul className="features-list-second features-list">
@@ -242,9 +238,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <div className="features-description features-description-third">
               <h3 className="font-heading-3">Learning</h3>
-              <p className="font-p-2">
-                When it's time to explore new possibilities for an existing product.
-              </p>
+              <p className="font-p-2">The main part of the platform is available for students.</p>
             </div>
 
             <ul className="features-list-third features-list">

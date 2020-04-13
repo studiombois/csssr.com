@@ -8,9 +8,8 @@ const ElearningPlatform = () => {
   const pageName = 'eLearningPlatform'
 
   return (
-    <Layout withFooter={true}>
-      {/* <Head customFavicons title="Start Your Online Education Business — CSSSR Remote Development Team">
-            </Head> */}
+    <Layout>
+      <Head title="Start Your Online Education Business — CSSSR Remote Development Team" />
 
       <ElearningPlatformContent />
       <Form pageName={pageName} />

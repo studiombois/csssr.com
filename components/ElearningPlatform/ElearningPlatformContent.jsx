@@ -1,13 +1,11 @@
-import React, { useState, PureComponent } from 'react'
-import ReactDOM, { render } from 'react-dom'
+import React, { Fragment, PureComponent } from 'react'
+import Fade from 'react-reveal/Fade'
 import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { disablePageScroll, enablePageScroll } from 'scroll-lock'
-import cn from 'classnames'
-import ContactModal from '../ContactModal'
 import styles from './ElearningPlatformContent.styles'
 import DesignButton from './DesignButton'
 import FeatureButton from './FeatureButton'
+import ContactButton from '../ContactButton'
 
 class ElearningPlatformContent extends PureComponent {
   state = {
@@ -17,7 +15,7 @@ class ElearningPlatformContent extends PureComponent {
 
   render() {
     const { className } = this.props
-    const { activeDesignImage, activeFeatureImage } = this.state
+
     const designImages = {
       base: {
         srcSet: `${require(`../../static/elearning-platform/design-base.png`)} 1x, ${require(`../../static/elearning-platform/design-base@2x.png`)} 2x, ${require(`../../static/elearning-platform/design-base@3x.png`)} 3x`,
@@ -99,14 +97,11 @@ class ElearningPlatformContent extends PureComponent {
 
         <div className="greeting">
           <div className="grid">
-            
-              <p className="font-p-5 greeting-perforator">Start Your Online Education Business</p>
-              <h1 className="font-heading-1">Modular Learning Management System</h1>
-              <p className="font-p-1 greeting-description">
-                Build your solution from the modules, add anything you need with our development
-                team.
-              </p>
-            
+            <p className="font-p-5 greeting-perforator">Start Your Online Education Business</p>
+            <h1 className="font-heading-1">Modular Learning Management System</h1>
+            <p className="font-p-1 greeting-description">
+              Build your solution from the modules, add anything you need with our development team.
+            </p>
 
             <div className="greeting-image">
               <img
@@ -145,10 +140,9 @@ class ElearningPlatformContent extends PureComponent {
 
             <p className="font-p-2 module-subdescription-right subdescription-first">
               We&rsquo;ve built an&nbsp;assistant based on&nbsp;
-              <span className="font-p-bold">Google Dialogflow</span>.
-              It&nbsp;gives&nbsp;us limitless possibilities to&nbsp;integrate our LMS with other
-              apps enabling users to&nbsp;communicate with the platform the way they are
-              used&nbsp;to.
+              <span className="font-p-bold">Google Dialogflow</span>. It&nbsp;gives&nbsp;us
+              limitless possibilities to&nbsp;integrate our LMS with other apps enabling users
+              to&nbsp;communicate with the platform the way they are used&nbsp;to.
             </p>
             <p className="font-p-2 module-subdescription-right subdescription-next">
               The assistant can be&nbsp;used in&nbsp;all phases from helping customers
@@ -174,7 +168,8 @@ class ElearningPlatformContent extends PureComponent {
             <p className="font-p-2 module-subdescription-left subdescription-first subdescription-first-tablet">
               Boost users motivation up&nbsp;with an&nbsp;achievements and rewards system.
               It&nbsp;could be&nbsp;customized to&nbsp;any level you want from a&nbsp;basic one
-              to&nbsp;an&nbsp;advanced RPG like integrated with <span className="font-p-bold">skill-system, quests and bonuses</span>.
+              to&nbsp;an&nbsp;advanced RPG like integrated with{' '}
+              <span className="font-p-bold">skill-system, quests and bonuses</span>.
             </p>
           </div>
         </div>
@@ -276,22 +271,24 @@ class ElearningPlatformContent extends PureComponent {
 
               <p className="font-p-2 design-desription design-desription-second-first">
                 We&nbsp;have a&nbsp;design team that will customize LMS to&nbsp;match your brand
-                identity. You can change everything you need. See how it&nbsp;works by&nbsp;clicking the icons
-                below.
+                identity. You can change everything you need. See how it&nbsp;works by&nbsp;clicking
+                the icons below.
               </p>
 
               <div className="design-buttons">
                 <div className="design-buttons-row">
+                  {console.log(this.state.activeDesignImage)}
+
                   <DesignButton
-                    onMouseOver={() => this.setState({ activeDesignImage: 'font' })}
-                    onMouseOut={() => this.setState({ activeDesignImage: 'base' })}
+                    onMouseEnter={() => this.setState({ activeDesignImage: 'font' })}
+                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Font"
                     icon={require('../../static/elearning-platform/icons/font.svg').default}
                   />
                   <DesignButton
-                    onMouseOver={() => this.setState({ activeDesignImage: 'graphic' })}
-                    onMouseOut={() => this.setState({ activeDesignImage: 'base' })}
+                    onMouseEnter={() => this.setState({ activeDesignImage: 'graphic' })}
+                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Graphic"
                     icon={require('../../static/elearning-platform/icons/graphic.svg').default}
@@ -300,15 +297,15 @@ class ElearningPlatformContent extends PureComponent {
 
                 <div className="design-buttons-row">
                   <DesignButton
-                    onMouseOver={() => this.setState({ activeDesignImage: 'theme' })}
-                    onMouseOut={() => this.setState({ activeDesignImage: 'base' })}
+                    onMouseEnter={() => this.setState({ activeDesignImage: 'theme' })}
+                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Theme"
                     icon={require('../../static/elearning-platform/icons/theme.svg').default}
                   />
                   <DesignButton
-                    onMouseOver={() => this.setState({ activeDesignImage: 'color' })}
-                    onMouseOut={() => this.setState({ activeDesignImage: 'base' })}
+                    onMouseEnter={() => this.setState({ activeDesignImage: 'color' })}
+                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Color"
                     icon={require('../../static/elearning-platform/icons/color.svg').default}
@@ -318,11 +315,55 @@ class ElearningPlatformContent extends PureComponent {
             </div>
 
             <div className="design-image">
-              <img
-                srcSet={designImages[this.state.activeDesignImage].srcSet}
-                src={designImages[this.state.activeDesignImage].src}
-                alt="Screenshot"
-              />
+              {this.state.activeDesignImage === 'base' && (
+                <Fade right={true} duration={200} distance="40px">
+                  <img
+                    srcSet={designImages.base.srcSet}
+                    src={designImages.base.src}
+                    alt="Screenshot"
+                  />
+                </Fade>
+              )}
+
+              {this.state.activeDesignImage === 'font' && (
+                <Fade right={true} duration={200} distance="40px">
+                  <img
+                    srcSet={designImages.font.srcSet}
+                    src={designImages.font.src}
+                    alt="Screenshot"
+                  />
+                </Fade>
+              )}
+
+              {this.state.activeDesignImage === 'graphic' && (
+                <Fade right={true} duration={200} distance="40px">
+                  <img
+                    srcSet={designImages.graphic.srcSet}
+                    src={designImages.graphic.src}
+                    alt="Screenshot"
+                  />
+                </Fade>
+              )}
+
+              {this.state.activeDesignImage === 'theme' && (
+                <Fade right={true} duration={200} distance="40px">
+                  <img
+                    srcSet={designImages.theme.srcSet}
+                    src={designImages.theme.src}
+                    alt="Screenshot"
+                  />
+                </Fade>
+              )}
+
+              {this.state.activeDesignImage === 'color' && (
+                <Fade right={true} duration={200} distance="40px">
+                  <img
+                    srcSet={designImages.color.srcSet}
+                    src={designImages.color.src}
+                    alt="Screenshot"
+                  />
+                </Fade>
+              )}
             </div>
           </div>
         </div>
@@ -330,8 +371,11 @@ class ElearningPlatformContent extends PureComponent {
         <div className="banner">
           <div className="grid">
             <h3 className="font-heading-3 banner-title">Need more info?</h3>
-            {/* MODAL BUTTON */}
-            <a className="banner-button font-p-5">REQUEST A DEMO</a>
+            <ContactButton
+              className="banner-button font-p-5"
+              kind="secondary"
+              dangerouslySetInnerHTML={{ __html: 'REQUEST A DEMO' }}
+            />
           </div>
         </div>
 
@@ -339,18 +383,41 @@ class ElearningPlatformContent extends PureComponent {
           <div className="grid">
             <p className="font-p-1 team-subheading">Add anything you need with our</p>
             <h2 className="font-heading-1 team-title">Agile Development Team</h2>
-            <div className="team-image">
-              <img
-                srcSet={`${require('../../static/elearning-platform/team.png')} 1x, ${require('../../static/elearning-platform/team@2x.png')} 2x, ${require('../../static/elearning-platform/team@3x.png')} 3x`}
-                src={require('../../static/elearning-platform/team.png')}
-                alt="team"
-              />
+          </div>
+          <div className="team-image-wrapper">
+            <div className="grid">
+              <div className="team-image">
+                <img
+                  srcSet={`${require('../../static/elearning-platform/team.png')} 1x, ${require('../../static/elearning-platform/team@2x.png')} 2x, ${require('../../static/elearning-platform/team@3x.png')} 3x`}
+                  src={require('../../static/elearning-platform/team.png')}
+                  alt="team"
+                />
+              </div>
             </div>
+          </div>
+          <div className="grid">
             <p className="font-p-2 team-description">
               We&rsquo;ll provide you with a&nbsp;development team based on&nbsp;desired
               functionality and timeline of&nbsp;the project. During the years we&rsquo;ve
-              established impeccable internal <a className="font-p-link" target="_blank" rel="noopener noreferrer" href="https://csssr.com/en/way-of-work">processes</a>. Our developers work with
-              modern <a className="font-p-link" target="_blank" rel="noopener noreferrer" href="https://csssr.com/en/tech-stack">technologies</a> to&nbsp;achieve excellent results.
+              established impeccable internal{' '}
+              <a
+                className="font-p-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://csssr.com/en/way-of-work"
+              >
+                processes
+              </a>
+              . Our developers work with modern{' '}
+              <a
+                className="font-p-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://csssr.com/en/tech-stack"
+              >
+                technologies
+              </a>{' '}
+              to&nbsp;achieve excellent results.
             </p>
 
             <div className="team-specialists">
@@ -434,13 +501,6 @@ class ElearningPlatformContent extends PureComponent {
             />
           </div>
         </div>
-
-        {/* {typeof window !== 'undefined' &&
-                    isContactModalVisible &&
-                    ReactDOM.createPortal(
-                        <ContactModal onClose={handleHideContactModal} pageName="covid19" />,
-                        document.getElementById('main'),
-                    )} */}
       </article>
     )
   }

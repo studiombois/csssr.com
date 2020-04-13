@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
-import { Global, css } from '@emotion/core'
+import React from 'react'
 import styled from '@emotion/styled'
-import cn from 'classnames'
 
 import styles from './DesignButton.styles'
 
-const DesignButton = ({ className, t, icon, onMouseOver, onMouseOut }) => {
+const DesignButton = ({ className, t, icon, onMouseEnter, onMouseLeave }) => {
   return (
-    <div onMouseOver={onMouseOver} onMouseOut={onMouseOut} className={className}>
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={className}>
       <img src={icon} alt="icon" />
       <p className="font-p-4">{t}</p>
     </div>

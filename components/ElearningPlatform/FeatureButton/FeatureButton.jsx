@@ -1,15 +1,25 @@
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
-import { Global, css } from '@emotion/core'
+import React from 'react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 
 import styles from './FeatureButton.styles'
 
-const FeatureButton = ({ className, t, d, i, srcSet, onClick, clicked, onMouseOver, onMouseOut, mobileSrcSet, im }) => {
+const FeatureButton = ({
+  className,
+  t,
+  d,
+  i,
+  srcSet,
+  onClick,
+  clicked,
+  onMouseOver,
+  onMouseOut,
+  mobileSrcSet,
+  im,
+}) => {
   return (
     <div className={className} onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-      <img src={i} srcSet={srcSet} alt="image" className="image"/>
+      <img src={i} srcSet={srcSet} alt="image" className="image" />
       <img src={im} srcSet={mobileSrcSet} alt="image" className="mobile-image" />
 
       <div

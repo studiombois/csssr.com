@@ -9,7 +9,7 @@ const base = css`
     .no-wrap {
       white-space: nowrap;
     }
-    
+
     .greeting {
         margin-top: 100px;
     }
@@ -43,7 +43,7 @@ const base = css`
         max-width: 100%;
         height: auto;
     }
-    
+
     .modules {
         margin-top: 150px;
     }
@@ -57,7 +57,7 @@ const base = css`
         grid-column: 2 / span 3;
         margin-top: 60px;
         display: block;
-    }   
+    }
 
     .module-image-right {
         grid-column: 7 / span 4;
@@ -196,7 +196,7 @@ const base = css`
     }
 
     .design-button:nth-child(even) {
-        margin-left: 25px;  
+        margin-left: 25px;
     }
 
     .design-image {
@@ -222,8 +222,6 @@ const base = css`
 
     .banner-button {
         margin-top: 0px;
-        padding-bottom: 15px;
-        padding-top: 16px;
         grid-column: 7 / span 4;
         text-align: center;
         text-decoration: none;
@@ -249,26 +247,17 @@ const base = css`
         text-align: center;
     }
 
+    .team-image-wrapper {
+        background-image: url(${require('../../static/elearning-platform/icons/team-line.svg').default});
+        background-repeat: repeat no-repeat;
+        background-position: 0 calc(100% - 25px);
+        background-size: 100% 5px;
+    }
+
     .team-image {
         grid-column: 1 / span 12;
         position: relative;
         display: block;
-    }
-
-    .team-image img::before{
-        content: '';
-        position: absolute;
-        bottom: 26px;
-        left: calc(100vw - 1fr);
-        /* left: 0); */
-        right: 0;
-        width: 100vw;
-        height: 4px;
-        z-index: 0;
-        background-image: url(../../static/elearning-platform/icons/team-line.svg);
-        /* background-position: center;
-        background-repeat: repeat-x;
-        background-size: cover; */
     }
 
     .team-image img {
@@ -359,6 +348,10 @@ const base = css`
         .module-image-right {
             margin-top: 120px;
         }
+
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 21px);
+        }
     }
 
     @media screen and (max-width: 1232px) {
@@ -387,7 +380,7 @@ const base = css`
 
         .module-image-left {
             grid-column: 1 / span 3;
-        }  
+        }
 
         .module-image-right {
             grid-column: 8 / span 4;
@@ -441,7 +434,7 @@ const base = css`
         }
 
         .design-button:nth-child(even) {
-            margin-left: 40px;  
+            margin-left: 40px;
         }
 
         .banner {
@@ -492,6 +485,11 @@ const base = css`
         .advanced-feature-buttons > div:hover {
             margin-top: 80px;
         }
+
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 17px);
+            background-size: 100% 3px;
+        }
     }
 
     @media screen and (max-width: 944px) {
@@ -529,7 +527,7 @@ const base = css`
         .module-image-left {
             grid-column: 2 / span 2;
             margin-top: 40px;
-        }   
+        }
 
         .module-title {
             margin-top: 60px;
@@ -634,11 +632,21 @@ const base = css`
         .advanced-feature-buttons > div:hover {
             margin-top: 60px;
         }
+
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 14px);
+            background-size: 100% 3px;
+        }
     }
 
     @media screen and (max-width: 768px) {
         & {
            margin-top: ${calcRem(56)};
+        }
+
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 19px);
+            background-size: 100% 2px;
         }
     }
 
@@ -688,12 +696,12 @@ const base = css`
         .modules-heading {
             grid-column: 1 / span 6;
             text-align: left;
-        } 
+        }
 
         .module-image-left {
             grid-column: 5 / span 2;
             margin-top: -10px;
-        }   
+        }
 
         .module-title {
             margin-top: -30px;
@@ -799,7 +807,7 @@ const base = css`
         }
 
         .design-button:nth-child(even) {
-            margin-left: 0;  
+            margin-left: 0;
         }
 
         .design-buttons-row {
@@ -810,7 +818,7 @@ const base = css`
             flex: 0 40%;
         }
 
-        
+
 
         .design-image {
             grid-column: 1 / span 6;
@@ -825,7 +833,7 @@ const base = css`
         .banner {
             margin-top: 60px;
             margin-bottom: 120px;
-        }     
+        }
 
         .banner-title {
             grid-column: 1 / span 6;
@@ -834,8 +842,6 @@ const base = css`
 
         .banner-button {
             margin-top: 20px;
-            padding-bottom: 15px;
-            padding-top: 16px;
             grid-column: 1 / span 6;
             text-align: center;
             text-decoration: none;
@@ -896,32 +902,27 @@ const base = css`
         }
 
         .advanced-feature-buttons {
+            padding-left: 32px;
+            padding-right: 32px;
             flex-wrap: nowrap;
-            overflow-x: auto;
-            /* justify-content: space-evenly; */
-            align-items: flex-start;
-            
-        }
-
-        .advanced-feature-buttons > div:not(:first-child) {
-            margin-right: 25px;
-        }
-
-        .advanced-feature-buttons > div:first-child {
-            padding-left: 24px;
-        }
-
-        .advanced-feature-buttons > div:last-child {
-            padding-right: 24px;
+            overflow-x: scroll;
+            justify-content: flex-start;
         }
 
         .advanced-feature-buttons > div {
             margin-top: 40px;
-            flex: 1 1 30%;
+            flex: auto;
+            flex-shrink: 0;
+            flex-grow: 1;
         }
 
         .advanced-feature-buttons > div:hover {
             margin-top: 40px;
+        }
+
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 12px);
+            background-size: 100% 2px;
         }
     }
 `
@@ -1054,7 +1055,7 @@ const fonts = css`
     }
 
     .font-p-link {
-        color: #4469E2; 
+        color: #4469E2;
         text-decoration: underline;
     }
 
@@ -1146,6 +1147,10 @@ const fonts = css`
         .font-p-5 {
             font-size: 0.75rem;
             line-height: 1.5rem;
+        }
+
+        .design-image {
+            height: 192px;
         }
     }
 `

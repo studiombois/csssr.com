@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 
 const base = css`
 
-    &{
+    & {
         width: 292px;
     }
 
@@ -42,7 +42,7 @@ const base = css`
 
     &:hover .wrapper {
         box-shadow: 0px 25px 50px rgba(78, 81, 144, 0.07), 0px 4px 7px rgba(78, 81, 144, 0.4);
-        
+
     }
 
     .wrapper-active {
@@ -102,6 +102,20 @@ const base = css`
     }
 
     @media screen and (max-width: 720px) {
+        & {
+            width: 70%;
+            height: 350px;
+            align-self: stretch;
+        }
+
+        &:not(:first-of-type ) {
+            margin-left: 25px;
+        }
+
+        .wrapper {
+            height: calc(100% - 90px);
+        }
+
         .font-p-2 {
             font-size: 0.875rem;
             line-height: 1.5rem;
@@ -110,11 +124,6 @@ const base = css`
             font-size: 0.875rem;
             line-height: 1.5rem;
         }
-
-        .mobile-image {
-            width: 70%;
-        }
-
     }
 
 `

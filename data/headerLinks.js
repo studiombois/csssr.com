@@ -9,6 +9,8 @@ import Computer from '../static/icons/header/computer.svg'
 import Message from '../static/icons/header/message.svg'
 import CPU from '../static/icons/header/cpu.svg'
 import Repeat from '../static/icons/header/repeat.svg'
+import LMS from '../static/icons/header/lms.svg'
+import Tracker from '../static/icons/header/tracker.svg'
 
 export default {
   menu: [
@@ -86,6 +88,26 @@ export default {
           title: 'common:header.menu.howWeWork.processes.title',
           description: 'common:header.menu.howWeWork.processes.description',
           href: 'way-of-work',
+        },
+      ],
+    },
+    {
+      id: 'products',
+      title: 'common:header.menu.products.title',
+      links: [
+        {
+          id: 'lms',
+          icon: LMS,
+          title: 'common:header.menu.products.lms.title',
+          description: 'common:header.menu.products.lms.description',
+          href: 'products/lms',
+        },
+        {
+          id: 'tracker',
+          icon: Tracker,
+          title: 'common:header.menu.products.tracker.title',
+          description: 'common:header.menu.products.tracker.description',
+          href: 'https://tracker.csssr.com',
         },
       ],
     },

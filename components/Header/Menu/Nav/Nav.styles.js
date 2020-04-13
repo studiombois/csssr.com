@@ -33,10 +33,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     color: #5695ED;
   }
 
-  .nav-item_active .icon path {
-    stroke: #5695ED;
-  }
-
   .nav {
     margin-left: auto;
     margin-right: auto;
@@ -63,6 +59,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .nav_services_ru,
   .nav_howWeWork,
+  .nav_products,
   .nav_industries {
     .nav-item {
       width: 50%;
@@ -121,6 +118,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     height: 100%;
     color: white;
     text-decoration: none;
+
+    &::after {
+      display: none;
+    }
   }
 
   .icon {
@@ -138,6 +139,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   @media (pointer: fine) {
     .nav_howWeWork,
+    .nav_products,
     .nav_industries {
       .link:hover {
         color: #5695ED;
@@ -159,6 +161,33 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
       .link:hover .icon path {
         stroke: #5695ED;
+      }
+    }
+  }
+
+  .nav_products .link:hover,
+  .nav_products .nav-item_active .link {
+    .icon_lms {
+      fill: #5695ED;
+
+      path {
+        stroke: #5695ED;
+      }
+
+      path:not(:first-of-type) {
+        stroke: #18191B;
+      }
+    }
+
+    .icon_tracker {
+      fill: #5695ED;
+
+      circle {
+        stroke: #5695ED;
+      }
+
+      path {
+        stroke: #18191B;
       }
     }
   }
@@ -251,6 +280,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
     .nav_industries,
     .nav_howWeWork,
+    .nav_products,
     .nav_services {
       .nav-item {
         width: 100%;

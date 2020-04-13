@@ -14,12 +14,12 @@ import translate from '../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const { menu } = headerLinks
-const Menu = ({ className, isMobile, t }) => {
+const Menu = ({ className, isMobile, lng, t }) => {
   const menuRef = useRef(null)
   const [activeItem, setActiveItem] = useState(null)
   const [animationDirection, setAnimationDirection] = useState(null)
 
-  const handleMouseOver = item => event => {
+  const handleMouseOver = (item) => (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -34,7 +34,7 @@ const Menu = ({ className, isMobile, t }) => {
 
   const handleResetActiveItem = () => setActiveItem(null)
 
-  const handleMouseOut = event => {
+  const handleMouseOut = (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -45,7 +45,7 @@ const Menu = ({ className, isMobile, t }) => {
     }
   }
 
-  const handleClick = item => event => {
+  const handleClick = (item) => (event) => {
     if (!isMobile) {
       event.preventDefault()
       return
@@ -67,19 +67,25 @@ const Menu = ({ className, isMobile, t }) => {
         data-scroll-lock-scrollable
       >
         <MenuWrapperTag className="menu">
-          {menu.map(({ id, title }) => (
-            <Link
-              className={cn('menu-item', {
-                'menu-item_active': id === activeItem,
-              })}
-              as={isMobile ? 'button' : 'li'}
-              key={title}
-              type="top_menu"
-              onMouseOver={handleMouseOver(id)}
-              onClick={handleClick(id)}
-              dangerouslySetInnerHTML={{ __html: t(title) }}
-            />
-          ))}
+          {menu.map(({ id, title }) => {
+            if (lng === 'ru' && id === 'products') {
+              return
+            }
+
+            return (
+              <Link
+                className={cn('menu-item', {
+                  'menu-item_active': id === activeItem,
+                })}
+                as={isMobile ? 'button' : 'li'}
+                key={title}
+                type="top_menu"
+                onMouseOver={handleMouseOver(id)}
+                onClick={handleClick(id)}
+                dangerouslySetInnerHTML={{ __html: t(title) }}
+              />
+            )
+          })}
         </MenuWrapperTag>
 
         <Nav

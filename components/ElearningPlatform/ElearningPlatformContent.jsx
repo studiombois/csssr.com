@@ -271,8 +271,6 @@ class ElearningPlatformContent extends PureComponent {
 
               <div className="design-buttons">
                 <div className="design-buttons-row">
-                  {console.log(this.state.activeDesignImage)}
-
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'font' })}
                     onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}

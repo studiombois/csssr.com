@@ -333,7 +333,7 @@ const base = css`
     }
 
     .advanced-feature-buttons > div:hover {
-        margin-top: 100px;
+        transform: translateY(-20px);
     }
 
     @media screen and (max-width: 1492px) {
@@ -482,10 +482,6 @@ const base = css`
             margin-top: 100px;
         }
 
-        .advanced-feature-buttons > div:hover {
-            margin-top: 80px;
-        }
-
         .team-image-wrapper {
             background-position: 0 calc(100% - 17px);
             background-size: 100% 3px;
@@ -630,7 +626,7 @@ const base = css`
         }
 
         .advanced-feature-buttons > div:hover {
-            margin-top: 60px;
+            transform: translateY(0);
         }
 
         .team-image-wrapper {

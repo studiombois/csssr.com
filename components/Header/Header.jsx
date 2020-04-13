@@ -114,12 +114,12 @@ const Header = ({
             dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
           />
         ) : (
-            <Button
-              onClick={handleButtonClick}
-              className="button_action"
-              dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
-            />
-          ))}
+          <Button
+            onClick={handleButtonClick}
+            className="button_action"
+            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+          />
+        ))}
     </Fragment>
   )
 
@@ -158,8 +158,8 @@ const Header = ({
           </div>
         </Fragment>
       ) : (
-          <CommonHeaderContent />
-        )}
+        <CommonHeaderContent />
+      )}
 
       {typeof window !== 'undefined' &&
         isContactModalVisible &&

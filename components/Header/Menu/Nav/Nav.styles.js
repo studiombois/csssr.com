@@ -121,7 +121,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     text-decoration: none;
 
     &::after {
-      display: none;
+      display: none !important;
     }
   }
 

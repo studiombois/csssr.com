@@ -3,7 +3,7 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = css`
     & {
-        margin-top: ${calcRem(-89)};
+        margin-top: ${calcRem(153)};
     }
 
     .no-wrap {
@@ -637,7 +637,7 @@ const base = css`
 
     @media screen and (max-width: 768px) {
         & {
-           margin-top: ${calcRem(56)};
+           margin-top: ${calcRem(80)};
         }
 
         .team-image-wrapper {

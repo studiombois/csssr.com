@@ -19,7 +19,7 @@ const OurClients = ({ t, lng, className, id, content: { heading, images, altImg 
 
     <PictureForAllResolutions
       images={images[lng]}
-      className={`image image_${id}`}
+      className="image"
       alt={t(altImg)}
       fallback={images[lng]['desktop.l']}
     />

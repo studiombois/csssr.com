@@ -10,18 +10,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     color: ${colors.secondary.darken100};
   }
 
+  .address-item {
+    cursor: pointer;
+
+    &:hover .pin {
+      transform: scale(1.5);
+    }
+  }
+
   .address,
   .phone {
     color: ${colors.secondary.darken100};
-  }
-
-  .address {
     font-weight: normal;
   }
   
   .phone {
     display: block;
-    font-weight: 300;
   }
 
   @media (hover: hover) and (pointer: fine) {

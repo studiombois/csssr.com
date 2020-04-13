@@ -173,6 +173,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       max-height: 296px;
     }
 
+    .first-item.card::before,
+    .third-item.card::before {
+      content: '';
+      display: block;
+      height: ${calcRem(92)};
+    }
+
     .title {
       margin-top: ${calcRem(62)};
     }
@@ -220,6 +227,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-row: 5;
     }
 
+    .first-item.card,
     .second-item.card,
     .third-item.card {
       margin-top: ${calcRem(89)};

@@ -17,7 +17,7 @@ const SocialLinks = ({ className, lng }) => (
       return (
         <li key={id}>
           <a href={href} target="_blank" rel="noopener nofollow">
-            <Icon className={`social-icon icon_${id}`}/>
+            <Icon />
           </a>
         </li>
       )

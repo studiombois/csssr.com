@@ -15,14 +15,6 @@ const base = ({ colors }) => css`
   a {
     color: ${colors.secondary.darken100};
   }
-  
-  .social-icon:hover {
-    fill: #0254D8;
-  }
-
-  .social-icon:hover path {
-    fill: #0254D8;
-  }
 `
 
 export default props => {

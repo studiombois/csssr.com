@@ -899,7 +899,6 @@ const base = css`
 
         .advanced-feature-buttons {
             padding-left: 32px;
-            padding-right: 32px;
             flex-wrap: nowrap;
             overflow-x: scroll;
             justify-content: flex-start;
@@ -910,6 +909,10 @@ const base = css`
             flex: auto;
             flex-shrink: 0;
             flex-grow: 1;
+        }
+
+        .advanced-feature-buttons > div:last-of-type {
+            padding-right: 32px;
         }
 
         .advanced-feature-buttons > div:hover {

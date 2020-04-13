@@ -1,10 +1,8 @@
 import projects_1 from './projects_1'
 import projects_2 from './projects_2'
-import projects_3 from './projects_3'
 
 export default {
   heading: 'industry:projects.heading',
-  subHeading: 'industry:projects.subHeading',
   projectsItems: [
     {
       images: projects_1,
@@ -22,6 +20,10 @@ export default {
           textData: 'industry:projects.firstItem.numericData.secondItem.text',
         },
       ],
+      button: {
+        title: 'industry:projects.firstItem.button.title',
+        href: 'industry:projects.firstItem.button.href'
+      }
     },
     {
       images: projects_2,
@@ -40,23 +42,10 @@ export default {
           textData: 'industry:projects.secondItem.numericData.secondItem.text',
         },
       ],
-    },
-    {
-      images: projects_3,
-      imgAlt: 'industry:imgAlt.projects_3',
-      heading: 'industry:projects.thirdItem.heading',
-      text: 'industry:projects.thirdItem.text',
-      className: 'third-item',
-      numericData: [
-        {
-          numberData: 'industry:projects.thirdItem.numericData.firstItem.number',
-          textData: 'industry:projects.thirdItem.numericData.firstItem.text',
-        },
-        {
-          numberData: 'industry:projects.thirdItem.numericData.secondItem.number',
-          textData: 'industry:projects.thirdItem.numericData.secondItem.text',
-        },
-      ],
-    },
-  ],
+      button: {
+        title: 'industry:projects.secondItem.button.title',
+        href: 'industry:projects.secondItem.button.href'
+      }
+    }
+  ]
 }

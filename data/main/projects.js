@@ -9,14 +9,12 @@ import tracker_tablet_all_webp from '../../static/images/main/tablet.all/tracker
 import tracker_mobile_all from '../../static/images/main/mobile.all/tracker.png?responsive'
 import tracker_mobile_all_webp from '../../static/images/main/mobile.all/tracker.png?responsive_and_webp'
 
-// TODO: Добавить файлы когда заработает figma: https://www.figma.com/file/iuGpB43tIO71pOBRBCczn5/.main?node-id=1555%3A13
-
-// import tracker_desktop_l_hovered from '../../static/images/main/desktop.l/tracker-hovered.png?responsive'
-// import tracker_desktop_l_webp_hovered from '../../static/images/main/desktop.l/tracker-hovered.png?responsive_and_webp'
-// import tracker_desktop_m_hovered from '../../static/images/main/desktop.m/tracker-hovered.png?responsive'
-// import tracker_desktop_m_webp_hovered from '../../static/images/main/desktop.m/tracker-hovered.png?responsive_and_webp'
-// import tracker_desktop_s_hovered from '../../static/images/main/desktop.s/tracker-hovered.png?responsive'
-// import tracker_desktop_s_webp_hovered from '../../static/images/main/desktop.s/tracker-hovered.png?responsive_and_webp'
+import tracker_desktop_l_hovered from '../../static/images/main/desktop.l/tracker-hovered.png?responsive'
+import tracker_desktop_l_webp_hovered from '../../static/images/main/desktop.l/tracker-hovered.png?responsive_and_webp'
+import tracker_desktop_m_hovered from '../../static/images/main/desktop.m/tracker-hovered.png?responsive'
+import tracker_desktop_m_webp_hovered from '../../static/images/main/desktop.m/tracker-hovered.png?responsive_and_webp'
+import tracker_desktop_s_hovered from '../../static/images/main/desktop.s/tracker-hovered.png?responsive'
+import tracker_desktop_s_webp_hovered from '../../static/images/main/desktop.s/tracker-hovered.png?responsive_and_webp'
 
 import school_desktop_l from '../../static/images/main/desktop.l/school.png?responsive'
 import school_desktop_l_webp from '../../static/images/main/desktop.l/school.png?responsive_and_webp'
@@ -29,14 +27,12 @@ import school_tablet_all_webp from '../../static/images/main/tablet.all/school.p
 import school_mobile_all from '../../static/images/main/mobile.all/school.png?responsive'
 import school_mobile_all_webp from '../../static/images/main/mobile.all/school.png?responsive_and_webp'
 
-// TODO: Добавить файлы когда заработает figma: https://www.figma.com/file/iuGpB43tIO71pOBRBCczn5/.main?node-id=1555%3A13
-
-// import school_desktop_l_hovered from '../../static/images/main/desktop.l/school-hovered.png?responsive'
-// import school_desktop_l_webp_hovered from '../../static/images/main/desktop.l/school-hovered.png?responsive_and_webp'
-// import school_desktop_m_hovered from '../../static/images/main/desktop.m/school-hovered.png?responsive'
-// import school_desktop_m_webp_hovered from '../../static/images/main/desktop.m/school-hovered.png?responsive_and_webp'
-// import school_desktop_s_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive'
-// import school_desktop_s_webp_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive_and_webp'
+import school_desktop_l_hovered from '../../static/images/main/desktop.l/school-hovered.png?responsive'
+import school_desktop_l_webp_hovered from '../../static/images/main/desktop.l/school-hovered.png?responsive_and_webp'
+import school_desktop_m_hovered from '../../static/images/main/desktop.m/school-hovered.png?responsive'
+import school_desktop_m_webp_hovered from '../../static/images/main/desktop.m/school-hovered.png?responsive_and_webp'
+import school_desktop_s_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive'
+import school_desktop_s_webp_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive_and_webp'
 
 // import blog_desktop_l from '../../static/images/main/desktop.l/blog.png?responsive'
 // import blog_desktop_l_webp from '../../static/images/main/desktop.l/blog.png?responsive_and_webp'
@@ -64,13 +60,11 @@ const trackerImages = {
   'desktop.l': { png: tracker_desktop_l, webp: tracker_desktop_l_webp },
 }
 
-// TODO: Добавить файлы когда заработает figma
-
-// const trackerImagesHovered = {
-//   'desktop.s': { png: tracker_desktop_s_hovered, webp: tracker_desktop_s_webp_hovered },
-//   'desktop.m': { png: tracker_desktop_m_hovered, webp: tracker_desktop_m_webp_hovered },
-//   'desktop.l': { png: tracker_desktop_l_hovered, webp: tracker_desktop_l_webp_hovered },
-// }
+const trackerImagesHovered = {
+  'desktop.s': { png: tracker_desktop_s_hovered, webp: tracker_desktop_s_webp_hovered },
+  'desktop.m': { png: tracker_desktop_m_hovered, webp: tracker_desktop_m_webp_hovered },
+  'desktop.l': { png: tracker_desktop_l_hovered, webp: tracker_desktop_l_webp_hovered },
+}
 
 const schoolImages = {
   'mobile.all': { png: school_mobile_all, webp: school_mobile_all_webp },
@@ -80,13 +74,11 @@ const schoolImages = {
   'desktop.l': { png: school_desktop_l, webp: school_desktop_l_webp },
 }
 
-// TODO: Добавить файлы когда заработает figma
-
-// const schoolImagesHovered = {
-//   'desktop.s': { png: school_desktop_s_hovered, webp: school_desktop_s_webp_hovered },
-//   'desktop.m': { png: school_desktop_m_hovered, webp: school_desktop_m_webp_hovered },
-//   'desktop.l': { png: school_desktop_l_hovered, webp: school_desktop_l_webp_hovered },
-// }
+const schoolImagesHovered = {
+  'desktop.s': { png: school_desktop_s_hovered, webp: school_desktop_s_webp_hovered },
+  'desktop.m': { png: school_desktop_m_hovered, webp: school_desktop_m_webp_hovered },
+  'desktop.l': { png: school_desktop_l_hovered, webp: school_desktop_l_webp_hovered },
+}
 
 // const blogImages = {
 //   'mobile.all': { png: blog_mobile_all, webp: blog_mobile_all_webp },
@@ -109,7 +101,7 @@ export default [
     description: 'main:projects.tracker.description',
     href: 'https://tracker.csssr.com/',
     images: trackerImages,
-    //imagesHovered: trackerImagesHovered,
+    imagesHovered: trackerImagesHovered,
     fallback: tracker_desktop_l,
   },
   {
@@ -118,7 +110,7 @@ export default [
     description: 'main:projects.school.description',
     href: 'https://school.csssr.com',
     images: schoolImages,
-    //imagesHovered: schoolImagesHovered,
+    imagesHovered: schoolImagesHovered,
     fallback: school_desktop_l,
   },
   // {

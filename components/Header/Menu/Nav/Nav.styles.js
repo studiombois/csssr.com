@@ -166,6 +166,32 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
   }
 
+  .nav_howWeWork,
+  .nav_products,
+  .nav_industries {
+    .nav-item_active .link {
+        color: #5695ED;
+      }
+
+    .nav-item_active .link .icon path {
+        stroke: #5695ED;
+      }
+    }
+
+  .nav_services {
+    .nav-item_active .link {
+      color: #5695ED;
+    }
+
+    .nav-item_active .link .icon {
+      fill: #5695ED;
+    }
+
+    .nav-item_active .link .icon path {
+      stroke: #5695ED;
+    }
+  }
+
   .nav_products .link:hover,
   .nav_products .nav-item_active .link {
     .icon_lms {

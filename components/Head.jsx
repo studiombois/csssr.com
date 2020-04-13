@@ -149,11 +149,12 @@ Head.propTypes = {
   }),
   structuredData: node,
 }
+
 Head.defaultProps = {
   structuredData: <StructuredData />,
   templateTitle: ' | CSSSR',
   ogImage: {
-    url: require('../static/images/dev/1920/dev@2x.png'),
+    url: require('../static/images/ogImage.png'),
     width: 3840,
     height: 1280,
   },

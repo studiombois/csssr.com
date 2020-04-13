@@ -90,7 +90,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   .nav_services_ru,
-  .nav_howWeWork {
+  .nav_howWeWork,
+  .nav_products {
     .icon {
       top: ${calcRem(68)};
     }
@@ -203,7 +204,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .nav_services_ru,
-    .nav_howWeWork {
+    .nav_howWeWork,
+    .nav_products {
       .description {
         width: calc(100% - ${calcRem(92)});
       }
@@ -294,7 +296,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .nav_services,
-    .nav_howWeWork {
+    .nav_howWeWork,
+    .nav_products {
       ul {
         margin-top: ${calcRem(27)};
       }

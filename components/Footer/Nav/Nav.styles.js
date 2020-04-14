@@ -10,6 +10,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     justify-content: space-between;
   }
 
+  .nav-item:nth-of-type(4) {
+    width: 100px;
+  }
+
   .title {
     display: block;
     color: ${colors.secondary.darken100};

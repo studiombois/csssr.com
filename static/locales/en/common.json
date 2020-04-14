@@ -109,6 +109,11 @@
       "aboutUs": "About us",
       "careers": "Careers"
     },
+    "products": {
+      "title": "Products",
+      "lms": "Modular LMS system",
+      "tracker": "Time-tracking software"
+    },
     "privacy": "Privacy policy",
     "cookies": "Website cookie policy",
     "addresses": {

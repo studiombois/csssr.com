@@ -229,6 +229,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       line-height: ${calcRem(32)};
     }
 
+    .nav_services {
+      .title {
+        width: 60%;
+      }
+    }
+
     .nav_services_ru,
     .nav_howWeWork,
     .nav_products {

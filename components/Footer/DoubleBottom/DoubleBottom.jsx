@@ -20,6 +20,9 @@ const pins = [
     id: 'russia'
   },
   {
+    id: 'russia'
+  },
+  {
     id: 'estonia'
   }
 ]
@@ -42,7 +45,7 @@ const DoubleBottom = ({ className, t}) => {
             {pins.map(({id}) => <span
                                   key={id}
                                   className={cn(`pin pin_${id}`, {
-                                    'pin_hovered': id === hoveredAddress,
+                                    'pin_hovered': id === hoveredAddress
                                   })}
                                 />)}
           </div>

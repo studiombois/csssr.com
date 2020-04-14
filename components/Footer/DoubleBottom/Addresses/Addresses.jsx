@@ -12,7 +12,7 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import Link from '../../../ui-kit/core-design/Link'
 import ClickOutside from '../../../ClickOutside'
 
-const addressesIds = ['singapore', 'russia', 'russia_2', 'estonia']
+const addressesIds = ['singapore', 'russia', 'russia', 'estonia']
 // TODO это может поменяться в будущем
 const timezoneOffsetsByAddressId = {
   singapore: 8,
@@ -64,15 +64,13 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
             onMouseLeave={handleMouseOut}
           >
 
-            {id !== 'russia_2' && (
-              <Heading
-                as="p"
-                className="title"
-                type="regular"
-                size="s"
-                dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.title`) }}
-              />
-            )}
+            <Heading
+              as="p"
+              className="title"
+              type="regular"
+              size="s"
+              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.title`) }}
+            />
             
             <Text
               className="address"

@@ -67,7 +67,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .address-item:nth-of-type(3) {
       margin-top: ${calcRem(86)};
-      margin-right: ${calcRem(80)};
+      margin-right: ${calcRem(72)};
     }
 
     .address-item:nth-of-type(3) .address {
@@ -84,12 +84,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
   }
 
   ${desktop.s} {
-    .address-item:nth-of-type(1) {
-      margin-right: ${calcRem(65)};
-    }
-
-    .address-item:nth-of-type(3) {
-      margin-right: ${calcRem(65)};
+    .address-item:not(:last-of-type) {
+      margin-right: ${calcRem(40)};
     }
   }
 

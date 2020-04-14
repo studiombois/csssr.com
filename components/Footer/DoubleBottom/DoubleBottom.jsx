@@ -42,8 +42,8 @@ const DoubleBottom = ({ className, t}) => {
               alt={t('common:footer.imageAlt.continents')}
             />
 
-            {pins.map(({id}) => <span
-                                  key={id}
+            {pins.map(({id}, index) => <span
+                                  key={`${id}_${index}`}
                                   className={cn(`pin pin_${id}`, {
                                     'pin_hovered': id === hoveredAddress
                                   })}

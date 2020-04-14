@@ -56,10 +56,10 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
   return (
     <ClickOutside onOutsideClick={handleResetHoveredAddress}>
       <div className={className}>
-        {addressesIds.map(id => (
+        {addressesIds.map((id, index) => (
           <div 
             className={`address-item address_${id}`}
-            key={id}
+            key={`${id}_${index}`}
             onMouseOver={handleMouseOver(id)}
             onMouseLeave={handleMouseOut}
           >

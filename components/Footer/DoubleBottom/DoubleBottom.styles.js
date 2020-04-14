@@ -53,6 +53,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     &_hovered {
       transform: scale(1.2);
       transition: transform 300ms ease;
+      transform-origin: bottom;
     }
 
   }

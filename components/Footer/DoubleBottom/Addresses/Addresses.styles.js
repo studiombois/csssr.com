@@ -18,6 +18,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
   }
 
+  .address_russia:nth-of-type(3) {
+    .title {
+      display: none;
+    }
+  }
+
   .address,
   .phone {
     color: ${colors.secondary.darken100};

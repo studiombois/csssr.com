@@ -4,10 +4,6 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
-  .listItem::before {
-    transition: 700ms ease-out;
-  }
-
   ${mobile.all} {
 
     .heading {
@@ -78,22 +74,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background-image: url('../../../static/icons/way-of-work/transparency/triangle.svg');
     }
 
-    .active.squareItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/square-fill.svg');
-    }
-
-    .active.circleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle-fill.svg');
-    }
-
-    .active.arcItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc-fill.svg');
-    }
-
-    .active.triangleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle-fill.svg');
-    }
-
     .figures {
       grid-column: 8 / span 4;
       grid-row: 1 / span 2;
@@ -146,22 +126,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .triangleItem::before {
       background-image: url('../../../static/icons/way-of-work/transparency/triangle.svg');
-    }
-
-    .active.squareItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/square-fill.svg');
-    }
-
-    .active.circleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle-fill.svg');
-    }
-
-    .active.arcItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc-fill.svg');
-    }
-
-    .active.triangleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle-fill.svg');
     }
 
     .figures {

@@ -11,7 +11,7 @@ const Observer = ({ children, name, handleActive, className }) => {
     const options = {
       root: null,
       rootMargin: '-5% 0px',
-      threshold: [0],
+      threshold: 1,
     }
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(callback, options)

@@ -168,17 +168,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-const ie11Styles = () => css`
-  .figure.active {
-    display: none;
-  }
-`
-
 export default props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
     ${base({ breakpoints })}
-    ${props.isIe11 && ie11Styles()}
   `
 }

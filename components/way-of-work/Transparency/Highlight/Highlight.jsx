@@ -6,7 +6,6 @@ import styled from '@emotion/styled'
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import translate from '../../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
-import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import styles from './Highlight.styles'
 
@@ -85,9 +84,7 @@ Highlight.propTypes = {
 }
 
 export default translate(
-  MsBrowserConsumer(
-    DeviceConsumer(styled(Highlight)`
-      ${styles}
-    `),
-  ),
+  DeviceConsumer(styled(Highlight)`
+    ${styles}
+  `),
 )

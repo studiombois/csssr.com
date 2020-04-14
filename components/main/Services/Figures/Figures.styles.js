@@ -140,10 +140,9 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
   }
 `
 
-const ie11Styles = ({ breakpoints: { tablet }, lng }) => css`
+const ie11Styles = ({ breakpoints: { tablet } }) => css`
   & {
     position: absolute;
-    top: calc((100% - ${lng === 'ru' ? '504px' : '456px'}) / 2);
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-row: 2;
   }
@@ -153,38 +152,13 @@ const ie11Styles = ({ breakpoints: { tablet }, lng }) => css`
     transform: translate(-50%);
   }
 
-  .picture_circle.picture_circle_ru {
-    left: 54%;
-  }
-
-  .picture_square.picture_square_ru {
-    left: 45.7%;
-  }
-
   .picture_figures {
     height: 100%;
   }
 
   ${tablet.all} {
-    & {
-      top: calc((100% - ${lng === 'ru' ? '303px' : '424px'}) / 2);
-    }
-
-    .picture_circle.picture_circle_ru {
-      left: 54%;
-    }
-
-    .picture_square.picture_square_ru {
-      left: 45.6%;
-    }
-
-    .picture_circle.picture_circle_en,
-    .picture_square.picture_square_en {
-      left: 52%;
-    }
-
-    .picture_triangle.picture_triangle_en {
-      left: 51.5%;
+    .picture:not(.picture_figures) {
+      left: calc(50% + 6px);
     }
   }
 `

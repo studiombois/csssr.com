@@ -10,20 +10,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     color: ${colors.secondary.darken100};
   }
 
-  .address-item {
-    cursor: pointer;
-
-    &:hover .pin {
-      transform: scale(1.5);
-    }
-  }
-
-  .address_russia:nth-of-type(3) {
-    .title {
-      display: none;
-    }
-  }
-
   .address,
   .phone {
     color: ${colors.secondary.darken100};
@@ -73,7 +59,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .address-item:nth-of-type(3) {
       margin-top: ${calcRem(86)};
-      margin-right: ${calcRem(72)};
+      margin-right: ${calcRem(80)};
     }
 
     .address-item:nth-of-type(3) .address {
@@ -90,12 +76,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
   }
 
   ${desktop.s} {
-    .address-item:not(:last-of-type) {
-      margin-right: ${calcRem(40)};
+    .address-item:nth-of-type(1) {
+      margin-right: ${calcRem(65)};
     }
 
-    .address-item:first-of-type {
-      margin-right: ${calcRem(50)};
+    .address-item:nth-of-type(3) {
+      margin-right: ${calcRem(65)};
     }
   }
 

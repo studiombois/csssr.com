@@ -137,6 +137,9 @@ const stylesForTextareaField = css`
   & {
     margin-top: 2.0625rem;
     grid-column: 2 / span 6;
+  }
+
+  & {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }

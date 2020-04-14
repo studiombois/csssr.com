@@ -10,9 +10,8 @@ import Text from '../../../ui-kit/core-design/Text'
 import translate from '../../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import Link from '../../../ui-kit/core-design/Link'
-import ClickOutside from '../../../ClickOutside'
 
-const addressesIds = ['singapore', 'russia', 'russia', 'estonia']
+const addressesIds = ['singapore', 'russia', 'russia_2', 'estonia']
 // TODO это может поменяться в будущем
 const timezoneOffsetsByAddressId = {
   singapore: 8,
@@ -21,7 +20,7 @@ const timezoneOffsetsByAddressId = {
   estonia: 2,
 }
 
-const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress }) => {
+const Addresses = ({ className, isTablet, isMobile, t, lng }) => {
   const [time, setTime] = useState(() => moment())
 
   useEffect(() => {
@@ -32,38 +31,13 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
     return () => clearTimeout(timeout)
   })
 
-  const handleResetHoveredAddress = () => setHoveredAddress(null)
-
-  const handleMouseOver = address => event => {
-    if (isMobile) {
-      event.preventDefault()
-      return
-    }
-
-    setHoveredAddress(address)
-  }
-
-  const handleMouseOut = event => {
-    if (isMobile) {
-      event.preventDefault()
-      return
-    }
-
-    setHoveredAddress(null)
-  }
-
   const textSize = isTablet || isMobile ? 'm' : 's'
   return (
-    <ClickOutside onOutsideClick={handleResetHoveredAddress}>
-      <div className={className}>
-        {addressesIds.map((id, index) => (
-          <div 
-            className={`address-item address_${id}`}
-            key={`${id}_${index}`}
-            onMouseOver={handleMouseOver(id)}
-            onMouseLeave={handleMouseOut}
-          >
+    <div className={className}>
+      {addressesIds.map(id => (
+        <div key={id} className="address-item">
 
+          {id !== 'russia_2' && (
             <Heading
               as="p"
               className="title"
@@ -71,41 +45,41 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
               size="s"
               dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.title`) }}
             />
-            
-            <Text
-              className="address"
-              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.address`) }}
+          )}
+          
+          <Text
+            className="address"
+            dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.address`) }}
+            size={textSize}
+            type="regular"
+          />
+          
+          {id !== 'estonia' && (
+            <Link
+              className="phone"
+              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.phone`) }}
+              href={`tel:${t(`common:footer.addresses.${id}.phone`)}`}
               size={textSize}
-              type="regular"
+              type="list"
             />
-            
-            {id !== 'estonia' && (
-              <Link
-                className="phone"
-                dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.phone`) }}
-                href={`tel:${t(`common:footer.addresses.${id}.phone`)}`}
-                size={textSize}
-                type="list"
-              />
-            )}
+          )}
 
-            {id === 'singapore' && (
-              <Text
-                className="status"
-                dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.status`) }}
-                type="regular"
-                size={textSize}
-                Head Office
-              />
-            )}
+          {id === 'singapore' && (
+            <Text
+              className="status"
+              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.status`) }}
+              type="regular"
+              size={textSize}
+              Head Office
+            />
+          )}
 
-            <Text className="time" type="regular" size={textSize}>
-              {time.utcOffset(timezoneOffsetsByAddressId[id]).format(`${lng==='ru' ? 'HH:mm': 'hh:mm A' }`)}
-            </Text>
-          </div>
-        ))}
-      </div>
-    </ClickOutside>
+          <Text className="time" type="regular" size={textSize}>
+            {time.utcOffset(timezoneOffsetsByAddressId[id]).format(`${lng==='ru' ? 'HH:mm': 'hh:mm A' }`)}
+          </Text>
+        </div>
+      ))}
+    </div>
   )
 }
 

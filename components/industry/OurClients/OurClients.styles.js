@@ -16,16 +16,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   .image {
     position: relative;
     grid-column: 1 / span 12;
+    width: max-content;
+    justify-self: center;
     grid-row: 2;
     max-width: ${calcRem(1792)};
     margin-top: ${calcRem(119)};
-  }
-
-  ${desktop.l} {
-    .image {
-      width: max-content;
-      justify-self: center;
-    }
   }
 
   ${desktop.m} {
@@ -36,8 +31,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
       &_informationTechnology {
         max-width: ${calcRem(1328)};
-        width: max-content;
-        justify-self: center;
       }
     }
   }

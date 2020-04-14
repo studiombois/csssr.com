@@ -33,6 +33,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .image {
       margin-top: ${calcRem(69)};
+
+      &_informationTechnology {
+        max-width: ${calcRem(1328)};
+        width: max-content;
+        justify-self: center;
+      }
     }
   }
 

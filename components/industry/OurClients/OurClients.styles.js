@@ -22,8 +22,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.l} {
-    .image_ourClients {
-      max-width: ${calcRem(1444)};
+    .image {
+      width: max-content;
       justify-self: center;
     }
   }

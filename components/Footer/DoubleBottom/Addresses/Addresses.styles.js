@@ -87,6 +87,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     .address-item:not(:last-of-type) {
       margin-right: ${calcRem(40)};
     }
+
+    .address-item:first-of-type {
+      margin-right: ${calcRem(50)};
+    }
   }
 
   ${tablet.all} {

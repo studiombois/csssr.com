@@ -397,6 +397,11 @@ const sitemapUrlsSettings = [
     changefreq: 'yearly',
     priority: 0.6,
   },
+  {
+    url: 'https://csssr.com/en/products/lms',
+    changefreq: 'yearly',
+    priority: 0.6,
+  },
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>

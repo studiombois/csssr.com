@@ -22,7 +22,7 @@
           "description": "Web development to&nbsp;complement core competencies."
         },
         "express": {
-          "title": "Express Front&#8209;end",
+          "title": "Express Web Development",
           "description": "Fixed rates for straight-forward, time-sensitive services."
         },
         "mvp": {
@@ -54,6 +54,17 @@
         "processes": {
           "title": "Our Process",
           "description": "Attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average."
+        }
+      },
+      "products": {
+        "title": "Products",
+        "lms": {
+          "title": "Modular LMS Platform",
+          "description": "Start you E-Learning business with or&nbsp;LMS. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and customization"
+        },
+        "tracker": {
+          "title": "Time-tracking Software",
+          "description": "Powerful time tracking app for teams. Track working hours across projects and get detailed reports to&nbsp;improve budgeting efficiency"
         }
       }
     },

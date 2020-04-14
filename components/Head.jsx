@@ -132,7 +132,7 @@ const Head = (props) => {
         </Fragment>
       )}
       <meta property="fb:app_id" content="416195255787519" />
-      <StructuredData />
+      {props.structuredData}
       {props.children}
     </NextHead>
   )
@@ -149,11 +149,12 @@ Head.propTypes = {
   }),
   structuredData: node,
 }
+
 Head.defaultProps = {
   structuredData: <StructuredData />,
   templateTitle: ' | CSSSR',
   ogImage: {
-    url: require('../static/images/dev/1920/dev@2x.png'),
+    url: require('../static/images/ogImage.png'),
     width: 3840,
     height: 1280,
   },

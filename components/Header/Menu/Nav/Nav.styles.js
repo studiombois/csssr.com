@@ -33,10 +33,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     color: #5695ED;
   }
 
-  .nav-item_active .icon path {
-    stroke: #5695ED;
-  }
-
   .nav {
     margin-left: auto;
     margin-right: auto;
@@ -63,6 +59,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .nav_services_ru,
   .nav_howWeWork,
+  .nav_products,
   .nav_industries {
     .nav-item {
       width: 50%;
@@ -129,7 +126,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   .nav_services_ru,
-  .nav_howWeWork {
+  .nav_howWeWork,
+  .nav_products {
     .icon {
       top: ${calcRem(68)};
     }
@@ -157,6 +155,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     height: 100%;
     color: white;
     text-decoration: none;
+
+    &::after {
+      display: none !important;
+    }
   }
 
   .icon {
@@ -174,6 +176,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   @media (pointer: fine) {
     .nav_howWeWork,
+    .nav_products,
     .nav_industries {
       .link:hover {
         color: #5695ED;
@@ -227,14 +230,72 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
   }
 
+  .nav_howWeWork,
+  .nav_products,
+  .nav_industries {
+    .nav-item_active .link {
+        color: #5695ED;
+      }
+
+    .nav-item_active .link .icon path {
+        stroke: #5695ED;
+      }
+    }
+
+  .nav_services {
+    .nav-item_active .link {
+      color: #5695ED;
+    }
+
+    .nav-item_active .link .icon {
+      fill: #5695ED;
+    }
+
+    .nav-item_active .link .icon path {
+      stroke: #5695ED;
+    }
+  }
+
+  .nav_products .link:hover,
+  .nav_products .nav-item_active .link {
+    .icon_lms {
+      fill: #5695ED;
+
+      path {
+        stroke: #5695ED;
+      }
+
+      path:not(:first-of-type) {
+        stroke: #18191B;
+      }
+    }
+
+    .icon_tracker {
+      fill: #5695ED;
+
+      circle {
+        stroke: #5695ED;
+      }
+
+      path {
+        stroke: #18191B;
+      }
+    }
+  }
+
   ${tablet.all} {
+    &.visible {
+      height: ${calcRem(288)};
+    }
+
     .title {
       font-size: ${calcRem(24)};
       line-height: ${calcRem(32)};
     }
 
     .nav_services_ru,
-    .nav_howWeWork {
+    .nav_howWeWork,
+    .nav_products {
       .description {
         width: calc(100% - ${calcRem(92)});
       }
@@ -317,6 +378,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
     .nav_industries,
     .nav_howWeWork,
+    .nav_products,
     .nav_services {
       .nav-item {
         width: 100%;
@@ -330,7 +392,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .nav_services,
-    .nav_howWeWork {
+    .nav_howWeWork,
+    .nav_products {
       ul {
         margin-top: ${calcRem(27)};
       }

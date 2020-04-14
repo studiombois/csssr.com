@@ -4,7 +4,9 @@ pipeline {
     branch = ""
     commit = ""
   }
-  agent { label 'master' }
+  agent {
+    label params.processImages ? 'master' : ''
+  }
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space (без слэша на конце)', name: 'csssrSpaceOrigin', trim: true)
@@ -67,7 +69,7 @@ pipeline {
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
             make deploy-production branch=${branch} commit=${commit}
             """
-          } else if (branch.startsWith('release/')) {
+          } else {
             sh """#!/bin/bash
             source ~/.bashrc
             set -x

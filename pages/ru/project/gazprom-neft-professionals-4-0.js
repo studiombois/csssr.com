@@ -1,3 +1,3 @@
-import GazpromNeftPage from '../../../components/industry/GazpromNeftPage'
+import GazpromNeftPage from '../../../components/project/GazpromNeftPage'
 
 export default GazpromNeftPage

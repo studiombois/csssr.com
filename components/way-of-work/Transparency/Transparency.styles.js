@@ -3,13 +3,64 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
-
   .listItem::before {
-    transition: 700ms ease-out;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .listItem::after {
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 700ms ease-out;
+  }
+
+  .listItem::before,
+  .listItem::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .squareItem::before {
+    background-image: url('../../../static/icons/way-of-work/transparency/square.svg');
+  }
+
+  .circleItem::before {
+    background-image: url('../../../static/icons/way-of-work/transparency/circle.svg');
+  }
+
+  .arcItem::before {
+    background-image: url('../../../static/icons/way-of-work/transparency/arc.svg');
+  }
+
+  .triangleItem::before {
+    background-image: url('../../../static/icons/way-of-work/transparency/triangle.svg');
+  }
+
+  .squareItem::after {
+    background-image: url('../../../static/icons/way-of-work/transparency/square-fill.svg');
+  }
+
+  .circleItem::after {
+    background-image: url('../../../static/icons/way-of-work/transparency/circle-fill.svg');
+  }
+
+  .arcItem::after {
+    background-image: url('../../../static/icons/way-of-work/transparency/arc-fill.svg');
+  }
+
+  .triangleItem::after {
+    background-image: url('../../../static/icons/way-of-work/transparency/triangle-fill.svg');
+  }
+
+  .listItem.active::after {
+    opacity: 1;
   }
 
   ${mobile.all} {
-
     .heading {
       grid-column: 1 / span 4;
       grid-row: 1;
@@ -51,47 +102,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       position: relative;
     }
 
-    .listItem::before{
+    .listItem::before,
+    .listItem::after {
       content: '';
-      position: absolute;
       top: 0;
       left: ${calcRem(-48)};
       width: ${calcRem(32)};
       height: ${calcRem(32)};
-      background-position: 50%;
-      background-repeat: no-repeat;
-    }
-
-    .squareItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/square.svg');
-    }
-
-    .circleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle.svg');
-    }
-
-    .arcItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc.svg');
-    }
-
-    .triangleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle.svg');
-    }
-
-    .active.squareItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/square-fill.svg');
-    }
-
-    .active.circleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle-fill.svg');
-    }
-
-    .active.arcItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc-fill.svg');
-    }
-
-    .active.triangleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle-fill.svg');
     }
 
     .figures {
@@ -120,48 +137,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       position: relative;
     }
 
-    .listItem::before{
-      content: '';
-      position: absolute;
+    .listItem::before,
+    .listItem::after {
       top: ${calcRem(4)};
       left: ${calcRem(-76)};
       width: ${calcRem(42)};
       height: ${calcRem(42)};
-      background-position: 50%;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    .squareItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/square.svg');
-    }
-
-    .circleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle.svg');
-    }
-
-    .arcItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc.svg');
-    }
-
-    .triangleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle.svg');
-    }
-
-    .active.squareItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/square-fill.svg');
-    }
-
-    .active.circleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle-fill.svg');
-    }
-
-    .active.arcItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc-fill.svg');
-    }
-
-    .active.triangleItem::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle-fill.svg');
     }
 
     .figures {

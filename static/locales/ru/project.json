@@ -1,0 +1,36 @@
+{
+    "meta": {
+        "gazpromNeft": {
+        "title": "FinTech and Banking Web Development",
+        "description": "We built a strong digital presence for banking and financial services."
+        },
+        "s7Airlines": {
+        "title": "Custom E-Commerce Development Services",
+        "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+        }
+    },
+    "imgAlt": {
+        "ourClients": "Сompany logos of our customers",
+        "facts": "Alt text for illustartion",
+        "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
+        "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
+        "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat."
+    },
+    "hero": {
+        "gazpromNeft": {
+            "title": "Проект Профессионалы&nbsp;4.0",
+            "link": "https://professionals4-0.ru",
+            "subTitle": "О клиенте",
+            "text": "&laquo;Газпром нефть&raquo;&nbsp;&mdash; вертикально-интегрированная нефтяная компания, основные виды деятельности которой&nbsp;&mdash; разведка и&nbsp;разработка месторождений нефти и&nbsp;газа, нефтепереработка, производство и&nbsp;сбыт нефтепродуктов.Компания является одной из&nbsp;крупнейших в&nbsp;своей отрасли и&nbsp;лидером по&nbsp;темпам роста финансовых показателей. &laquo;Газпром нефть&raquo; активно инвестирует средства и&nbsp;ресурсы в&nbsp;развитие технологий, социальные и&nbsp;образовательные проекты. В&nbsp;2018 году компания объявила о&nbsp;начале цифровой трансформации своего бизнеса.",
+            "imgAlt": ""
+        },
+        "s7Airlines": {
+            "title": "Личный кабинет пользователя авиакомпании&nbsp;S7",
+            "link": "https://myprofile.s7.ru/ ",
+            "subTitle": "О клиенте",
+            "text": "S7&nbsp;Airlines&nbsp;&mdash; крупнейшая частная авиакомпания России. Входит в&nbsp;холдинг &laquo;С7&nbsp;авиационно-космическая корпорация&raquo;, специализирующийся на&nbsp;продаже авиабилетов и&nbsp;туризме, пассажирских и&nbsp;грузоперевозках по&nbsp;воздуху, обучении лётного персонала, ремонте воздушных судов и&nbsp;других авиа- и&nbsp;космических услугах.",
+            "imgAlt": ""
+        }
+    }
+}
+  

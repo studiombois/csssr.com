@@ -1,0 +1,36 @@
+{
+    "meta": {
+      "gazpromNeft": {
+        "title": "FinTech and Banking Web Development",
+        "description": "We built a strong digital presence for banking and financial services."
+      },
+      "s7Airlines": {
+        "title": "Custom E-Commerce Development Services",
+        "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+      }
+    },
+    "imgAlt": {
+      "ourClients": "Сompany logos of our customers",
+      "facts": "Alt text for illustartion",
+      "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
+      "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
+      "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat."
+    },
+    "hero": {
+      "gazpromNeft": {
+        "title": "Professionals&nbsp;4.0",
+        "link": "https://professionals4-0.ru",
+        "subTitle": "Client",
+        "text": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products. The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector. Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business.",
+        "imgAlt": ""
+      },
+      "s7Airlines": {
+        "title": "Personal Account of&nbsp;an&nbsp;S7&nbsp;Airline Customer",
+        "link": "https://myprofile.s7.ru/ ",
+        "subTitle": "Client",
+        "text": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline. It&nbsp;is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;group of&nbsp;companies doing business in&nbsp;tourism and ticket distribution, passengers and cargo air transportation, flight personnel training, aircraft repair, and other aviation and space services.",
+        "imgAlt": ""
+      }
+    }
+  }
+  

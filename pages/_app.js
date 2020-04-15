@@ -153,7 +153,7 @@ export default class MyApp extends App {
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMobileMediaMatch)
     this.tabletMediaQuery.removeListener(this.handleTableMediaMatch)
-    window.removeListener('resize', this.getVhSize)
+    window.removeEventListener('resize', this.getVhSize)
 
     Router.events.off('routeChangeStart', this.handleRouteChangeStart)
     Router.events.off('routeChangeComplete', this.handleRouteChangeComplete)

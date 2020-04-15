@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { string } from 'prop-types'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 
 import Highlight from './Highlight'
@@ -38,7 +39,9 @@ const Transparency = ({ className, id, t }) => {
               key={item.id}
               name={item.id}
               handleActive={handleActive}
-              className={`listItem ${item.id}Item`}
+              className={cn(`listItem ${item.id}Item`, {
+                active: item.id === activeItem,
+              })}
             >
               <SubHeading
                 type="regular"

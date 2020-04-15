@@ -198,6 +198,66 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/project/s7-personal-account',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/s7-personal-account',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/s7-personal-account',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/s7-personal-account',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/s7-personal-account',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/s7-personal-account',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/gazprom-neft-professionals-4-0',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/gazprom-neft-professionals-4-0',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/gazprom-neft-professionals-4-0',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/gazprom-neft-professionals-4-0',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/gazprom-neft-professionals-4-0',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/gazprom-neft-professionals-4-0',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,

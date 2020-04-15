@@ -85,6 +85,7 @@ const Head = (props) => {
 
       {!props.customFavicons && (
         <Fragment>
+          <link rel="shortcut icon" href="/static/icons/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -108,7 +109,6 @@ const Head = (props) => {
             href="/static/icons/favicon/safari-pinned-tab.svg"
             color="#5bbad5"
           />
-          <link rel="shortcut icon" href="/static/icons/favicon/favicon.ico" />
           <meta name="msapplication-TileColor" content="#00aba9" />
           <meta name="msapplication-config" content="/static/icons/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />

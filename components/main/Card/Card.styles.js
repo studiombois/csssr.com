@@ -9,10 +9,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     cursor: pointer;
   }
 
-  .card-picture {
+  .picture-wrap {
     order: 1;
     width: 100%;
     flex-shrink: 0;
+    /* z-index: 1; */
+
     img {
       height: auto;
     }

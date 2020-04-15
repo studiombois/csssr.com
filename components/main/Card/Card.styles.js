@@ -13,7 +13,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     order: 1;
     width: 100%;
     flex-shrink: 0;
-    /* z-index: 1; */
+    z-index: 1;
 
     img {
       height: auto;

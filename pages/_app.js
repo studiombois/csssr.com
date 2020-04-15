@@ -46,14 +46,16 @@ const getI18nInitialProps = (ctx) => {
 export default class MyApp extends App {
   // This reports errors before rendering, when fetching initial props
   static async getInitialProps(appContext) {
-    const { Component, ctx } = appContext
-
-    const pagesList = ctx.res ? ctx.res.locals.pagesList : window.__NEXT_DATA__.props.pagesList
-    const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
-
-    let pageProps = getI18nInitialProps(ctx)
+    const { ctx } = appContext
 
     try {
+      const { Component } = appContext
+
+      const pagesList = ctx.res ? ctx.res.locals.pagesList : window.__NEXT_DATA__.props.pagesList
+      const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
+
+      let pageProps = getI18nInitialProps(ctx)
+
       if (Component.getInitialProps) {
         const componentProps = await Component.getInitialProps(ctx)
 
@@ -61,6 +63,15 @@ export default class MyApp extends App {
           ...pageProps,
           ...componentProps,
         }
+      }
+
+      pageProps.userAgent = userAgent
+      pageProps.isMobile = detectMobileByUserAgent(userAgent)
+      pageProps.isTablet = detectTabletByUserAgent(userAgent)
+
+      return {
+        pageProps,
+        pagesList,
       }
     } catch (error) {
       Sentry.withScope((scope) => {
@@ -96,15 +107,12 @@ export default class MyApp extends App {
 
       throw error
     }
+  }
 
-    pageProps.userAgent = userAgent
-    pageProps.isMobile = detectMobileByUserAgent(userAgent)
-    pageProps.isTablet = detectTabletByUserAgent(userAgent)
-
-    return {
-      pageProps,
-      pagesList,
-    }
+  static getDerivedStateFromError() {
+    // В componentDidCatch отправляем в Sentry ошибку и показываем alert
+    // Считаем ошибки обработанными и не ломаем страницу
+    return {}
   }
 
   state = {
@@ -115,7 +123,12 @@ export default class MyApp extends App {
   // This reports errors thrown while rendering components
   componentDidCatch(error, errorInfo) {
     Sentry.captureException(error, { extra: errorInfo })
-    super.componentDidCatch(error, errorInfo)
+    const ruLanguage = /^ru/.test(this.props.pageProps.initialLanguage)
+    window.alert(
+      ruLanguage
+        ? 'Произошла непредвиденная ошибка. Детали ошибки отправлены нашим разработчикам.'
+        : 'An unexpected error has occurred. Error details have been sent to our developers.'
+    )
   }
 
   componentDidMount() {

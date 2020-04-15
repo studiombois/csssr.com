@@ -21,6 +21,10 @@ import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 
+const possibleStatusCodes = [404, 500]
+
+const defaultStatusCode = 500
+
 const titleLocalesByStatusCode = {
   404: 'error:errors.notFound.title',
   500: 'error:errors.serverError.title',
@@ -62,7 +66,12 @@ class ErrorPage extends React.Component {
   )
 
   render() {
-    const { className, t, lng: lngCodeFromI18n, statusCode = 500, i18n } = this.props
+    const { className, t, lng: lngCodeFromI18n, i18n } = this.props
+
+    const statusCode = possibleStatusCodes.includes(this.props.statusCode)
+      ? this.props.statusCode
+      : defaultStatusCode
+
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`
 

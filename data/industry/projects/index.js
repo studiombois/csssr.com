@@ -1,7 +1,7 @@
 import projects_1 from './projects_1'
 import projects_2 from './projects_2'
 
-export const informationTechnologyProjects =  {
+export const informationTechnologyProjects = {
   heading: 'industry:projects.heading',
   projectsItems: [
     {
@@ -12,18 +12,22 @@ export const informationTechnologyProjects =  {
       className: 'first-item',
       numericData: [
         {
-          numberData: 'industry:projects.informationTechnologyPage.firstItem.numericData.firstItem.number',
-          textData: 'industry:projects.informationTechnologyPage.firstItem.numericData.firstItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.firstItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.firstItem.text',
         },
         {
-          numberData: 'industry:projects.informationTechnologyPage.firstItem.numericData.secondItem.number',
-          textData: 'industry:projects.informationTechnologyPage.firstItem.numericData.secondItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.secondItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.secondItem.text',
         },
       ],
       button: {
         title: 'industry:projects.informationTechnologyPage.firstItem.button.title',
-        href: 'industry:projects.informationTechnologyPage.firstItem.button.href'
-      }
+        href: 'industry:projects.informationTechnologyPage.firstItem.button.href',
+      },
     },
     {
       images: projects_2,
@@ -34,18 +38,22 @@ export const informationTechnologyProjects =  {
       direction: 'reverse',
       numericData: [
         {
-          numberData: 'industry:projects.informationTechnologyPage.secondItem.numericData.firstItem.number',
-          textData: 'industry:projects.informationTechnologyPage.secondItem.numericData.firstItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.firstItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.firstItem.text',
         },
         {
-          numberData: 'industry:projects.informationTechnologyPage.secondItem.numericData.secondItem.number',
-          textData: 'industry:projects.informationTechnologyPage.secondItem.numericData.secondItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.secondItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.secondItem.text',
         },
       ],
       button: {
         title: 'industry:projects.informationTechnologyPage.secondItem.button.title',
-        href: 'industry:projects.informationTechnologyPage.secondItem.button.href'
-      }
-    }
-  ]
+        href: 'industry:projects.informationTechnologyPage.secondItem.button.href',
+      },
+    },
+  ],
 }

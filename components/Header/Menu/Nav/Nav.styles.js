@@ -220,10 +220,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
-    &.visible {
-      height: ${calcRem(288)};
-    }
-
     .title {
       font-size: ${calcRem(24)};
       line-height: ${calcRem(32)};
@@ -232,6 +228,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     .nav_services {
       .title {
         width: 60%;
+      }
+    }
+
+    .nav_services {
+      .description {
+        width: calc(100% - ${calcRem(35)});
       }
     }
 

@@ -18,10 +18,8 @@ const ContactOptions = ({ className, connection = [], t }) => (
       <Fragment key={option.id}>
         <Field
           css={css`
-            span {
               margin-bottom: 1rem;
               display: block;
-            }
           `}
           id={`${option.id}OptionalContactCheckbox`}
           name="connection"
@@ -35,10 +33,8 @@ const ContactOptions = ({ className, connection = [], t }) => (
         {connection.includes(option.id) && (
           <Field
             css={css`
-              div {
                 margin-top: 2rem;
                 margin-bottom: 2.9375rem;
-              }
             `}
             id={`${option.id}OptionalContactField`}
             name={option.id}

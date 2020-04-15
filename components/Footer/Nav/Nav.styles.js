@@ -21,14 +21,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.all} {
     & {
-      width: 636px;
+      width: 738px;
     }
   }
 
   ${tablet.all} {
     & {
       margin-right: ${calcRem(9)};
-      width: ${calcRem(543)};
+      width: ${calcRem(672)};
     }
   }
 

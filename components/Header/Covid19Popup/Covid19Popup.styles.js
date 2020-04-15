@@ -10,10 +10,12 @@ const base = ({ breakpoints: { mobile } }) => css`
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: ${calcRem(153)};
     background-image: url(${require('../../../static/icons/header/viruses.svg').default});
     background-color: #87DCB7;
     background-position: 50%;
-    transition: height 125ms ease-out;
+    transition: transform 125ms ease-out;
+    transform-origin: top;
     overflow: hidden;
   }
 
@@ -64,6 +66,7 @@ const base = ({ breakpoints: { mobile } }) => css`
   ${mobile.all} {
     & {
       background-position: 90%;
+      height: ${calcRem(80)};
     }
 
     .title,
@@ -80,13 +83,9 @@ const base = ({ breakpoints: { mobile } }) => css`
   }
 `
 
-const dynamic = ({ breakpoints: { mobile }, invisible })=> css`
+const dynamic = invisible => css`
   & {
-    height: ${ invisible ? 0 : calcRem(153)};
-  }
-
-  ${mobile.all} {
-    height: ${ invisible ? 0 : calcRem(80)};
+    transform: ${ invisible ? 'scaleY(0)' : 'scaleY(1)'};
   }
 `
 
@@ -96,6 +95,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints })}
-    ${dynamic({ breakpoints, invisible })}
+    ${dynamic(invisible)}
   `
 }

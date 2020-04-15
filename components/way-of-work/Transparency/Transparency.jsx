@@ -19,7 +19,7 @@ import styles from './Transparency.styles'
 const Transparency = ({ className, id, t }) => {
   const [activeItem, setActiveItem] = useState('triangle')
 
-  const handleActive = name => {
+  const handleActive = (name) => {
     setActiveItem(name)
   }
 
@@ -34,7 +34,7 @@ const Transparency = ({ className, id, t }) => {
         />
 
         <ul className="list">
-          {list.map(item => (
+          {list.map((item) => (
             <Observer
               key={item.id}
               name={item.id}

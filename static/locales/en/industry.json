@@ -97,40 +97,42 @@
   },
   "projects": {
     "heading": "Our projects",
-    "firstItem": {
-      "heading": "Gazprom Neft - Professionals 4.0",
-      "text": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers.",
-      "numericData": {
-        "firstItem": {
-          "number": "9",
-          "text": "specialists"
+    "informationTechnologyPage": {
+      "firstItem": {
+        "heading": "Gazprom Neft - Professionals 4.0",
+        "text": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers.",
+        "numericData": {
+          "firstItem": {
+            "number": "9",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "13",
+            "text": "month"
+          }
         },
-        "secondItem": {
-          "number": "12",
-          "text": "month"
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "#"
         }
       },
-      "button": {
-        "title": "READ THE CASE STUDY",
-        "href": "#"
-      }
-    },
-    "secondItem": {
-      "heading": "S7 Airlines - Personal Account",
-      "text": "Online storefront for wine importer and distributor",
-      "numericData": {
-        "firstItem": {
-          "number": "13",
-          "text": "specialists"
+      "secondItem": {
+        "heading": "S7 Airlines - Personal Account",
+        "text": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services.",
+        "numericData": {
+          "firstItem": {
+            "number": "13",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "7",
+            "text": "month"
+          }
         },
-        "secondItem": {
-          "number": "7",
-          "text": "month"
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "#"
         }
-      },
-      "button": {
-        "title": "READ THE CASE STUDY",
-        "href": "#"
       }
     }
   },

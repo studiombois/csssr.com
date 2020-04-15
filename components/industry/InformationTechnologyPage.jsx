@@ -15,7 +15,7 @@ import greeting from '../../data/industry/informationTechnology/greeting'
 import ourClients from '../../data/industry/informationTechnology/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
-import projects from '../../data/industry/projects'
+import { informationTechnologyProjects } from '../../data/industry/projects'
 
 const InformationTechnologyPage = ({ t }) => {
   const pageName = 'industry'
@@ -34,7 +34,7 @@ const InformationTechnologyPage = ({ t }) => {
 
       <CoreValues id="core-values" content={coreValues} />
 
-      <Projects id="projects" content={projects} />
+      <Projects id="projects" content={informationTechnologyProjects} />
 
       <Form pageName={pageName} />
     </Layout>

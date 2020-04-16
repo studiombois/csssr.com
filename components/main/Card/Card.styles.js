@@ -9,10 +9,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     cursor: pointer;
   }
 
-  .card-picture {
+  .picture-wrap {
     order: 1;
     width: 100%;
     flex-shrink: 0;
+    z-index: 1;
+
     img {
       height: auto;
     }
@@ -27,6 +29,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   .card-title {
     margin-top: 32px;
     order: 2;
+    transition: color 200ms;
   }
 
   .card-description {
@@ -36,8 +39,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     order: 5;
   }
 
-  .card-title,
-  .card-icon {
+  .card-title {
     align-self: baseline;
   }
 
@@ -47,11 +49,18 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     order: 4;
   }
 
-  .card-icon {
-    margin-left: 16px;
+  .picture-wrap {
+    position: relative;
+  }
+
+  .card-picture-hovered {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     opacity: 0;
-    order: 3;
-    transition: opacity 100ms ease-out;
+    transition: opacity 200ms;
   }
 
   ${tablet.all} {
@@ -62,10 +71,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     .card-description {
       margin-top: ${calcRem(9)};
       width: 100%;
-    }
-
-    .card-icon {
-      display: none;
     }
   }
 
@@ -78,23 +83,17 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(9)};
       width: 100%;
     }
-
-    .card-icon {
-      display: none;
-    }
   }
 `
 
-const dynamic = (canHoverAllCard, isIe11) => {
+const dynamic = (canHoverAllCard, isIe11, colors) => {
   const styles = canHoverAllCard
-    ? `
-      &:hover .card-icon {
-        opacity: 1;
+    && `
+      &:hover .card-title {
+        color: ${colors.primary.origin};
       }
-    `
-    : `
-      .card-description:hover ~ .card-icon,
-      .card-title:hover ~ .card-icon{
+
+      &:hover .card-picture-hovered {
         opacity: 1;
       }
     `
@@ -116,6 +115,6 @@ export default props => {
 
   return css`
     ${base({ breakpoints, colors })}
-    ${dynamic(canHoverAllCard, isIe11 )}
+    ${dynamic(canHoverAllCard, isIe11, colors )}
   `
 }

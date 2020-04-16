@@ -69,7 +69,7 @@ pipeline {
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
             make deploy-production branch=${branch} commit=${commit}
             """
-          } else if (branch.startsWith('release/')) {
+          } else {
             sh """#!/bin/bash
             source ~/.bashrc
             set -x

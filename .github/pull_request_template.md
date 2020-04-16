@@ -1,6 +1,6 @@
 ## Задача
-- ссылка на jira: https://jira.csssr.io/browse/__HERE_JIRA_ID__
-- стенд: http://__HERE_BRANCH_NAME__.test.csssr.com
+- ссылка на jira: COM-__HERE_JIRA_ID__
+- стенд: http://__HERE_BRANCH_NAME__.csssr.cloud/
 
 ### Релиз
 * https://jira.csssr.io/projects/COM/versions/__HERE_JIRA_VERSION_ID__

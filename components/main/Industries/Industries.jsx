@@ -39,7 +39,7 @@ const Industries = ({ className, t, lng }) => {
           id={id}
           title={title}
           description={description}
-          href={`${lng}/industry/${href}`}
+          href={`/${lng}/industry/${href}`}
           images={images}
           fallback={fallback}
           isNextLink

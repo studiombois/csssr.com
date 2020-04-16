@@ -9,21 +9,26 @@ import Heading from '../../ui-kit/core-design/Heading'
 import { nav } from '../../../data/footerLinks'
 import translate from '../../../utils/translate-wrapper'
 
-const Nav = ({ className, t }) => (
+const Nav = ({ className, t, lng }) => (
   <nav className={className}>
-    {nav.map(({ id, links }) => (
-      <div key={id} className="nav-item">
-        <Heading
-          as="p"
-          className="title"
-          type="regular"
-          size="s"
-          dangerouslySetInnerHTML={{ __html: t(`common:footer.${id}.title`) }}
-        />
+    {nav.map(({ id, links }) => {
+      if (lng === 'ru' && id ==='products') {
+        return
+      }
 
-        <LinksList linksGroupName={id} links={links} />
-      </div>
-    ))}
+      return (
+        <div key={id} className="nav-item">
+          <Heading
+            as="p"
+            className="title"
+            type="regular"
+            size="s"
+            dangerouslySetInnerHTML={{ __html: t(`common:footer.${id}.title`) }}
+          />
+
+          <LinksList linksGroupName={id} links={links} />
+        </div>
+    )})}
   </nav>
 )
 

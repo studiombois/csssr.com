@@ -18,6 +18,10 @@ const Links = ({ className, router, t, lng, locale }) => (
     {links.map(({ title, href }) => {
       const loc = href === 'jobs' ? locale : lng
 
+      if (lng === 'ru' && href === 'https://blog.csssr.com') {
+        return
+      }
+
       return (
         <li key={title}>
           {linkRegExp.test(href) ? (

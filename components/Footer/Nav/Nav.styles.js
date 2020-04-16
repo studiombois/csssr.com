@@ -10,6 +10,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     justify-content: space-between;
   }
 
+  .nav-item:nth-of-type(4) {
+    width: 100px;
+  }
+
   .title {
     display: block;
     color: ${colors.secondary.darken100};
@@ -17,14 +21,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.all} {
     & {
-      width: 636px;
+      width: 738px;
     }
   }
 
   ${tablet.all} {
     & {
       margin-right: ${calcRem(9)};
-      width: ${calcRem(543)};
+      width: ${calcRem(672)};
     }
   }
 

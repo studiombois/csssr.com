@@ -130,7 +130,11 @@ const Header = ({
         invisible: !isHeaderVisible,
       })}
     >
-      {lng === 'en' && pathname !== '/en/covid-19' && <Covid19Popup invisible={!isHeaderVisible} />}
+      {lng === 'en' &&
+        pathname !== '/en/covid-19' &&
+        pathname !== '/en/products/e-learning-platform' && (
+          <Covid19Popup invisible={!isHeaderVisible} />
+        )}
 
       <NextLink href={`/${lng}`}>
         <a className="logo-wrapper">

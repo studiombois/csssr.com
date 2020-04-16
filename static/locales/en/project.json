@@ -1,4 +1,16 @@
 {
+  "gazpromNeft": {
+    "quote": {
+      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project, which is&nbsp;very important to&nbsp;the company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the team in&nbsp;proactivity solving complex problems, and its commitment to&nbsp;fulfilling plans and targets. I&rsquo;d also like to&nbsp;commend the team for the friendly atmosphere and rapport they helped to&nbsp;create.",
+      "author": {
+        "name": "Daria Skatova",
+        "signature": "Project Manager, Gazprom Neft"
+      }
+    },
+    "imgAlt": {
+      "quote": ""
+    }
+  },
   "form": {
     "title": "Let&rsquo;s Talk",
     "namePlaceholder": "Tim Berners-Lee",

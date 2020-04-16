@@ -15,6 +15,7 @@ import ourClients from '../../data/industry/fintech/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
+
 const FintechPage = ({ t }) => {
   const pageName = 'industry'
   return (

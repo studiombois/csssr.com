@@ -97,46 +97,41 @@
   },
   "projects": {
     "heading": "Our projects",
-    "subHeading": "This is&nbsp;the true stories. The events described here took place in&nbsp;CSSSR in&nbsp;20XX. At&nbsp;the request of&nbsp;the clients, all names and important details have been hidden. Out of&nbsp;respect for the team, the rest has been told exactly as&nbsp;it&nbsp;occurred",
-    "firstItem": {
-      "heading": "Telecom Provider",
-      "text": "Website for the largest fashion department store in&nbsp;Eastern Europe.",
-      "numericData": {
-        "firstItem": {
-          "number": "9",
-          "text": "team size"
+    "informationTechnologyPage": {
+      "firstItem": {
+        "heading": "Gazprom Neft - Professionals 4.0",
+        "text": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers.",
+        "numericData": {
+          "firstItem": {
+            "number": "9",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "13",
+            "text": "month"
+          }
         },
-        "secondItem": {
-          "number": "12",
-          "text": "month"
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "#"
         }
-      }
-    },
-    "secondItem": {
-      "heading": "Telecom Provider",
-      "text": "Online storefront for wine importer and distributor",
-      "numericData": {
-        "firstItem": {
-          "number": "4",
-          "text": "team size"
+      },
+      "secondItem": {
+        "heading": "S7 Airlines - Personal Account",
+        "text": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services.",
+        "numericData": {
+          "firstItem": {
+            "number": "13",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "7",
+            "text": "month"
+          }
         },
-        "secondItem": {
-          "number": "7",
-          "text": "month"
-        }
-      }
-    },
-    "thirdItem": {
-      "heading": "Telecom Provider",
-      "text": "Interface of&nbsp;self service terminal system for one of&nbsp;the largest Russian online electronics retailers",
-      "numericData": {
-        "firstItem": {
-          "number": "14",
-          "text": "team size"
-        },
-        "secondItem": {
-          "number": "17",
-          "text": "month"
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "#"
         }
       }
     }

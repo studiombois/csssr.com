@@ -43,12 +43,14 @@ const Hero = ({
                 className="text"
             />
 
-            <PictureForAllResolutions
-                images={images}
-                fallback={images['desktop.l'].png}
-                alt={t(imgAlt)}
-                className="image"
-            />
+            <div className="pic-wrapper">
+                <PictureForAllResolutions
+                    images={images}
+                    fallback={images['desktop.l'].png}
+                    alt={t(imgAlt)}
+                    className="image"
+                />
+            </div>
 
         </Grid>
     )

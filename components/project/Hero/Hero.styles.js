@@ -6,9 +6,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     grid-template-rows: max-content max-content max-content;
     padding-top: ${calcRem(135)};
-    background-image: url(${require('../../../static/icons/project/desktop.l/hero-bg.svg').default});
-    background-repeat: no-repeat;
-    background-position: 59% 100%;
+    // background-image: url(${require('../../../static/icons/project/desktop.l/hero-bg.svg').default});
+    // background-repeat: no-repeat;
+    // background-position: 59% 100%;
   }
 
   .heading {
@@ -46,9 +46,28 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     z-index: 1;
   }
 
-  .image {
+  .pic-wrapper {
+    position: relative;
     grid-column: 8 / span 5;
     grid-row: 1 / 5;
+  }
+
+  .image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      height: max-content;
+      background-image: url(${require('../../../static/images/project/common-pics/desktop.l/hero-bg.png').default});
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
   }
 
   ${desktop.l} {
@@ -60,14 +79,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       width: max-content;
       height: max-content;
       margin-top: ${calcRem(35)};
+
+      &:before {
+        top: ${calcRem(-68)};
+        left: ${calcRem(-180)};
+        width: ${calcRem(298)};
+        height: ${calcRem(799)};
+      }
     }
   }
 
   ${desktop.m} {
     & {
       padding-bottom: ${calcRem(32)};
-      background-image: url(${require('../../../static/icons/project/desktop.m/hero-bg.svg').default});
-      background-position: 56.5% 100%;
     }
 
     .heading {
@@ -78,19 +102,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(39)};
     }
 
-    .image {
+    .pic-wrapper {
       position: absolute;
       right: 0;
       z-index: -1;
       margin-top: ${calcRem(160)};
+    }
+
+    .image {
+      &:before {
+        top: ${calcRem(-68)};
+        left: ${calcRem(-192)};
+        width: ${calcRem(298)};
+        height: ${calcRem(809)};
+        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png').default});
+      }
     }
   }
 
   ${desktop.s} {
     & {
       padding-bottom: ${calcRem(32)};
-      background-image: url(${require('../../../static/icons/project/desktop.m/hero-bg.svg').default});
-      background-position: 56.5% 100%;
     }
 
     .heading {
@@ -101,11 +133,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(39)};
     }
 
-    .image {
+    .pic-wrapper {
       position: absolute;
       right: 0;
       z-index: -1;
       margin-top: ${calcRem(160)};
+    }
+
+    .image {
+      &:before {
+        top: ${calcRem(-68)};
+        left: ${calcRem(-192)};
+        width: ${calcRem(278)};
+        height: ${calcRem(810)};
+        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png').default});
+      }
     }
   }
 
@@ -113,9 +155,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     & {
       padding-top: ${calcRem(84)};
       padding-bottom: ${calcRem(64)};
-      background-image: url(${require('../../../static/icons/project/desktop.m/hero-bg.svg').default});
-      background-position: 54.5% 100%;
-      background-size: auto 85%;
     }
     
 
@@ -138,20 +177,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(24)};
     }
 
-    .image {
+    .pic-wrapper {
       position: absolute;
       right: 0;
       z-index: -1;
       margin-top: ${calcRem(48)};
     }
+
+    .image {
+      &:before {
+        top: ${calcRem(-36)};
+        left: ${calcRem(-144)};
+        width: ${calcRem(200)};
+        height: ${calcRem(543)};
+        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png').default};
   }
 
   ${mobile.all} {
     & {
       padding-top: ${calcRem(80)};
       padding-bottom: ${calcRem(77)};
-      background-image: url(${require('../../../static/icons/project/mobile.all/hero-bg.svg').default});
-      background-position: 35% 100%;
     }
 
     .heading,
@@ -175,7 +220,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(24)};
     }
 
-    .image {
+    .pic-wrapper {
       grid-row: 5;
       grid-column: 1 / span 6;
       margin-top: ${calcRem(89)};

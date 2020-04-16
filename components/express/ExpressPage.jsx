@@ -4,7 +4,6 @@ import Layout from '../Layout'
 import Head from '../Head'
 import translate from '../../utils/translate-wrapper'
 import Greeting from './Greeting'
-import About from './About'
 import Workflow from './Workflow'
 import Calculator from './Calculator'
 import Features from './Features'
@@ -23,7 +22,6 @@ const ExpressPage = ({ t }) => (
     />
 
     <Greeting />
-    <About />
     <Workflow />
     <Calculator />
     <Features />

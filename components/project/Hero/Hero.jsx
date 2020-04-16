@@ -16,41 +16,38 @@ const Hero = ({
     className,
     id,
     content: { heading, link, subHeading, text, images, imgAlt },
-    isMobile,
-    isTablet,
 }) => {
-    const textType = isMobile || isTablet ? 'regular' : 'strong'
     return (
         <Grid className={className} as="section" id={id}>
             <Heading.H2
-            type="slab"
-            size="m"
-            dangerouslySetInnerHTML={{ __html: t(heading) }}
-            className="heading"
+                type="slab"
+                size="m"
+                dangerouslySetInnerHTML={{ __html: t(heading) }}
+                className="heading"
             />
 
             <Link href={t(link)}>
-                <a className="mvp-link">{t(link)}</a>
+                <a className="link">{t(link)}</a>
             </Link>
 
             <SubHeading
-            type="slab"
-            dangerouslySetInnerHTML={{ __html: t(subHeading) }}
-            className="sub-heading"
+                type="slab"
+                dangerouslySetInnerHTML={{ __html: t(subHeading) }}
+                className="sub-heading"
             />
 
             <Text
-                type={textType}
+                type="strong"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: t(text) }}
                 className="text"
             />
 
             <PictureForAllResolutions
-            images={images}
-            fallback={images['desktop.l'].png}
-            alt={t(imgAlt)}
-            className="image"
+                images={images}
+                fallback={images['desktop.l'].png}
+                alt={t(imgAlt)}
+                className="image"
             />
 
         </Grid>

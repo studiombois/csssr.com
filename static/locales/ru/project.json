@@ -1,4 +1,29 @@
-{
+{ 
+  "gazpromNeft": {
+    "meta": {
+      "title": "Custom E-Commerce Development Services",
+      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+    },
+    "hero": {
+      "title": "Professionals&nbsp;4.0",
+      "link": "https://professionals4-0.ru",
+      "subTitle": "О клиенте",
+      "text": "&laquo;Газпром нефть&raquo;&nbsp;&mdash; вертикально-интегрированная нефтяная компания, основные виды деятельности которой&nbsp;&mdash; разведка и&nbsp;разработка месторождений нефти и&nbsp;газа, нефтепереработка, производство и&nbsp;сбыт нефтепродуктов.<br/>Компания является одной из&nbsp;крупнейших в&nbsp;своей отрасли и&nbsp;лидером по&nbsp;темпам роста финансовых показателей.<br/><br/> &laquo;Газпром нефть&raquo; активно инвестирует средства и&nbsp;ресурсы в&nbsp;развитие технологий, социальные и&nbsp;образовательные проекты. В&nbsp;2018 году компания объявила о&nbsp;начале цифровой трансформации своего бизнеса.",
+      "imgAlt": ""
+    }
+  },
+  "s7Airlines": {
+    "meta": {
+      "title": "Custom E-Commerce Development Services",
+      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+    },
+    "hero": {
+      "title": "Личный кабинет пользователя авиакомпании&nbsp;S7",
+      "link": "https://myprofile.s7.ru/ ",
+      "subTitle": "О клиенте",
+      "text": "S7&nbsp;Airlines&nbsp;&mdash; крупнейшая частная авиакомпания России. Входит в&nbsp;холдинг &laquo;С7&nbsp;авиационно-космическая корпорация&raquo;, специализирующийся на&nbsp;продаже авиабилетов и&nbsp;туризме, пассажирских и&nbsp;грузоперевозках по&nbsp;воздуху, обучении лётного персонала, ремонте воздушных судов и&nbsp;других авиа- и&nbsp;космических услугах.",
+      "imgAlt": ""
+    }
   "form": {
     "title": "Давайте пообщаемся",
     "namePlaceholder": "Тим Бернерс-Ли",
@@ -11,4 +36,5 @@
     "messageLabel": "Чем мы могли бы помочь вам?",
     "submitText": "Отправить"
   }
+ }
 }

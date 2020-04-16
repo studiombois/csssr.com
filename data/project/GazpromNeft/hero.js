@@ -20,9 +20,9 @@ const heroImages = {
 
 export default {
   images: heroImages,
-  heading: 'project:hero.gazpromNeft.title',
-  link: 'project:hero.gazpromNeft.link',
-  subHeading: 'project:hero.gazpromNeft.subTitle',
-  text: 'project:hero.gazpromNeft.text',
-  imgAlt: 'project:hero.gazpromNeft.imgAlt',
+  heading: 'project:gazpromNeft.hero.title',
+  link: 'project:gazpromNeft.hero.link',
+  subHeading: 'project:gazpromNeft.hero.subTitle',
+  text: 'project:gazpromNeft.hero.text',
+  imgAlt: 'project:gazpromNeft.hero.imgAlt',
 }

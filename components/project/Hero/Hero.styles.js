@@ -4,7 +4,7 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
-    grid-template-rows: max-content max-content;
+    grid-template-rows: max-content max-content max-content;
     padding-top: ${calcRem(135)};
     background-image: url(${require('../../../static/icons/project/desktop.l/hero-bg.svg').default});
     background-repeat: no-repeat;
@@ -65,7 +65,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.m} {
     & {
-      padding-bottom: ${calcRem(80)};
+      padding-bottom: ${calcRem(32)};
       background-image: url(${require('../../../static/icons/project/desktop.m/hero-bg.svg').default});
       background-position: 56.5% 100%;
     }

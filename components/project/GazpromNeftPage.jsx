@@ -13,8 +13,8 @@ const GazpromNeftPage = ({ t }) => {
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('industry:meta.ecommerce.title')}
-        description={t('industry:meta.ecommerce.description')}
+        title={t('project:gazpromNeft.meta.title')}
+        description={t('project:gazpromNeft.meta.description')}
       />
 
       <Hero  id="hero" content={hero} />

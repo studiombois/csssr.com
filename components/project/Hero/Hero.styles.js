@@ -6,9 +6,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     grid-template-rows: max-content max-content max-content;
     padding-top: ${calcRem(135)};
-    // background-image: url(${require('../../../static/icons/project/desktop.l/hero-bg.svg').default});
-    // background-repeat: no-repeat;
-    // background-position: 59% 100%;
   }
 
   .heading {
@@ -63,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       position: absolute;
       z-index: 2;
       height: max-content;
-      background-image: url(${require('../../../static/images/project/common-pics/desktop.l/hero-bg.png').default});
+      background-image: url(${require('../../../static/images/project/common-pics/desktop.l/hero-bg.png')});
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -115,7 +112,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(-192)};
         width: ${calcRem(298)};
         height: ${calcRem(809)};
-        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png').default});
+        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png')});
       }
     }
   }
@@ -146,7 +143,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(-192)};
         width: ${calcRem(278)};
         height: ${calcRem(810)};
-        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png').default});
+        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png')});
       }
     }
   }
@@ -190,7 +187,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(-144)};
         width: ${calcRem(200)};
         height: ${calcRem(543)};
-        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png').default};
+        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png')};
   }
 
   ${mobile.all} {

@@ -8,7 +8,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       url(${require('../../../static/icons/project/quote/circle.svg').default}),
       url(${require('../../../static/icons/project/quote/zigzag.svg').default}),
       url(${require('../../../static/icons/project/quote/line.svg').default});
-    background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat, no-repeat, no-repeat;
   }
 
   .quote {

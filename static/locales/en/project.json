@@ -7,8 +7,42 @@
         "signature": "Project Manager, Gazprom Neft"
       }
     },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "The main goal of&nbsp;the Professionals&nbsp;4.0 project is&nbsp;to&nbsp;connect major corporations with talented performers. Through the project, talented individuals can find new career opportunities, solve challenging tasks, develop new skills and prove themselves in&nbsp;an&nbsp;authentic work environment.",
+          "The companies, meanwhile, get access to&nbsp;a&nbsp;huge database of&nbsp;business competition finalists and top performers, allowing them to&nbsp;quickly assemble teams for particular business tasks and reinforce internal resources, with external expertise.",
+          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Rostelecom</a> and the <a href=\"https://sk.ru/foundation/about/\" target=\"_blank\" rel=\"noopener nofollow\">Skolkovo Innovation Center</a>."
+        ],
+        [
+          "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
+          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two software testers.",
+          "The first public version was launched in&nbsp;spring of&nbsp;2019. Since then, our team has continued to&nbsp;develop new functionality and has released several major updates over the past year."
+        ]
+      ]
+    },
     "imgAlt": {
-      "quote": ""
+      "quote": "Graphic representation of a woman",
+      "aboutProject": "Three people working diligently on the project"
+    }
+  },
+  "s7airlines": {
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "S7&nbsp;Airlines&rsquo; personal account provides quick access to&nbsp;the Airline&rsquo;s services: customers can view their reservations and participate in&nbsp;the loyalty program."
+        ],
+        [
+          "We&nbsp;develop the entire front-end for the adaptive website of&nbsp;the project.",
+          "The core team consists of&nbsp;4&nbsp;developers and one tester, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
+          "Currently we&nbsp;are implementing flight statistics and login through social networks, and are planning to&nbsp;conduct significant refactoring and improve the performance of&nbsp;the web application. The entire front-end is&nbsp;written on&nbsp;Next.js&nbsp;&mdash; a&nbsp;modern React framework."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Трое людей усердно работающих над проектом"
     }
   },
   "form": {

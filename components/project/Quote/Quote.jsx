@@ -17,7 +17,7 @@ const Quote = ({ className, porojectId, images, t }) => (
       className="picture"
       images={images}
       fallback={images['desktop.l'].png}
-      alt={t(`project:${porojectId}.quote.imgAlt.quote`)}
+      alt={t(`project:${porojectId}.imgAlt.quote`)}
     />
 
     <blockquote className="quote">

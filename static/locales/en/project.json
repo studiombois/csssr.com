@@ -53,6 +53,21 @@
       "text": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline. It&nbsp;is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;group of&nbsp;companies doing business in&nbsp;tourism and ticket distribution, passengers and cargo air transportation, flight personnel training, aircraft repair, and other aviation and space services.",
       "imgAlt": ""
     },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Developer",
+        "secondItem": "Middle JS&nbsp;Developers",
+        "thirdItem": "Middle HTML/CSS Developer",
+        "fourthItem": "Testers"
+      }
+    },
     "form": {
       "title": "Let&rsquo;s Talk",
       "namePlaceholder": "Tim Berners-Lee",

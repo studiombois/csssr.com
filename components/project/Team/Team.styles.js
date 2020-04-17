@@ -46,6 +46,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     & > span {
+      font-family: 'Roboto Slab', serif;
       font-size: ${calcRem(48)};
       line-height: ${calcRem(64)};
     }
@@ -67,13 +68,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.l} {
     & {
-      padding-bottom: ${calcRem(80)};
+      padding-top: ${calcRem(217)};
     }
   }
 
   ${desktop.m} {
     & {
-      padding-bottom: ${calcRem(32)};
+      padding-top: ${calcRem(217)};
     }
 
     .image {
@@ -82,9 +83,52 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  ${tablet.all}
+  ${desktop.s} {
     & {
-      padding-bottom: ${calcRem(32)};
+      padding-top: ${calcRem(208)};
+    }
+
+    .image {
+      grid-row: 2 / 4;
+    }
+  }
+
+  ${tablet.all} {
+    & {
+      padding-top: ${calcRem(118)};
+    }
+
+    .text-item {
+      & > span {
+        font-size: ${calcRem(16)};
+        line-height: ${calcRem(24)};
+      }
+    }
+
+    .number-item {
+      & > span {
+        font-size: ${calcRem(24)};
+        line-height: ${calcRem(32)};
+      }
+    }
+
+    .image {
+      grid-row: 2 / 4;
+    }
+  }
+
+  ${mobile.all} {
+    & {
+      padding-top: ${calcRem(88)};
+    }
+
+    .heading,
+    .list {
+      grid-column: 1 / span 6;
+    }
+
+    .list {
+      margin-top: ${calcRem(24)};
     }
 
     .number-item {
@@ -102,14 +146,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .image {
-      grid-row: 1 / 4;
-      margin-top: ${calcRem(32)};
-    }
-  }
-
-  ${mobile.all} {
-    & {
-      padding-top: ${calcRem(80)};
+      display: none;
     }
   }
 `

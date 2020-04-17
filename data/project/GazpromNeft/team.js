@@ -21,23 +21,23 @@ export default {
   teamItems: [
     {
       number: 'project:gazpromNeft.team.numberList.firstItem',
-      text: 'project:gazpromNeft.team.textList.firstItem'
+      text: 'project:gazpromNeft.team.textList.firstItem',
     },
     {
       number: 'project:gazpromNeft.team.numberList.secondItem',
-      text: 'project:gazpromNeft.team.textList.secondItem'
+      text: 'project:gazpromNeft.team.textList.secondItem',
     },
     {
       number: 'project:gazpromNeft.team.numberList.thirdItem',
-      text: 'project:gazpromNeft.team.textList.thirdItem'
+      text: 'project:gazpromNeft.team.textList.thirdItem',
     },
     {
       number: 'project:gazpromNeft.team.numberList.fourthItem',
-      text: 'project:gazpromNeft.team.textList.fourthItem'
+      text: 'project:gazpromNeft.team.textList.fourthItem',
     },
     {
       number: 'project:gazpromNeft.team.numberList.fifthItem',
-      text: 'project:gazpromNeft.team.textList.fifthItem'
+      text: 'project:gazpromNeft.team.textList.fifthItem',
     },
   ],
   imgAlt: 'project:gazpromNeft.team.imgAlt',

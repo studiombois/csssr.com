@@ -154,9 +154,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       padding-bottom: ${calcRem(64)};
     }
     
-
     .heading {
-      grid-column: 2 / span 7;
+      grid-column: 2 / span 4;
       margin-top: 1rem;
     }
 
@@ -187,7 +186,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(-144)};
         width: ${calcRem(200)};
         height: ${calcRem(543)};
-        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png')};
+        background-image: url(${require('../../../static/images/project/common-pics/tablet.all/hero-bg.png')});
+      }
+    }   
   }
 
   ${mobile.all} {
@@ -221,6 +222,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-row: 5;
       grid-column: 1 / span 6;
       margin-top: ${calcRem(89)};
+    }
+
+    .image {
+      &:before {
+        top: ${calcRem(-43)};
+        left: ${calcRem(16)};
+        width: ${calcRem(252)};
+        height: ${calcRem(386)};
+        background-image: url(${require('../../../static/images/project/common-pics/mobile.all/hero-bg.png')});
+      }
     }
   }
 `

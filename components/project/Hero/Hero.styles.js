@@ -9,7 +9,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .heading {
-    grid-column: 2 / span 6;
+    grid-column: 2 / span 5;
     grid-row: 1;
     z-index: 1;
   }
@@ -83,6 +83,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.m} {
+    .heading {
+      grid-column: 2 / span 6;
+    }
+
     .text {
       margin-top: ${calcRem(39)};
     }
@@ -91,7 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       position: absolute;
       right: 0;
       z-index: -1;
-      margin-top: ${calcRem(224)};
+      margin-top: ${calcRem(254)};
     }
 
     .image {
@@ -106,9 +110,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
-
     .heading {
-      grid-column: 2 / span 7;
+      grid-column: 2 / span 6;
     }
 
     .text {
@@ -119,7 +122,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       position: absolute;
       right: 0;
       z-index: -1;
-      margin-top: ${calcRem(160)};
+      margin-top: ${calcRem(216)};
     }
 
     .image {

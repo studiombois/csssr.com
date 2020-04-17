@@ -9,7 +9,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .heading {
-    grid-column: 2 / span 5;
+    grid-column: 2 / span 6;
     grid-row: 1;
     z-index: 1;
   }
@@ -68,10 +68,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.l} {
-    & {
-      padding-bottom: ${calcRem(80)};
-    }
-
     .image {
       width: max-content;
       height: max-content;
@@ -87,14 +83,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.m} {
-    & {
-      padding-bottom: ${calcRem(32)};
-    }
-
-    .heading {
-      grid-column: 2 / span 7;
-    }
-
     .text {
       margin-top: ${calcRem(39)};
     }
@@ -103,7 +91,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       position: absolute;
       right: 0;
       z-index: -1;
-      margin-top: ${calcRem(160)};
+      margin-top: ${calcRem(224)};
     }
 
     .image {
@@ -118,9 +106,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
-    & {
-      padding-bottom: ${calcRem(32)};
-    }
 
     .heading {
       grid-column: 2 / span 7;
@@ -151,7 +136,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${tablet.all} {
     & {
       padding-top: ${calcRem(84)};
-      padding-bottom: ${calcRem(64)};
     }
     
     .heading {
@@ -194,7 +178,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${mobile.all} {
     & {
       padding-top: ${calcRem(80)};
-      padding-bottom: ${calcRem(77)};
     }
 
     .heading,

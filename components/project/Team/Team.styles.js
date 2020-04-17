@@ -5,7 +5,6 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
     grid-template-rows: max-content max-content max-content;
-    padding-top: ${calcRem(135)};
   }
 
   .heading {
@@ -58,6 +57,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.all} {
+    & {
+      margin-top: ${calcRem(280)};
+    }
+
     .number-item {
       & > span {
         font-size: ${calcRem(48)};
@@ -66,16 +69,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  ${desktop.l} {
-    & {
-      padding-top: ${calcRem(217)};
-    }
-  }
-
   ${desktop.m} {
-    & {
-      padding-top: ${calcRem(217)};
-    }
 
     .image {
       grid-row: 1 / 4;
@@ -84,10 +78,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.s} {
-    & {
-      padding-top: ${calcRem(208)};
-    }
-
     .image {
       grid-row: 2 / 4;
     }
@@ -95,7 +85,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      padding-top: ${calcRem(118)};
+      margin-top: ${calcRem(202)};
     }
 
     .text-item {
@@ -119,7 +109,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      padding-top: ${calcRem(88)};
+      margin-top: ${calcRem(89)};
     }
 
     .heading,

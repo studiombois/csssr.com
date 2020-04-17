@@ -107,6 +107,19 @@ export const nav = [
     ],
   },
   {
+    id: 'products',
+    links: [
+      {
+        id: 'lms',
+        href: 'products/lms',
+      },
+      {
+        id: 'tracker',
+        href: 'https://tracker.csssr.com/',
+      },
+    ],
+  },
+  {
     id: 'company',
     links: [
       // {

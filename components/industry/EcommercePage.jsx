@@ -17,6 +17,7 @@ import facts from '../../data/industry/facts'
 
 const EcommercePage = ({ t }) => {
   const pageName = 'industry'
+  const page = 'ecommerce'
   return (
     <Layout pageName={pageName}>
       <Head
@@ -26,7 +27,7 @@ const EcommercePage = ({ t }) => {
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />
 
-      <OurClients id="ourClients" content={ourClients} />
+      <OurClients id="ourClients" page={page} content={ourClients} />
 
       <Facts id="facts" content={facts} />
 

@@ -10,6 +10,35 @@
       "subTitle": "О клиенте",
       "text": "&laquo;Газпром нефть&raquo;&nbsp;&mdash; вертикально-интегрированная нефтяная компания, основные виды деятельности которой&nbsp;&mdash; разведка и&nbsp;разработка месторождений нефти и&nbsp;газа, нефтепереработка, производство и&nbsp;сбыт нефтепродуктов.<br/>Компания является одной из&nbsp;крупнейших в&nbsp;своей отрасли и&nbsp;лидером по&nbsp;темпам роста финансовых показателей.<br/><br/> &laquo;Газпром нефть&raquo; активно инвестирует средства и&nbsp;ресурсы в&nbsp;развитие технологий, социальные и&nbsp;образовательные проекты. В&nbsp;2018 году компания объявила о&nbsp;начале цифровой трансформации своего бизнеса.",
       "imgAlt": ""
+    },
+    "team": {
+      "title": "Команда в деталях",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "1",
+        "fifthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Разработчик и&nbsp;Team Lead",
+        "secondItem": "Middle JS&nbsp;Разработчик(и)",
+        "thirdItem": "Junior JS&nbsp;Разработчик(и)",
+        "fourthItem": "Аналитик(и)",
+        "fifthItem": "Тестировщик(и)"
+      }
+    },
+    "form": {
+      "title": "Давайте пообщаемся",
+      "namePlaceholder": "Тим Бернерс-Ли",
+      "nameLabel": "Имя",
+      "phonePlaceholder": "+7-987-654-32-10",
+      "phoneLabel": "Телефон",
+      "emailPlaceholder": "name@example.com",
+      "emailLabel": "E-mail",
+      "messagePlaceholder": "Чем мы могли бы помочь вам?",
+      "messageLabel": "Чем мы могли бы помочь вам?",
+      "submitText": "Отправить"
     }
   },
   "s7Airlines": {
@@ -23,6 +52,33 @@
       "subTitle": "О клиенте",
       "text": "S7&nbsp;Airlines&nbsp;&mdash; крупнейшая частная авиакомпания России. Входит в&nbsp;холдинг &laquo;С7&nbsp;авиационно-космическая корпорация&raquo;, специализирующийся на&nbsp;продаже авиабилетов и&nbsp;туризме, пассажирских и&nbsp;грузоперевозках по&nbsp;воздуху, обучении лётного персонала, ремонте воздушных судов и&nbsp;других авиа- и&nbsp;космических услугах.",
       "imgAlt": ""
+    },
+    "team": {
+      "title": "Команда в деталях",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Разработчик",
+        "secondItem": "Middle JS&nbsp;Разработчика",
+        "thirdItem": "Middle HTML/CSS Разработчик",
+        "fourthItem": "Тестировщика"
+      }
+    },
+    "form": {
+      "title": "Давайте пообщаемся",
+      "namePlaceholder": "Тим Бернерс-Ли",
+      "nameLabel": "Имя",
+      "phonePlaceholder": "+7-987-654-32-10",
+      "phoneLabel": "Телефон",
+      "emailPlaceholder": "name@example.com",
+      "emailLabel": "E-mail",
+      "messagePlaceholder": "Чем мы могли бы помочь вам?",
+      "messageLabel": "Чем мы могли бы помочь вам?",
+      "submitText": "Отправить"
     }
   }
 }

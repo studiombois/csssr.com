@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "title": "We Create Web Services for Millions",
+    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript."
+  },
+  "hero": {
+    "title": "<span style=\"font-weight: bold;\">Outsourcing</span><br />Web Development",
+    "description": "We&nbsp;specialize in&nbsp;front-end web development for a&nbsp;wide range of&nbsp;industries.",
+    "button": "Let&rsquo;s Talk"
+  },
+  "aboutFrontend": {
+    "title": "<span style=\"white-space: nowrap;\">Front-End</span> Development",
+    "subtitle": "We&nbsp;develop complex solutions for websites and web applications using JavaScript.",
+    "description": "User experiences primarily depend on&nbsp;how well the front-end of&nbsp;the product is&nbsp;made. Original design and ideas must look perfect across all major browsers, platforms and devices, as&nbsp;well as&nbsp;being accessible to&nbsp;most users and performing well."
+  },
+  "benefits": {
+    "title": "Reliable Outsourcing",
+    "description": "By&nbsp;entrusting web development tasks to&nbsp;a&nbsp;reliable contractor, you can significantly accelerate your business development and reduce costs.",
+    "list": [
+      {
+        "title": "Quick start",
+        "description": "By&nbsp;outsourcing your projects, you get access to&nbsp;a&nbsp;ready-built team immediately, without the exhausting process of&nbsp;hiring an&nbsp;in-house team."
+      },
+      {
+        "title": "Cost Savings",
+        "description": "With a&nbsp;remote team, you can save money on&nbsp;hiring, office space, developing processes and motivating your employees."
+      },
+      {
+        "title": "External Expertise",
+        "description": "We&nbsp;can provide you with a&nbsp;wide range of&nbsp;specialists with various qualifications, including rare expertise."
+      },
+      {
+        "title": "Flexibility",
+        "description": "Outsourced teams are easily adjusted, with the potential to&nbsp;quickly change in&nbsp;size and structure, giving you long-term convenience and security."
+      }
+    ]
+  },
+  "whatWeDo": {
+    "title": "What We&nbsp;Do",
+    "list": [
+      {
+        "title": "Single-Page Apps",
+        "description": "SPAs render pages directly in&nbsp;browsers, prevent server overload, and feel much faster and more responsive to&nbsp;users."
+      },
+      {
+        "title": "Progressive Web Apps",
+        "description": "PWAs provide features that give them the same user experience advantages as&nbsp;native apps. They are fast, integrated, reliable, and engaging."
+      },
+      {
+        "title": "Real-Time Web Apps",
+        "description": "Such apps provide real-time information transfer between users and from users to&nbsp;servers. It&nbsp;can be&nbsp;messengers, newsfeeds, dashboards, etc."
+      },
+      {
+        "title": "API Integration",
+        "description": "API integration is&nbsp;necessary for building a&nbsp;strong network of&nbsp;data across different services, including third-party apps."
+      },
+      {
+        "title": "Stack Migration",
+        "description": "Sometimes it&nbsp;is&nbsp;necessary to&nbsp;migrate an&nbsp;entire project from inefficient and outdated technologies to&nbsp;modern ones. We&nbsp;can guide the process smoothly and without downtime."
+      },
+      {
+        "title": "Consulting",
+        "description": "We&rsquo;re happy to&nbsp;offer technical consulting advice on&nbsp;all matters related to&nbsp;our expertise."
+      }
+    ],
+    "contactUs": {
+      "title": "Already Have an&nbsp;Idea?",
+      "subtitle": "Tell&nbsp;us about your project and we&rsquo;ll find a&nbsp;solution.",
+      "button": "Let&rsquo;s Talk"
+    }
+  },
+  "technologyStack": {
+    "title": "Technology Stack",
+    "subtitle": "For most projects we&nbsp;use React, Angular and Vue.",
+    "description": [
+      "Our proficiency in&nbsp;a&nbsp;wide range of&nbsp;front-end technologies helps&nbsp;us choose the right tools and libraries based on&nbsp;clients&rsquo; requirements and our expertise.",
+      "We&nbsp;can also pair your front-end with back-end technologies to&nbsp;provide a&nbsp;complete end-to-end solution."
+    ],
+    "link": "Read About Our Tech Stack"
+  },
+  "ourAdvantages": {
+    "title": "Our Advantages",
+    "advantages": [
+      [{
+        "title": "Well-Designed Processes",
+        "description": "We&nbsp;work completely remotely and have built remote processes, which we&nbsp;are extremely proud&nbsp;of. We&nbsp;work with Agile methodologies and have taken the best from various approaches. Therefore, it&nbsp;is&nbsp;simple for&nbsp;us to&nbsp;adapt our team size and ways of&nbsp;working to&nbsp;your needs.",
+        "link": "Read About Our Process "
+      }],
+      [{
+        "title": "Specialization",
+        "description": "We&rsquo;ve focused on&nbsp;the narrow niche of&nbsp;front-end development, which has allowed&nbsp;us to&nbsp;achieve the highest level of&nbsp;expertise through over 500&nbsp;projects."
+      }, {
+        "title": "Long-Term Relationship",
+        "description": [
+          "We&nbsp;can complete ",
+          " over just a&nbsp;few months, or&nbsp;we&nbsp;can stay on&nbsp;a&nbsp;project for years, developing and supporting it&nbsp;with a&nbsp;permanent team."
+        ],
+        "link": "short-term tasks"
+      }]
+    ]
+  },
+  "form": {
+    "title": "Let&rsquo;s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "nameLabel": "Your Name",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "phoneLabel": "Phone",
+    "emailPlaceholder": "name@example.com",
+    "emailLabel": "E-mail",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "How can we help?",
+    "submitText": "Submit"
+  },
+  "imgAlt": {
+    "hero": "Picture of balloon",
+    "aboutFrontend": "A group of people building a robot",
+    "benefits": [
+      "Picture of number 1",
+      "Picture of number 2",
+      "Picture of number 3",
+      "Picture of number 4"
+    ],
+    "technologyStack": "Logos of some technologies we use: MongoDB, Kotlin, React, Vue Angular, NodeJS, PostgreSQL",
+    "ourAdvantages": [
+      ["A man in harmony in the middle of computer monitors"],
+      ["Printing code woman", "Two developers giving high five to each other"]
+    ]
+  }
+}

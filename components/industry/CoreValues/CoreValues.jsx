@@ -6,10 +6,11 @@ import translate from '../../../utils/translate-wrapper'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
+import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import CoreValuesItem from '../CoreValuesItem'
 
-const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValuesItems } }) => (
+const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValuesItems, button } }) => (
   <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"
@@ -35,6 +36,13 @@ const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValu
         key={title}
       />
     ))}
+
+    <ButtonLink
+      href={t('industry:coreValues.button.href')}
+      kind="secondary"
+      className="button"
+      dangerouslySetInnerHTML={{ __html: t(button.title) }}
+    />
   </Grid>
 )
 

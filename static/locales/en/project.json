@@ -10,6 +10,35 @@
       "subTitle": "Client",
       "text": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.<br/><br/> The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.<br/><br/> Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business.",
       "imgAlt": ""
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "1",
+        "fifthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
+        "secondItem": "Middle JS&nbsp;Developers",
+        "thirdItem": "Junior JS&nbsp;Developers",
+        "fourthItem": "Analyst",
+        "fifthItem": "Testers"
+      }
+    },
+    "form": {
+      "title": "Let&rsquo;s Talk",
+      "namePlaceholder": "Tim Berners-Lee",
+      "nameLabel": "Your Name",
+      "phonePlaceholder": "+1-612-566-34-43",
+      "phoneLabel": "Phone",
+      "emailPlaceholder": "name@example.com",
+      "emailLabel": "E-mail",
+      "messagePlaceholder": "How can we help?",
+      "messageLabel": "How can we help?",
+      "submitText": "Submit"
     }
   },
   "s7Airlines": {
@@ -23,7 +52,33 @@
       "subTitle": "Client",
       "text": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline. It&nbsp;is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;group of&nbsp;companies doing business in&nbsp;tourism and ticket distribution, passengers and cargo air transportation, flight personnel training, aircraft repair, and other aviation and space services.",
       "imgAlt": ""
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Developer",
+        "secondItem": "Middle JS&nbsp;Developers",
+        "thirdItem": "Middle HTML/CSS Developer",
+        "fourthItem": "Testers"
+      }
+    },
+    "form": {
+      "title": "Let&rsquo;s Talk",
+      "namePlaceholder": "Tim Berners-Lee",
+      "nameLabel": "Your Name",
+      "phonePlaceholder": "+1-612-566-34-43",
+      "phoneLabel": "Phone",
+      "emailPlaceholder": "name@example.com",
+      "emailLabel": "E-mail",
+      "messagePlaceholder": "How can we help?",
+      "messageLabel": "How can we help?",
+      "submitText": "Submit"
     }
   }
 }
-  

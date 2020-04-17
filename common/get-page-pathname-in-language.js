@@ -1,9 +1,8 @@
 import { defaultLocaleByLanguage } from './locales-settings'
 
 export default (fullPathname, newLanguage, pagesList) => {
-  const {
-    groups: { pathname },
-  } = fullPathname.match(/^\/(?<locale>.*?)(\/(?<pathname>.*))?$/)
+  // Здесь не используются именованные группы для поддержки IE
+  const [, , , pathname] = fullPathname.match(/^\/(.*?)(\/(.*))?$/)
 
   if (!pathname) {
     // /ru или /en

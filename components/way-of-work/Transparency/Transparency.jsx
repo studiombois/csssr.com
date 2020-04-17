@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { string } from 'prop-types'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 
 import Highlight from './Highlight'
@@ -18,7 +19,7 @@ import styles from './Transparency.styles'
 const Transparency = ({ className, id, t }) => {
   const [activeItem, setActiveItem] = useState('triangle')
 
-  const handleActive = name => {
+  const handleActive = (name) => {
     setActiveItem(name)
   }
 
@@ -33,12 +34,14 @@ const Transparency = ({ className, id, t }) => {
         />
 
         <ul className="list">
-          {list.map(item => (
+          {list.map((item) => (
             <Observer
               key={item.id}
               name={item.id}
               handleActive={handleActive}
-              className={`listItem ${item.id}Item`}
+              className={cn(`listItem ${item.id}Item`, {
+                active: item.id === activeItem,
+              })}
             >
               <SubHeading
                 type="regular"

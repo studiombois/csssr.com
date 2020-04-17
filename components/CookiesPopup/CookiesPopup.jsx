@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 
 import Text from '../ui-kit/core-design/Text'
 import translate from '../../utils/translate-wrapper'
+import localStorageAvailable from '../../utils/client/localStorageAvailable'
 import styles from './CookiesPopup.styles'
 
 import cookiesLinks from '../../data/сookies-popup/cookiesLinks'
@@ -18,14 +19,14 @@ const CookiesPopup = ({ className, t, lng }) => {
   const [isHidden, setIsHidden] = useState(true)
 
   const handleClick = () => {
-    if (localStorage) {
+    if (localStorageAvailable()) {
       localStorage.setItem('cookies_policy', COOKIES_POLICY_ALERT_HIDDEN)
     }
     setIsHidden(true)
   }
 
   useEffect(() => {
-    if (localStorage) {
+    if (localStorageAvailable()) {
       const isHidden = localStorage.getItem('cookies_policy') === COOKIES_POLICY_ALERT_HIDDEN
       setIsHidden(isHidden)
     } else {

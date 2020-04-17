@@ -50,6 +50,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .image {
+      position: relative;
+      z-index: -1;
       grid-column: 6 / span 7;
       margin-top: ${calcRem(42)};
     }

@@ -4,14 +4,14 @@ const Observer = ({ children, name, handleActive, className }) => {
   const itemRef = useRef()
 
   useEffect(() => {
-    const callback = function([entry]) {
+    const callback = function ([entry]) {
       if (entry.isIntersecting) handleActive(name)
     }
 
     const options = {
       root: null,
-      rootMargin: '-5% 0px',
-      threshold: 1,
+      rootMargin: '-45% 0px -45% 0px',
+      threshold: [0],
     }
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(callback, options)

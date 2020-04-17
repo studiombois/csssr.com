@@ -15,8 +15,10 @@ import ourClients from '../../data/industry/fintech/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
+
 const FintechPage = ({ t }) => {
   const pageName = 'industry'
+  const page = 'fintech'
   return (
     <Layout pageName={pageName}>
       <Head
@@ -26,7 +28,7 @@ const FintechPage = ({ t }) => {
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />
 
-      <OurClients id="ourClients" content={ourClients} />
+      <OurClients id="ourClients" page={page} content={ourClients} />
 
       <Facts id="facts" content={facts} />
 

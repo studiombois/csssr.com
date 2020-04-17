@@ -1,6 +1,6 @@
 export default [
   'common',
-  'dev',
+  'outsourcingFrontEnd',
   'jobs',
   'job',
   'error',
@@ -14,5 +14,6 @@ export default [
   'express',
   'wayOfWork',
   'covid19',
+  'eLearningPlatform',
   'project',
 ]

@@ -152,7 +152,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     & {
       margin-top: ${calcRem(88)};
       background-image: url(${require('../../../static/icons/project/about-project/circle.svg').default});
-      background-position: ${calcRem(59)} ${calcRem(576)};
+      background-position: ${calcRem(59)} ${calcRem(176)};
       background-repeat: no-repeat;
     }
 

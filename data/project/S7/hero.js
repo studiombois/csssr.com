@@ -20,9 +20,9 @@ const heroImages = {
 
 export default {
   images: heroImages,
-  heading: 'project:s7Airlines.hero.title',
-  link: 'project:s7Airlines.hero.link',
-  subHeading: 'project:s7Airlines.hero.subTitle',
-  text: 'project:s7Airlines.hero.text',
-  imgAlt: 'project:s7Airlines.hero.imgAlt',
+  heading: 'project:s7airlines.hero.title',
+  link: 'project:s7airlines.hero.link',
+  subHeading: 'project:s7airlines.hero.subTitle',
+  text: 'project:s7airlines.hero.text',
+  imgAlt: 'project:s7airlines.hero.imgAlt',
 }

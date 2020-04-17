@@ -17,24 +17,24 @@ const teamImages = {
 
 export default {
   images: teamImages,
-  heading: 'project:s7Airlines.team.title',
+  heading: 'project:s7airlines.team.title',
   teamItems: [
     {
-      number: 'project:s7Airlines.team.numberList.firstItem',
-      text: 'project:s7Airlines.team.textList.firstItem',
+      number: 'project:s7airlines.team.numberList.firstItem',
+      text: 'project:s7airlines.team.textList.firstItem',
     },
     {
-      number: 'project:s7Airlines.team.numberList.secondItem',
-      text: 'project:s7Airlines.team.textList.secondItem',
+      number: 'project:s7airlines.team.numberList.secondItem',
+      text: 'project:s7airlines.team.textList.secondItem',
     },
     {
-      number: 'project:s7Airlines.team.numberList.thirdItem',
-      text: 'project:s7Airlines.team.textList.thirdItem',
+      number: 'project:s7airlines.team.numberList.thirdItem',
+      text: 'project:s7airlines.team.textList.thirdItem',
     },
     {
-      number: 'project:s7Airlines.team.numberList.fourthItem',
-      text: 'project:s7Airlines.team.textList.fourthItem',
+      number: 'project:s7airlines.team.numberList.fourthItem',
+      text: 'project:s7airlines.team.textList.fourthItem',
     },
   ],
-  imgAlt: 'project:s7Airlines.team.imgAlt',
+  imgAlt: 'project:s7airlines.team.imgAlt',
 }

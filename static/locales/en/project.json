@@ -1,5 +1,33 @@
 {
   "gazpromNeft": {
+   "meta": {
+      "title": "FinTech and Banking Web Development",
+      "description": "We built a strong digital presence for banking and financial services."
+    },
+    "hero": {
+      "title": "Professionals&nbsp;4.0",
+      "link": "https://professionals4-0.ru",
+      "subTitle": "Client",
+      "text": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.<br/><br/> The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.<br/><br/> Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business.",
+      "imgAlt": ""
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "1",
+        "fifthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
+        "secondItem": "Middle JS&nbsp;Developers",
+        "thirdItem": "Junior JS&nbsp;Developers",
+        "fourthItem": "Analyst",
+        "fifthItem": "Testers"
+      }
+    },
     "quote": {
       "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project, which is&nbsp;very important to&nbsp;the company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the team in&nbsp;proactivity solving complex problems, and its commitment to&nbsp;fulfilling plans and targets. I&rsquo;d also like to&nbsp;commend the team for the friendly atmosphere and rapport they helped to&nbsp;create.",
       "author": {
@@ -28,6 +56,32 @@
     }
   },
   "s7airlines": {
+    "meta": {
+      "title": "FinTech and Banking Web Development",
+      "description": "We built a strong digital presence for banking and financial services."
+    },
+    "hero": {
+      "title": "Personal Account of&nbsp;an&nbsp;S7&nbsp;Airline Customer",
+      "link": "https://myprofile.s7.ru/",
+      "subTitle": "Client",
+      "text": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline. It&nbsp;is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;group of&nbsp;companies doing business in&nbsp;tourism and ticket distribution, passengers and cargo air transportation, flight personnel training, aircraft repair, and other aviation and space services.",
+      "imgAlt": ""
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Developer",
+        "secondItem": "Middle JS&nbsp;Developers",
+        "thirdItem": "Middle HTML/CSS Developer",
+        "fourthItem": "Testers"
+      }
+    },
     "aboutProject": {
       "title": "About the Project:",
       "text": [

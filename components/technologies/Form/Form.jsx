@@ -10,7 +10,7 @@ import ContactForm from '../../ContactForm'
 import contactFormValidationRules from '../../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../../utils/client/getGaCid'
 
-const ContactFormForIndustry = props => (
+const ContactFormForIndustry = (props) => (
   <ContactForm
     imageName="letter"
     headerId="hire-us"
@@ -20,7 +20,7 @@ const ContactFormForIndustry = props => (
   />
 )
 
-const onSubmit = (t, lng) => async values => {
+const onSubmit = (t, lng) => async (values) => {
   values.gacid = getGaCid()
   values.language = lng
   let res

@@ -20,7 +20,7 @@ const ClientsLogosListMobile = ({ className, t }) =>
       <h3 dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${clientsGroup.id}`) }} />
 
       <ul className="logos">
-        {clientsGroup.clients.map(clientId => (
+        {clientsGroup.clients.map((clientId) => (
           <li className="logo" key={clientId}>
             <ClientLogo clientId={clientId} />
           </li>

@@ -11,7 +11,7 @@ import testEmail from '../../utils/testEmail'
 
 const pageName = 'mvp'
 
-const ContactFormForMVP = props => (
+const ContactFormForMVP = (props) => (
   <ContactForm
     imageName="letter"
     pageName={pageName}
@@ -22,7 +22,7 @@ const ContactFormForMVP = props => (
   />
 )
 
-const onSubmit = (t, lng) => async values => {
+const onSubmit = (t, lng) => async (values) => {
   values.pageName = pageName
   values.gacid = getGaCid()
   values.language = lng

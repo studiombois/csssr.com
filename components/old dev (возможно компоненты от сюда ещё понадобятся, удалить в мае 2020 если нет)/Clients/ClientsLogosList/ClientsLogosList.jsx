@@ -7,7 +7,7 @@ import ClientLogo from '../ClientLogo'
 
 const ClientsLogosList = ({ className, clients }) => (
   <ul className={className}>
-    {clients.map(clientId => (
+    {clients.map((clientId) => (
       <li key={clientId}>
         <ClientLogo clientId={clientId} />
       </li>

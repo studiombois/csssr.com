@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, number, bool } from 'prop-types'
+import { bool, number, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './TextField.styles'
 import translate from '../../../../utils/translate-wrapper'

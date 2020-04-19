@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string, arrayOf, shape } from 'prop-types'
+import { arrayOf, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './LinksList.styles'
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { string, func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Addresses.styles'
 
@@ -36,7 +36,7 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
 
   const handleResetHoveredAddress = () => setHoveredAddress(null)
 
-  const handleMouseOver = address => event => {
+  const handleMouseOver = (address) => (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -45,7 +45,7 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
     setHoveredAddress(address)
   }
 
-  const handleMouseOut = event => {
+  const handleMouseOut = (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -65,7 +65,6 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
             onMouseOver={handleMouseOver(id)}
             onMouseLeave={handleMouseOut}
           >
-
             <Heading
               as="p"
               className="title"

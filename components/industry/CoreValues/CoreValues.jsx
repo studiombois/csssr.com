@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, object, array, func } from 'prop-types'
+import { array, func, object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './CoreValues.styles'
 import translate from '../../../utils/translate-wrapper'
@@ -10,7 +10,12 @@ import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import CoreValuesItem from '../CoreValuesItem'
 
-const CoreValues = ({ t, className, id, content: { heading, subHeading, coreValuesItems, button } }) => (
+const CoreValues = ({
+  t,
+  className,
+  id,
+  content: { heading, subHeading, coreValuesItems, button },
+}) => (
   <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"

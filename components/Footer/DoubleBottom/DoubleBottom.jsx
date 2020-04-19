@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './DoubleBottom.styles'
@@ -14,42 +14,44 @@ import continents_webp from '../../../static/images/continents.png?responsive_an
 
 const pins = [
   {
-    id: 'singapore'
+    id: 'singapore',
   },
   {
-    id: 'russia'
+    id: 'russia',
   },
   {
-    id: 'russia_2'
+    id: 'russia_2',
   },
   {
-    id: 'estonia'
-  }
+    id: 'estonia',
+  },
 ]
 
-const DoubleBottom = ({ className, t}) => {
+const DoubleBottom = ({ className, t }) => {
   const [hoveredAddress, setHoveredAddress] = useState(null)
 
   return (
     <div className={className}>
-      <Addresses setHoveredAddress={setHoveredAddress}/>
-        <div className={'map-wrapper'}>
-          <div className={'map'}>
-            <Picture
-              className="picture"
-              images={{ png: continents, webp: continents_webp }}
-              fallback={continents}
-              alt={t('common:footer.imageAlt.continents')}
-            />
+      <Addresses setHoveredAddress={setHoveredAddress} />
+      <div className={'map-wrapper'}>
+        <div className={'map'}>
+          <Picture
+            className="picture"
+            images={{ png: continents, webp: continents_webp }}
+            fallback={continents}
+            alt={t('common:footer.imageAlt.continents')}
+          />
 
-            {pins.map(({id}, index) => <span
-                                  key={`${id}_${index}`}
-                                  className={cn(`pin pin_${id}`, {
-                                    'pin_hovered': id === hoveredAddress
-                                  })}
-                                />)}
-          </div>
+          {pins.map(({ id }, index) => (
+            <span
+              key={`${id}_${index}`}
+              className={cn(`pin pin_${id}`, {
+                pin_hovered: id === hoveredAddress,
+              })}
+            />
+          ))}
         </div>
+      </div>
     </div>
   )
 }

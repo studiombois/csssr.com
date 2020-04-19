@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { string, object } from 'prop-types'
+import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './FeatureItem.styles'
 import Heading from '../../../ui-kit/core-design/Heading'

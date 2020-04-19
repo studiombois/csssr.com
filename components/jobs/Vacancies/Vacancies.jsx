@@ -1,8 +1,8 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import styles, { pictureStyles, pictureFaqStyles, pictureHunterStyles } from './Vacancies.styles'
+import styles, { pictureFaqStyles, pictureHunterStyles, pictureStyles } from './Vacancies.styles'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Picture from '../../Picture'
@@ -27,7 +27,7 @@ class Vacancies extends PureComponent {
 
         {this.props.vacancies.length > 0 && (
           <ul>
-            {this.props.vacancies.map(vacancy => (
+            {this.props.vacancies.map((vacancy) => (
               <li key={vacancy.id}>
                 <Link
                   href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}

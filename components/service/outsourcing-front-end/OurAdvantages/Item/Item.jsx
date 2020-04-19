@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import styles from './Item.styles'
@@ -65,7 +65,7 @@ const Item = ({ className, t, lng, id, link, images }) => (
           }}
         />
 
-        {!link || link === '/en/service/express-front-end' && lng === 'ru' ? null : (
+        {!link || (link === '/en/service/express-front-end' && lng === 'ru') ? null : (
           <Link
             className="link"
             href={`/${lng}/${link}`}

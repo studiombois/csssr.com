@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { string, func } from 'prop-types'
+import React, { useEffect, useRef, useState } from 'react'
+import { func, string } from 'prop-types'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import styles from './Footer.styles'

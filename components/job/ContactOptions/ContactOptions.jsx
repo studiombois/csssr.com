@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { arrayOf, string, func } from 'prop-types'
+import { arrayOf, func, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './ContactOptions.styles'
@@ -14,12 +14,12 @@ const ContactOptions = ({ className, connection = [], t }) => (
   <fieldset className={className}>
     <legend className="font_h3-regular">{t('job:additionalContactInfo')}:</legend>
 
-    {getContactOptionsByI18N(t).map(option => (
+    {getContactOptionsByI18N(t).map((option) => (
       <Fragment key={option.id}>
         <Field
           css={css`
-              margin-bottom: 1rem;
-              display: block;
+            margin-bottom: 1rem;
+            display: block;
           `}
           id={`${option.id}OptionalContactCheckbox`}
           name="connection"
@@ -33,8 +33,8 @@ const ContactOptions = ({ className, connection = [], t }) => (
         {connection.includes(option.id) && (
           <Field
             css={css`
-                margin-top: 2rem;
-                margin-bottom: 2.9375rem;
+              margin-top: 2rem;
+              margin-bottom: 2.9375rem;
             `}
             id={`${option.id}OptionalContactField`}
             name={option.id}

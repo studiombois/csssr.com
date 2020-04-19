@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
 import translate from '../../../utils/translate-wrapper'
-import { string, arrayOf, shape, bool, func } from 'prop-types'
+import { arrayOf, bool, func, shape, string } from 'prop-types'
 import cn from 'classnames'
-import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock'
+import { clearQueueScrollLocks, disablePageScroll, enablePageScroll } from 'scroll-lock'
 import styled from '@emotion/styled'
 import styles, { blueButtonStyles, whiteButtonStyles } from './ButtonSelect.styles'
 import Button from '../core-design/Button'
@@ -105,7 +105,7 @@ class ButtonSelect extends PureComponent {
     })
   }
 
-  handleLinkClick = dataLayerEvent => {
+  handleLinkClick = (dataLayerEvent) => {
     if (window.dataLayer) {
       window.dataLayer.push({ event: dataLayerEvent })
     }

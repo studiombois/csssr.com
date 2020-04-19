@@ -1,10 +1,10 @@
 import React from 'react'
-import { string, any, object, func, bool } from 'prop-types'
+import { any, bool, func, object, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Checkbox.styles'
 
-const Checkbox = props => {
+const Checkbox = (props) => {
   const {
     className,
     children,

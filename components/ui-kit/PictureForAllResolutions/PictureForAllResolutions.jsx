@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import { isEmpty } from 'ramda'
-import { string, object } from 'prop-types'
+import { object, string } from 'prop-types'
 import styles from './PictureForAllResolutions.styles'
 import flattenObjDeep from '../../../utils/client/flattenObjDeep'
 
@@ -27,12 +27,12 @@ const PictureForAllResolutions = ({
   return (
     <Fragment>
       <picture className={className}>
-        {Object.keys(images).map(resolution => {
+        {Object.keys(images).map((resolution) => {
           const mediaRule = mediaRulesByResolution[resolution].slice(7)
           const extensions = ['webp', 'png', 'jpeg', 'jpg', 'svg']
 
           return extensions.map(
-            extension =>
+            (extension) =>
               images[resolution][extension] && (
                 <source
                   key={`${resolution}_${extension}`}

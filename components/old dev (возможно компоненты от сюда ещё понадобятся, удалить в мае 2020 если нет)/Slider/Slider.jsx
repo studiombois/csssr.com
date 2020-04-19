@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { arrayOf, string, number } from 'prop-types'
+import { arrayOf, number, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Slider.styles'
 import { css } from '@emotion/core'
@@ -26,7 +26,7 @@ class Slider extends PureComponent {
     this.scrollbarWidth = getScrollbarWidth()
   }
 
-  handleChangeSlide = step => () => {
+  handleChangeSlide = (step) => () => {
     const { activeSlide } = this.state
     const { slides } = this.props
 
@@ -49,7 +49,7 @@ class Slider extends PureComponent {
               height: calc(21.8125rem + ${this.scrollbarWidth}px);
             `}
           >
-            {slides.map(slide => (
+            {slides.map((slide) => (
               <img
                 key={`${id}_${slide}`}
                 css={css`

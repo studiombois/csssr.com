@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
-import { number, string, shape, node } from 'prop-types'
+import { node, number, shape, string } from 'prop-types'
 import translate from '../utils/translate-wrapper'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
@@ -85,7 +85,11 @@ const Head = (props) => {
 
       {!props.customFavicons && (
         <Fragment>
-          <link rel="shortcut icon" href="/static/icons/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+          <link
+            rel="shortcut icon"
+            href="/static/icons/favicon/favicon.ico"
+            type="image/vnd.microsoft.icon"
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import { string, oneOfType, func, number, object } from 'prop-types'
+import { func, number, oneOfType, string } from 'prop-types'
 import styles from './InputControl.styles'
 import TextFieldRegular from '../../../../ui-kit/core-design/TextFieldRegular'
 
@@ -15,7 +15,7 @@ const OriginInputControl = ({
   testidBtnIncrement,
   testidBtnDecrement,
 }) => {
-  const handleOnClick = event => {
+  const handleOnClick = (event) => {
     const updatedValue = `${Number(value) + Number(event.target.dataset.step)}`
 
     onChange(updatedValue)

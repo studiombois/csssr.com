@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Frontend.styles'
@@ -12,7 +12,7 @@ import Text from '../../ui-kit/core-design/Text'
 import Picture from '../../ui-kit/Picture'
 import Grid from '../../ui-kit/core-design/Grid'
 
-import { reactImages, vueImages, angularImages } from '../../../data/technologies/frontend'
+import { angularImages, reactImages, vueImages } from '../../../data/technologies/frontend'
 
 const Frontend = ({ className, t }) => (
   <Grid as="section" className={className}>

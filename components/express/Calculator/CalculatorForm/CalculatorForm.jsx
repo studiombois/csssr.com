@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { string, func, bool, any } from 'prop-types'
-import { Form, Field, FormSpy } from 'react-final-form'
+import React, { useEffect, useState } from 'react'
+import { any, bool, func, string } from 'prop-types'
+import { Field, Form, FormSpy } from 'react-final-form'
 import createFocusDecorator, { getFormInputs } from 'final-form-focus'
 import styled from '@emotion/styled'
 import styles from './CalculatorForm.styles'
@@ -21,8 +21,7 @@ import AnimatedButton from '../../../ui-kit/core-design/AnimatedButton'
 
 import callbackTextFields from '../../../../data/express/callBackTextFields'
 import browsers from '../../../../data/express/browsers'
-import { calcLayoutSum } from '../../../../data/express/valuesByFieldNames'
-import { valuesByFieldNames } from '../../../../data/express/valuesByFieldNames'
+import { calcLayoutSum, valuesByFieldNames } from '../../../../data/express/valuesByFieldNames'
 
 import createDecorator from '../../../../utils/createDecorator'
 import normalizePrice from '../../../../utils/normalizePrice'
@@ -36,7 +35,7 @@ const formName = 'calculatorForm'
 const focusOnErrorsDecorator = createFocusDecorator(getFormInputs(formName))
 const calculator = createDecorator
 
-const handleAnyValuesChange = formState => {
+const handleAnyValuesChange = (formState) => {
   if (typeof window !== 'undefined' && !formState.pristine) {
     window.dataLayer.push({ event: `calculator_interaction` })
   }
@@ -46,7 +45,7 @@ const toggleBrowserField = (stateCheckbox, setFunc) => {
   return stateCheckbox ? setFunc(true) : setFunc(false)
 }
 
-const OriginCalculatorForm = props => {
+const OriginCalculatorForm = (props) => {
   const [status, setStatus] = useState('pending')
   const [isDropdownVisible, toggleDropdown] = useState(false)
   const [isDesiredScreenWidth, setDesiredScreenWidth] = useState(false)
@@ -60,7 +59,7 @@ const OriginCalculatorForm = props => {
     toggleDropdown(!isDesiredScreenWidth)
   }, [isDesiredScreenWidth])
 
-  const handleStatus = formState => {
+  const handleStatus = (formState) => {
     const { submitting, submitFailed } = formState
     // this.props.dirtySinceLastSubmit к сожалению не подходит,
     // потому что не отслеживает первое изменение после сабмита,
@@ -80,7 +79,7 @@ const OriginCalculatorForm = props => {
     return setStatus('pending')
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     const { handleSubmit, onSubmitResolve } = props
     // Может быть undefined если были ошибки валидации
     // или Promise если запрос отправлен
@@ -249,7 +248,7 @@ const OriginCalculatorForm = props => {
           />
 
           <div className="checkbox-wrapper">
-            {browsers.map(browsers => (
+            {browsers.map((browsers) => (
               <Field
                 id={browsers.name}
                 name={browsers.name}
@@ -410,7 +409,7 @@ const OriginCalculatorForm = props => {
             />
 
             <div className="input-wrapper">
-              {callbackTextFields.map(callbackTextFields => (
+              {callbackTextFields.map((callbackTextFields) => (
                 <Field
                   name={callbackTextFields.name}
                   key={callbackTextFields.name}

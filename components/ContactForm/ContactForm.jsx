@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { string, arrayOf, bool, func } from 'prop-types'
+import { arrayOf, bool, func, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import { Field, FormSpy } from 'react-final-form'
@@ -62,7 +62,7 @@ class ContactForm extends PureComponent {
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     const {
       handleSubmit,
       onSubmitResolve,
@@ -136,7 +136,7 @@ class ContactForm extends PureComponent {
     return 'pending'
   }
 
-  renderField = fieldName => {
+  renderField = (fieldName) => {
     const { pageName, fieldsIds, formName, hasFailOrSuccessStatus, t } = this.props
 
     const getTabIndex = `${hasFailOrSuccessStatus ? '-1' : '0'}`

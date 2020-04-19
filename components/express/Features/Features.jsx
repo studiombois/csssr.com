@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Features.styles'
 import FeatureItem from './FeatureItem'

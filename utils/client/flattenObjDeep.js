@@ -1,4 +1,4 @@
-import { chain, type, map, toPairs, fromPairs } from 'ramda'
+import { chain, fromPairs, map, toPairs, type } from 'ramda'
 
 const go = (obj) =>
   chain(([key, value]) => {

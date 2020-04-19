@@ -3,11 +3,11 @@ import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import {
   Link as CoreDesignLink,
-  link_list_s,
-  link_list_m,
-  link_list_l,
-  link_top_menu,
   link_burger,
+  link_list_l,
+  link_list_m,
+  link_list_s,
+  link_top_menu,
 } from '@csssr/core-design'
 
 const fonts = {

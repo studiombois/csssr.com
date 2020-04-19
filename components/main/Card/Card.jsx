@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { string, func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Card.styles'

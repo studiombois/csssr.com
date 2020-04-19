@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
-import { string, bool, func } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import ContactForm from '../../ContactForm'
 import StatusMessage from './StatusMessage'
 import styles from './Form.styles'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Form = props => {
+const Form = (props) => {
   const {
     pageName,
     formName,

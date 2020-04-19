@@ -10,7 +10,7 @@ import styled from '@emotion/styled'
 import styles from './AboutMvp.styles'
 import cn from 'classnames'
 
-import { mvpOnImages, mvpOffImages } from '../../../../data/service/mvp/aboutMvp'
+import { mvpOffImages, mvpOnImages } from '../../../../data/service/mvp/aboutMvp'
 
 class AboutMvp extends PureComponent {
   state = {

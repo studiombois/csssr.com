@@ -22,13 +22,13 @@ const PictureForAllResolutions = ({
     )
   }
 
-  const mediaRulesByResoluton = flattenObjDeep(theme.breakpoints)
+  const mediaRulesByResolution = flattenObjDeep(theme.breakpoints)
 
   return (
     <Fragment>
       <picture className={className}>
         {Object.keys(images).map(resolution => {
-          const mediaRule = mediaRulesByResoluton[resolution].slice(7)
+          const mediaRule = mediaRulesByResolution[resolution].slice(7)
           const extensions = ['webp', 'png', 'jpeg', 'jpg', 'svg']
 
           return extensions.map(

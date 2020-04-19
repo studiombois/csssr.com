@@ -127,7 +127,7 @@ export default class MyApp extends App {
     window.alert(
       ruLanguage
         ? 'Произошла непредвиденная ошибка. Детали ошибки отправлены нашим разработчикам.'
-        : 'An unexpected error has occurred. Error details have been sent to our developers.'
+        : 'An unexpected error has occurred. Error details have been sent to our developers.',
     )
   }
 

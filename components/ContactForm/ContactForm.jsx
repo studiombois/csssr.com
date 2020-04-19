@@ -163,7 +163,7 @@ class ContactForm extends PureComponent {
             id={(fieldsIds && fieldsIds.phone) || 'phone'}
             name="phone"
             component={TextField}
-            type="text"
+            type="tel"
             placeholder={t(`${pageName}:form.phonePlaceholder`)}
             label={t(`${pageName}:form.phoneLabel`)}
             testid={`${formName}:field:callbackForm.phone`}

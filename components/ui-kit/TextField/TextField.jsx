@@ -12,7 +12,6 @@ class TextField extends PureComponent {
     placeholder: string,
     label: string,
     autoFocus: bool,
-    type: string,
     disabled: bool,
   }
 
@@ -31,14 +30,13 @@ class TextField extends PureComponent {
       placeholder,
       label,
       autoFocus,
-      type,
       disabled,
       kind,
       className,
       maxLength,
       testid,
       tabIndex,
-      input: { name, value, onBlur, onFocus },
+      input: { name, type, value, onBlur, onFocus },
       meta: { error, invalid, submitError, submitFailed },
     } = this.props
 

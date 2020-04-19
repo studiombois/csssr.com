@@ -8,7 +8,6 @@ class Checkbox extends PureComponent {
   static propTypes = {
     id: oneOfType([string, number]),
     name: string,
-    value: oneOfType([string, number]),
     tabIndex: string,
     className: string,
     checked: bool,
@@ -47,7 +46,6 @@ class Checkbox extends PureComponent {
         <input
           id={id}
           name={input.name}
-          value={input.value}
           checked={input.checked}
           disabled={disabled}
           type="checkbox"

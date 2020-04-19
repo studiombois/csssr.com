@@ -58,7 +58,7 @@ module.exports = withSourceMaps({
       options: {
         publicPath: '/_next',
         name: dev ? '[path][name][resolution].[ext]' : '[path][name]-[hash:8][resolution].[ext]',
-        disable: PROCESS_IMAGES === 'true' ? false : true,
+        disable: PROCESS_IMAGES !== 'true',
         webp: {
           quality: 75,
         },
@@ -69,17 +69,6 @@ module.exports = withSourceMaps({
           quality: [0.3, 0.5],
           speed: 1,
         },
-      },
-    }
-
-    const urlLoaderConfig = {
-      loader: 'url-loader',
-      options: {
-        publicPath: '/_next',
-        name: dev ? '[path][name].[ext]' : '[path][name]-[hash:8].[ext]',
-        limit: 8192,
-        mimetype: 'image/webp',
-        esModule: false,
       },
     }
 
@@ -103,7 +92,7 @@ module.exports = withSourceMaps({
             use: [responsiveLoaderConfig],
           },
           {
-            use: [urlLoaderConfig],
+            use: [fileLoaderConfig],
           },
         ],
       })

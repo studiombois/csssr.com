@@ -129,6 +129,7 @@ export const nav = [
       {
         id: 'careers',
         href: 'jobs',
+        useLocale: true,
       },
       // {
       //   id: 'blog',

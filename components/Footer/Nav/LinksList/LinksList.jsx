@@ -8,9 +8,9 @@ import Link from '../../../ui-kit/core-design/Link'
 import translate from '../../../../utils/translate-wrapper'
 
 const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-const LinksList = ({ className, linksGroupName, links, t, lng }) => (
+const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
   <ul className={className}>
-    {links.map(({ id, href }) => {
+    {links.map(({ id, href, useLocale }) => {
       if (lng === 'ru' && id === 'express') {
         return
       }
@@ -28,7 +28,7 @@ const LinksList = ({ className, linksGroupName, links, t, lng }) => (
             />
           ) : (
             <Link
-              href={`/${lng}/${href}`}
+              href={`/${useLocale ? locale : lng}/${href}`}
               type="list"
               size="s"
               dangerouslySetInnerHTML={{ __html: t(`common:footer.${linksGroupName}.${id}`) }}

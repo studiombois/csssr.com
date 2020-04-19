@@ -23,7 +23,6 @@ export default [
     text: 'express:calculator.form.fieldset3.checkboxLabel6',
     name: 'parceForm_other',
     className: 'checkbox-browser checkbox-browser_other',
-    toggleField: true,
   },
   {
     text: 'express:calculator.form.fieldset3.checkboxLabel7',

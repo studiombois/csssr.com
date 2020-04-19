@@ -41,16 +41,11 @@ const handleAnyValuesChange = (formState) => {
   }
 }
 
-const toggleBrowserField = (stateCheckbox, setFunc) => {
-  return stateCheckbox ? setFunc(true) : setFunc(false)
-}
-
 const OriginCalculatorForm = (props) => {
   const [status, setStatus] = useState('pending')
   const [isDropdownVisible, toggleDropdown] = useState(false)
   const [isDesiredScreenWidth, setDesiredScreenWidth] = useState(false)
   const [submittedToServer, setSubmitToServerStatus] = useState(false)
-  const [isOtherBrowsersDropdownVisible, toggleOtherBrowsersDropdown] = useState(false)
 
   useEffect(() => {
     const isSmallDevice = window.matchMedia('(max-width: 1023px)').matches
@@ -248,23 +243,20 @@ const OriginCalculatorForm = (props) => {
           />
 
           <div className="checkbox-wrapper">
-            {browsers.map((browsers) => (
+            {browsers.map((browser) => (
               <Field
-                id={browsers.name}
-                name={browsers.name}
-                className={browsers.className}
+                id={browser.name}
+                name={browser.name}
+                className={browser.className}
                 type="checkbox"
-                key={browsers.name}
+                key={browser.name}
                 component={Checkbox}
-                isToggleInputCheckbox={browsers.toggleField}
-                toggleBrowserField={toggleBrowserField}
-                toggleOtherBrowsersDropdown={toggleOtherBrowsersDropdown}
-                testId={`calculator:field:checkbox.${browsers.name.split('_')[1]}`}
+                testId={`calculator:field:checkbox.${browser.name.split('_')[1]}`}
               >
                 <Label
-                  text={t(browsers.text)}
-                  price={valuesByFieldNames[browsers.name]}
-                  testId={`calculator:text:price.${browsers.name.split('_')[1]}`}
+                  text={t(browser.text)}
+                  price={valuesByFieldNames[browser.name]}
+                  testId={`calculator:text:price.${browser.name.split('_')[1]}`}
                 />
               </Field>
             ))}
@@ -273,7 +265,7 @@ const OriginCalculatorForm = (props) => {
           <div
             className={cn(
               'browser',
-              `${isOtherBrowsersDropdownVisible ? 'browser_visible' : 'browser_hidden'}`,
+              `${props.values.parceForm_other ? 'browser_visible' : 'browser_hidden'}`,
             )}
           >
             <Note

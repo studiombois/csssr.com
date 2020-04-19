@@ -146,7 +146,7 @@ export default class MyApp extends App {
       }
     })
 
-    window.addEventListener('click', function () {
+    window.addEventListener('mousedown', function () {
       document.body.classList.remove('outline')
     })
 

@@ -134,6 +134,7 @@ const base = css`
         line-height: 32px;
         color: #ffffff;
         letter-spacing: 0;
+        margin-bottom: 0;
     }
 
     /*  5 Benefit */
@@ -221,17 +222,15 @@ const base = css`
 
         .greeting-image {
             grid-column: 8 / span 5;
-            /* margin-top: 0; */
+            margin-top: 100px;
         }
         .greeting-text {
             grid-column: 1 / span 7;
             margin-top: 40px;
         }
-
         .greeting-red-box {
             margin-top: 30px;
         }
-
         .greeting-red-box img {
             height: 20px;
         }
@@ -239,14 +238,27 @@ const base = css`
         .crisis h2 {
             margin-top: 70px;
             grid-column: 1 / span 12;
+            margin-bottom: 10px;
         }
         .crisis-lines {
-            grid-column: 1 / span 1;
-            margin-top: -100px;
+            grid-column: 2 / span 1;
+            margin-top: -70px;
+        }
+
+        .benefits {
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        .benefits-description {
+            grid-column: 1 / span 12;
+            grid-row: 1;
+            margin-bottom: 50px;
         }
 
         .benefit-3-title {
             margin-top: 80px;
+
         }
 
     }
@@ -258,23 +270,14 @@ const base = css`
     }
 
     @media screen and (max-width: 720px) {
-        .greeting-red-text, .alert-red-text, .experience-description-virus-text {
-            font-size: 12px;
-            line-height: 12px;
-        }
         .greeting {
-            margin-top: 80px;
+            margin-top: 40px;
         }
-        .greeting h1 {
+        .greeting-text {
+            margin-top: 0;
             grid-column: 1 / span 6;
         }
-        .greeting-red-box {
-            grid-column: 1 / span 2;
-            margin-top: 15px;
-        }
-        .greeting-red-box {
-            grid-column: 1 / span 2;
-        }
+
         .greeting-image {
             grid-column: 1 / span 6;
             margin-top: 40px;
@@ -286,10 +289,7 @@ const base = css`
             grid-column: 1 / span 6;
             margin-top: 40px;
         }
-        .greeting-description {
-            grid-column: 1 / span 6;
-            margin-top: 40px;
-        }
+
         .benefits {
             margin-top: 0;
         }
@@ -300,11 +300,14 @@ const base = css`
             grid-column: 1 / span 6;
             margin-top: 40px;
             text-align: left;
+            margin-bottom: 40px;
         }
-        .crisis-image {
-            grid-column: 2 / span 4;
-            display: none;
+
+        .benefits-description {
+            font-size: 16px;
+            line-height: 24px;
         }
+
         .benefit-3-title {
             grid-column: 1 / span 6;
         }

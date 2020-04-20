@@ -14,6 +14,7 @@ const base = css`
         border-bottom: 1px solid #FFFFFF;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
     }
 
     .header {
@@ -90,11 +91,41 @@ const base = css`
 
 
     @media screen and (max-width: 944px) {
-
+        & {
+            grid-column: 1 / span 12;
+        }
     }
 
     @media screen and (max-width: 720px) {
+        & {
+            grid-column: 1 / span 6;
+        }
 
+        &.visible .text {
+            margin-bottom: 40px;
+        }
+
+        .header-icon {
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+
+        .header-icon img {
+            width: 16px;
+            height: auto;
+        }
+
+        .text {
+            margin-left: 35px;
+        }
+
+        .text p {
+            flex: 1 100%;
+        }   
+
+        .text-image {
+            display: none;
+        }
     }
 
 `

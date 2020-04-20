@@ -78,16 +78,43 @@ const base = css`
             line-height: 1.5rem;
         }
 
-
+        .wrapper {
+            width: 380px;
+            height: 100px;
+            padding-top: 15px;
+            padding-left: 30px;
+        }
     }
 
     @media screen and (max-width: 720px) {
-        .text-top {
-            font-size: 0.875rem;
-            line-height: 1.5rem;
+        & {
+            left: 50%;
+            transform: translateX(-50%);
+            right: 0;
+            bottom: 0;
         }
 
+        .wrapper {
+            height: 100px;
+            padding-top: 30px;
+            padding-left: 60px;
+            border-radius: 0px;
+        }
 
+        .text-top {
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .text-bottom {
+            margin-top: 5px;
+            font-size: 16px;
+            line-height: 16px;
+        }
+        
+        img {
+            display: none;
+        }
     }
 
 `

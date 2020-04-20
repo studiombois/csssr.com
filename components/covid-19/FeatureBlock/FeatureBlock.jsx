@@ -23,7 +23,7 @@ class FeatureBlock extends React.PureComponent {
   }
 
   render() {
-    const { className, header, text, i, iSet, id } = this.props
+    const { className, header, text, image, imagesSet, id } = this.props
     const { isVisible } = this.state
 
     const ariaControlsId = `expandable-${id}`
@@ -59,7 +59,7 @@ class FeatureBlock extends React.PureComponent {
           <p className="font-p-1" dangerouslySetInnerHTML={{ __html: text }} />
 
           <div className="text-image">
-            <img src={i} srcSet={iSet} alt="feature image" />
+            <img src={image} srcSet={imagesSet} alt="feature image" />
           </div>
         </div>
       </div>

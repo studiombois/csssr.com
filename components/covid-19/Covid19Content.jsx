@@ -130,8 +130,8 @@ const Covid19Content = ({ className }) => {
             <FeatureBlock
               key={feature.id}
               id={feature.id}
-              i={require(`../../static/covid-19/${feature.id}.png`)}
-              iSet={`${require(`../../static/covid-19/${feature.id}.png`)} 1x, ${require(`../../static/covid-19/${feature.id}@2x.png`)} 2x, ${require(`../../static/covid-19/${feature.id}@3x.png`)} 3x`}
+              image={require(`../../static/covid-19/${feature.id}.png`)}
+              imagesSet={`${require(`../../static/covid-19/${feature.id}.png`)} 1x, ${require(`../../static/covid-19/${feature.id}@2x.png`)} 2x, ${require(`../../static/covid-19/${feature.id}@3x.png`)} 3x`}
               header={feature.header}
               text={feature.text}
             />

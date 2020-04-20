@@ -8,8 +8,11 @@ import translate from '../../utils/translate-wrapper'
 import Hero from './Hero'
 import Team from './Team'
 import Head from '../Head'
-import hero from '../../data/project/S7/hero'
-import team from '../../data/project/S7/team'
+import TechStack from './TechStack'
+
+import hero from '../../data/project/s7/hero'
+import team from '../../data/project/s7/team'
+import techStack from '../../data/project/s7/techStack'
 import aboutProjectImages from '../../data/project/aboutProject'
 
 const S7AirlinesPage = ({ t }) => {
@@ -20,12 +23,13 @@ const S7AirlinesPage = ({ t }) => {
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('project:s7Airlines.meta.title')}
-        description={t('project:s7Airlines.meta.description')}
+        title={t('project:s7airlines.meta.title')}
+        description={t('project:s7airlines.meta.description')}
       />
 
       <Hero  id="hero" content={hero} />
       <Team  id="team" content={team} />
+      <TechStack id ="teckStack" content={techStack} />
       <AboutProject
         porojectId={porojectId}
         images={aboutProjectImages}

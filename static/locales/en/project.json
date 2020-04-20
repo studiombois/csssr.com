@@ -1,8 +1,8 @@
 {
   "gazpromNeft": {
    "meta": {
-      "title": "FinTech and Banking Web Development",
-      "description": "We built a strong digital presence for banking and financial services."
+      "title": "Web Development Services for IT Companies",
+      "description": "We push IT-companies to the cutting edge of technological progress."
     },
     "hero": {
       "title": "Professionals&nbsp;4.0",
@@ -26,6 +26,24 @@
         "thirdItem": "Junior JS&nbsp;Developers",
         "fourthItem": "Analyst",
         "fifthItem": "Testers"
+      }
+    },
+    "techStack": {
+      "title": "Tech stack",
+      "techList": {
+        "firstItem": "React.js",
+        "secondItem": "Next.js + Webpack",
+        "thirdItem": "Kubernetes, Docker"
+      },
+      "numericData": {
+        "duration": {
+          "number": "13",
+          "text": "months (Jan 2019 - ongoing)"
+        },
+        "projectTeam": {
+          "number": "9",
+          "text": "specialists"
+        }
       }
     },
     "quote": {
@@ -57,14 +75,14 @@
   },
   "s7airlines": {
     "meta": {
-      "title": "FinTech and Banking Web Development",
-      "description": "We built a strong digital presence for banking and financial services."
+      "title": "Web Development Services for IT Companies",
+      "description": "We push IT-companies to the cutting edge of technological progress."
     },
     "hero": {
       "title": "Personal Account of&nbsp;an&nbsp;S7&nbsp;Airline Customer",
       "link": "https://myprofile.s7.ru/",
       "subTitle": "Client",
-      "text": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline. It&nbsp;is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;group of&nbsp;companies doing business in&nbsp;tourism and ticket distribution, passengers and cargo air transportation, flight personnel training, aircraft repair, and other aviation and space services.",
+      "text": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline primarily based at&nbsp;Moscow Domodedovo International Airport and Novosibirsk Tolmachevo Airport. S7&nbsp;has the youngest fleet on&nbsp;the Russian air transportation market. It&nbsp;boasts an&nbsp;extensive network of&nbsp;routes allowing passengers to&nbsp;travel to&nbsp;181 destinations in&nbsp;26&nbsp;countries all over the globe. S7&nbsp;is a&nbsp;full member of&nbsp;Oneworld airline alliance.<br/><br/>S7&nbsp;Airlines is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;major Russian holding consisting of&nbsp;15&nbsp;companies, doing business in&nbsp;passengers and cargo air transportation (both regular and charter), tourism, air flights ticket distribution, flight personnel training, aircraft repair, and other aviation and space services.",
       "imgAlt": ""
     },
     "team": {
@@ -80,6 +98,26 @@
         "secondItem": "Middle JS&nbsp;Developers",
         "thirdItem": "Middle HTML/CSS Developer",
         "fourthItem": "Testers"
+      }
+    },
+    "techStack": {
+      "title": "Tech stack",
+      "techList": {
+        "firstItem": "React",
+        "secondItem": "Redux",
+        "thirdItem": "Saga",
+        "fourthItem": "Next.js",
+        "fifthItem": "CSS Modules"
+      },
+      "numericData": {
+        "duration": {
+          "number": "25",
+          "text": "months (Feb 2018 - ongoing)"
+        },
+        "projectTeam": {
+          "number": "8",
+          "text": "specialists"
+        }
       }
     },
     "aboutProject": {

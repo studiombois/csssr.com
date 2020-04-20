@@ -1,8 +1,8 @@
 {
   "gazpromNeft": {
     "meta": {
-      "title": "Custom E-Commerce Development Services",
-      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+      "title": "Веб-разработка для IT-компаний",
+      "description": "Выводим IT-компании на новый технологический уровень."
     },
     "hero": {
       "title": "Professionals&nbsp;4.0",
@@ -27,7 +27,25 @@
         "fourthItem": "Аналитик(и)",
         "fifthItem": "Тестировщик(и)"
       }
-    },  
+    },
+    "techStack": {
+      "title": "Стек",
+      "techList": {
+        "firstItem": "React.js",
+        "secondItem": "Next.js + Webpack",
+        "thirdItem": "Kubernetes, Docker"
+      },
+      "numericData": {
+        "duration": {
+          "number": "13",
+          "text": "месяцев (Январь 2019 — н.в.)"
+        },
+        "projectTeam": {
+          "number": "9",
+          "text": "человек"
+        }
+      }
+    },
     "quote": {
       "text": "Работаем с командой CSSSR не первый год на проекте, который имеет большое значение для нашей компании и для меня лично. Хочется отметить профессионализм и эффективность ребят, проактивность в решении сложных вопросов, обязательность при выполнении планов и данных обещаний, а также большой вклад в создание дружественной атмосферы в команде.",
       "author": {
@@ -57,14 +75,14 @@
   },
   "s7airlines": {
     "meta": {
-      "title": "Custom E-Commerce Development Services",
-      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+      "title": "Веб-разработка для IT-компаний",
+      "description": "Выводим IT-компании на новый технологический уровень."
     },
     "hero": {
       "title": "Личный кабинет пользователя авиакомпании&nbsp;S7",
       "link": "https://myprofile.s7.ru/",
       "subTitle": "О клиенте",
-      "text": "S7&nbsp;Airlines&nbsp;&mdash; крупнейшая частная авиакомпания России. Входит в&nbsp;холдинг &laquo;С7&nbsp;авиационно-космическая корпорация&raquo;, специализирующийся на&nbsp;продаже авиабилетов и&nbsp;туризме, пассажирских и&nbsp;грузоперевозках по&nbsp;воздуху, обучении лётного персонала, ремонте воздушных судов и&nbsp;других авиа- и&nbsp;космических услугах.",
+      "text": "S7&nbsp;Airlines&nbsp;&mdash; крупнейшая частная авиакомпания России базирующаяся в&nbsp;международных аэропортах Домодедово (Москва) и&nbsp;Толмачёво (Новосибирск). Компания располагает самым молодым парком воздушных судов на&nbsp;российском рынке авиаперевозок. Широкая маршрутная сеть позволяет пассажирам авиакомпании путешествовать в&nbsp;181 город в&nbsp;26&nbsp;странах мира. S7&nbsp;является членом международного авиационного альянса Oneworld.<br/><br/>Авиакомпания S7&nbsp;входит в&nbsp;холдинг АО&nbsp;&laquo;С7&nbsp;авиационно-космическая корпорация&raquo;, состоящий из&nbsp;15&nbsp;компаний, которые специализируются на&nbsp;пассажирских и&nbsp;грузоперевозках по&nbsp;воздуху (как регулярных, так и&nbsp;чартерных), продаже авиабилетов и&nbsp;туризме, обучении лётного персонала, ремонте воздушных судов и&nbsp;других авиа- и&nbsp;космических услугах.",
       "imgAlt": ""
     },
     "team": {
@@ -80,6 +98,26 @@
         "secondItem": "Middle JS&nbsp;Разработчика",
         "thirdItem": "Middle HTML/CSS Разработчик",
         "fourthItem": "Тестировщика"
+      }
+    },
+    "techStack": {
+      "title": "Стек",
+      "techList": {
+        "firstItem": "React",
+        "secondItem": "Redux",
+        "thirdItem": "Saga",
+        "fourthItem": "Next.js",
+        "fifthItem": "CSS Modules"
+      },
+      "numericData": {
+        "duration": {
+          "number": "25",
+          "text": "месяцев (Фев 2018 — н.в.)"
+        },
+        "projectTeam": {
+          "number": "8",
+          "text": "человек"
+        }
       }
     },
     "aboutProject": {

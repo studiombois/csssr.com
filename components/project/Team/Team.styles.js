@@ -121,7 +121,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .image {
-      grid-row: 1 / 4;
+      grid-row: 1 / 3;
     }
   }
 

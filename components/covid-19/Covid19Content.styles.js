@@ -304,6 +304,7 @@ const base = css`
         }
 
         .benefits-description {
+            grid-column: 1 / span 6;
             font-size: 16px;
             line-height: 24px;
         }

@@ -88,15 +88,16 @@ const base = css`
 
     @media screen and (max-width: 720px) {
         & {
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
+            left: 0;
             right: 0;
             bottom: 0;
         }
 
         .wrapper {
-            height: 100px;
-            padding-top: 30px;
+            width: 100%;
+            height: 60px;
+            padding-top: 10px;
             padding-left: 60px;
             border-radius: 0px;
         }

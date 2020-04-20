@@ -122,6 +122,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .player {
       top: 48px;
+      height: calc( 100% - 48px);
     }
   }
 
@@ -133,6 +134,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .player {
       top: 44px;
+      height: calc( 100% - 44px);
     }
   }
 
@@ -152,6 +154,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .player {
       top: 40px;
+      height: calc( 100% - 40px);
     }
   }
 

@@ -33,7 +33,7 @@ const base = css`
     .wrapper {
         width: 420px;
         height: 100px;
-        padding-top: 20px;
+        padding-top: 17px;
         padding-left: 50px;
         background-color: #0076FF;
         border: 1px solid transparent;
@@ -96,8 +96,8 @@ const base = css`
 
         .wrapper {
             width: 100%;
-            height: 60px;
-            padding-top: 10px;
+            height: 75px;
+            padding-top: 15px;
             padding-left: 60px;
             border-radius: 0px;
         }

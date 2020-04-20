@@ -11,7 +11,7 @@ const base = css`
     }
     /* Greeting */
     .greeting {
-        margin-top: 190px;
+        margin-top: 140px;
     }
 
     .greeting-text {
@@ -90,7 +90,7 @@ const base = css`
     /* Benefits */
 
     .benefits {
-        margin-top: 60px;
+        margin-top: 80px;
         margin-bottom: 200px;
     }
 
@@ -131,16 +131,20 @@ const base = css`
         font-family: "Roboto", sans-serif;
         font-weight: 100;
         font-size: 24px;
-        line-height: 32px;
+        line-height: 36px;
         color: #ffffff;
         letter-spacing: 0;
         margin-bottom: 0;
     }
 
+    .benefits-description-bold {
+        font-weight: 100;
+    }
+
     /*  5 Benefit */
 
     .benefit-3-title {
-        margin-top: 270px;
+        margin-top: 150px;
         grid-column: 3 / span 5;
         text-align: left;
     }
@@ -432,8 +436,9 @@ const fonts = css`
     }
 
     .font-p-link {
-        text-decoration: underline;
+        text-decoration: none;
         color: #FFFFFF;
+        border-bottom: 1px solid #ABABAB;
     }
 
     .font-p-link:hover {

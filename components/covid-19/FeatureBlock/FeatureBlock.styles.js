@@ -11,7 +11,7 @@ const base = css`
         /* margin-top: 30px; */
         margin-bottom: 30px;
         transition: all 0.1s ease-in;
-        border-bottom: 1px solid #FFFFFF;
+        border-bottom: 1px solid #ABABAB;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -37,6 +37,7 @@ const base = css`
 
     .header h3 {
         display: inline;
+        max-width: 650px;
     }
 
     .text {
@@ -53,7 +54,7 @@ const base = css`
     }
 
     .text p {
-        flex: 1 60%;
+        flex: 0 65%;
     }
 
     .text-image {
@@ -61,12 +62,16 @@ const base = css`
     }
 
     .text-image img {
-        height: 175px;
-        width: auto;
+        height: auto;
+        width: 200px;
     }
 
     &:hover {
         cursor: pointer;
+    }
+
+    &:hover h3 {
+        color: #B24372;
     }
 
     &.visible .text {
@@ -103,6 +108,10 @@ const base = css`
 
         &.visible .text {
             margin-bottom: 40px;
+        }
+
+        &:hover h3 {
+            color: #FFFFFF;
         }
 
         .header-icon {

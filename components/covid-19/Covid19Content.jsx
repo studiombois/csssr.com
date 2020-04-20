@@ -65,35 +65,28 @@ const Covid19Content = ({ className }) => {
               alt="Greeting"
             />
           </div>
-
         </div>
       </div>
 
       <div className="crisis" id="crisis">
         <div className="grid">
-          <h2 className="font-heading-1">How we can help</h2>
-
-          <div className="crisis-lines">
-            <img
-              src={require('../../static/covid-19/icons/crisis_lines.svg').default}
-              alt="crisis lines"
-            />
-          </div>
+          <h2 className="font-heading-2">How we can help</h2>
         </div>
       </div>
 
       <div className="benefits">
         <div className="grid">
-
-        <p className="benefits-description">
+          <p className="benefits-description">
             During the pandemic the web has become more important than ever. Almost everybody has
             to&nbsp;stay isolated at&nbsp;home, so&nbsp;the Internet has instantly become
-            a&nbsp;global workplace, the only way to&nbsp;communicate with other people and get
-            goods and services.
+            <span className="benefits-description-bold">{' '}a&nbsp;global workplace{' '}</span>
+            , the only way to&nbsp;communicate with other people and get goods and services.
             <br />
             <br />
-            Our group of&nbsp;companies employs more than 150 professionals in&nbsp;different
-            countries and all of&nbsp;them have always been working remotely. For eight years
+            Our group of&nbsp;companies employs more than
+            <span className="benefits-description-bold">{' '}150 professionals{' '}</span>
+            in&nbsp;different countries and all of&nbsp;them have always been working remotely. For
+            <span className="benefits-description-bold">{' '}eight years{' '}</span>
             we&nbsp;have been building web services for various industries such{' '}
             <a href="https://csssr.com/en/industry/ecommerce" className="font-p-link no-wrap">
               e-commerce

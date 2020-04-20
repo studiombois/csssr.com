@@ -1,7 +1,1 @@
-<svg width="500" height="34" viewBox="0 0 500 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M500 32C476.25 32 473.75 2 450 2C426.25 2 423.75 32 400 32" stroke="#FFD576" stroke-width="3"/>
-<path d="M400 32C376.25 32 373.75 2 350 2C326.25 2 323.75 32 300 32" stroke="#FFD576" stroke-width="3"/>
-<path d="M300 32C276.25 32 273.75 2 250 2C226.25 2 223.75 32 200 32" stroke="#FFD576" stroke-width="3"/>
-<path d="M200 32C176.25 32 173.75 2 150 2C126.25 2 123.75 32 100 32" stroke="#FFD576" stroke-width="3"/>
-<path d="M100 32C76.25 32 73.75 2 50 2C26.25 2 23.75 32 0 32" stroke="#FFD576" stroke-width="3"/>
-</svg>
+<svg width="500" height="34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M500 32c-23.75 0-26.25-30-50-30s-26.25 30-50 30m0 0c-23.75 0-26.25-30-50-30s-26.25 30-50 30m0 0c-23.75 0-26.25-30-50-30s-26.25 30-50 30m0 0c-23.75 0-26.25-30-50-30s-26.25 30-50 30m0 0C76.25 32 73.75 2 50 2S23.75 32 0 32" stroke="#FFD576" stroke-width="3"/></svg>

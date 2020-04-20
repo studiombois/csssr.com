@@ -10,9 +10,9 @@ import Team from './Team'
 import Head from '../Head'
 import TechStack from './TechStack'
 
-import hero from '../../data/project/s7/hero'
-import team from '../../data/project/s7/team'
-import techStack from '../../data/project/s7/techStack'
+import hero from '../../data/project/s7airlines/hero'
+import team from '../../data/project/s7airlines/team'
+import techStack from '../../data/project/s7airlines/techStack'
 import aboutProjectImages from '../../data/project/aboutProject'
 
 const S7AirlinesPage = ({ t }) => {

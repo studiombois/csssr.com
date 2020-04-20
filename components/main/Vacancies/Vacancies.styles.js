@@ -31,6 +31,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .picture {
     margin-top: 249px;
     grid-row-end: span 4;
+
+    img {
+      height: auto;
+    }
   }
 
   ${desktop.l} {

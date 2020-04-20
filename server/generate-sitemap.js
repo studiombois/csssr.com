@@ -392,6 +392,16 @@ const sitemapUrlsSettings = [
       },
     ],
   },
+  {
+    url: 'https://csssr.com/en/covid-19',
+    changefreq: 'yearly',
+    priority: 0.6,
+  },
+  {
+    url: 'https://csssr.com/en/products/lms',
+    changefreq: 'yearly',
+    priority: 0.6,
+  },
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>

@@ -32,15 +32,16 @@ const Industries = ({ className, t, lng }) => {
         dangerouslySetInnerHTML={{ __html: t('main:industries.subtitle') }}
       />
 
-      {industries.map(({ id, title, description, href, images, fallback }) => (
+      {industries.map(({ id, title, description, href, images, imagesHovered, fallback }) => (
         <Card
           className="card"
           key={id}
           id={id}
           title={title}
           description={description}
-          href={`${lng}/industry/${href}`}
+          href={`/${lng}/industry/${href}`}
           images={images}
+          imagesHovered={imagesHovered}
           fallback={fallback}
           isNextLink
         />

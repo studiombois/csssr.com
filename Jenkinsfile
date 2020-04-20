@@ -4,7 +4,9 @@ pipeline {
     branch = ""
     commit = ""
   }
-  agent { label 'master' }
+  agent {
+    label params.processImages ? 'master' : ''
+  }
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space (без слэша на конце)', name: 'csssrSpaceOrigin', trim: true)
@@ -55,7 +57,7 @@ pipeline {
           sshagent(credentials: ['csssr-com-chart']) {
             sh """
             rm -rf csssr.com-chart
-            git clone --single-branch --branch prod-before-redesign git@github.com:csssr-dreamteam/csssr.com-chart.git
+            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
             """
           }
 
@@ -67,7 +69,7 @@ pipeline {
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
             make deploy-production branch=${branch} commit=${commit}
             """
-          } else if (branch.startsWith('release/')) {
+          } else {
             sh """#!/bin/bash
             source ~/.bashrc
             set -x

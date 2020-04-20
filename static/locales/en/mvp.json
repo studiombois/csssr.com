@@ -3,39 +3,96 @@
     "title": "Outsourced MVP Development",
     "description": "We'll help you to test out your business ideas and demonstrate the product's potential to investors."
   },
-  "begin": {
-    "imageAlt": {
-      "title": "MVP",
-      "rocketBody": "Rocket body",
-      "rocketDress": "Rocket turbine",
-      "rocketJet": "Rocket jet",
-      "rocketDivider": "Rocket divider",
-      "rocketArrow": "Triangle symbol that point direction in in which the rocket travels"
-    },
-    "title": "MVP",
-    "text": "An MVP (Minimum Viable Product) is the most basic form of your product, with only the essential functionality. A well built MVP allows you to test out your business idea and demonstrate the product’s potential to investors.",
-    "rocketText": "In a highly competitive market, building a product quickly is crucial. We create core products for our clients in a short timeframe, helping them determine the best direction for future development."
+  "hero": {
+    "title": "<span style=\"font-weight: bold;\">MVP</span><br />Development",
+    "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;intended to&nbsp;help guide its future development.",
+    "button": "Start Your Project"
   },
-  "riskMinimization": {
+  "aboutMvp": {
     "togglerOn": "With MVP",
     "togglerOff": "Without MVP",
-    "imageAltOn": "Development process with MVP",
-    "imageAltOff": "Development process without MVP",
-    "title": "Risk Minimization",
-    "textOn": "Simple and robust product in-hand that’s easy to modify and improve later.",
-    "textOff": "Wasted time and resources developing a product, without knowing if it brings value to users.",
-    "imageAltWaves": "Curves symbolizing the MVP development process"
+    "title": "About MVP",
+    "descriptionOn": "An&nbsp;MVP based approach allows you to&nbsp;quickly validate your business idea, get real feedback, and build a&nbsp;roadmap for the final product.",
+    "descriptionOff": "Attempting to&nbsp;build a&nbsp;fully finished product from scratch, can make determining its true value and performance difficult and risks losing time, money, and even your reputation."
   },
-  "money": {
-    "imageAlt": "Man with coins in hand",
-    "title": "Cost Savings",
-    "text": "Invest your money only in the necessary functionality, giving you a working product that helps gain your first followers."
+  "benefits": {
+    "title": "It&nbsp;is&nbsp;generally good practice to&nbsp;launch products first as&nbsp;MVPs, while&nbsp;in&nbsp;some situations it&nbsp;is&nbsp;absolutely essential.",
+    "startups": {
+      "title": "Startups",
+      "description": "For those who at&nbsp;the beginning of&nbsp;their journeys.",
+      "benefits": [
+        "Test the viability of&nbsp;the idea",
+        "Engage with potential customers",
+        "Do&nbsp;so&nbsp;with minimal effort, while not sacrificing quality "
+      ]
+    },
+    "investors": {
+      "title": "Pitch Investors",
+      "description": "Prove that your product is&nbsp;worthy of&nbsp;funding.",
+      "benefits": [
+        "Build a&nbsp;real, functioning product",
+        "Show investors initial feedback and customer demand",
+        "Continue with the same team after raising funds"
+      ]
+    },
+    "newFeatures": {
+      "title": "New Features",
+      "description": "When it&rsquo;s time to&nbsp;explore new possibilities for an&nbsp;existing product.",
+      "benefits": [
+        "Launch new functions faster than competitors",
+        "Get customer feedback and collect data",
+        "Understand what to&nbsp;develop further"
+      ]
+    },
+    "paragraph": [
+      "Regardless of&nbsp;the project&rsquo;s goals, the speed and quality of&nbsp;the MVP launch play a&nbsp;crucial role in&nbsp;the future of&nbsp;the project.",
+      "<span style=\"font-style: italic; font-weight: 900; font-family: 'Roboto', 'Arial', sans-serif;\">Outsourced development</span> by&nbsp;a&nbsp;team of&nbsp;professionals is&nbsp;the best solution."
+    ]
+  },
+  "ourAdvantages": {
+    "title": "Our Advantages",
+    "advantages": [
+      [{
+        "title": "Quick Start",
+        "description": "Finding good specialists and gathering a&nbsp;team can take months and cost can run high. With&nbsp;us, you can start development in&nbsp;less than a&nbsp;week."
+      }, {
+        "title": "Flexibility",
+        "description": "We&nbsp;assemble teams based on&nbsp;the appropriate technologies, scope of&nbsp;work and budget for each project, while our commitment to&nbsp;efficiency and our core development principles remains constant.",
+        "link": "Read about our core values "
+      }],
+      [{
+        "title": "High-Level Expertise",
+        "description": "We&rsquo;ve been doing front-end development since 2012, and we&nbsp;are meticulous about hiring. We&nbsp;continuously improve the quality of&nbsp;our work through a&nbsp;system of&nbsp;employee education. "
+      }, {
+        "title": "Transparency",
+        "description": "We&nbsp;work with Agile methodologies, employing weekly sprints that help&nbsp;us better plan load, easily break down tasks and provide better transparency.",
+        "link": "Read about how we work"
+      }]
+    ]
   },
   "process": {
-    "title": "Process"
+    "title": "Process",
+    "stages": {
+      "start": {
+        "title": "Start",
+        "description": "Provide&nbsp;us with your design layouts and other required information."
+      },
+      "development": {
+        "title": "Development",
+        "description": [
+          "We&nbsp;help you choose the most suitable ",
+          ", assemble a&nbsp;team and start bringing your ideas to&nbsp;life."
+        ],
+        "link": "technology stack"
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "You collect feedback and determine the next steps."
+      }
+    }
   },
   "form": {
-    "title": "Get in Touch",
+    "title": "Let&rsquo;s Talk",
     "namePlaceholder": "Tim Berners-Lee",
     "nameLabel": "Name",
     "phonePlaceholder": "+1-612-566-34-43",
@@ -46,5 +103,13 @@
     "messageLabel": "How can we help?",
     "submitText": "Submit"
   },
-  "buttonText": "Hire Us"
+  "imageAlt": {
+    "mvpOn": "Development process with MVP",
+    "mvpOff": "Development process without MVP",
+    "ourAdvantages": [
+      ["Two men running in a race", "People performing acrobatic etudes with frontend technologies"],
+      ["Recursion of a man looking for something in a magnifying glass", "The frontend atlas, who has everything under control"]
+    ],
+    "process": "Solar system"
+  }
 }

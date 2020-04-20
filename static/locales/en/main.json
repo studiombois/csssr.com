@@ -9,13 +9,12 @@
   },
   "services": {
     "title": "We&nbsp;Create Web Services for Millions",
-    "link": "More",
     "outsourcing": {
       "title": "<span style=\"font-weight: bold;\">Outsourcing</span><span style=\"white-space: nowrap; display: block;\">Front-end</span>",
       "subtitle": "Web development to&nbsp;complement core competencies."
     },
     "express": {
-      "title": "<span style=\"font-weight: bold;\">Express</span> Front-end",
+      "title": "<span style=\"font-weight: bold;\">Express</span> Web Development",
       "subtitle": "Fixed rates for straight-forward, <span style=\"white-space: nowrap;\">time-sensitive</span> services."
     },
     "mvp": {

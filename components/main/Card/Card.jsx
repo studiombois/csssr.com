@@ -9,10 +9,9 @@ import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
-import ArrowIcon from '../../../static/icons/main/arrow.svg'
-
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Card = ({
   className,
@@ -21,20 +20,34 @@ const Card = ({
   description,
   href,
   images,
+  imagesHovered,
   fallback,
   t,
   isNextLink,
   isLink,
   children,
+  isMobile,
+  isTablet,
 }) => {
   const CardBody = () => (
     <Fragment>
-      <PictureForAllResolutions
-        className={cn('card-picture', `card-picture_${id}`)}
-        images={images}
-        fallback={fallback}
-        alt={t(`main:imageAlt.${id}`)}
-      />
+      <div className="picture-wrap">
+        <PictureForAllResolutions
+          className={cn('card-picture', `card-picture_${id}`)}
+          images={images}
+          fallback={fallback}
+          alt={t(`main:imageAlt.${id}`)}
+        />
+
+        {!isMobile && !isTablet && imagesHovered && (
+          <PictureForAllResolutions
+            className={'card-picture-hovered'}
+            images={imagesHovered}
+            fallback={fallback}
+            alt={t(`main:imageAlt.${id}`)}
+          />
+        )}
+      </div>
 
       <Heading
         className="card-title"
@@ -52,7 +65,6 @@ const Card = ({
         size="m"
       />
 
-      <ArrowIcon className="card-icon" />
       <div className="break" />
     </Fragment>
   )
@@ -94,11 +106,15 @@ Card.propTypes = {
   lng: string,
   isLink: bool,
   next: bool,
+  isMobile: bool,
+  isTablet: bool,
   t: func,
 }
 
 export default translate(
-  MsBrowserConsumer(styled(Card)`
-    ${styles}
-  `),
+  DeviceConsumer(
+    MsBrowserConsumer(styled(Card)`
+      ${styles}
+    `),
+  ),
 )

@@ -18,6 +18,10 @@ const Links = ({ className, router, t, lng, locale }) => (
     {links.map(({ title, href }) => {
       const loc = href === 'jobs' ? locale : lng
 
+      if (lng === 'ru' && href === 'https://blog.csssr.com') {
+        return
+      }
+
       return (
         <li key={title}>
           {linkRegExp.test(href) ? (
@@ -28,7 +32,7 @@ const Links = ({ className, router, t, lng, locale }) => (
             <Link
               href={`/${loc}/${href}`}
               className={cn('link', {
-                link_active: router.asPath === `/${loc}/${href}`,
+                link_active: router.pathname === `/${loc}/${href}`,
               })}
               isNextLink
               type="top_menu"

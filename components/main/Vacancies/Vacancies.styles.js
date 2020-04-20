@@ -24,6 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .link {
+    max-width: 192px;
     margin-top: 56px;
   }
 

@@ -29,6 +29,7 @@ const Nav = ({
   t,
   lng,
 }) => {
+  const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
   const Wrapper = isIe11 ? Fragment : Fade
   const animationProps = isIe11
     ? {}
@@ -72,11 +73,17 @@ const Nav = ({
                   <Wrapper key={id} {...animationProps}>
                     <li
                       className={cn('nav-item', {
-                        'nav-item_active': router.asPath === `/${lng}/${href}`,
+                        'nav-item_active': router.pathname === `/${lng}/${href}`,
                       })}
                     >
-                      <Link className="link" href={`/${lng}/${href}`} isNextLink>
-                        <Icon className="icon" />
+                      <Link
+                        className="link"
+                        href={linkRegExp.test(href) ? href : `/${lng}/${href}`}
+                        isNextLink={!linkRegExp.test(href)}
+                        target={linkRegExp.test(href) ? '_blank' : '_self'}
+                        rel="noopener noreferrer"
+                      >
+                        <Icon className={cn('icon', `icon_${id}`)} />
 
                         <Heading
                           className="title"

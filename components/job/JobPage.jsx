@@ -20,7 +20,7 @@ import i18n from '../../common/i18n'
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
 // 2. Добавляем индексы всем полям для сабмита и корректной работы в связке с final-form
 // 3. Записываем title у всех заданий, потому что они в таком виде сохраняются в модель кандидата
-const processVacancy = vacancy => {
+const processVacancy = (vacancy) => {
   const vacancySections = []
   const initialValues = {
     vacancy: vacancy.pathName,
@@ -29,11 +29,11 @@ const processVacancy = vacancy => {
   }
 
   let inputIndex = 0
-  vacancy.sections.forEach(section => {
+  vacancy.sections.forEach((section) => {
     if (section.type === 'questBox') {
       let displayIndex = 1
       const innerSections = []
-      section.sections.forEach(innerSection => {
+      section.sections.forEach((innerSection) => {
         if (innerSection.type === 'questionAndAnswer') {
           initialValues.quests.push({
             title: innerSection.title,
@@ -86,7 +86,7 @@ const filterUnckeckedContactOptions = (values, t) => {
   }, {})
 
   return Object.keys(values)
-    .filter(key => !filteredContactOptions[key])
+    .filter((key) => !filteredContactOptions[key])
     .reduce(
       (memo, key) => ({
         ...memo,
@@ -96,7 +96,7 @@ const filterUnckeckedContactOptions = (values, t) => {
     )
 }
 
-const onSubmit = t => async values => {
+const onSubmit = (t) => async (values) => {
   const filteredValues = filterUnckeckedContactOptions(values, t)
 
   if (values.quests.length === 0) {
@@ -135,7 +135,7 @@ const onSubmit = t => async values => {
     } catch {
       error = t('common:form.errors.general')
     }
-    Sentry.withScope(scope => {
+    Sentry.withScope((scope) => {
       scope.setExtra('reqBody', formData)
       Sentry.captureException(error)
     })
@@ -159,7 +159,7 @@ class JobPage extends PureComponent {
     )
     const vacancies = await response.json()
 
-    const vacancy = vacancies.find(v => v.pathName === query.jobPathName)
+    const vacancy = vacancies.find((v) => v.pathName === query.jobPathName)
 
     if (!vacancy) {
       // SSR

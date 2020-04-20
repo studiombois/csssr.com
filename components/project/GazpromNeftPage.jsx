@@ -6,11 +6,14 @@ import AboutProject from './AboutProject'
 import Layout from '../Layout'
 import translate from '../../utils/translate-wrapper'
 
+import Head from '../Head'
 import Hero from './Hero'
 import Team from './Team'
-import Head from '../Head'
-import hero from '../../data/project/GazpromNeft/hero'
-import team from '../../data/project/GazpromNeft/team'
+import TechStack from './TechStack'
+
+import hero from '../../data/project/gazprom-neft/hero'
+import team from '../../data/project/gazprom-neft/team'
+import techStack from '../../data/project/gazprom-neft/techStack'
 import quoteImages from '../../data/project/gazprom-neft/quote'
 import aboutProjectImages from '../../data/project/aboutProject'
 
@@ -31,6 +34,7 @@ const GazpromNeftPage = ({ t }) => {
 
       <Hero  id="hero" content={hero} />
       <Team  id="team" content={team} />
+      <TechStack id ="teckStack" content={techStack} />
       <AboutProject
         porojectId={porojectId}
         images={aboutProjectImages}

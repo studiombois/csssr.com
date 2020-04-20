@@ -178,6 +178,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       right: 0;
       z-index: -1;
       margin-top: ${calcRem(48)};
+      max-width: ${calcRem(504)};
     }
 
     .image {

@@ -9,6 +9,30 @@ import styles from './Covid19Content.styles'
 import FloatButton from './FloatButton'
 import FeatureBlock from './FeatureBlock'
 
+const features = [
+  {
+    id: 'benefits-1',
+    header: 'Let&nbsp;us speed up&nbsp;your project development with our team and experience',
+    text: 'Maybe right now your project is&nbsp;almost ready for release, but your team members have to&nbsp;keep social distancing so&nbsp;cannot complete&nbsp;it.'
+  },
+  {
+    id: 'benefits-2',
+    header: 'We&nbsp;can bring your business online right now',
+    text:
+      'This crisis is&nbsp;not only a&nbsp;time of&nbsp;hardship but also great opportunities for exponential growth. Perhaps it&nbsp;is&nbsp;the right time to&nbsp;launch your project. We&nbsp;would love to&nbsp;craft digital products, services, internal systems and ecosystems',
+  },
+  {
+    id: 'benefits-4',
+    header: 'Let&nbsp;us optimize your web-service performance',
+    text: 'People are in&nbsp;a&nbsp;difficult situation, and the highest load Internet services are on&nbsp;the front line now and must stay stable and reliable.'
+  },
+  {
+    id: 'benefits-5',
+    header: 'We&nbsp;are ready to&nbsp;bring the costs down for any socially important projects',
+    text: 'Tell&nbsp;us why your project is&nbsp;important for society. We&nbsp;are all in&nbsp;the same boat now.'
+  },
+]
+
 const Covid19Content = ({ className }) => {
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
   const [hoveredImage, setHoveredImage] = useState(null)
@@ -102,42 +126,16 @@ const Covid19Content = ({ className }) => {
             .
           </p>
 
-          {/* <!-- 1 Benefit --> */}
-          <FeatureBlock
-            i={require('../../static/covid-19/benefits-1.png')}
-            iSet={`${require('../../static/covid-19/benefits-1.png')} 1x, ${require('../../static/covid-19/benefits-1@2x.png')} 2x, ${require('../../static/covid-19/benefits-1@3x.png')} 3x`}
-            h="Let&nbsp;us speed up&nbsp;your project development with our team and experience"
-            t="Maybe right now your project is&nbsp;almost ready for release, but your team members
-            have to&nbsp;keep social distancing so&nbsp;cannot complete&nbsp;it."
-          />
-
-          {/* <!-- 2 Benefit --> */}
-          <FeatureBlock
-            i={require('../../static/covid-19/benefits-2.png')}
-            iSet={`${require('../../static/covid-19/benefits-2.png')} 1x, ${require('../../static/covid-19/benefits-2@2x.png')} 2x, ${require('../../static/covid-19/benefits-2@3x.png')} 3x`}
-            h="We&nbsp;can bring your business online right now"
-            t="This crisis is&nbsp;not only a&nbsp;time of&nbsp;hardship but also great opportunities
-            for exponential growth. Perhaps it&nbsp;is&nbsp;the right time to&nbsp;launch your
-            project. We&nbsp;would love to&nbsp;craft digital products, services, internal systems and ecosystems"
-          />
-
-          {/* <!-- 3 Benefit --> */}
-          <FeatureBlock
-            i={require('../../static/covid-19/benefits-4.png')}
-            iSet={`${require('../../static/covid-19/benefits-4.png')} 1x, ${require('../../static/covid-19/benefits-4@2x.png')} 2x, ${require('../../static/covid-19/benefits-4@3x.png')} 3x`}
-            h="Let&nbsp;us optimize your web-service performance"
-            t="People are in&nbsp;a&nbsp;difficult situation, and the highest load Internet services
-            are on&nbsp;the front line now and must stay stable and reliable."
-          />
-
-          {/* <!-- 4 Benefit --> */}
-          <FeatureBlock
-            i={require('../../static/covid-19/benefits-5.png')}
-            iSet={`${require('../../static/covid-19/benefits-5.png')} 1x, ${require('../../static/covid-19/benefits-5@2x.png')} 2x, ${require('../../static/covid-19/benefits-5@3x.png')} 3x`}
-            h="We&nbsp;are ready to&nbsp;bring the costs down for any socially important projects"
-            t="Tell&nbsp;us why your project is&nbsp;important for society. We&nbsp;are all
-            in&nbsp;the same boat now."
-          />
+          {features.map((feature) =>
+            <FeatureBlock
+              key={feature.id}
+              id={feature.id}
+              i={require(`../../static/covid-19/${feature.id}.png`)}
+              iSet={`${require(`../../static/covid-19/${feature.id}.png`)} 1x, ${require(`../../static/covid-19/${feature.id}@2x.png`)} 2x, ${require(`../../static/covid-19/${feature.id}@3x.png`)} 3x`}
+              header={feature.header}
+              text={feature.text}
+            />
+          )}
 
           {/* <!-- 5 Benefit --> */}
           <h3

@@ -24,12 +24,12 @@ const Team = ({
                 className="heading"
             />
             <ul className="list">
-            {teamItems.map(({number, text}, index) => (
+            {teamItems.map(({number, text}) => (
               <>
-                <li className="list-item number-item" key={`${index}_${number}`}>
+                <li className="list-item number-item" key={number}>
                   <Text type="regular" as="span" dangerouslySetInnerHTML={{ __html: t(number) }} />
                 </li>
-                <li className="list-item text-item" key={`${index}_${text}`}>
+                <li className="list-item text-item" key={text}>
                   <Text type="strong" as="span" dangerouslySetInnerHTML={{ __html: t(text) }} />
                 </li>
               </>

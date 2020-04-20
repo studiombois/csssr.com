@@ -110,12 +110,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      grid-gap: 24px 16px;
+      grid-gap: ${calcRem(24)} ${calcRem(16)};
       margin-top: ${calcRem(126)};
     }
 
     .tech-list {
-      grid-gap: 8px 0;
+      grid-gap: ${calcRem(8)} 0;
     }
 
     .number {
@@ -154,7 +154,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .tech-list {
       margin-top: ${calcRem(24)};
-      grid-gap: 8px 0;
+      grid-gap: ${calcRem(8)} 0;
       grid-row: 4;
     }
 

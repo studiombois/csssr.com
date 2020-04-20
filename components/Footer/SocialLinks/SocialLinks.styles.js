@@ -14,6 +14,11 @@ const base = ({ colors }) => css`
 
   a {
     color: ${colors.secondary.darken100};
+    transition: color 200ms ease-out;
+
+    &:hover {
+      color: ${colors.primary.origin};
+    }
   }
 `
 

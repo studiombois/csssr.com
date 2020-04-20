@@ -8,10 +8,9 @@ const base = css`
 
     & {
         grid-column: 2 / span 7;
-        /* margin-top: 30px; */
         margin-bottom: 30px;
-        transition: all 0.1s ease-in;
-        border-bottom: 1px solid #ABABAB;
+        transition: all 100ms ease-in;
+        border-bottom: 1px solid #ababab;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -22,7 +21,7 @@ const base = css`
     }
 
     .header-icon {
-        display: inline;
+        display: inline-block;
         margin-right: 40px;
         margin-top: 10px;
     }
@@ -50,7 +49,7 @@ const base = css`
         margin-bottom: 20px;
         max-height: 0;
         opacity: 0;
-        transition: max-height 0.3s ease, opacity 0.2s ease;
+        transition: max-height 300ms ease, opacity 200ms ease;
     }
 
     .text p {
@@ -71,7 +70,7 @@ const base = css`
     }
 
     &:hover h3 {
-        color: #B24372;
+        color: #b24372;
     }
 
     &.visible .text {
@@ -111,7 +110,7 @@ const base = css`
         }
 
         &:hover h3 {
-            color: #FFFFFF;
+            color: #ffffff;
         }
 
         .header-icon {
@@ -130,7 +129,7 @@ const base = css`
 
         .text p {
             flex: 1 100%;
-        }   
+        }
 
         .text-image {
             display: none;
@@ -142,4 +141,3 @@ const base = css`
 export default css`
   ${base}
 `
-

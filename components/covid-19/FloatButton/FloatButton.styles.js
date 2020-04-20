@@ -10,7 +10,7 @@ const base = css`
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        transition: all 0.1s ease-in;
+        transition: all 100ms ease-in;
         position: fixed;
         bottom: 50px;
         right: 50px;
@@ -35,10 +35,10 @@ const base = css`
         height: 100px;
         padding-top: 17px;
         padding-left: 50px;
-        background-color: #0076FF;
+        background-color: #0076ff;
         border: 1px solid transparent;
         border-radius: 3px;
-        transition: all 0.1s ease-in;
+        transition: all 100ms ease-in;
     }
 
     &:hover {
@@ -47,7 +47,7 @@ const base = css`
     }
 
     &:hover .wrapper {
-        background-color: #3557FF;
+        background-color: #3557ff;
     }
 
     .text-top {
@@ -99,7 +99,7 @@ const base = css`
             height: 75px;
             padding-top: 15px;
             padding-left: 60px;
-            border-radius: 0px;
+            border-radius: 0;
         }
 
         .text-top {
@@ -112,7 +112,7 @@ const base = css`
             font-size: 16px;
             line-height: 16px;
         }
-        
+
         img {
             display: none;
         }
@@ -123,4 +123,3 @@ const base = css`
 export default css`
   ${base}
 `
-

@@ -32,7 +32,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-size: 100%;
     background-position: 100%;
 
-    &_russia {
+    &_russia, &_russia_2 {
       top: 100px;
       right: 191px
     }
@@ -80,7 +80,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       right: 36%;
     }
 
-    .pin_russia {
+    .pin_russia, .pin_russia_2 {
       top: 26%;
       right: 30%;
     }
@@ -102,7 +102,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       right: 36%;
     }
 
-    .pin_russia {
+    .pin_russia, .pin_russia_2 {
       top: 25%;
       right: 30%;
     }
@@ -119,7 +119,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       right: 36%;
     }
 
-    .pin_russia {
+    .pin_russia, .pin_russia_2 {
       top: 23%;
       right: 31%;
     }
@@ -149,7 +149,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       right: ${calcRem(135)};
     }
 
-    .pin_russia {
+    .pin_russia, .pin_russia_2 {
       top: ${calcRem(48)};
       right: ${calcRem(112)};
     }
@@ -186,7 +186,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         right: ${calcRem(119)};
       }
 
-      &_russia {
+      &_russia, &_russia_2 {
         top: ${calcRem(44)};
         right: ${calcRem(99)};
       }

@@ -39,6 +39,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     color: ${colors.secondary.darken100};
   }
 
+  .service-title a {
+    transition: color 200ms;
+  }
+
+  .service-title a {
+    &:hover {
+      color: ${colors.primary.origin};
+    }
+  }
+
   .service-subtitle {
     margin-top: 21px;
   }

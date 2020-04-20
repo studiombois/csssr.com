@@ -74,15 +74,6 @@ const Services = ({ className, t, lng, isMobile }) => {
                     dangerouslySetInnerHTML={{ __html: t(subtitle) }}
                   />
 
-                  <Link
-                    className="service-link"
-                    href={`${lng}/service/${href}`}
-                    type="list"
-                    size="m"
-                    dangerouslySetInnerHTML={{ __html: t('main:services.link') }}
-                    isNextLink
-                  />
-
                   <Icon className={cn('service-icon', `service-icon_${iconName}`)} />
                 </li>
               )

@@ -1,7 +1,7 @@
-import fintechImages from './fintech'
-import eCommerceImages from './eCommerce'
-import informationImages from './information'
-import mediaAndMarketingImages from './mediaAndMarketing'
+import { fintechImages, fintechImagesHovered } from './fintech'
+import { eCommerceImages, eCommerceImagesHovered } from './eCommerce'
+import { informationImages, informationImagesHovered } from './information'
+import { mediaAndMarketingImages, mediaAndMarketingImagesHovered } from './mediaAndMarketing'
 
 export default [
   {
@@ -10,6 +10,7 @@ export default [
     description: 'main:industries.fintech.description',
     href: 'fintech',
     images: fintechImages,
+    imagesHovered: fintechImagesHovered,
     fallback: fintechImages['desktop.l'].png,
   },
   {
@@ -18,6 +19,7 @@ export default [
     description: 'main:industries.eCommerce.description',
     href: 'ecommerce',
     images: eCommerceImages,
+    imagesHovered: eCommerceImagesHovered,
     fallback: eCommerceImages['desktop.l'].png,
   },
   {
@@ -26,6 +28,7 @@ export default [
     description: 'main:industries.information.description',
     href: 'information-technology',
     images: informationImages,
+    imagesHovered: informationImagesHovered,
     fallback: informationImages['desktop.l'].png,
   },
   {
@@ -34,6 +37,7 @@ export default [
     description: 'main:industries.mediaAndMarketing.description',
     href: 'media-and-marketing',
     images: mediaAndMarketingImages,
+    imagesHovered: mediaAndMarketingImagesHovered,
     fallback: mediaAndMarketingImages['desktop.l'].png,
   },
 ]

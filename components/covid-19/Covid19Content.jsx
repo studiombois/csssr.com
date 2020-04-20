@@ -13,7 +13,8 @@ const features = [
   {
     id: 'benefits-1',
     header: 'Let&nbsp;us speed up&nbsp;your project development with our team and experience',
-    text: 'Maybe right now your project is&nbsp;almost ready for release, but your team members have to&nbsp;keep social distancing so&nbsp;cannot complete&nbsp;it.'
+    text:
+      'Maybe right now your project is&nbsp;almost ready for release, but your team members have to&nbsp;keep social distancing so&nbsp;cannot complete&nbsp;it.',
   },
   {
     id: 'benefits-2',
@@ -24,12 +25,14 @@ const features = [
   {
     id: 'benefits-4',
     header: 'Let&nbsp;us optimize your web-service performance',
-    text: 'People are in&nbsp;a&nbsp;difficult situation, and the highest load Internet services are on&nbsp;the front line now and must stay stable and reliable.'
+    text:
+      'People are in&nbsp;a&nbsp;difficult situation, and the highest load Internet services are on&nbsp;the front line now and must stay stable and reliable.',
   },
   {
     id: 'benefits-5',
     header: 'We&nbsp;are ready to&nbsp;bring the costs down for any socially important projects',
-    text: 'Tell&nbsp;us why your project is&nbsp;important for society. We&nbsp;are all in&nbsp;the same boat now.'
+    text:
+      'Tell&nbsp;us why your project is&nbsp;important for society. We&nbsp;are all in&nbsp;the same boat now.',
   },
 ]
 
@@ -103,14 +106,14 @@ const Covid19Content = ({ className }) => {
           <p className="benefits-description">
             During the pandemic the web has become more important than ever. Almost everybody has
             to&nbsp;stay isolated at&nbsp;home, so&nbsp;the Internet has instantly become
-            <span className="benefits-description-bold">{' '}a&nbsp;global workplace{' '}</span>
+            <span className="benefits-description-bold"> a&nbsp;global workplace </span>
             , the only way to&nbsp;communicate with other people and get goods and services.
             <br />
             <br />
             Our group of&nbsp;companies employs more than
-            <span className="benefits-description-bold">{' '}150 professionals{' '}</span>
+            <span className="benefits-description-bold"> 150 professionals </span>
             in&nbsp;different countries and all of&nbsp;them have always been working remotely. For
-            <span className="benefits-description-bold">{' '}eight years{' '}</span>
+            <span className="benefits-description-bold"> eight years </span>
             we&nbsp;have been building web services for various industries such{' '}
             <a href="https://csssr.com/en/industry/ecommerce" className="font-p-link no-wrap">
               e-commerce
@@ -126,7 +129,7 @@ const Covid19Content = ({ className }) => {
             .
           </p>
 
-          {features.map((feature) =>
+          {features.map((feature) => (
             <FeatureBlock
               key={feature.id}
               id={feature.id}
@@ -135,7 +138,7 @@ const Covid19Content = ({ className }) => {
               header={feature.header}
               text={feature.text}
             />
-          )}
+          ))}
 
           {/* <!-- 5 Benefit --> */}
           <h3

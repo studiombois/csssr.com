@@ -13,10 +13,9 @@ class FeatureBlock extends React.PureComponent {
     const { isVisible } = this.state
 
     this.setState({ isVisible: !isVisible })
-    console.log(this.state.isVisible)
   }
   render() {
-    const { className, onClick, t, i, iSet, h } = this.props
+    const { className, h, t, i, iSet } = this.props
 
     return (
       <div

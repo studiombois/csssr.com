@@ -164,41 +164,42 @@ const base = css`
     }
 
     @media screen and (max-width: 1492px) {
-        .greeting-red-box {
-            grid-column: 9 / span 3;
-            /* margin-top: 100px; */
+        .greeting-text {
+            grid-column: 2 / span 6;
         }
-        .greeting-description {
-            grid-column: 3 / span 7;
-            margin-top: 80px;
+
+        .greeting-image {
+            grid-column: 8 / span 5;
         }
+
         .crisis h2 {
-            background-color: transparent;
+            margin-bottom: 100px;
         }
-        .crisis-image {
-            margin-top: -80px;
+
+        .crisis-lines {
+            margin-top: -190px;
         }
+
         .benefit-3-title {
             grid-column: 3 / span 6;
+            margin-top: 150px;
+        }
+
+        .benefits-description {
+            grid-column: 9 / span 4;
         }
     }
 
     @media screen and (max-width: 1232px) {
-        .greeting h1 {
+        .greeting-text {
             grid-column: 1 / span 7;
-        }
-        .greeting-red-box {
-            grid-column: 10 / span 3;
-        }
-        .greeting-description {
-            grid-column: 3 / span 8;
-            margin-top: 80px;
+            /* margin-top: 80px; */
         }
         .crisis h2 {
             grid-column: 1 / span 12;
         }
-        .crisis-image {
-            margin-top: -30px;
+        .crisis-lines {
+            grid-column: 2 / span 1;
         }
 
         .benefit-3-title {
@@ -214,32 +215,30 @@ const base = css`
     }
 
     @media screen and (max-width: 944px) {
-        .greeting-red-text, .alert-red-text, .experience-description-virus-text {
-            font-size: 16px;
-            line-height: 24px;
-        }
         .greeting {
             margin-top: 120px;
         }
-        .greeting-red-box {
-            grid-column: 9 / span 4;
-            margin-top: 10px;
-        }
+
         .greeting-image {
-            grid-column: 3 / span 7;
-            margin-top: 0;
+            grid-column: 8 / span 5;
+            /* margin-top: 0; */
         }
-        .greeting-description {
-            grid-column: 3 / span 8;
+        .greeting-text {
+            grid-column: 1 / span 7;
             margin-top: 40px;
         }
+
+        .greeting-red-box {
+            margin-top: 30px;
+        }
+
+        .greeting-red-box img {
+            height: 20px;
+        }
+
         .crisis h2 {
             margin-top: 70px;
             grid-column: 1 / span 12;
-        }
-        .crisis-image {
-            margin-top: -50px;
-            grid-column: 9 / span 4;
         }
         .crisis-lines {
             grid-column: 1 / span 1;

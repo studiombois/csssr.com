@@ -8,19 +8,12 @@ const base = css`
 
     & {
         grid-column: 2 / span 7;
-        margin-top: 30px;
+        /* margin-top: 30px; */
+        margin-bottom: 30px;
         transition: all 0.1s ease-in;
         border-bottom: 1px solid #FFFFFF;
         display: flex;
         flex-direction: column;
-    }
-
-    .minus {
-        display: block;
-    }
-
-    .plus {
-        display: none;
     }
 
     .header {
@@ -31,6 +24,14 @@ const base = css`
         display: inline;
         margin-right: 40px;
         margin-top: 10px;
+    }
+
+    .minus {
+        display: none;
+    }
+
+    .plus {
+        display: block;
     }
 
     .header h3 {
@@ -44,18 +45,18 @@ const base = css`
         flex-wrap: wrap;
         margin-top: 30px;
         justify-content: space-between;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         max-height: 0;
         opacity: 0;
         transition: max-height 0.3s ease, opacity 0.2s ease;
     }
 
     .text p {
-        flex: 0 60%;
+        flex: 1 60%;
     }
 
     .text-image {
-        display: block;
+        display: inline-block;
     }
 
     .text-image img {
@@ -69,8 +70,7 @@ const base = css`
 
     &.visible .text {
         opacity: 1;
-        max-height: 500px; /* так нужно для плавного изменения высоты https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css */
-        display: block;
+        max-height: 500px;  /* нужно для плавного изменения высоты https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css */
         margin-bottom: 90px;
     }
 
@@ -79,10 +79,14 @@ const base = css`
     }
 
     &.visible .minus {
-        display: block
+        display: block;
     }
 
-
+    @media screen and (max-width: 1492px) {
+        & {
+            grid-column: 1 / span 7;
+        }
+    }
 
 
     @media screen and (max-width: 944px) {

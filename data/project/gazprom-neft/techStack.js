@@ -1,4 +1,3 @@
-
 export default {
   heading: 'project:gazpromNeft.techStack.title',
   techList: [
@@ -15,11 +14,11 @@ export default {
   numericData: {
     duration: {
       number: 'project:gazpromNeft.techStack.numericData.duration.number',
-      text: 'project:gazpromNeft.techStack.numericData.duration.text'
+      text: 'project:gazpromNeft.techStack.numericData.duration.text',
     },
     projectTeam: {
       number: 'project:gazpromNeft.techStack.numericData.projectTeam.number',
-      text: 'project:gazpromNeft.techStack.numericData.projectTeam.text'
-    }
+      text: 'project:gazpromNeft.techStack.numericData.projectTeam.text',
+    },
   },
 }

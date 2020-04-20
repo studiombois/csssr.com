@@ -14,11 +14,11 @@ export default {
   numericData: {
     duration: {
       number: 'project:s7airlines.techStack.numericData.duration.number',
-      text: 'project:s7airlines.techStack.numericData.duration.text'
+      text: 'project:s7airlines.techStack.numericData.duration.text',
     },
     projectTeam: {
       number: 'project:s7airlines.techStack.numericData.projectTeam.number',
-      text: 'project:s7airlines.techStack.numericData.projectTeam.text'
-    }
+      text: 'project:s7airlines.techStack.numericData.projectTeam.text',
+    },
   },
 }

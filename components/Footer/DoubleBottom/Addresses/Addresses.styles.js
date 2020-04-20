@@ -18,7 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
   }
 
-  .address_russia:nth-of-type(3) {
+  .address_russia_2:nth-of-type(3) {
     .title {
       display: none;
     }

@@ -36,6 +36,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   .picture_typescript {
     grid-column: 6 / span 5;
     grid-row: 3 / span 2;
+    object-fit: contain;
+    width:
   }
 
   .typescript {
@@ -86,6 +88,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .picture_typescript {
       margin-top: 261px;
+      width: 728px;
+      height: 472px;
     }
   }
 
@@ -107,6 +111,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .picture_typescript {
       margin-top: 340px;
+      width: 544px;
+      height: 352px;
     }
   }
 
@@ -127,6 +133,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .picture_typescript {
       margin-top: 364px;
+      width: 504px;
+      height: 328px;
     }
   }
 
@@ -159,6 +167,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
     .picture_typescript {
       margin-top: ${calcRem(217)};
+      width: ${calcRem(384)};
+      height: ${calcRem(248)};
     }
 
     .typescript {

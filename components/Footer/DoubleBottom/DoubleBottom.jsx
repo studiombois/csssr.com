@@ -20,7 +20,7 @@ const pins = [
     id: 'russia'
   },
   {
-    id: 'russia'
+    id: 'russia_2'
   },
   {
     id: 'estonia'

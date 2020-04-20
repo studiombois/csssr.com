@@ -8,6 +8,7 @@ import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Grid from '../../ui-kit/core-design/Grid'
 import Link from '../../ui-kit/core-design/Link'
+import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 
 import images from '../../../data/main/vacancies/images'
 
@@ -52,10 +53,10 @@ const Vacancies = ({ className, vacancies, t, locale }) => (
       })}
     </ul>
 
-    <Link
+    <ButtonLink
       className="link"
       href={`/${locale}/jobs`}
-      type="list"
+      kind="third"
       size="s"
       dangerouslySetInnerHTML={{ __html: t(`main:vacancies.link`) }}
     />

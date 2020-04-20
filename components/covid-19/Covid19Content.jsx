@@ -250,8 +250,8 @@ const Covid19Content = ({ className }) => {
                 onMouseOut={() => setHoveredImage(null)}
               >
                 <a onClick={handleButtonClick}>
-                  We&nbsp;are ready to&nbsp;significantly{' '}
-                  <span className="benefit-2-text-bold">reduce prices</span> for any socially
+                  We&nbsp;are ready to&nbsp;bring{' '}
+                  <span className="benefit-2-text-bold">the costs down</span> for any socially
                   important projects
                 </a>
               </h3>

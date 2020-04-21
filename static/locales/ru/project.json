@@ -22,10 +22,10 @@
       },
       "textList": {
         "firstItem": "Senior JS&nbsp;Разработчик и&nbsp;Team Lead",
-        "secondItem": "Middle JS&nbsp;Разработчик(и)",
-        "thirdItem": "Junior JS&nbsp;Разработчик(и)",
-        "fourthItem": "Аналитик(и)",
-        "fifthItem": "Тестировщик(и)"
+        "secondItem": "Middle JS&nbsp;Разработчика",
+        "thirdItem": "Junior JS&nbsp;Разработчик",
+        "fourthItem": "Аналитик",
+        "fifthItem": "Тестировщика"
       }
     },
     "techStack": {

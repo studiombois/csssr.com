@@ -70,13 +70,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.l} {
     & {
-      padding-top: ${calcRem(217)};
+      padding-top: ${calcRem(252)};
     }
   }
 
   ${desktop.m} {
     & {
-      padding-top: ${calcRem(217)};
+      padding-top: ${calcRem(285)};
     }
 
     .image {
@@ -97,7 +97,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      padding-top: ${calcRem(118)};
+      padding-top: ${calcRem(129)};
     }
 
     .heading {
@@ -131,7 +131,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      padding-top: ${calcRem(88)};
+      padding-top: ${calcRem(153)};
     }
 
     .heading,

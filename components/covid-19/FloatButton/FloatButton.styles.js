@@ -94,6 +94,11 @@ const base = css`
             bottom: 0;
         }
 
+        &:hover {
+            bottom: 0;
+            cursor: default;
+        }
+
         .wrapper {
             width: 100%;
             height: 75px;

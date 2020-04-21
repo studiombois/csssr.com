@@ -20,7 +20,7 @@ const features = [
     id: 'benefits-2',
     header: 'We&nbsp;can bring your business online right now',
     text:
-      'This crisis is&nbsp;not only a&nbsp;time of&nbsp;hardship but also great opportunities for exponential growth. Perhaps it&nbsp;is&nbsp;the right time to&nbsp;launch your project. We&nbsp;would love to&nbsp;craft digital products, services, internal systems and ecosystems',
+      'This crisis is&nbsp;not only a&nbsp;time of&nbsp;hardship but also great opportunities for exponential growth. Perhaps it&nbsp;is&nbsp;the right time to&nbsp;launch your project. We&nbsp;would love to&nbsp;craft digital products, services, internal systems and ecosystems.',
   },
   {
     id: 'benefits-4',

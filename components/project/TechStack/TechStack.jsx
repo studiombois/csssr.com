@@ -31,12 +31,12 @@ const TechStack = ({
             ))}
             </ul>
             <div className="duration">
-              <Text className="number duration-number" type="regular" as="span" dangerouslySetInnerHTML={{ __html: t(duration.number) }} />
+              <Text className="number duration-number" type="strong" as="span" dangerouslySetInnerHTML={{ __html: t(duration.number) }} />
               <Text className="text" type="strong" size="m" as="span" dangerouslySetInnerHTML={{ __html: t(duration.text) }} />
             </div>
 
             <div className="team">
-              <Text className="number team-number" type="regular" as="span" dangerouslySetInnerHTML={{ __html: t(projectTeam.number) }} />
+              <Text className="number team-number" type="strong" as="span" dangerouslySetInnerHTML={{ __html: t(projectTeam.number) }} />
               <Text className="text" type="strong" size="m" as="span" dangerouslySetInnerHTML={{ __html: t(projectTeam.text) }} />
             </div>
         </Grid>

@@ -97,7 +97,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      padding-top: ${calcRem(129)};
+      padding-top: ${calcRem(202)};
     }
 
     .heading {

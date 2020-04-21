@@ -112,7 +112,7 @@
           },
           "secondItem": {
             "number": "13",
-            "text": "month"
+            "text": "months"
           }
         },
         "button": {
@@ -125,12 +125,12 @@
         "text": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services.",
         "numericData": {
           "firstItem": {
-            "number": "13",
+            "number": "8",
             "text": "specialists"
           },
           "secondItem": {
-            "number": "7",
-            "text": "month"
+            "number": "25",
+            "text": "months"
           }
         },
         "button": {

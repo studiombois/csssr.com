@@ -67,11 +67,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  ${desktop.l} {
-    & {
-      padding-bottom: ${calcRem(80)};
+  ${desktop.all} {
+    .paragraph:last-of-type {
+      margin-top: 24px;
     }
+  }
 
+  ${desktop.l} {
     .image {
       width: max-content;
       height: max-content;
@@ -87,10 +89,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.m} {
-    & {
-      padding-bottom: ${calcRem(32)};
-    }
-
     .heading {
       grid-column: 2 / span 6;
     }
@@ -118,10 +116,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
-    & {
-      padding-bottom: ${calcRem(32)};
-    }
-
     .heading {
       grid-column: 2 / span 7;
     }
@@ -151,7 +145,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${tablet.all} {
     & {
       padding-top: ${calcRem(84)};
-      padding-bottom: ${calcRem(64)};
     }
     
     .heading {
@@ -171,6 +164,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .text {
       grid-column: 2 / span 5;
       margin-top: ${calcRem(24)};
+    }
+
+    .paragraph:last-of-type {
+      margin-top: ${calcRem(16)};
     }
 
     .pic-wrapper {
@@ -195,7 +192,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${mobile.all} {
     & {
       padding-top: ${calcRem(80)};
-      padding-bottom: ${calcRem(77)};
     }
 
     .heading,
@@ -217,6 +213,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .text {
       margin-top: ${calcRem(24)};
+    }
+
+    .paragraph:last-of-type {
+      margin-top: ${calcRem(16)};
     }
 
     .pic-wrapper {

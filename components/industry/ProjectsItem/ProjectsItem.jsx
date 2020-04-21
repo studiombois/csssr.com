@@ -43,7 +43,7 @@ const ProjectsItem = ({
         className="item-heading"
       />
 
-      <Text type="strong" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
+      <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
 
       {numericData.map(({ numberData, textData }, index) => (
         <Fragment key={textData}>

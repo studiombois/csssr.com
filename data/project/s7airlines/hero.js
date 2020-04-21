@@ -23,6 +23,9 @@ export default {
   heading: 'project:s7airlines.hero.title',
   link: 'project:s7airlines.hero.link',
   subHeading: 'project:s7airlines.hero.subTitle',
-  text: 'project:s7airlines.hero.text',
+  text: [
+    'project:s7airlines.hero.text.firstParagraph',
+    'project:s7airlines.hero.text.secondParagraph',
+  ],
   imgAlt: 'project:s7airlines.hero.imgAlt',
 }

@@ -6,7 +6,6 @@ import translate from '../../../utils/translate-wrapper'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import Link from 'next/link'
-import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
@@ -37,13 +36,18 @@ const Hero = ({
                 className="sub-heading"
             />
 
-            <Text
-                type="strong"
-                size="m"
-                dangerouslySetInnerHTML={{ __html: t(text) }}
-                className="text"
-            />
-
+            <div className="text">
+            {text.map((item) => (
+                <Text
+                    type="strong"
+                    size="m"
+                    as="p"
+                    dangerouslySetInnerHTML={{ __html: t(item) }}
+                    className="paragraph"
+                />
+            ))}
+            </div>
+            
             <div className="pic-wrapper">
                 <PictureForAllResolutions
                     images={images}

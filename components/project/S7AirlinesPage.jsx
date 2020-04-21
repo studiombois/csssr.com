@@ -27,9 +27,9 @@ const S7AirlinesPage = ({ t }) => {
         description={t('project:s7airlines.meta.description')}
       />
 
-      <Hero  id="hero" content={hero} />
-      <Team  id="team" content={team} />
-      <TechStack id ="teckStack" content={techStack} />
+      <Hero id="hero" content={hero} />
+      <Team id="team" content={team} />
+      <TechStack id="teckStack" content={techStack} />
       <AboutProject
         porojectId={porojectId}
         images={aboutProjectImages}

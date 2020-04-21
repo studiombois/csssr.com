@@ -27,7 +27,7 @@ const Team = ({
             {teamItems.map(({number, text}) => (
               <>
                 <li className="list-item number-item" key={number}>
-                  <Text type="regular" as="span" dangerouslySetInnerHTML={{ __html: t(number) }} />
+                  <Text type="strong" as="span" dangerouslySetInnerHTML={{ __html: t(number) }} />
                 </li>
                 <li className="list-item text-item" key={text}>
                   <Text type="strong" as="span" dangerouslySetInnerHTML={{ __html: t(text) }} />

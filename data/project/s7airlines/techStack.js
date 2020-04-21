@@ -10,6 +10,12 @@ export default {
     {
       name: 'project:s7airlines.techStack.techList.thirdItem',
     },
+    {
+      name: 'project:s7airlines.techStack.techList.fourthItem',
+    },
+    {
+      name: 'project:s7airlines.techStack.techList.fifthItem',
+    },
   ],
   numericData: {
     duration: {

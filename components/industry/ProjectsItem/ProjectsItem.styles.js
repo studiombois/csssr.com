@@ -27,7 +27,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .button {
-          grid-column: 2 / span 3;
+          grid-column: 3 / span 3;
         }
 
         ${desktop.m} {

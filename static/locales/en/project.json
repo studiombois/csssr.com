@@ -8,7 +8,11 @@
       "title": "Professionals&nbsp;4.0",
       "link": "https://professionals4-0.ru",
       "subTitle": "Client",
-      "text": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.<br/><br/> The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.<br/><br/> Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business.",
+      "text": {
+        "firstParagraph": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.",
+        "secondParagraph": "The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.",
+        "thirdParagraph": "Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business."
+      },
       "imgAlt": ""
     },
     "team": {
@@ -82,9 +86,13 @@
       "title": "Personal Account of&nbsp;an&nbsp;S7&nbsp;Airline Customer",
       "link": "https://myprofile.s7.ru/",
       "subTitle": "Client",
-      "text": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline primarily based at&nbsp;Moscow Domodedovo International Airport and Novosibirsk Tolmachevo Airport. S7&nbsp;has the youngest fleet on&nbsp;the Russian air transportation market. It&nbsp;boasts an&nbsp;extensive network of&nbsp;routes allowing passengers to&nbsp;travel to&nbsp;181 destinations in&nbsp;26&nbsp;countries all over the globe. S7&nbsp;is a&nbsp;full member of&nbsp;Oneworld airline alliance.<br/><br/>S7&nbsp;Airlines is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;major Russian holding consisting of&nbsp;15&nbsp;companies, doing business in&nbsp;passengers and cargo air transportation (both regular and charter), tourism, air flights ticket distribution, flight personnel training, aircraft repair, and other aviation and space services.",
+      "text": {
+        "firstParagraph": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline primarily based at&nbsp;Moscow Domodedovo International Airport and Novosibirsk Tolmachevo Airport. S7&nbsp;has the youngest fleet on&nbsp;the Russian air transportation market. It&nbsp;boasts an&nbsp;extensive network of&nbsp;routes allowing passengers to&nbsp;travel to&nbsp;181 destinations in&nbsp;26&nbsp;countries all over the globe. S7&nbsp;is a&nbsp;full member of&nbsp;Oneworld airline alliance.",
+        "secondParagraph": "S7&nbsp;Airlines is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;major Russian holding consisting of&nbsp;15&nbsp;companies, doing business in&nbsp;passengers and cargo air transportation (both regular and charter), tourism, air flights ticket distribution, flight personnel training, aircraft repair, and other aviation and space services."
+      },
       "imgAlt": ""
     },
+    
     "team": {
       "title": "Team Composition",
       "numberList": {

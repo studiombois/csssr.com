@@ -10048,10 +10048,10 @@ schema-utils@^2.0.1, schema-utils@^2.6.0, schema-utils@^2.6.1, schema-utils@^2.6
     ajv "^6.12.0"
     ajv-keywords "^3.4.1"
 
-scroll-lock@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/scroll-lock/-/scroll-lock-2.1.3.tgz#fc7619f0ebb8ae3f6818092430bf755b48e634cb"
-  integrity sha512-lyZsFFUagp8qs9Pk84m8opeGKDobCQn1BZcMq0zH/affS/7KroPyPt84lIX0dcQPoKwy/DYMX63MCy0BDyVVQw==
+scroll-lock@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/scroll-lock/-/scroll-lock-2.1.4.tgz#2698551a18f6f88fa3e71a52db09adc4060c949e"
+  integrity sha512-v1uK+1UbDj15V+b2PeAVvoh5TDd7Ub1JPQcEdKE8z+dPS/1xytmPGSD3F2A6la1qp8xLXcGfW11Nrs9Ch7pAag==
 
 seek-bzip@^1.0.5:
   version "1.0.5"

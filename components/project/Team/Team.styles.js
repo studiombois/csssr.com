@@ -106,6 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .list {
       grid-template-columns: 14px 1fr;
+      grid-gap: 16px 17px;
       margin-top: ${calcRem(24)};
     }
 
@@ -140,6 +141,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .list {
       grid-template-columns: 14px 1fr;
+      grid-gap: 16px 17px;
       margin-top: ${calcRem(24)};
     }
 

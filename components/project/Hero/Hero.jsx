@@ -21,7 +21,7 @@ const Hero = ({
         <Grid className={className} as="section" id={id}>
             <Heading.H2
                 type="slab"
-                size="m"
+                size="l"
                 dangerouslySetInnerHTML={{ __html: t(heading) }}
                 className="heading"
             />
@@ -30,8 +30,9 @@ const Hero = ({
                 <a className="link">{t(link)}</a>
             </Link>
 
-            <SubHeading
+            <Heading.H3
                 type="slab"
+                size="m"
                 dangerouslySetInnerHTML={{ __html: t(subHeading) }}
                 className="sub-heading"
             />

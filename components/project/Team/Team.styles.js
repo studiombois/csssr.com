@@ -17,7 +17,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     display: grid;
     grid-column: 8 / span 5;
     grid-row: 2 / 5;
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 28px 1fr;
     grid-template-rows: max-content max-content max-content max-content;
     grid-gap: 8px 22px;
     align-items: baseline;
@@ -25,6 +25,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .number-item {
+    justify-self: end;
+
     &:nth-of-type(1) span {
       color: #41CE7F;
     }
@@ -45,7 +47,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       color: #41CE7F;
     }
 
-    & > span {
+    & span {
       font-family: 'Roboto Slab', serif;
       font-size: ${calcRem(48)};
       line-height: ${calcRem(64)};
@@ -103,6 +105,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .list {
+      grid-template-columns: 14px 1fr;
       margin-top: ${calcRem(24)};
     }
 
@@ -136,6 +139,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .list {
+      grid-template-columns: 14px 1fr;
       margin-top: ${calcRem(24)};
     }
 

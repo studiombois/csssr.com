@@ -6,7 +6,6 @@ import translate from '../../../utils/translate-wrapper'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import Link from 'next/link'
-import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
@@ -21,7 +20,7 @@ const Hero = ({
         <Grid className={className} as="section" id={id}>
             <Heading.H2
                 type="slab"
-                size="m"
+                size="l"
                 dangerouslySetInnerHTML={{ __html: t(heading) }}
                 className="heading"
             />
@@ -30,19 +29,25 @@ const Hero = ({
                 <a className="link">{t(link)}</a>
             </Link>
 
-            <SubHeading
+            <Heading.H3
                 type="slab"
+                size="m"
                 dangerouslySetInnerHTML={{ __html: t(subHeading) }}
                 className="sub-heading"
             />
 
-            <Text
-                type="strong"
-                size="m"
-                dangerouslySetInnerHTML={{ __html: t(text) }}
-                className="text"
-            />
-
+            <div className="text">
+            {text.map((item) => (
+                <Text
+                    type="strong"
+                    size="m"
+                    as="p"
+                    dangerouslySetInnerHTML={{ __html: t(item) }}
+                    className="paragraph"
+                />
+            ))}
+            </div>
+            
             <div className="pic-wrapper">
                 <PictureForAllResolutions
                     images={images}

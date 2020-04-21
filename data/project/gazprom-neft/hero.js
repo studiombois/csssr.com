@@ -23,6 +23,10 @@ export default {
   heading: 'project:gazpromNeft.hero.title',
   link: 'project:gazpromNeft.hero.link',
   subHeading: 'project:gazpromNeft.hero.subTitle',
-  text: 'project:gazpromNeft.hero.text',
+  text: [
+    'project:gazpromNeft.hero.text.firstParagraph',
+    'project:gazpromNeft.hero.text.secondParagraph',
+    'project:gazpromNeft.hero.text.thirdParagraph'
+  ],
   imgAlt: 'project:gazpromNeft.hero.imgAlt',
 }

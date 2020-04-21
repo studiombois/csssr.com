@@ -67,6 +67,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
+  ${desktop.all} {
+    .paragraph:last-of-type {
+      margin-top: 24px;
+    }
+  }
+
   ${desktop.l} {
     & {
       padding-bottom: ${calcRem(80)};
@@ -173,6 +179,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(24)};
     }
 
+    .paragraph:last-of-type {
+      margin-top: ${calcRem(16)};
+    }
+
     .pic-wrapper {
       position: absolute;
       right: 0;
@@ -217,6 +227,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .text {
       margin-top: ${calcRem(24)};
+    }
+
+    .paragraph:last-of-type {
+      margin-top: ${calcRem(16)};
     }
 
     .pic-wrapper {

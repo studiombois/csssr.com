@@ -3,6 +3,11 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+
+  & {
+    overflow-x: hidden;
+  }
+
   .heading {
     grid-row: 1;
     grid-column: 2 / span 4;
@@ -39,7 +44,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     font-family: 'Roboto Slab', serif;
     font-size: ${calcRem(64)};
     line-height: ${calcRem(84)};
-    overflow-x: hidden;
+    font-weight: 400;
 
     &:before {
       content: '';
@@ -54,14 +59,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .duration-number {
     &:before {
-      height: 21px;
+      height: 25px;
       background-image: url(${require('../../../static/icons/project/techStack/duration/curvy-line.svg').default});
     }
   }
 
   .team-number {
     &:before {
-      height: 6px;
+      margin-top: ${calcRem(5)};
+      height: 4px;
+      background-position: -8px 0;
       background-image: url(${require('../../../static/icons/project/techStack/team/line.svg').default});
     }
   }
@@ -72,67 +79,109 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.all} {
     & {
-      grid-template-rows: max-content max-content;
-      grid-gap: 80px 16px;
       margin-top: ${calcRem(135)};
+    }
+
+    .tech-list {
+      margin-top: ${calcRem(37)};
+    }
+
+    .duration {
+      margin-top: ${calcRem(12)};
+    }
+
+    .text {
+      margin-top: ${calcRem(-3)};
+    }
+
+    .team {
+      margin-top: ${calcRem(68)};
     }
 
     .duration-number {
       &:before {
-        left: 125px;
+        left: ${calcRem(100)};
       }
     }
 
     .team-number {
       &:before {
-        left: 84px;
+        left: 77px;
       }
     }
   }
 
   ${desktop.l} {
     & {
-      margin-top: ${calcRem(141)};
+      margin-top: ${calcRem(128)};
     }
   }
 
   ${desktop.m} {
     & {
-      margin-top: ${calcRem(184)};
+      margin-top: ${calcRem(170)};
+    }
+
+    .duration {
+      margin-top: ${calcRem(22)};
     }
   }
 
   ${desktop.s} {
     & {
-      margin-top: ${calcRem(184)};
+      margin-top: ${calcRem(168)};
+    }
+
+    .duration {
+      margin-top: ${calcRem(27)};
     }
   }
 
   ${tablet.all} {
     & {
-      grid-gap: ${calcRem(24)} ${calcRem(16)};
-      margin-top: ${calcRem(126)};
+      margin-top: ${calcRem(103)};
+    }
+
+    .duration {
+      margin-top: ${calcRem(25)};
     }
 
     .tech-list {
-      grid-gap: ${calcRem(8)} 0;
+      display: flex;
+      flex-direction: column;
+      margin-top: ${calcRem(-9)};
+    }
+
+    .tech-item {
+      margin-bottom: ${calcRem(8)};
     }
 
     .number {
       font-size: ${calcRem(32)};
-      line-height ${calcRem(42)};
+      line-height: ${calcRem(42)};
+    }
+
+    .text {
+      margin-top: ${calcRem(5)};
     }
 
     .duration-number {
       &:before {
-        left: 62px;
-        height: 13px;
+        background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
+        left: 49px;
+        height: 17px;
       }
+    }
+
+    .team {
+      margin-top: ${calcRem(40)};
     }
 
     .team-number {
       &:before {
-        left: 44px;
+        background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
+        margin-top: 0;
+        left: 36px;
       }
     }
   }
@@ -160,7 +209,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .number {
       font-size: ${calcRem(32)};
-      line-height ${calcRem(42)};
+      line-height: ${calcRem(42)};
     }
 
     .duration {
@@ -176,18 +225,30 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .duration-number {
       &:before {
-        left: 62px;
-        height: 13px;
+        background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
+        left: 48px;
+        height: 17px;
+      }
+    }
+
+    .text {
+      margin-top: 6px;
+
+      span {
+        display: inline-block;
+        width: 100%;
       }
     }
 
     .team-number {
       &:before {
-        height: 3px;
-        left: 44px;
+        left: 36px;
+        margin: 0;
+        min-width: 385px;
+        background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
       }
     }
-  }  
+  }
 `
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`

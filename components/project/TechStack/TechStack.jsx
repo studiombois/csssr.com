@@ -38,7 +38,7 @@ const TechStack = ({
       <div className="duration">
         <Text
           className="number duration-number"
-          type="regular"
+          type="strong"
           as="span"
           dangerouslySetInnerHTML={{ __html: t(duration.number) }}
         />
@@ -55,7 +55,7 @@ const TechStack = ({
       <div className="team">
         <Text
           className="number team-number"
-          type="regular"
+          type="strong"
           as="span"
           dangerouslySetInnerHTML={{ __html: t(projectTeam.number) }}
         />

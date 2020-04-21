@@ -4,7 +4,7 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
-    margin-top: ${calcRem(352)};
+    margin-top: ${calcRem(320)};
     margin-bottom: ${calcRem(210)};
   }
 
@@ -124,7 +124,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .first-item {
-      margin-top: ${calcRem(78)};
+      margin-top: ${calcRem(88)};
     }
 
     .second-item {

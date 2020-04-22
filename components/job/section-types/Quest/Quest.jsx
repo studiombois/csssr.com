@@ -16,7 +16,7 @@ const renderFileInfo = (fileSize, fileExt, fileName, fileLink) => (
     </div>
 
     <div className="file-info">
-      <a className="font_link-list_16" href={fileLink} target="_blank" rel="noopener">
+      <a className="font_link-list_16" href={fileLink} target="_blank" rel="noopener nofollow">
         {fileName}
       </a>
       <span className="font_perforator-10-regular" dangerouslySetInnerHTML={{ __html: fileSize }} />

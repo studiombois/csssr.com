@@ -78,15 +78,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .pic-wrapper {
       grid-row: 4;
       max-width: ${calcRem(728)};
-      margin-top: ${calcRem(-182)};
+      margin-top: ${calcRem(-221)};
     }
 
     .image {
       width: auto;
       height: auto;
+
       &:before {
-        top: ${calcRem(-68)};
-        left: ${calcRem(-180)};
+        top: ${calcRem(-78)};
+        left: ${calcRem(-185)};
         width: ${calcRem(298)};
         height: ${calcRem(799)};
       }
@@ -95,7 +96,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.m} {
     .heading {
-      grid-column: 2 / span 6;
+      grid-column: 2 / span 10;
     }
 
     .text {
@@ -103,14 +104,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .pic-wrapper {
-      position: absolute;
-      right: 0;
+      grid-column: 8 / span 5;
+      grid-row: 2 / span 3;
       z-index: -1;
-      max-width: ${calcRem(560)};
-      margin-top: ${calcRem(160)};
+      width: ${calcRem(560)};
+      margin-top: ${calcRem(72)};
     }
 
     .image {
+      position: absolute;
+      height: auto;
+      top: 0;
+      left: calc((100vw - 83rem) / 2 - 16px);
+
       &:before {
         top: ${calcRem(-68)};
         left: ${calcRem(-192)};
@@ -123,7 +129,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.s} {
     .heading {
-      grid-column: 2 / span 7;
+      grid-column: 2 / span 10;
     }
 
     .text {
@@ -131,14 +137,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .pic-wrapper {
-      position: absolute;
-      right: 0;
+      grid-row: 2 / span 3;
       z-index: -1;
-      max-width: ${calcRem(528)};
-      margin-top: ${calcRem(160)};
+      width: ${calcRem(528)};
+      margin-top: ${calcRem(89)};
     }
 
     .image {
+      position: absolute;
+      height: auto;
+      top: 0;
+      left: calc((100vw - 77rem) / 2 - 24px);
+
       &:before {
         top: ${calcRem(-68)};
         left: ${calcRem(-192)};
@@ -155,7 +165,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .heading {
-      grid-column: 2 / span 4;
+      grid-column: 2 / span 10;
       margin-top: 1rem;
     }
 
@@ -178,14 +188,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .pic-wrapper {
-      position: absolute;
-      right: 0;
+      grid-row: 2 / span 3;
+      display: flex;
       z-index: -1;
-      margin-top: ${calcRem(48)};
-      max-width: ${calcRem(424)};
+      margin-top: ${calcRem(-4)};
+      width: ${calcRem(424)};
     }
 
     .image {
+      position: absolute;
+      height: auto;
+      top: 0;
+      left: calc((100vw - 59rem) / 2 - 2.5rem);
+
       &:before {
         top: ${calcRem(-36)};
         left: ${calcRem(-144)};

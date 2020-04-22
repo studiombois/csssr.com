@@ -26,7 +26,9 @@ const Hero = ({
       />
 
       <Link href={t(link)}>
-        <a className="link">{t(link)}</a>
+        <a className="link" target="_blank" rel="noreferrer noopener">
+          {t(link)}
+        </a>
       </Link>
 
       <Heading.H3

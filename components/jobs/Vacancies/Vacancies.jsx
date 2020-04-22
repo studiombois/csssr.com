@@ -121,7 +121,7 @@ class Vacancies extends PureComponent {
           <a
             href={t('jobs:hunter.firstLink')}
             target="_blank"
-            rel="noopener"
+            rel="noopener nofollow"
             className="font_link-list_16"
           >
             {t('jobs:hunter.firstLinkText')}
@@ -131,7 +131,7 @@ class Vacancies extends PureComponent {
             <a
               href={t('jobs:hunter.secondLink')}
               target="_blank"
-              rel="noopener"
+              rel="noopener nofollow"
               className="font_link-list_16"
             >
               {t('jobs:hunter.secondLinkText')}

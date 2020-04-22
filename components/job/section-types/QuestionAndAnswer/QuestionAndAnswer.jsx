@@ -37,7 +37,7 @@ const QuestionAndAnswer = ({
   <FormRow className={className} rightSideContent={renderTime(time, t, false)}>
     <h3 className="font_h3-regular">{title}</h3>
     <div className="link-wrapper">
-      <a className="font_link-list_16" href={taskLink} target="_blank" rel="noopener">
+      <a className="font_link-list_16" href={taskLink} target="_blank" rel="noopener nofollow">
         {taskLink}
       </a>
     </div>

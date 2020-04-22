@@ -21,7 +21,7 @@ const ButtonSelectLinksApple = props => {
         href={href}
         onClick={handleLinkClick(dataLayerEvent)}
         target={external ? '_blank' : null}
-        rel="noopener"
+        rel="noopener nofollow"
         data-testid={testid}
       >
         {iconsByLabel[label]}

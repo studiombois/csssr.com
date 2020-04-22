@@ -178,6 +178,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .pic-wrapper {
+      display: flex;
       position: absolute;
       right: 0;
       z-index: -1;

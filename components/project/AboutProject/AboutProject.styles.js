@@ -150,10 +150,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     & {
+      position: relative;
       margin-top: ${calcRem(88)};
-      background-image: url(${require('../../../static/icons/project/about-project/circle.svg').default});
-      background-position: ${calcRem(59)} ${calcRem(176)};
-      background-repeat: no-repeat;
+      background: none;
     }
 
     .paragraphs-gropup_0 {
@@ -181,9 +180,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .picture {
+      position: relative;
       margin-top: ${calcRem(33)};
       grid-column: 3 / span 4;
       order: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: ${calcRem(15)};
+        left: ${calcRem(-53)};
+        width: 20px;
+        height: 20px;
+        background-image: url(${require('../../../static/icons/project/about-project/circle.svg').default});
+        background-repeat: no-repeat;
+      }
     }
   }
 `

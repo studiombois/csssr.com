@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) => {
+const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, lng }) => {
   if (direction === 'reverse') {
     return (
       css`
@@ -50,6 +50,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           .column-2 {
             grid-column: 4 / span 2;
           }
+
+          .button {
+            grid-column: 2 / span 3;
+          }
         }
 
         ${desktop.s} {
@@ -71,6 +75,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 
           .column-2 {
             grid-column: 4 / span 2;
+          }
+
+          .button {
+            grid-column: 2 / span 3;
           }
         }
 
@@ -94,6 +102,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           .column-2 {
             grid-column: 4 / span 2;
           }
+
+          .button {
+            grid-column: 2 / span 3;
+          }
         }
 
         ${mobile.all} {
@@ -108,7 +120,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           }
 
           .column-2 {
-            grid-column: 3 / span 2;
+            grid-column: ${lng === 'ru' ? '4' : '3'} / span 2;
           }
         }
       `
@@ -207,7 +219,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .column-2 {
-          grid-column: 3 / span 2;
+          grid-column: ${lng === 'ru' ? '4' : '3'} / span 2;
         }
       }
     `
@@ -642,9 +654,10 @@ const ie11BaseStyles = () => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { lng } = props
 
   return css`
-    ${dynamicStyles(props.direction, { breakpoints })}
+    ${dynamicStyles(props.direction, { breakpoints, lng })}
     ${base({ colors, breakpoints })}
     ${props.isIe11 && ie11DynamicStyles(props.direction, { breakpoints })}
     ${props.isIe11 && ie11BaseStyles()}

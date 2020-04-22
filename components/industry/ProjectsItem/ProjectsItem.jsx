@@ -58,6 +58,7 @@ const ProjectsItem = ({
             type="strong"
             dangerouslySetInnerHTML={{ __html: t(textData) }}
             className={cn(`column-${index + 1}`, 'text-data')}
+            size="m"
           />
         </Fragment>
       ))}

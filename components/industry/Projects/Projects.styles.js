@@ -123,11 +123,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .second-item {
-      margin-top: ${calcRem(105)};
+      margin-top: ${calcRem(72)};
     }
 
     .third-item {
-      margin-top: ${calcRem(105)};
+      margin-top: ${calcRem(72)};
     }
   }
 `

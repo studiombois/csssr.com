@@ -87,7 +87,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.s} {
     & {
-      padding-top: ${calcRem(208)};
+      padding-top: ${calcRem(285)};
     }
 
     .image {

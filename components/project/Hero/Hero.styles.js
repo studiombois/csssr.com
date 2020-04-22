@@ -69,8 +69,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.all} {
-    .paragraph:last-of-type {
-      margin-top: 24px;
+    .paragraph + .paragraph{
+        margin-top: ${calcRem(24)};
     }
   }
 
@@ -153,7 +153,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     & {
       padding-top: ${calcRem(84)};
     }
-    
+
     .heading {
       grid-column: 2 / span 4;
       margin-top: 1rem;
@@ -173,7 +173,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(24)};
     }
 
-    .paragraph:last-of-type {
+    .paragraph + .paragraph{
       margin-top: ${calcRem(16)};
     }
 
@@ -193,7 +193,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         height: ${calcRem(543)};
         background-image: url(${require('../../../static/images/project/common-pics/tablet.all/hero-bg.png')});
       }
-    }   
+    }
   }
 
   ${mobile.all} {
@@ -222,7 +222,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(24)};
     }
 
-    .paragraph:last-of-type {
+    .paragraph + .paragraph {
       margin-top: ${calcRem(16)};
     }
 

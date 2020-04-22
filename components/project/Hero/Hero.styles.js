@@ -47,6 +47,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     position: relative;
     grid-column: 8 / span 5;
     grid-row: 1 / 5;
+    max-width: ${calcRem(728)};
   }
 
   .image {
@@ -74,11 +75,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.l} {
-    .image {
-      width: max-content;
-      height: max-content;
-      margin-top: ${calcRem(35)};
+    .pic-wrapper {
+      grid-row: 4;
+      max-width: ${calcRem(728)};
+      margin-top: ${calcRem(-182)};
+    }
 
+    .image {
+      width: auto;
+      height: auto;
       &:before {
         top: ${calcRem(-68)};
         left: ${calcRem(-180)};
@@ -101,6 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       position: absolute;
       right: 0;
       z-index: -1;
+      max-width: ${calcRem(560)};
       margin-top: ${calcRem(160)};
     }
 
@@ -128,6 +134,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       position: absolute;
       right: 0;
       z-index: -1;
+      max-width: ${calcRem(528)};
       margin-top: ${calcRem(160)};
     }
 

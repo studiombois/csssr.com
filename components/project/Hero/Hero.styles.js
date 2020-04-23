@@ -79,6 +79,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.l} {
+    .heading {
+      grid-column: 2 / span 6;
+    }
+
     .pic-wrapper {
       grid-row: 4;
       max-width: ${calcRem(728)};

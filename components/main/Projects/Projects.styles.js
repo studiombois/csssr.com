@@ -38,6 +38,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: 90px;
     grid-column: 2 / span 10;
     order: 5;
+    cursor: auto;
   }
 
   .card_radio .card-picture {
@@ -122,6 +123,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .player {
       top: 48px;
+      height: calc( 100% - 48px);
     }
   }
 
@@ -133,6 +135,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .player {
       top: 44px;
+      height: calc( 100% - 44px);
     }
   }
 
@@ -152,6 +155,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .player {
       top: 40px;
+      height: calc( 100% - 40px);
     }
   }
 

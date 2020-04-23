@@ -17,49 +17,51 @@ const Hero = ({
   content: { heading, link, subHeading, text, images, imgAlt },
 }) => {
   return (
-    <Grid className={className} as="section" id={id}>
-      <Heading.H2
-        type="slab"
-        size="l"
-        dangerouslySetInnerHTML={{ __html: t(heading) }}
-        className="heading"
-      />
-
-      <Link href={t(link)}>
-        <a className="link" target="_blank" rel="noreferrer noopener">
-          {t(link)}
-        </a>
-      </Link>
-
-      <Heading.H3
-        type="slab"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: t(subHeading) }}
-        className="sub-heading"
-      />
-
-      <div className="text">
-        {text.map((item, index) => (
-          <Text
-            key={`paragraph-${index}`}
-            type="strong"
-            size="m"
-            as="p"
-            dangerouslySetInnerHTML={{ __html: t(item) }}
-            className="paragraph"
-          />
-        ))}
-      </div>
-
-      <div className="pic-wrapper">
-        <PictureForAllResolutions
-          images={images}
-          fallback={images['desktop.l'].png}
-          alt={t(imgAlt)}
-          className="image"
+    <section className={className} id={id}>
+      <Grid className="grid" as="div">
+        <Heading.H2
+          type="slab"
+          size="l"
+          dangerouslySetInnerHTML={{ __html: t(heading) }}
+          className="heading"
         />
-      </div>
-    </Grid>
+
+        <Link href={t(link)}>
+          <a className="link" target="_blank" rel="noreferrer noopener">
+            {t(link)}
+          </a>
+        </Link>
+
+        <Heading.H3
+          type="slab"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: t(subHeading) }}
+          className="sub-heading"
+        />
+
+        <div className="text">
+          {text.map((item, index) => (
+            <Text
+              key={`paragraph-${index}`}
+              type="strong"
+              size="m"
+              as="p"
+              dangerouslySetInnerHTML={{ __html: t(item) }}
+              className="paragraph"
+            />
+          ))}
+        </div>
+
+        <div className="pic-wrapper">
+          <PictureForAllResolutions
+            images={images}
+            fallback={images['desktop.l'].png}
+            alt={t(imgAlt)}
+            className="image"
+          />
+        </div>
+      </Grid>
+    </section>
   )
 }
 

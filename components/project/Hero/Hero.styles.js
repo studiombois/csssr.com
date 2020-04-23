@@ -4,6 +4,10 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
+    overflow-x: hidden;
+  }
+
+  .grid {
     grid-template-rows: max-content max-content max-content;
     padding-top: ${calcRem(135)};
   }
@@ -75,6 +79,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.l} {
+    .heading {
+      grid-column: 2 / span 6;
+    }
+
     .pic-wrapper {
       grid-row: 4;
       max-width: ${calcRem(728)};
@@ -160,7 +168,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
-    & {
+    .grid {
       padding-top: ${calcRem(84)};
     }
 
@@ -212,7 +220,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${mobile.all} {
-    & {
+    .grid {
       padding-top: ${calcRem(80)};
     }
 
@@ -260,7 +268,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 `
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
-  & {
+  .grid {
     -ms-grid-template-rows: max-content max-content;
   }
 

@@ -80,7 +80,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.l} {
     .heading {
-      grid-column: 2 / span 6;
+      grid-column: 2 / span 7;
     }
 
     .pic-wrapper {

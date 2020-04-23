@@ -20,7 +20,7 @@ const timezoneOffsetsByAddressId = {
   singapore: 8,
   russia: 3,
   russia_2: 3,
-  estonia: 2,
+  estonia: 3,
 }
 
 const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress }) => {

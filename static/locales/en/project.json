@@ -83,7 +83,7 @@
       "description": "We push IT-companies to the cutting edge of technological progress."
     },
     "hero": {
-      "title": "Personal Account of&nbsp;an&nbsp;S7&nbsp;Airline Customer",
+      "title": "Personal Account of<br />an&nbsp;S7&nbsp;Airline Customer",
       "link": "https://myprofile.s7.ru/",
       "subTitle": "Client",
       "text": {
@@ -92,7 +92,7 @@
       },
       "imgAlt": ""
     },
-    
+
     "team": {
       "title": "Team Composition",
       "numberList": {

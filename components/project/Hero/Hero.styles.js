@@ -173,7 +173,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .heading {
-      grid-column: 2 / span 10;
+      grid-column: 2 / span 8;
       margin-top: 1rem;
     }
 

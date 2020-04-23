@@ -9,10 +9,7 @@ import PictureOld from '../../Picture'
 import Grid from '../../ui-kit/core-design/Grid'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
-import { howImages } from '../../../data/jobs/images'
-import { whoImages } from '../../../data/jobs/images'
-import { distanceImages } from '../../../data/jobs/images'
-import { faqImages } from '../../../data/jobs/images'
+import { howImages, whoImages, distanceImages, faqImages  } from '../../../data/jobs/images'
 
 class Vacancies extends PureComponent {
   render() {

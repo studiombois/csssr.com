@@ -31,5 +31,5 @@ export default {
   button: {
     title: 'industry:coreValues.button.title',
     href: 'industry:coreValues.button.href',
-  }
+  },
 }

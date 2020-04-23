@@ -1,0 +1,160 @@
+{
+  "gazpromNeft": {
+   "meta": {
+      "title": "Web Development Services for IT Companies",
+      "description": "We push IT-companies to the cutting edge of technological progress."
+    },
+    "hero": {
+      "title": "Professionals&nbsp;4.0",
+      "link": "https://professionals4-0.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.",
+        "secondParagraph": "The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.",
+        "thirdParagraph": "Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business."
+      },
+      "imgAlt": ""
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "1",
+        "fifthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
+        "secondItem": "Middle JS&nbsp;Developers",
+        "thirdItem": "Junior JS&nbsp;Developers",
+        "fourthItem": "Analyst",
+        "fifthItem": "Testers"
+      }
+    },
+    "techStack": {
+      "title": "Tech stack",
+      "techList": {
+        "firstItem": "React.js",
+        "secondItem": "Next.js + Webpack",
+        "thirdItem": "Kubernetes, Docker"
+      },
+      "numericData": {
+        "duration": {
+          "number": "13",
+          "text": "months <span>(Jan 2019 - ongoing)</span>"
+        },
+        "projectTeam": {
+          "number": "9",
+          "text": "specialists"
+        }
+      }
+    },
+    "quote": {
+      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project, which is&nbsp;very important to&nbsp;the company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the team in&nbsp;proactivity solving complex problems, and its commitment to&nbsp;fulfilling plans and targets. I&rsquo;d also like to&nbsp;commend the team for the friendly atmosphere and rapport they helped to&nbsp;create.",
+      "author": {
+        "name": "Daria Skatova",
+        "signature": "Project Manager, Gazprom Neft"
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "The main goal of&nbsp;the Professionals&nbsp;4.0 project is&nbsp;to&nbsp;connect major corporations with talented performers. Through the project, talented individuals can find new career opportunities, solve challenging tasks, develop new skills and prove themselves in&nbsp;an&nbsp;authentic work environment.",
+          "The companies, meanwhile, get access to&nbsp;a&nbsp;huge database of&nbsp;business competition finalists and top performers, allowing them to&nbsp;quickly assemble teams for particular business tasks and reinforce internal resources, with external expertise.",
+          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Rostelecom</a> and the <a href=\"https://sk.ru/foundation/about/\" target=\"_blank\" rel=\"noopener nofollow\">Skolkovo Innovation Center</a>."
+        ],
+        [
+          "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
+          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two software testers.",
+          "The first public version was launched in&nbsp;spring of&nbsp;2019. Since then, our team has continued to&nbsp;develop new functionality and has released several major updates over the past year."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "quote": "Graphic representation of a woman",
+      "aboutProject": "Three people working diligently on the project"
+    }
+  },
+  "s7airlines": {
+    "meta": {
+      "title": "Web Development Services for IT Companies",
+      "description": "We push IT-companies to the cutting edge of technological progress."
+    },
+    "hero": {
+      "title": "Personal Account of<br />an&nbsp;S7&nbsp;Airline Customer",
+      "link": "https://myprofile.s7.ru/",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline primarily based at&nbsp;Moscow Domodedovo International Airport and Novosibirsk Tolmachevo Airport. S7&nbsp;has the youngest fleet on&nbsp;the Russian air transportation market. It&nbsp;boasts an&nbsp;extensive network of&nbsp;routes allowing passengers to&nbsp;travel to&nbsp;181 destinations in&nbsp;26&nbsp;countries all over the globe. S7&nbsp;is a&nbsp;full member of&nbsp;Oneworld airline alliance.",
+        "secondParagraph": "S7&nbsp;Airlines is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;major Russian holding consisting of&nbsp;15&nbsp;companies, doing business in&nbsp;passengers and cargo air transportation (both regular and charter), tourism, air flights ticket distribution, flight personnel training, aircraft repair, and other aviation and space services."
+      },
+      "imgAlt": ""
+    },
+
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "4",
+        "thirdItem": "1",
+        "fourthItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior JS&nbsp;Developer",
+        "secondItem": "Middle JS&nbsp;Developers",
+        "thirdItem": "Middle HTML/CSS Developer",
+        "fourthItem": "Testers"
+      }
+    },
+    "techStack": {
+      "title": "Tech stack",
+      "techList": {
+        "firstItem": "React",
+        "secondItem": "Redux",
+        "thirdItem": "Saga",
+        "fourthItem": "Next.js",
+        "fifthItem": "CSS Modules"
+      },
+      "numericData": {
+        "duration": {
+          "number": "25",
+          "text": "months (Feb 2018 - ongoing)"
+        },
+        "projectTeam": {
+          "number": "8",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "S7&nbsp;Airlines&rsquo; personal account provides quick access to&nbsp;the Airline&rsquo;s services: customers can view their reservations and participate in&nbsp;the loyalty program."
+        ],
+        [
+          "We&nbsp;develop the entire front-end for the adaptive website of&nbsp;the project.",
+          "The core team consists of&nbsp;4&nbsp;developers and one tester, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
+          "Currently we&nbsp;are implementing flight statistics and login through social networks, and are planning to&nbsp;conduct significant refactoring and improve the performance of&nbsp;the web application. The entire front-end is&nbsp;written on&nbsp;Next.js&nbsp;&mdash; a&nbsp;modern React framework."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Трое людей усердно работающих над проектом"
+    }
+  },
+  "form": {
+    "title": "Let&rsquo;s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "nameLabel": "Your Name",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "phoneLabel": "Phone",
+    "emailPlaceholder": "name@example.com",
+    "emailLabel": "E-mail",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "How can we help?",
+    "submitText": "Submit"
+  }
+}

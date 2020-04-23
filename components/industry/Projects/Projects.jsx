@@ -26,13 +26,14 @@ const Projects = ({ t, className, id, content: { heading, subHeading, projectsIt
       />
     </Grid>
 
-    {projectsItems.map(({ images, imgAlt, heading, text, numericData, direction, className }) => (
+    {projectsItems.map(({ images, imgAlt, heading, text, numericData, button, direction, className }) => (
       <ProjectsItem
         images={images}
         imgAlt={imgAlt}
         heading={heading}
         text={text}
         numericData={numericData}
+        button={button}
         itemClassName={className}
         direction={direction}
         key={text}

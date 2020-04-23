@@ -7,6 +7,7 @@ import cn from 'classnames'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
+import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
@@ -19,6 +20,7 @@ const ProjectsItem = ({
   heading,
   text,
   numericData,
+  button,
   itemClassName,
   isMobile,
 }) => {
@@ -41,7 +43,7 @@ const ProjectsItem = ({
         className="item-heading"
       />
 
-      <Text type="strong" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
+      <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
 
       {numericData.map(({ numberData, textData }, index) => (
         <Fragment key={textData}>
@@ -56,9 +58,18 @@ const ProjectsItem = ({
             type="strong"
             dangerouslySetInnerHTML={{ __html: t(textData) }}
             className={cn(`column-${index + 1}`, 'text-data')}
+            size="m"
           />
         </Fragment>
       ))}
+      
+      <ButtonLink
+        href={t(button.href)}
+        className="button"
+        kind="primary"
+        dangerouslySetInnerHTML={{ __html: t(button.title) }}
+      />
+
     </Grid>
   )
 }

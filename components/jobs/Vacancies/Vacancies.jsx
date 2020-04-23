@@ -17,8 +17,6 @@ import { faqImages } from '../../../data/jobs/images'
 class Vacancies extends PureComponent {
   render() {
     const { className, lng, locale, t } = this.props
-    console.log(howImages)
-
     return (
       <Grid as="article" className={className}>
         <header>

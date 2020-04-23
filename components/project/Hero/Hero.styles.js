@@ -4,7 +4,8 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
-    overflow-x: hidden;
+    overflow: hidden;
+    padding-bottom: ${calcRem(135)};
   }
 
   .grid {
@@ -79,6 +80,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.l} {
+    & {
+      padding-bottom: ${calcRem(252)};
+    }
+
     .heading {
       grid-column: 2 / span 7;
     }
@@ -103,6 +108,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.m} {
+    & {
+      padding-bottom: ${calcRem(285)};
+    }
+
     .heading {
       grid-column: 2 / span 10;
     }
@@ -136,6 +145,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
+    & {
+      padding-bottom: ${calcRem(285)};
+    }
+
     .heading {
       grid-column: 2 / span 10;
     }
@@ -168,6 +181,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
+    & {
+      padding-bottom: ${calcRem(202)};
+    }
+
     .grid {
       padding-top: ${calcRem(84)};
     }
@@ -220,6 +237,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${mobile.all} {
+    & {
+      padding-bottom: ${calcRem(153)};
+    }
+
     .grid {
       padding-top: ${calcRem(80)};
     }

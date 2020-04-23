@@ -5,7 +5,6 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
     grid-template-rows: max-content max-content max-content;
-    padding-top: ${calcRem(135)};
   }
 
   .heading {
@@ -68,17 +67,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  ${desktop.l} {
-    & {
-      padding-top: ${calcRem(252)};
-    }
-  }
-
   ${desktop.m} {
-    & {
-      padding-top: ${calcRem(285)};
-    }
-
     .image {
       grid-row: 1 / 3;
       margin-top: ${calcRem(60)};
@@ -86,20 +75,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.s} {
-    & {
-      padding-top: ${calcRem(285)};
-    }
-
     .image {
       grid-row: 2 / 4;
     }
   }
 
   ${tablet.all} {
-    & {
-      padding-top: ${calcRem(202)};
-    }
-
     .heading {
       margin-top: ${calcRem(20)};
     }
@@ -130,10 +111,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${mobile.all} {
-    & {
-      padding-top: ${calcRem(153)};
-    }
-
     .heading,
     .list {
       grid-column: 1 / span 6;

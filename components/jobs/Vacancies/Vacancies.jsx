@@ -2,16 +2,22 @@ import React, { PureComponent, Fragment } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import styles, { pictureStyles, pictureFaqStyles, pictureHunterStyles } from './Vacancies.styles'
+import styles, { pictureHunterStyles } from './Vacancies.styles'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import Picture from '../../Picture'
+import PictureOld from '../../Picture'
 import Grid from '../../ui-kit/core-design/Grid'
-import PictureForAllResolutions from '../../PictureForAllResolutions'
+import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
+import { howImages } from '../../../data/jobs/images'
+import { whoImages } from '../../../data/jobs/images'
+import { distanceImages } from '../../../data/jobs/images'
+import { faqImages } from '../../../data/jobs/images'
 
 class Vacancies extends PureComponent {
   render() {
     const { className, lng, locale, t } = this.props
+    console.log(howImages)
 
     return (
       <Grid as="article" className={className}>
@@ -48,9 +54,10 @@ class Vacancies extends PureComponent {
         )}
 
         <PictureForAllResolutions
-          css={pictureStyles}
-          image={{ namespace: 'jobs', key: 'how', alt: t('jobs:how.alt') }}
-          customResolutions={['360', '1024']}
+          className="picture"
+          images={howImages}
+          fallback={howImages['desktop.l']}
+          alt={t('jobs:faq.alt')}
         />
 
         <h2 className="font_h2-regular">
@@ -63,9 +70,10 @@ class Vacancies extends PureComponent {
         />
 
         <PictureForAllResolutions
-          css={pictureStyles}
-          image={{ namespace: 'jobs', key: 'who', alt: t('jobs:who.alt') }}
-          customResolutions={['360', '1024']}
+          className="picture"
+          images={whoImages}
+          fallback={whoImages['desktop.l']}
+          alt={t('jobs:faq.alt')}
         />
 
         <h2 className="font_h2-regular">
@@ -78,9 +86,10 @@ class Vacancies extends PureComponent {
         />
 
         <PictureForAllResolutions
-          css={pictureStyles}
-          image={{ namespace: 'jobs', key: 'distance', alt: t('jobs:about.alt') }}
-          customResolutions={['360', '1024']}
+          className="picture"
+          images={distanceImages}
+          fallback={distanceImages['desktop.l']}
+          alt={t('jobs:faq.alt')}
         />
 
         <h2
@@ -98,9 +107,11 @@ class Vacancies extends PureComponent {
 
         {lng === 'ru' && (
           <Fragment>
-            <Picture
-              css={pictureFaqStyles}
-              image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}
+            <PictureForAllResolutions
+              className="picture-faq"
+              images={faqImages}
+              fallback={faqImages['desktop.l']}
+              alt={t('jobs:faq.alt')}
             />
             <p className="faq-text font_p16-regular">
               {t('jobs:faq.title')}
@@ -112,7 +123,7 @@ class Vacancies extends PureComponent {
           </Fragment>
         )}
 
-        <Picture
+        <PictureOld
           css={pictureHunterStyles}
           image={{ namespace: 'jobs', key: 'jobs-hunter', alt: t('jobs:hunter.alt') }}
         />

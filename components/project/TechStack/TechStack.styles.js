@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
 
   & {
     overflow-x: hidden;
@@ -240,6 +240,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       }
     }
 
+    .duration .text {
+      white-space: ${lng === 'ru' ? 'normal' : 'nowrap'};
+    }
+
     .team-number {
       &:before {
         left: 36px;
@@ -327,9 +331,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { lng } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, lng })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

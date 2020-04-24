@@ -73,6 +73,10 @@ const base = css`
 
 
     @media screen and (max-width: 944px) {
+        & {
+            bottom: 0;
+        }
+
         .text-top {
             font-size: 0.875rem;
             line-height: 1.5rem;

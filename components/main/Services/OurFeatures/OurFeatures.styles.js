@@ -4,7 +4,6 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   & {
-    outline: 1px solid red;
     margin-top: ${calcRem(212)};
   }
 

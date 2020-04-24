@@ -151,7 +151,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${mobile.all} {
     & {
       position: relative;
-      margin-top: ${calcRem(88)};
+      margin-top: ${calcRem(111)};
       background: none;
     }
 

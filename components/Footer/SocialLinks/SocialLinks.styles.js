@@ -13,6 +13,7 @@ const base = ({ colors }) => css`
   }
 
   a {
+    font-size: 0;
     color: ${colors.secondary.darken100};
     transition: color 200ms ease-out;
 

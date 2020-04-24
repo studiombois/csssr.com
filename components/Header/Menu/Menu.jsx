@@ -74,6 +74,7 @@ const Menu = ({ className, isMobile, lng, t }) => {
 
             return (
               <Link
+                tabIndex="0"
                 className={cn('menu-item', {
                   'menu-item_active': id === activeItem,
                 })}

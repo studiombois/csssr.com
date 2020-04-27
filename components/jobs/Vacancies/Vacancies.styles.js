@@ -290,19 +290,19 @@ const base = css`
       margin-top: 15.5rem;
       padding-top: 5.5rem;
       width: 20.5rem;
-    }
 
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: white;
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+      }
     }
 
     h1 span {

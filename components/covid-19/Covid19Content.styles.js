@@ -251,7 +251,7 @@ const base = css`
 
         .benefits {
             margin-top: 20px;
-            margin-bottom: 100px;
+            margin-bottom: 168px;
         }
 
         .benefits-description {

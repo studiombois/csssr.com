@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import styles from './QuestionBlock.styles'
-import { string, node, bool } from 'prop-types'
+import { bool, node, string } from 'prop-types'
 import QuestionAnswer from '../QuestionAnswer'
 import Heading from '../../ui-kit/core-design/Heading'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -37,7 +37,7 @@ class OriginQuestionBlock extends React.PureComponent {
     })
   }
 
-  toggleAnswer = e => {
+  toggleAnswer = (e) => {
     const { isContentVisible } = this.state
 
     if (e.type === 'click' || e.keyCode === 13) {

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { bool, arrayOf, shape, string, number } from 'prop-types'
+import { arrayOf, bool, number, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Portfolio.styles'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -16,7 +16,7 @@ const Portfolio = ({ className, t, isMobile, portfolio }) => (
       dangerouslySetInnerHTML={{ __html: t('dev:portfolio.text') }}
     />
     {isMobile ? (
-      portfolio.map(projectGroup => (
+      portfolio.map((projectGroup) => (
         <Fragment key={projectGroup.id}>
           <h3 dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${projectGroup.id}`) }} />
           <div className="project-container">

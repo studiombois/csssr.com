@@ -76,7 +76,7 @@ class ErrorPage extends React.Component {
     const rootUrl = `/${lng}`
 
     if (!lng) {
-      Sentry.withScope(scope => {
+      Sentry.withScope((scope) => {
         scope.setExtra('lngCodeFromI18n', lngCodeFromI18n)
         scope.setExtra('lng', lng)
         Sentry.captureMessage(
@@ -132,7 +132,9 @@ class ErrorPage extends React.Component {
                 <LineFromTopToBottomIcon width="100%" height="100%" />
               </div>
 
-              <div className="navList">{navItems.map(items => this.renderNav({ lng, items }))}</div>
+              <div className="navList">
+                {navItems.map((items) => this.renderNav({ lng, items }))}
+              </div>
             </Fragment>
           )}
         </Grid>

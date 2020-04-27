@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import ReactDOM from 'react-dom'
-import { string, any, bool } from 'prop-types'
+import { any, bool, string } from 'prop-types'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
 import Button from './ui-kit/core-design/Button'
 import ButtonLink from './ui-kit/core-design/ButtonLink'

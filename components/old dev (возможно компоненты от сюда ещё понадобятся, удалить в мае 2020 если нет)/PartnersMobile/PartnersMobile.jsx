@@ -2,16 +2,16 @@ import React from 'react'
 import LinksList from '../LinksList'
 import translate from '../../../utils/translate-wrapper'
 import {
+  financeAndBankingLinksEn,
+  financeAndBankingLinksRu,
+  healthLinksRu,
   iTcompaniesLinksEn,
   iTcompaniesLinksRu,
+  othersLinksEn,
+  othersLinksRu,
   realEstateLinksEn,
   telecomLinksEn,
   telecomLinksRu,
-  financeAndBankingLinksEn,
-  financeAndBankingLinksRu,
-  othersLinksEn,
-  othersLinksRu,
-  healthLinksRu,
 } from '../../../data/dev/partnersLinks'
 import styled from '@emotion/styled'
 import styles from './PartnersMobile.styles'

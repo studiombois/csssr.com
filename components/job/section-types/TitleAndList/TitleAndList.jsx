@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { string, arrayOf } from 'prop-types'
+import { arrayOf, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './TitleAndList.styles'

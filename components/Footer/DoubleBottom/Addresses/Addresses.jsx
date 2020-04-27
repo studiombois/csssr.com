@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { string, func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import styled from '@emotion/styled'
-import moment from 'moment'
 import styles from './Addresses.styles'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -12,21 +11,24 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import Link from '../../../ui-kit/core-design/Link'
 import ClickOutside from '../../../ClickOutside'
 
+import formatTime from '../../../../utils/formatTime'
+
 const addressesIds = ['singapore', 'russia', 'russia_2', 'estonia']
 // TODO это может поменяться в будущем
+// Можно эти данные отправлять с сервера при первой загрузке страницы
 const timezoneOffsetsByAddressId = {
   singapore: 8,
   russia: 3,
   russia_2: 3,
-  estonia: 2,
+  estonia: 3,
 }
 
 const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress }) => {
-  const [time, setTime] = useState(() => moment())
+  const [time, setTime] = useState(new Date())
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setTime(() => moment())
+      setTime(new Date())
     }, 1000)
 
     return () => clearTimeout(timeout)
@@ -34,7 +36,7 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
 
   const handleResetHoveredAddress = () => setHoveredAddress(null)
 
-  const handleMouseOver = address => event => {
+  const handleMouseOver = (address) => (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -43,7 +45,7 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
     setHoveredAddress(address)
   }
 
-  const handleMouseOut = event => {
+  const handleMouseOut = (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -63,7 +65,6 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
             onMouseOver={handleMouseOver(id)}
             onMouseLeave={handleMouseOut}
           >
-
             <Heading
               as="p"
               className="title"
@@ -95,12 +96,11 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
                 dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.status`) }}
                 type="regular"
                 size={textSize}
-                Head Office
               />
             )}
 
             <Text className="time" type="regular" size={textSize}>
-              {time.utcOffset(timezoneOffsetsByAddressId[id]).format(`${lng==='ru' ? 'HH:mm': 'hh:mm A' }`)}
+              {formatTime(time, timezoneOffsetsByAddressId[id], lng)}
             </Text>
           </div>
         ))}

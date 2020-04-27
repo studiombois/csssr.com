@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const Observer = ({ children, name, handleActive, className }) => {
   const itemRef = useRef()

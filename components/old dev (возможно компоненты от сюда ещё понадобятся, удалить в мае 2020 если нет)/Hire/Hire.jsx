@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import styled from '@emotion/styled'
 import styles, { devLine } from './Hire.styles'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
@@ -13,7 +13,7 @@ class Hire extends PureComponent {
 
     return (
       <Fragment>
-        <Global styles={devLine}/>
+        <Global styles={devLine} />
         <Grid className={className} as="article">
           <h1 className="font_h1-slab">
             <span dangerouslySetInnerHTML={{ __html: t('dev:hire.title') }} />

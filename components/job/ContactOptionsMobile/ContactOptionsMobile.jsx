@@ -1,5 +1,5 @@
 import React from 'react'
-import { arrayOf, string, func } from 'prop-types'
+import { arrayOf, func, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './ContactOptionsMobile.styles'
@@ -11,7 +11,7 @@ import getContactOptionsByI18N from '../../../data/job/getContactOptionsByI18N'
 
 const ContactOptionsMobile = ({ className, connection, t }) => {
   const connectionData =
-    connection[0] && getContactOptionsByI18N(t).find(contact => contact.id === connection[0])
+    connection[0] && getContactOptionsByI18N(t).find((contact) => contact.id === connection[0])
 
   return (
     <fieldset className={className}>

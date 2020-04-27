@@ -12,7 +12,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import styles from './Development.styles'
 
-import { scrumban, review } from '../../../data/way-of-work/development'
+import { review, scrumban } from '../../../data/way-of-work/development'
 
 const Development = ({ className, id, t }) => {
   return (

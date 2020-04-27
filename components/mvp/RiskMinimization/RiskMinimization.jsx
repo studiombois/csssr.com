@@ -30,7 +30,7 @@ class RiskMinimization extends PureComponent {
               <Toggler
                 activeIndex={togglerIndex}
                 items={[t('mvp:riskMinimization.togglerOn'), t('mvp:riskMinimization.togglerOff')]}
-                onChange={index => this.setState({ togglerIndex: index })}
+                onChange={(index) => this.setState({ togglerIndex: index })}
               />
             </div>
 

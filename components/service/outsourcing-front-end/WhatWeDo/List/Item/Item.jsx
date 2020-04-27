@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func, number, object } from 'prop-types'
+import { func, number, object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Item.styles'
 import translate from '../../../../../../utils/translate-wrapper'

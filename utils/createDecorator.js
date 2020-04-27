@@ -1,5 +1,5 @@
 import createDecorator from 'final-form-calculate'
-import { valuesByFieldNames, multiplier, calcLayoutSum } from '../data/express/valuesByFieldNames'
+import { calcLayoutSum, multiplier, valuesByFieldNames } from '../data/express/valuesByFieldNames'
 
 export default createDecorator({
   field: /parceForm_/,

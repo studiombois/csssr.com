@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
-import { string, func, bool } from 'prop-types'
+import React, { useRef, useState } from 'react'
+import { bool, func, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Menu.styles'

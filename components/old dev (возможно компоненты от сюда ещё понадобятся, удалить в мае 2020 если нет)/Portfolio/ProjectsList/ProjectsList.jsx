@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { arrayOf, shape, string, number, bool } from 'prop-types'
+import { arrayOf, bool, number, shape, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
@@ -43,16 +43,16 @@ class ProjectsList extends PureComponent {
     const { activeProjectsGroupId } = this.state
 
     if (activeProjectsGroupId === 'all') {
-      return portfolio.map(projectGroup => projectGroup.projects.map(project => project))
+      return portfolio.map((projectGroup) => projectGroup.projects.map((project) => project))
     }
 
     const targetPortfolio = portfolio.find(
-      projectGroup => projectGroup.id === activeProjectsGroupId,
+      (projectGroup) => projectGroup.id === activeProjectsGroupId,
     )
     return targetPortfolio ? targetPortfolio.projects : []
   }
 
-  handleChangeActiveProjectsGroupId = value =>
+  handleChangeActiveProjectsGroupId = (value) =>
     this.setState({
       activeProjectsGroupId: value,
       listHeight: null,
@@ -133,7 +133,7 @@ class ProjectsList extends PureComponent {
 
   renderSpecificProjects = () => {
     return this.props.portfolio
-      .find(projectGroup => projectGroup.id === this.state.activeProjectsGroupId)
+      .find((projectGroup) => projectGroup.id === this.state.activeProjectsGroupId)
       .projects.map(this.renderProject)
   }
 
@@ -142,7 +142,7 @@ class ProjectsList extends PureComponent {
     const { activeProjectsGroupId, listHeight, isCut } = this.state
     const projectsOfActiveProjectsGroupId = this.getProjectsOfActiveProjectsGroupId()
     const shouldShowCutButton = projectsOfActiveProjectsGroupId.length > 5
-    const tabs = ['all'].concat(portfolio.map(projectsGroup => projectsGroup.id))
+    const tabs = ['all'].concat(portfolio.map((projectsGroup) => projectsGroup.id))
 
     return (
       <Fragment>

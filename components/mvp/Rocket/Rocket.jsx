@@ -2,14 +2,14 @@ import React, { Fragment, PureComponent } from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles, {
+  rocketArrow,
+  rocketBlack,
+  rocketBlue,
   rocketBody,
   rocketDress,
-  rocketBlue,
-  rocketArrow,
   rocketJet1,
   rocketJet2,
   rocketJet3,
-  rocketBlack,
 } from './Rocket.styles'
 import translate from '../../../utils/translate-wrapper'
 import Picture from '../../Picture'

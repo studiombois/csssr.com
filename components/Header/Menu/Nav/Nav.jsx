@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { withRouter } from 'next/router'
-import { string, func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import cn from 'classnames'
 import Fade from 'react-reveal/Fade'
 import styled from '@emotion/styled'

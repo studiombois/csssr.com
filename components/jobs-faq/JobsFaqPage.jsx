@@ -34,14 +34,14 @@ const JobsFaqPage = () => (
     <ImageBlock blockName="roads" images={{ png: roads, webp: roads_webp }} />
 
     <QuestionHeader headingText="Про найм" />
-    {questions.hire.map(item => (
+    {questions.hire.map((item) => (
       <QuestionBlock question={item.question} answer={item.answer} key={item.question} />
     ))}
 
     <ImageBlock blockName="puzzle" images={{ png: puzzle, webp: puzzle_webp }} />
 
     <QuestionHeader headingText="Про работу" />
-    {questions.apply.map(item => (
+    {questions.apply.map((item) => (
       <QuestionBlock question={item.question} answer={item.answer} key={item.question} />
     ))}
 

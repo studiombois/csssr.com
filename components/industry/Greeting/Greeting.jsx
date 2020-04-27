@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { string, object, func } from 'prop-types'
+import React from 'react'
+import { func, object, string } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'

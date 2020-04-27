@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Vacancies.styles'
@@ -32,7 +32,7 @@ const Vacancies = ({ className, vacancies, t, locale }) => (
     />
 
     <ul className="list">
-      {vacancies.map(vacancy => {
+      {vacancies.map((vacancy) => {
         if (!vacancy.isHot) {
           return
         }

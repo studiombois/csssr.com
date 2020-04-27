@@ -1,11 +1,11 @@
 import acceptLanguageParser from 'accept-language-parser'
 import {
-  supportedLocales,
-  supportedLanguages,
-  estonianLanguageAndLocale,
   defaultEstonianLocale,
-  defaultLocaleByLanguage,
   defaultLocale,
+  defaultLocaleByLanguage,
+  estonianLanguageAndLocale,
+  supportedLanguages,
+  supportedLocales,
 } from '../common/locales-settings'
 import i18n from '../common/i18n'
 import { isDevelopment } from '../utils/app-environment'

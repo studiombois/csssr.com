@@ -1,6 +1,6 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
-import { GtmScript, GtmNoScript } from 'react-gtm-components'
+import { GtmNoScript, GtmScript } from 'react-gtm-components'
 import getGtmId from '../utils/getGtmId'
 import cn from 'classnames'
 import detectMsBrowser, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string, oneOf, bool } from 'prop-types'
+import { bool, oneOf, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './TextField.styles'
@@ -12,7 +12,6 @@ class TextField extends PureComponent {
     placeholder: string,
     label: string,
     autoFocus: bool,
-    type: string,
     disabled: bool,
   }
 
@@ -20,7 +19,7 @@ class TextField extends PureComponent {
     kind: 'light',
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { value } = event.target
     this.props.input.onChange(value)
   }
@@ -31,14 +30,13 @@ class TextField extends PureComponent {
       placeholder,
       label,
       autoFocus,
-      type,
       disabled,
       kind,
       className,
       maxLength,
       testid,
       tabIndex,
-      input: { name, value, onBlur, onFocus },
+      input: { name, type, value, onBlur, onFocus },
       meta: { error, invalid, submitError, submitFailed },
     } = this.props
 

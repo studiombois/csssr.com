@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, bool, oneOf } from 'prop-types'
+import { bool, oneOf, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 
@@ -11,10 +11,10 @@ import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import styles from './Highlight.styles'
 
 import {
+  arcImages,
+  circleImages,
   highlightImages,
   squareImages,
-  circleImages,
-  arcImages,
   triangleImages,
 } from '../../../../data/way-of-work/transparency'
 
@@ -42,7 +42,7 @@ const Highlight = ({ className, id, t, isMobile, active }) => {
     <div className={className} id={id}>
       {isMobile ? (
         <>
-          {figures.map(figure => (
+          {figures.map((figure) => (
             <span
               key={figure.name}
               className={cn('figure', figure.name, {
@@ -60,7 +60,7 @@ const Highlight = ({ className, id, t, isMobile, active }) => {
             className="image"
           />
 
-          {figures.map(figure => (
+          {figures.map((figure) => (
             <PictureForAllResolutions
               key={figure.name}
               images={figure.images}

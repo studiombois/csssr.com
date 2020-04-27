@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Workflow.styles'
 import Wrapper from '../Wrapper'
@@ -22,7 +22,7 @@ const Workflow = ({ className, t }) => (
       dangerouslySetInnerHTML={{ __html: t('express:workflow.title') }}
     />
 
-    {workflowSteps.map(stepNumber => (
+    {workflowSteps.map((stepNumber) => (
       <div className="wrapper" key={stepNumber}>
         <div className="img-wrapper">
           <PictureForAllResolutions

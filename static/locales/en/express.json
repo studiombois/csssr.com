@@ -86,7 +86,7 @@
   "features": {
     "title": "Core Features",
     "feature1": {
-      "title": "Design&#8209;Friendly",
+      "title": "<span style=\"white-space: nowrap;\">Design-Friendly</span>",
       "text": "Your project will look exactly like it’s supposed to. We understand the design processes and respect every pixel in your mock-ups."
     },
     "feature2": {

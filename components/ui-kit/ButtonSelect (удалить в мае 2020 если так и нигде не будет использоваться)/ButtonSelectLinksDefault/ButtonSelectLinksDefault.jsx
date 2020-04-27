@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, arrayOf, shape, string, bool } from 'prop-types'
+import { arrayOf, bool, func, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './ButtonSelectLinksDefault.styles'
 import translate from '../../../../utils/translate-wrapper'
@@ -13,8 +13,8 @@ const iconsByLabel = {
   Messenger: <Messenger />,
 }
 
-const ButtonSelectLinksDefault = props => {
-  const handleLinkClick = dataLayerEvent => () => {
+const ButtonSelectLinksDefault = (props) => {
+  const handleLinkClick = (dataLayerEvent) => () => {
     props.onLinkClick(dataLayerEvent)
   }
 

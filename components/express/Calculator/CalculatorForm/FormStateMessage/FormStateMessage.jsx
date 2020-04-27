@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { oneOf, string, func } from 'prop-types'
+import { func, oneOf, string } from 'prop-types'
 
 import Text from '../../../../ui-kit/core-design/Text'
 

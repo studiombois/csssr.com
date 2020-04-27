@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'next/router'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Links.styles'

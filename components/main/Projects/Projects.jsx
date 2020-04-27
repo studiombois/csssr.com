@@ -1,16 +1,13 @@
 import React from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Projects.styles'
-
-import Post from './Post'
 import Heading from '../../ui-kit/core-design/Heading'
 import Grid from '../../ui-kit/core-design/Grid'
 import Card from '../Card'
 
 import projects from '../../../data/main/projects'
-import posts from '../../../data/main/posts'
 
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'

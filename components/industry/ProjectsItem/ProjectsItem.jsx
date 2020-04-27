@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { string, object, array, func } from 'prop-types'
+import { array, func, object, string } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import styled from '@emotion/styled'
 import styles from './ProjectsItem.styles'

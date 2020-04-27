@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Backend.styles'
@@ -12,7 +12,7 @@ import Text from '../../ui-kit/core-design/Text'
 import Picture from '../../ui-kit/Picture'
 import Grid from '../../ui-kit/core-design/Grid'
 
-import { nodeImages, dbsImages, kotlinImages } from '../../../data/technologies/backend'
+import { dbsImages, kotlinImages, nodeImages } from '../../../data/technologies/backend'
 
 const Backend = ({ className, t, lng }) => (
   <Grid as="section" className={className}>

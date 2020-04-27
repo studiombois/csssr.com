@@ -1,10 +1,10 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles, { pictureStyles, textDataStyles } from './FormStateMessage.styles'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import { oneOf, string, func } from 'prop-types'
+import { func, oneOf, string } from 'prop-types'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 
 class FormStateMessage extends PureComponent {

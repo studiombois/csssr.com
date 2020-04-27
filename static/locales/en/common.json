@@ -18,7 +18,7 @@
       "services": {
         "title": "Services",
         "outsourcing": {
-          "title": "Outsourcing Front&#8209;end",
+          "title": "Outsourcing <span style=\"white-space: nowrap;\">Front-end</span>",
           "description": "Web development to&nbsp;complement core competencies."
         },
         "express": {

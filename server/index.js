@@ -14,9 +14,9 @@ const generateSitemap = require('./generate-sitemap').generateSitemap
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 
 import {
+  defaultLocaleByLanguage,
   supportedLanguages,
   supportedLocales,
-  defaultLocaleByLanguage,
 } from '../common/locales-settings'
 import pathCookieHeaderDetector from './path-cookie-header-detector'
 import getPagesList from './get-pages-list'

@@ -31,7 +31,7 @@ const Card = ({
 }) => {
   const CardBody = () => (
     <Fragment>
-      <div className="picture-wrap">
+      <div className={cn('picture-wrap', { 'picture-wrap_radio': id === 'radio' })}>
         <PictureForAllResolutions
           className={cn('card-picture', `card-picture_${id}`)}
           images={images}
@@ -49,13 +49,25 @@ const Card = ({
         )}
       </div>
 
-      <Heading
-        className="card-title"
-        as="h3"
-        dangerouslySetInnerHTML={{ __html: t(title) }}
-        type="regular"
-        size="m"
-      />
+      {id === 'radio' ? (
+        <a className="card-link" href={href} target="_blank" rel="noopener nofollow">
+          <Heading
+            className="card-title"
+            as="h3"
+            dangerouslySetInnerHTML={{ __html: t(title) }}
+            type="regular"
+            size="m"
+          />
+        </a>
+      ) : (
+        <Heading
+          className="card-title"
+          as="h3"
+          dangerouslySetInnerHTML={{ __html: t(title) }}
+          type="regular"
+          size="m"
+        />
+      )}
 
       <Text
         className="card-description"
@@ -69,7 +81,7 @@ const Card = ({
     </Fragment>
   )
 
-  if (isLink) {
+  if (isLink && id !== 'radio') {
     return (
       <a className={cn('card', className)} href={href} target="_blank" rel="noopener nofollow">
         <CardBody />

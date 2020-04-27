@@ -15,4 +15,5 @@ export default [
   'wayOfWork',
   'covid19',
   'eLearningPlatform',
+  'project',
 ]

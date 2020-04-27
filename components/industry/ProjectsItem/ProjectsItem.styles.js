@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) => {
+const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, lng }) => {
   if (direction === 'reverse') {
     return (
       css`
@@ -26,6 +26,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           grid-column: 5 / span 2;
         }
 
+        .button {
+          grid-column: 3 / span 3;
+        }
+
         ${desktop.m} {
           .image {
             grid-column: 8 / span 4;
@@ -45,6 +49,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 
           .column-2 {
             grid-column: 4 / span 2;
+          }
+
+          .button {
+            grid-column: 2 / span 3;
           }
         }
 
@@ -68,6 +76,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           .column-2 {
             grid-column: 4 / span 2;
           }
+
+          .button {
+            grid-column: 2 / span 3;
+          }
         }
 
         ${tablet.all} {
@@ -90,6 +102,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           .column-2 {
             grid-column: 4 / span 2;
           }
+
+          .button {
+            grid-column: 2 / span 3;
+          }
         }
 
         ${mobile.all} {
@@ -104,7 +120,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
           }
 
           .column-2 {
-            grid-column: 3 / span 2;
+            grid-column: ${lng === 'ru' ? '4' : '3'} / span 2;
           }
         }
       `
@@ -131,6 +147,10 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
 
       .column-2 {
         grid-column: 9 / span 2;
+      }
+
+      .button {
+        grid-column: 7 / span 3;
       }
 
       ${desktop.m} {
@@ -199,7 +219,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile } }) 
         }
 
         .column-2 {
-          grid-column: 3 / span 2;
+          grid-column: ${lng === 'ru' ? '4' : '3'} / span 2;
         }
       }
     `
@@ -256,6 +276,17 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     color: ${colors.secondary.darken100};
   }
 
+  .button {
+    grid-row: 4;
+    margin-top: ${calcRem(104)};
+  }
+
+  ${desktop.l} {
+    .button {
+      max-width: ${calcRem(272)};
+    }
+  }
+
   ${desktop.m} {
     &.first-item .image {
       max-width: ${calcRem(445)};
@@ -275,6 +306,10 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     &.third-item .text {
       grid-column: 7 / span 4;
     }
+
+    .button {
+      max-width: ${calcRem(272)};
+    }
   }
 
   ${desktop.s} {
@@ -288,6 +323,10 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
 
     &.third-item .image {
       max-width: ${calcRem(470)};
+    }
+
+    .button {
+      max-width: ${calcRem(296)};
     }
   }
 
@@ -320,30 +359,44 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     .text-data{
       margin-top: ${calcRem(9)};
     }
+
+    .button {
+      margin-top: ${calcRem(72)};
+    }
   }
 
   ${mobile.all} {
+    & {
+      grid-template-rows: auto;
+    }
+
     .image {
       grid-row: 1;
       width: ${calcRem(360)};
       margin-bottom: ${calcRem(14)};
     }
 
+    .image {
+      width: auto;
+    }
+
     &.first-item .image {
-      margin-left: ${calcRem(-16)};
+      margin-left: 0;
     }
 
     &.second-item .image {
-      margin-left: ${calcRem(-16)};
+      margin-top: ${calcRem(2)};
+      margin-right: 0;
     }
 
     &.third-item .image {
-      margin-top: 0;
-      margin-left: ${calcRem(-16)};
+      margin-top: ${calcRem(-10)};
+      margin-left: 0;
     }
 
     .item-heading {
       grid-row: 2;
+      margin-top: ${calcRem(38)};
     }
 
     .text {
@@ -359,6 +412,12 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     .text-data {
       grid-row: 5;
       margin-top: ${calcRem(-5)};
+    }
+
+    .button {
+      grid-row: 6;
+      grid-column: 1 / span 6;
+      margin-top: ${calcRem(32)};
     }
   }
 `
@@ -595,9 +654,10 @@ const ie11BaseStyles = () => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { lng } = props
 
   return css`
-    ${dynamicStyles(props.direction, { breakpoints })}
+    ${dynamicStyles(props.direction, { breakpoints, lng })}
     ${base({ colors, breakpoints })}
     ${props.isIe11 && ie11DynamicStyles(props.direction, { breakpoints })}
     ${props.isIe11 && ie11BaseStyles()}

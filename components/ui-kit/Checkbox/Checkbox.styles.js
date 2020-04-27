@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 
 const base = css`
   & {
+    display: block;
     position: relative;
   }
 
@@ -82,6 +83,12 @@ const base = css`
     background: none;
     border: 0;
     appearance: none;
+
+    @supports (-moz-appearance: none) {
+      &:focus {
+        outline: 1px dotted gray;
+      }
+    }
   }
 
   input::-ms-check {

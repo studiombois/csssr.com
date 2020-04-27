@@ -11,16 +11,15 @@ const base = css`
     }
     /* Greeting */
     .greeting {
-        margin-top: 190px;
+        margin-top: 140px;
     }
 
-    .greeting h1 {
-        grid-column: 2 / span 6;
+    .greeting-text {
+        grid-column: 2 / span 5;
     }
 
     .greeting-red-box {
-        grid-column: 10 / span 2;
-        margin-top: 30px;
+        margin-top: 60px;
     }
 
     .greeting-red-box img {
@@ -38,8 +37,8 @@ const base = css`
     }
 
     .greeting-image {
-        grid-column: 3 / span 8;
-        margin-top: 60px;
+        grid-column: 7 / span 6;
+        /* margin-top: 60px; */
         display: block;
     }
 
@@ -66,8 +65,8 @@ const base = css`
     }
 
     .crisis-lines {
-        grid-column: 1 / span 1;
-        margin-top: -100px;
+        grid-column: 3 / span 1;
+        margin-top: -90px;
         display: block;
     }
 
@@ -91,38 +90,17 @@ const base = css`
     /* Benefits */
 
     .benefits {
-        margin-top: 60px;
+        margin-top: 80px;
+        margin-bottom: 200px;
     }
 
-    .benefit-1-image,
-    .benefit-2-image,
-    .benefit-4-image,
-    .benefit-5-image {
-        display: block;
-    }
-
-    .benefit-1-image-mobile,
-    .benefit-2-image-mobile,
-    .benefit-5-image-mobile,
-    .benefit-4-image-mobile {
-        display: none;
-    }
-
-    .benefit-1-title:hover a,
-    .benefit-2-title:hover a,
-    .benefit-3-title:hover a,
-    .benefit-4-title:hover a,
-    .benefit-5-title:hover a {
+    .benefit-3-title:hover a{
         display: block;
         color: #DF4976;
         cursor: pointer;
     }
 
-    .benefit-1-title a,
-    .benefit-2-title a,
-    .benefit-3-title a,
-    .benefit-4-title a,
-    .benefit-5-title a {
+    .benefit-3-title a {
         text-decoration: none;
         background-color: transparent;
         padding: 0;
@@ -130,20 +108,12 @@ const base = css`
         color: #fff;
     }
 
-    .benefit-1-image,
-    .benefit-2-image,
-    .benefit-3-image,
-    .benefit-4-image,
-    .benefit-5-image {
+    .benefit-3-image {
         position: relative;
         display: inline-block;
     }
 
-    .benefit-1-image-hover,
-    .benefit-2-image-hover,
-    .benefit-3-image-hover,
-    .benefit-4-image-hover,
-    .benefit-5-image-hover {
+    .benefit-3-image-hover{
         display: none;
         position: absolute;
         top: 0;
@@ -155,113 +125,26 @@ const base = css`
         display: inline;
     }
 
-    /*  1 Benefit */
-
-    .benefit-1-description {
-        grid-column: 6 / span 5;
-        margin-top: 110px;
+    .benefits-description {
+        grid-column: 10 / span 3;
+        grid-row: 1 / span 4;
+        font-family: "Roboto", sans-serif;
+        font-weight: 100;
+        font-size: 24px;
+        line-height: 36px;
+        color: #ffffff;
+        letter-spacing: 0;
+        margin-bottom: 0;
     }
 
-    .benefit-1-description p {
-        margin-top: 30px;
-    }
-
-    .benefit-1-image {
-        position: relative;
-        display: inline-block;
-        margin-top: 80px;
-        grid-column: 2 / span 3;
-    }
-
-    .benefit-1-image img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /*  2 Benefit */
-
-    .benefit-2-image {
-        margin-top: 120px;
-        grid-column: 8 / span 4;
-    }
-
-    .benefit-2-image img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .benefit-2-description {
-        margin-top: 174px;
-        grid-column: 2 / span 5;
-    }
-
-    .benefit-2-title h3 {
-        display: inline-block;
-    }
-
-    .benefit-2-description p {
-        margin-top: 30px;
-    }
-
-    .benefit-2-text-bold {
-        font-weight: 600;
-        background-color: transparent;
-    }
-
-    /*  3 Benefit */
-
-    .benefit-4-description {
-        grid-column: 6 / span 5;
-        margin-top: 180px;
-    }
-
-    .benefit-4-description p {
-        margin-top: 30px;
-    }
-
-    .benefit-4-image {
-        margin-top: 180px;
-        grid-column: 2 / span 3;
-    }
-
-    .benefit-4-image img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /*  4 Benefit */
-
-    .benefit-5-image {
-        margin-top: 174px;
-        grid-column: 8 / span 4;
-    }
-
-    .benefit-5-image img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .benefit-5-description {
-        margin-top: 174px;
-        grid-column: 2 / span 5;
-    }
-
-    .benefit-5-title h3 {
-        display: inline-block;
-    }
-
-    .benefit-5-description p {
-        margin-top: 30px;
-    }
-
-    .benefit-5-text-bold {
-        font-weight: 600;
+    .benefits-description-bold {
+        font-weight: 100;
     }
 
     /*  5 Benefit */
 
     .benefit-3-title {
-        margin-top: 270px;
+        margin-top: 150px;
         grid-column: 3 / span 5;
         text-align: left;
     }
@@ -285,121 +168,45 @@ const base = css`
         height: auto;
     }
 
-    /*  Contact */
-
-    .contact {
-        margin-top: 200px;
-        margin-bottom: 250px;
-    }
-
-    .wrapper {
-        grid-column: 3 / span 5;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        border: 4px solid #3557FF;
-        padding: 20px 20px 20px 40px;
-        position: relative;
-    }
-
-    .contact p, .contact a {
-        background-color: transparent;
-        z-index: 1;
-    }
-
-    .wrapper:hover .link-big {
-        background-color: transparent;
-        color: #B24372;
-    }
-
-    .contact-image {
-        grid-column: 7 / span 2;
-        margin-top: -100px;
-        display: block;
-        position: absolute;
-        right: -150px;
-        top: -10px;
-        background-color: #18191b;
-    }
-
-    .contact-image img {
-        z-index: 10;
-        max-width: 100%;
-        height: auto;
-    }
-
     @media screen and (max-width: 1492px) {
-        .greeting-red-box {
-            grid-column: 9 / span 3;
-            /* margin-top: 100px; */
+        .greeting-text {
+            grid-column: 2 / span 6;
         }
-        .greeting-description {
-            grid-column: 3 / span 7;
-            margin-top: 80px;
+
+        .greeting-image {
+            grid-column: 8 / span 5;
         }
+
         .crisis h2 {
-            background-color: transparent;
+            margin-bottom: 100px;
         }
-        .crisis-image {
-            margin-top: -80px;
+
+        .crisis-lines {
+            margin-top: -190px;
         }
-        .benefit-2-image-mobile, .benefit-5-image-mobile {
-            display: none;
-        }
-        .benefit-1-image, .benefit-2-image, .benefit-4-image, .benefit-5-image {
-            display: block;
-        }
+
         .benefit-3-title {
             grid-column: 3 / span 6;
+            margin-top: 150px;
         }
-        .wrapper {
-            grid-column: 3 / span 6;
+
+        .benefits-description {
+            grid-column: 9 / span 4;
         }
     }
 
     @media screen and (max-width: 1232px) {
-        .greeting h1 {
+        .greeting-text {
             grid-column: 1 / span 7;
-        }
-        .greeting-red-box {
-            grid-column: 10 / span 3;
-        }
-        .greeting-description {
-            grid-column: 3 / span 8;
-            margin-top: 80px;
+            /* margin-top: 80px; */
         }
         .crisis h2 {
             grid-column: 1 / span 12;
         }
-        .crisis-image {
-            margin-top: -30px;
+        .crisis-lines {
+            grid-column: 2 / span 1;
         }
-        .benefit-2-image-mobile, .benefit-5-image-mobile {
-            display: none;
-        }
-        .benefit-1-image, .benefit-2-image, .benefit-4-image, .benefit-5-image {
-            display: block;
-        }
-        .benefit-1-description {
-            grid-column: 6 / span 7;
-        }
-        .benefit-1-image, .benefit-4-image {
-            grid-column: 1 / span 3;
-        }
-        .benefit-1-image {
-            margin-top: 120px;
-        }
-        .benefit-2-image {
-            margin-top: 170px;
-        }
-        .benefit-2-image, .benefit-5-image {
-            grid-column: 9 / span 4;
-        }
-        .benefit-2-description, .benefit-5-description {
-            grid-column: 1 / span 6;
-        }
+
         .benefit-3-title {
             grid-column: 3 / span 7;
         }
@@ -409,75 +216,55 @@ const base = css`
         .benefit-3-image {
             grid-column: 2 / span 10;
         }
-        .wrapper {
-            grid-column: 3 / span 8;
-        }
+
     }
 
     @media screen and (max-width: 944px) {
-        .greeting-red-text, .alert-red-text, .experience-description-virus-text {
-            font-size: 16px;
-            line-height: 24px;
-        }
         .greeting {
             margin-top: 120px;
         }
-        .greeting-red-box {
-            grid-column: 9 / span 4;
-            margin-top: 10px;
-        }
+
         .greeting-image {
-            grid-column: 3 / span 7;
-            margin-top: 0;
+            grid-column: 8 / span 5;
+            margin-top: 100px;
         }
-        .greeting-description {
-            grid-column: 3 / span 8;
+        .greeting-text {
+            grid-column: 1 / span 7;
             margin-top: 40px;
         }
+        .greeting-red-box {
+            margin-top: 30px;
+        }
+        .greeting-red-box img {
+            height: 20px;
+        }
+
         .crisis h2 {
             margin-top: 70px;
             grid-column: 1 / span 12;
-        }
-        .crisis-image {
-            margin-top: -50px;
-            grid-column: 9 / span 4;
+            margin-bottom: 10px;
         }
         .crisis-lines {
-            grid-column: 1 / span 1;
-            margin-top: -100px;
+            grid-column: 2 / span 1;
+            margin-top: -70px;
         }
-        .benefit-2-image-mobile, .benefit-5-image-mobile {
-            display: none;
-        }
-        .benefit-1-image, .benefit-2-image, .benefit-4-image, .benefit-5-image {
-            display: block;
-        }
-        .benefit-1-description, .benefit-1-image {
-            margin-top: 40px;
-        }
-        .benefit-2-description, .benefit-4-description, .benefit-5-description, .benefit-2-image, .benefit-4-image, .benefit-5-image {
-            margin-top: 80px;
-        }
-        .benefit-1-description p, .benefit-2-description p, .benefit-4-description p, .benefit-5-description p {
-            margin-top: 15px;
-        }
-        .benefit-3-title {
-            margin-top: 80px;
-        }
-        .contact {
-            margin-top: 150px;
+
+        .benefits {
+            margin-top: 20px;
             margin-bottom: 100px;
         }
-        .wrapper {
-            grid-column: 3 / span 7;
+
+        .benefits-description {
+            grid-column: 1 / span 12;
+            grid-row: 1;
+            margin-bottom: 50px;
         }
-        .contact-image {
-            grid-column: 7 / span 1;
-            z-index: 0;
-            margin-top: -70px;
-            right: -150px;
-            top: -40px;
+
+        .benefit-3-title {
+            margin-top: 80px;
+
         }
+
     }
 
     @media screen and (max-width: 768px) {
@@ -487,23 +274,14 @@ const base = css`
     }
 
     @media screen and (max-width: 720px) {
-        .greeting-red-text, .alert-red-text, .experience-description-virus-text {
-            font-size: 12px;
-            line-height: 12px;
-        }
         .greeting {
-            margin-top: 80px;
+            margin-top: 40px;
         }
-        .greeting h1 {
+        .greeting-text {
+            margin-top: 0;
             grid-column: 1 / span 6;
         }
-        .greeting-red-box {
-            grid-column: 1 / span 2;
-            margin-top: 15px;
-        }
-        .greeting-red-box {
-            grid-column: 1 / span 2;
-        }
+
         .greeting-image {
             grid-column: 1 / span 6;
             margin-top: 40px;
@@ -515,10 +293,7 @@ const base = css`
             grid-column: 1 / span 6;
             margin-top: 40px;
         }
-        .greeting-description {
-            grid-column: 1 / span 6;
-            margin-top: 40px;
-        }
+
         .benefits {
             margin-top: 0;
         }
@@ -529,28 +304,15 @@ const base = css`
             grid-column: 1 / span 6;
             margin-top: 40px;
             text-align: left;
+            margin-bottom: 40px;
         }
-        .crisis-image {
-            grid-column: 2 / span 4;
-            display: none;
-        }
-        .benefit-1-image-mobile, .benefit-2-image-mobile, .benefit-4-image-mobile, .benefit-5-image-mobile {
-            grid-column: 1 / span 3;
-            display: block;
-            margin-top: 60px;
-            margin-bottom: 0;
-        }
-        .benefit-1-image, .benefit-2-image, .benefit-5-image, .benefit-4-image {
-            display: none;
-        }
-        .benefit-1-image-mobile img, .benefit-2-image-mobile img, .benefit-4-image-mobile img, .benefit-5-image-mobile img {
-            max-width: 100%;
-            height: auto;
-        }
-        .benefit-1-description, .benefit-2-description, .benefit-4-description, .benefit-5-description {
+
+        .benefits-description {
             grid-column: 1 / span 6;
-            margin-top: 10px;
+            font-size: 16px;
+            line-height: 24px;
         }
+
         .benefit-3-title {
             grid-column: 1 / span 6;
         }
@@ -559,24 +321,6 @@ const base = css`
         }
         .benefit-3-image {
             grid-column: 1 / span 6;
-        }
-        .contact p, .contact a {
-            grid-column: 1 / span 6;
-            text-align: left;
-        }
-        .contact-image {
-            /* display: none; */
-            grid-column: 5 / span 1;
-            /* margin-top: -120px; */
-            right: -20px;
-            top: 30px;
-        }
-        .contact-image img {
-            width: 100px;
-        }
-        .wrapper {
-            grid-column: 1 / span 6;
-            padding: 10px 15px 10px 15px;
         }
     }
 `
@@ -692,8 +436,9 @@ const fonts = css`
     }
 
     .font-p-link {
-        text-decoration: underline;
+        text-decoration: none;
         color: #FFFFFF;
+        border-bottom: 1px solid #ABABAB;
     }
 
     .font-p-link:hover {

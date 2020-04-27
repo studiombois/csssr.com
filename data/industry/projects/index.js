@@ -1,62 +1,59 @@
 import projects_1 from './projects_1'
 import projects_2 from './projects_2'
-import projects_3 from './projects_3'
 
-export default {
+export const informationTechnologyProjects = {
   heading: 'industry:projects.heading',
-  subHeading: 'industry:projects.subHeading',
   projectsItems: [
     {
       images: projects_1,
       imgAlt: 'industry:imgAlt.projects_1',
-      heading: 'industry:projects.firstItem.heading',
-      text: 'industry:projects.firstItem.text',
+      heading: 'industry:projects.informationTechnologyPage.firstItem.heading',
+      text: 'industry:projects.informationTechnologyPage.firstItem.text',
       className: 'first-item',
       numericData: [
         {
-          numberData: 'industry:projects.firstItem.numericData.firstItem.number',
-          textData: 'industry:projects.firstItem.numericData.firstItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.firstItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.firstItem.text',
         },
         {
-          numberData: 'industry:projects.firstItem.numericData.secondItem.number',
-          textData: 'industry:projects.firstItem.numericData.secondItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.secondItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.firstItem.numericData.secondItem.text',
         },
       ],
+      button: {
+        title: 'industry:projects.informationTechnologyPage.firstItem.button.title',
+        href: 'industry:projects.informationTechnologyPage.firstItem.button.href',
+      },
     },
     {
       images: projects_2,
       imgAlt: 'industry:imgAlt.projects_2',
-      heading: 'industry:projects.secondItem.heading',
-      text: 'industry:projects.secondItem.text',
+      heading: 'industry:projects.informationTechnologyPage.secondItem.heading',
+      text: 'industry:projects.informationTechnologyPage.secondItem.text',
       className: 'second-item',
       direction: 'reverse',
       numericData: [
         {
-          numberData: 'industry:projects.secondItem.numericData.firstItem.number',
-          textData: 'industry:projects.secondItem.numericData.firstItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.firstItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.firstItem.text',
         },
         {
-          numberData: 'industry:projects.secondItem.numericData.secondItem.number',
-          textData: 'industry:projects.secondItem.numericData.secondItem.text',
+          numberData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.secondItem.number',
+          textData:
+            'industry:projects.informationTechnologyPage.secondItem.numericData.secondItem.text',
         },
       ],
-    },
-    {
-      images: projects_3,
-      imgAlt: 'industry:imgAlt.projects_3',
-      heading: 'industry:projects.thirdItem.heading',
-      text: 'industry:projects.thirdItem.text',
-      className: 'third-item',
-      numericData: [
-        {
-          numberData: 'industry:projects.thirdItem.numericData.firstItem.number',
-          textData: 'industry:projects.thirdItem.numericData.firstItem.text',
-        },
-        {
-          numberData: 'industry:projects.thirdItem.numericData.secondItem.number',
-          textData: 'industry:projects.thirdItem.numericData.secondItem.text',
-        },
-      ],
+      button: {
+        title: 'industry:projects.informationTechnologyPage.secondItem.button.title',
+        href: 'industry:projects.informationTechnologyPage.secondItem.button.href',
+      },
     },
   ],
 }

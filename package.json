@@ -61,7 +61,7 @@
     "react-reveal": "^1.2.2",
     "react-transition-group": "^4.3.0",
     "scroll-lock": "^2.1.4",
-    "sitemap": "^6.1.1",
+    "sitemap": "^6.1.2",
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {

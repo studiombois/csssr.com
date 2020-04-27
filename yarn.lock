@@ -1336,10 +1336,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.1.0.tgz#2240db06bf3245c1a0ef7df6f36c177728d4dc6f"
-  integrity sha512-Blo1ujCbSi7ELHHe7cLCZc85UBmlH+FFbwcdEioB/GyZrFmslXhRk0ODfRN3/uHnZrMcGMCQkz4a0ERwjocYNA==
+"@csssr/core-design@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.1.1.tgz#5195ab7c2c293b47574955aa2a17e03f9ac2dda2"
+  integrity sha512-2nITzea/yK4OTa526nWxffRRcKXhui863qWf66Bi0OwtbfsgQT9TS0g/44gg2WTavTeMElcY55oTMfMbWjIOUA==
   dependencies:
     "@emotion/styled-base" "^10.0.10"
     color "^3.1.1"

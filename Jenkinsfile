@@ -1,6 +1,5 @@
 pipeline {
   environment {
-    registryCredential = "space-nexus"
     branch = ""
     commit = ""
   }
@@ -35,7 +34,7 @@ pipeline {
       steps {
         script {
           withCredentials([string(credentialsId: 'github-registry-read-only-token', variable: 'NPM_TOKEN')]) {
-            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} --network host . -t docker.csssr.space/csssr-com:${commit}"
+            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} --network host . -t registry.csssr.cloud/csssr-com:${safeBranch}-${commit}"
           }
         }
       }
@@ -43,10 +42,9 @@ pipeline {
     stage('Push Image') {
       steps {
         script {
-          withCredentials([usernamePassword(credentialsId: registryCredential, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh "docker login -u ${USERNAME} -p \"${PASSWORD}\" docker.csssr.space"
-            sh "docker push docker.csssr.space/csssr-com:${commit}"
-            sh "docker rmi docker.csssr.space/csssr-com:${commit}"
+          withCredentials([usernamePassword(credentialsId: 'registry-csssr-cloud', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            sh "docker login -u ${USERNAME} -p \"${PASSWORD}\" registry.csssr.cloud"
+            sh "docker push registry.csssr.cloud/csssr-com:${safeBranch}-${commit}"
           }
         }
       }
@@ -67,7 +65,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            make deploy-production branch=${branch} commit=${commit}
+            make deploy-production branch=${branch} commit=${safeBranch}-${commit}
             """
           } else {
             sh """#!/bin/bash
@@ -75,7 +73,7 @@ pipeline {
             set -x
             cd csssr.com-chart
             export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages}
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${safeBranch}-${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages}
             """
           }
         }

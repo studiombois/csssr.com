@@ -167,7 +167,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
 
     .duration-number {
       &:before {
-        background-image: url(${require('../../../static/icons/project/techStack/duration/tablet/curvy-line-png.png')});
+        background-image: url(${require('../../../static/icons/project/techStack/duration/curvy-line.svg').default});
         left: 49px;
         height: 17px;
       }
@@ -225,7 +225,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
 
     .duration-number {
       &:before {
-        background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line-png.png')});
+        background-image: url(${require('../../../static/icons/project/techStack/duration/curvy-line.svg').default});
         left: 48px;
         height: 17px;
       }

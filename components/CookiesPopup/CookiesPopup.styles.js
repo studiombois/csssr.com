@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
 const base = ({ media }) => css`
   & {
@@ -63,6 +64,32 @@ const base = ({ media }) => css`
 
     .wrap {
       max-width: 49rem;
+    }
+  }
+
+  @media
+  screen and (max-width: 768px),
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx),
+  (orientation: landscape) {
+    & {
+      padding-top: ${calcRem(12)};
+      padding-bottom: ${calcRem(12)};
+      padding-left: ${calcRem(24)};
+      padding-right: ${calcRem(27)};
+    }
+
+    .close {
+      top: ${calcRem(12)};
+      right: ${calcRem(12)};
+      width: ${calcRem(12)};
+      height: ${calcRem(12)};
+    }
+
+    .cookies-text {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 `

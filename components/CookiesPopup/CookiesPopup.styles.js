@@ -91,6 +91,31 @@ const base = ({ media }) => css`
       line-height: ${calcRem(24)};
     }
   }
+
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 667px) 
+  and (-webkit-device-pixel-ratio : 2)
+  and (orientation : landscape) {
+    & {
+      padding-top: ${calcRem(8)};
+      padding-bottom: ${calcRem(8)};
+      padding-left: ${calcRem(16)};
+      padding-right: ${calcRem(20)};
+    }
+
+    .close {
+      top: ${calcRem(12)};
+      right: ${calcRem(12)};
+      width: ${calcRem(12)};
+      height: ${calcRem(12)};
+    }
+
+    .cookies-text {
+      font-size: ${calcRem(8)};
+      line-height: ${calcRem(16)};
+    }
+  }
 `
 
 export default props => {

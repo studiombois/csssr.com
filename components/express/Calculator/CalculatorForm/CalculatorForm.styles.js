@@ -251,7 +251,9 @@ export default {
         width: 100%;
 
         &_short {
-          letter-spacing: 0.8px;
+          & > label {
+            letter-spacing: 0.8px;
+            }
 
           ${breakpoints.desktop.all} {
             max-width: 26.4375rem;

@@ -21,8 +21,10 @@ class Vacancies extends PureComponent {
           styles={
             lng === 'en' &&
             css`
-              #main {
-                padding-top: 0;
+              @media (max-width: 767px) {
+                #main {
+                  padding-top: 0;
+                }
               }
             `
           }

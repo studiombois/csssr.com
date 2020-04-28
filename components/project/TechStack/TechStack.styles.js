@@ -169,7 +169,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/curvy-line-mobile.svg').default});
         left: 70px;
-        height: 17px;
+        height: 18px;
         background-size: auto;
       }
 
@@ -232,7 +232,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/curvy-line-mobile.svg').default});
         left: 70px;
-        height: 17px;
+        height: 18px;
         background-size: auto;
       }
 

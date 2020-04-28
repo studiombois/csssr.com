@@ -76,7 +76,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   ${desktop.m} {
     .image {
       grid-row: 1 / 3;
-      margin-top: ${calcRem(60)};
+      margin-top: ${calcRem(51)};
     }
   }
 
@@ -89,7 +89,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     .heading {
-      margin-top: ${calcRem(20)};
+      margin-top: ${calcRem(15)};
     }
 
     .list {

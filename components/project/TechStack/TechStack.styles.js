@@ -168,8 +168,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
     .duration-number {
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
-        left: 49px;
-        height: 17px;
+        left: 70px;
+        height: 18px;
+        background-size: auto;
       }
     }
 
@@ -181,7 +182,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
         margin-top: 0;
-        left: 36px;
+        left: 50px;
       }
     }
   }
@@ -226,8 +227,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
     .duration-number {
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
-        left: 48px;
-        height: 17px;
+        left: 70px;
+        height: 18px;
+        background-size: auto;
       }
     }
 
@@ -246,7 +248,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
 
     .team-number {
       &:before {
-        left: 36px;
+        left: 50px;
         margin: 0;
         min-width: 385px;
         background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});

@@ -67,12 +67,11 @@ const base = ({ media }) => css`
     }
   }
 
-  @media
-  screen and (max-width: 768px),
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx),
-  (orientation: landscape) {
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px) 
+  and (-webkit-device-pixel-ratio : 3)
+  and (orientation : landscape) {
     & {
       padding-top: ${calcRem(12)};
       padding-bottom: ${calcRem(12)};

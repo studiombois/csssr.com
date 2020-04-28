@@ -115,7 +115,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.m} {
     & {
-      padding-bottom: ${calcRem(285)};
+      padding-bottom: ${calcRem(281)};
     }
 
     .heading {

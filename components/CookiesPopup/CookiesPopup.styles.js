@@ -87,8 +87,8 @@ const base = ({ media }) => css`
     }
 
     .cookies-text {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
+      font-size: 14px;
+      line-height: 24px;
     }
   }
 
@@ -112,8 +112,8 @@ const base = ({ media }) => css`
     }
 
     .cookies-text {
-      font-size: ${calcRem(8)};
-      line-height: ${calcRem(16)};
+      font-size: 8px;
+      line-height: 16px;
     }
   }
 `

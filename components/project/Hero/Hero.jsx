@@ -5,7 +5,7 @@ import styles from './Hero.styles'
 import translate from '../../../utils/translate-wrapper'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
-import Link from 'next/link'
+import Link from '../../ui-kit/core-design/Link'
 import Text from '../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
@@ -26,11 +26,14 @@ const Hero = ({
           className="heading"
         />
 
-        <Link href={t(link)}>
-          <a className="link" target="_blank" rel="noreferrer noopener">
-            {t(link)}
-          </a>
-        </Link>
+        <Link
+          className="link"
+          href={t(link)}
+          type="list"
+          target="_blank"
+          rel="noreferrer noopener"
+          dangerouslySetInnerHTML={{ __html: t(link) }}
+        />
 
         <Heading.H3
           type="slab"

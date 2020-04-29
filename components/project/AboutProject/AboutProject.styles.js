@@ -109,7 +109,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(186)};
+      margin-top: ${calcRem(154)};
       background-position: ${calcRem(54)} 0, ${calcRem(504)} ${calcRem(471)};
       background-size: ${calcRem(48)} ${calcRem(48)}, auto;
     }

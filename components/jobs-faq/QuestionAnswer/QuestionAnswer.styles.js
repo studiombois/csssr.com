@@ -9,13 +9,23 @@ export default {
     contain: size;
     overflow: hidden;
     opacity: 0;
-    transition: contain 0.3s ease, opacity 0.3s ease;
+    transition: opacity 0.3s ease;
     margin: 0;
-    will-change: contain, opacity;
+    will-change: opacity;
+
+    @supports not (contain: size) {
+      max-height: 0;
+      will-change: opacity, max-height;
+      transition: opacity 0.3s ease;
+    }
 
     &.visible {
       contain: content;
       opacity: 1;
+
+      @supports not (contain: content) {
+        max-height: 500px;
+      }
     }
 
     .list-item {

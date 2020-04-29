@@ -6,14 +6,16 @@ export default {
     grid-column: 4 / span 6;
     display: flex;
     flex-flow: column;
-    max-height: 0;
+    contain: size;
+    overflow: hidden;
     opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    transition: contain 0.3s ease, opacity 0.3s ease;
     margin: 0;
+    will-change: contain, opacity;
 
     &.visible {
+      contain: content;
       opacity: 1;
-      max-height: 500px; /* так нужно для плавного изменения высоты https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css */
     }
 
     .list-item {

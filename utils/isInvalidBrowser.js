@@ -7,18 +7,7 @@ const VALID_DEVICES = {
 }
 
 /**
- * Method for check layout features
- * @returns {Boolean}
- */
-function validateLayoutFeatures() {
-  if (process.browser && window.CSS && window.CSS.supports) {
-    return CSS.supports('display', 'flex') && CSS.supports('display', 'grid')
-  }
-
-  return false
-}
-
-/**
+ * Method for check invalid device
  * @param {String} name - Browser or OS name
  * @param {String} version - Browser or OS version
  * @returns {Boolean}
@@ -35,19 +24,3 @@ export function checkIsInvalidDevice(name, version) {
 
   return Number(validDeviceOrBrowser) >= Number(version.replace(/(\d+)\.+(\d+)\.+(\d+)/, '$1.$2'))
 }
-
-/**
- * Browser features request method
- * @param {BrowserInfo} browserOptions
- * @returns {Boolean}
- */
-export const checkIsInvalidBrowser = () => {
-  return !validateLayoutFeatures()
-}
-
-/**
- * @typedef BrowserInfo
- * @property {String} name
- * @property {String} version
- * @property {String} [os]
- */

@@ -8,38 +8,36 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   width: 1792px;
   background-color: white;
 
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
   header {
-    grid-column: 2 / span 3;
-    padding-top: 13.5rem;
+    grid-column: 4 / span 6;
+    padding-top: ${calcRem(269)};
   }
 
-  h1 {
+  .title {
     display: inline-block;
+    grid-column: 4 / span 6;
   }
 
-  div {
-    grid-column: 6 / span 6;
-    padding-top: 14.5rem;
+  header p {
+    margin-top: ${calcRem(7)};
   }
 
-  div > p:not(:last-of-type) {
+  .description {
+    grid-column: 4 / span 6;
+    margin-top: ${calcRem(43)};
+  }
+
+  .description > p:not(:last-of-type) {
     margin-bottom: 1.5rem;
   }
 
   section {
-    padding-top: 2rem;
-  }
-
-  h3 + h4,
-  h3 + p,
-  section + section {
-    margin-top: 0.5rem;
-  }
-
-  h4 + p,
-  p + ul,
-  ul + p {
-    margin-top: 1rem;
+    margin-top: ${calcRem(49)};
   }
 
   .list-item {
@@ -51,6 +49,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     top: 0;
     left: 0;
     content: attr(data-counter);
+  }
+
+  section .list-item.list-item_level_2 {
+    margin-top: ${calcRem(15)};
+    margin-bottom: 0;
+  }
+
+  section .list-item.list-item_level_3 {
+    margin-top: ${calcRem(16)};
+    margin-bottom: 0;
   }
 
   .list-item.list-item_level_1,

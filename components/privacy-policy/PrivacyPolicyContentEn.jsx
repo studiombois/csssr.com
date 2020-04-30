@@ -9,13 +9,13 @@ const PrivacyPolicyContentEn = ({ className, t }) => (
   <Grid className={className} as="article">
     <header>
       <h1
-        className="font_h1-regular"
+        className="title font_h1-regular"
         dangerouslySetInnerHTML={{ __html: t('privacyPolicy:title') }}
       />
-      <p className="font_subhead-regular">{t('privacyPolicy:date')}</p>
+      <p className="date font_subhead-regular">{t('privacyPolicy:date')}</p>
     </header>
 
-    <div>
+    <div className="description">
       <p className="font_p24-strong">
         CSSSR is&nbsp;a&nbsp;software development company that creates interfaces and
         web-applications (see &ldquo;Who We&nbsp;Are&rdquo;). We&nbsp;are concerned about privacy

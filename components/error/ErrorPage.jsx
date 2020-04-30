@@ -68,9 +68,10 @@ class ErrorPage extends React.Component {
   render() {
     const { className, t, lng: lngCodeFromI18n, i18n } = this.props
 
-    const statusCode = possibleStatusCodes.includes(this.props.statusCode)
-      ? this.props.statusCode
-      : defaultStatusCode
+    const statusCode =
+      possibleStatusCodes.indexOf(this.props.statusCode) !== -1
+        ? this.props.statusCode
+        : defaultStatusCode
 
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`

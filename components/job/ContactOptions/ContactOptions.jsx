@@ -30,7 +30,7 @@ const ContactOptions = ({ className, connection = [], t }) => (
           {option.checkboxText}
         </Field>
 
-        {connection.includes(option.id) && (
+        {connection.indexOf(option.id) !== -1 && (
           <Field
             css={css`
               margin-top: 2rem;

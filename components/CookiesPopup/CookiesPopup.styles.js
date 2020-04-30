@@ -91,7 +91,6 @@ const base = ({ media }) => css`
     .cookies-text {
       font-size: 14px;
       line-height: 24px;
-      -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
     }
   }
 `

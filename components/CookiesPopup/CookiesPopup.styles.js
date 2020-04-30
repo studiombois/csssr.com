@@ -40,6 +40,7 @@ const base = ({ media }) => css`
 
   .cookies-text {
     color: #ffffff;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
   }
 
   .cookies-link {
@@ -67,11 +68,8 @@ const base = ({ media }) => css`
     }
   }
 
-  @media only screen 
-  and (min-device-width : 375px) 
-  and (max-device-width : 812px) 
-  and (-webkit-device-pixel-ratio : 3)
-  and (orientation: landscape) {
+  @media (-webkit-min-device-pixel-ratio : 2)
+  and (-webkit-max-device-pixel-ratio : 3) {
     & {
       padding-top: ${calcRem(12)};
       padding-bottom: ${calcRem(12)};
@@ -79,29 +77,8 @@ const base = ({ media }) => css`
       padding-right: ${calcRem(27)};
     }
 
-    .close {
-      top: ${calcRem(12)};
-      right: ${calcRem(12)};
-      width: ${calcRem(12)};
-      height: ${calcRem(12)};
-    }
-
-    .cookies-text {
-      font-size: 10px;
-      line-height: 16px;
-    }
-  }
-
-  @media only screen 
-  and (min-device-width : 375px) 
-  and (max-device-width : 667px) 
-  and (-webkit-device-pixel-ratio : 2)
-  and (orientation: landscape) {
-    & {
-      padding-top: ${calcRem(8)};
-      padding-bottom: ${calcRem(8)};
-      padding-left: ${calcRem(16)};
-      padding-right: ${calcRem(20)};
+    .wrap {
+      max-width: unset;
     }
 
     .close {
@@ -112,8 +89,9 @@ const base = ({ media }) => css`
     }
 
     .cookies-text {
-      font-size: 8px;
-      line-height: 16px;
+      font-size: 14px;
+      line-height: 24px;
+      -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
     }
   }
 `

@@ -99,7 +99,7 @@ const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress
             )}
             {!isIe11 && 
               <Text className="time" type="regular" size={textSize}>
-                {time.toLocaleTimeString([], { timeZone: timezoneOffsetsByAddressId[id], hour: '2-digit', minute: '2-digit' })}
+                {time.toLocaleTimeString([], { timeZone: timezoneOffsetsByAddressId[id], hour: '2-digit', minute: '2-digit' })} {/* show only hours and minutes, use options with the default locale - use an empty array, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString */}
               </Text>
             }
           </div>

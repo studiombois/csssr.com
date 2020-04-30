@@ -1,7 +1,8 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
-const base = css`
-  margin-bottom: 31rem;
+const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+  margin-bottom: ${calcRem(256)};
   margin-right: auto;
   margin-left: auto;
   width: 1792px;
@@ -76,6 +77,14 @@ const base = css`
     margin-bottom: 1rem;
   }
 
+  ${tablet.all} {
+    margin-bottom: ${calcRem(168)};
+  }
+
+  ${mobile.all} {
+    margin-bottom: ${calcRem(144)};
+  }
+
   @media (min-width: 768px) and (max-width: 1023px) {
     div {
       padding-top: 13.875rem;
@@ -83,8 +92,6 @@ const base = css`
   }
 
   @media (max-width: 767px) {
-    margin-bottom: 13.5rem;
-
     header {
       grid-column: 1 / span 6;
       padding-top: 5.5rem;
@@ -173,7 +180,11 @@ const ie11Styles = css`
   }
 `
 
-export default ({ isIe11 }) => css`
-  ${base}
-  ${isIe11 && ie11Styles}
-`
+export default props => {
+  const breakpoints = props.theme.breakpoints
+
+  return css`
+    ${base({ breakpoints })}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
+  `
+}

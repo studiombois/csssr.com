@@ -68,7 +68,9 @@ const base = ({ media }) => css`
     }
   }
 
-  @media (-webkit-min-device-pixel-ratio : 2)
+  @media (min-device-width : 375px) 
+  and (max-device-width : 812px) 
+  and (-webkit-min-device-pixel-ratio : 2)
   and (-webkit-max-device-pixel-ratio : 3) {
     & {
       padding-top: ${calcRem(12)};

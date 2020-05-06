@@ -7,7 +7,7 @@ import Grid from '../ui-kit/core-design/Grid'
 
 const PrivacyPolicyContentEn = ({ className, t }) => (
   <Grid className={className} as="article">
-    <header>
+    <header className="header">
       <h1
         className="title font_h1-regular"
         dangerouslySetInnerHTML={{ __html: t('privacyPolicy:title') }}
@@ -15,8 +15,8 @@ const PrivacyPolicyContentEn = ({ className, t }) => (
       <p className="date font_subhead-regular">{t('privacyPolicy:date')}</p>
     </header>
 
-    <div className="description">
-      <p className="font_p24-strong">
+    <div className="content">
+      <p className="description font_p24-strong">
         CSSSR is&nbsp;a&nbsp;software development company that creates interfaces and
         web-applications (see &ldquo;Who We&nbsp;Are&rdquo;). We&nbsp;are concerned about privacy
         issues and want you to&nbsp;be&nbsp;familiar with how we&nbsp;collect, use, and share

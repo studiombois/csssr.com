@@ -7,7 +7,7 @@ import Grid from '../ui-kit/core-design/Grid'
 
 const PrivacyPolicyContentRu = ({ className, t }) => (
   <Grid className={className} as="article">
-    <header>
+    <header className="header">
       <h1
         className="title font_h1-regular"
         dangerouslySetInnerHTML={{ __html: t('privacyPolicy:title') }}
@@ -15,8 +15,8 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
       <p className="date font_subhead-regular">{t('privacyPolicy:date')}</p>
     </header>
 
-    <div className="description">
-      <p className="font_p24-strong">
+    <div className="content">
+      <p className="description font_p24-strong">
         Настоящая Политика конфиденциальности персональных данных (далее&nbsp;&mdash; Политика
         конфиденциальности) действует в&nbsp;отношении всех персональных данных, которые Общество
         с&nbsp;ограниченной ответственностью &laquo;Компани Нейм&raquo; (ИНН 5056011973),

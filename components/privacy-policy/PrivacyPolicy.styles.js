@@ -2,20 +2,20 @@ import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
-  margin-bottom: ${calcRem(256)};
-  margin-right: auto;
-  margin-left: auto;
-  width: 1792px;
-  background-color: white;
-
   * {
     padding: 0;
     margin: 0;
   }
 
-  header {
+  padding-top: calc(${calcRem(256)} + 64px);
+  margin-bottom: ${calcRem(256)};
+  margin-right: auto;
+  margin-left: auto;
+  width: 1792px;
+  background-color: white;
+  
+  .header {
     grid-column: 4 / span 6;
-    padding-top: ${calcRem(269)};
   }
 
   .title {
@@ -23,21 +23,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     grid-column: 4 / span 6;
   }
 
-  header p {
-    margin-top: ${calcRem(7)};
+  .date {
+    margin-top: ${calcRem(56)};
+  }
+
+  .content {
+    grid-column: 4 / span 6;
+    margin-top: ${calcRem(72)};
   }
 
   .description {
-    grid-column: 4 / span 6;
-    margin-top: ${calcRem(43)};
-  }
-
-  .description > p:not(:last-of-type) {
-    margin-bottom: 1.5rem;
+    font-size: ${calcRem(16)};
+    line-height: ${calcRem(24)};
   }
 
   section {
-    margin-top: ${calcRem(49)};
+    margin-top: ${calcRem(80)};
   }
 
   .list-item {
@@ -52,12 +53,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   section .list-item.list-item_level_2 {
-    margin-top: ${calcRem(15)};
+    margin-top: ${calcRem(40)};
     margin-bottom: 0;
   }
 
   section .list-item.list-item_level_3 {
-    margin-top: ${calcRem(16)};
+    margin-top: ${calcRem(40)};
     margin-bottom: 0;
   }
 
@@ -85,87 +86,115 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-bottom: 1rem;
   }
 
+  ${desktop.all} {
+    .title {
+      font-size: ${calcRem(48)};
+      line-height: ${calcRem(64)};
+    }
+  }
+
+  ${desktop.m} {
+    .header {
+      grid-column: 3 / span 8;
+    }
+
+    .content {
+      grid-column: 3 / span 8;
+    }
+  }
+
+  ${desktop.s} {
+    .header {
+      grid-column: 3 / span 8;
+    }
+
+    .content {
+      grid-column: 3 / span 8;
+    }
+  }
+
   ${tablet.all} {
-    margin-bottom: ${calcRem(168)};
+    & {
+      padding-top: calc(${calcRem(168)} + 64px);
+      margin-bottom: ${calcRem(168)};
+    }
+
+    .header {
+      grid-column: 3 / span 8;
+    }
+
+    .date {
+      margin-top: ${calcRem(40)};
+    }
+
+    .content {
+      grid-column: 3 / span 8;
+      margin-top: ${calcRem(56)};
+    }
+
+    .date {
+      margin-top: ${calcRem(40)};
+    }
+  
+    section {
+      margin-top: ${calcRem(72)};
+    }
+
+    section .list-item.list-item_level_2 {
+      margin-top: ${calcRem(32)};
+      margin-bottom: 0;
+    }
+  
+    section .list-item.list-item_level_3 {
+      margin-top: ${calcRem(32)};
+      margin-bottom: 0;
+    }
   }
 
   ${mobile.all} {
-    margin-bottom: ${calcRem(144)};
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    div {
-      padding-top: 13.875rem;
-    }
-  }
-
-  @media (max-width: 767px) {
-    header {
-      grid-column: 1 / span 6;
-      padding-top: 5.5rem;
+    & {
+      padding-top: calc(${calcRem(112)} + 56px);
+      margin-bottom: ${calcRem(144)};
     }
 
-    p {
-      margin-top: 0.125rem;
-    }
-
-    div {
-      padding-top: 2.1875rem;
+    .header {
       grid-column: 1 / span 6;
     }
 
-    div > p:not(:last-of-type) {
-      margin-bottom: 1rem;
+    .date {
+      margin-top: ${calcRem(40)};
     }
 
+    .content {
+      grid-column: 1 / span 6;
+      margin-top: ${calcRem(56)};
+    }
+
+    .date {
+      margin-top: ${calcRem(40)};
+    }
+  
     section {
-      padding-top: 2.3125rem;
+      margin-top: ${calcRem(56)};
     }
 
-    h3 + h4,
-    h3 + p,
-    p + h4 {
-      margin-top: 1rem;
+    section .list-item.list-item_level_2 {
+      margin-top: ${calcRem(24)};
     }
-
-    section + section {
-      margin-top: 0.1875rem;
-    }
-
-    p:not(.font_p24-strong) {
-      margin-top: 0.125rem;
-    }
-
-    p.font_p16-regular + section {
-      margin-top: -0.3125rem;
-    }
-
-    .font_p24-strong {
-      margin-bottom: 1.3125rem !important;
+  
+    section .list-item.list-item_level_3 {
+      margin-top: ${calcRem(24)};
     }
 
     .font_p16-regular {
-      margin-top: 0;
-      padding-bottom: 0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
-    }
-
-    .font_p16-regular:not(:last-child) {
-      margin-bottom: 0.5rem;
-    }
-
-    .font_link-list_16 {
-      margin-top: 0;
-      padding-bottom: 0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: ${calcRem(12)};
+      line-height: ${calcRem(16)};
     }
   }
 `
 
 const ie11Styles = css`
-  header {
+  .header {
     -ms-grid-column: 3;
     -ms-grid-column-span: 5;
   }
@@ -176,7 +205,7 @@ const ie11Styles = css`
   }
 
   @media (max-width: 767px) {
-    header {
+    .header {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }

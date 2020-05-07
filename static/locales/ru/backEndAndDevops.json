@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "Бэкенд и DevOps",
+    "description": "Улучшите ваш веб-сервис с помощью надежной бэкенд-разработки и правильно настроенной инфраструктуры."
+  },
+  "hero": {
+    "title": "<span style=\"font-weight: bold;\">Бэкенд</span><br />и&nbsp;<span style=\"font-weight: bold;\">DevOps</span>",
+    "description": "Улучшите ваш веб-сервис с помощью надежной бэкенд-разработки и правильно настроенной инфраструктуры.",
+    "button": "Let’s Talk"
+  }
+}

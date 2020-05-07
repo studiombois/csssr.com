@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "Back-End and DevOps",
+    "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
+  },
+  "hero": {
+    "title": "<span style=\"font-weight: bold;\">Back-End</span><br />and <span style=\"font-weight: bold;\">DevOps</span>",
+    "description": "Reinforce your web application with reliable <span style='white-space:nowrap'>back-end</span> development and duly adjusted infrastructure.",
+    "button": "Let&rsquo;s Talk"
+  }
+}

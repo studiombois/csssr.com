@@ -15,79 +15,28 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 import LogoIcon from '../../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../../static/icons/lineFromTopToBottom.svg'
 import NotFound from '../../static/icons/notFound.svg'
-import ServerError from '../../static/icons/serverError.svg'
 
 import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 
-const possibleStatusCodes = [500]
-
-const defaultStatusCode = 500
-
 const titleLocalesByStatusCode = {
-  500: 'error:errors.serverError.title',
+  404: 'error:errors.notFound.title'
 }
 
 const subtitleLocalesByStatusCode = {
-  500: 'error:errors.serverError.subtitle',
+  404: 'error:errors.notFound.subtitle'
 }
 
 const codeIconByStatusCode = {
-  500: <ServerError width="auto" height="100%" />
+  404: <NotFound width="auto" height="100%" />
 }
 
-class ErrorPage extends React.Component {
-  renderNav = ({ lng, items: { title, id, links } }) => {
-    const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-
-    if (id === 'products' && lng === 'ru') return
-    return (
-      <span key={id}>
-        <h3
-          className="font_burger-menu"
-          dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
-        />
-
-        {links && (
-          <ul className="menu">
-            {links.map(({ id, title, href }) => {
-              if (id === 'express' && lng === 'ru') return
-
-              return (
-                <li key={id}>
-                  {linkRegExp.test(href) ? (
-                    <Link href={href}>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
-                      />
-                    </Link>
-                  ) : (
-                    <Link href={`/${lng}/${href}`}>
-                      <a
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
-                      />
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </span>
-    )
-  }
-
+class Error404Page extends React.Component {
   render() {
     const { className, t, lng: lngCodeFromI18n, i18n } = this.props
 
-    const statusCode = possibleStatusCodes.includes(this.props.statusCode)
-      ? this.props.statusCode
-      : defaultStatusCode
+    const statusCode = this.props.statusCode
 
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`
@@ -135,31 +84,24 @@ class ErrorPage extends React.Component {
           <h2
             className="font_subhead-slab"
             dangerouslySetInnerHTML={{
-              __html: [
-                t(`${subtitleLocalesByStatusCode[statusCode]}`),
-                statusCode === 500
-                  ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
-                  : null,
-              ].join(''),
+              __html: t(`${subtitleLocalesByStatusCode[statusCode]}`)
             }}
           />
-          {statusCode === 404 && (
-            <Fragment>
-              <div className="arrow-wrapper">
-                <LineFromTopToBottomIcon width="100%" height="100%" />
-              </div>
+          <Fragment>
+            <div className="arrow-wrapper">
+              <LineFromTopToBottomIcon width="100%" height="100%" />
+            </div>
 
-              <div className="navList">
-                {navItems.map((items) => this.renderNav({ lng, items }))}
-              </div>
-            </Fragment>
-          )}
+            <div className="navList">
+              {navItems.map((items) => this.renderNav({ lng, items }))}
+            </div>
+          </Fragment>
         </Grid>
       </Fragment>
     )
   }
 }
 
-export default MsBrowserConsumer(styled(ErrorPage)`
+export default MsBrowserConsumer(styled(Error404Page)`
   ${styles}
 `)

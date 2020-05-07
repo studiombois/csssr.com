@@ -23,6 +23,7 @@ const walkSync = (dir) => {
         'https://csssr.com/_app',
         'https://csssr.com/_document',
         'https://csssr.com/_error',
+        'https://csssr.com/_404',
         'https://csssr.com/fonts',
         'https://csssr.com/en/school',
         'https://csssr.com/ru/express',

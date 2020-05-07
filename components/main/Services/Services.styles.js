@@ -12,6 +12,11 @@ import triangle_webp from '../../../static/images/main/triangle.png?responsive_a
 import circle from '../../../static/images/main/circle.png?responsive'
 import circle_webp from '../../../static/images/main/circle.png?responsive_and_webp'
 
+import arc_ru from '../../../static/images/main/arc-ru.png?responsive'
+import arc_ru_webp from '../../../static/images/main/arc-ru.png?responsive_and_webp'
+
+import arc from '../../../static/images/main/arc.png?responsive'
+import arc_webp from '../../../static/images/main/arc.png?responsive_and_webp'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
   align-items: start;
@@ -92,6 +97,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
       & path {
         stroke: #8BD9B9;
+      }
+    }
+
+    .service:hover .service-icon_arc {
+      fill: #0054D7;
+
+      & path {
+        stroke: #0054D7;
       }
     }
   }
@@ -192,6 +205,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
         stroke: #8BD9B9;
       }
     }
+
+    .service-icon_arc {
+      fill: #0054D7;
+
+      & path {
+        stroke: #0054D7;
+      }
+    }
   }
 
   ${mobile.all} {
@@ -243,6 +264,31 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
       transform: ${lng === 'ru' ? `rotateZ(180deg)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
     }
 
+    .service_backend::before {
+      width: ${calcRem(120)};
+
+      ${lng === 'ru'
+        ? css`
+            top: ${calcRem(-17)};
+            left: ${calcRem(-72)};
+            height: ${calcRem(192)};
+          `
+        : css`
+            top: ${calcRem(-20)};
+            right: ${calcRem(-16)};
+            height: ${calcRem(176)};
+          `
+      }
+    }
+
+    .service_backend {
+      min-height: ${lng === 'ru'? calcRem(192) : calcRem(176)};
+    }
+
+    .service.service_backend:not(:first-of-type) {
+      margin-top: ${lng === 'ru'? calcRem(76) : calcRem(106)};
+    }
+
     .service-icon {
       display: none;
     }
@@ -290,14 +336,17 @@ const ie11Styles = ({ breakpoints: { mobile }}) => css`
   }
 `
 
-export const mobileBackgroundImagesStyles = theme => {
+export const mobileBackgroundImagesStyles =  lng => theme => {
   const { mobile } = theme.breakpoints
-
   return css`
     ${mobile.all} {
       ${getBackgroundImageSrcSet({ png: circle, webp: circle_webp}, '.service_outsourcing::before')}
       ${getBackgroundImageSrcSet({ png: triangle, webp: triangle_webp}, '.service_express::before')}
       ${getBackgroundImageSrcSet({ png: square, webp: square_webp}, '.service_mvp::before')}
+
+      ${lng === 'ru'
+      ? getBackgroundImageSrcSet({ png: arc_ru, webp: arc_ru_webp}, '.service_backend::before')
+      : getBackgroundImageSrcSet({ png: arc, webp: arc_webp}, '.service_backend::before')}
     }
   `
 }

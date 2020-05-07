@@ -21,6 +21,10 @@
       "title": "Разработка <span style=\"font-weight: bold;\">MVP</span>",
       "subtitle": "Ключевой функционал для проверки бизнес-идей."
     },
+    "backend": {
+      "title": "<span style=\"font-weight: bold;\">Бэкенд</span><br/> и <span style=\"font-weight: bold;\">DevOps</span>",
+      "subtitle": "Разработка полного цикла и настройка окружения."
+    },
     "ourFeatures": {
       "feature1": {
         "text": "Отлаженные процессы, опыт и&nbsp;внимание к&nbsp;деталям помогают нам создавать успешные проекты.",

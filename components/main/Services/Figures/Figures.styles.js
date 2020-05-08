@@ -10,8 +10,8 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     grid-column: 8;
     /* Вычисляем ширину по aspect ration */
     display: inline-flex;
-    width: ${lng === 'ru' ? `calc(90vh * 504 / 424)` : `calc(90vh * 456 / 588)`};
-    max-width: ${lng === 'ru' ? `504px` : `456px`};
+    width: ${lng === 'ru' ? `calc(90vh * 400 / 384)` : `calc(90vh * 359 / 483)`};
+    max-width: ${lng === 'ru' ? `400px` : `358px`};
     max-height: 90vh;
   }
 
@@ -19,7 +19,6 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     position: absolute;
     left: 50%;
     opacity: 0;
-    transform: translateX(-46.5%);
     transition: opacity 100ms ease-out;
 
     &.picture_is_visible {
@@ -34,39 +33,59 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
 
   .picture_square {
     top: 0;
+    transform: translateX(-51%);
     z-index: 1;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-    width: calc(190 / 456 * 100%);
+    width: calc(145 / 358 * 100%);
   }
 
   .picture_square.picture_square_ru {
-    top: 49.1%;
-    left: 44.3%;
+    top: 8.1%;
+    left: 25.5%;
     z-index: 1;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-    width: calc(197 / 504 * 100%);
+    width: calc(145 / 400 * 100%);
+    transform: rotate(9.21deg)
   }
 
   .picture_triangle {
-    top: 29.5%;
+    top: 28.5%;
+    transform: translateX(-57%);
     z-index: 2;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-    width: calc(248 / 456 * 100%);
+    width: calc(191 / 358 * 100%);
   }
 
   .picture_circle {
-    top: 62%;
+    top: 59%;
     z-index: 3;
+    transform: translateX(-52%);
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-    width: calc(225 / 456 * 100%);
+    width: calc(145 / 358 * 100%);
   }
 
   .picture_circle.picture_circle_ru {
-    top: 1%;
-    left: 53%;
+    top: 45.1%;
+    left: 45%;
     z-index: 3;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-    width: calc(210 / 504 * 100%);
+    width: calc(145 / 400 * 100%);
+  }
+
+  .picture_arc {
+    top: 64%;
+    z-index: 2;
+    transform: translateX(-50%);
+    /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+    width: calc(249 / 358 * 100%);
+  }
+
+  .picture_arc.picture_arc_ru {
+    top: 51.6%;
+    left: 45.2%;
+    z-index: 2;
+    /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
+    width: calc(249 / 400 * 100%);
   }
 
   @media (min-height: 654px) {
@@ -76,15 +95,21 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     }
   }
 
+  ${desktop.l} {
+    & {
+      margin-left: 40px;
+    }
+  }
+
   ${desktop.m} {
     & {
-      margin-left: -32px;
+      margin-left: 30px;
     }
   }
 
   ${desktop.s} {
     & {
-      margin-left: -16px;
+      margin-left: 67px;
     }
   }
 
@@ -92,9 +117,9 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     & {
       /* Вычисляем top таким образом, что бы он был равен bottom */
       top: calc((100vh - ${calcRem(303)}) / 2);
-      margin-top: ${calcRem(105)};
-      margin-left: ${calcRem(-26)};
-      width: ${lng === 'ru' ? calcRem(304) : calcRem(324)};
+      margin-top: ${calcRem(100)};
+      margin-left: ${calcRem(7)};
+      width: ${lng === 'ru' ? calcRem(304) : calcRem(294)};
       max-height: ${lng === 'ru' ? calcRem(303) : calcRem(421)};
     }
 
@@ -104,38 +129,41 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     }
 
     .picture:not(.picture_figures) {
-      transform: translateX(calc(-50% + 0.375rem));
       opacity: 1;
       z-index: -1;
     }
 
     .picture_square {
       top: 0;
-      width: ${calcRem(130)};
+      width: ${calcRem(118)};
+      transform: translateX(-50%);
     }
 
     .picture_square.picture_square_ru {
-      top: 50%;
-      left: 43.7%;
-      /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-      width: calc(113 / 304 * 100%);
+      top: 9%;
+      left: 26%;
+      width: ${calcRem(105)};
     }
 
     .picture_triangle {
-      top: ${calcRem(125)};
-      width: ${calcRem(172)};
+      top: ${calcRem(112)};
+      transform: translateX(-58%);
+      width: ${calcRem(155)};
     }
 
     .picture_circle {
-      top: ${calcRem(262)};
-      width: ${calcRem(154)}
+      top: ${calcRem(233)};
+      width: ${calcRem(118)};
+    }
+
+    .picture_arc {
+      width: ${calcRem(202)};
     }
 
     .picture_circle.picture_circle_ru {
-      top: 2%;
-      left: 52%;
-      /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-      width: calc(122 / 304 * 100%);
+      top: 46%;
+      left: 45%;
+      width: ${calcRem(105)};
     }
   }
 `

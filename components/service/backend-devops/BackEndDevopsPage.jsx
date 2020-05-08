@@ -1,12 +1,14 @@
 import React from 'react'
 import { func } from 'prop-types'
+
 import Layout from '../../Layout'
 import translate from '../../../utils/translate-wrapper'
-
-import Hero from './Hero'
-
 import Head from '../../Head'
+import Hero from './Hero'
+import DevOpsServices from './DevOpsServices'
+
 import hero from '../../../data/service/backend-and-devops/hero'
+import devopsServices from '../../../data/service/backend-and-devops/devops-services'
 
 const BackEndDevopsPage = ({ t }) => {
   const pageName = 'backend-and-devops'
@@ -18,6 +20,8 @@ const BackEndDevopsPage = ({ t }) => {
       />
 
       <Hero id="hero" content={hero} />
+
+      <DevOpsServices id="devops-services" content={devopsServices} />
     </Layout>
   )
 }

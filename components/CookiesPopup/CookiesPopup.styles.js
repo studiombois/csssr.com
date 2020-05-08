@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
 const base = ({ media }) => css`
   & {
@@ -39,6 +40,7 @@ const base = ({ media }) => css`
 
   .cookies-text {
     color: #ffffff;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
   }
 
   .cookies-link {
@@ -63,6 +65,34 @@ const base = ({ media }) => css`
 
     .wrap {
       max-width: 49rem;
+    }
+  }
+
+  @media (min-device-width : 375px) 
+  and (max-device-width : 812px) 
+  and (-webkit-min-device-pixel-ratio : 2)
+  and (-webkit-max-device-pixel-ratio : 3) {
+    & {
+      padding-top: ${calcRem(12)};
+      padding-bottom: ${calcRem(12)};
+      padding-left: ${calcRem(24)};
+      padding-right: ${calcRem(27)};
+    }
+
+    .wrap {
+      max-width: unset;
+    }
+
+    .close {
+      top: ${calcRem(12)};
+      right: ${calcRem(12)};
+      width: ${calcRem(12)};
+      height: ${calcRem(12)};
+    }
+
+    .cookies-text {
+      font-size: 14px;
+      line-height: 24px;
     }
   }
 `

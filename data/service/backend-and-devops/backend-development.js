@@ -22,5 +22,22 @@ export default {
   images: backEndDevImages,
   heading: 'backEndAndDevops:backEndDevelopment.title',
   description: 'backEndAndDevops:backEndDevelopment.description',
-  button: 'backEndAndDevops:backEndDevelopment.button'
+  whatWeDo: {
+    do_title: 'backEndAndDevops:backEndDevelopment.whatWeDo.title',
+    do_description: 'backEndAndDevops:backEndDevelopment.whatWeDo.description',
+    list: [
+      {
+        title: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.firstItem.title',
+        description: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.firstItem.description'
+      },
+      {
+        title: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.secondItem.title',
+        description: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.secondItem.description'
+      },
+      {
+        title: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.thirdItem.title',
+        description: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.thirdItem.description'
+      }
+    ]
+  },
 }

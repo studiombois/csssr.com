@@ -10,6 +10,24 @@
   },
   "backEndDevelopment": {
     "title": "Back-End Development",
-    "description": "It&nbsp;is&nbsp;not only the appearance of&nbsp;your product that matters, but also how smoothly, flexibly and reliably the part hidden from users performs."
+    "description": "It&nbsp;is&nbsp;not only the appearance of&nbsp;your product that matters, but also how smoothly, flexibly and reliably the part hidden from users performs.",
+    "whatWeDo": {
+      "title": "What We Do",
+      "description": "Although front-end development was our only specialization for years, now we&nbsp;also provide back-end web solutions so&nbsp;we&nbsp;can develop products from the top down.",
+      "list": {
+        "firstItem": {
+          "title": "Full Stack web development",
+          "description": "We&nbsp;turn your design layouts into a&nbsp;complete working product."
+        },
+        "secondItem": {
+          "title": "Only back-end development",
+          "description": "We&rsquo;ll handle back-end tasks to&nbsp;let your team focus on&nbsp;the priority goals."
+        },
+        "thirdItem": {
+          "title": "Third-party services integration",
+          "description": "We&rsquo;ll help you to&nbsp;build a&nbsp;strong network of&nbsp;necessary data across different services and applications."
+        }
+      }
+    }
   }
 }

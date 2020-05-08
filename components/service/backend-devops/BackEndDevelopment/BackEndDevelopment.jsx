@@ -6,7 +6,10 @@ import styles from './BackEndDevelopment.styles'
 import Grid from '../../../ui-kit/core-design/Grid'
 import SubHeading from '../../../ui-kit/core-design/SubHeading'
 import Heading from '../../../ui-kit/core-design/Heading'
+import Text from '../../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
+import List from '../../../ui-kit/core-design/List'
+import ListItem from '../../../ui-kit/core-design/ListItem'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
@@ -14,11 +17,8 @@ const BackEndDevelopment = ({
   t,
   className,
   id,
-  content: { heading, description, images, imgAlt },
-  isMobile,
-  isTablet,
+  content: { heading, description, images, imgAlt, whatWeDo: { do_title, do_description, list } }
 }) => {
-  const textType = isMobile || isTablet ? 'regular' : 'strong'
 
   return (
     <Grid className={className} as="section" id={id}>
@@ -41,6 +41,44 @@ const BackEndDevelopment = ({
         alt={t(imgAlt)}
         className="image"
       />
+      <div className="left-block">
+        <Heading
+          as="h2"
+          type="regular"
+          size="l"
+          dangerouslySetInnerHTML={{ __html: t(do_title) }}
+          className="heading-do"
+        />
+        <Text
+          size="m"
+          type="strong"
+          dangerouslySetInnerHTML={{ __html: t(do_description) }}
+          className="text-do"
+        />
+      </div>
+      <List className="list">
+        {list.map((item, index) => (
+          <ListItem
+            className="list-item"
+            key={index}
+          >
+            <Heading
+              as="h3"
+              type="regular"
+              className="item-title"
+              dangerouslySetInnerHTML={{ __html: t(item.title) }}
+              size="m"
+            />
+
+            <Text
+              size="m"
+              type="regular"
+              dangerouslySetInnerHTML={{ __html: t(item.description) }}
+              className="item-text"
+            />
+          </ListItem>
+        ))}
+      </List>
     </Grid>
   )
 }

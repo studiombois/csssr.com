@@ -29,6 +29,69 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-row: 1 / 4;
   }
 
+  .left-block {
+    grid-column: 3 / span 3;
+    grid-row: 4;
+    margin-top: ${calcRem(220)};
+  }
+
+  .text-do {
+    grid-column: 3 / span 3;
+    grid-row: 5;
+    margin-top: ${calcRem(22)};
+  }
+
+  .list {
+    grid-row: 4;
+    grid-column: 7 / span 3;
+    margin-top: ${calcRem(238)};
+  }
+
+  .list-item {
+    padding-left: ${calcRem(152)};
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(97)};
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: none;
+    }
+
+    &:nth-of-type(1) {
+      &:before {
+        width: ${calcRem(65)};
+        height: ${calcRem(63)};
+        background-image: url(${require('../../../../static/icons/service/back-end-and-devops/full_stack.svg').default});
+      }
+    }
+
+    &:nth-of-type(2) {
+      &:before {
+        width: ${calcRem(65)};
+        height: ${calcRem(56)};
+        background-image: url(${require('../../../../static/icons/service/back-end-and-devops/back_end.svg').default});
+      }
+    }
+
+    &:nth-of-type(3) {
+      &:before {
+        width: ${calcRem(64)};
+        height: ${calcRem(64)};
+        background-image: url(${require('../../../../static/icons/service/back-end-and-devops/third_party.svg').default});
+      }
+    }
+  }
+
+  .item-text {
+    margin-top: ${calcRem(15)};
+  }
+
   ${desktop.m} {
     .image {
       grid-column: 2 / span 5;
@@ -40,6 +103,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .text {
       grid-column: 7 / span 5;
+    }
+
+    .list {
+      grid-column: 7 / span 4;
     }
   }
 
@@ -55,11 +122,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .text {
       grid-column: 7 / span 5;
     }
+
+    .list {
+      grid-column: 7 / span 4;
+    }
   }
 
   ${tablet.all} {
-    padding-top: ${calcRem(120)};
-
     .image {
       grid-column: 2 / span 5;
     }
@@ -77,6 +146,46 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(26)};
     }
     
+    .list {
+      grid-column: 7 / span 5;
+    }
+
+    .list-item {
+      padding-left: ${calcRem(81)};
+
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(63)};
+      }
+
+      &:nth-of-type(1) {
+        &:before {
+          width: ${calcRem(49)};
+          height: ${calcRem(47)};
+        }
+      }
+  
+      &:nth-of-type(2) {
+        &:before {
+          width: ${calcRem(49)};
+          height: ${calcRem(42)};
+        }
+      }
+  
+      &:nth-of-type(3) {
+        &:before {
+          width: ${calcRem(48)};
+          height: ${calcRem(48)};
+        }
+      }
+    }
+
+    .text-do {
+      margin-top: ${calcRem(14)};
+    }
+
+    .item-text {
+      margin-top: ${calcRem(9)};
+    }
   }
 
   ${mobile.all} {
@@ -102,6 +211,51 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-row: 3;
       margin-top: ${calcRem(39)};
     }
+  }
+
+  .left-block {
+    grid-column: 1 / span 6;
+    grid-row: 4;
+    margin-top: ${calcRem(121)};
+  }
+
+  .list {
+    grid-column: 1 / span 6;
+    margin-top: ${calcRem(71)};
+    grid-row: 5;
+  }
+
+  .list-item {
+    padding-left: ${calcRem(64)};
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(71)};
+    }
+
+    &:nth-of-type(1) {
+      &:before {
+        width: ${calcRem(48)};
+        height: ${calcRem(48)};
+      }
+    }
+
+    &:nth-of-type(2) {
+      &:before {
+        width: ${calcRem(48)};
+        height: ${calcRem(48)};
+      }
+    }
+
+    &:nth-of-type(3) {
+      &:before {
+        width: ${calcRem(40)};
+        height: ${calcRem(40)};
+      }
+    }
+  }
+
+  .item-text {
+    margin-top: ${calcRem(25)};
   }
 `
 

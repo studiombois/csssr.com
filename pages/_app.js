@@ -13,6 +13,10 @@ import MsBrowserProvider from '../utils/msBrowserProvider'
 import DeviceProvider from '../utils/deviceProvider'
 import PagesListProvider from '../utils/pagesListProvider'
 import allNamespaces from '../common/all-namespaces'
+import { parseUserAgent } from 'detect-browser'
+import { checkIsInvalidDevice } from '../utils/isInvalidBrowser'
+import Modal from '../components/ui-kit/Modal'
+import BrowserModalContent from '../components/BrowserModalContent'
 
 const getI18nInitialProps = (ctx) => {
   let i18nInitialProps = {}
@@ -59,9 +63,14 @@ export default class MyApp extends App {
       if (Component.getInitialProps) {
         const componentProps = await Component.getInitialProps(ctx)
 
+        const deviceData = parseUserAgent(userAgent)
+        const isInvalidDevice =
+          deviceData && checkIsInvalidDevice(deviceData.name, deviceData.version)
+
         pageProps = {
           ...pageProps,
           ...componentProps,
+          isInvalidDevice,
         }
       }
 
@@ -118,6 +127,7 @@ export default class MyApp extends App {
   state = {
     isMobile: this.props.pageProps.isMobile,
     isTablet: this.props.pageProps.isTablet,
+    isModalClosed: false,
   }
 
   // This reports errors thrown while rendering components
@@ -202,12 +212,19 @@ export default class MyApp extends App {
     })
   }
 
+  handleCloseModal = () => {
+    this.setState({ isModalClosed: true })
+  }
+
   render() {
+    const { isModalClosed } = this.state
     const { Component, pageProps, pagesList } = this.props
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {}
     const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
     const isIe11Browser = detectIe11(pageProps.userAgent)
 
+    // SSR calculate only
+    const isInvalidDevice = !!pageProps.isInvalidDevice && !isModalClosed
     return (
       <I18nextProvider
         i18n={i18n || initialI18nInstance}
@@ -225,6 +242,12 @@ export default class MyApp extends App {
                   isMobile={this.state.isMobile}
                   isMsBrowser={isMsBrowser}
                 />
+
+                {isInvalidDevice && (
+                  <Modal withFixWidth onClose={this.handleCloseModal}>
+                    <BrowserModalContent />
+                  </Modal>
+                )}
               </PagesListProvider>
             </ThemeProvider>
           </DeviceProvider>

@@ -11,7 +11,7 @@ const contInfo = () => {
     )
     browser.setValue(
       '[data-testid="contact:field:callbackForm.message"]',
-      'Ехал Грека через реку.'
+      'Это тестовая заявка, отправленная из формы связи внизу страницы.'
     )
   })
 }

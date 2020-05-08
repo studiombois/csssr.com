@@ -4,8 +4,12 @@
     "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
   },
   "hero": {
-    "title": "<span style=\"font-weight: bold;\">Back-End</span><br />and <span style=\"font-weight: bold;\">DevOps</span>",
+    "title": "<span style='font-weight: bold;'>Back-End</span><br />and <span style='font-weight: bold;'>DevOps</span>",
     "description": "Reinforce your web application with reliable <span style='white-space:nowrap'>back-end</span> development and duly adjusted infrastructure.",
     "button": "Let&rsquo;s Talk"
+  },
+  "backEndDevelopment": {
+    "title": "Back-End Development",
+    "description": "It&nbsp;is&nbsp;not only the appearance of&nbsp;your product that matters, but also how smoothly, flexibly and reliably the part hidden from users performs."
   }
 }

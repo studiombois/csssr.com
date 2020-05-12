@@ -1,6 +1,6 @@
 import React from 'react'
 import LinksList from '../LinksList'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import {
   financeAndBankingLinksEn,
   financeAndBankingLinksRu,
@@ -17,37 +17,41 @@ import styled from '@emotion/styled'
 import styles from './PartnersMobile.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 
-const Partners = ({ className, t, lng }) => (
+const Partners = ({ className, l10n: { translations, language } }) => (
   <Grid as="section" className={className}>
     <h2
       id="clients"
       className="font_h2-slab"
-      dangerouslySetInnerHTML={{ __html: t('dev:partners.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.dev.partners.title }}
     />
 
     <LinksList
-      title={t('dev:partners.iTTitle')}
-      links={lng === 'ru' ? iTcompaniesLinksRu : iTcompaniesLinksEn}
+      title={translations.dev.partners.iTTitle}
+      links={language === 'ru' ? iTcompaniesLinksRu : iTcompaniesLinksEn}
     />
     <LinksList
-      title={t('dev:partners.financeTitle')}
-      links={lng === 'ru' ? financeAndBankingLinksRu : financeAndBankingLinksEn}
+      title={translations.dev.partners.financeTitle}
+      links={language === 'ru' ? financeAndBankingLinksRu : financeAndBankingLinksEn}
     />
     <LinksList
-      title={t('dev:partners.telecomTitle')}
-      links={lng === 'ru' ? telecomLinksRu : telecomLinksEn}
+      title={translations.dev.partners.telecomTitle}
+      links={language === 'ru' ? telecomLinksRu : telecomLinksEn}
     />
     <LinksList
-      title={lng === 'ru' ? t('dev:partners.healthTitle') : t('dev:partners.estateTitle')}
-      links={lng === 'ru' ? healthLinksRu : realEstateLinksEn}
+      title={
+        language === 'ru'
+          ? translations.dev.partners.healthTitle
+          : translations.dev.partners.estateTitle
+      }
+      links={language === 'ru' ? healthLinksRu : realEstateLinksEn}
     />
     <LinksList
-      title={t('dev:partners.othersTitle')}
-      links={lng === 'ru' ? othersLinksRu : othersLinksEn}
+      title={translations.dev.partners.othersTitle}
+      links={language === 'ru' ? othersLinksRu : othersLinksEn}
     />
   </Grid>
 )
 
-export default styled(translate(Partners))`
+export default styled(L10nConsumer(Partners))`
   ${styles}
 `

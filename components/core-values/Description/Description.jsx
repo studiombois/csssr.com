@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
-import { array, func, string } from 'prop-types'
+import { array, string } from 'prop-types'
 import cn from 'classnames'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import styled from '@emotion/styled'
 import styles from './Description.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Description = ({ t, parentClassName, className, description }) => (
+const Description = ({ parentClassName, className, description, l10n: { translations } }) => (
   <Grid className={cn(className, parentClassName)}>
     {description.map(({ icon: Icon, text }, index) => (
       <Fragment key={text}>
@@ -17,7 +17,7 @@ const Description = ({ t, parentClassName, className, description }) => (
         <Text
           type="regular"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(text) }}
+          dangerouslySetInnerHTML={{ __html: text(translations) }}
           className={cn(`text-column-${index + 1} `, 'text')}
         />
       </Fragment>
@@ -26,12 +26,11 @@ const Description = ({ t, parentClassName, className, description }) => (
 )
 
 Description.propTypes = {
-  t: func,
   className: string,
   description: array,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Description)`
     ${styles}
   `),

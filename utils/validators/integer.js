@@ -3,9 +3,9 @@ function isPositiveInteger(str) {
   return n !== Infinity && String(n) === str && n >= 0
 }
 
-export default (t) => (value) => {
+export default (translations) => (value) => {
   if (value && !isPositiveInteger(value)) {
-    return t('common:form.errors.integer')
+    return translations.common.form.errors.integer
   }
 
   return undefined

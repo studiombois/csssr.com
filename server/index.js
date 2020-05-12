@@ -5,26 +5,15 @@ const expressStaticGzip = require('express-static-gzip')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const next = require('next')
-const i18nextMiddleware = require('i18next-express-middleware')
-const i18nextNodeFsBackend = require('i18next-node-fs-backend')
 const { pick } = require('ramda')
 const submitForm = require('./submit-form')
 const submitCalculatorForm = require('./submit-calculator-form')
 const generateSitemap = require('./generate-sitemap').generateSitemap
 const { isDevelopment, isProduction } = require('../utils/app-environment')
-
-import {
-  defaultLocaleByLanguage,
-  supportedLanguages,
-  supportedLocales,
-} from '../common/locales-settings'
-import pathCookieHeaderDetector from './path-cookie-header-detector'
+import { defaultLocaleByLanguage } from '../common/locales-settings'
+import l10nMiddleware from './l10n-middleware'
 import getPagesList from './get-pages-list'
-import allNamespaces from '../common/all-namespaces'
-import i18n from '../common/i18n'
-
-const languageDetector = new i18nextMiddleware.LanguageDetector()
-languageDetector.addDetector(pathCookieHeaderDetector)
+import { ONE_YEAR } from '../utils/timePeriods'
 
 require('../utils/sentry')
 
@@ -33,174 +22,143 @@ const app = next({ dev: isDevelopment })
 const handle = app.getRequestHandler()
 
 const startApp = async () => {
-  const pagesList = await getPagesList()
+  await app.prepare()
+  const server = express()
 
-  i18n
-    .use(languageDetector)
-    .use(i18nextNodeFsBackend)
-    .init(
-      {
-        load: 'all',
-        whitelist: [...supportedLanguages, ...supportedLocales],
-        preload: [...supportedLanguages, ...supportedLocales],
-        lowerCaseLng: true,
-        ns: allNamespaces,
-        detection: {
-          order: ['pathCookieHeader'],
-          lookupCookie: 'locale',
-          caches: ['cookie'],
+  // https://expressjs.com/en/api.html#app.locals
+  // Доступно по req.app.locals.pagesList
+  server.locals.pagesList = await getPagesList()
+
+  server.use(Sentry.Handlers.requestHandler())
+
+  server.get('/:language(ru|en)/jobs', (req, res) => {
+    const locale = defaultLocaleByLanguage[req.params.language]
+    res.redirect(301, `/${locale}/jobs`)
+  })
+
+  server.get('/:language(ru|en)/jobs/:jobName', (req, res) => {
+    const locale = defaultLocaleByLanguage[req.params.language]
+    res.redirect(301, `/${locale}/jobs/${req.params.jobName}`)
+  })
+
+  // Отключаем хедер x-powered-by. Зачем разглашать информацию, какой веб-сервер/фреймворк мы используем?
+  server.disable('x-powered-by')
+
+  // In production we don't want to serve sourcemaps for anyone
+  if (isProduction) {
+    const sentryToken = process.env.SENTRY_TOKEN
+    server.get(/\.js\.map$/, (req, res, nextHandler) => {
+      if (!sentryToken || req.headers['x-sentry-token'] !== sentryToken) {
+        return res.sendStatus(404)
+      }
+      nextHandler()
+    })
+  }
+
+  server.use((req, res, nextHandler) => {
+    const allowedUtmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+    const utmQueryParams = pick(allowedUtmParams, req.query)
+
+    Object.keys(utmQueryParams).forEach((utmKey) => {
+      res.cookie(utmKey, utmQueryParams[utmKey], { maxAge: ONE_YEAR })
+    })
+
+    nextHandler()
+  })
+
+  // eslint-disable-next-line
+  server.use(bodyParser.json())      // to support JSON-encoded bodies
+  server.use(
+    bodyParser.urlencoded({
+      // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
+      extended: true,
+    }),
+  )
+  server.use(cookieParser())
+
+  // https://expressjs.com/en/api.html#res.locals
+  // Добавляет l10n объект ({language, locale, translations}) в res.locals
+  server.use(
+    l10nMiddleware({
+      loadPath: path.join(__dirname, '../static/locales'),
+      ignorePaths: [/^\/_next/, /^\/static/],
+      lookupCookieName: 'locale',
+    }),
+  )
+
+  server.post('/api/submit-form', submitForm)
+  server.post('/api/submit-calculator-form', submitCalculatorForm)
+
+  server.get('/', (req, res) => {
+    res.redirect(`/${res.locals.l10n.language}`)
+  })
+
+  server.get('/en/service/express-front-end', (req, res, nextHandler) => {
+    res.setHeader('Content-Language', 'en-SG')
+    nextHandler()
+  })
+
+  if (!isDevelopment) {
+    server.get(/^\/_next\/static\/(fonts|icons|images)\//, (req, res, nextHandler) => {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+      nextHandler()
+    })
+
+    server.use(
+      '/_next',
+      expressStaticGzip(path.join(__dirname, '../.next'), {
+        enableBrotli: true,
+        orderPreference: ['br'],
+        setHeaders: (res) => {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
         },
-        backend: {
-          loadPath: path.join(__dirname, '../static/locales/{{lng}}/{{ns}}.json'),
-        },
-      },
-      () => {
-        app.prepare().then(() => {
-          const server = express()
-
-          server.use(Sentry.Handlers.requestHandler())
-
-          server.get('/:lng(ru|en)/jobs', (req, res) => {
-            const locale = defaultLocaleByLanguage[req.params.lng]
-            res.redirect(301, `/${locale}/jobs`)
-          })
-
-          server.get('/:lng(ru|en)/jobs/:jobName', (req, res) => {
-            const locale = defaultLocaleByLanguage[req.params.lng]
-            res.redirect(301, `/${locale}/jobs/${req.params.jobName}`)
-          })
-
-          // Отключаем хедер x-powered-by. Зачем разглашать информацию, какой веб-сервер/фреймворк мы используем?
-          server.disable('x-powered-by')
-
-          // In production we don't want to serve sourcemaps for anyone
-          if (isProduction) {
-            const sentryToken = process.env.SENTRY_TOKEN
-            server.get(/\.js\.map$/, (req, res, nextHandler) => {
-              if (!sentryToken || req.headers['x-sentry-token'] !== sentryToken) {
-                return res.sendStatus(404)
-              }
-              nextHandler()
-            })
-          }
-
-          server.use((req, res, nextHandler) => {
-            const allowedUtmParams = [
-              'utm_source',
-              'utm_medium',
-              'utm_campaign',
-              'utm_term',
-              'utm_content',
-            ]
-            const utmQueryParams = pick(allowedUtmParams, req.query)
-
-            const ONE_YEAR = 365 * 24 * 60 * 60 * 1000
-
-            Object.keys(utmQueryParams).forEach((utmKey) => {
-              res.cookie(utmKey, utmQueryParams[utmKey], { maxAge: ONE_YEAR })
-            })
-
-            nextHandler()
-          })
-
-          // eslint-disable-next-line
-          server.use(bodyParser.json())      // to support JSON-encoded bodies
-          server.use(
-            bodyParser.urlencoded({
-              // to support URL-encoded bodies: без этого нельзя будет прочесть что приходит из Amo CRM Webhook'a
-              extended: true,
-            }),
-          )
-          server.use(cookieParser())
-
-          server.use(
-            i18nextMiddleware.handle(i18n, {
-              ignoreRoutes: ['/_next/', '/static/'],
-            }),
-          )
-
-          server.post('/api/submit-form', submitForm)
-          server.post('/api/submit-calculator-form', submitCalculatorForm)
-
-          server.get('/', function (req, res) {
-            const language = i18n.services.languageUtils.getLanguagePartFromCode(req.i18n.language)
-            res.redirect(`/${language}`)
-          })
-
-          server.get('/en/service/express-front-end', (req, res, nextHandler) => {
-            res.setHeader('Content-Language', 'en-SG')
-            nextHandler()
-          })
-
-          if (!isDevelopment) {
-            server.get(/^\/_next\/static\/(fonts|icons|images)\//, (req, res, nextHandler) => {
-              res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
-              nextHandler()
-            })
-
-            server.use(
-              '/_next',
-              expressStaticGzip(path.join(__dirname, '../.next'), {
-                enableBrotli: true,
-                orderPreference: ['br'],
-                setHeaders: (res) => {
-                  res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
-                },
-              }),
-            )
-          }
-
-          server.get('/robots.txt', function (req, res) {
-            res.type('text/plain')
-            if (isProduction) {
-              res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
-            } else {
-              res.send('User-agent: *\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml')
-            }
-          })
-
-          server.use(
-            '/yandex_3ecce01745a58936.html',
-            express.static(path.join(__dirname, '../yandex_3ecce01745a58936.html')),
-          )
-
-          server.get('/sitemap.xml', (req, res) => {
-            generateSitemap().then((sitemap) => {
-              const xml = sitemap.toXML()
-              res.header('Content-Type', 'application/xml')
-              res.send(xml)
-            })
-          })
-
-          server.use((req, res, nextHandler) => {
-            res.locals.pagesList = pagesList
-            nextHandler()
-          })
-
-          /* eslint-disable no-prototype-builtins */
-          server.get('/:locale/jobs/:jobPathName', (req, res) => {
-            const params = {
-              jobPathName: req.params.jobPathName,
-              preview: req.query.hasOwnProperty('preview'),
-            }
-
-            return app.render(req, res, `/${req.params.locale}/job`, params)
-          })
-          /* eslint-enable no-prototype-builtins */
-
-          server.get('*', (req, res) => {
-            return handle(req, res)
-          })
-
-          server.use(Sentry.Handlers.errorHandler())
-
-          server.listen(port, (err) => {
-            if (err) throw err
-            console.log(`> Ready on http://localhost:${port}`)
-          })
-        })
-      },
+      }),
     )
+  }
+
+  server.get('/robots.txt', (req, res) => {
+    res.type('text/plain')
+    if (isProduction) {
+      res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
+    } else {
+      res.send('User-agent: *\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml')
+    }
+  })
+
+  server.use(
+    '/yandex_3ecce01745a58936.html',
+    express.static(path.join(__dirname, '../yandex_3ecce01745a58936.html')),
+  )
+
+  server.get('/sitemap.xml', (req, res) => {
+    generateSitemap().then((sitemap) => {
+      const xml = sitemap.toXML()
+      res.header('Content-Type', 'application/xml')
+      res.send(xml)
+    })
+  })
+
+  /* eslint-disable no-prototype-builtins */
+  server.get('/:locale/jobs/:jobPathName', (req, res) => {
+    const params = {
+      jobPathName: req.params.jobPathName,
+      preview: req.query.hasOwnProperty('preview'),
+    }
+
+    return app.render(req, res, `/${req.params.locale}/job`, params)
+  })
+  /* eslint-enable no-prototype-builtins */
+
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  server.use(Sentry.Handlers.errorHandler())
+
+  server.listen(port, (err) => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
 }
 
 startApp()

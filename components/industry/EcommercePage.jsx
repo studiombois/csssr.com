@@ -1,7 +1,6 @@
 import React from 'react'
-import { func } from 'prop-types'
 import Layout from '../Layout'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Greeting from './Greeting'
 import OurClients from './OurClients'
@@ -15,14 +14,14 @@ import ourClients from '../../data/industry/ecommerce/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
-const EcommercePage = ({ t }) => {
+const EcommercePage = ({ l10n: { translations } }) => {
   const pageName = 'industry'
   const page = 'ecommerce'
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('industry:meta.ecommerce.title')}
-        description={t('industry:meta.ecommerce.description')}
+        title={translations.industry.meta.ecommerce.title}
+        description={translations.industry.meta.ecommerce.description}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />
@@ -38,8 +37,6 @@ const EcommercePage = ({ t }) => {
   )
 }
 
-EcommercePage.propTypes = {
-  t: func,
-}
+EcommercePage.propTypes = {}
 
-export default translate(EcommercePage)
+export default L10nConsumer(EcommercePage)

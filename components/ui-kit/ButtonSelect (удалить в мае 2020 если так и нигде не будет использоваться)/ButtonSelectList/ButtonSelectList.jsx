@@ -1,18 +1,18 @@
 import React from 'react'
 import Transition from 'react-transition-group/Transition'
-import { bool, func, string } from 'prop-types'
+import { bool, func } from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './ButtonSelectList.styles'
 import ButtonSelectLinksApple from '../ButtonSelectLinksApple'
 import ButtonSelectLinksDefault from '../ButtonSelectLinksDefault'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const links = [
   {
     label: 'Messenger',
-    localeLink: 'common:floatingButton.messenger',
+    localeLink: (t) => t.common.floatingButton.messenger,
     href: 'https://messenger.com/t/csssr',
     external: true,
     dataLayerEvent: 'floating_button_fb',
@@ -20,7 +20,7 @@ const links = [
   },
   {
     label: 'Telegram',
-    localeLink: 'common:floatingButton.telegram',
+    localeLink: (t) => t.common.floatingButton.telegram,
     href: 'http://t.me/sputnik_one_bot',
     external: true,
     dataLayerEvent: 'floating_button_tg',
@@ -28,7 +28,7 @@ const links = [
   },
   {
     label: 'Email',
-    localeLink: 'common:floatingButton.email',
+    localeLink: (t) => t.common.floatingButton.email,
     href: 'mailto:sales@csssr.com',
     dataLayerEvent: 'floating_button_email',
     testid: 'moreLinks:link.email',
@@ -36,7 +36,14 @@ const links = [
 ]
 
 const ButtonSelectList = (props) => {
-  const { className, t, isDropdownVisible, isAppleDevice, onLinkClick, onCloseButtonClick } = props
+  const {
+    className,
+    isDropdownVisible,
+    isAppleDevice,
+    onLinkClick,
+    onCloseButtonClick,
+    l10n: { translations },
+  } = props
   const animationDuration = 300
   const Links = isAppleDevice ? ButtonSelectLinksApple : ButtonSelectLinksDefault
 
@@ -51,14 +58,14 @@ const ButtonSelectList = (props) => {
               })}
             >
               <li
-                dangerouslySetInnerHTML={{ __html: t('common:floatingButton.question') }}
+                dangerouslySetInnerHTML={{ __html: translations.common.floatingButton.question }}
                 data-testid="buttonSelect:text.question"
               />
               <Links links={links} onLinkClick={onLinkClick} />
               <li>
                 <button
                   className="close-button"
-                  dangerouslySetInnerHTML={{ __html: t('common:floatingButton.closeText') }}
+                  dangerouslySetInnerHTML={{ __html: translations.common.floatingButton.closeText }}
                   onClick={onCloseButtonClick}
                   data-testid="moreLinks:button.closeDropdown"
                 />
@@ -72,14 +79,12 @@ const ButtonSelectList = (props) => {
 }
 
 ButtonSelectList.propTypes = {
-  lng: string,
   isDropdownVisible: bool,
   isAppleDevice: bool,
   onLinkClick: func,
   onCloseButtonClick: func,
-  t: func,
 }
 
-export default translate(styled(ButtonSelectList)`
+export default L10nConsumer(styled(ButtonSelectList)`
   ${styles}
 `)

@@ -9,7 +9,7 @@ import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Tabs from '../../Tabs'
 import Project from '../Project/Project'
 import CutButton from '../../CutButton'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import isOdd from '../../../../utils/isOdd'
 import isEven from '../../../../utils/isEven'
 
@@ -107,7 +107,7 @@ class ProjectsList extends PureComponent {
       projectGroup.projects.forEach((project, index) => {
         const shouldHaveTitle = index === 0
         const newProject = shouldHaveTitle
-          ? { ...project, title: this.props.t(`dev:tabs.${projectGroup.id}`) }
+          ? { ...project, title: this.props.l10n.translations.dev.tabs[projectGroup.id] }
           : project
 
         accumulator.push(newProject)
@@ -138,7 +138,11 @@ class ProjectsList extends PureComponent {
   }
 
   render() {
-    const { className, t, portfolio } = this.props
+    const {
+      className,
+      portfolio,
+      l10n: { translations },
+    } = this.props
     const { activeProjectsGroupId, listHeight, isCut } = this.state
     const projectsOfActiveProjectsGroupId = this.getProjectsOfActiveProjectsGroupId()
     const shouldShowCutButton = projectsOfActiveProjectsGroupId.length > 5
@@ -169,7 +173,9 @@ class ProjectsList extends PureComponent {
 
         {shouldShowCutButton && (
           <CutButton isCut={isCut} onClick={this.handleCutListOnOff}>
-            {isCut ? t('dev:portfolio.buttonText1') : t('dev:portfolio.buttonText2')}
+            {isCut
+              ? translations.dev.portfolio.buttonText1
+              : translations.dev.portfolio.buttonText2}
           </CutButton>
         )}
       </Fragment>
@@ -181,7 +187,7 @@ ProjectsList.contextTypes = {
   isMsBrowser: bool,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(ProjectsList)`
     ${styles}
   `),

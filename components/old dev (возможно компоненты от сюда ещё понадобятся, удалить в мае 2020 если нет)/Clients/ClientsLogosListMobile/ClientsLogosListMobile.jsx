@@ -3,10 +3,10 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import styles from './ClientsLogosListMobile.styles'
 import ClientLogo from '../ClientLogo/ClientLogo'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import clientsGroups from '../../../../data/dev/clientsGroups'
 
-const ClientsLogosListMobile = ({ className, t }) =>
+const ClientsLogosListMobile = ({ className, l10n: { translations } }) =>
   clientsGroups.map((clientsGroup, index) => (
     <li
       key={clientsGroup.id}
@@ -17,7 +17,7 @@ const ClientsLogosListMobile = ({ className, t }) =>
         -ms-grid-column-span: 7;
       `}
     >
-      <h3 dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${clientsGroup.id}`) }} />
+      <h3 dangerouslySetInnerHTML={{ __html: translations.dev.tabs[clientsGroup.id] }} />
 
       <ul className="logos">
         {clientsGroup.clients.map((clientId) => (
@@ -29,6 +29,6 @@ const ClientsLogosListMobile = ({ className, t }) =>
     </li>
   ))
 
-export default styled(translate(ClientsLogosListMobile))`
+export default styled(L10nConsumer(ClientsLogosListMobile))`
   ${styles}
 `

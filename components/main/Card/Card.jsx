@@ -9,11 +9,12 @@ import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Card = ({
+  l10n: { translations },
   className,
   id,
   title,
@@ -22,7 +23,6 @@ const Card = ({
   images,
   imagesHovered,
   fallback,
-  t,
   isNextLink,
   isLink,
   children,
@@ -36,7 +36,7 @@ const Card = ({
           className={cn('card-picture', `card-picture_${id}`)}
           images={images}
           fallback={fallback}
-          alt={t(`main:imageAlt.${id}`)}
+          alt={translations.main.imgAlt[id]}
         />
 
         {!isMobile && !isTablet && imagesHovered && (
@@ -44,7 +44,7 @@ const Card = ({
             className={'card-picture-hovered'}
             images={imagesHovered}
             fallback={fallback}
-            alt={t(`main:imageAlt.${id}`)}
+            alt={translations.main.imgAlt[id]}
           />
         )}
       </div>
@@ -54,7 +54,7 @@ const Card = ({
           <Heading
             className="card-title"
             as="h3"
-            dangerouslySetInnerHTML={{ __html: t(title) }}
+            dangerouslySetInnerHTML={{ __html: title(translations) }}
             type="regular"
             size="m"
           />
@@ -63,7 +63,7 @@ const Card = ({
         <Heading
           className="card-title"
           as="h3"
-          dangerouslySetInnerHTML={{ __html: t(title) }}
+          dangerouslySetInnerHTML={{ __html: title(translations) }}
           type="regular"
           size="m"
         />
@@ -72,7 +72,7 @@ const Card = ({
       <Text
         className="card-description"
         as="p"
-        dangerouslySetInnerHTML={{ __html: t(description) }}
+        dangerouslySetInnerHTML={{ __html: description(translations) }}
         type="regular"
         size="m"
       />
@@ -112,18 +112,16 @@ const Card = ({
 Card.propTypes = {
   className: string,
   id: string,
-  title: string,
-  description: string,
+  title: func,
+  description: func,
   href: string,
-  lng: string,
   isLink: bool,
   next: bool,
   isMobile: bool,
   isTablet: bool,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(Card)`
       ${styles}

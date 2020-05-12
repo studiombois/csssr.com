@@ -9,28 +9,29 @@ import Projects from './Projects'
 import Vacancies from './Vacancies'
 import Head from '../Head'
 import Form from './Form'
-import translate from '../../utils/translate-wrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
-import i18n from '../../common/i18n'
 
 class MainPage extends PureComponent {
-  static async getInitialProps({ req }) {
-    const locale = req ? req.language : i18n.language
-    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?locale=${locale}`)
+  static async getInitialProps(ctx) {
+    const l10n = ctx.res ? ctx.res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
+    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?locale=${l10n.locale}`)
     const vacancies = await res.json()
 
     return { vacancies }
   }
 
   render() {
-    const { vacancies, t } = this.props
+    const {
+      vacancies,
+      l10n: { translations },
+    } = this.props
     const pageName = 'main'
     return (
       <Layout pageName={pageName}>
         <Head
-          title={t('main:meta.title')}
+          title={translations.main.meta.title}
           templateTitle=""
-          description={t('main:meta.description')}
+          description={translations.main.meta.description}
         />
         <Hero />
         <Services />
@@ -48,4 +49,4 @@ MainPage.propTypes = {
   className: string,
 }
 
-export default translate(MainPage)
+export default MainPage

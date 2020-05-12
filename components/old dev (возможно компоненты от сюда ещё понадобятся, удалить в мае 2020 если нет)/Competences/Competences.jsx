@@ -5,7 +5,7 @@ import styles from './Competences.styles'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import LogosSheet from '../LogosSheet'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import CutButton from '../CutButton'
 
 class Competences extends PureComponent {
@@ -20,7 +20,10 @@ class Competences extends PureComponent {
   }
 
   render() {
-    const { className, t, lng } = this.props
+    const {
+      className,
+      l10n: { translations, language },
+    } = this.props
     const { isCut } = this.state
 
     return (
@@ -30,19 +33,19 @@ class Competences extends PureComponent {
           id="competences"
           className={cn(className, {
             is_cut: isCut,
-            lng_en: lng === 'en',
-            lng_ru: lng === 'ru',
+            language_en: language === 'en',
+            language_ru: language === 'ru',
           })}
         >
           <h2
             className="font_h2-slab"
-            dangerouslySetInnerHTML={{ __html: t('dev:competence.title1') }}
+            dangerouslySetInnerHTML={{ __html: translations.dev.competence.title1 }}
           />
 
           <div className="logos-and-text-container">
             <p
               className="font_p24-strong"
-              dangerouslySetInnerHTML={{ __html: t('dev:competence.text1') }}
+              dangerouslySetInnerHTML={{ __html: translations.dev.competence.text1 }}
             />
 
             <figure className="react">
@@ -78,26 +81,26 @@ class Competences extends PureComponent {
 
           <h2
             className="font_h2-regular"
-            dangerouslySetInnerHTML={{ __html: t('dev:competence.title2') }}
+            dangerouslySetInnerHTML={{ __html: translations.dev.competence.title2 }}
           />
           <p
             className="font_p16-regular"
-            dangerouslySetInnerHTML={{ __html: t('dev:competence.text2') }}
+            dangerouslySetInnerHTML={{ __html: translations.dev.competence.text2 }}
           />
 
           <h2
             className="font_h2-slab"
-            dangerouslySetInnerHTML={{ __html: t('dev:competence.title3') }}
+            dangerouslySetInnerHTML={{ __html: translations.dev.competence.title3 }}
           />
           <p
             className="font_p24-strong"
-            dangerouslySetInnerHTML={{ __html: t('dev:competence.text3') }}
+            dangerouslySetInnerHTML={{ __html: translations.dev.competence.text3 }}
           />
         </Grid>
 
         {isCut && (
           <CutButton isCut={isCut} onClick={this.handleUncutArticle}>
-            {t('dev:competence.buttonText')}
+            {translations.dev.competence.buttonText}
           </CutButton>
         )}
       </Fragment>
@@ -105,7 +108,7 @@ class Competences extends PureComponent {
   }
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Competences)`
     ${styles}
   `),

@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { bool, func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './FileField.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 class FileField extends PureComponent {
   static propTypes = {
@@ -14,7 +14,6 @@ class FileField extends PureComponent {
     onFileFieldChange: func,
     autoFocus: bool,
     disabled: bool,
-    t: func,
   }
 
   state = {
@@ -33,7 +32,6 @@ class FileField extends PureComponent {
 
   render() {
     const {
-      t,
       id,
       fileAccept,
       label,
@@ -42,6 +40,7 @@ class FileField extends PureComponent {
       className,
       input: { name, value, onBlur, onFocus },
       meta: { error, invalid, submitFailed },
+      l10n: { translations },
     } = this.props
 
     const showError = invalid && submitFailed
@@ -84,7 +83,7 @@ class FileField extends PureComponent {
             button_state_disabled: disabled,
           })}
         >
-          {t('job:chooseFile')}
+          {translations.job.chooseFile}
         </label>
         {showError && <span className="font_input-small-error-label error">{error}</span>}
       </div>
@@ -92,6 +91,6 @@ class FileField extends PureComponent {
   }
 }
 
-export default styled(translate(FileField))`
+export default styled(L10nConsumer(FileField))`
   ${styles}
 `

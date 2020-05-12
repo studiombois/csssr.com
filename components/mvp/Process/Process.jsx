@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from '@emotion/styled'
 import styles from './Process.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 class Process extends PureComponent {
@@ -32,13 +32,14 @@ class Process extends PureComponent {
   }
 
   componentDidMount() {
-    // this.props.lng
-    const { lng } = this.props
+    const {
+      l10n: { language },
+    } = this.props
     const lottieWeb = import(
       /* webpackChunkName: "lottie" */ 'lottie-web/build/player/lottie_light.min'
     )
     const planets = import(
-      /* webpackChunkName: "lottie" */ `../../../static/lottie/mvp/${lng}/planets.json`
+      /* webpackChunkName: "lottie" */ `../../../static/lottie/mvp/${language}/planets.json`
     )
     const sputnik = import(/* webpackChunkName: "lottie" */ '../../../static/lottie/sputnik.json')
 
@@ -72,21 +73,24 @@ class Process extends PureComponent {
   }
 
   render() {
-    const { className, t } = this.props
+    const {
+      className,
+      l10n: { translations },
+    } = this.props
 
     return (
       <section className={className} id="process">
         <span className="planets" ref={this.planetsRef} />
         <span className="sputnik" ref={this.sputnikRef} />
         <div className="grid-container">
-          <h2>{t('mvp:process.title')}</h2>
+          <h2>{translations.mvp.process.title}</h2>
         </div>
       </section>
     )
   }
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Process)`
     ${styles}
   `),

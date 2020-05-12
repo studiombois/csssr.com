@@ -1,7 +1,7 @@
 import { composeValidators, email, required } from '../../utils/validators/index'
 
-export default (t) => (values) => ({
-  name: required(t)(values.name),
-  email: composeValidators(required(t), email(t))(values.email),
-  privacyPolicy: required(t)(values.privacyPolicy),
+export default (translations) => (values) => ({
+  name: required(translations)(values.name),
+  email: composeValidators(required(translations), email(translations))(values.email),
+  privacyPolicy: required(translations)(values.privacyPolicy),
 })

@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Toggler from '../Toggler'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
@@ -11,7 +11,10 @@ class RiskMinimization extends PureComponent {
     togglerIndex: 0,
   }
   render() {
-    const { className, t } = this.props
+    const {
+      className,
+      l10n: { translations },
+    } = this.props
     const { togglerIndex } = this.state
 
     return (
@@ -20,16 +23,19 @@ class RiskMinimization extends PureComponent {
           <img
             className="waves"
             src={require('../../../static/images/mvp/Waves.svg').default}
-            alt={t('mvp:riskMinimization.imageAltWaves')}
+            alt={translations.mvp.riskMinimization.imageAltWaves}
           />
 
           <div className="wrapper grid-container">
-            <h2>{t('mvp:riskMinimization.title')}</h2>
+            <h2>{translations.mvp.riskMinimization.title}</h2>
 
             <div className="toggler">
               <Toggler
                 activeIndex={togglerIndex}
-                items={[t('mvp:riskMinimization.togglerOn'), t('mvp:riskMinimization.togglerOff')]}
+                items={[
+                  translations.mvp.riskMinimization.togglerOn,
+                  translations.mvp.riskMinimization.togglerOff,
+                ]}
                 onChange={(index) => this.setState({ togglerIndex: index })}
               />
             </div>
@@ -40,7 +46,7 @@ class RiskMinimization extends PureComponent {
                   image={{
                     namespace: 'mvp',
                     key: 'MVP_ON',
-                    alt: t('mvp:riskMinimization.imageAltOn'),
+                    alt: translations.mvp.riskMinimization.imageAltOn,
                   }}
                 />
               </div>
@@ -50,7 +56,7 @@ class RiskMinimization extends PureComponent {
                   image={{
                     namespace: 'mvp',
                     key: 'MVP_OFF',
-                    alt: t('mvp:riskMinimization.imageAltOff'),
+                    alt: translations.mvp.riskMinimization.imageAltOff,
                   }}
                 />
               </div>
@@ -58,12 +64,12 @@ class RiskMinimization extends PureComponent {
 
             <p
               className="on-text"
-              dangerouslySetInnerHTML={{ __html: t('mvp:riskMinimization.textOn') }}
+              dangerouslySetInnerHTML={{ __html: translations.mvp.riskMinimization.textOn }}
             />
 
             <p
               className="off-text"
-              dangerouslySetInnerHTML={{ __html: t('mvp:riskMinimization.textOff') }}
+              dangerouslySetInnerHTML={{ __html: translations.mvp.riskMinimization.textOff }}
             />
           </div>
         </article>
@@ -72,7 +78,7 @@ class RiskMinimization extends PureComponent {
   }
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(RiskMinimization)`
     ${styles}
   `),

@@ -11,7 +11,7 @@ import styles, {
   rocketJet2,
   rocketJet3,
 } from './Rocket.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import Picture from '../../Picture'
 
 class Rocket extends PureComponent {
@@ -51,20 +51,27 @@ class Rocket extends PureComponent {
 
   render() {
     const { isAssembled } = this.state
-    const { className, t } = this.props
+    const {
+      className,
+      l10n: { translations },
+    } = this.props
     return (
       <Fragment>
         <div className={className} ref={this.rocketRef}>
           <Picture
             css={rocketBody(isAssembled)}
-            image={{ namespace: 'mvp', key: 'red_block', alt: t('mvp:begin.imageAlt.rocketBody') }}
+            image={{
+              namespace: 'mvp',
+              key: 'red_block',
+              alt: translations.mvp.begin.imgAlt.rocketBody,
+            }}
           />
           <Picture
             css={rocketDress(isAssembled)}
             image={{
               namespace: 'mvp',
               key: 'yellow_block',
-              alt: t('mvp:begin.imageAlt.rocketDress'),
+              alt: translations.mvp.begin.imgAlt.rocketDress,
             }}
           />
           <Picture
@@ -72,7 +79,7 @@ class Rocket extends PureComponent {
             image={{
               namespace: 'mvp',
               key: 'blue_line',
-              alt: t('mvp:begin.imageAlt.rocketDivider'),
+              alt: translations.mvp.begin.imgAlt.rocketDivider,
             }}
           />
           <Picture
@@ -80,7 +87,7 @@ class Rocket extends PureComponent {
             image={{
               namespace: 'mvp',
               key: 'yellow_arrow',
-              alt: t('mvp:begin.imageAlt.rocketArrow'),
+              alt: translations.mvp.begin.imgAlt.rocketArrow,
             }}
           />
           <Picture
@@ -88,7 +95,7 @@ class Rocket extends PureComponent {
             image={{
               namespace: 'mvp',
               key: 'green_line_left',
-              alt: t('mvp:begin.imageAlt.rocketJet'),
+              alt: translations.mvp.begin.imgAlt.rocketJet,
             }}
           />
           <Picture
@@ -96,7 +103,7 @@ class Rocket extends PureComponent {
             image={{
               namespace: 'mvp',
               key: 'green_line_middle',
-              alt: t('mvp:begin.imageAlt.rocketJet'),
+              alt: translations.mvp.begin.imgAlt.rocketJet,
             }}
           />
           <Picture
@@ -104,7 +111,7 @@ class Rocket extends PureComponent {
             image={{
               namespace: 'mvp',
               key: 'green_line_right',
-              alt: t('mvp:begin.imageAlt.rocketJet'),
+              alt: translations.mvp.begin.imgAlt.rocketJet,
             }}
           />
           <Picture
@@ -112,7 +119,7 @@ class Rocket extends PureComponent {
             image={{
               namespace: 'mvp',
               key: 'black_line',
-              alt: t('mvp:begin.imageAlt.rocketDivider'),
+              alt: translations.mvp.begin.imgAlt.rocketDivider,
             }}
           />
         </div>
@@ -121,6 +128,6 @@ class Rocket extends PureComponent {
   }
 }
 
-export default styled(translate(Rocket))`
+export default styled(L10nConsumer(Rocket))`
   ${styles}
 `

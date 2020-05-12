@@ -7,7 +7,7 @@ import RiskMinimization from './RiskMinimization'
 import Money from './Money'
 import Process from './Process'
 import HireUs from './HireUs'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 class MVPPage extends PureComponent {
   state = {
@@ -30,15 +30,17 @@ class MVPPage extends PureComponent {
     })
 
   render() {
-    const { t } = this.props
+    const {
+      l10n: { translations },
+    } = this.props
     // const { isMobile } = this.state
 
     return (
       <Layout>
         <div style={{ overflowX: 'hidden' }}>
           <Head
-            title={t('mvp:meta.title')}
-            description={t('mvp:meta.description')}
+            title={translations.mvp.meta.title}
+            description={translations.mvp.meta.description}
             ogImage={{
               url: require('../../static/images/mvp/ogImage.jpg'),
               width: 2400,
@@ -54,7 +56,7 @@ class MVPPage extends PureComponent {
             isMobile={isMobile}
             showButtonOnNode="advantages"
             hideButtonOnNode="hire-us"
-            buttonText={t('mvp:buttonText')}
+            buttonText={translations.mvp.buttonText}
             pageName="mvp"
           /> */}
         </div>
@@ -63,4 +65,4 @@ class MVPPage extends PureComponent {
   }
 }
 
-export default translate(MVPPage)
+export default L10nConsumer(MVPPage)

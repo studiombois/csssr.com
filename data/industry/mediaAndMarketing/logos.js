@@ -58,7 +58,7 @@ const ourClientsImages = {
 }
 
 export default {
-  heading: 'industry:ourClients.title',
+  heading: (t) => t.industry.ourClients.title,
   images: ourClientsImages,
-  altImg: 'industry:imgAlt.ourClients',
+  altImg: (t) => t.industry.imgAlt.ourClients,
 }

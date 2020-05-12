@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
 import { node, number, shape, string } from 'prop-types'
-import translate from '../utils/translate-wrapper'
+import { L10nConsumer } from '../utils/l10nProvider'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { Ie11BrowserContext } from '../utils/msBrowserProvider'
@@ -26,21 +26,21 @@ const Head = (props) => {
     <NextHead>
       <link
         rel="preload"
-        href={require(`../static/fonts/Roboto_Slab_normal_300_${props.lng}.woff2`)}
+        href={require(`../static/fonts/Roboto_Slab_normal_300_${props.l10n.language}.woff2`)}
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
       />
       <link
         rel="preload"
-        href={require(`../static/fonts/Roboto_normal_100_${props.lng}.woff2`)}
+        href={require(`../static/fonts/Roboto_normal_100_${props.l10n.language}.woff2`)}
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
       />
       <link
         rel="preload"
-        href={require(`../static/fonts/Roboto_normal_900_${props.lng}.woff2`)}
+        href={require(`../static/fonts/Roboto_normal_900_${props.l10n.language}.woff2`)}
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
@@ -164,4 +164,4 @@ Head.defaultProps = {
   },
 }
 
-export default withRouter(translate(Head))
+export default withRouter(L10nConsumer(Head))

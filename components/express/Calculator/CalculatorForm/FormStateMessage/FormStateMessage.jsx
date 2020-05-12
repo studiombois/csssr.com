@@ -7,7 +7,7 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './FormStateMessage.styles'
 
-import translate from '../../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../../utils/l10nProvider'
 
 class FormStateMessage extends PureComponent {
   static propTypes = {
@@ -18,24 +18,27 @@ class FormStateMessage extends PureComponent {
   }
 
   getTextData = () => {
-    const { status, t } = this.props
+    const {
+      status,
+      l10n: { translations },
+    } = this.props
     if (status === 'success') {
       return {
-        intro: t('common:form.message.success.intro'),
-        message: t('common:form.message.success.body'),
+        intro: translations.common.form.message.success.intro,
+        message: translations.common.form.message.success.body,
       }
     } else if (status === 'fail') {
       return {
         intro: 'An error occurred',
         message: (
           <span className="message">
-            <span>{t('common:form.message.fail.body.textStart')}</span>
+            <span>{translations.common.form.message.fail.body.textStart}</span>
 
             <button type="button" className="font_link-list_16" onClick={this.props.onTryAgain}>
-              {t('common:form.message.fail.body.textForButton')}
+              {translations.common.form.message.fail.body.textForButton}
             </button>
 
-            <span>{t('common:form.message.fail.body.textBetweenButtonAndLink')}</span>
+            <span>{translations.common.form.message.fail.body.textBetweenButtonAndLink}</span>
 
             <a className="font_link-list_16" href={`mailto:${this.props.feedbackEmail}`}>
               {this.props.feedbackEmail}
@@ -74,6 +77,6 @@ class FormStateMessage extends PureComponent {
   }
 }
 
-export default translate(styled(FormStateMessage)`
+export default L10nConsumer(styled(FormStateMessage)`
   ${styles.base}
 `)

@@ -2,7 +2,7 @@ import React from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import fetch from 'isomorphic-unfetch'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
@@ -22,10 +22,10 @@ const ContactFormForMVP = (props) => (
   />
 )
 
-const onSubmit = (t, lng) => async (values) => {
+const onSubmit = (translations, language) => async (values) => {
   values.pageName = pageName
   values.gacid = getGaCid()
-  values.language = lng
+  values.language = language
 
   let res
   try {
@@ -38,7 +38,7 @@ const onSubmit = (t, lng) => async (values) => {
       body: JSON.stringify(values),
     })
   } catch {
-    return { [FORM_ERROR]: t('common:form.errors.general') }
+    return { [FORM_ERROR]: translations.common.form.errors.general }
   }
 
   const isTestEmail = values.email === testEmail
@@ -53,7 +53,7 @@ const onSubmit = (t, lng) => async (values) => {
       const response = await res.json()
       error = response.error
     } catch {
-      error = t('common:form.errors.general')
+      error = translations.common.form.errors.general
     }
 
     if (window.dataLayer && !isTestEmail) {
@@ -66,13 +66,13 @@ const onSubmit = (t, lng) => async (values) => {
 
 const focusOnErrors = createDecorator()
 
-const HireUs = ({ t, lng }) => (
+const HireUs = ({ l10n: { translations, language } }) => (
   <ReactFinalForm
-    onSubmit={onSubmit(t, lng)}
-    validate={contactFormValidationRules(t)}
+    onSubmit={onSubmit(translations, language)}
+    validate={contactFormValidationRules(translations)}
     decorators={[focusOnErrors]}
     component={ContactFormForMVP}
   />
 )
 
-export default translate(HireUs)
+export default L10nConsumer(HireUs)

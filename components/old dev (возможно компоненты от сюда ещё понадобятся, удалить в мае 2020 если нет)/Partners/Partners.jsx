@@ -1,6 +1,6 @@
 import React from 'react'
 import LinksList from '../LinksList'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import {
   financeAndBankingLinksEn,
   financeAndBankingLinksRu,
@@ -18,65 +18,79 @@ import styles from './Partners.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Partners = ({ className, t, lng }) => (
+const Partners = ({ className, l10n: { translations, language } }) => (
   <Grid className={className} as="section">
     <h2
       id="clients"
       className="font_h2-slab"
-      dangerouslySetInnerHTML={{ __html: t('dev:partners.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.dev.partners.title }}
     />
 
     <div className="column">
-      {lng !== 'ru' && (
+      {language !== 'ru' && (
         <div className="link-list-wrapper">
-          <LinksList title={t('dev:partners.iTTitle')} links={iTcompaniesLinksEn} />
+          <LinksList title={translations.dev.partners.iTTitle} links={iTcompaniesLinksEn} />
         </div>
       )}
 
-      {lng !== 'ru' && (
-        <LinksList title={t('dev:partners.estateTitle')} links={realEstateLinksEn} />
+      {language !== 'ru' && (
+        <LinksList title={translations.dev.partners.estateTitle} links={realEstateLinksEn} />
       )}
 
-      {lng === 'ru' && (
+      {language === 'ru' && (
         <div className="link-list-wrapper">
-          <LinksList title={t('dev:partners.iTTitle')} links={iTcompaniesLinksRu} />
+          <LinksList title={translations.dev.partners.iTTitle} links={iTcompaniesLinksRu} />
         </div>
       )}
 
-      {lng === 'ru' && <LinksList title={t('dev:partners.telecomTitle')} links={telecomLinksRu} />}
+      {language === 'ru' && (
+        <LinksList title={translations.dev.partners.telecomTitle} links={telecomLinksRu} />
+      )}
     </div>
 
     <div className="column">
-      {lng !== 'ru' && (
+      {language !== 'ru' && (
         <div className="link-list-wrapper">
-          <LinksList title={t('dev:partners.financeTitle')} links={financeAndBankingLinksEn} />
+          <LinksList
+            title={translations.dev.partners.financeTitle}
+            links={financeAndBankingLinksEn}
+          />
         </div>
       )}
 
-      {lng === 'ru' && (
+      {language === 'ru' && (
         <div className="link-list-wrapper">
-          <LinksList title={t('dev:partners.financeTitle')} links={financeAndBankingLinksRu} />
+          <LinksList
+            title={translations.dev.partners.financeTitle}
+            links={financeAndBankingLinksRu}
+          />
         </div>
       )}
 
-      {lng !== 'ru' && <LinksList title={t('dev:partners.othersTitle')} links={othersLinksEn} />}
+      {language !== 'ru' && (
+        <LinksList title={translations.dev.partners.othersTitle} links={othersLinksEn} />
+      )}
     </div>
 
     <div className="column">
-      {lng === 'ru' && (
+      {language === 'ru' && (
         <div className="link-list-wrapper">
-          <LinksList title={t('dev:partners.healthTitle')} links={healthLinksRu} />
+          <LinksList title={translations.dev.partners.healthTitle} links={healthLinksRu} />
         </div>
       )}
 
-      {lng !== 'ru' && <LinksList title={t('dev:partners.telecomTitle')} links={telecomLinksEn} />}
+      {language !== 'ru' && (
+        <LinksList title={translations.dev.partners.telecomTitle} links={telecomLinksEn} />
+      )}
 
-      {lng === 'ru' && <LinksList title={t('dev:partners.othersTitle')} links={othersLinksRu} />}
+      {language === 'ru' && (
+        <LinksList title={translations.dev.partners.othersTitle} links={othersLinksRu} />
+      )}
     </div>
   </Grid>
 )
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Partners)`
     ${styles}
   `),

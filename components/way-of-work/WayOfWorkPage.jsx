@@ -1,6 +1,6 @@
 import React from 'react'
 
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import Head from '../Head'
 import Layout from '../Layout'
 import Greeting from './Greeting'
@@ -9,13 +9,16 @@ import Development from './Development'
 import Transparency from './Transparency'
 import Form from './Form'
 
-const WayOfWork = ({ t }) => {
+const WayOfWork = ({ l10n: { translations } }) => {
   const pageName = 'wayOfWork'
   return (
     <Layout pageName={pageName}>
-      <Head title={t('wayOfWork:meta.title')} description={t('wayOfWork:meta.description')} />
+      <Head
+        title={translations.wayOfWork.meta.title}
+        description={translations.wayOfWork.meta.description}
+      />
 
-      <Greeting title={t('wayOfWork:greeting.title')} />
+      <Greeting title={translations.wayOfWork.greeting.title} />
 
       <Organized />
 
@@ -28,4 +31,4 @@ const WayOfWork = ({ t }) => {
   )
 }
 
-export default translate(WayOfWork)
+export default L10nConsumer(WayOfWork)

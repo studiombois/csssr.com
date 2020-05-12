@@ -4,40 +4,43 @@ import styles, { devLine } from './Hire.styles'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { Global } from '@emotion/core'
 import Grid from '../../ui-kit/core-design/Grid'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 
 class Hire extends PureComponent {
   render() {
-    const { className, t } = this.props
+    const {
+      className,
+      l10n: { translations },
+    } = this.props
 
     return (
       <Fragment>
         <Global styles={devLine} />
         <Grid className={className} as="article">
           <h1 className="font_h1-slab">
-            <span dangerouslySetInnerHTML={{ __html: t('dev:hire.title') }} />
-            <span className="font_subhead-slab">{t('dev:hire.subTitle')}</span>
+            <span dangerouslySetInnerHTML={{ __html: translations.dev.hire.title }} />
+            <span className="font_subhead-slab">{translations.dev.hire.subTitle}</span>
           </h1>
 
           <blockquote>
             <p
               className="font_p16-regular"
-              dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph1') }}
+              dangerouslySetInnerHTML={{ __html: translations.dev.hire.paragraph1 }}
             />
             <p
               className="font_p16-regular"
-              dangerouslySetInnerHTML={{ __html: t('dev:hire.paragraph2') }}
+              dangerouslySetInnerHTML={{ __html: translations.dev.hire.paragraph2 }}
             />
             <footer
               className="font_p16-regular"
               rel="author"
-              dangerouslySetInnerHTML={{ __html: t('dev:hire.author') }}
+              dangerouslySetInnerHTML={{ __html: translations.dev.hire.author }}
             />
           </blockquote>
 
           <PictureForAllResolutions
-            image={{ namespace: 'dev', key: 'dev', alt: t('dev:imgAlt.dev') }}
+            image={{ namespace: 'dev', key: 'dev', alt: translations.dev.imgAlt.dev }}
           />
         </Grid>
       </Fragment>
@@ -45,7 +48,7 @@ class Hire extends PureComponent {
   }
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Hire)`
     ${styles}
   `),

@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
     privacyPolicy,
   } = req.body
 
-  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), 'contactForm', {
+  const validationResult = validateFormFields(res.locals.l10n.translations, 'contactForm', {
     name,
     email,
     privacyPolicy,
@@ -78,6 +78,8 @@ module.exports = async (req, res) => {
       Sentry.captureException(e)
     })
 
-    return res.status(400).send({ error: 'common:form.message.fail.intro' })
+    return res
+      .status(400)
+      .send({ error: res.locals.l10n.translations.common.form.message.fail.intro })
   }
 }

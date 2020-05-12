@@ -4,7 +4,7 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
@@ -18,7 +18,7 @@ import {
   triangleImages,
 } from '../../../../data/way-of-work/transparency'
 
-const Highlight = ({ className, id, t, isMobile, active }) => {
+const Highlight = ({ className, id, isMobile, active, l10n: { translations } }) => {
   const figures = [
     {
       name: 'square',
@@ -56,7 +56,7 @@ const Highlight = ({ className, id, t, isMobile, active }) => {
           <PictureForAllResolutions
             images={highlightImages}
             fallback={highlightImages['desktop.all'].png}
-            alt={t('wayOfWork:transparency.imagesAlt.highlight')}
+            alt={translations.wayOfWork.transparency.imagesAlt.highlight}
             className="image"
           />
 
@@ -65,7 +65,7 @@ const Highlight = ({ className, id, t, isMobile, active }) => {
               key={figure.name}
               images={figure.images}
               fallback={figure.images['desktop.all'].png}
-              alt={t('wayOfWork:transparency.imagesAlt.square')}
+              alt={translations.wayOfWork.transparency.imagesAlt.square}
               className={cn('figure', figure.name, {
                 active: figure.name === active,
               })}
@@ -84,7 +84,7 @@ Highlight.propTypes = {
   active: oneOf(['square', 'circle', 'arc', 'triangle']),
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(
     DeviceConsumer(styled(Highlight)`
       ${styles}

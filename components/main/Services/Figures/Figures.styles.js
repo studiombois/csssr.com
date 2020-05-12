@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../../utils/style/getGridValueForMs'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
+const base = ({ breakpoints: { desktop, tablet }, language }) => css`
   & {
     position: sticky;
     top: 5vh;
@@ -10,8 +10,8 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
     grid-column: 8;
     /* Вычисляем ширину по aspect ration */
     display: inline-flex;
-    width: ${lng === 'ru' ? `calc(90vh * 504 / 424)` : `calc(90vh * 456 / 588)`};
-    max-width: ${lng === 'ru' ? `504px` : `456px`};
+    width: ${language === 'ru' ? `calc(90vh * 504 / 424)` : `calc(90vh * 456 / 588)`};
+    max-width: ${language === 'ru' ? `504px` : `456px`};
     max-height: 90vh;
   }
 
@@ -71,8 +71,8 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
 
   @media (min-height: 654px) {
     & {
-      top: calc((100vh - ${lng === 'ru' ? `484px` : `588px`}) / 2);
-      max-height: ${lng === 'ru' ? `484px` : `588px`};
+      top: calc((100vh - ${language === 'ru' ? `484px` : `588px`}) / 2);
+      max-height: ${language === 'ru' ? `484px` : `588px`};
     }
   }
 
@@ -94,8 +94,8 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
       top: calc((100vh - ${calcRem(303)}) / 2);
       margin-top: ${calcRem(105)};
       margin-left: ${calcRem(-26)};
-      width: ${lng === 'ru' ? calcRem(304) : calcRem(324)};
-      max-height: ${lng === 'ru' ? calcRem(303) : calcRem(421)};
+      width: ${language === 'ru' ? calcRem(304) : calcRem(324)};
+      max-height: ${language === 'ru' ? calcRem(303) : calcRem(421)};
     }
 
     .picture_figures {
@@ -140,10 +140,10 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
   }
 `
 
-const ie11Styles = ({ breakpoints: { tablet }, lng }) => css`
+const ie11Styles = ({ breakpoints: { tablet }, language }) => css`
   & {
     position: absolute;
-    top: calc((100% - ${lng === 'ru' ? '504px' : '456px'}) / 2);
+    top: calc((100% - ${language === 'ru' ? '504px' : '456px'}) / 2);
     -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-row: 2;
   }
@@ -167,7 +167,7 @@ const ie11Styles = ({ breakpoints: { tablet }, lng }) => css`
 
   ${tablet.all} {
     & {
-      top: calc((100% - ${lng === 'ru' ? '303px' : '424px'}) / 2);
+      top: calc((100% - ${language === 'ru' ? '303px' : '424px'}) / 2);
     }
 
     .picture_circle.picture_circle_ru {
@@ -192,10 +192,10 @@ const ie11Styles = ({ breakpoints: { tablet }, lng }) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const { lng } = props
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors, lng })}
+    ${base({ breakpoints, colors, language })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

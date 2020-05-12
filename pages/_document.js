@@ -4,7 +4,6 @@ import { GtmNoScript, GtmScript } from 'react-gtm-components'
 import getGtmId from '../utils/getGtmId'
 import cn from 'classnames'
 import detectMsBrowser, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
-import i18n from '../common/i18n'
 
 // Текст для модального окна невалидного браузера
 const CONTENT = {
@@ -26,17 +25,16 @@ const CONTENT = {
   },
 }
 
+// https://nextjs.org/docs/advanced-features/custom-document
+// Document is only rendered in the server
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
-    const userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent
+    const userAgent = ctx.req.headers['user-agent']
 
     return {
       ...initialProps,
-      // https://github.com/isaachinman/next-i18next/issues/374#issuecomment-529196313
-      language: i18n.services.languageUtils.getLanguagePartFromCode(
-        ctx.req.i18n ? ctx.req.i18n.language : undefined,
-      ),
+      language: ctx.res.locals.l10n.language,
       userAgent,
     }
   }

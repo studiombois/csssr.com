@@ -1,18 +1,21 @@
 import React from 'react'
 import Layout from '../Layout'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Greeting from './Greeting'
 import ValuesSection from './ValuesSection'
 import Form from './Form'
 import Head from '../Head'
 
-const CoreValues = ({ t }) => {
+const CoreValues = ({ l10n: { translations } }) => {
   const pageName = 'coreValues'
 
   return (
     <Layout pageName={pageName}>
-      <Head title={t('coreValues:meta.title')} description={t('coreValues:meta.description')} />
+      <Head
+        title={translations.coreValues.meta.title}
+        description={translations.coreValues.meta.description}
+      />
 
       <Greeting />
 
@@ -23,4 +26,4 @@ const CoreValues = ({ t }) => {
   )
 }
 
-export default translate(CoreValues)
+export default L10nConsumer(CoreValues)

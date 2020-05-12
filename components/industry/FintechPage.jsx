@@ -1,7 +1,6 @@
 import React from 'react'
-import { func } from 'prop-types'
 import Layout from '../Layout'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Greeting from './Greeting'
 import OurClients from './OurClients'
@@ -15,15 +14,14 @@ import ourClients from '../../data/industry/fintech/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
-
-const FintechPage = ({ t }) => {
+const FintechPage = ({ l10n: { translations } }) => {
   const pageName = 'industry'
   const page = 'fintech'
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('industry:meta.fintech.title')}
-        description={t('industry:meta.fintech.description')}
+        title={translations.industry.meta.fintech.title}
+        description={translations.industry.meta.fintech.description}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />
@@ -39,8 +37,6 @@ const FintechPage = ({ t }) => {
   )
 }
 
-FintechPage.propTypes = {
-  t: func,
-}
+FintechPage.propTypes = {}
 
-export default translate(FintechPage)
+export default L10nConsumer(FintechPage)

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Workflow.styles'
 import Wrapper from '../Wrapper'
@@ -9,17 +9,17 @@ import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
 import workflowImages from '../../../data/express/workflow'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const workflowSteps = [1, 2, 3, 4, 5]
-const Workflow = ({ className, t }) => (
+const Workflow = ({ className, l10n: { translations } }) => (
   <Wrapper className={className} id="workflow">
     <Heading
       as="h2"
       className="heading"
       type="slab"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('express:workflow.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.express.workflow.title }}
     />
 
     {workflowSteps.map((stepNumber) => (
@@ -29,7 +29,7 @@ const Workflow = ({ className, t }) => (
             className={`picture picture_${stepNumber}`}
             images={workflowImages[stepNumber]}
             fallback={workflowImages[stepNumber]['desktop.l']}
-            alt={t(`express:imageAlt.workflow${stepNumber}`)}
+            alt={translations.express.imgAlt[`workflow${stepNumber}`]}
           />
         </div>
 
@@ -37,7 +37,7 @@ const Workflow = ({ className, t }) => (
           className={`text text_${stepNumber}`}
           type="strong"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(`express:workflow.text${stepNumber}`) }}
+          dangerouslySetInnerHTML={{ __html: translations.express.workflow[`text${stepNumber}`] }}
         />
       </div>
     ))}
@@ -46,9 +46,8 @@ const Workflow = ({ className, t }) => (
 
 Workflow.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(styled(Workflow)`
+export default L10nConsumer(styled(Workflow)`
   ${styles.base}
 `)

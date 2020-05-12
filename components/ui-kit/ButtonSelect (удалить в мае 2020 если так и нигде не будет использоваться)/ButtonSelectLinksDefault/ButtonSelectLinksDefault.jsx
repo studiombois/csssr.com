@@ -2,7 +2,7 @@ import React from 'react'
 import { arrayOf, bool, func, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './ButtonSelectLinksDefault.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import Email from '../../../../static/icons/email.svg'
 import Telegram from '../../../../static/icons/telegram.svg'
 import Messenger from '../../../../static/icons/messenger.svg'
@@ -28,7 +28,7 @@ const ButtonSelectLinksDefault = (props) => {
         data-testid={testid}
       >
         {iconsByLabel[label]}
-        <span>{props.t(localeLink)}</span>
+        <span>{localeLink(props.l10n.translations)}</span>
       </a>
     </li>
   ))
@@ -36,7 +36,6 @@ const ButtonSelectLinksDefault = (props) => {
 
 ButtonSelectLinksDefault.propTypes = {
   onLinkClick: func,
-  t: func,
   links: arrayOf(
     shape({
       label: string,
@@ -48,6 +47,6 @@ ButtonSelectLinksDefault.propTypes = {
   ),
 }
 
-export default styled(translate(ButtonSelectLinksDefault))`
+export default styled(L10nConsumer(ButtonSelectLinksDefault))`
   ${styles}
 `

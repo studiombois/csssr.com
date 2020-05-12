@@ -13,7 +13,7 @@ import circle from '../../../static/images/main/circle.png?responsive'
 import circle_webp from '../../../static/images/main/circle.png?responsive_and_webp'
 
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
   align-items: start;
 
   .title_main {
@@ -237,10 +237,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service_mvp::before {
       top: ${calcRem(24)};
-      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-112)})` : calcRem(-75)};
+      left: ${language === 'ru' ? `calc(100% + ${calcRem(-112)})` : calcRem(-75)};
       width: ${calcRem(87)};
       height: ${calcRem(87)};
-      transform: ${lng === 'ru' ? `rotateZ(180deg)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
+      transform: ${language === 'ru' ? `rotateZ(180deg)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
     }
 
     .service-icon {
@@ -306,10 +306,10 @@ export const mobileBackgroundImagesStyles = theme => {
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const { lng } = props
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors, lng })}
+    ${base({ breakpoints, colors, language })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

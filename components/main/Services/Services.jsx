@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -14,11 +14,11 @@ import Grid from '../../ui-kit/core-design/Grid'
 
 import services from '../../../data/main/services'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Services = ({ className, t, lng, isMobile }) => {
+const Services = ({ className, l10n: { translations, language }, isMobile }) => {
   const [hoveredService, setHoveredService] = useState(null)
 
   return (
@@ -27,7 +27,7 @@ const Services = ({ className, t, lng, isMobile }) => {
         <Heading
           className="title_main"
           as="h2"
-          dangerouslySetInnerHTML={{ __html: t('main:services.title') }}
+          dangerouslySetInnerHTML={{ __html: translations.main.services.title }}
           type="slab"
           size="m"
         />
@@ -44,7 +44,7 @@ const Services = ({ className, t, lng, isMobile }) => {
                 setHoveredService(hoveredService)
               }
 
-              if (lng === 'ru' && id === 'express') {
+              if (language === 'ru' && id === 'express') {
                 return
               }
 
@@ -56,10 +56,10 @@ const Services = ({ className, t, lng, isMobile }) => {
                   onMouseLeave={handleHover(null)}
                 >
                   <Heading className="service-title" as="h3" type="slab" size="l">
-                    <NextLink href={`${lng}/service/${href}`}>
+                    <NextLink href={`${language}/service/${href}`}>
                       <a
                         dangerouslySetInnerHTML={{
-                          __html: t(title),
+                          __html: title(translations),
                         }}
                       />
                     </NextLink>
@@ -70,7 +70,7 @@ const Services = ({ className, t, lng, isMobile }) => {
                     as="p"
                     type="strong"
                     size="m"
-                    dangerouslySetInnerHTML={{ __html: t(subtitle) }}
+                    dangerouslySetInnerHTML={{ __html: subtitle(translations) }}
                   />
 
                   <Icon className={cn('service-icon', `service-icon_${iconName}`)} />
@@ -92,12 +92,10 @@ const Services = ({ className, t, lng, isMobile }) => {
 
 Services.propTypes = {
   className: string,
-  t: func,
-  lng: string,
   isMobile: bool,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(Services)`
       ${styles}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Industries.styles'
@@ -11,16 +11,16 @@ import Grid from '../../ui-kit/core-design/Grid'
 
 import industries from '../../../data/main/industries'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Industries = ({ className, t, lng }) => {
+const Industries = ({ className, l10n: { translations, language } }) => {
   return (
     <Grid as="article" className={cn('industries', className)}>
       <Heading
         className="title"
         as="h2"
-        dangerouslySetInnerHTML={{ __html: t('main:industries.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.industries.title }}
         type="slab"
         size="m"
       />
@@ -29,7 +29,7 @@ const Industries = ({ className, t, lng }) => {
         className="subtitle"
         as="p"
         type="slab"
-        dangerouslySetInnerHTML={{ __html: t('main:industries.subtitle') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.industries.subtitle }}
       />
 
       {industries.map(({ id, title, description, href, images, imagesHovered, fallback }) => (
@@ -39,7 +39,7 @@ const Industries = ({ className, t, lng }) => {
           id={id}
           title={title}
           description={description}
-          href={`/${lng}/industry/${href}`}
+          href={`/${language}/industry/${href}`}
           images={images}
           imagesHovered={imagesHovered}
           fallback={fallback}
@@ -52,10 +52,9 @@ const Industries = ({ className, t, lng }) => {
 
 Industries.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Industries)`
     ${styles}
   `),

@@ -6,7 +6,7 @@ import styles from './FeatureButton.styles'
 
 const FeatureButton = ({
   className,
-  t,
+  text,
   d,
   i,
   srcSet,
@@ -27,7 +27,7 @@ const FeatureButton = ({
           'wrapper-active': clicked === 1,
         })}
       >
-        <p className="font-p-4 title">{t}</p>
+        <p className="font-p-4 title">{text}</p>
         <p className="font-p-2">{d}</p>
       </div>
     </div>

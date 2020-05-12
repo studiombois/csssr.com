@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import styles from './Covid19Popup.styles'
 
@@ -24,6 +24,6 @@ const Covid19Popup = ({ className, isMobile }) => (
   </div>
 )
 
-export default styled(translate(DeviceConsumer(Covid19Popup)))`
+export default styled(L10nConsumer(DeviceConsumer(Covid19Popup)))`
   ${styles}
 `

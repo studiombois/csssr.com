@@ -1,6 +1,6 @@
 import ErrorPage from '../components/error/ErrorPage'
 import React from 'react'
-import translate from '../utils/translate-wrapper'
+import { L10nConsumer } from '../utils/l10nProvider'
 
 class MyError extends React.Component {
   static getInitialProps({ res, err }) {
@@ -13,4 +13,4 @@ class MyError extends React.Component {
   }
 }
 
-export default translate(MyError)
+export default L10nConsumer(MyError)

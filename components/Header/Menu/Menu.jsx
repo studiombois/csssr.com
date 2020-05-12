@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Menu.styles'
@@ -10,11 +10,11 @@ import ClickOutside from '../../ClickOutside'
 
 import headerLinks from '../../../data/headerLinks'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const { menu } = headerLinks
-const Menu = ({ className, isMobile, lng, t }) => {
+const Menu = ({ className, isMobile, l10n: { translations, language } }) => {
   const menuRef = useRef(null)
   const [activeItem, setActiveItem] = useState(null)
   const [animationDirection, setAnimationDirection] = useState(null)
@@ -68,7 +68,7 @@ const Menu = ({ className, isMobile, lng, t }) => {
       >
         <MenuWrapperTag className="menu">
           {menu.map(({ id, title }) => {
-            if (lng === 'ru' && id === 'products') {
+            if (language === 'ru' && id === 'products') {
               return
             }
 
@@ -82,7 +82,7 @@ const Menu = ({ className, isMobile, lng, t }) => {
                 type="top_menu"
                 onMouseOver={handleMouseOver(id)}
                 onClick={handleClick(id)}
-                dangerouslySetInnerHTML={{ __html: t(title) }}
+                dangerouslySetInnerHTML={{ __html: title(translations) }}
               />
             )
           })}
@@ -101,11 +101,9 @@ const Menu = ({ className, isMobile, lng, t }) => {
 Menu.propTypes = {
   className: string,
   isMobile: bool,
-  lng: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(styled(Menu)`
     ${styles}
   `),

@@ -3,17 +3,17 @@ import cn from 'classnames'
 import { arrayOf, func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Tabs.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Tabs = ({ className, t, tabs, activeTabId, onClick }) => (
+const Tabs = ({ className, tabs, activeTabId, onClick, l10n: { translations } }) => (
   <ul className={className}>
     {tabs.map((tabId) => (
       <li className={cn({ active: tabId === activeTabId })} key={tabId}>
         <button
           onClick={() => onClick(tabId)}
           value={tabId}
-          dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${tabId}`) }}
+          dangerouslySetInnerHTML={{ __html: translations.dev.tabs[tabId] }}
         />
       </li>
     ))}
@@ -25,7 +25,7 @@ Tabs.propTypes = {
   onClick: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Tabs)`
     ${styles}
   `),

@@ -1,51 +1,20 @@
 import React from 'react'
 import Router from 'next/router'
 import App from 'next/app'
-import { I18nextProvider } from 'react-i18next'
 import * as Sentry from '@sentry/node'
 import { ThemeProvider } from 'emotion-theming'
 import { customTheme } from '../themes/customTheme'
-import initialI18nInstance from '../common/i18n'
 import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
 import { detectMobileByUserAgent, detectTabletByUserAgent } from '../utils/detectDeviceByUserAgent'
 import MsBrowserProvider from '../utils/msBrowserProvider'
 import DeviceProvider from '../utils/deviceProvider'
 import PagesListProvider from '../utils/pagesListProvider'
-import allNamespaces from '../common/all-namespaces'
+import L10nProvider from '../utils/l10nProvider'
 import { parseUserAgent } from 'detect-browser'
 import { checkIsInvalidDevice } from '../utils/isInvalidBrowser'
 import Modal from '../components/ui-kit/Modal'
 import BrowserModalContent from '../components/BrowserModalContent'
-
-const getI18nInitialProps = (ctx) => {
-  let i18nInitialProps = {}
-
-  if (ctx.req) {
-    if (!ctx.req.i18n) {
-      return {}
-    }
-
-    ctx.req.i18n.toJSON = () => null // do not serialize i18next instance and send to client
-
-    const initialI18nStore = {}
-    ctx.req.i18n.languages.forEach((language) => {
-      initialI18nStore[language] = {}
-      allNamespaces.forEach((ns) => {
-        initialI18nStore[language][ns] =
-          (ctx.req.i18n.services.resourceStore.data[language] || {})[ns] || {}
-      })
-    })
-
-    i18nInitialProps = {
-      i18n: ctx.req.i18n, // use the instance on req - fixed language on request (avoid issues in race conditions with lngs of different users)
-      initialI18nStore,
-      initialLanguage: ctx.req.i18n.language,
-    }
-  }
-
-  return i18nInitialProps
-}
 
 export default class MyApp extends App {
   // This reports errors before rendering, when fetching initial props
@@ -55,10 +24,13 @@ export default class MyApp extends App {
     try {
       const { Component } = appContext
 
-      const pagesList = ctx.res ? ctx.res.locals.pagesList : window.__NEXT_DATA__.props.pagesList
+      const pagesList = ctx.req
+        ? ctx.req.app.locals.pagesList
+        : window.__NEXT_DATA__.props.pageProps.pagesList
+      const l10n = ctx.res ? ctx.res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
       const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
 
-      let pageProps = getI18nInitialProps(ctx)
+      let pageProps = {}
 
       if (Component.getInitialProps) {
         const componentProps = await Component.getInitialProps(ctx)
@@ -77,11 +49,10 @@ export default class MyApp extends App {
       pageProps.userAgent = userAgent
       pageProps.isMobile = detectMobileByUserAgent(userAgent)
       pageProps.isTablet = detectTabletByUserAgent(userAgent)
+      pageProps.pagesList = pagesList
+      pageProps.l10n = l10n
 
-      return {
-        pageProps,
-        pagesList,
-      }
+      return { pageProps }
     } catch (error) {
       Sentry.withScope((scope) => {
         const { req, res, errorInfo, query, pathname } = ctx
@@ -218,23 +189,18 @@ export default class MyApp extends App {
 
   render() {
     const { isModalClosed } = this.state
-    const { Component, pageProps, pagesList } = this.props
-    const { i18n, initialI18nStore, initialLanguage } = pageProps || {}
+    const { Component, pageProps } = this.props
     const isMsBrowser = detectMsBrowserByUserAgent(pageProps.userAgent)
     const isIe11Browser = detectIe11(pageProps.userAgent)
 
     // SSR calculate only
     const isInvalidDevice = !!pageProps.isInvalidDevice && !isModalClosed
     return (
-      <I18nextProvider
-        i18n={i18n || initialI18nInstance}
-        initialI18nStore={initialI18nStore}
-        initialLanguage={initialLanguage}
-      >
+      <L10nProvider l10n={pageProps.l10n}>
         <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
           <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
             <ThemeProvider theme={customTheme}>
-              <PagesListProvider pagesList={pagesList}>
+              <PagesListProvider pagesList={pageProps.pagesList}>
                 {/* У Component isMobile прокидывается явно для обратной совместимости  */}
                 {/* TODO: перевести все компоненты на isMobile из контекста */}
                 <Component
@@ -252,7 +218,7 @@ export default class MyApp extends App {
             </ThemeProvider>
           </DeviceProvider>
         </MsBrowserProvider>
-      </I18nextProvider>
+      </L10nProvider>
     )
   }
 }

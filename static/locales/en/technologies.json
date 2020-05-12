@@ -35,7 +35,7 @@
     "nameLabel": "Name",
     "submitText": "Submit"
   },
-  "imageAlt": {
+  "imgAlt": {
     "javascript": "Happy astronaut with Javascript logo",
     "typescript": "Happy astronauts with Typescript logo",
     "react": "React Logo",

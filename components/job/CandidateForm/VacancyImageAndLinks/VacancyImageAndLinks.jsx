@@ -1,13 +1,20 @@
 import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 import styles, { faqImageStyles, vacancyImageStyles } from './VacancyImageAndLinks.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import PictureForAllResolutions from '../../../PictureForAllResolutions'
 import Picture from '../../../Picture'
 import Vacancy from '../Vacancy'
 
-const VacancyImageAndLinks = ({ lng, t, locale, className, vacancies, pictureName, name }) => (
+const VacancyImageAndLinks = ({
+  l10n: { translations, language },
+  locale,
+  className,
+  vacancies,
+  pictureName,
+  name,
+}) => (
   <div className={className}>
     {pictureName && (
       <PictureForAllResolutions
@@ -23,19 +30,19 @@ const VacancyImageAndLinks = ({ lng, t, locale, className, vacancies, pictureNam
       ))}
     </ul>
 
-    {lng === 'ru' && (
+    {language === 'ru' && (
       <Fragment>
         <p className="faq-text font_p16-regular">
-          {t('job:faq.title')}
+          {translations.job.faq.title}
 
           <a href="/ru/jobs-faq" className="font_link-list_16">
-            {t('job:faq.link')}
+            {translations.job.faq.link}
           </a>
         </p>
 
         <Picture
           className="hidden_on_mobile"
-          image={{ namespace: 'jobs', key: 'faq', alt: t('job:faq.alt') }}
+          image={{ namespace: 'jobs', key: 'faq', alt: translations.job.faq.alt }}
           css={faqImageStyles}
         />
       </Fragment>
@@ -43,7 +50,7 @@ const VacancyImageAndLinks = ({ lng, t, locale, className, vacancies, pictureNam
   </div>
 )
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(VacancyImageAndLinks)`
     ${styles}
   `),

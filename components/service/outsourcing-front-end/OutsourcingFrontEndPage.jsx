@@ -10,14 +10,14 @@ import OurAdvantages from '../../../components/service/outsourcing-front-end/Our
 import Industries from '../../../components/service/outsourcing-front-end/Industries'
 import Form from '../../../components/service/outsourcing-front-end/Form'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const pageName = 'outsourcingFrontEnd'
-const OutsourcingFrontEndPage = ({ t }) => (
+const OutsourcingFrontEndPage = ({ l10n: { translations } }) => (
   <Layout pageName={pageName}>
     <Head
-      title={t('outsourcingFrontEnd:meta.title')}
-      description={t('outsourcingFrontEnd:meta.description')}
+      title={translations.outsourcingFrontEnd.meta.title}
+      description={translations.outsourcingFrontEnd.meta.description}
     />
     <Hero />
     <AboutFrontend />
@@ -30,4 +30,4 @@ const OutsourcingFrontEndPage = ({ t }) => (
   </Layout>
 )
 
-export default translate(OutsourcingFrontEndPage)
+export default L10nConsumer(OutsourcingFrontEndPage)

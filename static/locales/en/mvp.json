@@ -103,7 +103,7 @@
     "messageLabel": "How can we help?",
     "submitText": "Submit"
   },
-  "imageAlt": {
+  "imgAlt": {
     "mvpOn": "Development process with MVP",
     "mvpOff": "Development process without MVP",
     "ourAdvantages": [

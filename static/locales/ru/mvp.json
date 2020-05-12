@@ -103,7 +103,7 @@
     "messageLabel": "Чем мы могли бы помочь вам?",
     "submitText": "Отправить"
   },
-  "imageAlt": {
+  "imgAlt": {
     "mvpOn": "Процесс разработки с MVP",
     "mvpOff": "Процесс разработки без MVP",
     "ourAdvantages": [

@@ -6,8 +6,8 @@ import { mediaAndMarketingImages, mediaAndMarketingImagesHovered } from './media
 export default [
   {
     id: 'fintech',
-    title: 'main:industries.fintech.title',
-    description: 'main:industries.fintech.description',
+    title: (t) => t.main.industries.fintech.title,
+    description: (t) => t.main.industries.fintech.description,
     href: 'fintech',
     images: fintechImages,
     imagesHovered: fintechImagesHovered,
@@ -15,8 +15,8 @@ export default [
   },
   {
     id: 'eCommerce',
-    title: 'main:industries.eCommerce.title',
-    description: 'main:industries.eCommerce.description',
+    title: (t) => t.main.industries.eCommerce.title,
+    description: (t) => t.main.industries.eCommerce.description,
     href: 'ecommerce',
     images: eCommerceImages,
     imagesHovered: eCommerceImagesHovered,
@@ -24,8 +24,8 @@ export default [
   },
   {
     id: 'information',
-    title: 'main:industries.information.title',
-    description: 'main:industries.information.description',
+    title: (t) => t.main.industries.information.title,
+    description: (t) => t.main.industries.information.description,
     href: 'information-technology',
     images: informationImages,
     imagesHovered: informationImagesHovered,
@@ -33,8 +33,8 @@ export default [
   },
   {
     id: 'mediaAndMarketing',
-    title: 'main:industries.mediaAndMarketing.title',
-    description: 'main:industries.mediaAndMarketing.description',
+    title: (t) => t.main.industries.mediaAndMarketing.title,
+    description: (t) => t.main.industries.mediaAndMarketing.description,
     href: 'media-and-marketing',
     images: mediaAndMarketingImages,
     imagesHovered: mediaAndMarketingImagesHovered,

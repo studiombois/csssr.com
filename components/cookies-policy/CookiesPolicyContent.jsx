@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import common_styles_for_policy_pages from '../privacy-policy/PrivacyPolicy.styles'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import Grid from '../ui-kit/core-design/Grid'
 
-const CookiesPolicyContent = ({ className, t }) => (
+const CookiesPolicyContent = ({ className, l10n: { translations } }) => (
   <Grid className={className} as="article">
     <header>
-      <h1 className="font_h1-regular">{t('cookiesPolicy:title')}</h1>
-      <p className="font_subhead-regular">{t('cookiesPolicy:date')}</p>
+      <h1 className="font_h1-regular">{translations.cookiesPolicy.title}</h1>
+      <p className="font_subhead-regular">{translations.cookiesPolicy.date}</p>
     </header>
     <div>
       <p className="font_p24-strong">
@@ -136,7 +136,7 @@ const CookiesPolicyContent = ({ className, t }) => (
   </Grid>
 )
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(CookiesPolicyContent)`
     ${common_styles_for_policy_pages}
   `),

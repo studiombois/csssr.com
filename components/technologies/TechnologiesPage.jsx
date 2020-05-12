@@ -6,14 +6,17 @@ import Frontend from './Frontend'
 import Autotests from './Autotests'
 import Backend from './Backend'
 import Form from './Form'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
-const TechnologiesPage = ({ t }) => {
+const TechnologiesPage = ({ l10n: { translations } }) => {
   const pageName = 'technologies'
 
   return (
     <Layout pageName={pageName}>
-      <Head title={t('technologies:meta.title')} description={t('technologies:meta.description')} />
+      <Head
+        title={translations.technologies.meta.title}
+        description={translations.technologies.meta.description}
+      />
       <Hero />
       <Frontend />
       <Autotests />
@@ -23,4 +26,4 @@ const TechnologiesPage = ({ t }) => {
   )
 }
 
-export default translate(TechnologiesPage)
+export default L10nConsumer(TechnologiesPage)

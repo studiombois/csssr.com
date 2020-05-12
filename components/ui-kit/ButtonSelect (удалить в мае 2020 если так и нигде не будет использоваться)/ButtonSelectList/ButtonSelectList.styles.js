@@ -169,10 +169,10 @@ const base = css`
   }
 `
 
-const dynamic = ({lng}) => css`
+const dynamic = ({l10n: {language}}) => css`
   @media (min-width: 1360px) and (max-width: 1919px) {
     &.is_entered {
-      height: ${lng === 'ru' ? 13 : 11.5}rem;
+      height: ${language === 'ru' ? 13 : 11.5}rem;
     }
   }
 `

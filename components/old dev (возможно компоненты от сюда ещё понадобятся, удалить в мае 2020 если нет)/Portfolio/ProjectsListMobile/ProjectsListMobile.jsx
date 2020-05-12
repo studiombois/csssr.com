@@ -3,10 +3,10 @@ import { arrayOf, number, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import styles from './ProjectsListMobile.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 // 5 колоной занимает каждый айтем
-const ProjectsListMobile = ({ className, t, projects }) => {
+const ProjectsListMobile = ({ className, projects, l10n: { translations } }) => {
   const renderProject = (project, index) => (
     <li
       key={project.id}
@@ -18,28 +18,30 @@ const ProjectsListMobile = ({ className, t, projects }) => {
         <a href={project.href} target="_blank" rel="noopener nofollow">
           <img
             src={require(`../../../../static/images/dev/portfolio/${project.id}_1.jpg`)}
-            alt={`${t('dev:portfolio.slidesAlt')}${t(
-              `dev:portfolio.projects.${project.id}.title`,
-            )}`}
+            alt={`${translations.dev.portfolio.slidesAlt}${
+              translations.dev.portfolio.projects[project.id].title
+            }`}
           />
         </a>
       ) : (
         <img
           src={require(`../../../../static/images/dev/portfolio/${project.id}_1.jpg`)}
-          alt={`${t('dev:portfolio.slidesAlt')}${t(`dev:portfolio.projects.${project.id}.title`)}`}
+          alt={`${translations.dev.portfolio.slidesAlt}${
+            translations.dev.portfolio.projects[project.id].title
+          }`}
         />
       )}
 
       <h4
         className="font_subhead-regular"
         dangerouslySetInnerHTML={{
-          __html: t(`dev:portfolio.projects.${project.id}.title`),
+          __html: translations.dev.portfolio.projects[project.id].title,
         }}
       />
       <p
         className="font_p16-regular"
         dangerouslySetInnerHTML={{
-          __html: t(`dev:portfolio.projects.${project.id}.text`),
+          __html: translations.dev.portfolio.projects[project.id].text,
         }}
       />
     </li>
@@ -60,6 +62,6 @@ ProjectsListMobile.propTypes = {
   ),
 }
 
-export default styled(translate(ProjectsListMobile))`
+export default styled(L10nConsumer(ProjectsListMobile))`
   ${styles}
 `

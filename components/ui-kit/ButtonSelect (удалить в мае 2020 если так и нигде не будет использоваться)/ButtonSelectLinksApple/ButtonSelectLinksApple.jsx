@@ -2,7 +2,7 @@ import React from 'react'
 import { arrayOf, bool, func, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './ButtonSelectLinksApple.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const iconsByLabel = {
   Email: null,
@@ -10,13 +10,13 @@ const iconsByLabel = {
   Messenger: null,
 }
 
-const ButtonSelectLinksApple = (props) => {
+const ButtonSelectLinksApple = ({ onLinkClick, links, className, l10n: { translations } }) => {
   const handleLinkClick = (dataLayerEvent) => () => {
-    props.onLinkClick(dataLayerEvent)
+    onLinkClick(dataLayerEvent)
   }
 
-  return props.links.map(({ label, localeLink, href, external, dataLayerEvent, testid }) => (
-    <li className={props.className} key={label}>
+  return links.map(({ label, localeLink, href, external, dataLayerEvent, testid }) => (
+    <li className={className} key={label}>
       <a
         href={href}
         onClick={handleLinkClick(dataLayerEvent)}
@@ -26,7 +26,9 @@ const ButtonSelectLinksApple = (props) => {
       >
         {iconsByLabel[label]}
         <span>
-          {props.t(label === 'Messenger' ? 'common:floatingButton.facebookMessenger' : localeLink)}
+          {label === 'Messenger'
+            ? translations.common.floatingButton.facebookMessenger
+            : localeLink(translations)}
         </span>
       </a>
     </li>
@@ -35,7 +37,6 @@ const ButtonSelectLinksApple = (props) => {
 
 ButtonSelectLinksApple.propTypes = {
   onLinkClick: func,
-  t: func,
   links: arrayOf(
     shape({
       label: string,
@@ -47,6 +48,6 @@ ButtonSelectLinksApple.propTypes = {
   ),
 }
 
-export default styled(translate(ButtonSelectLinksApple))`
+export default styled(L10nConsumer(ButtonSelectLinksApple))`
   ${styles}
 `

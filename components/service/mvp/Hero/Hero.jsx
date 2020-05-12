@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -17,13 +17,13 @@ import hero_desktop_webp from '../../../../static/images/service/mvp/desktop.all
 import hero_mobile from '../../../../static/images/service/mvp/mobile.all/hero.png?responsive'
 import hero_mobile_webp from '../../../../static/images/service/mvp/mobile.all/hero.png?responsive_and_webp'
 
-const Hero = ({ className, t }) => (
+const Hero = ({ className, l10n: { translations } }) => (
   <article className={className}>
     <Grid as="div">
       <Heading
         className="title"
         as="h1"
-        dangerouslySetInnerHTML={{ __html: t('mvp:hero.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.mvp.hero.title }}
         type="slab"
         size="l"
       />
@@ -33,13 +33,13 @@ const Hero = ({ className, t }) => (
         as="p"
         type="strong"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('mvp:hero.description') }}
+        dangerouslySetInnerHTML={{ __html: translations.mvp.hero.description }}
       />
 
       <ContactButton
         className="button"
         pageName="outsourcingFrontEnd"
-        dangerouslySetInnerHTML={{ __html: t('mvp:hero.button') }}
+        dangerouslySetInnerHTML={{ __html: translations.mvp.hero.button }}
       />
 
       <PictureForAllResolutions
@@ -49,7 +49,7 @@ const Hero = ({ className, t }) => (
           'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
         }}
         fallback={hero_desktop}
-        alt={t('mvp:imageAlt.hero')}
+        alt={translations.mvp.imgAlt.hero}
       />
     </Grid>
   </article>
@@ -57,10 +57,9 @@ const Hero = ({ className, t }) => (
 
 Hero.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Hero)`
     ${styles}
   `),

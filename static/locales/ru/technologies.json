@@ -35,7 +35,7 @@
     "nameLabel": "Имя",
     "submitText": "Отправить"
   },
-  "imageAlt": {
+  "imgAlt": {
     "javascript": "Счастливый космонавт c лого Javascript",
     "typescript": "Счастливые космонавты c лого Typescript",
     "react": "Лого React",

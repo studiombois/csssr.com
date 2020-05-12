@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import { withRouter } from 'next/router'
 import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
@@ -18,19 +18,18 @@ import Logo from '../../static/icons/csssr_logo.svg'
 import Burger from '../../static/icons/header/burger.svg'
 import Cross from '../../static/icons/header/close.svg'
 
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
 const Header = ({
   className,
-  lng,
-  t,
   isIe11,
   isMobile,
   pageName,
   router: { pathname },
   isButtonVisible = true,
+  l10n: { translations, language },
 }) => {
   let lastScrollTopValue = useRef(0)
   const [isDropdownOpened, toggleDropdown] = useState(false)
@@ -111,13 +110,13 @@ const Header = ({
             href="#hire-us"
             kind="primary"
             className="button_action"
-            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
           />
         ) : (
           <Button
             onClick={handleButtonClick}
             className="button_action"
-            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
           />
         ))}
     </Fragment>
@@ -130,13 +129,13 @@ const Header = ({
         invisible: !isHeaderVisible,
       })}
     >
-      {lng === 'en' &&
+      {language === 'en' &&
         pathname !== '/en/covid-19' &&
         pathname !== '/en/products/e-learning-platform' && (
           <Covid19Popup invisible={!isHeaderVisible} />
         )}
 
-      <NextLink href={`/${lng}`}>
+      <NextLink href={`/${language}`}>
         <a className="logo-wrapper">
           <Logo className="logo" />
         </a>
@@ -175,12 +174,11 @@ Header.propTypes = {
   className: string,
   isIe11: bool,
   isMobile: bool,
-  t: func,
   isButtonVisible: bool,
 }
 
 export default withRouter(
-  translate(
+  L10nConsumer(
     DeviceConsumer(
       MsBrowserConsumer(styled(Header)`
         ${styles}

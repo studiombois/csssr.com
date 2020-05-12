@@ -4,21 +4,24 @@ import styled from '@emotion/styled'
 import styles from './Portfolio.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import ProjectsList from './ProjectsList/ProjectsList'
 import ProjectsListMobile from './ProjectsListMobile/ProjectsListMobile'
 
-const Portfolio = ({ className, t, isMobile, portfolio }) => (
+const Portfolio = ({ className, isMobile, portfolio, l10n: { translations } }) => (
   <Grid as="article" id="portfolio" className={className}>
-    <h2 className="font_h2-slab" dangerouslySetInnerHTML={{ __html: t('dev:portfolio.title') }} />
+    <h2
+      className="font_h2-slab"
+      dangerouslySetInnerHTML={{ __html: translations.dev.portfolio.title }}
+    />
     <p
       className="font_subhead-regular"
-      dangerouslySetInnerHTML={{ __html: t('dev:portfolio.text') }}
+      dangerouslySetInnerHTML={{ __html: translations.dev.portfolio.text }}
     />
     {isMobile ? (
       portfolio.map((projectGroup) => (
         <Fragment key={projectGroup.id}>
-          <h3 dangerouslySetInnerHTML={{ __html: t(`dev:tabs.${projectGroup.id}`) }} />
+          <h3 dangerouslySetInnerHTML={{ __html: translations.dev.tabs[projectGroup.id] }} />
           <div className="project-container">
             <ProjectsListMobile projects={projectGroup.projects} />
           </div>
@@ -47,7 +50,7 @@ Portfolio.propTypes = {
   ),
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Portfolio)`
     ${styles}
   `),

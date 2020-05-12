@@ -1,6 +1,6 @@
 import React from 'react'
-import { func, object, string } from 'prop-types'
-import translate from '../../../utils/translate-wrapper'
+import { object, string } from 'prop-types'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -12,13 +12,13 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Greeting = ({
-  t,
   className,
   pageName,
   id,
   content: { heading, text, button, images, imgAlt },
   isMobile,
   isTablet,
+  l10n: { translations },
 }) => {
   const textType = isMobile || isTablet ? 'regular' : 'strong'
 
@@ -27,39 +27,38 @@ const Greeting = ({
       <Heading.H1
         type="slab"
         size="l"
-        dangerouslySetInnerHTML={{ __html: t(heading) }}
+        dangerouslySetInnerHTML={{ __html: heading(translations) }}
         className="heading"
       />
       <Text
         type={textType}
         size="m"
-        dangerouslySetInnerHTML={{ __html: t(text) }}
+        dangerouslySetInnerHTML={{ __html: text(translations) }}
         className="text"
       />
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.l'].png}
-        alt={t(imgAlt)}
+        alt={imgAlt(translations)}
         className="image"
       />
 
       <ContactButton
         className="button"
         pageName={pageName}
-        dangerouslySetInnerHTML={{ __html: t(button) }}
+        dangerouslySetInnerHTML={{ __html: button(translations) }}
       />
     </Grid>
   )
 }
 
 Greeting.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(Greeting)`
       ${styles}

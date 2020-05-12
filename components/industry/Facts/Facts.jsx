@@ -1,8 +1,8 @@
 import React from 'react'
-import { array, func, object, string } from 'prop-types'
+import { array, object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Facts.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
@@ -13,27 +13,27 @@ import FactItem from '../FactItem'
 const Facts = ({
   className,
   id,
-  t,
   content: { heading, subHeading, images, imgAlt, factItems },
+  l10n: { translations },
 }) => (
   <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t(heading) }}
+      dangerouslySetInnerHTML={{ __html: heading(translations) }}
       className="heading"
     />
 
     <SubHeading
       type="slab"
-      dangerouslySetInnerHTML={{ __html: t(subHeading) }}
+      dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
       className="sub-heading"
     />
 
     <PictureForAllResolutions
       images={images}
       fallback={images['desktop.l'].png}
-      alt={t(imgAlt)}
+      alt={imgAlt(translations)}
       className="image"
     />
 
@@ -46,12 +46,11 @@ const Facts = ({
 Facts.propTypes = {
   className: string,
   id: string,
-  t: func,
   content: object,
   factItems: array,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(
     styled(Facts)`
       ${styles}

@@ -2,18 +2,18 @@ import React from 'react'
 import { string } from 'prop-types'
 import Layout from '../Layout'
 import Head from '../Head'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import Greeting from './Greeting'
 import Workflow from './Workflow'
 import Calculator from './Calculator'
 import Features from './Features'
 import Form from './Form'
 
-const ExpressPage = ({ t }) => (
+const ExpressPage = ({ l10n: { translations } }) => (
   <Layout pageName="express">
     <Head
-      title={t('express:meta.title')}
-      description={t('express:meta.description')}
+      title={translations.express.meta.title}
+      description={translations.express.meta.description}
       ogImage={{
         url: require('../../static/images/express/ogImage.jpg'),
         width: 2400,
@@ -33,4 +33,4 @@ ExpressPage.propTypes = {
   className: string,
 }
 
-export default translate(ExpressPage)
+export default L10nConsumer(ExpressPage)

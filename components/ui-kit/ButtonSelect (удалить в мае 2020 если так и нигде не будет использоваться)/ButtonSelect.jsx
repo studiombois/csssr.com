@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
-import translate from '../../../utils/translate-wrapper'
-import { arrayOf, bool, func, shape, string } from 'prop-types'
+import { L10nConsumer } from '../../../utils/l10nProvider'
+import { arrayOf, bool, shape, string } from 'prop-types'
 import cn from 'classnames'
 import { clearQueueScrollLocks, disablePageScroll, enablePageScroll } from 'scroll-lock'
 import styled from '@emotion/styled'
@@ -27,7 +27,6 @@ class ButtonSelect extends PureComponent {
     ),
     pageName: string,
     isMobile: bool,
-    t: func,
   }
 
   state = {
@@ -144,7 +143,13 @@ class ButtonSelect extends PureComponent {
   }
 
   render() {
-    const { className, buttonText, t, pageName, isMobile } = this.props
+    const {
+      className,
+      buttonText,
+      pageName,
+      isMobile,
+      l10n: { translations },
+    } = this.props
     const { isDropdownVisible } = this.state
 
     return (
@@ -188,7 +193,7 @@ class ButtonSelect extends PureComponent {
 
         <Button
           name="more-links"
-          ariaLabel={t('common:moreLinks')}
+          ariaLabel={translations.common.moreLinks}
           onClick={this.handleToggleDropdown}
           css={whiteButtonStyles}
           kind="secondary"
@@ -214,6 +219,6 @@ class ButtonSelect extends PureComponent {
   }
 }
 
-export default styled(translate(ButtonSelect))`
+export default styled(L10nConsumer(ButtonSelect))`
   ${styles}
 `

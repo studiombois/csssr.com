@@ -1,7 +1,6 @@
 import React from 'react'
-import { func } from 'prop-types'
 import Layout from '../Layout'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Greeting from './Greeting'
 import OurClients from './OurClients'
@@ -15,14 +14,14 @@ import ourClients from '../../data/industry/mediaAndMarketing/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
-const MediaAndMarketingPage = ({ t }) => {
+const MediaAndMarketingPage = ({ l10n: { translations } }) => {
   const pageName = 'industry'
   const page = 'mediaAndMarketing'
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('industry:meta.mediaAndMarketing.title')}
-        description={t('industry:meta.mediaAndMarketing.description')}
+        title={translations.industry.meta.mediaAndMarketing.title}
+        description={translations.industry.meta.mediaAndMarketing.description}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />
@@ -38,8 +37,6 @@ const MediaAndMarketingPage = ({ t }) => {
   )
 }
 
-MediaAndMarketingPage.propTypes = {
-  t: func,
-}
+MediaAndMarketingPage.propTypes = {}
 
-export default translate(MediaAndMarketingPage)
+export default L10nConsumer(MediaAndMarketingPage)

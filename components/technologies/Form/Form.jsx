@@ -5,7 +5,7 @@ import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
 import fetch from 'isomorphic-unfetch'
 import styles from './Form.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import ContactForm from '../../ContactForm'
 import contactFormValidationRules from '../../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../../utils/client/getGaCid'
@@ -20,9 +20,9 @@ const ContactFormForIndustry = (props) => (
   />
 )
 
-const onSubmit = (t, lng) => async (values) => {
+const onSubmit = (translations, language) => async (values) => {
   values.gacid = getGaCid()
-  values.language = lng
+  values.language = language
   let res
 
   try {
@@ -39,7 +39,7 @@ const onSubmit = (t, lng) => async (values) => {
       window.dataLayer.push({ event: `form_fail` })
     }
 
-    return { [FORM_ERROR]: t('common:form.errors.general') }
+    return { [FORM_ERROR]: translations.common.form.errors.general }
   }
 
   if (res.status === 201) {
@@ -52,7 +52,7 @@ const onSubmit = (t, lng) => async (values) => {
       const response = await res.json()
       error = response.error
     } catch {
-      error = t('common:form.errors.general')
+      error = translations.common.form.errors.general
     }
 
     if (window.dataLayer) {
@@ -65,10 +65,10 @@ const onSubmit = (t, lng) => async (values) => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ t, lng, pageName, className }) => (
+const Form = ({ l10n: { translations, language }, pageName, className }) => (
   <ReactFinalForm
-    onSubmit={onSubmit(t, lng)}
-    validate={contactFormValidationRules(t)}
+    onSubmit={onSubmit(translations, language)}
+    validate={contactFormValidationRules(translations)}
     decorators={[focusOnErrors]}
     component={ContactFormForIndustry}
     className={className}
@@ -76,7 +76,7 @@ const Form = ({ t, lng, pageName, className }) => (
   />
 )
 
-export default translate(
+export default L10nConsumer(
   styled(Form)`
     ${styles}
   `,

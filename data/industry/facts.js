@@ -19,29 +19,29 @@ const factsImages = {
 }
 
 export default {
-  heading: 'industry:facts.heading',
-  subHeading: 'industry:facts.subHeading',
+  heading: (t) => t.industry.facts.heading,
+  subHeading: (t) => t.industry.facts.subHeading,
   images: factsImages,
-  imgAlt: 'industry:imgAlt.facts',
+  imgAlt: (t) => t.industry.imgAlt.facts,
   factItems: [
     {
-      number: 'industry:facts.firstItem.number',
-      text: 'industry:facts.firstItem.text',
+      number: (t) => t.industry.facts.firstItem.number,
+      text: (t) => t.industry.facts.firstItem.text,
       className: 'first-item',
     },
     {
-      number: 'industry:facts.secondItem.number',
-      text: 'industry:facts.secondItem.text',
+      number: (t) => t.industry.facts.secondItem.number,
+      text: (t) => t.industry.facts.secondItem.text,
       className: 'second-item',
     },
     {
-      number: 'industry:facts.thirdItem.number',
-      text: 'industry:facts.thirdItem.text',
+      number: (t) => t.industry.facts.thirdItem.number,
+      text: (t) => t.industry.facts.thirdItem.text,
       className: 'third-item',
     },
     {
-      number: 'industry:facts.fourthItem.number',
-      text: 'industry:facts.fourthItem.text',
+      number: (t) => t.industry.facts.fourthItem.number,
+      text: (t) => t.industry.facts.fourthItem.text,
       className: 'fourth-item',
     },
   ],

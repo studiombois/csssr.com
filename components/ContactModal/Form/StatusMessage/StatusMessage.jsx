@@ -36,7 +36,7 @@ const StatusMessage = ({
       <p className="font_p16-regular status_text">{messageText}</p>
 
       <Button tabIndex={tabIndex} onClick={onClick}>
-        {status && translations.common.form.message[status].action}
+        {hasFailOrSuccessStatus && translations.common.form.message[status].action}
       </Button>
     </div>
   )

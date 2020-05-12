@@ -29,5 +29,42 @@
         }
       }
     }
+  },
+  "devOpsServices": {
+    "title": "DevOps Services",
+    "subtitle": "We&nbsp;offer the DevOps service as&nbsp;a&nbsp;part of&nbsp;our software development process.",
+    "description": "Our DevOps engineers always work side by side with our development teams creating, configuring, and supporting a reliable and secure environment for each project.",
+    "imgAlt": "Illustration with a man holding a laptop connected to a server",
+    "solutions": {
+      "title": "DevOps Solutions",
+      "continuous": {
+        "title": "Continuous Integration",
+        "description": "We&nbsp;implement&nbsp;CI systems to&nbsp;ensure that all developers&rsquo; pull requests go&nbsp;through automatic testing to&nbsp;verify the code before merging."
+      },
+      "automatic": {
+        "title": "Automatic Deployment",
+        "description": "We&nbsp;use containers to&nbsp;pack an&nbsp;application and all its dependencies to&nbsp;make deployment hassle-free."
+      },
+      "cluster": {
+        "title": "Cluster Management and Optimization",
+        "description": "We&nbsp;can take care of&nbsp;a&nbsp;server environment configuration depending on&nbsp;project&rsquo;s current needs and future development plans."
+      },
+      "maintenance": {
+        "title": "Maintenance and Monitoring",
+        "description": "Our engineers continuously support and monitor development environment throughout the whole development process to&nbsp;ensure that no&nbsp;time is&nbsp;lost due to&nbsp;the development environment unavailability."
+      }
+    }
+  },
+  "form": {
+    "title": "Let&rsquo;s Talk",
+    "namePlaceholder": "Tim Berners-Lee",
+    "nameLabel": "Your Name",
+    "phonePlaceholder": "+1-612-566-34-43",
+    "phoneLabel": "Phone",
+    "emailPlaceholder": "name@example.com",
+    "emailLabel": "E-mail",
+    "messagePlaceholder": "How can we help?",
+    "messageLabel": "How can we help?",
+    "submitText": "Submit"
   }
 }

@@ -16,12 +16,8 @@ const Hero = ({
   className,
   pageName,
   id,
-  content: { heading, description, button, images, imgAlt },
-  isMobile,
-  isTablet,
+  content: { heading, description, button, images, imgAlt }
 }) => {
-  const textType = isMobile || isTablet ? 'regular' : 'strong'
-
   return (
     <Grid className={className} as="section" id={id}>
       <Heading.H1
@@ -31,7 +27,7 @@ const Hero = ({
         className="heading"
       />
       <Text
-        type={textType}
+        type="regular"
         size="m"
         dangerouslySetInnerHTML={{ __html: t(description) }}
         className="text"

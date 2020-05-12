@@ -4,9 +4,12 @@ import Layout from '../../Layout'
 import translate from '../../../utils/translate-wrapper'
 
 import Hero from './Hero'
+import TechStack from './TechStack/TechStack'
 
 import Head from '../../Head'
 import hero from '../../../data/service/backend-and-devops/hero'
+import tech_stack from '../../../data/service/backend-and-devops/tech-stack'
+
 
 const BackEndDevopsPage = ({ t }) => {
   const pageName = 'backend-and-devops'
@@ -18,6 +21,7 @@ const BackEndDevopsPage = ({ t }) => {
       />
 
       <Hero id="hero" content={hero} />
+      <TechStack id="tech-stack" content={tech_stack} />
     </Layout>
   )
 }

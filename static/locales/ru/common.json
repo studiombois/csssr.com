@@ -72,7 +72,8 @@
     "services": {
       "title": "Сервисы",
       "outsourcing": "Aутсорсинг",
-      "mvp": "MVP"
+      "mvp": "MVP",
+      "backend": "Бэкенд и DevOps"
     },
     "industries": {
       "title": "Индустрии",

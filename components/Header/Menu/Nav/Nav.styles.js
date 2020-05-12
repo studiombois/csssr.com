@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     position: absolute;
     top: ${calcRem(64)};
@@ -57,7 +57,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     line-height: ${calcRem(24)};
   }
 
-  .nav_services_ru,
   .nav_howWeWork,
   .nav_products,
   .nav_industries {
@@ -67,6 +66,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
     .title {
       width: calc(100% - ${calcRem(43)});
+    }
+  }
+
+  .nav_services_ru {
+    .nav-item {
+      width: 33%;
     }
   }
 
@@ -99,7 +104,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     .nav-item_active .icon_information path:first-of-type {
       fill: #5695ED;
     }
-      
+
     .nav-item_active .icon_mediaAndMarketing path:first-of-type {
       fill: #5695ED;
     }
@@ -123,6 +128,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     .nav-item_active .icon {
       fill: #5695ED;
     }
+
+    .link {
+      padding-top: ${calcRem(42)};
+      padding-left: ${calcRem(88)};
+    }
   }
 
   .nav_services_ru,
@@ -139,11 +149,20 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
   .nav_services_en {
     .nav-item {
-      width: 33%;
+      width: 23.125%;
+      margin-left: ${calcRem(19)};
     }
 
     .title {
-      width: 50%;
+      width: 90%;
+    }
+
+    .icon {
+      top: ${calcRem(60)};
+    }
+
+    .description {
+      width: 90%;
     }
   }
 
@@ -199,7 +218,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       .link:hover .icon_information path:first-of-type {
         fill: #5695ED;
       }
-      
+
       .link:hover .icon_mediaAndMarketing path:first-of-type {
         fill: #5695ED;
       }
@@ -219,7 +238,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       .link:hover {
         color: #5695ED;
       }
-  
+
       .link:hover .icon {
         fill: #5695ED;
       }
@@ -283,6 +302,14 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
   }
 
+  ${desktop.l} {
+    .nav_services_en {
+      .nav-item {
+        margin-left: ${calcRem(24)};
+      }
+    }
+  }
+
   ${tablet.all} {
     .title {
       font-size: ${calcRem(24)};
@@ -293,15 +320,50 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       .title {
         width: 60%;
       }
-    }
 
-    .nav_services {
       .description {
-        width: calc(100% - ${calcRem(35)});
+        width: calc(100% - ${calcRem(25)});
+      }
+
+      .link {
+        padding-left: ${calcRem(72)};
+      }
+
+      .nav-item {
+        width: 33%;
       }
     }
 
-    .nav_services_ru,
+    .nav_services_en {
+      .nav-item {
+        width: 21.875%;
+        margin-left: ${calcRem(16)};
+      }
+
+      .icon {
+        left: ${calcRem(23)};
+      }
+
+      .title {
+        width: 100%;
+      }
+
+      .description {
+        width: calc(100% - ${calcRem(15)});
+      }
+    }
+
+    .nav_services_ru {
+      .link {
+        padding-top: ${calcRem(64)};
+        padding-left: ${calcRem(89)};
+      }
+
+      .icon {
+        top: ${calcRem(81)};
+      }
+    }
+
     .nav_howWeWork,
     .nav_products {
       .description {
@@ -366,6 +428,17 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       padding-left: 0;
     }
 
+    .nav_services {
+      .link {
+        padding-top: 0;
+        padding-left: 0;
+      }
+
+      .nav-item {
+        margin-left: 0;
+      }
+    }
+
     .title {
       margin-top: ${calcRem(8)};
       font-size: ${calcRem(16)};
@@ -399,7 +472,6 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       }
     }
 
-    .nav_services,
     .nav_howWeWork,
     .nav_products {
       ul {
@@ -413,6 +485,25 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
       .nav-item:not(:first-of-type) {
         margin-top: ${calcRem(67)};
+      }
+    }
+
+    .nav_services {
+      ul {
+        margin-top: ${calcRem(19)};
+      }
+
+      .nav-item {
+        width: 100%;
+        height: auto;
+      }
+
+      .title {
+        margin-top: 0;
+      }
+
+      .nav-item:not(:first-of-type) {
+        margin-top: ${calcRem(35)};
       }
     }
 

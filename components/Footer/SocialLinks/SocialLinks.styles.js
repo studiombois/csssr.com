@@ -22,7 +22,7 @@ const base = ({ colors, breakpoints: { tablet }, lng }) => css`
   }
 
   ${tablet.all} {
-    margin-top: ${lng === 'ru' ? calcRem(64) : calcRem(50)};
+    margin-top: ${lng === 'ru' ? calcRem(72) : calcRem(50)};
   }
 `
 

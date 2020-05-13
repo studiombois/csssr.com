@@ -1,20 +1,18 @@
 import React from 'react'
+import styled from '@emotion/styled'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
-import styled from '@emotion/styled'
-
-import { L10nConsumer } from '../../../utils/l10nProvider'
 import fetch from 'isomorphic-unfetch'
-import ContactForm from '../../ContactForm'
-import contactFormValidationRules from '../../../utils/validators/contactFormValidationRules'
-import getGaCid from '../../../utils/client/getGaCid'
+import styles from './ContactFormWrapper.styles'
+import { L10nConsumer } from '../../utils/l10nProvider'
+import ContactForm from '../ContactForm'
+import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
+import getGaCid from '../../utils/client/getGaCid'
+import testEmail from '../../utils/testEmail'
 
-import styles from './Form.styles'
-
-const ContactFormForCoreValues = (props) => (
+const Form = (props) => (
   <ContactForm
-    imageName="letter"
     headerId="hire-us"
     fields={['name', 'phone', 'email', 'message']}
     feedbackEmail="sales@csssr.io"
@@ -22,10 +20,13 @@ const ContactFormForCoreValues = (props) => (
   />
 )
 
-const onSubmit = (translations, language) => async (values) => {
+const onSubmit = (translations, language, pageName) => async (values) => {
+  values.pageName = pageName
   values.gacid = getGaCid()
   values.language = language
   let res
+
+  const isTestEmail = values.email === testEmail
 
   try {
     res = await fetch('/api/submit-form', {
@@ -37,16 +38,16 @@ const onSubmit = (translations, language) => async (values) => {
       body: JSON.stringify(values),
     })
   } catch {
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: `form_fail` })
+    if (window.dataLayer && !isTestEmail) {
+      window.dataLayer.push({ event: 'form_fail' })
     }
 
     return { [FORM_ERROR]: translations.common.form.errors.general }
   }
 
   if (res.status === 201) {
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: `form_success` })
+    if (window.dataLayer && !isTestEmail) {
+      window.dataLayer.push({ event: 'form_success' })
     }
   } else {
     let error
@@ -57,8 +58,8 @@ const onSubmit = (translations, language) => async (values) => {
       error = translations.common.form.errors.general
     }
 
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: `form_fail` })
+    if (window.dataLayer && !isTestEmail) {
+      window.dataLayer.push({ event: 'form_fail' })
     }
 
     return { [FORM_ERROR]: error }
@@ -67,21 +68,19 @@ const onSubmit = (translations, language) => async (values) => {
 
 const focusOnErrors = createDecorator()
 
-const Form = ({ l10n: { translations, language }, pageName, className }) => (
+const ContactFormWrapper = ({ l10n: { translations, language }, pageName, className }) => (
   <ReactFinalForm
-    onSubmit={onSubmit(translations, language)}
+    onSubmit={onSubmit(translations, language, pageName)}
     validate={contactFormValidationRules(translations)}
     decorators={[focusOnErrors]}
-    component={ContactFormForCoreValues}
-    pageName={pageName}
+    component={Form}
     className={className}
+    pageName={pageName}
   />
 )
 
 export default L10nConsumer(
-  styled(Form)`
+  styled(ContactFormWrapper)`
     ${styles}
   `,
 )
-
-export { onSubmit }

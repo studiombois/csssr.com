@@ -7,7 +7,7 @@ import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
 import Projects from './Projects'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 
 import Head from '../Head'
 import greeting from '../../data/industry/informationTechnology/greeting'

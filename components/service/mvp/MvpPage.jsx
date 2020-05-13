@@ -6,7 +6,7 @@ import AboutMvp from './AboutMvp'
 import Benefits from './Benefits'
 import OurAdvantages from './OurAdvantages'
 import Process from './Process'
-import Form from './Form'
+import Form from '../../ContactFormWrapper'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 

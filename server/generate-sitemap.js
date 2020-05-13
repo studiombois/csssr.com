@@ -348,6 +348,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/service/back-end-and-devops',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/service/back-end-and-devops',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/service/back-end-and-devops',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/service/back-end-and-devops',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/service/back-end-and-devops',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/service/back-end-and-devops',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/en/service/express-front-end',
     changefreq: 'yearly',
     priority: 0.6,

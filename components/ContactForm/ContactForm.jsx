@@ -269,6 +269,7 @@ class ContactForm extends PureComponent {
         <div className="button" ref={this.messageRef}>
           <AnimatedButton
             type="submit"
+            disabled={status === 'submitting' || status === 'fail'}
             status={status}
             testid={`${formName}:button.callbackForm.submit`}
           >

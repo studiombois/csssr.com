@@ -123,7 +123,7 @@ const CookiesPolicyContent = ({ className, t }) => (
           <a
             href="http://www.allaboutcookies.org/manage-cookies/index.html"
             target="_blank"
-            rel="noopener"
+            rel="noopener nofollow"
             className="font_link-list_16"
           >
             http://www.allaboutcookies.org/manage-cookies/index.html

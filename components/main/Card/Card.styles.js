@@ -20,10 +20,18 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
   }
 
+  .picture-wrap_radio{
+    pointer-events: none;
+  }
+
   .card-title,
   .card-description {
     text-align: left;
     color: ${colors.secondary.darken100};
+  }
+
+  .card-link {
+    order: 2;
   }
 
   .card-title {

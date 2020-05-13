@@ -8,22 +8,21 @@ import Text from '../../../ui-kit/core-design/Text'
 
 import translate from '../../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Link from '../../../ui-kit/core-design/Link'
 import ClickOutside from '../../../ClickOutside'
-
-import formatTime from '../../../../utils/formatTime'
 
 const addressesIds = ['singapore', 'russia', 'russia_2', 'estonia']
 // TODO это может поменяться в будущем
 // Можно эти данные отправлять с сервера при первой загрузке страницы
 const timezoneOffsetsByAddressId = {
-  singapore: 8,
-  russia: 3,
-  russia_2: 3,
-  estonia: 2,
+  singapore: 'Asia/Singapore',
+  russia: 'Europe/Moscow',
+  russia_2: 'Europe/Moscow',
+  estonia: 'Europe/Tallinn',
 }
 
-const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress }) => {
+const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress }) => {
   const [time, setTime] = useState(new Date())
 
   useEffect(() => {
@@ -98,10 +97,11 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
                 size={textSize}
               />
             )}
-
-            <Text className="time" type="regular" size={textSize}>
-              {formatTime(time, timezoneOffsetsByAddressId[id], lng)}
-            </Text>
+            {!isIe11 && 
+              <Text className="time" type="regular" size={textSize}>
+                {time.toLocaleTimeString([], { timeZone: timezoneOffsetsByAddressId[id], hour: '2-digit', minute: '2-digit' })} {/* show only hours and minutes, use options with the default locale - use an empty array, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString */}
+              </Text>
+            }
           </div>
         ))}
       </div>
@@ -117,7 +117,10 @@ Addresses.propTypes = {
 }
 
 export default translate(
-  DeviceConsumer(styled(Addresses)`
-    ${styles}
-  `),
+  DeviceConsumer(
+    MsBrowserConsumer(
+      styled(Addresses)`
+        ${styles}
+    `)
+  ),
 )

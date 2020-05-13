@@ -9,7 +9,7 @@ export default (fullPathname, newLanguage, pagesList) => {
     return `/${newLanguage}`
   }
 
-  if (['job', 'jobs', 'jobs-faq'].includes(pathname)) {
+  if (['job', 'jobs', 'jobs-faq'].indexOf(pathname) !== -1) {
     return `/${defaultLocaleByLanguage[newLanguage]}/jobs`
   }
 

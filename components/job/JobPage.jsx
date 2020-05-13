@@ -79,7 +79,7 @@ const filterUnckeckedContactOptions = (values, t) => {
   const filteredContactOptions = getContactOptionsByI18N(t).reduce((acc, option) => {
     const optionId = option.id
 
-    if (values.connection && !values.connection.includes(optionId)) {
+    if (values.connection && !values.connection.indexOf(optionId) !== -1) {
       acc[optionId] = true
     }
     return acc

@@ -35,6 +35,10 @@ test('test', () => {
     { language: 'ru', pathname: 'industry/fintech' },
     { language: 'ru', pathname: 'industry/information-technology' },
     { language: 'ru', pathname: 'industry/media-and-marketing' },
+    { language: 'en', pathname: 'project/s7-personal-account' },
+    { language: 'en', pathname: 'project/gazprom-neft-professionals-4-0' },
+    { language: 'ru', pathname: 'project/s7-personal-account' },
+    { language: 'ru', pathname: 'project/gazprom-neft-professionals-4-0' },
     { language: 'ru', pathname: 'service/mvp-development' },
     { language: 'ru', pathname: 'service/outsourcing-front-end' },
   ]

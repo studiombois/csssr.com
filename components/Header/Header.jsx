@@ -108,6 +108,7 @@ const Header = ({
       {isButtonVisible &&
         (isIe11 ? (
           <ButtonLink
+            data-testid={`Header:link.contactUs`}
             href="#hire-us"
             kind="primary"
             className="button_action"
@@ -115,6 +116,7 @@ const Header = ({
           />
         ) : (
           <Button
+            data-testid={`Header:button.contactUs`}
             onClick={handleButtonClick}
             className="button_action"
             dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
@@ -125,6 +127,7 @@ const Header = ({
 
   return (
     <header
+      data-testid="Header:block"
       className={cn(className, {
         visible: isHeaderVisible,
         invisible: !isHeaderVisible,
@@ -137,7 +140,7 @@ const Header = ({
         )}
 
       <NextLink href={`/${lng}`}>
-        <a className="logo-wrapper">
+        <a className="logo-wrapper" data-testid="Header:link.logo">
           <Logo className="logo" />
         </a>
       </NextLink>

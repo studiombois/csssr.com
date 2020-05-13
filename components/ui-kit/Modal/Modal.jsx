@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 import styles from './Modal.styles'
 
-import CrossIcon from '../../../static/icons/close.svg'
+import { ReactComponent as CrossIcon } from '../../../static/icons/close.svg'
 
 const crossIcon = <CrossIcon width="100%" height="100%" />
 

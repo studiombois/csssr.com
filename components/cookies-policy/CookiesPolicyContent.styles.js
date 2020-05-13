@@ -21,10 +21,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   h3 + h4,
   h4 + p,
   p + h4,
-  h3 + p,
-  p + ul,
-  ul + p,
-  ul .list-item_en:not(:first-of-type) {
+  h3 + p {
     margin-top: ${calcRem(40)};
   }
 
@@ -32,13 +29,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-bottom: 0;
   }
 
-  .title {
-    display: inline-block;
-    grid-column: 4 / span 6;
-  }
-
   .date {
     margin-top: ${calcRem(56)};
+  }
+
+  .adress {
+    display: block;
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(12)};
+    }
   }
 
   .content {
@@ -64,37 +64,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   section .list-item_en.font_p16-regular {
     margin-bottom: 0;
-  }
-
-  .list-item::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: attr(data-counter);
-  }
-
-  section .list-item.list-item_level_2 {
-    margin-top: ${calcRem(40)};
-    margin-bottom: 0;
-  }
-
-  .list .list-item.text,
-  section .list-item.list-item_level_3 {
-    margin-top: ${calcRem(40)};
-    margin-bottom: 0;
-  }
-
-  .list-item.list-item_level_1,
-  .list-item.list-item_level_2 {
-    padding-left: 2rem;
-  }
-
-  .list-item.list-item_level_3 {
-    padding-left: 5rem;
-  }
-
-  .list-item.list-item_level_3::before {
-    padding-left: 2rem;
   }
 
   .font_link-list_24 {

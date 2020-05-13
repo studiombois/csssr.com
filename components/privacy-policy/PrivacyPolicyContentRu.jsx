@@ -16,7 +16,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
     </header>
 
     <div className="content">
-      <p className="description font_p24-strong">
+      <p className="description font_p16-regular">
         Настоящая Политика конфиденциальности персональных данных (далее&nbsp;&mdash; Политика
         конфиденциальности) действует в&nbsp;отношении всех персональных данных, которые Общество
         с&nbsp;ограниченной ответственностью &laquo;Компани Нейм&raquo; (ИНН 5056011973),

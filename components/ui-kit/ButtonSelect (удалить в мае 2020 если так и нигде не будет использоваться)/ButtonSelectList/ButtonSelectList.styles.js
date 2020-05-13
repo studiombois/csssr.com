@@ -33,7 +33,7 @@ const base = css`
     background-color: white;
   }
 
-  &.is_appleDevice li:first-child {
+  &.is_appleDevice li:first-of-type {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-top: none;
@@ -72,12 +72,12 @@ const base = css`
     background-color: transparent;
   }
 
-  li:first-child,
+  li:first-of-type,
   li:last-child {
     padding: 0.5rem 1rem;
   }
 
-  li:first-child {
+  li:first-of-type {
     padding-top: 0;
     padding-bottom: 0.5rem;
     font-family: 'Roboto', 'Arial', sans-serif;
@@ -135,7 +135,7 @@ const base = css`
       border: none;
     }
 
-    li:first-child {
+    li:first-of-type {
       padding-top: 1.5rem;
       padding-bottom: 0;
       cursor: default;

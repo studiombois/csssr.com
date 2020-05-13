@@ -3,9 +3,9 @@ import { arrayOf, bool, func, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './ButtonSelectLinksDefault.styles'
 import translate from '../../../../utils/translate-wrapper'
-import Email from '../../../../static/icons/email.svg'
-import Telegram from '../../../../static/icons/telegram.svg'
-import Messenger from '../../../../static/icons/messenger.svg'
+import { ReactComponent as Email } from '../../../../static/icons/email.svg'
+import { ReactComponent as Telegram } from '../../../../static/icons/telegram.svg'
+import { ReactComponent as Messenger } from '../../../../static/icons/messenger.svg'
 
 const iconsByLabel = {
   Email: <Email />,

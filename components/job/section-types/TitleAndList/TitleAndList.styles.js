@@ -10,7 +10,7 @@ const base = css`
     margin-top: 0.5rem;
   }
 
-  & + ul li:not(:first-child) {
+  & + ul li:not(:first-of-type) {
     margin-top: 1rem;
   }
 
@@ -31,7 +31,7 @@ const base = css`
       line-height: 1.5rem;
     }
 
-    & + ul li:not(:first-child) {
+    & + ul li:not(:first-of-type) {
       margin-top: 0.5rem;
     }
   }

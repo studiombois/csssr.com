@@ -10,7 +10,7 @@ import Nav from './Nav'
 import DoubleBottom from './DoubleBottom'
 import Link from '../ui-kit/core-design/Link'
 import Heading from '../ui-kit/core-design/Heading'
-import Logo from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
 
 import translate from '../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../utils/deviceProvider'

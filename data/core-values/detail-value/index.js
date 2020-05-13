@@ -4,13 +4,13 @@ import accessibility from './accessibility'
 import ux from './ux'
 import webSecurity from './webSecurity'
 
-import Accessibility_1 from '../../../static/icons/core-values/accessibility_1.svg'
-import Accessibility_2 from '../../../static/icons/core-values/accessibility_2.svg'
-import Code from '../../../static/icons/core-values/code.svg'
-import Keys from '../../../static/icons/core-values/keys.svg'
-import Line_code from '../../../static/icons/core-values/line_code.svg'
-import Perfectionism from '../../../static/icons/core-values/perfectionism.svg'
-import Reliability from '../../../static/icons/core-values/reliability.svg'
+import { ReactComponent as Accessibility_1 } from '../../../static/icons/core-values/accessibility_1.svg'
+import { ReactComponent as Accessibility_2 } from '../../../static/icons/core-values/accessibility_2.svg'
+import { ReactComponent as Code } from '../../../static/icons/core-values/code.svg'
+import { ReactComponent as Keys } from '../../../static/icons/core-values/keys.svg'
+import { ReactComponent as Line_code } from '../../../static/icons/core-values/line_code.svg'
+import { ReactComponent as Perfectionism } from '../../../static/icons/core-values/perfectionism.svg'
+import { ReactComponent as Reliability } from '../../../static/icons/core-values/reliability.svg'
 
 export default [
   {

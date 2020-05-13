@@ -44,15 +44,15 @@ const base = css`
       text-align: center;
     }
 
-    &:first-child:not(.smaller-margin-top) {
+    &:first-of-type:not(.smaller-margin-top) {
       margin-top: 4.125rem;
     }
 
-    &.smaller-margin-top:not(:first-child) {
+    &.smaller-margin-top:not(:first-of-type) {
       margin-top: 3.675rem;
     }
 
-    &:not(:first-child):not(.smaller-margin-top),
+    &:not(:first-of-type):not(.smaller-margin-top),
     &:nth-child(n + 3):not(.smaller-margin-top) {
       margin-top: 2.25rem !important;
     }

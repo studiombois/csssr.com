@@ -132,7 +132,7 @@ module.exports = withSourceMaps({
             use: [svgrLoaderConfigWithoutSvgo, fileLoaderConfig],
           },
           {
-            use: [svgrLoaderConfig],
+            use: [svgrLoaderConfig, fileLoaderConfig],
           },
         ],
       })

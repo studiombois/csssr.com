@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, number, object, string } from 'prop-types'
+import { func, number, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Item.styles'
 import translate from '../../../../../../utils/translate-wrapper'
@@ -35,7 +35,7 @@ Item.propTypes = {
   className: string,
   t: func,
   index: number,
-  icon: object,
+  icon: func,
 }
 
 export default translate(

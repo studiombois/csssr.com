@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import styles from './CutButton.styles'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
-import FoldArrow from '../../../static/icons/foldArrow.svg'
+import { ReactComponent as FoldArrow } from '../../../static/icons/foldArrow.svg'
 import { bool, func, string } from 'prop-types'
 
 const CutButton = ({ className, children, onClick }) => (

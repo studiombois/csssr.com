@@ -1,8 +1,8 @@
 /* eslint-disable-next-line */
 import React from 'react'
-import Square from '../../static/icons/main/square.svg'
-import Triangle from '../../static/icons/main/triangle.svg'
-import Circle from '../../static/icons/main/circle.svg'
+import { ReactComponent as Square } from '../../static/icons/main/square.svg'
+import { ReactComponent as Triangle } from '../../static/icons/main/triangle.svg'
+import { ReactComponent as Circle } from '../../static/icons/main/circle.svg'
 
 export default [
   {

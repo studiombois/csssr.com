@@ -26,6 +26,7 @@ test('test', () => {
     'en-us/jobs.js',
     'en/service/express-front-end.js',
     'en/service/mvp-development.js',
+    'en/service/outsourcing-front-end.js',
     'en/service/back-end-and-devops.js',
     'en/industry/ecommerce.js',
     'en/industry/fintech.js',

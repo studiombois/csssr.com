@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   * {
     padding: 0;
     margin: 0;
@@ -16,6 +16,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   
   .header {
     grid-column: 4 / span 6;
+  }
+
+  .title {
+    font-family: 'Roboto Slab', serif;
+    color: black;
+  }
+
+  h3, h4 {
+    color: ${colors.secondary.darken100};
+  }
+
+  p {
+    color: black;
   }
 
   h3 + h4,
@@ -230,9 +243,10 @@ const ie11Styles = css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

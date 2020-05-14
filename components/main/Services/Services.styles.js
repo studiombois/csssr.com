@@ -285,10 +285,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
       min-height: ${lng === 'ru'? calcRem(192) : calcRem(176)};
     }
 
-    .service.service_backend:not(:first-of-type) {
-      margin-top: ${lng === 'ru'? calcRem(76) : calcRem(106)};
-    }
-
     .service-icon {
       display: none;
     }
@@ -298,7 +294,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
 
     .service:not(:first-of-type) {
-      margin-top: ${calcRem(76)};
+      margin-top: ${calcRem(108)};
     }
 
     .service-subtitle {

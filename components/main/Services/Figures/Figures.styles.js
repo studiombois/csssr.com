@@ -130,40 +130,51 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
 
     .picture:not(.picture_figures) {
       opacity: 1;
-      z-index: -1;
     }
 
     .picture_square {
+      z-index: 4;
       top: 0;
-      width: ${calcRem(118)};
-      transform: translateX(-50%);
+      width: ${calcRem(119)};
+      transform: translateX(-51%);
     }
 
     .picture_square.picture_square_ru {
-      top: 9%;
-      left: 26%;
-      width: ${calcRem(105)};
+      z-index: 3;
+      top: 8.5%;
+      left: 25.4%;
+      width: ${calcRem(111)};
     }
 
     .picture_triangle {
-      top: ${calcRem(112)};
-      transform: translateX(-58%);
-      width: ${calcRem(155)};
+      z-index: 3;
+      top: ${calcRem(111.5)};
+      transform: translateX(-57.9%);
+      width: ${calcRem(158)};
     }
 
     .picture_circle {
-      top: ${calcRem(233)};
+      z-index: 2;
+      top: ${calcRem(231)};
       width: ${calcRem(118)};
     }
 
-    .picture_arc {
-      width: ${calcRem(202)};
+    .picture_circle.picture_circle_ru {
+      z-index: 2;
+      top: 45%;
+      left: 45%;
+      width: ${calcRem(109)};
     }
 
-    .picture_circle.picture_circle_ru {
-      top: 46%;
-      left: 45%;
-      width: ${calcRem(105)};
+    .picture_arc {
+      top: 63.5%;
+      z-index: 1;
+      width: ${calcRem(204)};
+      transform: translateX(-49.6%);
+    }
+
+    .picture_arc.picture_arc_ru {
+      z-index: 1;
     }
   }
 `

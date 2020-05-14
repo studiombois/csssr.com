@@ -18,11 +18,14 @@ const base = ({ breakpoints: { mobile }}) => css`
 
   .menu-item {
     color: white;
-    letter-spacing: 0;
     cursor: pointer;
+    font-weight: 900;
+    font-size: ${calcRem(14)};
+    line-height: ${calcRem(32)};
+    letter-spacing: ${calcRem(1.8)};
 
     &:not(:first-of-type) {
-      margin-left: ${calcRem(17)};
+      margin-left: ${calcRem(19)};
     }
 
     &_active {
@@ -64,7 +67,8 @@ const base = ({ breakpoints: { mobile }}) => css`
     .menu-item {
       padding-left: ${calcRem(32)};
       padding-right: ${calcRem(32)};
-      letter-spacing: ${calcRem(1)};
+      font-size: ${calcRem(12)};
+      letter-spacing: ${calcRem(0.8)};
       border: none;
       background-color: transparent;
 

@@ -25,7 +25,7 @@ const Links = ({ className, router, t, lng, locale }) => (
       return (
         <li key={title}>
           {linkRegExp.test(href) ? (
-            <Link href={`${href}/${lng}`} type="top_menu" target="_blank">
+            <Link className="link" href={`${href}/${lng}`} type="top_menu" target="_blank">
               {t(title)}
             </Link>
           ) : (

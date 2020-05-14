@@ -75,6 +75,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
   ${mobile.all} {
     & {
+      padding-top: ${calcRem(40)};
       padding-right: ${calcRem(16)};
       padding-bottom: ${calcRem(16)};
       padding-left: ${calcRem(16)};
@@ -89,14 +90,43 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       display: none;
     }
 
+    .top-content {
+      width: 100%;
+    }
+
     .top-content-left-wrapper {
-      display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
+    }
+
+    .action-phrase,
+    .email {
+      margin-left: ${calcRem(31)};
+      align-self: flex-start;
     }
 
     .action-phrase {
-      margin-top: ${calcRem(3)};
+      margin-top: 0;
+    }
+
+    .link-lng,
+    .email {
+      margin-top: ${calcRem(8)};
+      display: inline-block;
+    }
+
+    .link-lng {
+      position: relative;
+      top: ${calcRem(-3)};
+      margin-left: ${calcRem(127)};
+      text-decoration: none;
+
+    }
+
+    .link-text {
+      color: ${colors.primary.origin};
+      font-weight: 300;
     }
   }
 `

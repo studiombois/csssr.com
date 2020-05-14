@@ -209,6 +209,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .image {
       grid-row: 3;
+      max-width: ${calcRem(312)};
       margin-top: ${calcRem(39)};
     }
   }

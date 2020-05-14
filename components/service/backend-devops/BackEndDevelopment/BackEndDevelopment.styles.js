@@ -198,6 +198,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-column: 1 / span 6;
     }
 
+    .text-do {
+      margin-top: ${calcRem(30)};
+    }
+
+    .item-title {
+      padding-left: ${calcRem(56)};
+    }
+
     .heading {
       grid-row: 1;
     }
@@ -209,6 +217,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .image {
       grid-row: 3;
+      max-width: ${calcRem(312)};
       margin-top: ${calcRem(39)};
     }
 
@@ -225,7 +234,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .list-item {
-      padding-left: ${calcRem(64)};
+      padding-left: ${calcRem(0)};
   
       &:not(:first-of-type) {
         margin-top: ${calcRem(71)};
@@ -233,22 +242,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   
       &:nth-of-type(1) {
         &:before {
-          width: ${calcRem(48)};
+          width: ${calcRem(43)};
           height: ${calcRem(48)};
         }
       }
   
       &:nth-of-type(2) {
         &:before {
-          width: ${calcRem(48)};
-          height: ${calcRem(48)};
+          width: ${calcRem(45)};
+          height: ${calcRem(54)};
         }
       }
   
       &:nth-of-type(3) {
         &:before {
-          width: ${calcRem(40)};
-          height: ${calcRem(40)};
+          width: ${calcRem(42)};
+          height: ${calcRem(49)};
+          top: ${calcRem(-12)};
+          left: ${calcRem(-2)};
         }
       }
     }

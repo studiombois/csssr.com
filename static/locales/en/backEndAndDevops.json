@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Back-End and DevOps",
+    "title": "Back-end and DevOps",
     "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
   },
   "hero": {
-    "title": "<span style='font-weight: bold;'>Back-End</span><br />and <span style='font-weight: bold;'>DevOps</span>",
+    "title": "<span style='font-weight: bold;'>Back-end</span><br />and <span style='font-weight: bold;'>DevOps</span>",
     "description": "Reinforce your web application with reliable <span style='white-space:nowrap'>back-end</span> development and duly adjusted infrastructure.",
     "button": "Let&rsquo;s Talk"
   },
   "backEndDevelopment": {
-    "title": "Back-End Development",
+    "title": "Back-end Development",
     "description": "It&nbsp;is&nbsp;not only the appearance of&nbsp;your product that matters, but also how smoothly, flexibly and reliably the part hidden from users performs.",
     "whatWeDo": {
       "title": "What We Do",
@@ -31,7 +31,7 @@
     }
   },
   "techStack": {
-    "title": "Back-End Tech Stack",
+    "title": "Back-end Tech Stack",
     "description": "Being front-end experts, we&nbsp;also work with a&nbsp;wide range of&nbsp;back-end technologies so&nbsp;we&nbsp;can develop an&nbsp;excellent web product all the way through.",
     "mongoDb": "We&nbsp;select databases subject to&nbsp;the project needs and specific tasks: <span style='font-weight:900'>MongoDB</span> (NoSQL) or&nbsp;<span style='font-weight:900'>PostgreSQL.</span>",
     "java": "We&nbsp;can write on&nbsp;well-proven <span style='font-weight:900'>Java</span>, but we&nbsp;prefer <span style='font-weight:900'>Kotlin</span>&nbsp;&mdash; a&nbsp;modern language working on&nbsp;<span style='font-weight:900'>JVM</span> (Java Virtual Machine).",

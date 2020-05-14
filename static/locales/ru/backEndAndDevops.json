@@ -61,18 +61,19 @@
         "title": "Обслуживание и мониторинг",
         "description": "Наши инженеры поддерживают и&nbsp;контролируют среду разработки на&nbsp;протяжении всего процесса. Это гарантирует непрерывность работы и&nbsp;отсутствие простоев."
       }
-    },
-    "form": {
-      "title": "Давайте пообщаемся",
-      "namePlaceholder": "Тим Бернерс-Ли",
-      "nameLabel": "Имя",
-      "phonePlaceholder": "+7-987-654-32-10",
-      "phoneLabel": "Телефон",
-      "emailPlaceholder": "name@example.com",
-      "emailLabel": "E-mail",
-      "messagePlaceholder": "Чем мы могли бы помочь вам?",
-      "messageLabel": "Чем мы могли бы помочь вам?",
-      "submitText": "Отправить"
     }
+  },
+  "form": {
+    "title": "Давайте пообщаемся",
+    "namePlaceholder": "Тим Бернерс-Ли",
+    "nameLabel": "Имя",
+    "phonePlaceholder": "+7-987-654-32-10",
+    "phoneLabel": "Телефон",
+    "emailPlaceholder": "name@example.com",
+    "emailLabel": "E-mail",
+    "messagePlaceholder": "Чем мы могли бы помочь вам?",
+    "messageLabel": "Чем мы могли бы помочь вам?",
+    "submitText": "Отправить"
   }
 }
+

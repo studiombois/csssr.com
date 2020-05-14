@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import common_styles_for_policy_pages from './CookiesPolicyContent.styles'
+import common_styles_for_policy_pages from '../privacy-policy/PrivacyPolicy.styles'
 import translate from '../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import Grid from '../ui-kit/core-design/Grid'

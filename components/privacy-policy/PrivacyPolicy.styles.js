@@ -54,6 +54,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(56)};
   }
 
+  .adress {
+    display: block;
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(12)};
+    }
+  }
+
   .content {
     grid-column: 4 / span 6;
     margin-top: ${calcRem(72)};

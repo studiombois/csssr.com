@@ -121,6 +121,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     .service-icon {
       left: 76px;
     }
+
+    .service_backend {
+      padding-right: ${calcRem(144)};
+    }
   }
 
   ${desktop.m} {
@@ -134,6 +138,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service-icon {
       left: 36px;
+    }
+
+    .service_backend {
+      .service-title {
+        padding-right: ${calcRem(8)};
+      }
     }
   }
 

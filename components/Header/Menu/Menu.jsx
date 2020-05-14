@@ -74,6 +74,7 @@ const Menu = ({ className, isMobile, lng, t }) => {
 
             return (
               <Link
+                data-testid={`Header:nav:button.${id}`}
                 className={cn('menu-item', {
                   'menu-item_active': id === activeItem,
                 })}

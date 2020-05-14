@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   * {
     padding: 0;
     margin: 0;
@@ -14,8 +14,35 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   width: 1792px;
   background-color: white;
   
+  
   .header {
     grid-column: 4 / span 6;
+  }
+
+  .title {
+    font-family: 'Roboto Slab', serif;
+  }
+
+  h3, h4 {
+    color: ${colors.secondary.darken100};
+  }
+
+  p {
+    color: black;
+  }
+
+  h3 + h4,
+  h4 + p,
+  p + h4,
+  h3 + p,
+  p + ul,
+  ul + p,
+  ul .list-item_en:not(:first-of-type) {
+    margin-top: ${calcRem(40)};
+  }
+
+  section .text.font_p16-regular {
+    margin-bottom: 0;
   }
 
   .title {
@@ -27,14 +54,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(56)};
   }
 
+  .adress {
+    display: block;
+  }
+
   .content {
     grid-column: 4 / span 6;
     margin-top: ${calcRem(72)};
   }
 
-  .description {
-    font-size: ${calcRem(16)};
-    line-height: ${calcRem(24)};
+  .content .description.font_p16-regular {
+    margin-bottom: 0;
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(40)};
+    }
   }
 
   section {
@@ -43,6 +77,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .list-item {
     position: relative;
+  }
+
+  section .list-item_en.font_p16-regular {
+    margin-bottom: 0;
   }
 
   .list-item::before {
@@ -57,6 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-bottom: 0;
   }
 
+  .list .list-item.text,
   section .list-item.list-item_level_3 {
     margin-top: ${calcRem(40)};
     margin-bottom: 0;
@@ -119,6 +158,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-bottom: ${calcRem(168)};
     }
 
+    h3 + h4,
+    h4 + p,
+    p + h4,
+    h3 + p,
+    p + ul,
+    ul + p,
+    ul .list-item_en:not(:first-of-type) {
+      margin-top: ${calcRem(32)};
+    }
+
     .header {
       grid-column: 3 / span 8;
     }
@@ -155,6 +204,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     & {
       padding-top: calc(${calcRem(112)} + 56px);
       margin-bottom: ${calcRem(144)};
+    }
+
+    h3 + h4,
+    h4 + p,
+    p + h4,
+    h3 + p,
+    p + ul,
+    ul + p,
+    ul .list-item_en:not(:first-of-type) {
+      margin-top: ${calcRem(24)};
     }
 
     .header {
@@ -219,9 +278,10 @@ const ie11Styles = css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

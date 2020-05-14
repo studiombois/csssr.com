@@ -40,24 +40,24 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
   }
 
   .picture_square.picture_square_ru {
-    top: 8.1%;
+    top: 8.5%;
     left: 25.5%;
     z-index: 1;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-    width: calc(145 / 400 * 100%);
+    width: calc(146 / 400 * 100%);
     transform: rotate(9.21deg)
   }
 
   .picture_triangle {
-    top: 28.5%;
-    transform: translateX(-57%);
+    top: 28.2%;
+    transform: translateX(-57.5%);
     z-index: 2;
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
-    width: calc(191 / 358 * 100%);
+    width: calc(193 / 358 * 100%);
   }
 
   .picture_circle {
-    top: 59%;
+    top: 58.7%;
     z-index: 3;
     transform: translateX(-52%);
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
@@ -73,9 +73,9 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
   }
 
   .picture_arc {
-    top: 64%;
+    top: 63.6%;
     z-index: 2;
-    transform: translateX(-50%);
+    transform: translateX(-49.7%);
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
     width: calc(249 / 358 * 100%);
   }

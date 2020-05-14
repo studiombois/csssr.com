@@ -90,8 +90,8 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
 
   @media (min-height: 654px) {
     & {
-      top: calc((100vh - ${lng === 'ru' ? `484px` : `588px`}) / 2);
-      max-height: ${lng === 'ru' ? `484px` : `588px`};
+      top: calc((100vh - ${lng === 'ru' ? `384px` : `482px`}) / 2);
+      max-height: ${lng === 'ru' ? `384px` : `482px`};
     }
   }
 

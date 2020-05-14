@@ -8,31 +8,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile, }}) => css`
 
   ${desktop.l} {
     .form {
-      padding-top: 263px;
-    }
-  }
-
-  ${desktop.m} {
-    .form {
-      padding-top: 186px;
-    }
-  }
-
-  ${desktop.s} {
-    .form {
-      padding-top: 226px;
+      padding-top: ${calcRem(256)};;
     }
   }
 
   ${tablet.all} {
     .form {
-      padding-top: ${calcRem(298)};
+      padding-top: ${calcRem(160)};
     }
   }
 
   ${mobile.all} {
     .form {
-      padding-top: ${calcRem(164)};
+      padding-top: ${calcRem(160)};
     }
 
     .form .button {

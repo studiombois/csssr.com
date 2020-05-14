@@ -20,6 +20,7 @@ const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
           {linkRegExp.test(href) ? (
             <Link
               href={href}
+              className="link"
               type="list"
               size="s"
               target="_blank"
@@ -29,6 +30,7 @@ const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
           ) : (
             <Link
               href={`/${useLocale ? locale : lng}/${href}`}
+              className="link"
               type="list"
               size="s"
               dangerouslySetInnerHTML={{ __html: t(`common:footer.${linksGroupName}.${id}`) }}

@@ -73,6 +73,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .nav-item {
       width: 33%;
     }
+
+    .title {
+      width: 45%;
+    }
   }
 
   .nav_industries {
@@ -153,16 +157,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-left: ${calcRem(19)};
     }
 
-    .title {
-      width: 90%;
+    .title,
+    .description {
+      width: 80%;
     }
 
     .icon {
       top: ${calcRem(60)};
-    }
-
-    .description {
-      width: 90%;
     }
   }
 

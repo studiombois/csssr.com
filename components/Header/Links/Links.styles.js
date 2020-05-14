@@ -11,7 +11,7 @@ const base = ({ breakpoints: { mobile }}) => css`
   }
 
   li:not(:first-of-type) {
-    margin-left: ${calcRem(16)};
+    margin-left: ${calcRem(24)};
   }
 
   a {
@@ -22,6 +22,12 @@ const base = ({ breakpoints: { mobile }}) => css`
 
   a:hover {
     color: #5695ED;
+  }
+
+  .link {
+    font-weight: 900;
+    font-size:  ${calcRem(14)};
+    line-height: ${calcRem(32)};
   }
 
   .link_active {
@@ -41,6 +47,10 @@ const base = ({ breakpoints: { mobile }}) => css`
     li:not(:first-of-type) {
       margin-top: ${calcRem(16)};
       margin-left: ${calcRem(0)};
+    }
+
+    .link {
+      font-size: ${calcRem(12)};
     }
 
     a {

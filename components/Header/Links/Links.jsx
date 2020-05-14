@@ -25,11 +25,17 @@ const Links = ({ className, router, l10n: { translations, locale, language } }) 
       return (
         <li key={title}>
           {linkRegExp.test(href) ? (
-            <Link href={`${href}/${language}`} type="top_menu" target="_blank">
+            <Link
+              data-testid={`Header:link.${title(translations)}`}
+              href={`${href}/${language}`}
+              type="top_menu"
+              target="_blank"
+            >
               {title(translations)}
             </Link>
           ) : (
             <Link
+              data-testid={`Header:link.${href}`}
               href={`/${loc}/${href}`}
               className={cn('link', {
                 link_active: router.pathname === `/${loc}/${href}`,

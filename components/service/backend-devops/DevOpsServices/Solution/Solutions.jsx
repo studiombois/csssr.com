@@ -19,7 +19,7 @@ const Solutions = ({ t, className, content: { heading, cases } }) => {
         as="h2"
         type="regular"
         size="l"
-        dangerouslySetInnerHTML={{ __html: 'What We Do' || t(heading) }}
+        dangerouslySetInnerHTML={{ __html: t(heading) }}
         className="title"
       />
 

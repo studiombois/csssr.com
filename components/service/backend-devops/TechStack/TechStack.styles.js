@@ -30,11 +30,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(98)};
   }
 
-  .mongodb-image {
-    position: relative;
-    height: max-content;
-  }
-
   .mongodb-text {
     margin-top: ${calcRem(46)};
   }
@@ -46,9 +41,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .java-image {
-    position: relative;
-    width: max-content;
-    height: max-content;
+    max-width: ${calcRem(296)};
   }
 
   .java-text {
@@ -88,8 +81,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .mongodb-image {
       grid-column: 9 / span 3;
-      width: max-content;
-      height: max-content;
+      max-width: ${calcRem(296)};
     }
 
     .mongodb-text {
@@ -156,6 +148,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(-87)};
     }
 
+    .java-image {
+      max-width: ${calcRem(224)};
+    }
+
     .java-text {
       grid-column: 4 / span 4;
       margin-top: ${calcRem(23)};
@@ -195,7 +191,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .mongodb-image {
-      width: max-content;
+      width: ${calcRem(224)};
     }
 
     .mongodb-text {
@@ -205,6 +201,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .java-block {
       grid-row: 3;
       margin-top: ${calcRem(57)};
+    }
+
+    .java-image {
+      max-width: ${calcRem(224)};
     }
 
     .experts-text {

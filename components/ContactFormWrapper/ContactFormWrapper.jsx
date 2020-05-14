@@ -69,14 +69,16 @@ const onSubmit = (translations, language, pageName) => async (values) => {
 const focusOnErrors = createDecorator()
 
 const ContactFormWrapper = ({ l10n: { translations, language }, pageName, className }) => (
-  <ReactFinalForm
-    onSubmit={onSubmit(translations, language, pageName)}
-    validate={contactFormValidationRules(translations)}
-    decorators={[focusOnErrors]}
-    component={Form}
-    className={className}
-    pageName={pageName}
-  />
+  <div className={className}>
+    <ReactFinalForm
+      onSubmit={onSubmit(translations, language, pageName)}
+      validate={contactFormValidationRules(translations)}
+      decorators={[focusOnErrors]}
+      component={Form}
+      className="form"
+      pageName={pageName}
+    />
+  </div>
 )
 
 export default L10nConsumer(

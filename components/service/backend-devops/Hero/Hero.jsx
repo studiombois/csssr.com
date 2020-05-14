@@ -16,7 +16,7 @@ const Hero = ({
   className,
   pageName,
   id,
-  content: { heading, description, button, images, imgAlt }
+  content: { heading, description, button, images, imgAlt },
 }) => {
   return (
     <Grid className={className} as="section" id={id}>
@@ -26,12 +26,14 @@ const Hero = ({
         dangerouslySetInnerHTML={{ __html: t(heading) }}
         className="heading"
       />
+
       <Text
-        type="regular"
+        type="strong"
         size="m"
         dangerouslySetInnerHTML={{ __html: t(description) }}
         className="text"
       />
+
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.l'].png}

@@ -211,51 +211,51 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-row: 3;
       margin-top: ${calcRem(39)};
     }
-  }
 
-  .left-block {
-    grid-column: 1 / span 6;
-    grid-row: 4;
-    margin-top: ${calcRem(121)};
-  }
-
-  .list {
-    grid-column: 1 / span 6;
-    margin-top: ${calcRem(71)};
-    grid-row: 5;
-  }
-
-  .list-item {
-    padding-left: ${calcRem(64)};
-
-    &:not(:first-of-type) {
+    .left-block {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+      margin-top: ${calcRem(121)};
+    }
+  
+    .list {
+      grid-column: 1 / span 6;
       margin-top: ${calcRem(71)};
+      grid-row: 5;
     }
 
-    &:nth-of-type(1) {
-      &:before {
-        width: ${calcRem(48)};
-        height: ${calcRem(48)};
+    .list-item {
+      padding-left: ${calcRem(64)};
+  
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(71)};
+      }
+  
+      &:nth-of-type(1) {
+        &:before {
+          width: ${calcRem(48)};
+          height: ${calcRem(48)};
+        }
+      }
+  
+      &:nth-of-type(2) {
+        &:before {
+          width: ${calcRem(48)};
+          height: ${calcRem(48)};
+        }
+      }
+  
+      &:nth-of-type(3) {
+        &:before {
+          width: ${calcRem(40)};
+          height: ${calcRem(40)};
+        }
       }
     }
 
-    &:nth-of-type(2) {
-      &:before {
-        width: ${calcRem(48)};
-        height: ${calcRem(48)};
-      }
+    .item-text {
+      margin-top: ${calcRem(25)};
     }
-
-    &:nth-of-type(3) {
-      &:before {
-        width: ${calcRem(40)};
-        height: ${calcRem(40)};
-      }
-    }
-  }
-
-  .item-text {
-    margin-top: ${calcRem(25)};
   }
 `
 

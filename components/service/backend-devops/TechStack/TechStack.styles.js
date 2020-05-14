@@ -57,7 +57,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .link-text {
     grid-column: 5 / span 4;
     grid-row: 6;
-    margin-top: ${calcRem(36)};
+    margin-top: ${calcRem(25)};
   }
 
   ${desktop.m} {
@@ -144,7 +144,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .java-block {
       grid-row: 2;
-      grid-column: 4 / span 3;
+      grid-column: 4 / span 4;
       margin-top: ${calcRem(-87)};
     }
 
@@ -164,7 +164,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   
     .link-text {
       grid-column: 4 / span 5;
-      margin-top: ${calcRem(16)};
+      margin-top: ${calcRem(24)};
     }
   }
 

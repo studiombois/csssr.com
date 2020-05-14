@@ -4,7 +4,7 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Greeting from './Greeting'
 import ValuesSection from './ValuesSection'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 import Head from '../Head'
 
 const CoreValues = ({ l10n: { translations } }) => {

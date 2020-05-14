@@ -7,10 +7,12 @@ import Greeting from './Greeting'
 import Workflow from './Workflow'
 import Calculator from './Calculator'
 import Features from './Features'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
+
+const pageName = 'express'
 
 const ExpressPage = ({ l10n: { translations } }) => (
-  <Layout pageName="express">
+  <Layout pageName={pageName}>
     <Head
       title={translations.express.meta.title}
       description={translations.express.meta.description}
@@ -25,7 +27,7 @@ const ExpressPage = ({ l10n: { translations } }) => (
     <Workflow />
     <Calculator />
     <Features />
-    <Form />
+    <Form pageName={pageName} />
   </Layout>
 )
 

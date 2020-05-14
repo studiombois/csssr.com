@@ -8,7 +8,7 @@ import WhatWeDo from '../../../components/service/outsourcing-front-end/WhatWeDo
 import TechnologyStack from '../../../components/service/outsourcing-front-end/TechnologyStack'
 import OurAdvantages from '../../../components/service/outsourcing-front-end/OurAdvantages'
 import Industries from '../../../components/service/outsourcing-front-end/Industries'
-import Form from '../../../components/service/outsourcing-front-end/Form'
+import Form from '../../ContactFormWrapper'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 

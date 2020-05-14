@@ -23,18 +23,6 @@
     "dbs": "We&nbsp;select databases depending on&nbsp;the project needs and specific tasks: MongoDB&nbsp (NoSQL) or&nbsp;PostgreSQL.",
     "kotlin": "We&nbsp;develop back-end for our clients as&nbsp;well. We&nbsp;can write on&nbsp;well-proven Java, but we&nbsp;prefer Kotlin&nbsp;&mdash; a&nbsp;modern language working on&nbsp;JVM (Java Virtual Machine)."
   },
-  "form": {
-    "title": "Let’s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "comment",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Phone",
-    "nameLabel": "Name",
-    "submitText": "Submit"
-  },
   "imgAlt": {
     "javascript": "Happy astronaut with Javascript logo",
     "typescript": "Happy astronauts with Typescript logo",

@@ -48,17 +48,5 @@
       "arc": "дуга",
       "triangle": "треугольник"
     }
-  },
-  "form": {
-    "title": "Давайте пообщаемся",
-    "namePlaceholder": "Тим Бернерс-Ли",
-    "phonePlaceholder": "+7-987-654-32-10",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "Чем мы могли бы помочь вам?",
-    "messageLabel": "коментарий",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Телефон",
-    "nameLabel": "Имя",
-    "submitText": "Отправить"
   }
 }

@@ -23,18 +23,6 @@
     "dbs": "Мы&nbsp;выбираем базы данных в&nbsp;зависимости от&nbsp;потребностей проекта и&nbsp;особенностей задач: MongoDB (NoSQL) или PostgreSQL.",
     "kotlin": "Мы&nbsp;разрабатываем и&nbsp;бэкенд. Можем писать на&nbsp;проверенном временем Java, но&nbsp;предпочитаем Kotlin&nbsp;&mdash; современный язык, работающий на&nbsp;JVM (Java Virtual Machine)."
   },
-  "form": {
-    "title": "Давайте пообщаемся",
-    "namePlaceholder": "Тим Бернерс-Ли",
-    "phonePlaceholder": "+7-987-654-32-10",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "Чем мы могли бы помочь вам?",
-    "messageLabel": "коментарий",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Телефон",
-    "nameLabel": "Имя",
-    "submitText": "Отправить"
-  },
   "imgAlt": {
     "javascript": "Счастливый космонавт c лого Javascript",
     "typescript": "Счастливые космонавты c лого Typescript",

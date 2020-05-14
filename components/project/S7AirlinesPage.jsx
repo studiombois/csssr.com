@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 import AboutProject from './AboutProject'
 import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'

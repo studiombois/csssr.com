@@ -8,7 +8,7 @@ import AboutUs from './AboutUs'
 import Projects from './Projects'
 import Vacancies from './Vacancies'
 import Head from '../Head'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 
 class MainPage extends PureComponent {

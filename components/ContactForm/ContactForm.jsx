@@ -7,7 +7,6 @@ import styles from './ContactForm.styles'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import { equals } from 'ramda'
 import Grid from '../ui-kit/core-design/Grid'
-import SubHeading from '../ui-kit/core-design/SubHeading'
 import Checkbox from '../ui-kit/Checkbox'
 import TextField from '../ui-kit/TextField'
 import TextareaField from '../ui-kit/TextareaField'
@@ -21,7 +20,6 @@ class ContactForm extends PureComponent {
   messageRef = React.createRef()
 
   static proptypes = {
-    imageName: string,
     formName: string,
     pageName: string,
     className: string,
@@ -36,7 +34,6 @@ class ContactForm extends PureComponent {
     formName: 'contact',
     shouldScroll: true,
     shouldShowStatusMessage: true,
-    shouldShowSubHeading: false,
   }
 
   state = {
@@ -138,7 +135,6 @@ class ContactForm extends PureComponent {
 
   renderField = (fieldName) => {
     const {
-      pageName,
       fieldsIds,
       formName,
       hasFailOrSuccessStatus,
@@ -155,8 +151,8 @@ class ContactForm extends PureComponent {
             name="name"
             component={TextField}
             type="text"
-            placeholder={translations[pageName].form.namePlaceholder}
-            label={translations[pageName].form.nameLabel}
+            placeholder={translations.contactForm.namePlaceholder}
+            label={translations.contactForm.nameLabel}
             testid={`${formName}:field:callbackForm.name`}
             autoFocus={formName === 'contact-modal'}
             tabIndex={getTabIndex}
@@ -170,8 +166,8 @@ class ContactForm extends PureComponent {
             name="phone"
             component={TextField}
             type="tel"
-            placeholder={translations[pageName].form.phonePlaceholder}
-            label={translations[pageName].form.phoneLabel}
+            placeholder={translations.contactForm.phonePlaceholder}
+            label={translations.contactForm.phoneLabel}
             testid={`${formName}:field:callbackForm.phone`}
             tabIndex={getTabIndex}
           />
@@ -184,8 +180,8 @@ class ContactForm extends PureComponent {
             name="email"
             component={TextField}
             type="email"
-            placeholder={translations[pageName].form.emailPlaceholder}
-            label={translations[pageName].form.emailLabel}
+            placeholder={translations.contactForm.emailPlaceholder}
+            label={translations.contactForm.emailLabel}
             testid={`${formName}:field:callbackForm.email`}
             tabIndex={getTabIndex}
           />
@@ -197,8 +193,8 @@ class ContactForm extends PureComponent {
             id={(fieldsIds && fieldsIds.message) || 'message'}
             name="message"
             component={TextareaField}
-            placeholder={translations[pageName].form.messagePlaceholder}
-            label={translations[pageName].form.messageLabel}
+            placeholder={translations.contactForm.messagePlaceholder}
+            label={translations.contactForm.messageLabel}
             testid={`${formName}:field:callbackForm.message`}
             tabIndex={getTabIndex}
           />
@@ -239,7 +235,6 @@ class ContactForm extends PureComponent {
       pageName,
       formName,
       className,
-      shouldShowSubHeading,
       shouldShowStatusMessage,
       headerId,
       fields,
@@ -257,16 +252,10 @@ class ContactForm extends PureComponent {
         <h2
           id={headerId}
           className="font_h2-slab"
-          dangerouslySetInnerHTML={{ __html: translations[pageName].form.title }}
+          dangerouslySetInnerHTML={{
+            __html: translations[pageName].formTitle || translations.contactForm.title,
+          }}
         />
-
-        {shouldShowSubHeading && (
-          <SubHeading
-            type="slab"
-            dangerouslySetInnerHTML={{ __html: translations[pageName].form.subTitle }}
-            className="sub-heading"
-          />
-        )}
 
         {fields.map(this.renderField)}
         {this.renderField('privacyPolicy')}
@@ -280,7 +269,7 @@ class ContactForm extends PureComponent {
             testid={`${formName}:button.callbackForm.submit`}
           >
             <Text type="perforator" size="m" className="button-content" as="span">
-              {translations[pageName].form.submitText}
+              {translations.contactForm.submitText}
             </Text>
           </AnimatedButton>
         </div>

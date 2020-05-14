@@ -6,7 +6,7 @@ import Greeting from './Greeting'
 import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 
 import Head from '../Head'
 import greeting from '../../data/industry/ecommerce/greeting'

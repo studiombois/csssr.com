@@ -220,53 +220,53 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       max-width: ${calcRem(312)};
       margin-top: ${calcRem(39)};
     }
-  }
 
-  .left-block {
-    grid-column: 1 / span 6;
-    grid-row: 4;
-    margin-top: ${calcRem(121)};
-  }
-
-  .list {
-    grid-column: 1 / span 6;
-    margin-top: ${calcRem(71)};
-    grid-row: 5;
-  }
-
-  .list-item {
-    padding-left: ${calcRem(0)};
-
-    &:not(:first-of-type) {
+    .left-block {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+      margin-top: ${calcRem(121)};
+    }
+  
+    .list {
+      grid-column: 1 / span 6;
       margin-top: ${calcRem(71)};
+      grid-row: 5;
     }
 
-    &:nth-of-type(1) {
-      &:before {
-        width: ${calcRem(43)};
-        height: ${calcRem(48)};
+    .list-item {
+      padding-left: ${calcRem(0)};
+  
+      &:not(:first-of-type) {
+        margin-top: ${calcRem(71)};
+      }
+  
+      &:nth-of-type(1) {
+        &:before {
+          width: ${calcRem(43)};
+          height: ${calcRem(48)};
+        }
+      }
+  
+      &:nth-of-type(2) {
+        &:before {
+          width: ${calcRem(45)};
+          height: ${calcRem(54)};
+        }
+      }
+  
+      &:nth-of-type(3) {
+        &:before {
+          width: ${calcRem(42)};
+          height: ${calcRem(49)};
+          top: ${calcRem(-12)};
+          left: ${calcRem(-2)};
+        }
       }
     }
 
-    &:nth-of-type(2) {
-      &:before {
-        width: ${calcRem(45)};
-        height: ${calcRem(54)};
-      }
+    .item-text {
+      margin-top: ${calcRem(25)};
     }
-
-    &:nth-of-type(3) {
-      &:before {
-        width: ${calcRem(42)};
-        height: ${calcRem(49)};
-        top: ${calcRem(-12)};
-        left: ${calcRem(-2)};
-      }
-    }
-  }
-
-  .item-text {
-    margin-top: ${calcRem(25)};
   }
 `
 

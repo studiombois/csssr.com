@@ -75,7 +75,7 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
   .picture_arc {
     top: 63.6%;
     z-index: 2;
-    transform: translateX(-49.7%);
+    transform: translateX(-49.5%);
     /* Вычисляем относительную величину ширины по соотношению ширины изображения к его контейнеру */
     width: calc(249 / 358 * 100%);
   }
@@ -170,7 +170,7 @@ const base = ({ breakpoints: { desktop, tablet }, lng }) => css`
       top: 63.5%;
       z-index: 1;
       width: ${calcRem(204)};
-      transform: translateX(-49.6%);
+      transform: translateX(-49.5%);
     }
 
     .picture_arc.picture_arc_ru {

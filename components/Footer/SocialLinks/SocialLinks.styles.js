@@ -1,9 +1,9 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ colors, breakpoints: { tablet }, lng }) => css`
+const base = ({ colors, breakpoints: { tablet, desktop } }) => css`
   & {
-    margin-top: ${calcRem(50)};
+    margin-top: ${calcRem(32)};
     display: flex;
     list-style: none;
   }
@@ -21,17 +21,28 @@ const base = ({ colors, breakpoints: { tablet }, lng }) => css`
     }
   }
 
+  ${desktop.m} {
+    & {
+      margin-top: ${calcRem(46)};
+    }
+  }
+
+  ${desktop.s} {
+    & {
+      margin-top: ${calcRem(46)};
+    }
+  }
+
   ${tablet.all} {
-    margin-top: ${lng === 'ru' ? calcRem(72) : calcRem(50)};
+    margin-top: ${calcRem(48)};
   }
 `
 
 export default props => {
   const colors = props.theme.colors
   const breakpoints = props.theme.breakpoints
-  const { lng }  = props
 
   return css`
-    ${base({ colors, breakpoints, lng })}
+    ${base({ colors, breakpoints })}
   `
 }

@@ -3,7 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ colors }) => css`
   & {
-    margin-top: ${calcRem(52)};
+    margin-top: ${calcRem(11)};
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;

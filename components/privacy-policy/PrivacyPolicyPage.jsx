@@ -4,7 +4,7 @@ import Layout from '../Layout'
 
 const PrivacyPolicyPage = ({ t, isMsBrowser, children }) => (
   <Layout>
-    <Head
+    {/* <Head
       title={t('privacyPolicy:meta.title')}
       description={t('privacyPolicy:meta.description')}
       isMsBrowser={isMsBrowser}
@@ -12,7 +12,7 @@ const PrivacyPolicyPage = ({ t, isMsBrowser, children }) => (
       <meta name="robots" content="noindex" />
     </Head>
 
-    {children}
+    {children} */}
   </Layout>
 )
 

@@ -121,17 +121,5 @@
     "school": "Robot in a bachelor's hat",
     "blog": "The man who reads the news",
     "vacancies": "Happy faces of people"
-  },
-  "form": {
-    "title": "Let’s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "comment",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Phone",
-    "nameLabel": "Name",
-    "submitText": "Submit"
   }
 }

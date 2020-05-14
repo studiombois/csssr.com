@@ -7,7 +7,7 @@ import Greeting from './Greeting'
 import Organized from './Organized'
 import Development from './Development'
 import Transparency from './Transparency'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 
 const WayOfWork = ({ l10n: { translations } }) => {
   const pageName = 'wayOfWork'

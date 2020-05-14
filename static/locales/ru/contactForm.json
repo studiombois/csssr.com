@@ -1,0 +1,12 @@
+{
+  "title": "Давайте пообщаемся",
+  "namePlaceholder": "Тим Бернерс-Ли",
+  "phonePlaceholder": "+7-987-654-32-10",
+  "emailPlaceholder": "name@example.com",
+  "messagePlaceholder": "Чем мы могли бы помочь вам?",
+  "nameLabel": "Имя",
+  "phoneLabel": "Телефон",
+  "emailLabel": "E-mail",
+  "messageLabel": "Чем мы могли бы помочь вам?",
+  "submitText": "Отправить"
+}

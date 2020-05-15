@@ -208,6 +208,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .heading {
       grid-row: 1;
+      margin-top: 0;
     }
 
     .text {

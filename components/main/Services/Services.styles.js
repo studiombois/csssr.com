@@ -123,7 +123,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
 
     .service_backend {
-      padding-right: ${calcRem(144)};
+      padding-right: ${calcRem(160)};
     }
   }
 
@@ -142,7 +142,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service_backend {
       .service-title {
-        padding-right: ${calcRem(8)};
+        padding-right: ${calcRem(16)};
       }
     }
   }

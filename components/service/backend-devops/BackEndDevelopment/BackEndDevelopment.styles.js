@@ -244,6 +244,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         &:before {
           width: ${calcRem(43)};
           height: ${calcRem(48)};
+          top: ${calcRem(-12)};
         }
       }
   
@@ -251,6 +252,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         &:before {
           width: ${calcRem(45)};
           height: ${calcRem(54)};
+          top: ${calcRem(-11)};
         }
       }
   
@@ -259,7 +261,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
           width: ${calcRem(42)};
           height: ${calcRem(49)};
           top: ${calcRem(-12)};
-          left: ${calcRem(-2)};
         }
       }
     }

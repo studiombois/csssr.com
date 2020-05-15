@@ -162,6 +162,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .button {
       margin-top: ${calcRem(49)};
       height: 3rem;
+      max-width: unset;
     }
   }
 `

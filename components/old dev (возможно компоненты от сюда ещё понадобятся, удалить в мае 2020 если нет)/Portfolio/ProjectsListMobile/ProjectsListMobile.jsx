@@ -1,5 +1,5 @@
 import React from 'react'
-import { arrayOf, number, string, shape } from 'prop-types'
+import { arrayOf, number, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import styles from './ProjectsListMobile.styles'

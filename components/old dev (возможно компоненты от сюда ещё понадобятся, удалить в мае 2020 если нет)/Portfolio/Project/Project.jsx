@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import { arrayOf, oneOf, string, number } from 'prop-types'
+import { arrayOf, number, oneOf, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Project.styles'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'

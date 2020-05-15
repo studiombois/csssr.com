@@ -56,9 +56,9 @@ const picturesMap = {
   'deputy-chief-accountant': 'Documents_2',
 }
 
-const divideSections = sections => {
-  const firstQuestIndex = sections.findIndex(section =>
-    ['quest', 'questBox'].includes(section.type),
+const divideSections = (sections) => {
+  const firstQuestIndex = sections.findIndex(
+    (section) => ['quest', 'questBox'].indexOf(section.type) !== -1,
   )
 
   return [sections.slice(0, firstQuestIndex), sections.slice(firstQuestIndex)]
@@ -92,7 +92,7 @@ class CandidateForm extends PureComponent {
   }
 
   // такой же метод есть в ContactForm
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     const {
       handleSubmit,
       form: { reset },

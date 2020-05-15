@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, object, array, func } from 'prop-types'
+import { array, func, object, string } from 'prop-types'
 import translate from '../../../utils/translate-wrapper'
 import cn from 'classnames'
 import Text from '../../ui-kit/core-design/Text'

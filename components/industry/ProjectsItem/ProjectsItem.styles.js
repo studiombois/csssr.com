@@ -269,6 +269,7 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
   .number-data {
     grid-row: 3;
     margin-top: ${calcRem(30)};
+    font-weight: normal;
   }
 
   .text-data {

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string, oneOf, bool } from 'prop-types'
+import { bool, oneOf, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './TextareaField.styles'
@@ -21,7 +21,7 @@ class TextareaField extends PureComponent {
     kind: 'light',
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { value } = event.target
     this.props.input.onChange(value)
   }

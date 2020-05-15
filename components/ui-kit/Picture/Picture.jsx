@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { string, object } from 'prop-types'
+import { object, string } from 'prop-types'
 import styles from './Picture.styles'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 

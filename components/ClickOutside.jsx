@@ -1,6 +1,6 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import { findDOMNode } from 'react-dom'
-import { node, string, func } from 'prop-types'
+import { func, node, string } from 'prop-types'
 
 export default class ClickOutside extends PureComponent {
   static propTypes = {
@@ -27,7 +27,7 @@ export default class ClickOutside extends PureComponent {
     window.document.removeEventListener('keydown', this.handleKeypress)
   }
 
-  handleClick = event => {
+  handleClick = (event) => {
     const target = event.target
     /* eslint-disable react/no-find-dom-node */
     const domNode = findDOMNode(this)
@@ -37,7 +37,7 @@ export default class ClickOutside extends PureComponent {
     }
   }
 
-  handleKeypress = event => {
+  handleKeypress = (event) => {
     const TABKEY = 9
     const ESCKEY = 27
 

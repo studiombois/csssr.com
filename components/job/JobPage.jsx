@@ -3,7 +3,7 @@ import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
 import fetch from 'isomorphic-unfetch'
-import objectToFormData from 'object-to-formdata'
+import { objectToFormData } from 'object-to-formdata'
 import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Head from '../Head'
@@ -79,7 +79,7 @@ const filterUnckeckedContactOptions = (values, t) => {
   const filteredContactOptions = getContactOptionsByI18N(t).reduce((acc, option) => {
     const optionId = option.id
 
-    if (values.connection && !values.connection.includes(optionId)) {
+    if (values.connection && !values.connection.indexOf(optionId) !== -1) {
       acc[optionId] = true
     }
     return acc

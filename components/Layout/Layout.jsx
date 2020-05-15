@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import DevTools from '../DevTools'
 import { withRouter } from 'next/router'
-import { Global, css } from '@emotion/core'
+import { css, Global } from '@emotion/core'
 import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'
 import Footer from '../Footer'

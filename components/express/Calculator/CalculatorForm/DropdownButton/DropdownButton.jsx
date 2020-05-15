@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { func, bool, string } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import Text from '../../../../ui-kit/core-design/Text'
 import styled from '@emotion/styled'
 import styles from './DropdownButton.styles'

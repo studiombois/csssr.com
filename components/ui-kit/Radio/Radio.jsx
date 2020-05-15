@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string, number, bool, func, node, oneOfType } from 'prop-types'
+import { bool, func, node, number, oneOfType, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Radio.styles'
 
@@ -21,7 +21,7 @@ class Radio extends PureComponent {
     tabIndex: 0,
   }
 
-  handleChange = data => {
+  handleChange = (data) => {
     this.props.input.onChange(data)
   }
 

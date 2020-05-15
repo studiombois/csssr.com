@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = css`
@@ -54,6 +55,21 @@ const base = css`
     background-size: auto 100%;
     overflow: hidden;
     z-index: -1000;
+  }
+
+  .picture {
+    grid-column: 8 / span 2;
+    margin-top: ${calcRem(88)};
+
+    &:firs-of-type {
+      margin-top: ${calcRem(96)};
+    }
+  }
+
+  .picture-faq {
+    grid-column: 8 / span 4;
+    grid-row: 13;
+    margin-top: ${calcRem(56)};
   }
 
   .hunter-text {
@@ -145,6 +161,10 @@ const base = css`
     .hunter-text {
       grid-column: 9 / span 4;
     }
+
+    .picture-faq {
+      margin-top: ${calcRem(72)};
+    }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
@@ -183,6 +203,20 @@ const base = css`
 
     p + p {
       margin-top: 0.5rem;
+    }
+
+    .picture {
+      grid-column: 8 / span 2;
+      margin-top: ${calcRem(56)};
+  
+      &:first-of-type {
+        margin-top: ${calcRem(104)};
+      }
+    }
+
+    .picture-faq {
+      grid-column: 8 / span 5;
+      margin-top: ${calcRem(75)};
     }
 
     .font_link-list_24 {
@@ -252,22 +286,23 @@ const base = css`
 
   @media (max-width: 767px) {
     & {
-      position: relative;
+      position: static;
       margin-top: 15.5rem;
       padding-top: 5.5rem;
       width: 20.5rem;
-    }
 
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: -1rem;
-      display: block;
-      width: 100vw;
-      height: 100%;
-      background-color: white;
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+      }
     }
 
     h1 span {
@@ -304,6 +339,22 @@ const base = css`
     ul {
       margin-top: 1.625rem;
       padding-left: 1.5rem;
+    }
+
+    .picture {
+      grid-column: 1 / span 3;
+      margin-top: ${calcRem(57)};
+      z-index: 0;
+  
+      &:first-of-type {
+        margin-top: ${calcRem(57)};
+      }
+    }
+
+    .picture-faq {
+      grid-column: 1 / span 6;
+      margin-top: ${calcRem(40)};
+      z-index: 0;
     }
 
     .font_p16-regular,
@@ -497,125 +548,6 @@ const ie11Styles = css`
   }
 `
 
-const pictureStyles = css`
-  & {
-    grid-column: 8 / span 2;
-    margin-top: 5.5rem;
-  }
-
-  & {
-    display: block;
-    -ms-grid-column: ${getGridValueForMs(8)};
-    -ms-grid-column-span: ${getGridValueForMs(2)};
-  }
-
-  &:nth-of-type(3) {
-    -ms-grid-row: 3;
-  }
-
-  &:nth-of-type(6) {
-    -ms-grid-row: 6;
-  }
-
-  &:nth-of-type(9) {
-    -ms-grid-row: 9;
-  }
-
-  &:first-of-type {
-    margin-top: 6rem;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media (min-width: 768px) and (max-width: 1279px) {
-    & {
-      margin-top: 3.5rem;
-    }
-
-    &:first-of-type {
-      margin-top: 6.5rem;
-    }
-  }
-
-  @media (max-width: 767px) {
-    & {
-      position: relative;
-      grid-column: 1 / span 3;
-      margin-top: 3.5625rem;
-    }
-
-    &:first-of-type {
-      margin-top: 3.5625rem;
-    }
-  }
-`
-
-const pictureFaqStyles = css`
-  & {
-    grid-column: 8 / span 5;
-    grid-row: 13;
-    margin-top: 3.5rem;
-  }
-
-  & {
-    display: block;
-    -ms-grid-column: ${getGridValueForMs(8)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: 13;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  @media (min-width: 768px) and (max-width: 1279px) {
-    img {
-      width: auto;
-      max-width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 33%;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    img {
-      object-position: calc(100% + 6.5rem);
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1279px) {
-    img {
-      width: 125%;
-      max-width: none;
-      height: auto;
-      object-position: unset;
-    }
-  }
-
-  @media (max-width: 767px) {
-    & {
-      position: relative;
-      grid-column: 1 / span 6;
-      margin-top: 1.5rem;
-      height: 100%;
-      max-height: 8.75rem;
-    }
-
-    img {
-      width: auto;
-      max-width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 40%;
-    }
-  }
-
-`
-
 const pictureHunterStyles = css`
   & {
     grid-column: 8 / span 1;
@@ -655,8 +587,6 @@ const pictureHunterStyles = css`
 `
 
 export {
-  pictureStyles,
-  pictureFaqStyles,
   pictureHunterStyles,
 }
 

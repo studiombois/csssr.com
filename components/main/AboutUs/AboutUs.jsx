@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import { Global } from '@emotion/core'
 import cn from 'classnames'
@@ -9,7 +9,6 @@ import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
 import Grid from '../../ui-kit/core-design/Grid'
-import Link from '../../ui-kit/core-design/Link'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import Picture from '../../ui-kit/Picture'
 
@@ -17,14 +16,13 @@ import facts from '../../../data/main/aboutUs/facts'
 import images from '../../../data/main/aboutUs/images'
 
 import translate from '../../../utils/translate-wrapper'
-import unescapeHtmlEntities from '../../../utils/unescapeHtmlEntities'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const AboutUs = ({ className, isMobile, t, lng }) => {
   const [visibleImage, setVisibleImage] = useState(null)
   const isDesktop = !isMobile
-  const handleHover = visibleImage => event => {
+  const handleHover = (visibleImage) => (event) => {
     if (!isDesktop) {
       event.preventDefault()
       return

@@ -4,11 +4,11 @@ import React from 'react'
 const StructuredDataVacancy = ({ vacancy }) => {
   const getDescriptionLayout = () => {
     return vacancy.sections
-      .map(item => {
+      .map((item) => {
         if (item.type === 'titleAndText') {
           return `<p>${item.title}</p><p>${item.text}</p>`
         } else if (item.type === 'titleAndList') {
-          return `<p>${item.title}</p><ul>${item.list.map(li => `<li>${li}</li>`).join('')}</ul>`
+          return `<p>${item.title}</p><ul>${item.list.map((li) => `<li>${li}</li>`).join('')}</ul>`
         } else if (item.type === 'text' || item.type === 'boldText') {
           return `<p>${item.text}</p>`
         }

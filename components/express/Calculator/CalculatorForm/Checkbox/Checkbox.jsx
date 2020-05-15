@@ -1,26 +1,13 @@
 import React from 'react'
-import { string, any, object, func, bool } from 'prop-types'
+import { any, object, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Checkbox.styles'
 
-const Checkbox = props => {
-  const {
-    className,
-    children,
-    input,
-    meta,
-    isToggleInputCheckbox,
-    toggleBrowserField,
-    toggleOtherBrowsersDropdown,
-    testId,
-    ...rest
-  } = props
-  const hasError = meta.touched && !!meta.error
+const Checkbox = (props) => {
+  const { className, children, input, meta, testId, ...rest } = props
 
-  if (isToggleInputCheckbox) {
-    toggleBrowserField(input.checked, toggleOtherBrowsersDropdown)
-  }
+  const hasError = meta.touched && !!meta.error
 
   return (
     <div className={className}>
@@ -44,9 +31,6 @@ const Checkbox = props => {
 }
 
 Checkbox.propTypes = {
-  toggleOtherBrowsersDropdown: func,
-  toggleBrowserField: func,
-  isToggleInputCheckbox: bool,
   meta: object,
   input: object,
   className: string,

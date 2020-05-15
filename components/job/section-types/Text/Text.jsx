@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'

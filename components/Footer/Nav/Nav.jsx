@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Nav.styles'
 
@@ -12,7 +12,7 @@ import translate from '../../../utils/translate-wrapper'
 const Nav = ({ className, t, lng }) => (
   <nav className={className}>
     {nav.map(({ id, links }) => {
-      if (lng === 'ru' && id ==='products') {
+      if (lng === 'ru' && id === 'products') {
         return
       }
 
@@ -28,7 +28,8 @@ const Nav = ({ className, t, lng }) => (
 
           <LinksList linksGroupName={id} links={links} />
         </div>
-    )})}
+      )
+    })}
   </nav>
 )
 

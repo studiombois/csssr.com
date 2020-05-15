@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { string, func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -10,7 +10,6 @@ import Figures from './Figures'
 import OurFeatures from './OurFeatures'
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
-import Link from '../../ui-kit/core-design/Link'
 import Grid from '../../ui-kit/core-design/Grid'
 
 import services from '../../../data/main/services'
@@ -36,7 +35,7 @@ const Services = ({ className, t, lng, isMobile }) => {
         <nav className="navigation">
           <ul>
             {services.map(({ id, title, subtitle, icon: Icon, iconName, href }) => {
-              const handleHover = hoveredService => event => {
+              const handleHover = (hoveredService) => (event) => {
                 if (isMobile) {
                   event.preventDefault()
                   return

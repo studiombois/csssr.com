@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import { Global, css } from '@emotion/core'
+import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
 import cn from 'classnames'

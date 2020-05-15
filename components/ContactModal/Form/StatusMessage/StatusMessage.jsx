@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { string, bool, func } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import translate from '../../../../utils/translate-wrapper'
 import getMessageTextOfStatus from '../../../../utils/client/getMessageTextOfStatus'
 import Button from '../../../ui-kit/core-design/Button'

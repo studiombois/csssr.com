@@ -1,1 +1,1 @@
-export default /^.+@.+\..+$/
+export default /^\S+@\S+\.\S+$/

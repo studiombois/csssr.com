@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { string, object } from 'prop-types'
+import { object, string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { withRouter } from 'next/router'
-import { string, func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import cn from 'classnames'
 import Fade from 'react-reveal/Fade'
 import styled from '@emotion/styled'
@@ -59,7 +59,10 @@ const Nav = ({
         </button>
       )}
 
-      <nav className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${lng}`)}>
+      <nav
+        data-testid="Header:nav.dropdown"
+        className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${lng}`)}
+      >
         <ul>
           {activeItem &&
             menu
@@ -77,6 +80,7 @@ const Nav = ({
                       })}
                     >
                       <Link
+                        data-testid={`Header:nav:link.${id}`}
                         className="link"
                         href={linkRegExp.test(href) ? href : `/${lng}/${href}`}
                         isNextLink={!linkRegExp.test(href)}

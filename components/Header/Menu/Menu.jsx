@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
-import { string, func, bool } from 'prop-types'
+import React, { useRef, useState } from 'react'
+import { bool, func, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Menu.styles'
@@ -75,6 +75,7 @@ const Menu = ({ className, isMobile, lng, t }) => {
             return (
               <Link
                 tabIndex="0"
+                data-testid={`Header:nav:button.${id}`}
                 className={cn('menu-item', {
                   'menu-item_active': id === activeItem,
                 })}

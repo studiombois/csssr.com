@@ -1,6 +1,6 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import Fade from 'react-reveal/Fade'
-import { Global, css } from '@emotion/core'
+import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import styles from './ElearningPlatformContent.styles'
 import DesignButton from './DesignButton'

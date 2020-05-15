@@ -14,7 +14,7 @@ const modalContInfo = () => {
     )
     browser.setValue(
       '[data-testid="contact-modal:field:callbackForm.message"]',
-      'Ехал Грека через реку.'
+      'Это тестовая заявка, отправленная из формы связи в модалке.'
     )
   })
 }

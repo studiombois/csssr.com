@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { css } from '@emotion/core'
-import { string, shape } from 'prop-types'
+import { shape, string } from 'prop-types'
 import getSrcSet from '../utils/client/getSrcSet'
 
 const defaultResolutions = ['360', '1024', '1280', '1360']
@@ -17,7 +17,7 @@ const PictureForAllResolutions = ({
   customResolutions = defaultResolutions,
 }) => (
   <picture className={className}>
-    {customResolutions.map(resolution => (
+    {customResolutions.map((resolution) => (
       <Fragment key={resolution}>
         <source
           media={mediaRuleByResoluton[resolution]}

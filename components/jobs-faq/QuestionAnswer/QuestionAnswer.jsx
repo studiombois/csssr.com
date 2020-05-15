@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { string, bool, array } from 'prop-types'
+import { array, bool, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './QuestionAnswer.styles'

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import styles from './QuestionHeader.styles'
-import { string, bool } from 'prop-types'
+import { bool, string } from 'prop-types'
 import Heading from '../../ui-kit/core-design/Heading'
 import Grid from '../../ui-kit/core-design/Grid'
 

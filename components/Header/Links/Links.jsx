@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'next/router'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Links.styles'
@@ -25,11 +25,17 @@ const Links = ({ className, router, t, lng, locale }) => (
       return (
         <li key={title}>
           {linkRegExp.test(href) ? (
-            <Link href={`${href}/${lng}`} type="top_menu" target="_blank">
+            <Link
+              data-testid={`Header:link.${t(title)}`}
+              href={`${href}/${lng}`}
+              type="top_menu"
+              target="_blank"
+            >
               {t(title)}
             </Link>
           ) : (
             <Link
+              data-testid={`Header:link.${href}`}
               href={`/${loc}/${href}`}
               className={cn('link', {
                 link_active: router.pathname === `/${loc}/${href}`,

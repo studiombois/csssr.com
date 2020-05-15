@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { string, shape } from 'prop-types'
+import { shape, string } from 'prop-types'
 import getSrcSet from '../utils/client/getSrcSet'
 
 const Picture = ({ className, image: { namespace, key, alt } }) => (

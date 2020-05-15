@@ -1,6 +1,6 @@
 import React from 'react'
 import Transition from 'react-transition-group/Transition'
-import { string, bool, func } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import OutsideClickHandler from 'react-outside-click-handler'
 import cn from 'classnames'
 import styled from '@emotion/styled'
@@ -35,14 +35,14 @@ const links = [
   },
 ]
 
-const ButtonSelectList = props => {
+const ButtonSelectList = (props) => {
   const { className, t, isDropdownVisible, isAppleDevice, onLinkClick, onCloseButtonClick } = props
   const animationDuration = 300
   const Links = isAppleDevice ? ButtonSelectLinksApple : ButtonSelectLinksDefault
 
   return (
     <Transition in={isDropdownVisible} timeout={animationDuration}>
-      {animationState =>
+      {(animationState) =>
         isDropdownVisible && (
           <OutsideClickHandler onOutsideClick={onCloseButtonClick} display="flex">
             <ul

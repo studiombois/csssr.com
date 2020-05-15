@@ -1,6 +1,6 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import cn from 'classnames'
-import { string, bool, func } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './FileField.styles'
 import translate from '../../../utils/translate-wrapper'
@@ -21,7 +21,7 @@ class FileField extends PureComponent {
     value: null,
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { value, files } = event.target
 
     this.props.input.onChange(value)

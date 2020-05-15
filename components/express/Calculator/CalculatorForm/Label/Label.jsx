@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { oneOfType, string, number } from 'prop-types'
+import { number, oneOfType, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Label.styles'
 import Text from '../../../../ui-kit/core-design/Text'

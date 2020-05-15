@@ -33,6 +33,12 @@ import school_desktop_m_hovered from '../../static/images/main/desktop.m/school-
 import school_desktop_m_webp_hovered from '../../static/images/main/desktop.m/school-hovered.png?responsive_and_webp'
 import school_desktop_s_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive'
 import school_desktop_s_webp_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive_and_webp'
+import radio_desktop_all from '../../static/images/main/desktop.all/radio.png?responsive'
+import radio_desktop_all_webp from '../../static/images/main/desktop.all/radio.png?responsive_and_webp'
+import radio_tablet_all from '../../static/images/main/tablet.all/radio.png?responsive'
+import radio_tablet_all_webp from '../../static/images/main/tablet.all/radio.png?responsive_and_webp'
+import radio_mobile_all from '../../static/images/main/mobile.all/radio.png?responsive'
+import radio_mobile_all_webp from '../../static/images/main/mobile.all/radio.png?responsive_and_webp'
 
 // import blog_desktop_l from '../../static/images/main/desktop.l/blog.png?responsive'
 // import blog_desktop_l_webp from '../../static/images/main/desktop.l/blog.png?responsive_and_webp'
@@ -44,13 +50,6 @@ import school_desktop_s_webp_hovered from '../../static/images/main/desktop.s/sc
 // import blog_tablet_all_webp from '../../static/images/main/tablet.all/blog.png?responsive_and_webp'
 // import blog_mobile_all from '../../static/images/main/mobile.all/blog.png?responsive'
 // import blog_mobile_all_webp from '../../static/images/main/mobile.all/blog.png?responsive_and_webp'
-
-import radio_desktop_all from '../../static/images/main/desktop.all/radio.png?responsive'
-import radio_desktop_all_webp from '../../static/images/main/desktop.all/radio.png?responsive_and_webp'
-import radio_tablet_all from '../../static/images/main/tablet.all/radio.png?responsive'
-import radio_tablet_all_webp from '../../static/images/main/tablet.all/radio.png?responsive_and_webp'
-import radio_mobile_all from '../../static/images/main/mobile.all/radio.png?responsive'
-import radio_mobile_all_webp from '../../static/images/main/mobile.all/radio.png?responsive_and_webp'
 
 const trackerImages = {
   'mobile.all': { png: tracker_mobile_all, webp: tracker_mobile_all_webp },

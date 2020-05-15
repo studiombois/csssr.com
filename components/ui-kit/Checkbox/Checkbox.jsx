@@ -2,13 +2,12 @@ import React, { PureComponent } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Checkbox.styles'
-import { string, number, bool, func, node, oneOfType } from 'prop-types'
+import { bool, func, node, number, oneOfType, string } from 'prop-types'
 
 class Checkbox extends PureComponent {
   static propTypes = {
     id: oneOfType([string, number]),
     name: string,
-    value: oneOfType([string, number]),
     tabIndex: string,
     className: string,
     checked: bool,
@@ -23,7 +22,7 @@ class Checkbox extends PureComponent {
     tabIndex: '0',
   }
 
-  handleChange = data => {
+  handleChange = (data) => {
     this.props.input.onChange(data)
   }
 
@@ -47,7 +46,6 @@ class Checkbox extends PureComponent {
         <input
           id={id}
           name={input.name}
-          value={input.value}
           checked={input.checked}
           disabled={disabled}
           type="checkbox"

@@ -10,7 +10,7 @@ import ContactForm from '../../ContactForm'
 import contactFormValidationRules from '../../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../../utils/client/getGaCid'
 
-const ContactFormForProcess = props => (
+const ContactFormForProcess = (props) => (
   <ContactForm
     headerId="hire-us"
     fields={['name', 'phone', 'email', 'message']}
@@ -19,7 +19,7 @@ const ContactFormForProcess = props => (
   />
 )
 
-const onSubmit = (t, lng) => async values => {
+const onSubmit = (t, lng) => async (values) => {
   values.gacid = getGaCid()
   values.language = lng
   let res

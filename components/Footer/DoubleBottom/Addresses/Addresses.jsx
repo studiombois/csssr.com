@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { string, func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 import styled from '@emotion/styled'
-import moment from 'moment'
 import styles from './Addresses.styles'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -9,24 +8,26 @@ import Text from '../../../ui-kit/core-design/Text'
 
 import translate from '../../../../utils/translate-wrapper'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Link from '../../../ui-kit/core-design/Link'
 import ClickOutside from '../../../ClickOutside'
 
 const addressesIds = ['singapore', 'russia', 'russia_2', 'estonia']
 // TODO это может поменяться в будущем
+// Можно эти данные отправлять с сервера при первой загрузке страницы
 const timezoneOffsetsByAddressId = {
-  singapore: 8,
-  russia: 3,
-  russia_2: 3,
-  estonia: 2,
+  singapore: 'Asia/Singapore',
+  russia: 'Europe/Moscow',
+  russia_2: 'Europe/Moscow',
+  estonia: 'Europe/Tallinn',
 }
 
-const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress }) => {
-  const [time, setTime] = useState(() => moment())
+const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress }) => {
+  const [time, setTime] = useState(new Date())
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setTime(() => moment())
+      setTime(new Date())
     }, 1000)
 
     return () => clearTimeout(timeout)
@@ -34,7 +35,7 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
 
   const handleResetHoveredAddress = () => setHoveredAddress(null)
 
-  const handleMouseOver = address => event => {
+  const handleMouseOver = (address) => (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -43,7 +44,7 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
     setHoveredAddress(address)
   }
 
-  const handleMouseOut = event => {
+  const handleMouseOut = (event) => {
     if (isMobile) {
       event.preventDefault()
       return
@@ -63,7 +64,6 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
             onMouseOver={handleMouseOver(id)}
             onMouseLeave={handleMouseOut}
           >
-
             <Heading
               as="p"
               className="title"
@@ -95,13 +95,13 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
                 dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.status`) }}
                 type="regular"
                 size={textSize}
-                Head Office
               />
             )}
-
-            <Text className="time" type="regular" size={textSize}>
-              {time.utcOffset(timezoneOffsetsByAddressId[id]).format(`${lng==='ru' ? 'HH:mm': 'hh:mm A' }`)}
-            </Text>
+            {!isIe11 && 
+              <Text className="time" type="regular" size={textSize}>
+                {time.toLocaleTimeString([], { timeZone: timezoneOffsetsByAddressId[id], hour: '2-digit', minute: '2-digit' })} {/* show only hours and minutes, use options with the default locale - use an empty array, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString */}
+              </Text>
+            }
           </div>
         ))}
       </div>
@@ -117,7 +117,10 @@ Addresses.propTypes = {
 }
 
 export default translate(
-  DeviceConsumer(styled(Addresses)`
-    ${styles}
-  `),
+  DeviceConsumer(
+    MsBrowserConsumer(
+      styled(Addresses)`
+        ${styles}
+    `)
+  ),
 )

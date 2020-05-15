@@ -1,14 +1,14 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { string, func } from 'prop-types'
+import { func, string } from 'prop-types'
 import { Field } from 'react-final-form'
 import styles from './RadioWrapper.styles'
 
 import RadioButton from '../RadioButton'
 import { valuesByFieldNames } from '../../../../../data/express/valuesByFieldNames'
 import {
-  retinaRadioButtons,
   additionalOptionsRadioButtons,
+  retinaRadioButtons,
 } from '../../../../../data/express/radioButtonsData'
 
 import translate from '../../../../../utils/translate-wrapper'
@@ -23,7 +23,7 @@ const RadioWrapper = ({ className, whatGroup, t }) => {
 
   return (
     <div className={className}>
-      {radioGroup.map(radio => (
+      {radioGroup.map((radio) => (
         <Field
           name={radio.name}
           key={radio.id}

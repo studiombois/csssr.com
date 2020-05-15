@@ -62,4 +62,20 @@ export default [
       },
     ],
   },
+  {
+    id: 'products',
+    title: 'common:header.menu.products.title',
+    links: [
+      {
+        id: 'lms',
+        title: 'common:header.menu.products.lms.title',
+        href: 'products/lms',
+      },
+      {
+        id: 'tracker',
+        title: 'common:header.menu.products.tracker.title',
+        href: 'https://tracker.csssr.com',
+      },
+    ],
+  },
 ]

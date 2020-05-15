@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
-import styles, { vacancyImageStyles, faqImageStyles } from './VacancyImageAndLinks.styles'
+import styles, { faqImageStyles, vacancyImageStyles } from './VacancyImageAndLinks.styles'
 import translate from '../../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import PictureForAllResolutions from '../../../PictureForAllResolutions'
@@ -18,7 +18,7 @@ const VacancyImageAndLinks = ({ lng, t, locale, className, vacancies, pictureNam
     )}
 
     <ul>
-      {vacancies.map(vacancy => (
+      {vacancies.map((vacancy) => (
         <Vacancy key={vacancy.name} locale={locale} vacancy={vacancy} />
       ))}
     </ul>

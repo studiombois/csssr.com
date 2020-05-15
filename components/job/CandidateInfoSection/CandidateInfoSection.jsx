@@ -2,12 +2,12 @@ import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles, {
-  stylesForFullWidthField,
-  stylesForFirstHalfWidthField,
-  stylesForSecondHalfWidthField,
-  stylesForTextareaField,
   stylesForCheckboxField,
   stylesForFileField,
+  stylesForFirstHalfWidthField,
+  stylesForFullWidthField,
+  stylesForSecondHalfWidthField,
+  stylesForTextareaField,
 } from './CandidateInfoSection.styles'
 import { css } from '@emotion/core'
 import translate from '../../../utils/translate-wrapper'
@@ -21,7 +21,7 @@ import PrivacyPolicyCheckbox from '../../PrivacyPolicyCheckbox'
 import getFileFieldText from '../../../utils/getFileFieldText'
 import Grid from '../../ui-kit/core-design/Grid'
 
-const CandidateInfoSection = props => {
+const CandidateInfoSection = (props) => {
   const { className, connection, vacancy, onFileFieldChange, t } = props
   const { hasComment, hasGithub, hasPortfolio, hasResume, hasFile, fileExt } = vacancy
   const commonFieldsData = [

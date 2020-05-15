@@ -4,7 +4,7 @@ import styles from './CutButton.styles'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import FoldArrow from '../../../static/icons/foldArrow.svg'
-import { string, bool, func } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 
 const CutButton = ({ className, children, onClick }) => (
   <Grid className={className}>

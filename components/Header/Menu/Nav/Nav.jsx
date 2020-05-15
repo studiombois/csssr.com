@@ -9,7 +9,7 @@ import styles from './Nav.styles'
 import Link from '../../../ui-kit/core-design/Link'
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
-import Back from '../../../../static/icons/header/back.svg'
+import { ReactComponent as Back } from '../../../../static/icons/header/back.svg'
 
 import headerLinks from '../../../../data/headerLinks'
 

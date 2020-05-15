@@ -1,16 +1,16 @@
 /* eslint-disable-next-line */
 import React from 'react'
-import Square from '../static/icons/header/square.svg'
-import Triangle from '../static/icons/header/triangle.svg'
-import Circle from '../static/icons/header/circle.svg'
-import PieChart from '../static/icons/header/pieChart.svg'
-import Bag from '../static/icons/header/bag.svg'
-import Computer from '../static/icons/header/computer.svg'
-import Message from '../static/icons/header/message.svg'
-import CPU from '../static/icons/header/cpu.svg'
-import Repeat from '../static/icons/header/repeat.svg'
-import LMS from '../static/icons/header/lms.svg'
-import Tracker from '../static/icons/header/tracker.svg'
+import { ReactComponent as Square } from '../static/icons/header/square.svg'
+import { ReactComponent as Triangle } from '../static/icons/header/triangle.svg'
+import { ReactComponent as Circle } from '../static/icons/header/circle.svg'
+import { ReactComponent as PieChart } from '../static/icons/header/pieChart.svg'
+import { ReactComponent as Bag } from '../static/icons/header/bag.svg'
+import { ReactComponent as Computer } from '../static/icons/header/computer.svg'
+import { ReactComponent as Message } from '../static/icons/header/message.svg'
+import { ReactComponent as CPU } from '../static/icons/header/cpu.svg'
+import { ReactComponent as Repeat } from '../static/icons/header/repeat.svg'
+import { ReactComponent as LMS } from '../static/icons/header/lms.svg'
+import { ReactComponent as Tracker } from '../static/icons/header/tracker.svg'
 
 export default {
   menu: [

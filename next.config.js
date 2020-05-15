@@ -115,7 +115,7 @@ module.exports = withSourceMaps({
       },
     }
 
-    const svgrLoaderConfigWithOutSvgo = {
+    const svgrLoaderConfigWithoutSvgo = {
       ...svgrLoaderConfig,
       options: {
         ...svgrLoaderConfig.options,
@@ -129,7 +129,7 @@ module.exports = withSourceMaps({
         oneOf: [
           {
             resourceQuery: /original/,
-            use: [svgrLoaderConfigWithOutSvgo, fileLoaderConfig],
+            use: [svgrLoaderConfigWithoutSvgo, fileLoaderConfig],
           },
           {
             use: [svgrLoaderConfig, fileLoaderConfig],

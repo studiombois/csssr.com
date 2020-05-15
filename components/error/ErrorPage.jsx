@@ -12,10 +12,10 @@ import DevTools from '../DevTools'
 import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
-import LogoIcon from '../../static/icons/csssr_logo.svg'
-import LineFromTopToBottomIcon from '../../static/icons/lineFromTopToBottom.svg'
-import NotFound from '../../static/icons/notFound.svg'
-import ServerError from '../../static/icons/serverError.svg'
+import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as LineFromTopToBottomIcon } from '../../static/icons/lineFromTopToBottom.svg'
+import { ReactComponent as NotFound } from '../../static/icons/notFound.svg'
+import { ReactComponent as ServerError } from '../../static/icons/serverError.svg'
 
 import navItems from '../../data/error/navItems'
 
@@ -32,8 +32,8 @@ const errorNameByStatusCode = {
 }
 
 const codeIconByStatusCode = {
-  404: <NotFound width="auto" height="100%" />,
-  500: <ServerError width="auto" height="100%" />,
+  404: <NotFound height="100%" />,
+  500: <ServerError height="100%" />,
 }
 
 class ErrorPage extends React.Component {

@@ -25,35 +25,35 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .squareItem::before {
-    background-image: url('../../../static/icons/way-of-work/transparency/square.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/square.svg').default});
   }
 
   .circleItem::before {
-    background-image: url('../../../static/icons/way-of-work/transparency/circle.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/circle.svg').default});
   }
 
   .arcItem::before {
-    background-image: url('../../../static/icons/way-of-work/transparency/arc.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/arc.svg').default});
   }
 
   .triangleItem::before {
-    background-image: url('../../../static/icons/way-of-work/transparency/triangle.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/triangle.svg').default});
   }
 
   .squareItem::after {
-    background-image: url('../../../static/icons/way-of-work/transparency/square-fill.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/square-fill.svg').default});
   }
 
   .circleItem::after {
-    background-image: url('../../../static/icons/way-of-work/transparency/circle-fill.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/circle-fill.svg').default});
   }
 
   .arcItem::after {
-    background-image: url('../../../static/icons/way-of-work/transparency/arc-fill.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/arc-fill.svg').default});
   }
 
   .triangleItem::after {
-    background-image: url('../../../static/icons/way-of-work/transparency/triangle-fill.svg');
+    background-image: url(${require('../../../static/icons/way-of-work/transparency/triangle-fill.svg').default});
   }
 
   .listItem.active::after {

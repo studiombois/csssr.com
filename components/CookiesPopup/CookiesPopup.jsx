@@ -9,7 +9,7 @@ import styles from './CookiesPopup.styles'
 
 import cookiesLinks from '../../data/сookies-popup/cookiesLinks'
 
-import CrossIcon from '../../static/icons/cross_white.svg'
+import { ReactComponent as CrossIcon } from '../../static/icons/cross_white.svg'
 
 const crossIcon = <CrossIcon width="100%" height="100%" />
 

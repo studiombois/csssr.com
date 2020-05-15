@@ -2,7 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import Layout from '../Layout'
 import Head from '../Head'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import Greeting from './Greeting'
 import ImageBlock from './ImageBlock'
 import QuestionHeader from './QuestionHeader'
@@ -53,4 +53,4 @@ JobsFaqPage.propTypes = {
   className: string,
 }
 
-export default translate(JobsFaqPage)
+export default L10nConsumer(JobsFaqPage)

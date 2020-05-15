@@ -96,8 +96,8 @@ const radioImages = {
 export default [
   {
     id: 'tracker',
-    title: 'main:projects.tracker.title',
-    description: 'main:projects.tracker.description',
+    title: (t) => t.main.projects.tracker.title,
+    description: (t) => t.main.projects.tracker.description,
     href: 'https://tracker.csssr.com/',
     images: trackerImages,
     imagesHovered: trackerImagesHovered,
@@ -105,8 +105,8 @@ export default [
   },
   {
     id: 'school',
-    title: 'main:projects.school.title',
-    description: 'main:projects.school.description',
+    title: (t) => t.main.projects.school.title,
+    description: (t) => t.main.projects.school.description,
     href: 'https://school.csssr.com',
     images: schoolImages,
     imagesHovered: schoolImagesHovered,
@@ -114,16 +114,16 @@ export default [
   },
   // {
   //   id: 'blog',
-  //   title: 'main:projects.blog.title',
-  //   description: 'main:projects.blog.description',
+  //   title: t => t.main.projects.blog.title,
+  //   description: t => t.main.projects.blog.description,
   //   href: 'https://blog.csssr.com',
   //   images: blogImages,
   //   fallback: blog_desktop_l,
   // },
   {
     id: 'radio',
-    title: 'main:projects.radio.title',
-    description: 'main:projects.radio.description',
+    title: (t) => t.main.projects.radio.title,
+    description: (t) => t.main.projects.radio.description,
     href: 'https://soundcloud.com/csssr',
     images: radioImages,
     fallback: radio_desktop_all,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'next/router'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Links.styles'
@@ -9,27 +9,33 @@ import Link from '../../ui-kit/core-design/Link'
 
 import headerLinks from '../../../data/headerLinks'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const { links } = headerLinks
 const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-const Links = ({ className, router, t, lng, locale }) => (
+const Links = ({ className, router, l10n: { translations, locale, language } }) => (
   <ul className={className}>
     {links.map(({ title, href }) => {
-      const loc = href === 'jobs' ? locale : lng
+      const loc = href === 'jobs' ? locale : language
 
-      if (lng === 'ru' && href === 'https://blog.csssr.com') {
+      if (language === 'ru' && href === 'https://blog.csssr.com') {
         return
       }
 
       return (
         <li key={title}>
           {linkRegExp.test(href) ? (
-            <Link href={`${href}/${lng}`} type="top_menu" target="_blank">
-              {t(title)}
+            <Link
+              data-testid={`Header:link.${title(translations)}`}
+              href={`${href}/${language}`}
+              type="top_menu"
+              target="_blank"
+            >
+              {title(translations)}
             </Link>
           ) : (
             <Link
+              data-testid={`Header:link.${href}`}
               href={`/${loc}/${href}`}
               className={cn('link', {
                 link_active: router.pathname === `/${loc}/${href}`,
@@ -37,7 +43,7 @@ const Links = ({ className, router, t, lng, locale }) => (
               isNextLink
               type="top_menu"
             >
-              {t(title)}
+              {title(translations)}
             </Link>
           )}
         </li>
@@ -48,11 +54,10 @@ const Links = ({ className, router, t, lng, locale }) => (
 
 Links.propTypes = {
   className: string,
-  t: func,
 }
 
 export default withRouter(
-  translate(styled(Links)`
+  L10nConsumer(styled(Links)`
     ${styles}
   `),
 )

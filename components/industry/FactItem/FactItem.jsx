@@ -5,15 +5,15 @@ import styled from '@emotion/styled'
 import styles from './FactItem.styles'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const FactItem = ({ t, number, text, className, itemClassName }) => (
+const FactItem = ({ number, text, className, itemClassName, l10n: { translations } }) => (
   <div className={cn(className, itemClassName)}>
     <Heading
       as="p"
       type="slab"
       size="l"
-      dangerouslySetInnerHTML={{ __html: t(number) }}
+      dangerouslySetInnerHTML={{ __html: number(translations) }}
       className="fact-number"
     />
 
@@ -21,19 +21,18 @@ const FactItem = ({ t, number, text, className, itemClassName }) => (
       type="strong"
       className="fact-text"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t(text) }}
+      dangerouslySetInnerHTML={{ __html: text(translations) }}
     />
   </div>
 )
 
 FactItem.propTypes = {
-  t: func,
-  number: string,
-  text: string,
+  number: func,
+  text: func,
   itemClassName: string,
 }
 
-export default translate(
+export default L10nConsumer(
   styled(FactItem)`
     ${styles}
   `,

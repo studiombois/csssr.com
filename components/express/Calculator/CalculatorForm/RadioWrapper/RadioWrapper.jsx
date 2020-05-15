@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import { Field } from 'react-final-form'
 import styles from './RadioWrapper.styles'
 
@@ -11,14 +11,14 @@ import {
   retinaRadioButtons,
 } from '../../../../../data/express/radioButtonsData'
 
-import translate from '../../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../../utils/l10nProvider'
 
 const radioGroups = {
   retina: retinaRadioButtons,
   additionalOptions: additionalOptionsRadioButtons,
 }
 
-const RadioWrapper = ({ className, whatGroup, t }) => {
+const RadioWrapper = ({ className, whatGroup, l10n: { translations } }) => {
   const radioGroup = radioGroups[whatGroup]
 
   return (
@@ -36,7 +36,7 @@ const RadioWrapper = ({ className, whatGroup, t }) => {
               <RadioButton
                 {...input}
                 className="radio-item"
-                labelText={t(radio.labelText)}
+                labelText={radio.labelText(translations)}
                 labelPrice={labelPrice === 0 ? 'Free' : `~$${labelPrice}`}
                 testIdRadioButton={`calculator:field:radioButton.${radio.id}`}
                 testIdLabel={`calculator:text:label.${radio.id}`}
@@ -52,9 +52,8 @@ const RadioWrapper = ({ className, whatGroup, t }) => {
 RadioWrapper.propTypes = {
   className: string,
   whatGroup: string,
-  t: func,
 }
 
-export default translate(styled(RadioWrapper)`
+export default L10nConsumer(styled(RadioWrapper)`
   ${styles.base}
 `)

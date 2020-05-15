@@ -38,19 +38,19 @@ const reviewImages = {
 
 const scrumban = {
   img: scrumbanImages,
-  imageAlt: 'wayOfWork:development.scrumban.imageAlt',
-  title: 'wayOfWork:development.scrumban.title',
-  description: 'wayOfWork:development.scrumban.description',
-  text: 'wayOfWork:development.scrumban.text',
-  textTwo: 'wayOfWork:development.scrumban.text_2',
+  imgAlt: (t) => t.wayOfWork.development.scrumban.imgAlt,
+  title: (t) => t.wayOfWork.development.scrumban.title,
+  description: (t) => t.wayOfWork.development.scrumban.description,
+  text: (t) => t.wayOfWork.development.scrumban.text,
+  textTwo: (t) => t.wayOfWork.development.scrumban.text_2,
 }
 
 const review = {
   img: reviewImages,
-  imageAlt: 'wayOfWork:development.review.imageAlt',
-  title: 'wayOfWork:development.review.title',
-  description: 'wayOfWork:development.review.description',
-  text: ['wayOfWork:development.review.text', 'wayOfWork:development.review.text_2'],
+  imgAlt: (t) => t.wayOfWork.development.review.imgAlt,
+  title: (t) => t.wayOfWork.development.review.title,
+  description: (t) => t.wayOfWork.development.review.description,
+  text: (t) => t.wayOfWork.development.review.text,
 }
 
 export { scrumban, review }

@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -17,12 +17,12 @@ import hero_desktop_webp from '../../../../static/images/service/outsourcing-fro
 import hero_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/hero.png?responsive'
 import hero_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/hero.png?responsive_and_webp'
 
-const Hero = ({ className, t }) => (
+const Hero = ({ className, l10n: { translations } }) => (
   <Grid as="article" className={className}>
     <Heading
       className="title"
       as="h1"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:hero.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.hero.title }}
       type="slab"
       size="l"
     />
@@ -32,13 +32,13 @@ const Hero = ({ className, t }) => (
       as="p"
       type="strong"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:hero.description') }}
+      dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.hero.description }}
     />
 
     <ContactButton
       className="button"
       pageName="outsourcingFrontEnd"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:hero.button') }}
+      dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.hero.button }}
     />
 
     <PictureForAllResolutions
@@ -48,17 +48,16 @@ const Hero = ({ className, t }) => (
         'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
       }}
       fallback={hero_desktop}
-      alt={t('outsourcingFrontEnd:imageAlt.hero')}
+      alt={translations.outsourcingFrontEnd.imgAlt.hero}
     />
   </Grid>
 )
 
 Hero.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Hero)`
     ${styles}
   `),

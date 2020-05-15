@@ -2,26 +2,26 @@ import React, { Fragment } from 'react'
 import { css } from '@emotion/core'
 
 /* eslint-disable react/display-name */
-export default ({ status, feedbackEmail, errorText, t, tabIndex }) => {
+export default ({ status, feedbackEmail, errorText, translations, tabIndex }) => {
   if (status === 'success') {
     return (
       <Fragment>
-        {t('common:form.message.success.intro')}
+        {translations.common.form.message.success.intro}
         <br />
-        {t('common:form.message.success.body')}
+        {translations.common.form.message.success.body}
       </Fragment>
     )
   }
 
   return (
     <Fragment>
-      {t(errorText)}
+      {errorText}
       <br />
 
       <span>
-        {t('common:form.message.fail.body.textStart')}
-        {t('common:form.message.fail.body.textForButton')}
-        {t('common:form.message.fail.body.textBetweenButtonAndLink')}
+        {translations.common.form.message.fail.body.textStart}
+        {translations.common.form.message.fail.body.textForButton}
+        {translations.common.form.message.fail.body.textBetweenButtonAndLink}
       </span>
 
       <a

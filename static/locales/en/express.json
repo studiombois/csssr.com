@@ -107,19 +107,7 @@
       "text": "Our in-house lawyer customizes contracts and NDAs for each project."
     }
   },
-  "form": {
-    "title": "Let’s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "comment",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Phone",
-    "nameLabel": "Name",
-    "submitText": "Submit"
-  },
-  "imageAlt": {
+  "imgAlt": {
     "rocket": "A rocket pointed upward",
     "aboutUs": "Illustrated figures of developers",
     "workflow1": "illustration of the number one for the first stage",

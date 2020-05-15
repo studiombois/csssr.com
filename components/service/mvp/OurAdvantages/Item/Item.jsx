@@ -1,21 +1,21 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Item.styles'
-import translate from '../../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../../utils/l10nProvider'
 
 import Heading from '../../../../ui-kit/core-design/Heading'
 import Text from '../../../../ui-kit/core-design/Text'
 import Link from '../../../../ui-kit/core-design/Link'
 import PictureForAllResolutions from '../../../../ui-kit/PictureForAllResolutions'
 
-const Item = ({ className, t, lng, id, link, images }) => (
+const Item = ({ className, l10n: { translations, language }, groupId, itemId, link, images }) => (
   <div className={className}>
     <PictureForAllResolutions
       className="picture"
       images={images}
       fallback={images['desktop.all'].png}
-      alt={t(`mvp:imageAlt.ourAdvantages.${id}`)}
+      alt={translations.mvp.imgAlt.ourAdvantages[groupId][itemId]}
     />
 
     <Heading
@@ -24,7 +24,7 @@ const Item = ({ className, t, lng, id, link, images }) => (
       type="regular"
       size="m"
       dangerouslySetInnerHTML={{
-        __html: t(`mvp:ourAdvantages.advantages.${id}.title`),
+        __html: translations.mvp.ourAdvantages.advantages[groupId][itemId].title,
       }}
     />
 
@@ -34,19 +34,19 @@ const Item = ({ className, t, lng, id, link, images }) => (
       type="strong"
       size="m"
       dangerouslySetInnerHTML={{
-        __html: t(`mvp:ourAdvantages.advantages.${id}.description`),
+        __html: translations.mvp.ourAdvantages.advantages[groupId][itemId].description,
       }}
     />
 
     {link && (
       <Link
         className="link"
-        href={`/${lng}/${link}`}
+        href={`/${language}/${link}`}
         type="list"
         size="m"
         isNextLink
         dangerouslySetInnerHTML={{
-          __html: t(`mvp:ourAdvantages.advantages.${id}.link`),
+          __html: translations.mvp.ourAdvantages.advantages[groupId][itemId].link,
         }}
       />
     )}
@@ -55,10 +55,8 @@ const Item = ({ className, t, lng, id, link, images }) => (
 
 Item.propTypes = {
   className: string,
-  t: func,
-  lng: string,
 }
 
-export default translate(styled(Item)`
+export default L10nConsumer(styled(Item)`
   ${styles}
 `)

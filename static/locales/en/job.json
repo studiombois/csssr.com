@@ -1,6 +1,5 @@
 {
-  "minutes": "~ {{count}} minute",
-  "minutes_plural": "~ {{count}} minutes",
+  "minutes": ["~ {{count}} minute", "~ {{count}} minutes"],
   "willBeRequired": "will need to solve the problem",
   "annotation": "Annotation",
   "remote": "Remote",

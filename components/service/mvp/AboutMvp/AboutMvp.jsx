@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Toggler from './Toggler'
 import Grid from '../../../ui-kit/core-design/Grid'
@@ -17,7 +17,10 @@ class AboutMvp extends PureComponent {
     togglerIndex: 1,
   }
   render() {
-    const { className, t } = this.props
+    const {
+      className,
+      l10n: { translations },
+    } = this.props
     const { togglerIndex } = this.state
 
     return (
@@ -27,7 +30,7 @@ class AboutMvp extends PureComponent {
             <Heading
               as="h2"
               className="title"
-              dangerouslySetInnerHTML={{ __html: t('mvp:aboutMvp.title') }}
+              dangerouslySetInnerHTML={{ __html: translations.mvp.aboutMvp.title }}
               type="slab"
               size="m"
             />
@@ -35,7 +38,7 @@ class AboutMvp extends PureComponent {
             <Toggler
               className="toggler"
               activeIndex={togglerIndex}
-              items={[t('mvp:aboutMvp.togglerOff'), t('mvp:aboutMvp.togglerOn')]}
+              items={[translations.mvp.aboutMvp.togglerOff, translations.mvp.aboutMvp.togglerOn]}
               onChange={(index) => this.setState({ togglerIndex: index })}
             />
 
@@ -45,7 +48,7 @@ class AboutMvp extends PureComponent {
                 as="p"
                 type="strong"
                 size="m"
-                dangerouslySetInnerHTML={{ __html: t('mvp:aboutMvp.descriptionOn') }}
+                dangerouslySetInnerHTML={{ __html: translations.mvp.aboutMvp.descriptionOn }}
               />
 
               <Text
@@ -53,7 +56,7 @@ class AboutMvp extends PureComponent {
                 as="p"
                 type="strong"
                 size="m"
-                dangerouslySetInnerHTML={{ __html: t('mvp:aboutMvp.descriptionOff') }}
+                dangerouslySetInnerHTML={{ __html: translations.mvp.aboutMvp.descriptionOff }}
               />
             </div>
           </Grid>
@@ -67,14 +70,14 @@ class AboutMvp extends PureComponent {
               className={cn('picture', { picture_visible: togglerIndex === 1 })}
               images={mvpOnImages}
               fallback={mvpOnImages['desktop.l']}
-              alt={t('mvp:imageAlt.mvpOn')}
+              alt={translations.mvp.imgAlt.mvpOn}
             />
 
             <PictureForAllResolutions
               className={cn('picture', { picture_visible: togglerIndex === 0 })}
               images={mvpOffImages}
               fallback={mvpOffImages['desktop.l']}
-              alt={t('mvp:imageAlt.mvpOff')}
+              alt={translations.mvp.imgAlt.mvpOff}
             />
           </div>
         </article>
@@ -83,7 +86,7 @@ class AboutMvp extends PureComponent {
   }
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(AboutMvp)`
     ${styles}
   `),

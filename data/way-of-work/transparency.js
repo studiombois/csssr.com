@@ -51,19 +51,19 @@ const triangleImages = {
 const list = [
   {
     id: 'square',
-    label: 'wayOfWork:transparency.square',
+    label: (t) => t.wayOfWork.transparency.square,
   },
   {
     id: 'circle',
-    label: 'wayOfWork:transparency.circle',
+    label: (t) => t.wayOfWork.transparency.circle,
   },
   {
     id: 'arc',
-    label: 'wayOfWork:transparency.arc',
+    label: (t) => t.wayOfWork.transparency.arc,
   },
   {
     id: 'triangle',
-    label: 'wayOfWork:transparency.triangle',
+    label: (t) => t.wayOfWork.transparency.triangle,
   },
 ]
 

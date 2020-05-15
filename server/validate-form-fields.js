@@ -1,12 +1,11 @@
-const contactFormValidationRules = require('../utils/validators/contactFormValidationRules').default
-const calculatorFormValidationRules = require('../utils/validators/calculatorFormValidationRules')
-  .default
+import contactFormValidationRules from '../utils/validators/contactFormValidationRules'
+import calculatorFormValidationRules from '../utils/validators/calculatorFormValidationRules'
 
-module.exports = (t, formName, fieldsValues) => {
+module.exports = (translations, formName, fieldsValues) => {
   const validationObject =
     formName === 'calculatorForm'
-      ? calculatorFormValidationRules(t)(fieldsValues)
-      : contactFormValidationRules(t)(fieldsValues)
+      ? calculatorFormValidationRules(translations)(fieldsValues)
+      : contactFormValidationRules(translations)(fieldsValues)
 
   const failedValidationFields = Object.keys(validationObject).filter(
     (field) => validationObject[field],

@@ -42,17 +42,5 @@
       "subTitle": "In&nbsp;addition to&nbsp;being well written, reliable, and user-friendly, web applications must also be&nbsp;secure.",
       "text": "We&nbsp;understand a&nbsp;small vulnerability in&nbsp;an&nbsp;application can lead to&nbsp;significant financial and reputational risks. One incorrectly implemented authorization or&nbsp;payment form can lead to&nbsp;a&nbsp;hack and extraction of&nbsp;user and/or company data. From the beginning, we&nbsp;think carefully about code architecture and pay special attention to&nbsp;security issues, even when client-side security audits are in&nbsp;place."
     }
-  },
-  "form": {
-    "title": "Let’s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "comment",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Phone",
-    "nameLabel": "Name",
-    "submitText": "Submit"
   }
 }

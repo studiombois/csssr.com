@@ -7,14 +7,14 @@ import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import styles from './Organized.styles'
 
 import { skydiverImages, skydiversImages } from '../../../data/way-of-work/organized'
 
-const Organized = ({ className, id, t }) => {
+const Organized = ({ className, id, l10n: { translations } }) => {
   return (
     <section className={className} id={id}>
       <Grid>
@@ -22,14 +22,14 @@ const Organized = ({ className, id, t }) => {
           <Heading.H1
             type="slab"
             size="m"
-            dangerouslySetInnerHTML={{ __html: t('wayOfWork:organized.title') }}
+            dangerouslySetInnerHTML={{ __html: translations.wayOfWork.organized.title }}
             className="heading"
           />
 
           <SubHeading
             type="slab"
             dangerouslySetInnerHTML={{
-              __html: t('wayOfWork:organized.description'),
+              __html: translations.wayOfWork.organized.description,
             }}
             className="subHeading"
           />
@@ -40,7 +40,7 @@ const Organized = ({ className, id, t }) => {
             className="skydiver"
             images={skydiverImages}
             fallback={skydiverImages['desktop.l']}
-            alt={t('wayOfWork:organized.imageAlt.skydiver')}
+            alt={translations.wayOfWork.organized.imgAlt.skydiver}
           />
         </div>
 
@@ -49,20 +49,20 @@ const Organized = ({ className, id, t }) => {
             className="firstParagraph"
             type="strong"
             size="m"
-            dangerouslySetInnerHTML={{ __html: t('wayOfWork:organized.firstParagraph') }}
+            dangerouslySetInnerHTML={{ __html: translations.wayOfWork.organized.firstParagraph }}
           />
 
           <Text
             className="secondParagraph"
             type="strong"
             size="m"
-            dangerouslySetInnerHTML={{ __html: t('wayOfWork:organized.secondParagraph') }}
+            dangerouslySetInnerHTML={{ __html: translations.wayOfWork.organized.secondParagraph }}
           />
         </div>
 
         <SubHeading
           type="slab"
-          dangerouslySetInnerHTML={{ __html: t('wayOfWork:organized.footer') }}
+          dangerouslySetInnerHTML={{ __html: translations.wayOfWork.organized.footer }}
           className="footer"
         />
 
@@ -71,7 +71,7 @@ const Organized = ({ className, id, t }) => {
             className="skydivers"
             images={skydiversImages}
             fallback={skydiversImages['desktop.l']}
-            alt={t('wayOfWork:organized.imageAlt.skydivers')}
+            alt={translations.wayOfWork.organized.imgAlt.skydivers}
           />
         </div>
       </Grid>
@@ -84,7 +84,7 @@ Organized.propTypes = {
   id: string,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Organized)`
     ${styles}
   `),

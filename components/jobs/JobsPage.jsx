@@ -1,29 +1,31 @@
 import React, { PureComponent } from 'react'
 import fetch from 'isomorphic-unfetch'
 import Head from '../../components/Head'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import Layout from '../../components/Layout'
 import Vacancies from '../../components/jobs/Vacancies'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
-import i18n from '../../common/i18n'
 
 class JobsPage extends PureComponent {
-  static async getInitialProps({ req }) {
-    const locale = req ? req.language : i18n.language
-    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?locale=${locale}`)
+  static async getInitialProps(ctx) {
+    const l10n = ctx.res ? ctx.res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
+    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?locale=${l10n.locale}`)
     const vacancies = await res.json()
 
     return { vacancies }
   }
 
   render() {
-    const { t, vacancies, lng } = this.props
+    const {
+      vacancies,
+      l10n: { translations, language },
+    } = this.props
     return (
       <Layout>
         <Head
-          title={t('jobs:meta.title')}
-          templateTitle={`${lng === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
-          description={t('jobs:meta.description')}
+          title={translations.jobs.meta.title}
+          templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
+          description={translations.jobs.meta.description}
           ogImage={{
             url: require('../../static/images/jobs/1920/cover@2x.jpg'),
             width: 1266,
@@ -36,4 +38,4 @@ class JobsPage extends PureComponent {
   }
 }
 
-export default translate(JobsPage)
+export default L10nConsumer(JobsPage)

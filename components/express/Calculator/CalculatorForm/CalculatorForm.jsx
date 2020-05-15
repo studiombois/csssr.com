@@ -29,7 +29,7 @@ import normalizeNumberOfPages from '../../../../utils/normalizeNumberOfPages'
 import calculatorFormValidationRules from '../../../../utils/validators/calculatorFormValidationRules'
 import submitFormCalculatorForm from '../../../../utils/submitFormCalculatorForm'
 
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const formName = 'calculatorForm'
 const focusOnErrorsDecorator = createFocusDecorator(getFormInputs(formName))
@@ -96,7 +96,11 @@ const OriginCalculatorForm = (props) => {
     setStatus(false)
   }
 
-  const { className, values, t } = props
+  const {
+    className,
+    values,
+    l10n: { translations },
+  } = props
   //TODO обернуть компоненты полей ввода в обертки
   return (
     <form onSubmit={handleSubmit} className={className} id={formName} name={formName}>
@@ -124,7 +128,9 @@ const OriginCalculatorForm = (props) => {
               className="second-title"
               type="regular"
               size="m"
-              dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset1.title') }}
+              dangerouslySetInnerHTML={{
+                __html: translations.express.calculator.form.fieldset1.title,
+              }}
             />
           </legend>
 
@@ -138,7 +144,7 @@ const OriginCalculatorForm = (props) => {
                   type="text"
                   maxLength="3"
                   className="input-control"
-                  label={t('express:calculator.form.fieldset1.fieldLabel')}
+                  label={translations.express.calculator.form.fieldset1.fieldLabel}
                   testidInput="calculator:field:basic.value"
                   testidBtnIncrement="calculator:button:basic.increment"
                   testidBtnDecrement="calculator:button:basic.decrement"
@@ -153,7 +159,7 @@ const OriginCalculatorForm = (props) => {
               component={Checkbox}
               testId="calculator:field:checkbox.hotProject"
             >
-              <Label text={t('express:calculator.form.fieldset1.checkboxLabel')} />
+              <Label text={translations.express.calculator.form.fieldset1.checkboxLabel} />
             </Field>
           </div>
         </fieldset>
@@ -165,13 +171,17 @@ const OriginCalculatorForm = (props) => {
               className="section-head"
               type="regular"
               size="s"
-              dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset2.title') }}
+              dangerouslySetInnerHTML={{
+                __html: translations.express.calculator.form.fieldset2.title,
+              }}
             />
           </legend>
 
           <Note
             className="note"
-            dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset2.note') }}
+            dangerouslySetInnerHTML={{
+              __html: translations.express.calculator.form.fieldset2.note,
+            }}
           />
 
           <Field
@@ -181,7 +191,7 @@ const OriginCalculatorForm = (props) => {
               <InputControl
                 {...input}
                 className="input-control"
-                label={t('express:calculator.form.fieldset2.fieldLabel')}
+                label={translations.express.calculator.form.fieldset2.fieldLabel}
                 maxLength="3"
                 testidInput="calculator:field:layout.value"
                 testidBtnIncrement="calculator:button:layout.increment"
@@ -192,17 +202,17 @@ const OriginCalculatorForm = (props) => {
 
           <div className="text-price">
             <Text type="regular" size="m">
-              {t('express:calculator.form.fieldset2.dynamicText.base')}
+              {translations.express.calculator.form.fieldset2.dynamicText.base}
               <b>
                 {values.parceForm_designPerPage <= 1
-                  ? t('express:calculator.form.fieldset2.dynamicText.option1')
-                  : t('express:calculator.form.fieldset2.dynamicText.option2')}
+                  ? translations.express.calculator.form.fieldset2.dynamicText.option1
+                  : translations.express.calculator.form.fieldset2.dynamicText.option2}
               </b>
             </Text>
 
             <Text type="regular" size="m" className="text-price_color_blue">
               {values.parceForm_designPerPage <= 1
-                ? t('express:calculator.form.fieldset2.dynamicText.price')
+                ? translations.express.calculator.form.fieldset2.dynamicText.price
                 : `$${calcLayoutSum(
                     values.parceForm_designPerPage,
                     values.parceForm_numberOfPages,
@@ -217,7 +227,9 @@ const OriginCalculatorForm = (props) => {
               as="h4"
               className="section-head"
               type="regular"
-              dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset3.title') }}
+              dangerouslySetInnerHTML={{
+                __html: translations.express.calculator.form.fieldset3.title,
+              }}
             />
           </legend>
 
@@ -230,7 +242,7 @@ const OriginCalculatorForm = (props) => {
             testId="calculator:field:checkbox.recommendations"
           >
             <Label
-              text={t('express:calculator.form.fieldset3.checkboxLabel1')}
+              text={translations.express.calculator.form.fieldset3.checkboxLabel1}
               price="Free"
               testId="calculator:text:label.recommendations"
             />
@@ -239,7 +251,9 @@ const OriginCalculatorForm = (props) => {
           <Text
             className="recommendations"
             type="perforator"
-            dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset3.subtitle') }}
+            dangerouslySetInnerHTML={{
+              __html: translations.express.calculator.form.fieldset3.subtitle,
+            }}
           />
 
           <div className="checkbox-wrapper">
@@ -254,7 +268,7 @@ const OriginCalculatorForm = (props) => {
                 testId={`calculator:field:checkbox.${browser.name.split('_')[1]}`}
               >
                 <Label
-                  text={t(browser.text)}
+                  text={browser.text(translations)}
                   price={valuesByFieldNames[browser.name]}
                   testId={`calculator:text:price.${browser.name.split('_')[1]}`}
                 />
@@ -271,7 +285,9 @@ const OriginCalculatorForm = (props) => {
             <Note
               className="note"
               colorTheme="primary"
-              dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset3.note') }}
+              dangerouslySetInnerHTML={{
+                __html: translations.express.calculator.form.fieldset3.note,
+              }}
             />
 
             <Field
@@ -281,7 +297,7 @@ const OriginCalculatorForm = (props) => {
                 <TextFieldRegular
                   {...input}
                   className="text-field text-field_short"
-                  label={t('express:calculator.form.fieldset3.fieldLabel')}
+                  label={translations.express.calculator.form.fieldset3.fieldLabel}
                 />
               )}
             />
@@ -303,7 +319,9 @@ const OriginCalculatorForm = (props) => {
                   as="h4"
                   className="section-head"
                   type="regular"
-                  dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset4.title') }}
+                  dangerouslySetInnerHTML={{
+                    __html: translations.express.calculator.form.fieldset4.title,
+                  }}
                 />
               </legend>
 
@@ -317,14 +335,18 @@ const OriginCalculatorForm = (props) => {
                   className="section-head"
                   type="regular"
                   size="m"
-                  dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset5.title') }}
+                  dangerouslySetInnerHTML={{
+                    __html: translations.express.calculator.form.fieldset5.title,
+                  }}
                 />
               </legend>
 
               <div className="note note_margin_m">
                 <Note
                   colorTheme="primary"
-                  dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset5.note') }}
+                  dangerouslySetInnerHTML={{
+                    __html: translations.express.calculator.form.fieldset5.note,
+                  }}
                 />
               </div>
 
@@ -338,7 +360,7 @@ const OriginCalculatorForm = (props) => {
                   type="regular"
                   size="m"
                   dangerouslySetInnerHTML={{
-                    __html: t('express:calculator.form.fieldset6.title1'),
+                    __html: translations.express.calculator.form.fieldset6.title1,
                   }}
                 />
 
@@ -348,7 +370,7 @@ const OriginCalculatorForm = (props) => {
                   type="regular"
                   size="m"
                   dangerouslySetInnerHTML={{
-                    __html: t('express:calculator.form.fieldset6.title2'),
+                    __html: translations.express.calculator.form.fieldset6.title2,
                   }}
                 />
               </legend>
@@ -359,7 +381,7 @@ const OriginCalculatorForm = (props) => {
                   <TextareaLight
                     {...input}
                     className="brief"
-                    placeholder={t('express:calculator.form.fieldset6.fieldLabel')}
+                    placeholder={translations.express.calculator.form.fieldset6.fieldLabel}
                     rows="6"
                     data-testid="calculator:field:brief"
                   />
@@ -379,7 +401,9 @@ const OriginCalculatorForm = (props) => {
                 className="section-head section-head_no-margin"
                 type="regular"
                 size="m"
-                dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset7.title') }}
+                dangerouslySetInnerHTML={{
+                  __html: translations.express.calculator.form.fieldset7.title,
+                }}
               />
 
               <Field
@@ -397,7 +421,9 @@ const OriginCalculatorForm = (props) => {
               className="text-price-mention"
               type="regular"
               size="s"
-              dangerouslySetInnerHTML={{ __html: t('express:calculator.form.fieldset7.subtitle') }}
+              dangerouslySetInnerHTML={{
+                __html: translations.express.calculator.form.fieldset7.subtitle,
+              }}
             />
 
             <div className="input-wrapper">
@@ -410,7 +436,7 @@ const OriginCalculatorForm = (props) => {
                       {...input}
                       error={meta.touched && meta.error}
                       className="text-field text-field_loop"
-                      label={t(callbackTextFields.label)}
+                      label={callbackTextFields.label(translations)}
                       data-testid={`calculator:field:${callbackTextFields.name}`}
                     />
                   )}
@@ -429,7 +455,7 @@ const OriginCalculatorForm = (props) => {
                 size="m"
                 className="button-content"
                 as="span"
-                dangerouslySetInnerHTML={{ __html: t('express:calculator.form.submit') }}
+                dangerouslySetInnerHTML={{ __html: translations.express.calculator.form.submit }}
               />
             </AnimatedButton>
 
@@ -445,9 +471,9 @@ const OriginCalculatorForm = (props) => {
   )
 }
 
-const CalculatorForm = ({ t, lng }) => (
+const CalculatorForm = ({ l10n: { translations, language } }) => (
   <Form
-    onSubmit={submitFormCalculatorForm('/api/submit-calculator-form', formName, lng)}
+    onSubmit={submitFormCalculatorForm('/api/submit-calculator-form', formName, language)}
     initialValues={{
       total: 200,
       parceForm_numberOfPages: '1',
@@ -458,8 +484,8 @@ const CalculatorForm = ({ t, lng }) => (
     }}
     subscription={{ values: true }}
     decorators={[calculator, focusOnErrorsDecorator]}
-    validate={calculatorFormValidationRules(t)}
-    component={translate(styled(OriginCalculatorForm)`
+    validate={calculatorFormValidationRules(translations)}
+    component={L10nConsumer(styled(OriginCalculatorForm)`
       ${styles.base}
     `)}
   />
@@ -474,4 +500,4 @@ OriginCalculatorForm.propTypes = {
   submitFailed: bool,
 }
 
-export default translate(CalculatorForm)
+export default L10nConsumer(CalculatorForm)

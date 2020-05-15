@@ -1,4 +1,4 @@
-export default (...validators) => (value, t) =>
+export default (...validators) => (value, translations) =>
   validators.reduce((error, validator) => {
-    return error || (validator && validator(value, t))
+    return error || (validator && validator(value, translations))
   }, undefined)

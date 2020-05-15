@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Post.styles'
@@ -8,15 +8,15 @@ import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
 import Link from '../../../ui-kit/core-design/Link'
 
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
-const Post = ({ className, id, href, t }) => {
+const Post = ({ className, id, href, l10n: { translations } }) => {
   return (
     <li as="article" className={cn('post', className)}>
       <Heading
         className="post-title"
         as="h3"
-        dangerouslySetInnerHTML={{ __html: t(`main:projects.blog.${id}.title`) }}
+        dangerouslySetInnerHTML={{ __html: translations.main.projects.blog[id].title }}
         type="regular"
         size="l"
       />
@@ -24,7 +24,7 @@ const Post = ({ className, id, href, t }) => {
       <Text
         className="post-description"
         as="p"
-        dangerouslySetInnerHTML={{ __html: t(`main:projects.blog.${id}.description`) }}
+        dangerouslySetInnerHTML={{ __html: translations.main.projects.blog[id].description }}
         type="regular"
         size="m"
       />
@@ -35,7 +35,7 @@ const Post = ({ className, id, href, t }) => {
         target="_blank"
         type="list"
         size="s"
-        dangerouslySetInnerHTML={{ __html: t(`main:projects.blog.${id}.link`) }}
+        dangerouslySetInnerHTML={{ __html: translations.main.projects.blog[id].link }}
       />
     </li>
   )
@@ -43,9 +43,8 @@ const Post = ({ className, id, href, t }) => {
 
 Post.propTypes = {
   className: string,
-  t: func,
 }
 
-export default styled(translate(Post))`
+export default styled(L10nConsumer(Post))`
   ${styles}
 `

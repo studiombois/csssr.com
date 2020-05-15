@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Benefits.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -12,14 +12,14 @@ import Grid from '../../../ui-kit/core-design/Grid'
 
 import whomItBenefits from '../../../../data/service/mvp/whomItBenefits'
 
-const Benefits = ({ className, t }) => (
+const Benefits = ({ className, l10n: { translations } }) => (
   <article className={className}>
     <Grid as="header">
       <SubHeading
         className="title"
         type="slab"
         as="h2"
-        dangerouslySetInnerHTML={{ __html: t('mvp:benefits.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.mvp.benefits.title }}
       />
     </Grid>
 
@@ -29,7 +29,7 @@ const Benefits = ({ className, t }) => (
           <Heading
             as="h3"
             className="title"
-            dangerouslySetInnerHTML={{ __html: t(`mvp:benefits.${id}.title`) }}
+            dangerouslySetInnerHTML={{ __html: translations.mvp.benefits[id].title }}
             type="slab"
             size="m"
           />
@@ -38,7 +38,7 @@ const Benefits = ({ className, t }) => (
             className="description"
             as="p"
             size="m"
-            dangerouslySetInnerHTML={{ __html: t(`mvp:benefits.${id}.description`) }}
+            dangerouslySetInnerHTML={{ __html: translations.mvp.benefits[id].description }}
           />
 
           <ul className="benefits">
@@ -49,7 +49,7 @@ const Benefits = ({ className, t }) => (
                 as="li"
                 size="m"
                 dangerouslySetInnerHTML={{
-                  __html: t(`mvp:benefits.${id}.benefits.${index}`),
+                  __html: translations.mvp.benefits[id].benefits[index],
                 }}
               />
             ))}
@@ -64,13 +64,13 @@ const Benefits = ({ className, t }) => (
           className="footer-paragraph"
           type="slab"
           as="p"
-          dangerouslySetInnerHTML={{ __html: t('mvp:benefits.paragraph.0') }}
+          dangerouslySetInnerHTML={{ __html: translations.mvp.benefits.paragraph[0] }}
         />
         <SubHeading
           className="footer-paragraph"
           type="slab"
           as="p"
-          dangerouslySetInnerHTML={{ __html: t('mvp:benefits.paragraph.1') }}
+          dangerouslySetInnerHTML={{ __html: translations.mvp.benefits.paragraph[1] }}
         />
       </div>
     </Grid>
@@ -79,10 +79,9 @@ const Benefits = ({ className, t }) => (
 
 Benefits.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Benefits)`
     ${styles}
   `),

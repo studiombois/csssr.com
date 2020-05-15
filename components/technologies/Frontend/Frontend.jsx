@@ -1,9 +1,9 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Frontend.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
@@ -14,13 +14,13 @@ import Grid from '../../ui-kit/core-design/Grid'
 
 import { angularImages, reactImages, vueImages } from '../../../data/technologies/frontend'
 
-const Frontend = ({ className, t }) => (
+const Frontend = ({ className, l10n: { translations } }) => (
   <Grid as="section" className={className}>
     <Picture
       className={cn('picture', 'picture_react')}
       images={reactImages}
       fallback={reactImages.png}
-      alt={t('technologies:imageAlt.react')}
+      alt={translations.technologies.imgAlt.react}
     />
 
     <Heading className={cn('title', 'title_react')} as="h2" type="slab" size="m">
@@ -31,14 +31,14 @@ const Frontend = ({ className, t }) => (
       className={cn('text', 'text_react')}
       as="p"
       type="slab"
-      dangerouslySetInnerHTML={{ __html: t('technologies:frontend.react') }}
+      dangerouslySetInnerHTML={{ __html: translations.technologies.frontend.react }}
     />
 
     <Picture
       className={cn('picture', 'picture_vue')}
       images={vueImages}
       fallback={vueImages.png}
-      alt={t('technologies:imageAlt.vue')}
+      alt={translations.technologies.imgAlt.vue}
     />
 
     <Heading className={cn('title', 'title_vue')} as="h2" type="regular" size="m">
@@ -50,14 +50,14 @@ const Frontend = ({ className, t }) => (
       as="p"
       type="strong"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('technologies:frontend.vue') }}
+      dangerouslySetInnerHTML={{ __html: translations.technologies.frontend.vue }}
     />
 
     <Picture
       className={cn('picture', 'picture_angular')}
       images={angularImages}
       fallback={angularImages.png}
-      alt={t('technologies:imageAlt.angular')}
+      alt={translations.technologies.imgAlt.angular}
     />
 
     <Heading className={cn('title', 'title_angular')} as="h2" type="regular" size="m">
@@ -69,17 +69,16 @@ const Frontend = ({ className, t }) => (
       as="p"
       type="strong"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('technologies:frontend.angular') }}
+      dangerouslySetInnerHTML={{ __html: translations.technologies.frontend.angular }}
     />
   </Grid>
 )
 
 Frontend.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Frontend)`
     ${styles}
   `),

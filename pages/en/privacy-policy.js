@@ -1,7 +1,7 @@
 import React from 'react'
 import PrivacyPolicyPage from '../../components/privacy-policy/PrivacyPolicyPage'
 import PrivacyPolicyContent from '../../components/privacy-policy/PrivacyPolicyContentEn'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 const PrivacyPolicy = (props) => (
   <PrivacyPolicyPage {...props}>
@@ -9,4 +9,4 @@ const PrivacyPolicy = (props) => (
   </PrivacyPolicyPage>
 )
 
-export default translate(PrivacyPolicy)
+export default L10nConsumer(PrivacyPolicy)

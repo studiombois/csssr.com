@@ -7,7 +7,7 @@ import createDecorator, { getFormInputs } from 'final-form-focus'
 import { FORM_ERROR } from 'final-form'
 import fetch from 'isomorphic-unfetch'
 import getGaCid from '../../utils/client/getGaCid'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 import testEmail from '../../utils/testEmail'
@@ -34,12 +34,12 @@ class ContactModal extends PureComponent {
 
   modalWrapperRef = React.createRef()
 
-  handleSubmit = (t, lng) => async (values) => {
+  handleSubmit = (translations, language) => async (values) => {
     this.setState({ submitStatus: '' })
 
     values.pageName = this.props.pageName
     values.gacid = getGaCid()
-    values.language = lng
+    values.language = language
 
     let res
     try {
@@ -56,7 +56,7 @@ class ContactModal extends PureComponent {
         window.dataLayer.push({ event: 'form_fail' })
       }
 
-      return { [FORM_ERROR]: t('common:form.errors.general') }
+      return { [FORM_ERROR]: translations.common.form.errors.general }
     }
 
     const isTestEmail = values.email === testEmail
@@ -70,7 +70,7 @@ class ContactModal extends PureComponent {
         const response = await res.json()
         error = response.error
       } catch {
-        error = t('common:form.errors.general')
+        error = translations.common.form.errors.general
       }
 
       if (window.dataLayer && !isTestEmail) {
@@ -104,7 +104,14 @@ class ContactModal extends PureComponent {
   }
 
   render() {
-    const { t, lng, className, feedbackEmail, pageName, isMobile, onClose } = this.props
+    const {
+      l10n: { translations, language },
+      className,
+      feedbackEmail,
+      pageName,
+      isMobile,
+      onClose,
+    } = this.props
     const { submitStatus } = this.state
     const hasFailOrSuccessStatus = submitStatus === 'success' || submitStatus === 'fail'
 
@@ -131,11 +138,11 @@ class ContactModal extends PureComponent {
                 feedbackEmail={feedbackEmail}
                 submitStatus={submitStatus}
                 hasFailOrSuccessStatus={hasFailOrSuccessStatus}
-                onSubmit={this.handleSubmit(t, lng)}
+                onSubmit={this.handleSubmit(translations, language)}
                 onSubmitResolve={this.handleSubmitResolve}
                 onStatusButtonClick={this.handleStatusButtonClick}
                 fieldsIds={fieldsIds}
-                validate={contactFormValidationRules(t)}
+                validate={contactFormValidationRules(translations)}
               />
 
               <button
@@ -156,6 +163,6 @@ Form.propTypes = {
   onClose: func,
 }
 
-export default DeviceConsumer(styled(translate(ContactModal))`
+export default DeviceConsumer(styled(L10nConsumer(ContactModal))`
   ${styles}
 `)

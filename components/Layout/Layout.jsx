@@ -6,7 +6,7 @@ import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'
 import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import calcRem from '../../utils/style/calcRem'
 import CookiesPopup from '../CookiesPopup'
 
@@ -15,7 +15,7 @@ const Layout = ({
   isIe11,
   pageName = 'main',
   router: { asPath },
-  lng,
+  l10n: { language },
   withFooter = true,
 }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
@@ -27,7 +27,7 @@ const Layout = ({
       <Global styles={styles} />
       <Global
         styles={
-          lng === 'en' &&
+          language === 'en' &&
           css`
             #main {
               padding-top: ${calcRem(153)};
@@ -52,4 +52,4 @@ const Layout = ({
   )
 }
 
-export default translate(withRouter(MsBrowserConsumer(Layout)))
+export default L10nConsumer(withRouter(MsBrowserConsumer(Layout)))

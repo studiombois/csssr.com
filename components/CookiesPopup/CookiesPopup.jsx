@@ -3,7 +3,7 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 
 import Text from '../ui-kit/core-design/Text'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import localStorageAvailable from '../../utils/client/localStorageAvailable'
 import styles from './CookiesPopup.styles'
 
@@ -15,7 +15,7 @@ const crossIcon = <CrossIcon width="100%" height="100%" />
 
 const COOKIES_POLICY_ALERT_HIDDEN = 'hidden'
 
-const CookiesPopup = ({ className, t, lng }) => {
+const CookiesPopup = ({ className, l10n: { language, translations } }) => {
   const [isHidden, setIsHidden] = useState(true)
 
   const handleClick = () => {
@@ -34,7 +34,7 @@ const CookiesPopup = ({ className, t, lng }) => {
     }
   }, [])
 
-  const links = cookiesLinks[lng]
+  const links = cookiesLinks[language]
 
   return (
     <div className={cn(className, { hide: isHidden })}>
@@ -43,7 +43,7 @@ const CookiesPopup = ({ className, t, lng }) => {
       </button>
       <div className="wrap">
         <Text type="regular" size="m" className="cookies-text">
-          <span dangerouslySetInnerHTML={{ __html: t('common:сookiesPopup.text') }} />
+          <span dangerouslySetInnerHTML={{ __html: translations.common.cookiesPopup.text }} />
 
           {links.map((url, index) => (
             <a
@@ -53,7 +53,7 @@ const CookiesPopup = ({ className, t, lng }) => {
               rel="noopener noreferrer"
               className="cookies-link"
               dangerouslySetInnerHTML={{
-                __html: t(`common:сookiesPopup.link.${index}`),
+                __html: translations.common.cookiesPopup.link[index],
               }}
             />
           ))}
@@ -63,6 +63,6 @@ const CookiesPopup = ({ className, t, lng }) => {
   )
 }
 
-export default styled(translate(CookiesPopup))`
+export default styled(L10nConsumer(CookiesPopup))`
   ${styles}
 `

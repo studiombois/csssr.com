@@ -1,14 +1,13 @@
 import React from 'react'
-import { func } from 'prop-types'
 import Layout from '../Layout'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Greeting from './Greeting'
 import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
 import Projects from './Projects'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 
 import Head from '../Head'
 import greeting from '../../data/industry/informationTechnology/greeting'
@@ -17,14 +16,14 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 import { informationTechnologyProjects } from '../../data/industry/projects'
 
-const InformationTechnologyPage = ({ t }) => {
+const InformationTechnologyPage = ({ l10n: { translations } }) => {
   const pageName = 'industry'
   const page = 'informationTechnology'
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('industry:meta.informationTechnology.title')}
-        description={t('industry:meta.informationTechnology.description')}
+        title={translations.industry.meta.informationTechnology.title}
+        description={translations.industry.meta.informationTechnology.description}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />
@@ -42,8 +41,6 @@ const InformationTechnologyPage = ({ t }) => {
   )
 }
 
-InformationTechnologyPage.propTypes = {
-  t: func,
-}
+InformationTechnologyPage.propTypes = {}
 
-export default translate(InformationTechnologyPage)
+export default L10nConsumer(InformationTechnologyPage)

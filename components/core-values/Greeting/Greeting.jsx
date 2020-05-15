@@ -1,6 +1,6 @@
 import React from 'react'
-import { func, string } from 'prop-types'
-import translate from '../../../utils/translate-wrapper'
+import { string } from 'prop-types'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -12,32 +12,31 @@ import greeting from '../../../data/core-values/greeting'
 
 const { heading, images, imgAlt } = greeting
 
-const Greeting = ({ t, className, id }) => (
+const Greeting = ({ className, id, l10n: { translations } }) => (
   <section className={className} id={id}>
     <Grid className="grid-heading">
       <Heading.H1
         type="slab"
         size="l"
-        dangerouslySetInnerHTML={{ __html: t(heading) }}
+        dangerouslySetInnerHTML={{ __html: heading(translations) }}
         className="heading"
       />
     </Grid>
     <PictureForAllResolutions
       images={images}
       fallback={images['desktop.l'].png}
-      alt={t(imgAlt)}
+      alt={imgAlt(translations)}
       className="image"
     />
   </section>
 )
 
 Greeting.propTypes = {
-  t: func,
   className: string,
   id: string,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Greeting)`
     ${styles}
   `),

@@ -1,18 +1,18 @@
 import React from 'react'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import styled from '@emotion/styled'
 import common_styles_for_policy_pages from './PrivacyPolicy.styles'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import Grid from '../ui-kit/core-design/Grid'
 
-const PrivacyPolicyContentRu = ({ className, t }) => (
+const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
   <Grid className={className} as="article">
     <header>
       <h1
         className="font_h1-regular"
-        dangerouslySetInnerHTML={{ __html: t('privacyPolicy:title') }}
+        dangerouslySetInnerHTML={{ __html: translations.privacyPolicy.title }}
       />
-      <p className="font_subhead-regular">{t('privacyPolicy:date')}</p>
+      <p className="font_subhead-regular">{translations.privacyPolicy.date}</p>
     </header>
 
     <div>
@@ -351,7 +351,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
   </Grid>
 )
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(PrivacyPolicyContentRu)`
     ${common_styles_for_policy_pages}
   `),

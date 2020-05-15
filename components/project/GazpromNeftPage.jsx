@@ -1,10 +1,9 @@
 import React from 'react'
-import { func } from 'prop-types'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 import Quote from './Quote'
 import AboutProject from './AboutProject'
 import Layout from '../Layout'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Head from '../Head'
 import Hero from './Hero'
@@ -17,9 +16,9 @@ import techStack from '../../data/project/gazprom-neft/techStack'
 import quoteImages from '../../data/project/gazprom-neft/quote'
 import aboutProjectImages from '../../data/project/aboutProject'
 
-const GazpromNeftPage = ({ t }) => {
+const GazpromNeftPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
-  const porojectId = 'gazpromNeft'
+  const projectId = 'gazpromNeft'
   const aboutProjectParagraphsScheme = [
     [0, 1, 2],
     [0, 1, 2],
@@ -28,26 +27,24 @@ const GazpromNeftPage = ({ t }) => {
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('project:gazpromNeft.meta.title')}
-        description={t('project:gazpromNeft.meta.description')}
+        title={translations.project.gazpromNeft.meta.title}
+        description={translations.project.gazpromNeft.meta.description}
       />
 
-      <Hero  id="hero" content={hero} />
-      <Team  id="team" content={team} />
-      <TechStack id ="teckStack" content={techStack} />
+      <Hero id="hero" content={hero} />
+      <Team id="team" content={team} />
+      <TechStack id="teckStack" content={techStack} />
       <AboutProject
-        porojectId={porojectId}
+        projectId={projectId}
         images={aboutProjectImages}
         paragraphsScheme={aboutProjectParagraphsScheme}
       />
-      <Quote porojectId={porojectId} images={quoteImages} />
+      <Quote projectId={projectId} images={quoteImages} />
       <Form pageName={pageName} />
     </Layout>
   )
 }
 
-GazpromNeftPage.propTypes = {
-  t: func,
-}
+GazpromNeftPage.propTypes = {}
 
-export default translate(GazpromNeftPage)
+export default L10nConsumer(GazpromNeftPage)

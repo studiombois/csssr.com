@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from '../../../components/Head'
 import Layout from '../../../components/Layout'
-import Form from '../../../components/ElearningPlatform/Form'
+import Form from '../../../components/ContactFormWrapper'
 import ElearningPlatformContent from '../../../components/ElearningPlatform/ElearningPlatformContent'
 
 const ElearningPlatform = () => {

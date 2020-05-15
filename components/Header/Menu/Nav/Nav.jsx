@@ -13,7 +13,7 @@ import { ReactComponent as Back } from '../../../../static/icons/header/back.svg
 
 import headerLinks from '../../../../data/headerLinks'
 
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
@@ -26,8 +26,7 @@ const Nav = ({
   isMobile,
   isIe11,
   router,
-  t,
-  lng,
+  l10n: { translations, language },
 }) => {
   const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
   const Wrapper = isIe11 ? Fragment : Fade
@@ -55,17 +54,20 @@ const Nav = ({
         <button className="button_back" onClick={onBackButtonClick}>
           <Back className="icon_back" />
 
-          {t('common:header.backLink')}
+          {translations.common.header.backLink}
         </button>
       )}
 
-      <nav className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${lng}`)}>
+      <nav
+        data-testid="Header:nav.dropdown"
+        className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${language}`)}
+      >
         <ul>
           {activeItem &&
             menu
               .find(({ id }) => id === activeItem)
               .links.map(({ id, icon: Icon, title, description, href }) => {
-                if (lng === 'ru' && id === 'express') {
+                if (language === 'ru' && id === 'express') {
                   return
                 }
 
@@ -73,12 +75,13 @@ const Nav = ({
                   <Wrapper key={id} {...animationProps}>
                     <li
                       className={cn('nav-item', {
-                        'nav-item_active': router.pathname === `/${lng}/${href}`,
+                        'nav-item_active': router.pathname === `/${language}/${href}`,
                       })}
                     >
                       <Link
+                        data-testid={`Header:nav:link.${id}`}
                         className="link"
-                        href={linkRegExp.test(href) ? href : `/${lng}/${href}`}
+                        href={linkRegExp.test(href) ? href : `/${language}/${href}`}
                         isNextLink={!linkRegExp.test(href)}
                         target={linkRegExp.test(href) ? '_blank' : '_self'}
                         rel="noopener noreferrer"
@@ -91,7 +94,7 @@ const Nav = ({
                           type="regular"
                           size="m"
                           dangerouslySetInnerHTML={{
-                            __html: t(title),
+                            __html: title(translations),
                           }}
                         />
 
@@ -101,7 +104,7 @@ const Nav = ({
                             as="p"
                             type="regular"
                             size="m"
-                            dangerouslySetInnerHTML={{ __html: t(description) }}
+                            dangerouslySetInnerHTML={{ __html: description(translations) }}
                           />
                         )}
                       </Link>
@@ -122,12 +125,10 @@ Nav.propTypes = {
   onBackButtonClick: func,
   isMobile: bool,
   isIe11: bool,
-  lng: string,
-  t: func,
 }
 
 export default withRouter(
-  translate(
+  L10nConsumer(
     MsBrowserConsumer(
       DeviceConsumer(styled(Nav)`
         ${styles}

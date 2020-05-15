@@ -1,7 +1,5 @@
 {
-  "minutes_0": "~ {{count}} минута",
-  "minutes_1": "~ {{count}} минуты",
-  "minutes_2": "~ {{count}} минут",
+  "minutes": ["~ {{count}} минута", "~ {{count}} минуты", "~ {{count}} минут"],
   "willBeRequired": "потребуется на решение",
   "annotation": "Комментарий",
   "remote": "Дистанционно",

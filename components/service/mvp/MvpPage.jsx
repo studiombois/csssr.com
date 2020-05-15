@@ -6,14 +6,14 @@ import AboutMvp from './AboutMvp'
 import Benefits from './Benefits'
 import OurAdvantages from './OurAdvantages'
 import Process from './Process'
-import Form from './Form'
+import Form from '../../ContactFormWrapper'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const pageName = 'mvp'
-const MvpDevelopmentPage = ({ t }) => (
+const MvpDevelopmentPage = ({ l10n: { translations } }) => (
   <Layout pageName={pageName}>
-    <Head title={t('mvp:meta.title')} description={t('mvp:meta.description')} />
+    <Head title={translations.mvp.meta.title} description={translations.mvp.meta.description} />
     <Hero />
     <AboutMvp />
     <Benefits />
@@ -23,4 +23,4 @@ const MvpDevelopmentPage = ({ t }) => (
   </Layout>
 )
 
-export default translate(MvpDevelopmentPage)
+export default L10nConsumer(MvpDevelopmentPage)

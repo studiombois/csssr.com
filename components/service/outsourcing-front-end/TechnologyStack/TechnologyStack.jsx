@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './TechnologyStack.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -18,12 +18,12 @@ import technologyStack_desktop_webp from '../../../../static/images/service/outs
 import technologyStack_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/technologyStack.png?responsive'
 import technologyStack_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/technologyStack.png?responsive_and_webp'
 
-const TechnologyStack = ({ className, t, lng }) => (
+const TechnologyStack = ({ className, l10n: { translations, language } }) => (
   <Grid as="article" className={className}>
     <Heading
       className="title"
       as="h2"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:technologyStack.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.technologyStack.title }}
       type="slab"
       size="m"
     />
@@ -32,7 +32,9 @@ const TechnologyStack = ({ className, t, lng }) => (
       className="subtitle"
       type="slab"
       as="p"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:technologyStack.subtitle') }}
+      dangerouslySetInnerHTML={{
+        __html: translations.outsourcingFrontEnd.technologyStack.subtitle,
+      }}
     />
 
     <Text
@@ -40,7 +42,9 @@ const TechnologyStack = ({ className, t, lng }) => (
       as="p"
       type="strong"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:technologyStack.description.0') }}
+      dangerouslySetInnerHTML={{
+        __html: translations.outsourcingFrontEnd.technologyStack.description[0],
+      }}
     />
 
     <Text
@@ -48,16 +52,18 @@ const TechnologyStack = ({ className, t, lng }) => (
       as="p"
       type="strong"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:technologyStack.description.1') }}
+      dangerouslySetInnerHTML={{
+        __html: translations.outsourcingFrontEnd.technologyStack.description[1],
+      }}
     />
 
     <Link
       className="link"
-      href={`/${lng}/tech-stack`}
+      href={`/${language}/tech-stack`}
       type="list"
       size="m"
       isNextLink
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:technologyStack.link') }}
+      dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.technologyStack.link }}
     />
 
     <PictureForAllResolutions
@@ -67,18 +73,16 @@ const TechnologyStack = ({ className, t, lng }) => (
         'mobile.all': { png: technologyStack_mobile, webp: technologyStack_mobile_webp },
       }}
       fallback={technologyStack_desktop}
-      alt={t('outsourcingFrontEnd:imageAlt.technologyStack')}
+      alt={translations.outsourcingFrontEnd.imgAlt.technologyStack}
     />
   </Grid>
 )
 
 TechnologyStack.propTypes = {
   className: string,
-  t: func,
-  lng: string,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(TechnologyStack)`
     ${styles}
   `),

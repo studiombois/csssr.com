@@ -1,0 +1,12 @@
+{
+  "title": "Let&rsquo;s Talk",
+  "namePlaceholder": "Tim Berners-Lee",
+  "phonePlaceholder": "+1-612-566-34-43",
+  "emailPlaceholder": "name@example.com",
+  "messagePlaceholder": "How can we help?",
+  "nameLabel": "Name",
+  "phoneLabel": "Phone",
+  "emailLabel": "E-mail",
+  "messageLabel": "How can we help?",
+  "submitText": "Submit"
+}

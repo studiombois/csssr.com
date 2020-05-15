@@ -1,14 +1,14 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Calculator.styles'
 import CalculatorForm from './CalculatorForm'
 import Wrapper from '../Wrapper'
 import Heading from '../../ui-kit/core-design/Heading'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const Calculator = ({ className, t }) => (
+const Calculator = ({ className, l10n: { translations } }) => (
   <Wrapper className={className} id="calculator">
     <div className="container">
       <Heading
@@ -16,7 +16,7 @@ const Calculator = ({ className, t }) => (
         className="main-title"
         type="slab"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('express:calculator.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.express.calculator.title }}
       />
 
       <CalculatorForm />
@@ -26,9 +26,8 @@ const Calculator = ({ className, t }) => (
 
 Calculator.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(styled(Calculator)`
+export default L10nConsumer(styled(Calculator)`
   ${styles.base}
 `)

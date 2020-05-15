@@ -1,22 +1,28 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { bool, func, string } from 'prop-types'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import getMessageTextOfStatus from '../../../../utils/client/getMessageTextOfStatus'
 import Button from '../../../ui-kit/core-design/Button'
 import styles from './StatusMessage.styles'
 
 const StatusMessage = ({
   className,
-  t,
   errorText,
   status,
   feedbackEmail,
   hasFailOrSuccessStatus,
   onClick,
+  l10n: { translations },
 }) => {
   const tabIndex = hasFailOrSuccessStatus ? '0' : '-1'
-  const messageText = getMessageTextOfStatus({ status, feedbackEmail, errorText, t, tabIndex })
+  const messageText = getMessageTextOfStatus({
+    status,
+    feedbackEmail,
+    errorText,
+    translations,
+    tabIndex,
+  })
 
   return (
     <div className={className}>
@@ -30,7 +36,7 @@ const StatusMessage = ({
       <p className="font_p16-regular status_text">{messageText}</p>
 
       <Button tabIndex={tabIndex} onClick={onClick}>
-        {t(`common:form.message.${status}.action`)}
+        {hasFailOrSuccessStatus && translations.common.form.message[status].action}
       </Button>
     </div>
   )
@@ -44,6 +50,6 @@ StatusMessage.propTypes = {
   onClick: func,
 }
 
-export default styled(translate(StatusMessage))`
+export default styled(L10nConsumer(StatusMessage))`
   ${styles}
 `

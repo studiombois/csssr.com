@@ -20,8 +20,8 @@ const greetingImages = {
 
 export default {
   images: greetingImages,
-  heading: 'industry:greeting.informationTechnology.title',
-  text: 'industry:greeting.informationTechnology.paragraph',
-  button: 'industry:greeting.informationTechnology.button',
-  imgAlt: 'industry:imgAlt.informationTechnology.greeting',
+  heading: (t) => t.industry.greeting.informationTechnology.title,
+  text: (t) => t.industry.greeting.informationTechnology.paragraph,
+  button: (t) => t.industry.greeting.informationTechnology.button,
+  imgAlt: (t) => t.industry.greeting.informationTechnology.imgAlt,
 }

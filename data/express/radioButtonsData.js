@@ -1,17 +1,17 @@
 const retinaRadioButtons = [
   {
-    labelText: 'express:calculator.form.fieldset4.radioLabel1',
+    labelText: (t) => t.express.calculator.form.fieldset4.radioLabel1,
     labelPrice: 'Free',
     id: 'retina_1',
     name: 'parceForm_retina',
   },
   {
-    labelText: 'express:calculator.form.fieldset4.radioLabel2',
+    labelText: (t) => t.express.calculator.form.fieldset4.radioLabel2,
     id: 'retina_2',
     name: 'parceForm_retina',
   },
   {
-    labelText: 'express:calculator.form.fieldset4.radioLabel3',
+    labelText: (t) => t.express.calculator.form.fieldset4.radioLabel3,
     id: 'retina_3',
     name: 'parceForm_retina',
   },
@@ -19,17 +19,17 @@ const retinaRadioButtons = [
 
 const additionalOptionsRadioButtons = [
   {
-    labelText: 'express:calculator.form.fieldset5.radioLabel1',
+    labelText: (t) => t.express.calculator.form.fieldset5.radioLabel1,
     id: 'additional-option_1',
     name: 'parceForm_additionalOptions',
   },
   {
-    labelText: 'express:calculator.form.fieldset5.radioLabel2',
+    labelText: (t) => t.express.calculator.form.fieldset5.radioLabel2,
     id: 'additional-option_2',
     name: 'parceForm_additionalOptions',
   },
   {
-    labelText: 'express:calculator.form.fieldset5.radioLabel3',
+    labelText: (t) => t.express.calculator.form.fieldset5.radioLabel3,
     id: 'additional-option_3',
     name: 'parceForm_additionalOptions',
   },

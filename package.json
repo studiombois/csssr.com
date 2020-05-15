@@ -82,10 +82,5 @@
     "hooks": {
       "pre-commit": "npm run check-sitemap && lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix --max-warnings=0"
-    ]
   }
 }

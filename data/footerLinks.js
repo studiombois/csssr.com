@@ -135,10 +135,10 @@ export const nav = [
         href: 'jobs',
         useLocale: true,
       },
-      // {
-      //   id: 'blog',
-      //   href: 'https://blog.csssr.com',
-      // },
+      {
+        id: 'blog',
+        href: 'https://blog.csssr.com',
+      },
     ],
   },
 ]

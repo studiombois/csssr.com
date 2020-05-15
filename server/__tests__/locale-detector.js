@@ -20,7 +20,7 @@ test('/ru, no cookie, ru-EE,en;q=0.9,ru;q=0.8 -> ru-EE', () => {
   expect(localeDetector('ru', undefined, 'ru-EE,en;q=0.9,ru;q=0.8')).toEqual('ru-ee')
 })
 
-test('/en, no cookie, ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7 -> en-SG', () => {
+test('/en, no cookie, ru-RU,ru;q=0.9,en-SG;q=0.8,en;q=0.7 -> en-SG', () => {
   expect(localeDetector('en', undefined, 'ru-RU,ru;q=0.9,en-SG;q=0.8,en;q=0.7')).toEqual('en-sg')
 })
 

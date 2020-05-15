@@ -14,7 +14,6 @@ import PictureForAllResolutions from '../PictureForAllResolutions'
 
 import LogoIcon from '../../static/icons/csssr_logo.svg'
 import LineFromTopToBottomIcon from '../../static/icons/lineFromTopToBottom.svg'
-import NotFound from '../../static/icons/notFound.svg'
 import ServerError from '../../static/icons/serverError.svg'
 
 import navItems from '../../data/error/navItems'
@@ -34,7 +33,7 @@ const subtitleLocalesByStatusCode = {
 }
 
 const codeIconByStatusCode = {
-  500: <ServerError width="auto" height="100%" />
+  500: <ServerError width="auto" height="100%" />,
 }
 
 class ErrorPage extends React.Component {

@@ -25,7 +25,10 @@ const log = (...args) => {
 //       хедер accept-language (header) может содержать что угодно.
 // 1. Если в пути не локаль из whitelist, то идём дальше;
 // 2. Если в пути только часть language без региона и этот language в whitelist,
-//    то ищем наиболее подходящую локаль, используя значение из cookie;
+//    то ищем наиболее подходящую локаль, используя значение из cookie, если
+//    значение в cookie не найдено, определям возможные поддерживаемые локали
+//    для пути и парсим header accept-language проверяя возможность поддержки региона,
+//    если регион не найден, то идем дальше;
 // 3. Если в cookie не локаль из whitelist, то идём дальше;
 // 4. Парсим header accept-language, если в порядке приоритетов там нашлась эстонская локаль, то ставим en-ee;
 // 5. Пытаемся найти совпадение хедера с whitelist;
@@ -55,6 +58,8 @@ export default (localeFromPath, localeFromCookie, acceptLanguageHeader) => {
   // path=/ru, cookie=en-us => ru-ru (by default)
   // path=/ru, cookie=undefined => ru-ru (by default)
   // path=/ru, cookie=ru => ru-ru (by default)
+  // path=/ru, cookie=undefined => header accept-language= ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7 => ru-ru (by default)
+  // path=/en, cookie=undefined => header accept-language= ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7 => en-us (by default)
   if (isLocaleLanguage(localeFromPath) && isLanguageInWhitelist(localeFromPath)) {
     if (
       !isLocaleLanguage(localeFromCookie) &&
@@ -65,6 +70,24 @@ export default (localeFromPath, localeFromCookie, acceptLanguageHeader) => {
         `locale detector: ${localeFromPath} was found in path, it was parsed as language part of full locale, ${localeFromCookie} was found in cookie, it is in whitelist, so locale was set to ${localeFromCookie}`,
       )
       return localeFromCookie
+    }
+
+    const supportedLocalesFromPath = supportedLocales.filter((item) =>
+      item.includes(localeFromPath),
+    )
+
+    if (supportedLocalesFromPath) {
+      const localeFromLanguageHeader = acceptLanguageParser.pick(
+        supportedLocalesFromPath,
+        acceptLanguageHeader,
+      )
+
+      if (localeFromLanguageHeader) {
+        log(
+          `locale detector: ${localeFromPath} was found in path, ${supportedLocalesFromPath} it was parsed as language part of full locales ${localeFromPath}, ${localeFromLanguageHeader} was found in language header: ${acceptLanguageHeader}, so locale was set to ${localeFromLanguageHeader}`,
+        )
+        return localeFromLanguageHeader
+      }
     }
 
     const locale = defaultLocaleByLanguage[localeFromPath]

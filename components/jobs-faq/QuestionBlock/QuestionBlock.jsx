@@ -60,7 +60,7 @@ class OriginQuestionBlock extends React.PureComponent {
           size="s"
           onKeyDown={this.toggleAnswer}
           onClick={this.toggleAnswer}
-          tabIndex="1"
+          tabIndex="0"
         >
           <div className="icon-wrapper">
             <div className="icon" ref={this.iconRef} />

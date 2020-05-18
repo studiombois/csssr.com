@@ -21,13 +21,15 @@ const OurFeatures = ({ className, t, lng }) => {
         type="slab"
         dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature1.text') }}
       />
-      <Link
-        className="link"
-        href={`${lng}/way-of-work`}
-        type="list"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature1.link') }}
-      />
+
+      <div className="link">
+        <Link
+          href={`${lng}/way-of-work`}
+          type="list"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature1.link') }}
+        />
+      </div>
 
       <PictureForAllResolutions
         className="picture"
@@ -43,13 +45,15 @@ const OurFeatures = ({ className, t, lng }) => {
         size="m"
         dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature2.text') }}
       />
-      <Link
-        className="link"
-        href={`${lng}/tech-stack`}
-        type="list"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature2.link') }}
-      />
+
+      <div className="link">
+        <Link
+          href={`${lng}/tech-stack`}
+          type="list"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature2.link') }}
+        />
+      </div>
     </Grid>
   )
 }

@@ -28,6 +28,7 @@ const Links = ({ className, router, l10n: { translations, locale, language } }) 
             <Link
               data-testid={`Header:link.${title(translations)}`}
               href={`${href}/${language}`}
+              className="link"
               type="top_menu"
               target="_blank"
             >

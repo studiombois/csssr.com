@@ -185,6 +185,33 @@ const eLearningPlatform = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 `
+const backEndAndDevops = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+  & {
+    background-color: #ffffff;
+  }
+
+  ${desktop.l} {
+    .form {
+      padding-top: ${calcRem(256)};;
+    }
+  }
+
+  ${tablet.all} {
+    .form {
+      padding-top: ${calcRem(160)};
+    }
+  }
+
+  ${mobile.all} {
+    .form {
+      padding-top: ${calcRem(160)};
+    }
+
+    .form .button {
+      grid-column: 1 / span 6;
+    }
+  }
+`
 
 const styles = {
   base,
@@ -193,6 +220,7 @@ const styles = {
   outsourcingFrontEnd,
   project,
   eLearningPlatform,
+  backEndAndDevops,
 }
 
 export default props => {

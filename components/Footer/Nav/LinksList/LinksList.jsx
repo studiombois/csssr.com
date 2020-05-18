@@ -16,7 +16,7 @@ const LinksList = ({
 }) => (
   <ul className={className}>
     {links.map(({ id, href, useLocale }) => {
-      if (language === 'ru' && id === 'express') {
+      if ((language === 'ru' && id === 'express') || (language === 'ru' && id === 'blog')) {
         return
       }
 
@@ -25,6 +25,7 @@ const LinksList = ({
           {linkRegExp.test(href) ? (
             <Link
               href={href}
+              className="link"
               type="list"
               size="s"
               target="_blank"
@@ -34,6 +35,7 @@ const LinksList = ({
           ) : (
             <Link
               href={`/${useLocale ? locale : language}/${href}`}
+              className="link"
               type="list"
               size="s"
               dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}

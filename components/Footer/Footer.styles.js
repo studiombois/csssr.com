@@ -1,17 +1,17 @@
 import { css } from '@emotion/core'
 import calcRem from '../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
   & {
     position: relative;
     margin-bottom: ${calcRem(344)};
     padding-top: ${calcRem(32)};
     padding-right: ${calcRem(102)};
-    padding-bottom: ${calcRem(55)};
+    padding-bottom: ${calcRem(39)};
     padding-left: ${calcRem(32)};
     display: flex;
     flex-direction: column;
-    height: ${calcRem(360)};
+    height: ${calcRem(344)};
     background-color: white;
     box-shadow: 0px 8px 12px rgba(50, 60, 72, 0.15);
     overflow: hidden;
@@ -58,8 +58,12 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   }
 
   .email {
-    margin-top: ${calcRem(20)};
+    margin-top: ${calcRem(16)};
     display: block;
+  }
+
+  ${desktop.s} {
+    padding-right: ${calcRem(52)};
   }
 
   ${tablet.all} {
@@ -71,6 +75,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
 
   ${mobile.all} {
     & {
+      padding-top: ${calcRem(40)};
       padding-right: ${calcRem(16)};
       padding-bottom: ${calcRem(16)};
       padding-left: ${calcRem(16)};
@@ -85,14 +90,43 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
       display: none;
     }
 
+    .top-content {
+      width: 100%;
+    }
+
     .top-content-left-wrapper {
-      display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
+    }
+
+    .action-phrase,
+    .email {
+      margin-left: ${calcRem(31)};
+      align-self: flex-start;
     }
 
     .action-phrase {
-      margin-top: ${calcRem(3)};
+      margin-top: 0;
+    }
+
+    .link-lng,
+    .email {
+      margin-top: ${calcRem(8)};
+      display: inline-block;
+    }
+
+    .link-lng {
+      position: relative;
+      top: ${calcRem(-3)};
+      margin-left: ${calcRem(127)};
+      text-decoration: none;
+
+    }
+
+    .link-text {
+      color: ${colors.primary.origin};
+      font-weight: 300;
     }
   }
 `

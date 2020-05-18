@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { string } from 'prop-types'
 import NextLink from 'next/link'
+import { withRouter } from 'next/router'
 import styled from '@emotion/styled'
 import styles from './Footer.styles'
 
@@ -9,15 +10,26 @@ import PrivacyAndLanguageLinks from './PrivacyAndLanguageLinks'
 import Nav from './Nav'
 import DoubleBottom from './DoubleBottom'
 import Link from '../ui-kit/core-design/Link'
+import Text from '../ui-kit/core-design/Text'
 import Heading from '../ui-kit/core-design/Heading'
 import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
 
 import { L10nConsumer } from '../../utils/l10nProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
+import { PagesListConsumer } from '../../utils/pagesListProvider'
+import getPagePathnameInLanguage from '../../common/get-page-pathname-in-language'
 
-const Footer = ({ className, isMobile, l10n: { translations, language } }) => {
+const Footer = ({
+  className,
+  isMobile,
+  l10n: { translations, language },
+  pagesList,
+  router: { pathname },
+}) => {
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const footerRef = useRef()
+  const lngToRedirect = language === 'ru' ? 'en' : 'ru'
+  const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
 
   useEffect(() => {
     if (isMobile) {
@@ -73,6 +85,17 @@ const Footer = ({ className, isMobile, l10n: { translations, language } }) => {
             sales@csssr.com
           </Link>
 
+          {isMobile && (
+            <Link className="link-lng" href={otherLanguagePathname}>
+              <Text
+                className="link-text"
+                dangerouslySetInnerHTML={{ __html: lngToRedirect }}
+                type="perforator"
+                size="s"
+              />
+            </Link>
+          )}
+
           <SocialLinks />
         </div>
 
@@ -92,7 +115,11 @@ Footer.propTypes = {
 }
 
 export default L10nConsumer(
-  DeviceConsumer(styled(Footer)`
-    ${styles}
-  `),
+  withRouter(
+    PagesListConsumer(
+      DeviceConsumer(styled(Footer)`
+        ${styles}
+      `),
+    ),
+  ),
 )

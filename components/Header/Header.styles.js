@@ -41,8 +41,8 @@ const base = ({ breakpoints: { mobile }}) => css`
   }
 
   .button_action {
-    padding-left: ${calcRem(25)};
-    padding-right: ${calcRem(25)};
+    padding-left: ${calcRem(27)};
+    padding-right: ${calcRem(27)};
     width: auto;
     height: 100%;
     order: 4;

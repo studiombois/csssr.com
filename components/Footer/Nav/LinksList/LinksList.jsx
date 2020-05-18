@@ -11,7 +11,7 @@ const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
 const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
   <ul className={className}>
     {links.map(({ id, href, useLocale }) => {
-      if (lng === 'ru' && id === 'express') {
+      if ((lng === 'ru' && id === 'express') || (lng === 'ru' && id === 'blog')) {
         return
       }
 
@@ -20,6 +20,7 @@ const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
           {linkRegExp.test(href) ? (
             <Link
               href={href}
+              className="link"
               type="list"
               size="s"
               target="_blank"
@@ -29,6 +30,7 @@ const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
           ) : (
             <Link
               href={`/${useLocale ? locale : lng}/${href}`}
+              className="link"
               type="list"
               size="s"
               dangerouslySetInnerHTML={{ __html: t(`common:footer.${linksGroupName}.${id}`) }}

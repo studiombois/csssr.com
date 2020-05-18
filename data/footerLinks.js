@@ -66,6 +66,10 @@ export const nav = [
         id: 'mvp',
         href: 'service/mvp-development',
       },
+      {
+        id: 'backend',
+        href: 'service/back-end-and-devops',
+      },
     ],
   },
   {
@@ -131,10 +135,10 @@ export const nav = [
         href: 'jobs',
         useLocale: true,
       },
-      // {
-      //   id: 'blog',
-      //   href: 'https://blog.csssr.com',
-      // },
+      {
+        id: 'blog',
+        href: 'https://blog.csssr.com',
+      },
     ],
   },
 ]

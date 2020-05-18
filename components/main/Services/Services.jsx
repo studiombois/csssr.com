@@ -82,7 +82,7 @@ const Services = ({ className, t, lng, isMobile }) => {
 
         {!isMobile && <Figures hoveredService={hoveredService} />}
 
-        <Global styles={mobileBackgroundImagesStyles} />
+        <Global styles={mobileBackgroundImagesStyles(lng)} />
       </Grid>
 
       <OurFeatures />

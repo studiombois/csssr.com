@@ -171,7 +171,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
           при заполнении формы отклика на&nbsp;вакансию;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.1.3.">
-          ппри заполнении формы запроса относительно обучающих курсов или оплаты обучения.
+          при заполнении формы запроса относительно обучающих курсов или оплаты обучения.
         </p>
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.2.">
           CSSSR собирает два вида информации о&nbsp;Пользователе:

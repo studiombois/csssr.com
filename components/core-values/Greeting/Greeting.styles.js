@@ -57,12 +57,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .heading {
+      position: static;
       margin-top: 0;
       grid-column: 1 / span 6;
     }
 
     .image {
-      margin-top: ${calcRem(26)};
+      margin-top: ${calcRem(-20)};
     }
   }
 `

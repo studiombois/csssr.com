@@ -69,7 +69,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.l} {
     .heading {
-      margin-top: ${calcRem(13)};
+      margin-top: ${calcRem(22)};
     }
   }
 

@@ -83,11 +83,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
     }
 
     .tech-list {
-      margin-top: ${calcRem(37)};
+      margin-top: ${calcRem(40)};
     }
 
     .duration {
-      margin-top: ${calcRem(12)};
+      margin-top: ${calcRem(14)};
     }
 
     .text {
@@ -95,7 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
     }
 
     .team {
-      margin-top: ${calcRem(68)};
+      margin-top: ${calcRem(73)};
     }
 
     .duration-number {
@@ -113,13 +113,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, lng }) => css`
 
   ${desktop.l} {
     & {
-      margin-top: ${calcRem(128)};
+      margin-top: ${calcRem(125)};
     }
   }
 
   ${desktop.m} {
     & {
-      margin-top: ${calcRem(170)};
+      margin-top: ${calcRem(160)};
     }
 
     .duration {

@@ -29,7 +29,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
         </a>{' '}
         (далее&nbsp;&mdash; «Сайт»), в&nbsp;частности в&nbsp;результате отправки формы заявки
         на&nbsp;выполнение работ, отклика на&nbsp;вакансию, участия в&nbsp;рекламных
-        и&nbsp;маркетинговых кампаниях или акциях предварительного ознакомления с&nbsp;программой
+        и&nbsp;маркетинговых кампаниях или акциях, предварительного ознакомления с&nbsp;программой
         обучения или приобретения курса обучения и/или ином взаимодействии (далее&nbsp;&mdash;
         «Услуги»).
       </p>
@@ -97,7 +97,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
           Настоящая Политика конфиденциальности применяется только к&nbsp;информации, получаемой
           в&nbsp;ходе использования сайта с&nbsp;доменным именем{' '}
           <a href="https://csssr.com/" className="font_link-list_16">
-            https://csssr.com/
+            https://csssr.com
           </a>
           .
         </p>
@@ -168,10 +168,10 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
           при заполнении формы заявки на&nbsp;выполнение работ;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.1.2.">
-          при заполнении формы отклика на&nbsp;вакансию.
+          при заполнении формы отклика на&nbsp;вакансию;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.1.3.">
-          ппри заполнении формы запроса относительно обучающих курсов или оплаты обучения.
+          при заполнении формы запроса относительно обучающих курсов или оплаты обучения.
         </p>
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.2.">
           CSSSR собирает два вида информации о&nbsp;Пользователе:
@@ -213,7 +213,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.5.">
           контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
-          программе Skype, логин Telegram, телефон)
+          программе Skype, телефон);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.6.">
           любая иная информация, предоставленная Пользователем по&nbsp;его желанию.
@@ -238,7 +238,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.5.">
           контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
-          программе Skype, логин Telegram, телефон)
+          программе Skype, телефон);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.6.">
           любая иная информация, предоставленная Пользователем по&nbsp;его желанию.
@@ -370,7 +370,7 @@ const PrivacyPolicyContentRu = ({ className, t }) => (
         </h3>
 
         <p className="font_p16-regular list-item list-item_level_2" data-counter="6.1.">
-          CSSSR в&nbsp;одностороннем порядке порядке вносить изменения в&nbsp;настоящую Политику
+          CSSSR вправе в&nbsp;одностороннем порядке вносить изменения в&nbsp;настоящую Политику
           конфиденциальности без согласия Пользователя.
         </p>
         <p className="font_p16-regular list-item list-item_level_2" data-counter="6.2.">

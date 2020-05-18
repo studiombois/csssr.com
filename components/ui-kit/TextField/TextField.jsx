@@ -13,6 +13,7 @@ class TextField extends PureComponent {
     label: string,
     autoFocus: bool,
     disabled: bool,
+    required: bool,
   }
 
   static defaultProps = {
@@ -38,6 +39,7 @@ class TextField extends PureComponent {
       tabIndex,
       input: { name, type, value, onBlur, onFocus },
       meta: { error, invalid, submitError, submitFailed },
+      required,
     } = this.props
 
     const showError = invalid && submitFailed
@@ -66,6 +68,8 @@ class TextField extends PureComponent {
           disabled={disabled}
           maxLength={maxLength}
           data-testid={testid}
+          required={required}
+          aria-required={required}
         />
         {showError && (
           <span className="font_input-small-error-label error">{error || submitError}</span>

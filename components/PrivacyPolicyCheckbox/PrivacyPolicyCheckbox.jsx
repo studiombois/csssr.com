@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { func, string, bool } from 'prop-types'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './PrivacyPolicyCheckbox.styles'
@@ -15,6 +15,7 @@ const PrivacyPolicyCheckbox = ({
   linkTestId,
   t,
   tabIndex,
+  required,
 }) => (
   <Field
     id={id}
@@ -25,6 +26,7 @@ const PrivacyPolicyCheckbox = ({
     component={Checkbox}
     testid={testid}
     tabIndex={tabIndex}
+    required={required}
   >
     {t('common:checkBoxesText.privacyPolicyText')}
     <a
@@ -43,6 +45,7 @@ const PrivacyPolicyCheckbox = ({
 PrivacyPolicyCheckbox.propTypes = {
   id: string,
   name: string,
+  required: bool,
   t: func,
 }
 

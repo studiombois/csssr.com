@@ -154,6 +154,7 @@ class ContactForm extends PureComponent {
             testid={`${formName}:field:callbackForm.name`}
             autoFocus={formName === 'contact-modal'}
             tabIndex={getTabIndex}
+            required
           />
         </div>
       ),
@@ -182,6 +183,7 @@ class ContactForm extends PureComponent {
             label={t(`${pageName}:form.emailLabel`)}
             testid={`${formName}:field:callbackForm.email`}
             tabIndex={getTabIndex}
+            required
           />
         </div>
       ),
@@ -206,6 +208,7 @@ class ContactForm extends PureComponent {
             testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
             linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
             tabIndex={getTabIndex}
+            required
           />
         </div>
       ),

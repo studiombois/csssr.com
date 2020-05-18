@@ -148,15 +148,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       }
 
       &:first-of-type:before {
+        top: 1px;
+        left: 8px;
+      }
+
+      &:nth-of-type(2):before {
+        top: 5px;
+        left: 8px;
+      }
+
+      &:last-of-type:before {
         left: 8px;
       }
 
       &:nth-of-type(2) .item-title {
         max-width: ${calcRem(190)};
-      }
-
-      &:nth-of-type(2):before {
-        top: 5px;
       }
     }
   }

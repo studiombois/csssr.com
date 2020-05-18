@@ -142,17 +142,13 @@ class ErrorPage extends React.Component {
               ].join(''),
             }}
           />
-          {statusCode === 404 && (
-            <Fragment>
-              <div className="arrow-wrapper">
-                <LineFromTopToBottomIcon width="100%" height="100%" />
-              </div>
+          <Fragment>
+            <div className="arrow-wrapper">
+              <LineFromTopToBottomIcon width="100%" height="100%" />
+            </div>
 
-              <div className="navList">
-                {navItems.map((items) => this.renderNav({ lng, items }))}
-              </div>
-            </Fragment>
-          )}
+            <div className="navList">{navItems.map((items) => this.renderNav({ lng, items }))}</div>
+          </Fragment>
         </Grid>
       </Fragment>
     )

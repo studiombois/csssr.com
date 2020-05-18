@@ -1,6 +1,7 @@
 export default [
   'common',
   'outsourcingFrontEnd',
+  'backEndAndDevops',
   'jobs',
   'job',
   'error',

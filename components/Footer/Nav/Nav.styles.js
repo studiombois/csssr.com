@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
   & {
     margin-left: auto;
     padding-top: ${calcRem(55)};
@@ -19,16 +19,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     color: ${colors.secondary.darken100};
   }
 
-  ${desktop.all} {
+  ${desktop.l} {
     & {
-      width: 738px;
+      width: ${lng === 'ru' ? '588px' : '738px'};
+    }
+  }
+
+  ${desktop.m} {
+    & {
+      width: ${lng === 'ru' ? '622px' : '752px'};
+    }
+  }
+
+  ${desktop.s} {
+    & {
+      margin-right: 50px;
+      width: ${lng === 'ru' ? '655px' : '785px'};
     }
   }
 
   ${tablet.all} {
     & {
-      margin-right: ${calcRem(9)};
-      width: ${calcRem(672)};
+      margin-right: ${calcRem(3)};
+      width: ${lng === 'ru' ? calcRem(522) : calcRem(652)};
     }
   }
 
@@ -40,8 +53,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const lng = props.lng
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, lng })}
   `
 }

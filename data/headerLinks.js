@@ -3,6 +3,7 @@ import React from 'react'
 import Square from '../static/icons/header/square.svg'
 import Triangle from '../static/icons/header/triangle.svg'
 import Circle from '../static/icons/header/circle.svg'
+import Arc from '../static/icons/header/arc.svg'
 import PieChart from '../static/icons/header/pieChart.svg'
 import Bag from '../static/icons/header/bag.svg'
 import Computer from '../static/icons/header/computer.svg'
@@ -38,6 +39,13 @@ export default {
           title: 'common:header.menu.services.mvp.title',
           description: 'common:header.menu.services.mvp.description',
           href: 'service/mvp-development',
+        },
+        {
+          id: 'backend',
+          icon: Arc,
+          title: 'common:header.menu.services.backend.title',
+          description: 'common:header.menu.services.backend.description',
+          href: 'service/back-end-and-devops',
         },
       ],
     },

@@ -29,7 +29,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     color: ${colors.secondary.darken100};
     font-weight: normal;
   }
-  
+
   .phone {
     display: block;
   }
@@ -165,13 +165,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
 
     .address,
-    .phone,
-    .time {
+    .time,
+    .status {
       margin-top: ${calcRem(8)};
     }
 
-    .status {
-      margin-top: ${calcRem(12)};
+    .phone {
+      margin-top: ${calcRem(4)};
     }
 
     .address-item:not(:first-of-type) {

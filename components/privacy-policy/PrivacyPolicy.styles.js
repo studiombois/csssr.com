@@ -42,6 +42,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(16)};
   }
 
+  .cookie-h4 {
+    margin-top: ${calcRem(32)};
+  }
+
   section .text.font_p16-regular {
     margin-bottom: 0;
   }
@@ -65,6 +69,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(43)};
   }
 
+  .cookie-content {
+    margin-top: ${calcRem(24)};
+  }
+
   .content .description.font_p16-regular {
     margin-bottom: 0;
 
@@ -73,8 +81,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
+  .content .cookie-description {
+    margin-top: ${calcRem(40)};
+    margin-bottom: 0;
+  }
+
   section {
     margin-top: ${calcRem(49)};
+  }
+
+  .cookie-section {
+    margin-top: ${calcRem(40)};
   }
 
   .list-item {
@@ -121,10 +138,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     padding-bottom: 0;
     font-size: inherit;
     line-height: inherit;
-  }
-
-  .font_p16-regular:not(:last-of-type) {
-    margin-bottom: 1rem;
   }
 
   ${desktop.all} {

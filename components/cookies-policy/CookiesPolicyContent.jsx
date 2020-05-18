@@ -11,7 +11,7 @@ const CookiesPolicyContent = ({ className, t }) => (
       <h1 className="title font_h1-regular">{t('cookiesPolicy:title')}</h1>
       <p className="date font_subhead-regular">{t('cookiesPolicy:date')}</p>
     </header>
-    <div className="content">
+    <div className="cookie-content content">
       <p className="description font_p24-strong">
         This Cookie Policy describes the different types of&nbsp;cookies that may be&nbsp;applied
         on&nbsp;the equipment of&nbsp;consumers who visit{' '}
@@ -21,7 +21,7 @@ const CookiesPolicyContent = ({ className, t }) => (
         (the &laquo;Site&raquo;), owned and operated by&nbsp;Company Name Ltd.
       </p>
 
-      <p className="description font_p16-regular">
+      <p className="cookie-description font_p16-regular">
         We&nbsp;may update this Cookie Policy from time to&nbsp;time in&nbsp;order to&nbsp;reflect,
         for example, changes to&nbsp;the cookies we&nbsp;use or&nbsp;for other operational, legal
         or&nbsp;regulatory reasons. Please therefore re-visit this Cookie Policy regularly
@@ -49,7 +49,7 @@ const CookiesPolicyContent = ({ className, t }) => (
         in&nbsp;accordance with our Privacy Policy.
       </p>
 
-      <section>
+      <section className="cookie-section">
         <h3 className="font_h2-regular">What is&nbsp;a&nbsp;cookie?</h3>
         <p className="font_p16-regular text">
           Cookies are a&nbsp;standard feature of&nbsp;websites that allows&nbsp;us to&nbsp;collect
@@ -58,7 +58,7 @@ const CookiesPolicyContent = ({ className, t }) => (
           that we&nbsp;do&nbsp;not have access or&nbsp;control over these cookies.
         </p>
       </section>
-      <section>
+      <section className="cookie-section">
         <h3 className="font_h2-regular">What cookies do&nbsp;we&nbsp;use?</h3>
         <p className="font_p16-regular text">
           We&nbsp;use a&nbsp;variety of&nbsp;cookies on&nbsp;the Site for several reasons.
@@ -72,21 +72,21 @@ const CookiesPolicyContent = ({ className, t }) => (
           and explain their use.
         </p>
 
-        <h4 className="font_h3-regular">Essential Cookies</h4>
+        <h4 className="cookie-h4 font_h3-regular">Essential Cookies</h4>
         <p className="font_p16-regular text">
           We&nbsp;use cookies that are essential to&nbsp;making the Sites work. These types
           of&nbsp;cookies enable you to&nbsp;move around the Sites and use their features. For
           example, we&nbsp;may use cookies to&nbsp;manage user sessions, or&nbsp;adjust settings and
           functionality on&nbsp;the Site.
         </p>
-        <h4 className="font_h3-regular">Preference Cookies</h4>
+        <h4 className="cookie-h4 font_h3-regular">Preference Cookies</h4>
         <p className="font_p16-regular text">
           We&nbsp;also use cookies that collect information about your choices and preferences.
           These cookies allow&nbsp;us to&nbsp;remember language or&nbsp;other local settings and
           customize the Sites accordingly. For example, we&nbsp;may store settings and preferences
           of&nbsp;our users.
         </p>
-        <h4 className="font_h3-regular">Social Media Cookies</h4>
+        <h4 className="cookie-h4 font_h3-regular">Social Media Cookies</h4>
         <p className="font_p16-regular text">
           Some of&nbsp;the pages on&nbsp;the Sites contain tools or&nbsp;applications that are
           linked to&nbsp;third-party social media service providers such as&nbsp;Facebook, Twitter
@@ -95,7 +95,7 @@ const CookiesPolicyContent = ({ className, t }) => (
           social media service provider&rsquo;s website for further details about how they use
           cookies.
         </p>
-        <h4 className="font_h3-regular">Analytics Cookies</h4>
+        <h4 className="cookie-h4 font_h3-regular">Analytics Cookies</h4>
         <p className="font_p16-regular text">
           These cookies collect information about how people are using the Sites, for example which
           pages are visited the most often, how visitors move from one webpage to&nbsp;another, and
@@ -104,7 +104,7 @@ const CookiesPolicyContent = ({ className, t }) => (
           we&nbsp;can improve&nbsp;it, and in&nbsp;some instances, whether our advertising
           is&nbsp;effective or&nbsp;not.
         </p>
-        <h4 className="font_h3-regular">Advertising Cookies</h4>
+        <h4 className="cookie-h4 font_h3-regular">Advertising Cookies</h4>
         <p className="font_p16-regular text">
           We&nbsp;may partner with certain third parties to&nbsp;deliver advertising that
           we&nbsp;believe may interest you based on&nbsp;your activity on&nbsp;our Sites and other

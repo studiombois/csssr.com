@@ -7,8 +7,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin: 0;
   }
 
-  padding-top: calc(${calcRem(256)} + 64px);
-  margin-bottom: ${calcRem(256)};
+  padding-top: calc(${calcRem(192)} + 64px);
+  margin-bottom: ${calcRem(192)};
   margin-right: auto;
   margin-left: auto;
   width: 1792px;
@@ -21,6 +21,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .title {
     font-family: 'Roboto Slab', serif;
+    color: black;
   }
 
   h3, h4 {
@@ -38,7 +39,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   p + ul,
   ul + p,
   ul .list-item_en:not(:first-of-type) {
-    margin-top: ${calcRem(40)};
+    margin-top: ${calcRem(16)};
+  }
+
+  .cookie-h4 {
+    margin-top: ${calcRem(32)};
   }
 
   section .text.font_p16-regular {
@@ -51,7 +56,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .date {
-    margin-top: ${calcRem(56)};
+    font-family: 'Roboto Slab', serif;
+    margin-top: ${calcRem(8)};
   }
 
   .adress {
@@ -60,19 +66,32 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .content {
     grid-column: 4 / span 6;
-    margin-top: ${calcRem(72)};
+    margin-top: ${calcRem(43)};
+  }
+
+  .cookie-content {
+    margin-top: ${calcRem(24)};
   }
 
   .content .description.font_p16-regular {
     margin-bottom: 0;
 
     &:not(:first-of-type) {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(15)};
     }
   }
 
+  .content .cookie-description {
+    margin-top: ${calcRem(40)};
+    margin-bottom: 0;
+  }
+
   section {
-    margin-top: ${calcRem(80)};
+    margin-top: ${calcRem(49)};
+  }
+
+  .cookie-section {
+    margin-top: ${calcRem(40)};
   }
 
   .list-item {
@@ -91,13 +110,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   section .list-item.list-item_level_2 {
-    margin-top: ${calcRem(40)};
+    margin-top: ${calcRem(16)};
     margin-bottom: 0;
   }
 
   .list .list-item.text,
   section .list-item.list-item_level_3 {
-    margin-top: ${calcRem(40)};
+    margin-top: ${calcRem(15)};
     margin-bottom: 0;
   }
 
@@ -119,10 +138,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     padding-bottom: 0;
     font-size: inherit;
     line-height: inherit;
-  }
-
-  .font_p16-regular:not(:last-of-type) {
-    margin-bottom: 1rem;
   }
 
   ${desktop.all} {
@@ -154,8 +169,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${tablet.all} {
     & {
-      padding-top: calc(${calcRem(168)} + 64px);
-      margin-bottom: ${calcRem(168)};
+      padding-top: calc(${calcRem(136)} + 64px);
+      margin-bottom: ${calcRem(136)};
     }
 
     h3 + h4,
@@ -165,7 +180,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     p + ul,
     ul + p,
     ul .list-item_en:not(:first-of-type) {
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(8)};
     }
 
     .header {
@@ -173,37 +188,33 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .date {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(10)};
     }
 
     .content {
       grid-column: 3 / span 8;
-      margin-top: ${calcRem(56)};
-    }
-
-    .date {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(30)};
     }
   
     section {
-      margin-top: ${calcRem(72)};
+      margin-top: ${calcRem(48)};
     }
 
     section .list-item.list-item_level_2 {
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(9)};
       margin-bottom: 0;
     }
-  
+    
     section .list-item.list-item_level_3 {
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(8)};
       margin-bottom: 0;
     }
   }
 
   ${mobile.all} {
     & {
-      padding-top: calc(${calcRem(112)} + 56px);
-      margin-bottom: ${calcRem(144)};
+      padding-top: calc(${calcRem(80)} + 56px);
+      margin-bottom: ${calcRem(128)};
     }
 
     h3 + h4,
@@ -213,7 +224,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     p + ul,
     ul + p,
     ul .list-item_en:not(:first-of-type) {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(8)};
     }
 
     .header {
@@ -221,28 +232,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .date {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(10)};
     }
 
     .content {
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(56)};
-    }
-
-    .date {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(30)};
     }
   
     section {
-      margin-top: ${calcRem(56)};
+      margin-top: ${calcRem(30)};
     }
 
     section .list-item.list-item_level_2 {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(14)};
     }
   
     section .list-item.list-item_level_3 {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(8)};
     }
 
     .font_p16-regular {

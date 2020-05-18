@@ -99,7 +99,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .list .list-item.text,
   section .list-item.list-item_level_3 {
-    margin-top: ${calcRem(16)};
+    margin-top: ${calcRem(15)};
     margin-bottom: 0;
   }
 

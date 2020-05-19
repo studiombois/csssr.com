@@ -86,7 +86,7 @@ const Footer = ({
           </Link>
 
           {isMobile && (
-            <Link className="link-lng" href={otherLanguagePathname}>
+            <Link className="link-language" href={otherLanguagePathname}>
               <Text
                 className="link-text"
                 dangerouslySetInnerHTML={{ __html: lngToRedirect }}

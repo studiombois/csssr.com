@@ -17,7 +17,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     text-decoration: none;
   }
 
-  .lng-link {
+  .language-link {
     margin-left: ${calcRem(50)};
   }
 
@@ -32,7 +32,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
   ${mobile.all} {
     margin-top: ${calcRem(45)};
 
-    .lng-link {
+    .language-link {
       display: none;
     }
   }

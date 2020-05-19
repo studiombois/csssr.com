@@ -53,6 +53,14 @@ const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress
     setHoveredAddress(null)
   }
 
+  const handleFocus = () => {
+    if (window.scrollTo) {
+      if (window.pageYOffset + window.innerHeight !== document.body.scrollHeight) {
+        window.scrollTo(0, document.body.scrollHeight)
+      }
+    }
+  }
+
   const textSize = isTablet || isMobile ? 'm' : 's'
   return (
     <ClickOutside onOutsideClick={handleResetHoveredAddress}>
@@ -86,6 +94,7 @@ const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress
                 href={`tel:${t(`common:footer.addresses.${id}.phone`)}`}
                 size={textSize}
                 type="list"
+                onFocus={handleFocus}
               />
             )}
 

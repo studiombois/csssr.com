@@ -213,6 +213,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(8)};
       margin-bottom: 0;
     }
+
+    .header .font_h1-regular {
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
+    }
+
+    .content .description.font_p16-regular {
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+    }
+
+    .font_p16-regular {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+    }
   }
 
   ${mobile.all} {
@@ -256,9 +271,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(8)};
     }
 
+    .header .font_h1-regular {
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
+    }
+
+    .content .description.font_p16-regular {
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+    }
+
     .font_p16-regular {
-      font-size: ${calcRem(12)};
-      line-height: ${calcRem(16)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 `

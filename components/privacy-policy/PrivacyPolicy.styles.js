@@ -265,12 +265,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(30)};
     }
 
+    .list-item.list-item_level_1 {
+      padding-left: ${calcRem(19)};
+    }
+
     section .list-item.list-item_level_2 {
       margin-top: ${calcRem(14)};
+      padding-left: ${calcRem(40)};
+
+      &:before {
+        left: ${calcRem(16)};
+      }
     }
   
     section .list-item.list-item_level_3 {
       margin-top: ${calcRem(8)};
+      padding-left: ${calcRem(66)};
     }
 
     .header .font_h1-regular {
@@ -280,11 +290,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .content .description.font_p16-regular {
       font-size: ${calcRem(16)};
-      line-height: ${calcRem(24)};
-    }
-
-    .font_p16-regular {
-      font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }
   }

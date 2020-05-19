@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useRef, useState, createRef } from 'react'
 import { bool, func, string } from 'prop-types'
 import { withRouter } from 'next/router'
 import ReactDOM from 'react-dom'
@@ -33,9 +33,11 @@ const Header = ({
   isButtonVisible = true,
 }) => {
   let lastScrollTopValue = useRef(0)
+  const buttonRef = createRef()
   const [isDropdownOpened, toggleDropdown] = useState(false)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
+  const [isContactModalOpened, toggleContactModalOpened] = useState(false)
 
   useEffect(() => {
     if (isMobile) {
@@ -44,6 +46,14 @@ const Header = ({
         disablePageScroll(document.body)
       } else {
         enablePageScroll(document.body)
+      }
+    }
+
+    if (!isMobile) {
+      if (isContactModalOpened && !isContactModalVisible) {
+        if (buttonRef.current) {
+          buttonRef.current.focus()
+        }
       }
     }
 
@@ -93,6 +103,11 @@ const Header = ({
     }
 
     toggleContactModalVisibility(true)
+    toggleContactModalOpened(true)
+  }
+
+  const handleButtonBlur = () => {
+    toggleContactModalOpened(false)
   }
 
   const handleHideContactModal = () => {
@@ -116,8 +131,10 @@ const Header = ({
           />
         ) : (
           <Button
+            ref={buttonRef}
             data-testid={`Header:button.contactUs`}
             onClick={handleButtonClick}
+            onBlur={handleButtonBlur}
             className="button_action"
             dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
           />

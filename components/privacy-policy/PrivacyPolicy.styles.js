@@ -109,6 +109,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     content: attr(data-counter);
   }
 
+  .list-item_en {
+    color: black;
+  }
+
   section .list-item.list-item_level_2 {
     margin-top: ${calcRem(16)};
     margin-bottom: 0;

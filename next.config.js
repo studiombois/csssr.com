@@ -105,6 +105,7 @@ module.exports = withSourceMaps({
           plugins: [
             { inlineStyles: false },
             { prefixIds: false },
+            { removeViewBox: false },
             {
               cleanupNumericValues: {
                 floatPrecision: 3,

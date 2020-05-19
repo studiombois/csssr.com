@@ -13,10 +13,7 @@ import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 import LogoIcon from '../../static/icons/csssr_logo.svg'
-import LineFromTopToBottomIcon from '../../static/icons/lineFromTopToBottom.svg'
 import ServerError from '../../static/icons/serverError.svg'
-
-import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 
@@ -142,13 +139,6 @@ class ErrorPage extends React.Component {
               ].join(''),
             }}
           />
-          <Fragment>
-            <div className="arrow-wrapper">
-              <LineFromTopToBottomIcon width="100%" height="100%" />
-            </div>
-
-            <div className="navList">{navItems.map((items) => this.renderNav({ lng, items }))}</div>
-          </Fragment>
         </Grid>
       </Fragment>
     )

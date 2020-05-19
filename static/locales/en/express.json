@@ -92,7 +92,7 @@
     "feature2": {
       "title": "Modern&nbsp;Stack",
       "text1": "We use only modern stack from open-source technologies to make your project work quickly and efficiently, and allow for easy future support.",
-      "text2": "HTML5, CSS3, Stylus, Pug, BEM, PostCSS"
+      "text2": "HTML5, CSS3, BEM, PostCSS, Next.js"
     },
     "feature3": {
       "title": "Accessibility",

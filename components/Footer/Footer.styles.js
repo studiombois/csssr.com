@@ -25,7 +25,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     position: relative;
     z-index: 2;
     height: ${calcRem(24)};
-    display: block;
+    display: inline-block;
     color: ${colors.secondary.darken100};
     transition: color 100ms ease-out;
   }
@@ -59,7 +59,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
   .email {
     margin-top: ${calcRem(16)};
-    display: block;
+    display: inline-block;
   }
 
   ${desktop.s} {

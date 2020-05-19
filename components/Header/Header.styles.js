@@ -28,7 +28,8 @@ const base = ({ breakpoints: { mobile }}) => css`
     top: -4rem;
   }
 
-  &.visible {
+  &.visible,
+  &:focus-within {
     position: fixed;
     top: 0;
   }

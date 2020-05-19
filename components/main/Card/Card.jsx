@@ -103,8 +103,8 @@ const Card = ({
 
   return (
     <div className={cn('card', className)}>
-      <CardBody />
       {children}
+      <CardBody />
     </div>
   )
 }

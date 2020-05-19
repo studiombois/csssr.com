@@ -206,6 +206,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(48)};
     }
 
+    .description {
+      font-weight: normal;
+    }
+
     section .list-item.list-item_level_2 {
       margin-top: ${calcRem(9)};
       margin-bottom: 0;
@@ -263,6 +267,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   
     section {
       margin-top: ${calcRem(30)};
+    }
+
+    .description {
+      font-weight: normal;
     }
 
     .list-item.list-item_level_1 {

@@ -32,8 +32,8 @@ const errorNameByStatusCode = {
 }
 
 const codeIconByStatusCode = {
-  404: <NotFound height="100%" />,
-  500: <ServerError height="100%" />,
+  404: <NotFound width="100%" height="100%" />,
+  500: <ServerError width="100%" height="100%" />,
 }
 
 class ErrorPage extends React.Component {

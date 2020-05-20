@@ -8,8 +8,7 @@ import Picture from '../../../Picture'
 import Vacancy from '../Vacancy'
 
 const VacancyImageAndLinks = ({
-  l10n: { translations, language },
-  locale,
+  l10n: { translations, language, locale },
   className,
   vacancies,
   pictureName,

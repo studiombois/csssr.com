@@ -41,6 +41,7 @@ class TextareaField extends PureComponent {
       tabIndex,
       input: { name, value, onBlur, onFocus },
       meta: { error, invalid, submitFailed },
+      required,
     } = this.props
 
     const showError = invalid && submitFailed
@@ -69,6 +70,8 @@ class TextareaField extends PureComponent {
           aria-label={label}
           data-testid={testid}
           tabIndex={tabIndex}
+          required={required}
+          aria-required={required}
         />
         {showError && <span className="font_input-small-error-label error">{error}</span>}
         {label && (

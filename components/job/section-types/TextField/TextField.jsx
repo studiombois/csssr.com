@@ -25,6 +25,7 @@ const JobSectionTextField = ({ className, title, maxLength, required, inputIndex
       component={TextareaField}
       label={title}
       kind="regular"
+      required={required}
     />
   )
 }

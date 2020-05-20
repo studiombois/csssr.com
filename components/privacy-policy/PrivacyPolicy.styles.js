@@ -7,8 +7,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin: 0;
   }
 
-  padding-top: calc(${calcRem(192)} + 64px);
-  margin-bottom: ${calcRem(192)};
+  padding-top: calc(${calcRem(205)} + 64px);
+  margin-bottom: ${calcRem(205)};
   margin-right: auto;
   margin-left: auto;
   width: 1792px;
@@ -109,6 +109,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     content: attr(data-counter);
   }
 
+  .list-item_en {
+    color: black;
+  }
+
   section .list-item.list-item_level_2 {
     margin-top: ${calcRem(16)};
     margin-bottom: 0;
@@ -158,6 +162,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
+    padding-top: calc(${calcRem(206)} + 64px);
+
     .header {
       grid-column: 3 / span 8;
     }
@@ -169,8 +175,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${tablet.all} {
     & {
-      padding-top: calc(${calcRem(136)} + 64px);
-      margin-bottom: ${calcRem(136)};
+      padding-top: calc(${calcRem(144)} + 64px);
+      margin-bottom: ${calcRem(150)};
     }
 
     h3 + h4,
@@ -200,6 +206,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(48)};
     }
 
+    .description {
+      font-weight: normal;
+    }
+
     section .list-item.list-item_level_2 {
       margin-top: ${calcRem(9)};
       margin-bottom: 0;
@@ -208,6 +218,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     section .list-item.list-item_level_3 {
       margin-top: ${calcRem(8)};
       margin-bottom: 0;
+    }
+
+    .header .font_h1-regular {
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
+    }
+
+    .content .description.font_p16-regular {
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+    }
+
+    .font_p16-regular {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
@@ -244,17 +269,36 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(30)};
     }
 
+    .description {
+      font-weight: normal;
+    }
+
+    .list-item.list-item_level_1 {
+      padding-left: ${calcRem(19)};
+    }
+
     section .list-item.list-item_level_2 {
       margin-top: ${calcRem(14)};
+      padding-left: ${calcRem(40)};
+
+      &:before {
+        left: ${calcRem(16)};
+      }
     }
   
     section .list-item.list-item_level_3 {
       margin-top: ${calcRem(8)};
+      padding-left: ${calcRem(66)};
     }
 
-    .font_p16-regular {
-      font-size: ${calcRem(12)};
-      line-height: ${calcRem(16)};
+    .header .font_h1-regular {
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
+    }
+
+    .content .description.font_p16-regular {
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
     }
   }
 `

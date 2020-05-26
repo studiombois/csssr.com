@@ -149,6 +149,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       font-size: ${calcRem(48)};
       line-height: ${calcRem(64)};
     }
+
+    .cookie-content > .font_p24-strong {
+      margin-bottom: ${calcRem(40)};
+      font-weight: 300;
+    }
   }
 
   ${desktop.m} {
@@ -234,6 +239,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }
+
+    .cookie-content > .font_p24-strong {
+      margin-bottom: ${calcRem(40)};
+    }
   }
 
   ${mobile.all} {
@@ -299,6 +308,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .content .description.font_p16-regular {
       font-size: ${calcRem(16)};
       line-height: ${calcRem(24)};
+    }
+
+    .cookie-content > .font_p24-strong {
+      margin-bottom: ${calcRem(16)};
     }
   }
 `

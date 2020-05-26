@@ -81,6 +81,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
+  .content .font_p16-regular a {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
   .content .cookie-description {
     margin-top: ${calcRem(40)};
     margin-bottom: 0;

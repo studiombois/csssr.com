@@ -63,8 +63,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       top: -58px;
-      right: -32px;
+      right: -16px;
       width: 572px;
+      overflow: hidden;
+
+      img {
+        margin-left: 16px;
+      }
     }
   }
 
@@ -82,8 +87,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       top: -8px;
-      right: -40px;
+      right: -24px;
       width: 540px;
+      overflow: hidden;
+
+      img {
+        margin-left: 16px;
+      }
     }
   }
 

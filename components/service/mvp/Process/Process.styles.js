@@ -132,7 +132,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       top: -150px;
-      left: calc(50% - 1397px);
+      left: calc(50% - ${calcRem(1397)});
       width: ${calcRem(1486)};
     }
 

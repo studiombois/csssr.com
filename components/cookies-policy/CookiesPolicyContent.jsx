@@ -21,7 +21,7 @@ const CookiesPolicyContent = ({ className, t }) => (
         (the &laquo;Site&raquo;), owned and operated by&nbsp;Company Name Ltd.
       </p>
 
-      <p className="cookie-description font_p16-regular">
+      <p className="description font_p16-regular">
         We&nbsp;may update this Cookie Policy from time to&nbsp;time in&nbsp;order to&nbsp;reflect,
         for example, changes to&nbsp;the cookies we&nbsp;use or&nbsp;for other operational, legal
         or&nbsp;regulatory reasons. Please therefore re-visit this Cookie Policy regularly

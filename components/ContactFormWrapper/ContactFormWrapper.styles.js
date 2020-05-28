@@ -18,7 +18,7 @@ const base = ({ breakpoints: { mobile }}) => css`
     }
 
     .button {
-      grid-column: 1 / span 6;
+      grid-column: 2 / span 4;
     }
   }
 `
@@ -64,7 +64,7 @@ const coreValues = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .button {
-      grid-column: 1 / span 6;
+      grid-column: 2 / span 4;
     }
   }
 `
@@ -208,7 +208,7 @@ const backEndAndDevops = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .form .button {
-      grid-column: 1 / span 6;
+      grid-column: 2 / span 4;
     }
   }
 `

@@ -4,7 +4,7 @@ import calcRem from '../../../../utils/style/calcRem'
 const base = ({ breakpoints: { mobile }, colors }) => css`
   ${mobile.all} {
     &.switch-toggler {
-      z-index: 1;
+      z-index: 3;
       margin-top: auto;
       padding-left: ${calcRem(16)};
       padding-top: ${calcRem(8)};
@@ -39,6 +39,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
       position: absolute;
       top: ${calcRem(-64)};
       left: ${calcRem(80)};
+      z-index: 2;
       pointer-events: none;
       padding-left: ${calcRem(32)};
       width: calc(100vw - ${calcRem(80)});

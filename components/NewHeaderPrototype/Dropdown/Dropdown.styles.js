@@ -42,23 +42,110 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       background-color: ${colors.secondary.darken100};
     }
 
-    .main-nav {
-      padding-top: ${calcRem(24)};
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      background-color: ${colors.secondary.darken100};
-    }
-
     .sub-nav {
+      padding-left: ${calcRem(32)};
       width: calc(100% - ${calcRem(80)});
       height: 100%;
       background-color: #101112;
+      overflow: auto;
+    }
+
+    .title {
+      position: sticky;
+      z-index: 1;
+      margin-top: ${calcRem(100)};
+      padding-top: ${calcRem(16)};
+      padding-bottom: ${calcRem(16)};
+      top: ${calcRem(-1)};
+      display: flex;
+      flex-direction: column;;
+      background-color: #101112;
+      transition: font-size 75ms ease-in;
+
+      a {
+        display: flex;
+        align-items: center;
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: normal;
+        font-size: ${calcRem(20)};
+        line-height: ${calcRem(16)};
+        letter-spacing: ${calcRem(1)};
+        text-transform: uppercase;
+        color: white
+      }
+    }
+
+    .title.stuck {
+      a {
+        font-size: ${calcRem(14)};
+        line-height: ${calcRem(20)};
+      }
+    }
+
+    .arrow {
+      margin-left: ${calcRem(9)};
+    }
+
+    .active-section {
+      margin-top: ${calcRem(5)};
+      font-family: Roboto Slab;
+      font-style: normal;
+      font-weight: normal;
+      font-size: ${calcRem(8)};
+      line-height: ${calcRem(16)};
+      letter-spacing: ${calcRem(1)};
+      text-transform: uppercase;
+      color: #9B9B9B;
+    }
+
+    .sub-nav-sections {
+      padding-bottom: ${calcRem(40)};
+    }
+
+    .sub-nav-sections-item {
+      margin-top: ${calcRem(40)};
+    }
+
+    .sub-nav-section-title {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 16px;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      color: #9B9B9B;
+    }
+
+    .sub-nav-section-list {
+      margin-top: ${calcRem(16)};
+    }
+
+    .sub-nav-section-list-item:not(:first-of-type) {
+      margin-top: ${calcRem(12)};
+    }
+
+    .sub-nav-section-list-item-link {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+      color: #FFFFFF;
+
+      &.is_active {
+        color: #9B9B9B;
+        pointer-events: none;
+        text-decoration: underline;
+        text-decoration-color: ${colors.primary.origin};
+      }
     }
 
     .button_action {
       position: absolute;
       bottom: 0;
+      z-index: 4;
       padding-left: ${calcRem(27)};
       padding-right: ${calcRem(27)};
       width: 100%;
@@ -72,52 +159,6 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
 
     &.is_opened .button_action {
       opacity: 1;
-    }
-
-    .main-nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      &:not(:first-of-type) {
-        margin-top: ${calcRem(40)};
-      }
-    }
-
-    .main-nav-item-button {
-      display: block;
-      width: 40px;
-      height: 40px;
-      background: none;
-      background-color: #434343;
-      transition: transform 75ms ease-in;
-      border: none;
-    }
-
-
-    .main-nav-item.is_active {
-      .main-nav-item-button {
-        transform: scale(1.4);
-        border: 3px solid #0054D7;
-      }
-
-      .main-nav-item-title {
-        transform: translateY(${calcRem(4)});
-      }
-    }
-
-    .main-nav-item-title {
-      margin-top: ${calcRem(4)};
-      font-family: Roboto Slab;
-      font-style: normal;
-      font-weight: normal;
-      font-size: ${calcRem(8)};
-      line-height: ${calcRem(16)};
-      text-align: center;
-      letter-spacing: ${calcRem(1)};
-      text-transform: uppercase;
-      color: #9B9B9B;
-      transition: transform 75ms ease-in;
     }
   }
 `

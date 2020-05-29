@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import moment from 'moment'
 import { bool, func, string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -12,9 +13,15 @@ import Button from '../../ui-kit/core-design/Button'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
-import { devNav, storeNav, blogNav, schoolNav } from '../data/nav'
+import { blogNav, devNav, storeNav } from '../data/nav'
 
-const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
+const formatDate = (start, end) => {
+  const momentStart = moment(new Date(start))
+  const momentEnd = moment(new Date(end))
+  return `${momentStart.format('HH:mm')} - ${momentEnd.format('HH:mm, dddd, MMMM DD, YYYY')}`
+}
+
+const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) => {
   const titleRef = useRef(null)
   useEffect(() => {
     const callback = ([entry]) =>
@@ -31,7 +38,10 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
     }
   })
 
-  const [activeMainNavItem, setActiveMainNavItem] = useState('blog')
+  const eventStartTime = query.event_start_time
+  const eventEndTime = query.event_end_time
+  const showCalendlyCallback = eventStartTime || eventEndTime
+  const [activeMainNavItem, setActiveMainNavItem] = useState(showCalendlyCallback ? 'store' : 'blog')
   let subNavTitleHref = {
     dev: '/',
     store: 'https://store.csssr.com/',
@@ -125,19 +135,25 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
         )}
 
         {activeMainNavItem === 'store' && (
-          <ul className="sub-nav-store-sections">
-            {storeNav.sections.map(({ links }, index) => (
-              <li className="sub-nav-store-sections-item" key={index}>
-                <ul className="sub-nav-store-sections-item">
-                  {links.map((title) => (
-                    <li className="sub-nav-store-section-list-item" key={title}>
-                      {title}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
+          <>
+            { showCalendlyCallback ?
+              <div style={{color: 'white'}}>{formatDate(eventStartTime, eventEndTime)}</div> :
+              <a href="https://calendly.com/andrey-yankovsky/30min?month=2020-06">Calendly</a>
+            }
+            <ul className="sub-nav-store-sections">
+              {storeNav.sections.map(({ links }, index) => (
+                <li className="sub-nav-store-sections-item" key={index}>
+                  <ul className="sub-nav-store-sections-item">
+                    {links.map((title) => (
+                      <li className="sub-nav-store-section-list-item" key={title}>
+                        {title}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
 
         {activeMainNavItem === 'blog' && lng === 'en' && (

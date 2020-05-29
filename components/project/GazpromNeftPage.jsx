@@ -32,9 +32,9 @@ const GazpromNeftPage = ({ t }) => {
         description={t('project:gazpromNeft.meta.description')}
       />
 
-      <Hero  id="hero" content={hero} />
-      <Team  id="team" content={team} />
-      <TechStack id ="teckStack" content={techStack} />
+      <Hero id="hero" content={hero} />
+      <Team id="team" content={team} />
+      <TechStack id="teckStack" content={techStack} />
       <AboutProject
         porojectId={porojectId}
         images={aboutProjectImages}

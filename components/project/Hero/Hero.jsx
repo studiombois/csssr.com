@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, object, func } from 'prop-types'
+import { func, object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
 import translate from '../../../utils/translate-wrapper'
@@ -19,7 +19,7 @@ const Hero = ({
   return (
     <section className={className} id={id}>
       <Grid className="grid" as="div">
-        <Heading.H2
+        <Heading.H1
           type="slab"
           size="l"
           dangerouslySetInnerHTML={{ __html: t(heading) }}

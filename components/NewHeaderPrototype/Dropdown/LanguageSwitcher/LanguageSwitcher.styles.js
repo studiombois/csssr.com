@@ -60,7 +60,7 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
         padding-top: ${calcRem(16)};
         padding-bottom: ${calcRem(16)};
         position: sticky;
-        top: ${calcRem(-1)};
+        top: ${calcRem(-2)};
         display: block;
         font-family: Roboto Slab;
         font-style: normal;

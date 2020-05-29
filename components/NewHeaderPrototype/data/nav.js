@@ -1,3 +1,16 @@
+import { ReactComponent as GooglePodcastIcon } from '../static/icons/podcast_google.svg'
+import { ReactComponent as ApplePodcastIcon } from '../static/icons/podcast_apple.svg'
+import { ReactComponent as SoundcloudPodcastIcon } from '../static/icons/podcast_soundcloud.svg'
+
+import { ReactComponent as Facebook } from '../static/icons/facebook.svg'
+import { ReactComponent as Linkedin } from '../static/icons/linkedin.svg'
+import { ReactComponent as Instagram } from '../static/icons/instagram.svg'
+import { ReactComponent as Youtube } from '../static/icons/youtube.svg'
+import { ReactComponent as Soundcloud } from '../static/icons/soundcloud.svg'
+import { ReactComponent as Telegram } from '../static/icons/telegram.svg'
+import { ReactComponent as Twitter } from '../static/icons/twitter.svg'
+import { ReactComponent as Vk } from '../static/icons/vk.svg'
+
 export const mainNav = ['dev', 'store', 'blog', 'school', 'career', 'podcasts']
 
 export const devNav = {
@@ -126,24 +139,71 @@ export const blogNav = {
     },
     {
       id: 'podcasts',
-      // title: 'common:header.menu.blog.podcasts.title',
       links: [
         {
           id: 'google',
-          title: 'common:header.menu.products.podcasts.google.title',
+          title: 'Google Podcasts',
+          icon: GooglePodcastIcon,
           href:
             'https://podcasts.google.com/?feed=aHR0cDovL2ZlZWRzLnNvdW5kY2xvdWQuY29tL3VzZXJzL3NvdW5kY2xvdWQ6dXNlcnM6NDIwNDQ2MDgyL3NvdW5kcy5yc3M&ved=2ahUKEwix_PWd-dbpAhWBSpoKHSmBAT4Q4aUDegQIARAC&hl=ru',
         },
         {
           id: 'apple',
-          title: 'common:header.menu.products.podcasts.apple.title',
+          title: 'Apple Podcasts',
+          icon: ApplePodcastIcon,
           href:
             'https://podcasts.apple.com/ru/podcast/%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8-512/id1370045815',
         },
         {
           id: 'soundcloud',
-          title: 'common:header.menu.products.podcasts.soundcloud.title',
+          title: 'Soundcloud',
+          icon: SoundcloudPodcastIcon,
           href: 'https://soundcloud.com/csssr',
+        },
+      ],
+    },
+    {
+      id: 'socials',
+      links: [
+        {
+          id: 'facebook',
+          href: 'https://www.facebook.com/csssr',
+          icon: Facebook,
+        },
+        {
+          id: 'linkedin',
+          href: 'https://www.linkedin.com/company/csssr',
+          icon: Linkedin,
+        },
+        {
+          id: 'instagram',
+          href: 'https://www.instagram.com/csssr.dev',
+          icon: Instagram,
+        },
+        {
+          id: 'youtube',
+          href: 'https://www.youtube.com/channel/UCdkZ6ckHOJ3DjAYxoGeMG0w',
+          icon: Youtube,
+        },
+        {
+          id: 'soundcloud',
+          href: 'https://soundcloud.com/csssr',
+          icon: Soundcloud,
+        },
+        {
+          id: 'telegram',
+          href: 'https://t.me/csssr',
+          icon: Telegram,
+        },
+        {
+          id: 'twitter',
+          href: 'https://twitter.com/csssr_dev',
+          icon: Twitter,
+        },
+        {
+          id: 'vk',
+          href: 'https://vk.com/csssr_dev',
+          icon: Vk,
         },
       ],
     },
@@ -152,7 +212,7 @@ export const blogNav = {
 
 export const schoolNav = {
   id: 'school',
-  href: 'https://blog.csssr.com',
+  href: 'https://school.csssr.com/ru',
   sections: [
     {
       id: 'junior',

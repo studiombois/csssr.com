@@ -31,7 +31,15 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
     }
   })
 
-  const [activeMainNavItem, setActiveMainNavItem] = useState('dev')
+  const [activeMainNavItem, setActiveMainNavItem] = useState('blog')
+  let subNavTitleHref = {
+    dev: '/',
+    store: 'https://store.csssr.com/',
+    blog: 'https://blog.csssr.com/',
+    school: 'https://school.csssr.com/ru',
+    career: 'https://csssr.com/jobs',
+    podcasts: '',
+  }[activeMainNavItem]
 
   return (
     <div
@@ -47,62 +55,62 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
 
       <div className="sub-nav">
         <div className="title" ref={titleRef}>
-          <NextLink href="/">
-            <a>
-              {`${activeMainNavItem}.csssr.com`}
+          <a href={subNavTitleHref}>
+            {`${activeMainNavItem}.csssr.com`}
 
-              <svg
-                className="arrow"
-                width="11"
-                height="10"
-                viewBox="0 0 11 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M10.1309 0.244078C10.4564 0.569515 10.4564 1.09715 10.1309 1.42259L1.79759 9.75592C1.47215 10.0814 0.944515 10.0814 0.619078 9.75592C0.293641 9.43048 0.293641 8.90285 0.619078 8.57741L8.95241 0.244078C9.27785 -0.0813592 9.80548 -0.0813592 10.1309 0.244078Z"
-                  fill="#0076FF"
-                />
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M0.375 0.833333C0.375 0.373096 0.748096 0 1.20833 0L9.54167 0C10.0019 0 10.375 0.373096 10.375 0.833333V9.16667C10.375 9.6269 10.0019 10 9.54167 10C9.08143 10 8.70833 9.6269 8.70833 9.16667V1.66667L1.20833 1.66667C0.748096 1.66667 0.375 1.29357 0.375 0.833333Z"
-                  fill="#0076FF"
-                />
-              </svg>
-            </a>
-          </NextLink>
+            <svg
+              className="arrow"
+              width="11"
+              height="10"
+              viewBox="0 0 11 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M10.1309 0.244078C10.4564 0.569515 10.4564 1.09715 10.1309 1.42259L1.79759 9.75592C1.47215 10.0814 0.944515 10.0814 0.619078 9.75592C0.293641 9.43048 0.293641 8.90285 0.619078 8.57741L8.95241 0.244078C9.27785 -0.0813592 9.80548 -0.0813592 10.1309 0.244078Z"
+                fill="#0076FF"
+              />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M0.375 0.833333C0.375 0.373096 0.748096 0 1.20833 0L9.54167 0C10.0019 0 10.375 0.373096 10.375 0.833333V9.16667C10.375 9.6269 10.0019 10 9.54167 10C9.08143 10 8.70833 9.6269 8.70833 9.16667V1.66667L1.20833 1.66667C0.748096 1.66667 0.375 1.29357 0.375 0.833333Z"
+                fill="#0076FF"
+              />
+            </svg>
+          </a>
 
-          <span className="active-section">
-            {(function () {
-              let sectionName
+          {activeMainNavItem === 'dev' && (
+            <span className="active-section">
+              {(function () {
+                let sectionName
 
-              devNav.sections.find(({ links }) => {
-                sectionName =
-                  links.find(({ href }) => pathname === `/${lng}/${href}`) &&
-                  links.find(({ href }) => pathname === `/${lng}/${href}`).title
+                devNav.sections.find(({ links }) => {
+                  sectionName =
+                    links.find(({ href }) => pathname === `/${lng}/${href}`) &&
+                    links.find(({ href }) => pathname === `/${lng}/${href}`).title
 
-                return sectionName
-              })
+                  return sectionName
+                })
 
-              return t(sectionName)
-            })()}
-          </span>
+                return t(sectionName)
+              })()}
+            </span>
+          )}
         </div>
 
         {activeMainNavItem === 'dev' && (
-          <ul className="sub-nav-sections">
+          <ul className="sub-nav-dev-sections">
             {devNav.sections.map(({ id, title, links }) => (
-              <li className="sub-nav-sections-item" key={id}>
-                <div className="sub-nav-section-title">{t(title)}</div>
-                <ul className="sub-nav-section-list">
+              <li className="sub-nav-dev-sections-item" key={id}>
+                <div className="sub-nav-dev-section-title">{t(title)}</div>
+                <ul className="sub-nav-dev-section-list">
                   {links.map(({ id, title, href }) => (
-                    <li key={id} className="sub-nav-section-list-item">
+                    <li key={id} className="sub-nav-dev-section-list-item">
                       <NextLink href={`/${lng}/${href}`}>
                         <a
-                          className={cn('sub-nav-section-list-item-link', {
+                          className={cn('sub-nav-dev-section-list-item-link', {
                             is_active: pathname === `/${lng}/${href}`,
                           })}
                           dangerouslySetInnerHTML={{ __html: t(title) }}
@@ -114,6 +122,66 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
               </li>
             ))}
           </ul>
+        )}
+
+        {activeMainNavItem === 'store' && (
+          <ul className="sub-nav-store-sections">
+            {storeNav.sections.map(({ links }, index) => (
+              <li className="sub-nav-store-sections-item" key={index}>
+                <ul className="sub-nav-store-sections-item">
+                  {links.map((title) => (
+                    <li className="sub-nav-store-section-list-item" key={title}>
+                      {title}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {activeMainNavItem === 'blog' && lng === 'en' && (
+          <>
+            <div className="sub-nav-blog-section-title">Sections</div>
+            <ul className="sub-nav-blog-sections">
+              {blogNav.sections[0].links.map((link) => (
+                <li className="sub-nav-blog-section-item" key={link}>
+                  <a className="sub-nav-blog-section-list-item-link">{link}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {activeMainNavItem === 'blog' && lng === 'ru' && (
+          <>
+            <div className="sub-nav-blog-section-title">Наши подкасты</div>
+            <ul className="sub-nav-blog-sections">
+              {blogNav.sections[1].links.map(({ id, title, href, icon: Icon }) => (
+                <li className="sub-nav-blog-section-item is_ru" key={id}>
+                  <Icon className="sub-nav-blog-section-list-item-icon" />
+                  <a href={href} className="sub-nav-blog-section-list-item-link">
+                    {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {activeMainNavItem === 'blog' && lng === 'ru' && (
+          <>
+            <div className="sub-nav-blog-section-title">Наши социальные сети</div>
+            <ul className="sub-nav-blog-sections socials">
+              {blogNav.sections[2].links.map(({ id, href, icon: Icon }) => (
+                <li className="sub-nav-blog-section-item" key={id}>
+                  <a href={href} className="sub-nav-blog-section-list-item-link">
+                    <Icon />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
 

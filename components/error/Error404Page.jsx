@@ -13,27 +13,14 @@ import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 import LogoIcon from '../../static/icons/csssr_logo.svg'
-import ServerError from '../../static/icons/serverError.svg'
+import LineFromTopToBottomIcon from '../../static/icons/lineFromTopToBottom.svg'
+import NotFound from '../../static/icons/notFound.svg'
+
+import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 
-const possibleStatusCodes = [500]
-
-const defaultStatusCode = 500
-
-const titleLocalesByStatusCode = {
-  500: 'error:errors.serverError.title',
-}
-
-const subtitleLocalesByStatusCode = {
-  500: 'error:errors.serverError.subtitle',
-}
-
-const codeIconByStatusCode = {
-  500: <ServerError width="auto" height="100%" />,
-}
-
-class ErrorPage extends React.Component {
+class Error404Page extends React.Component {
   renderNav = ({ lng, items: { title, id, links } }) => {
     const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
 
@@ -81,11 +68,6 @@ class ErrorPage extends React.Component {
   render() {
     const { className, t, lng: lngCodeFromI18n, i18n } = this.props
 
-    const statusCode =
-      possibleStatusCodes.indexOf(this.props.statusCode) !== -1
-        ? this.props.statusCode
-        : defaultStatusCode
-
     const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
     const rootUrl = `/${lng}`
 
@@ -116,36 +98,40 @@ class ErrorPage extends React.Component {
           </Link>
         </Grid>
 
-        <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
+        <Grid as="main" className={cn(className, `error-code_404`)}>
           <h1
             className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: t(`${titleLocalesByStatusCode[statusCode]}`) }}
+            dangerouslySetInnerHTML={{ __html: t('error:errors.notFound.title') }}
           />
 
           <PictureForAllResolutions
             className="picture"
-            image={{ namespace: 'error', key: `${statusCode}`, alt: `${statusCode}` }}
+            image={{ namespace: 'error', key: '404', alt: '404' }}
           />
 
-          <div className={'code-wrapper'}>{codeIconByStatusCode[statusCode]}</div>
+          <div className={'code-wrapper'}>
+            <NotFound width="auto" height="100%" />
+          </div>
 
           <h2
             className="font_subhead-slab"
             dangerouslySetInnerHTML={{
-              __html: [
-                t(`${subtitleLocalesByStatusCode[statusCode]}`),
-                statusCode === 500
-                  ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
-                  : null,
-              ].join(''),
+              __html: t('error:errors.notFound.subtitle'),
             }}
           />
+          <Fragment>
+            <div className="arrow-wrapper">
+              <LineFromTopToBottomIcon width="100%" height="100%" />
+            </div>
+
+            <div className="navList">{navItems.map((items) => this.renderNav({ lng, items }))}</div>
+          </Fragment>
         </Grid>
       </Fragment>
     )
   }
 }
 
-export default MsBrowserConsumer(styled(ErrorPage)`
+export default MsBrowserConsumer(styled(Error404Page)`
   ${styles}
 `)

@@ -9,7 +9,10 @@ const ElearningPlatform = () => {
 
   return (
     <Layout>
-      <Head title="Start Your Online Education Business — CSSSR Remote Development Team" />
+      <Head
+        title="Modular Learning Management System"
+        description="Build your solution from the modules, add anything you need with our development team."
+      />
 
       <ElearningPlatformContent />
       <Form pageName={pageName} />

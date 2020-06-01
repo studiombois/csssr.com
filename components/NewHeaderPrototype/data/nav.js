@@ -210,23 +210,6 @@ export const blogNav = {
   ],
 }
 
-export const schoolNav = {
-  id: 'school',
-  href: 'https://school.csssr.com/ru',
-  sections: [
-    {
-      id: 'junior',
-      href: 'https://school.csssr.com/ru/course/react/junior',
-    },
-    {
-      id: 'react',
-      href: 'https://school.csssr.com/ru/course/react/react-under-the-hood',
-    },
-  ],
-}
-
-export const subNav = [devNav, storeNav, blogNav, schoolNav]
-
 export const jobsNav = {
   id: 'jobs',
   href: 'https://csssr.com/jobs',
@@ -246,5 +229,35 @@ export const jobsNav = {
     { name: 'Copywriter', locale: 'en-sg', pathName: 'copywriter-en' },
     { name: 'Sales executive USA', locale: 'en-sg', pathName: 'sales-executive-en-us' },
     { name: 'Sales executive Singapore', locale: 'en-sg', pathName: 'sales-executive-en-sg' },
+  ],
+}
+
+export const schoolNav = {
+  id: 'school',
+  href: 'https://school.csssr.com/ru',
+  sections: [
+    {
+      id: 'junior-react-developer',
+      href: 'https://school.csssr.com/ru/course/react/junior',
+    },
+    {
+      id: 'react-under-the-hood',
+      href: 'https://school.csssr.com/ru/course/react/react-under-the-hood',
+    },
+  ],
+}
+
+export const podcastsNav = {
+  id: 'podacsts',
+  sections: [
+    {
+      href:
+        'https://soundcloud.com/csssr/avtomatizatsiya-refaktoringa-migratsiya-na-ts-typescript-39-rc-redis-6-relizy-nodejs-i-ror',
+      id: 'news-512',
+    },
+    {
+      href: 'https://soundcloud.com/csssr/argumentarium-mesto-verstki-vo-vselennoy',
+      id: 'news-513',
+    },
   ],
 }

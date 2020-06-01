@@ -86,6 +86,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
 
     .arrow {
       margin-left: ${calcRem(9)};
+      flex-shrink: 0;
     }
 
     /* dev-nav-start */
@@ -270,6 +271,26 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       color: #FFFFFF;
     }
     /* jobs-nav-end */
+
+    /* school-nav-start */
+    .sub-nav-school-section-item {
+      margin-top: ${calcRem(40)};
+
+      img {
+        width: ${calcRem(216)};
+      }
+    }
+    /* school-nav-end */
+
+    /* podcasts-nav-start */
+    .sub-nav-podcasts-section-item {
+      margin-top: ${calcRem(40)};
+
+      img {
+        width: ${calcRem(216)};
+      }
+    }
+    /* podcasts-nav-end */
 
     .button_action {
       position: absolute;

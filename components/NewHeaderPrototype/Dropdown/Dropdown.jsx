@@ -12,7 +12,7 @@ import Button from '../../ui-kit/core-design/Button'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
-import { devNav, storeNav, blogNav, schoolNav, jobsNav } from '../data/nav'
+import { devNav, storeNav, blogNav, jobsNav, schoolNav, podcastsNav } from '../data/nav'
 
 const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
   const titleRef = useRef(null)
@@ -31,7 +31,7 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
     }
   })
 
-  const [activeMainNavItem, setActiveMainNavItem] = useState('jobs')
+  const [activeMainNavItem, setActiveMainNavItem] = useState('podcasts')
   let subNavTitleHref = {
     dev: '/',
     store: 'https://store.csssr.com/',
@@ -49,36 +49,38 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
       data-scroll-lock-scrollable
     >
       <div className="side-bar">
-        <MainNav activeItem={activeMainNavItem} onNavItemClick={setActiveMainNavItem} />
+        <MainNav activeItem={activeMainNavItem} onNavItemClick={setActiveMainNavItem} lng={lng} />
         <LanguageSwitcher />
       </div>
 
       <div className="sub-nav">
         <div className="title" ref={titleRef}>
           <a href={subNavTitleHref}>
-            {`${activeMainNavItem}.csssr.com`}
+            {activeMainNavItem === 'podcasts' ? 'Подкасты' : `${activeMainNavItem}.csssr.com`}
 
-            <svg
-              className="arrow"
-              width="11"
-              height="10"
-              viewBox="0 0 11 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M10.1309 0.244078C10.4564 0.569515 10.4564 1.09715 10.1309 1.42259L1.79759 9.75592C1.47215 10.0814 0.944515 10.0814 0.619078 9.75592C0.293641 9.43048 0.293641 8.90285 0.619078 8.57741L8.95241 0.244078C9.27785 -0.0813592 9.80548 -0.0813592 10.1309 0.244078Z"
-                fill="#0076FF"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M0.375 0.833333C0.375 0.373096 0.748096 0 1.20833 0L9.54167 0C10.0019 0 10.375 0.373096 10.375 0.833333V9.16667C10.375 9.6269 10.0019 10 9.54167 10C9.08143 10 8.70833 9.6269 8.70833 9.16667V1.66667L1.20833 1.66667C0.748096 1.66667 0.375 1.29357 0.375 0.833333Z"
-                fill="#0076FF"
-              />
-            </svg>
+            {activeMainNavItem !== 'podcasts' && (
+              <svg
+                className="arrow"
+                width="11"
+                height="10"
+                viewBox="0 0 11 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M10.1309 0.244078C10.4564 0.569515 10.4564 1.09715 10.1309 1.42259L1.79759 9.75592C1.47215 10.0814 0.944515 10.0814 0.619078 9.75592C0.293641 9.43048 0.293641 8.90285 0.619078 8.57741L8.95241 0.244078C9.27785 -0.0813592 9.80548 -0.0813592 10.1309 0.244078Z"
+                  fill="#0076FF"
+                />
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M0.375 0.833333C0.375 0.373096 0.748096 0 1.20833 0L9.54167 0C10.0019 0 10.375 0.373096 10.375 0.833333V9.16667C10.375 9.6269 10.0019 10 9.54167 10C9.08143 10 8.70833 9.6269 8.70833 9.16667V1.66667L1.20833 1.66667C0.748096 1.66667 0.375 1.29357 0.375 0.833333Z"
+                  fill="#0076FF"
+                />
+              </svg>
+            )}
           </a>
 
           {activeMainNavItem === 'dev' && (
@@ -217,6 +219,34 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
                   </a>
                 </li>
               )}
+            </ul>
+          </>
+        )}
+
+        {activeMainNavItem === 'school' && lng === 'ru' && (
+          <>
+            <ul>
+              {schoolNav.sections.map(({ id, href }) => (
+                <li className="sub-nav-school-section-item" key={id}>
+                  <a href={href}>
+                    <img src={require(`../../../static/new-header/images/${id}.png`)} alt={name} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {activeMainNavItem === 'podcasts' && lng === 'ru' && (
+          <>
+            <ul>
+              {podcastsNav.sections.map(({ href, id }) => (
+                <li className="sub-nav-podcasts-section-item" key={id}>
+                  <a href={href}>
+                    <img src={require(`../../../static/new-header/images/${id}.png`)} />
+                  </a>
+                </li>
+              ))}
             </ul>
           </>
         )}

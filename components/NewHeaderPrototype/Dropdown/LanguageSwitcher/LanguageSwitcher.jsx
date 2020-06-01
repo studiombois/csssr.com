@@ -63,15 +63,19 @@ const LanguageSwitcher = ({ className, lng }) => {
         <ul className="languages">
           <li>
             <div className="language-region">Global</div>
-            <NextLink href="/en">
-              <a className={cn('language-link', { active: lng === 'en' })}>English</a>
-            </NextLink>
+            {/* <NextLink href="/en"> */}
+            <a href="/en" className={cn('language-link', { active: lng === 'en' })}>
+              English
+            </a>
+            {/* </NextLink> */}
           </li>
           <li>
             <div className="language-region">Russia</div>
-            <NextLink href="/ru">
-              <a className={cn('language-link', { active: lng === 'ru' })}>Русский</a>
-            </NextLink>
+            {/* <NextLink href="/ru"> */}
+            <a href="/ru" className={cn('language-link', { active: lng === 'ru' })}>
+              Русский
+            </a>
+            {/* </NextLink> */}
           </li>
         </ul>
       </div>

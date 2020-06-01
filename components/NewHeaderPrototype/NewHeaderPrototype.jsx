@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { bool, func, string } from 'prop-types'
+import { withRouter } from 'next/router'
 import NextLink from 'next/link'
 import Dropdown from './Dropdown'
 import styled from '@emotion/styled'
@@ -15,9 +16,13 @@ import translate from '../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const NewHeaderPrototype = ({ className, lng, t, isIe11, isMobile }) => {
+const NewHeaderPrototype = ({ className, lng, t, router: { query }, isIe11, isMobile }) => {
   let lastScrollTopValue = useRef(0)
-  const [isDropdownOpened, toggleDropdown] = useState(true)
+  const eventStartTime = query.event_start_time
+  const eventEndTime = query.event_end_time
+  const showCalendlyCallback = eventStartTime || eventEndTime
+  console.log('yyyy', showCalendlyCallback)
+  const [isDropdownOpened, toggleDropdown] = useState(showCalendlyCallback || false)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
 
   useEffect(() => {
@@ -101,9 +106,11 @@ NewHeaderPrototype.propTypes = {
 }
 
 export default translate(
-  DeviceConsumer(
-    MsBrowserConsumer(styled(NewHeaderPrototype)`
-      ${styles}
-    `),
+  withRouter(
+    DeviceConsumer(
+      MsBrowserConsumer(styled(NewHeaderPrototype)`
+        ${styles}
+      `),
+    ),
   ),
 )

@@ -9,7 +9,10 @@ import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import translate from '../../utils/translate-wrapper'
 // import CookiesPopup from '../CookiesPopup'
 
-const Layout = (/*{ children, isIe11, pageName = 'main', router: { asPath }, withFooter = true }*/) => {
+const Layout = (
+  { children } /*{ children, isIe11, pageName = 'main', router: { asPath }, withFooter = true }*/,
+) => {
+  const dynamicTag = 'main'
   // const dynamicTag = isIe11 ? 'div' : 'main'
   // const pathsNoButton = ['jobs']
   // const isButtonVisible = !pathsNoButton.some((string) => asPath.indexOf(string) + 1)
@@ -21,7 +24,7 @@ const Layout = (/*{ children, isIe11, pageName = 'main', router: { asPath }, wit
 
       {/* {isIe11 && <Global styles={ie11Styles} />} */}
 
-      {/* {React.createElement(dynamicTag, { id: 'main' }, children)} */}
+      {React.createElement(dynamicTag, { id: 'main' }, children)}
 
       {/* {withFooter && <Footer />} */}
       {/* <CookiesPopup /> */}

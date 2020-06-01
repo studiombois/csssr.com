@@ -42,11 +42,8 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
   const eventStartTime = query.event_start_time
   const eventEndTime = query.event_end_time
   const showCalendlyCallback = eventStartTime || eventEndTime
-  const [activeMainNavItem, setActiveMainNavItem] = useState(
-    showCalendlyCallback ? 'store' : 'blog',
-  )
-  // const [isFormVisible, setFormVisibilityStatus] = useState(showCalendlyCallback ? true : false)
-  const [isFormVisible, setFormVisibilityStatus] = useState(true)
+  const [activeMainNavItem, setActiveMainNavItem] = useState('dev')
+  const [isFormVisible, setFormVisibilityStatus] = useState(showCalendlyCallback || false)
   let subNavTitleHref = {
     dev: '/',
     store: 'https://store.csssr.com/',

@@ -11,7 +11,7 @@ import { ReactComponent as Telegram } from '../static/icons/telegram.svg'
 import { ReactComponent as Twitter } from '../static/icons/twitter.svg'
 import { ReactComponent as Vk } from '../static/icons/vk.svg'
 
-export const mainNav = ['dev', 'store', 'blog', 'school', 'career', 'podcasts']
+export const mainNav = ['dev', 'store', 'blog', 'school', 'jobs', 'podcasts']
 
 export const devNav = {
   id: 'dev',
@@ -226,3 +226,25 @@ export const schoolNav = {
 }
 
 export const subNav = [devNav, storeNav, blogNav, schoolNav]
+
+export const jobsNav = {
+  id: 'jobs',
+  href: 'https://csssr.com/jobs',
+  ru: [
+    { name: 'High middle back-end разработчик', locale: 'ru-ru', pathName: 'java-developer' },
+    { name: 'Senior front-end разработчик', locale: 'ru-ru', pathName: 'senior-js-developer' },
+    { name: 'High middle front-end разработчик', locale: 'ru-ru', pathName: 'middle-js-developer' },
+    { name: 'Менеджер по продажам', locale: 'ru-ru', pathName: 'sales' },
+    { name: 'Senior back-end разработчик', locale: 'ru-ru', pathName: 'senior-java-developer' },
+    { name: 'Front-end QA-инженер', locale: 'ru-ru', pathName: 'qa-engineer' },
+    { name: 'Бизнес-ассистент', locale: 'ru-ru', pathName: 'business-assistant' },
+    { name: 'IT-рекрутер (сорсер)', locale: 'ru-ru', pathName: 'hr-manager' },
+    { name: 'Главный редактор', locale: 'ru-ru', pathName: 'chief-editor' },
+  ],
+  en: [
+    { name: 'Account manager EU', locale: 'en-sg', pathName: 'account-manager-ee' },
+    { name: 'Copywriter', locale: 'en-sg', pathName: 'copywriter-en' },
+    { name: 'Sales executive USA', locale: 'en-sg', pathName: 'sales-executive-en-us' },
+    { name: 'Sales executive Singapore', locale: 'en-sg', pathName: 'sales-executive-en-sg' },
+  ],
+}

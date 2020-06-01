@@ -236,6 +236,41 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     }
     /* blog-nav-end */
 
+    /* jobs-nav-start */
+    .sub-nav-jobs-section-title {
+      margin-top: ${calcRem(40)};
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: ${calcRem(10)};
+      line-height: ${calcRem(16)};
+      letter-spacing: ${calcRem(1.25)};
+      text-transform: uppercase;
+      color: #9B9B9B;
+    }
+
+    .sub-nav-jobs-sections {
+      margin-top: ${calcRem(16)};
+
+      &:last-of-type {
+        padding-bottom: ${calcRem(40)};
+      }
+    }
+
+    .sub-nav-jobs-section-item:not(:first-of-type) {
+      margin-top: ${calcRem(12)};
+    }
+
+    .sub-nav-jobs-section-list-item-link {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+      color: #FFFFFF;
+    }
+    /* jobs-nav-end */
+
     .button_action {
       position: absolute;
       bottom: 0;

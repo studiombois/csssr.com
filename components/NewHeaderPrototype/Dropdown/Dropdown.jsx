@@ -12,7 +12,7 @@ import Button from '../../ui-kit/core-design/Button'
 import translate from '../../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
-import { devNav, storeNav, blogNav, schoolNav } from '../data/nav'
+import { devNav, storeNav, blogNav, schoolNav, jobsNav } from '../data/nav'
 
 const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
   const titleRef = useRef(null)
@@ -31,7 +31,7 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
     }
   })
 
-  const [activeMainNavItem, setActiveMainNavItem] = useState('blog')
+  const [activeMainNavItem, setActiveMainNavItem] = useState('jobs')
   let subNavTitleHref = {
     dev: '/',
     store: 'https://store.csssr.com/',
@@ -166,11 +166,7 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
                 </li>
               ))}
             </ul>
-          </>
-        )}
 
-        {activeMainNavItem === 'blog' && lng === 'ru' && (
-          <>
             <div className="sub-nav-blog-section-title">Наши социальные сети</div>
             <ul className="sub-nav-blog-sections socials">
               {blogNav.sections[2].links.map(({ id, href, icon: Icon }) => (
@@ -180,6 +176,47 @@ const Dropdown = ({ className, isOpened, t, router: { pathname }, lng }) => {
                   </a>
                 </li>
               ))}
+            </ul>
+          </>
+        )}
+
+        {activeMainNavItem === 'jobs' && (
+          <>
+            <div className="sub-nav-jobs-section-title">Vacancies</div>
+            <ul className="sub-nav-jobs-sections">
+              {jobsNav[lng].map(({ name, locale, pathName }) => (
+                <li className="sub-nav-jobs-section-item" key={pathName}>
+                  <a
+                    href={`https://csssr.com/${locale}/jobs/${pathName}`}
+                    className="sub-nav-jobs-section-list-item-link"
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="sub-nav-jobs-section-title">Company</div>
+            <ul className="sub-nav-jobs-sections">
+              <li className="sub-nav-jobs-section-item">
+                <a
+                  href="https://csssr.com/ru/jobs-faq"
+                  className="sub-nav-jobs-section-list-item-link"
+                >
+                  About CSSSR
+                </a>
+              </li>
+
+              {lng === 'ru' && (
+                <li className="sub-nav-jobs-section-item">
+                  <a
+                    href="https://csssr.com/ru/jobs-faq"
+                    className="sub-nav-jobs-section-list-item-link"
+                  >
+                    F.A.Q
+                  </a>
+                </li>
+              )}
             </ul>
           </>
         )}

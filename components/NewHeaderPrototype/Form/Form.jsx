@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { string } from 'prop-types'
 import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -14,7 +14,7 @@ const formData = {
       text:
         'Want to <a href="https://calendly.com/andrey-yankovsky/30min?month=2020-06">book a call</a> instead of boring form?',
     },
-    calandy: {
+    calandly: {
       title: 'Call booked!',
       text: 'We dropped all information into your mailbox',
     },
@@ -44,7 +44,7 @@ const formData = {
       text:
         'Давайте <a href="https://calendly.com/andrey-yankovsky/30min?month=2020-06">забронируем звонок</a> вместо скучной формы?',
     },
-    calandy: {
+    calandly: {
       title: 'Звонок забронирован!',
       text: 'Мы отправили всю информацию на ваш почтовый ящик',
     },
@@ -84,6 +84,35 @@ const Form = ({ className, isVisible, showCalendlyCallback, calandlyTime, onClos
       }
     }
   })
+  const [isCallBooked, setCallStatus] = useState(showCalendlyCallback)
+  const [counter, setCounter] = useState(4)
+
+  useEffect(() => {
+    if (isCallBooked) {
+      const interval = setInterval(() => {
+        if (counter === 0) {
+          clearInterval(interval)
+          setCallStatus(false)
+          return
+        }
+
+        setCounter(counter - 1)
+      }, 1000)
+
+      return () => clearInterval(interval)
+    }
+  })
+
+  // const [count, setCount] = useState(0);
+  // const countRef = useRef(count);
+  // countRef.current = count;
+
+  // const getCountTimeout = () => {
+  //   setTimeout(() => {
+  //     setTimeoutCount(countRef.current);
+  //   }, 2000);
+  // }
+
   return (
     <div data-scroll-lock-scrollable className={cn(className, { is_visible: isVisible })}>
       <button className="close_button" onClick={onCloseClick} />
@@ -102,11 +131,13 @@ const Form = ({ className, isVisible, showCalendlyCallback, calandlyTime, onClos
       />
 
       <div className="manager">
-        <div className="manager-avatar" />
+        <div className={cn('manager-avatar', { is_call_booked: isCallBooked })} />
         <div className="manager-info">
-          {showCalendlyCallback ? (
+          {isCallBooked ? (
             <>
-              <div className="manager-name">{formData[lng].calandly.title}</div>
+              <div className="manager-name">
+                {formData[lng].calandly.title} <span className="seconds">{counter}s</span>
+              </div>
               <div className="manager-text">
                 <span>{calandlyTime}</span>
                 <span>{formData[lng].calandly.text}</span>

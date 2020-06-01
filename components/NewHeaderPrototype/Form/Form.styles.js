@@ -6,8 +6,8 @@ const base = ({ breakpoints: { mobile }, colors, lng}) => css`
     & {
       position: fixed;
       z-index: 9999999;
-      padding-left: ${calcRem(16)};
-      padding-right: ${calcRem(16)};
+      padding-left: ${calcRem(24)};
+      padding-right: ${calcRem(24)};
       padding-bottom: ${calcRem(32)};
       top: 0;
       left: 0;
@@ -42,7 +42,7 @@ const base = ({ breakpoints: { mobile }, colors, lng}) => css`
       position: sticky;
       top: ${calcRem(-2)};
       margin-top: ${calcRem(99)};
-      padding: 0 ${calcRem(24)};
+      padding: ${calcRem(24)} 0;
       font-family: Roboto Slab;
       font-style: normal;
       font-weight: normal;
@@ -82,13 +82,30 @@ const base = ({ breakpoints: { mobile }, colors, lng}) => css`
       background-color: ${lng === 'ru' ? 'blue' : 'yellow'};
     }
 
+    .manager-avatar.is_call_booked {
+      background-image: url(${require('../../../static/new-header/images/booked.png')});
+      background-size: contain;
+    }
+
     .manager-name {
+      display: flex;
       font-family: Roboto Slab;
       font-style: normal;
       font-weight: normal;
       font-size: ${calcRem(16)};
       line-height: ${calcRem(32)};
       color: #FFFFFF;
+    }
+
+    .seconds {
+      margin-left: auto;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: ${calcRem(10)};
+      line-height: ${calcRem(32)};
+      text-align: right;
+      color: #9B9B9B;
     }
 
     .manager-text {

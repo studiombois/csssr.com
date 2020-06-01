@@ -7,6 +7,7 @@ import styles from './Form.styles'
 
 const formData = {
   en: {
+    button: 'Contact Us',
     title: 'Let’s Talk',
     subtitle: 'with Singapore sales manager',
     manager: {
@@ -37,6 +38,7 @@ const formData = {
     },
   },
   ru: {
+    button: 'Отправить',
     title: 'Давайте пообщаемся',
     subtitle: 'С нашим менеджером',
     manager: {
@@ -86,6 +88,7 @@ const Form = ({ className, isVisible, showCalendlyCallback, calandlyTime, onClos
   })
   const [isCallBooked, setCallStatus] = useState(showCalendlyCallback)
   const [counter, setCounter] = useState(4)
+  const [submitStatus, setSubmitStatus] = useState('pending')
 
   useEffect(() => {
     if (isCallBooked) {
@@ -103,15 +106,21 @@ const Form = ({ className, isVisible, showCalendlyCallback, calandlyTime, onClos
     }
   })
 
-  // const [count, setCount] = useState(0);
-  // const countRef = useRef(count);
-  // countRef.current = count;
+  useEffect(() => {
+    if (submitStatus === 'success' || submitStatus === 'fail') {
+      const interval = setInterval(() => {
+        if (counter === 0) {
+          clearInterval(interval)
+          setSubmitStatus('pending')
+          return
+        }
 
-  // const getCountTimeout = () => {
-  //   setTimeout(() => {
-  //     setTimeoutCount(countRef.current);
-  //   }, 2000);
-  // }
+        setCounter(counter - 1)
+      }, 1000)
+
+      return () => clearInterval(interval)
+    }
+  })
 
   return (
     <div data-scroll-lock-scrollable className={cn(className, { is_visible: isVisible })}>
@@ -155,7 +164,35 @@ const Form = ({ className, isVisible, showCalendlyCallback, calandlyTime, onClos
         </div>
       </div>
 
-      <img className="form" src={require(`../../../static/new-header/images/form_${lng}.png`)} />
+      <div className={cn('form', { [`submit_status_${submitStatus}`]: submitStatus })}>
+        {submitStatus === 'pending' && (
+          <>
+            <img src={require(`../../../static/new-header/images/form_${lng}.png`)} />
+            <button
+              onClick={() => {
+                setSubmitStatus('success')
+                setCounter(4)
+              }}
+            >
+              {formData[lng].button}
+            </button>
+          </>
+        )}
+
+        {submitStatus === 'success' && (
+          <>
+            <img src={require(`../../../static/new-header/images/success.png`)} />
+            <div className="status-text">Success!  We will back to you as soon as possible.</div>
+            <div className="status-button">
+              <img
+                className="status-button-img"
+                src={require(`../../../static/new-header/images/good.png`)}
+              />{' '}
+              <span className="seconds">{counter}s</span>
+            </div>
+          </>
+        )}
+      </div>
 
       <footer>
         <div className="footer-title">{formData[lng].footer.title}</div>

@@ -130,8 +130,80 @@ const base = ({ breakpoints: { mobile }, colors, lng}) => css`
     }
 
     .form {
+      position: relative;
       margin-top: ${calcRem(65)};
       width: ${calcRem(311)};
+      font-size: 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: ${calcRem(40)};
+        background-color: #101112;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      button {
+        margin-top: ${calcRem(-40)};
+        position: relative;
+        z-index: 1;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 900;
+        font-size: ${calcRem(12)};
+        line-height: ${calcRem(24)};
+        text-align: center;
+        letter-spacing: ${calcRem(1.6)};
+        text-transform: uppercase;
+        color: #FFFFFF;
+        border: none;
+        background: none;
+        background-color: #0076FF;
+        height: ${calcRem(40)};
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .form.submit_status_success {
+      margin-top: ${calcRem(97)};
+    }
+
+    .status-text {
+      margin-top: ${calcRem(104)};
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .status-button-img {
+      width: ${calcRem(40)} !important;
+      height: ${calcRem(40)} !important;
+    }
+
+    .status-button {
+      z-index: 1;
+      position: relative;
+      margin-top: ${calcRem(32)};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .seconds {
+        position: absolute;
+        left: calc(50% + ${calcRem(32)});
+      }
     }
 
     .footer-title {

@@ -7,6 +7,7 @@ import styles from './Dropdown.styles'
 import { withRouter } from 'next/router'
 import NextLink from 'next/link'
 import MainNav from './MainNav'
+import Form from '../Form'
 import LanguageSwitcher from './LanguageSwitcher'
 import Button from '../../ui-kit/core-design/Button'
 
@@ -44,6 +45,8 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
   const [activeMainNavItem, setActiveMainNavItem] = useState(
     showCalendlyCallback ? 'store' : 'blog',
   )
+  // const [isFormVisible, setFormVisibilityStatus] = useState(showCalendlyCallback ? true : false)
+  const [isFormVisible, setFormVisibilityStatus] = useState(true)
   let subNavTitleHref = {
     dev: '/',
     store: 'https://store.csssr.com/',
@@ -140,11 +143,11 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
 
         {activeMainNavItem === 'store' && (
           <>
-            {showCalendlyCallback ? (
+            {/* {showCalendlyCallback ? (
               <div style={{ color: 'white' }}>{formatDate(eventStartTime, eventEndTime)}</div>
             ) : (
               <a href="https://calendly.com/andrey-yankovsky/30min?month=2020-06">Calendly</a>
-            )}
+            )} */}
 
             <ul className="sub-nav-store-sections">
               {storeNav.sections.map(({ links }, index) => (
@@ -272,7 +275,17 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
         )}
       </div>
 
-      <Button className="button_action">Contact us</Button>
+      <Button className="button_action" onClick={() => setFormVisibilityStatus(true)}>
+        Contact us
+      </Button>
+
+      <Form
+        lng={lng}
+        isVisible={isFormVisible}
+        showCalendlyCallback={showCalendlyCallback}
+        calandlyTime={formatDate(eventStartTime, eventEndTime)}
+        onCloseClick={() => setFormVisibilityStatus(false)}
+      />
     </div>
   )
 }

@@ -305,6 +305,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       letter-spacing: 0;
       transition: opacity 75ms ease-out;
       opacity: 0;
+      pointer-events: all;
     }
 
     &.is_opened .button_action {

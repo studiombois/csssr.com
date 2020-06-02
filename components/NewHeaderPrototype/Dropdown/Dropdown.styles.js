@@ -274,6 +274,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
 
     /* school-nav-start */
     .sub-nav-school-section-item {
+      padding-bottom: ${calcRem(40)};
       margin-top: ${calcRem(40)};
 
       img {
@@ -285,6 +286,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     /* podcasts-nav-start */
     .sub-nav-podcasts-section-item {
       margin-top: ${calcRem(40)};
+      padding-bottom: ${calcRem(40)};
 
       img {
         width: ${calcRem(216)};

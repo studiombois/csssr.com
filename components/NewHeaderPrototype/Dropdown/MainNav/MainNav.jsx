@@ -15,7 +15,7 @@ const ruNavTitlesByMainNavIds = {
 }
 
 const MainNav = ({ className, activeItem, onNavItemClick, lng }) => (
-  <ul className={className}>
+  <ul className={className} data-scroll-lock-scrollable>
     {mainNav.map((id) => {
       if (lng === 'en') {
         if (id === 'school' || id === 'podcasts') {

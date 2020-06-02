@@ -81,7 +81,6 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
 
       .languages {
         margin-top: ${calcRem(41)};
-        height: 1600px;
 
         li:not(:first-of-type) {
           margin-top: ${calcRem(40)};

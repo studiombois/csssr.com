@@ -65,7 +65,7 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
         <LanguageSwitcher />
       </div>
 
-      <div className="sub-nav">
+      <div className="sub-nav" data-scroll-lock-scrollable>
         <div className="title" ref={titleRef}>
           <a href={subNavTitleHref}>
             {activeMainNavItem === 'podcasts' ? 'Подкасты' : `${activeMainNavItem}.csssr.com`}
@@ -116,25 +116,40 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
 
         {activeMainNavItem === 'dev' && (
           <ul className="sub-nav-dev-sections">
-            {devNav.sections.map(({ id, title, links }) => (
-              <li className="sub-nav-dev-sections-item" key={id}>
-                <div className="sub-nav-dev-section-title">{t(title)}</div>
-                <ul className="sub-nav-dev-section-list">
-                  {links.map(({ id, title, href }) => (
-                    <li key={id} className="sub-nav-dev-section-list-item">
-                      <NextLink href={`/${lng}/${href}`}>
-                        <a
-                          className={cn('sub-nav-dev-section-list-item-link', {
-                            is_active: pathname === `/${lng}/${href}`,
-                          })}
-                          dangerouslySetInnerHTML={{ __html: t(title) }}
-                        />
-                      </NextLink>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
+            {devNav.sections.map(({ id, title, links }) => {
+              if (lng === 'ru' && id === 'products') {
+                return
+              }
+
+              return (
+                <li className="sub-nav-dev-sections-item" key={id}>
+                  <div
+                    className="sub-nav-dev-section-title"
+                    dangerouslySetInnerHTML={{ __html: t(title) }}
+                  />
+                  <ul className="sub-nav-dev-section-list">
+                    {links.map(({ id, title, href }) => {
+                      if (lng === 'ru' && id === 'express') {
+                        return
+                      }
+
+                      return (
+                        <li key={id} className="sub-nav-dev-section-list-item">
+                          <NextLink href={`/${lng}/${href}`}>
+                            <a
+                              className={cn('sub-nav-dev-section-list-item-link', {
+                                is_active: pathname === `/${lng}/${href}`,
+                              })}
+                              dangerouslySetInnerHTML={{ __html: t(title) }}
+                            />
+                          </NextLink>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </li>
+              )
+            })}
           </ul>
         )}
 

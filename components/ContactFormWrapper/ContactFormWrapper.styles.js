@@ -181,7 +181,7 @@ const eLearningPlatform = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .button {
-      grid-column: 1 / span 6;
+      grid-column: 2 / span 4;
     }
   }
 `

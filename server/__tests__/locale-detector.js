@@ -39,3 +39,7 @@ test('/en, ru-RU, ru-RU,ru;q=0.9,en-SG;q=0.8,en-US;q=0.7 -> en-SG', () => {
 test('/ru, ru-RU, ru-RU,ru;q=0.9,en-SG;q=0.8,en-US;q=0.7 -> ru-RU', () => {
   expect(localeDetector('ru', 'ru-RU', 'ru-RU,ru;q=0.9,en-SG;q=0.8,en-US;q=0.7')).toEqual('ru-ru')
 })
+
+test('/en, no cookie, en-GB,en;q=0.9 -> en-SG', () => {
+  expect(localeDetector('en', undefined, 'en-GB,en;q=0.9')).toEqual('en-sg')
+})

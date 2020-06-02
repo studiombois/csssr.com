@@ -273,14 +273,12 @@ class ElearningPlatformContent extends PureComponent {
                 <div className="design-buttons-row">
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'font' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Font"
                     icon={require('../../static/elearning-platform/icons/font.svg').default}
                   />
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'graphic' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Graphic"
                     icon={require('../../static/elearning-platform/icons/graphic.svg').default}
@@ -290,14 +288,12 @@ class ElearningPlatformContent extends PureComponent {
                 <div className="design-buttons-row">
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'theme' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Theme"
                     icon={require('../../static/elearning-platform/icons/theme.svg').default}
                   />
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'color' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     t="Color"
                     icon={require('../../static/elearning-platform/icons/color.svg').default}
@@ -308,7 +304,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <div className="design-image">
               {this.state.activeDesignImage === 'base' && (
-                <Fade right={true} duration={200} distance="40px">
+                <Fade right={true} duration={400} distance="40px">
                   <img
                     srcSet={designImages.base.srcSet}
                     src={designImages.base.src}

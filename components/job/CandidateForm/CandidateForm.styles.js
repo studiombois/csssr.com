@@ -8,6 +8,7 @@ const base = css`
     margin-right: auto;
     margin-left: auto;
     padding-top: 13.5625rem;
+    padding-bottom: 10rem;
     align-items: center;
     border: none;
   }

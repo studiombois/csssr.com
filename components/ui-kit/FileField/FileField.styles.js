@@ -128,12 +128,18 @@ const base = css`
 
     div {
       width: 100%;
+      order: 1;
     }
 
     .button {
       margin-left: auto;
       margin-right: auto;
       width: 66%;
+      order: 3;
+    }
+
+    span.error {
+      order: 2;
     }
   }
 `

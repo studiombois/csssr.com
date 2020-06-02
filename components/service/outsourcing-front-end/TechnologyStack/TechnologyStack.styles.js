@@ -128,8 +128,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       position: absolute;
       top: ${calcRem(-52)};
-      right: ${calcRem(-56)};
+      right: ${calcRem(-40)};
       width: ${calcRem(448)};
+      overflow: hidden;
+
+      img {
+        margin-left: ${calcRem(16)};
+      }
     }
   }
 

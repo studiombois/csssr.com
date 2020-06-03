@@ -304,7 +304,7 @@ class ElearningPlatformContent extends PureComponent {
 
             <div className="design-image">
               {this.state.activeDesignImage === 'base' && (
-                <Fade right={true} duration={400} distance="40px">
+                <Fade right={true} duration={200} distance="40px">
                   <img
                     srcSet={designImages.base.srcSet}
                     src={designImages.base.src}

@@ -22,7 +22,7 @@ const BackEndDevopsPage = ({ l10n: { translations } }) => {
         title={translations.backEndAndDevops.meta.title}
         description={translations.backEndAndDevops.meta.description}
       />
-      <Hero id="hero" content={hero} />
+      <Hero pageName={pageName} id="hero" content={hero} />
       <BackEndDevelopment id="backend-development" content={backend_dev} />
       <TechStack id="tech-stack" content={tech_stack} />
       <DevOpsServices id="devops-services" content={devopsServices} />

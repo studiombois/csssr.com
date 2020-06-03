@@ -13,7 +13,7 @@ import CookiesPopup from '../CookiesPopup'
 const Layout = ({
   children,
   isIe11,
-  pageName = 'main',
+  pageName,
   router: { asPath },
   l10n: { language },
   withFooter = true,

@@ -17,7 +17,7 @@ import hero_desktop_webp from '../../../../static/images/service/mvp/desktop.all
 import hero_mobile from '../../../../static/images/service/mvp/mobile.all/hero.png?responsive'
 import hero_mobile_webp from '../../../../static/images/service/mvp/mobile.all/hero.png?responsive_and_webp'
 
-const Hero = ({ className, l10n: { translations } }) => (
+const Hero = ({ className, pageName, l10n: { translations } }) => (
   <article className={className}>
     <Grid as="div">
       <Heading
@@ -38,7 +38,7 @@ const Hero = ({ className, l10n: { translations } }) => (
 
       <ContactButton
         className="button"
-        pageName="outsourcingFrontEnd"
+        pageName={pageName}
         dangerouslySetInnerHTML={{ __html: translations.mvp.hero.button }}
       />
 
@@ -57,6 +57,7 @@ const Hero = ({ className, l10n: { translations } }) => (
 
 Hero.propTypes = {
   className: string,
+  pageName: string,
 }
 
 export default L10nConsumer(

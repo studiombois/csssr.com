@@ -6,6 +6,7 @@ import Layout from '../../components/Layout'
 import Vacancies from '../../components/jobs/Vacancies'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 
+const pageName = 'jobs'
 class JobsPage extends PureComponent {
   static async getInitialProps(ctx) {
     const l10n = ctx.res ? ctx.res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
@@ -21,7 +22,7 @@ class JobsPage extends PureComponent {
       l10n: { translations, language },
     } = this.props
     return (
-      <Layout>
+      <Layout pageName={pageName}>
         <Head
           title={translations.jobs.meta.title}
           templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}

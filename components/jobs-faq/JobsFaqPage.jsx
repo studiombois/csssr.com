@@ -16,8 +16,9 @@ import roads_webp from '../../static/images/jobs-faq/roads.png?responsive_and_we
 import puzzle from '../../static/images/jobs-faq/puzzle.png?responsive'
 import puzzle_webp from '../../static/images/jobs-faq/puzzle.png?responsive_and_webp'
 
+const pageName = 'jobsFaq'
 const JobsFaqPage = () => (
-  <Layout>
+  <Layout pageName={pageName}>
     <Head
       title="Как устроиться сюда ➡️"
       description="Часто задаваемые вопросы кандидатов в..."

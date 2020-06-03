@@ -148,6 +148,7 @@ const onSubmit = (translations) => async (values) => {
 
 const focusOnErrors = createDecorator()
 
+const pageName = 'job'
 class JobPage extends PureComponent {
   static async getInitialProps({ res, query }) {
     const l10n = res ? res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
@@ -191,7 +192,7 @@ class JobPage extends PureComponent {
 
     return (
       <Fragment>
-        <Layout>
+        <Layout pageName={pageName}>
           <Head
             title={vacancy.name}
             templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}

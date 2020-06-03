@@ -14,7 +14,7 @@ const pageName = 'mvp'
 const MvpDevelopmentPage = ({ l10n: { translations } }) => (
   <Layout pageName={pageName}>
     <Head title={translations.mvp.meta.title} description={translations.mvp.meta.description} />
-    <Hero />
+    <Hero pageName={pageName} />
     <AboutMvp />
     <Benefits />
     <OurAdvantages />

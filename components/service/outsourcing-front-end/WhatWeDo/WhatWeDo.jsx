@@ -8,7 +8,7 @@ import List from './List'
 import ContactUs from './ContactUs'
 import Heading from '../../../ui-kit/core-design/Heading'
 
-const WhatWeDo = ({ className, l10n: { translations } }) => (
+const WhatWeDo = ({ className, pageName, l10n: { translations } }) => (
   <section className={className}>
     <Heading
       className="title"
@@ -18,12 +18,13 @@ const WhatWeDo = ({ className, l10n: { translations } }) => (
       size="m"
     />
     <List />
-    <ContactUs />
+    <ContactUs pageName={pageName} />
   </section>
 )
 
 WhatWeDo.propTypes = {
   className: string,
+  pageName: string,
 }
 
 export default L10nConsumer(styled(WhatWeDo)`

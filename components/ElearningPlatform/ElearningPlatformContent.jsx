@@ -14,7 +14,7 @@ class ElearningPlatformContent extends PureComponent {
   }
 
   render() {
-    const { className } = this.props
+    const { className, pageName } = this.props
 
     const designImages = {
       base: {
@@ -365,6 +365,7 @@ class ElearningPlatformContent extends PureComponent {
             <h3 className="font-heading-3 banner-title">Need more info?</h3>
             <ContactButton
               className="banner-button font-p-5"
+              pageName={pageName}
               kind="secondary"
               dangerouslySetInnerHTML={{ __html: 'REQUEST A DEMO' }}
             />

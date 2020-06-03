@@ -54,6 +54,7 @@ const Greeting = ({
 
 Greeting.propTypes = {
   className: string,
+  pageName: string,
   id: string,
   content: object,
 }

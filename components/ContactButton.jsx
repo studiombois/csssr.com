@@ -9,7 +9,7 @@ import { MsBrowserConsumer } from '../utils/msBrowserProvider'
 
 const ContactButton = ({
   className,
-  pageName = 'main',
+  pageName,
   dangerouslySetInnerHTML,
   kind = 'primary',
   isIe11,

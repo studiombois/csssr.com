@@ -8,10 +8,10 @@ const ElearningPlatform = () => {
   const pageName = 'eLearningPlatform'
 
   return (
-    <Layout>
+    <Layout pageName={pageName}>
       <Head title="Start Your Online Education Business — CSSSR Remote Development Team" />
 
-      <ElearningPlatformContent />
+      <ElearningPlatformContent pageName={pageName} />
       <Form pageName={pageName} />
     </Layout>
   )

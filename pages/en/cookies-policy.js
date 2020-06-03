@@ -4,8 +4,9 @@ import Layout from '../../components/Layout'
 import CookiesPolicyContent from '../../components/cookies-policy/CookiesPolicyContent'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
+const pageName = 'cookiesPolicy'
 const PrivacyPolicy = ({ l10n: { translations } }) => (
-  <Layout>
+  <Layout pageName={pageName}>
     <Head
       title={translations.cookiesPolicy.meta.title}
       description={translations.cookiesPolicy.meta.description}

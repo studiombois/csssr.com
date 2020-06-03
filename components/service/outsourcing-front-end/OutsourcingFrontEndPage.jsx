@@ -19,10 +19,10 @@ const OutsourcingFrontEndPage = ({ l10n: { translations } }) => (
       title={translations.outsourcingFrontEnd.meta.title}
       description={translations.outsourcingFrontEnd.meta.description}
     />
-    <Hero />
+    <Hero pageName={pageName} />
     <AboutFrontend />
     <Benefits />
-    <WhatWeDo />
+    <WhatWeDo pageName={pageName} />
     <TechnologyStack />
     <OurAdvantages />
     <Industries />

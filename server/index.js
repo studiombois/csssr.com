@@ -25,6 +25,7 @@ const handle = app.getRequestHandler()
 const startApp = async () => {
   await app.prepare()
   const server = express()
+  const lookupCookieName = 'locale'
 
   // https://expressjs.com/en/api.html#app.locals
   // Доступно по req.app.locals.pagesList
@@ -35,8 +36,8 @@ const startApp = async () => {
   server.use(cookieParser())
 
   server.get('/:language(ru|en)/jobs', (req, res) => {
-    const [, localeFromPath] = req.path.split('/')
-    const localeFromCookie = req.cookies['locale']
+    const localeFromPath = req.params.language
+    const localeFromCookie = req.cookies[lookupCookieName]
     const acceptLanguageHeader = req.headers['accept-language']
     const locale = localeDetector(localeFromPath, localeFromCookie, acceptLanguageHeader)
 
@@ -88,7 +89,7 @@ const startApp = async () => {
     l10nMiddleware({
       loadPath: path.join(__dirname, '../static/locales'),
       ignorePaths: [/^\/_next/, /^\/static/],
-      lookupCookieName: 'locale',
+      lookupCookieName,
     }),
   )
 

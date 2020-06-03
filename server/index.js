@@ -14,6 +14,7 @@ import { defaultLocaleByLanguage } from '../common/locales-settings'
 import l10nMiddleware from './l10n-middleware'
 import getPagesList from './get-pages-list'
 import { ONE_YEAR } from '../utils/timePeriods'
+import localeDetector from './locale-detector'
 
 require('../utils/sentry')
 
@@ -31,8 +32,14 @@ const startApp = async () => {
 
   server.use(Sentry.Handlers.requestHandler())
 
+  server.use(cookieParser())
+
   server.get('/:language(ru|en)/jobs', (req, res) => {
-    const locale = defaultLocaleByLanguage[req.params.language]
+    const [, localeFromPath] = req.path.split('/')
+    const localeFromCookie = req.cookies['locale']
+    const acceptLanguageHeader = req.headers['accept-language']
+    const locale = localeDetector(localeFromPath, localeFromCookie, acceptLanguageHeader)
+
     res.redirect(301, `/${locale}/jobs`)
   })
 
@@ -74,7 +81,6 @@ const startApp = async () => {
       extended: true,
     }),
   )
-  server.use(cookieParser())
 
   // https://expressjs.com/en/api.html#res.locals
   // Добавляет l10n объект ({language, locale, translations}) в res.locals

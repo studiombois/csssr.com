@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import NextLink from 'next/link'
 import { withRouter } from 'next/router'
 import styled from '@emotion/styled'
@@ -12,17 +12,23 @@ import DoubleBottom from './DoubleBottom'
 import Link from '../ui-kit/core-design/Link'
 import Text from '../ui-kit/core-design/Text'
 import Heading from '../ui-kit/core-design/Heading'
-import Logo from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
 
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 import { PagesListConsumer } from '../../utils/pagesListProvider'
 import getPagePathnameInLanguage from '../../common/get-page-pathname-in-language'
 
-const Footer = ({ className, isMobile, lng, t, pagesList, router: { pathname } }) => {
+const Footer = ({
+  className,
+  isMobile,
+  l10n: { translations, language },
+  pagesList,
+  router: { pathname },
+}) => {
   const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const footerRef = useRef()
-  const lngToRedirect = lng === 'ru' ? 'en' : 'ru'
+  const lngToRedirect = language === 'ru' ? 'en' : 'ru'
   const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
 
   useEffect(() => {
@@ -53,7 +59,7 @@ const Footer = ({ className, isMobile, lng, t, pagesList, router: { pathname } }
     <footer className={className} ref={footerRef}>
       <div className="top-content">
         <div className="top-content-left-wrapper">
-          <NextLink href={`/${lng}`}>
+          <NextLink href={`/${language}`}>
             <a className="logo">
               <Logo />
             </a>
@@ -63,7 +69,7 @@ const Footer = ({ className, isMobile, lng, t, pagesList, router: { pathname } }
             <video className="video" autoPlay loop muted>
               <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
 
-              <p>{t('common:footer.videoError')}</p>
+              <p>{translations.common.footer.videoError}</p>
             </video>
           )}
 
@@ -72,7 +78,7 @@ const Footer = ({ className, isMobile, lng, t, pagesList, router: { pathname } }
             className="action-phrase"
             type="regular"
             size="s"
-            dangerouslySetInnerHTML={{ __html: t('common:footer.actionPhrase') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.footer.actionPhrase }}
           />
 
           <Link className="email" href="mailto:sales@csssr.com">
@@ -80,7 +86,7 @@ const Footer = ({ className, isMobile, lng, t, pagesList, router: { pathname } }
           </Link>
 
           {isMobile && (
-            <Link className="link-lng" href={otherLanguagePathname}>
+            <Link className="link-language" href={otherLanguagePathname}>
               <Text
                 className="link-text"
                 dangerouslySetInnerHTML={{ __html: lngToRedirect }}
@@ -106,10 +112,9 @@ const Footer = ({ className, isMobile, lng, t, pagesList, router: { pathname } }
 
 Footer.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   withRouter(
     PagesListConsumer(
       DeviceConsumer(styled(Footer)`

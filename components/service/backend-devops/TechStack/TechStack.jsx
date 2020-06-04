@@ -1,6 +1,5 @@
 import React from 'react'
-import { func, object, string } from 'prop-types'
-import translate from '../../../../utils/translate-wrapper'
+import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './TechStack.styles'
 import Grid from '../../../ui-kit/core-design/Grid'
@@ -10,9 +9,9 @@ import SubHeading from '../../../ui-kit/core-design/SubHeading'
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const TechStack = ({
-  t,
   className,
   id,
   content: {
@@ -24,8 +23,10 @@ const TechStack = ({
     link,
     javaImages,
     mongoDbImages,
-    imgAlt,
+    javaImgAlt,
+    mongoDbImgAlt,
   },
+  l10n: { translations },
 }) => {
   return (
     <Grid className={className} as="section" id={id}>
@@ -34,13 +35,13 @@ const TechStack = ({
           as="h2"
           type="regular"
           size="l"
-          dangerouslySetInnerHTML={{ __html: t(heading) }}
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className="heading"
         />
         <SubHeading
           as="p"
           type="slab"
-          dangerouslySetInnerHTML={{ __html: t(description) }}
+          dangerouslySetInnerHTML={{ __html: description(translations) }}
           className="text"
         />
       </div>
@@ -48,39 +49,39 @@ const TechStack = ({
         <PictureForAllResolutions
           images={javaImages}
           fallback={javaImages['desktop.l'].png}
-          alt={t(imgAlt)}
+          alt={javaImgAlt(translations)}
           className="java-image"
         />
         <Text
           type="strong"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(java) }}
+          dangerouslySetInnerHTML={{ __html: java(translations) }}
           className="java-text"
         />
       </div>
       <Text
         type="strong"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t(experts) }}
+        dangerouslySetInnerHTML={{ __html: experts(translations) }}
         className="experts-text"
       />
       <Text
         type="strong"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t(link) }}
+        dangerouslySetInnerHTML={{ __html: link(translations) }}
         className="link-text"
       />
       <div className="mongodb-block">
         <PictureForAllResolutions
           images={mongoDbImages}
           fallback={mongoDbImages['desktop.l'].png}
-          alt={t(imgAlt)}
+          alt={mongoDbImgAlt(translations)}
           className="mongodb-image"
         />
         <Text
           type="strong"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(mongoDb) }}
+          dangerouslySetInnerHTML={{ __html: mongoDb(translations) }}
           className="mongodb-text"
         />
       </div>
@@ -89,13 +90,12 @@ const TechStack = ({
 }
 
 TechStack.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(TechStack)`
       ${styles}

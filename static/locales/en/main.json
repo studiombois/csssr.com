@@ -107,11 +107,12 @@
     "title": "Ready to&nbsp;<span style=\"font-style: italic; font-weight: normal;\">join our team</span> and enjoy all the benefits of&nbsp;remote work on&nbsp;a&nbsp;full-time basis?",
     "link": "All our vacancies"
   },
-  "imageAlt": {
+  "imgAlt": {
     "hero": "Happy astronauts in front of CSSSR logo",
     "square": "Square figure",
     "triangle": "Triangle figure",
     "circle": "Circle figure",
+    "arc": "Arc figure",
     "figures": "Square, Triangle and Circle figures in a pile",
     "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly",
     "fintech": "Woman holding credit cards",
@@ -125,17 +126,5 @@
     "school": "Robot in a bachelor's hat",
     "blog": "The man who reads the news",
     "vacancies": "Happy faces of people"
-  },
-  "form": {
-    "title": "Let’s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "comment",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Phone",
-    "nameLabel": "Name",
-    "submitText": "Submit"
   }
 }

@@ -20,13 +20,13 @@ const heroImages = {
 
 export default {
   images: heroImages,
-  heading: 'project:gazpromNeft.hero.title',
-  link: 'project:gazpromNeft.hero.link',
-  subHeading: 'project:gazpromNeft.hero.subTitle',
+  heading: (t) => t.project.gazpromNeft.hero.title,
+  link: (t) => t.project.gazpromNeft.hero.link,
+  subHeading: (t) => t.project.gazpromNeft.hero.subTitle,
   text: [
-    'project:gazpromNeft.hero.text.firstParagraph',
-    'project:gazpromNeft.hero.text.secondParagraph',
-    'project:gazpromNeft.hero.text.thirdParagraph'
+    (t) => t.project.gazpromNeft.hero.text.firstParagraph,
+    (t) => t.project.gazpromNeft.hero.text.secondParagraph,
+    (t) => t.project.gazpromNeft.hero.text.thirdParagraph,
   ],
-  imgAlt: 'project:gazpromNeft.hero.imgAlt',
+  imgAlt: (t) => t.project.gazpromNeft.hero.imgAlt,
 }

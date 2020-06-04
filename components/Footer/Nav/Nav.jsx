@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Nav.styles'
 
@@ -7,12 +7,12 @@ import LinksList from './LinksList'
 import Heading from '../../ui-kit/core-design/Heading'
 
 import { nav } from '../../../data/footerLinks'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const Nav = ({ className, t, lng }) => (
+const Nav = ({ className, l10n: { translations, language } }) => (
   <nav className={className}>
     {nav.map(({ id, links }) => {
-      if (lng === 'ru' && id === 'products') {
+      if (language === 'ru' && id === 'products') {
         return
       }
 
@@ -23,7 +23,7 @@ const Nav = ({ className, t, lng }) => (
             className="title"
             type="regular"
             size="s"
-            dangerouslySetInnerHTML={{ __html: t(`common:footer.${id}.title`) }}
+            dangerouslySetInnerHTML={{ __html: translations.common.footer[id].title }}
           />
 
           <LinksList linksGroupName={id} links={links} />
@@ -35,9 +35,8 @@ const Nav = ({ className, t, lng }) => (
 
 Nav.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(styled(Nav)`
+export default L10nConsumer(styled(Nav)`
   ${styles}
 `)

@@ -1,8 +1,7 @@
 import React from 'react'
-import { func, object, string } from 'prop-types'
+import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 
-import translate from '../../../../utils/translate-wrapper'
 import Grid from '../../../ui-kit/core-design/Grid'
 import SubHeading from '../../../ui-kit/core-design/SubHeading'
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -13,12 +12,13 @@ import styles from './DevOpsServices.styles'
 
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const DevOpsServices = ({
-  t,
   className,
   id,
   content: { heading, subtitle, description, images, imgAlt, solutions },
+  l10n: { translations },
 }) => {
   return (
     <>
@@ -27,27 +27,27 @@ const DevOpsServices = ({
           as="h2"
           type="slab"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(heading) }}
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className="title"
         />
 
         <SubHeading
           as="p"
           type="slab"
-          dangerouslySetInnerHTML={{ __html: t(subtitle) }}
+          dangerouslySetInnerHTML={{ __html: subtitle(translations) }}
           className="subtitle"
         />
 
         <Text
           type="regular"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(description) }}
+          dangerouslySetInnerHTML={{ __html: description(translations) }}
           className="description"
         />
         <PictureForAllResolutions
           images={images}
           fallback={images['desktop.l'].png}
-          alt={t(imgAlt)}
+          alt={imgAlt(translations)}
           className="img"
         />
       </Grid>
@@ -58,14 +58,13 @@ const DevOpsServices = ({
 }
 
 DevOpsServices.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
   solutions: object,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(DevOpsServices)`
       ${styles}

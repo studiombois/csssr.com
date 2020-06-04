@@ -158,7 +158,7 @@ const base = css`
         grid-column: 9 / span 3;
     }
 
-    .features-list li:not(:first-child) {
+    .features-list li:not(:first-of-type) {
         margin-top: 16px;
     }
 
@@ -195,7 +195,7 @@ const base = css`
         margin-top: 25px;
     }
 
-    .design-button:nth-child(even) {
+    .design-button:nth-of-type(even) {
         margin-left: 25px;
     }
 
@@ -433,7 +433,7 @@ const base = css`
             grid-column: 7 / span 6;
         }
 
-        .design-button:nth-child(even) {
+        .design-button:nth-of-type(even) {
             margin-left: 40px;
         }
 
@@ -764,7 +764,7 @@ const base = css`
             grid-column: 1 / span 6;
         }
 
-        .features-list li:not(:first-child) {
+        .features-list li:not(:first-of-type) {
             margin-top: 5px;
         }
 
@@ -805,7 +805,7 @@ const base = css`
             margin-top: 25px;
         }
 
-        .design-button:nth-child(even) {
+        .design-button:nth-of-type(even) {
             margin-left: 0;
         }
 

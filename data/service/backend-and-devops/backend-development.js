@@ -20,23 +20,27 @@ const backEndDevImages = {
 
 export default {
   images: backEndDevImages,
-  heading: 'backEndAndDevops:backEndDevelopment.title',
-  description: 'backEndAndDevops:backEndDevelopment.description',
+  heading: (t) => t.backEndAndDevops.backEndDevelopment.title,
+  description: (t) => t.backEndAndDevops.backEndDevelopment.description,
+  imgAlt: (t) => t.backEndAndDevops.backEndDevelopment.imgAlt,
   whatWeDo: {
-    do_title: 'backEndAndDevops:backEndDevelopment.whatWeDo.title',
-    do_description: 'backEndAndDevops:backEndDevelopment.whatWeDo.description',
+    do_title: (t) => t.backEndAndDevops.backEndDevelopment.whatWeDo.title,
+    do_description: (t) => t.backEndAndDevops.backEndDevelopment.whatWeDo.description,
     list: [
       {
-        title: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.firstItem.title',
-        description: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.firstItem.description',
+        title: (t) => t.backEndAndDevops.backEndDevelopment.whatWeDo.list.firstItem.title,
+        description: (t) =>
+          t.backEndAndDevops.backEndDevelopment.whatWeDo.list.firstItem.description,
       },
       {
-        title: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.secondItem.title',
-        description: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.secondItem.description',
+        title: (t) => t.backEndAndDevops.backEndDevelopment.whatWeDo.list.secondItem.title,
+        description: (t) =>
+          t.backEndAndDevops.backEndDevelopment.whatWeDo.list.secondItem.description,
       },
       {
-        title: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.thirdItem.title',
-        description: 'backEndAndDevops:backEndDevelopment.whatWeDo.list.thirdItem.description',
+        title: (t) => t.backEndAndDevops.backEndDevelopment.whatWeDo.list.thirdItem.title,
+        description: (t) =>
+          t.backEndAndDevops.backEndDevelopment.whatWeDo.list.thirdItem.description,
       },
     ],
   },

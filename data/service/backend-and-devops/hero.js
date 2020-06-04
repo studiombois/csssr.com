@@ -20,7 +20,8 @@ const heroImages = {
 
 export default {
   images: heroImages,
-  heading: 'backEndAndDevops:hero.title',
-  description: 'backEndAndDevops:hero.description',
-  button: 'backEndAndDevops:hero.button',
+  heading: (t) => t.backEndAndDevops.hero.title,
+  description: (t) => t.backEndAndDevops.hero.description,
+  button: (t) => t.backEndAndDevops.hero.button,
+  imgAlt: (t) => t.backEndAndDevops.hero.imgAlt,
 }

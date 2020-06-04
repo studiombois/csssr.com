@@ -1,11 +1,11 @@
-import Facebook from '../static/icons/facebook.svg'
-import Linkedin from '../static/icons/linkedin.svg'
-import Instagram from '../static/icons/instagram.svg'
-import Youtube from '../static/icons/youtube.svg'
-import Soundcloud from '../static/icons/soundcloud.svg'
-import Telegram from '../static/icons/telegram.svg'
-import Twitter from '../static/icons/twitter.svg'
-import Vk from '../static/icons/vk.svg'
+import { ReactComponent as Facebook } from '../static/icons/facebook.svg'
+import { ReactComponent as Linkedin } from '../static/icons/linkedin.svg'
+import { ReactComponent as Instagram } from '../static/icons/instagram.svg'
+import { ReactComponent as Youtube } from '../static/icons/youtube.svg'
+import { ReactComponent as Soundcloud } from '../static/icons/soundcloud.svg'
+import { ReactComponent as Telegram } from '../static/icons/telegram.svg'
+import { ReactComponent as Twitter } from '../static/icons/twitter.svg'
+import { ReactComponent as Vk } from '../static/icons/vk.svg'
 
 export const socials = [
   {

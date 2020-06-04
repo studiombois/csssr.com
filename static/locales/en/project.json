@@ -144,17 +144,5 @@
     "imgAlt": {
       "aboutProject": "Трое людей усердно работающих над проектом"
     }
-  },
-  "form": {
-    "title": "Let&rsquo;s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "nameLabel": "Your Name",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "phoneLabel": "Phone",
-    "emailPlaceholder": "name@example.com",
-    "emailLabel": "E-mail",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "How can we help?",
-    "submitText": "Submit"
   }
 }

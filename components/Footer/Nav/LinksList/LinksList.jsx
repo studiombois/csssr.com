@@ -1,17 +1,22 @@
 import React from 'react'
-import { arrayOf, func, shape, string } from 'prop-types'
+import { arrayOf, shape, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './LinksList.styles'
 
 import Link from '../../../ui-kit/core-design/Link'
 
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
+const LinksList = ({
+  className,
+  linksGroupName,
+  links,
+  l10n: { translations, language, locale },
+}) => (
   <ul className={className}>
     {links.map(({ id, href, useLocale }) => {
-      if ((lng === 'ru' && id === 'express') || (lng === 'ru' && id === 'blog')) {
+      if ((language === 'ru' && id === 'express') || (language === 'ru' && id === 'blog')) {
         return
       }
 
@@ -25,15 +30,15 @@ const LinksList = ({ className, linksGroupName, links, t, lng, locale }) => (
               size="s"
               target="_blank"
               rel="noopener nofollow"
-              dangerouslySetInnerHTML={{ __html: t(`common:footer.${linksGroupName}.${id}`) }}
+              dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
             />
           ) : (
             <Link
-              href={`/${useLocale ? locale : lng}/${href}`}
+              href={`/${useLocale ? locale : language}/${href}`}
               className="link"
               type="list"
               size="s"
-              dangerouslySetInnerHTML={{ __html: t(`common:footer.${linksGroupName}.${id}`) }}
+              dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
               isNextLink
             />
           )}
@@ -52,10 +57,8 @@ LinksList.propTypes = {
       href: string,
     }),
   ),
-  t: func,
-  lng: string,
 }
 
-export default translate(styled(LinksList)`
+export default L10nConsumer(styled(LinksList)`
   ${styles}
 `)

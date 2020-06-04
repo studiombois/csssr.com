@@ -110,13 +110,13 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       margin-top: 0;
     }
 
-    .link-lng,
+    .link-language,
     .email {
       margin-top: ${calcRem(8)};
       display: inline-block;
     }
 
-    .link-lng {
+    .link-language {
       position: relative;
       top: ${calcRem(-3)};
       margin-left: ${calcRem(127)};

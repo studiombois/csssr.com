@@ -18,5 +18,5 @@
       ]
     }
   },
-  "plugins": ["inline-react-svg", "ramda"]
+  "plugins": ["ramda"]
 }

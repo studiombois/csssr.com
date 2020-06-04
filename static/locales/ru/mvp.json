@@ -91,19 +91,7 @@
       }
     }
   },
-  "form": {
-    "title": "Давайте пообщаемся",
-    "namePlaceholder": "Тим Бернерс-Ли",
-    "nameLabel": "Имя",
-    "phonePlaceholder": "+7-987-654-32-10",
-    "phoneLabel": "Телефон",
-    "emailPlaceholder": "name@example.com",
-    "emailLabel": "E-mail",
-    "messagePlaceholder": "Чем мы могли бы помочь вам?",
-    "messageLabel": "Чем мы могли бы помочь вам?",
-    "submitText": "Отправить"
-  },
-  "imageAlt": {
+  "imgAlt": {
     "mvpOn": "Процесс разработки с MVP",
     "mvpOff": "Процесс разработки без MVP",
     "ourAdvantages": [

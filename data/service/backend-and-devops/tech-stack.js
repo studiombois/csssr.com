@@ -41,10 +41,12 @@ const mongoDbImages = {
 export default {
   javaImages: javaImages,
   mongoDbImages: mongoDbImages,
-  heading: 'backEndAndDevops:techStack.title',
-  description: 'backEndAndDevops:techStack.description',
-  mongoDb: 'backEndAndDevops:techStack.mongoDb',
-  java: 'backEndAndDevops:techStack.java',
-  experts: 'backEndAndDevops:techStack.experts',
-  link: 'backEndAndDevops:techStack.link',
+  heading: (t) => t.backEndAndDevops.techStack.title,
+  description: (t) => t.backEndAndDevops.techStack.description,
+  mongoDb: (t) => t.backEndAndDevops.techStack.mongoDb,
+  java: (t) => t.backEndAndDevops.techStack.java,
+  experts: (t) => t.backEndAndDevops.techStack.experts,
+  link: (t) => t.backEndAndDevops.techStack.link,
+  javaImgAlt: (t) => t.backEndAndDevops.techStack.javaImgAlt,
+  mongoDbImgAlt: (t) => t.backEndAndDevops.techStack.mongoDbImgAlt,
 }

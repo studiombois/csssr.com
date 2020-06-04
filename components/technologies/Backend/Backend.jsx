@@ -1,9 +1,9 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Backend.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
@@ -14,31 +14,31 @@ import Grid from '../../ui-kit/core-design/Grid'
 
 import { dbsImages, kotlinImages, nodeImages } from '../../../data/technologies/backend'
 
-const Backend = ({ className, t, lng }) => (
+const Backend = ({ className, l10n: { translations, language } }) => (
   <Grid as="section" className={className}>
     <Picture
       className={cn('picture', 'picture_dbs')}
       images={dbsImages}
       fallback={dbsImages.png}
-      alt={t('technologies:imageAlt.dbs')}
+      alt={translations.technologies.imgAlt.dbs}
     />
 
     <Heading className={cn('title', 'title_dbs')} as="h2" type="slab" size="m">
-      {`MongoDB ${lng === 'ru' ? 'и' : '&'} PostgreSQL`}
+      {`MongoDB ${language === 'ru' ? 'и' : '&'} PostgreSQL`}
     </Heading>
 
     <SubHeading
       className={cn('text', 'text_dbs')}
       as="p"
       type="slab"
-      dangerouslySetInnerHTML={{ __html: t('technologies:backend.dbs') }}
+      dangerouslySetInnerHTML={{ __html: translations.technologies.backend.dbs }}
     />
 
     <Picture
       className={cn('picture', 'picture_node')}
       images={nodeImages}
       fallback={nodeImages.png}
-      alt={t('technologies:imageAlt.node')}
+      alt={translations.technologies.imgAlt.node}
     />
 
     <Heading className={cn('title', 'title_node')} as="h2" type="regular" size="m">
@@ -50,18 +50,18 @@ const Backend = ({ className, t, lng }) => (
       as="p"
       type="strong"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('technologies:backend.node') }}
+      dangerouslySetInnerHTML={{ __html: translations.technologies.backend.node }}
     />
 
     <Picture
       className={cn('picture', 'picture_kotlin')}
       images={kotlinImages}
       fallback={kotlinImages.png}
-      alt={t('technologies:imageAlt.kotlin')}
+      alt={translations.technologies.imgAlt.kotlin}
     />
 
     <Heading className={cn('title', 'title_kotlin')} as="h2" type="regular" size="m">
-      {lng === 'ru' ? 'Бэкенд' : 'Back-end'}
+      {language === 'ru' ? 'Бэкенд' : 'Back-end'}
     </Heading>
 
     <Text
@@ -69,18 +69,16 @@ const Backend = ({ className, t, lng }) => (
       as="p"
       type="strong"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('technologies:backend.kotlin') }}
+      dangerouslySetInnerHTML={{ __html: translations.technologies.backend.kotlin }}
     />
   </Grid>
 )
 
 Backend.propTypes = {
   className: string,
-  t: func,
-  lng: string,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Backend)`
     ${styles}
   `),

@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Benefits.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import List from './List'
@@ -10,14 +10,14 @@ import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
 import Grid from '../../../ui-kit/core-design/Grid'
 
-const Benefits = ({ className, t }) => (
+const Benefits = ({ className, l10n: { translations } }) => (
   <Grid as="article" className={className}>
     <aside>
       <div className="sticky-wrapper">
         <Heading
           className="title"
           as="h2"
-          dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:benefits.title') }}
+          dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.benefits.title }}
           type="slab"
           size="m"
         />
@@ -27,7 +27,9 @@ const Benefits = ({ className, t }) => (
           as="p"
           type="strong"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:benefits.description') }}
+          dangerouslySetInnerHTML={{
+            __html: translations.outsourcingFrontEnd.benefits.description,
+          }}
         />
       </div>
     </aside>
@@ -38,10 +40,9 @@ const Benefits = ({ className, t }) => (
 
 Benefits.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Benefits)`
     ${styles}
   `),

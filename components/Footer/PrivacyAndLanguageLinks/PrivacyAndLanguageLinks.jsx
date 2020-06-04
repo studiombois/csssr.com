@@ -1,27 +1,32 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import { withRouter } from 'next/router'
 import styled from '@emotion/styled'
 
 import styles from './PrivacyAndLanguageLinks.styles'
 import Link from '../../ui-kit/core-design/Link'
 import Text from '../../ui-kit/core-design/Text'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { PagesListConsumer } from '../../../utils/pagesListProvider'
 import getPagePathnameInLanguage from '../../../common/get-page-pathname-in-language'
 
-const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathname } }) => {
-  const lngToRedirect = lng === 'ru' ? 'en' : 'ru'
+const PrivacyAndLanguageLinks = ({
+  className,
+  l10n: { language, translations },
+  pagesList,
+  router: { pathname },
+}) => {
+  const languageToRedirect = language === 'ru' ? 'en' : 'ru'
 
-  const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
+  const otherLanguagePathname = getPagePathnameInLanguage(pathname, languageToRedirect, pagesList)
 
   return (
     <ul className={className}>
       <li>
-        <Link className="link lng-link" href={otherLanguagePathname}>
+        <Link className="link language-link" href={otherLanguagePathname}>
           <Text
             className="link-text"
-            dangerouslySetInnerHTML={{ __html: lngToRedirect }}
+            dangerouslySetInnerHTML={{ __html: languageToRedirect }}
             type="perforator"
             size="s"
           />
@@ -29,20 +34,20 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
       </li>
 
       <li>
-        <Link className="link" href={`/${lng}/privacy-policy`} isNextLink>
+        <Link className="link" href={`/${language}/privacy-policy`} isNextLink>
           <Text
             className="link-text"
-            dangerouslySetInnerHTML={{ __html: t('common:footer.privacy') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.footer.privacy }}
             type="perforator"
             size="s"
           />
         </Link>
 
-        {lng === 'en' && (
-          <Link className="link policy-link" href={`/${lng}/cookies-policy`} isNextLink>
+        {language === 'en' && (
+          <Link className="link policy-link" href={`/${language}/cookies-policy`} isNextLink>
             <Text
               className="link-text"
-              dangerouslySetInnerHTML={{ __html: t('common:footer.cookies') }}
+              dangerouslySetInnerHTML={{ __html: translations.common.footer.cookies }}
               type="perforator"
               size="s"
             />
@@ -54,11 +59,9 @@ const PrivacyAndLanguageLinks = ({ className, lng, t, pagesList, router: { pathn
 }
 PrivacyAndLanguageLinks.propTypes = {
   className: string,
-  lng: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   withRouter(
     PagesListConsumer(
       styled(PrivacyAndLanguageLinks)`

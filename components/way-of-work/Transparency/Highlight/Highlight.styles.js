@@ -52,38 +52,38 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .square {
-      background-image: url('../../../static/icons/way-of-work/transparency/square.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/square.svg').default});
     }
 
     .square::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/square-fill.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/square-fill.svg').default});
     }
 
     .circle {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/circle.svg').default});
     }
 
     .circle::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/circle-fill.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/circle-fill.svg').default});
     }
 
     .arc {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/arc.svg').default});
       margin-top: ${calcRem(-7)};
       margin-left: ${calcRem(-3)};
     }
 
     .arc::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/arc-fill.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/arc-fill.svg').default});
     }
 
     .triangle {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/triangle.svg').default});
       margin-top: ${calcRem(-7)};
     }
 
     .triangle::before {
-      background-image: url('../../../static/icons/way-of-work/transparency/triangle-fill.svg');
+      background-image: url(${require('../../../../static/icons/way-of-work/transparency/triangle-fill.svg').default});
     }
   }
 

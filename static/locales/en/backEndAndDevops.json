@@ -6,11 +6,13 @@
   "hero": {
     "title": "<span style='font-weight: bold;'>Back-end</span><br />and <span style='font-weight: bold;'>DevOps</span>",
     "description": "Reinforce your web application with reliable <span style='white-space:nowrap'>back-end</span> development and duly adjusted infrastructure.",
-    "button": "Let&rsquo;s Talk"
+    "button": "Let&rsquo;s Talk",
+    "imgAlt": "Three people building reliable infrastructure"
   },
   "backEndDevelopment": {
     "title": "Back-end Development",
     "description": "It&nbsp;is&nbsp;not only the appearance of&nbsp;your product that matters, but also how smoothly, flexibly and reliably the part hidden from users performs.",
+    "imgAlt": "The work of a backend developer is not noticeable, but very important",
     "whatWeDo": {
       "title": "What We Do",
       "description": "Although front-end development was our only specialization for years, now we&nbsp;also provide back-end web solutions so&nbsp;we&nbsp;can develop products from the top down.",
@@ -36,7 +38,9 @@
     "mongoDb": "We&nbsp;select databases subject to&nbsp;the project needs and specific tasks: <span style='font-weight:900'>MongoDB</span> (NoSQL) or&nbsp;<span style='font-weight:900'>PostgreSQL.</span>",
     "java": "We&nbsp;can write on&nbsp;well-proven <span style='font-weight:900'>Java</span>, but we&nbsp;prefer <span style='font-weight:900'>Kotlin</span>&nbsp;&mdash; a&nbsp;modern language working on&nbsp;<span style='font-weight:900'>JVM</span> (Java Virtual Machine).",
     "experts": "Our experts are ready to&nbsp;advise you on&nbsp;the technologies that would fit your project most.",
-    "link": "Take a&nbsp;look at&nbsp;the other <a style='text-decoration: underline; color: #0076FF;' href='/en/tech-stack'>technologies we&nbsp;use</a>"
+    "link": "Take a&nbsp;look at&nbsp;the other <a style='text-decoration: underline; color: #0076FF;' href='/en/tech-stack'>technologies we&nbsp;use</a>",
+    "javaImgAlt": "Styled logos of Kotlin and Java",
+    "mongoDbImgAlt": "An elephant symbolizing PostgreSQL"
   },
   "devOpsServices": {
     "title": "DevOps Services",
@@ -62,17 +66,5 @@
         "description": "Our engineers continuously support and monitor development environment throughout the whole development process to&nbsp;ensure that no&nbsp;time is&nbsp;lost due to&nbsp;the development environment unavailability."
       }
     }
-  },
-  "form": {
-    "title": "Let&rsquo;s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "nameLabel": "Your Name",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "phoneLabel": "Phone",
-    "emailPlaceholder": "name@example.com",
-    "emailLabel": "E-mail",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "How can we help?",
-    "submitText": "Submit"
   }
 }

@@ -4,12 +4,12 @@ import styled from '@emotion/styled'
 import styles from './SocialLinks.styles'
 
 import { socials } from '../../../data/footerLinks'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const SocialLinks = ({ className, lng }) => (
+const SocialLinks = ({ className, l10n: { language } }) => (
   <ul className={className}>
     {socials.map(({ id, href, icon: Icon }) => {
-      if (lng !== 'ru') {
+      if (language !== 'ru') {
         if (id === 'soundcloud' || id === 'telegram' || id === 'twitter' || id === 'vk') {
           return
         }
@@ -27,9 +27,8 @@ const SocialLinks = ({ className, lng }) => (
 
 SocialLinks.propTypes = {
   className: string,
-  lng: string,
 }
 
-export default translate(styled(SocialLinks)`
+export default L10nConsumer(styled(SocialLinks)`
   ${styles}
 `)

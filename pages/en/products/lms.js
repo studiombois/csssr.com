@@ -1,20 +1,20 @@
 import React from 'react'
 import Head from '../../../components/Head'
 import Layout from '../../../components/Layout'
-import Form from '../../../components/ElearningPlatform/Form'
+import Form from '../../../components/ContactFormWrapper'
 import ElearningPlatformContent from '../../../components/ElearningPlatform/ElearningPlatformContent'
 
 const ElearningPlatform = () => {
   const pageName = 'eLearningPlatform'
 
   return (
-    <Layout>
+    <Layout pageName={pageName}>
       <Head
         title="Modular Learning Management System"
         description="Build your solution from the modules, add anything you need with our development team."
       />
 
-      <ElearningPlatformContent />
+      <ElearningPlatformContent pageName={pageName} />
       <Form pageName={pageName} />
     </Layout>
   )

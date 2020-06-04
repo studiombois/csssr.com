@@ -20,32 +20,32 @@ const devOpsImages = {
 
 export default {
   images: devOpsImages,
-  heading: 'backEndAndDevops:devOpsServices.title',
-  subtitle: 'backEndAndDevops:devOpsServices.subtitle',
-  description: 'backEndAndDevops:devOpsServices.description',
-  imgAlt: 'backEndAndDevops:devOpsServices.imgAlt',
+  heading: (t) => t.backEndAndDevops.devOpsServices.title,
+  subtitle: (t) => t.backEndAndDevops.devOpsServices.subtitle,
+  description: (t) => t.backEndAndDevops.devOpsServices.description,
+  imgAlt: (t) => t.backEndAndDevops.devOpsServices.imgAlt,
   solutions: {
-    heading: 'backEndAndDevops:devOpsServices.solutions.title',
+    heading: (t) => t.backEndAndDevops.devOpsServices.solutions.title,
     cases: [
       {
         id: 'continuous',
-        title: 'backEndAndDevops:devOpsServices.solutions.continuous.title',
-        description: 'backEndAndDevops:devOpsServices.solutions.continuous.description',
+        title: (t) => t.backEndAndDevops.devOpsServices.solutions.continuous.title,
+        description: (t) => t.backEndAndDevops.devOpsServices.solutions.continuous.description,
       },
       {
         id: 'automatic',
-        title: 'backEndAndDevops:devOpsServices.solutions.automatic.title',
-        description: 'backEndAndDevops:devOpsServices.solutions.automatic.description',
+        title: (t) => t.backEndAndDevops.devOpsServices.solutions.automatic.title,
+        description: (t) => t.backEndAndDevops.devOpsServices.solutions.automatic.description,
       },
       {
         id: 'cluster',
-        title: 'backEndAndDevops:devOpsServices.solutions.cluster.title',
-        description: 'backEndAndDevops:devOpsServices.solutions.cluster.description',
+        title: (t) => t.backEndAndDevops.devOpsServices.solutions.cluster.title,
+        description: (t) => t.backEndAndDevops.devOpsServices.solutions.cluster.description,
       },
       {
         id: 'maintenance',
-        title: 'backEndAndDevops:devOpsServices.solutions.maintenance.title',
-        description: 'backEndAndDevops:devOpsServices.solutions.maintenance.description',
+        title: (t) => t.backEndAndDevops.devOpsServices.solutions.maintenance.title,
+        description: (t) => t.backEndAndDevops.devOpsServices.solutions.maintenance.description,
       },
     ],
   },

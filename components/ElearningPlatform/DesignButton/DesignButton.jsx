@@ -3,11 +3,11 @@ import styled from '@emotion/styled'
 
 import styles from './DesignButton.styles'
 
-const DesignButton = ({ className, t, icon, onMouseEnter, onMouseLeave }) => {
+const DesignButton = ({ className, text, icon, onMouseEnter, onMouseLeave }) => {
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={className}>
       <img src={icon} alt="icon" />
-      <p className="font-p-4">{t}</p>
+      <p className="font-p-4">{text}</p>
     </div>
   )
 }

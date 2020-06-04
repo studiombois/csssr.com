@@ -142,7 +142,7 @@
         "address": "26 Majaka St.,</br>bld.1, office 14,<br/>Tallinn, 11412,</br>Estonia"
       }
     },
-    "imageAlt": {
+    "imgAlt": {
       "continents": "This browser does not support downloading video files"
     },
     "videoError": "Этот браузер не поддерживает загрузку видеофайлов"
@@ -158,7 +158,7 @@
       "email": "Invalid email format",
       "integer": "The value must be a number",
       "link": "Invalid link format",
-      "maxLength": "The quantity of characters should not exceed {{maxLength}}",
+      "maxLength": "The quantity of characters should not exceed {{count}}",
       "required": "Required",
       "file": "Invalid file format",
       "general": "Something went wrong"
@@ -180,7 +180,7 @@
       }
     }
   },
-  "сookiesPopup": {
+  "cookiesPopup": {
     "text": "This site uses cookies to&nbsp;personalize its services. By&nbsp;continuing to&nbsp;use this site, you agree to&nbsp;this cookie usage. You can learn more about cookies and how your data is&nbsp;protected in&nbsp;the",
     "link": ["Privacy Policy,", "Website Cookie Policy."]
   }

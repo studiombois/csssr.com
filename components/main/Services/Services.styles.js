@@ -18,7 +18,7 @@ import arc_ru_webp from '../../../static/images/main/arc-ru.png?responsive_and_w
 import arc from '../../../static/images/main/arc.png?responsive'
 import arc_webp from '../../../static/images/main/arc.png?responsive_and_webp'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
   align-items: start;
 
   .title_main {
@@ -268,16 +268,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
     .service_mvp::before {
       top: ${calcRem(24)};
-      left: ${lng === 'ru' ? `calc(100% + ${calcRem(-112)})` : calcRem(-75)};
+      left: ${language === 'ru' ? `calc(100% + ${calcRem(-112)})` : calcRem(-75)};
       width: ${calcRem(87)};
       height: ${calcRem(87)};
-      transform: ${lng === 'ru' ? `rotateZ(180deg)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
+      transform: ${language === 'ru' ? `rotateZ(180deg)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
     }
 
     .service_backend::before {
       width: ${calcRem(120)};
 
-      ${lng === 'ru'
+      ${language === 'ru'
         ? css`
             top: ${calcRem(-17)};
             left: ${calcRem(-72)};
@@ -292,7 +292,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
     }
 
     .service_backend {
-      min-height: ${lng === 'ru'? calcRem(192) : calcRem(176)};
+      min-height: ${language === 'ru'? calcRem(192) : calcRem(176)};
     }
 
     .service-icon {
@@ -342,7 +342,7 @@ const ie11Styles = ({ breakpoints: { mobile }}) => css`
   }
 `
 
-export const mobileBackgroundImagesStyles =  lng => theme => {
+export const mobileBackgroundImagesStyles = language => theme => {
   const { mobile } = theme.breakpoints
   return css`
     ${mobile.all} {
@@ -350,7 +350,7 @@ export const mobileBackgroundImagesStyles =  lng => theme => {
       ${getBackgroundImageSrcSet({ png: triangle, webp: triangle_webp}, '.service_express::before')}
       ${getBackgroundImageSrcSet({ png: square, webp: square_webp}, '.service_mvp::before')}
 
-      ${lng === 'ru'
+      ${language === 'ru'
       ? getBackgroundImageSrcSet({ png: arc_ru, webp: arc_ru_webp}, '.service_backend::before')
       : getBackgroundImageSrcSet({ png: arc, webp: arc_webp}, '.service_backend::before')}
     }
@@ -361,10 +361,10 @@ export const mobileBackgroundImagesStyles =  lng => theme => {
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const { lng } = props
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors, lng })}
+    ${base({ breakpoints, colors, language })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

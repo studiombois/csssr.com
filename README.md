@@ -95,8 +95,8 @@ import ultramarine_mobile_all_webp from '../../static/images/main/mobile.all/ult
 Или обернуть текст в `span` c `dangerouslySetInnerHTML`
 ```jsx
 <h1 className='font_h1-regular'>
-    <div dangerouslySetInnerHTML={{ __html: t('jobs:title') }} />
-    <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('jobs:subTitle') }} />
+    <div dangerouslySetInnerHTML={{ __html: translations.jobs.title }} />
+    <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: translations.jobs.subTitle }} />
 </h1>
 ```
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import { array, func, object, string } from 'prop-types'
+import { array, object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './CoreValues.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
@@ -11,22 +11,22 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import CoreValuesItem from '../CoreValuesItem'
 
 const CoreValues = ({
-  t,
   className,
   id,
   content: { heading, subHeading, coreValuesItems, button },
+  l10n: { translations },
 }) => (
   <Grid className={className} as="section" id={id}>
     <Heading.H2
       type="slab"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t(heading) }}
+      dangerouslySetInnerHTML={{ __html: heading(translations) }}
       className="heading"
     />
 
     <SubHeading
       type="slab"
-      dangerouslySetInnerHTML={{ __html: t(subHeading) }}
+      dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
       className="sub-heading"
     />
 
@@ -43,23 +43,22 @@ const CoreValues = ({
     ))}
 
     <ButtonLink
-      href={t('industry:coreValues.button.href')}
+      href={translations.industry.coreValues.button.href}
       kind="secondary"
       className="button"
-      dangerouslySetInnerHTML={{ __html: t(button.title) }}
+      dangerouslySetInnerHTML={{ __html: button.title(translations) }}
     />
   </Grid>
 )
 
 CoreValues.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
   factItems: array,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(CoreValues)`
     ${styles}
   `),

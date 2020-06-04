@@ -6,10 +6,9 @@ import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'
 import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
-import translate from '../../utils/translate-wrapper'
 import CookiesPopup from '../CookiesPopup'
 
-const Layout = ({ children, isIe11, pageName = 'main', router: { asPath }, withFooter = true }) => {
+const Layout = ({ children, isIe11, pageName, router: { asPath }, withFooter = true }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
   const pathsNoButton = ['jobs']
   const isButtonVisible = !pathsNoButton.some((string) => asPath.indexOf(string) + 1)
@@ -29,4 +28,4 @@ const Layout = ({ children, isIe11, pageName = 'main', router: { asPath }, withF
   )
 }
 
-export default translate(withRouter(MsBrowserConsumer(Layout)))
+export default withRouter(MsBrowserConsumer(Layout))

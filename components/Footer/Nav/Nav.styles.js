@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
   & {
     margin-left: auto;
     padding-top: ${calcRem(55)};
@@ -21,27 +21,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 
   ${desktop.l} {
     & {
-      width: ${lng === 'ru' ? '588px' : '738px'};
+      width: ${language === 'ru' ? '588px' : '738px'};
     }
   }
 
   ${desktop.m} {
     & {
-      width: ${lng === 'ru' ? '622px' : '752px'};
+      width: ${language === 'ru' ? '622px' : '752px'};
     }
   }
 
   ${desktop.s} {
     & {
       margin-right: 50px;
-      width: ${lng === 'ru' ? '655px' : '785px'};
+      width: ${language === 'ru' ? '655px' : '785px'};
     }
   }
 
   ${tablet.all} {
     & {
       margin-right: ${calcRem(3)};
-      width: ${lng === 'ru' ? calcRem(522) : calcRem(652)};
+      width: ${language === 'ru' ? calcRem(522) : calcRem(652)};
     }
   }
 
@@ -53,9 +53,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, lng }) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const lng = props.lng
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors, lng })}
+    ${base({ breakpoints, colors, language })}
   `
 }

@@ -1,6 +1,5 @@
 import React from 'react'
-import { func, object, string } from 'prop-types'
-import translate from '../../../../utils/translate-wrapper'
+import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
 import Grid from '../../../ui-kit/core-design/Grid'
@@ -10,54 +9,55 @@ import ContactButton from '../../../ContactButton'
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const Hero = ({
-  t,
   className,
   pageName,
   id,
   content: { heading, description, button, images, imgAlt },
+  l10n: { translations },
 }) => {
   return (
     <Grid className={className} as="section" id={id}>
       <Heading.H1
         type="slab"
         size="l"
-        dangerouslySetInnerHTML={{ __html: t(heading) }}
+        dangerouslySetInnerHTML={{ __html: heading(translations) }}
         className="heading"
       />
 
       <Text
         type="strong"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t(description) }}
+        dangerouslySetInnerHTML={{ __html: description(translations) }}
         className="text"
       />
 
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.l'].png}
-        alt={t(imgAlt)}
+        alt={imgAlt(translations)}
         className="image"
       />
 
       <ContactButton
         className="button"
         pageName={pageName}
-        dangerouslySetInnerHTML={{ __html: t(button) }}
+        dangerouslySetInnerHTML={{ __html: button(translations) }}
       />
     </Grid>
   )
 }
 
 Hero.propTypes = {
-  t: func,
   className: string,
+  pageName: string,
   id: string,
   content: object,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(Hero)`
       ${styles}

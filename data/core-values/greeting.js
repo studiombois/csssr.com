@@ -20,6 +20,6 @@ const greetingImages = {
 
 export default {
   images: greetingImages,
-  heading: 'coreValues:greeting.title',
-  imgAlt: 'coreValues:imgAlt.greeting',
+  heading: (t) => t.coreValues.greeting.title,
+  imgAlt: (t) => t.coreValues.imgAlt.greeting,
 }

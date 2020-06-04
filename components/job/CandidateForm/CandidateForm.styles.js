@@ -33,7 +33,7 @@ const base = css`
     width: 12rem;
   }
 
-  .button_lng_en {
+  .button_language_en {
     width: 16rem;
   }
 
@@ -74,7 +74,7 @@ const base = css`
       width: 13.5rem;
     }
 
-    .button_lng_en {
+    .button_language_en {
       width: 17.5rem;
     }
 

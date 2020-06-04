@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './About.styles'
 
@@ -11,9 +11,9 @@ import Wrapper from '../Wrapper'
 
 import aboutImagesData from '../../../data/express/about'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const About = ({ className, t }) => (
+const About = ({ className, l10n: { translations } }) => (
   <Wrapper className={className} id="about">
     <div className="wrapper">
       <div className="heading-for-picture">
@@ -22,14 +22,14 @@ const About = ({ className, t }) => (
           className="heading"
           type="slab"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t('express:aboutUs.title') }}
+          dangerouslySetInnerHTML={{ __html: translations.express.aboutUs.title }}
         />
 
         <PictureForAllResolutions
           className="picture"
           images={aboutImagesData.images}
           fallback={aboutImagesData.images['desktop.l']}
-          alt={t('express:imgAlt.aboutUs')}
+          alt={translations.express.imgAlt.aboutUs}
         />
       </div>
 
@@ -37,23 +37,22 @@ const About = ({ className, t }) => (
         className="text"
         type="regular"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('express:aboutUs.text1') }}
+        dangerouslySetInnerHTML={{ __html: translations.express.aboutUs.text1 }}
       />
     </div>
 
     <SubHeading
       className="subheading"
       type="regular"
-      dangerouslySetInnerHTML={{ __html: t('express:aboutUs.text2') }}
+      dangerouslySetInnerHTML={{ __html: translations.express.aboutUs.text2 }}
     />
   </Wrapper>
 )
 
 About.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(styled(About)`
+export default L10nConsumer(styled(About)`
   ${styles.base}
 `)

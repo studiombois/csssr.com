@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import { array, func, object, string } from 'prop-types'
-import translate from '../../../utils/translate-wrapper'
+import { array, object, string } from 'prop-types'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import styled from '@emotion/styled'
 import styles from './ProjectsItem.styles'
 import cn from 'classnames'
@@ -13,7 +13,6 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const ProjectsItem = ({
-  t,
   className,
   images,
   imgAlt,
@@ -23,6 +22,7 @@ const ProjectsItem = ({
   button,
   itemClassName,
   isMobile,
+  l10n: { translations },
 }) => {
   const headingNumberSize = isMobile ? 'l' : 'm'
 
@@ -31,7 +31,7 @@ const ProjectsItem = ({
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.all'].png}
-        alt={t(imgAlt)}
+        alt={imgAlt(translations)}
         className="image"
       />
 
@@ -39,50 +39,53 @@ const ProjectsItem = ({
         as="p"
         type="regular"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t(heading) }}
+        dangerouslySetInnerHTML={{ __html: heading(translations) }}
         className="item-heading"
       />
 
-      <Text type="strong" size="m" dangerouslySetInnerHTML={{ __html: t(text) }} className="text" />
+      <Text
+        type="strong"
+        size="m"
+        dangerouslySetInnerHTML={{ __html: text(translations) }}
+        className="text"
+      />
 
       {numericData.map(({ numberData, textData }, index) => (
         <Fragment key={textData}>
           <Heading
             as="p"
             size={headingNumberSize}
-            dangerouslySetInnerHTML={{ __html: t(numberData) }}
+            dangerouslySetInnerHTML={{ __html: numberData(translations) }}
             className={cn(`column-${index + 1}`, 'number-data')}
           />
 
           <Text
             type="strong"
-            dangerouslySetInnerHTML={{ __html: t(textData) }}
+            dangerouslySetInnerHTML={{ __html: textData(translations) }}
             className={cn(`column-${index + 1}`, 'text-data')}
             size="m"
           />
         </Fragment>
       ))}
-      
+
       <ButtonLink
-        href={t(button.href)}
+        href={button.href(translations)}
         className="button"
         kind="primary"
-        dangerouslySetInnerHTML={{ __html: t(button.title) }}
+        dangerouslySetInnerHTML={{ __html: button.title(translations) }}
       />
-
     </Grid>
   )
 }
 
 ProjectsItem.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
   factItems: array,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(ProjectsItem)`
       ${styles}

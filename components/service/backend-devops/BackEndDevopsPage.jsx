@@ -1,29 +1,28 @@
 import React from 'react'
-import { func } from 'prop-types'
 
 import Layout from '../../Layout'
-import translate from '../../../utils/translate-wrapper'
 import Head from '../../Head'
 import Hero from './Hero'
 import BackEndDevelopment from './BackEndDevelopment/BackEndDevelopment'
 import TechStack from './TechStack/TechStack'
 import DevOpsServices from './DevOpsServices'
-import Form from './Form'
 
 import hero from '../../../data/service/backend-and-devops/hero'
 import backend_dev from '../../../data/service/backend-and-devops/backend-development'
 import tech_stack from '../../../data/service/backend-and-devops/tech-stack'
 import devopsServices from '../../../data/service/backend-and-devops/devops-services'
+import { L10nConsumer } from '../../../utils/l10nProvider'
+import Form from '../../ContactFormWrapper/ContactFormWrapper'
 
-const BackEndDevopsPage = ({ t }) => {
-  const pageName = 'backEndAndDevops'
+const pageName = 'backEndAndDevops'
+const BackEndDevopsPage = ({ l10n: { translations } }) => {
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('backEndAndDevops:meta.title')}
-        description={t('backEndAndDevops:meta.description')}
+        title={translations.backEndAndDevops.meta.title}
+        description={translations.backEndAndDevops.meta.description}
       />
-      <Hero id="hero" content={hero} />
+      <Hero pageName={pageName} id="hero" content={hero} />
       <BackEndDevelopment id="backend-development" content={backend_dev} />
       <TechStack id="tech-stack" content={tech_stack} />
       <DevOpsServices id="devops-services" content={devopsServices} />
@@ -32,8 +31,4 @@ const BackEndDevopsPage = ({ t }) => {
   )
 }
 
-BackEndDevopsPage.propTypes = {
-  t: func,
-}
-
-export default translate(BackEndDevopsPage)
+export default L10nConsumer(BackEndDevopsPage)

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import styles from './Item.styles'
-import translate from '../../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../../utils/l10nProvider'
 
 import Heading from '../../../../ui-kit/core-design/Heading'
 import Text from '../../../../ui-kit/core-design/Text'
@@ -12,13 +12,13 @@ import PictureForAllResolutions from '../../../../ui-kit/PictureForAllResolution
 
 import unescapeHtmlEntities from '../../../../../utils/unescapeHtmlEntities'
 
-const Item = ({ className, t, lng, id, link, images }) => (
+const Item = ({ className, l10n: { translations, language }, groupId, itemId, link, images }) => (
   <div className={className}>
     <PictureForAllResolutions
       className="picture"
       images={images}
       fallback={images['desktop.all'].png}
-      alt={t(`outsourcingFrontEnd:imageAlt.ourAdvantages.${id}`)}
+      alt={translations.outsourcingFrontEnd.imgAlt.ourAdvantages[groupId][itemId]}
     />
 
     <Heading
@@ -27,14 +27,14 @@ const Item = ({ className, t, lng, id, link, images }) => (
       type="regular"
       size="m"
       dangerouslySetInnerHTML={{
-        __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.title`),
+        __html: translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].title,
       }}
     />
 
-    {link && link === '/en/service/express-front-end' && lng === 'en' ? (
+    {link && link === '/en/service/express-front-end' && language === 'en' ? (
       <Text className="description" as="p" type="strong" size="m">
         {unescapeHtmlEntities(
-          t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.description.0`),
+          translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].description[0],
         )}
         <Link
           key="link"
@@ -46,11 +46,11 @@ const Item = ({ className, t, lng, id, link, images }) => (
           `}
           isNextLink
           dangerouslySetInnerHTML={{
-            __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.link`),
+            __html: translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
           }}
         />
         {unescapeHtmlEntities(
-          t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.description.1`),
+          translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].description[1],
         )}
       </Text>
     ) : (
@@ -61,19 +61,22 @@ const Item = ({ className, t, lng, id, link, images }) => (
           type="strong"
           size="m"
           dangerouslySetInnerHTML={{
-            __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.description`),
+            __html:
+              translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId]
+                .description,
           }}
         />
 
-        {!link || (link === '/en/service/express-front-end' && lng === 'ru') ? null : (
+        {!link || (link === '/en/service/express-front-end' && language === 'ru') ? null : (
           <Link
             className="link"
-            href={`/${lng}/${link}`}
+            href={`/${language}/${link}`}
             type="list"
             size="m"
             isNextLink
             dangerouslySetInnerHTML={{
-              __html: t(`outsourcingFrontEnd:ourAdvantages.advantages.${id}.link`),
+              __html:
+                translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
             }}
           />
         )}
@@ -84,10 +87,8 @@ const Item = ({ className, t, lng, id, link, images }) => (
 
 Item.propTypes = {
   className: string,
-  t: func,
-  lng: string,
 }
 
-export default translate(styled(Item)`
+export default L10nConsumer(styled(Item)`
   ${styles}
 `)

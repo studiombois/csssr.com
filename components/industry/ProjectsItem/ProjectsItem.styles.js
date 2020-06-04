@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, lng }) => {
+const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, language }) => {
   if (direction === 'reverse') {
     return (
       css`
@@ -120,7 +120,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, ln
           }
 
           .column-2 {
-            grid-column: ${lng === 'ru' ? '4' : '3'} / span 2;
+            grid-column: ${language === 'ru' ? '4' : '3'} / span 2;
           }
         }
       `
@@ -219,7 +219,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, ln
         }
 
         .column-2 {
-          grid-column: ${lng === 'ru' ? '4' : '3'} / span 2;
+          grid-column: ${language === 'ru' ? '4' : '3'} / span 2;
         }
       }
     `
@@ -655,10 +655,10 @@ const ie11BaseStyles = () => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const { lng } = props
+  const { l10n: {language} } = props
 
   return css`
-    ${dynamicStyles(props.direction, { breakpoints, lng })}
+    ${dynamicStyles(props.direction, { breakpoints, language })}
     ${base({ colors, breakpoints })}
     ${props.isIe11 && ie11DynamicStyles(props.direction, { breakpoints })}
     ${props.isIe11 && ie11BaseStyles()}

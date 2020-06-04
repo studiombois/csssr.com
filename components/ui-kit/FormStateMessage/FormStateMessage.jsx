@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles, { pictureStyles, textDataStyles } from './FormStateMessage.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { func, oneOf, string } from 'prop-types'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
@@ -16,24 +16,28 @@ class FormStateMessage extends PureComponent {
   }
 
   getTextData = () => {
-    const { status, t, errorText } = this.props
+    const {
+      status,
+      errorText,
+      l10n: { translations },
+    } = this.props
     if (status === 'success') {
       return {
-        intro: t('common:form.message.success.intro'),
-        message: t('common:form.message.success.body'),
+        intro: translations.common.form.message.success.intro,
+        message: translations.common.form.message.success.body,
       }
     } else if (status === 'fail') {
       return {
-        intro: t(errorText),
+        intro: errorText,
         message: (
           <span css={textDataStyles}>
-            <span>{t('common:form.message.fail.body.textStart')}</span>
+            <span>{translations.common.form.message.fail.body.textStart}</span>
 
             <button type="button" className="font_link-list_16" onClick={this.props.onTryAgain}>
-              {t('common:form.message.fail.body.textForButton')}
+              {translations.common.form.message.fail.body.textForButton}
             </button>
 
-            <span>{t('common:form.message.fail.body.textBetweenButtonAndLink')}</span>
+            <span>{translations.common.form.message.fail.body.textBetweenButtonAndLink}</span>
 
             <a className="font_link-list_16" href={`mailto:${this.props.feedbackEmail}`}>
               {this.props.feedbackEmail}
@@ -83,7 +87,7 @@ class FormStateMessage extends PureComponent {
   }
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(FormStateMessage)`
     ${styles}
   `),

@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { FormSpy } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './CandidateForm.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import FormRow from '../FormRow'
 import Section from '../Section'
 import VacancyImageAndLinks from './VacancyImageAndLinks'
@@ -169,19 +169,11 @@ class CandidateForm extends PureComponent {
   renderVacancyImageAndLinks = () => {
     const {
       vacancies,
-      locale,
       vacancy: { name },
     } = this.props
     const pictureName = picturesMap[this.props.vacancy.pathName]
 
-    return (
-      <VacancyImageAndLinks
-        vacancies={vacancies}
-        pictureName={pictureName}
-        locale={locale}
-        name={name}
-      />
-    )
+    return <VacancyImageAndLinks vacancies={vacancies} pictureName={pictureName} name={name} />
   }
 
   render() {
@@ -190,8 +182,7 @@ class CandidateForm extends PureComponent {
       values: { connection },
       vacancy,
       submitError,
-      lng,
-      t,
+      l10n: { translations, language },
     } = this.props
 
     const [beforeQuestSections, otherSections] = divideSections(vacancy.sections)
@@ -212,9 +203,9 @@ class CandidateForm extends PureComponent {
             {vacancy.name}
 
             {vacancy.employment === 'part-time' ? (
-              <span className="font_subhead-regular">{t('job:remote')}</span>
+              <span className="font_subhead-regular">{translations.job.remote}</span>
             ) : (
-              <span className="font_subhead-regular">{t('job:remoteAndFullTime')}</span>
+              <span className="font_subhead-regular">{translations.job.remoteAndFullTime}</span>
             )}
           </h1>
 
@@ -226,18 +217,18 @@ class CandidateForm extends PureComponent {
             <Section key={index} {...section} />
           ))}
 
-          {lng === 'ru' && (
+          {language === 'ru' && (
             <div className="faq-text-container">
               <Picture
                 className="faq-picture visible_on_mobile"
-                image={{ namespace: 'jobs', key: 'faq', alt: t('jobs:faq.alt') }}
+                image={{ namespace: 'jobs', key: 'faq', alt: translations.jobs.faq.alt }}
                 css={faqImageStyles}
               />
               <p className="faq-text font_p16-regular">
-                {t('job:faq.title')}
+                {translations.job.faq.title}
 
                 <a href="/ru/jobs-faq" className="font_link-list_16">
-                  {t('job:faq.link')}
+                  {translations.job.faq.link}
                 </a>
               </p>
             </div>
@@ -258,13 +249,13 @@ class CandidateForm extends PureComponent {
         <FormRow>
           <div
             className={cn('button', {
-              button_lng_en: lng === 'en',
+              button_language_en: language === 'en',
             })}
             ref={this.messageRef}
           >
             <AnimatedButton type="submit" status={status}>
               <Text type="perforator" size="m" className="button-content" as="span">
-                {t('job:send')}
+                {translations.job.send}
               </Text>
             </AnimatedButton>
           </div>
@@ -283,7 +274,7 @@ class CandidateForm extends PureComponent {
   }
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(CandidateForm)`
     ${styles}
   `),

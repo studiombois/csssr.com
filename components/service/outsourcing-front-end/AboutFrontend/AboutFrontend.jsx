@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './AboutFrontend.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -17,12 +17,12 @@ import aboutFrontend_desktop_webp from '../../../../static/images/service/outsou
 import aboutFrontend_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/aboutFrontend.png?responsive'
 import aboutFrontend_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/aboutFrontend.png?responsive_and_webp'
 
-const AboutFrontend = ({ className, t }) => (
+const AboutFrontend = ({ className, l10n: { translations } }) => (
   <Grid as="article" className={className}>
     <Heading
       className="title"
       as="h2"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:aboutFrontend.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.aboutFrontend.title }}
       type="slab"
       size="m"
     />
@@ -31,14 +31,16 @@ const AboutFrontend = ({ className, t }) => (
       className="subtitle"
       as="p"
       type="slab"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:aboutFrontend.subtitle') }}
+      dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.aboutFrontend.subtitle }}
     />
 
     <Text
       className="description"
       as="p"
       size="m"
-      dangerouslySetInnerHTML={{ __html: t('outsourcingFrontEnd:aboutFrontend.description') }}
+      dangerouslySetInnerHTML={{
+        __html: translations.outsourcingFrontEnd.aboutFrontend.description,
+      }}
     />
 
     <PictureForAllResolutions
@@ -48,17 +50,16 @@ const AboutFrontend = ({ className, t }) => (
         'mobile.all': { png: aboutFrontend_mobile, webp: aboutFrontend_mobile_webp },
       }}
       fallback={aboutFrontend_desktop}
-      alt={t('outsourcingFrontEnd:imageAlt.aboutFrontend')}
+      alt={translations.outsourcingFrontEnd.imgAlt.aboutFrontend}
     />
   </Grid>
 )
 
 AboutFrontend.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(AboutFrontend)`
     ${styles}
   `),

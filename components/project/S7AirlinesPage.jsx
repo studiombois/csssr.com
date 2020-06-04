@@ -1,9 +1,8 @@
 import React from 'react'
-import { func } from 'prop-types'
-import Form from './Form'
+import Form from '../ContactFormWrapper'
 import AboutProject from './AboutProject'
 import Layout from '../Layout'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Hero from './Hero'
 import Team from './Team'
@@ -15,23 +14,23 @@ import team from '../../data/project/s7airlines/team'
 import techStack from '../../data/project/s7airlines/techStack'
 import aboutProjectImages from '../../data/project/aboutProject'
 
-const S7AirlinesPage = ({ t }) => {
+const S7AirlinesPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
-  const porojectId = 's7airlines'
+  const projectId = 's7airlines'
   const aboutProjectParagraphsScheme = [[0], [0, 1, 2]]
 
   return (
     <Layout pageName={pageName}>
       <Head
-        title={t('project:s7airlines.meta.title')}
-        description={t('project:s7airlines.meta.description')}
+        title={translations.project.s7airlines.meta.title}
+        description={translations.project.s7airlines.meta.description}
       />
 
       <Hero id="hero" content={hero} />
       <Team id="team" content={team} />
       <TechStack id="teckStack" content={techStack} />
       <AboutProject
-        porojectId={porojectId}
+        projectId={projectId}
         images={aboutProjectImages}
         paragraphsScheme={aboutProjectParagraphsScheme}
       />
@@ -40,8 +39,6 @@ const S7AirlinesPage = ({ t }) => {
   )
 }
 
-S7AirlinesPage.propTypes = {
-  t: func,
-}
+S7AirlinesPage.propTypes = {}
 
-export default translate(S7AirlinesPage)
+export default L10nConsumer(S7AirlinesPage)

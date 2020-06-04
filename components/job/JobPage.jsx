@@ -8,13 +8,12 @@ import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Head from '../Head'
 import CandidateForm from './CandidateForm'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../utils/validators/candidateFormValidationRules'
 import withError from '../../utils/withError'
-import getContactOptionsByI18N from '../../data/job/getContactOptionsByI18N'
+import getContactOptions from '../../data/job/getContactOptions'
 import StructuredDataVacancy from '../StructuredDataVacancy'
-import i18n from '../../common/i18n'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -75,8 +74,8 @@ const processVacancy = (vacancy) => {
   }
 }
 
-const filterUnckeckedContactOptions = (values, t) => {
-  const filteredContactOptions = getContactOptionsByI18N(t).reduce((acc, option) => {
+const filterUncheckedContactOptions = (values, translations) => {
+  const filteredContactOptions = getContactOptions(translations).reduce((acc, option) => {
     const optionId = option.id
 
     if (values.connection && !values.connection.indexOf(optionId) !== -1) {
@@ -96,8 +95,8 @@ const filterUnckeckedContactOptions = (values, t) => {
     )
 }
 
-const onSubmit = (t) => async (values) => {
-  const filteredValues = filterUnckeckedContactOptions(values, t)
+const onSubmit = (translations) => async (values) => {
+  const filteredValues = filterUncheckedContactOptions(values, translations)
 
   if (values.quests.length === 0) {
     delete filteredValues.quests
@@ -120,7 +119,7 @@ const onSubmit = (t) => async (values) => {
       body: formData,
     })
   } catch {
-    return { [FORM_ERROR]: t('common:form.errors.general') }
+    return { [FORM_ERROR]: translations.common.form.errors.general }
   }
 
   if (res.status === 200) {
@@ -133,7 +132,7 @@ const onSubmit = (t) => async (values) => {
       const response = await res.json()
       error = response.error
     } catch {
-      error = t('common:form.errors.general')
+      error = translations.common.form.errors.general
     }
     Sentry.withScope((scope) => {
       scope.setExtra('reqBody', formData)
@@ -149,9 +148,11 @@ const onSubmit = (t) => async (values) => {
 
 const focusOnErrors = createDecorator()
 
+const pageName = 'job'
 class JobPage extends PureComponent {
-  static async getInitialProps({ req, res, query }) {
-    const locale = req ? req.language : i18n.language
+  static async getInitialProps({ res, query }) {
+    const l10n = res ? res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
+    const locale = l10n.locale
     const response = await fetch(
       `${csssrSpaceOrigin}/api/public/vacancies/${
         query.preview ? 'preview' : 'active'
@@ -182,14 +183,19 @@ class JobPage extends PureComponent {
   }
 
   render() {
-    const { vacancy, vacancies, initialValues, t, lng } = this.props
+    const {
+      vacancy,
+      vacancies,
+      initialValues,
+      l10n: { translations, language },
+    } = this.props
 
     return (
       <Fragment>
-        <Layout>
+        <Layout pageName={pageName}>
           <Head
             title={vacancy.name}
-            templateTitle={`${lng === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
+            templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
             description={vacancy.description}
             structuredData={<StructuredDataVacancy vacancy={vacancy} />}
             ogImage={{
@@ -200,11 +206,11 @@ class JobPage extends PureComponent {
           />
           <ReactFinalForm
             vacancy={vacancy}
-            language={lng}
+            language={language}
             vacancies={vacancies}
             initialValues={initialValues}
-            validate={candidateFormValidationRules(vacancy, t)}
-            onSubmit={onSubmit(t)}
+            validate={candidateFormValidationRules(vacancy, translations, language)}
+            onSubmit={onSubmit(translations)}
             decorators={[focusOnErrors]}
             component={CandidateForm}
           />
@@ -214,4 +220,4 @@ class JobPage extends PureComponent {
   }
 }
 
-export default withError(translate(JobPage))
+export default withError(L10nConsumer(JobPage))

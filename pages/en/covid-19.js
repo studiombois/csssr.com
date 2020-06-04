@@ -3,8 +3,9 @@ import Head from '../../components/Head'
 import Layout from '../../components/Layout'
 import Covid19Content from '../../components/covid-19/Covid19Content'
 
+const pageName = 'covid19'
 const Covid19Page = () => (
-  <Layout withFooter={false}>
+  <Layout pageName={pageName} withFooter={false}>
     <Head customFavicons title="COVID-19 Response — CSSSR Remote Development Team">
       <link rel="icon" href="../../static/covid-19/favicon/favicon-32.png" sizes="32x32" />
       <link rel="icon" href="../../static/covid-19/favicon/apple-touch-icon-57.png" sizes="57x57" />

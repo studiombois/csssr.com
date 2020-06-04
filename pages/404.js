@@ -1,6 +1,5 @@
-import Error404Page from '../components/error/Error404Page'
 import React from 'react'
-import translate from '../utils/translate-wrapper'
+import Error404Page from '../components/error/Error404Page'
 
 class Custom404 extends React.Component {
   render() {
@@ -8,4 +7,4 @@ class Custom404 extends React.Component {
   }
 }
 
-export default translate(Custom404)
+export default Custom404

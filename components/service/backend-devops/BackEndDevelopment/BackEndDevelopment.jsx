@@ -1,6 +1,5 @@
 import React from 'react'
-import { func, object, string } from 'prop-types'
-import translate from '../../../../utils/translate-wrapper'
+import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './BackEndDevelopment.styles'
 import Grid from '../../../ui-kit/core-design/Grid'
@@ -12,9 +11,9 @@ import List from '../../../ui-kit/core-design/List'
 import ListItem from '../../../ui-kit/core-design/ListItem'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 
 const BackEndDevelopment = ({
-  t,
   className,
   id,
   content: {
@@ -24,6 +23,7 @@ const BackEndDevelopment = ({
     imgAlt,
     whatWeDo: { do_title, do_description, list },
   },
+  l10n: { translations },
 }) => {
   return (
     <Grid className={className} as="section" id={id}>
@@ -31,19 +31,19 @@ const BackEndDevelopment = ({
         as="h2"
         type="slab"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t(heading) }}
+        dangerouslySetInnerHTML={{ __html: heading(translations) }}
         className="heading"
       />
       <SubHeading
         as="p"
         type="slab"
-        dangerouslySetInnerHTML={{ __html: t(description) }}
+        dangerouslySetInnerHTML={{ __html: description(translations) }}
         className="text"
       />
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.l'].png}
-        alt={t(imgAlt)}
+        alt={imgAlt(translations)}
         className="image"
       />
       <div className="left-block">
@@ -51,13 +51,13 @@ const BackEndDevelopment = ({
           as="h2"
           type="regular"
           size="l"
-          dangerouslySetInnerHTML={{ __html: t(do_title) }}
+          dangerouslySetInnerHTML={{ __html: do_title(translations) }}
           className="heading-do"
         />
         <Text
           size="m"
           type="strong"
-          dangerouslySetInnerHTML={{ __html: t(do_description) }}
+          dangerouslySetInnerHTML={{ __html: do_description(translations) }}
           className="text-do"
         />
       </div>
@@ -68,14 +68,14 @@ const BackEndDevelopment = ({
               as="h3"
               type="regular"
               className="item-title"
-              dangerouslySetInnerHTML={{ __html: t(item.title) }}
+              dangerouslySetInnerHTML={{ __html: item.title(translations) }}
               size="m"
             />
 
             <Text
               size="m"
               type="regular"
-              dangerouslySetInnerHTML={{ __html: t(item.description) }}
+              dangerouslySetInnerHTML={{ __html: item.description(translations) }}
               className="item-text"
             />
           </ListItem>
@@ -86,13 +86,12 @@ const BackEndDevelopment = ({
 }
 
 BackEndDevelopment.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(BackEndDevelopment)`
       ${styles}

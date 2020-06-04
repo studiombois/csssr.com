@@ -6,11 +6,13 @@
   "hero": {
     "title": "<span style='font-weight: bold;'>Бэкенд</span><br />и&nbsp;<span style='font-weight: bold;'>DevOps</span>",
     "description": "Улучшите ваш веб-сервис с помощью надежной бэкенд-разработки и правильно настроенной инфраструктуры.",
-    "button": "Оставить заявку"
+    "button": "Оставить заявку",
+    "imgAlt": "Три человека строят надёжную инфраструктуру"
   },
   "backEndDevelopment": {
     "title": "Бэкенд-разработка",
     "description": "Важен не&nbsp;только внешний вид вашего продукта, но&nbsp;и&nbsp;то, насколько стабильно работает часть, скрытая от&nbsp;пользователя.",
+    "imgAlt": "Работа бекенд разработчика не заметна, но важна",
     "whatWeDo": {
       "title": "Что мы делаем",
       "description": "Хотя фронтенд долго время был нашей основной специализацией, теперь мы также предоставляем бэкенд-решения.",
@@ -36,7 +38,9 @@
     "mongoDb": "Мы&nbsp;выбираем базу данных в&nbsp;зависимости от&nbsp;типа задач: <span style='font-weight:900'>MongoDB</span> (NoSQL) или <span style='font-weight:900'>PostgreSQL</span>.",
     "java": "Мы&nbsp;можем писать на&nbsp;проверенном временем <span style='font-weight:900'>Java</span>, но&nbsp;предпочитаем <span style='font-weight:900'>Kotlin</span>&nbsp;&mdash; современный язык, работающий на&nbsp;<span style='font-weight:900'>JVM</span> (Java Virtual Machine).",
     "experts": "Наши эксперты готовы проконсультировать вас по&nbsp;технологиям, которые лучше всего подойдут для вашего проекта.",
-    "link": "Взгляните на&nbsp;другие <a style='text-decoration: underline; color: #0076FF;' href='/ru/tech-stack'>технологии, которые мы&nbsp;используем.</a>"
+    "link": "Взгляните на&nbsp;другие <a style='text-decoration: underline; color: #0076FF;' href='/ru/tech-stack'>технологии, которые мы&nbsp;используем.</a>",
+    "javaImgAlt": "Стилизованные логотипы Kotlin и Java",
+    "mongoDbImgAlt": "Слон символизирующий PostgreSQL"
   },
   "devOpsServices": {
     "title": "DevOps Сервис",
@@ -62,18 +66,6 @@
         "description": "Наши инженеры поддерживают и&nbsp;контролируют среду разработки на&nbsp;протяжении всего процесса. Это гарантирует непрерывность работы и&nbsp;отсутствие простоев."
       }
     }
-  },
-  "form": {
-    "title": "Давайте пообщаемся",
-    "namePlaceholder": "Тим Бернерс-Ли",
-    "nameLabel": "Имя",
-    "phonePlaceholder": "+7-987-654-32-10",
-    "phoneLabel": "Телефон",
-    "emailPlaceholder": "name@example.com",
-    "emailLabel": "E-mail",
-    "messagePlaceholder": "Чем мы могли бы помочь вам?",
-    "messageLabel": "Чем мы могли бы помочь вам?",
-    "submitText": "Отправить"
   }
 }
 

@@ -91,9 +91,9 @@
       "title": "UX",
       "text": "Перфекционизм должен быть умным. Мы&nbsp;всегда ставим себя на&nbsp;место пользователя и&nbsp;обращаем внимание на&nbsp;мелочи, которые могут повлиять на&nbsp;впечатление от&nbsp;конечного продукта."
     },
-    "button": {	
-      "title": "Наши ценности",	
-      "href": "/ru/core-values"	
+    "button": {
+      "title": "Наши ценности",
+      "href": "/ru/core-values"
     }
   },
   "projects": {
@@ -136,17 +136,5 @@
         }
       }
     }
-  },
-  "form": {
-    "title": "Давайте пообщаемся",
-    "namePlaceholder": "Тим Бернерс-Ли",
-    "phonePlaceholder": "+7-987-654-32-10",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "Чем мы могли бы помочь вам?",
-    "messageLabel": "коментарий",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Телефон",
-    "nameLabel": "Имя",
-    "submitText": "Отправить"
   }
 }

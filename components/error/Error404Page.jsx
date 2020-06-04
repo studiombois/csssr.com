@@ -12,47 +12,51 @@ import DevTools from '../DevTools'
 import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
-import LogoIcon from '../../static/icons/csssr_logo.svg'
-import LineFromTopToBottomIcon from '../../static/icons/lineFromTopToBottom.svg'
-import NotFound from '../../static/icons/notFound.svg'
+import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as LineFromTopToBottomIcon } from '../../static/icons/lineFromTopToBottom.svg'
+import { ReactComponent as NotFound } from '../../static/icons/notFound.svg'
 
 import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 class Error404Page extends React.Component {
-  renderNav = ({ lng, items: { title, id, links } }) => {
+  renderNav = ({ title, id, links }) => {
+    const {
+      l10n: { language, translations },
+    } = this.props
+
     const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
 
-    if (id === 'products' && lng === 'ru') return
+    if (id === 'products' && language === 'ru') return
     return (
       <span key={id}>
         <h3
           className="font_burger-menu"
-          dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
+          dangerouslySetInnerHTML={{ __html: title(translations) }}
         />
 
         {links && (
           <ul className="menu">
             {links.map(({ id, title, href }) => {
-              if (id === 'express' && lng === 'ru') return
+              if (id === 'express' && language === 'ru') return
 
               return (
                 <li key={id}>
                   {linkRegExp.test(href) ? (
-                    <Link href={href}>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
-                      />
-                    </Link>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="menu-item"
+                      href={href}
+                      dangerouslySetInnerHTML={{ __html: title(translations) }}
+                    />
                   ) : (
-                    <Link href={`/${lng}/${href}`}>
+                    <Link href={`/${language}/${href}`}>
                       <a
                         className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
+                        dangerouslySetInnerHTML={{ __html: title(translations) }}
                       />
                     </Link>
                   )}
@@ -66,15 +70,16 @@ class Error404Page extends React.Component {
   }
 
   render() {
-    const { className, t, lng: lngCodeFromI18n, i18n } = this.props
+    const {
+      className,
+      l10n: { language, translations },
+    } = this.props
 
-    const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
-    const rootUrl = `/${lng}`
+    const rootUrl = `/${language}`
 
-    if (!lng) {
+    if (!language) {
       Sentry.withScope((scope) => {
-        scope.setExtra('lngCodeFromI18n', lngCodeFromI18n)
-        scope.setExtra('lng', lng)
+        scope.setExtra('language', language)
         Sentry.captureMessage(
           'Опять что-то не так с определением языка, смотри url и дополнительные параметры',
         )
@@ -86,7 +91,10 @@ class Error404Page extends React.Component {
         <Global styles={globalStyles} />
         <DevTools />
 
-        <Head title={t('error:meta.title')} description={t('error:meta.description')}>
+        <Head
+          title={translations.error.meta.title}
+          description={translations.error.meta.description}
+        >
           <meta name="robots" content="noindex" />
         </Head>
 
@@ -101,7 +109,7 @@ class Error404Page extends React.Component {
         <Grid as="main" className={cn(className, `error-code_404`)}>
           <h1
             className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: t('error:errors.notFound.title') }}
+            dangerouslySetInnerHTML={{ __html: translations.error.errors.notFound.title }}
           />
 
           <PictureForAllResolutions
@@ -116,7 +124,7 @@ class Error404Page extends React.Component {
           <h2
             className="font_subhead-slab"
             dangerouslySetInnerHTML={{
-              __html: t('error:errors.notFound.subtitle'),
+              __html: translations.error.errors.notFound.subtitle,
             }}
           />
           <Fragment>
@@ -124,7 +132,7 @@ class Error404Page extends React.Component {
               <LineFromTopToBottomIcon width="100%" height="100%" />
             </div>
 
-            <div className="navList">{navItems.map((items) => this.renderNav({ lng, items }))}</div>
+            <div className="navList">{navItems.map(this.renderNav)}</div>
           </Fragment>
         </Grid>
       </Fragment>
@@ -132,6 +140,8 @@ class Error404Page extends React.Component {
   }
 }
 
-export default MsBrowserConsumer(styled(Error404Page)`
-  ${styles}
-`)
+export default L10nConsumer(
+  MsBrowserConsumer(styled(Error404Page)`
+    ${styles}
+  `),
+)

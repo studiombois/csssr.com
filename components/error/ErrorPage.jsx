@@ -12,87 +12,41 @@ import DevTools from '../DevTools'
 import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
-import LogoIcon from '../../static/icons/csssr_logo.svg'
-import ServerError from '../../static/icons/serverError.svg'
+import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as ServerError } from '../../static/icons/serverError.svg'
 
 import globalStyles from '../Layout/Layout.styles'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 const possibleStatusCodes = [500]
 
 const defaultStatusCode = 500
 
-const titleLocalesByStatusCode = {
-  500: 'error:errors.serverError.title',
-}
-
-const subtitleLocalesByStatusCode = {
-  500: 'error:errors.serverError.subtitle',
+const errorNameByStatusCode = {
+  500: 'serverError',
 }
 
 const codeIconByStatusCode = {
-  500: <ServerError width="auto" height="100%" />,
+  500: <ServerError width="100%" height="100%" />,
 }
 
 class ErrorPage extends React.Component {
-  renderNav = ({ lng, items: { title, id, links } }) => {
-    const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-
-    if (id === 'products' && lng === 'ru') return
-    return (
-      <span key={id}>
-        <h3
-          className="font_burger-menu"
-          dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
-        />
-
-        {links && (
-          <ul className="menu">
-            {links.map(({ id, title, href }) => {
-              if (id === 'express' && lng === 'ru') return
-
-              return (
-                <li key={id}>
-                  {linkRegExp.test(href) ? (
-                    <Link href={href}>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
-                      />
-                    </Link>
-                  ) : (
-                    <Link href={`/${lng}/${href}`}>
-                      <a
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: this.props.t(title) }}
-                      />
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </span>
-    )
-  }
-
   render() {
-    const { className, t, lng: lngCodeFromI18n, i18n } = this.props
+    const {
+      className,
+      l10n: { language, translations },
+    } = this.props
 
     const statusCode =
       possibleStatusCodes.indexOf(this.props.statusCode) !== -1
         ? this.props.statusCode
         : defaultStatusCode
 
-    const lng = i18n.services.languageUtils.getLanguagePartFromCode(lngCodeFromI18n)
-    const rootUrl = `/${lng}`
+    const rootUrl = `/${language}`
 
-    if (!lng) {
+    if (!language) {
       Sentry.withScope((scope) => {
-        scope.setExtra('lngCodeFromI18n', lngCodeFromI18n)
-        scope.setExtra('lng', lng)
+        scope.setExtra('language', language)
         Sentry.captureMessage(
           'Опять что-то не так с определением языка, смотри url и дополнительные параметры',
         )
@@ -104,7 +58,10 @@ class ErrorPage extends React.Component {
         <Global styles={globalStyles} />
         <DevTools />
 
-        <Head title={t('error:meta.title')} description={t('error:meta.description')}>
+        <Head
+          title={translations.error.meta.title}
+          description={translations.error.meta.description}
+        >
           <meta name="robots" content="noindex" />
         </Head>
 
@@ -119,7 +76,9 @@ class ErrorPage extends React.Component {
         <Grid as="main" className={cn(className, `error-code_${statusCode}`)}>
           <h1
             className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: t(`${titleLocalesByStatusCode[statusCode]}`) }}
+            dangerouslySetInnerHTML={{
+              __html: translations.error.errors[errorNameByStatusCode[statusCode]].title,
+            }}
           />
 
           <PictureForAllResolutions
@@ -133,7 +92,7 @@ class ErrorPage extends React.Component {
             className="font_subhead-slab"
             dangerouslySetInnerHTML={{
               __html: [
-                t(`${subtitleLocalesByStatusCode[statusCode]}`),
+                translations.error.errors[errorNameByStatusCode[statusCode]].subtitle,
                 statusCode === 500
                   ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
                   : null,
@@ -146,6 +105,8 @@ class ErrorPage extends React.Component {
   }
 }
 
-export default MsBrowserConsumer(styled(ErrorPage)`
-  ${styles}
-`)
+export default L10nConsumer(
+  MsBrowserConsumer(styled(ErrorPage)`
+    ${styles}
+  `),
+)

@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import { withRouter } from 'next/router'
 import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
@@ -13,15 +13,22 @@ import Links from './Links'
 import Button from '../ui-kit/core-design/Button'
 import ButtonLink from '../ui-kit/core-design/ButtonLink'
 import ContactModal from '../ContactModal'
-import Logo from '../../static/icons/csssr_logo.svg'
-import Burger from '../../static/icons/header/burger.svg'
-import Cross from '../../static/icons/header/close.svg'
+import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as Burger } from '../../static/icons/header/burger.svg'
+import { ReactComponent as Cross } from '../../static/icons/header/close.svg'
 
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible = true }) => {
+const Header = ({
+  className,
+  isIe11,
+  isMobile,
+  pageName,
+  isButtonVisible = true,
+  l10n: { translations, language },
+}) => {
   let lastScrollTopValue = useRef(0)
   const [isDropdownOpened, toggleDropdown] = useState(false)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
@@ -102,14 +109,14 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
             href="#hire-us"
             kind="primary"
             className="button_action"
-            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
           />
         ) : (
           <Button
             data-testid={`Header:button.contactUs`}
             onClick={handleButtonClick}
             className="button_action"
-            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
           />
         ))}
     </Fragment>
@@ -123,7 +130,7 @@ const Header = ({ className, lng, t, isIe11, isMobile, pageName, isButtonVisible
         invisible: !isHeaderVisible,
       })}
     >
-      <NextLink href={`/${lng}`}>
+      <NextLink href={`/${language}`}>
         <a className="logo-wrapper" data-testid="Header:link.logo">
           <Logo className="logo" />
         </a>
@@ -162,12 +169,11 @@ Header.propTypes = {
   className: string,
   isIe11: bool,
   isMobile: bool,
-  t: func,
   isButtonVisible: bool,
 }
 
 export default withRouter(
-  translate(
+  L10nConsumer(
     DeviceConsumer(
       MsBrowserConsumer(styled(Header)`
         ${styles}

@@ -1,5 +1,4 @@
 import React, { Fragment, PureComponent } from 'react'
-import translate from '../../utils/translate-wrapper'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 
@@ -7,6 +6,7 @@ import Heading from '../ui-kit/core-design/Heading'
 import Text from '../ui-kit/core-design/Text'
 
 import styles from './BrowserModalContent.styles'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 // Текст для модала невалидного браузера
 // захардкожен тут, т.к. старые браузеры(некоторые) не могут i18n нормально
@@ -32,17 +32,15 @@ const CONTENT = {
 // контент для модала детекта устаревших браузеров
 class BrowserModalContent extends PureComponent {
   static propTypes = {
-    lng: string,
     className: string,
   }
 
-  static defaultProps = {
-    lng: 'en',
-  }
-
   render() {
-    const { lng, className } = this.props
-    const { title, text1, text2, text3 } = CONTENT[lng] || {}
+    const {
+      className,
+      l10n: { language },
+    } = this.props
+    const { title, text1, text2, text3 } = CONTENT[language] || {}
 
     return (
       <Fragment>
@@ -122,6 +120,6 @@ class BrowserModalContent extends PureComponent {
   }
 }
 
-export default styled(translate(BrowserModalContent))`
+export default styled(L10nConsumer(BrowserModalContent))`
   ${styles}
 `

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Addresses.styles'
 
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
 
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Link from '../../../ui-kit/core-design/Link'
@@ -22,7 +22,14 @@ const timezoneOffsetsByAddressId = {
   estonia: 'Europe/Tallinn',
 }
 
-const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress }) => {
+const Addresses = ({
+  className,
+  isTablet,
+  isMobile,
+  isIe11,
+  setHoveredAddress,
+  l10n: { translations },
+}) => {
   const [time, setTime] = useState(new Date())
 
   useEffect(() => {
@@ -69,12 +76,12 @@ const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress
               className="title"
               type="regular"
               size="s"
-              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.title`) }}
+              dangerouslySetInnerHTML={{ __html: translations.common.footer.addresses[id].title }}
             />
 
             <Text
               className="address"
-              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.address`) }}
+              dangerouslySetInnerHTML={{ __html: translations.common.footer.addresses[id].address }}
               size={textSize}
               type="regular"
             />
@@ -82,8 +89,8 @@ const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress
             {id !== 'estonia' && (
               <Link
                 className="phone"
-                dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.phone`) }}
-                href={`tel:${t(`common:footer.addresses.${id}.phone`)}`}
+                dangerouslySetInnerHTML={{ __html: translations.common.footer.addresses[id].phone }}
+                href={`tel:${translations.common.footer.addresses[id].phone}`}
                 size={textSize}
                 type="list"
               />
@@ -92,7 +99,9 @@ const Addresses = ({ className, isTablet, isMobile, t, isIe11, setHoveredAddress
             {id === 'singapore' && (
               <Text
                 className="status"
-                dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.status`) }}
+                dangerouslySetInnerHTML={{
+                  __html: translations.common.footer.addresses[id].status,
+                }}
                 type="regular"
                 size={textSize}
               />
@@ -118,10 +127,9 @@ Addresses.propTypes = {
   className: string,
   isTable: bool,
   isMobile: bool,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(
       styled(Addresses)`

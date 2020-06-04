@@ -32,6 +32,7 @@ const JobSectionTextField = ({
       component={TextareaField}
       label={title}
       kind="regular"
+      required={required}
     />
   )
 }

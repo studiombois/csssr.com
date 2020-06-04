@@ -10,7 +10,6 @@ import styles from './Header.styles'
 
 import Menu from './Menu'
 import Links from './Links'
-import Covid19Popup from './Covid19Popup'
 import Button from '../ui-kit/core-design/Button'
 import ButtonLink from '../ui-kit/core-design/ButtonLink'
 import ContactModal from '../ContactModal'
@@ -27,7 +26,6 @@ const Header = ({
   isIe11,
   isMobile,
   pageName,
-  router: { pathname },
   isButtonVisible = true,
   l10n: { translations, language },
 }) => {
@@ -132,12 +130,6 @@ const Header = ({
         invisible: !isHeaderVisible,
       })}
     >
-      {language === 'en' &&
-        pathname !== '/en/covid-19' &&
-        pathname !== '/en/products/e-learning-platform' && (
-          <Covid19Popup invisible={!isHeaderVisible} />
-        )}
-
       <NextLink href={`/${language}`}>
         <a className="logo-wrapper" data-testid="Header:link.logo">
           <Logo className="logo" />

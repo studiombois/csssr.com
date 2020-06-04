@@ -33,6 +33,7 @@ const CandidateInfoSection = (props) => {
   const commonFieldsData = [
     {
       id: 'firstname',
+      required: true,
       label: translations.job.name,
       css: css`
         ${stylesForFullWidthField}
@@ -41,6 +42,7 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'lastname',
+      required: true,
       label: translations.job.lastname,
       css: css`
         ${stylesForFullWidthField}
@@ -56,6 +58,7 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'location',
+      required: true,
       label: translations.job.city,
       css: css`
         ${stylesForFullWidthField}
@@ -63,6 +66,7 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'email',
+      required: true,
       label: translations.job.email,
       type: 'email',
       css: css`
@@ -71,6 +75,7 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'resume',
+      required: true,
       label: translations.job.resumeLink,
       shouldShow: hasResume,
       css: css`
@@ -79,6 +84,7 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'portfolio',
+      required: true,
       label: translations.job.resumePortfolio,
       shouldShow: hasPortfolio,
       css: css`
@@ -101,7 +107,7 @@ const CandidateInfoSection = (props) => {
 
       {!props.isMobile && <ContactOptions connection={connection} />}
 
-      {commonFieldsData.map(({ id, label, css, type = 'text', shouldShow = true }) =>
+      {commonFieldsData.map(({ id, label, css, type = 'text', shouldShow = true, required }) =>
         shouldShow ? (
           <Field
             key={id}
@@ -113,6 +119,8 @@ const CandidateInfoSection = (props) => {
             type={type}
             label={label}
             kind="regular"
+            aria-required={required}
+            required={required}
           />
         ) : null,
       )}
@@ -129,6 +137,8 @@ const CandidateInfoSection = (props) => {
           fileAccept={fileExt}
           component={FileField}
           onFileFieldChange={onFileFieldChange}
+          aria-required={true}
+          required
         />
       )}
 
@@ -152,6 +162,7 @@ const CandidateInfoSection = (props) => {
 
       <PrivacyPolicyCheckbox
         className="input-checkbox"
+        required
         css={css`
           ${stylesForCheckboxField}
         `}

@@ -19,7 +19,7 @@ const Hero = ({
   return (
     <section className={className} id={id}>
       <Grid className="grid" as="div">
-        <Heading.H2
+        <Heading.H1
           type="slab"
           size="l"
           dangerouslySetInnerHTML={{ __html: heading(translations) }}

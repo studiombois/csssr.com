@@ -18,6 +18,11 @@ export default [
         title: (t) => t.common.header.menu.services.mvp.title,
         href: 'service/mvp-development',
       },
+      {
+        id: 'backend',
+        title: (t) => t.common.header.menu.services.backend.title,
+        href: 'service/back-end-and-devops',
+      },
     ],
   },
   {

@@ -1,48 +1,110 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
-const base = css`
-  margin-bottom: 31rem;
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  padding-top: calc(${calcRem(205)} + 64px);
+  margin-bottom: ${calcRem(205)};
   margin-right: auto;
   margin-left: auto;
   width: 1792px;
   background-color: white;
-
-  header {
-    grid-column: 2 / span 3;
-    padding-top: 13.5rem;
+  
+  
+  .header {
+    grid-column: 4 / span 6;
   }
 
-  h1 {
-    display: inline-block;
+  .title {
+    font-family: 'Roboto Slab', serif;
+    color: black;
   }
 
-  div {
-    grid-column: 6 / span 6;
-    padding-top: 14.5rem;
+  h3, h4 {
+    color: ${colors.secondary.darken100};
   }
 
-  div > p:not(:last-of-type) {
-    margin-bottom: 1.5rem;
-  }
-
-  section {
-    padding-top: 2rem;
+  p {
+    color: black;
   }
 
   h3 + h4,
+  h4 + p,
+  p + h4,
   h3 + p,
-  section + section {
-    margin-top: 0.5rem;
+  p + ul,
+  ul + p,
+  ul .list-item_en:not(:first-of-type) {
+    margin-top: ${calcRem(16)};
   }
 
-  h4 + p,
-  p + ul,
-  ul + p {
-    margin-top: 1rem;
+  .cookie-h4 {
+    margin-top: ${calcRem(32)};
+  }
+
+  section .text.font_p16-regular {
+    margin-bottom: 0;
+  }
+
+  .title {
+    display: inline-block;
+    grid-column: 4 / span 6;
+  }
+
+  .date {
+    font-family: 'Roboto Slab', serif;
+    margin-top: ${calcRem(8)};
+  }
+
+  .adress {
+    display: block;
+  }
+
+  .content {
+    grid-column: 4 / span 6;
+    margin-top: ${calcRem(43)};
+  }
+
+  .cookie-content {
+    margin-top: ${calcRem(24)};
+  }
+
+  .content .description.font_p16-regular {
+    margin-bottom: 0;
+
+    &:not(:first-of-type) {
+      margin-top: ${calcRem(15)};
+    }
+  }
+
+  .content .font_p16-regular a {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .content .cookie-description {
+    margin-top: ${calcRem(40)};
+    margin-bottom: 0;
+  }
+
+  section {
+    margin-top: ${calcRem(49)};
+  }
+
+  .cookie-section {
+    margin-top: ${calcRem(40)};
   }
 
   .list-item {
     position: relative;
+  }
+
+  section .list-item_en.font_p16-regular {
+    margin-bottom: 0;
   }
 
   .list-item::before {
@@ -50,6 +112,21 @@ const base = css`
     top: 0;
     left: 0;
     content: attr(data-counter);
+  }
+
+  .list-item_en {
+    color: black;
+  }
+
+  section .list-item.list-item_level_2 {
+    margin-top: ${calcRem(16)};
+    margin-bottom: 0;
+  }
+
+  .list .list-item.text,
+  section .list-item.list-item_level_3 {
+    margin-top: ${calcRem(15)};
+    margin-bottom: 0;
   }
 
   .list-item.list-item_level_1,
@@ -72,85 +149,180 @@ const base = css`
     line-height: inherit;
   }
 
-  .font_p16-regular:not(:last-of-type) {
-    margin-bottom: 1rem;
-  }
+  ${desktop.all} {
+    .title {
+      font-size: ${calcRem(48)};
+      line-height: ${calcRem(64)};
+    }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
-    div {
-      padding-top: 13.875rem;
+    .cookie-content > .font_p24-strong {
+      margin-bottom: ${calcRem(40)};
+      font-weight: 300;
     }
   }
 
-  @media (max-width: 767px) {
-    margin-bottom: 13.5rem;
-
-    header {
-      grid-column: 1 / span 6;
-      padding-top: 5.5rem;
+  ${desktop.m} {
+    .header {
+      grid-column: 3 / span 8;
     }
 
-    p {
-      margin-top: 0.125rem;
+    .content {
+      grid-column: 3 / span 8;
+    }
+  }
+
+  ${desktop.s} {
+    padding-top: calc(${calcRem(206)} + 64px);
+
+    .header {
+      grid-column: 3 / span 8;
     }
 
-    div {
-      padding-top: 2.1875rem;
-      grid-column: 1 / span 6;
+    .content {
+      grid-column: 3 / span 8;
     }
+  }
 
-    div > p:not(:last-of-type) {
-      margin-bottom: 1rem;
-    }
-
-    section {
-      padding-top: 2.3125rem;
+  ${tablet.all} {
+    & {
+      padding-top: calc(${calcRem(144)} + 64px);
+      margin-bottom: ${calcRem(150)};
     }
 
     h3 + h4,
+    h4 + p,
+    p + h4,
     h3 + p,
-    p + h4 {
-      margin-top: 1rem;
+    p + ul,
+    ul + p,
+    ul .list-item_en:not(:first-of-type) {
+      margin-top: ${calcRem(8)};
     }
 
-    section + section {
-      margin-top: 0.1875rem;
+    .header {
+      grid-column: 3 / span 8;
     }
 
-    p:not(.font_p24-strong) {
-      margin-top: 0.125rem;
+    .date {
+      margin-top: ${calcRem(10)};
     }
 
-    p.font_p16-regular + section {
-      margin-top: -0.3125rem;
+    .content {
+      grid-column: 3 / span 8;
+      margin-top: ${calcRem(30)};
+    }
+  
+    section {
+      margin-top: ${calcRem(48)};
     }
 
-    .font_p24-strong {
-      margin-bottom: 1.3125rem !important;
+    .description {
+      font-weight: normal;
+    }
+
+    section .list-item.list-item_level_2 {
+      margin-top: ${calcRem(9)};
+      margin-bottom: 0;
+    }
+    
+    section .list-item.list-item_level_3 {
+      margin-top: ${calcRem(8)};
+      margin-bottom: 0;
+    }
+
+    .header .font_h1-regular {
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
+    }
+
+    .content .description.font_p16-regular {
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
     }
 
     .font_p16-regular {
-      margin-top: 0;
-      padding-bottom: 0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
 
-    .font_p16-regular:not(:last-child) {
-      margin-bottom: 0.5rem;
+    .cookie-content > .font_p24-strong {
+      margin-bottom: ${calcRem(40)};
+    }
+  }
+
+  ${mobile.all} {
+    & {
+      padding-top: calc(${calcRem(80)} + 56px);
+      margin-bottom: ${calcRem(128)};
     }
 
-    .font_link-list_16 {
-      margin-top: 0;
-      padding-bottom: 0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+    h3 + h4,
+    h4 + p,
+    p + h4,
+    h3 + p,
+    p + ul,
+    ul + p,
+    ul .list-item_en:not(:first-of-type) {
+      margin-top: ${calcRem(8)};
+    }
+
+    .header {
+      grid-column: 1 / span 6;
+    }
+
+    .date {
+      margin-top: ${calcRem(10)};
+    }
+
+    .content {
+      grid-column: 1 / span 6;
+      margin-top: ${calcRem(30)};
+    }
+  
+    section {
+      margin-top: ${calcRem(30)};
+    }
+
+    .description {
+      font-weight: normal;
+    }
+
+    .list-item.list-item_level_1 {
+      padding-left: ${calcRem(19)};
+    }
+
+    section .list-item.list-item_level_2 {
+      margin-top: ${calcRem(14)};
+      padding-left: ${calcRem(40)};
+
+      &:before {
+        left: ${calcRem(16)};
+      }
+    }
+  
+    section .list-item.list-item_level_3 {
+      margin-top: ${calcRem(8)};
+      padding-left: ${calcRem(66)};
+    }
+
+    .header .font_h1-regular {
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(32)};
+    }
+
+    .content .description.font_p16-regular {
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+    }
+
+    .cookie-content > .font_p24-strong {
+      margin-bottom: ${calcRem(16)};
     }
   }
 `
 
 const ie11Styles = css`
-  header {
+  .header {
     -ms-grid-column: 3;
     -ms-grid-column-span: 5;
   }
@@ -161,7 +333,7 @@ const ie11Styles = css`
   }
 
   @media (max-width: 767px) {
-    header {
+    .header {
       -ms-grid-column: 1;
       -ms-grid-column-span: 11;
     }
@@ -173,7 +345,12 @@ const ie11Styles = css`
   }
 `
 
-export default ({ isIe11 }) => css`
-  ${base}
-  ${isIe11 && ie11Styles}
-`
+export default props => {
+  const breakpoints = props.theme.breakpoints
+  const colors = props.theme.colors
+
+  return css`
+    ${base({ breakpoints, colors })}
+    ${props.isIe11 && ie11Styles({ breakpoints })}
+  `
+}

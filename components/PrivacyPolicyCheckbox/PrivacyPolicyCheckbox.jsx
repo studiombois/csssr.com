@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { string, bool } from 'prop-types'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './PrivacyPolicyCheckbox.styles'
@@ -14,6 +14,7 @@ const PrivacyPolicyCheckbox = ({
   linkTestId,
   l10n: { translations, language },
   tabIndex,
+  required,
 }) => (
   <Field
     id={id}
@@ -24,6 +25,7 @@ const PrivacyPolicyCheckbox = ({
     component={Checkbox}
     testid={testid}
     tabIndex={tabIndex}
+    required={required}
   >
     {translations.common.checkBoxesText.privacyPolicyText}
     <a
@@ -42,6 +44,7 @@ const PrivacyPolicyCheckbox = ({
 PrivacyPolicyCheckbox.propTypes = {
   id: string,
   name: string,
+  required: bool,
 }
 
 export default styled(L10nConsumer(PrivacyPolicyCheckbox))`

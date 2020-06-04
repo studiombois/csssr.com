@@ -96,26 +96,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .square {
       top: 0;
-      left: ${calcRem(226)};
-      width: ${calcRem(78)};
+      left: ${calcRem(225)};
+      width: ${calcRem(79)};
     }
 
     .circle {
       top: ${calcRem(191)};
-      left: ${calcRem(158)};
-      width: ${calcRem(61)};
+      left: ${calcRem(157)};
+      width: ${calcRem(62)};
     }
 
     .arc {
-      top: ${calcRem(149)};
+      top: ${calcRem(148)};
       left: ${calcRem(20)};
-      width: ${calcRem(95)};
+      width: ${calcRem(97)};
     }
 
     .triangle {
       top: ${calcRem(275)};
       left: ${calcRem(106)};
-      width: ${calcRem(42)};
+      width: ${calcRem(43)};
     }
   }
 
@@ -145,7 +145,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .square {
       top: 0;
       left: ${calcRem(296)};
-      width: ${calcRem(103)};
+      width: ${calcRem(104)};
     }
 
     .circle {
@@ -155,15 +155,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .arc {
-      top: ${calcRem(198)};
+      top: ${calcRem(197)};
       left: ${calcRem(27)};
-      width: ${calcRem(125)};
+      width: ${calcRem(127)};
     }
 
     .triangle {
       top: ${calcRem(362)};
-      left: ${calcRem(141)};
-      width: ${calcRem(55)};
+      left: ${calcRem(140)};
+      width: ${calcRem(56)};
     }
   }
 `

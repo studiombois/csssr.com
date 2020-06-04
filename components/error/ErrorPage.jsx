@@ -13,78 +13,24 @@ import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
 import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
-import { ReactComponent as LineFromTopToBottomIcon } from '../../static/icons/lineFromTopToBottom.svg'
-import { ReactComponent as NotFound } from '../../static/icons/notFound.svg'
 import { ReactComponent as ServerError } from '../../static/icons/serverError.svg'
-
-import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
-const possibleStatusCodes = [404, 500]
+const possibleStatusCodes = [500]
 
 const defaultStatusCode = 500
 
 const errorNameByStatusCode = {
-  404: 'notFound',
   500: 'serverError',
 }
 
 const codeIconByStatusCode = {
-  404: <NotFound width="100%" height="100%" />,
   500: <ServerError width="100%" height="100%" />,
 }
 
 class ErrorPage extends React.Component {
-  renderNav = ({ title, id, links }) => {
-    const {
-      l10n: { language, translations },
-    } = this.props
-
-    const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
-
-    if (id === 'products' && language === 'ru') return
-    return (
-      <span key={id}>
-        <h3
-          className="font_burger-menu"
-          dangerouslySetInnerHTML={{ __html: title(translations) }}
-        />
-
-        {links && (
-          <ul className="menu">
-            {links.map(({ id, title, href }) => {
-              if (id === 'express' && language === 'ru') return
-
-              return (
-                <li key={id}>
-                  {linkRegExp.test(href) ? (
-                    <Link href={href}>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: title(translations) }}
-                      />
-                    </Link>
-                  ) : (
-                    <Link href={`/${language}/${href}`}>
-                      <a
-                        className="menu-item"
-                        dangerouslySetInnerHTML={{ __html: title(translations) }}
-                      />
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </span>
-    )
-  }
-
   render() {
     const {
       className,
@@ -153,15 +99,6 @@ class ErrorPage extends React.Component {
               ].join(''),
             }}
           />
-          {statusCode === 404 && (
-            <Fragment>
-              <div className="arrow-wrapper">
-                <LineFromTopToBottomIcon width="100%" height="100%" />
-              </div>
-
-              <div className="navList">{navItems.map((items) => this.renderNav(items))}</div>
-            </Fragment>
-          )}
         </Grid>
       </Fragment>
     )

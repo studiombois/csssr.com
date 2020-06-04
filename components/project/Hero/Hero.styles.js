@@ -24,7 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-row: 2;
     z-index: 1;
     width: max-content;
-    margin-top: ${calcRem(17)};
+    margin-top: ${calcRem(19)};
     font-family: "Roboto", sans-serif;
     font-size: ${calcRem(24)};
     line-height: ${calcRem(24)};
@@ -42,14 +42,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     grid-column: 2 / span 5;
     grid-row: 3;
     z-index: 1;
-    margin-top: ${calcRem(85)};
+    margin-top: ${calcRem(90)};
     font-weight: normal;
   }
 
   .text {
     grid-column: 2 / span 5;
     grid-row: 4;
-    margin-top: ${calcRem(39)};
+    margin-top: ${calcRem(38)};
     color: ${colors.secondary.darken100};
     z-index: 1;
   }
@@ -87,7 +87,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.l} {
     & {
-      padding-bottom: ${calcRem(252)};
+      padding-bottom: ${calcRem(260)};
     }
 
     .heading {
@@ -120,6 +120,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .heading {
       grid-column: 2 / span 10;
+    }
+
+    .link {
+      margin-top: ${calcRem(23)};
     }
 
     .text {
@@ -201,6 +205,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .link {
+      margin-top: ${calcRem(10)};
       font-size: ${calcRem(16)};
       line-height: ${calcRem(24)};
     }

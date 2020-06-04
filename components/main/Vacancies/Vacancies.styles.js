@@ -108,6 +108,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .link {
       margin-top: ${calcRem(40)};
       order: 3;
+      font-size: 12px;
     }
 
     .picture {

@@ -434,6 +434,8 @@ const OriginCalculatorForm = (props) => {
                   render={({ input, meta }) => (
                     <TextFieldRegular
                       {...input}
+                      required={callbackTextFields.required}
+                      aria-required={callbackTextFields.required}
                       error={meta.touched && meta.error}
                       className="text-field text-field_loop"
                       label={callbackTextFields.label(translations)}

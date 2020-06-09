@@ -3,10 +3,10 @@ const { modalContInfo } = require('../actions/modalContInfo')
 
 //Отправика заявок с русской локали
 
-testcase('Отправка заявки из модалки в хеддере RU локали', () => {
+testcase('Отправка заявки из модалки в хеддере RU-локали', () => {
   step('Открыть главную страницу', () => {
     browser.setWindowSize(1360, 1024)
-    browser.url(browser.launch_url + '/ru')
+    browser.url(browser.launch_url + '/ru/core-values')
   })
   step('Нажать на кнопку в хеддере [Нанять нас]', () => {
     browser.click('[data-testid="Header:button.contactUs"]')
@@ -48,7 +48,7 @@ testcase('Отправка заявки из модалки в хеддере RU
 
 testcase('Отправка заявки из формы в конце страницы RU-локали', () => {
   step('Перейти к форме связи в конце страницы', () => {
-    browser.url(browser.launch_url + '/ru')
+    browser.url(browser.launch_url + '/ru/core-values')
   })
   contInfo()
   step('Отметить чекбокс с Политикой конфиденциальности', () => {
@@ -72,12 +72,12 @@ testcase('Отправка заявки из формы в конце стран
   })
 })
 
-//Отправика заявок с английской локали
+//Отправка заявок с английской страницы
 
 testcase('Отправка заявки из модалки в хеддере EN-локали', () => {
   step('Открыть главную страницу', () => {
     browser.setWindowSize(1360, 1024)
-    browser.url(browser.launch_url + '/en')
+    browser.url(browser.launch_url + '/en/core-values')
   })
   step('Нажать на кнопку в хеддере [Contuct us]', () => {
     browser.click('[data-testid="Header:button.contactUs"]')
@@ -119,7 +119,7 @@ testcase('Отправка заявки из модалки в хеддере EN
 
 testcase('Отправка заявки из формы в конце страницы EN-локали', () => {
   step('Перейти к форме связи в конце страницы', () => {
-    browser.url(browser.launch_url + '/en')
+    browser.url(browser.launch_url + '/en/core-values')
   })
   contInfo()
   step('Отметить чекбокс с Политикой конфиденциальности', () => {

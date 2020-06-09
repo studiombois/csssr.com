@@ -63,7 +63,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       top: -58px;
-      right: -16px;
+      right: -10px;
       width: 572px;
       overflow: hidden;
 
@@ -128,7 +128,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       position: absolute;
       top: ${calcRem(-52)};
-      right: ${calcRem(-40)};
+      right: ${calcRem(-30)};
       width: ${calcRem(448)};
       overflow: hidden;
 

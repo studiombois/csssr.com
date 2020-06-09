@@ -87,7 +87,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       top: -8px;
-      right: -24px;
+      right: -18px;
       width: 540px;
       overflow: hidden;
 

@@ -273,14 +273,12 @@ class ElearningPlatformContent extends PureComponent {
                 <div className="design-buttons-row">
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'font' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     text="Font"
                     icon={require('../../static/elearning-platform/icons/font.svg').default}
                   />
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'graphic' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     text="Graphic"
                     icon={require('../../static/elearning-platform/icons/graphic.svg').default}
@@ -290,14 +288,12 @@ class ElearningPlatformContent extends PureComponent {
                 <div className="design-buttons-row">
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'theme' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     text="Theme"
                     icon={require('../../static/elearning-platform/icons/theme.svg').default}
                   />
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'color' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
                     text="Color"
                     icon={require('../../static/elearning-platform/icons/color.svg').default}

@@ -3,10 +3,10 @@ const { modalContInfo } = require('../actions/modalContInfo')
 
 // Отправка заявок с русской локали
 
-testcase('Отправка заявки из модалки в хеддере RU локали', () => {
-  step('Открыть главную страницу', () => {
+testcase('Отправка заявки из модалки в хеддере RU-локали', () => {
+  step('Перейти на страницу индустрии Финтех', () => {
     browser.setWindowSize(1360, 1024)
-    browser.url(browser.launch_url + '/ru')
+    browser.url(browser.launch_url + '/ru/industry/fintech')
   })
   step('Нажать на кнопку в хеддере [Нанять нас]', () => {
     browser.click('[data-testid="Header:button.contactUs"]')
@@ -46,9 +46,55 @@ testcase('Отправка заявки из модалки в хеддере RU
   })
 })
 
+testcase(
+  'Отправка заявки через кнопку в первом блоке на странице RU-локали',
+  () => {
+    step('Перейти на страницу индустрий Финтех', () => {
+      browser.setWindowSize(1360, 1024)
+      browser.url(browser.launch_url + '/ru/industry/fintech')
+    })
+    step('Нажать на кнопку [Hire us] на странице', () => {
+      browser.click('#greeting > button')
+    })
+    modalContInfo()
+    step('Отметить чекбокс с Политикой конфиденциальности', () => {
+      // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
+      // происходит переход на другую страницу
+      browser.execute(
+        function (selector) {
+          document.querySelector(selector).click()
+        },
+        [
+          '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
+        ]
+      )
+    })
+    step('Отметить чекбокс с подпиской на рассылку', () => {
+      // TODO здесь нужно кликать на лейбл
+      browser.click('[for="ConctactModalForm_newsletter"]')
+    })
+    step('Нажать кнопку сабмита формы', () => {
+      browser.click('[testid="contact-modal:button.callbackForm.submit"]')
+    })
+    expected('Появилось сообщение об успехе', () => {
+      // TODO здесь нужно добавить селектор
+      browser.waitForElementPresent('div > div > p')
+      browser.expect
+        .element('[class="font_p16-regular status_text"]')
+        .text.to.equal('Успех!' + '\n' + 'Совсем скоро мы с вами свяжемся.')
+      browser.expect.element(
+        '[src="/_next/static/icons/button_success-3019b6f7.svg"]'
+      ).to.be.present
+    })
+    step('Закрыть модалку', () => {
+      browser.click('[data-testid="modalForm:button:closeModal"]')
+    })
+  }
+)
+
 testcase('Отправка заявки из формы в конце страницы RU-локали', () => {
-  step('Перейти к форме связи в конце страницы', () => {
-    browser.url(browser.launch_url + '/ru')
+  step('Перейти к форме связи в конце страницы Финтех', () => {
+    browser.url(browser.launch_url + '/ru/industry/fintech')
   })
   contInfo()
   step('Отметить чекбокс с Политикой конфиденциальности', () => {
@@ -72,12 +118,12 @@ testcase('Отправка заявки из формы в конце стран
   })
 })
 
-// Отправка заявок с английской локали
+// Отправка заявок с английской страницы
 
 testcase('Отправка заявки из модалки в хеддере EN-локали', () => {
-  step('Открыть главную страницу', () => {
+  step('Перейти на страницу индустрии Финтех', () => {
     browser.setWindowSize(1360, 1024)
-    browser.url(browser.launch_url + '/en')
+    browser.url(browser.launch_url + '/en/industry/fintech')
   })
   step('Нажать на кнопку в хеддере [Contuct us]', () => {
     browser.click('[data-testid="Header:button.contactUs"]')
@@ -104,7 +150,7 @@ testcase('Отправка заявки из модалки в хеддере EN
   })
   expected('Появилось сообщение об успехе', () => {
     // TODO здесь нужно добавить селектор
-    browser.waitForElementPresent('div > div > p')
+    browser.waitForElementPresent('div > div > div > p')
     browser.expect
       .element('[class="font_p16-regular status_text"]')
       .text.to.equal('Success!' + '\n' + 'We will contact you soon')
@@ -117,9 +163,55 @@ testcase('Отправка заявки из модалки в хеддере EN
   })
 })
 
+testcase(
+  'Отправка заявки через кнопку в первом блоке на странице EN-локали',
+  () => {
+    step('Перейти на страницу индустрий Финтех', () => {
+      browser.setWindowSize(1360, 1024)
+      browser.url(browser.launch_url + '/en/industry/fintech')
+    })
+    step('Нажать на кнопку [Hire us] на странице', () => {
+      browser.click('#greeting > button')
+    })
+    modalContInfo()
+    step('Отметить чекбокс с Политикой конфиденциальности', () => {
+      // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
+      // происходит переход на другую страницу
+      browser.execute(
+        function (selector) {
+          document.querySelector(selector).click()
+        },
+        [
+          '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
+        ]
+      )
+    })
+    step('Отметить чекбокс с подпиской на рассылку', () => {
+      // TODO здесь нужно кликать на лейбл
+      browser.click('[for="ConctactModalForm_newsletter"]')
+    })
+    step('Нажать кнопку сабмита формы', () => {
+      browser.click('[testid="contact-modal:button.callbackForm.submit"]')
+    })
+    expected('Появилось сообщение об успехе', () => {
+      // TODO здесь нужно добавить селектор
+      browser.waitForElementPresent('div > div > p')
+      browser.expect
+        .element('[class="font_p16-regular status_text"]')
+        .text.to.equal('Success!' + '\n' + 'We will contact you soon')
+      browser.expect.element(
+        '[src="/_next/static/icons/button_success-3019b6f7.svg"]'
+      ).to.be.present
+    })
+    step('Закрыть модалку', () => {
+      browser.click('[data-testid="modalForm:button:closeModal"]')
+    })
+  }
+)
+
 testcase('Отправка заявки из формы в конце страницы EN-локали', () => {
-  step('Перейти к форме связи в конце страницы', () => {
-    browser.url(browser.launch_url + '/en')
+  step('Перейти к форме связи в конце страницы Финтех', () => {
+    browser.url(browser.launch_url + '/en/industry/fintech')
   })
   contInfo()
   step('Отметить чекбокс с Политикой конфиденциальности', () => {

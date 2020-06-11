@@ -30,6 +30,8 @@ const Footer = ({
   const footerRef = useRef()
   const lngToRedirect = language === 'ru' ? 'en' : 'ru'
   const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
+  const jobsRegExp = /job/
+  const footerEmail = jobsRegExp.test(pathname) ? 'join@csssr.com' : 'launch@csssr.com'
 
   useEffect(() => {
     if (isMobile) {
@@ -81,8 +83,8 @@ const Footer = ({
             dangerouslySetInnerHTML={{ __html: translations.common.footer.actionPhrase }}
           />
 
-          <Link className="email" href="mailto:sales@csssr.com">
-            sales@csssr.com
+          <Link className="email" href={`mailto:${footerEmail}`}>
+            {footerEmail}
           </Link>
 
           {isMobile && (

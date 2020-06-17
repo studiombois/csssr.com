@@ -94,7 +94,7 @@ class ErrorPage extends React.Component {
               __html: [
                 translations.error.errors[errorNameByStatusCode[statusCode]].subtitle,
                 statusCode === 500
-                  ? '<a style="color: #345eff" href="mailto:sales@csssr.io">sales@csssr.io</a>'
+                  ? '<a style="color: #345eff" href="mailto:launch@csssr.com">launch@csssr.com</a>'
                   : null,
               ].join(''),
             }}

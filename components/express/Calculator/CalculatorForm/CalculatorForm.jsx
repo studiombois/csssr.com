@@ -464,7 +464,7 @@ const OriginCalculatorForm = (props) => {
             <FormStateMessage
               status={status}
               onTryAgain={handleTryToFillFormAgain}
-              feedbackEmail="sales@csssr.io"
+              feedbackEmail="launch@csssr.com"
             />
           </div>
         </aside>

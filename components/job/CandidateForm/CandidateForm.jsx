@@ -265,7 +265,7 @@ class CandidateForm extends PureComponent {
               status={status}
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
-              feedbackEmail="hr@csssr.io"
+              feedbackEmail="join@csssr.com"
             />
           </div>
         </FormRow>

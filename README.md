@@ -11,7 +11,7 @@ Find the most recent version of this guide at [here](https://github.com/segmenti
 
 `yarn install`
 
-`yarn dev`
+`CSSSR_SPACE_ORIGIN=https://csssr.space yarn dev`
 
 
 ## Гриды-колонки и сетка

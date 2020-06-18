@@ -78,7 +78,7 @@ const filterUncheckedContactOptions = (values, translations) => {
   const filteredContactOptions = getContactOptions(translations).reduce((acc, option) => {
     const optionId = option.id
 
-    if (values.connection && !values.connection.indexOf(optionId) !== -1) {
+    if (values.connection && values.connection.indexOf(optionId) === -1) {
       acc[optionId] = true
     }
     return acc

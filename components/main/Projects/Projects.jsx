@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Projects.styles'
@@ -9,16 +9,16 @@ import Card from '../Card'
 
 import projects from '../../../data/main/projects'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Projects = ({ className, t, lng }) => {
+const Projects = ({ className, l10n: { translations, language } }) => {
   return (
     <Grid as="article" className={cn('about-us', className)}>
       <Heading
         className="title"
         as="h2"
-        dangerouslySetInnerHTML={{ __html: t('main:projects.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.projects.title }}
         type="slab"
         size="m"
       />
@@ -35,7 +35,7 @@ const Projects = ({ className, t, lng }) => {
           </div>
         )
 
-        if (lng !== 'ru' && id === 'radio') {
+        if (language !== 'ru' && id === 'radio') {
           return
         }
 
@@ -58,7 +58,7 @@ const Projects = ({ className, t, lng }) => {
       })}
 
       {/* <ul className="posts">
-        {posts[lng].map(({ id, href }) => (
+        {posts[language].map(({ id, href }) => (
           <Post key={id} id={id} href={href} />
         ))}
       </ul> */}
@@ -68,10 +68,9 @@ const Projects = ({ className, t, lng }) => {
 
 Projects.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Projects)`
     ${styles}
   `),

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import { Global } from '@emotion/core'
 import cn from 'classnames'
@@ -15,11 +15,11 @@ import Picture from '../../ui-kit/Picture'
 import facts from '../../../data/main/aboutUs/facts'
 import images from '../../../data/main/aboutUs/images'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const AboutUs = ({ className, isMobile, t, lng }) => {
+const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
   const [visibleImage, setVisibleImage] = useState(null)
   const isDesktop = !isMobile
   const handleHover = (visibleImage) => (event) => {
@@ -36,7 +36,7 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
       <Heading
         className="about-us-title"
         as="h2"
-        dangerouslySetInnerHTML={{ __html: t('main:aboutUs.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.aboutUs.title }}
         type="slab"
         size="m"
       />
@@ -49,25 +49,27 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
       >
         <PictureForAllResolutions
           className={cn('picture', 'picture_love')}
-          images={lng === 'ru' ? images.love_ru : images.love_en}
+          images={language === 'ru' ? images.love_ru : images.love_en}
           fallback={
-            lng === 'ru' ? images.love_ru['desktop.all'].png : images.love_en['desktop.all'].png
+            language === 'ru'
+              ? images.love_ru['desktop.all'].png
+              : images.love_en['desktop.all'].png
           }
-          alt={t('main:imageAlt.aboutUs')}
+          alt={translations.main.imgAlt.aboutUs}
         />
 
         {/* <Picture
           className={cn('picture', 'picture_volleyball')}
           images={images.volleyball}
           fallback={images.volleyball.jpg}
-          alt={t('main:imageAlt.volleyball')}
+          alt={translations.main.imgAlt.volleyball}
         /> */}
 
         <Picture
           className={cn('picture', 'picture_elbrus')}
           images={images.elbrus}
           fallback={images.elbrus.jpg}
-          alt={t('main:imageAlt.elbrus')}
+          alt={translations.main.imgAlt.elbrus}
         />
       </aside>
 
@@ -75,7 +77,7 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
         className="about-us-description"
         as="p"
         type="slab"
-        dangerouslySetInnerHTML={{ __html: t('main:aboutUs.description') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.aboutUs.description }}
       />
 
       {facts.map(({ id }) => (
@@ -83,7 +85,7 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
           <Heading
             className="fact-title"
             as="h3"
-            dangerouslySetInnerHTML={{ __html: t(`main:aboutUs.${id}.title`) }}
+            dangerouslySetInnerHTML={{ __html: translations.main.aboutUs[id].title }}
             type="slab"
             size="l"
           />
@@ -95,20 +97,20 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
                 onMouseOver={handleHover('elbrus')}
                 onMouseLeave={handleHover(null)}
               >
-                {t(`main:aboutUs.${id}.hero`)}
+                {translations.main.aboutUs[id].hero}
               </span>
             )}
-            <span dangerouslySetInnerHTML={{ __html: t(`main:aboutUs.${id}.description`) }} />
+            <span dangerouslySetInnerHTML={{ __html: translations.main.aboutUs[id].description }} />
           </Text>
         </div>
       ))}
 
       {/* <Link
         className="link"
-        href={`${lng}/about-us`}
+        href={`${language}/about-us`}
         type="list"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('main:aboutUs.link') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.aboutUs.link }}
         onMouseOver={handleHover('volleyball')}
         onMouseLeave={handleHover(null)}
         isNextLink
@@ -121,10 +123,9 @@ const AboutUs = ({ className, isMobile, t, lng }) => {
 
 AboutUs.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(AboutUs)`
       ${styles}

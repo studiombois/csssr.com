@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     language,
   } = req.body
 
-  const validationResult = validateFormFields(req.i18n.t.bind(req.i18n), formName, {
+  const validationResult = validateFormFields(res.locals.l10n.translations, formName, {
     name,
     email,
     design,
@@ -65,7 +65,7 @@ module.exports = async (req, res) => {
 
   const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies
 
-  const retiaLabelTextByValue = retinaRadioButtons.reduce((acc, radio) => {
+  const retinaLabelTextByValue = retinaRadioButtons.reduce((acc, radio) => {
     acc[radio.id] = radio.labelText
     return acc
   }, {})
@@ -73,9 +73,9 @@ module.exports = async (req, res) => {
     acc[radio.id] = radio.labelText
     return acc
   }, {})
-  const retina = req.i18n.t.bind(req.i18n)(retiaLabelTextByValue[parceForm_retina])
-  const interactive = req.i18n.t.bind(req.i18n)(
-    additionalOptionsTextByValue[parceForm_additionalOptions],
+  const retina = retinaLabelTextByValue[parceForm_retina](res.locals.l10n.translations)
+  const interactive = additionalOptionsTextByValue[parceForm_additionalOptions](
+    res.locals.l10n.translations,
   )
 
   try {
@@ -127,6 +127,6 @@ module.exports = async (req, res) => {
 
     return res
       .status(400)
-      .send({ error: req.i18n.t.bind(req.i18n)('common:form.message.fail.intro') })
+      .send({ error: res.locals.l10n.translations.common.form.message.fail.intro })
   }
 }

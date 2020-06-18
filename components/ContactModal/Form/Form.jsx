@@ -38,7 +38,7 @@ const Form = (props) => {
       <StatusMessage
         status={submitStatus}
         hasFailOrSuccessStatus={hasFailOrSuccessStatus}
-        feedbackEmail="sales@csssr.io"
+        feedbackEmail="launch@csssr.com"
         errorText={submitError}
         onClick={onStatusButtonClick}
       />

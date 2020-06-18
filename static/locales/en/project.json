@@ -1,8 +1,8 @@
 {
   "gazpromNeft": {
    "meta": {
-      "title": "Web Development Services for IT Companies",
-      "description": "We push IT-companies to the cutting edge of technological progress."
+      "title": "Project: Gazprom Neft - Professionals 4.0",
+      "description": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers."
     },
     "hero": {
       "title": "Professionals&nbsp;4.0",
@@ -79,12 +79,12 @@
   },
   "s7airlines": {
     "meta": {
-      "title": "Web Development Services for IT Companies",
-      "description": "We push IT-companies to the cutting edge of technological progress."
+      "title": "Project: S7 Airlines - Personal Account",
+      "description": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services."
     },
     "hero": {
       "title": "Personal Account of<br />an&nbsp;S7&nbsp;Airline Customer",
-      "link": "https://myprofile.s7.ru/",
+      "link": "https://myprofile.s7.ru",
       "subTitle": "Client",
       "text": {
         "firstParagraph": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline primarily based at&nbsp;Moscow Domodedovo International Airport and Novosibirsk Tolmachevo Airport. S7&nbsp;has the youngest fleet on&nbsp;the Russian air transportation market. It&nbsp;boasts an&nbsp;extensive network of&nbsp;routes allowing passengers to&nbsp;travel to&nbsp;181 destinations in&nbsp;26&nbsp;countries all over the globe. S7&nbsp;is a&nbsp;full member of&nbsp;Oneworld airline alliance.",
@@ -144,17 +144,5 @@
     "imgAlt": {
       "aboutProject": "Трое людей усердно работающих над проектом"
     }
-  },
-  "form": {
-    "title": "Let&rsquo;s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "nameLabel": "Your Name",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "phoneLabel": "Phone",
-    "emailPlaceholder": "name@example.com",
-    "emailLabel": "E-mail",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "How can we help?",
-    "submitText": "Submit"
   }
 }

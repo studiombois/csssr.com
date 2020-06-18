@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import { withRouter } from 'next/router'
 import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
@@ -10,27 +10,24 @@ import styles from './Header.styles'
 
 import Menu from './Menu'
 import Links from './Links'
-import Covid19Popup from './Covid19Popup'
 import Button from '../ui-kit/core-design/Button'
 import ButtonLink from '../ui-kit/core-design/ButtonLink'
 import ContactModal from '../ContactModal'
-import Logo from '../../static/icons/csssr_logo.svg'
-import Burger from '../../static/icons/header/burger.svg'
-import Cross from '../../static/icons/header/close.svg'
+import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as Burger } from '../../static/icons/header/burger.svg'
+import { ReactComponent as Cross } from '../../static/icons/header/close.svg'
 
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
 const Header = ({
   className,
-  lng,
-  t,
   isIe11,
   isMobile,
   pageName,
-  router: { pathname },
   isButtonVisible = true,
+  l10n: { translations, language },
 }) => {
   let lastScrollTopValue = useRef(0)
   const [isDropdownOpened, toggleDropdown] = useState(false)
@@ -108,16 +105,18 @@ const Header = ({
       {isButtonVisible &&
         (isIe11 ? (
           <ButtonLink
+            data-testid={`Header:link.contactUs`}
             href="#hire-us"
             kind="primary"
             className="button_action"
-            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
           />
         ) : (
           <Button
+            data-testid={`Header:button.contactUs`}
             onClick={handleButtonClick}
             className="button_action"
-            dangerouslySetInnerHTML={{ __html: t('common:header.action') }}
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
           />
         ))}
     </Fragment>
@@ -125,19 +124,14 @@ const Header = ({
 
   return (
     <header
+      data-testid="Header:block"
       className={cn(className, {
         visible: isHeaderVisible,
         invisible: !isHeaderVisible,
       })}
     >
-      {lng === 'en' &&
-        pathname !== '/en/covid-19' &&
-        pathname !== '/en/products/e-learning-platform' && (
-          <Covid19Popup invisible={!isHeaderVisible} />
-        )}
-
-      <NextLink href={`/${lng}`}>
-        <a className="logo-wrapper">
+      <NextLink href={`/${language}`}>
+        <a className="logo-wrapper" data-testid="Header:link.logo">
           <Logo className="logo" />
         </a>
       </NextLink>
@@ -175,12 +169,11 @@ Header.propTypes = {
   className: string,
   isIe11: bool,
   isMobile: bool,
-  t: func,
   isButtonVisible: bool,
 }
 
 export default withRouter(
-  translate(
+  L10nConsumer(
     DeviceConsumer(
       MsBrowserConsumer(styled(Header)`
         ${styles}

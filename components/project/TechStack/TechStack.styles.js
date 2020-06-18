@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
   & {
     overflow-x: hidden;
@@ -83,11 +83,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .tech-list {
-      margin-top: ${calcRem(37)};
+      margin-top: ${calcRem(40)};
     }
 
     .duration {
-      margin-top: ${calcRem(12)};
+      margin-top: ${calcRem(14)};
     }
 
     .text {
@@ -95,7 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .team {
-      margin-top: ${calcRem(68)};
+      margin-top: ${calcRem(73)};
     }
 
     .duration-number {
@@ -113,13 +113,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.l} {
     & {
-      margin-top: ${calcRem(128)};
+      margin-top: ${calcRem(125)};
     }
   }
 
   ${desktop.m} {
     & {
-      margin-top: ${calcRem(170)};
+      margin-top: ${calcRem(160)};
     }
 
     .duration {
@@ -169,7 +169,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
         left: 49px;
-        height: 17px;
+        height: 18px;
+        background-size: auto;
       }
     }
 
@@ -226,8 +227,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .duration-number {
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
-        left: 48px;
-        height: 17px;
+        left: 49px;
+        height: 18px;
+        background-size: auto;
       }
     }
 
@@ -238,6 +240,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         display: inline-block;
         width: 100%;
       }
+    }
+
+    .duration .text {
+      white-space: ${language === 'ru' ? 'normal' : 'nowrap'};
     }
 
     .team-number {
@@ -327,9 +333,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, language })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

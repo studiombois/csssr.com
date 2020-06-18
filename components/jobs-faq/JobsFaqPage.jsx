@@ -2,7 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import Layout from '../Layout'
 import Head from '../Head'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import Greeting from './Greeting'
 import ImageBlock from './ImageBlock'
 import QuestionHeader from './QuestionHeader'
@@ -16,8 +16,9 @@ import roads_webp from '../../static/images/jobs-faq/roads.png?responsive_and_we
 import puzzle from '../../static/images/jobs-faq/puzzle.png?responsive'
 import puzzle_webp from '../../static/images/jobs-faq/puzzle.png?responsive_and_webp'
 
+const pageName = 'jobsFaq'
 const JobsFaqPage = () => (
-  <Layout>
+  <Layout pageName={pageName}>
     <Head
       title="Как устроиться сюда ➡️"
       description="Часто задаваемые вопросы кандидатов в..."
@@ -53,4 +54,4 @@ JobsFaqPage.propTypes = {
   className: string,
 }
 
-export default translate(JobsFaqPage)
+export default L10nConsumer(JobsFaqPage)

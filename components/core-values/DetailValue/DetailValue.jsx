@@ -1,7 +1,7 @@
 import React from 'react'
-import { func, object, string } from 'prop-types'
+import { object, string } from 'prop-types'
 import cn from 'classnames'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import styled from '@emotion/styled'
 import styles from './DetailValue.styles'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -12,29 +12,29 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Description from '../Description'
 
 const DetailValue = ({
-  t,
   className,
   content: { id, images, imgAlt, title, subTitle, description },
+  l10n: { translations },
 }) => (
   <article id={id}>
     <Grid className={cn(className, id)}>
       <PictureForAllResolutions
         images={images}
         fallback={images['desktop.m'].png}
-        alt={t(imgAlt)}
+        alt={imgAlt(translations)}
         className="image"
       />
 
       <Heading.H2
         type="slab"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t(title) }}
+        dangerouslySetInnerHTML={{ __html: title(translations) }}
         className="heading"
       />
 
       <SubHeading
         type="slab"
-        dangerouslySetInnerHTML={{ __html: t(subTitle) }}
+        dangerouslySetInnerHTML={{ __html: subTitle(translations) }}
         className="sub-heading"
       />
     </Grid>
@@ -44,12 +44,11 @@ const DetailValue = ({
 )
 
 DetailValue.propTypes = {
-  t: func,
   className: string,
   content: object,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(DetailValue)`
     ${styles}
   `),

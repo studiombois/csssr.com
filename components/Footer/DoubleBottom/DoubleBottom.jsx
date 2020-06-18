@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './DoubleBottom.styles'
@@ -7,7 +7,7 @@ import styles from './DoubleBottom.styles'
 import Addresses from './Addresses'
 import Picture from '../../ui-kit/Picture'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 import continents from '../../../static/images/continents.png?responsive'
 import continents_webp from '../../../static/images/continents.png?responsive_and_webp'
@@ -27,7 +27,7 @@ const pins = [
   },
 ]
 
-const DoubleBottom = ({ className, t }) => {
+const DoubleBottom = ({ className, l10n: { translations } }) => {
   const [hoveredAddress, setHoveredAddress] = useState(null)
 
   return (
@@ -39,7 +39,7 @@ const DoubleBottom = ({ className, t }) => {
             className="picture"
             images={{ png: continents, webp: continents_webp }}
             fallback={continents}
-            alt={t('common:footer.imageAlt.continents')}
+            alt={translations.common.footer.imgAlt.continents}
           />
 
           {pins.map(({ id }, index) => (
@@ -58,9 +58,8 @@ const DoubleBottom = ({ className, t }) => {
 
 DoubleBottom.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(styled(DoubleBottom)`
+export default L10nConsumer(styled(DoubleBottom)`
   ${styles}
 `)

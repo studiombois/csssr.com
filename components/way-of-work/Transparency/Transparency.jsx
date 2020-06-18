@@ -9,14 +9,14 @@ import Observer from './Observer'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import { list } from '../../../data/way-of-work/transparency'
 
 import styles from './Transparency.styles'
 
-const Transparency = ({ className, id, t }) => {
+const Transparency = ({ className, id, l10n: { translations } }) => {
   const [activeItem, setActiveItem] = useState('triangle')
 
   const handleActive = (name) => {
@@ -29,7 +29,7 @@ const Transparency = ({ className, id, t }) => {
         <Heading.H1
           type="slab"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t('wayOfWork:transparency.title') }}
+          dangerouslySetInnerHTML={{ __html: translations.wayOfWork.transparency.title }}
           className="heading"
         />
 
@@ -46,7 +46,7 @@ const Transparency = ({ className, id, t }) => {
               <SubHeading
                 type="regular"
                 dangerouslySetInnerHTML={{
-                  __html: t(item.label),
+                  __html: item.label(translations),
                 }}
               />
             </Observer>
@@ -66,7 +66,7 @@ Transparency.propTypes = {
   id: string,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Transparency)`
     ${styles}
   `),

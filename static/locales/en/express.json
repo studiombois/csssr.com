@@ -61,7 +61,7 @@
       },
       "fieldset5": {
         "title": "Interactivity Options",
-        "note": "Websites are complex, with hundreds of&nbsp;variables.<br />This is&nbsp;an&nbsp;approximate estimate based on&nbsp;previous projects. <a href=\"mailto:sales@csssr.io\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"contact-link\" data-testid=\"calculator:link:hireUs\">Hire&nbsp;us</a> for a&nbsp;more refined estimate.",
+        "note": "Websites are complex, with hundreds of&nbsp;variables.<br />This is&nbsp;an&nbsp;approximate estimate based on&nbsp;previous projects. <a href=\"mailto:launch@csssr.com\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"contact-link\" data-testid=\"calculator:link:hireUs\">Hire&nbsp;us</a> for a&nbsp;more refined estimate.",
         "radioLabel1": "None",
         "radioLabel2": "Basic",
         "radioLabel3": "Advanced"
@@ -92,7 +92,7 @@
     "feature2": {
       "title": "Modern&nbsp;Stack",
       "text1": "We use only modern stack from open-source technologies to make your project work quickly and efficiently, and allow for easy future support.",
-      "text2": "HTML5, CSS3, Stylus, Pug, BEM, PostCSS"
+      "text2": "HTML5, CSS3, BEM, PostCSS, Next.js"
     },
     "feature3": {
       "title": "Accessibility",
@@ -107,19 +107,7 @@
       "text": "Our in-house lawyer customizes contracts and NDAs for each project."
     }
   },
-  "form": {
-    "title": "Let’s Talk",
-    "namePlaceholder": "Tim Berners-Lee",
-    "phonePlaceholder": "+1-612-566-34-43",
-    "emailPlaceholder": "name@example.com",
-    "messagePlaceholder": "How can we help?",
-    "messageLabel": "comment",
-    "emailLabel": "E-mail",
-    "phoneLabel": "Phone",
-    "nameLabel": "Name",
-    "submitText": "Submit"
-  },
-  "imageAlt": {
+  "imgAlt": {
     "rocket": "A rocket pointed upward",
     "aboutUs": "Illustrated figures of developers",
     "workflow1": "illustration of the number one for the first stage",

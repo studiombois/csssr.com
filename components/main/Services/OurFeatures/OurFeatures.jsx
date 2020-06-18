@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './OurFeatures.styles'
@@ -9,31 +9,31 @@ import Link from '../../../ui-kit/core-design/Link'
 import Text from '../../../ui-kit/core-design/Text'
 import images from '../../../../data/main/ourFeatures'
 import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
-const OurFeatures = ({ className, t, lng }) => {
+const OurFeatures = ({ className, l10n: { translations, language } }) => {
   return (
     <Grid as="section" className={cn('our-features', className)}>
       <SubHeading
         className={cn('feature', 'feature_1')}
         as="p"
         type="slab"
-        dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature1.text') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.services.ourFeatures.feature1.text }}
       />
       <Link
         className="link"
-        href={`${lng}/way-of-work`}
+        href={`${language}/way-of-work`}
         type="list"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature1.link') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.services.ourFeatures.feature1.link }}
       />
 
       <PictureForAllResolutions
         className="picture"
         images={images}
         fallback={images['desktop.l'].png}
-        alt={t('main:imageAlt.ourFeatures')}
+        alt={translations.main.imgAlt.ourFeatures}
       />
 
       <Text
@@ -41,14 +41,14 @@ const OurFeatures = ({ className, t, lng }) => {
         as="p"
         type="strong"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature2.text') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.services.ourFeatures.feature2.text }}
       />
       <Link
         className="link"
-        href={`${lng}/tech-stack`}
+        href={`${language}/tech-stack`}
         type="list"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('main:services.ourFeatures.feature2.link') }}
+        dangerouslySetInnerHTML={{ __html: translations.main.services.ourFeatures.feature2.link }}
       />
     </Grid>
   )
@@ -56,10 +56,9 @@ const OurFeatures = ({ className, t, lng }) => {
 
 OurFeatures.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(OurFeatures)`
     ${styles}
   `),

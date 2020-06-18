@@ -3,7 +3,7 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = css`
     & {
-        margin-top: ${calcRem(-89)};
+        padding-top: ${calcRem(64)};
     }
 
     .no-wrap {
@@ -251,7 +251,7 @@ const base = css`
 
         .benefits {
             margin-top: 20px;
-            margin-bottom: 100px;
+            margin-bottom: 168px;
         }
 
         .benefits-description {

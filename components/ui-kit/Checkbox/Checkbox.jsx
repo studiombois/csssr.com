@@ -16,6 +16,7 @@ class Checkbox extends PureComponent {
     children: node,
     onChange: func,
     showValidationAsWarning: bool,
+    required: bool,
   }
 
   static defaultProps = {
@@ -37,6 +38,7 @@ class Checkbox extends PureComponent {
       testid,
       tabIndex,
       meta: { error, invalid, submitFailed },
+      required,
     } = this.props
 
     const showError = invalid && submitFailed
@@ -52,6 +54,8 @@ class Checkbox extends PureComponent {
           onChange={this.handleChange}
           data-testid={testid}
           tabIndex={tabIndex}
+          required={required}
+          aria-required={required}
         />
         <label
           className={cn('input-label', {

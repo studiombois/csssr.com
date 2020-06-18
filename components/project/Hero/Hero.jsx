@@ -1,41 +1,44 @@
 import React from 'react'
-import { string, object, func } from 'prop-types'
+import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
-import Link from 'next/link'
+import Link from '../../ui-kit/core-design/Link'
 import Text from '../../ui-kit/core-design/Text'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Hero = ({
-  t,
   className,
   id,
   content: { heading, link, subHeading, text, images, imgAlt },
+  l10n: { translations },
 }) => {
   return (
     <section className={className} id={id}>
       <Grid className="grid" as="div">
-        <Heading.H2
+        <Heading.H1
           type="slab"
           size="l"
-          dangerouslySetInnerHTML={{ __html: t(heading) }}
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className="heading"
         />
 
-        <Link href={t(link)}>
-          <a className="link" target="_blank" rel="noreferrer noopener">
-            {t(link)}
-          </a>
-        </Link>
+        <Link
+          className="link"
+          href={link(translations)}
+          type="list"
+          target="_blank"
+          rel="noreferrer noopener"
+          dangerouslySetInnerHTML={{ __html: link(translations) }}
+        />
 
         <Heading.H3
           type="slab"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(subHeading) }}
+          dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
           className="sub-heading"
         />
 
@@ -46,7 +49,7 @@ const Hero = ({
               type="strong"
               size="m"
               as="p"
-              dangerouslySetInnerHTML={{ __html: t(item) }}
+              dangerouslySetInnerHTML={{ __html: item(translations) }}
               className="paragraph"
             />
           ))}
@@ -56,7 +59,7 @@ const Hero = ({
           <PictureForAllResolutions
             images={images}
             fallback={images['desktop.l'].png}
-            alt={t(imgAlt)}
+            alt={imgAlt(translations)}
             className="image"
           />
         </div>
@@ -66,13 +69,12 @@ const Hero = ({
 }
 
 Hero.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Hero)`
     ${styles}
   `),

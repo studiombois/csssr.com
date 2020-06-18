@@ -3,33 +3,33 @@ import coreValuesSecurity from './coreValuesSecurity'
 import coreValuesUX from './coreValuesUX'
 
 export default {
-  heading: 'industry:coreValues.heading',
-  subHeading: 'industry:coreValues.subHeading',
+  heading: (t) => t.industry.coreValues.heading,
+  subHeading: (t) => t.industry.coreValues.subHeading,
   coreValuesItems: [
     {
       images: coreValuesAccessibility,
-      imgAlt: 'industry:imgAlt.coreValuesAccessibility',
-      title: 'industry:coreValues.firstItem.title',
-      text: 'industry:coreValues.firstItem.text',
+      imgAlt: (t) => t.industry.imgAlt.coreValuesAccessibility,
+      title: (t) => t.industry.coreValues.firstItem.title,
+      text: (t) => t.industry.coreValues.firstItem.text,
       className: 'first-item',
     },
     {
       images: coreValuesSecurity,
-      imgAlt: 'industry:imgAlt.coreValuesSecurity',
-      title: 'industry:coreValues.secondItem.title',
-      text: 'industry:coreValues.secondItem.text',
+      imgAlt: (t) => t.industry.imgAlt.coreValuesSecurity,
+      title: (t) => t.industry.coreValues.secondItem.title,
+      text: (t) => t.industry.coreValues.secondItem.text,
       className: 'second-item',
     },
     {
       images: coreValuesUX,
-      imgAlt: 'industry:imgAlt.coreValuesUX',
-      title: 'industry:coreValues.thirdItem.title',
-      text: 'industry:coreValues.thirdItem.text',
+      imgAlt: (t) => t.industry.imgAlt.coreValuesUX,
+      title: (t) => t.industry.coreValues.thirdItem.title,
+      text: (t) => t.industry.coreValues.thirdItem.text,
       className: 'third-item',
     },
   ],
   button: {
-    title: 'industry:coreValues.button.title',
-    href: 'industry:coreValues.button.href',
+    title: (t) => t.industry.coreValues.button.title,
+    href: (t) => t.industry.coreValues.button.href,
   },
 }

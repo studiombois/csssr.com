@@ -1,2 +1,4 @@
-export default (fileExt, t) => (value) =>
-  value.includes(`.${fileExt.toLowerCase()}`) ? undefined : t('common:form.errors.file')
+export default (fileExt, translations) => (value) =>
+  value.indexOf(`.${fileExt.toLowerCase()}`) !== -1
+    ? undefined
+    : translations.common.form.errors.file

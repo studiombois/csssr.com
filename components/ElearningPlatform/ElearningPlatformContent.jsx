@@ -14,7 +14,7 @@ class ElearningPlatformContent extends PureComponent {
   }
 
   render() {
-    const { className } = this.props
+    const { className, pageName } = this.props
 
     const designImages = {
       base: {
@@ -273,16 +273,14 @@ class ElearningPlatformContent extends PureComponent {
                 <div className="design-buttons-row">
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'font' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
-                    t="Font"
+                    text="Font"
                     icon={require('../../static/elearning-platform/icons/font.svg').default}
                   />
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'graphic' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
-                    t="Graphic"
+                    text="Graphic"
                     icon={require('../../static/elearning-platform/icons/graphic.svg').default}
                   />
                 </div>
@@ -290,16 +288,14 @@ class ElearningPlatformContent extends PureComponent {
                 <div className="design-buttons-row">
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'theme' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
-                    t="Theme"
+                    text="Theme"
                     icon={require('../../static/elearning-platform/icons/theme.svg').default}
                   />
                   <DesignButton
                     onMouseEnter={() => this.setState({ activeDesignImage: 'color' })}
-                    onMouseLeave={() => this.setState({ activeDesignImage: 'base' })}
                     className="design-button"
-                    t="Color"
+                    text="Color"
                     icon={require('../../static/elearning-platform/icons/color.svg').default}
                   />
                 </div>
@@ -365,6 +361,7 @@ class ElearningPlatformContent extends PureComponent {
             <h3 className="font-heading-3 banner-title">Need more info?</h3>
             <ContactButton
               className="banner-button font-p-5"
+              pageName={pageName}
               kind="secondary"
               dangerouslySetInnerHTML={{ __html: 'REQUEST A DEMO' }}
             />
@@ -453,7 +450,7 @@ class ElearningPlatformContent extends PureComponent {
               im={require('../../static/elearning-platform/feature-payment-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-payment.png')} 1x, ${require('../../static/elearning-platform/feature-payment@2x.png')} 2x, ${require('../../static/elearning-platform/feature-payment@3x.png')} 3x`}
               mobileSrcSet={`${require('../../static/elearning-platform/feature-payment-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-payment-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-payment-mobile@3x.png')} 3x`}
-              t="Payment Providers Integration"
+              text="Payment Providers Integration"
               d="Add any payment provider you need"
               onMouseOver={() => this.setState({ activeFeatureImage: 'payment' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
@@ -464,7 +461,7 @@ class ElearningPlatformContent extends PureComponent {
               im={require('../../static/elearning-platform/feature-skill-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-skill.png')} 1x, ${require('../../static/elearning-platform/feature-skill@2x.png')} 2x, ${require('../../static/elearning-platform/feature-skill@3x.png')} 3x`}
               mobileSrcSet={`${require('../../static/elearning-platform/feature-skill-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-skill-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-skill-mobile@3x.png')} 3x`}
-              t="Skill-Based Learning System"
+              text="Skill-Based Learning System"
               d="Configure learning programms based on skills"
               onMouseOver={() => this.setState({ activeFeatureImage: 'skill' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
@@ -475,7 +472,7 @@ class ElearningPlatformContent extends PureComponent {
               im={require('../../static/elearning-platform/feature-rating-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-rating.png')} 1x, ${require('../../static/elearning-platform/feature-rating@2x.png')} 2x, ${require('../../static/elearning-platform/feature-rating@3x.png')} 3x`}
               mobileSrcSet={`${require('../../static/elearning-platform/feature-rating-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-rating-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-rating-mobile@3x.png')} 3x`}
-              t="Rating System"
+              text="Rating System"
               d="Choose the learning programm and see how skils grow"
               onMouseOver={() => this.setState({ activeFeatureImage: 'rating' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
@@ -486,7 +483,7 @@ class ElearningPlatformContent extends PureComponent {
               im={require('../../static/elearning-platform/feature-ecosystem-mobile.png')}
               srcSet={`${require('../../static/elearning-platform/feature-ecosystem.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem@3x.png')} 3x`}
               mobileSrcSet={`${require('../../static/elearning-platform/feature-ecosystem-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@3x.png')} 3x`}
-              t="Ecosystem integration"
+              text="Ecosystem integration"
               d="Connect the LMS to your own and unique existing tools and systems"
               onMouseOver={() => this.setState({ activeFeatureImage: 'ecosystem' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}

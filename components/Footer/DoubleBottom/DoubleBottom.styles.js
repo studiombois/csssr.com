@@ -123,7 +123,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       top: 23%;
       right: 31%;
     }
-    
+
   }
 
   ${tablet.all} {

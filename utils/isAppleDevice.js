@@ -2,7 +2,7 @@ export default () => {
   const appleDevices = ['iPad', 'iPhone']
 
   if (typeof window !== 'undefined' && window.navigator && window.navigator.platform) {
-    return appleDevices.includes(window.navigator.platform)
+    return appleDevices.indexOf(window.navigator.platform) !== -1
   }
 
   // Данная проверка сделана что работать только на фронте

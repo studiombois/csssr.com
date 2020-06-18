@@ -162,7 +162,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .first-item.card,
     .third-item.card {
-      margin-top: ${calcRem(96)};
+      margin-top: ${calcRem(4)};
     }
 
     .second-item.card {

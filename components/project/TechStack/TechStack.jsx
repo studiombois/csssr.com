@@ -1,15 +1,14 @@
 import React from 'react'
-import { string, object, func } from 'prop-types'
+import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './TechStack.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const TechStack = ({
-  t,
   className,
   id,
   content: {
@@ -17,6 +16,7 @@ const TechStack = ({
     techList,
     numericData: { duration, projectTeam },
   },
+  l10n: { translations },
 }) => {
   return (
     <section className={className}>
@@ -24,7 +24,7 @@ const TechStack = ({
         <Heading.H2
           type="slab"
           size="m"
-          dangerouslySetInnerHTML={{ __html: t(heading) }}
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className="heading"
         />
 
@@ -35,7 +35,7 @@ const TechStack = ({
                 type="strong"
                 size="m"
                 as="span"
-                dangerouslySetInnerHTML={{ __html: t(name) }}
+                dangerouslySetInnerHTML={{ __html: name(translations) }}
               />
             </li>
           ))}
@@ -46,7 +46,7 @@ const TechStack = ({
             className="number duration-number"
             type="strong"
             as="span"
-            dangerouslySetInnerHTML={{ __html: t(duration.number) }}
+            dangerouslySetInnerHTML={{ __html: duration.number(translations) }}
           />
 
           <Text
@@ -54,7 +54,7 @@ const TechStack = ({
             type="strong"
             size="m"
             as="span"
-            dangerouslySetInnerHTML={{ __html: t(duration.text) }}
+            dangerouslySetInnerHTML={{ __html: duration.text(translations) }}
           />
         </div>
 
@@ -63,7 +63,7 @@ const TechStack = ({
             className="number team-number"
             type="strong"
             as="span"
-            dangerouslySetInnerHTML={{ __html: t(projectTeam.number) }}
+            dangerouslySetInnerHTML={{ __html: projectTeam.number(translations) }}
           />
 
           <Text
@@ -71,7 +71,7 @@ const TechStack = ({
             type="strong"
             size="m"
             as="span"
-            dangerouslySetInnerHTML={{ __html: t(projectTeam.text) }}
+            dangerouslySetInnerHTML={{ __html: projectTeam.text(translations) }}
           />
         </div>
       </Grid>
@@ -80,13 +80,12 @@ const TechStack = ({
 }
 
 TechStack.propTypes = {
-  t: func,
   className: string,
   id: string,
   content: object,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(TechStack)`
     ${styles}
   `),

@@ -7,39 +7,54 @@ import triangle_webp from '../../static/images/main/triangle.png?responsive_and_
 import circle from '../../static/images/main/circle.png?responsive'
 import circle_webp from '../../static/images/main/circle.png?responsive_and_webp'
 
+import arc from '../../static/images/main/arc-descktop.png?responsive'
+import arc_webp from '../../static/images/main/arc-descktop.png?responsive_and_webp'
+
 export default {
   figures_en: [
     {
       name: 'square',
-      lng: 'en',
+      language: 'en',
       images: { png: square, webp: square_webp },
       fallback: square,
     },
     {
       name: 'triangle',
-      lng: 'en',
+      language: 'en',
       images: { png: triangle, webp: triangle_webp },
       fallback: triangle,
     },
     {
       name: 'circle',
-      lng: 'en',
+      language: 'en',
       images: { png: circle, webp: circle_webp },
       fallback: circle,
+    },
+    {
+      name: 'arc',
+      language: 'en',
+      images: { png: arc, webp: arc_webp },
+      fallback: arc,
     },
   ],
   figures_ru: [
     {
       name: 'square',
-      lng: 'ru',
+      language: 'ru',
       images: { png: square, webp: square_webp },
       fallback: square,
     },
     {
       name: 'circle',
-      lng: 'ru',
+      language: 'ru',
       images: { png: circle, webp: circle_webp },
       fallback: circle,
+    },
+    {
+      name: 'arc',
+      language: 'ru',
+      images: { png: arc, webp: arc_webp },
+      fallback: arc,
     },
   ],
 }

@@ -158,7 +158,7 @@ const base = css`
         grid-column: 9 / span 3;
     }
 
-    .features-list li:not(:first-child) {
+    .features-list li:not(:first-of-type) {
         margin-top: 16px;
     }
 
@@ -195,7 +195,7 @@ const base = css`
         margin-top: 25px;
     }
 
-    .design-button:nth-child(even) {
+    .design-button:nth-of-type(even) {
         margin-left: 25px;
     }
 
@@ -290,7 +290,6 @@ const base = css`
     .advanced-features {
         margin-top: 80px;
         padding-top: 80px;
-        padding-bottom: 80px;
         background-color: #EEf0f6;
     }
 
@@ -325,6 +324,7 @@ const base = css`
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: flex-start;
+        padding-bottom: 80px;
     }
 
     .advanced-feature-buttons > div {
@@ -433,7 +433,7 @@ const base = css`
             grid-column: 7 / span 6;
         }
 
-        .design-button:nth-child(even) {
+        .design-button:nth-of-type(even) {
             margin-left: 40px;
         }
 
@@ -608,7 +608,6 @@ const base = css`
         .advanced-features {
             margin-top: 80px;
             padding-top: 60px;
-            padding-bottom: 60px;
         }
 
         .advanced-feature-image {
@@ -623,6 +622,10 @@ const base = css`
         .advanced-feature-buttons > div {
             margin-top: 60px;
             flex: 0 15%;
+        }
+
+        .advanced-feature-buttons{
+            padding-bottom: 60px;
         }
 
         .advanced-feature-buttons > div:hover {
@@ -761,7 +764,7 @@ const base = css`
             grid-column: 1 / span 6;
         }
 
-        .features-list li:not(:first-child) {
+        .features-list li:not(:first-of-type) {
             margin-top: 5px;
         }
 
@@ -802,7 +805,7 @@ const base = css`
             margin-top: 25px;
         }
 
-        .design-button:nth-child(even) {
+        .design-button:nth-of-type(even) {
             margin-left: 0;
         }
 
@@ -879,7 +882,6 @@ const base = css`
         .advanced-features {
             margin-top: 50px;
             padding-top: 60px;
-            padding-bottom: 60px;
         }
 
         .advanced-features-title {
@@ -899,6 +901,7 @@ const base = css`
 
         .advanced-feature-buttons {
             padding-left: 32px;
+            padding-bottom: 60px;
             flex-wrap: nowrap;
             overflow-x: scroll;
             justify-content: flex-start;

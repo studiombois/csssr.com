@@ -10,7 +10,7 @@ import styles, {
   stylesForTextareaField,
 } from './CandidateInfoSection.styles'
 import { css } from '@emotion/core'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import ContactOptions from '../ContactOptions'
 import ContactOptionsMobile from '../ContactOptionsMobile'
@@ -22,12 +22,19 @@ import getFileFieldText from '../../../utils/getFileFieldText'
 import Grid from '../../ui-kit/core-design/Grid'
 
 const CandidateInfoSection = (props) => {
-  const { className, connection, vacancy, onFileFieldChange, t } = props
+  const {
+    className,
+    connection,
+    vacancy,
+    onFileFieldChange,
+    l10n: { translations },
+  } = props
   const { hasComment, hasGithub, hasPortfolio, hasResume, hasFile, fileExt } = vacancy
   const commonFieldsData = [
     {
       id: 'firstname',
-      label: t('job:name'),
+      required: true,
+      label: translations.job.name,
       css: css`
         ${stylesForFullWidthField}
         ${stylesForFirstHalfWidthField}
@@ -35,7 +42,8 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'lastname',
-      label: t('job:lastname'),
+      required: true,
+      label: translations.job.lastname,
       css: css`
         ${stylesForFullWidthField}
         ${stylesForSecondHalfWidthField}
@@ -43,21 +51,23 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'age',
-      label: t('job:age'),
+      label: translations.job.age,
       css: css`
         ${stylesForFullWidthField}
       `,
     },
     {
       id: 'location',
-      label: t('job:city'),
+      required: true,
+      label: translations.job.city,
       css: css`
         ${stylesForFullWidthField}
       `,
     },
     {
       id: 'email',
-      label: t('job:email'),
+      required: true,
+      label: translations.job.email,
       type: 'email',
       css: css`
         ${stylesForFullWidthField}
@@ -65,7 +75,8 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'resume',
-      label: t('job:resumeLink'),
+      required: true,
+      label: translations.job.resumeLink,
       shouldShow: hasResume,
       css: css`
         ${stylesForFullWidthField}
@@ -73,7 +84,8 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'portfolio',
-      label: t('job:resumePortfolio'),
+      required: true,
+      label: translations.job.resumePortfolio,
       shouldShow: hasPortfolio,
       css: css`
         ${stylesForFullWidthField}
@@ -81,7 +93,7 @@ const CandidateInfoSection = (props) => {
     },
     {
       id: 'github',
-      label: t('job:resumeGithub'),
+      label: translations.job.resumeGithub,
       shouldShow: hasGithub,
       css: css`
         ${stylesForFullWidthField}
@@ -91,11 +103,11 @@ const CandidateInfoSection = (props) => {
 
   return (
     <Grid className={className}>
-      <h2 className="font_h2-regular">{t('job:tellAboutYourself')}</h2>
+      <h2 className="font_h2-regular">{translations.job.tellAboutYourself}</h2>
 
       {!props.isMobile && <ContactOptions connection={connection} />}
 
-      {commonFieldsData.map(({ id, label, css, type = 'text', shouldShow = true }) =>
+      {commonFieldsData.map(({ id, label, css, type = 'text', shouldShow = true, required }) =>
         shouldShow ? (
           <Field
             key={id}
@@ -107,6 +119,8 @@ const CandidateInfoSection = (props) => {
             type={type}
             label={label}
             kind="regular"
+            aria-required={required}
+            required={required}
           />
         ) : null,
       )}
@@ -119,10 +133,12 @@ const CandidateInfoSection = (props) => {
           css={css`
             ${stylesForFileField}
           `}
-          label={`${t('job:testQuest')} ${getFileFieldText(t)(fileExt)}`}
+          label={`${translations.job.testQuest} ${getFileFieldText(translations)(fileExt)}`}
           fileAccept={fileExt}
           component={FileField}
           onFileFieldChange={onFileFieldChange}
+          aria-required={true}
+          required
         />
       )}
 
@@ -133,7 +149,7 @@ const CandidateInfoSection = (props) => {
           <Field
             id="comment"
             name="comment"
-            label={t('job:tellUsMoreAboutYourself')}
+            label={translations.job.tellUsMoreAboutYourself}
             className="line-nine"
             css={css`
               ${stylesForTextareaField}
@@ -146,6 +162,7 @@ const CandidateInfoSection = (props) => {
 
       <PrivacyPolicyCheckbox
         className="input-checkbox"
+        required
         css={css`
           ${stylesForCheckboxField}
         `}
@@ -154,7 +171,7 @@ const CandidateInfoSection = (props) => {
   )
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(CandidateInfoSection)`
     ${styles}
   `),

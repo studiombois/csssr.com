@@ -17,24 +17,24 @@ const teamImages = {
 
 export default {
   images: teamImages,
-  heading: 'project:s7airlines.team.title',
+  heading: (t) => t.project.s7airlines.team.title,
   teamItems: [
     {
-      number: 'project:s7airlines.team.numberList.firstItem',
-      text: 'project:s7airlines.team.textList.firstItem',
+      number: (t) => t.project.s7airlines.team.numberList.firstItem,
+      text: (t) => t.project.s7airlines.team.textList.firstItem,
     },
     {
-      number: 'project:s7airlines.team.numberList.secondItem',
-      text: 'project:s7airlines.team.textList.secondItem',
+      number: (t) => t.project.s7airlines.team.numberList.secondItem,
+      text: (t) => t.project.s7airlines.team.textList.secondItem,
     },
     {
-      number: 'project:s7airlines.team.numberList.thirdItem',
-      text: 'project:s7airlines.team.textList.thirdItem',
+      number: (t) => t.project.s7airlines.team.numberList.thirdItem,
+      text: (t) => t.project.s7airlines.team.textList.thirdItem,
     },
     {
-      number: 'project:s7airlines.team.numberList.fourthItem',
-      text: 'project:s7airlines.team.textList.fourthItem',
+      number: (t) => t.project.s7airlines.team.numberList.fourthItem,
+      text: (t) => t.project.s7airlines.team.textList.fourthItem,
     },
   ],
-  imgAlt: 'project:s7airlines.team.imgAlt',
+  imgAlt: (t) => t.project.s7airlines.team.imgAlt,
 }

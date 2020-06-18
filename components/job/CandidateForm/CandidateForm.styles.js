@@ -8,6 +8,7 @@ const base = css`
     margin-right: auto;
     margin-left: auto;
     padding-top: 13.5625rem;
+    padding-bottom: 10rem;
     align-items: center;
     border: none;
   }
@@ -32,7 +33,7 @@ const base = css`
     width: 12rem;
   }
 
-  .button_lng_en {
+  .button_language_en {
     width: 16rem;
   }
 
@@ -73,7 +74,7 @@ const base = css`
       width: 13.5rem;
     }
 
-    .button_lng_en {
+    .button_language_en {
       width: 17.5rem;
     }
 

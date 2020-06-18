@@ -1,18 +1,13 @@
 import { css } from '@emotion/core'
 
 const base = css`
-  & {
-    display: flex;
-    align-items: center;
-  }
-
   div {
     position: relative;
     margin-top: 0;
     padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    display: flex;
+    display: inline-flex;
     width: calc(66% - 1rem);
     height: 4rem;
     align-items: center;
@@ -59,6 +54,7 @@ const base = css`
   }
 
   span.error {
+    display: block;
     margin-top: 0.625rem;
     grid-column: 2 / span 6;
     color: #ff0000;
@@ -95,7 +91,7 @@ const base = css`
   .button {
     margin-top: 0;
     margin-left: 1rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     height: 3rem;
@@ -132,12 +128,18 @@ const base = css`
 
     div {
       width: 100%;
+      order: 1;
     }
 
     .button {
       margin-left: auto;
       margin-right: auto;
       width: 66%;
+      order: 3;
+    }
+
+    span.error {
+      order: 2;
     }
   }
 `

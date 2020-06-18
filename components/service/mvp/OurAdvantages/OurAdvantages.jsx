@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './OurAdvantages.styles'
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import ourAdvantages from '../../../../data/service/mvp/ourAdvantages'
@@ -11,12 +11,12 @@ import Item from './Item'
 import Heading from '../../../ui-kit/core-design/Heading'
 import Grid from '../../../ui-kit/core-design/Grid'
 
-const OurAdvantages = ({ className, t }) => (
+const OurAdvantages = ({ className, l10n: { translations } }) => (
   <Grid as="section" className={className}>
     <Heading
       className="title"
       as="h2"
-      dangerouslySetInnerHTML={{ __html: t('mvp:ourAdvantages.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.mvp.ourAdvantages.title }}
       type="slab"
       size="m"
     />
@@ -26,7 +26,8 @@ const OurAdvantages = ({ className, t }) => (
         {advantagesGroup.map((advantageItem, advantageItemIndex) => (
           <Item
             key={advantageItemIndex}
-            id={`${advantagesGroupIndex}.${advantageItemIndex}`}
+            groupId={advantagesGroupIndex}
+            itemId={advantageItemIndex}
             images={advantageItem.images}
             link={advantageItem.link}
           />
@@ -38,10 +39,9 @@ const OurAdvantages = ({ className, t }) => (
 
 OurAdvantages.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(OurAdvantages)`
     ${styles}
   `),

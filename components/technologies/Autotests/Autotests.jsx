@@ -1,8 +1,8 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Autotests.styles'
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
@@ -13,7 +13,7 @@ import Grid from '../../ui-kit/core-design/Grid'
 
 import images from '../../../data/technologies/autotests'
 
-const Autotests = ({ className, t }) => (
+const Autotests = ({ className, l10n: { translations } }) => (
   <div className={className}>
     <Grid as="article">
       <Heading
@@ -21,21 +21,21 @@ const Autotests = ({ className, t }) => (
         as="h2"
         type="slab"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('technologies:autotests.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.technologies.autotests.title }}
       />
 
       <Picture
         className="picture"
         images={images}
         fallback={images.png}
-        alt={t('technologies:imageAlt.autotests')}
+        alt={translations.technologies.imgAlt.autotests}
       />
 
       <SubHeading
         className="text"
         as="p"
         type="slab"
-        dangerouslySetInnerHTML={{ __html: t('technologies:autotests.text') }}
+        dangerouslySetInnerHTML={{ __html: translations.technologies.autotests.text }}
       />
     </Grid>
   </div>
@@ -43,10 +43,9 @@ const Autotests = ({ className, t }) => (
 
 Autotests.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(Autotests)`
       ${styles}

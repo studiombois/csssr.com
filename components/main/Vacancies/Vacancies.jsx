@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Vacancies.styles'
@@ -12,23 +12,23 @@ import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 
 import images from '../../../data/main/vacancies/images'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Vacancies = ({ className, vacancies, t, locale }) => (
+const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => (
   <Grid as="article" className={cn('industries', className)}>
     <SubHeading
       className="title"
       as="p"
       type="slab"
-      dangerouslySetInnerHTML={{ __html: t('main:vacancies.title') }}
+      dangerouslySetInnerHTML={{ __html: translations.main.vacancies.title }}
     />
 
     <PictureForAllResolutions
       className="picture"
       images={images}
       fallback={images['desktop.l'].png}
-      alt={t('main:imageAlt.vacancies')}
+      alt={translations.main.imgAlt.vacancies}
     />
 
     <ul className="list">
@@ -58,17 +58,16 @@ const Vacancies = ({ className, vacancies, t, locale }) => (
       href={`/${locale}/jobs`}
       kind="third"
       size="s"
-      dangerouslySetInnerHTML={{ __html: t(`main:vacancies.link`) }}
+      dangerouslySetInnerHTML={{ __html: translations.main.vacancies.link }}
     />
   </Grid>
 )
 
 Vacancies.propTypes = {
   className: string,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   MsBrowserConsumer(styled(Vacancies)`
     ${styles}
   `),

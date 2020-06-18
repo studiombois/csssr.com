@@ -126,12 +126,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .picture-wrapper {
-      background-position-x: calc(50% - 386px);
-      background-position-y: -136px;
+      background-position-x: calc(50% - ${calcRem(386)});
+      background-position-y: ${calcRem(-136)};
+      background-size: 192rem;
     }
 
     .picture {
-      width:  ${calcRem(1024)};
+      width: ${calcRem(1024)};
     }
 
     .title,

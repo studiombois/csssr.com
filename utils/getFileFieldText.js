@@ -1,19 +1,19 @@
-export default (t) => (accept) => {
+export default (translations) => (accept) => {
   switch (accept) {
     case 'zip':
-      return `(${t('job:zipPacked')})`
+      return `(${translations.job.zipPacked})`
     case 'docx':
-      return `(${t('job:docxFormat')})`
+      return `(${translations.job.docxFormat})`
     case 'xlsx':
-      return `(${t('job:xlsxFormat')})`
+      return `(${translations.job.xlsxFormat})`
     case 'sketch':
-      return `(${t('job:sketchFormat')})`
+      return `(${translations.job.sketchFormat})`
     case 'jpg':
-      return `(${t('job:jpgFormat')})`
+      return `(${translations.job.jpgFormat})`
     case 'pdf':
-      return `(${t('job:pdfFormat')})`
+      return `(${translations.job.pdfFormat})`
     case 'psd':
-      return `(${t('job:psdFormat')})`
+      return `(${translations.job.psdFormat})`
     default:
       return ''
   }

@@ -1,5 +1,3 @@
-import { defaultLocaleByLanguage } from './locales-settings'
-
 export default (fullPathname, newLanguage, pagesList) => {
   // Здесь не используются именованные группы для поддержки IE
   const [, , , pathname] = fullPathname.match(/^\/(.*?)(\/(.*))?$/)
@@ -9,8 +7,8 @@ export default (fullPathname, newLanguage, pagesList) => {
     return `/${newLanguage}`
   }
 
-  if (['job', 'jobs', 'jobs-faq'].includes(pathname)) {
-    return `/${defaultLocaleByLanguage[newLanguage]}/jobs`
+  if (['job', 'jobs', 'jobs-faq'].indexOf(pathname) !== -1) {
+    return `/${newLanguage}/jobs`
   }
 
   if (pagesList.some((page) => page.pathname === pathname && page.language === newLanguage)) {

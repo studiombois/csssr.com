@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'
@@ -14,11 +14,11 @@ import { ReactComponent as PlanetMobileSvg } from '../../../static/images/expres
 import { ReactComponent as PlanetDesktopSvg } from '../../../static/images/express/planet-animation/orbits-desktop.svg?original'
 import greetingImagesData from '../../../data/express/greeting'
 
-import translate from '../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Greeting = ({ isMsBrowser, isMobile, className, t }) => {
+const Greeting = ({ isMsBrowser, isMobile, className, l10n: { translations } }) => {
   const PlanetSvg = isMobile ? PlanetMobileSvg : PlanetDesktopSvg
   return (
     <Grid as="article" className={className}>
@@ -31,7 +31,7 @@ const Greeting = ({ isMsBrowser, isMobile, className, t }) => {
           className="rocket"
           images={greetingImagesData.images}
           fallback={greetingImagesData.images['desktop.l']}
-          alt={t('express:imgAlt.rocket')}
+          alt={translations.express.imgAlt.rocket}
         />
 
         <PlanetSvg
@@ -47,21 +47,21 @@ const Greeting = ({ isMsBrowser, isMobile, className, t }) => {
         className="heading"
         type="slab"
         size="l"
-        dangerouslySetInnerHTML={{ __html: t('express:greeting.title') }}
+        dangerouslySetInnerHTML={{ __html: translations.express.greeting.title }}
       />
 
       <Text
         className="subheading"
         type="strong"
         size="m"
-        dangerouslySetInnerHTML={{ __html: t('express:greeting.description') }}
+        dangerouslySetInnerHTML={{ __html: translations.express.greeting.description }}
       />
 
       <ButtonLink
         className="button"
         kind="primary"
         href="#calculator"
-        dangerouslySetInnerHTML={{ __html: t('express:greeting.button') }}
+        dangerouslySetInnerHTML={{ __html: translations.express.greeting.button }}
       />
     </Grid>
   )
@@ -71,10 +71,9 @@ Greeting.propTypes = {
   className: string,
   isMsBrowser: bool,
   isMobile: bool,
-  t: func,
 }
 
-export default translate(
+export default L10nConsumer(
   DeviceConsumer(
     MsBrowserConsumer(styled(Greeting)`
       ${styles}

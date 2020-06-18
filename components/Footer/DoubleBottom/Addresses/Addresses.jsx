@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import { bool, func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Addresses.styles'
 
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
 
-import translate from '../../../../utils/translate-wrapper'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import Link from '../../../ui-kit/core-design/Link'
 import ClickOutside from '../../../ClickOutside'
-
-import formatTime from '../../../../utils/formatTime'
 
 const addressesIds = ['singapore', 'russia', 'russia_2', 'estonia']
 // TODO это может поменяться в будущем
 // Можно эти данные отправлять с сервера при первой загрузке страницы
 const timezoneOffsetsByAddressId = {
-  singapore: 8,
-  russia: 3,
-  russia_2: 3,
-  estonia: 3,
+  singapore: 'Asia/Singapore',
+  russia: 'Europe/Moscow',
+  russia_2: 'Europe/Moscow',
+  estonia: 'Europe/Tallinn',
 }
 
-const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress }) => {
+const Addresses = ({
+  className,
+  isTablet,
+  isMobile,
+  isIe11,
+  setHoveredAddress,
+  l10n: { translations },
+}) => {
   const [time, setTime] = useState(new Date())
 
   useEffect(() => {
@@ -70,12 +76,12 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
               className="title"
               type="regular"
               size="s"
-              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.title`) }}
+              dangerouslySetInnerHTML={{ __html: translations.common.footer.addresses[id].title }}
             />
 
             <Text
               className="address"
-              dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.address`) }}
+              dangerouslySetInnerHTML={{ __html: translations.common.footer.addresses[id].address }}
               size={textSize}
               type="regular"
             />
@@ -83,8 +89,8 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
             {id !== 'estonia' && (
               <Link
                 className="phone"
-                dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.phone`) }}
-                href={`tel:${t(`common:footer.addresses.${id}.phone`)}`}
+                dangerouslySetInnerHTML={{ __html: translations.common.footer.addresses[id].phone }}
+                href={`tel:${translations.common.footer.addresses[id].phone}`}
                 size={textSize}
                 type="list"
               />
@@ -93,15 +99,23 @@ const Addresses = ({ className, isTablet, isMobile, t, lng, setHoveredAddress })
             {id === 'singapore' && (
               <Text
                 className="status"
-                dangerouslySetInnerHTML={{ __html: t(`common:footer.addresses.${id}.status`) }}
+                dangerouslySetInnerHTML={{
+                  __html: translations.common.footer.addresses[id].status,
+                }}
                 type="regular"
                 size={textSize}
               />
             )}
-
-            <Text className="time" type="regular" size={textSize}>
-              {formatTime(time, timezoneOffsetsByAddressId[id], lng)}
-            </Text>
+            {!isIe11 && (
+              <Text className="time" type="regular" size={textSize}>
+                {time.toLocaleTimeString([], {
+                  timeZone: timezoneOffsetsByAddressId[id],
+                  hour: '2-digit',
+                  minute: '2-digit',
+                })}{' '}
+                {/* show only hours and minutes, use options with the default locale - use an empty array, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString */}
+              </Text>
+            )}
           </div>
         ))}
       </div>
@@ -113,11 +127,14 @@ Addresses.propTypes = {
   className: string,
   isTable: bool,
   isMobile: bool,
-  t: func,
 }
 
-export default translate(
-  DeviceConsumer(styled(Addresses)`
-    ${styles}
-  `),
+export default L10nConsumer(
+  DeviceConsumer(
+    MsBrowserConsumer(
+      styled(Addresses)`
+        ${styles}
+      `,
+    ),
+  ),
 )

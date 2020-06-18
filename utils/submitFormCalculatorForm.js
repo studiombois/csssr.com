@@ -1,9 +1,9 @@
 import { FORM_ERROR } from 'final-form'
 import testEmail from './testEmail'
 
-const onSubmit = (url, formName, lng) => async (values) => {
+const onSubmit = (url, formName, language) => async (values) => {
   values.formName = formName
-  values.language = lng
+  values.language = language
   let res
 
   const isTestEmail = values.email === testEmail

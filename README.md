@@ -7,7 +7,7 @@ Find the most recent version of this guide at [here](https://github.com/segmenti
 
 ## Запуск проекта
 
-Среди зависимостей проекта есть наши приватные npm пакеты, чтобы их установить, надо выполнить инструкцию из статьи https://confluence.csssr.io/display/DT/Nexus
+Среди зависимостей проекта есть наши приватные npm пакеты, чтобы их установить, надо выполнить инструкцию из статьи https://confluence.csssr.io/display/DT/Github+packages
 
 `yarn install`
 
@@ -95,8 +95,8 @@ import ultramarine_mobile_all_webp from '../../static/images/main/mobile.all/ult
 Или обернуть текст в `span` c `dangerouslySetInnerHTML`
 ```jsx
 <h1 className='font_h1-regular'>
-    <div dangerouslySetInnerHTML={{ __html: t('jobs:title') }} />
-    <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: t('jobs:subTitle') }} />
+    <div dangerouslySetInnerHTML={{ __html: translations.jobs.title }} />
+    <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: translations.jobs.subTitle }} />
 </h1>
 ```
 

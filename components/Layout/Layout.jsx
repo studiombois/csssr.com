@@ -1,23 +1,14 @@
 import React, { Fragment } from 'react'
 import DevTools from '../DevTools'
 import { withRouter } from 'next/router'
-import { css, Global } from '@emotion/core'
+import { Global } from '@emotion/core'
 import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'
 import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
-import translate from '../../utils/translate-wrapper'
-import calcRem from '../../utils/style/calcRem'
 import CookiesPopup from '../CookiesPopup'
 
-const Layout = ({
-  children,
-  isIe11,
-  pageName = 'main',
-  router: { asPath },
-  lng,
-  withFooter = true,
-}) => {
+const Layout = ({ children, isIe11, pageName, router: { asPath }, withFooter = true }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
   const pathsNoButton = ['jobs']
   const isButtonVisible = !pathsNoButton.some((string) => asPath.indexOf(string) + 1)
@@ -25,22 +16,7 @@ const Layout = ({
     <Fragment>
       <Header isButtonVisible={isButtonVisible} pageName={pageName} />
       <Global styles={styles} />
-      <Global
-        styles={
-          lng === 'en' &&
-          css`
-            #main {
-              padding-top: ${calcRem(153)};
-            }
 
-            @media (max-width: 767px) {
-              #main {
-                padding-top: ${calcRem(80)};
-              }
-            }
-          `
-        }
-      />
       {isIe11 && <Global styles={ie11Styles} />}
 
       {React.createElement(dynamicTag, { id: 'main' }, children)}
@@ -52,4 +28,4 @@ const Layout = ({
   )
 }
 
-export default translate(withRouter(MsBrowserConsumer(Layout)))
+export default withRouter(MsBrowserConsumer(Layout))

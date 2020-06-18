@@ -67,22 +67,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
+  ${desktop.l} {
+    .heading {
+      margin-top: ${calcRem(22)};
+    }
+  }
+
   ${desktop.m} {
     .image {
       grid-row: 1 / 3;
-      margin-top: ${calcRem(60)};
+      margin-top: ${calcRem(51)};
     }
   }
 
   ${desktop.s} {
     .image {
+      margin-top: ${calcRem(-13)};
       grid-row: 2 / 4;
     }
   }
 
   ${tablet.all} {
     .heading {
-      margin-top: ${calcRem(20)};
+      margin-top: ${calcRem(15)};
     }
 
     .list {

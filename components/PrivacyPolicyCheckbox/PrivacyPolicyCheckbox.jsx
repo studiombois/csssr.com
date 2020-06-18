@@ -1,20 +1,20 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { string, bool } from 'prop-types'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles from './PrivacyPolicyCheckbox.styles'
-import translate from '../../utils/translate-wrapper'
+import { L10nConsumer } from '../../utils/l10nProvider'
 import Checkbox from '../ui-kit/Checkbox/Checkbox'
 
 const PrivacyPolicyCheckbox = ({
   id = 'privacyPolicyCheckbox',
-  lng,
   name = 'privacyPolicy',
   className,
   testid,
   linkTestId,
-  t,
+  l10n: { translations, language },
   tabIndex,
+  required,
 }) => (
   <Field
     id={id}
@@ -25,17 +25,18 @@ const PrivacyPolicyCheckbox = ({
     component={Checkbox}
     testid={testid}
     tabIndex={tabIndex}
+    required={required}
   >
-    {t('common:checkBoxesText.privacyPolicyText')}
+    {translations.common.checkBoxesText.privacyPolicyText}
     <a
-      href={`/${lng}/privacy-policy`}
+      href={`/${language}/privacy-policy`}
       target="_blank"
       rel="noopener"
       className="font_link-list_16"
       data-testid={linkTestId}
       tabIndex={tabIndex}
     >
-      {t('common:checkBoxesText.privacyPolicyLinkText')}
+      {translations.common.checkBoxesText.privacyPolicyLinkText}
     </a>
   </Field>
 )
@@ -43,9 +44,9 @@ const PrivacyPolicyCheckbox = ({
 PrivacyPolicyCheckbox.propTypes = {
   id: string,
   name: string,
-  t: func,
+  required: bool,
 }
 
-export default styled(translate(PrivacyPolicyCheckbox))`
+export default styled(L10nConsumer(PrivacyPolicyCheckbox))`
   ${styles}
 `

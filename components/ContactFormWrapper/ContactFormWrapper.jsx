@@ -15,7 +15,7 @@ const Form = (props) => (
   <ContactForm
     headerId="hire-us"
     fields={['name', 'phone', 'email', 'message']}
-    feedbackEmail="sales@csssr.io"
+    feedbackEmail="launch@csssr.com"
     {...props}
   />
 )

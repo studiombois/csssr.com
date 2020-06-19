@@ -25,6 +25,8 @@ class MainPage extends PureComponent {
       vacancies,
       l10n: { translations },
     } = this.props
+
+    const pagePath = '/main'
     const pageName = 'main'
     return (
       <Layout pageName={pageName}>
@@ -32,6 +34,8 @@ class MainPage extends PureComponent {
           title={translations.main.meta.title}
           templateTitle=""
           description={translations.main.meta.description}
+          withHrefLang
+          pagePath={pagePath}
         />
         <Hero />
         <Services />

@@ -10,12 +10,16 @@ import Transparency from './Transparency'
 import Form from '../ContactFormWrapper'
 
 const WayOfWork = ({ l10n: { translations } }) => {
+  const pagePath = '/way-of-work'
   const pageName = 'wayOfWork'
+
   return (
     <Layout pageName={pageName}>
       <Head
         title={translations.wayOfWork.meta.title}
         description={translations.wayOfWork.meta.description}
+        withHrefLang
+        pagePath={pagePath}
       />
 
       <Greeting title={translations.wayOfWork.greeting.title} />

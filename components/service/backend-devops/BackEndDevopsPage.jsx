@@ -14,6 +14,7 @@ import devopsServices from '../../../data/service/backend-and-devops/devops-serv
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import Form from '../../ContactFormWrapper/ContactFormWrapper'
 
+const pagePath = '/service/back-end-and-devops'
 const pageName = 'backEndAndDevops'
 const BackEndDevopsPage = ({ l10n: { translations } }) => {
   return (
@@ -21,6 +22,8 @@ const BackEndDevopsPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.backEndAndDevops.meta.title}
         description={translations.backEndAndDevops.meta.description}
+        withHrefLang
+        pagePath={pagePath}
       />
       <Hero pageName={pageName} id="hero" content={hero} />
       <BackEndDevelopment id="backend-development" content={backend_dev} />

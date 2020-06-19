@@ -45,6 +45,71 @@ const Head = (props) => {
         type="font/woff2"
         crossOrigin="anonymous"
       />
+      {props.withHrefLang && props.pagePath.substring(0, 5) !== '/jobs' && (
+        <Fragment>
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href={
+              props.pagePath === '/main'
+                ? 'https://csssr.com/en'
+                : `https://csssr.com/en${props.pagePath}`
+            }
+          />
+          <link
+            rel="alternate"
+            hrefLang="ru"
+            href={
+              props.pagePath === '/main'
+                ? 'https://csssr.com/ru'
+                : `https://csssr.com/ru${props.pagePath}`
+            }
+          />
+          <link
+            rel="alternate"
+            hrefLang="en"
+            href={
+              props.pagePath === '/main'
+                ? 'https://csssr.com/en'
+                : `https://csssr.com/en${props.pagePath}`
+            }
+          />
+        </Fragment>
+      )}
+      {props.withHrefLang && props.pagePath.substring(0, 5) === '/jobs' && (
+        <Fragment>
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href={`https://csssr.com/en-us${props.pagePath}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="ru-ru"
+            href={`https://csssr.com/ru-ru${props.pagePath}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="ru-ee"
+            href={`https://csssr.com/ru-ee${props.pagePath}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-ee"
+            href={`https://csssr.com/en-ee${props.pagePath}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-sg"
+            href={`https://csssr.com/en-sg${props.pagePath}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-us"
+            href={`https://csssr.com/en-us${props.pagePath}`}
+          />
+        </Fragment>
+      )}
       <script
         dangerouslySetInnerHTML={{
           __html: `

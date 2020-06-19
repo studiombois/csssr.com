@@ -17,6 +17,7 @@ import facts from '../../data/industry/facts'
 import { informationTechnologyProjects } from '../../data/industry/projects'
 
 const InformationTechnologyPage = ({ l10n: { translations } }) => {
+  const pagePath = '/industry/information-technology'
   const pageName = 'industry'
   const page = 'informationTechnology'
   return (
@@ -24,6 +25,8 @@ const InformationTechnologyPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.industry.meta.informationTechnology.title}
         description={translations.industry.meta.informationTechnology.description}
+        withHrefLang
+        pagePath={pagePath}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />

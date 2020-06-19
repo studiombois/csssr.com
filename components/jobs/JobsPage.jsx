@@ -6,6 +6,7 @@ import Layout from '../../components/Layout'
 import Vacancies from '../../components/jobs/Vacancies'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 
+const pagePath = '/jobs'
 const pageName = 'jobs'
 class JobsPage extends PureComponent {
   static async getInitialProps(ctx) {
@@ -27,6 +28,8 @@ class JobsPage extends PureComponent {
           title={translations.jobs.meta.title}
           templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
           description={translations.jobs.meta.description}
+          withHrefLang
+          pagePath={pagePath}
           ogImage={{
             url: require('../../static/images/jobs/1920/cover@2x.jpg'),
             width: 1266,

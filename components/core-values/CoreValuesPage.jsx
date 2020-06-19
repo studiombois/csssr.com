@@ -8,6 +8,7 @@ import Form from '../ContactFormWrapper'
 import Head from '../Head'
 
 const CoreValues = ({ l10n: { translations } }) => {
+  const pagePath = '/core-values'
   const pageName = 'coreValues'
 
   return (
@@ -15,6 +16,8 @@ const CoreValues = ({ l10n: { translations } }) => {
       <Head
         title={translations.coreValues.meta.title}
         description={translations.coreValues.meta.description}
+        withHrefLang
+        pagePath={pagePath}
       />
 
       <Greeting />

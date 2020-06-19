@@ -9,6 +9,7 @@ import Form from '../ContactFormWrapper'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
 const TechnologiesPage = ({ l10n: { translations } }) => {
+  const pagePath = '/tech-stack'
   const pageName = 'technologies'
 
   return (
@@ -16,6 +17,8 @@ const TechnologiesPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.technologies.meta.title}
         description={translations.technologies.meta.description}
+        withHrefLang
+        pagePath={pagePath}
       />
       <Hero />
       <Frontend />

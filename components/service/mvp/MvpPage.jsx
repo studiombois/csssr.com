@@ -10,10 +10,16 @@ import Form from '../../ContactFormWrapper'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 
+const pagePath = '/service/mvp-development'
 const pageName = 'mvp'
 const MvpDevelopmentPage = ({ l10n: { translations } }) => (
   <Layout pageName={pageName}>
-    <Head title={translations.mvp.meta.title} description={translations.mvp.meta.description} />
+    <Head
+      title={translations.mvp.meta.title}
+      description={translations.mvp.meta.description}
+      withHrefLang
+      pagePath={pagePath}
+    />
     <Hero pageName={pageName} />
     <AboutMvp />
     <Benefits />

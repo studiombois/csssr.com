@@ -6,11 +6,19 @@ import { L10nConsumer } from '../utils/l10nProvider'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { Ie11BrowserContext } from '../utils/msBrowserProvider'
+import { PagesListConsumer } from '../utils/pagesListProvider'
 
 // Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
 
 const Head = (props) => {
+  const [, , , pathname] = props.router.pathname.match(/^\/(.*?)(\/(.*))?$/)
+
+  let localePageCounter = 0
+  props.pagesList.map((page) => {
+    if (page.pathname === pathname) localePageCounter += 1
+  })
+
   const isIe11 = useContext(Ie11BrowserContext)
 
   // При роутинге в ie11 picturefill не подгружает правильные размеры изображений.
@@ -45,69 +53,34 @@ const Head = (props) => {
         type="font/woff2"
         crossOrigin="anonymous"
       />
-      {props.withHrefLang && props.pagePath.substring(0, 5) !== '/jobs' && (
+      {(!pathname ||
+        (localePageCounter > 1 && ['job', 'jobs', 'jobs-faq'].indexOf(pathname) === -1)) && (
         <Fragment>
           <link
             rel="alternate"
             hrefLang="x-default"
-            href={
-              props.pagePath === '/main'
-                ? 'https://csssr.com/en'
-                : `https://csssr.com/en${props.pagePath}`
-            }
+            href={!pathname ? 'https://csssr.com/en' : `https://csssr.com/en/${pathname}`}
           />
           <link
             rel="alternate"
             hrefLang="ru"
-            href={
-              props.pagePath === '/main'
-                ? 'https://csssr.com/ru'
-                : `https://csssr.com/ru${props.pagePath}`
-            }
+            href={!pathname ? 'https://csssr.com/ru' : `https://csssr.com/ru/${pathname}`}
           />
           <link
             rel="alternate"
             hrefLang="en"
-            href={
-              props.pagePath === '/main'
-                ? 'https://csssr.com/en'
-                : `https://csssr.com/en${props.pagePath}`
-            }
+            href={!pathname ? 'https://csssr.com/en' : `https://csssr.com/en/${pathname}`}
           />
         </Fragment>
       )}
-      {props.withHrefLang && props.pagePath.substring(0, 5) === '/jobs' && (
+      {pathname === 'jobs' && (
         <Fragment>
-          <link
-            rel="alternate"
-            hrefLang="x-default"
-            href={`https://csssr.com/en-us${props.pagePath}`}
-          />
-          <link
-            rel="alternate"
-            hrefLang="ru-ru"
-            href={`https://csssr.com/ru-ru${props.pagePath}`}
-          />
-          <link
-            rel="alternate"
-            hrefLang="ru-ee"
-            href={`https://csssr.com/ru-ee${props.pagePath}`}
-          />
-          <link
-            rel="alternate"
-            hrefLang="en-ee"
-            href={`https://csssr.com/en-ee${props.pagePath}`}
-          />
-          <link
-            rel="alternate"
-            hrefLang="en-sg"
-            href={`https://csssr.com/en-sg${props.pagePath}`}
-          />
-          <link
-            rel="alternate"
-            hrefLang="en-us"
-            href={`https://csssr.com/en-us${props.pagePath}`}
-          />
+          <link rel="alternate" hrefLang="x-default" href={`https://csssr.com/en-us/${pathname}`} />
+          <link rel="alternate" hrefLang="ru-ru" href={`https://csssr.com/ru-ru/${pathname}`} />
+          <link rel="alternate" hrefLang="ru-ee" href={`https://csssr.com/ru-ee/${pathname}`} />
+          <link rel="alternate" hrefLang="en-ee" href={`https://csssr.com/en-ee/${pathname}`} />
+          <link rel="alternate" hrefLang="en-sg" href={`https://csssr.com/en-sg/${pathname}`} />
+          <link rel="alternate" hrefLang="en-us" href={`https://csssr.com/en-us/${pathname}`} />
         </Fragment>
       )}
       <script
@@ -229,4 +202,4 @@ Head.defaultProps = {
   },
 }
 
-export default withRouter(L10nConsumer(Head))
+export default withRouter(PagesListConsumer(L10nConsumer(Head)))

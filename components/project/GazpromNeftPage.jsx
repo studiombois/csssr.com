@@ -17,7 +17,6 @@ import quoteImages from '../../data/project/gazprom-neft/quote'
 import aboutProjectImages from '../../data/project/aboutProject'
 
 const GazpromNeftPage = ({ l10n: { translations } }) => {
-  const pagePath = '/project/gazprom-neft-professionals-4-0'
   const pageName = 'project'
   const projectId = 'gazpromNeft'
   const aboutProjectParagraphsScheme = [
@@ -30,8 +29,6 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.project.gazpromNeft.meta.title}
         description={translations.project.gazpromNeft.meta.description}
-        withHrefLang
-        pagePath={pagePath}
       />
 
       <Hero id="hero" content={hero} />

@@ -15,7 +15,6 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
 const EcommercePage = ({ l10n: { translations } }) => {
-  const pagePath = '/industry/ecommerce'
   const pageName = 'industry'
   const page = 'ecommerce'
   return (
@@ -23,8 +22,6 @@ const EcommercePage = ({ l10n: { translations } }) => {
       <Head
         title={translations.industry.meta.ecommerce.title}
         description={translations.industry.meta.ecommerce.description}
-        withHrefLang
-        pagePath={pagePath}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />

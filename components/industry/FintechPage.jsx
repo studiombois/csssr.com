@@ -15,7 +15,6 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
 const FintechPage = ({ l10n: { translations } }) => {
-  const pagePath = '/industry/fintech'
   const pageName = 'industry'
   const page = 'fintech'
   return (
@@ -23,8 +22,6 @@ const FintechPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.industry.meta.fintech.title}
         description={translations.industry.meta.fintech.description}
-        withHrefLang
-        pagePath={pagePath}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />

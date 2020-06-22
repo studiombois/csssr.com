@@ -190,8 +190,6 @@ class JobPage extends PureComponent {
       l10n: { translations, language },
     } = this.props
 
-    const pagePath = `/jobs/${vacancy.pathName}`
-
     return (
       <Fragment>
         <Layout pageName={pageName}>
@@ -200,8 +198,6 @@ class JobPage extends PureComponent {
             templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
             description={vacancy.description}
             structuredData={<StructuredDataVacancy vacancy={vacancy} />}
-            withHrefLang
-            pagePath={pagePath}
             ogImage={{
               url: require('../../static/images/jobs/1920/cover@2x.jpg'),
               width: 1266,

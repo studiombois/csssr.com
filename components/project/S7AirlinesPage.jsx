@@ -15,7 +15,6 @@ import techStack from '../../data/project/s7airlines/techStack'
 import aboutProjectImages from '../../data/project/aboutProject'
 
 const S7AirlinesPage = ({ l10n: { translations } }) => {
-  const pagePath = '/project/s7-personal-account'
   const pageName = 'project'
   const projectId = 's7airlines'
   const aboutProjectParagraphsScheme = [[0], [0, 1, 2]]
@@ -25,8 +24,6 @@ const S7AirlinesPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.project.s7airlines.meta.title}
         description={translations.project.s7airlines.meta.description}
-        withHrefLang
-        pagePath={pagePath}
       />
 
       <Hero id="hero" content={hero} />

@@ -12,15 +12,12 @@ import Form from '../../ContactFormWrapper'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const pagePath = '/service/outsourcing-front-end'
 const pageName = 'outsourcingFrontEnd'
 const OutsourcingFrontEndPage = ({ l10n: { translations } }) => (
   <Layout pageName={pageName}>
     <Head
       title={translations.outsourcingFrontEnd.meta.title}
       description={translations.outsourcingFrontEnd.meta.description}
-      withHrefLang
-      pagePath={pagePath}
     />
     <Hero pageName={pageName} />
     <AboutFrontend />

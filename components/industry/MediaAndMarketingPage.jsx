@@ -15,7 +15,6 @@ import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
 
 const MediaAndMarketingPage = ({ l10n: { translations } }) => {
-  const pagePath = '/industry/media-and-marketing'
   const pageName = 'industry'
   const page = 'mediaAndMarketing'
   return (
@@ -23,8 +22,6 @@ const MediaAndMarketingPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.industry.meta.mediaAndMarketing.title}
         description={translations.industry.meta.mediaAndMarketing.description}
-        withHrefLang
-        pagePath={pagePath}
       />
 
       <Greeting id="greeting" content={greeting} pageName={pageName} />

@@ -8,7 +8,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   padding-top: calc(${calcRem(205)} + 64px);
-  margin-bottom: ${calcRem(205)};
+  margin-bottom: ${calcRem(256)};
   margin-right: auto;
   margin-left: auto;
   width: 1792px;
@@ -186,7 +186,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${tablet.all} {
     & {
       padding-top: calc(${calcRem(144)} + 64px);
-      margin-bottom: ${calcRem(150)};
+      margin-bottom: ${calcRem(168)};
     }
 
     h3 + h4,
@@ -253,7 +253,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${mobile.all} {
     & {
       padding-top: calc(${calcRem(80)} + 56px);
-      margin-bottom: ${calcRem(128)};
+      margin-bottom: ${calcRem(144)};
     }
 
     h3 + h4,

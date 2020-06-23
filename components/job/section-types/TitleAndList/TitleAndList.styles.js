@@ -14,9 +14,15 @@ const base = css`
     margin-top: 1rem;
   }
 
+  @media (min-width: 768px) and (max-width: 1279px) {
+    & + ul.have-square-bullets li:before {
+      top: 0.25rem;
+    }
+  }
+
   @media (max-width: 767px) {
     & {
-      margin-top: 2.4375rem;
+      margin-top: 20.4375rem;
       font-size: 1rem;
     }
 

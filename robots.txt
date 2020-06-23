@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /cdn-cgi/l/email-protection
-Clean-param: utm&name&gclid&quests&amp&nm
-
-Sitemap: https://csssr.com/sitemap.xml

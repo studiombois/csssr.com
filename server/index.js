@@ -126,7 +126,9 @@ const startApp = async () => {
   server.get('/robots.txt', (req, res) => {
     res.type('text/plain')
     if (isProduction) {
-      res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
+      res.send(
+        'User-agent: *\nDisallow: /cdn-cgi/l/email-protection\nClean-param: utm&name&gclid&quests&amp&nm\nSitemap: https://csssr.com/sitemap.xml',
+      )
     } else {
       res.send('User-agent: *\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml')
     }

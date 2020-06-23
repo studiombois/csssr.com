@@ -13,8 +13,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   margin-left: auto;
   width: 1792px;
   background-color: white;
-  
-  
+
+
   .header {
     grid-column: 4 / span 6;
   }
@@ -92,7 +92,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   section {
-    margin-top: ${calcRem(49)};
+    margin-top: ${calcRem(80)};
   }
 
   .cookie-section {
@@ -211,9 +211,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-column: 3 / span 8;
       margin-top: ${calcRem(30)};
     }
-  
+
     section {
-      margin-top: ${calcRem(48)};
+      margin-top: ${calcRem(56)};
     }
 
     .description {
@@ -224,7 +224,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(9)};
       margin-bottom: 0;
     }
-    
+
     section .list-item.list-item_level_3 {
       margin-top: ${calcRem(8)};
       margin-bottom: 0;
@@ -278,7 +278,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-column: 1 / span 6;
       margin-top: ${calcRem(30)};
     }
-  
+
     section {
       margin-top: ${calcRem(30)};
     }
@@ -299,7 +299,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(16)};
       }
     }
-  
+
     section .list-item.list-item_level_3 {
       margin-top: ${calcRem(8)};
       padding-left: ${calcRem(66)};

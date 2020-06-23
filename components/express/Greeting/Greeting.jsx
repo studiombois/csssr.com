@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { bool, string } from 'prop-types'
-import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Greeting.styles'
 
@@ -10,37 +9,21 @@ import Text from '../../ui-kit/core-design/Text'
 import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
-import { ReactComponent as PlanetMobileSvg } from '../../../static/images/express/planet-animation/orbits-mobile.svg?original'
-import { ReactComponent as PlanetDesktopSvg } from '../../../static/images/express/planet-animation/orbits-desktop.svg?original'
 import greetingImagesData from '../../../data/express/greeting'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Greeting = ({ isMsBrowser, isMobile, className, l10n: { translations } }) => {
-  const PlanetSvg = isMobile ? PlanetMobileSvg : PlanetDesktopSvg
+const Greeting = ({ className, l10n: { translations } }) => {
   return (
     <Grid as="article" className={className}>
-      <div
-        className={cn('svg-animation', 'svg-animation-wrapper', {
-          'ms-style': isMsBrowser,
-        })}
-      >
-        <PictureForAllResolutions
-          className="rocket"
-          images={greetingImagesData.images}
-          fallback={greetingImagesData.images['desktop.l']}
-          alt={translations.express.imgAlt.rocket}
-        />
-
-        <PlanetSvg
-          className={cn('svg-animation-orbit', {
-            'svg-animation_visible': !isMsBrowser,
-            'svg-animation_invisible': isMsBrowser,
-          })}
-        />
-      </div>
+      <PictureForAllResolutions
+        className="bicycle"
+        images={greetingImagesData.images}
+        fallback={greetingImagesData.images['desktop.l']}
+        alt={translations.express.imgAlt.bicycle}
+      />
 
       <Heading
         as="h1"

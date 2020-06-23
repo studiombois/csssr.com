@@ -5,7 +5,7 @@ export const getPathName = (path) => {
 }
 
 export const isJobPage = (pathname) => {
-  return ['job', 'jobs', 'jobs-faq'].indexOf(pathname) === -1
+  return ['job', 'jobs', 'jobs-faq'].indexOf(pathname) !== -1
 }
 
 export default (fullPathname, newLanguage, pagesList) => {

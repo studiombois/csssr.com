@@ -51,7 +51,7 @@ const Head = (props) => {
         type="font/woff2"
         crossOrigin="anonymous"
       />
-      {(!pathname || (localePageCounter > 1 && isJobPage(pathname))) && (
+      {(!pathname || (localePageCounter > 1 && !isJobPage(pathname))) && (
         <Fragment>
           <link
             rel="alternate"

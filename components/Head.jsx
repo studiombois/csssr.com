@@ -7,17 +7,15 @@ import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 import { PagesListConsumer } from '../utils/pagesListProvider'
+import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
 
 // Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
 
 const Head = (props) => {
-  const [, , , pathname] = props.router.pathname.match(/^\/(.*?)(\/(.*))?$/)
+  const pathname = getPathName(props.router.pathname)
 
-  let localePageCounter = 0
-  props.pagesList.map((page) => {
-    if (page.pathname === pathname) localePageCounter += 1
-  })
+  const localePageCounter = props.pagesList.filter((page) => page.pathname === pathname).length
 
   const isIe11 = useContext(Ie11BrowserContext)
 
@@ -53,8 +51,7 @@ const Head = (props) => {
         type="font/woff2"
         crossOrigin="anonymous"
       />
-      {(!pathname ||
-        (localePageCounter > 1 && ['job', 'jobs', 'jobs-faq'].indexOf(pathname) === -1)) && (
+      {(!pathname || (localePageCounter > 1 && isJobPage(pathname))) && (
         <Fragment>
           <link
             rel="alternate"

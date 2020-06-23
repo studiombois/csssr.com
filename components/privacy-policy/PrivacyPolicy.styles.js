@@ -8,13 +8,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   padding-top: calc(${calcRem(205)} + 64px);
-  margin-bottom: ${calcRem(205)};
+  margin-bottom: ${calcRem(256)};
   margin-right: auto;
   margin-left: auto;
   width: 1792px;
   background-color: white;
-  
-  
+
+
   .header {
     grid-column: 4 / span 6;
   }
@@ -186,7 +186,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${tablet.all} {
     & {
       padding-top: calc(${calcRem(144)} + 64px);
-      margin-bottom: ${calcRem(150)};
+      margin-bottom: ${calcRem(168)};
     }
 
     h3 + h4,
@@ -211,7 +211,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-column: 3 / span 8;
       margin-top: ${calcRem(30)};
     }
-  
+
     section {
       margin-top: ${calcRem(48)};
     }
@@ -224,7 +224,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(9)};
       margin-bottom: 0;
     }
-    
+
     section .list-item.list-item_level_3 {
       margin-top: ${calcRem(8)};
       margin-bottom: 0;
@@ -253,7 +253,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${mobile.all} {
     & {
       padding-top: calc(${calcRem(80)} + 56px);
-      margin-bottom: ${calcRem(128)};
+      margin-bottom: ${calcRem(144)};
     }
 
     h3 + h4,
@@ -278,7 +278,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-column: 1 / span 6;
       margin-top: ${calcRem(30)};
     }
-  
+
     section {
       margin-top: ${calcRem(30)};
     }
@@ -299,7 +299,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(16)};
       }
     }
-  
+
     section .list-item.list-item_level_3 {
       margin-top: ${calcRem(8)};
       padding-left: ${calcRem(66)};

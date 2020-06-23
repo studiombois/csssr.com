@@ -6,11 +6,17 @@ import { L10nConsumer } from '../utils/l10nProvider'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { Ie11BrowserContext } from '../utils/msBrowserProvider'
+import { PagesListConsumer } from '../utils/pagesListProvider'
+import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
 
 // Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
 
 const Head = (props) => {
+  const pathname = getPathName(props.router.pathname)
+
+  const localePageCounter = props.pagesList.filter((page) => page.pathname === pathname).length
+
   const isIe11 = useContext(Ie11BrowserContext)
 
   // При роутинге в ie11 picturefill не подгружает правильные размеры изображений.
@@ -45,6 +51,35 @@ const Head = (props) => {
         type="font/woff2"
         crossOrigin="anonymous"
       />
+      {(!pathname || (localePageCounter > 1 && !isJobPage(pathname))) && (
+        <Fragment>
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href={!pathname ? 'https://csssr.com/en' : `https://csssr.com/en/${pathname}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="ru"
+            href={!pathname ? 'https://csssr.com/ru' : `https://csssr.com/ru/${pathname}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="en"
+            href={!pathname ? 'https://csssr.com/en' : `https://csssr.com/en/${pathname}`}
+          />
+        </Fragment>
+      )}
+      {pathname === 'jobs' && (
+        <Fragment>
+          <link rel="alternate" hrefLang="x-default" href={`https://csssr.com/en-us/${pathname}`} />
+          <link rel="alternate" hrefLang="ru-ru" href={`https://csssr.com/ru-ru/${pathname}`} />
+          <link rel="alternate" hrefLang="ru-ee" href={`https://csssr.com/ru-ee/${pathname}`} />
+          <link rel="alternate" hrefLang="en-ee" href={`https://csssr.com/en-ee/${pathname}`} />
+          <link rel="alternate" hrefLang="en-sg" href={`https://csssr.com/en-sg/${pathname}`} />
+          <link rel="alternate" hrefLang="en-us" href={`https://csssr.com/en-us/${pathname}`} />
+        </Fragment>
+      )}
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -164,4 +199,4 @@ Head.defaultProps = {
   },
 }
 
-export default withRouter(L10nConsumer(Head))
+export default withRouter(PagesListConsumer(L10nConsumer(Head)))

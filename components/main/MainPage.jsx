@@ -25,6 +25,7 @@ class MainPage extends PureComponent {
       vacancies,
       l10n: { translations },
     } = this.props
+
     const pageName = 'main'
     return (
       <Layout pageName={pageName}>

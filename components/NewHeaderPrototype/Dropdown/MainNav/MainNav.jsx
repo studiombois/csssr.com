@@ -10,7 +10,7 @@ const ruNavTitlesByMainNavIds = {
   store: 'Магазин',
   blog: 'Блог',
   school: 'Школа',
-  jobs: 'Карьера',
+  career: 'Карьера',
   podcasts: 'Подкасты',
 }
 
@@ -24,7 +24,10 @@ const MainNav = ({ className, activeItem, onNavItemClick, lng }) => (
       }
 
       return (
-        <li key={id} className={cn('main-nav-item', { is_active: id === activeItem })}>
+        <li
+          key={id}
+          className={cn('main-nav-item', `main-nav-item_${id}`, { is_active: id === activeItem })}
+        >
           <button className="main-nav-item-button" onClick={() => onNavItemClick(id)} />
           <div className="main-nav-item-title">
             {lng === 'en' ? `.${id}` : ruNavTitlesByMainNavIds[id]}

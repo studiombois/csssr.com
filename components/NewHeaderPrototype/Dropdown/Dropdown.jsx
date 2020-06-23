@@ -44,6 +44,7 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
   const showCalendlyCallback = eventStartTime || eventEndTime
   const [activeMainNavItem, setActiveMainNavItem] = useState('dev')
   const [isFormVisible, setFormVisibilityStatus] = useState(showCalendlyCallback || false)
+  const [isLngModalVisible, toggleLngModalVisibilisty] = useState(false)
   let subNavTitleHref = {
     dev: '/',
     store: 'https://store.csssr.com/',
@@ -57,12 +58,12 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
     <div
       className={cn(className, {
         is_opened: isOpened,
+        is_on_top: isLngModalVisible,
       })}
       data-scroll-lock-scrollable
     >
-      <div className="side-bar">
+      <div className={cn('side-bar', { is_blured: isLngModalVisible })}>
         <MainNav activeItem={activeMainNavItem} onNavItemClick={setActiveMainNavItem} lng={lng} />
-        <LanguageSwitcher />
       </div>
 
       <div className="sub-nav" data-scroll-lock-scrollable>
@@ -155,19 +156,18 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
 
         {activeMainNavItem === 'store' && (
           <>
-            {/* {showCalendlyCallback ? (
-              <div style={{ color: 'white' }}>{formatDate(eventStartTime, eventEndTime)}</div>
-            ) : (
-              <a href="https://calendly.com/andrey-yankovsky/30min?month=2020-06">Calendly</a>
-            )} */}
-
             <ul className="sub-nav-store-sections">
               {storeNav.sections.map(({ links }, index) => (
                 <li className="sub-nav-store-sections-item" key={index}>
                   <ul className="sub-nav-store-sections-item">
                     {links.map((title) => (
-                      <li className="sub-nav-store-section-list-item" key={title}>
-                        {title}
+                      <li key={title}>
+                        <a
+                          href="https://www.store.csssr.com/"
+                          className="sub-nav-store-section-list-item"
+                        >
+                          {title}
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -179,11 +179,16 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
 
         {activeMainNavItem === 'blog' && lng === 'en' && (
           <>
-            <div className="sub-nav-blog-section-title">Sections</div>
+            <div className="sub-nav-blog-section-title">Categories</div>
             <ul className="sub-nav-blog-sections">
-              {blogNav.sections[0].links.map((link) => (
+              {blogNav.sections[0].links.en.map((link) => (
                 <li className="sub-nav-blog-section-item" key={link}>
-                  <a className="sub-nav-blog-section-list-item-link">{link}</a>
+                  <a
+                    href="https://blog.csssr.com/en"
+                    className="sub-nav-blog-section-list-item-link"
+                  >
+                    {link}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -192,7 +197,49 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
 
         {activeMainNavItem === 'blog' && lng === 'ru' && (
           <>
-            <div className="sub-nav-blog-section-title">Наши подкасты</div>
+            <div className="sub-nav-blog-section-title">Категории</div>
+            <ul className="sub-nav-blog-sections">
+              {blogNav.sections[0].links.ru.map((link) => (
+                <li className="sub-nav-blog-section-item" key={link}>
+                  <a
+                    href="https://blog.csssr.com/en"
+                    className="sub-nav-blog-section-list-item-link"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {activeMainNavItem === 'blog' && lng === 'en' && (
+          <>
+            <div className="sub-nav-blog-section-title big-margin">Our socials</div>
+            <ul className="sub-nav-blog-sections socials">
+              {blogNav.sections[2].links.map(({ id, icon: Icon }) => {
+                if (id === 'instagram' || id === 'soundcloud' || id === 'telegram' || id === 'vk') {
+                  return
+                }
+
+                return (
+                  <li className="sub-nav-blog-section-item" key={id}>
+                    <a
+                      href="https://blog.csssr.ru/"
+                      className="sub-nav-blog-section-list-item-link"
+                    >
+                      <Icon />
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </>
+        )}
+
+        {activeMainNavItem === 'blog' && lng === 'ru' && (
+          <>
+            {/* <div className="sub-nav-blog-section-title">Наши подкасты</div>
             <ul className="sub-nav-blog-sections">
               {blogNav.sections[1].links.map(({ id, title, href, icon: Icon }) => (
                 <li className="sub-nav-blog-section-item is_ru" key={id}>
@@ -202,9 +249,9 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
 
-            <div className="sub-nav-blog-section-title">Наши социальные сети</div>
+            <div className="sub-nav-blog-section-title big-margin">Наши социальные сети</div>
             <ul className="sub-nav-blog-sections socials">
               {blogNav.sections[2].links.map(({ id, href, icon: Icon }) => (
                 <li className="sub-nav-blog-section-item" key={id}>
@@ -217,7 +264,7 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
           </>
         )}
 
-        {activeMainNavItem === 'jobs' && (
+        {activeMainNavItem === 'career' && (
           <>
             <div className="sub-nav-jobs-section-title">Vacancies</div>
             <ul className="sub-nav-jobs-sections">
@@ -233,7 +280,7 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
               ))}
             </ul>
 
-            <div className="sub-nav-jobs-section-title">Company</div>
+            <div className="sub-nav-jobs-section-title big-margin">Company</div>
             <ul className="sub-nav-jobs-sections">
               <li className="sub-nav-jobs-section-item">
                 <a
@@ -287,9 +334,11 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
         )}
       </div>
 
-      <Button className="button_action" onClick={() => setFormVisibilityStatus(true)}>
-        Contact us
-      </Button>
+      {!isLngModalVisible && (
+        <Button className="button_action" onClick={() => setFormVisibilityStatus(true)}>
+          Contact us
+        </Button>
+      )}
 
       <Form
         lng={lng}
@@ -297,6 +346,11 @@ const Dropdown = ({ className, isOpened, t, router: { pathname, query }, lng }) 
         showCalendlyCallback={showCalendlyCallback}
         calandlyTime={formatDate(eventStartTime, eventEndTime)}
         onCloseClick={() => setFormVisibilityStatus(false)}
+      />
+
+      <LanguageSwitcher
+        isModalVisible={isLngModalVisible}
+        toggleModalVisibilisty={toggleLngModalVisibilisty}
       />
     </div>
   )

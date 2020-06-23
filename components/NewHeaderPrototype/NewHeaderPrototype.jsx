@@ -10,7 +10,7 @@ import styles from './NewHeaderPrototype.styles'
 
 import Logo from '../../static/icons/csssr_logo.svg'
 import Burger from './static/icons/burger.svg'
-import Cross from './static/icons/cross.svg'
+import Cross from './static/icons/cross_new.svg'
 
 import translate from '../../utils/translate-wrapper'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
@@ -21,8 +21,7 @@ const NewHeaderPrototype = ({ className, lng, t, router: { query }, isIe11, isMo
   const eventStartTime = query.event_start_time
   const eventEndTime = query.event_end_time
   const showCalendlyCallback = eventStartTime || eventEndTime
-  console.log('yyyy', showCalendlyCallback)
-  const [isDropdownOpened, toggleDropdown] = useState(showCalendlyCallback || false)
+  const [isDropdownOpened, toggleDropdown] = useState(showCalendlyCallback || true)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
 
   useEffect(() => {

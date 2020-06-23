@@ -11,7 +11,7 @@ import { ReactComponent as Telegram } from '../static/icons/telegram.svg'
 import { ReactComponent as Twitter } from '../static/icons/twitter.svg'
 import { ReactComponent as Vk } from '../static/icons/vk.svg'
 
-export const mainNav = ['dev', 'store', 'blog', 'school', 'jobs', 'podcasts']
+export const mainNav = ['dev', 'school', 'store', 'podcasts', 'blog', 'career']
 
 export const devNav = {
   id: 'dev',
@@ -124,18 +124,10 @@ export const blogNav = {
     {
       id: 'sections',
       title: 'common:header.menu.blog.sections.title',
-      links: [
-        'Web development',
-        'Business',
-        'Design',
-        'Black work',
-        'Dotted section',
-        'Frames',
-        'React.js',
-        'Pepsi',
-        'Spotify',
-        'Rational war',
-      ],
+      links: {
+        en: ['Web development', 'Business', 'Managment', 'Cultere', 'HR'],
+        ru: ['Разработка', 'Бизнес', 'Менеджмент', 'Культура', 'HR'],
+      },
     },
     {
       id: 'podcasts',
@@ -211,7 +203,7 @@ export const blogNav = {
 }
 
 export const jobsNav = {
-  id: 'jobs',
+  id: 'career',
   href: 'https://csssr.com/jobs',
   ru: [
     { name: 'High middle back-end разработчик', locale: 'ru-ru', pathName: 'java-developer' },
@@ -258,6 +250,16 @@ export const podcastsNav = {
     {
       href: 'https://soundcloud.com/csssr/argumentarium-mesto-verstki-vo-vselennoy',
       id: 'news-513',
+    },
+    {
+      href:
+        'https://soundcloud.com/csssr/world-wide-work-kitay-ukhan-v-gostyakh-ararat-martirosyan',
+      id: 'news-514',
+    },
+    {
+      href:
+        'https://soundcloud.com/csssr/remote-talk-12-dmitriy-kurtaev-nizhniy-novgorod-intel-opencv-c-one-love',
+      id: 'news-515',
     },
   ],
 }

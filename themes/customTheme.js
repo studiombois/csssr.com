@@ -22,6 +22,7 @@ const customTheme = {
     primary: {
       origin: primary.hex(),
       darken15: primary.darken(0.15).hex(),
+      fade: '#80bbff',
     },
     secondary: {
       origin: secondary.hex(),

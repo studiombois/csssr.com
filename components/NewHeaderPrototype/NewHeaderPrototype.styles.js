@@ -56,7 +56,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     }
 
     &.is_dropdown_opened .burger {
-      background-color: #18191B;
+      background-color: #212528;
     }
 
     .dropdown {

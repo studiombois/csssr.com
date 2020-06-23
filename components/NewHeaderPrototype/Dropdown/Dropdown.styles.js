@@ -26,6 +26,14 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       overflow: hidden;
     }
 
+    &.is_on_top {
+      z-index: 1;
+
+      .side-bar {
+        padding-bottom: 0;
+      }
+    }
+
     .side-bar,
     .sub-nav {
       padding-bottom: ${calcRem(72)};
@@ -38,8 +46,20 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       display: flex;
       flex-direction: column;
       width: ${calcRem(80)};
-      height: calc(100% - ${calcRem(64)});
+      height: 100%;
       background-color: ${colors.secondary.darken100};
+
+      &.is_blured::before {
+        content: '';
+        position: absolute;
+        top: ${calcRem(-64)};
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(25, 29, 32, 0.95);
+        z-index: 4
+      }
     }
 
     .sub-nav {
@@ -47,20 +67,23 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       padding-right: ${calcRem(32)};
       width: calc(100% - ${calcRem(80)});
       height: 100%;
-      background-color: #101112;
+      background-color: #191D20;
       overflow: auto;
     }
 
     .title {
       position: sticky;
       z-index: 1;
-      margin-top: ${calcRem(100)};
-      padding-top: ${calcRem(16)};
-      padding-bottom: ${calcRem(16)};
       top: ${calcRem(-2)};
+      padding-top: ${calcRem(21)};
+      padding-bottom: ${calcRem(23)};
+      width: ${calcRem(280)};
+      margin-left: ${calcRem(-32)};
+      padding-left: ${calcRem(32)};
+      padding-right: ${calcRem(68)};
       display: flex;
-      flex-direction: column;;
-      background-color: #101112;
+      flex-direction: column;
+      background-color: #191D20;
       transition: font-size 75ms ease-in;
 
       a {
@@ -69,8 +92,8 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
         font-family: Roboto Slab;
         font-style: normal;
         font-weight: normal;
-        font-size: ${calcRem(20)};
-        line-height: ${calcRem(16)};
+        font-size: ${calcRem(14)};
+        line-height: ${calcRem(20)};
         letter-spacing: ${calcRem(1)};
         text-transform: uppercase;
         color: white
@@ -78,10 +101,8 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     }
 
     .title.stuck {
-      a {
-        font-size: ${calcRem(14)};
-        line-height: ${calcRem(20)};
-      }
+      padding-top: ${calcRem(23)};
+      border-bottom: ${calcRem(1)} solid #2A2E31;
     }
 
     .arrow {
@@ -100,6 +121,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       letter-spacing: ${calcRem(1)};
       text-transform: uppercase;
       color: #9B9B9B;
+      display: none;
     }
 
     .sub-nav-dev-sections {
@@ -108,6 +130,10 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
 
     .sub-nav-dev-sections-item {
       margin-top: ${calcRem(40)};
+
+      &:first-of-type {
+        margin-top: ${calcRem(24)};
+      }
     }
 
     .sub-nav-dev-section-title {
@@ -126,22 +152,31 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     }
 
     .sub-nav-dev-section-list-item:not(:first-of-type) {
-      margin-top: ${calcRem(12)};
+      margin-top: ${calcRem(20)};
     }
 
     .sub-nav-dev-section-list-item-link {
       font-family: Roboto;
       font-style: normal;
-      font-weight: 500;
-      font-size: ${calcRem(16)};
-      line-height: ${calcRem(24)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(20)};
+      font-weight: normal;
       color: #FFFFFF;
 
       &.is_active {
+        position: relative;
         color: #9B9B9B;
         pointer-events: none;
-        text-decoration: underline;
-        text-decoration-color: ${colors.primary.origin};
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: ${calcRem(-32)};
+          top: ${calcRem(-6)};
+          height: ${calcRem(32)};
+          width: ${calcRem(280)};
+          background-color: rgba(155, 155, 155, 0.5);
+        }
       }
     }
      /* dev-nav-end */
@@ -149,10 +184,18 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       /* store-nav-start */
     .sub-nav-store-sections {
       padding-bottom: ${calcRem(40)};
+
+      &:first-of-type {
+        margin-top: ${calcRem(24)};
+      }
     }
 
     .sub-nav-store-sections-item {
       margin-top: ${calcRem(40)};
+
+      &:first-of-type {
+        margin-top: ${calcRem(24)};
+      }
     }
 
     .sub-nav-store-section-list-item {
@@ -166,12 +209,13 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       line-height: ${calcRem(24)};
       color: #FFFFFF;
       background-color: #323C48;
+      display: block;
     }
     /* store-nav-end */
 
     /* blog-nav-start */
     .sub-nav-blog-section-title {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(24)};
       font-family: Roboto;
       font-style: normal;
       font-weight: normal;
@@ -180,6 +224,10 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       letter-spacing: ${calcRem(1.25)};
       text-transform: uppercase;
       color: #9B9B9B;
+
+      &.big-margin {
+        margin-top: ${calcRem(40)};
+      }
     }
 
     .sub-nav-blog-sections {
@@ -197,7 +245,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
           }
 
           &:not(:first-of-type) {
-            margin-top: ${calcRem(12)};
+            margin-top: ${calcRem(20)};
           }
         }
 
@@ -211,9 +259,9 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
         .sub-nav-blog-section-list-item-link {
           font-family: Roboto;
           font-style: normal;
-          font-weight: 500;
-          font-size: ${calcRem(16)};
-          line-height: ${calcRem(24)};
+          font-weight: normal;
+          font-size: ${calcRem(14)};
+          line-height: ${calcRem(20)};
           color: #FFFFFF;
         }
       }
@@ -239,7 +287,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
 
     /* jobs-nav-start */
     .sub-nav-jobs-section-title {
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(24)};
       font-family: Roboto;
       font-style: normal;
       font-weight: normal;
@@ -248,6 +296,10 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       letter-spacing: ${calcRem(1.25)};
       text-transform: uppercase;
       color: #9B9B9B;
+
+      &.big-margin {
+        margin-top: ${calcRem(40)};
+      }
     }
 
     .sub-nav-jobs-sections {
@@ -259,15 +311,15 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     }
 
     .sub-nav-jobs-section-item:not(:first-of-type) {
-      margin-top: ${calcRem(12)};
+      margin-top: ${calcRem(20)};
     }
 
     .sub-nav-jobs-section-list-item-link {
       font-family: Roboto;
       font-style: normal;
-      font-weight: 500;
-      font-size: ${calcRem(16)};
-      line-height: ${calcRem(24)};
+      font-weight: normal;
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(20)};
       color: #FFFFFF;
     }
     /* jobs-nav-end */
@@ -275,7 +327,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     /* school-nav-start */
     .sub-nav-school-section-item {
       padding-bottom: ${calcRem(40)};
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(24)};
 
       img {
         width: ${calcRem(216)};
@@ -286,7 +338,14 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     /* podcasts-nav-start */
     .sub-nav-podcasts-section-item {
       margin-top: ${calcRem(40)};
-      padding-bottom: ${calcRem(40)};
+
+      &:first-of-type {
+        margin-top: ${calcRem(24)};
+      }
+
+      &:last-of-type {
+        padding-bottom: ${calcRem(40)};
+      }
 
       img {
         width: ${calcRem(216)};
@@ -295,6 +354,7 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     /* podcasts-nav-end */
 
     .button_action {
+      background-color: ${colors.primary.fade};
       position: absolute;
       bottom: 0;
       z-index: 4;
@@ -307,7 +367,8 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
       letter-spacing: 0;
       transition: opacity 75ms ease-out;
       opacity: 0;
-      pointer-events: all;
+      /* pointer-events: all; */
+      pointer-events: none;
     }
 
     &.is_opened .button_action {

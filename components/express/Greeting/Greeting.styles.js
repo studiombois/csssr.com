@@ -3,6 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({breakpoints}) => css`
+  position: relative;
   overflow: visible;
 
   ${breakpoints.mobile.all} {
@@ -166,30 +167,40 @@ const base = ({breakpoints}) => css`
     margin-bottom: 2.5rem;
   }
 
-  .rocket {
+  .bicycle {
     position: absolute;
     display: block;
 
-    ${breakpoints.desktop.all} {
-      top: 7%;
-      left: 42.5%;
-      width: ${calcRem(376)};
-    }
-
     ${breakpoints.desktop.l} {
       transform: translate(2%, 19%);
+      width: ${calcRem(728)};
+      top: 8.5%;
+      left: 50%;
+    }
+
+    ${breakpoints.desktop.m} {
+      width: ${calcRem(656)};
+      top: 34.5%;
+      left: 42.2%;
+    }
+
+    ${breakpoints.desktop.s} {
+      width: ${calcRem(608)};
+      top: 22%;
+      left: 42%;
     }
 
     ${breakpoints.tablet.all} {
-      width: ${calcRem(376)};
-      top: 7%;
-      left: 43%;
+      width: ${calcRem(463)};
+      top: 28.5%;
+      left: 51%;
     }
 
     ${breakpoints.mobile.all} {
-      top: 0;
-      left: 36%;
-      width: ${calcRem(146)};
+      top: 11.5%;
+      right: 0;
+      transform: translateX(15px);
+      width: ${calcRem(176)};
     }
   }
 `

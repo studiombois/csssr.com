@@ -61,7 +61,7 @@
         }
       },
       "products": {
-        "title": "Products",
+        "title": "Solutions",
         "lms": {
           "title": "Modular LMS Platform",
           "description": "Start you E-Learning business with or&nbsp;LMS. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and customization"
@@ -115,7 +115,7 @@
       "careers": "Careers"
     },
     "products": {
-      "title": "Products",
+      "title": "Solutions",
       "lms": "Modular LMS system",
       "tracker": "Time-tracking software"
     },

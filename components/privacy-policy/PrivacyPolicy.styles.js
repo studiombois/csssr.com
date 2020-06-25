@@ -92,7 +92,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   section {
+<<<<<<< HEAD
+    margin-top: ${calcRem(50)};
+=======
     margin-top: ${calcRem(80)};
+>>>>>>> 77f909353e220820f0f889f88b118439748721e4
   }
 
   .cookie-section {
@@ -213,7 +217,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     section {
+<<<<<<< HEAD
+      margin-top: ${calcRem(30)};
+=======
       margin-top: ${calcRem(56)};
+>>>>>>> 77f909353e220820f0f889f88b118439748721e4
     }
 
     .description {

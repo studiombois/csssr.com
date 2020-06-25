@@ -12,8 +12,6 @@ import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import greetingImagesData from '../../../data/express/greeting'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Greeting = ({ className, l10n: { translations } }) => {
   return (
@@ -57,9 +55,7 @@ Greeting.propTypes = {
 }
 
 export default L10nConsumer(
-  DeviceConsumer(
-    MsBrowserConsumer(styled(Greeting)`
-      ${styles}
-    `),
-  ),
+  styled(Greeting)`
+    ${styles}
+  `,
 )

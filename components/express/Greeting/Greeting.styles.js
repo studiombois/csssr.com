@@ -33,7 +33,7 @@ const base = ({breakpoints}) => css`
     ${breakpoints.desktop.all} {
       margin-top: ${calcRem(7)};
       margin-bottom: ${calcRem(53)};
-      grid-column: 2 / span 4;
+      grid-column: 2 / span 6;
     }
 
     ${breakpoints.tablet.all} {
@@ -58,7 +58,7 @@ const base = ({breakpoints}) => css`
     }
 
     ${breakpoints.desktop.l} {
-      grid-column: 2 / span 3;
+      grid-column: 2 / span 4;
     }
 
     ${breakpoints.tablet.all} {
@@ -180,7 +180,7 @@ const base = ({breakpoints}) => css`
 
     ${breakpoints.desktop.m} {
       width: ${calcRem(656)};
-      top: 34.5%;
+      top: 22%;
       left: 42.2%;
     }
 
@@ -197,9 +197,8 @@ const base = ({breakpoints}) => css`
     }
 
     ${breakpoints.mobile.all} {
-      top: 11.5%;
-      right: 0;
-      transform: translateX(15px);
+      top: 12%;
+      right: ${calcRem(-16)};
       width: ${calcRem(176)};
     }
   }

@@ -197,7 +197,7 @@ testcase('Переход на страницу LMS Platform из хеддера'
       .mouseButtonClick('left')
   })
   expected('Переход на страницу LMS Platform', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en/products/lms')
+    browser.assert.urlEquals(browser.launch_url + '/en/solutions/lms')
   })
 })
 

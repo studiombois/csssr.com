@@ -5,7 +5,7 @@
   },
   "greeting": {
     "title": "<strong>Express</strong> <br /> Web Development",
-    "description": "If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable<br /> HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
+    "description": "If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable<br class='subheading-br'/> HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
     "button": "Get a quote"
   },
   "aboutUs": {

@@ -80,7 +80,10 @@ const Head = (props) => {
           <link rel="alternate" hrefLang="en-us" href={`https://csssr.com/en-us/${pathname}`} />
         </Fragment>
       )}
-      <link rel="canonical" href={`https://csssr.com${props.router.pathname}`} />
+      <link
+        rel="canonical"
+        href={`https://csssr.com${props.router.pathname || props.router.asPath}`}
+      />
       <script
         dangerouslySetInnerHTML={{
           __html: `

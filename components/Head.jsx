@@ -13,7 +13,7 @@ import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
 const origin = 'https://csssr.com'
 
 const Head = (props) => {
-  const pathname = getPathName(props.router.pathname)
+  const pathname = getPathName(props.router.pathname || props.router.asPath)
 
   const localePageCounter = props.pagesList.filter((page) => page.pathname === pathname).length
 

@@ -11,6 +11,7 @@ import Form from '../ContactFormWrapper'
 
 const WayOfWork = ({ l10n: { translations } }) => {
   const pageName = 'wayOfWork'
+
   return (
     <Layout pageName={pageName}>
       <Head

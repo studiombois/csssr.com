@@ -111,11 +111,11 @@ export const nav = [
     ],
   },
   {
-    id: 'products',
+    id: 'solutions',
     links: [
       {
         id: 'lms',
-        href: 'products/lms',
+        href: 'solutions/lms',
       },
       {
         id: 'tracker',

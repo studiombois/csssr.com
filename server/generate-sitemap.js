@@ -488,7 +488,7 @@ const sitemapUrlsSettings = [
     priority: 0.6,
   },
   {
-    url: 'https://csssr.com/en/products/lms',
+    url: 'https://csssr.com/en/solutions/lms',
     changefreq: 'yearly',
     priority: 0.6,
   },

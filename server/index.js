@@ -41,7 +41,7 @@ const startApp = async () => {
     const acceptLanguageHeader = req.headers['accept-language']
     const locale = localeDetector(localeFromPath, localeFromCookie, acceptLanguageHeader)
 
-    res.redirect(301, `/${locale}/jobs`)
+    res.redirect(302, `/${locale}/jobs`)
   })
 
   server.get('/:language(ru|en)/jobs/:jobName', (req, res) => {

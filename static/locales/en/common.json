@@ -60,7 +60,7 @@
           "description": "Attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average."
         }
       },
-      "products": {
+      "solutions": {
         "title": "Solutions",
         "lms": {
           "title": "Modular LMS Platform",
@@ -114,7 +114,7 @@
       "aboutUs": "About us",
       "careers": "Careers"
     },
-    "products": {
+    "solutions": {
       "title": "Solutions",
       "lms": "Modular LMS system",
       "tracker": "Time-tracking software"

@@ -38,6 +38,10 @@ const base = ({breakpoints}) => css`
 
     ${breakpoints.desktop.l} {
       margin-bottom: ${calcRem(78)};
+
+      &-br.br {
+        display: inline-block;
+      }
     }
 
     ${breakpoints.tablet.all} {
@@ -50,6 +54,10 @@ const base = ({breakpoints}) => css`
       margin-top: ${calcRem(120)};
       margin-bottom: ${calcRem(27)};
       grid-column: 1 / span 6;
+    }
+
+    &-br {
+      display: none;
     }
   }
 

@@ -1,11 +1,6 @@
 export default (translations) => (value) => {
-  if (value) {
-    if (value.trim() === '') {
+  if (!value || value.trim() === '') {
       return translations.common.form.errors.required
-    }
-
-    return undefined
   }
-
-  return translations.common.form.errors.required
+  return undefined
 }

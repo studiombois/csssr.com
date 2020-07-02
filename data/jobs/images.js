@@ -13,7 +13,6 @@ import how_tablet_all_webp from '../../static/images/jobs/tablet.all/how.png?res
 import how_mobile_all from '../../static/images/jobs/mobile.all/how.png?responsive'
 import how_mobile_all_webp from '../../static/images/jobs/mobile.all/how.png?responsive_and_webp'
 
-
 import who_desktop_l from '../../static/images/jobs/desktop.l/who.png?responsive'
 import who_desktop_l_webp from '../../static/images/jobs/desktop.l/who.png?responsive_and_webp'
 
@@ -28,7 +27,6 @@ import who_tablet_all_webp from '../../static/images/jobs/tablet.all/who.png?res
 
 import who_mobile_all from '../../static/images/jobs/mobile.all/who.png?responsive'
 import who_mobile_all_webp from '../../static/images/jobs/mobile.all/who.png?responsive_and_webp'
-
 
 import distance_desktop_l from '../../static/images/jobs/desktop.l/distance.png?responsive'
 import distance_desktop_l_webp from '../../static/images/jobs/desktop.l/distance.png?responsive_and_webp'
@@ -45,7 +43,6 @@ import distance_tablet_all_webp from '../../static/images/jobs/tablet.all/distan
 import distance_mobile_all from '../../static/images/jobs/mobile.all/distance.png?responsive'
 import distance_mobile_all_webp from '../../static/images/jobs/mobile.all/distance.png?responsive_and_webp'
 
-
 import faq_desktop_l from '../../static/images/jobs/desktop.l/faq.png?responsive'
 import faq_desktop_l_webp from '../../static/images/jobs/desktop.l/faq.png?responsive_and_webp'
 
@@ -61,13 +58,12 @@ import faq_tablet_all_webp from '../../static/images/jobs/tablet.all/faq.png?res
 import faq_mobile_all from '../../static/images/jobs/mobile.all/faq.png?responsive'
 import faq_mobile_all_webp from '../../static/images/jobs/mobile.all/faq.png?responsive_and_webp'
 
-
 export const howImages = {
   'mobile.all': { png: how_mobile_all, webp: how_mobile_all_webp },
   'tablet.all': { png: how_tablet_all, webp: how_tablet_all_webp },
   'desktop.s': { png: how_desktop_s, webp: how_desktop_s_webp },
   'desktop.m': { png: how_desktop_m, webp: how_desktop_m_webp },
-  'desktop.l': { png: how_desktop_l, webp: how_desktop_l_webp}
+  'desktop.l': { png: how_desktop_l, webp: how_desktop_l_webp },
 }
 
 export const whoImages = {

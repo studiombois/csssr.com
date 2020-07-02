@@ -1,6 +1,7 @@
 import React from 'react'
 import { number } from 'prop-types'
 import ErrorPage from '../pages/_error'
+import Error404Page from '../pages/404'
 
 export default (Component) => {
   class Extended extends React.Component {
@@ -13,6 +14,9 @@ export default (Component) => {
     render() {
       const { statusCode } = this.props
       if (statusCode && statusCode !== 200) {
+        if (statusCode === 404) {
+          return <Error404Page />
+        }
         return <ErrorPage statusCode={statusCode} />
       }
       return <Component {...this.props} />

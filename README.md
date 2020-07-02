@@ -1,6 +1,6 @@
 # CSSSR official website
 
-This repo contains the source code for [csssr.com](http://csssr.com/).
+This repo contains the source code for [csssr.com](https://csssr.com/).
 
 *Readme is also available in [Russian](README.ru.md).*
 
@@ -18,7 +18,7 @@ Apart from Next.js built-in features our site has:
 - basic multilingual support without any third-party library
 - example usage of our [e2e tools](https://github.com/CSSSR/e2e-tools)
 - integration with [emotion](https://emotion.sh/docs/introduction)
-- [sentry](https://sentry.io/organizations/csssr/issues/) integration for both client and server
+- [sentry](https://sentry.io/) integration for both client and server
 
 We hope that this repo will be helpful to anyone building Next.js app!
 

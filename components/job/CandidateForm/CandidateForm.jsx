@@ -157,6 +157,18 @@ class CandidateForm extends PureComponent {
     this.handleMediaMatch(this.mobileMediaQuery)
   }
 
+  componentDidUpdate(prevProps) {
+    const {
+      form: { reset },
+      vacancy: { id },
+    } = this.props
+
+    prevProps.vacancy.id !== id &&
+      setTimeout(() => {
+        reset()
+      }, 0)
+  }
+
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }

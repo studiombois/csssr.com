@@ -39,7 +39,7 @@ We hope that this repo will be helpful to anyone building Next.js app!
 
 ### Running locally
 
-1. Run `CSSSR_SPACE_ORIGIN=http://master.space.csssr yarn dev` to start dev server
+1. Run `CSSSR_SPACE_ORIGIN=http://master.space.csssr.cloud yarn dev` to start dev server
 (CSSSR_SPACE_ORIGIN is used to fetch data about vacancies from our HR software)
 1. Open `localhost:3000` in browser
 

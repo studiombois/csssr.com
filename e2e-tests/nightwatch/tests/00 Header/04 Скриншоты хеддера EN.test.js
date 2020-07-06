@@ -67,17 +67,17 @@ testcase('Дропдаун HOW WE WORK 1920 EN', () => {
   })
 })
 
-testcase('Дропдаун PRODUCTS 1920 EN', () => {
+testcase('Дропдаун SOLUTIONS 1920 EN', () => {
   step('Перейти на главную страницу', () => {
     browser.setWindowSize(1920, 1024).url(browser.launch_url + '/en')
   })
-  step('Навести курсор на PRODUCTS в хеддере', () => {
+  step('Навести курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
   })
-  expected('Скрин дропдауна PRODUCTS на 1920', () => {
+  expected('Скрин дропдауна SOLUTIONS на 1920', () => {
     browser.assert.screenshotElement(
       '#__next > header > div > div',
-      'Дропдаун PRODUCTS 1920 EN'
+      'Дропдаун SOLUTIONS 1920 EN'
     )
   })
 })
@@ -151,17 +151,17 @@ testcase('Дропдаун HOW WE WORK 1360 EN', () => {
   })
 })
 
-testcase('Дропдаун PRODUCTS 1360 EN', () => {
+testcase('Дропдаун SOLUTIONS 1360 EN', () => {
   step('Перейти на главную страницу', () => {
     browser.setWindowSize(1360, 1024).url(browser.launch_url + '/en')
   })
-  step('Навести курсор на PRODUCTS в хеддере', () => {
+  step('Навести курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
   })
-  expected('Скрин дропдауна PRODUCTS на 1360', () => {
+  expected('Скрин дропдауна SOLUTIONS на 1360', () => {
     browser.assert.screenshotElement(
       '#__next > header > div > div',
-      'Дропдаун PRODUCTS 1360 EN'
+      'Дропдаун SOLUTIONS 1360 EN'
     )
   })
 })
@@ -235,17 +235,17 @@ testcase('Дропдаун HOW WE WORK 1280 EN', () => {
   })
 })
 
-testcase('Дропдаун PRODUCTS 1280 EN', () => {
+testcase('Дропдаун SOLUTIONS 1280 EN', () => {
   step('Перейти на главную страницу', () => {
     browser.setWindowSize(1280, 1024).url(browser.launch_url + '/en')
   })
-  step('Навести курсор на PRODUCTS в хеддере', () => {
+  step('Навести курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
   })
-  expected('Скрин дропдауна PRODUCTS на 1280', () => {
+  expected('Скрин дропдауна SOLUTIONS на 1280', () => {
     browser.assert.screenshotElement(
       '#__next > header > div > div',
-      'Дропдаун PRODUCTS 1280 EN'
+      'Дропдаун SOLUTIONS 1280 EN'
     )
   })
 })
@@ -319,17 +319,17 @@ testcase('Дропдаун HOW WE WORK 1024 EN', () => {
   })
 })
 
-testcase('Дропдаун PRODUCTS 1024 EN', () => {
+testcase('Дропдаун SOLUTIONS 1024 EN', () => {
   step('Перейти на главную страницу', () => {
     browser.setWindowSize(1024, 1024).url(browser.launch_url + '/en')
   })
-  step('Навести курсор на PRODUCTS в хеддере', () => {
+  step('Навести курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
   })
-  expected('Скрин дропдауна PRODUCTS на 1024', () => {
+  expected('Скрин дропдауна SOLUTIONS на 1024', () => {
     browser.assert.screenshotElement(
       '#__next > header > div > div',
-      'Дропдаун PRODUCTS 1024 EN'
+      'Дропдаун SOLUTIONS 1024 EN'
     )
   })
 })

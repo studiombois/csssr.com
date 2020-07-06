@@ -70,7 +70,7 @@ testcase('Индустрии Финтех 1920 RU', () => {
       .waitForElementPresent('footer')
   })
   expected('Скрин целой страницы индустрии Финтех на 1920 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1920 RU')
+    browser.assert.screenshotElement('[id="main"]', 'Финтех 1920 RU')
   })
 })
 
@@ -82,7 +82,7 @@ testcase('Индустрии Финтех 1360 RU', () => {
       .waitForElementPresent('footer')
   })
   expected('Скрин целой страницы индустрии Финтех на 1360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1360 RU')
+    browser.assert.screenshotElement('[id="main"]', 'Финтех 1360 RU')
   })
 })
 
@@ -94,7 +94,7 @@ testcase('Индустрии Финтех 1280 RU', () => {
       .waitForElementPresent('footer')
   })
   expected('Скрин целой страницы индустрии Финтех на 1280 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1280 RU')
+    browser.assert.screenshotElement('[id="main"]', 'Финтех 1280 RU')
   })
 })
 
@@ -106,7 +106,7 @@ testcase('Индустрии Финтех 1024 RU', () => {
       .waitForElementPresent('footer')
   })
   expected('Скрин целой страницы индустрии Финтех на 1024 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1024 RU')
+    browser.assert.screenshotElement('[id="main"]', 'Финтех 1024 RU')
   })
 })
 
@@ -118,6 +118,6 @@ testcase('Индустрии Финтех 360 RU', () => {
       .waitForElementPresent('footer')
   })
   expected('Скрин целой страницы индустрии Финтех на 360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 360 RU')
+    browser.assert.screenshotElement('[id="main"]', 'Финтех 360 RU')
   })
 })

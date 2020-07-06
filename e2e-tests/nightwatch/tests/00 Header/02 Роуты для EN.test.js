@@ -5,15 +5,12 @@ testcase('Переход на страницу Outsourcing Front-end из хед
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на SERVICES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(1)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
   step('В дропдауне выбрать  Outsourcing Front-end', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(1)',
-        0,
-        0
-      )
+        '[data-testid="Header:nav:link.outsourcing"]', 0, 0)
       .mouseButtonClick('left')
   })
   expected('Переход на страницу  Outsourcing Front-end', () => {
@@ -23,24 +20,23 @@ testcase('Переход на страницу Outsourcing Front-end из хед
   })
 })
 
-testcase('Переход на страницу FINTECH из хеддера', () => {
+testcase('Переход на страницу Express Front-end из хеддера', () => {
   step('Перейти на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
-  step('Навести курсор на INDUSTRIES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+  step('Навести курсор на SERVICES в хеддере', () => {
+    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
-  step('В дропдауне выбрать  Fintech', () => {
+  step('В дропдауне выбрать  Express Front-end', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(1) > a',
-        0,
-        0
-      )
+        '[data-testid="Header:nav:link.express"]', 0, 0)
       .mouseButtonClick('left')
   })
-  expected('Переход на страницу Fintecch', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en/industry/fintech')
+  expected('Переход на страницу  Express Front-end', () => {
+    browser.assert.urlEquals(
+      browser.launch_url + '/en/service/express-front-end'
+    )
   })
 })
 
@@ -49,15 +45,12 @@ testcase('Переход на страницу MVP Development из хеддер
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на SERVICES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(1)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
   step('В дропдауне выбрать  MVP Development', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(3)',
-        0,
-        0
-      )
+        '[data-testid="Header:nav:link.mvp"]', 0, 0)
       .mouseButtonClick('left')
   })
   expected('Переход на страницу MVP Development', () => {
@@ -65,25 +58,22 @@ testcase('Переход на страницу MVP Development из хеддер
   })
 })
 
-testcase('Переход на страницу Express Front-end из хеддера', () => {
+testcase('Переход на страницу Express Back-end & DevOps из хеддера', () => {
   step('Перейти на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на SERVICES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(1)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
-  step('В дропдауне выбрать  Express Front-end', () => {
+  step('В дропдауне выбрать Back-end & DevOps', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(2)',
-        0,
-        0
-      )
+        '[data-testid="Header:nav:link.backend"]', 0, 0)
       .mouseButtonClick('left')
   })
-  expected('Переход на страницу  Express Front-end', () => {
+  expected('Переход на страницу Back-end & DevOps', () => {
     browser.assert.urlEquals(
-      browser.launch_url + '/en/service/express-front-end'
+      browser.launch_url + '/en/service/back-end-and-devops'
     )
   })
 })
@@ -95,12 +85,12 @@ testcase('Переход на страницу FINTECH из хеддера', () 
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на INDUSTRIES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать  Fintech', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(1) > a',
+        '[data-testid="Header:nav:link.fintech"]',
         0,
         0
       )
@@ -116,12 +106,12 @@ testcase('Переход на страницу E-Commerce из хеддера', 
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на INDUSTRIES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать  E-Commerce', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(2) > a',
+        '[data-testid="Header:nav:link.eCommerce"]',
         0,
         0
       )
@@ -137,12 +127,12 @@ testcase('Переход на страницу Information Technology из хе�
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на INDUSTRIES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать IT', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(3) > a',
+        '[data-testid="Header:nav:link.information"]',
         0,
         0
       )
@@ -160,15 +150,12 @@ testcase('Переход на страницу Media & Marketing из хедде
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на INDUSTRIES в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать Media & Marketing', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(4) > a',
-        0,
-        0
-      )
+        '[data-testid="Header:nav:link.mediaAndMarketing"]', 0, 0)
       .mouseButtonClick('left')
   })
   expected('Переход на страницу Media & Marketing', () => {
@@ -185,12 +172,12 @@ testcase('Переход на страницу LMS Platform из хеддера'
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на SOLUTIONS в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.solutions"]', 0, 0)
   })
   step('В дропдауне выбрать LMS Platform', () => {
     browser
       .moveToElement(
-        'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(1) > a',
+        '[data-testid="Header:nav:link.lms"]',
         0,
         0
       )
@@ -206,26 +193,21 @@ testcase('Ссылка на страницу Time-tracking Software из хед�
     browser.url(browser.launch_url + '/en')
   })
   step('Навести курсор на SOLUTIONS в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.solutions"]', 0, 0)
   })
   step('В дропдауне выбрать Time-tracking Software', () => {
     browser.moveToElement(
-      'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(2) > a',
-      0,
-      0
-    )
+      '[data-testid="Header:nav:link.tracker"]', 0, 0)
   })
 
   expected('У селекта Tracker есть атрибут ссылкой на страницу трекера', () => {
     browser.assert.attributeEquals(
-      'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(2) > a',
-      'href',
-      'https://tracker.csssr.com/'
+      '[data-testid="Header:nav:link.tracker"]', 'href', 'https://tracker.csssr.com/'
     )
   })
   expected('У ссылки на Tracker есть свойство target="_blank"', () => {
     browser.assert.attributeEquals(
-      'header > div.css-cfpi11.eddnnqq0.with_hidden_menu > div > nav > ul > li:nth-child(2) > a',
+      '[data-testid="Header:nav:link.tracker"]',
       'target',
       '_blank'
     )
@@ -240,14 +222,14 @@ testcase('Ссылка на Блог из хеддера', () => {
   })
   expected('У кнопки Blog есть атрибут с сылкой на страницу трекера', () => {
     browser.assert.attributeEquals(
-      'header > ul > li:nth-child(1) > a',
+      '[data-testid="Header:link.Blog"]',
       'href',
       'https://blog.csssr.com/en'
     )
   })
-  expected('У ссылки на Tracker есть свойство target="_blank"', () => {
+  expected('У ссылки на Blog есть свойство target="_blank"', () => {
     browser.assert.attributeEquals(
-      'header > ul > li:nth-child(1) > a',
+      '[data-testid="Header:link.Blog"]',
       'target',
       '_blank'
     )
@@ -260,10 +242,10 @@ testcase('Переход на страницу Careers', () => {
   })
 
   step('Кликнуть на Careers в хеддере', () => {
-    browser.click('header > ul > li:nth-child(2) > a')
+    browser.click('[data-testid="Header:link.jobs"]')
   })
   expected('Переход на страницу Careers', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en-sg/jobs')
+    browser.assert.urlEquals(browser.launch_url + '/en-us/jobs')
   })
 })
 
@@ -273,7 +255,7 @@ testcase('Открытие модалки', () => {
   })
 
   step('Кликнуть на кнопку [HIRE US] в хеддере', () => {
-    browser.click('header > button')
+    browser.click('[data-testid="Header:button.contactUs"]')
   })
   expected('Открылась модалка с формой связи', () => {
     browser.expect.element('[name="contact-modal"]').to.be.present

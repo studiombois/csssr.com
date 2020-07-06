@@ -10,12 +10,12 @@
   "services": {
     "title": "We&nbsp;Create Web Services for Millions",
     "outsourcing": {
-      "title": "<span style=\"font-weight: bold;\">Outsourcing</span><span style=\"white-space: nowrap; display: block;\">Front-end</span>",
-      "subtitle": "Web development to&nbsp;complement core competencies."
+      "title": "<span style=\"font-weight: bold;\">Web&nbsp;Development</span><span style=\"white-space: nowrap; display: block;\">Outsourcing</span>",
+      "subtitle": "Fast, reliable and professional web development services."
     },
     "express": {
-      "title": "<span style=\"font-weight: bold;\">Express</span> Web Development",
-      "subtitle": "Fixed rates for straight-forward, <span style=\"white-space: nowrap;\">time-sensitive</span> services."
+      "title": "<span style=\"font-weight: bold;\">PSD&nbsp;to&nbsp;HTML</span> Conversion",
+      "subtitle": "Turn your design (PSD, Sketch, Figma) into <span style=\"white-space: nowrap;\">HTML-pages</span>."
     },
     "mvp": {
       "title": "<span style=\"font-weight: bold;\">MVP</span> Development",

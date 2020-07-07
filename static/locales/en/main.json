@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "CSSSR",
-    "description": "International IT company that specializes in front-end web development services. We help a wide range of industries build reliable web solutions."
+    "title": "CSSSR — International IT company that specializes in front-end web development services.",
+    "description": "We help our clients build reliable web solutions. Attention to detail and well-adjusted business processes make projects successful."
   },
   "hero": {
     "title": "We Code for Good",
@@ -108,7 +108,7 @@
     "link": "All our vacancies"
   },
   "imgAlt": {
-    "hero": "Happy astronauts in front of CSSSR logo",
+    "hero": "CSSSR specializes in front-end web development services",
     "square": "Square figure",
     "triangle": "Triangle figure",
     "circle": "Circle figure",

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import cn from 'classnames'
 
 import styles from './FeatureBlock.styles'
 

@@ -8,7 +8,6 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "lint:js": "eslint --ext .js,.jsx --fix --max-warnings=0 .",
-    "eslint-fix": "eslint --fix .",
     "check-sitemap": "node -r esm ./server/check-sitemap.js",
     "test": "NODE_ENV=development jest --watch"
   },

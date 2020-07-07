@@ -3,6 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = ({breakpoints}) => css`
+  position: relative;
   overflow: visible;
 
   ${breakpoints.mobile.all} {
@@ -31,8 +32,16 @@ const base = ({breakpoints}) => css`
 
     ${breakpoints.desktop.all} {
       margin-top: ${calcRem(7)};
-      margin-bottom: ${calcRem(53)};
-      grid-column: 2 / span 4;
+      margin-bottom: ${calcRem(76)};
+      grid-column: 2 / span 6;
+    }
+
+    ${breakpoints.desktop.l} {
+      margin-bottom: ${calcRem(78)};
+
+      &-br.br {
+        display: inline-block;
+      }
     }
 
     ${breakpoints.tablet.all} {
@@ -46,6 +55,10 @@ const base = ({breakpoints}) => css`
       margin-bottom: ${calcRem(27)};
       grid-column: 1 / span 6;
     }
+
+    &-br {
+      display: none;
+    }
   }
 
   .subheading {
@@ -57,7 +70,7 @@ const base = ({breakpoints}) => css`
     }
 
     ${breakpoints.desktop.l} {
-      grid-column: 2 / span 3;
+      grid-column: 2 / span 4;
     }
 
     ${breakpoints.tablet.all} {
@@ -69,6 +82,12 @@ const base = ({breakpoints}) => css`
       grid-column: 1 / span 6;
       max-width: ${calcRem(328)};
       margin-bottom: ${calcRem(49)};
+    }
+
+    &-br {
+      ${breakpoints.desktop.all} {
+        display: none;
+      }
     }
   }
 
@@ -166,30 +185,39 @@ const base = ({breakpoints}) => css`
     margin-bottom: 2.5rem;
   }
 
-  .rocket {
+  .bicycle {
     position: absolute;
     display: block;
 
-    ${breakpoints.desktop.all} {
-      top: 7%;
-      left: 42.5%;
-      width: ${calcRem(376)};
-    }
-
     ${breakpoints.desktop.l} {
       transform: translate(2%, 19%);
+      width: ${calcRem(728)};
+      top: 9%;
+      left: 50%;
+    }
+
+    ${breakpoints.desktop.m} {
+      width: ${calcRem(656)};
+      top: 23.5%;
+      left: 42.1%;
+    }
+
+    ${breakpoints.desktop.s} {
+      width: ${calcRem(608)};
+      top: 23.6%;
+      left: 42.2%;
     }
 
     ${breakpoints.tablet.all} {
-      width: ${calcRem(376)};
-      top: 7%;
-      left: 43%;
+      width: ${calcRem(463)};
+      top: 28.5%;
+      left: 51%;
     }
 
     ${breakpoints.mobile.all} {
-      top: 0;
-      left: 36%;
-      width: ${calcRem(146)};
+      top: 12%;
+      right: ${calcRem(-16)};
+      width: ${calcRem(176)};
     }
   }
 `

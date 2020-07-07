@@ -60,8 +60,8 @@
           "description": "Attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average."
         }
       },
-      "products": {
-        "title": "Products",
+      "solutions": {
+        "title": "Solutions",
         "lms": {
           "title": "Modular LMS Platform",
           "description": "Start you E-Learning business with or&nbsp;LMS. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and customization"
@@ -114,8 +114,8 @@
       "aboutUs": "About us",
       "careers": "Careers"
     },
-    "products": {
-      "title": "Products",
+    "solutions": {
+      "title": "Solutions",
       "lms": "Modular LMS system",
       "tracker": "Time-tracking software"
     },

@@ -68,7 +68,7 @@ const Menu = ({ className, isMobile, l10n: { translations, language } }) => {
       >
         <MenuWrapperTag className="menu">
           {menu.map(({ id, title }) => {
-            if (language === 'ru' && id === 'products') {
+            if (language === 'ru' && id === 'solutions') {
               return
             }
 

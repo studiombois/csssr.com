@@ -41,7 +41,7 @@ const startApp = async () => {
     const acceptLanguageHeader = req.headers['accept-language']
     const locale = localeDetector(localeFromPath, localeFromCookie, acceptLanguageHeader)
 
-    res.redirect(301, `/${locale}/jobs`)
+    res.redirect(302, `/${locale}/jobs`)
   })
 
   server.get('/:language(ru|en)/jobs/:jobName', (req, res) => {
@@ -126,7 +126,9 @@ const startApp = async () => {
   server.get('/robots.txt', (req, res) => {
     res.type('text/plain')
     if (isProduction) {
-      res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
+      res.send(
+        'User-agent: *\nClean-param: utm&name&gclid&quests&amp&nm\nSitemap: https://csssr.com/sitemap.xml',
+      )
     } else {
       res.send('User-agent: *\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml')
     }

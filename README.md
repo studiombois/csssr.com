@@ -1,116 +1,48 @@
-## Next.js README
+# CSSSR official website
 
-This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).
+This repo contains the source code for [csssr.com](https://csssr.com/).
 
-Find the most recent version of this guide at [here](https://github.com/segmentio/create-next-app/blob/master/lib/templates/default/README.md). And check out [Next.js repo](https://github.com/zeit/next.js) for the most up-to-date info.
+*Readme is also available in [Russian](README.ru.md).*
 
+## What this repo can offer to you
 
-## Запуск проекта
+CSSSR website is powered by [Next.js](https://nextjs.org/).
 
-Среди зависимостей проекта есть наши приватные npm пакеты, чтобы их установить, надо выполнить инструкцию из статьи https://confluence.csssr.io/display/DT/Github+packages
+Examples provided by Next.js are great and cover a lot of different topics,
+but we strongly believe that being able to hack into real-world application's source code is even better.
+By opening this project to public we intend to share our experience 
+and help other developers to come up with solutions more quickly.
 
-`yarn install`
+Apart from Next.js built-in features our site has:
+- custom express server
+- basic multilingual support without any third-party library
+- example usage of our [e2e tools](https://github.com/CSSSR/e2e-tools)
+- integration with [emotion](https://emotion.sh/docs/introduction)
+- [sentry](https://sentry.io/) integration for both client and server
 
-`CSSSR_SPACE_ORIGIN=https://csssr.space yarn dev`
+We hope that this repo will be helpful to anyone building Next.js app!
 
+## Development
 
-## Гриды-колонки и сетка
-В компоненте DevTools есть два div элемента, у которых закоменченны классы,
-их можно раскоментить и увидеть грид-колонки и сетку. Этим удобно пользоваться во время разработки, что бы сверять расстановку блоков по гридам, а текста по бейзлайну.
-![](https://s.csssr.ru/U31J879TR/20200110163125.jpg)
+### Prerequisites
 
-В Figma увидеть грид-колонки можно включив «Layout Grids»
-![](https://s.csssr.ru/U31J879TR/20200110162841.jpg)
+1. [Git](https://git-scm.com/download)
+1. [Node.js LTS](https://nodejs.org/en/download/): any 12.x version starting with v12.0.0 or greater
+1. [Yarn](https://yarnpkg.com/lang/en/docs/install/)
+1. [Set up token for private github packages](https://confluence.csssr.io/display/DT/Github+packages)
+*Currently it is restricted to company employees only, but we are preparing to share our internal npm packages with everyone!*
 
+### Installation
 
-## Размеры
+1. Clone this repository
+1. Run `yarn` in project root to install npm dependencies
 
-На проекте все размеры пишутся в rem, это особенно важно для разрешений меньше 1024px. 1rem = 16px. Полученные размеры в rem при умножении на 16 всегда должны возвращать целое число.
+### Running locally
 
-## Работа с изображениями
+1. Run `CSSSR_SPACE_ORIGIN=http://master.space.csssr.cloud yarn dev` to start dev server
+(CSSSR_SPACE_ORIGIN is used to fetch data about vacancies from our HR software)
+1. Open `localhost:3000` in browser
 
-Для обработки изображений используется webpack loader [image-resolution-loader](https://github.com/ArtyomResh/image-resolution-loader). Разработчику достаточно иметь только исходное 3x изображение. Дальше он помещает его в нужный фолдер статики и импортируем его там где он требуется не забывая указать в конце пути до файла квери `?responsive` или `?responsive_and_webp`, — первое возвращает набор обработанных изображений в исходном формате, второе делает тоже самое, но преобразует формат изображения в `webp`.
+## License
 
-Для вставки изображений на страницу следует использовать новые компоненты `<Picture />` и `<PictureForAllResolutions />` из `components/ui-kit`
-
-Для `<PictureForAllResolutions />` в пропс `images` передаётся объект, содержащий ключи с названиями брейкпоинтов текущей темы. В каждом брейкпоинте содержится ещё один объект, ключи которого являются названиями расширений изображений. В них нужно передать полученные из импорта изображений объекты с аналогичными расширениями.
-
-```jsx
-import ultramarine_desktop_all from '../../static/images/main/desktop.all/ultramarine.png?responsive'
-import ultramarine_desktop_m from '../../static/images/main/desktop.m/ultramarine.png?responsive'
-import ultramarine_desktop_s from '../../static/images/main/desktop.s/ultramarine.png?responsive'
-import ultramarine_tablet_all from '../../static/images/main/tablet.all/ultramarine.png?responsive'
-import ultramarine_mobile_all from '../../static/images/main/mobile.all/ultramarine.png?responsive'
-
-import ultramarine_desktop_all_webp from '../../static/images/main/desktop.all/ultramarine.png?responsive_and_webp'
-import ultramarine_desktop_m_webp from '../../static/images/main/desktop.m/ultramarine.png?responsive_and_webp'
-import ultramarine_desktop_s_webp from '../../static/images/main/desktop.s/ultramarine.png?responsive_and_webp'
-import ultramarine_tablet_all_webp from '../../static/images/main/tablet.all/ultramarine.png?responsive_and_webp'
-import ultramarine_mobile_all_webp from '../../static/images/main/mobile.all/ultramarine.png?responsive_and_webp'
-
-<PictureForAllResolutions
-    images={{
-        'desktop.all': { png: ultramarine_desktop_all, webp: ultramarine_desktop_all_webp },
-        'desktop.m': { png: ultramarine_desktop_m, webp: ultramarine_desktop_m_webp },
-        'desktop.s': { png: ultramarine_desktop_s, webp: ultramarine_desktop_s_webp },
-        'tablet.all': { png: ultramarine_tablet_all, webp: ultramarine_tablet_all_webp },
-        'mobile.all': { png: ultramarine_mobile_all, webp: ultramarine_mobile_all_webp },
-    }}
-    fallback={ultramarine_desktop_all}
-    alt="Сержант Ультрамаринов"
-/>
-```
-
-В пропс `fallback` передаётся результат импорта изображения, который должен будет выставляться по дефолту, если, например, не для всех брейкпоинтов требуется указывать разные изображения, или если браузер не поддерживает какой-то формат изображения, или если браузер не поддерживает тег `<picture>`
-
-```jsx
-<PictureForAllResolutions
-    images={{
-        'desktop.m': { png: ultramarine_desktop_s, webp: ultramarine_desktop_s_webp },
-        'mobile.all': { png: ultramarine_mobile_all, webp: ultramarine_mobile_all_webp },
-    }}
-    fallback={ultramarine_desktop_all}
-    alt="Сержант Ультрамаринов"
-/>
-```
-
-Компонент `<Picture />` является частным случаем компонента `<PictureForAllResolutions />` и используется тогда, когда для всех брейкпоинтов требуется использовать одно и тоже изображение. Он имеет схожее с `<PictureForAllResolutions />` API, но для пропса `images` не требуется указывать разные изображения для разных брейкпоинтов, достаточно указать одно:
-
-```jsx
-<Picture
-    images={{ png: ultramarine, webp: ultramarine_webp }}
-    fallback={ultramarine_desktop_all}
-    alt="Сержант Ультрамаринов"
-/>
-```
-
-> ℹ️На 10.01.20 в проекте ещё используются старые компоненты `<Picture />` и `<PictureForAllResolutions />` из `components`. На их замену на новые заведена задача, пока они остаются, так как на них нет время.
-
-
-## Работа с текстами
-
-Все текста типографируются [типографом Лебедева](https://www.artlebedev.ru/typograf/). Вставляются через `dangerouslySetInnerHTML`, кроме тех случаев, когда в блоке несколько элементов. Если элементов несколько то в настройках типографа надо выбрать подстановку «готовыми символами», а не цифровым или буквенным кодом.
-![](https://s.csssr.ru/U31J879TR/20190409044640.jpg)
-
-Или обернуть текст в `span` c `dangerouslySetInnerHTML`
-```jsx
-<h1 className='font_h1-regular'>
-    <div dangerouslySetInnerHTML={{ __html: translations.jobs.title }} />
-    <span className='font_subhead-regular' dangerouslySetInnerHTML={{ __html: translations.jobs.subTitle }} />
-</h1>
-```
-
-Все динамические тексты на страницах вставляются с помощью функции t и лежат в файлах локалей, которые расположены в `./locales`
-
-## Работа с вакансиями
-
-По дефолту вакансии подтягиваются с https://csssr.space. Что бы это изменить нужно поменять переменную окружения CSSSR_SPACE_ORIGIN в файле nodemon.json и перезапустить проект
-
-## AmoCRM
-
-Логика работы с amo-crm вынесена в библиотеку [csssr-amo](https://github.com/csssr-dreamteam/csssr-amo)
-
-## Title/Description для meta тегов
-
-https://docs.google.com/spreadsheets/d/1B19QbMMyC6qod17ysy3na14vNMCHMLQ4dgw4vEjRV8I/edit#gid=0
-
+The CSSSR website is an open source project released under the [MIT License](https://github.com/CSSSR/csssr.com/LICENSE).

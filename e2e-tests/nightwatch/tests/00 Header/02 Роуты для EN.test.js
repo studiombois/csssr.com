@@ -178,13 +178,13 @@ testcase('Переход на страницу Media & Marketing из хедде
   })
 })
 
-//Меню PRODUCTS
+//Меню SOLUTIONS
 
 testcase('Переход на страницу LMS Platform из хеддера', () => {
   step('Перейти на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
-  step('Навести курсор на PRODUCTS в хеддере', () => {
+  step('Навести курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
   })
   step('В дропдауне выбрать LMS Platform', () => {
@@ -197,7 +197,7 @@ testcase('Переход на страницу LMS Platform из хеддера'
       .mouseButtonClick('left')
   })
   expected('Переход на страницу LMS Platform', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en/products/lms')
+    browser.assert.urlEquals(browser.launch_url + '/en/solutions/lms')
   })
 })
 
@@ -205,7 +205,7 @@ testcase('Ссылка на страницу Time-tracking Software из хед�
   step('Перейти на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
-  step('Навести курсор на PRODUCTS в хеддере', () => {
+  step('Навести курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('header > div > ul > li:nth-child(4)', 0, 0)
   })
   step('В дропдауне выбрать Time-tracking Software', () => {

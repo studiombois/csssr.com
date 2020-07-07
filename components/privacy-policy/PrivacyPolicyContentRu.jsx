@@ -165,23 +165,23 @@ const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
           предоставляет Администрации сайта в&nbsp;следующих случаях:
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.1.1.">
-          при заполнении формы заявки на&nbsp;выполнение работ;
+          При заполнении формы заявки на&nbsp;выполнение работ;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.1.2.">
-          при заполнении формы отклика на&nbsp;вакансию;
+          При заполнении формы отклика на&nbsp;вакансию;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.1.3.">
-          при заполнении формы запроса относительно обучающих курсов или оплаты обучения.
+          При заполнении формы запроса относительно обучающих курсов или оплаты обучения.
         </p>
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.2.">
           CSSSR собирает два вида информации о&nbsp;Пользователе:
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.2.1.">
-          информацию, которую Пользователь сознательно предоставил CSSSR в&nbsp;процессе
+          Информацию, которую Пользователь сознательно предоставил CSSSR в&nbsp;процессе
           использования Сайта;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.2.2.">
-          техническую информацию, автоматически собираемую программным обеспечением Сайта
+          Техническую информацию, автоматически собираемую программным обеспечением Сайта
           во&nbsp;время его посещения Пользователем.
         </p>
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.3.">
@@ -189,10 +189,10 @@ const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
           заявки на&nbsp;выполнение работ и&nbsp;включают в&nbsp;себя следующие сведения:
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.3.1.">
-          имя;
+          Имя;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.3.2.">
-          контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
+          Контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
           программе Skype, телефон).
         </p>
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.4.">
@@ -200,23 +200,23 @@ const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
           отклика на&nbsp;вакансию и&nbsp;включают в&nbsp;себя следующие сведения:
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.1.">
-          фамилия, имя;
+          Фамилия, имя;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.2.">
-          возраст;
+          Возраст;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.3.">
-          место проживания (город, населённый пункт);
+          Место проживания (город, населённый пункт);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.4.">
-          ссылки на&nbsp;страницы профиля на&nbsp;других сайтах и&nbsp;интернет-сервисах;
+          Ссылки на&nbsp;страницы профиля на&nbsp;других сайтах и&nbsp;интернет-сервисах;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.5.">
-          контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
+          Контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
           программе Skype, телефон);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.4.6.">
-          любая иная информация, предоставленная Пользователем по&nbsp;его желанию.
+          Любая иная информация, предоставленная Пользователем по&nbsp;его желанию.
         </p>
 
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.5.">
@@ -225,23 +225,23 @@ const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
           обучения и&nbsp;включают в&nbsp;себя следующие сведения:
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.1.">
-          фамилия, имя;
+          Фамилия, имя;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.2.">
-          возраст;
+          Возраст;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.3.">
-          место проживания (город, населённый пункт);
+          Место проживания (город, населённый пункт);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.4.">
-          ссылки на&nbsp;страницы профиля на&nbsp;других сайтах и&nbsp;интернет-сервисах;
+          Ссылки на&nbsp;страницы профиля на&nbsp;других сайтах и&nbsp;интернет-сервисах;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.5.">
-          контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
+          Контактные данные для связи (адрес электронной почты, логин в&nbsp;коммуникационной
           программе Skype, телефон);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.5.6.">
-          любая иная информация, предоставленная Пользователем по&nbsp;его желанию.
+          Любая иная информация, предоставленная Пользователем по&nbsp;его желанию.
         </p>
 
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.6.">
@@ -252,16 +252,16 @@ const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
           IP-адрес;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.6.2.">
-          информацию из&nbsp;cookies;
+          Информацию из&nbsp;cookies;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.6.3.">
-          информацию о&nbsp;браузере;
+          Информацию о&nbsp;браузере;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.6.4.">
-          информация о&nbsp;типе устройства (мобильное или&nbsp;ПК);
+          Информация о&nbsp;типе устройства (мобильное или&nbsp;ПК);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.6.5.">
-          время доступа.
+          Время доступа.
         </p>
         <p className="font_p16-regular list-item list-item_level_2" data-counter="3.7.">
           В&nbsp;отношении Персональных данных Пользователя сохраняется конфиденциальность, кроме
@@ -273,14 +273,14 @@ const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
           за&nbsp;исключением случаев, когда:
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.8.1.">
-          этого прямо требует законодательство (например, по&nbsp;письменному запросу суда,
+          Этого прямо требует законодательство (например, по&nbsp;письменному запросу суда,
           правоохранительных органов);
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.8.2.">
           Пользователь дал письменное согласие на&nbsp;передачу своих Персональных данных;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="3.8.3.">
-          передача Персональных данных производится в&nbsp;целях возможного трудоустройства
+          Передача Персональных данных производится в&nbsp;целях возможного трудоустройства
           конкретного Пользователя.
         </p>
       </section>
@@ -294,21 +294,21 @@ const PrivacyPolicyContentRu = ({ className, l10n: { translations } }) => (
           Персональные данные CSSSR может использовать в&nbsp;целях:
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="4.1.1.">
-          установления с&nbsp;Пользователем обратной связи, включая направление уведомлений,
+          Установления с&nbsp;Пользователем обратной связи, включая направление уведомлений,
           запросов, касающихся выполнения работ, а&nbsp;также возможного делового сотрудничества
           и/или трудоустройства;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="4.1.2.">
-          оценки способности Пользователя работать на&nbsp;заявленной им&nbsp;должности;
+          Оценки способности Пользователя работать на&nbsp;заявленной им&nbsp;должности;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="4.1.3.">
-          получения оплаты от&nbsp;Пользователя и&nbsp;его допуск к&nbsp;обучающим материалам Сайта;
+          Получения оплаты от&nbsp;Пользователя и&nbsp;его допуск к&nbsp;обучающим материалам Сайта;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="4.1.4.">
-          проведения статистических и&nbsp;иных исследований на&nbsp;основе обезличенных данных;
+          Проведения статистических и&nbsp;иных исследований на&nbsp;основе обезличенных данных;
         </p>
         <p className="font_p16-regular list-item list-item_level_3" data-counter="4.1.5.">
-          предоставления Пользователю эффективной клиентской и&nbsp;технической поддержки при
+          Предоставления Пользователю эффективной клиентской и&nbsp;технической поддержки при
           возникновении проблем связанных с&nbsp;использованием Cайта.
         </p>
       </section>

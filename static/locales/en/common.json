@@ -18,12 +18,12 @@
       "services": {
         "title": "Services",
         "outsourcing": {
-          "title": "Outsourcing <span style=\"white-space: nowrap;\">Front-end</span>",
-          "description": "Web development to&nbsp;complement core competencies."
+          "title": "Web Development",
+          "description": "Fast, reliable and professional web development services."
         },
         "express": {
-          "title": "Express Web Development",
-          "description": "Fixed rates for straight-forward, time-sensitive services."
+          "title": "PSD to HTML Conversion",
+          "description": "Turn your design (PSD, Sketch, Figma) into <span style=\"white-space: nowrap;\">HTML-pages</span>."
         },
         "mvp": {
           "title": "MVP Development",
@@ -90,8 +90,8 @@
     "actionPhrase": "Let’s work together!",
     "services": {
       "title": "Services",
-      "outsourcing": "Outsourcing",
-      "express": "Express",
+      "outsourcing": "Web Development",
+      "express": "PSD to HTML",
       "mvp": "MVP",
       "backend": "Back-end</br>and DevOps"
     },

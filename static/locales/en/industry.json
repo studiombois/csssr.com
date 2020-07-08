@@ -155,6 +155,42 @@
           "title": "READ THE CASE STUDY",
           "href": "/en/project/mosoblgaz"
         }
+      },
+      "brusnika": {
+        "heading": "Brusnika&nbsp;&mdash; Internal assessment and forecasting tools",
+        "text": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, the Urals and the Moscow Region.",
+        "numericData": {
+          "firstItem": {
+            "number": "1",
+            "text": "specialist"
+          },
+          "secondItem": {
+            "number": "13",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/brusnika"
+        }
+      },
+      "mindbox": {
+        "heading": "Mindbox&nbsp;&mdash; Personal Account Data Filtering",
+        "text": "Mindbox develops a customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "13",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/mindbox"
+        }
       }
     }
   }

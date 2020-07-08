@@ -202,5 +202,131 @@
     "imgAlt": {
       "aboutProject": "Three people are working hard on the project."
     }
+  },
+  "brusnika": {
+    "meta": {
+      "title": "Brusnika - Internal assessment and forecasting tools",
+      "description": "Brusnika — is a Russian development company specializing in the construction of multi-storey residential buildings in major cities of Siberia, the Urals and the Moscow Region."
+    },
+    "hero": {
+      "title": "Brusnika - Internal assessment and forecasting tools",
+      "link": "https://brusnika.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, the Urals and the Moscow Region."
+      },
+      "imgAlt": "Brusnika"
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1"
+      },
+      "textList": {
+        "firstItem": "HighMiddle JS&nbsp;Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "React",
+        "secondItem": "Redux",
+        "thirdItem": "Saga",
+        "fourthItem": "Admin-on-rest",
+        "fifthItem": "Node.js"
+      },
+      "numericData": {
+        "duration": {
+          "number": "13",
+          "text": "months <span style='white-space:nowrap'>(June 2019 — May 2020)</span>"
+        },
+        "projectTeam": {
+          "number": "1",
+          "text": "specialist"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding."
+        ],
+        [
+          "We&nbsp;were engaged in&nbsp;the development of&nbsp;an&nbsp;internal sales planning tool for Brusnika managers. Our team used Node.js to&nbsp;integrate into the customer&rsquo;s database and output sorted data. Work with &laquo;Sales Planning&raquo; is&nbsp;done in&nbsp;an&nbsp;interface similar to&nbsp;a&nbsp;table editor. Thanks to&nbsp;this tool the company&rsquo;s employees can see the real estate price growth dynamics, verify information about past transactions and forecast the value of&nbsp;the real estate object for months ahead."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Three people are working hard on the project."
+    },
+    "quote": {
+      "text": "The result of our joint work was not only a software product, but also a new work style that we've developed with our colleagues. Thank you for your individual approach, courage throughout experiments and professionalism in difficult situations!",
+      "author": {
+        "name": "Kirill Makarkin",
+        "signature": "Head of Managerial Projects Digitalization Group"
+      }
+    }
+  },
+  "mindbox": {
+    "meta": {
+      "title": "Mindbox - Personal Account Data Filtering / Promotion Campaigns Arbitration",
+      "description": "Mindbox develops a customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing."
+    },
+    "hero": {
+      "title": "Mindbox - Personal Account Data Filtering / Promotion Campaigns Arbitration",
+      "link": "https:///mindbox.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Mindbox develops a&nbsp;customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing automation in&nbsp;FMCG, retail, e-commerce and other industries with large numbers of&nbsp;customers.",
+        "secondParagraph": "Thanks to&nbsp;the platform, a&nbsp;client can personalize its website with dynamic content and recommendations, set up&nbsp;messages circulation via emails, social networks, and messengers, and ensure loyalty growth by&nbsp;creating virtual loyalty cards and promotions."
+      },
+      "imgAlt": "Mindbox"
+    },
+    "team": {
+      "title": "Team Composition:",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "2"
+      },
+      "textList": {
+        "firstItem": "Middle HTML/CSS Developer",
+        "secondItem": "Middle Front-end Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack:",
+      "techList": {
+        "firstItem": "React — Redux",
+        "secondItem": "TypeScript"
+      },
+      "numericData": {
+        "duration": {
+          "number": "13",
+          "text": "months <span style='white-space:nowrap'>(May 2019 — June 2020)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "сspecialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "We&nbsp;worked on&nbsp;two projects: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
+          "In&nbsp;the first project, we&nbsp;were faced with a&nbsp;non-trivial problem: we&nbsp;had to&nbsp;implement data filtering with an&nbsp;option to&nbsp;add new filters and combine them into groups in&nbsp;a&nbsp;tree structure.",
+          "Our team has developed a&nbsp;filtering system that supports conditions and nesting levels. After basic data sorting, a&nbsp;user can configure fine filtering, which enables a&nbsp;user to&nbsp;apply up&nbsp;to&nbsp;several thousand filters."
+        ],
+        [
+          "The second project also required development of&nbsp;a&nbsp;complex logic cooperating with a&nbsp;tree structure. Thanks to&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; a&nbsp;Mindbox client can create new promotions, flexibly setting up&nbsp;rules of&nbsp;promotions interaction with each other by&nbsp;combining them into groups. Arbitrary nesting of&nbsp;groups is&nbsp;supported.",
+          "An&nbsp;unconventional drag-and-drop was developed by&nbsp;us for this application. For example, a&nbsp;user can create a&nbsp;&laquo;Promotions&raquo; group with subgroups &laquo;Discount&raquo;, &laquo;Accrual of&nbsp;Points&raquo;, &laquo;Gift with Purchase&raquo; and &laquo;Discount by&nbsp;Promotion Code&raquo;, and configure the parameters of&nbsp;each entity."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Three people are working hard on the project."
+    }
   }
 }

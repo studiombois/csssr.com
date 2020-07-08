@@ -80,5 +80,56 @@ export const informationTechnologyProjects = {
         href: (t) => t.industry.projects.informationTechnologyPage.mosoblgaz.button.href,
       },
     },
+    {
+      images: projects_2,
+      imgAlt: (t) => t.industry.imgAlt.projects_2,
+      heading: (t) => t.industry.projects.informationTechnologyPage.brusnika.heading,
+      text: (t) => t.industry.projects.informationTechnologyPage.brusnika.text,
+      className: 'second-item',
+      direction: 'reverse',
+      numericData: [
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.brusnika.numericData.firstItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.brusnika.numericData.firstItem.text,
+        },
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.brusnika.numericData.secondItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.brusnika.numericData.secondItem.text,
+        },
+      ],
+      button: {
+        title: (t) => t.industry.projects.informationTechnologyPage.brusnika.button.title,
+        href: (t) => t.industry.projects.informationTechnologyPage.brusnika.button.href,
+      },
+    },
+    {
+      images: projects_1,
+      imgAlt: (t) => t.industry.imgAlt.projects_1,
+      heading: (t) => t.industry.projects.informationTechnologyPage.mindbox.heading,
+      text: (t) => t.industry.projects.informationTechnologyPage.mindbox.text,
+      className: 'first-item',
+      numericData: [
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.firstItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.firstItem.text,
+        },
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.secondItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.secondItem.text,
+        },
+      ],
+      button: {
+        title: (t) => t.industry.projects.informationTechnologyPage.mindbox.button.title,
+        href: (t) => t.industry.projects.informationTechnologyPage.mindbox.button.href,
+      },
+    },
   ],
 }

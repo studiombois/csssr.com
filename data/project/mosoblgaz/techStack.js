@@ -4,18 +4,6 @@ export default {
     {
       name: (t) => t.project.mosoblgaz.techStack.techList.firstItem,
     },
-    {
-      name: (t) => t.project.mosoblgaz.techStack.techList.secondItem,
-    },
-    {
-      name: (t) => t.project.mosoblgaz.techStack.techList.thirdItem,
-    },
-    {
-      name: (t) => t.project.mosoblgaz.techStack.techList.fourthItem,
-    },
-    {
-      name: (t) => t.project.mosoblgaz.techStack.techList.fifthItem,
-    },
   ],
   numericData: {
     duration: {

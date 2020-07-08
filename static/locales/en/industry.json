@@ -137,6 +137,24 @@
           "title": "READ THE CASE STUDY",
           "href": "/en/project/s7-personal-account"
         }
+      },
+      "mosoblgaz": {
+        "heading": "Mosoblgaz - Personal Account",
+        "text": "Mosoblgaz is&nbsp;one of&nbsp;the largest gas distribution companies in&nbsp;Russia providing natural gas distribution throughout the Moscow Region.",
+        "numericData": {
+          "firstItem": {
+            "number": "4",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/mosoblgaz"
+        }
       }
     }
   }

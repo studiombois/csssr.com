@@ -55,5 +55,30 @@ export const informationTechnologyProjects = {
         href: (t) => t.industry.projects.informationTechnologyPage.secondItem.button.href,
       },
     },
+    {
+      images: projects_1,
+      imgAlt: (t) => t.industry.imgAlt.projects_1,
+      heading: (t) => t.industry.projects.informationTechnologyPage.mosoblgaz.heading,
+      text: (t) => t.industry.projects.informationTechnologyPage.mosoblgaz.text,
+      className: 'first-item',
+      numericData: [
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.mosoblgaz.numericData.firstItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.mosoblgaz.numericData.firstItem.text,
+        },
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.mosoblgaz.numericData.secondItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.mosoblgaz.numericData.secondItem.text,
+        },
+      ],
+      button: {
+        title: (t) => t.industry.projects.informationTechnologyPage.mosoblgaz.button.title,
+        href: (t) => t.industry.projects.informationTechnologyPage.mosoblgaz.button.href,
+      },
+    },
   ],
 }

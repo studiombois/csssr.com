@@ -134,6 +134,24 @@
           "title": "Узнать о проекте",
           "href": "/ru/project/s7-personal-account"
         }
+      },
+      "mosoblgaz": {
+        "heading": "Мособлгаз - личный кабинет",
+        "text": "Мособлгаз — одна из крупнейших газораспределительных компаний России, обеспечивающая газификацию Московской области.",
+        "numericData": {
+          "firstItem": {
+            "number": "4",
+            "text": "специалиста"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "месяца"
+          }
+        },
+        "button": {
+          "title": "Узнать о проекте",
+          "href": "/ru/project/mosoblgaz"
+        }
       }
     }
   }

@@ -144,5 +144,63 @@
     "imgAlt": {
       "aboutProject": "Трое людей усердно работающих над проектом"
     }
+  },
+  "mosoblgaz": {
+    "meta": {
+      "title": "Mosoblgaz - Personal Account",
+      "description": "Mosoblgaz is one of the largest gas distribution companies in Russia providing natural gas distribution throughout the Moscow Region."
+    },
+    "hero": {
+      "title": "Mosoblgaz - Personal Account",
+      "link": "https://mosoblgaz.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Mosoblgaz is&nbsp;one of&nbsp;the largest gas distribution companies in&nbsp;Russia providing natural gas distribution throughout the Moscow Region. By&nbsp;using Mosoblgaz services one can apply for connection to&nbsp;gas networks, monitor the account balance and control gas consumption using his/her personal account on&nbsp;the website or&nbsp;in&nbsp;a&nbsp;mobile application."
+      },
+      "imgAlt": "Mosoblgaz"
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "1",
+        "thirdItem": "2"
+      },
+      "textList": {
+        "firstItem": "High Middle JS&nbsp;Developer",
+        "secondItem": "Middle QA&nbsp;Engineer",
+        "thirdItem": "Middle HTML/CSS Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "React"
+      },
+      "numericData": {
+        "duration": {
+          "number": "2",
+          "text": "months <span style='white-space:nowrap'>(June 2019 — July 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "4",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network."
+        ],
+        [
+          "The personal account supports role models and restrictions for individual employees."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Three people are working hard on the project."
+    }
   }
 }

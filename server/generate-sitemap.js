@@ -258,6 +258,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/project/mosoblgaz',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mosoblgaz',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mosoblgaz',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/mosoblgaz',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mosoblgaz',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mosoblgaz',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,

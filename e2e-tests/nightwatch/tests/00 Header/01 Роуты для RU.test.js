@@ -5,11 +5,11 @@ testcase('Переход на страницу Фронтенд-Аутсорс �
     browser.url(browser.launch_url + '/ru')
   })
   step('Навести курсор на УСЛУГИ в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(1)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
   step('В дропдауне выбрать Фронтенд аутсорсинг', () => {
     browser
-      .moveToElement('header > div > div > nav > ul > li:nth-child(1)', 0, 0)
+      .moveToElement('[data-testid="Header:nav:link.outsourcing"]', 0, 0)
       .mouseButtonClick('left')
   })
   expected('Переход на страницу Фронтенд аутсорсинг', () => {
@@ -24,15 +24,32 @@ testcase('Переход на страницу MVP', () => {
     browser.url(browser.launch_url + '/ru')
   })
   step('Навести курсор на УСЛУГИ в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(1)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
   step('В дропдауне выбрать Разработка MVP', () => {
     browser
-      .moveToElement('header > div > div > nav > ul > li:nth-child(2)', 0, 0)
+      .moveToElement('[data-testid="Header:nav:link.mvp"]', 0, 0)
       .mouseButtonClick('left')
   })
   expected('Переход на страницу Разработка MVP', () => {
     browser.assert.urlEquals(browser.launch_url + '/ru/service/mvp-development')
+  })
+})
+
+testcase('Переход на страницу Бекэнд и DevOps', () => {
+  step('Перейти на главную страницу', () => {
+    browser.url(browser.launch_url + '/ru')
+  })
+  step('Навести курсор на УСЛУГИ в хеддере', () => {
+    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
+  })
+  step('В дропдауне выбрать Бекенд и DevOps', () => {
+    browser
+      .moveToElement('[data-testid="Header:nav:link.backend"]', 0, 0)
+      .mouseButtonClick('left')
+  })
+  expected('Переход на страницу Бекенд и DevOps', () => {
+    browser.assert.urlEquals(browser.launch_url + '/ru/service/back-end-and-devops')
   })
 })
 
@@ -43,15 +60,11 @@ testcase('Переход на страницу Финтех', () => {
     browser.url(browser.launch_url + '/ru')
   })
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать Финтех', () => {
     browser
-      .moveToElement(
-        'header > div > div > nav > ul > li:nth-child(1) > a',
-        0,
-        0
-      )
+      .moveToElement('[data-testid="Header:nav:link.fintech"]', 0, 0)
       .mouseButtonClick('left')
   })
   expected('Переход на страницу Финтех', () => {
@@ -64,12 +77,12 @@ testcase('Переход на страницу ИТ', () => {
     browser.url(browser.launch_url + '/ru')
   })
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать ИТ', () => {
     browser
       .moveToElement(
-        'header > div > div > nav > ul > li:nth-child(3) > a',
+        '[data-testid="Header:nav:link.information"]',
         0,
         0
       )
@@ -87,14 +100,12 @@ testcase('Переход на страницу E-Commerce', () => {
     browser.url(browser.launch_url + '/ru')
   })
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать E-Commerce', () => {
     browser
       .moveToElement(
-        'header > div > div > nav > ul > li:nth-child(2) > a',
-        0,
-        0
+        '[data-testid="Header:nav:link.eCommerce"]', 0, 0
       )
       .mouseButtonClick('left')
   })
@@ -108,12 +119,12 @@ testcase('Переход на страницу Медиа и Маркетинг'
     browser.url(browser.launch_url + '/ru')
   })
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(2)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
   step('В дропдауне выбрать Медиа и Маркетинг', () => {
     browser
       .moveToElement(
-        'header > div > div > nav > ul > li:nth-child(4) > a',
+        '[data-testid="Header:nav:link.mediaAndMarketing"]',
         0,
         0
       )
@@ -133,11 +144,11 @@ testcase('Переход на страницу Технологии', () => {
     browser.url(browser.launch_url + '/ru')
   })
   step('Навести курсор на КАК МЫ РАБОТАЕМ в хеддере', () => {
-    browser.moveToElement('header > div > ul > li:nth-child(3)', 0, 0)
+    browser.moveToElement('[data-testid="Header:nav:button.howWeWork"]', 0, 0)
   })
   step('В дропдауне выбрать Технологии', () => {
     browser
-      .moveToElement('header > div > div > nav > ul > li:nth-child(1)', 0, 0)
+      .moveToElement('[data-testid="Header:nav:link.technologies"]', 0, 0)
       .mouseButtonClick('left')
   })
   expected('Переход на страницу Технологии', () => {
@@ -151,13 +162,13 @@ testcase('Переход на страницу Процессы', () => {
   })
   step('Навести курсор на КАК МЫ РАБОТАЕМ в хеддере', () => {
     browser
-      .moveToElement('header > div > ul > li:nth-child(3)', 0, 0)
-      .pause(5000)
+      .moveToElement('[data-testid="Header:nav:button.howWeWork"]', 0, 0)
+
   })
   step('В дропдауне выбрать Процессы', () => {
     browser
-      .moveToElement('header > div > div > nav > ul > li:nth-child(2)', 0, 0)
-      .pause(5000)
+      .moveToElement('[data-testid="Header:nav:link.processes"]', 0, 0)
+
       .mouseButtonClick('left')
   })
   expected('Переход на страницу Процессы', () => {
@@ -173,7 +184,7 @@ testcase('Переход на страницу Вакансии', () => {
   })
 
   step('Кликнуть на Вакансии в хеддере', () => {
-    browser.click('header > ul > li > a')
+    browser.click('[data-testid="Header:link.jobs"]')
   })
   expected('Переход на страницу Вакансии', () => {
     browser.assert.urlEquals(browser.launch_url + '/ru-ru/jobs')
@@ -186,7 +197,7 @@ testcase('Открытие модалки', () => {
   })
 
   step('Кликнуть на кнопку [НАНЯТЬ НАС] в хеддере', () => {
-    browser.click('header > button')
+    browser.click('[data-testid="Header:button.contactUs"]')
   })
   expected('Открылась модалка с формой связи', () => {
     browser.expect.element('[name="contact-modal"]').to.be.present

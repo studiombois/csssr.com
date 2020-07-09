@@ -13,7 +13,7 @@ import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
 const origin = 'https://csssr.com'
 
 const Head = (props) => {
-  const pathname = getPathName(props.router.pathname || props.router.asPath)
+  const pathname = getPathName(props.router.asPath)
 
   const localePageCounter = props.pagesList.filter((page) => page.pathname === pathname).length
 
@@ -80,10 +80,7 @@ const Head = (props) => {
           <link rel="alternate" hrefLang="en-us" href={`https://csssr.com/en-us/${pathname}`} />
         </Fragment>
       )}
-      <link
-        rel="canonical"
-        href={`https://csssr.com${props.router.pathname || props.router.asPath}`}
-      />
+      <link rel="canonical" href={`https://csssr.com${props.router.asPath}`} />
       <script
         dangerouslySetInnerHTML={{
           __html: `

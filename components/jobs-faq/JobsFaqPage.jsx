@@ -27,7 +27,6 @@ const JobsFaqPage = () => (
         width: 2400,
         height: 1260,
       }}
-      router={{ asPath: '/ru/jobs-faq' }}
     />
 
     <Greeting />

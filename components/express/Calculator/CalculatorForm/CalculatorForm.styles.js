@@ -274,6 +274,22 @@ export default {
 
         ${breakpoints.desktop.all} {
           max-width: 26.4375rem;
+
+          & textarea {
+            max-width: 39.0625rem;
+          }
+        }
+
+        ${breakpoints.desktop.l} {
+          & textarea {
+            max-width: 45.625rem;
+          }
+        }
+
+        ${breakpoints.below.desktop} {
+          & textarea {
+            max-width: 34.125rem;
+          }
         }
 
         ${breakpoints.tablet.all} {
@@ -286,6 +302,10 @@ export default {
 
         ${breakpoints.mobile.all} {
           margin-bottom: 2.5rem;
+
+          & textarea {
+            max-width: calc(100vw - 2rem);
+          }
         }
       }
 

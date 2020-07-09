@@ -131,5 +131,31 @@ export const informationTechnologyProjects = {
         href: (t) => t.industry.projects.informationTechnologyPage.mindbox.button.href,
       },
     },
+    {
+      images: projects_2,
+      imgAlt: (t) => t.industry.imgAlt.projects_2,
+      heading: (t) => t.industry.projects.informationTechnologyPage.qmarketing.heading,
+      text: (t) => t.industry.projects.informationTechnologyPage.qmarketing.text,
+      className: 'second-item',
+      direction: 'reverse',
+      numericData: [
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.firstItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.firstItem.text,
+        },
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.secondItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.secondItem.text,
+        },
+      ],
+      button: {
+        title: (t) => t.industry.projects.informationTechnologyPage.qmarketing.button.title,
+        href: (t) => t.industry.projects.informationTechnologyPage.qmarketing.button.href,
+      },
+    },
   ],
 }

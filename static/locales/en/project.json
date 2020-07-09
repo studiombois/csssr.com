@@ -328,5 +328,64 @@
     "imgAlt": {
       "aboutProject": "Three people are working hard on the project."
     }
+  },
+  "qmarketing": {
+    "meta": {
+      "title": "QMarketing - QAcademy",
+      "description": "Qmarketing Agency develops progressive digital advertising for companies operating on the Russian and European markets."
+    },
+    "hero": {
+      "title": "QMarketing - QAcademy",
+      "link": "https://qacademy.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Qmarketing Agency develops progressive digital advertising for companies operating on&nbsp;the Russian and European markets, invests in&nbsp;technological projects, and creates its own training program for marketing specialists and entrepreneurs&nbsp;&mdash; QAcademy."
+      },
+      "imgAlt": "QMarketing"
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "1",
+        "thirdItem": "1"
+      },
+      "textList": {
+        "firstItem": "Middle HTML/CSS Developer",
+        "secondItem": "Middle QA Engineer",
+        "thirdItem": "High Middle JS Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "Vue.js",
+        "secondItem": "Vuex"
+      },
+      "numericData": {
+        "duration": {
+          "number": "4",
+          "text": "months <span style='white-space:nowrap'>(July 2019 — October 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "specialist"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "Qmarketing Academy is&nbsp;an&nbsp;interactive system that trains to&nbsp;choose the most effective analytical and promotional tools. Beginner entrepreneurs, marketers, and CEOs are trained on&nbsp;the basis of&nbsp;real-life cases, have their knowledge gaps filled, and awarded certificates of&nbsp;successful course completion."
+        ],
+        [
+          "We were entrusted with front-end development of authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer's API."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Three people are working hard on the project."
+    }
   }
 }

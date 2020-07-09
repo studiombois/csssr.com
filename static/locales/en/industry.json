@@ -191,6 +191,24 @@
           "title": "READ THE CASE STUDY",
           "href": "/en/project/mindbox"
         }
+      },
+      "qmarketing": {
+        "heading": "QMarketing &mdash; QAcademy",
+        "text": "Qmarketing Agency develops progressive digital advertising for companies operating on the Russian and European markets.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "4",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/qmarketing"
+        }
       }
     }
   }

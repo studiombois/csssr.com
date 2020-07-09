@@ -188,6 +188,24 @@
           "title": "Узнать о проекте",
           "href": "/ru/project/mindbox"
         }
+      },
+      "qmarketing": {
+        "heading": "QMarketing &mdash; QAcademy",
+        "text": "Агентство Qmarketing разрабатывает прогрессивную digital рекламу для компаний на российском и европейском рынке.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "специалиста"
+          },
+          "secondItem": {
+            "number": "4",
+            "text": "месяца"
+          }
+        },
+        "button": {
+          "title": "Узнать о проекте",
+          "href": "/ru/project/qmarketing"
+        }
       }
     }
   }

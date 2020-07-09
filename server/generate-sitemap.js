@@ -348,6 +348,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/project/qmarketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/qmarketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/qmarketing',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/qmarketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/qmarketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/qmarketing',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,

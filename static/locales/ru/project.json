@@ -327,5 +327,64 @@
     "imgAlt": {
       "aboutProject": "Трое людей усердно работающих над проектом"
     }
+  },
+  "qmarketing": {
+    "meta": {
+      "title": "QMarketing - QAcademy",
+      "description": "Агентство Qmarketing разрабатывает прогрессивную digital рекламу для компаний на российском и европейском рынке"
+    },
+    "hero": {
+      "title": "QMarketing - QAcademy",
+      "link": "https://qacademy.ru",
+      "subTitle": "О клиенте",
+      "text": {
+        "firstParagraph": "Агентство Qmarketing разрабатывает прогрессивную digital рекламу для компаний на&nbsp;российском и&nbsp;европейском рынке, инвестирует в&nbsp;технологические проекты и&nbsp;создаёт собственную программу обучения для маркетологов и&nbsp;предпринимателей&nbsp;&mdash; QAcademy."
+      },
+      "imgAlt": "QMarketing"
+    },
+    "team": {
+      "title": "Команда в деталях",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "1",
+        "thirdItem": "1"
+      },
+      "textList": {
+        "firstItem": "Middle HTML/CSS Разработчик",
+        "secondItem": "Middle QA Инженер",
+        "thirdItem": "High Middle JS Разработчик"
+      }
+    },
+    "techStack": {
+      "title": "Стек",
+      "techList": {
+        "firstItem": "Vue.js",
+        "secondItem": "Vuex"
+      },
+      "numericData": {
+        "duration": {
+          "number": "4",
+          "text": "месяца <span style='white-space:nowrap'>(Июль 2019 — Октябрь 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "специалиста"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "О&nbsp;проекте:",
+      "text": [
+        [
+          "Qmarketing Academy&nbsp;&mdash; это интерактивная система, обучающая выбирать наиболее эффективные инструменты аналитики и&nbsp;продвижения. Начинающие предприниматели, маркетологи и&nbsp;CEO обучаются на&nbsp;основе реальных примеров, заполняют пробелы в&nbsp;знаниях и&nbsp;получают сертификат об&nbsp;успешном прохождении курса."
+        ],
+        [
+          "Нам доверили фронтенд разработку&nbsp;&mdash; страницу авторизации, профиль пользователя, интерактивный обучающий блок и&nbsp;страницу выдачи сертификата. После завершения разработки наша команда провела интеграцию с&nbsp;API заказчика."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Трое людей усердно работающих над проектом"
+    }
   }
 }

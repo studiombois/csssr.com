@@ -103,7 +103,7 @@
     "heading": "Our projects",
     "informationTechnologyPage": {
       "firstItem": {
-        "heading": "Gazprom Neft - Professionals 4.0",
+        "heading": "Gazprom Neft — Professionals 4.0",
         "text": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers.",
         "numericData": {
           "firstItem": {
@@ -121,7 +121,7 @@
         }
       },
       "secondItem": {
-        "heading": "S7 Airlines - Personal Account",
+        "heading": "S7 Airlines — Personal Account",
         "text": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services.",
         "numericData": {
           "firstItem": {
@@ -139,8 +139,8 @@
         }
       },
       "mosoblgaz": {
-        "heading": "Mosoblgaz - Personal Account",
-        "text": "Mosoblgaz is&nbsp;one of&nbsp;the largest gas distribution companies in&nbsp;Russia providing natural gas distribution throughout the Moscow Region.",
+        "heading": "Mosoblgaz — Personal Account",
+        "text": "Development of b2b client's account that allows quick access to the company's services.",
         "numericData": {
           "firstItem": {
             "number": "4",
@@ -157,8 +157,8 @@
         }
       },
       "brusnika": {
-        "heading": "Brusnika&nbsp;&mdash; Internal assessment and forecasting tools",
-        "text": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, the Urals and the Moscow Region.",
+        "heading": "Brusnika — Internal assessment and forecasting tools",
+        "text": "Creation of internal sales planning tools for the company's managers.",
         "numericData": {
           "firstItem": {
             "number": "1",
@@ -175,8 +175,8 @@
         }
       },
       "mindbox": {
-        "heading": "Mindbox&nbsp;&mdash; Personal Account Data Filtering",
-        "text": "Mindbox develops a customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing.",
+        "heading": "Mindbox&nbsp;— Personal Account Data Filtering",
+        "text": "Development of two projects for marketing automation.",
         "numericData": {
           "firstItem": {
             "number": "3",
@@ -194,7 +194,7 @@
       },
       "qmarketing": {
         "heading": "QMarketing &mdash; QAcademy",
-        "text": "Qmarketing Agency develops progressive digital advertising for companies operating on the Russian and European markets.",
+        "text": "Front-end development of internal pages for the e-learning platform.",
         "numericData": {
           "firstItem": {
             "number": "3",

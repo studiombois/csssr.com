@@ -17,7 +17,7 @@ import aboutProjectImages from '../../data/project/aboutProject'
 const MosOblGazPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
   const projectId = 'mosoblgaz'
-  const aboutProjectParagraphsScheme = [[0], [0]]
+  const aboutProjectParagraphsScheme = [null, [0, 1]]
 
   return (
     <Layout pageName={pageName}>
@@ -38,7 +38,5 @@ const MosOblGazPage = ({ l10n: { translations } }) => {
     </Layout>
   )
 }
-
-MosOblGazPage.propTypes = {}
 
 export default L10nConsumer(MosOblGazPage)

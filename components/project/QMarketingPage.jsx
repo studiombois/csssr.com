@@ -42,6 +42,4 @@ const QMarketingPage = ({ l10n: { translations } }) => {
   )
 }
 
-QMarketingPage.propTypes = {}
-
 export default L10nConsumer(QMarketingPage)

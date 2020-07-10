@@ -17,10 +17,7 @@ import aboutProjectImages from '../../data/project/aboutProject'
 const MindboxPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
   const projectId = 'mindbox'
-  const aboutProjectParagraphsScheme = [
-    [0, 1, 2],
-    [0, 1],
-  ]
+  const aboutProjectParagraphsScheme = [null, [0, 1, 2, 3, 4]]
 
   return (
     <Layout pageName={pageName}>
@@ -41,7 +38,5 @@ const MindboxPage = ({ l10n: { translations } }) => {
     </Layout>
   )
 }
-
-MindboxPage.propTypes = {}
 
 export default L10nConsumer(MindboxPage)

@@ -1,7 +1,7 @@
 {
   "gazpromNeft": {
    "meta": {
-      "title": "Project: Gazprom Neft - Professionals 4.0",
+      "title": "Project: Gazprom Neft — Professionals 4.0",
       "description": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers."
     },
     "hero": {
@@ -42,7 +42,7 @@
       "numericData": {
         "duration": {
           "number": "13",
-          "text": "months <span>(Jan 2019 - ongoing)</span>"
+          "text": "months <span>(Jan 2019 — ongoing)</span>"
         },
         "projectTeam": {
           "number": "9",
@@ -79,7 +79,7 @@
   },
   "s7airlines": {
     "meta": {
-      "title": "Project: S7 Airlines - Personal Account",
+      "title": "Project: S7 Airlines — Personal Account",
       "description": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services."
     },
     "hero": {
@@ -142,16 +142,16 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Трое людей усердно работающих над проектом"
+      "aboutProject": "Three people are working hard on the project."
     }
   },
   "mosoblgaz": {
     "meta": {
-      "title": "Mosoblgaz - Personal Account",
+      "title": "Mosoblgaz — Personal Account",
       "description": "Mosoblgaz is one of the largest gas distribution companies in Russia providing natural gas distribution throughout the Moscow Region."
     },
     "hero": {
-      "title": "Mosoblgaz - Personal Account",
+      "title": "Mosoblgaz — Personal Account",
       "link": "https://mosoblgaz.ru",
       "subTitle": "Client",
       "text": {
@@ -191,10 +191,9 @@
     "aboutProject": {
       "title": "About the Project:",
       "text": [
+        [],
         [
-          "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network."
-        ],
-        [
+          "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network.",
           "The personal account supports role models and restrictions for individual employees."
         ]
       ]
@@ -205,11 +204,11 @@
   },
   "brusnika": {
     "meta": {
-      "title": "Brusnika - Internal assessment and forecasting tools",
+      "title": "Brusnika — Internal assessment and forecasting tools",
       "description": "Brusnika — is a Russian development company specializing in the construction of multi-storey residential buildings in major cities of Siberia, the Urals and the Moscow Region."
     },
     "hero": {
-      "title": "Brusnika - Internal assessment and forecasting tools",
+      "title": "Brusnika — Internal assessment and forecasting tools",
       "link": "https://brusnika.ru",
       "subTitle": "Client",
       "text": {
@@ -249,10 +248,9 @@
     "aboutProject": {
       "title": "About the Project:",
       "text": [
+        [],
         [
-          "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding."
-        ],
-        [
+          "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding.",
           "We&nbsp;were engaged in&nbsp;the development of&nbsp;an&nbsp;internal sales planning tool for Brusnika managers. Our team used Node.js to&nbsp;integrate into the customer&rsquo;s database and output sorted data. Work with &laquo;Sales Planning&raquo; is&nbsp;done in&nbsp;an&nbsp;interface similar to&nbsp;a&nbsp;table editor. Thanks to&nbsp;this tool the company&rsquo;s employees can see the real estate price growth dynamics, verify information about past transactions and forecast the value of&nbsp;the real estate object for months ahead."
         ]
       ]
@@ -270,11 +268,11 @@
   },
   "mindbox": {
     "meta": {
-      "title": "Mindbox - Personal Account Data Filtering / Promotion Campaigns Arbitration",
+      "title": "Mindbox — Personal Account Data Filtering / Promotion Campaigns Arbitration",
       "description": "Mindbox develops a customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing."
     },
     "hero": {
-      "title": "Mindbox - Personal Account Data Filtering / Promotion Campaigns Arbitration",
+      "title": "Mindbox — Personal Account Data Filtering / Promotion Campaigns Arbitration",
       "link": "https:///mindbox.ru",
       "subTitle": "Client",
       "text": {
@@ -314,12 +312,11 @@
     "aboutProject": {
       "title": "About the Project:",
       "text": [
+        [],
         [
           "We&nbsp;worked on&nbsp;two projects: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
           "In&nbsp;the first project, we&nbsp;were faced with a&nbsp;non-trivial problem: we&nbsp;had to&nbsp;implement data filtering with an&nbsp;option to&nbsp;add new filters and combine them into groups in&nbsp;a&nbsp;tree structure.",
-          "Our team has developed a&nbsp;filtering system that supports conditions and nesting levels. After basic data sorting, a&nbsp;user can configure fine filtering, which enables a&nbsp;user to&nbsp;apply up&nbsp;to&nbsp;several thousand filters."
-        ],
-        [
+          "Our team has developed a&nbsp;filtering system that supports conditions and nesting levels. After basic data sorting, a&nbsp;user can configure fine filtering, which enables a&nbsp;user to&nbsp;apply up&nbsp;to&nbsp;several thousand filters.",
           "The second project also required development of&nbsp;a&nbsp;complex logic cooperating with a&nbsp;tree structure. Thanks to&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; a&nbsp;Mindbox client can create new promotions, flexibly setting up&nbsp;rules of&nbsp;promotions interaction with each other by&nbsp;combining them into groups. Arbitrary nesting of&nbsp;groups is&nbsp;supported.",
           "An&nbsp;unconventional drag-and-drop was developed by&nbsp;us for this application. For example, a&nbsp;user can create a&nbsp;&laquo;Promotions&raquo; group with subgroups &laquo;Discount&raquo;, &laquo;Accrual of&nbsp;Points&raquo;, &laquo;Gift with Purchase&raquo; and &laquo;Discount by&nbsp;Promotion Code&raquo;, and configure the parameters of&nbsp;each entity."
         ]
@@ -331,11 +328,11 @@
   },
   "qmarketing": {
     "meta": {
-      "title": "QMarketing - QAcademy",
+      "title": "QMarketing — QAcademy",
       "description": "Qmarketing Agency develops progressive digital advertising for companies operating on the Russian and European markets."
     },
     "hero": {
-      "title": "QMarketing - QAcademy",
+      "title": "QMarketing — QAcademy",
       "link": "https://qacademy.ru",
       "subTitle": "Client",
       "text": {

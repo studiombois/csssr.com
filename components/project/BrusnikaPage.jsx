@@ -19,7 +19,7 @@ import aboutProjectImages from '../../data/project/aboutProject'
 const BrusnikaPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
   const projectId = 'brusnika'
-  const aboutProjectParagraphsScheme = [[0], [0]]
+  const aboutProjectParagraphsScheme = [null, [0, 1]]
 
   return (
     <Layout pageName={pageName}>
@@ -41,7 +41,5 @@ const BrusnikaPage = ({ l10n: { translations } }) => {
     </Layout>
   )
 }
-
-BrusnikaPage.propTypes = {}
 
 export default L10nConsumer(BrusnikaPage)

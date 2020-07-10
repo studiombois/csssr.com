@@ -45,6 +45,4 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
   )
 }
 
-GazpromNeftPage.propTypes = {}
-
 export default L10nConsumer(GazpromNeftPage)

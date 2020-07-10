@@ -39,6 +39,4 @@ const S7AirlinesPage = ({ l10n: { translations } }) => {
   )
 }
 
-S7AirlinesPage.propTypes = {}
-
 export default L10nConsumer(S7AirlinesPage)

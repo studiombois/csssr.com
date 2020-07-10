@@ -55,6 +55,69 @@ export const informationTechnologyProjects = {
         href: (t) => t.industry.projects.informationTechnologyPage.secondItem.button.href,
       },
     },
+  ],
+}
+
+export const mediaAndMarketingProjects = {
+  heading: (t) => t.industry.projects.heading,
+  projectsItems: [
+    {
+      images: projects_1,
+      imgAlt: (t) => t.industry.imgAlt.projects_1,
+      heading: (t) => t.industry.projects.informationTechnologyPage.qmarketing.heading,
+      text: (t) => t.industry.projects.informationTechnologyPage.qmarketing.text,
+      className: 'first-item',
+      numericData: [
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.firstItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.firstItem.text,
+        },
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.secondItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.qmarketing.numericData.secondItem.text,
+        },
+      ],
+      button: {
+        title: (t) => t.industry.projects.informationTechnologyPage.qmarketing.button.title,
+        href: (t) => t.industry.projects.informationTechnologyPage.qmarketing.button.href,
+      },
+    },
+    {
+      images: projects_2,
+      imgAlt: (t) => t.industry.imgAlt.projects_2,
+      heading: (t) => t.industry.projects.informationTechnologyPage.mindbox.heading,
+      text: (t) => t.industry.projects.informationTechnologyPage.mindbox.text,
+      className: 'second-item',
+      direction: 'reverse',
+      numericData: [
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.firstItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.firstItem.text,
+        },
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.secondItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.mindbox.numericData.secondItem.text,
+        },
+      ],
+      button: {
+        title: (t) => t.industry.projects.informationTechnologyPage.mindbox.button.title,
+        href: (t) => t.industry.projects.informationTechnologyPage.mindbox.button.href,
+      },
+    },
+  ],
+}
+
+export const eCommerceProjects = {
+  heading: (t) => t.industry.projects.heading,
+  projectsItems: [
     {
       images: projects_1,
       imgAlt: (t) => t.industry.imgAlt.projects_1,
@@ -104,57 +167,6 @@ export const informationTechnologyProjects = {
       button: {
         title: (t) => t.industry.projects.informationTechnologyPage.brusnika.button.title,
         href: (t) => t.industry.projects.informationTechnologyPage.brusnika.button.href,
-      },
-    },
-    {
-      images: projects_1,
-      imgAlt: (t) => t.industry.imgAlt.projects_1,
-      heading: (t) => t.industry.projects.informationTechnologyPage.mindbox.heading,
-      text: (t) => t.industry.projects.informationTechnologyPage.mindbox.text,
-      className: 'first-item',
-      numericData: [
-        {
-          numberData: (t) =>
-            t.industry.projects.informationTechnologyPage.mindbox.numericData.firstItem.number,
-          textData: (t) =>
-            t.industry.projects.informationTechnologyPage.mindbox.numericData.firstItem.text,
-        },
-        {
-          numberData: (t) =>
-            t.industry.projects.informationTechnologyPage.mindbox.numericData.secondItem.number,
-          textData: (t) =>
-            t.industry.projects.informationTechnologyPage.mindbox.numericData.secondItem.text,
-        },
-      ],
-      button: {
-        title: (t) => t.industry.projects.informationTechnologyPage.mindbox.button.title,
-        href: (t) => t.industry.projects.informationTechnologyPage.mindbox.button.href,
-      },
-    },
-    {
-      images: projects_2,
-      imgAlt: (t) => t.industry.imgAlt.projects_2,
-      heading: (t) => t.industry.projects.informationTechnologyPage.qmarketing.heading,
-      text: (t) => t.industry.projects.informationTechnologyPage.qmarketing.text,
-      className: 'second-item',
-      direction: 'reverse',
-      numericData: [
-        {
-          numberData: (t) =>
-            t.industry.projects.informationTechnologyPage.qmarketing.numericData.firstItem.number,
-          textData: (t) =>
-            t.industry.projects.informationTechnologyPage.qmarketing.numericData.firstItem.text,
-        },
-        {
-          numberData: (t) =>
-            t.industry.projects.informationTechnologyPage.qmarketing.numericData.secondItem.number,
-          textData: (t) =>
-            t.industry.projects.informationTechnologyPage.qmarketing.numericData.secondItem.text,
-        },
-      ],
-      button: {
-        title: (t) => t.industry.projects.informationTechnologyPage.qmarketing.button.title,
-        href: (t) => t.industry.projects.informationTechnologyPage.qmarketing.button.href,
       },
     },
   ],

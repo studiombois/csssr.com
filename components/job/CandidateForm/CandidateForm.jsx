@@ -157,6 +157,19 @@ class CandidateForm extends PureComponent {
     this.handleMediaMatch(this.mobileMediaQuery)
   }
 
+  // Сбрасываем состояние полей формы, при переходе на новую вакансию
+  componentDidUpdate(prevProps) {
+    const {
+      form: { reset },
+      vacancy: { id },
+    } = this.props
+
+    prevProps.vacancy.id !== id &&
+      setTimeout(() => {
+        reset()
+      }, 0)
+  }
+
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }

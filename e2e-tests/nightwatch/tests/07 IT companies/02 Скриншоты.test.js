@@ -7,6 +7,7 @@ testcase('IT 1920 En', () => {
       .url(browser.launch_url + '/en/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы IT на 1920 EN', () => {
     browser.assert.screenshotElement('[id="main"]', 'IT 1920 EN')
   })
@@ -19,6 +20,7 @@ testcase('IT 1360 En', () => {
       .url(browser.launch_url + '/en/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы IT на 1360 EN', () => {
     browser.assert.screenshotElement('[id="main"]', 'IT 1360 EN')
   })
@@ -31,6 +33,7 @@ testcase('IT 1280 En', () => {
       .url(browser.launch_url + '/en/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы IT на 1280 EN', () => {
     browser.assert.screenshotElement('[id="main"]', 'IT 1280 EN')
   })
@@ -43,6 +46,7 @@ testcase('IT 1024 En', () => {
       .url(browser.launch_url + '/en/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы IT на 1024 EN', () => {
     browser.assert.screenshotElement('[id="main"]', 'IT 1024 EN')
   })
@@ -55,6 +59,7 @@ testcase('IT 360 En', () => {
       .url(browser.launch_url + '/en/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы IT на 360 EN', () => {
     browser.assert.screenshotElement('[id="main"]', 'IT 360 EN')
   })
@@ -69,6 +74,7 @@ testcase('Индустрии ИТ 1920 RU', () => {
       .url(browser.launch_url + '/ru/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии ИТ на 1920 RU', () => {
     browser.assert.screenshotElement('[id="main"]', 'ИТ 1920 RU')
   })
@@ -81,6 +87,7 @@ testcase('Индустрии ИТ 1360 RU', () => {
       .url(browser.launch_url + '/ru/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии ИТ на 1360 RU', () => {
     browser.assert.screenshotElement('[id="main"]', 'ИТ 1360 RU')
   })
@@ -93,6 +100,7 @@ testcase('Индустрии ИТ 1280 RU', () => {
       .url(browser.launch_url + '/ru/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии ИТ на 1280 RU', () => {
     browser.assert.screenshotElement('[id="main"]', 'ИТ 1280 RU')
   })
@@ -105,6 +113,7 @@ testcase('Индустрии ИТ 1024 RU', () => {
       .url(browser.launch_url + '/ru/industry/information-technology')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии ИТ на 1024 RU', () => {
     browser.assert.screenshotElement('[id="main"]', 'ИТ 1024 RU')
   })
@@ -117,6 +126,7 @@ testcase('Индустрии ИТ 360 RU', () => {
       .url(browser.launch_url + '/ru/industry/information-technology')
       .waitForElementPresent('footer')
   })
+  
   expected('Скрин целой страницы индустрии ИТ на 360 RU', () => {
     browser.assert.screenshotElement('[id="main"]', 'ИТ 360 RU')
   })

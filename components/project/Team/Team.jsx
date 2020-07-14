@@ -17,32 +17,34 @@ const Team = ({
 }) => {
   return (
     <Grid className={className} as="section" id={id}>
-      <Heading.H2
-        type="slab"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: heading(translations) }}
-        className="heading"
-      />
-      <ul className="list">
-        {teamItems.map(({ number, text }, index) => (
-          <React.Fragment key={index}>
-            <li className="list-item number-item" key={number}>
-              <Text
-                type="strong"
-                as="span"
-                dangerouslySetInnerHTML={{ __html: number(translations) }}
-              />
-            </li>
-            <li className="list-item text-item" key={text}>
-              <Text
-                type="strong"
-                as="span"
-                dangerouslySetInnerHTML={{ __html: text(translations) }}
-              />
-            </li>
-          </React.Fragment>
-        ))}
-      </ul>
+      <div className="team-breakdown">
+        <Heading.H2
+          type="slab"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
+          className="heading"
+        />
+        <ul className="list">
+          {teamItems.map(({ number, text }, index) => (
+            <React.Fragment key={index}>
+              <li className="list-item number-item" key={number}>
+                <Text
+                  type="strong"
+                  as="span"
+                  dangerouslySetInnerHTML={{ __html: number(translations) }}
+                />
+              </li>
+              <li className="list-item text-item" key={text}>
+                <Text
+                  type="strong"
+                  as="span"
+                  dangerouslySetInnerHTML={{ __html: text(translations) }}
+                />
+              </li>
+            </React.Fragment>
+          ))}
+        </ul>
+      </div>
 
       <PictureForAllResolutions
         images={images}

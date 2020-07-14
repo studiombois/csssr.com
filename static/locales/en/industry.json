@@ -103,7 +103,7 @@
     "heading": "Our projects",
     "informationTechnologyPage": {
       "firstItem": {
-        "heading": "Gazprom Neft - Professionals 4.0",
+        "heading": "Gazprom Neft — Professionals 4.0",
         "text": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers.",
         "numericData": {
           "firstItem": {
@@ -121,7 +121,7 @@
         }
       },
       "secondItem": {
-        "heading": "S7 Airlines - Personal Account",
+        "heading": "S7 Airlines — Personal Account",
         "text": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services.",
         "numericData": {
           "firstItem": {
@@ -136,6 +136,78 @@
         "button": {
           "title": "READ THE CASE STUDY",
           "href": "/en/project/s7-personal-account"
+        }
+      },
+      "mosoblgaz": {
+        "heading": "Mosoblgaz — Personal Account",
+        "text": "Development of b2b client's account that allows quick access to the company's services.",
+        "numericData": {
+          "firstItem": {
+            "number": "4",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/mosoblgaz"
+        }
+      },
+      "brusnika": {
+        "heading": "Brusnika — Internal assessment and forecasting tools",
+        "text": "Creation of internal sales planning tools for the company's managers.",
+        "numericData": {
+          "firstItem": {
+            "number": "1",
+            "text": "specialist"
+          },
+          "secondItem": {
+            "number": "13",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/brusnika"
+        }
+      },
+      "mindbox": {
+        "heading": "Mindbox&nbsp;— Personal Account Data Filtering",
+        "text": "Development of two projects for marketing automation.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "13",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/mindbox"
+        }
+      },
+      "qmarketing": {
+        "heading": "QMarketing &mdash; QAcademy",
+        "text": "Front-end development of internal pages for the e-learning platform.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "4",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/qmarketing"
         }
       }
     }

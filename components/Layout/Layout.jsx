@@ -19,7 +19,7 @@ const Layout = ({ children, isIe11, pageName, router: { asPath }, withFooter = t
 
       {isIe11 && <Global styles={ie11Styles} />}
 
-      {React.createElement(dynamicTag, { id: 'main' }, children)}
+      {React.createElement(dynamicTag, { id: 'main', 'data-testid': 'Main:block' }, children)}
 
       {withFooter && <Footer />}
       <CookiesPopup />

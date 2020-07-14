@@ -6,6 +6,7 @@ export const informationTechnologyProjects = {
   projectsItems: [
     {
       images: projects_1,
+      id: 'GazpromNeft',
       imgAlt: (t) => t.industry.imgAlt.projects_1,
       heading: (t) => t.industry.projects.informationTechnologyPage.firstItem.heading,
       text: (t) => t.industry.projects.informationTechnologyPage.firstItem.text,
@@ -30,6 +31,7 @@ export const informationTechnologyProjects = {
       },
     },
     {
+      id: 'S7Airlines',
       images: projects_2,
       imgAlt: (t) => t.industry.imgAlt.projects_2,
       heading: (t) => t.industry.projects.informationTechnologyPage.secondItem.heading,

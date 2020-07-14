@@ -47,6 +47,7 @@ const Greeting = ({
         className="button"
         pageName={pageName}
         dangerouslySetInnerHTML={{ __html: button(translations) }}
+        testId="Industry:button.contactUs"
       />
     </Grid>
   )

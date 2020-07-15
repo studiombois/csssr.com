@@ -45,6 +45,11 @@ const Header = ({
     }
 
     const handleScroll = (event) => {
+      // В коде ab теста добавили такую переменную в window
+      if (!window.__OPTIMIZE_AB_TEST_SHOULD_HIDE_HEADER_ON_SCROLL__) {
+        return
+      }
+
       const headerHeight = 64
       const {
         target: { scrollingElement },

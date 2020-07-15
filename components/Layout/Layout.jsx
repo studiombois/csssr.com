@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
 import DevTools from '../DevTools'
 import { withRouter } from 'next/router'
-import { Global } from '@emotion/core'
-import styles, { ie11Styles } from './Layout.styles'
 import Header from '../Header'
 import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
@@ -15,9 +13,6 @@ const Layout = ({ children, isIe11, pageName, router: { asPath }, withFooter = t
   return (
     <Fragment>
       <Header isButtonVisible={isButtonVisible} pageName={pageName} />
-      <Global styles={styles} />
-
-      {isIe11 && <Global styles={ie11Styles} />}
 
       {React.createElement(dynamicTag, { id: 'main' }, children)}
 

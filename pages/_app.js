@@ -15,6 +15,8 @@ import { parseUserAgent } from 'detect-browser'
 import { checkIsInvalidDevice } from '../utils/isInvalidBrowser'
 import Modal from '../components/ui-kit/Modal'
 import BrowserModalContent from '../components/BrowserModalContent'
+import { Global } from '@emotion/core'
+import styles, { ie11Styles } from '../components/Layout/Layout.styles'
 
 export default class MyApp extends App {
   // This reports errors before rendering, when fetching initial props
@@ -196,29 +198,33 @@ export default class MyApp extends App {
     // SSR calculate only
     const isInvalidDevice = !!pageProps.isInvalidDevice && !isModalClosed
     return (
-      <L10nProvider l10n={pageProps.l10n}>
-        <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
-          <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
-            <ThemeProvider theme={customTheme}>
-              <PagesListProvider pagesList={pageProps.pagesList}>
-                {/* У Component isMobile прокидывается явно для обратной совместимости  */}
-                {/* TODO: перевести все компоненты на isMobile из контекста */}
-                <Component
-                  {...pageProps}
-                  isMobile={this.state.isMobile}
-                  isMsBrowser={isMsBrowser}
-                />
+      <>
+        <Global styles={styles} />
+        {isIe11Browser && <Global styles={ie11Styles} />}
+        <L10nProvider l10n={pageProps.l10n}>
+          <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
+            <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
+              <ThemeProvider theme={customTheme}>
+                <PagesListProvider pagesList={pageProps.pagesList}>
+                  {/* У Component isMobile прокидывается явно для обратной совместимости  */}
+                  {/* TODO: перевести все компоненты на isMobile из контекста */}
+                  <Component
+                    {...pageProps}
+                    isMobile={this.state.isMobile}
+                    isMsBrowser={isMsBrowser}
+                  />
 
-                {isInvalidDevice && (
-                  <Modal withFixWidth onClose={this.handleCloseModal}>
-                    <BrowserModalContent />
-                  </Modal>
-                )}
-              </PagesListProvider>
-            </ThemeProvider>
-          </DeviceProvider>
-        </MsBrowserProvider>
-      </L10nProvider>
+                  {isInvalidDevice && (
+                    <Modal withFixWidth onClose={this.handleCloseModal}>
+                      <BrowserModalContent />
+                    </Modal>
+                  )}
+                </PagesListProvider>
+              </ThemeProvider>
+            </DeviceProvider>
+          </MsBrowserProvider>
+        </L10nProvider>
+      </>
     )
   }
 }

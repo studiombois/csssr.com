@@ -49,6 +49,7 @@ const Nav = ({
       className={cn(className, {
         visible: activeItem,
       })}
+      data-testid="Header:nav.dropdown"
     >
       {isMobile && (
         <button className="button_back" onClick={onBackButtonClick}>
@@ -58,10 +59,7 @@ const Nav = ({
         </button>
       )}
 
-      <nav
-        data-testid="Header:nav.dropdown"
-        className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${language}`)}
-      >
+      <nav className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${language}`)}>
         <ul>
           {activeItem &&
             menu

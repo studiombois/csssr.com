@@ -483,6 +483,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/contact-us',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/contact-us',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/contact-us',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/contact-us',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/contact-us',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/contact-us',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/en/covid-19',
     changefreq: 'yearly',
     priority: 0.6,

@@ -1490,10 +1490,10 @@
   dependencies:
     isomorphic-unfetch "^3.0.0"
 
-"@csssr/csssr-shared-header@^1.0.10":
-  version "1.0.10"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.0.10/06530376d3a99096dd3b3c09eeff75f8109c88b0c569bd4280bee3cd237953e5#273995b58b6513cc6b86eab3868218c6dccd3ea6"
-  integrity sha512-S9M1vp35zLvvMapSMqtowi0wx+Ybdfo1YQ6MS18rcOy/EoG5bPiAIgIih/zqER/2tDfc/SOl9327TWqzm5TRsw==
+"@csssr/csssr-shared-header@^1.0.11":
+  version "1.0.11"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.0.11/0adc97452b0ef161866206935efc95f3a469d38e875ce2990776551f3f567888#a7a8de42d40e0ed684e473f3a82344a81048516f"
+  integrity sha512-eSx+NVNIzVTm08QW2p25Flckmb7sZWh3lfFzXX3A0SLuRZKAlbjJ4KQY5FrdZHkPsMFsenFJXwaU0w14e1sfKw==
   dependencies:
     "@emotion/styled-base" "^10.0.31"
     classnames "^2.2.6"

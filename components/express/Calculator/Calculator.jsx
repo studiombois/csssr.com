@@ -9,7 +9,7 @@ import Heading from '../../ui-kit/core-design/Heading'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const Calculator = ({ className, l10n: { translations } }) => (
-  <Wrapper className={className} id="calculator">
+  <Wrapper className={className} id="calculator" data-testid="Calculator:block">
     <div className="container">
       <Heading
         as="h2"

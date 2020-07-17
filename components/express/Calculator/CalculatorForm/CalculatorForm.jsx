@@ -201,16 +201,21 @@ const OriginCalculatorForm = (props) => {
           />
 
           <div className="text-price">
-            <Text type="regular" size="m">
+            <Text type="regular" size="m" data-testid="Calculator:text.looksLike">
               {translations.express.calculator.form.fieldset2.dynamicText.base}
-              <b>
+              <b data-testid="Calculator:text.looksLikeType">
                 {values.parceForm_designPerPage <= 1
                   ? translations.express.calculator.form.fieldset2.dynamicText.option1
                   : translations.express.calculator.form.fieldset2.dynamicText.option2}
               </b>
             </Text>
 
-            <Text type="regular" size="m" className="text-price_color_blue">
+            <Text
+              type="regular"
+              size="m"
+              className="text-price_color_blue"
+              data-testid="Calculator:text.looksLikePrice"
+            >
               {values.parceForm_designPerPage <= 1
                 ? translations.express.calculator.form.fieldset2.dynamicText.price
                 : `$${calcLayoutSum(
@@ -288,6 +293,7 @@ const OriginCalculatorForm = (props) => {
               dangerouslySetInnerHTML={{
                 __html: translations.express.calculator.form.fieldset3.note,
               }}
+              testId="Calculator:text.otherRequirements"
             />
 
             <Field
@@ -298,6 +304,7 @@ const OriginCalculatorForm = (props) => {
                   {...input}
                   className="text-field text-field_short"
                   label={translations.express.calculator.form.fieldset3.fieldLabel}
+                  data-testid="Calculator:input.otherRequirements"
                 />
               )}
             />

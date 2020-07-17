@@ -43,6 +43,7 @@ const Greeting = ({ className, l10n: { translations } }) => {
         kind="primary"
         href="#calculator"
         dangerouslySetInnerHTML={{ __html: translations.express.greeting.button }}
+        data-testid="Express:link.greeting"
       />
     </Grid>
   )

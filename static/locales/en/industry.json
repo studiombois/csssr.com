@@ -157,7 +157,7 @@
         }
       },
       "brusnika": {
-        "heading": "Brusnika — Internal assessment and forecasting tools",
+        "heading": "Brusnika — Internal assessment and <span style='white-space: nowrap'>forecasting tools</span>",
         "text": "Creation of internal sales planning tools for the company's managers.",
         "numericData": {
           "firstItem": {

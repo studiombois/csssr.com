@@ -1490,6 +1490,17 @@
   dependencies:
     isomorphic-unfetch "^3.0.0"
 
+"@csssr/csssr-shared-header@^1.0.10":
+  version "1.0.10"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.0.10/06530376d3a99096dd3b3c09eeff75f8109c88b0c569bd4280bee3cd237953e5#273995b58b6513cc6b86eab3868218c6dccd3ea6"
+  integrity sha512-S9M1vp35zLvvMapSMqtowi0wx+Ybdfo1YQ6MS18rcOy/EoG5bPiAIgIih/zqER/2tDfc/SOl9327TWqzm5TRsw==
+  dependencies:
+    "@emotion/styled-base" "^10.0.31"
+    classnames "^2.2.6"
+    emotion-theming "^10.0.27"
+    ramda "^0.26.1"
+    scroll-lock "^2.1.4"
+
 "@csssr/eslint-config-core@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@csssr/eslint-config-core/-/eslint-config-core-1.0.2.tgz#a7cada15058f3dd14591ad8b832c1e093837af61"
@@ -1579,7 +1590,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/sheet/-/sheet-0.9.4.tgz#894374bea39ec30f489bbfc3438192b9774d32e5"
   integrity sha512-zM9PFmgVSqBw4zL101Q0HrBVTGmpAxFZH/pYx/cjJT5advXguvcgjHFTCaIO3enL/xr89vK2bh0Mfyj9aa0ANA==
 
-"@emotion/styled-base@^10.0.10", "@emotion/styled-base@^10.0.27":
+"@emotion/styled-base@^10.0.10", "@emotion/styled-base@^10.0.27", "@emotion/styled-base@^10.0.31":
   version "10.0.31"
   resolved "https://registry.yarnpkg.com/@emotion/styled-base/-/styled-base-10.0.31.tgz#940957ee0aa15c6974adc7d494ff19765a2f742a"
   integrity sha512-wTOE1NcXmqMWlyrtwdkqg87Mu6Rj1MaukEoEmEkHirO5IoHDJ8LgCQL4MjJODgxWxXibGR3opGp1p7YvkNEdXQ==

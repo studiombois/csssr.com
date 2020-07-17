@@ -14,6 +14,7 @@
   "dependencies": {
     "@csssr/core-design": "^5.1.2",
     "@csssr/csssr-amo": "^3.2.0",
+    "@csssr/csssr-shared-header": "^1.0.10",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",

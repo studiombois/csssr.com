@@ -212,7 +212,7 @@
       "link": "https://brusnika.ru",
       "subTitle": "Client",
       "text": {
-        "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, the Urals and the Moscow Region."
+        "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, <span style='white-space:nowrap'>the Urals</span> and the Moscow Region."
       },
       "imgAlt": "Brusnika"
     },
@@ -222,7 +222,7 @@
         "firstItem": "1"
       },
       "textList": {
-        "firstItem": "HighMiddle JS&nbsp;Developer"
+        "firstItem": "High Middle JS&nbsp;Developer"
       }
     },
     "techStack": {

@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { calcRem } from '../../../../../utils/style/calcRem'
 
-const base = () => css`
+const base = ({ colors }) => css`
   & {
     position: relative;
   }
@@ -16,9 +16,9 @@ const base = () => css`
     font-weight: 300;
     font-size: ${calcRem(16)};
     line-height: ${calcRem(24)};
-    color: #18191b;
+    color: ${colors.secondary.darken100};
     border: none;
-    border-bottom: 2px solid #d4d4d4;
+    border-bottom: ${calcRem(2)} solid #d4d4d4;
     background-color: transparent;
     padding-bottom: ${calcRem(4)};
     padding-left: ${calcRem(9)};
@@ -26,11 +26,11 @@ const base = () => css`
   }
 
   .input::placeholder {
-    color: #9b9b9b;
+    color: ${colors.secondary.gray};
   }
 
   .input:focus {
-    border-bottom-color: #0076ff;
+    border-bottom-color: ${colors.primary.origin};
   }
 
   .input._error {
@@ -50,7 +50,7 @@ const base = () => css`
     position: absolute;
     top: 0;
     left: ${calcRem(8)};
-    color: #9b9b9b;
+    color: ${colors.secondary.gray};
 
     > span {
       opacity: 0.4
@@ -60,16 +60,17 @@ const base = () => css`
   .input:focus + .label,
   .label._active {
     transform: translateY(${calcRem(28)});
-    color: #18191b;
+    color: ${colors.secondary.darken100};
     font-weight: 300;
     font-size: ${calcRem(12)};
     text-transform: lowercase;
   }
 `
 
-export default () => {
+export default (props) => {
+  const { colors } = props.theme
 
   return css`
-    ${base()}
+    ${base({colors})}
   `
 }

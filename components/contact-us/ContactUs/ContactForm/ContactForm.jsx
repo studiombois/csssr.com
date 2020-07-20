@@ -37,8 +37,8 @@ const ContactForm = ({ className, l10n: { translations } }) => {
 
       <h2 className="subheading">{translations.contactUs.form.subtitle}</h2>
 
-      <div className="form">
-        <Dropdown label="Тип запроса" items={itemsMoock} />
+      <form className="form">
+        <Dropdown label="Тип запроса" items={itemsMoock} activeId="new-project" />
 
         <TextField label="Email" />
 
@@ -61,10 +61,10 @@ const ContactForm = ({ className, l10n: { translations } }) => {
           <span className="submit-text">{translations.contactUs.form.submitText}</span>
         </AnimatedButton>
 
-        <span className="separator">
+        <div className="separator">
           <span className="separator-text">{translations.contactUs.form.separator}</span>
-        </span>
-      </div>
+        </div>
+      </form>
     </section>
   )
 }

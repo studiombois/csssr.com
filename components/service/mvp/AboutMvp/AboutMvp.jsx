@@ -49,6 +49,7 @@ class AboutMvp extends PureComponent {
                 type="strong"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.mvp.aboutMvp.descriptionOn }}
+                testid={togglerIndex === 1 ? 'MVP:text:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
               />
 
               <Text
@@ -57,6 +58,7 @@ class AboutMvp extends PureComponent {
                 type="strong"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.mvp.aboutMvp.descriptionOff }}
+                testid={togglerIndex === 0 ? 'MVP:text:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
               />
             </div>
           </Grid>
@@ -71,6 +73,7 @@ class AboutMvp extends PureComponent {
               images={mvpOnImages}
               fallback={mvpOnImages['desktop.l']}
               alt={translations.mvp.imgAlt.mvpOn}
+              testid={togglerIndex === 1 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
             />
 
             <PictureForAllResolutions
@@ -78,6 +81,7 @@ class AboutMvp extends PureComponent {
               images={mvpOffImages}
               fallback={mvpOffImages['desktop.l']}
               alt={translations.mvp.imgAlt.mvpOff}
+              testid={togglerIndex === 0 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
             />
           </div>
         </article>

@@ -3,14 +3,12 @@ import { css } from '@emotion/core'
 const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
   & {
     display: flex;
-    min-height: 100vh;
   }
 
   .map-wrap {
     top: 0;
     left: 0;
     width: 41.25%;
-    height: 100vh;
   }
 
 

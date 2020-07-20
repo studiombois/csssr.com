@@ -5,12 +5,15 @@ import styled from '@emotion/styled'
 import styles from './ContactUs.styles'
 
 import Map from './Map'
+import { MapProvider } from '../../../utils/mapContext'
 
 const ContactUs = ({ className }) => {
   return (
     <section className={className}>
       <div className="map-wrap">
-        <Map />
+        <MapProvider>
+          <Map />
+        </MapProvider>
       </div>
     </section>
   )

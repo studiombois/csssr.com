@@ -204,11 +204,11 @@
   },
   "brusnika": {
     "meta": {
-      "title": "Brusnika — Internal assessment and forecasting tools",
+      "title": "Internal assessment and forecasting tools",
       "description": "Brusnika — is a Russian development company specializing in the construction of multi-storey residential buildings in major cities of Siberia, the Urals and the Moscow Region."
     },
     "hero": {
-      "title": "Brusnika — Internal assessment and forecasting tools",
+      "title": "Internal assessment and forecasting tools",
       "link": "https://brusnika.ru",
       "subTitle": "Client",
       "text": {
@@ -268,11 +268,11 @@
   },
   "mindbox": {
     "meta": {
-      "title": "Mindbox — Personal Account Data Filtering / Promotion Campaigns Arbitration",
+      "title": "Personal Account Data Filtering / Promotion Campaigns Arbitration",
       "description": "Mindbox develops a customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing."
     },
     "hero": {
-      "title": "Mindbox — Personal Account Data Filtering / Promotion Campaigns Arbitration",
+      "title": "Personal Account Data Filtering / Promotion Campaigns Arbitration",
       "link": "https://mindbox.ru",
       "subTitle": "Client",
       "text": {
@@ -305,7 +305,7 @@
         },
         "projectTeam": {
           "number": "3",
-          "text": "сspecialists"
+          "text": "specialists"
         }
       }
     },
@@ -314,10 +314,10 @@
       "text": [
         [],
         [
-          "We&nbsp;worked on&nbsp;two projects: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
-          "In&nbsp;the first project, we&nbsp;were faced with a&nbsp;non-trivial problem: we&nbsp;had to&nbsp;implement data filtering with an&nbsp;option to&nbsp;add new filters and combine them into groups in&nbsp;a&nbsp;tree structure.",
+          "We&nbsp;worked on&nbsp;<b>two projects</b>: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
+          "In&nbsp;the <b>first project</b>, we&nbsp;were faced with a&nbsp;<span style='white-space:nowrap'>non-trivial</span> problem: we&nbsp;had to&nbsp;implement data filtering with an&nbsp;option to&nbsp;add new filters and combine them into groups in&nbsp;a&nbsp;tree structure.",
           "Our team has developed a&nbsp;filtering system that supports conditions and nesting levels. After basic data sorting, a&nbsp;user can configure fine filtering, which enables a&nbsp;user to&nbsp;apply up&nbsp;to&nbsp;several thousand filters.",
-          "The second project also required development of&nbsp;a&nbsp;complex logic cooperating with a&nbsp;tree structure. Thanks to&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; a&nbsp;Mindbox client can create new promotions, flexibly setting up&nbsp;rules of&nbsp;promotions interaction with each other by&nbsp;combining them into groups. Arbitrary nesting of&nbsp;groups is&nbsp;supported.",
+          "<b>The second project</b> also required development of&nbsp;a&nbsp;complex logic cooperating with a&nbsp;tree structure. Thanks to&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; a&nbsp;Mindbox client can create new promotions, flexibly setting up&nbsp;rules of&nbsp;promotions interaction with each other by&nbsp;combining them into groups. Arbitrary nesting of&nbsp;groups is&nbsp;supported.",
           "An&nbsp;unconventional drag-and-drop was developed by&nbsp;us for this application. For example, a&nbsp;user can create a&nbsp;&laquo;Promotions&raquo; group with subgroups &laquo;Discount&raquo;, &laquo;Accrual of&nbsp;Points&raquo;, &laquo;Gift with Purchase&raquo; and &laquo;Discount by&nbsp;Promotion Code&raquo;, and configure the parameters of&nbsp;each entity."
         ]
       ]

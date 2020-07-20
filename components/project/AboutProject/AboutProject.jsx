@@ -30,9 +30,14 @@ const AboutProject = ({
     {paragraphsScheme.map(
       (paragraphsGroup, paragraphsGroupId) =>
         paragraphsGroup && (
-          <div
+          <Grid
+            as="div"
             key={paragraphsGroupId}
-            className={cn('paragraphs-gropup', `paragraphs-gropup_${paragraphsGroupId}`)}
+            className={cn(
+              'paragraphs-gropup',
+              `paragraphs-gropup_${paragraphsGroupId}`,
+              `paragraphs-gropup_${projectId}`,
+            )}
           >
             {paragraphsGroup.map((paragrapId) => (
               <Text
@@ -49,7 +54,7 @@ const AboutProject = ({
                 }}
               />
             ))}
-          </div>
+          </Grid>
         ),
     )}
 

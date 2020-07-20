@@ -10,6 +10,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-repeat: no-repeat, no-repeat;
   }
 
+  .paragraph {
+    color: #000000;
+  }
+
   .paragraph a {
     color: #0076FF;
     text-decoration: underline;
@@ -34,6 +38,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
       .paragraph:not(:first-of-type) {
         margin-top: 24px;
+      }
+    }
+    .paragraphs-gropup_mindbox {
+      grid-column: 1 / span 7;
+    }
+
+    .paragraphs-gropup_mindbox p {
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        grid-column: 2 / span 5;
+      }
+
+      &:nth-of-type(4) {
+        margin-top: 96px !important;
+      }
+
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        grid-column: 4 / span 6;
       }
     }
   }

@@ -67,7 +67,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
   .team-number {
     &:before {
       margin-top: ${calcRem(5)};
-      height: 4px;
+      height: ${calcRem(4)};
       background-position: -8px 0;
       background-image: url(${require('../../../static/icons/project/techStack/team/line.svg').default});
     }
@@ -168,8 +168,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
     .duration-number {
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
-        left: 49px;
-        height: 18px;
+        left: ${calcRem(49)};
+        height: ${calcRem(18)};
         background-size: auto;
       }
     }
@@ -182,7 +182,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
         margin-top: 0;
-        left: 36px;
+        left: ${calcRem(36)};
       }
     }
   }
@@ -227,9 +227,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
     .duration-number {
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
-        left: 49px;
-        height: 18px;
-        background-size: auto;
+        left: ${calcRem(49)};
+        height: ${calcRem(18)};
+        background-position: center;
       }
     }
 
@@ -248,9 +248,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
     .team-number {
       &:before {
-        left: 36px;
+        left: ${calcRem(36)};
         margin: 0;
-        min-width: 385px;
+        min-width: ${calcRem(385)};
         background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
       }
     }

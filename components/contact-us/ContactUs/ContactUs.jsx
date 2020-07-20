@@ -1,34 +1,26 @@
 import React from 'react'
-import { string, object } from 'prop-types'
+import { string } from 'prop-types'
 
 import styled from '@emotion/styled'
 import styles from './ContactUs.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+import ContactForm from './ContactForm/ContactForm'
 
-import Heading from '../../ui-kit/core-design/Heading'
-
-const ContactUs = ({ className, l10n: { translations } }) => {
+const ContactUs = ({ className }) => {
   return (
-    <section className={className}>
-      <Heading
-        as="h2"
-        className="heading"
-        type="slab"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: translations.contactUs.title }}
-      />
-    </section>
+    <div className={className}>
+      <div className="map-wrap" />
+
+      <div className="form-wrap">
+        <ContactForm />
+      </div>
+    </div>
   )
 }
 
 ContactUs.propTypes = {
   className: string,
-  l10n: object,
 }
 
-export default L10nConsumer(
-  MsBrowserConsumer(styled(ContactUs)`
-    ${styles}
-  `),
-)
+export default styled(ContactUs)`
+  ${styles}
+`

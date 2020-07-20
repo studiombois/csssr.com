@@ -3,5 +3,11 @@
     "title": "Cвязаться с нами",
     "description": ""
   },
-  "title": "Cвязаться с нами"
+  "form": {
+    "title": "Cвязаться с нами",
+    "subtitle": "О чем бы ты хотел поговорить?",
+    "separator": "или",
+    "policy": "By submitting the form, you consent to the processing of your personal data in accordance with the \"<a href='/en/privacy-policy' target='_blank'>Privacy Policy</a>\" and agree to the \"<a href='/en/cookies-policy' target='_blank'>Terms of Service</a>\".",
+    "submitText": "Отправить"
+  }
 }

@@ -212,7 +212,7 @@
       "link": "https://brusnika.ru",
       "subTitle": "Client",
       "text": {
-        "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, the Urals and the Moscow Region."
+        "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, <span style='white-space:nowrap'>the Urals</span> and the Moscow Region."
       },
       "imgAlt": "Brusnika"
     },
@@ -222,7 +222,7 @@
         "firstItem": "1"
       },
       "textList": {
-        "firstItem": "HighMiddle JS&nbsp;Developer"
+        "firstItem": "High Middle JS&nbsp;Developer"
       }
     },
     "techStack": {
@@ -366,7 +366,7 @@
         },
         "projectTeam": {
           "number": "3",
-          "text": "specialist"
+          "text": "specialists"
         }
       }
     },
@@ -374,7 +374,7 @@
       "title": "About the Project:",
       "text": [
         [
-          "Qmarketing Academy is&nbsp;an&nbsp;interactive system that trains to&nbsp;choose the most effective analytical and promotional tools. Beginner entrepreneurs, marketers, and CEOs are trained on&nbsp;the basis of&nbsp;real-life cases, have their knowledge gaps filled, and awarded certificates of&nbsp;successful course completion."
+          "Qmarketing Academy is&nbsp;an&nbsp;interactive system that trains to&nbsp;choose the most effective analytical and promotional tools. Beginner entrepreneurs, marketers, and CEOs are trained on&nbsp;the basis of&nbsp;<span style='white-space:nowrap'>real-life</span> cases, have their knowledge gaps filled, and awarded certificates of&nbsp;successful course completion."
         ],
         [
           "We were entrusted with front-end development of authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer's API."

@@ -30,7 +30,7 @@
   "greeting": {
     "ecommerce": {
       "title": "Custom E-Commerce <br/>Development Services",
-      "paragraph": "In&nbsp;the constantly growing and highly competitive <span style=\"white-space: nowrap\">e-commerce</span> industry every page, every metric, and every customer opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales.",
+      "paragraph": "In&nbsp;the constantly growing and highly competitive <span style='white-space: nowrap'>e-commerce</span> industry every page, every metric, and every customer opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales.",
       "button": "Hire us",
       "imgAlt": "Illustration with two figures of people, a man conveys something to a girl"
     },
@@ -157,7 +157,7 @@
         }
       },
       "brusnika": {
-        "heading": "Brusnika — Internal assessment and forecasting tools",
+        "heading": "Brusnika — Internal assessment and <span style='white-space: nowrap'>forecasting tools</span>",
         "text": "Creation of internal sales planning tools for the company's managers.",
         "numericData": {
           "firstItem": {
@@ -194,7 +194,7 @@
       },
       "qmarketing": {
         "heading": "QMarketing &mdash; QAcademy",
-        "text": "Front-end development of internal pages for the e-learning platform.",
+        "text": "Front-end development of internal pages for the <span style='white-space: nowrap'>e-learning</span> platform.",
         "numericData": {
           "firstItem": {
             "number": "3",

@@ -3,7 +3,6 @@
     "title": "Cвязаться с нами",
     "description": ""
   },
-  "title": "Cвязаться с нами",
   "bookACall": {
     "profiles": {
       "anastasia_ignatenko": {
@@ -34,5 +33,33 @@
       }
     },
     "buttonText": "Забронировать звонок"
+  },
+  "form": {
+    "title": "Cвязаться с нами",
+    "subtitle": "О чем бы ты хотел поговорить?",
+    "separator": "или",
+    "policy": "By submitting the form, you consent to the processing of your personal data in accordance with the \"<a href='/en/privacy-policy' target='_blank'>Privacy Policy</a>\" and agree to the \"<a href='/en/cookies-policy' target='_blank'>Terms of Service</a>\".",
+    "submitText": "Отправить",
+    "typeInquiry": {
+      "label": "Тип запроса",
+      "newPropject": "Новый проект",
+      "job": "Работа в CSSSR"
+    }
+  },
+  "map": {
+    "tabs": {
+      "sg": "Singapore",
+      "ee": "Estonia",
+      "ru": "Russia"
+    },
+    "addresses": {
+      "text": "If you'd like to meet us in person, please contact us to make an arrangement.",
+      "ru": [
+        "22 Bol'shoj<br /> Kozihinskij Lane,<br />bld. 2, office 28,<br /> Moscow, 123001,<br />Russia",
+        "30 Lesnaya St.,<br />bld. 1, office 303,<br /> Dzerzhinsky, 140090,<br /> Russia"
+      ],
+      "sg": "68 Circular Road,<br />#02-01,<br />Singapore, 049422",
+      "ee": "68 Circular Road,<br />#02-01,<br />,Singapore, 049422"
+    }
   }
 }

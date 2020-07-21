@@ -126,6 +126,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       flex-direction: row;
       flex-wrap: wrap;
       width: ${calcRem(328)};
+      background-color: white;
     }
 
     .reservation,

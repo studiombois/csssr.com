@@ -12,7 +12,15 @@ import PictureForAllResolutions from '../../../../ui-kit/PictureForAllResolution
 
 import unescapeHtmlEntities from '../../../../../utils/unescapeHtmlEntities'
 
-const Item = ({ className, l10n: { translations, language }, groupId, itemId, link, images }) => (
+const Item = ({
+  className,
+  l10n: { translations, language },
+  groupId,
+  itemId,
+  testId,
+  link,
+  images,
+}) => (
   <div className={className}>
     <PictureForAllResolutions
       className="picture"
@@ -46,8 +54,12 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
           `}
           isNextLink
           dangerouslySetInnerHTML={{
-            __html: translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
+            __html:
+              translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link.title,
           }}
+          data-testid={
+            translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link.testId
+          }
         />
         {unescapeHtmlEntities(
           translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].description[1],
@@ -78,6 +90,7 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
               __html:
                 translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
             }}
+            data-testid={testId}
           />
         )}
       </Fragment>

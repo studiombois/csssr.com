@@ -135,3 +135,8 @@ export default {
     },
   ],
 }
+
+export const action = {
+  title: (t) => t.common.header.action,
+  href: 'contact-us',
+}

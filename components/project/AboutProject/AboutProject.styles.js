@@ -140,6 +140,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .title {
       margin-top: ${calcRem(70)};
+      grid-row: 1;
     }
 
     .paragraphs-gropup_0 {
@@ -162,6 +163,35 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       .paragraph:not(:first-of-type) {
         margin-top: ${calcRem(16)};
       }
+    }
+
+    .paragraphs-gropup_mindbox {
+      grid-column: 1 / span 8;
+      grid-row: 2;
+      margin-top: ${calcRem(40)};
+    }
+
+    .paragraphs-gropup_mindbox p {
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        grid-column: 3 / span 8;
+      }
+
+      &:nth-of-type(4) {
+        margin-top: ${calcRem(64)} !important;
+      }
+
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        grid-column: 2 / span 5;
+      }
+    }
+
+    .paragraphs-gropup_mindbox + .picture {
+      grid-row: 2;
+      grid-column: 8 / span 4;
+      margin-top: ${calcRem(336)};
     }
 
     .picture {
@@ -195,6 +225,29 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       .paragraph:not(:first-of-type) {
         margin-top: ${calcRem(16)};
       }
+    }
+
+    .paragraphs-gropup_mindbox {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+      margin-top: ${calcRem(40)};
+    }
+
+    .paragraphs-gropup_mindbox p {
+      grid-column: 1/ span 6;
+
+      &:nth-of-type(4) {
+        margin-top: ${calcRem(331)} !important;
+      } 
+    }
+
+    .paragraphs-gropup_mindbox + .picture {
+      grid-row: 2;
+      grid-column: 1 / span 6;
+      margin-top: ${calcRem(416)};
+      width: ${calcRem(216)};
+      height: ${calcRem(258)};
+      justify-self: right;
     }
 
     .title,

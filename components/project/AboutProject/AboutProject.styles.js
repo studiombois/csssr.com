@@ -24,7 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.all} {
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       margin-top: 58px;
 
       .paragraph:not(:first-of-type) {
@@ -32,7 +32,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       margin-top: 157px;
       grid-column: 2 / span 5;
 
@@ -40,11 +40,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         margin-top: 24px;
       }
     }
-    .paragraphs-gropup_mindbox {
+    .paragraphs-group_mindbox {
       grid-column: 1 / span 7;
     }
 
-    .paragraphs-gropup_mindbox p {
+    .paragraphs-group_mindbox p {
       &:nth-of-type(1),
       &:nth-of-type(2),
       &:nth-of-type(3) {
@@ -73,7 +73,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 7;
     }
 
@@ -96,7 +96,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 8;
     }
 
@@ -119,7 +119,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 8;
     }
 
@@ -143,7 +143,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-row: 1;
     }
 
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       margin-top: ${calcRem(40)};
 
       .paragraph:not(:first-of-type) {
@@ -152,11 +152,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 8;
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       margin-top: ${calcRem(96)};
       grid-column: 2 / span 5;
 
@@ -165,13 +165,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
-    .paragraphs-gropup_mindbox {
+    .paragraphs-group_mindbox {
       grid-column: 1 / span 8;
       grid-row: 2;
       margin-top: ${calcRem(40)};
     }
 
-    .paragraphs-gropup_mindbox p {
+    .paragraphs-group_mindbox p {
       &:nth-of-type(1),
       &:nth-of-type(2),
       &:nth-of-type(3) {
@@ -188,7 +188,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
-    .paragraphs-gropup_mindbox + .picture {
+    .paragraphs-group_mindbox + .picture {
       grid-row: 2;
       grid-column: 8 / span 4;
       margin-top: ${calcRem(336)};
@@ -209,7 +209,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background: none;
     }
 
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       margin-top: ${calcRem(24)};
       order: 1;
 
@@ -218,7 +218,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       margin-top: ${calcRem(37)};
       order: 3;
 
@@ -227,13 +227,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
-    .paragraphs-gropup_mindbox {
+    .paragraphs-group_mindbox {
       grid-column: 1 / span 6;
       grid-row: 2;
       margin-top: ${calcRem(40)};
     }
 
-    .paragraphs-gropup_mindbox p {
+    .paragraphs-group_mindbox p {
       grid-column: 1/ span 6;
 
       &:nth-of-type(4) {
@@ -241,7 +241,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       } 
     }
 
-    .paragraphs-gropup_mindbox + .picture {
+    .paragraphs-group_mindbox + .picture {
       grid-row: 2;
       grid-column: 1 / span 6;
       margin-top: ${calcRem(416)};
@@ -251,8 +251,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0,
-    .paragraphs-gropup_1 {
+    .paragraphs-group_0,
+    .paragraphs-group_1 {
       grid-column: 1 / span 6;
     }
 
@@ -278,7 +278,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.all} {
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       -ms-grid-column: ${getGridValueForMs(2)};
       -ms-grid-column-span: ${getGridValueForMs(5)};
     }
@@ -286,7 +286,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.l} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(7)};
     }
@@ -299,7 +299,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.m} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(8)};
     }
@@ -312,7 +312,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.s} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(8)};
     }
@@ -325,12 +325,12 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(8)};
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       -ms-grid-column: ${getGridValueForMs(2)};
       -ms-grid-column-span: ${getGridValueForMs(5)};
     }
@@ -343,8 +343,8 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     .title,
-    .paragraphs-gropup_0,
-    .paragraphs-gropup_1 {
+    .paragraphs-group_0,
+    .paragraphs-group_1 {
       -ms-grid-column: ${getGridValueForMs(1)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
     }

@@ -34,9 +34,9 @@ const AboutProject = ({
             as="div"
             key={paragraphsGroupId}
             className={cn(
-              'paragraphs-gropup',
-              `paragraphs-gropup_${paragraphsGroupId}`,
-              `paragraphs-gropup_${projectId}`,
+              'paragraphs-group',
+              `paragraphs-group_${paragraphsGroupId}`,
+              `paragraphs-group_${projectId}`,
             )}
           >
             {paragraphsGroup.map((paragrapId) => (

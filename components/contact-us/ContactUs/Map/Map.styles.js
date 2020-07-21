@@ -44,6 +44,10 @@ const base = ({ breakpoints: { mobile, } }) => css`
     }
   }
 
+  .book-a-call_mobile {
+    display: none;
+  }
+
   ${mobile.all} {
     & {
       height: ${calcRem(645)};

@@ -3,9 +3,8 @@ import { string } from 'prop-types'
 
 import styled from '@emotion/styled'
 import styles from './ContactUs.styles'
-import ContactForm from './ContactForm'
+import ContactOptions from './ContactOptions'
 import Map from './Map'
-import BookACall from '../BookACall'
 
 import { MapProvider } from '../../../utils/mapContext'
 import { TypeInquiryProvider } from '../../../utils/typeInquiryContext'
@@ -19,12 +18,9 @@ const ContactUs = ({ className }) => {
         </MapProvider>
       </div>
 
-      <div className="form-wrap">
-        <TypeInquiryProvider>
-          <ContactForm />
-          <BookACall className="book-a-call" profileId="anastasia_ignatenko" canBookACall />
-        </TypeInquiryProvider>
-      </div>
+      <TypeInquiryProvider>
+        <ContactOptions />
+      </TypeInquiryProvider>
     </div>
   )
 }

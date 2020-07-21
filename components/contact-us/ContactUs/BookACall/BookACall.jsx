@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { string, oneOf, bool } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './BookACall.styles'
-import Picture from '../../ui-kit/Picture'
-import ButtonLink from '../../ui-kit/core-design/ButtonLink'
-import profiles from '../../../data/contact-us/profiles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { DeviceConsumer } from '../../../utils/deviceProvider'
-import { ReactComponent as SuccessIconSmall } from '../../../static/icons/contact-us/book-a-call/success_small.svg'
-import { ReactComponent as SuccessIconBig } from '../../../static/icons/contact-us/book-a-call/success_big.svg'
+import Picture from '../../../ui-kit/Picture'
+import ButtonLink from '../../../ui-kit/core-design/ButtonLink'
+import profiles from '../../../../data/contact-us/profiles'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
+import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
+import { ReactComponent as SuccessIconBig } from '../../../../static/icons/contact-us/book-a-call/success_big.svg'
 
 const BookACall = ({
   className,
@@ -75,7 +75,7 @@ const BookACall = ({
               {translations.contactUs.bookACall.profiles[profileId].position}
             </div>
 
-            <span className="email">{profiles[profileId].email}</span>
+            <div className="email">{profiles[profileId].email}</div>
           </figcaption>
         </>
       )}

@@ -6,7 +6,7 @@ import Head from '../Head'
 import ContactUs from './ContactUs'
 
 const ContactUsPage = ({ l10n: { translations } }) => {
-  const pageName = 'coreValues'
+  const pageName = 'contactUs'
 
   return (
     <Layout pageName={pageName} withFooter={false}>

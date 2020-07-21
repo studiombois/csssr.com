@@ -5,10 +5,10 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Dropdown.styles'
 
-import { TypeInquiryConsumer } from '../../../../../utils/typeInquiryContext'
-import { L10nConsumer } from '../../../../../utils/l10nProvider'
+import { TypeInquiryConsumer } from '../../../../../../utils/typeInquiryContext'
+import { L10nConsumer } from '../../../../../../utils/l10nProvider'
 
-import items from '../../../../../data/contact-us/typeInquiry'
+import items from '../../../../../../data/contact-us/typeInquiry'
 
 const Dropdown = ({ className, testid, activeItemId, setActiveItemId, l10n: { translations } }) => {
   const [isOpen, toggleIsOpen] = useState(false)

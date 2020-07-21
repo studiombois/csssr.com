@@ -75,7 +75,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop }}) => css`
 
   ${desktop.l} {
     & {
-      left: 170px;
+      left: calc(50% - 222px);
     }
   }
 

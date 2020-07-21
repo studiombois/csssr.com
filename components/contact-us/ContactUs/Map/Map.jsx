@@ -17,7 +17,7 @@ const Map = ({ className, activePinId }) => {
     <div className={className}>
       <Global styles={backgroundImagesStyles} />
       <Tabs />
-      <BookACall className="book-a-call_mobile" profileId="anastasia_ignatenko" canBookACall />
+      <BookACall className="book-a-call" profileId="anastasia_ignatenko" canBookACall />
       <Address />
       <span className={cn('map', `map-${activePinId}`)} />
     </div>

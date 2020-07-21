@@ -5,6 +5,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   & {
     position: absolute;
     display: flex;
+    height: ${calcRem(40)};
     background-color: #ffffff;
     z-index: 2;
   }
@@ -44,6 +45,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   ${desktop.all} {
     & {
       top: 32px;
+      width: 444px;
     }
 
     .item {
@@ -70,8 +72,8 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
 
   ${desktop.l} {
     & {
-      left: 170px;
-      right: 170px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -80,6 +82,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
       top: ${calcRem(32)};
       left: ${calcRem(16)};
       right: ${calcRem(16)};
+      width: ${calcRem(392)};
     }
 
     .item {

@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import calcRem from '../../../utils/style/calcRem'
+import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, above }, colors }) => css`
   & {
@@ -65,6 +65,12 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     font-size: ${calcRem(10)};
     line-height: ${calcRem(24)};
     color: ${colors.secondary.gray};
+  }
+
+  .button {
+    padding-right: ${calcRem(27)};
+    padding-left: ${calcRem(27)};
+    width: auto;
   }
 
   ${above.mobile} {
@@ -162,7 +168,6 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       bottom: 0;
       left: 0;
       height: ${calcRem(40)};
-      width: 100%;
     }
 
     .success-icon_small {

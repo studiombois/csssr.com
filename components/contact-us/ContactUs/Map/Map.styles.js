@@ -24,7 +24,7 @@ import mapSgMobile from '../../../../static/images/contact-us/maps/mobile.all/ma
 import mapSgMobile_webp from '../../../../static/images/contact-us/maps/mobile.all/map-sg.png?responsive_and_webp'
 
 
-const base = ({ breakpoints: { mobile, } }) => css`
+const base = ({ breakpoints: { mobile } }) => css`
 
   & {
     position: relative;
@@ -38,13 +38,13 @@ const base = ({ breakpoints: { mobile, } }) => css`
       position: fixed;
       width: 41.25%;
       height: 100vh;
-      background-size: auto 100vh !important;
+      background-size: cover !important;
       background-position: center;
       background-color: #808080;
     }
   }
 
-  .book-a-call_mobile {
+  .book-a-call {
     display: none;
   }
 
@@ -60,7 +60,7 @@ const base = ({ breakpoints: { mobile, } }) => css`
       position: absolute;
     }
 
-    .book-a-call_mobile {
+    .book-a-call {
       z-index: 2;
       position: absolute;
       top: 150px;
@@ -72,9 +72,6 @@ const base = ({ breakpoints: { mobile, } }) => css`
 
 export const backgroundImagesStyles = theme => {
   const { desktop, tablet, mobile } = theme.breakpoints
-
-
-
   return css`
     ${desktop.all} {
       ${getBackgroundImageSrcSet({png: mapRuDesktop, webp: mapRuDesktop_webp}, '.map-ru')};

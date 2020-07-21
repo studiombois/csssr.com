@@ -55,6 +55,14 @@ const base = ({ breakpoints: { mobile, } }) => css`
       height: 100%;
       position: absolute;
     }
+
+    .book-a-call_mobile {
+      z-index: 2;
+      position: absolute;
+      top: 150px;
+      left: 16px;
+      display: flex;
+    }
   }
 `
 

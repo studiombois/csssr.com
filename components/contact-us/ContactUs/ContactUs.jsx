@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import styles from './ContactUs.styles'
 import ContactForm from './ContactForm'
 import Map from './Map'
+import BookACall from '../BookACall'
 
 import { MapProvider } from '../../../utils/mapContext'
 import { TypeInquiryProvider } from '../../../utils/typeInquiryContext'
@@ -21,6 +22,7 @@ const ContactUs = ({ className }) => {
       <div className="form-wrap">
         <TypeInquiryProvider>
           <ContactForm />
+          <BookACall className="book-a-call" profileId="anastasia_ignatenko" canBookACall />
         </TypeInquiryProvider>
       </div>
     </div>

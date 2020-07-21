@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
+import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
+const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   & {
     display: flex;
   }
@@ -32,10 +33,26 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
     }
   }
 
+  ${above.mobile} {
+    .form-wrap {
+      display: flex
+    }
+
+    .book-a-call {
+      margin-top: ${calcRem(379)}; /* TODO: Тупой хак, что бы просто показать вёрстку заказчику, удалить потом */
+      margin-left: ${calcRem(72)};
+      margin-right: ${calcRem(20)};
+    }
+  }
+
   ${mobile.all} {
     & {
       margin-top: 3.5rem;
       flex-direction: column;
+    }
+
+    .book-a-call {
+      display: none;
     }
 
     .map-wrap {

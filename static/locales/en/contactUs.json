@@ -3,6 +3,37 @@
     "title": "Сontact Us",
     "description": ""
   },
+  "bookACall": {
+    "profiles": {
+      "anastasia_ignatenko": {
+        "name": "Anastasia Ignatenko",
+        "alt": "photo of Anastasia Ignatenko",
+        "position": "APAC Sales Representative"
+      },
+      "anastasia_vnuchenko": {
+        "name": "Anastasia Vnuchenko",
+        "alt": "photo of Anastasia Vnuchenko",
+        "position": "EU Sales Representative"
+      },
+      "olga_shevchenko": {
+        "name": "Olga Shevchenko",
+        "alt": "photo of Olga Shevchenko",
+        "position": "Head of Sales "
+      },
+      "victoria_zubareva": {
+        "name": "Victoria Zubareva",
+        "alt": "photo of Victoria Zubareva",
+        "position": "Head of HR"
+      }
+    },
+    "messages": {
+      "success": {
+        "title": "Thanks! Call is booked.",
+        "description": "We've sent you an email with all the information."
+      }
+    },
+    "buttonText": "Schedule a call"
+  },
   "form": {
     "title": "Сontact Us",
     "subtitle": "What would you like to talk about?",

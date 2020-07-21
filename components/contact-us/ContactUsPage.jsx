@@ -9,12 +9,11 @@ const ContactUsPage = ({ l10n: { translations } }) => {
   const pageName = 'coreValues'
 
   return (
-    <Layout pageName={pageName}>
+    <Layout pageName={pageName} withFooter={false}>
       <Head
         title={translations.contactUs.meta.title}
         description={translations.contactUs.meta.description}
       />
-
       <ContactUs />
     </Layout>
   )

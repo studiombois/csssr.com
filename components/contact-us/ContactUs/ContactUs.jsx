@@ -1,27 +1,34 @@
 import React from 'react'
-import { string, object } from 'prop-types'
+import { string } from 'prop-types'
 
 import styled from '@emotion/styled'
 import styles from './ContactUs.styles'
-
+import ContactForm from './ContactForm'
 import Map from './Map'
+
 import { MapProvider } from '../../../utils/mapContext'
+import { TypeInquiryProvider } from '../../../utils/typeInquiryContext'
 
 const ContactUs = ({ className }) => {
   return (
-    <section className={className}>
+    <div className={className}>
       <div className="map-wrap">
         <MapProvider>
           <Map />
         </MapProvider>
       </div>
-    </section>
+
+      <div className="form-wrap">
+        <TypeInquiryProvider>
+          <ContactForm />
+        </TypeInquiryProvider>
+      </div>
+    </div>
   )
 }
 
 ContactUs.propTypes = {
   className: string,
-  l10n: object,
 }
 
 export default styled(ContactUs)`

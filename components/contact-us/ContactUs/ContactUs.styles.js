@@ -9,8 +9,8 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
     top: 0;
     left: 0;
     width: 41.25%;
+    height: 100vh;
   }
-
 
   ${desktop.all} {
     & {
@@ -39,6 +39,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
     }
 
     .map-wrap {
+      order: 1;
       position: relative;
       width: 100%;
     }

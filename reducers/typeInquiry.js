@@ -3,7 +3,7 @@ export default (state, action) => {
     case 'CHANGE_TYPE':
       return {
         ...state,
-        activeId: action.payload,
+        id: action.payload,
       }
     default:
       throw new Error()

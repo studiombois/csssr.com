@@ -3,7 +3,9 @@ import { string } from 'prop-types'
 
 import styled from '@emotion/styled'
 import styles from './ContactUs.styles'
-import ContactForm from './ContactForm/ContactForm'
+import ContactForm from './ContactForm'
+
+import { TypeInquiryProvider } from '../../../utils/typeInquiryContext'
 
 const ContactUs = ({ className }) => {
   return (
@@ -11,7 +13,9 @@ const ContactUs = ({ className }) => {
       <div className="map-wrap" />
 
       <div className="form-wrap">
-        <ContactForm />
+        <TypeInquiryProvider>
+          <ContactForm />
+        </TypeInquiryProvider>
       </div>
     </div>
   )

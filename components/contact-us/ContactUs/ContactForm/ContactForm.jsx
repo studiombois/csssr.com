@@ -12,17 +12,6 @@ import { L10nConsumer } from '../../../../utils/l10nProvider'
 import styled from '@emotion/styled'
 import styles from './ContactForm.styles'
 
-const itemsMoock = [
-  {
-    id: 'new-project',
-    value: 'New Project',
-  },
-  {
-    id: 'job',
-    value: 'Работа в CSSSR',
-  },
-]
-
 const ContactForm = ({ className, l10n: { translations } }) => {
   const status = ''
   return (
@@ -38,7 +27,7 @@ const ContactForm = ({ className, l10n: { translations } }) => {
       <h2 className="subheading">{translations.contactUs.form.subtitle}</h2>
 
       <form className="form">
-        <Dropdown label="Тип запроса" items={itemsMoock} activeId="new-project" />
+        <Dropdown />
 
         <TextField label="Email" />
 

@@ -1,51 +1,50 @@
-import React, { useState, useReducer } from 'react'
-import { string, array, func } from 'prop-types'
+import React, { useState } from 'react'
+import { string } from 'prop-types'
 import cn from 'classnames'
 
 import styled from '@emotion/styled'
 import styles from './Dropdown.styles'
 
-import reducer from '../../../../reducers/typeInquiry'
+import { TypeInquiryConsumer } from '../../../../../utils/typeInquiryContext'
+import { L10nConsumer } from '../../../../../utils/l10nProvider'
 
-const Dropdown = ({ items, className, label, onClick, testid, activeId }) => {
+import items from '../../../../../data/contact-us/typeInquiry'
+
+const Dropdown = ({ className, testid, activeItemId, setActiveItemId, l10n: { translations } }) => {
   const [isOpen, toggleIsOpen] = useState(false)
-  const [state, dispatch] = useReducer(reducer, { activeId })
 
   const handleClick = (event) => {
     event.preventDefault()
-
     toggleIsOpen((prevState) => !prevState)
-    if (onClick) {
-      onClick()
-    }
   }
 
   const selectItem = (id) => (event) => {
     event.preventDefault()
-    dispatch({ type: 'CHANGE_TYPE', payload: id })
-
+    setActiveItemId(id)
     toggleIsOpen(false)
   }
 
-  const { value } = items.filter((item) => item.id === state.activeId)[0]
+  const { value } = items.filter((item) => item.id === activeItemId)[0]
   return (
     <div className={cn(className, { _active: isOpen })} data-testid={testid}>
       <button type="button" onClick={handleClick} className={cn('button', { _active: isOpen })}>
-        {value}
+        {value(translations)}
       </button>
 
-      <div className={cn('label', { _active: isOpen })}>{label}</div>
+      <div className={cn('label', { _active: isOpen })}>
+        {translations.contactUs.form.typeInquiry.label}
+      </div>
 
       {isOpen && (
         <div className="popup">
           {items.map(({ id, value }) => (
             <button
-              className={cn('popup-item', { _active: id === state.activeId })}
+              className={cn('popup-item', { _active: id === activeItemId })}
               type="button"
               key={id}
               onClick={selectItem(id)}
             >
-              {value}
+              {value(translations)}
             </button>
           ))}
         </div>
@@ -56,16 +55,11 @@ const Dropdown = ({ items, className, label, onClick, testid, activeId }) => {
 
 Dropdown.propTypes = {
   className: string,
-  label: string,
   testid: string,
-  onClick: func,
-  items: array,
 }
 
-Dropdown.defaultProps = {
-  items: [],
-}
-
-export default styled(Dropdown)`
-  ${styles}
-`
+export default L10nConsumer(
+  TypeInquiryConsumer(styled(Dropdown)`
+    ${styles}
+  `),
+)

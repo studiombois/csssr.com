@@ -1,33 +1,13 @@
 import { css } from '@emotion/core'
 
-const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
+const base = ({ breakpoints: { above, mobile } }) => css`
   & {
     display: flex;
   }
 
-  .map-wrap {
-    top: 0;
-    left: 0;
-    width: 41.25%;
-  }
-
-  ${desktop.all} {
-    & {
-      margin-top: 64px;
-    }
-
-    .map-wrap {
-      height: calc(100vh - 64px);
-    }
-  }
-
-  ${tablet.all} {
+  ${above.mobile} {
     & {
       margin-top: 4rem;
-    }
-
-    .map-wrap {
-      height: calc(100vh - 4rem);
     }
   }
 
@@ -35,12 +15,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
     & {
       margin-top: 3.5rem;
       flex-direction: column;
-    }
-
-    .map-wrap {
-      order: 1;
-      position: relative;
-      width: 100%;
     }
   }
 `

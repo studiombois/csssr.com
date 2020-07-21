@@ -10,7 +10,13 @@ import { L10nConsumer } from '../../../../../../utils/l10nProvider'
 
 import items from '../../../../../../data/contact-us/typeInquiry'
 
-const Dropdown = ({ className, testid, activeItemId, setActiveItemId, l10n: { translations } }) => {
+const Dropdown = ({
+  className,
+  testid,
+  inquiryTypeId,
+  setInquiryTypeId,
+  l10n: { translations },
+}) => {
   const [isOpen, toggleIsOpen] = useState(false)
 
   const handleClick = (event) => {
@@ -20,11 +26,12 @@ const Dropdown = ({ className, testid, activeItemId, setActiveItemId, l10n: { tr
 
   const selectItem = (id) => (event) => {
     event.preventDefault()
-    setActiveItemId(id)
+    setInquiryTypeId(id)
     toggleIsOpen(false)
   }
 
-  const { value } = items.filter((item) => item.id === activeItemId)[0]
+  const { value } = items.filter((item) => item.id === inquiryTypeId)[0]
+
   return (
     <div className={cn(className, { _active: isOpen })} data-testid={testid}>
       <button type="button" onClick={handleClick} className={cn('button', { _active: isOpen })}>
@@ -39,7 +46,7 @@ const Dropdown = ({ className, testid, activeItemId, setActiveItemId, l10n: { tr
         <div className="popup">
           {items.map(({ id, value }) => (
             <button
-              className={cn('popup-item', { _active: id === activeItemId })}
+              className={cn('popup-item', { _active: id === inquiryTypeId })}
               type="button"
               key={id}
               onClick={selectItem(id)}

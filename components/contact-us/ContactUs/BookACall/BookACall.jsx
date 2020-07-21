@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { string, oneOf, bool } from 'prop-types'
+import React, { useState, useEffect, useContext } from 'react'
+import { string, bool } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './BookACall.styles'
 import Picture from '../../../ui-kit/Picture'
@@ -7,14 +7,14 @@ import ButtonLink from '../../../ui-kit/core-design/ButtonLink'
 import profiles from '../../../../data/contact-us/profiles'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { TypeInquiryContext } from '../../../../utils/typeInquiryContext'
+import { MapContext } from '../../../../utils/mapContext'
 import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
 import { ReactComponent as SuccessIconBig } from '../../../../static/icons/contact-us/book-a-call/success_big.svg'
 
 const BookACall = ({
   className,
-  canBookACall,
   wasCallReservationSuccessful: callReservationStatusFromProps,
-  profileId,
   reservationTime,
   l10n: { translations },
   isMobile,
@@ -23,6 +23,17 @@ const BookACall = ({
   const [wasCallReservationSuccessful, setCallReservationStatus] = useState(
     callReservationStatusFromProps,
   )
+  const { inquiryTypeId } = useContext(TypeInquiryContext)
+  const { activeAddressId } = useContext(MapContext)
+  const profileId =
+    inquiryTypeId === 'new-project'
+      ? {
+          sg: 'anastasia_ignatenko',
+          ee: 'anastasia_vnuchenko',
+          ru: 'olga_shevchenko',
+        }[activeAddressId]
+      : 'victoria_zubareva'
+  const canBookACall = inquiryTypeId === 'new-project' && profileId !== 'olga_shevchenko'
 
   useEffect(() => {
     if (wasCallReservationSuccessful) {
@@ -95,14 +106,7 @@ const BookACall = ({
 }
 
 BookACall.propTypes = {
-  profileId: oneOf([
-    'anastasia_ignatenko',
-    'anastasia_vnuchenko',
-    'olga_shevchenko',
-    'victoria_zubareva',
-  ]),
   wasCallReservationSuccessfulL: bool,
-  canBookACall: bool,
   isMobile: bool,
   className: string,
   reservationTime: string,

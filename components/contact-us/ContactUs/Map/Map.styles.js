@@ -24,11 +24,10 @@ import mapSgMobile from '../../../../static/images/contact-us/maps/mobile.all/ma
 import mapSgMobile_webp from '../../../../static/images/contact-us/maps/mobile.all/map-sg.png?responsive_and_webp'
 
 
-const base = ({ breakpoints: { mobile } }) => css`
-
+const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
     position: relative;
-    width: 100%;
+    width: 41.25%;
     height: 100%;
 
     .map {
@@ -44,12 +43,27 @@ const base = ({ breakpoints: { mobile } }) => css`
     }
   }
 
+
   .book-a-call {
     display: none;
   }
 
+  ${desktop.all} {
+    & {
+      height: calc(100vh - 64px);
+    }
+  }
+
+  ${tablet.all} {
+    & {
+      height: calc(100vh - 4rem);
+    }
+  }
+
   ${mobile.all} {
     & {
+      order: 1;
+      width: 100%;
       height: ${calcRem(645)};
     }
 

@@ -28,7 +28,7 @@ const ContactOptions = ({ className, l10n: { translations } }) => (
         <span className="separator-text">{translations.contactUs.form.separator}</span>
       </div>
 
-      <BookACall className="book-a-call" profileId="anastasia_ignatenko" canBookACall />
+      <BookACall className="book-a-call" />
     </div>
   </section>
 )

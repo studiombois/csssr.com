@@ -12,15 +12,16 @@ import BookACall from '../../BookACall'
 
 import { MapConsumer } from '../../../../utils/mapContext'
 
-const Map = ({ className, activePinId }) => {
+const Map = ({ className, activeAddressId }) => {
   return (
-    <div className={className}>
+    <aside className={className}>
       <Global styles={backgroundImagesStyles} />
+
       <Tabs />
       <BookACall className="book-a-call" profileId="anastasia_ignatenko" canBookACall />
       <Address />
-      <span className={cn('map', `map-${activePinId}`)} />
-    </div>
+      <span className={cn('map', `map-${activeAddressId}`)} />
+    </aside>
   )
 }
 

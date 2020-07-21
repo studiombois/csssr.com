@@ -12,8 +12,8 @@ import { ReactComponent as PinLionIcon } from '../../../../../static/icons/pin-l
 
 import addresses from '../../../../../data/contact-us/address'
 
-const Address = ({ className, l10n: { translations }, activePinId }) => {
-  const { items, id } = addresses[activePinId]
+const Address = ({ className, l10n: { translations }, activeAddressId }) => {
+  const { items, id } = addresses[activeAddressId]
 
   return (
     <div className={className}>

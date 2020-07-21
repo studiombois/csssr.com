@@ -11,17 +11,15 @@ import { TypeInquiryProvider } from '../../../utils/typeInquiryContext'
 
 const ContactUs = ({ className }) => {
   return (
-    <div className={className}>
-      <div className="map-wrap">
-        <MapProvider>
+    <TypeInquiryProvider>
+      <MapProvider>
+        <div className={className}>
           <Map />
-        </MapProvider>
-      </div>
 
-      <TypeInquiryProvider>
-        <ContactOptions />
-      </TypeInquiryProvider>
-    </div>
+          <ContactOptions />
+        </div>
+      </MapProvider>
+    </TypeInquiryProvider>
   )
 }
 

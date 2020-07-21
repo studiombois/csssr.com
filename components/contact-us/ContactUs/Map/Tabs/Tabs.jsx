@@ -10,15 +10,15 @@ import styles from './Tabs.styles'
 
 import tabs from '../../../../../data/contact-us/tabs'
 
-const Tabs = ({ className, l10n: { translations }, activePinId, setActivePinId }) => {
+const Tabs = ({ className, l10n: { translations }, activeAddressId, setActiveAddressId }) => {
   return (
     <div className={className}>
       {tabs.map(({ id, value }) => (
         <button
-          className={cn('item', { _active: activePinId === id })}
+          className={cn('item', { _active: activeAddressId === id })}
           key={id}
           type="button"
-          onClick={() => setActivePinId(id)}
+          onClick={() => setActiveAddressId(id)}
         >
           {value(translations)}
         </button>

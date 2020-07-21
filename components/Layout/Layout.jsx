@@ -19,9 +19,18 @@ const Layout = ({ children, isIe11, withFooter = true }) => {
     <Fragment>
       {/* <Header isButtonVisible={isButtonVisible} pageName={pageName} />
        */}
-      <ThemeProvider theme={theme}>
-        <Header pathname="dev" isIe11={false} isMobile={true} lng={['ru', 'en']} NextLink={Link} />
-      </ThemeProvider>
+      {typeof window === 'object' && (
+        <ThemeProvider theme={theme}>
+          <Header
+            appRootElement={document.getElementById('__next')}
+            pathname="dev"
+            isIe11={false}
+            isProd={false}
+            lng="ru"
+            NextLink={Link}
+          />
+        </ThemeProvider>
+      )}
       <Global styles={styles} />
 
       {isIe11 && <Global styles={ie11Styles} />}

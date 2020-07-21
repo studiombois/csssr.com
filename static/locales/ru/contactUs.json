@@ -3,5 +3,21 @@
     "title": "Cвязаться с нами",
     "description": ""
   },
-  "title": "Cвязаться с нами"
+  "title": "Cвязаться с нами",
+  "map": {
+    "tabs": {
+      "sg": "Singapore",
+      "ee": "Estonia",
+      "ru": "Russia"
+    },
+    "addresses": {
+      "text": "If you'd like to meet us in person, please contact us to make an arrangement.",
+      "ru": [
+        "22 Bol'shoj<br /> Kozihinskij Lane,<br />bld. 2, office 28,<br /> Moscow, 123001,<br />Russia",
+        "30 Lesnaya St.,<br />bld. 1, office 303,<br /> Dzerzhinsky, 140090,<br /> Russia"
+      ],
+      "sg": "68 Circular Road,<br />#02-01,<br />Singapore, 049422",
+      "ee": "68 Circular Road,<br />#02-01,<br />,Singapore, 049422"
+    }
+  }
 }

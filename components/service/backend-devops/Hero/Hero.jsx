@@ -45,6 +45,7 @@ const Hero = ({
         className="button"
         pageName={pageName}
         dangerouslySetInnerHTML={{ __html: button(translations) }}
+        data-testid="BackendAndDevops:link:hero"
       />
     </Grid>
   )

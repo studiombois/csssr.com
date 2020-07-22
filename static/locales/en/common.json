@@ -81,9 +81,12 @@
       },
       "careers": {
         "title": "Careers"
+      },
+      "contacts": {
+        "title": "Contacts"
       }
     },
-    "action": "Contacts",
+    "action": "Hire us",
     "backLink": "Our services"
   },
   "footer": {

@@ -17,7 +17,7 @@ const List = ({ className, testid }) => (
 
 List.propTypes = {
   className: string,
-  testid: string,
+  testId: string,
 }
 
 export default MsBrowserConsumer(styled(List)`

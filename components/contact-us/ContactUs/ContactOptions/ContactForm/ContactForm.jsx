@@ -147,65 +147,67 @@ Component.propTypes = {
   l10n: object,
 }
 
-const onSubmit = (translations, language, pageName) => async (values) => {
-  // в этой форме нет name, поэтому ставим прочерк что бы пройти валидацию на сервере
-  // чекбокса privacyPolicy тоже нет, но в тексте к форме говорится, что при сабмите
-  // пользователь соглашается с нашей политикой, поэтому ставим privacyPolicy в true
-  values.name = '—'
-  values.privacyPolicy = true
-  values.pageName = pageName
-  values.language = language
-  values.gacid = getGaCid()
-  let res
-
-  const isTestEmail = values.email === testEmail
-
-  try {
-    res = await fetch('/api/submit-form', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    })
-  } catch {
-    if (window.dataLayer && !isTestEmail) {
-      window.dataLayer.push({ event: 'form_fail' })
-    }
-
-    return { [FORM_ERROR]: translations.common.form.errors.general }
-  }
-
-  if (res.status === 201) {
-    if (window.dataLayer && !isTestEmail) {
-      window.dataLayer.push({ event: 'form_success' })
-    }
-  } else {
-    let error
-    try {
-      const response = await res.json()
-      error = typeof response.error !== 'string' ? JSON.stringify(response.error) : response.error
-    } catch {
-      error = translations.common.form.errors.general
-    }
-
-    if (window.dataLayer && !isTestEmail) {
-      window.dataLayer.push({ event: 'form_fail' })
-    }
-
-    return { [FORM_ERROR]: error }
-  }
-}
-
 const focusOnErrors = createDecorator()
 const Form = ({ className, l10n, l10n: { translations, language } }) => {
-  const formName = 'contactUs'
+  const { inquiryTypeId } = useContext(TypeInquiryContext)
+  const onSubmit = async (values) => {
+    // в этой форме нет name, поэтому ставим прочерк что бы пройти валидацию на сервере
+    // чекбокса privacyPolicy тоже нет, но в тексте к форме говорится, что при сабмите
+    // пользователь соглашается с нашей политикой, поэтому ставим privacyPolicy в true
+    values.name = '—'
+    values.privacyPolicy = true
+    values.pageName = 'contactUs'
+    values.language = language
+    values.gacid = getGaCid()
+
+    let res
+    const isTestEmail = values.email === testEmail
+    const shouldSendDataLayerEvent = window.dataLayer && !isTestEmail
+    const dataLayerEventNamePrefix = inquiryTypeId === 'new-project' ? '' : 'jobs_'
+    const submitUrl = inquiryTypeId === 'new-project' ? '/api/submit-form' : '/api/send-email'
+
+    try {
+      res = await fetch(submitUrl, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+    } catch {
+      if (shouldSendDataLayerEvent) {
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_fail' })
+      }
+
+      return { [FORM_ERROR]: translations.common.form.errors.general }
+    }
+
+    if (res.status === 201) {
+      if (shouldSendDataLayerEvent) {
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_success' })
+      }
+    } else {
+      let error
+      try {
+        const response = await res.json()
+        error = typeof response.error !== 'string' ? JSON.stringify(response.error) : response.error
+      } catch {
+        error = translations.common.form.errors.general
+      }
+
+      if (shouldSendDataLayerEvent) {
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_fail' })
+      }
+
+      return { [FORM_ERROR]: error }
+    }
+  }
 
   return (
     <ReactFinalForm
-      formName={formName}
-      onSubmit={onSubmit(translations, language, formName)}
+      formName="contactUs"
+      onSubmit={onSubmit}
       validate={contactUsFormValidationRules(translations)}
       decorators={[focusOnErrors]}
       className={className}

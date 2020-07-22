@@ -21,9 +21,10 @@ const base = ({ colors }) => css`
     padding-left: ${calcRem(9)};
     padding-right: ${calcRem(9)};
     padding-bottom: ${calcRem(4)};
+    min-height: ${calcRem(34)};
     height: ${calcRem(34)};
     width: 100%;
-    resize: none;
+    resize: vertical;
   }
 
   .textarea:focus {
@@ -35,15 +36,15 @@ const base = ({ colors }) => css`
   }
 
   .label {
-    font-family: Roboto, sans-serif;
-    pointer-events: none;
-    font-weight: 300;
-    font-size: ${calcRem(16)};
-    line-height: ${calcRem(24)};
     position: absolute;
     top: ${calcRem(4)};
     left: ${calcRem(8)};
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: ${calcRem(16)};
+    line-height: ${calcRem(24)};
     color: ${colors.secondary.gray};
+    pointer-events: none;
 
     > span {
       opacity: 0.4
@@ -56,11 +57,11 @@ const base = ({ colors }) => css`
 
   .textarea:focus + .label,
   .label._active {
-    transform: translateY(${calcRem(32)});
-    color: ${colors.secondary.darken100};
+    top: calc(100% - ${calcRem(2)});
     font-weight: 300;
     font-size: ${calcRem(12)};
     text-transform: lowercase;
+    color: ${colors.secondary.darken100};
   }
 `
 

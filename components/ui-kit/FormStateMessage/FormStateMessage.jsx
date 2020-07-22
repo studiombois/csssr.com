@@ -52,7 +52,7 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { className, status, testid, shouldShowPicture, successPictureTestid } = this.props
+    const { className, status, testid, shouldShowPicture = true, successPictureTestid } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 

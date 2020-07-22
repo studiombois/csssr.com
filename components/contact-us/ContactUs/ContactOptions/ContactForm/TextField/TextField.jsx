@@ -1,35 +1,51 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { string, bool } from 'prop-types'
 import cn from 'classnames'
 
 import styled from '@emotion/styled'
 import styles from './TextField.styles'
 
-const TextField = ({ className, id, isError, name, label, testid, required }) => {
-  const [value, setValue] = useState('')
-
+const TextField = ({
+  className,
+  id,
+  label,
+  testid,
+  tabIndex,
+  autoFocus,
+  disabled,
+  input: { name, type, value, onBlur, onChange, onFocus },
+  meta: { error, invalid, submitError, submitFailed },
+  required,
+}) => {
+  const showError = invalid && submitFailed
   const handleChange = (event) => {
-    const { value } = event.target
-    setValue(value)
+    onChange(event.target.value)
   }
 
   return (
     <div className={className}>
       <input
+        className={cn('input', { _error: showError })}
         id={id}
-        className={cn('input', { _error: isError })}
         name={name}
+        value={value}
+        onChange={handleChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        tabIndex={tabIndex}
+        autoFocus={autoFocus}
+        type={type}
+        disabled={disabled}
         data-testid={testid}
         required={required}
-        onChange={handleChange}
-        value={value}
+        aria-required={required}
       />
 
       {label && (
         <label
           className={cn('label', { _active: value })}
           htmlFor={id}
-          dangerouslySetInnerHTML={{ __html: label }}
+          dangerouslySetInnerHTML={{ __html: (showError && (error || submitError)) || label }}
         />
       )}
     </div>

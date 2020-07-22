@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import { calcRem } from '../../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
+const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   & {
     position: relative;
   }
@@ -26,6 +26,17 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
     > button {
       height: ${calcRem(40)};
     }
+
+    > button[status='fail'],
+    > button[status='success'],
+    > button[status='submitting'] {
+      width: ${calcRem(40)};
+    }
+
+    svg {
+      width: ${calcRem(40)};
+      height: ${calcRem(40)};
+    }
   }
 
   .submit-text {
@@ -41,7 +52,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: 19px;
       width: 320px;
     }
 
@@ -62,7 +72,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(19)};
       width: ${calcRem(224)};
     }
 
@@ -72,9 +81,17 @@ const base = ({ breakpoints: { tablet, mobile, desktop } }) => css`
     }
   }
 
+  ${above.mobile} {
+    .message {
+      position: absolute;
+      top: 100%;
+      padding-bottom: ${calcRem(40)};
+      width: 100%;
+    }
+  }
+
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(20)};
       padding-bottom: ${calcRem(79)};
     }
 

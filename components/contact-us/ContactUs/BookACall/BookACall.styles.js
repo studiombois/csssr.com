@@ -75,6 +75,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
 
   ${above.mobile} {
     & {
+      padding-bottom: ${calcRem(80)};
       flex-direction: column;
       align-items: center;
       width: ${calcRem(260)};
@@ -108,7 +109,8 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .button {
-      margin-top: ${calcRem(40)};
+      position: absolute;
+      bottom: 0;
     }
 
     .success-icon_small {

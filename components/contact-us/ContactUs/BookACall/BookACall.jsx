@@ -8,6 +8,7 @@ import profiles from '../../../../data/contact-us/profiles'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { TypeInquiryContext } from '../../../../utils/typeInquiryContext'
+import getProfileIdByInquiryTypeAndActiveAddress from '../../../../utils/getProfileIdByInquiryTypeAndActiveAddress'
 import { MapContext } from '../../../../utils/mapContext'
 import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
 import { ReactComponent as SuccessIconBig } from '../../../../static/icons/contact-us/book-a-call/success_big.svg'
@@ -25,14 +26,7 @@ const BookACall = ({
   )
   const { inquiryTypeId } = useContext(TypeInquiryContext)
   const { activeAddressId } = useContext(MapContext)
-  const profileId =
-    inquiryTypeId === 'new-project'
-      ? {
-          sg: 'anastasia_ignatenko',
-          ee: 'anastasia_vnuchenko',
-          ru: 'olga_shevchenko',
-        }[activeAddressId]
-      : 'victoria_zubareva'
+  const profileId = getProfileIdByInquiryTypeAndActiveAddress(inquiryTypeId, activeAddressId)
   const canBookACall = inquiryTypeId === 'new-project' && profileId !== 'olga_shevchenko'
 
   useEffect(() => {

@@ -1,34 +1,50 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { string, bool } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Textarea.styles'
 
-const Textarea = ({ id, className, name, testid, isError, required, label }) => {
-  const [value, setValue] = useState('')
-
+const Textarea = ({
+  className,
+  id,
+  label,
+  testid,
+  tabIndex,
+  autoFocus,
+  disabled,
+  input: { name, type, value, onBlur, onChange, onFocus },
+  meta: { error, invalid, submitError, submitFailed },
+  required,
+}) => {
+  const showError = invalid && submitFailed
   const handleChange = (event) => {
-    const { value } = event.target
-    setValue(value)
+    onChange(event.target.value)
   }
 
   return (
     <div className={className}>
       <textarea
-        className={cn('textarea', { _error: isError })}
-        name={name}
+        className={cn('textarea', { _error: showError })}
         id={id}
+        name={name}
+        value={value}
+        onChange={handleChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        tabIndex={tabIndex}
+        autoFocus={autoFocus}
+        type={type}
+        disabled={disabled}
         data-testid={testid}
         required={required}
-        onChange={handleChange}
-        value={value}
+        aria-required={required}
       />
 
       {label && (
         <label
           className={cn('label', { _active: value })}
           htmlFor={id}
-          dangerouslySetInnerHTML={{ __html: label }}
+          dangerouslySetInnerHTML={{ __html: (showError && (error || submitError)) || label }}
         />
       )}
     </div>

@@ -122,13 +122,6 @@ const textDataStyles = css`
   a {
     text-decoration: none;
   }
-
-  @media (max-width: 1279px) {
-    a {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
 `
 
 export default ({ isIe11 }) => css`

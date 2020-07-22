@@ -29,7 +29,8 @@ const AboutProject = ({
 
     {paragraphsScheme.map(
       (paragraphsGroup, paragraphsGroupId) =>
-        paragraphsGroup && (
+        paragraphsGroup &&
+        (projectId === 'mindbox' ? (
           <Grid
             as="div"
             key={paragraphsGroupId}
@@ -55,7 +56,32 @@ const AboutProject = ({
               />
             ))}
           </Grid>
-        ),
+        ) : (
+          <div
+            key={paragraphsGroupId}
+            className={cn(
+              'paragraphs-group',
+              `paragraphs-group_${paragraphsGroupId}`,
+              `paragraphs-group_${projectId}`,
+            )}
+          >
+            {paragraphsGroup.map((paragrapId) => (
+              <Text
+                key={paragrapId}
+                className="paragraph"
+                as="p"
+                type={paragraphsGroupId === 0 ? 'regular' : 'strong'}
+                size="m"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    translations.project[projectId].aboutProject.text[paragraphsGroupId][
+                      paragrapId
+                    ],
+                }}
+              />
+            ))}
+          </div>
+        )),
     )}
 
     <PictureForAllResolutions

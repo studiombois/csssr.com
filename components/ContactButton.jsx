@@ -13,6 +13,7 @@ const ContactButton = ({
   dangerouslySetInnerHTML,
   kind = 'primary',
   isIe11,
+  testId,
 }) => {
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
@@ -33,6 +34,7 @@ const ContactButton = ({
           kind={kind}
           className={className}
           dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+          data-testid={testId}
         />
       ) : (
         <Button
@@ -40,6 +42,7 @@ const ContactButton = ({
           kind={kind}
           dangerouslySetInnerHTML={dangerouslySetInnerHTML}
           onClick={handleButtonClick}
+          data-testid={testId}
         />
       )}
 
@@ -58,6 +61,7 @@ ContactButton.propTypes = {
   pageName: string,
   dangerouslySetInnerHTML: any,
   isIe11: bool,
+  testId: string,
 }
 
 export default MsBrowserConsumer(ContactButton)

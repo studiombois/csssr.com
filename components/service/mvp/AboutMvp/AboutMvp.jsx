@@ -49,7 +49,9 @@ class AboutMvp extends PureComponent {
                 type="strong"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.mvp.aboutMvp.descriptionOn }}
-                testid={togglerIndex === 1 ? 'MVP:text:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
+                data-testid={
+                  togglerIndex === 1 ? 'MVP:text:aboutMvp.on' : 'MVP:picture:aboutMvp.off'
+                }
               />
 
               <Text
@@ -58,7 +60,9 @@ class AboutMvp extends PureComponent {
                 type="strong"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.mvp.aboutMvp.descriptionOff }}
-                testid={togglerIndex === 0 ? 'MVP:text:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
+                data-testid={
+                  togglerIndex === 0 ? 'MVP:text:aboutMvp.on' : 'MVP:picture:aboutMvp.off'
+                }
               />
             </div>
           </Grid>

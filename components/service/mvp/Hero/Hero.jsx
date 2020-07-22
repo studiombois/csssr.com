@@ -40,7 +40,7 @@ const Hero = ({ className, pageName, l10n: { translations } }) => (
         className="button"
         pageName={pageName}
         dangerouslySetInnerHTML={{ __html: translations.mvp.hero.button }}
-        data-testid="MVP:modal:hero"
+        testId="MVP:button:contactUs"
       />
 
       <PictureForAllResolutions

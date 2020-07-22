@@ -12,15 +12,7 @@ import PictureForAllResolutions from '../../../../ui-kit/PictureForAllResolution
 
 import unescapeHtmlEntities from '../../../../../utils/unescapeHtmlEntities'
 
-const Item = ({
-  className,
-  l10n: { translations, language },
-  groupId,
-  itemId,
-  testId,
-  link,
-  images,
-}) => (
+const Item = ({ className, l10n: { translations, language }, groupId, itemId, link, images }) => (
   <div className={className}>
     <PictureForAllResolutions
       className="picture"
@@ -90,7 +82,9 @@ const Item = ({
               __html:
                 translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
             }}
-            data-testid={testId}
+            data-testid={
+              translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].testId
+            }
           />
         )}
       </Fragment>

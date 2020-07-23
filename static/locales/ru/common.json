@@ -66,9 +66,12 @@
       },
       "careers": {
         "title": "Вакансии"
+      },
+      "contacts": {
+        "title": "Контакты"
       }
     },
-    "action": "Контакты",
+    "action": "Нанять нас",
     "backLink": "Наши сервисы"
   },
   "footer": {

@@ -8,7 +8,7 @@ import Address from './Address'
 
 import styled from '@emotion/styled'
 import styles, { backgroundImagesStyles } from './Map.styles'
-import BookACall from '../../BookACall'
+import BookACall from '../BookACall'
 
 import { MapConsumer } from '../../../../utils/mapContext'
 

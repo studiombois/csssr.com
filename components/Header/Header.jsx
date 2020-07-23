@@ -1,10 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { bool, string } from 'prop-types'
 import { withRouter } from 'next/router'
-// TODO: удалить 21.09.2020 если это не будет нужно
-// import ReactDOM from 'react-dom'
-// import Button from '../ui-kit/core-design/Button'
-// import ContactModal from '../ContactModal'
+import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -13,7 +10,9 @@ import styles from './Header.styles'
 
 import Menu from './Menu'
 import Links from './Links'
+import Button from '../ui-kit/core-design/Button'
 import ButtonLink from '../ui-kit/core-design/ButtonLink'
+import ContactModal from '../ContactModal'
 import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
 import { ReactComponent as Burger } from '../../static/icons/header/burger.svg'
 import { ReactComponent as Cross } from '../../static/icons/header/close.svg'
@@ -22,27 +21,22 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 
-import { action } from '../../data/headerLinks'
-
 const Header = ({
   className,
   isIe11,
   isMobile,
-  // pageName,
+  pageName,
   isButtonVisible = true,
   l10n: { translations, language },
 }) => {
   let lastScrollTopValue = useRef(0)
   const [isDropdownOpened, toggleDropdown] = useState(false)
   const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
-  // TODO: удалить 21.09.2020 если это не будет нужно
-  // const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
+  const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
   useEffect(() => {
     if (isMobile) {
-      if (isDropdownOpened) {
-        // TODO: удалить 21.09.2020 если это не будет нужно
-        //|| isContactModalVisible
+      if (isDropdownOpened || isContactModalVisible) {
         clearQueueScrollLocks()
         disablePageScroll(document.body)
       } else {
@@ -93,45 +87,43 @@ const Header = ({
     }
   })
 
-  // TODO: удалить 21.09.2020 если это не будет нужно
-  // const handleButtonClick = () => {
-  //   disablePageScroll(document.body)
+  const handleButtonClick = () => {
+    disablePageScroll(document.body)
 
-  //   if (isMobile) {
-  //     toggleDropdown(false)
-  //   }
+    if (isMobile) {
+      toggleDropdown(false)
+    }
 
-  //   toggleContactModalVisibility(true)
-  // }
+    toggleContactModalVisibility(true)
+  }
 
-  // const handleHideContactModal = () => {
-  //   enablePageScroll(document.body)
-  //   toggleContactModalVisibility(false)
-  // }
+  const handleHideContactModal = () => {
+    enablePageScroll(document.body)
+    toggleContactModalVisibility(false)
+  }
 
   const Icon = isDropdownOpened ? Cross : Burger
   const CommonHeaderContent = () => (
     <Fragment>
       <Menu />
       <Links />
-      {isButtonVisible && (
-        <ButtonLink
-          data-testid={`Header:link.contactUs`}
-          href={`/${language}/${action.href}`}
-          kind="primary"
-          className="button_action"
-          dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
-        />
-        // TODO: удалить 21.09.2020 если это не будет нужно
-
-        // ) : (
-        //   <Button
-        //     data-testid={`Header:button.contactUs`}
-        //     onClick={handleButtonClick}
-        //     className="button_action"
-        //     dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
-        //   />
-      )}
+      {isButtonVisible &&
+        (isIe11 ? (
+          <ButtonLink
+            data-testid={`Header:link.contactUs`}
+            href="#hire-us"
+            kind="primary"
+            className="button_action"
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
+          />
+        ) : (
+          <Button
+            data-testid={`Header:button.contactUs`}
+            onClick={handleButtonClick}
+            className="button_action"
+            dangerouslySetInnerHTML={{ __html: translations.common.header.action }}
+          />
+        ))}
     </Fragment>
   )
 
@@ -168,15 +160,12 @@ const Header = ({
         <CommonHeaderContent />
       )}
 
-      {
-        // TODO: удалить 21.09.2020 если это не будет нужно
-        /* {typeof window !== 'undefined' &&
+      {typeof window !== 'undefined' &&
         isContactModalVisible &&
         ReactDOM.createPortal(
           <ContactModal onClose={handleHideContactModal} pageName={pageName} />,
           document.getElementById('main'),
-        )} */
-      }
+        )}
     </header>
   )
 }

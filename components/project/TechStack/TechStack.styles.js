@@ -169,8 +169,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
         left: ${calcRem(49)};
-        height: ${calcRem(18)};
+        top: calc(50% - ${calcRem(4)});
+        height: ${calcRem(24)};
         background-size: auto;
+        background-position: left bottom;
       }
     }
 

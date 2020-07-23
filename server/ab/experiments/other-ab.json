@@ -1,0 +1,12 @@
+{
+  "variants": [
+    {
+      "name": "current",
+      "weight": 3
+    },
+    {
+      "name": "other",
+      "weight": 1
+    }
+  ]
+}

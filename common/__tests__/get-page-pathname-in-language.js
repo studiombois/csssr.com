@@ -48,11 +48,11 @@ test('test', () => {
   expect(getPagePathnameInLanguage('/en/service/outsourcing-front-end', 'ru', pagesList)).toEqual(
     '/ru/service/outsourcing-front-end',
   )
-  expect(getPagePathnameInLanguage('/en-sg/jobs', 'ru', pagesList)).toEqual('/ru-ru/jobs')
-  expect(getPagePathnameInLanguage('/en-sg/job', 'ru', pagesList)).toEqual('/ru-ru/jobs')
+  expect(getPagePathnameInLanguage('/en-sg/jobs', 'ru', pagesList)).toEqual('/ru/jobs')
+  expect(getPagePathnameInLanguage('/en-sg/job', 'ru', pagesList)).toEqual('/ru/jobs')
   expect(getPagePathnameInLanguage('/ru', 'en', pagesList)).toEqual('/en')
-  expect(getPagePathnameInLanguage('/ru/jobs-faq', 'en', pagesList)).toEqual('/en-sg/jobs')
-  expect(getPagePathnameInLanguage('/ru-ru/job', 'en', pagesList)).toEqual('/en-sg/jobs')
+  expect(getPagePathnameInLanguage('/ru/jobs-faq', 'en', pagesList)).toEqual('/en/jobs')
+  expect(getPagePathnameInLanguage('/ru-ru/job', 'en', pagesList)).toEqual('/en/jobs')
   expect(getPagePathnameInLanguage('/en/service/express-front-end', 'ru', pagesList)).toEqual('/ru')
   expect(getPagePathnameInLanguage('/en/cookies-policy', 'ru', pagesList)).toEqual('/ru')
   expect(getPagePathnameInLanguage('/en/privacy-policy', 'ru', pagesList)).toEqual(

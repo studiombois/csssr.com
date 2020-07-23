@@ -10,6 +10,7 @@ import Vacancies from './Vacancies'
 import Head from '../Head'
 import Form from '../ContactFormWrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
+import AbContext from '../../utils/abContext'
 
 class MainPage extends PureComponent {
   static async getInitialProps(ctx) {
@@ -35,6 +36,7 @@ class MainPage extends PureComponent {
           description={translations.main.meta.description}
         />
         <Hero />
+        <AbContext.Consumer>{(ab) => <div>{JSON.stringify(ab)}</div>}</AbContext.Consumer>
         <Services />
         <Industries />
         <AboutUs />

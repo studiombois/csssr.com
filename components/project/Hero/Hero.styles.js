@@ -263,6 +263,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-column: 1 / span 6;
     }
 
+    .heading {
+      & br {
+        display: none;
+      }
+    }
+
     .link {
       margin-top: ${calcRem(11)};
       font-size: ${calcRem(16)};

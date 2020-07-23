@@ -10,6 +10,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-repeat: no-repeat, no-repeat;
   }
 
+  .title {
+    font-weight: 300;
+  }
+
   .paragraph {
     color: #000000;
   }
@@ -40,6 +44,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         margin-top: 24px;
       }
     }
+
+    .paragraphs-group_1.paragraphs-group_mindbox {
+      margin-top: 95px;
+    }
+
     .paragraphs-group_mindbox {
       grid-column: 1 / span 7;
     }
@@ -59,6 +68,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       &:nth-of-type(5) {
         grid-column: 4 / span 6;
       }
+    }
+
+    &.paragraphs-group_mindbox .picture {
+      margin-top: 110px;
     }
   }
 
@@ -105,6 +118,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 8 / span 4;
       width: 432px;
       height: 520px;
+    }
+
+    .paragraphs-group_mindbox p {
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        margin-left: 7px;
+      }
     }
   }
 
@@ -165,6 +185,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
+    .paragraphs-group_1.paragraphs-group_mindbox {
+      .paragraph {
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+          margin-left: ${calcRem(3)};
+          line-height: ${calcRem(26)};
+        }
+      }
+
+      .paragraph:not(:first-of-type) {
+        margin-top: ${calcRem(24)};
+      }
+    }
+
     .paragraphs-group_mindbox {
       grid-column: 1 / span 8;
       grid-row: 2;
@@ -186,12 +220,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       &:nth-of-type(5) {
         grid-column: 2 / span 5;
       }
+
+      &:nth-of-type(5) {
+        grid-column: 2 / span 5;
+      }
     }
 
     .paragraphs-group_mindbox + .picture {
       grid-row: 2;
       grid-column: 8 / span 4;
-      margin-top: ${calcRem(336)};
+      margin-top: ${calcRem(345)};
     }
 
     .picture {
@@ -230,21 +268,38 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .paragraphs-group_mindbox {
       grid-column: 1 / span 6;
       grid-row: 2;
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(24)};
+    }
+
+    .paragraphs-group_1.paragraphs-group_mindbox {
+      .paragraph {
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+          line-height: ${calcRem(26)};
+        }
+      }
+
+      .paragraph:not(:first-of-type) {
+        margin-top: ${calcRem(24)};
+      }
     }
 
     .paragraphs-group_mindbox p {
       grid-column: 1/ span 6;
 
       &:nth-of-type(4) {
-        margin-top: ${calcRem(331)} !important;
+        margin-top: ${calcRem(329)} !important;
+      } 
+
+      &:nth-of-type(5) {
+        margin-top: ${calcRem(28)} !important;
       } 
     }
 
     .paragraphs-group_mindbox + .picture {
       grid-row: 2;
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(416)};
+      margin-top: ${calcRem(441)};
       width: ${calcRem(216)};
       height: ${calcRem(258)};
       justify-self: right;

@@ -13,6 +13,7 @@ import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 // AB-test
 import { default as ServicesAll } from './ab-test/all/Services'
 import { default as HeroV1 } from './ab-test/v1/Hero'
+import { default as HeroV2 } from './ab-test/v2/Hero'
 
 class MainPage extends PureComponent {
   static async getInitialProps(ctx) {
@@ -31,7 +32,7 @@ class MainPage extends PureComponent {
 
     const pageName = 'main'
     //  TODO: Поменять на реальную переменную
-    const test = locale != 'ru-ru' ? 'v1' : 'v0'
+    const test = locale != 'ru-ru' ? 'v2' : 'v0'
     return (
       <Layout pageName={pageName}>
         <Head
@@ -41,6 +42,7 @@ class MainPage extends PureComponent {
         />
         {test === 'v0' && <Hero />}
         {test === 'v1' && <HeroV1 />}
+        {test === 'v2' && <HeroV2 />}
         {test === 'v0' ? <Services /> : <ServicesAll />}
         <Industries />
         <AboutUs />

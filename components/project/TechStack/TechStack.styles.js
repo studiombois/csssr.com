@@ -218,12 +218,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
     .duration {
       grid-row: 1;
       grid-column: 3 / span 4;
+      margin-left: ${calcRem(-10)};
     }
 
     .team {
       grid-row: 2;
       grid-column: 3 / span 4;
       margin-top: ${calcRem(40)};
+      margin-left: ${calcRem(-10)};
     }
 
     .duration-number {

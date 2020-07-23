@@ -81,6 +81,10 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       width: ${calcRem(260)};
     }
 
+    &.call_was_booked {
+      padding-bottom: ${calcRem(86)};
+    }
+
     .reservation,
     .manager {
       text-align: center;
@@ -114,6 +118,8 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .success-icon_small {
+      position: absolute;
+      bottom: 0;
       margin-top: ${calcRem(62)};
       width: ${calcRem(40)};
       height: ${calcRem(40)};
@@ -170,6 +176,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       bottom: 0;
       left: 0;
       height: ${calcRem(40)};
+      width: 100%;
     }
 
     .success-icon_small {

@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const withSourceMaps = require('@zeit/next-source-maps')()
 const CompressionPlugin = require('compression-webpack-plugin')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 const { ANALYZE } = process.env
 const { PROCESS_IMAGES } = process.env
 
@@ -152,6 +153,9 @@ module.exports = withSourceMaps({
             filename: '[path].br[query]',
             compressionOptions: { level: 11 },
             threshold: 10240,
+          }),
+          new MomentLocalesPlugin({
+            localesToKeep: ['ru'],
           }),
         )
       }

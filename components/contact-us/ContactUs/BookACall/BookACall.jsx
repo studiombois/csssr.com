@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { useRouter } from 'next/router'
 import { string, bool } from 'prop-types'
+import moment from 'moment'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './BookACall.styles'
 import Picture from '../../../ui-kit/Picture'
@@ -13,21 +16,27 @@ import { MapContext } from '../../../../utils/mapContext'
 import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
 import { ReactComponent as SuccessIconBig } from '../../../../static/icons/contact-us/book-a-call/success_big.svg'
 
-const BookACall = ({
-  className,
-  wasCallReservationSuccessful: callReservationStatusFromProps,
-  reservationTime,
-  l10n: { translations },
-  isMobile,
-}) => {
-  const [counter, setCounterVaule] = useState(4)
-  const [wasCallReservationSuccessful, setCallReservationStatus] = useState(
-    callReservationStatusFromProps,
-  )
+const BookACall = ({ className, l10n: { translations, lng }, isMobile }) => {
+  const { query } = useRouter()
+  const eventStartTime = query.event_start_time
+  const eventEndTime = query.event_end_time
+  const showCalendlyCallback = eventStartTime || eventEndTime
+
+  const [counter, setCounterValue] = useState(4)
+  const [wasCallReservationSuccessful, setCallReservationStatus] = useState(showCalendlyCallback)
   const { inquiryTypeId } = useContext(TypeInquiryContext)
   const { activeAddressId } = useContext(MapContext)
   const profileId = getProfileIdByInquiryTypeAndActiveAddress(inquiryTypeId, activeAddressId)
   const canBookACall = inquiryTypeId === 'new-project' && profileId !== 'olga_shevchenko'
+
+  let reservationTime
+  if (eventStartTime && eventEndTime) {
+    moment.locale(lng)
+    const startTime = moment(eventStartTime).format('HH:mm')
+    const endTime = moment(eventEndTime).format('HH:mm')
+    const date = moment(eventStartTime).format('dddd, Do MMMM, YYYY')
+    reservationTime = `${startTime} - ${endTime}, ${date}`
+  }
 
   useEffect(() => {
     if (wasCallReservationSuccessful) {
@@ -36,8 +45,7 @@ const BookACall = ({
           setCallReservationStatus(false)
           return clearInterval(intervalId)
         }
-
-        setCounterVaule(counter - 1)
+        setCounterValue(counter - 1)
       }, 1000)
     }
   }, [wasCallReservationSuccessful, counter])
@@ -45,7 +53,7 @@ const BookACall = ({
   const Tag = wasCallReservationSuccessful ? 'div' : 'figure'
 
   return (
-    <Tag className={className}>
+    <Tag className={cn(className, { call_was_booked: wasCallReservationSuccessful })}>
       {wasCallReservationSuccessful && isMobile ? (
         <SuccessIconBig className="success-icon_big" />
       ) : (
@@ -89,7 +97,11 @@ const BookACall = ({
         (wasCallReservationSuccessful ? (
           <SuccessIconSmall className="success-icon_small" />
         ) : (
-          <ButtonLink className="button" kind={isMobile ? 'primary' : 'third'}>
+          <ButtonLink
+            className="button"
+            kind={isMobile ? 'primary' : 'third'}
+            href={profiles[profileId]?.calendlyLink}
+          >
             {translations.contactUs.bookACall.buttonText}
           </ButtonLink>
         ))}

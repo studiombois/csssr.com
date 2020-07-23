@@ -232,6 +232,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
         left: ${calcRem(49)};
         height: ${calcRem(18)};
         background-position: center;
+        background-size: auto;
       }
     }
 

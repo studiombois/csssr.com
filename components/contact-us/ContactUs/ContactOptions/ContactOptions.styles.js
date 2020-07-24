@@ -135,6 +135,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   }
 
   ${above.mobile} {
+    & {
+      padding-bottom: ${calcRem(40)};
+    }
+
     .form-wrapper {
       display: flex;
     }

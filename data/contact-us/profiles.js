@@ -14,10 +14,12 @@ export default {
   anastasia_ignatenko: {
     images: { jpg: anastasia_ignatenko, webp: anastasia_ignatenko_webp },
     email: 'launch@csssr.com',
+    calendlyLink: 'https://calendly.com/anastasia-ign/30min',
   },
   anastasia_vnuchenko: {
     images: { jpg: anastasia_vnuchenko, webp: anastasia_vnuchenko_webp },
     email: 'launch@csssr.com',
+    calendlyLink: 'https://calendly.com/anastasia-vnuchenko/30min',
   },
   olga_shevchenko: {
     images: { jpg: olga_shevchenko, webp: olga_shevchenko_webp },

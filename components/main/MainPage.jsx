@@ -10,7 +10,14 @@ import Vacancies from './Vacancies'
 import Head from '../Head'
 import Form from '../ContactFormWrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
+// AB-test
 import AbContext from '../../utils/abContext'
+import { default as ServicesAll } from './ab-test/all/Services'
+import { default as HeroV1 } from './ab-test/v1/Hero'
+import { default as HeroV2 } from './ab-test/v2/Hero'
+import { default as HeroV3 } from './ab-test/v3/Hero'
+import { default as HeroV4 } from './ab-test/v4/Hero'
+import { default as HeroV5 } from './ab-test/v5/Hero'
 
 class MainPage extends PureComponent {
   static async getInitialProps(ctx) {
@@ -24,10 +31,12 @@ class MainPage extends PureComponent {
   render() {
     const {
       vacancies,
-      l10n: { translations },
+      l10n: { translations, locale },
     } = this.props
 
     const pageName = 'main'
+    //  TODO: Поменять на реальную переменную
+    const test = locale != 'ru-ru' ? 'v5' : 'v0'
     return (
       <Layout pageName={pageName}>
         <Head
@@ -35,9 +44,14 @@ class MainPage extends PureComponent {
           templateTitle=""
           description={translations.main.meta.description}
         />
-        <Hero />
+        {test === 'v0' && <Hero />}
+        {test === 'v1' && <HeroV1 />}
+        {test === 'v2' && <HeroV2 />}
+        {test === 'v3' && <HeroV3 />}
+        {test === 'v4' && <HeroV4 />}
+        {test === 'v5' && <HeroV5 />}
+        {test === 'v0' ? <Services /> : <ServicesAll />}
         <AbContext.Consumer>{(ab) => <div>{JSON.stringify(ab)}</div>}</AbContext.Consumer>
-        <Services />
         <Industries />
         <AboutUs />
         <Projects />

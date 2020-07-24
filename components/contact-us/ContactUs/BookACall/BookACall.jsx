@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useRouter } from 'next/router'
 import { string, bool } from 'prop-types'
-import moment from 'moment'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './BookACall.styles'
@@ -12,11 +11,12 @@ import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { TypeInquiryContext } from '../../../../utils/typeInquiryContext'
 import getProfileIdByInquiryTypeAndActiveAddress from '../../../../utils/getProfileIdByInquiryTypeAndActiveAddress'
+import setReservationTimeLng from '../../../../utils/setReservationTimeLng'
 import { MapContext } from '../../../../utils/mapContext'
 import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
 import { ReactComponent as SuccessIconBig } from '../../../../static/icons/contact-us/book-a-call/success_big.svg'
 
-const BookACall = ({ className, l10n: { translations, lng }, isMobile }) => {
+const BookACall = ({ className, l10n: { translations, language }, isMobile }) => {
   const { query } = useRouter()
   const eventStartTime = query.event_start_time
   const eventEndTime = query.event_end_time
@@ -31,11 +31,9 @@ const BookACall = ({ className, l10n: { translations, lng }, isMobile }) => {
 
   let reservationTime
   if (eventStartTime && eventEndTime) {
-    moment.locale(lng)
-    const startTime = moment(eventStartTime).format('HH:mm')
-    const endTime = moment(eventEndTime).format('HH:mm')
-    const date = moment(eventStartTime).format('dddd, Do MMMM, YYYY')
-    reservationTime = `${startTime} - ${endTime}, ${date}`
+    const getReservationTime = setReservationTimeLng(language)
+
+    reservationTime = getReservationTime(eventStartTime, eventEndTime)
   }
 
   useEffect(() => {
@@ -45,8 +43,11 @@ const BookACall = ({ className, l10n: { translations, lng }, isMobile }) => {
           setCallReservationStatus(false)
           return clearInterval(intervalId)
         }
+
         setCounterValue(counter - 1)
       }, 1000)
+
+      return () => clearInterval(intervalId)
     }
   }, [wasCallReservationSuccessful, counter])
 

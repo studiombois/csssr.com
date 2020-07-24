@@ -14,6 +14,7 @@ import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const ProjectsItem = ({
   className,
+  id,
   images,
   imgAlt,
   heading,
@@ -73,6 +74,7 @@ const ProjectsItem = ({
         className="button"
         kind="primary"
         dangerouslySetInnerHTML={{ __html: button.title(translations) }}
+        data-testid={id && `Industry:link.${id}`}
       />
     </Grid>
   )

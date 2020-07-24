@@ -18,6 +18,7 @@ import { default as HeroV2 } from './ab-test/v2/Hero'
 import { default as HeroV3 } from './ab-test/v3/Hero'
 import { default as HeroV4 } from './ab-test/v4/Hero'
 import { default as HeroV5 } from './ab-test/v5/Hero'
+import { default as HeroV6 } from './ab-test/v6/Hero'
 import abMeta from '../../data/ab-test/main/metaEn'
 
 class MainPage extends PureComponent {
@@ -62,6 +63,7 @@ class MainPage extends PureComponent {
                   {variant === 'v3' && <HeroV3 />}
                   {variant === 'v4' && <HeroV4 />}
                   {variant === 'v5' && <HeroV5 />}
+                  {variant === 'v6' && <HeroV6 />}
                   {variant === 'base' ? <Services /> : <ServicesAll />}
                 </>
               )

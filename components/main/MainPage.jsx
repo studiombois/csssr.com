@@ -17,6 +17,7 @@ import { default as HeroV2 } from './ab-test/v2/Hero'
 import { default as HeroV3 } from './ab-test/v3/Hero'
 import { default as HeroV4 } from './ab-test/v4/Hero'
 import { default as HeroV5 } from './ab-test/v5/Hero'
+import { default as HeroV6 } from './ab-test/v6/Hero'
 
 class MainPage extends PureComponent {
   static async getInitialProps(ctx) {
@@ -35,7 +36,7 @@ class MainPage extends PureComponent {
 
     const pageName = 'main'
     //  TODO: Поменять на реальную переменную
-    const test = locale != 'ru-ru' ? 'v5' : 'v0'
+    const test = locale != 'ru-ru' ? 'v6' : 'v0'
     return (
       <Layout pageName={pageName}>
         <Head
@@ -49,6 +50,7 @@ class MainPage extends PureComponent {
         {test === 'v3' && <HeroV3 />}
         {test === 'v4' && <HeroV4 />}
         {test === 'v5' && <HeroV5 />}
+        {test === 'v6' && <HeroV6 />}
         {test === 'v0' ? <Services /> : <ServicesAll />}
         <Industries />
         <AboutUs />

@@ -19,6 +19,7 @@ import { default as HeroV3 } from './ab-test/v3/Hero'
 import { default as HeroV4 } from './ab-test/v4/Hero'
 import { default as HeroV5 } from './ab-test/v5/Hero'
 import { default as HeroV6 } from './ab-test/v6/Hero'
+import abMeta from '../../data/ab-test/main/metaEn'
 
 class MainPage extends PureComponent {
   static async getInitialProps(ctx) {
@@ -38,17 +39,24 @@ class MainPage extends PureComponent {
     const pageName = 'main'
     return (
       <Layout pageName={pageName}>
-        <Head
-          title={translations.main.meta.title}
-          templateTitle=""
-          description={translations.main.meta.description}
-        />
         {language === 'en' ? (
           <AbContext.Consumer>
             {(ab) => {
               const variant = ab['en-main-page']
               return (
                 <>
+                  <Head
+                    title={
+                      variant === 'base' ? translations.main.meta.title : abMeta[variant].title
+                    }
+                    templateTitle=""
+                    description={
+                      variant === 'base'
+                        ? translations.main.meta.description
+                        : abMeta[variant].description
+                    }
+                  />
+
                   {variant === 'base' && <Hero />}
                   {variant === 'v1' && <HeroV1 />}
                   {variant === 'v2' && <HeroV2 />}
@@ -63,6 +71,11 @@ class MainPage extends PureComponent {
           </AbContext.Consumer>
         ) : (
           <>
+            <Head
+              title={translations.main.meta.title}
+              templateTitle=""
+              description={translations.main.meta.description}
+            />
             <Hero />
             <Services />
           </>

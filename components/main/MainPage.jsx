@@ -11,6 +11,7 @@ import Head from '../Head'
 import Form from '../ContactFormWrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 // AB-test
+import AbContext from '../../utils/abContext'
 import { default as ServicesAll } from './ab-test/all/Services'
 import { default as HeroV1 } from './ab-test/v1/Hero'
 import { default as HeroV2 } from './ab-test/v2/Hero'
@@ -50,6 +51,7 @@ class MainPage extends PureComponent {
         {test === 'v4' && <HeroV4 />}
         {test === 'v5' && <HeroV5 />}
         {test === 'v0' ? <Services /> : <ServicesAll />}
+        <AbContext.Consumer>{(ab) => <div>{JSON.stringify(ab)}</div>}</AbContext.Consumer>
         <Industries />
         <AboutUs />
         <Projects />

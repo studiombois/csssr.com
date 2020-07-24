@@ -8,6 +8,7 @@ import '../utils/sentry'
 import detectMsBrowserByUserAgent, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
 import { detectMobileByUserAgent, detectTabletByUserAgent } from '../utils/detectDeviceByUserAgent'
 import MsBrowserProvider from '../utils/msBrowserProvider'
+import AbContext from '../utils/abContext'
 import DeviceProvider from '../utils/deviceProvider'
 import PagesListProvider from '../utils/pagesListProvider'
 import L10nProvider from '../utils/l10nProvider'
@@ -30,6 +31,7 @@ export default class MyApp extends App {
         ? ctx.req.app.locals.pagesList
         : window.__NEXT_DATA__.props.pageProps.pagesList
       const l10n = ctx.res ? ctx.res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
+      const ab = ctx.res ? ctx.res.locals.ab : window.__NEXT_DATA__.props.pageProps.ab
       const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
 
       let pageProps = {}
@@ -53,6 +55,7 @@ export default class MyApp extends App {
       pageProps.isTablet = detectTabletByUserAgent(userAgent)
       pageProps.pagesList = pagesList
       pageProps.l10n = l10n
+      pageProps.ab = ab
 
       return { pageProps }
     } catch (error) {
@@ -201,29 +204,31 @@ export default class MyApp extends App {
       <>
         <Global styles={styles} />
         {isIe11Browser && <Global styles={ie11Styles} />}
-        <L10nProvider l10n={pageProps.l10n}>
-          <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
-            <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
-              <ThemeProvider theme={customTheme}>
-                <PagesListProvider pagesList={pageProps.pagesList}>
-                  {/* У Component isMobile прокидывается явно для обратной совместимости  */}
-                  {/* TODO: перевести все компоненты на isMobile из контекста */}
-                  <Component
-                    {...pageProps}
-                    isMobile={this.state.isMobile}
-                    isMsBrowser={isMsBrowser}
-                  />
+        <AbContext.Provider value={pageProps.ab}>
+          <L10nProvider l10n={pageProps.l10n}>
+            <MsBrowserProvider isIe11={isIe11Browser} isMsBrowser={isMsBrowser}>
+              <DeviceProvider isMobile={this.state.isMobile} isTablet={this.state.isTablet}>
+                <ThemeProvider theme={customTheme}>
+                  <PagesListProvider pagesList={pageProps.pagesList}>
+                    {/* У Component isMobile прокидывается явно для обратной совместимости  */}
+                    {/* TODO: перевести все компоненты на isMobile из контекста */}
+                    <Component
+                      {...pageProps}
+                      isMobile={this.state.isMobile}
+                      isMsBrowser={isMsBrowser}
+                    />
 
-                  {isInvalidDevice && (
-                    <Modal withFixWidth onClose={this.handleCloseModal}>
-                      <BrowserModalContent />
-                    </Modal>
-                  )}
-                </PagesListProvider>
-              </ThemeProvider>
-            </DeviceProvider>
-          </MsBrowserProvider>
-        </L10nProvider>
+                    {isInvalidDevice && (
+                      <Modal withFixWidth onClose={this.handleCloseModal}>
+                        <BrowserModalContent />
+                      </Modal>
+                    )}
+                  </PagesListProvider>
+                </ThemeProvider>
+              </DeviceProvider>
+            </MsBrowserProvider>
+          </L10nProvider>
+        </AbContext.Provider>
       </>
     )
   }

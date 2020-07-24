@@ -14,7 +14,7 @@ import { MapConsumer } from '../../../../utils/mapContext'
 
 const Map = ({ className, activeAddressId }) => {
   return (
-    <aside className={className}>
+    <aside className={className} id="map">
       <Global styles={backgroundImagesStyles} />
 
       <Tabs />

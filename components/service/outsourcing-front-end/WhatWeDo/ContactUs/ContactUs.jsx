@@ -35,7 +35,7 @@ const ContactUs = ({ className, pageName, l10n: { translations } }) => (
       dangerouslySetInnerHTML={{
         __html: translations.outsourcingFrontEnd.whatWeDo.contactUs.button,
       }}
-      testId="Outsourcing:button:contactUs"
+      testId="Outsourcing:button:contactUs.whatWeDo"
     />
   </section>
 )

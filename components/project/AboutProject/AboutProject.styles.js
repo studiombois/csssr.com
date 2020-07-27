@@ -114,7 +114,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .picture {
-      margin-top: 73px;
+      margin-top: 109px;
       grid-column: 8 / span 4;
       width: 432px;
       height: 520px;

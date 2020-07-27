@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, language}) => css`
   & {
     background-image:
       url(${require('../../../static/icons/project/about-project/line.svg').default}),
@@ -295,7 +295,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .paragraphs-group_mindbox + .picture {
       grid-row: 2;
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(441)};
+      margin-top: ${language === 'ru' ? calcRem(513) : calcRem(441)};
       width: ${calcRem(216)};
       height: ${calcRem(258)};
       justify-self: right;
@@ -409,9 +409,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, language })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

@@ -10,10 +10,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-repeat: no-repeat, no-repeat;
   }
 
-  .title {
-    font-weight: 300;
-  }
-
   .paragraph {
     color: #000000;
   }

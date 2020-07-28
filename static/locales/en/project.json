@@ -147,8 +147,8 @@
   },
   "mosoblgaz": {
     "meta": {
-      "title": "Mosoblgaz — Personal Account",
-      "description": "Mosoblgaz is one of the largest gas distribution companies in Russia providing natural gas distribution throughout the Moscow Region."
+      "title": "Mosoblgaz — Project: Personal Account",
+      "description": "Development of b2b client's account that allows quick access to the company's services."
     },
     "hero": {
       "title": "Personal Account",
@@ -204,8 +204,8 @@
   },
   "brusnika": {
     "meta": {
-      "title": "Internal assessment and forecasting tools",
-      "description": "Brusnika — is a Russian development company specializing in the construction of multi-storey residential buildings in major cities of Siberia, the Urals and the Moscow Region."
+      "title": "Brusnika — Project: Internal assessment and forecasting tools",
+      "description": "Creation of internal sales planning tools for the company's managers."
     },
     "hero": {
       "title": "Internal assessment and<br/> forecasting tools",
@@ -268,8 +268,8 @@
   },
   "mindbox": {
     "meta": {
-      "title": "Personal Account Data Filtering / Promotion Campaigns Arbitration",
-      "description": "Mindbox develops a customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing."
+      "title": "Mindbox  — Projects: Personal Account Data Filtering & Promotion Campaigns Arbitration",
+      "description": "Development of two projects for marketing automation."
     },
     "hero": {
       "title": "Personal Account Data Filtering&nbsp;/ Promotion Campaigns Arbitration",
@@ -328,8 +328,8 @@
   },
   "qmarketing": {
     "meta": {
-      "title": "QMarketing — QAcademy",
-      "description": "Qmarketing Agency develops progressive digital advertising for companies operating on the Russian and European markets."
+      "title": "QMarketing  —  Project: QAcademy",
+      "description": "Front-end development of internal pages for the e-learning platform."
     },
     "hero": {
       "title": "QAcademy",

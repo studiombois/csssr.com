@@ -14,7 +14,7 @@ const Layout = ({ children, isIe11, pageName, router: { asPath }, withFooter = t
     <Fragment>
       <Header isButtonVisible={isButtonVisible} pageName={pageName} />
 
-      {React.createElement(dynamicTag, { id: 'main' }, children)}
+      {React.createElement(dynamicTag, { id: 'main', 'data-testid': 'Main:block' }, children)}
 
       {withFooter && <Footer />}
       <CookiesPopup />

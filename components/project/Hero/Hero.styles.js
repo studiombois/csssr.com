@@ -97,6 +97,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .pic-wrapper {
       grid-row: 4;
       max-width: ${calcRem(728)};
+      margin-top: ${calcRem(-221)};
+    }
+
+    .pic-wrapper_mindbox {
       margin-top: ${calcRem(-77)};
     }
 

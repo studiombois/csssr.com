@@ -2,6 +2,7 @@ import React from 'react'
 import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
+import cn from 'classnames'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
@@ -13,6 +14,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 const Hero = ({
   className,
   id,
+  projectId,
   content: { heading, link, subHeading, text, images, imgAlt },
   l10n: { translations },
 }) => {
@@ -55,7 +57,7 @@ const Hero = ({
           ))}
         </div>
 
-        <div className="pic-wrapper">
+        <div className={cn('pic-wrapper', projectId === 'mindbox' && `pic-wrapper_${projectId}`)}>
           <PictureForAllResolutions
             images={images}
             fallback={images['desktop.l'].png}

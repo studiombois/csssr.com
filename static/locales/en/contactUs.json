@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Сontact Us",
-    "description": ""
+    "title": "Contacts",
+    "description": "CSSSR company contact details: phone number, location address, e-mail, location map."
   },
   "bookACall": {
     "profiles": {
@@ -38,7 +38,11 @@
     "title": "Сontact Us",
     "subtitle": "What would you like to talk about?",
     "separator": "or",
-    "policy":"By submitting the form, you consent to the processing of&nbsp;your personal data in accordance with the \"<a href='/en/privacy-policy' target='_blank'>Privacy Policy</a>\" and agree to the \"<a href='/en/cookies-policy' target='_blank'>Terms of Service</a>\".",
+    "email": "E-mail",
+    "phone": "Phone",
+    "text": "Drop us a line",
+    "agree": "I agree to receive information and commercial offers",
+    "policy":"By submitting the form, you agree to your personal data being stored and used for the purposes stated in the <a href='/en/privacy-policy' target='_blank'>Privacy Policy</a>.",
     "submitText":"Submit",
     "typeInquiry": {
       "label": "Type of inquiry",

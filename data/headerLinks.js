@@ -135,12 +135,7 @@ export default {
     },
     {
       title: (t) => t.common.header.links.contacts.title,
-      href: 'contact-us',
+      href: 'contacts',
     },
   ],
-}
-
-export const action = {
-  title: (t) => t.common.header.action,
-  href: 'contact-us',
 }

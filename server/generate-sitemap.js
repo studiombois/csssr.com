@@ -483,32 +483,32 @@ const sitemapUrlsSettings = [
     ],
   },
   {
-    url: 'https://csssr.com/ru/contact-us',
+    url: 'https://csssr.com/ru/contacts',
     changefreq: 'yearly',
     priority: 0.6,
     links: [
       {
         lang: 'en',
-        url: 'https://csssr.com/en/contact-us',
+        url: 'https://csssr.com/en/contacts',
       },
       {
         lang: 'ru',
-        url: 'https://csssr.com/ru/contact-us',
+        url: 'https://csssr.com/ru/contacts',
       },
     ],
   },
   {
-    url: 'https://csssr.com/en/contact-us',
+    url: 'https://csssr.com/en/contacts',
     changefreq: 'yearly',
     priority: 0.6,
     links: [
       {
         lang: 'en',
-        url: 'https://csssr.com/en/contact-us',
+        url: 'https://csssr.com/en/contacts',
       },
       {
         lang: 'ru',
-        url: 'https://csssr.com/ru/contact-us',
+        url: 'https://csssr.com/ru/contacts',
       },
     ],
   },

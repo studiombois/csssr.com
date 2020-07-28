@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
       from: `CSSSR COM <${process.env.HR_MAIL_FROM}>`,
       to: process.env.HR_MAIL_TO,
       cc: process.env.HR_MAIL_CC,
-      subject: 'Работа в CSSSR | Заявка со страницы contact-us',
+      subject: 'Работа в CSSSR | Заявка со страницы contacts',
       text: `телефон: ${phone}\nemail: ${email}\n\n\n${message}`,
     }
 

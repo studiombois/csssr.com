@@ -141,7 +141,7 @@ export const nav = [
       },
       {
         id: 'contacts',
-        href: 'contact-us',
+        href: 'contacts',
       },
     ],
   },

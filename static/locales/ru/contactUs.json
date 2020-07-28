@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Cвязаться с нами",
-    "description": ""
+    "title": "Контакты",
+    "description": "Контактные данные компании CSSSR, телефон, адрес расположения, схема проезда."
   },
   "bookACall": {
     "profiles": {
@@ -23,7 +23,7 @@
       "victoria_zubareva": {
         "name": "Виктория Зубарева",
         "alt": "фотография Виктории Зубаревой",
-        "position": "Руководитель отдела найма"
+        "position": "Руководитель отдела кадров"
       }
     },
     "messages": {
@@ -32,13 +32,17 @@
         "description": "Мы отправили вам письмо со всей информацией."
       }
     },
-    "buttonText": "Забронировать звонок"
+    "buttonText": "Запланировать звонок"
   },
   "form": {
     "title": "Cвязаться с нами",
-    "subtitle": "О чем бы ты хотел поговорить?",
+    "subtitle": "Что бы вы хотели обсудить?",
     "separator": "или",
-    "policy": "By submitting the form, you consent to the processing of your personal data in accordance with the \"<a href='/en/privacy-policy' target='_blank'>Privacy Policy</a>\" and agree to the \"<a href='/en/cookies-policy' target='_blank'>Terms of Service</a>\".",
+    "email": "E-mail",
+    "phone": "Телефон",
+    "text": "Напишите нам пару строк",
+    "agree": "Я согласен(-на) получать информационные рассылки и коммерческие предложения.",
+    "policy": "Отправляя данную форму, я согласен(-на) на обработку моих персональных данных в соответствии с <a href='/ru/privacy-policy' target='_blank'>Политикой конфиденциальности</a>.",
     "submitText": "Отправить",
     "typeInquiry": {
       "label": "Тип запроса",
@@ -48,15 +52,15 @@
   },
   "map": {
     "tabs": {
-      "sg": "Singapore",
-      "ee": "Estonia",
-      "ru": "Russia"
+      "sg": "Сингапур",
+      "ee": "Эстония",
+      "ru": "Россия"
     },
     "addresses": {
-      "text": "If you'd like to meet us in person, please contact us to make an arrangement.",
+      "text": "Если вы хотите встретиться лично, пожалуйста, свяжитесь с нами, чтобы договориться о встрече.",
       "ru": [
-        "22 Bol'shoj<br /> Kozihinskij Lane,<br />bld. 2, office 28,<br /> Moscow, 123001,<br />Russia",
-        "30 Lesnaya St.,<br />bld. 1, office 303,<br /> Dzerzhinsky, 140090,<br /> Russia"
+        "22 Большой<br /> Козихинский пер.,<br />стр. 2, офис 28,<br /> г. Москва, 123001,<br />Россия",
+        "30 Лесная ул., <br />стр. 1, офис 303,<br /> г. Дзержинский, 140090,<br /> Россия"
       ],
       "sg": "68 Circular Road,<br />#02-01,<br />Singapore, 049422",
       "ee": "68 Circular Road,<br />#02-01,<br />,Singapore, 049422"

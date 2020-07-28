@@ -95,20 +95,27 @@ const Component = ({
       <form className={className} onSubmit={handleSubmit}>
         <Field
           name="email"
-          render={({ input, meta }) => <TextField input={input} meta={meta} label="Email" />}
+          render={({ input, meta }) => (
+            <TextField input={input} meta={meta} label={translations.contactUs.form.email} />
+          )}
         />
 
         <Field
           name="phone"
           render={({ input, meta }) => (
-            <TextField input={input} meta={meta} label="Phone <span>(optional)</span>" type="tel" />
+            <TextField
+              input={input}
+              meta={meta}
+              label={translations.contactUs.form.phone}
+              type="tel"
+            />
           )}
         />
 
         <Field
           name="message"
           render={({ input, meta }) => (
-            <Textarea input={input} meta={meta} label="Drop us a line" />
+            <Textarea input={input} meta={meta} label={translations.contactUs.form.text} />
           )}
         />
 

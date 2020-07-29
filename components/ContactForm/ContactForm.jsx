@@ -13,7 +13,7 @@ import TextareaField from '../ui-kit/TextareaField'
 import AnimatedButton from '../ui-kit/core-design/AnimatedButton'
 import Text from '../ui-kit/core-design/Text'
 import FormStateMessage from '../ui-kit/FormStateMessage'
-import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
+// import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 
 class ContactForm extends PureComponent {
@@ -202,18 +202,18 @@ class ContactForm extends PureComponent {
           />
         </div>
       ),
-      privacyPolicy: (
-        <div className={cn('field', 'field_type_checkbox')}>
-          <PrivacyPolicyCheckbox
-            id={(fieldsIds && fieldsIds.privacyPolicy) || 'privacyPolicy'}
-            name="privacyPolicy"
-            testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
-            linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
-            tabIndex={getTabIndex}
-            required
-          />
-        </div>
-      ),
+      // privacyPolicy: (
+      //   <div className={cn('field', 'field_type_checkbox')}>
+      //     <PrivacyPolicyCheckbox
+      //       id={(fieldsIds && fieldsIds.privacyPolicy) || 'privacyPolicy'}
+      //       name="privacyPolicy"
+      //       testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
+      //       linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
+      //       tabIndex={getTabIndex}
+      //       required
+      //     />
+      //   </div>
+      // ),
       newsletter: (
         <div className={cn('field', 'field_type_checkbox')}>
           <Field
@@ -243,7 +243,7 @@ class ContactForm extends PureComponent {
       fields,
       feedbackEmail,
       submitError,
-      l10n: { translations },
+      l10n: { translations, language },
     } = this.props
 
     const status = this.props.status || this.getStatus()
@@ -261,8 +261,22 @@ class ContactForm extends PureComponent {
         />
 
         {fields.map(this.renderField)}
-        {this.renderField('privacyPolicy')}
+        {/* {this.renderField('privacyPolicy')} */}
+
         {this.renderField('newsletter')}
+
+        <span className="privacyPolicy font_p16-regular">
+          {translations.common.checkBoxesText.privacyPolicyText}
+          <a
+            href={`/${language}/privacy-policy`}
+            target="_blank"
+            rel="noopener"
+            className="font_link-list_16"
+            data-testid={`${formName}:link:callbackForm.privacyPolicy`}
+          >
+            {translations.common.checkBoxesText.privacyPolicyLinkText}
+          </a>
+        </span>
 
         <div className="button" ref={this.messageRef}>
           <AnimatedButton

@@ -42,7 +42,7 @@ class MainPage extends PureComponent {
         {language === 'en' ? (
           <AbContext.Consumer>
             {(ab) => {
-              const variant = ab['en-main-page']
+              const variant = ab['en-main-page'].name
               return (
                 <>
                   <Head

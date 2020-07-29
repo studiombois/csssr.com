@@ -35,20 +35,36 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       language: ctx.res.locals.l10n.language,
+      ab: ctx.res.locals.ab,
       userAgent,
     }
   }
 
   render() {
     const language = this.props.language
+    const ab = this.props.ab
     const gtmId = getGtmId(language)
     const isIe11 = detectIe11(this.props.userAgent)
     const isMsBrowser = detectMsBrowser(this.props.userAgent)
+    const gtmExperimentsData = Object.keys(ab)
+      .map((experimentName) => {
+        const experiment = ab[experimentName]
+        return `${experiment.optimizeExperimentId}.${experiment.index}`
+      })
+      .join('!')
 
     const { title, text1, text2, text3 } = CONTENT[language]
     return (
       <html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
         <Head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              var dataLayer = dataLayer || []
+              dataLayer.push({ 'gaExperiment': '${gtmExperimentsData}' })
+          `,
+            }}
+          />
           <GtmScript gtmId={gtmId} />
         </Head>
         <body>

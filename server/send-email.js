@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
     const transporter = nodemailer.createTransport(transport)
     const options = {
       from: `CSSSR COM <${process.env.HR_MAIL_FROM}>`,
-      to: process.env.HR_MAIL_TO,
+      to: process.env.HR_MAIL_TO || process.env.HR_MAIL_TEST_RECIPIENT,
       cc: process.env.HR_MAIL_CC,
       subject: 'Работа в CSSSR | Заявка со страницы contacts',
       text: `телефон: ${phone}\nemail: ${email}\n\n\n${message}`,

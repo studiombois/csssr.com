@@ -101,7 +101,7 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
           <ButtonLink
             className="button"
             kind={isMobile ? 'primary' : 'third'}
-            href={profiles[profileId]?.calendlyLink}
+            href={`${profiles[profileId]?.calendlyLink}-${language}`}
           >
             {translations.contactUs.bookACall.buttonText}
           </ButtonLink>

@@ -2,6 +2,7 @@ const Sentry = require('@sentry/node')
 const { express, TEST_TAG } = require('@csssr/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
+const testEmail = require('../utils/testEmail')
 const {
   retinaRadioButtons,
   additionalOptionsRadioButtons,
@@ -78,8 +79,9 @@ module.exports = async (req, res) => {
     res.locals.l10n.translations,
   )
 
+  const isTestEmail = email === testEmail
   try {
-    const amoResponse = await amoExpress.createLead(language, {
+    const amoResponse = await amoExpress.createLead(isTestEmail ? TEST_TAG : language, {
       tags,
       name,
       phone,

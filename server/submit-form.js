@@ -2,6 +2,7 @@ const Sentry = require('@sentry/node')
 const { sales, TEST_TAG } = require('@csssr/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
+const testEmail = require('../utils/testEmail')
 
 const amoSales = sales.init(
   process.env.AMO_CRM_SALES_USER_LOGIN,
@@ -47,8 +48,9 @@ module.exports = async (req, res) => {
 
   const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies
 
+  const isTestEmail = email === testEmail
   try {
-    const amoResponse = await amoSales.createLead(language, {
+    const amoResponse = await amoSales.createLead(isTestEmail ? TEST_TAG : language, {
       tags,
       name,
       phone,

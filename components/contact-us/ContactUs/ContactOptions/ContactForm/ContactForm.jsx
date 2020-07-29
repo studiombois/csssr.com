@@ -8,6 +8,7 @@ import styles from './ContactForm.styles'
 import TextField from './TextField'
 import Dropdown from './Dropdown'
 import Textarea from './Textarea'
+import Checkbox from '../../../../ui-kit/Checkbox'
 import AnimatedButton from '../../../../ui-kit/core-design/AnimatedButton'
 import FormStateMessage from '../../../../ui-kit/FormStateMessage'
 import { TypeInquiryContext } from '../../../../../utils/typeInquiryContext'
@@ -118,6 +119,18 @@ const Component = ({
             <Textarea input={input} meta={meta} label={translations.contactUs.form.text} />
           )}
         />
+
+        <div className="newsletter">
+          <Field
+            id="newsletter"
+            name="newsletter"
+            type="checkbox"
+            component={Checkbox}
+            testid={`${formName}:field:contacts.agree`}
+          >
+            <span className="newsletter-text">{translations.contactUs.form.agree}</span>
+          </Field>
+        </div>
 
         <p
           className="policy"

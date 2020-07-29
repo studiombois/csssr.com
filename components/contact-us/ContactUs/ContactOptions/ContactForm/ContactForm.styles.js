@@ -7,7 +7,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   }
 
   .policy {
-    margin-top: ${calcRem(21)};
+    margin-top: ${calcRem(22)};
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -50,6 +50,49 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     color: #ffffff;
   }
 
+  .newsletter {
+    margin-top: ${calcRem(20)};
+  }
+
+  .newsletter label.input-label {
+    min-height: 1rem;
+    padding-left: 1rem;
+    align-items: flex-start;
+    line-height: ${calcRem(16)};
+  }
+
+  .newsletter label.input-label span.content {
+    transform: translateY(-0.125rem)
+  }
+
+  .newsletter label.input-label::before,
+  .newsletter input {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .newsletter label.input-label::after {
+    width: 1rem;
+    height: 1rem;
+    top: 0;
+    left: 0;
+    transform: none;
+    background-image: url(${require('../../../../../static/icons/mdi_check.svg').default});
+  }
+
+  .newsletter span.border {
+    width: 1rem;
+    height: 1rem;
+    border: none;
+  }
+
+  .newsletter-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: ${calcRem(12)};
+    line-height: ${calcRem(16)};
+  }
+
   ${desktop.all} {
     & {
       width: 320px;
@@ -76,8 +119,17 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     }
 
     .policy {
-      font-size: ${calcRem(10)};
+      margin-top: ${calcRem(19)};
+    }
+
+    .policy,
+    .newsletter-text {
+      font-size: ${calcRem(12)};
       line-height: ${calcRem(16)};
+    }
+
+    .newsletter {
+      margin-top: ${calcRem(23)};
     }
   }
 
@@ -95,9 +147,14 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
       padding-bottom: ${calcRem(79)};
     }
 
-    .policy {
+    .policy,
+    .newsletter-text {
       font-size: ${calcRem(10)};
       line-height: ${calcRem(16)};
+    }
+
+    .newsletter {
+      margin-top: ${calcRem(22)};
     }
   }
 `

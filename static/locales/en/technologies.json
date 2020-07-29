@@ -4,7 +4,7 @@
     "description": "CSSSR uses open-source tools and resources that are supported and continuously improved by the community, and thus are the most reliable and flexible."
   },
   "hero": {
-    "title": "Technologies",
+    "title": "CSSSR Technologies",
     "description": "We&nbsp;use open-source tools and resources that are supported and continuously improved by&nbsp;the community, and thus are the most reliable and flexible. We&nbsp;keep a&nbsp;close eye on&nbsp;web development novelties, but do&nbsp;not forget about the best standards.",
     "javascript": "We&nbsp;use all modern features of&nbsp;<span style=\"font-weight: bold;\">JavaScript</span>, but we&nbsp;also apply tools that allow our projects to&nbsp;work in&nbsp;old versions of&nbsp;browsers, including old versions of&nbsp;IE.",
     "typescript": "We&nbsp;also use <span style=\"font-weight: bold;\">TypeScript</span> and <span style=\"font-weight: bold;\">Flow</span> to&nbsp;add static typing support in&nbsp;JS. This helps&nbsp;us to&nbsp;write flexible and reliable code."
@@ -24,14 +24,14 @@
     "kotlin": "We&nbsp;develop back-end for our clients as&nbsp;well. We&nbsp;can write on&nbsp;well-proven Java, but we&nbsp;prefer Kotlin&nbsp;&mdash; a&nbsp;modern language working on&nbsp;JVM (Java Virtual Machine)."
   },
   "imgAlt": {
-    "javascript": "Happy astronaut with Javascript logo",
-    "typescript": "Happy astronauts with Typescript logo",
-    "react": "React Logo",
-    "angular": "Angular logo",
-    "vue": "Vue logo",
-    "autotests": "Balancing Man",
-    "node": "Node logo",
-    "dbs": "MongoDB PostgreSQL logos",
-    "kotlin": "Kotlin logo"
+    "javascript": "We use all modern features of JavaScript",
+    "typescript": "We also use TypeScript and Flow to add static typing support in JS.",
+    "react": "React is one of the most popular libraries for solving various development tasks.",
+    "angular": "Angular 2+ provides a large number of ready-made solutions to standard problems.",
+    "vue": "Vue is a library that is very similar to React in its ideology.",
+    "autotests": "We write various auto-tests: unit, integration, end-to-end.",
+    "node": "Node.js is a server-side JavaScript runtime environment.",
+    "dbs": "We select databases depending on the project needs",
+    "kotlin": "For our clients, we develop back-end as well."
   }
 }

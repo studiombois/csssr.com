@@ -4,10 +4,10 @@
     "description": "CSSSR is a front-end web development group that major on outsource front-end development services for a wide range of industries. We bring logic to the world with JavaScript."
   },
   "hero": {
-    "title": "<span style=\"font-weight: bold;\">Outsourcing</span><br />Web Development",
-    "description": "We&nbsp;specialize in&nbsp;front-end web development for a&nbsp;wide range of&nbsp;industries.",
+    "title": "Front End Development<br/> <span style=\"font-weight: bold;\">Outsourcing</span>",
+    "description": "CSSSR group specializes in&nbsp;outsource front-end web development for a&nbsp;wide range of&nbsp;industries. We&nbsp;have created more than 500 successful projects so&nbsp;our experience always helps&nbsp;us to&nbsp;choose the right way whatever task we&nbsp;are assigned with.",
     "button": "Let&rsquo;s Talk"
-  },
+  }, 
   "aboutFrontend": {
     "title": "<span style=\"white-space: nowrap;\">Front-End</span> Development",
     "subtitle": "We&nbsp;develop complex solutions for websites and web applications using JavaScript.",
@@ -100,18 +100,18 @@
     ]
   },
   "imgAlt": {
-    "hero": "Picture of balloon",
-    "aboutFrontend": "A group of people building a robot",
+    "hero": "We develop complex solutions for websites and web applications using JavaScript",
+    "aboutFrontend": "Full services in front-end development",
     "benefits": [
-      "Picture of number 1",
-      "Picture of number 2",
-      "Picture of number 3",
-      "Picture of number 4"
+      "Outsourcing makes quick start.",
+      "Outsourcing saves your costs.",
+      "We can provide you with a broad range of specialists with various qualifications.",
+      "Outsourced teams are easy to adjust."
     ],
-    "technologyStack": "Logos of some technologies we use: MongoDB, Kotlin, React, Vue Angular, NodeJS, PostgreSQL",
+    "technologyStack": "We use React, Angular, and Vue for the most projects.",
     "ourAdvantages": [
-      ["A man in harmony in the middle of computer monitors"],
-      ["Printing code woman", "Two developers giving high five to each other"]
+      ["We work absolutely remotely so we have elaborated reliable remote processes."],
+      ["We are focused on a narrow niche of front-end development.", "We can deal with both short- and long-term tasks."]
     ]
   }
 }

@@ -214,13 +214,13 @@ class CandidateForm extends PureComponent {
             })}
           >
             {vacancy.name}
-
-            {vacancy.employment === 'part-time' ? (
-              <span className="font_subhead-regular">{translations.job.remote}</span>
-            ) : (
-              <span className="font_subhead-regular">{translations.job.remoteAndFullTime}</span>
-            )}
           </h1>
+
+          {vacancy.employment === 'part-time' ? (
+            <span className="font_subhead-regular">{translations.job.remote}</span>
+          ) : (
+            <span className="font_subhead-regular">{translations.job.remoteAndFullTime}</span>
+          )}
 
           <p
             className="font_p24-strong"

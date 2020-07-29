@@ -11,10 +11,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   .separator {
     position: relative;
+    bottom: 0;
+    margin-top: ${calcRem(143)};
     display: flex;
     align-items: center;
-    bottom: 0;
-    height: 339px;
+    height: auto;
 
     &::before{
       position: absolute;
@@ -42,7 +43,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     z-index: 2;
   }
 
-  .separator,
   .book-a-call {
     margin-top: auto;
   }
@@ -128,7 +128,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
     .separator {
       margin-left: ${calcRem(30)};
-      height: ${calcRem(361)};
     }
 
     .book-a-call {

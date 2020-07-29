@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Contacts",
+    "description": "CSSSR company contact details: phone number, location address, e-mail, location map."
+  },
+  "bookACall": {
+    "profiles": {
+      "anastasia_ignatenko": {
+        "name": "Anastasia Ignatenko",
+        "alt": "photo of Anastasia Ignatenko",
+        "position": "APAC Sales Representative"
+      },
+      "anastasia_vnuchenko": {
+        "name": "Anastasia Vnuchenko",
+        "alt": "photo of Anastasia Vnuchenko",
+        "position": "EU Sales Representative"
+      },
+      "olga_shevchenko": {
+        "name": "Olga Shevchenko",
+        "alt": "photo of Olga Shevchenko",
+        "position": "Head of Sales "
+      },
+      "victoria_zubareva": {
+        "name": "Victoria Zubareva",
+        "alt": "photo of Victoria Zubareva",
+        "position": "Head of HR"
+      }
+    },
+    "messages": {
+      "success": {
+        "title": "Thanks! Call is booked.",
+        "description": "We've sent you an email with all the information."
+      }
+    },
+    "buttonText": "Schedule a call"
+  },
+  "form": {
+    "title": "Сontact Us",
+    "subtitle": "What would you like to talk about?",
+    "separator": "or",
+    "email": "E-mail",
+    "phone": "Phone",
+    "text": "Drop us a line",
+    "agree": "I agree to receive information and commercial offers",
+    "policy":"By submitting the form, you agree to your personal data being stored and used for the purposes stated in the <a href='/en/privacy-policy' target='_blank'>Privacy Policy</a>.",
+    "submitText":"Submit",
+    "typeInquiry": {
+      "label": "Type of inquiry",
+      "newPropject": "New Project",
+      "job": "Work in CSSSR"
+    }
+  },
+  "map": {
+    "tabs": {
+      "sg": "Singapore",
+      "ee": "Estonia",
+      "ru": "Russia"
+    },
+    "addresses": {
+      "text": "If you'd like to meet us in person, please contact us to make an arrangement.",
+      "ru": [
+        "22 Bol'shoj<br /> Kozihinskij Lane,<br />bld. 2, office 28,<br /> Moscow, 123001,<br />Russia",
+        "30 Lesnaya St.,<br />bld. 1, office 303,<br /> Dzerzhinsky, 140090,<br /> Russia"
+      ],
+      "sg": "68 Circular Road,<br />#02-01,<br />Singapore, 049422",
+      "ee": "68 Circular Road,<br />#02-01,<br />,Singapore, 049422"
+    }
+  }
+}

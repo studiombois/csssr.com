@@ -7,7 +7,7 @@ const base = ({ colors }) => css`
   }
 
   & + & {
-    margin-top: ${calcRem(38)};
+    margin-top: ${calcRem(40)};
   }
 
   .input {

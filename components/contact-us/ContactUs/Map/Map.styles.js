@@ -58,6 +58,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     & {
       height: calc(100vh - 4rem);
     }
+
+    .map {
+      width: 41.4%;
+    }
   }
 
   ${mobile.all} {
@@ -77,8 +81,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .book-a-call {
       z-index: 2;
       position: absolute;
-      top: 150px;
-      left: 16px;
+      top: ${calcRem(145)};
+      left: ${calcRem(16)};
       display: flex;
     }
   }

@@ -32,7 +32,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     border-bottom: 2px solid #18191b;
     cursor: pointer;
     padding-left: ${calcRem(8)};
-    padding-bottom: ${calcRem(4)};
+    padding-bottom: ${calcRem(3)};
 
     &._active {
       border-color: ${colors.primary.origin};
@@ -107,13 +107,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.all} {
     & {
-      margin-bottom: 55px;
+      margin-bottom: 46px;
     }
   }
 
   ${tablet.all} {
     & {
-      margin-bottom: ${calcRem(48)};
+      margin-bottom: ${calcRem(30)};
     }
   }
 

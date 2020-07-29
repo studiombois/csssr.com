@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { string, bool } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
@@ -16,9 +16,15 @@ const Textarea = ({
   meta: { error, invalid, submitError, submitFailed },
   required,
 }) => {
+  const textareaRef = useRef(null)
+  const [rows, setRows] = useState(1)
   const showError = invalid && submitFailed
   const handleChange = (event) => {
     onChange(event.target.value)
+
+    const paddingsSum = 8
+    const lineHeight = 24
+    setRows(Math.ceil((textareaRef.current.scrollHeight - paddingsSum) / lineHeight))
   }
 
   return (
@@ -36,8 +42,10 @@ const Textarea = ({
         type={type}
         disabled={disabled}
         data-testid={testid}
+        rows={rows}
         required={required}
         aria-required={required}
+        ref={textareaRef}
       />
 
       {label && (

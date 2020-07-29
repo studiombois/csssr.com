@@ -22,7 +22,7 @@ const base = ({ colors }) => css`
     padding-right: ${calcRem(9)};
     padding-bottom: ${calcRem(4)};
     min-height: ${calcRem(34)};
-    height: ${calcRem(34)};
+    max-height: ${calcRem(224)};
     width: 100%;
     resize: vertical;
   }

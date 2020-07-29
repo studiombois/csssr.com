@@ -1,9 +1,8 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile, desktop }}) => css`
+const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
   & {
-    position: absolute;
     background-color: #ffffff;
     z-index: 2;
     color: #18191B;
@@ -100,8 +99,13 @@ const base = ({ breakpoints: { tablet, mobile, desktop }}) => css`
     }
   }
 
+  ${above.mobile} {
+    position: fixed;
+  }
+
   ${mobile.all} {
     & {
+      position: absolute;
       padding-top: ${calcRem(56)};
       padding-right: ${calcRem(24)};
       padding-bottom: ${calcRem(24)};

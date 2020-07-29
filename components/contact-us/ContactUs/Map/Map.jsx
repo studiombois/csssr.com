@@ -18,7 +18,7 @@ const Map = ({ className, activeAddressId }) => {
       <Global styles={backgroundImagesStyles} />
 
       <Tabs />
-      <BookACall className="book-a-call" profileId="anastasia_ignatenko" canBookACall />
+      <BookACall className="book-a-call" />
       <Address />
       <span className={cn('map', `map-${activeAddressId}`)} />
     </aside>

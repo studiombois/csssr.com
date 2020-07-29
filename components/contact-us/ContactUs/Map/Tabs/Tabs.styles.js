@@ -70,7 +70,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }, colors }) => cs
 
   ${desktop.l} {
     & {
-      left: 50%;
+      left: 20.625%;
       transform: translateX(-50%);
     }
   }

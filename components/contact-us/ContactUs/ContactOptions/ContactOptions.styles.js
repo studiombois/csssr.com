@@ -14,12 +14,12 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     display: flex;
     align-items: center;
     bottom: 0;
-    height: 298px;
+    height: 339px;
 
     &::before{
       position: absolute;
       top: 0;
-      left: 50%;
+      left: 43%;
       content: '';
       background-color: #e1e1e1;
       height: 100%;
@@ -40,8 +40,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     text-transform: uppercase;
     color: #918686;
     z-index: 2;
-    padding-top: ${calcRem(10)};
-    padding-bottom: ${calcRem(10)};
   }
 
   .separator,
@@ -52,7 +50,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   ${desktop.all} {
     .heading {
-      margin-top: 99px;
+      margin-top: 68px;
     }
 
     .subheading {
@@ -66,7 +64,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     }
 
     .subheading {
-      margin-top: 53px;
+      margin-top: 55px;
     }
 
     .separator {
@@ -80,7 +78,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   ${desktop.m} {
     & {
-      padding-left: 108px;
+      padding-left: 127px;
     }
 
     .subheading {
@@ -98,7 +96,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   ${desktop.s} {
     & {
-      padding-left: 100px;
+      padding-left: 120px;
+    }
+
+    .heading {
+      margin-top: 63px;
     }
 
     .separator {
@@ -112,25 +114,25 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   ${tablet.all} {
     & {
-      padding-left: ${calcRem(57)};
+      padding-left: ${calcRem(65)};
     }
 
     .heading {
-      margin-top: ${calcRem(80)};
+      margin-top: ${calcRem(52)};
     }
 
     .subheading {
       font-size: ${calcRem(14)};
-      margin-top: ${calcRem(48)};
+      margin-top: ${calcRem(40)};
     }
 
     .separator {
       margin-left: ${calcRem(30)};
-      height: ${calcRem(316)};
+      height: ${calcRem(361)};
     }
 
     .book-a-call {
-      margin-left: ${calcRem(-8)};
+      margin-left: ${calcRem(-13)};
     }
   }
 

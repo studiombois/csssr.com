@@ -135,7 +135,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     & {
       padding-top: ${calcRem(32)};
       padding-right: ${calcRem(12)};
-      padding-bottom: ${calcRem(56)};
+      padding-bottom: ${calcRem(72)};
       padding-left: ${calcRem(24)};
       flex-direction: row;
       flex-wrap: wrap;
@@ -158,6 +158,10 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       line-height: ${calcRem(16)};
     }
 
+    .manager-name {
+      margin-top: ${calcRem(4)};
+    }
+
     .manager-position,
     .reservation-time {
       margin-top: ${calcRem(4)};
@@ -177,6 +181,8 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       left: 0;
       height: ${calcRem(40)};
       width: 100%;
+      font-size: ${calcRem(12)};
+      line-height: ${calcRem(24)};
     }
 
     .success-icon_small {

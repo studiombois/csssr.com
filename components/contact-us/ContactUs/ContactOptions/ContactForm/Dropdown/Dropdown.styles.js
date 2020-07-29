@@ -92,8 +92,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     padding-left: ${calcRem(8)};
     transition: color 100ms ease-out;
 
-    &._active {
+    &:disabled {
       color: #9b9b9b;
+      pointer-events: none;
     }
 
     &:hover {

@@ -46,9 +46,10 @@ const Dropdown = ({
         <div className="popup">
           {items.map(({ id, value }) => (
             <button
-              className={cn('popup-item', { _active: id === inquiryTypeId })}
+              className="popup-item"
               type="button"
               key={id}
+              disabled={id === inquiryTypeId}
               onClick={selectItem(id)}
             >
               {value(translations)}

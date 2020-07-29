@@ -27,26 +27,62 @@ const AboutProject = ({
       dangerouslySetInnerHTML={{ __html: translations.project[projectId].aboutProject.title }}
     />
 
-    {paragraphsScheme.map((paragraphsGroup, paragraphsGroupId) => (
-      <div
-        key={paragraphsGroupId}
-        className={cn('paragraphs-gropup', `paragraphs-gropup_${paragraphsGroupId}`)}
-      >
-        {paragraphsGroup.map((paragrapId) => (
-          <Text
-            key={paragrapId}
-            className="paragraph"
-            as="p"
-            type={paragraphsGroupId === 0 ? 'regular' : 'strong'}
-            size="m"
-            dangerouslySetInnerHTML={{
-              __html:
-                translations.project[projectId].aboutProject.text[paragraphsGroupId][paragrapId],
-            }}
-          />
-        ))}
-      </div>
-    ))}
+    {paragraphsScheme.map(
+      (paragraphsGroup, paragraphsGroupId) =>
+        paragraphsGroup &&
+        (projectId === 'mindbox' ? (
+          <Grid
+            as="div"
+            key={paragraphsGroupId}
+            className={cn(
+              'paragraphs-group',
+              `paragraphs-group_${paragraphsGroupId}`,
+              `paragraphs-group_${projectId}`,
+            )}
+          >
+            {paragraphsGroup.map((paragrapId) => (
+              <Text
+                key={paragrapId}
+                className="paragraph"
+                as="p"
+                type={paragraphsGroupId === 0 ? 'regular' : 'strong'}
+                size="m"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    translations.project[projectId].aboutProject.text[paragraphsGroupId][
+                      paragrapId
+                    ],
+                }}
+              />
+            ))}
+          </Grid>
+        ) : (
+          <div
+            key={paragraphsGroupId}
+            className={cn(
+              'paragraphs-group',
+              `paragraphs-group_${paragraphsGroupId}`,
+              `paragraphs-group_${projectId}`,
+            )}
+          >
+            {paragraphsGroup.map((paragrapId) => (
+              <Text
+                key={paragrapId}
+                className="paragraph"
+                as="p"
+                type={paragraphsGroupId === 0 ? 'regular' : 'strong'}
+                size="m"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    translations.project[projectId].aboutProject.text[paragraphsGroupId][
+                      paragrapId
+                    ],
+                }}
+              />
+            ))}
+          </div>
+        )),
+    )}
 
     <PictureForAllResolutions
       className="picture"

@@ -2,12 +2,16 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, language}) => css`
   & {
     background-image:
       url(${require('../../../static/icons/project/about-project/line.svg').default}),
       url(${require('../../../static/icons/project/about-project/circle.svg').default});
     background-repeat: no-repeat, no-repeat;
+  }
+
+  .paragraph {
+    color: #000000;
   }
 
   .paragraph a {
@@ -20,7 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.all} {
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       margin-top: 58px;
 
       .paragraph:not(:first-of-type) {
@@ -28,13 +32,42 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       margin-top: 157px;
       grid-column: 2 / span 5;
 
       .paragraph:not(:first-of-type) {
         margin-top: 24px;
       }
+    }
+
+    .paragraphs-group_1.paragraphs-group_mindbox {
+      margin-top: 95px;
+    }
+
+    .paragraphs-group_mindbox {
+      grid-column: 1 / span 7;
+    }
+
+    .paragraphs-group_mindbox p {
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        grid-column: 2 / span 5;
+      }
+
+      &:nth-of-type(4) {
+        margin-top: 96px !important;
+      }
+
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        grid-column: 4 / span 6;
+      }
+    }
+
+    &.paragraphs-group_mindbox .picture {
+      margin-top: 110px;
     }
   }
 
@@ -49,7 +82,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 7;
     }
 
@@ -72,15 +105,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 8;
     }
 
     .picture {
-      margin-top: 73px;
+      margin-top: 109px;
       grid-column: 8 / span 4;
       width: 432px;
       height: 520px;
+    }
+
+    .paragraphs-group_mindbox p {
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        margin-left: 7px;
+      }
     }
   }
 
@@ -95,7 +135,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 8;
     }
 
@@ -116,9 +156,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .title {
       margin-top: ${calcRem(70)};
+      grid-row: 1;
     }
 
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       margin-top: ${calcRem(40)};
 
       .paragraph:not(:first-of-type) {
@@ -127,17 +168,64 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       grid-column: 3 / span 8;
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       margin-top: ${calcRem(96)};
       grid-column: 2 / span 5;
 
       .paragraph:not(:first-of-type) {
         margin-top: ${calcRem(16)};
       }
+    }
+
+    .paragraphs-group_1.paragraphs-group_mindbox {
+      .paragraph {
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+          margin-left: ${calcRem(3)};
+          line-height: ${calcRem(26)};
+        }
+      }
+
+      .paragraph:not(:first-of-type) {
+        margin-top: ${calcRem(24)};
+      }
+    }
+
+    .paragraphs-group_mindbox {
+      grid-column: 1 / span 8;
+      grid-row: 2;
+      margin-top: ${calcRem(40)};
+    }
+
+    .paragraphs-group_mindbox p {
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        grid-column: 3 / span 8;
+      }
+
+      &:nth-of-type(4) {
+        margin-top: ${calcRem(64)} !important;
+      }
+
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        grid-column: 2 / span 5;
+      }
+
+      &:nth-of-type(5) {
+        grid-column: 2 / span 5;
+      }
+    }
+
+    .paragraphs-group_mindbox + .picture {
+      grid-row: 2;
+      grid-column: 8 / span 4;
+      margin-top: ${calcRem(345)};
     }
 
     .picture {
@@ -155,7 +243,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       background: none;
     }
 
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       margin-top: ${calcRem(24)};
       order: 1;
 
@@ -164,7 +252,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       margin-top: ${calcRem(37)};
       order: 3;
 
@@ -173,9 +261,49 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
     }
 
+    .paragraphs-group_mindbox {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+      margin-top: ${calcRem(24)};
+    }
+
+    .paragraphs-group_1.paragraphs-group_mindbox {
+      .paragraph {
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+          line-height: ${calcRem(26)};
+        }
+      }
+
+      .paragraph:not(:first-of-type) {
+        margin-top: ${calcRem(24)};
+      }
+    }
+
+    .paragraphs-group_mindbox p {
+      grid-column: 1/ span 6;
+
+      &:nth-of-type(4) {
+        margin-top: ${calcRem(329)} !important;
+      } 
+
+      &:nth-of-type(5) {
+        margin-top: ${calcRem(28)} !important;
+      } 
+    }
+
+    .paragraphs-group_mindbox + .picture {
+      grid-row: 2;
+      grid-column: 1 / span 6;
+      margin-top: ${language === 'ru' ? calcRem(513) : calcRem(441)};
+      width: ${calcRem(216)};
+      height: ${calcRem(258)};
+      justify-self: right;
+    }
+
     .title,
-    .paragraphs-gropup_0,
-    .paragraphs-gropup_1 {
+    .paragraphs-group_0,
+    .paragraphs-group_1 {
       grid-column: 1 / span 6;
     }
 
@@ -201,7 +329,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.all} {
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       -ms-grid-column: ${getGridValueForMs(2)};
       -ms-grid-column-span: ${getGridValueForMs(5)};
     }
@@ -209,7 +337,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.l} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(7)};
     }
@@ -222,7 +350,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.m} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(8)};
     }
@@ -235,7 +363,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.s} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(8)};
     }
@@ -248,12 +376,12 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${tablet.all} {
     .title,
-    .paragraphs-gropup_0 {
+    .paragraphs-group_0 {
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(8)};
     }
 
-    .paragraphs-gropup_1 {
+    .paragraphs-group_1 {
       -ms-grid-column: ${getGridValueForMs(2)};
       -ms-grid-column-span: ${getGridValueForMs(5)};
     }
@@ -266,8 +394,8 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     .title,
-    .paragraphs-gropup_0,
-    .paragraphs-gropup_1 {
+    .paragraphs-group_0,
+    .paragraphs-group_1 {
       -ms-grid-column: ${getGridValueForMs(1)};
       -ms-grid-column-span: ${getGridValueForMs(6)};
     }
@@ -281,9 +409,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, language })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

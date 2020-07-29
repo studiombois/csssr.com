@@ -7,15 +7,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     grid-template-rows: max-content max-content max-content;
   }
 
-  .heading {
+  .team-breakdown {
     grid-column: 8 / span 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-row: 1;
   }
 
   .list {
     display: grid;
-    grid-column: 8 / span 5;
-    grid-row: 2 / 5;
     grid-template-columns: 28px 1fr;
     grid-template-rows: max-content max-content max-content max-content;
     grid-gap: 8px 22px;
@@ -55,7 +56,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .image {
     grid-column: 2 / span 4;
-    grid-row: 1 / 5;
+    grid-row: 1;
   }
 
   ${desktop.all} {
@@ -71,19 +72,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .heading {
       margin-top: ${calcRem(22)};
     }
+
+    .image {
+      max-height: 536px;
+    }
   }
 
   ${desktop.m} {
     .image {
-      grid-row: 1 / 3;
       margin-top: ${calcRem(51)};
+      max-height: 400px;
     }
   }
 
   ${desktop.s} {
     .image {
       margin-top: ${calcRem(-13)};
-      grid-row: 2 / 4;
+      max-height: 368px;
     }
   }
 
@@ -113,13 +118,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .image {
-      grid-row: 1 / 3;
+      max-height: ${calcRem(280)};
     }
   }
 
   ${mobile.all} {
-    .heading,
-    .list {
+    .team-breakdown {
       grid-column: 1 / span 6;
     }
 
@@ -149,75 +153,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 `
 
-const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
+const ie11Styles = ({ breakpoints: { mobile }}) => css`
   & {
     -ms-grid-template-rows: max-content max-content;
   }
 
-  .heading {
+  .team-breakdown {
     position: relative;
-    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column: ${getGridValueForMs(8)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: 1;
-  }
-
-  .text {
-    position: relative;
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: 2;
   }
 
   .image {
-    -ms-grid-column: ${getGridValueForMs(7)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
+    -ms-grid-column: ${getGridValueForMs(2)};
+    -ms-grid-column-span: ${getGridValueForMs(4)};
   }
 
-  ${desktop.m} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-  }
-
-  ${desktop.s} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .text {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(5)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-  }
-
-  ${tablet.all} {
-    .heading {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
-    }
-
-    .text {
-      -ms-grid-column: ${getGridValueForMs(2)};
-      -ms-grid-column-span: ${getGridValueForMs(5)};
-    }
-
-    .image {
-      -ms-grid-column: ${getGridValueForMs(6)};
-      -ms-grid-column-span: ${getGridValueForMs(7)};
+  ${mobile.all} {
+    .team-breakdown {
+      position: relative;
+      -ms-grid-column: ${getGridValueForMs(1)};
+      -ms-grid-column-span: ${getGridValueForMs(6)};
     }
   }
 `

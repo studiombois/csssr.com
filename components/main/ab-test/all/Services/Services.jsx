@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { bool, string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -20,6 +21,17 @@ import { MsBrowserConsumer } from '../../../../../utils/msBrowserProvider'
 
 const Services = ({ className, l10n: { translations, language }, isMobile }) => {
   const [hoveredService, setHoveredService] = useState(null)
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  })
+  useEffect(() => {
+    if (inView) {
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'scrolled_to_services' })
+      }
+    }
+  }, [inView])
 
   return (
     <Fragment>
@@ -45,6 +57,7 @@ const Services = ({ className, l10n: { translations, language }, isMobile }) => 
               return (
                 <li
                   key={id}
+                  ref={language === 'en' && id === 'mvp' ? ref : null}
                   className={cn('service', `service_${id}`)}
                   onMouseOver={handleHover(iconName)}
                   onMouseLeave={handleHover(null)}

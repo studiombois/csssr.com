@@ -67,7 +67,7 @@
         ],
         [
           "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
-          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two software testers.",
+          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two QA Engineers.",
           "The first public version was launched in&nbsp;spring of&nbsp;2019. Since then, our team has continued to&nbsp;develop new functionality and has released several major updates over the past year."
         ]
       ]
@@ -136,7 +136,7 @@
         ],
         [
           "We&nbsp;develop the entire front-end for the adaptive website of&nbsp;the project.",
-          "The core team consists of&nbsp;4&nbsp;developers and one tester, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
+          "The core team consists of&nbsp;4&nbsp;developers and one QA Engineer, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
           "Currently we&nbsp;are implementing flight statistics and login through social networks, and are planning to&nbsp;conduct significant refactoring and improve the performance of&nbsp;the web application. The entire front-end is&nbsp;written on&nbsp;Next.js&nbsp;&mdash; a&nbsp;modern React framework."
         ]
       ]

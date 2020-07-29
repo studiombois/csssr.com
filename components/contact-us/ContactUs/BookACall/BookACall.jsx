@@ -89,7 +89,9 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
               {translations.contactUs.bookACall.profiles[profileId].position}
             </div>
 
-            <div className="email">{profiles[profileId].email}</div>
+            <a href={`mailto:${profiles[profileId].email}`} className="email">
+              {profiles[profileId].email}
+            </a>
           </figcaption>
         </>
       )}

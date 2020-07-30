@@ -101,6 +101,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   ${desktop.all} {
     & {
       width: 320px;
+      margin-bottom: 40px;
     }
 
     .policy {

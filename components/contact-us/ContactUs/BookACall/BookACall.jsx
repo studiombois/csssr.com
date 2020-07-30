@@ -11,6 +11,7 @@ import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { TypeInquiryContext } from '../../../../utils/typeInquiryContext'
 import getProfileIdByInquiryTypeAndActiveAddress from '../../../../utils/getProfileIdByInquiryTypeAndActiveAddress'
+import getBookACall from '../../../../utils/getBookACall'
 import setReservationTimeLng from '../../../../utils/setReservationTimeLng'
 import { MapContext } from '../../../../utils/mapContext'
 import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
@@ -26,8 +27,12 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
   const [wasCallReservationSuccessful, setCallReservationStatus] = useState(showCalendlyCallback)
   const { inquiryTypeId } = useContext(TypeInquiryContext)
   const { activeAddressId } = useContext(MapContext)
-  const profileId = getProfileIdByInquiryTypeAndActiveAddress(inquiryTypeId, activeAddressId)
-  const canBookACall = inquiryTypeId === 'new-project' && profileId !== 'olga_shevchenko'
+  const profileId = getProfileIdByInquiryTypeAndActiveAddress(
+    inquiryTypeId,
+    activeAddressId,
+    language,
+  )
+  const canBookACall = getBookACall(inquiryTypeId, activeAddressId, language, profileId)
 
   let reservationTime
   if (eventStartTime && eventEndTime) {
@@ -96,18 +101,25 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
         </>
       )}
 
-      {canBookACall &&
-        (wasCallReservationSuccessful ? (
-          <SuccessIconSmall className="success-icon_small" />
-        ) : (
-          <ButtonLink
-            className="button"
-            kind={isMobile ? 'primary' : 'third'}
-            href={`${profiles[profileId]?.calendlyLink}-${language}`}
-          >
-            {translations.contactUs.bookACall.buttonText}
-          </ButtonLink>
-        ))}
+      {canBookACall && (
+        <div className="button-wrap">
+          {wasCallReservationSuccessful ? (
+            <SuccessIconSmall className="success-icon_small" />
+          ) : (
+            <ButtonLink
+              className="button"
+              kind={isMobile ? 'primary' : 'third'}
+              href={`${profiles[profileId]?.calendlyLink}-${language}`}
+            >
+              {translations.contactUs.bookACall.buttonText}
+            </ButtonLink>
+          )}
+          <div
+            className="communication"
+            dangerouslySetInnerHTML={{ __html: translations.contactUs.bookACall.communication }}
+          />
+        </div>
+      )}
 
       {wasCallReservationSuccessful && <div className="counter">{counter} s</div>}
     </Tag>

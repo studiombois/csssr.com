@@ -21,17 +21,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }, colors }) => cs
     cursor: pointer;
     color: #18191b;
     border: none;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
     flex-grow: 1;
     width: ${100/3}%;
 
-    &:first-of-type {
-      border-left: 1px solid #000000;
-    }
-
-    &:last-of-type {
-      border-right: 1px solid #000000;
+    &:hover {
+      color:  #0254D8;
     }
 
     &._active {

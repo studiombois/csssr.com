@@ -29,7 +29,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     color: #18191b;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid #18191b;
+    border-bottom: ${calcRem(1)} solid #18191b;
     cursor: pointer;
     padding-left: ${calcRem(8)};
     padding-bottom: ${calcRem(3)};
@@ -121,6 +121,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${mobile.all} {
     & {
       margin-bottom: ${calcRem(32)};
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .button:hover {
+      border-color: ${colors.primary.origin};
+
+      &::before {
+        border-top-color: ${colors.primary.origin};
+      }
     }
   }
 `

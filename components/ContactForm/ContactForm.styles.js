@@ -203,6 +203,26 @@ const base = () => css`
   .field_type_no-margin {
     margin: 0;
   }
+
+  .privacyPolicy {
+    grid-column: 4 / span 6;
+    color: #18191b;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      grid-column: 4 / span 6;
+      font-size: inherit;
+      line-height: inherit;
+
+      & > a {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+
+    @media (max-width: 767px) {
+      grid-column: 1 / span 6;
+    }
+  }
 `
 
 export default () => css`

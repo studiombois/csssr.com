@@ -52,7 +52,7 @@ const Hero = ({
               size="m"
               as="p"
               dangerouslySetInnerHTML={{ __html: item(translations) }}
-              className="paragraph"
+              className={`paragraph paragraph_${index}`}
             />
           ))}
         </div>

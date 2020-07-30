@@ -20,8 +20,8 @@ const pageName = 'jobsFaq'
 const JobsFaqPage = () => (
   <Layout pageName={pageName}>
     <Head
-      title="Как устроиться сюда ➡️"
-      description="Часто задаваемые вопросы кандидатов в..."
+      title="F.A.Q. о работе в компании"
+      description="Актуальные вопросы кандидатов про вакансии, условия найма, график работы в группе компаний CSSSR. Для тех, кто предпочитает читать инструкции перед применением, а не после."
       ogImage={{
         url: require('../../static/images/jobs-faq/ogImage.jpg'),
         width: 2400,

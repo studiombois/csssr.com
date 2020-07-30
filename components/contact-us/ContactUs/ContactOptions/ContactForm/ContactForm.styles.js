@@ -37,6 +37,11 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
       width: ${calcRem(40)};
       height: ${calcRem(40)};
     }
+
+    span {
+      max-height: ${calcRem(24)};
+      display: inline-block;
+    }
   }
 
   .submit-text {

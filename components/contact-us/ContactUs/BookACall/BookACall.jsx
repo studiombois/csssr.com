@@ -29,13 +29,6 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
   const profileId = getProfileIdByInquiryTypeAndActiveAddress(inquiryTypeId, activeAddressId)
   const canBookACall = inquiryTypeId === 'new-project' && profileId !== 'olga_shevchenko'
 
-  let reservationTime
-  if (eventStartTime && eventEndTime) {
-    const getReservationTime = setReservationTimeLng(language)
-
-    reservationTime = getReservationTime(eventStartTime, eventEndTime)
-  }
-
   useEffect(() => {
     if (wasCallReservationSuccessful) {
       const intervalId = setInterval(() => {
@@ -50,6 +43,12 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
       return () => clearInterval(intervalId)
     }
   }, [wasCallReservationSuccessful, counter])
+
+  let reservationTime
+  if (eventStartTime && eventEndTime) {
+    const getReservationTime = setReservationTimeLng(language)
+    reservationTime = getReservationTime(eventStartTime, eventEndTime)
+  }
 
   const Tag = wasCallReservationSuccessful ? 'div' : 'figure'
 
@@ -72,7 +71,7 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
             {translations.contactUs.bookACall.messages.success.title}
           </div>
 
-          <div className="reservation-time">{reservationTime}</div>
+          {reservationTime && <div className="reservation-time">{reservationTime}</div>}
 
           <div className="reservation-description">
             {translations.contactUs.bookACall.messages.success.description}

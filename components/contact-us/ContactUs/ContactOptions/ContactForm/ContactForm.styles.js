@@ -15,6 +15,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     line-height: 16px;
     color: #18191b;
 
+    & > span {
+      white-space: nowrap;
+    }
+
     > a {
       color: #0076ff;
     }
@@ -96,6 +100,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     font-weight: 300;
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
+
+    & > span {
+      white-space: nowrap;
+    }
   }
 
   ${desktop.all} {

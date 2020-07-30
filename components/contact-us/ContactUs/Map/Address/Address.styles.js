@@ -110,7 +110,8 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
       padding-right: ${calcRem(24)};
       padding-bottom: ${calcRem(24)};
       padding-left: ${calcRem(24)};
-      bottom: ${calcRem(50)};
+      top: ${calcRem(380)};
+      bottom: auto;
       left: ${calcRem(16)};
       right: ${calcRem(16)};
     }

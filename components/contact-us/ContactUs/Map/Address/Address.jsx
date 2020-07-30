@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import { string, object } from 'prop-types'
 
 import { L10nConsumer } from '../../../../../utils/l10nProvider'
@@ -16,7 +17,7 @@ const Address = ({ className, l10n: { translations }, activeAddressId }) => {
   const { items, id } = addresses[activeAddressId]
 
   return (
-    <div className={className}>
+    <div className={cn(className, `_${id}`)}>
       {id === 'sg' && <PinLionIcon className="pin" />}
 
       <div className="addresses">

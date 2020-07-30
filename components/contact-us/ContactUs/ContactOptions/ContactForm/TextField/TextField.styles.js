@@ -18,7 +18,7 @@ const base = ({ colors }) => css`
     line-height: ${calcRem(24)};
     color: ${colors.secondary.darken100};
     border: none;
-    border-bottom: ${calcRem(2)} solid #d4d4d4;
+    border-bottom: ${calcRem(1)} solid #d4d4d4;
     background-color: transparent;
     padding-bottom: ${calcRem(4)};
     padding-left: ${calcRem(9)};

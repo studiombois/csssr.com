@@ -68,6 +68,7 @@ Textarea.propTypes = {
   isError: bool,
   required: bool,
 }
+
 export default styled(Textarea)`
   ${styles}
 `

@@ -87,6 +87,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     left: 0;
     transform: none;
     background-image: url(${require('../../../../../static/icons/mdi_check.svg').default});
+    background-size: 1rem;
   }
 
   .newsletter span.border {

@@ -97,11 +97,17 @@ const Component = ({
         <Field
           name="email"
           render={({ input, meta }) => (
-            <TextField input={input} meta={meta} label={translations.contactUs.form.email} />
+            <TextField
+              input={input}
+              meta={meta}
+              label={translations.contactUs.form.email}
+              testid={`${formName}:field:contacts.email`}
+            />
           )}
         />
 
         <Field
+          testid="Contacts:field:phone"
           name="phone"
           render={({ input, meta }) => (
             <TextField
@@ -109,18 +115,25 @@ const Component = ({
               meta={meta}
               label={translations.contactUs.form.phone}
               type="tel"
+              testid={`${formName}:field:contacts.phone`}
             />
           )}
         />
 
         <Field
+          testid="Contacts:field:message"
           name="message"
           render={({ input, meta }) => (
-            <Textarea input={input} meta={meta} label={translations.contactUs.form.text} />
+            <Textarea
+              input={input}
+              meta={meta}
+              label={translations.contactUs.form.text}
+              testid={`${formName}:field:contacts.message`}
+            />
           )}
         />
 
-        <div className="newsletter">
+        <div className="newsletter" testid={`${formName}:block:contacts.checkbox`}>
           <Field
             id="newsletter"
             name="newsletter"
@@ -142,7 +155,7 @@ const Component = ({
           type="submit"
           disabled={status === 'submitting' || status === 'fail'}
           status={status}
-          testid=""
+          data-testid={`${formName}:button:formSubmit`}
         >
           <span className="submit-text">{translations.contactUs.form.submitText}</span>
         </AnimatedButton>
@@ -153,7 +166,7 @@ const Component = ({
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
             feedbackEmail={feedbackEmail}
-            testid={`${formName}:text.successMessage`}
+            testid={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
             shouldShowPicture={false}
           />
         </div>

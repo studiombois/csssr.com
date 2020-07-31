@@ -10,13 +10,7 @@ import { L10nConsumer } from '../../../../../../utils/l10nProvider'
 
 import items from '../../../../../../data/contact-us/typeInquiry'
 
-const Dropdown = ({
-  className,
-  testid,
-  inquiryTypeId,
-  setInquiryTypeId,
-  l10n: { translations },
-}) => {
+const Dropdown = ({ className, inquiryTypeId, setInquiryTypeId, l10n: { translations } }) => {
   const [isOpen, toggleIsOpen] = useState(false)
 
   const handleClick = (event) => {
@@ -33,7 +27,7 @@ const Dropdown = ({
   const { value } = items.filter((item) => item.id === inquiryTypeId)[0]
 
   return (
-    <div className={cn(className, { _active: isOpen })} data-testid={testid}>
+    <div className={cn(className, { _active: isOpen })} data-testid="Contacts:dropdown">
       <button type="button" onClick={handleClick} className={cn('button', { _active: isOpen })}>
         {value(translations)}
       </button>
@@ -51,6 +45,7 @@ const Dropdown = ({
               key={id}
               disabled={id === inquiryTypeId}
               onClick={selectItem(id)}
+              data-testid="Contacts:button:projectType"
             >
               {value(translations)}
             </button>

@@ -23,7 +23,7 @@ const Textarea = ({
     onChange(event.target.value)
 
     const paddingsSum = 8
-    const lineHeight = 24
+    const lineHeight = 34
     setRows(Math.ceil((textareaRef.current.scrollHeight - paddingsSum) / lineHeight))
   }
 

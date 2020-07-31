@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile, above }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
   & {
     position: relative;
     display: flex;
@@ -128,6 +128,13 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     .counter {
       bottom: ${calcRem(8)};
       left: calc(50% + ${calcRem(32)});
+    }
+  }
+
+  ${tablet.all} {
+    .reservation-description {
+      padding-left: ${calcRem(8)};
+      padding-right: ${calcRem(8)};
     }
   }
 

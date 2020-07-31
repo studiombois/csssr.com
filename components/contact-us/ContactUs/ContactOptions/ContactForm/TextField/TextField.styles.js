@@ -37,7 +37,8 @@ const base = ({ colors }) => css`
     border-bottom-color: #d0021b;
   }
 
-  .input._error + .label {
+  .input._error + .label,
+  .input._error:focus + .label {
     color: #d0021b;
   }
 

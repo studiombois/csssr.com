@@ -128,7 +128,10 @@ const Component = ({
             component={Checkbox}
             testid={`${formName}:field:contacts.agree`}
           >
-            <span className="newsletter-text">{translations.contactUs.form.agree}</span>
+            <span
+              className="newsletter-text"
+              dangerouslySetInnerHTML={{ __html: translations.contactUs.form.agree }}
+            />
           </Field>
         </div>
 

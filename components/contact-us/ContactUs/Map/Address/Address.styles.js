@@ -94,7 +94,8 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
   ${mobile.all} {
     & {
       position: absolute;
-      bottom: ${calcRem(50)};
+      top: ${calcRem(380)};
+      bottom: auto;
       left: ${calcRem(16)};
       right: ${calcRem(16)};
       padding-top: ${calcRem(36)};

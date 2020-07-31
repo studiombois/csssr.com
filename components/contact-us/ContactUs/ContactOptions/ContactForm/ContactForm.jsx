@@ -15,14 +15,14 @@ import { TypeInquiryContext } from '../../../../../utils/typeInquiryContext'
 import { MapContext } from '../../../../../utils/mapContext'
 import { L10nConsumer } from '../../../../../utils/l10nProvider'
 import contactUsFormValidationRules from '../../../../../utils/validators/contactUsFormValidationRules'
-import getProfileIdByInquiryTypeAndActiveAddress from '../../../../../utils/getProfileIdByInquiryTypeAndActiveAddress'
+import getProfileId from '../../../../../utils/getProfileId'
 import getGaCid from '../../../../../utils/client/getGaCid'
 import testEmail from '../../../../../utils/testEmail'
 import profiles from '../../../../../data/contact-us/profiles'
 
 const Component = ({
   className,
-  l10n: { translations },
+  l10n: { translations, language },
   submitError,
   formName,
   submitting,
@@ -85,7 +85,7 @@ const Component = ({
     }
   }
   const handleTryToFillFormAgain = () => setSubmittedToServerStatus(false)
-  const profileId = getProfileIdByInquiryTypeAndActiveAddress(inquiryTypeId, activeAddressId)
+  const profileId = getProfileId(inquiryTypeId, activeAddressId, language)
   const feedbackEmail = profiles[profileId].email
   const status = getStatus()
 

@@ -8,7 +8,6 @@ import { MapConsumer } from '../../../../../utils/mapContext'
 import styled from '@emotion/styled'
 import styles from './Address.styles'
 
-// import { ReactComponent as PinIcon } from '../../../../../static/icons/pin.svg'
 import { ReactComponent as PinLionIcon } from '../../../../../static/icons/pin-lion.svg'
 
 import addresses from '../../../../../data/contact-us/address'

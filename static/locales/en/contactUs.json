@@ -8,17 +8,17 @@
       "anastasia_ignatenko": {
         "name": "Anastasia Ignatenko",
         "alt": "photo of Anastasia Ignatenko",
-        "position": "ASEAN Sales Representative"
+        "position": "ASEAN Regional Manager"
       },
       "anastasia_vnuchenko": {
         "name": "Anastasia Vnuchenko",
         "alt": "photo of Anastasia Vnuchenko",
-        "position": "EU Sales Representative"
+        "position": "European Regional Manager"
       },
       "olga_shevchenko": {
         "name": "Olga Shevchenko",
         "alt": "photo of Olga Shevchenko",
-        "position": "Head of Sales "
+        "position": "Head of Business Development"
       },
       "victoria_zubareva": {
         "name": "Victoria Zubareva",
@@ -28,11 +28,12 @@
     },
     "messages": {
       "success": {
-        "title": "Thanks! Call is booked.",
+        "title": "Call is booked.",
         "description": "We've sent you an email with all the information."
       }
     },
-    "buttonText": "Schedule a call"
+    "buttonText": "Schedule a call",
+    "communication": "Hangouts, Skype, Zoom, <span>Phone call</span>"
   },
   "form": {
     "title": "Сontact Us",

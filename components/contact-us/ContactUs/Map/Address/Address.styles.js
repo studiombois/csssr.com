@@ -24,9 +24,9 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
     font-family: Roboto, sans-serif;
     font-size: ${calcRem(10)};
     line-height: ${calcRem(16)};
-    letter-spacing: ${calcRem(1.25)};
+    letter-spacing: ${calcRem(0.75)};
     text-transform: uppercase;
-    width: ${calcRem(158)};
+    width: ${calcRem(167)};
   }
 
   .text {
@@ -87,7 +87,8 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
     }
 
     .address + .address {
-      margin-left: ${calcRem(24)};
+      width: ${calcRem(172)};
+      margin-left: ${calcRem(15)};
     }
   }
 
@@ -103,6 +104,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
 
     .address {
       width: ${calcRem(144)};
+    }
+
+    .address + .address {
+      margin-left: ${calcRem(10)};
     }
   }
 `

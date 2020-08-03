@@ -11,24 +11,26 @@ import styles from './ContactOptions.styles'
 
 const ContactOptions = ({ className, l10n: { translations } }) => (
   <section className={className}>
-    <Heading
-      as="h1"
-      className="heading"
-      type="slab"
-      size="m"
-      dangerouslySetInnerHTML={{ __html: translations.contactUs.form.title }}
-    />
+    <div className="form-wrap">
+      <Heading
+        as="h1"
+        className="heading"
+        type="slab"
+        size="m"
+        dangerouslySetInnerHTML={{ __html: translations.contactUs.form.title }}
+      />
 
-    <h2 className="subheading">{translations.contactUs.form.subtitle}</h2>
+      <h2 className="subheading">{translations.contactUs.form.subtitle}</h2>
 
-    <div className="form-wrapper">
-      <ContactForm />
+      <div className="form-wrapper">
+        <ContactForm />
 
-      <div className="separator">
-        <span className="separator-text">{translations.contactUs.form.separator}</span>
+        <div className="separator">
+          <span className="separator-text">{translations.contactUs.form.separator}</span>
+        </div>
+
+        <BookACall className="book-a-call" />
       </div>
-
-      <BookACall className="book-a-call" />
     </div>
   </section>
 )

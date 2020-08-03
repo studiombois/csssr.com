@@ -47,7 +47,7 @@
     "next": "^9.5.1",
     "object-to-formdata": "^4.1.0",
     "prop-types": "^15.7.2",
-    "ramda": "^0.27.0",
+    "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-final-form": "^6.5.1",

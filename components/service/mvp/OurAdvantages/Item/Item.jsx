@@ -48,6 +48,7 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
         dangerouslySetInnerHTML={{
           __html: translations.mvp.ourAdvantages.advantages[groupId][itemId].link,
         }}
+        data-testid={translations.mvp.ourAdvantages.advantages[groupId][itemId].testid}
       />
     )}
   </div>

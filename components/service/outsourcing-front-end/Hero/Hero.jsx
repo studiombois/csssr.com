@@ -39,6 +39,7 @@ const Hero = ({ className, pageName, l10n: { translations } }) => (
       className="button"
       pageName={pageName}
       dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.hero.button }}
+      testId="Outsourcing:button:contactUs.hero"
     />
 
     <PictureForAllResolutions

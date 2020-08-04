@@ -14,9 +14,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v1
         with:
-          username: csssr-team/csssr-com
+          username: csssr-team+github_csssr_com_repo
           password: ${{ secrets.QUAY_PASSWORD }}
-          registry: registry.csssr.cloud
+          registry: quay.csssr.cloud
           repository: csssr-team/csssr-com
           tags: build-${{ github.run_id }}
           build_args: NPM_TOKEN,isProduction,csssrSpaceOrigin,processImages

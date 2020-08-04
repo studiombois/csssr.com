@@ -4,7 +4,7 @@
     "description": "Over the years, our group has perfected our development and communication processes, and we are very proud of them."
   },
   "greeting": {
-    "title": "Our Process"
+    "title": "CSSSR Working Process Organization"
   },
   "organized": {
     "title": "How Outsourced Teams Are Organized",
@@ -13,21 +13,21 @@
     "secondParagraph":"From the client side, the team is&nbsp;usually joined by&nbsp;a&nbsp;product manager, designer and sometimes others. This can cause the lines between processes and teams to&nbsp;blur.",
     "footer": "As&nbsp;a&nbsp;result, we&nbsp;cooperate closely with other client teams, with a&nbsp;clear understanding of&nbsp;responsibilities and transparency of&nbsp;processes.",
     "imgAlt": {
-      "skydiver" : "skydiver",
-      "skydivers" : "skydivers"
+      "skydiver" : "We provide clients with well organized development teams",
+      "skydivers" : "We can also assemble a team comprising of back-end developers and systems analysts"
     }
   },
   "development": {
     "title": "Standard Development Methodology",
     "scrumban": {
-      "imgAlt": "Scrumban",
+      "imgAlt": "We work with Agile methodologies",
       "title": "Scrumban",
       "description": "We&nbsp;work with Agile methodologies, but do&nbsp;not blindly follow a&nbsp;particular doctrine.",
       "text": "We&nbsp;use a&nbsp;mix of&nbsp;scrum and kanban, employing weekly sprints that are convenient for clients.",
       "text_2": "In&nbsp;a&nbsp;classic scrum, at&nbsp;the end of&nbsp;a&nbsp;sprint a&nbsp;set of&nbsp;functionality is&nbsp;rolled out for production. Our weekly sprints, on&nbsp;the other hand, are fixed agreements on&nbsp;a&nbsp;certain amount of&nbsp;work that must be&nbsp;completed within a&nbsp;given timeframe. For example, we&nbsp;may complete some features, but testing could be&nbsp;scheduled and completed in&nbsp;the next sprint."
     },
     "review": {
-      "imgAlt": "Code Review",
+      "imgAlt": "To control code quality, we employ a code-review process",
       "title": "Code review",
       "description": "To&nbsp;control code quality, we&nbsp;employ a&nbsp;code-review process that the whole development team participates&nbsp;in, with specific rules.",
       "text": "For example, each pull request must be&nbsp;approved by&nbsp;at&nbsp;least two developers. Only after approval can the code be&nbsp;put into a&nbsp;stable branch. In&nbsp;code review, we&nbsp;focus on&nbsp;business logic, code readability, architecture and APIs."
@@ -40,7 +40,7 @@
     "arc": "All documentation is&nbsp;automatically generated according to&nbsp;a&nbsp;template, which minimizes the risk of&nbsp;errors.",
     "triangle": "We&nbsp;have a&nbsp;dedicated manager who is&nbsp;responsible for the documentation and promptly assists with any questions.",
     "imagesAlt": {
-      "highlight": "Transparency",
+      "highlight": "We work on an hourly basis",
       "square": "square",
       "circle": "circle",
       "arc": "arc",

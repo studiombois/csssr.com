@@ -15,6 +15,7 @@ const base = ({ colors }) => css`
     line-height: ${calcRem(24)};
     color: ${colors.secondary.darken100};
     border: none;
+    border-radius: 0;
     border-bottom: ${calcRem(1)} solid #d4d4d4;
     background-color: transparent;
     padding-top: ${calcRem(4)};

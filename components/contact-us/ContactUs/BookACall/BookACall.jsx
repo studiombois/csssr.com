@@ -42,7 +42,7 @@ const BookACall = ({ className, l10n: { translations, language } }) => {
 
       {canBookACall && (
         <div className="button-wrap">
-          <CalendlyBookingButton />
+          <CalendlyBookingButton bookingUrl={`${profiles[profileId]?.calendlyLink}-${language}`} />
           <div
             className="communication"
             dangerouslySetInnerHTML={{ __html: translations.contactUs.bookACall.communication }}

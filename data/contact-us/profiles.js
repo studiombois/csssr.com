@@ -10,6 +10,7 @@ import olga_shevchenko_webp from '../../static/images/contact-us/book-a-call/olg
 import victoria_zubareva from '../../static/images/contact-us/book-a-call/victoria_zubareva.jpg?responsive'
 import victoria_zubareva_webp from '../../static/images/contact-us/book-a-call/victoria_zubareva.jpg?responsive_and_webp'
 
+//TODO: обновить calendlyLink перед релизом
 export default {
   anastasia_ignatenko: {
     images: { jpg: anastasia_ignatenko, webp: anastasia_ignatenko_webp },

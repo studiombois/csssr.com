@@ -110,7 +110,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   ${desktop.all} {
     & {
       width: 320px;
-      margin-bottom: 40px;
     }
 
     .policy {
@@ -149,10 +148,14 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   }
 
   ${above.mobile} {
+    & {
+      margin-bottom: ${calcRem(42)};
+    }
+
     .message {
       position: absolute;
       top: 100%;
-      padding-bottom: ${calcRem(40)};
+      padding-bottom: ${calcRem(42)};
       width: 100%;
     }
   }

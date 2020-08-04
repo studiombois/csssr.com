@@ -1,63 +1,61 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useRouter } from 'next/router'
+import React, { /* useEffect, */ useContext } from 'react'
+// import { useRouter } from 'next/router'
 import { string, bool } from 'prop-types'
-import cn from 'classnames'
+// import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './BookACall.styles'
 import Picture from '../../../ui-kit/Picture'
-import ButtonLink from '../../../ui-kit/core-design/ButtonLink'
 import profiles from '../../../../data/contact-us/profiles'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { TypeInquiryContext } from '../../../../utils/typeInquiryContext'
 import getProfileId from '../../../../utils/getProfileId'
 import setBookingPossibility from '../../../../utils/setBookingPossibility'
-import setReservationTimeLng from '../../../../utils/setReservationTimeLng'
+// import setReservationTimeLng from '../../../../utils/setReservationTimeLng'
 import { MapContext } from '../../../../utils/mapContext'
-import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
-import { ReactComponent as SuccessIconBig } from '../../../../static/icons/contact-us/book-a-call/success_big.svg'
+import CalendlyBookingButton from './CalendlyBookingButton'
+// import { ReactComponent as SuccessIconSmall } from '../../../../static/icons/contact-us/book-a-call/success_small.svg'
+// import { ReactComponent as SuccessIconBig } from '../../../../static/icons/contact-us/book-a-call/success_big.svg'
 
 const BookACall = ({ className, l10n: { translations, language }, isMobile }) => {
-  const { query } = useRouter()
-  const eventStartTime = query.event_start_time
-  const eventEndTime = query.event_end_time
-  const showCalendlyCallback = eventStartTime || eventEndTime
+  // const { query } = useRouter()
+  // const eventStartTime = query.event_start_time
+  // const eventEndTime = query.event_end_time
+  // const showCalendlyCallback = eventStartTime || eventEndTime
 
-  const [counter, setCounterValue] = useState(4)
-  const [wasCallReservationSuccessful, setCallReservationStatus] = useState(showCalendlyCallback)
+  // const [counter, setCounterValue] = useState(4)
+  // const [wasCallReservationSuccessful, setCallReservationStatus] = useState(showCalendlyCallback)
   const { inquiryTypeId } = useContext(TypeInquiryContext)
   const { activeAddressId } = useContext(MapContext)
   const profileId = getProfileId(inquiryTypeId, activeAddressId, language)
   const canBookACall = setBookingPossibility(inquiryTypeId, activeAddressId, language, profileId)
 
-  useEffect(() => {
-    if (wasCallReservationSuccessful) {
-      const intervalId = setInterval(() => {
-        if (counter === 0) {
-          setCallReservationStatus(false)
-          return clearInterval(intervalId)
-        }
+  // useEffect(() => {
+  //   if (wasCallReservationSuccessful) {
+  //     const intervalId = setInterval(() => {
+  //       if (counter === 0) {
+  //         setCallReservationStatus(false)
+  //         return clearInterval(intervalId)
+  //       }
 
-        setCounterValue(counter - 1)
-      }, 1000)
+  //       setCounterValue(counter - 1)
+  //     }, 1000)
 
-      return () => clearInterval(intervalId)
-    }
-  }, [wasCallReservationSuccessful, counter])
+  //     return () => clearInterval(intervalId)
+  //   }
+  // }, [wasCallReservationSuccessful, counter])
 
-  let reservationTime
-  if (eventStartTime && eventEndTime) {
-    const getReservationTime = setReservationTimeLng(language)
-    reservationTime = getReservationTime(eventStartTime, eventEndTime)
-  }
+  // let reservationTime
+  // if (eventStartTime && eventEndTime) {
+  //   const getReservationTime = setReservationTimeLng(language)
+  //   reservationTime = getReservationTime(eventStartTime, eventEndTime)
+  // }
 
-  const Tag = wasCallReservationSuccessful ? 'div' : 'figure'
+  // const Tag = wasCallReservationSuccessful ? 'div' : 'figure'
 
   return (
-    <Tag className={cn(className, { call_was_booked: wasCallReservationSuccessful })}>
-      {wasCallReservationSuccessful && isMobile ? (
-        <SuccessIconBig className="success-icon_big" />
-      ) : (
+    <figure className={className}>
+      {isMobile && (
         <Picture
           className="manager-avatar"
           images={profiles[profileId].images}
@@ -66,7 +64,7 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
         />
       )}
 
-      {wasCallReservationSuccessful ? (
+      {/* {wasCallReservationSuccessful ? (
         <div className="reservation">
           <div className="reservation-heading">
             {translations.contactUs.bookACall.messages.success.title}
@@ -79,26 +77,26 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
           </div>
         </div>
       ) : (
-        <>
-          <figcaption className="manager">
-            <div className="manager-name">
-              {translations.contactUs.bookACall.profiles[profileId].name}
-            </div>
+        <> */}
+      <figcaption className="manager">
+        <div className="manager-name">
+          {translations.contactUs.bookACall.profiles[profileId].name}
+        </div>
 
-            <div className="manager-position">
-              {translations.contactUs.bookACall.profiles[profileId].position}
-            </div>
+        <div className="manager-position">
+          {translations.contactUs.bookACall.profiles[profileId].position}
+        </div>
 
-            <a href={`mailto:${profiles[profileId].email}`} className="email">
-              {profiles[profileId].email}
-            </a>
-          </figcaption>
-        </>
-      )}
+        <a href={`mailto:${profiles[profileId].email}`} className="email">
+          {profiles[profileId].email}
+        </a>
+      </figcaption>
+      {/* </>
+      )} */}
 
       {canBookACall && (
         <div className="button-wrap">
-          {wasCallReservationSuccessful ? (
+          {/* {wasCallReservationSuccessful ? (
             <SuccessIconSmall className="success-icon_small" />
           ) : (
             <ButtonLink
@@ -107,8 +105,9 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
               href={`${profiles[profileId]?.calendlyLink}-${language}`}
             >
               {translations.contactUs.bookACall.buttonText}
-            </ButtonLink>
-          )}
+            </ButtonLink> */}
+          <CalendlyBookingButton />
+          {/* )} */}
           <div
             className="communication"
             dangerouslySetInnerHTML={{ __html: translations.contactUs.bookACall.communication }}
@@ -116,8 +115,8 @@ const BookACall = ({ className, l10n: { translations, language }, isMobile }) =>
         </div>
       )}
 
-      {wasCallReservationSuccessful && <div className="counter">{counter} s</div>}
-    </Tag>
+      {/* {wasCallReservationSuccessful && <div className="counter">{counter} s</div>} */}
+    </figure>
   )
 }
 

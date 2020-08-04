@@ -22,9 +22,13 @@ const Textarea = ({
   const handleChange = (event) => {
     onChange(event.target.value)
 
-    const paddingsSum = 8
-    const lineHeight = 34
-    setRows(Math.ceil((textareaRef.current.scrollHeight - paddingsSum) / lineHeight))
+    const textareaStyles = window.getComputedStyle(textareaRef.current)
+    const paddingsSum =
+      parseFloat(textareaStyles.getPropertyValue('padding-top')) +
+      parseFloat(textareaStyles.getPropertyValue('padding-bottom'))
+    const lineHeight = parseFloat(textareaStyles.getPropertyValue('line-height'))
+
+    setRows(Math.floor((textareaRef.current.scrollHeight - paddingsSum) / lineHeight))
   }
 
   return (

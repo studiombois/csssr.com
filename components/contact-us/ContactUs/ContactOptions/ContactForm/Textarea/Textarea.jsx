@@ -22,6 +22,13 @@ const Textarea = ({
   const handleChange = (event) => {
     onChange(event.target.value)
 
+    /**
+     * Calculate rows to autoresize textarea
+     *
+     * number or rows = content box height / row height
+     * context box height = textarea height - paddings
+     * row height = textarea font line height
+     */
     const textareaStyles = window.getComputedStyle(textareaRef.current)
     const paddingsSum =
       parseFloat(textareaStyles.getPropertyValue('padding-top')) +

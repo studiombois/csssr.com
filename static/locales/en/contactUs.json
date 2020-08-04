@@ -26,12 +26,6 @@
         "position": "Head of HR"
       }
     },
-    "messages": {
-      "success": {
-        "title": "Call is booked.",
-        "description": "We've sent you an email with all the information."
-      }
-    },
     "buttonText": "Schedule a call",
     "communication": "Hangouts, Skype, Zoom, <span>Phone call</span>"
   },

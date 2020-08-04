@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
+const base = ({ breakpoints: { mobile, above }, colors }) => css`
   & {
     position: relative;
     display: flex;
@@ -12,15 +12,13 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
     height: ${calcRem(76)};
   }
 
-  .manager-name,
-  .reservation-heading {
+  .manager-name {
     font-weight: 500;
     font-size: ${calcRem(14)};
     line-height: ${calcRem(24)};
   }
 
-  .manager-position,
-  .reservation-time {
+  .manager-position {
     font-weight: normal;
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
@@ -34,28 +32,16 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
     color: ${colors.primary.origin};
   }
 
-  .reservation-description {
-    font-weight: 500;
-    font-size: ${calcRem(12)};
-    line-height: ${calcRem(16)};
-    color: ${colors.secondary.gray};
-  }
-
   .manager-name,
   .manager-position,
-  .reservation-heading,
-  .reservation-time,
   .email,
-  .reservation-description,
   .counter {
     font-family: Roboto;
     font-style: normal;
   }
 
   .manager-name,
-  .manager-position,
-  .reservation-heading,
-  .reservation-time {
+  .manager-position {
     color: ${colors.secondary.darken100};
   }
 
@@ -98,11 +84,6 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
       width: ${calcRem(260)};
     }
 
-    &.call_was_booked {
-      padding-bottom: ${calcRem(86)};
-    }
-
-    .reservation,
     .manager {
       text-align: center;
     }
@@ -111,8 +92,7 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
       margin-bottom: ${calcRem(42)};
     }
 
-    .manager-name,
-    .reservation-heading {
+    .manager-name {
       margin-top: ${calcRem(12)};
     }
 
@@ -122,15 +102,8 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
 
     .manager-name,
     .manager-position,
-    .reservation-heading,
-    .reservation-time,
-    .email,
-    .reservation-description {
+    .email {
       text-align: center;
-    }
-
-    .reservation-description  {
-      margin-top: ${calcRem(4)};
     }
 
     .communication {
@@ -153,13 +126,6 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
     }
   }
 
-  ${tablet.all} {
-    .reservation-description {
-      padding-left: ${calcRem(8)};
-      padding-right: ${calcRem(8)};
-    }
-  }
-
   ${mobile.all} {
     & {
       padding-top: ${calcRem(32)};
@@ -172,7 +138,6 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
       background-color: white;
     }
 
-    .reservation,
     .manager {
       width: ${calcRem(200)};
     }
@@ -182,8 +147,7 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
       margin-right: ${calcRem(16)};
     }
 
-    .manager-name,
-    .reservation-heading {
+    .manager-name {
       line-height: ${calcRem(16)};
     }
 
@@ -191,17 +155,12 @@ const base = ({ breakpoints: { mobile, tablet, above }, colors }) => css`
       margin-top: ${calcRem(4)};
     }
 
-    .manager-position,
-    .reservation-time {
+    .manager-position {
       margin-top: ${calcRem(4)};
     }
 
     .email {
       margin-top: ${calcRem(4)};
-    }
-
-    .reservation-description  {
-      margin-top: ${calcRem(6)};
     }
 
     .communication {

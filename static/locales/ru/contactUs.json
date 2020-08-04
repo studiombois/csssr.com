@@ -26,12 +26,6 @@
         "position": "HR директор"
       }
     },
-    "messages": {
-      "success": {
-        "title": "Звонок забронирован.",
-        "description": "Мы отправили вам письмо со всей информацией."
-      }
-    },
     "buttonText": "Запланировать звонок",
     "communication": "Hangouts, Skype, Zoom, <span>телефонный звонок</span>"
   },

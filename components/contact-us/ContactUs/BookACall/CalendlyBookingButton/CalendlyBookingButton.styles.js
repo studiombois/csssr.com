@@ -1,8 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../../utils/style/calcRem'
-// import { ReactComponent as CrossIcon } from '../../../static/icons/close.svg'
 
-const base = ({ breakpoints: { mobile }, colors}) => css`
+const base = ({ breakpoints: { mobile, above }, colors}) => css`
   & {
     padding-right: ${calcRem(27)};
     padding-left: ${calcRem(27)};
@@ -13,28 +12,34 @@ const base = ({ breakpoints: { mobile }, colors}) => css`
     height: ${calcRem(40)};
     background: none;
     border: none;
+    border: solid 0.0625rem ${colors.primary.origin};
     font-family: 'Roboto', 'Arial', sans-serif;
     font-size:  ${calcRem(12)};
     font-weight: 900;
     line-height:  ${calcRem(24)};
     letter-spacing: ${calcRem(1.6)};
     text-transform: uppercase;
-    color: #ffffff;
+    color: ${colors.primary.origin};
     cursor: pointer;
-    background-color: ${colors.primary.origin};
-    transition: background-color 0.3s ease-out;
+    transition: border-color 0.3s ease-out, color 0.3s ease-out;
+  }
+
+  ${above.mobile} {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover,
+      &:active {
+        color: ${colors.primary.darken15};
+        border-color: ${colors.primary.darken15};
+      }
+    }
   }
 
   ${mobile.all} {
     & {
       width: 100%;
-    }
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover,
-    &:active {
-      background-color: ${colors.primary.darken15};
+      border: none;
+      color: #ffffff;
+      background-color: ${colors.primary.origin};
     }
   }
 `

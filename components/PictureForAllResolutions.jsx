@@ -52,7 +52,7 @@ const PictureForAllResolutions = ({
 
 PictureForAllResolutions.propTypes = {
   className: string,
-  testid: string,
+  testId: string,
   image: shape({
     namespace: string,
     key: string,

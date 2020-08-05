@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Back-end and DevOps",
-    "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
+    "title": "Back-End and DevOps",
+    "description": "CSSSR offers DevOps solutions: reinforce your web application with reliable back-end development and duly adjusted infrastructure."
   },
   "hero": {
     "title": "<span style='font-weight: bold;'>Back-end</span><br />and <span style='font-weight: bold;'>DevOps</span>",
@@ -38,7 +38,7 @@
     "mongoDb": "We&nbsp;select databases subject to&nbsp;the project needs and specific tasks: <span style='font-weight:900'>MongoDB</span> (NoSQL) or&nbsp;<span style='font-weight:900'>PostgreSQL.</span>",
     "java": "We&nbsp;can write on&nbsp;well-proven <span style='font-weight:900'>Java</span>, but we&nbsp;prefer <span style='font-weight:900'>Kotlin</span>&nbsp;&mdash; a&nbsp;modern language working on&nbsp;<span style='font-weight:900'>JVM</span> (Java Virtual Machine).",
     "experts": "Our experts are ready to&nbsp;advise you on&nbsp;the technologies that would fit your project most.",
-    "link": "Take a&nbsp;look at&nbsp;the other <a style='text-decoration: underline; color: #0076FF;' href='/en/tech-stack'>technologies we&nbsp;use</a>",
+    "link": "Take a&nbsp;look at&nbsp;the other <a style='text-decoration: underline; color: #0076FF;' href='/en/tech-stack' data-testid='BackendAndDevops:link:techstack'>technologies we&nbsp;use</a>",
     "javaImgAlt": "Styled logos of Kotlin and Java",
     "mongoDbImgAlt": "An elephant symbolizing PostgreSQL"
   },

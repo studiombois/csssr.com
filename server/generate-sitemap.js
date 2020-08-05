@@ -258,6 +258,126 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/project/mosoblgaz',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mosoblgaz',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mosoblgaz',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/mosoblgaz',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mosoblgaz',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mosoblgaz',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/brusnika',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/brusnika',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/brusnika',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/brusnika',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/brusnika',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/brusnika',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/mindbox',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mindbox',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mindbox',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/mindbox',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mindbox',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mindbox',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/qmarketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/qmarketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/qmarketing',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/qmarketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/qmarketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/qmarketing',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,

@@ -46,8 +46,12 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
           `}
           isNextLink
           dangerouslySetInnerHTML={{
-            __html: translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
+            __html:
+              translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link.title,
           }}
+          data-testid={
+            translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link.testId
+          }
         />
         {unescapeHtmlEntities(
           translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].description[1],
@@ -78,6 +82,9 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
               __html:
                 translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
             }}
+            data-testid={
+              translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].testId
+            }
           />
         )}
       </Fragment>

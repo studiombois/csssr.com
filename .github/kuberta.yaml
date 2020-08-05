@@ -1,0 +1,18 @@
+version: 1-alpha.1
+
+releases:
+  csssr-com-testing:
+    name: Тестинг
+    autodeploy-on: default
+    chart: csssr/csssr-com@~1.0.0
+    static-params:
+      environment: testing
+    params:
+      env.CSSSR_SPACE_ORIGIN:
+        type: url
+        description: Адрес csssr.space
+        default: http://master.space.csssr.cloud/
+    builds:
+      - workflow: build-docker-image.yml
+        values:
+          image.tag: "build-{{ .Build.RunID }}"

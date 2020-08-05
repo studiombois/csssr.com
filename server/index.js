@@ -164,6 +164,10 @@ const startApp = async () => {
     return app.render(req, res, `/${req.params.locale}/job`, params)
   })
   /* eslint-enable no-prototype-builtins */
+  
+  server.get('/healthz', (req, res) => {
+    res.send('ok')
+  })
 
   server.get('*', (req, res) => {
     return handle(req, res)

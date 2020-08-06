@@ -107,7 +107,7 @@ const Component = ({
             <TextField
               input={input}
               meta={meta}
-              inputmode="numeric"
+              inputMode="numeric"
               pattern="[0-9]*"
               label={translations.contactUs.form.phone}
             />
@@ -187,7 +187,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
     let res
     const isTestEmail = values.email === testEmail
     const shouldSendDataLayerEvent = window.dataLayer && !isTestEmail
-    const dataLayerEventNamePrefix = inquiryTypeId === 'new-project' ? '' : 'jobs_'
+    const dataLayerEventNamePrefix = inquiryTypeId === 'new-project' ? 'form' : 'form_jbs'
     const submitUrl = inquiryTypeId === 'new-project' ? '/api/submit-form' : '/api/send-email'
 
     try {
@@ -201,7 +201,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
       })
     } catch {
       if (shouldSendDataLayerEvent) {
-        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_fail' })
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + '_fail' })
       }
 
       return { [FORM_ERROR]: translations.common.form.errors.general }
@@ -209,7 +209,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
 
     if (res.status === 201) {
       if (shouldSendDataLayerEvent) {
-        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_success' })
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + '_success' })
       }
     } else {
       let error
@@ -221,7 +221,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
       }
 
       if (shouldSendDataLayerEvent) {
-        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_fail' })
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + '_fail' })
       }
 
       return { [FORM_ERROR]: error }

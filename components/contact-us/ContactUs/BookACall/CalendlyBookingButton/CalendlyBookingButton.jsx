@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import styles, { modal as modalStyles } from './CalendlyBookingButton.styles'
 import { L10nConsumer } from '../../../../../utils/l10nProvider'
-import { DeviceConsumer } from '../../../../../utils/deviceProvider'
 
 const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }) => {
+  useEffect(() => {
+    const isCalendlyEvent = (e) => e.data.event && e.data.event.indexOf('calendly') === 0
+    const handleCalendlyMessage = (e) => {
+      if (isCalendlyEvent(e) && e.data.event === 'calendly.event_scheduled') {
+        window.dataLayer.push({ event: 'booking_success' })
+      }
+    }
+
+    window.addEventListener('message', handleCalendlyMessage)
+
+    return () => window.removeEventListener('message', handleCalendlyMessage)
+  }, [])
+
   return (
     <>
       <button
@@ -13,6 +25,7 @@ const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }
         onClick={() => {
           /*eslint-disable-next-line no-undef */
           Calendly.initPopupWidget({ url: bookingUrl })
+          window.dataLayer.push({ event: 'booking_started' })
 
           return false
         }}
@@ -25,7 +38,7 @@ const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }
   )
 }
 
-export default DeviceConsumer(
+export default React.memo(
   L10nConsumer(styled(CalendlyBookingButton)`
     ${styles}
   `),

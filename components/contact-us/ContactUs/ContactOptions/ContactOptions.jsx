@@ -5,11 +5,12 @@ import ContactForm from './ContactForm'
 import BookACall from '../BookACall'
 import Heading from '../../../ui-kit/core-design/Heading'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
+import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 import styled from '@emotion/styled'
 import styles from './ContactOptions.styles'
 
-const ContactOptions = ({ className, l10n: { translations } }) => (
+const ContactOptions = ({ className, l10n: { translations }, isMobile }) => (
   <section className={className}>
     <div className="form-wrap">
       <Heading
@@ -29,7 +30,7 @@ const ContactOptions = ({ className, l10n: { translations } }) => (
           <span className="separator-text">{translations.contactUs.form.separator}</span>
         </div>
 
-        <BookACall className="book-a-call" />
+        {!isMobile && <BookACall className="book-a-call" />}
       </div>
     </div>
   </section>
@@ -40,6 +41,8 @@ ContactOptions.propTypes = {
   l10n: object,
 }
 
-export default L10nConsumer(styled(ContactOptions)`
-  ${styles}
-`)
+export default DeviceConsumer(
+  L10nConsumer(styled(ContactOptions)`
+    ${styles}
+  `),
+)

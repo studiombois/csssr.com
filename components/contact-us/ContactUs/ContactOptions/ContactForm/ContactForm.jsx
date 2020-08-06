@@ -107,8 +107,9 @@ const Component = ({
             <TextField
               input={input}
               meta={meta}
+              inputmode="numeric"
+              pattern="[0-9]*"
               label={translations.contactUs.form.phone}
-              type="tel"
             />
           )}
         />

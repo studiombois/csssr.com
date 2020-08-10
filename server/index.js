@@ -8,6 +8,7 @@ const next = require('next')
 const { pick } = require('ramda')
 const submitForm = require('./submit-form')
 const submitCalculatorForm = require('./submit-calculator-form')
+const sendEmail = require('./send-email')
 const generateSitemap = require('./generate-sitemap').generateSitemap
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 import { defaultLocaleByLanguage } from '../common/locales-settings'
@@ -95,6 +96,7 @@ const startApp = async () => {
 
   server.post('/api/submit-form', submitForm)
   server.post('/api/submit-calculator-form', submitCalculatorForm)
+  server.post('/api/send-email', sendEmail)
 
   server.get('/', (req, res) => {
     res.redirect(`/${res.locals.l10n.language}`)

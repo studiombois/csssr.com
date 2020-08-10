@@ -133,5 +133,9 @@ export default {
       title: (t) => t.common.header.links.careers.title,
       href: 'jobs',
     },
+    {
+      title: (t) => t.common.header.links.contacts.title,
+      href: 'contacts',
+    },
   ],
 }

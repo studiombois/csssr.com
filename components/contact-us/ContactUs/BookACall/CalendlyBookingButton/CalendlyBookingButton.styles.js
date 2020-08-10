@@ -216,6 +216,7 @@ const modal = () => css`
 
   @media (max-width:768px)  {
     .calendly-overlay .calendly-popup {
+      top: ${calcRem(56)};
       background-color: white;
     }
 
@@ -224,7 +225,12 @@ const modal = () => css`
     }
 
     .calendly-overlay .calendly-popup-close {
-      top: ${calcRem(72)};
+      top: ${calcRem(16)};
+      right: ${calcRem(32)};
+      height: ${calcRem(24)};
+      width: ${calcRem(24)};
+      background-image: url(${require('../../../../../static/icons/header/close.svg').default});
+      background-color: #18191B;
     }
   }
 

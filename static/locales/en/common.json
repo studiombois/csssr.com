@@ -81,9 +81,12 @@
       },
       "careers": {
         "title": "Careers"
+      },
+      "contacts": {
+        "title": "Contacts"
       }
     },
-    "action": "Contact us",
+    "action": "Hire us",
     "backLink": "Our services"
   },
   "footer": {
@@ -112,7 +115,8 @@
       "title": "Company",
       "blog": "Blog",
       "aboutUs": "About us",
-      "careers": "Careers"
+      "careers": "Careers",
+      "contacts": "Contacts"
     },
     "solutions": {
       "title": "Solutions",

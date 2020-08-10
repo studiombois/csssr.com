@@ -4,12 +4,13 @@ import styled from '@emotion/styled'
 import styles, { pictureStyles, textDataStyles } from './FormStateMessage.styles'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import { func, oneOf, string } from 'prop-types'
+import { func, oneOf, string, bool } from 'prop-types'
 import PictureForAllResolutions from '../../PictureForAllResolutions'
 
 class FormStateMessage extends PureComponent {
   static propTypes = {
     status: oneOf(['pending', 'submitting', 'success', 'fail']),
+    shouldShowPicture: bool,
     errorText: string,
     onTryAgain: func,
     feedbackEmail: string,
@@ -51,7 +52,7 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { className, status, testid, successPictureTestid } = this.props
+    const { className, status, testid, shouldShowPicture = true, successPictureTestid } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 
@@ -71,7 +72,7 @@ class FormStateMessage extends PureComponent {
               </span>
             </div>
           )}
-          {messageShown && (
+          {messageShown && shouldShowPicture && (
             <div className="picture">
               <PictureForAllResolutions
                 css={pictureStyles}

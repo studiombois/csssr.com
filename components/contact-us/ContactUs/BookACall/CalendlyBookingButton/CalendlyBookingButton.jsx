@@ -18,6 +18,11 @@ const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }
     return () => window.removeEventListener('message', handleCalendlyMessage)
   }, [])
 
+  useEffect(() => {
+    /*eslint-disable-next-line no-undef */
+    return () => Calendly.closePopupWidget()
+  }, [])
+
   return (
     <>
       <button

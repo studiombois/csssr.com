@@ -1,9 +1,9 @@
+import testEmail from '../utils/testEmail'
+
 const Sentry = require('@sentry/node')
 const { sales, TEST_TAG } = require('@csssr/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
-const testEmail = require('../utils/testEmail')
-
 const amoSales = sales.init(
   process.env.AMO_CRM_SALES_USER_LOGIN,
   process.env.AMO_CRM_SALES_USER_HASH,

@@ -1,8 +1,9 @@
+import testEmail from '../utils/testEmail'
+
 const Sentry = require('@sentry/node')
 const { express, TEST_TAG } = require('@csssr/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
-const testEmail = require('../utils/testEmail')
 const {
   retinaRadioButtons,
   additionalOptionsRadioButtons,

@@ -58,7 +58,7 @@ const PictureForAllResolutions = ({
 
 PictureForAllResolutions.propTypes = {
   className: string,
-  testid: string,
+  testId: string,
   images: object.isRequired,
   fallback: object,
   alt: string,

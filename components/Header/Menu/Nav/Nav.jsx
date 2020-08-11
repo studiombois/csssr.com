@@ -82,7 +82,7 @@ const Nav = ({
                         href={linkRegExp.test(href) ? href : `/${language}/${href}`}
                         isNextLink={!linkRegExp.test(href)}
                         target={linkRegExp.test(href) ? '_blank' : '_self'}
-                        rel="noopener noreferrer"
+                        rel={linkRegExp.test(href) ? 'noopener noreferrer' : null}
                       >
                         <Icon className={cn('icon', `icon_${id}`)} />
 

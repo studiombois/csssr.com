@@ -13,7 +13,6 @@ import TextareaField from '../ui-kit/TextareaField'
 import AnimatedButton from '../ui-kit/core-design/AnimatedButton'
 import Text from '../ui-kit/core-design/Text'
 import FormStateMessage from '../ui-kit/FormStateMessage'
-// import PrivacyPolicyCheckbox from '../PrivacyPolicyCheckbox'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 
 class ContactForm extends PureComponent {
@@ -202,18 +201,6 @@ class ContactForm extends PureComponent {
           />
         </div>
       ),
-      // privacyPolicy: (
-      //   <div className={cn('field', 'field_type_checkbox')}>
-      //     <PrivacyPolicyCheckbox
-      //       id={(fieldsIds && fieldsIds.privacyPolicy) || 'privacyPolicy'}
-      //       name="privacyPolicy"
-      //       testid={`${formName}:field:callbackForm.privacyPolicy.checkbox`}
-      //       linkTestId={`${formName}:link:callbackForm.privacyPolicy`}
-      //       tabIndex={getTabIndex}
-      //       required
-      //     />
-      //   </div>
-      // ),
       newsletter: (
         <div className={cn('field', 'field_type_checkbox')}>
           <Field
@@ -261,7 +248,6 @@ class ContactForm extends PureComponent {
         />
 
         {fields.map(this.renderField)}
-        {/* {this.renderField('privacyPolicy')} */}
 
         {this.renderField('newsletter')}
 

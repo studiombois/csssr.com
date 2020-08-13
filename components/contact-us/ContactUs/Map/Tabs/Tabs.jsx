@@ -15,7 +15,7 @@ const Tabs = ({ className, l10n: { translations }, activeAddressId, setActiveAdd
     <div className={className}>
       {tabs.map(({ id, value }) => (
         <button
-          data-testid={`Contacts:tab:${id}`}
+          data-testid={`Contacts:tab.${id}`}
           className={cn('item', { _active: activeAddressId === id })}
           key={id}
           type="button"

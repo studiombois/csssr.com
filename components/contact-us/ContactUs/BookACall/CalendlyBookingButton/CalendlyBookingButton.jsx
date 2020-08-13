@@ -27,6 +27,7 @@ const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }
     <>
       <button
         className={className}
+        data-testid="contactUs:button:bookACall.call"
         onClick={() => {
           /*eslint-disable-next-line no-undef */
           Calendly.initPopupWidget({ url: bookingUrl })

@@ -45,7 +45,7 @@ const Dropdown = ({ className, inquiryTypeId, setInquiryTypeId, l10n: { translat
               key={id}
               disabled={id === inquiryTypeId}
               onClick={selectItem(id)}
-              data-testid="Contacts:button:projectType"
+              data-testid={`Contacts:dropdownOption.${id}`}
             >
               {value(translations)}
             </button>

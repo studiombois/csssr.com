@@ -30,7 +30,7 @@ const Address = ({ className, l10n: { translations }, activeAddressId }) => {
         ))}
       </div>
 
-      <p className="text" data-testid={`Contacts:text:meeting`}>
+      <p className="text" data-testid={`Contacts:text.meeting`}>
         {translations.contactUs.map.addresses.text}
       </p>
     </div>

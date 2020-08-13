@@ -158,7 +158,7 @@ const Component = ({
           type="submit"
           disabled={status === 'submitting' || status === 'fail'}
           status={status}
-          data-testid={`${formName}:button:formSubmit`}
+          data-testid={`${formName}:button.formSubmit`}
         >
           <span className="submit-text">{translations.contactUs.form.submitText}</span>
         </AnimatedButton>

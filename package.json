@@ -18,7 +18,7 @@
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@sentry/browser": "^5.20.1",
+    "@sentry/browser": "^5.21.1",
     "@sentry/node": "^5.20.1",
     "@svgr/webpack": "^5.4.0",
     "@zeit/next-source-maps": "0.0.4-canary.1",

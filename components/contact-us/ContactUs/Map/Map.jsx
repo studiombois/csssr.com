@@ -11,14 +11,15 @@ import styles, { backgroundImagesStyles } from './Map.styles'
 import BookACall from '../BookACall'
 
 import { MapConsumer } from '../../../../utils/mapContext'
+import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
-const Map = ({ className, activeAddressId }) => {
+const Map = ({ className, activeAddressId, isMobile }) => {
   return (
     <aside className={className} id="map">
       <Global styles={backgroundImagesStyles} />
 
       <Tabs />
-      <BookACall className="book-a-call" />
+      {isMobile && <BookACall className="book-a-call" />}
       <Address />
       <span className={cn('map', `map-${activeAddressId}`)} data-testid="Contacts:block.map" />
     </aside>
@@ -29,6 +30,8 @@ Map.propTypes = {
   className: string,
 }
 
-export default MapConsumer(styled(Map)`
-  ${styles}
-`)
+export default DeviceConsumer(
+  MapConsumer(styled(Map)`
+    ${styles}
+  `),
+)

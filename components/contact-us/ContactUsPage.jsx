@@ -13,7 +13,13 @@ const ContactUsPage = ({ l10n: { translations } }) => {
       <Head
         title={translations.contactUs.meta.title}
         description={translations.contactUs.meta.description}
-      />
+      >
+        <script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          async
+        />
+      </Head>
       <ContactUs />
     </Layout>
   )

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Express Web Development",
-    "description": "If you need to build a solid, reliable HTML-layout for a website or e-mail newsletter based on your design, you came to the right place."
+    "description": "If you need to build a solid, reliable HTML layout for a website or email newsletter based on your design, you are in the right place."
   },
   "greeting": {
     "title": "<strong>Express</strong> Web<br class='heading-br br'/> Development",
@@ -15,7 +15,7 @@
   },
   "workflow": {
     "title": "Two Days to&nbsp;Start",
-    "text1": "Estimate the cost of&nbsp;your project using <a className=\"button\" href=\"#calculator\">our Calculator</a> and fill out the application form.",
+    "text1": "Estimate the cost of&nbsp;your project using <a className=\"button\" href=\"#calculator\" data-testid='Express:link.ourCalculator'>our Calculator</a> and fill out the application form.",
     "text2": "Within one working day we&rsquo;ll give you an&nbsp;estimate, and send you contract and NDA templates as&nbsp;well as&nbsp;some additional questions.",
     "text3": "You provide&nbsp;us your company details, answer our questions and ask any of&nbsp;your own.",
     "text4": "Within a&nbsp;day we&rsquo;ll send you a&nbsp;finalized contract, a&nbsp;commercial offer and a&nbsp;prepayment invoice.",

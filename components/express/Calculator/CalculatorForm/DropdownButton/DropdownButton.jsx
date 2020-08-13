@@ -6,7 +6,12 @@ import styles from './DropdownButton.styles'
 
 const OriginDropdownButton = ({ isExpanded, onClick, className }) => {
   return (
-    <button className={className} onClick={onClick} type="button">
+    <button
+      className={className}
+      onClick={onClick}
+      type="button"
+      data-testid="Calculator:button.collapseExpand"
+    >
       <Text type="perforator" size="s">
         {isExpanded ? 'Collapse' : 'Expand'}
       </Text>

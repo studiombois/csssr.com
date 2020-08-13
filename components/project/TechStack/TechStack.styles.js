@@ -67,7 +67,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
   .team-number {
     &:before {
       margin-top: ${calcRem(5)};
-      height: 4px;
+      height: ${calcRem(4)};
       background-position: -8px 0;
       background-image: url(${require('../../../static/icons/project/techStack/team/line.svg').default});
     }
@@ -168,9 +168,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
     .duration-number {
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
-        left: 49px;
-        height: 18px;
+        left: ${calcRem(49)};
+        top: calc(50% - ${calcRem(4)});
+        height: ${calcRem(24)};
         background-size: auto;
+        background-position: left bottom;
       }
     }
 
@@ -182,7 +184,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
         margin-top: 0;
-        left: 36px;
+        left: ${calcRem(36)};
       }
     }
   }
@@ -216,19 +218,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
     .duration {
       grid-row: 1;
       grid-column: 3 / span 4;
+      margin-left: ${calcRem(-10)};
     }
 
     .team {
       grid-row: 2;
       grid-column: 3 / span 4;
       margin-top: ${calcRem(40)};
+      margin-left: ${calcRem(-10)};
     }
 
     .duration-number {
       &:before {
         background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
-        left: 49px;
-        height: 18px;
+        left: ${calcRem(49)};
+        height: ${calcRem(18)};
+        background-position: center;
         background-size: auto;
       }
     }
@@ -248,9 +253,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
     .team-number {
       &:before {
-        left: 36px;
+        left: ${calcRem(36)};
         margin: 0;
-        min-width: 385px;
+        min-width: ${calcRem(385)};
         background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
       }
     }

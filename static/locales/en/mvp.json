@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Outsourced MVP Development",
-    "description": "We'll help you to test out your business ideas and demonstrate the product's potential to investors."
+    "description": "By developing MVP we'll help you to test out your business ideas and demonstrate your product potential to investors."
   },
   "hero": {
     "title": "<span style=\"font-weight: bold;\">MVP</span><br />Development",
@@ -58,7 +58,8 @@
       }, {
         "title": "Flexibility",
         "description": "We&nbsp;assemble teams based on&nbsp;the appropriate technologies, scope of&nbsp;work and budget for each project, while our commitment to&nbsp;efficiency and our core development principles remains constant.",
-        "link": "Read about our core values "
+        "link": "Read about our core values",
+        "testid": "MVP:link:advantages.flexibility"
       }],
       [{
         "title": "High-Level Expertise",
@@ -66,7 +67,8 @@
       }, {
         "title": "Transparency",
         "description": "We&nbsp;work with Agile methodologies, employing weekly sprints that help&nbsp;us better plan load, easily break down tasks and provide better transparency.",
-        "link": "Read about how we work"
+        "link": "Read about how we work",
+        "testid": "MVP:link:advantages.transparency"
       }]
     ]
   },
@@ -83,7 +85,10 @@
           "We&nbsp;help you choose the most suitable ",
           ", assemble a&nbsp;team and start bringing your ideas to&nbsp;life."
         ],
-        "link": "technology stack"
+        "link": {
+          "title": "technology stack",
+          "testid": "MVP:link:process.development"
+        }
       },
       "launch": {
         "title": "Launch",

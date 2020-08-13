@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Бэкенд и DevOps",
-    "description": "Улучшите ваш веб-сервис с помощью надежной бэкенд-разработки и правильно настроенной инфраструктуры."
+    "description": "Группа компаний CSSSR предлагает услуги по бэкенд разработке. Улучшите ваш веб-сервис с помощью надежной бэкенд разработки и правильно настроенной инфраструктуры."
   },
   "hero": {
     "title": "<span style='font-weight: bold;'>Бэкенд</span><br />и&nbsp;<span style='font-weight: bold;'>DevOps</span>",
@@ -38,7 +38,7 @@
     "mongoDb": "Мы&nbsp;выбираем базу данных в&nbsp;зависимости от&nbsp;типа задач: <span style='font-weight:900'>MongoDB</span> (NoSQL) или <span style='font-weight:900'>PostgreSQL</span>.",
     "java": "Мы&nbsp;можем писать на&nbsp;проверенном временем <span style='font-weight:900'>Java</span>, но&nbsp;предпочитаем <span style='font-weight:900'>Kotlin</span>&nbsp;&mdash; современный язык, работающий на&nbsp;<span style='font-weight:900'>JVM</span> (Java Virtual Machine).",
     "experts": "Наши эксперты готовы проконсультировать вас по&nbsp;технологиям, которые лучше всего подойдут для вашего проекта.",
-    "link": "Взгляните на&nbsp;другие <a style='text-decoration: underline; color: #0076FF;' href='/ru/tech-stack'>технологии, которые мы&nbsp;используем.</a>",
+    "link": "Взгляните на&nbsp;другие <a style='text-decoration: underline; color: #0076FF;' href='/ru/tech-stack' data-testid='BackendAndDevops:link:techstack'>технологии, которые мы&nbsp;используем.</a>",
     "javaImgAlt": "Стилизованные логотипы Kotlin и Java",
     "mongoDbImgAlt": "Слон символизирующий PostgreSQL"
   },

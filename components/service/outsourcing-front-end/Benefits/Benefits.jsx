@@ -11,8 +11,8 @@ import Text from '../../../ui-kit/core-design/Text'
 import Grid from '../../../ui-kit/core-design/Grid'
 
 const Benefits = ({ className, l10n: { translations } }) => (
-  <Grid as="article" className={className}>
-    <aside>
+  <Grid as="article" className={className} data-testid="Outsourcing:block:benefits">
+    <aside data-testid="Outsourcing:block:text">
       <div className="sticky-wrapper">
         <Heading
           className="title"
@@ -34,7 +34,7 @@ const Benefits = ({ className, l10n: { translations } }) => (
       </div>
     </aside>
 
-    <List />
+    <List testid="Outsourcing:block:animation" />
   </Grid>
 )
 

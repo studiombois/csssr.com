@@ -16,6 +16,7 @@ const TextField = ({
   input: { name, type, value, onBlur, onChange, onFocus },
   meta: { error, invalid, submitError, submitFailed },
   required,
+  ...rest
 }) => {
   const showError = invalid && submitFailed
   const handleChange = (event) => {
@@ -39,6 +40,7 @@ const TextField = ({
         data-testid={testid}
         required={required}
         aria-required={required}
+        {...rest}
       />
 
       {label && (

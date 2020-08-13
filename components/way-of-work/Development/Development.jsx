@@ -18,7 +18,7 @@ const Development = ({ className, id, l10n: { translations } }) => {
   return (
     <section className={className} id={id}>
       <Grid>
-        <Heading.H1
+        <Heading.H2
           type="slab"
           size="m"
           dangerouslySetInnerHTML={{ __html: translations.wayOfWork.development.title }}
@@ -32,7 +32,7 @@ const Development = ({ className, id, l10n: { translations } }) => {
           alt={scrumban.imgAlt(translations)}
         />
 
-        <Heading.H2
+        <Heading.H3
           type="regular"
           size="l"
           dangerouslySetInnerHTML={{ __html: scrumban.title(translations) }}
@@ -70,7 +70,7 @@ const Development = ({ className, id, l10n: { translations } }) => {
           alt={review.imgAlt(translations)}
         />
 
-        <Heading.H2
+        <Heading.H3
           type="regular"
           size="l"
           dangerouslySetInnerHTML={{ __html: review.title(translations) }}

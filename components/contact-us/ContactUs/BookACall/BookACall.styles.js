@@ -12,15 +12,13 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     height: ${calcRem(76)};
   }
 
-  .manager-name,
-  .reservation-heading {
+  .manager-name {
     font-weight: 500;
     font-size: ${calcRem(14)};
     line-height: ${calcRem(24)};
   }
 
-  .manager-position,
-  .reservation-time {
+  .manager-position {
     font-weight: normal;
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
@@ -34,28 +32,16 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     color: ${colors.primary.origin};
   }
 
-  .reservation-description {
-    font-weight: 500;
-    font-size: ${calcRem(12)};
-    line-height: ${calcRem(16)};
-    color: ${colors.secondary.gray};
-  }
-
   .manager-name,
   .manager-position,
-  .reservation-heading,
-  .reservation-time,
   .email,
-  .reservation-description,
   .counter {
     font-family: Roboto;
     font-style: normal;
   }
 
   .manager-name,
-  .manager-position,
-  .reservation-heading,
-  .reservation-time {
+  .manager-position {
     color: ${colors.secondary.darken100};
   }
 
@@ -67,6 +53,24 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     color: ${colors.secondary.gray};
   }
 
+  .button-wrap {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .communication {
+    width: 100%;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    font-size: ${calcRem(12)};
+    line-height: ${calcRem(16)};
+    text-align: center;
+    color: ${colors.secondary.gray};
+    margin-top: ${calcRem(10)};
+  }
+
   .button {
     padding-right: ${calcRem(27)};
     padding-left: ${calcRem(27)};
@@ -75,23 +79,20 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
 
   ${above.mobile} {
     & {
-      padding-bottom: ${calcRem(80)};
       flex-direction: column;
       align-items: center;
       width: ${calcRem(260)};
     }
 
-    &.call_was_booked {
-      padding-bottom: ${calcRem(86)};
-    }
-
-    .reservation,
     .manager {
       text-align: center;
     }
 
-    .manager-name,
-    .reservation-heading {
+    .manager {
+      margin-bottom: ${calcRem(42)};
+    }
+
+    .manager-name {
       margin-top: ${calcRem(12)};
     }
 
@@ -101,20 +102,14 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
 
     .manager-name,
     .manager-position,
-    .reservation-heading,
-    .reservation-time,
-    .email,
-    .reservation-description {
+    .email {
       text-align: center;
     }
 
-    .reservation-description  {
-      margin-top: ${calcRem(4)};
-    }
-
-    .button {
-      position: absolute;
-      bottom: 0;
+    .communication {
+      & > span {
+        display: block;
+      }
     }
 
     .success-icon_small {
@@ -143,7 +138,6 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       background-color: white;
     }
 
-    .reservation,
     .manager {
       width: ${calcRem(200)};
     }
@@ -153,8 +147,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       margin-right: ${calcRem(16)};
     }
 
-    .manager-name,
-    .reservation-heading {
+    .manager-name {
       line-height: ${calcRem(16)};
     }
 
@@ -162,8 +155,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       margin-top: ${calcRem(4)};
     }
 
-    .manager-position,
-    .reservation-time {
+    .manager-position {
       margin-top: ${calcRem(4)};
     }
 
@@ -171,14 +163,18 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       margin-top: ${calcRem(4)};
     }
 
-    .reservation-description  {
-      margin-top: ${calcRem(6)};
+    .communication {
+      order: -1;
+      margin-bottom: ${calcRem(4)};
     }
 
-    .button {
+    .button-wrap {
       position: absolute;
       bottom: 0;
       left: 0;
+    }
+
+    .button {
       height: ${calcRem(40)};
       width: 100%;
       font-size: ${calcRem(12)};

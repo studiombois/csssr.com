@@ -15,14 +15,14 @@ import { TypeInquiryContext } from '../../../../../utils/typeInquiryContext'
 import { MapContext } from '../../../../../utils/mapContext'
 import { L10nConsumer } from '../../../../../utils/l10nProvider'
 import contactUsFormValidationRules from '../../../../../utils/validators/contactUsFormValidationRules'
-import getProfileIdByInquiryTypeAndActiveAddress from '../../../../../utils/getProfileIdByInquiryTypeAndActiveAddress'
+import getProfileId from '../../../../../utils/getProfileId'
 import getGaCid from '../../../../../utils/client/getGaCid'
 import testEmail from '../../../../../utils/testEmail'
 import profiles from '../../../../../data/contact-us/profiles'
 
 const Component = ({
   className,
-  l10n: { translations },
+  l10n: { translations, language },
   submitError,
   formName,
   submitting,
@@ -85,7 +85,7 @@ const Component = ({
     }
   }
   const handleTryToFillFormAgain = () => setSubmittedToServerStatus(false)
-  const profileId = getProfileIdByInquiryTypeAndActiveAddress(inquiryTypeId, activeAddressId)
+  const profileId = getProfileId(inquiryTypeId, activeAddressId, language)
   const feedbackEmail = profiles[profileId].email
   const status = getStatus()
 
@@ -113,8 +113,8 @@ const Component = ({
             <TextField
               input={input}
               meta={meta}
+              inputMode="tel"
               label={translations.contactUs.form.phone}
-              type="tel"
               testid={`${formName}:field:contacts.phone`}
             />
           )}
@@ -141,7 +141,10 @@ const Component = ({
             component={Checkbox}
             testid={`${formName}:field:contacts.agree`}
           >
-            <span className="newsletter-text">{translations.contactUs.form.agree}</span>
+            <span
+              className="newsletter-text"
+              dangerouslySetInnerHTML={{ __html: translations.contactUs.form.agree }}
+            />
           </Field>
         </div>
 
@@ -196,7 +199,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
     let res
     const isTestEmail = values.email === testEmail
     const shouldSendDataLayerEvent = window.dataLayer && !isTestEmail
-    const dataLayerEventNamePrefix = inquiryTypeId === 'new-project' ? '' : 'jobs_'
+    const dataLayerEventNamePrefix = inquiryTypeId === 'new-project' ? 'form' : 'form_jbs'
     const submitUrl = inquiryTypeId === 'new-project' ? '/api/submit-form' : '/api/send-email'
 
     try {
@@ -210,7 +213,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
       })
     } catch {
       if (shouldSendDataLayerEvent) {
-        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_fail' })
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + '_fail' })
       }
 
       return { [FORM_ERROR]: translations.common.form.errors.general }
@@ -218,7 +221,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
 
     if (res.status === 201) {
       if (shouldSendDataLayerEvent) {
-        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_success' })
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + '_success' })
       }
     } else {
       let error
@@ -230,7 +233,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
       }
 
       if (shouldSendDataLayerEvent) {
-        window.dataLayer.push({ event: dataLayerEventNamePrefix + 'form_fail' })
+        window.dataLayer.push({ event: dataLayerEventNamePrefix + '_fail' })
       }
 
       return { [FORM_ERROR]: error }

@@ -56,7 +56,7 @@ pipeline {
 
   options {
     skipDefaultCheckout(true)
-    timeout(time: 1, unit: 'HOURS')
+    timeout(time: config.maxTestsDurationMinutes ?: 60, unit: 'MINUTES')
   }
 
   stages {
@@ -106,7 +106,7 @@ pipeline {
             docker cp `cat "${scmVars.GIT_COMMIT}.cid"`:/usr/src/app/nightwatch/jenkins-report.xml artifacts/
             docker cp `cat "${scmVars.GIT_COMMIT}.cid"`:/usr/src/app/nightwatch/failure-screenshots artifacts/
             docker cp `cat "${scmVars.GIT_COMMIT}.cid"`:/usr/src/app/nightwatch/screenshots artifacts/
-            docker rm `cat "${scmVars.GIT_COMMIT}.cid"`
+            docker rm --force `cat "${scmVars.GIT_COMMIT}.cid"`
             rm "${scmVars.GIT_COMMIT}.cid"
           """
 

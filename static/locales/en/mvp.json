@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "CSSSR <span style=\"font-weight: bold;\">MVP</span> Development",
-    
+
     "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;intended to&nbsp;help guide its future development.",
     "button": "Start Your Project"
   },
@@ -97,8 +97,8 @@
     "mvpOn": "Working on a project step-by-step we finally create a product that meets all the client's requirements.",
     "mvpOff": "Development process without MVP",
     "ourAdvantages": [
-      ["With us, you can start development in less than a week.", "We continuously improve the quality of our work."],
-      ["We are flexible enough in our work, but at the same time we follow the firm principles", "We use methodologies that provide better transparency."]
+      ["With us, you can start development in less than a week.", "We are flexible enough in our work, but at the same time we follow the firm principles."],
+      ["We continuously improve the quality of our work.", "We use methodologies that provide better transparency."]
     ],
     "process": "CSSSR's process of work"
   }

@@ -1,7 +1,7 @@
 {
   "gazpromNeft": {
    "meta": {
-      "title": "Project: Gazprom Neft - Professionals 4.0",
+      "title": "Gazprom Neft - Project: Professionals 4.0",
       "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
@@ -80,7 +80,7 @@
   },
   "s7airlines": {
     "meta": {
-      "title": "Project: S7 Airlines - Personal Account",
+      "title": "S7 Airlines - Project: Personal Account",
       "description": "S7 Airline Customer's personal account: we have developed the entire front-end, written on Next.js, for the adaptive website of the project."
     },
     "hero": {

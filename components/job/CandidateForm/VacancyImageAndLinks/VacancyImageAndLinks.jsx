@@ -12,13 +12,18 @@ const VacancyImageAndLinks = ({
   className,
   vacancies,
   pictureName,
+  pathName,
   name,
 }) => (
   <div className={className}>
     {pictureName && (
       <PictureForAllResolutions
         customResolutions={['360']}
-        image={{ namespace: 'job', key: `${pictureName}`, alt: name }}
+        image={{
+          namespace: 'job',
+          key: `${pictureName}`,
+          alt: translations.job.imgsAlt[pathName] || name,
+        }}
         css={vacancyImageStyles}
       />
     )}

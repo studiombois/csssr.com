@@ -11,9 +11,9 @@ const OriginInputControl = ({
   value,
   onChange,
   maxLength,
-  testidInput,
-  testidBtnIncrement,
-  testidBtnDecrement,
+  testIdInput,
+  testIdBtnIncrement,
+  testIdBtnDecrement,
 }) => {
   const handleOnClick = (event) => {
     const updatedValue = `${Number(value) + Number(event.target.dataset.step)}`
@@ -28,7 +28,7 @@ const OriginInputControl = ({
         label={label}
         onChange={onChange}
         maxLength={maxLength}
-        data-testid={testidInput}
+        data-testid={testIdInput}
       />
       <button
         className={cn({
@@ -39,14 +39,14 @@ const OriginInputControl = ({
         data-step="-1"
         type="button"
         onClick={handleOnClick}
-        data-testid={testidBtnDecrement}
+        data-testid={testIdBtnDecrement}
       />
       <button
         className="button increment"
         data-step="1"
         type="button"
         onClick={handleOnClick}
-        data-testid={testidBtnIncrement}
+        data-testid={testIdBtnIncrement}
       />
     </div>
   )
@@ -61,9 +61,9 @@ OriginInputControl.propTypes = {
   label: string,
   maxLength: string,
   onChange: func,
-  testidInput: string,
-  testidBtnIncrement: string,
-  testidBtnDecrement: string,
+  testIdInput: string.isRequired,
+  testIdBtnIncrement: string.isRequired,
+  testIdBtnDecrement: string.isRequired,
 }
 
 export { InputControl }

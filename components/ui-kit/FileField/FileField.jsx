@@ -14,6 +14,7 @@ class FileField extends PureComponent {
     onFileFieldChange: func,
     autoFocus: bool,
     disabled: bool,
+    testId: string.isRequired,
   }
 
   state = {
@@ -41,6 +42,7 @@ class FileField extends PureComponent {
       input: { name, value, onBlur, onFocus },
       meta: { error, invalid, submitFailed },
       l10n: { translations },
+      testId,
     } = this.props
 
     const showError = invalid && submitFailed
@@ -60,6 +62,7 @@ class FileField extends PureComponent {
           type="file"
           disabled={disabled}
           aria-label={label}
+          data-testid={testId}
         />
         <div
           className={cn({

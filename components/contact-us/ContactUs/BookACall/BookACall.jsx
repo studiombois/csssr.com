@@ -11,7 +11,7 @@ import setBookingPossibility from '../../../../utils/setBookingPossibility'
 import { MapContext } from '../../../../utils/mapContext'
 import CalendlyBookingButton from './CalendlyBookingButton'
 
-const BookACall = ({ className, l10n: { translations, language } }) => {
+const BookACall = ({ className, l10n: { translations, language }, testId }) => {
   const { inquiryTypeId } = useContext(TypeInquiryContext)
   const { activeAddressId } = useContext(MapContext)
   const profileId = getProfileId(inquiryTypeId, activeAddressId, language)
@@ -36,11 +36,7 @@ const BookACall = ({ className, l10n: { translations, language } }) => {
           {translations.contactUs.bookACall.profiles[profileId].position}
         </div>
 
-        <a
-          href={`mailto:${profiles[profileId].email}`}
-          className="email"
-          data-testid="contactUs:link:bookACall:email"
-        >
+        <a href={`mailto:${profiles[profileId].email}`} className="email" data-testid={testId}>
           {profiles[profileId].email}
         </a>
       </figcaption>
@@ -60,6 +56,7 @@ const BookACall = ({ className, l10n: { translations, language } }) => {
 
 BookACall.propTypes = {
   className: string,
+  testId: string.isRequired,
 }
 
 export default L10nConsumer(styled(BookACall)`

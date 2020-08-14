@@ -13,7 +13,7 @@ import greetingImagesData from '../../../data/express/greeting'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const Greeting = ({ className, l10n: { translations } }) => {
+const Greeting = ({ className, l10n: { translations }, testId }) => {
   return (
     <Grid as="article" className={className}>
       <PictureForAllResolutions
@@ -43,7 +43,7 @@ const Greeting = ({ className, l10n: { translations } }) => {
         kind="primary"
         href="#calculator"
         dangerouslySetInnerHTML={{ __html: translations.express.greeting.button }}
-        data-testid="Express:link.greeting"
+        data-testid={testId}
       />
     </Grid>
   )
@@ -53,6 +53,7 @@ Greeting.propTypes = {
   className: string,
   isMsBrowser: bool,
   isMobile: bool,
+  testId: string.isRequired,
 }
 
 export default L10nConsumer(

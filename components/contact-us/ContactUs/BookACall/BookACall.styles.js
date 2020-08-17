@@ -86,10 +86,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
 
     .manager {
       text-align: center;
-    }
-
-    .manager {
-      margin-bottom: ${calcRem(42)};
+      margin-bottom: ${calcRem(40)};
     }
 
     .manager-name {
@@ -97,6 +94,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .email {
+      display: inline-block;
       margin-top: ${calcRem(10)};
     }
 

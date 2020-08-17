@@ -11,8 +11,8 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   .separator {
     position: relative;
-    bottom: 0;
-    margin-top: ${calcRem(143)};
+    bottom: ${calcRem(38)};
+    margin-top: ${calcRem(166)};
     display: flex;
     align-items: center;
     height: auto;
@@ -50,7 +50,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   ${desktop.all} {
     .heading {
-      margin-top: 68px;
+      margin-top: 54px;
     }
 
     .subheading {

@@ -182,11 +182,18 @@ class CandidateForm extends PureComponent {
   renderVacancyImageAndLinks = () => {
     const {
       vacancies,
-      vacancy: { name },
+      vacancy: { name, pathName },
     } = this.props
     const pictureName = picturesMap[this.props.vacancy.pathName]
 
-    return <VacancyImageAndLinks vacancies={vacancies} pictureName={pictureName} name={name} />
+    return (
+      <VacancyImageAndLinks
+        vacancies={vacancies}
+        pictureName={pictureName}
+        name={name}
+        pathName={pathName}
+      />
+    )
   }
 
   render() {

@@ -69,7 +69,7 @@ class Vacancies extends PureComponent {
             className="picture"
             images={howImages}
             fallback={howImages['desktop.l']}
-            alt={translations.jobs.faq.alt}
+            alt={translations.jobs.how.alt}
           />
 
           <h2 className="font_h2-regular">
@@ -85,7 +85,7 @@ class Vacancies extends PureComponent {
             className="picture"
             images={whoImages}
             fallback={whoImages['desktop.l']}
-            alt={translations.jobs.how.alt}
+            alt={translations.jobs.who.alt}
           />
 
           <h2 className="font_h2-regular">
@@ -101,7 +101,7 @@ class Vacancies extends PureComponent {
             className="picture"
             images={distanceImages}
             fallback={distanceImages['desktop.l']}
-            alt={translations.jobs.who.alt}
+            alt={translations.jobs.about.alt}
           />
 
           <h2

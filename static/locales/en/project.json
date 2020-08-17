@@ -1,7 +1,7 @@
 {
   "gazpromNeft": {
    "meta": {
-      "title": "Project: Gazprom Neft - Professionals 4.0",
+      "title": "Gazprom Neft - Project: Professionals 4.0",
       "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
@@ -80,7 +80,7 @@
   },
   "s7airlines": {
     "meta": {
-      "title": "Project: S7 Airlines - Personal Account",
+      "title": "S7 Airlines - Project: Personal Account",
       "description": "S7 Airline Customer's personal account: we have developed the entire front-end, written on Next.js, for the adaptive website of the project."
     },
     "hero": {
@@ -96,6 +96,7 @@
 
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "4",
@@ -143,7 +144,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "mosoblgaz": {
@@ -162,6 +164,7 @@
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -200,7 +203,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "brusnika": {
@@ -219,6 +223,7 @@
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1"
       },
@@ -257,7 +262,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     },
     "quote": {
       "text": "The result of our joint work was not only a software product, but also a new work style that we've developed with our colleagues. Thank you for your individual approach, courage throughout experiments and professionalism in difficult situations!",
@@ -284,6 +290,7 @@
     },
     "team": {
       "title": "Team Composition:",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "2"
@@ -324,7 +331,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "qmarketing": {
@@ -343,6 +351,7 @@
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -383,7 +392,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   }
 }

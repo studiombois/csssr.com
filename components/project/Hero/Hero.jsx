@@ -37,7 +37,7 @@ const Hero = ({
           dangerouslySetInnerHTML={{ __html: link(translations) }}
         />
 
-        <Heading.H3
+        <Heading.H2
           type="slab"
           size="m"
           dangerouslySetInnerHTML={{ __html: subHeading(translations) }}

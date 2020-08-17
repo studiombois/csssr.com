@@ -39,5 +39,14 @@
     "alt": "Pictures a man with questions",
     "title": "Have questions?",
     "link": "See FAQ"
+  },
+  "descriptions": {
+    "sales-executive-en-sg": "Careers at CSSSR: we are looking for a talented sales executive in Singapore. We need your energy, passion, and initiative to increase our brand awareness and boost new business acquisition.",
+    "sales-executive-en-us": "Careers at CSSSR: we are looking for a talented sales executive in the USA to promote our great front-end development services.",
+    "account-manager-ee": "Careers at CSSSR: expanding into Europe we are looking for a candidate familiar with the IT sector in Germany and the Netherlands.",
+    "copywriter-en": "Careers at CSSSR: we are looking for a talented and passionate person who loves to explore new topics and enjoys the process of writing."
+  },
+  "imgsAlt": {
+    "copywriter-en": "Copywriter career at CSSSR"
   }
 }

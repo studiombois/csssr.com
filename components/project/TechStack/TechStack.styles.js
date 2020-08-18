@@ -59,7 +59,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
   .duration-number {
     &:before {
-      height: 25px;
+      height: 26px;
       background-image: url(${require('../../../static/icons/project/techStack/duration/curvy-line.svg').default});
     }
   }

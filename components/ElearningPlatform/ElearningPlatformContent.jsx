@@ -410,17 +410,13 @@ class ElearningPlatformContent extends PureComponent {
             </p>
 
             <div className="team-specialists">
-              <img
-                src={require('../../static/elearning-platform/icons/team-specialists.svg').default}
-                alt="team-specialists"
-              />
+              <p className="team-number">150+</p>
+              <p className="team-label">specialists</p>
             </div>
 
             <div className="team-projects">
-              <img
-                src={require('../../static/elearning-platform/icons/team-projects.svg').default}
-                alt="team-projects"
-              />
+              <p className="team-number">500+</p>
+              <p className="team-label">projects</p>
             </div>
           </div>
         </div>

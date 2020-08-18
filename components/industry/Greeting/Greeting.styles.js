@@ -54,6 +54,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       z-index: -1;
       grid-column: 6 / span 7;
       margin-top: ${calcRem(42)};
+      margin-left: ${calcRem(40)};
     }
 
     .button {

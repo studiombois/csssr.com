@@ -1,4 +1,4 @@
-import testEmail from '../utils/testEmail'
+import testEmails from '../utils/testEmails'
 
 const Sentry = require('@sentry/node')
 const { sales, TEST_TAG } = require('@csssr/csssr-amo')
@@ -37,7 +37,7 @@ module.exports = async (req, res) => {
 
   const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies
 
-  const isTestEmail = email === testEmail
+  const isTestEmail = testEmails.includes(email)
   try {
     const amoResponse = await amoSales.createLead(isTestEmail ? TEST_TAG : language, {
       tags,

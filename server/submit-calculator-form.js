@@ -1,4 +1,4 @@
-import testEmail from '../utils/testEmail'
+import testEmails from '../utils/testEmails'
 
 const Sentry = require('@sentry/node')
 const { express, TEST_TAG } = require('@csssr/csssr-amo')
@@ -80,7 +80,7 @@ module.exports = async (req, res) => {
     res.locals.l10n.translations,
   )
 
-  const isTestEmail = email === testEmail
+  const isTestEmail = testEmails.includes(email)
   try {
     const amoResponse = await amoExpress.createLead(isTestEmail ? TEST_TAG : language, {
       tags,

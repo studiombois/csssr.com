@@ -1,5 +1,5 @@
-import React, { useState, useContext, useRef, useEffect } from 'react'
-import { string, object } from 'prop-types'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { object, string } from 'prop-types'
 import { Field, Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
@@ -17,7 +17,7 @@ import { L10nConsumer } from '../../../../../utils/l10nProvider'
 import contactUsFormValidationRules from '../../../../../utils/validators/contactUsFormValidationRules'
 import getProfileId from '../../../../../utils/getProfileId'
 import getGaCid from '../../../../../utils/client/getGaCid'
-import testEmail from '../../../../../utils/testEmail'
+import testEmails from '../../../../../utils/testEmails'
 import profiles from '../../../../../data/contact-us/profiles'
 
 const Component = ({
@@ -184,7 +184,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
     values.gacid = getGaCid()
 
     let res
-    const isTestEmail = values.email === testEmail
+    const isTestEmail = testEmails.includes(values.email)
     const shouldSendDataLayerEvent = window.dataLayer && !isTestEmail
     const dataLayerEventNamePrefix = inquiryTypeId === 'new-project' ? 'form' : 'form_jbs'
     const submitUrl = inquiryTypeId === 'new-project' ? '/api/submit-form' : '/api/send-email'

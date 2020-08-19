@@ -4,6 +4,7 @@ import { GtmNoScript, GtmScript } from 'react-gtm-components'
 import getGtmId from '../utils/getGtmId'
 import cn from 'classnames'
 import detectMsBrowser, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
+import Fonts from '../components/Fonts'
 
 // Текст для модального окна невалидного браузера
 const CONTENT = {
@@ -50,6 +51,7 @@ export default class MyDocument extends Document {
       <html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
         <Head>
           <GtmScript gtmId={gtmId} />
+          <Fonts />
         </Head>
         <body>
           <GtmNoScript gtmId={gtmId} />

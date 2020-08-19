@@ -61,6 +61,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: 269px;
+      max-height: 656px;
     }
 
     .quote {
@@ -80,6 +81,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: 389px;
+      max-height: 496px;
     }
 
     .quote {
@@ -99,6 +101,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: 429px;
+      max-height: 456px;
     }
 
     .quote {
@@ -120,6 +123,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       margin-top: ${calcRem(239)};
       grid-column: 2 / span 3;
+      max-height: ${calcRem(344)};
     }
 
     .quote {
@@ -153,6 +157,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       margin-top: ${calcRem(55)};
       grid-column: 2 / span 4;
+      max-height: ${calcRem(336)};
     }
 
     .quote {

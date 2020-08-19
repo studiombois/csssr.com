@@ -99,15 +99,25 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
       bottom: auto;
       left: ${calcRem(16)};
       right: ${calcRem(16)};
-      padding-top: ${calcRem(36)};
+      padding-top: ${calcRem(46)};
+      transition: height 100ms ease-in-out;
+    }
+
+    &._ru {
+      height: ${calcRem(262)};
+    }
+
+    .addresses {
+      flex-direction: column;
     }
 
     .address {
-      width: ${calcRem(144)};
+      width: ${calcRem(167)};
     }
 
     .address + .address {
-      margin-left: ${calcRem(10)};
+      margin-left: 0;
+      margin-top: ${calcRem(20)};
     }
   }
 `

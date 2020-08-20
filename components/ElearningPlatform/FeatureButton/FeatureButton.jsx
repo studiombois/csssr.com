@@ -1,33 +1,31 @@
 import React from 'react'
-import styled from '@emotion/styled'
 import cn from 'classnames'
-
+import styled from '@emotion/styled'
 import styles from './FeatureButton.styles'
 
 const FeatureButton = ({
   className,
-  text,
-  d,
   i,
   srcSet,
-  onClick,
-  clicked,
-  onMouseOver,
-  onMouseOut,
-  mobileSrcSet,
   im,
+  mobileSrcSet,
+  text,
+  d,
+  onMouseOver,
+  isActive,
   imageAlt,
 }) => {
   return (
-    <div className={className} onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+    <div
+      className={cn(className, {
+        active: isActive,
+      })}
+      onMouseOver={onMouseOver}
+    >
       <img src={i} srcSet={srcSet} alt={imageAlt} className="image" />
       <img src={im} srcSet={mobileSrcSet} alt={imageAlt} className="mobile-image" />
 
-      <div
-        className={cn('wrapper', {
-          'wrapper-active': clicked === 1,
-        })}
-      >
+      <div className="wrapper">
         <p className="font-p-4 title">{text}</p>
         <p className="font-p-2">{d}</p>
       </div>

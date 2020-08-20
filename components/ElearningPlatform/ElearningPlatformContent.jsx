@@ -449,7 +449,7 @@ class ElearningPlatformContent extends PureComponent {
               text="Payment Providers Integration"
               d="Add any payment provider you need"
               onMouseOver={() => this.setState({ activeFeatureImage: 'payment' })}
-              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              isActive={this.state.activeFeatureImage === 'payment'}
               imageAlt="Add any payment provider you need"
             />
 
@@ -461,7 +461,7 @@ class ElearningPlatformContent extends PureComponent {
               text="Skill-Based Learning System"
               d="Configure learning programms based on skills"
               onMouseOver={() => this.setState({ activeFeatureImage: 'skill' })}
-              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              isActive={this.state.activeFeatureImage === 'skill'}
               imageAlt="Configure learning programs based on skills"
             />
 
@@ -473,7 +473,7 @@ class ElearningPlatformContent extends PureComponent {
               text="Rating System"
               d="Choose the learning programm and see how skils grow"
               onMouseOver={() => this.setState({ activeFeatureImage: 'rating' })}
-              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              isActive={this.state.activeFeatureImage === 'rating'}
               imageAlt="Choose among the learning programs and see how skills grow"
             />
 
@@ -485,7 +485,7 @@ class ElearningPlatformContent extends PureComponent {
               text="Ecosystem integration"
               d="Connect the LMS to your own and unique existing tools and systems"
               onMouseOver={() => this.setState({ activeFeatureImage: 'ecosystem' })}
-              onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              isActive={this.state.activeFeatureImage === 'ecosystem'}
               imageAlt="Connect the LMS to your own current unique tools and systems"
             />
           </div>

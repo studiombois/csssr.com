@@ -343,7 +343,7 @@ const base = css`
         transition: all 0.1s ease-out;
     }
 
-    .advanced-feature-buttons > div:hover {
+    .advanced-feature-buttons > div.active {
         transform: translateY(-20px);
     }
 
@@ -678,7 +678,7 @@ const base = css`
             padding-bottom: 60px;
         }
 
-        .advanced-feature-buttons > div:hover {
+        .advanced-feature-buttons > div.active {
             transform: translateY(0);
         }
     }
@@ -976,7 +976,7 @@ const base = css`
             padding-right: 32px;
         }
 
-        .advanced-feature-buttons > div:hover {
+        .advanced-feature-buttons > div.active {
             margin-top: 40px;
         }
     }

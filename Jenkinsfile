@@ -2,6 +2,8 @@ pipeline {
   environment {
     branch = ""
     commit = ""
+    imageTag = ""
+    bash = "#!/bin/bash\nsource ~/.bashrc\nsource ~/.config/csssr/non-breaking-profile\n"
   }
   agent {
     label params.processImages ? 'master' : ''
@@ -25,6 +27,8 @@ pipeline {
           branch = GIT_BRANCH
           commit = GIT_COMMIT.substring(0,8)
           safeBranch = branch.replaceAll('/', '-').toLowerCase()
+          imageTag = "jenkins-build-${safeBranch}-${commit}"
+          image = "quay.csssr.cloud/csssr-team/csssr-com:${imageTag}"
         }
         echo "GIT_BRANCH: ${branch}"
         echo "GIT_COMMIT: ${commit}"
@@ -34,7 +38,7 @@ pipeline {
       steps {
         script {
           withCredentials([string(credentialsId: 'github-registry-read-only-token', variable: 'NPM_TOKEN')]) {
-            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} --network host . -t registry.csssr.cloud/csssr-com:${safeBranch}-${commit}"
+            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} . -t ${image}"
           }
         }
       }
@@ -42,9 +46,9 @@ pipeline {
     stage('Push Image') {
       steps {
         script {
-          withCredentials([usernamePassword(credentialsId: 'registry-csssr-cloud', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            sh "docker login -u ${USERNAME} -p \"${PASSWORD}\" registry.csssr.cloud"
-            sh "docker push registry.csssr.cloud/csssr-com:${safeBranch}-${commit}"
+          withCredentials([usernamePassword(credentialsId: 'quay-csssr-cloud', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            sh "docker login -u ${USERNAME} -p \"${PASSWORD}\" quay.csssr.cloud"
+            sh "docker push ${image}"
           }
         }
       }
@@ -53,27 +57,22 @@ pipeline {
       steps {
         script {
           sshagent(credentials: ['csssr-com-chart']) {
-            sh """
+            sh """${bash}
             rm -rf csssr.com-chart
-            git clone git@github.com:csssr-dreamteam/csssr.com-chart.git
+            git clone git@github.com:CSSSR/csssr.com-chart.git
             """
           }
 
           if (branch == 'master') {
-            sh """#!/bin/bash
-            source ~/.bashrc
-            set -x
+            sh """${bash}
             cd csssr.com-chart
-            export KUBECONFIG=/var/lib/jenkins/.kube/csssr-com-k3s.config
-            make deploy-production branch=${branch} commit=${safeBranch}-${commit}
+            make deploy-production imageTag=${imageTag}
             """
           } else {
-            sh """#!/bin/bash
-            source ~/.bashrc
-            set -x
+            sh """${bash}
             cd csssr.com-chart
-            export KUBECONFIG=/var/lib/jenkins/.kube/k8s-csssr-atlassian-kubeconfig.yaml
-            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${safeBranch}-${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin} processImages=${params.processImages}
+            git checkout -b jenkins
+            make deploy-release safeBranch=${safeBranch} branch=${branch} commit=${safeBranch}-${commit} csssrSpaceOrigin=${params.csssrSpaceOrigin}
             """
           }
         }

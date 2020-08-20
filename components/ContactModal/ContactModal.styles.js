@@ -27,7 +27,8 @@ const base = colors => css`
     overflow-y: auto;
   }
 
-  .modal-wrapper .content {
+  .modal-wrapper .content,
+  .modal-wrapper .privacyPolicy {
     color: #ffffff;
   }
 
@@ -59,6 +60,11 @@ const base = colors => css`
     cursor: pointer;
   }
 
+  .modal-wrapper .privacyPolicy {
+    grid-column: 2 / span 8;
+    margin-bottom: 2.5625rem;
+  }
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     .modal-wrapper {
       grid-template-columns: repeat(10, 96px);
@@ -77,6 +83,11 @@ const base = colors => css`
     .modal-wrapper {
       grid-template-columns: repeat(8, 4rem);
       width: 39rem;
+    }
+
+    .modal-wrapper .privacyPolicy {
+      grid-column: 2 / span 6;
+      margin-bottom: 2.5625rem;
     }
   }
 

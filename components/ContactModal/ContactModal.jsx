@@ -23,7 +23,6 @@ const fieldsIds = {
   phone: 'ConctactModalForm_phone',
   email: 'ConctactModalForm_email',
   message: 'ConctactModalForm_message',
-  privacyPolicy: 'ConctactModalForm_privacyPolicy',
   newsletter: 'ConctactModalForm_newsletter',
 }
 

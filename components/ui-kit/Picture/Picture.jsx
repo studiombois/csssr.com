@@ -21,7 +21,7 @@ const Picture = ({ images, ...props }) => {
 
 Picture.propTypes = {
   className: string,
-  testid: string,
+  testId: string,
   images: object.isRequired,
   fallback: object.isRequired,
   alt: string.isRequired,

@@ -33,8 +33,9 @@ const Item = ({ className, id, link, l10n: { translations, language } }) => (
           `}
           isNextLink
           dangerouslySetInnerHTML={{
-            __html: translations.mvp.process.stages[id].link,
+            __html: translations.mvp.process.stages[id].link.title,
           }}
+          data-testid={translations.mvp.process.stages[id].link.testid}
         />
         {unescapeHtmlEntities(translations.mvp.process.stages[id].description[1])}
       </Text>

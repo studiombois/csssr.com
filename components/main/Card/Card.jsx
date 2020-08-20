@@ -17,6 +17,7 @@ const Card = ({
   l10n: { translations },
   className,
   id,
+  testId,
   title,
   description,
   href,
@@ -93,7 +94,7 @@ const Card = ({
   if (isNextLink) {
     return (
       <NextLink href={href}>
-        <a className={cn('card', className)}>
+        <a className={cn('card', className)} data-testid={testId}>
           <CardBody />
           {children}
         </a>
@@ -112,6 +113,7 @@ const Card = ({
 Card.propTypes = {
   className: string,
   id: string,
+  testId: string,
   title: func,
   description: func,
   href: string,

@@ -30,6 +30,7 @@ const OurAdvantages = ({ className, l10n: { translations } }) => (
             itemId={advantageItemIndex}
             images={advantageItem.images}
             link={advantageItem.link}
+            testId={advantageItem.testId}
           />
         ))}
       </div>

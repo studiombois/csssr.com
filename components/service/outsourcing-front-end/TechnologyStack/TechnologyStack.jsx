@@ -64,6 +64,7 @@ const TechnologyStack = ({ className, l10n: { translations, language } }) => (
       size="m"
       isNextLink
       dangerouslySetInnerHTML={{ __html: translations.outsourcingFrontEnd.technologyStack.link }}
+      data-testid="Outsourcing:link:techstack"
     />
 
     <PictureForAllResolutions

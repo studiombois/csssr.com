@@ -9,22 +9,11 @@ const amoSales = sales.init(
 )
 
 module.exports = async (req, res) => {
-  const {
-    name,
-    phone,
-    email,
-    message,
-    pageName,
-    newsletter,
-    gacid,
-    language,
-    privacyPolicy,
-  } = req.body
+  const { name, phone, email, message, pageName, newsletter, gacid, language } = req.body
 
   const validationResult = validateFormFields(res.locals.l10n.translations, 'contactForm', {
     name,
     email,
-    privacyPolicy,
   })
 
   if (validationResult.errors) {

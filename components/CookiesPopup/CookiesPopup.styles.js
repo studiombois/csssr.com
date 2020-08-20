@@ -68,8 +68,8 @@ const base = ({ media }) => css`
     }
   }
 
-  @media (min-device-width : 375px) 
-  and (max-device-width : 812px) 
+  @media (min-device-width : 375px)
+  and (max-device-width : 812px)
   and (-webkit-min-device-pixel-ratio : 2)
   and (-webkit-max-device-pixel-ratio : 3) {
     & {
@@ -86,8 +86,6 @@ const base = ({ media }) => css`
     .close {
       top: ${calcRem(12)};
       right: ${calcRem(12)};
-      width: ${calcRem(12)};
-      height: ${calcRem(12)};
     }
 
     .cookies-text {

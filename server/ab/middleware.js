@@ -31,12 +31,16 @@ const loadAllAbExperiments = async () => {
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min
 const isObject = (value) => typeof value === 'object' && value !== null
 
-export const getVariantNameForNumber = (variants, number) => {
+export const getVariantForNumber = (variants, number) => {
   let result
-  for (let variant of variants) {
+  for (let i = 0; i < variants.length; i++) {
+    const variant = variants[i]
     number -= variant.weight
     if (number < 0) {
-      result = variant.name
+      result = {
+        name: variant.name,
+        index: i,
+      }
       break
     }
   }
@@ -50,19 +54,29 @@ export const getUserAb = (abExperiments, userAb) => {
     const variants = experimentData.variants
     if (variantFromCookie) {
       // Проверяем, что вариант из куки действительно существует в эксперименте
-      if (variants.some((variant) => variant.name === variantFromCookie)) {
+      const index = variants.findIndex((variant) => variant.name === variantFromCookie)
+      if (index !== -1) {
         return {
           ...memo,
-          [experimentName]: variantFromCookie,
+          [experimentName]: {
+            optimizeExperimentId: experimentData.optimizeExperimentId,
+            name: variantFromCookie,
+            index,
+          },
         }
       }
     }
 
     const random = randomInt(0, experimentData.weightsSum)
+    const variant = getVariantForNumber(experimentData.variants, random)
 
     return {
       ...memo,
-      [experimentName]: getVariantNameForNumber(experimentData.variants, random),
+      [experimentName]: {
+        optimizeExperimentId: experimentData.optimizeExperimentId,
+        name: variant.name,
+        index: variant.index,
+      },
     }
   }, {})
 }

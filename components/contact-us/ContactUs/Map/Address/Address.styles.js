@@ -100,7 +100,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
       left: ${calcRem(16)};
       right: ${calcRem(16)};
       padding-top: ${calcRem(46)};
-      transition: height 100ms ease-in-out;
     }
 
     &._ru {

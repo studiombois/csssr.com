@@ -10,7 +10,6 @@
   "testQuest": "or upload resume / CV",
   "name": "first name",
   "lastname": "last name",
-  "age": "age",
   "city": "city",
   "email": "E-mail",
   "send": "Submit application",

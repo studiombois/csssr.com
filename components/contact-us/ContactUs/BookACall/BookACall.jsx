@@ -24,7 +24,7 @@ const BookACall = ({ className, l10n: { translations, language } }) => {
         images={profiles[profileId].images}
         fallback={profiles[profileId].images.jpg}
         alt={translations.contactUs.bookACall.profiles[profileId].alt}
-        testId="contactUs:picture:bookACall.avatar"
+        testid="contactUs:picture:bookACall.avatar"
       />
 
       <figcaption className="manager">

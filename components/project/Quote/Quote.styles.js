@@ -51,6 +51,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .author-signature {
       margin-top: 4px;
     }
+
+    &.flant {
+      .text {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
   }
 
   ${desktop.l} {
@@ -111,6 +118,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         right: calc(100% + 53px);
       }
     }
+
+    &.flant {
+      .quote {
+        &::before {
+          top: 10px;
+        }
+      }
+    }
   }
 
   ${tablet.all} {
@@ -144,6 +159,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .author-signature {
       margin-top: ${calcRem(9)};
+    }
+
+    &.flant {
+      .quote {
+        &::before {
+          top: auto;
+          bottom: ${calcRem(74)};
+        }
+      }
+
+      .picture {
+        margin-top: auto;
+      }
     }
   }
 

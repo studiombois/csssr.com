@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import fetch from 'isomorphic-unfetch'
 import Head from '../../components/Head'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import Layout from '../../components/Layout'

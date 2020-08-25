@@ -127,9 +127,9 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
   ${mobile.all} {
     & {
       padding-top: ${calcRem(32)};
-      padding-right: ${calcRem(12)};
-      padding-bottom: ${calcRem(72)};
-      padding-left: ${calcRem(24)};
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-left: 0;
       flex-direction: row;
       flex-wrap: wrap;
       width: ${calcRem(328)};
@@ -143,6 +143,11 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     .manager-avatar,
     .success-icon_big {
       margin-right: ${calcRem(16)};
+    }
+
+    .manager-avatar {
+      margin-left: ${calcRem(24)};
+      margin-bottom: ${calcRem(32)};
     }
 
     .manager-name {
@@ -167,9 +172,8 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .button-wrap {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      margin-top: ${calcRem(-30)};
+      width: 100%;
     }
 
     .button {

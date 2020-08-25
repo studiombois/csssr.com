@@ -13,24 +13,12 @@ const base = ({ breakpoints: { mobile }}) => css`
     width: 100%;
     box-sizing: border-box;
     transition: top 300ms ease 0s;
+    position: fixed;
+    top: 0;
   }
 
   .logo-wrapper {
     font-size: 0;
-  }
-
-  &.invisible,
-  &.visible  {
-    position: fixed;
-  }
-
-  &.invisible {
-    top: -4rem;
-  }
-
-  &.visible {
-    position: fixed;
-    top: 0;
   }
 
   .logo {

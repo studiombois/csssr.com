@@ -37,7 +37,7 @@
     "phone": "Phone <span>(optional)</span>",
     "text": "Drop us a line",
     "agree": "I agree to receive information and commercial offers",
-    "policy":"By submitting the form, you agree to your personal data being stored and used for the purposes stated in the <a href='/en/privacy-policy' target='_blank'>Privacy Policy</a>.",
+    "policy":"By submitting the form, you agree to your personal data being stored and used for the purposes stated in the <a href='/en/privacy-policy' target='_blank' data-testid='contactUs:link:privacyPolicy'>Privacy Policy</a>.",
     "submitText":"Submit",
     "typeInquiry": {
       "label": "Type of inquiry",

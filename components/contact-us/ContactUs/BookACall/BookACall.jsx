@@ -26,18 +26,23 @@ const BookACall = ({ className, l10n: { translations, language } }) => {
           images={profiles[profileId].images}
           fallback={profiles[profileId].images.jpg}
           alt={translations.contactUs.bookACall.profiles[profileId].alt}
+          testid="contactUs:picture:bookACall.avatar"
         />
 
         <figcaption className="manager">
-          <div className="manager-name">
+          <div className="manager-name" data-testid="contactUs:text:bookACall:name">
             {translations.contactUs.bookACall.profiles[profileId].name}
           </div>
 
-          <div className="manager-position">
+          <div className="manager-position" data-testid="contactUs:text:bookACall:position">
             {translations.contactUs.bookACall.profiles[profileId].position}
           </div>
 
-          <a href={`mailto:${profiles[profileId].email}`} className="email">
+          <a
+            href={`mailto:${profiles[profileId].email}`}
+            className="email"
+            data-testid="contactUs:link:bookACall:email"
+          >
             {profiles[profileId].email}
           </a>
         </figcaption>

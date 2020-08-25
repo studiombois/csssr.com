@@ -21,7 +21,7 @@ const Map = ({ className, activeAddressId, isMobile }) => {
       <Tabs />
       {isMobile && <BookACall className="book-a-call" />}
       <Address />
-      <span className={cn('map', `map-${activeAddressId}`)} />
+      <span className={cn('map', `map-${activeAddressId}`)} data-testid="Contacts:block.map" />
     </aside>
   )
 }

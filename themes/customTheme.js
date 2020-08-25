@@ -50,6 +50,9 @@ const customTheme = {
     below: {
       desktop: `@media (max-width: ${breakpoints.s_l}px)`,
     },
+    above: {
+      mobile: `@media (min-width: ${breakpoints.s}px)`,
+    },
   },
   media: {
     points: breakpoints,

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "We Create Web Services for Millions",
-    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript."
+    "title": "Web Development Outsourcing",
+    "description": "CSSSR is a front-end web development group that major on outsource front-end development services for a wide range of industries. We bring logic to the world with JavaScript."
   },
   "hero": {
     "title": "<span style=\"font-weight: bold;\">Outsourcing</span><br />Web Development",
@@ -84,7 +84,8 @@
       [{
         "title": "Well-Designed Processes",
         "description": "We&nbsp;work completely remotely and have built remote processes, which we&nbsp;are extremely proud&nbsp;of. We&nbsp;work with Agile methodologies and have taken the best from various approaches. Therefore, it&nbsp;is&nbsp;simple for&nbsp;us to&nbsp;adapt our team size and ways of&nbsp;working to&nbsp;your needs.",
-        "link": "Read About Our Process "
+        "link": "Read About Our Process ",
+        "testId": "Outsourcing:link:ourProcesses"
       }],
       [{
         "title": "Specialization",
@@ -95,7 +96,10 @@
           "We&nbsp;can complete ",
           " over just a&nbsp;few months, or&nbsp;we&nbsp;can stay on&nbsp;a&nbsp;project for years, developing and supporting it&nbsp;with a&nbsp;permanent team."
         ],
-        "link": "short-term tasks"
+        "link": {
+          "title": "short-term tasks",
+          "testId": "Outsourcing:link:shortTermTasks"
+        }
       }]
     ]
   },

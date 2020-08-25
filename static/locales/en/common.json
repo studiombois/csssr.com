@@ -81,9 +81,12 @@
       },
       "careers": {
         "title": "Careers"
+      },
+      "contacts": {
+        "title": "Contacts"
       }
     },
-    "action": "Contact us",
+    "action": "Hire us",
     "backLink": "Our services"
   },
   "footer": {
@@ -112,7 +115,8 @@
       "title": "Company",
       "blog": "Blog",
       "aboutUs": "About us",
-      "careers": "Careers"
+      "careers": "Careers",
+      "contacts": "Contacts"
     },
     "solutions": {
       "title": "Solutions",
@@ -149,7 +153,7 @@
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {
-    "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in the ",
+    "privacyPolicyText": "By submitting the form, you agree to your personal data being stored and used for the purposes stated in the ",
     "privacyPolicyLinkText": "Privacy Policy",
     "newsletterText": "I agree to receive information and commercial offers"
   },

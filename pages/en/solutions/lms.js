@@ -11,7 +11,7 @@ const ElearningPlatform = () => {
     <Layout pageName={pageName}>
       <Head
         title="Modular Learning Management System"
-        description="Build your solution from the modules, add anything you need with our development team."
+        description="Start using modular learning management system and you can build your own solution from the modules, add anything you need with our development team."
       />
 
       <ElearningPlatformContent pageName={pageName} />

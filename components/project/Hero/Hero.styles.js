@@ -100,6 +100,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(-221)};
     }
 
+    .pic-wrapper_mindbox {
+      margin-top: ${calcRem(-77)};
+    }
+
     .image {
       width: auto;
       height: auto;
@@ -261,6 +265,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .sub-heading,
     .text {
       grid-column: 1 / span 6;
+    }
+
+    .heading {
+      & br {
+        display: none;
+      }
     }
 
     .link {

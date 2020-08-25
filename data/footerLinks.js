@@ -139,6 +139,10 @@ export const nav = [
         id: 'blog',
         href: 'https://blog.csssr.com',
       },
+      {
+        id: 'contacts',
+        href: 'contacts',
+      },
     ],
   },
 ]

@@ -78,6 +78,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         right: calc(100% + 96px);
       }
     }
+
+    &.flant {
+      .picture {
+        margin-top: 354px;
+      }
+
+      .quote {
+        &::before {
+          top: 51px;
+        }
+      }
+    }
   }
 
   ${desktop.m} {
@@ -96,6 +108,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
       &::before {
         right: calc(100% + 64px);
+      }
+    }
+
+    &.flant {
+      .picture {
+        margin-top: 554px;
+      }
+
+      .quote {
+        &::before {
+          top: 130px;
+        }
       }
     }
   }
@@ -120,9 +144,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.flant {
+      .picture {
+        margin-top: 634px;
+      }
+
       .quote {
         &::before {
-          top: 10px;
+          top: 170px;
         }
       }
     }
@@ -162,15 +190,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.flant {
-      .quote {
-        &::before {
-          top: auto;
-          bottom: ${calcRem(74)};
-        }
+      .text {
+        font-size: ${calcRem(16)};
+        line-height: ${calcRem(24)};
       }
 
       .picture {
-        margin-top: auto;
+        margin-top: ${calcRem(386)};
+      }
+
+      .quote {
+        &::before {
+          top: ${calcRem(106)};
+        }
       }
     }
   }
@@ -207,6 +239,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .author-signature {
       margin-top: ${calcRem(9)};
+    }
+
+    &.flant {
+      .text {
+        margin-top: ${calcRem(5)};
+        font-size: ${calcRem(16)};
+        line-height: ${calcRem(24)};
+      }
     }
   }
 `

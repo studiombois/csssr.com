@@ -34,7 +34,7 @@ class MainPage extends PureComponent {
   windowInnerHeight = undefined
 
   scrollEventListener = () => {
-    if (window.scrollY > this.windowInnerHeight) {
+    if (window.scrollY > this.windowInnerHeight / 2) {
       if (window.dataLayer) {
         window.dataLayer.push({ event: 'scrolled_to_services' })
       }

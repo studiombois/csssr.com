@@ -3,6 +3,7 @@ const withSourceMaps = require('@zeit/next-source-maps')()
 const CompressionPlugin = require('compression-webpack-plugin')
 const { ANALYZE } = process.env
 const { PROCESS_IMAGES } = process.env
+const { defaultTheme } = require('@csssr/core-design')
 
 module.exports = withSourceMaps({
   poweredByHeader: false,
@@ -80,6 +81,16 @@ module.exports = withSourceMaps({
     }
 
     const withResponsiveImages = () => {
+      let comHost, imgproxyHost
+      if (dev) {
+        const ip = require('ip')
+        comHost = `http://${ip.address()}:3000`
+        imgproxyHost = 'http://localhost:8080'
+      } else {
+        comHost = process.env.COM_HOST || 'https://csssr.com'
+        imgproxyHost = 'https://images.csssr.com'
+      }
+
       config.module.rules.push({
         test: /\.(jpe?g|png|webp|gif|ico)$/,
         oneOf: [
@@ -90,6 +101,24 @@ module.exports = withSourceMaps({
           {
             resourceQuery: /responsive/,
             use: [responsiveLoaderConfig],
+          },
+          {
+            resourceQuery: /csssr-images/,
+            use: [
+              {
+                loader: '@csssr/csssr.images',
+                options: {
+                  breakpoints: defaultTheme.breakpointsOrdered,
+                  imgproxy: {
+                    disable: dev,
+                    imagesHost: comHost,
+                    host: imgproxyHost,
+                  },
+                  originalPixelRatio: '3x',
+                },
+              },
+              fileLoaderConfig,
+            ],
           },
           {
             use: [fileLoaderConfig],

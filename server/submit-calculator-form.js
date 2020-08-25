@@ -1,3 +1,5 @@
+import testEmails from '../utils/testEmails'
+
 const Sentry = require('@sentry/node')
 const { express, TEST_TAG } = require('@csssr/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
@@ -78,8 +80,9 @@ module.exports = async (req, res) => {
     res.locals.l10n.translations,
   )
 
+  const isTestEmail = testEmails.includes(email)
   try {
-    const amoResponse = await amoExpress.createLead(language, {
+    const amoResponse = await amoExpress.createLead(isTestEmail ? TEST_TAG : language, {
       tags,
       name,
       phone,

@@ -7,11 +7,6 @@ releases:
     chart: csssr/csssr-com@~1.0.0
     static-params:
       environment: testing
-    params:
-      env.CSSSR_SPACE_ORIGIN:
-        type: url
-        description: Адрес csssr.space
-        default: http://master.space.csssr.cloud/
     builds:
       - workflow: build-docker-image.yml
         values:

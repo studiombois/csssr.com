@@ -19,7 +19,7 @@ const Organized = ({ className, id, l10n: { translations } }) => {
     <section className={className} id={id}>
       <Grid>
         <div className="header">
-          <Heading.H1
+          <Heading.H2
             type="slab"
             size="m"
             dangerouslySetInnerHTML={{ __html: translations.wayOfWork.organized.title }}

@@ -1,30 +1,20 @@
+import testEmails from '../utils/testEmails'
+
 const Sentry = require('@sentry/node')
 const { sales, TEST_TAG } = require('@csssr/csssr-amo')
 const { isProduction } = require('../utils/app-environment')
 const validateFormFields = require('./validate-form-fields')
-
 const amoSales = sales.init(
   process.env.AMO_CRM_SALES_USER_LOGIN,
   process.env.AMO_CRM_SALES_USER_HASH,
 )
 
 module.exports = async (req, res) => {
-  const {
-    name,
-    phone,
-    email,
-    message,
-    pageName,
-    newsletter,
-    gacid,
-    language,
-    privacyPolicy,
-  } = req.body
+  const { name, phone, email, message, pageName, newsletter, gacid, language } = req.body
 
   const validationResult = validateFormFields(res.locals.l10n.translations, 'contactForm', {
     name,
     email,
-    privacyPolicy,
   })
 
   if (validationResult.errors) {
@@ -47,8 +37,9 @@ module.exports = async (req, res) => {
 
   const { utm_source, utm_medium, utm_campaign, utm_term, utm_content } = req.cookies
 
+  const isTestEmail = testEmails.includes(email)
   try {
-    const amoResponse = await amoSales.createLead(language, {
+    const amoResponse = await amoSales.createLead(isTestEmail ? TEST_TAG : language, {
       tags,
       name,
       phone,

@@ -16,11 +16,12 @@ const FeatureButton = ({
   onMouseOut,
   mobileSrcSet,
   im,
+  imageAlt,
 }) => {
   return (
     <div className={className} onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-      <img src={i} srcSet={srcSet} alt="image" className="image" />
-      <img src={im} srcSet={mobileSrcSet} alt="image" className="mobile-image" />
+      <img src={i} srcSet={srcSet} alt={imageAlt} className="image" />
+      <img src={im} srcSet={mobileSrcSet} alt={imageAlt} className="mobile-image" />
 
       <div
         className={cn('wrapper', {

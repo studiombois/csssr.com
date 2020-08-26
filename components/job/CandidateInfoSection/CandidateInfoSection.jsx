@@ -50,13 +50,6 @@ const CandidateInfoSection = (props) => {
       `,
     },
     {
-      id: 'age',
-      label: translations.job.age,
-      css: css`
-        ${stylesForFullWidthField}
-      `,
-    },
-    {
       id: 'location',
       required: true,
       label: translations.job.city,

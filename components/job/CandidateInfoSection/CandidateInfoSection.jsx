@@ -121,6 +121,8 @@ const CandidateInfoSection = (props) => {
             kind="regular"
             aria-required={required}
             required={required}
+            testid={`Jobs:form:input.${id}`}
+            errorTestid={`Jobs:form:text:error.${id}`}
           />
         ) : null,
       )}
@@ -138,6 +140,9 @@ const CandidateInfoSection = (props) => {
           component={FileField}
           onFileFieldChange={onFileFieldChange}
           aria-required={true}
+          testid="Jobs:form:input.file"
+          buttunTestid="Jobs:form:button.file"
+          labelTestid="Jobs:form:label.file"
           required
         />
       )}
@@ -156,11 +161,14 @@ const CandidateInfoSection = (props) => {
             `}
             component={TextareaField}
             kind="regular"
+            testid="Jobs:form:input.comment"
           />
         </Fragment>
       )}
 
       <PrivacyPolicyCheckbox
+        testid="Jobs:form:checkbox.policy"
+        linkTestId="Jobs:form:link.policy"
         className="input-checkbox"
         required
         css={css`

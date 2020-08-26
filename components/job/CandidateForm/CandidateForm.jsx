@@ -236,11 +236,12 @@ class CandidateForm extends PureComponent {
                 className="faq-picture visible_on_mobile"
                 image={{ namespace: 'jobs', key: 'faq', alt: translations.jobs.faq.alt }}
                 css={faqImageStyles}
+                testid="Jobs:img.faq"
               />
               <p className="faq-text font_p16-regular">
                 {translations.job.faq.title}
 
-                <a href="/ru/jobs-faq" className="font_link-list_16">
+                <a href="/ru/jobs-faq" className="font_link-list_16" data-testid="Jobs:link.faq">
                   {translations.job.faq.link}
                 </a>
               </p>
@@ -266,7 +267,7 @@ class CandidateForm extends PureComponent {
             })}
             ref={this.messageRef}
           >
-            <AnimatedButton type="submit" status={status}>
+            <AnimatedButton type="submit" status={status} testid="Jobs:form:button.submit">
               <Text type="perforator" size="m" className="button-content" as="span">
                 {translations.job.send}
               </Text>
@@ -279,6 +280,8 @@ class CandidateForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail="join@csssr.com"
+              successPictureTestid="Jobs:form:img.result"
+              testid="Jobs:form.text.result"
             />
           </div>
         </FormRow>

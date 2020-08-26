@@ -45,8 +45,8 @@ class Vacancies extends PureComponent {
 
           {this.props.vacancies.length > 0 && (
             <ul>
-              {this.props.vacancies.map((vacancy) => (
-                <li key={vacancy.id}>
+              {this.props.vacancies.map((vacancy, index) => (
+                <li key={vacancy.id} data-testid={`Jobs:list.item-${index}`}>
                   <Link
                     href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
                     as={`/${locale}/jobs/${vacancy.pathName}`}
@@ -124,11 +124,12 @@ class Vacancies extends PureComponent {
                 images={faqImages}
                 fallback={faqImages['desktop.l']}
                 alt={translations.jobs.faq.alt}
+                testid="Jobs:img.faq"
               />
               <p className="faq-text font_p16-regular">
                 {translations.jobs.faq.title}
 
-                <a href="/ru/jobs-faq" className="font_link-list_16">
+                <a href="/ru/jobs-faq" className="font_link-list_16" data-testid="Jobs:link.faq">
                   {translations.jobs.faq.link}
                 </a>
               </p>

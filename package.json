@@ -9,13 +9,14 @@
     "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "lint:js": "eslint --ext .js,.jsx --fix --max-warnings=0 .",
     "check-sitemap": "node -r esm ./server/check-sitemap.js",
-    "test": "NODE_ENV=development jest --watch",
-    "test-ci": "NODE_ENV=development jest"
+    "test": "cross-env NODE_ENV=development jest --watch",
+    "test-ci": "cross-env NODE_ENV=development jest"
   },
   "dependencies": {
     "@csssr/core-design": "^5.9.2",
     "@csssr/csssr-amo": "^3.5.2",
     "@csssr/csssr.images": "^3.0.0",
+    "@csssr/csssr-shared-header": "1.1.13",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",

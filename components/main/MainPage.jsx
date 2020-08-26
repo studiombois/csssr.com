@@ -38,7 +38,9 @@ class MainPage extends PureComponent {
       Sentry.captureException(error)
     }
 
-    return { vacancies }
+    const userAgent = ctx.req ? ctx.req.headers['user-agent'] : window.navigator.userAgent
+
+    return { vacancies, userAgent }
   }
 
   /* A/B test en-main-page code start */
@@ -68,12 +70,14 @@ class MainPage extends PureComponent {
   render() {
     const {
       vacancies,
-      l10n: { translations, language },
+      language,
+      userAgent,
+      l10n: { translations },
     } = this.props
 
     const pageName = 'main'
     return (
-      <Layout pageName={pageName}>
+      <Layout pageName={pageName} userAgent={userAgent}>
         {language === 'en' ? (
           <AbContext.Consumer>
             {(ab) => {

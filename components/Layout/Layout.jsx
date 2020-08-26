@@ -1,24 +1,45 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import DevTools from '../DevTools'
 import { withRouter } from 'next/router'
-import Header from '../Header'
+import { Global } from '@emotion/core'
+import Link from 'next/link'
+import styles from './Layout.styles'
+import { Header, getLocaleFromUrl, PageContent, getDevPathname } from '@csssr/csssr-shared-header'
 import Footer from '../Footer'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import CookiesPopup from '../CookiesPopup'
+import { DeviceContext } from '../../utils/deviceProvider'
 
-const Layout = ({ children, isIe11, pageName, router: { asPath }, withFooter = true }) => {
+import spaceOrigin from '../../utils/csssrSpaceOrigin'
+
+const Layout = ({ children, isIe11, withFooter = true, router }) => {
+  const { isMobile } = useContext(DeviceContext)
+
   const dynamicTag = isIe11 ? 'div' : 'main'
-  const pathsNoButton = ['jobs']
-  const isButtonVisible = !pathsNoButton.some((string) => asPath.indexOf(string) + 1)
+  const appRootElement = typeof window === 'object' ? document.getElementById('__next') : null
+  const lng = getLocaleFromUrl(router.asPath)
+
+  const pathname = getDevPathname(router.asPath, isMobile)
+
   return (
     <Fragment>
-      <Header isButtonVisible={isButtonVisible} pageName={pageName} />
+      <Header
+        isMobile={isMobile}
+        appRootElement={appRootElement}
+        pathname={pathname}
+        lng={lng}
+        NextLink={Link}
+        jobsDomain={spaceOrigin}
+      />
 
-      {React.createElement(dynamicTag, { id: 'main', 'data-testid': 'Main:block' }, children)}
+      <PageContent>
+        {React.createElement(dynamicTag, { id: 'main', 'data-testid': 'Main:block' }, children)}
+        {withFooter && <Footer />}
+        <CookiesPopup />
+        <DevTools />
+      </PageContent>
 
-      {withFooter && <Footer />}
-      <CookiesPopup />
-      <DevTools />
+      <Global styles={styles} />
     </Fragment>
   )
 }

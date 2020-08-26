@@ -1356,6 +1356,17 @@
   dependencies:
     isomorphic-unfetch "^3.0.0"
 
+"@csssr/csssr-shared-header@1.1.13":
+  version "1.1.13"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-shared-header/1.1.13/e6414baa031580f865cceb9d1bdfa265fa2bf95bb0233f9f26783175cfac39c5#79f78c2a5422fe99780010cc4408ff28536639e2"
+  integrity sha512-b8b+ajicxoln918+OKDotmkFBqIKh2L6WkeCh7SYQUBL5JkLlyjRJfYcPqX0DX4ytAargBV9uCgqGjd4/GQ5ZQ==
+  dependencies:
+    classnames "^2.2.6"
+    color "^3.1.2"
+    emotion-theming "^10.0.27"
+    lottie-web "^5.7.3"
+    scroll-lock "^2.1.4"
+
 "@csssr/csssr.images@^3.0.0":
   version "3.0.0"
   resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/3.0.0/72bc56233afa18fe009d4205d73e0a934500a27ee5f63240918953b4d3533578#6f011dc767bbfccf0407687fea833dd5d6b261ba"

@@ -54,7 +54,7 @@ export const getUserAb = (abExperiments, userAb) => {
     const variants = experimentData.variants
     if (variantFromCookie) {
       // Проверяем, что вариант из куки действительно существует в эксперименте
-      const index = variants.findIndex((variant) => variant.name === variantFromCookie)
+      const index = variants.findIndex(({ name }) => name === variantFromCookie)
       if (index !== -1) {
         return {
           ...memo,
@@ -87,9 +87,12 @@ export default ({ ignorePaths }) => {
   const allAbExperimentsPromise = loadAllAbExperiments()
 
   return async (req, res, next) => {
-    const path = req.path
+    const reqPath = req.path
 
-    const shouldIgnorePath = ignorePaths.reduce((acc, pattern) => acc || pattern.test(path), false)
+    const shouldIgnorePath = ignorePaths.reduce(
+      (acc, pattern) => acc || pattern.test(reqPath),
+      false,
+    )
     if (shouldIgnorePath) {
       return next()
     }
@@ -114,6 +117,7 @@ export default ({ ignorePaths }) => {
         userAb[paramKey.replace('ab-', '')] = query[paramKey]
       })
 
+    // TODO здесь можно хранить только имя эксперимента и id варианта
     const newUserAb = getUserAb(allAbExperiments, userAb)
 
     // Сохраняем в куку объект вида {'other-ab': 'current', 'en-main-page': 'v4'}

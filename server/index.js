@@ -89,7 +89,7 @@ const startApp = async () => {
   server.use(
     l10nMiddleware({
       loadPath: path.join(__dirname, '../static/locales'),
-      ignorePaths: [/^\/_next/, /^\/static/],
+      ignorePaths: [/^\/_next/, /^\/static/, /^\/public/],
       lookupCookieName,
     }),
   )
@@ -108,7 +108,7 @@ const startApp = async () => {
   })
 
   if (!isDevelopment) {
-    server.get(/^\/_next\/static\/(fonts|icons|images)\//, (req, res, nextHandler) => {
+    server.get(/^\/_next\/(static|public)\/(fonts|icons|images)\//, (req, res, nextHandler) => {
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
       nextHandler()
     })

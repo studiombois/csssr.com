@@ -4,16 +4,16 @@ import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Vacancies.styles'
 
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Grid from '../../ui-kit/core-design/Grid'
 import Link from '../../ui-kit/core-design/Link'
 import ButtonLink from '../../ui-kit/core-design/ButtonLink'
 
-import images from '../../../data/main/vacancies/images'
-
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+
+const vacanciesImages = require.context('../../../public/images/main/vacancies?csssr-images')
 
 const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => (
   <Grid as="article" className={cn('industries', className)}>
@@ -24,10 +24,9 @@ const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => 
       dangerouslySetInnerHTML={{ __html: translations.main.vacancies.title }}
     />
 
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={images}
-      fallback={images['desktop.l'].png}
+      requireImages={vacanciesImages}
       alt={translations.main.imgAlt.vacancies}
     />
 

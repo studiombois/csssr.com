@@ -11,6 +11,8 @@ import SubHeading from '../../ui-kit/core-design/SubHeading'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import Grid from '../../ui-kit/core-design/Grid'
 
+const requireImages = require.context('../../../public/images/main/hero?csssr-images')
+
 const Hero = ({ className, l10n: { translations }, isMobile }) => (
   <Grid as="article" className={className}>
     <Heading
@@ -25,7 +27,7 @@ const Hero = ({ className, l10n: { translations }, isMobile }) => (
       <div className="picture-hover-area" />
       <PictureSmart
         className="picture"
-        requireImages={require.context('../../../static/images/main/hero?csssr-images')}
+        requireImages={requireImages}
         alt={translations.main.imgAlt.hero}
       />
     </div>

@@ -117,7 +117,15 @@ module.exports = withSourceMaps({
                   originalPixelRatio: '3x',
                 },
               },
-              fileLoaderConfig,
+              {
+                loader: 'file-loader',
+                options: {
+                  publicPath: '/_next/static/',
+                  outputPath: `${isServer ? '../' : ''}static/`,
+                  name: '[path][name]-[hash:8].[ext]',
+                  esModule: false,
+                },
+              },
             ],
           },
           {

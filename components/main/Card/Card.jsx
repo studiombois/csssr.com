@@ -7,7 +7,7 @@ import styles from './Card.styles'
 import NextLink from 'next/link'
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
@@ -23,7 +23,6 @@ const Card = ({
   href,
   images,
   imagesHovered,
-  fallback,
   isNextLink,
   isLink,
   children,
@@ -33,18 +32,16 @@ const Card = ({
   const CardBody = () => (
     <Fragment>
       <div className={cn('picture-wrap', { 'picture-wrap_radio': id === 'radio' })}>
-        <PictureForAllResolutions
+        <PictureSmart
           className={cn('card-picture', `card-picture_${id}`)}
-          images={images}
-          fallback={fallback}
+          requireImages={images}
           alt={translations.main.imgAlt[id]}
         />
 
         {!isMobile && !isTablet && imagesHovered && (
-          <PictureForAllResolutions
+          <PictureSmart
             className={'card-picture-hovered'}
-            images={imagesHovered}
-            fallback={fallback}
+            requireImages={imagesHovered}
             alt={translations.main.imgAlt[id]}
           />
         )}

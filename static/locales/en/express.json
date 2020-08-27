@@ -108,17 +108,17 @@
     }
   },
   "imgAlt": {
-    "bicycle": "Forward bicycle",
+    "bicycle": "Express web development",
     "aboutUs": "Illustrated figures of developers",
-    "workflow1": "illustration of the number one for the first stage",
-    "workflow2": "illustration of the number two, for the second stage",
-    "workflow3": "illustration of the number three, for the third stage",
-    "workflow4": "illustration of the number four, for the fourth stage",
-    "workflow5": "illustration of the number five, for the fifth stage",
-    "feature1": "Illustration that describes design friendly block",
-    "feature2": "Illustration that describes modern stack block",
-    "feature3": "Illustration that describes accessibility block",
-    "feature4": "Illustration that describes quality control block",
-    "feature5": "Illustration that describes quality guarantees block"
+    "workflow1": "Estimate the cost of your project by using our Calculator and fill out the application form.",
+    "workflow2": "You’ll be provided with an estimate, a draft contract, and an NDA within one working day.",
+    "workflow3": "You provide us with your company details, answer our questions and ask your own ones.",
+    "workflow4": "You'll receive a finalized contract within a day.",
+    "workflow5": "Once the documents are signed and advance payment is received, we’ll quickly assemble a team and begin to work.",
+    "feature1": "Your project will look exactly like it’s supposed to.",
+    "feature2": "We use only modern stack from open-source technologies",
+    "feature3": "We apply a11y principles to all our projects.",
+    "feature4": "We always control the quality of our work.",
+    "feature5": "Our in-house lawyer drafts tailor-made contracts and NDAs for each project."
   }
 }

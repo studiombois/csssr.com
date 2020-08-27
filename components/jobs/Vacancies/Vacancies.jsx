@@ -36,11 +36,11 @@ class Vacancies extends PureComponent {
           <header>
             <h1 className="font_h1-regular">
               <div dangerouslySetInnerHTML={{ __html: translations.jobs.title }} />
-              <span
-                className="font_subhead-regular"
-                dangerouslySetInnerHTML={{ __html: translations.jobs.subTitle }}
-              />
             </h1>
+            <span
+              className="font_subhead-regular"
+              dangerouslySetInnerHTML={{ __html: translations.jobs.subTitle }}
+            />
           </header>
 
           {this.props.vacancies.length > 0 && (
@@ -69,7 +69,7 @@ class Vacancies extends PureComponent {
             className="picture"
             images={howImages}
             fallback={howImages['desktop.l']}
-            alt={translations.jobs.faq.alt}
+            alt={translations.jobs.how.alt}
           />
 
           <h2 className="font_h2-regular">
@@ -85,7 +85,7 @@ class Vacancies extends PureComponent {
             className="picture"
             images={whoImages}
             fallback={whoImages['desktop.l']}
-            alt={translations.jobs.faq.alt}
+            alt={translations.jobs.who.alt}
           />
 
           <h2 className="font_h2-regular">
@@ -101,7 +101,7 @@ class Vacancies extends PureComponent {
             className="picture"
             images={distanceImages}
             fallback={distanceImages['desktop.l']}
-            alt={translations.jobs.faq.alt}
+            alt={translations.jobs.about.alt}
           />
 
           <h2

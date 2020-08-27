@@ -107,7 +107,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 srcSet={`${require('../../static/elearning-platform/greeting.png')} 1x, ${require('../../static/elearning-platform/greeting@2x.png')} 2x, ${require('../../static/elearning-platform/greeting@3x.png')} 3x`}
                 src={require('../../static/elearning-platform/greeting.png')}
-                alt="Greeting image"
+                alt="By using a modular learning management system you can build your solution from the modules."
               />
             </div>
 
@@ -115,7 +115,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 srcSet={`${require('../../static/elearning-platform/greeting-mob.png')} 1x, ${require('../../static/elearning-platform/greeting-mob@2x.png')} 2x, ${require('../../static/elearning-platform/greeting-mob@3x.png')} 3x`}
                 src={require('../../static/elearning-platform/greeting-mob.png')}
-                alt="Greeting image"
+                alt="By using a modular learning management system you can build your solution from the modules."
               />
             </div>
           </div>
@@ -129,7 +129,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 srcSet={`${require('../../static/elearning-platform/assistant.png')} 1x, ${require('../../static/elearning-platform/assistant@2x.png')} 2x, ${require('../../static/elearning-platform/assistant@3x.png')} 3x`}
                 src={require('../../static/elearning-platform/assistant.png')}
-                alt="assistant"
+                alt="We’ve built an assistant based on Google Dialogflow."
               />
             </div>
 
@@ -161,7 +161,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 srcSet={`${require('../../static/elearning-platform/gamification.png')} 1x, ${require('../../static/elearning-platform/gamification@2x.png')} 2x, ${require('../../static/elearning-platform/gamification@3x.png')} 3x`}
                 src={require('../../static/elearning-platform/gamification.png')}
-                alt="gamification"
+                alt="Boost users motivation up with an achievements and rewards system."
               />
             </div>
 
@@ -308,7 +308,7 @@ class ElearningPlatformContent extends PureComponent {
                   <img
                     srcSet={designImages.base.srcSet}
                     src={designImages.base.src}
-                    alt="Screenshot"
+                    alt="We have a design team that will customize the LMS to match your brand identity."
                   />
                 </Fade>
               )}
@@ -318,7 +318,7 @@ class ElearningPlatformContent extends PureComponent {
                   <img
                     srcSet={designImages.font.srcSet}
                     src={designImages.font.src}
-                    alt="Screenshot"
+                    alt="We have a design team that will customize the LMS to match your brand identity."
                   />
                 </Fade>
               )}
@@ -328,7 +328,7 @@ class ElearningPlatformContent extends PureComponent {
                   <img
                     srcSet={designImages.graphic.srcSet}
                     src={designImages.graphic.src}
-                    alt="Screenshot"
+                    alt="We have a design team that will customize the LMS to match your brand identity."
                   />
                 </Fade>
               )}
@@ -338,7 +338,7 @@ class ElearningPlatformContent extends PureComponent {
                   <img
                     srcSet={designImages.theme.srcSet}
                     src={designImages.theme.src}
-                    alt="Screenshot"
+                    alt="We have a design team that will customize the LMS to match your brand identity."
                   />
                 </Fade>
               )}
@@ -348,7 +348,7 @@ class ElearningPlatformContent extends PureComponent {
                   <img
                     srcSet={designImages.color.srcSet}
                     src={designImages.color.src}
-                    alt="Screenshot"
+                    alt="We have a design team that will customize the LMS to match your brand identity."
                   />
                 </Fade>
               )}
@@ -379,7 +379,7 @@ class ElearningPlatformContent extends PureComponent {
                 <img
                   srcSet={`${require('../../static/elearning-platform/team.png')} 1x, ${require('../../static/elearning-platform/team@2x.png')} 2x, ${require('../../static/elearning-platform/team@3x.png')} 3x`}
                   src={require('../../static/elearning-platform/team.png')}
-                  alt="team"
+                  alt="We’ll provide you with a development team based on the project desired functionality and timeline."
                 />
               </div>
             </div>
@@ -433,7 +433,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 srcSet={featureImages[this.state.activeFeatureImage].srcSet}
                 src={featureImages[this.state.activeFeatureImage].src}
-                alt="Feature"
+                alt="By using advanced features ideas you can add any payment provider you like."
               />
             </div>
 
@@ -454,6 +454,7 @@ class ElearningPlatformContent extends PureComponent {
               d="Add any payment provider you need"
               onMouseOver={() => this.setState({ activeFeatureImage: 'payment' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              imageAlt="Add any payment provider you need"
             />
 
             <FeatureButton
@@ -465,6 +466,7 @@ class ElearningPlatformContent extends PureComponent {
               d="Configure learning programms based on skills"
               onMouseOver={() => this.setState({ activeFeatureImage: 'skill' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              imageAlt="Configure learning programs based on skills"
             />
 
             <FeatureButton
@@ -476,6 +478,7 @@ class ElearningPlatformContent extends PureComponent {
               d="Choose the learning programm and see how skils grow"
               onMouseOver={() => this.setState({ activeFeatureImage: 'rating' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              imageAlt="Choose among the learning programs and see how skills grow"
             />
 
             <FeatureButton
@@ -487,6 +490,7 @@ class ElearningPlatformContent extends PureComponent {
               d="Connect the LMS to your own and unique existing tools and systems"
               onMouseOver={() => this.setState({ activeFeatureImage: 'ecosystem' })}
               onMouseOut={() => this.setState({ activeFeatureImage: 'payment' })}
+              imageAlt="Connect the LMS to your own current unique tools and systems"
             />
           </div>
         </div>

@@ -182,11 +182,18 @@ class CandidateForm extends PureComponent {
   renderVacancyImageAndLinks = () => {
     const {
       vacancies,
-      vacancy: { name },
+      vacancy: { name, pathName },
     } = this.props
     const pictureName = picturesMap[this.props.vacancy.pathName]
 
-    return <VacancyImageAndLinks vacancies={vacancies} pictureName={pictureName} name={name} />
+    return (
+      <VacancyImageAndLinks
+        vacancies={vacancies}
+        pictureName={pictureName}
+        name={name}
+        pathName={pathName}
+      />
+    )
   }
 
   render() {
@@ -214,13 +221,13 @@ class CandidateForm extends PureComponent {
             })}
           >
             {vacancy.name}
-
-            {vacancy.employment === 'part-time' ? (
-              <span className="font_subhead-regular">{translations.job.remote}</span>
-            ) : (
-              <span className="font_subhead-regular">{translations.job.remoteAndFullTime}</span>
-            )}
           </h1>
+
+          {vacancy.employment === 'part-time' ? (
+            <span className="font_subhead-regular">{translations.job.remote}</span>
+          ) : (
+            <span className="font_subhead-regular">{translations.job.remoteAndFullTime}</span>
+          )}
 
           <p
             className="font_p24-strong"

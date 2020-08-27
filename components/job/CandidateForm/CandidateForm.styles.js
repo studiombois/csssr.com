@@ -17,12 +17,12 @@ const base = css`
     margin-top: -0.0625rem;
   }
 
-  h1 span {
+  h1 + span {
     margin-top: 0.875rem;
     display: block;
   }
 
-  h1 + p {
+  span.font_subhead-regular + p {
     margin-top: 1.3125rem;
   }
 
@@ -54,11 +54,11 @@ const base = css`
       margin-top: 2.125rem;
     }
 
-    h1 span {
+    h1 + span {
       margin-top: 0.5rem;
     }
 
-    h1 + p {
+    span.font_subhead-regular + p {
       margin-top: 0.125rem;
     }
 

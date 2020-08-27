@@ -19,6 +19,8 @@ import { DeviceConsumer } from '../../utils/deviceProvider'
 import { PagesListConsumer } from '../../utils/pagesListProvider'
 import getPagePathnameInLanguage from '../../common/get-page-pathname-in-language'
 
+import LazyLoad from '../LazyLoad'
+
 const Footer = ({
   className,
   isMobile,
@@ -68,11 +70,13 @@ const Footer = ({
           </NextLink>
 
           {!isMobile && (
-            <video className="video" autoPlay loop muted>
-              <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
+            <LazyLoad>
+              <video className="video" autoPlay loop muted>
+                <source data-src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
 
-              <p>{translations.common.footer.videoError}</p>
-            </video>
+                <p>{translations.common.footer.videoError}</p>
+              </video>
+            </LazyLoad>
           )}
 
           <Heading

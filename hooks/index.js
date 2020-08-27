@@ -1,0 +1,1 @@
+export { useLazy } from './useLazy'

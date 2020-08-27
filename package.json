@@ -9,8 +9,8 @@
     "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "lint:js": "eslint --ext .js,.jsx --fix --max-warnings=0 .",
     "check-sitemap": "node -r esm ./server/check-sitemap.js",
-    "test": "NODE_ENV=development jest --watch",
-    "test-ci": "NODE_ENV=development jest"
+    "test": "cross-env NODE_ENV=development jest --watch",
+    "test-ci": "cross-env NODE_ENV=development jest"
   },
   "dependencies": {
     "@csssr/core-design": "^5.1.2",

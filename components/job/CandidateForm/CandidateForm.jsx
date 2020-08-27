@@ -267,7 +267,12 @@ class CandidateForm extends PureComponent {
             })}
             ref={this.messageRef}
           >
-            <AnimatedButton type="submit" status={status} testid="Jobs:form:button.submit">
+            <AnimatedButton
+              type="submit"
+              status={status}
+              testid="Jobs:form:button.submit"
+              failImgTestId="Jobs:form:img.fail"
+            >
               <Text type="perforator" size="m" className="button-content" as="span">
                 {translations.job.send}
               </Text>

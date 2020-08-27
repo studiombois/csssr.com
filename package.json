@@ -12,7 +12,7 @@
     "test": "NODE_ENV=development jest --watch"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.1.2",
+    "@csssr/core-design": "^5.9.0",
     "@csssr/csssr-amo": "^3.3.2",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.28",

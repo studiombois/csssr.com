@@ -195,7 +195,7 @@ class JobPage extends PureComponent {
           <Head
             title={vacancy.name}
             templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
-            description={vacancy.description}
+            description={translations.job.descriptions[vacancy.pathName] || vacancy.description}
             structuredData={<StructuredDataVacancy vacancy={vacancy} />}
             ogImage={{
               url: require('../../static/images/jobs/1920/cover@2x.jpg'),

@@ -34,13 +34,22 @@ class FormStateMessage extends PureComponent {
           <span css={textDataStyles}>
             <span>{translations.common.form.message.fail.body.textStart}</span>
 
-            <button type="button" className="font_link-list_16" onClick={this.props.onTryAgain}>
+            <button
+              type="button"
+              className="font_link-list_16"
+              onClick={this.props.onTryAgain}
+              data-testid="contactUs:button:error.tryAgain"
+            >
               {translations.common.form.message.fail.body.textForButton}
             </button>
 
             <span>{translations.common.form.message.fail.body.textBetweenButtonAndLink}</span>
 
-            <a className="font_link-list_16" href={`mailto:${this.props.feedbackEmail}`}>
+            <a
+              className="font_link-list_16"
+              href={`mailto:${this.props.feedbackEmail}`}
+              data-testid="contactUs:link:feedbackEmail"
+            >
               {this.props.feedbackEmail}
             </a>
           </span>

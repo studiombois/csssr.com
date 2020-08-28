@@ -9,7 +9,7 @@ import getGaCid from '../../utils/client/getGaCid'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import { DeviceConsumer } from '../../utils/deviceProvider'
-import testEmail from '../../utils/testEmail'
+import testEmails from '../../utils/testEmails'
 import Form from './Form'
 import OutsideClickHandler from 'react-outside-click-handler'
 import FocusLock from 'react-focus-lock'
@@ -57,7 +57,7 @@ class ContactModal extends PureComponent {
       return { [FORM_ERROR]: translations.common.form.errors.general }
     }
 
-    const isTestEmail = values.email === testEmail
+    const isTestEmail = testEmails.includes(values.email)
     if (res.status === 201) {
       if (window.dataLayer && !isTestEmail) {
         window.dataLayer.push({ event: 'form_success' })

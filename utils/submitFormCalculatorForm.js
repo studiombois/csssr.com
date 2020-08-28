@@ -1,12 +1,12 @@
 import { FORM_ERROR } from 'final-form'
-import testEmail from './testEmail'
+import testEmails from './testEmails'
 
 const onSubmit = (url, formName, language) => async (values) => {
   values.formName = formName
   values.language = language
   let res
 
-  const isTestEmail = values.email === testEmail
+  const isTestEmail = testEmails.includes(values.email)
 
   try {
     res = await fetch(url, {

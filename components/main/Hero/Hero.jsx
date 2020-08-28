@@ -8,14 +8,10 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import Grid from '../../ui-kit/core-design/Grid'
 
-import hero_desktop from '../../../static/images/main/desktop.all/hero.png?responsive'
-import hero_desktop_webp from '../../../static/images/main/desktop.all/hero.png?responsive_and_webp'
-
-import hero_mobile from '../../../static/images/main/mobile.all/hero.png?responsive'
-import hero_mobile_webp from '../../../static/images/main/mobile.all/hero.png?responsive_and_webp'
+const requireImages = require.context('../../../public/images/main/hero?csssr-images')
 
 const Hero = ({ className, l10n: { translations }, isMobile }) => (
   <Grid as="article" className={className}>
@@ -29,13 +25,9 @@ const Hero = ({ className, l10n: { translations }, isMobile }) => (
 
     <div className="picture-wrapper">
       <div className="picture-hover-area" />
-      <PictureForAllResolutions
+      <PictureSmart
         className="picture"
-        images={{
-          'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
-          'desktop.all': { png: hero_desktop, webp: hero_desktop_webp },
-        }}
-        fallback={hero_desktop}
+        requireImages={requireImages}
         alt={translations.main.imgAlt.hero}
       />
     </div>

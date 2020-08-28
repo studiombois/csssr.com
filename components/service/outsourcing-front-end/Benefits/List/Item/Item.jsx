@@ -1,12 +1,12 @@
 import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './Item.styles'
 import { L10nConsumer } from '../../../../../../utils/l10nProvider'
 
 import Heading from '../../../../../ui-kit/core-design/Heading'
 import Text from '../../../../../ui-kit/core-design/Text'
-import Picture from '../../../../../ui-kit/Picture'
 
 const Item = ({ className, index, images, l10n: { translations } }) => (
   <li className={className}>
@@ -29,10 +29,9 @@ const Item = ({ className, index, images, l10n: { translations } }) => (
       }}
     />
 
-    <Picture
+    <PictureSmart
       className="picture"
-      images={images}
-      fallback={images.png}
+      requireImages={images}
       alt={translations.outsourcingFrontEnd.imgAlt.benefits[index]}
     />
   </li>

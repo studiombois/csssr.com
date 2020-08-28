@@ -2,8 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
-import fetch from 'isomorphic-unfetch'
-import { objectToFormData } from 'object-to-formdata'
+import { serialize } from 'object-to-formdata'
 import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Head from '../Head'
@@ -104,7 +103,7 @@ const onSubmit = (translations) => async (values) => {
   delete filteredValues.file
   delete filteredValues.files
 
-  const formData = objectToFormData(filteredValues, {
+  const formData = serialize(filteredValues, {
     indices: true,
   })
 

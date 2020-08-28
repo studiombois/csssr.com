@@ -1,6 +1,9 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+
+const heroBgImages = require.context('../../../public/images/projects/common-pics/hero-bg?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
@@ -31,7 +34,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     font-weight: 300;
     color: ${colors.primary.origin};
     text-decoration: underline;
-    
+
     &:before {
       top: 0;
       right: ${calcRem(-3)};
@@ -72,7 +75,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       position: absolute;
       z-index: 2;
       height: max-content;
-      background-image: url(${require('../../../static/images/project/common-pics/desktop.l/hero-bg.png')});
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -153,7 +155,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(-192)};
         width: ${calcRem(298)};
         height: ${calcRem(809)};
-        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png')});
       }
     }
   }
@@ -189,7 +190,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(-192)};
         width: ${calcRem(278)};
         height: ${calcRem(810)};
-        background-image: url(${require('../../../static/images/project/common-pics/desktop.m/hero-bg.png')});
       }
     }
   }
@@ -246,7 +246,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(-144)};
         width: ${calcRem(200)};
         height: ${calcRem(543)};
-        background-image: url(${require('../../../static/images/project/common-pics/tablet.all/hero-bg.png')});
       }
     }
   }
@@ -303,11 +302,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         left: ${calcRem(16)};
         width: ${calcRem(252)};
         height: ${calcRem(386)};
-        background-image: url(${require('../../../static/images/project/common-pics/mobile.all/hero-bg.png')});
       }
     }
   }
 `
+
+export const backgroundImagesStyles = className =>
+//  сlassName name приходит как две строки (css-57ijkk e52q0fl0)
+//  без replace (.css-57ijkk e52q0fl0) не отработает
+//  с replace (.css-57ijkk.e52q0fl0)
+   css`
+    ${backgroundCssSmart(`.${className.replace(' ', '.')} .image::before`, heroBgImages)}
+  `
+
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
   .grid {

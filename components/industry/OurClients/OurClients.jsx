@@ -1,11 +1,13 @@
 import React from 'react'
 import { object, string } from 'prop-types'
-import { L10nConsumer } from '../../../utils/l10nProvider'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
-import styles from './OurClients.styles'
+
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import styles from './OurClients.styles'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const OurClients = ({
@@ -23,11 +25,10 @@ const OurClients = ({
       className="heading"
     />
 
-    <PictureForAllResolutions
-      images={images[language]}
+    <PictureSmart
+      requireImages={images[language]}
       className={`image image_${page}`}
       alt={altImg(translations)}
-      fallback={images[language]['desktop.l']}
     />
   </Grid>
 )

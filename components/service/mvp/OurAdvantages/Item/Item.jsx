@@ -7,14 +7,13 @@ import { L10nConsumer } from '../../../../../utils/l10nProvider'
 import Heading from '../../../../ui-kit/core-design/Heading'
 import Text from '../../../../ui-kit/core-design/Text'
 import Link from '../../../../ui-kit/core-design/Link'
-import PictureForAllResolutions from '../../../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 const Item = ({ className, l10n: { translations, language }, groupId, itemId, link, images }) => (
   <div className={className}>
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={images}
-      fallback={images['desktop.all'].png}
+      requireImages={images}
       alt={translations.mvp.imgAlt.ourAdvantages[groupId][itemId]}
     />
 

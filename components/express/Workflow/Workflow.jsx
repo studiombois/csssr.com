@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { string } from 'prop-types'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import styles from './Workflow.styles'
 import Wrapper from '../Wrapper'
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
 import workflowImages from '../../../data/express/workflow'
 
@@ -25,10 +25,9 @@ const Workflow = ({ className, l10n: { translations } }) => (
     {workflowSteps.map((stepNumber) => (
       <div className="wrapper" key={stepNumber}>
         <div className="img-wrapper">
-          <PictureForAllResolutions
+          <PictureSmart
             className={`picture picture_${stepNumber}`}
-            images={workflowImages[stepNumber]}
-            fallback={workflowImages[stepNumber]['desktop.l']}
+            requireImages={workflowImages[stepNumber]}
             alt={translations.express.imgAlt[`workflow${stepNumber}`]}
           />
         </div>

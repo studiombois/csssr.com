@@ -1,12 +1,12 @@
 import React from 'react'
 import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import Grid from '../../../ui-kit/core-design/Grid'
 import SubHeading from '../../../ui-kit/core-design/SubHeading'
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import Solution from './Solution'
 import styles from './DevOpsServices.styles'
 
@@ -44,12 +44,8 @@ const DevOpsServices = ({
           dangerouslySetInnerHTML={{ __html: description(translations) }}
           className="description"
         />
-        <PictureForAllResolutions
-          images={images}
-          fallback={images['desktop.l'].png}
-          alt={imgAlt(translations)}
-          className="img"
-        />
+
+        <PictureSmart requireImages={images} alt={imgAlt(translations)} className="img" />
       </Grid>
 
       <Solution content={solutions} />

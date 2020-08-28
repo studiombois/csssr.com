@@ -1169,10 +1169,10 @@
     react-reveal "^1.2.2"
     scroll-lock "^2.1.4"
 
-"@csssr/csssr-amo@^3.2.0":
-  version "3.2.0"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/3.2.0/d59620371b8fb75f3489065a60a6b4618c00d574ea719862475cdd9d1776dda9#00885aa726029c0cbe754491a80553f3874d08c7"
-  integrity sha512-QOcX+sVXxRv2CExtDAm1onfX2AtBolCaiterI3KKod4OwNNqM7imAYff6VVBfxMXt+KU0edYtl/hdHNdjRDb1Q==
+"@csssr/csssr-amo@^3.3.2":
+  version "3.3.2"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/3.3.2/6aab3cc26748df49256e1bb417b9892cdb560c3aeb2a0098c0b70326514a65d7#4586ff6cbf1a5eaf35a160b20c2534e578f1a115"
+  integrity sha512-sONEKaRkvguKJalGQpVAWitBr9q1fu7vWUMi5+olkORWw3+Ii90UcFh+Sg6CWBs/xnfXhSyR3I4vin5avhHdmQ==
   dependencies:
     isomorphic-unfetch "^3.0.0"
 

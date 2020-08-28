@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
   & {
     overflow: hidden;
     padding-bottom: ${calcRem(135)};
@@ -52,6 +52,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(38)};
     color: ${colors.secondary.darken100};
     z-index: 1;
+  }
+
+  .paragraph_1,
+  .paragraph_2 {
+    display: ${language === 'ru' ? 'none' : 'block'};
   }
 
   .pic-wrapper {
@@ -385,9 +390,10 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, language })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

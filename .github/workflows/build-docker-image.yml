@@ -23,5 +23,5 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
           isProduction: "false"
-          csssrSpaceOrigin: "https://master.space.csssr.cloud"
+          csssrSpaceOrigin: "https://csssr.space"
           processImages: "false"

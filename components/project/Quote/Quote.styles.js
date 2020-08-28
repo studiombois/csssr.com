@@ -80,6 +80,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.flant {
+      & {
+        background-position: 219px 268px, 1046px 35px, 535px 840px;
+      }
+
       .picture {
         margin-top: 354px;
       }
@@ -112,6 +116,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.flant {
+      & {
+        background-position: 180px 442px, 1006px 30px, 398px 928px;
+      }
+
       .picture {
         margin-top: 554px;
       }
@@ -144,6 +152,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.flant {
+      & {
+        background-position: 172px 522px, 999px 30px, 391px 969px;
+      }
+
       .picture {
         margin-top: 634px;
       }
@@ -190,6 +202,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
 
     &.flant {
+      & {
+        background-position: ${calcRem(136)} ${calcRem(302)}, ${calcRem(759)} 0, ${calcRem(271)} ${calcRem(627)};
+      }
+
       .text {
         font-size: ${calcRem(16)};
         line-height: ${calcRem(24)};

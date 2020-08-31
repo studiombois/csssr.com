@@ -32,7 +32,6 @@ const Post = ({ className, id, href, l10n: { translations } }) => {
       <Link
         className="post-link"
         href={href}
-        target="_blank"
         type="list"
         size="s"
         dangerouslySetInnerHTML={{ __html: translations.main.projects.blog[id].link }}

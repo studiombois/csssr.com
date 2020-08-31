@@ -10,6 +10,8 @@ class TextField extends PureComponent {
     kind: oneOf(['regular', 'light']),
     className: string,
     placeholder: string,
+    testid: string,
+    errorTestid: string,
     label: string,
     autoFocus: bool,
     disabled: bool,
@@ -37,6 +39,7 @@ class TextField extends PureComponent {
       maxLength,
       testid,
       tabIndex,
+      errorTestid,
       input: { name, type, value, onBlur, onFocus },
       meta: { error, invalid, submitError, submitFailed },
       required,
@@ -72,7 +75,9 @@ class TextField extends PureComponent {
           aria-required={required}
         />
         {showError && (
-          <span className="font_input-small-error-label error">{error || submitError}</span>
+          <span className="font_input-small-error-label error" data-testid={errorTestid}>
+            {error || submitError}
+          </span>
         )}
         {label && (
           <label

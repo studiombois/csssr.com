@@ -19,12 +19,12 @@ class JobsPage extends PureComponent {
       )
       vacancies = await res.json()
     } catch (error) {
-      Sentry.withScope(() => {
-        Sentry.captureException(error)
-      })
+      vacancies = []
+
+      Sentry.captureException(error)
     }
 
-    return { vacancies: vacancies || [] }
+    return { vacancies }
   }
 
   render() {

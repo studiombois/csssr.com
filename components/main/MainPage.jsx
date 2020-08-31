@@ -33,12 +33,12 @@ class MainPage extends PureComponent {
       )
       vacancies = await res.json()
     } catch (error) {
-      Sentry.withScope(() => {
-        Sentry.captureException(error)
-      })
+      vacancies = []
+
+      Sentry.captureException(error)
     }
 
-    return { vacancies: vacancies || [] }
+    return { vacancies }
   }
 
   /* A/B test en-main-page code start */

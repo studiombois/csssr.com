@@ -142,6 +142,7 @@ export const nav = [
       {
         id: 'contacts',
         href: 'contacts',
+        testId: 'Footer:link.contacts',
       },
     ],
   },

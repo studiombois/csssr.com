@@ -34,7 +34,7 @@ Checkbox.propTypes = {
   meta: object,
   input: object,
   className: string,
-  testId: string,
+  testId: string.isRequired,
   children: any,
 }
 

@@ -10,7 +10,13 @@ import styles from './Tabs.styles'
 
 import tabs from '../../../../../data/contact-us/tabs'
 
-const Tabs = ({ className, l10n: { translations }, activeAddressId, setActiveAddressId }) => {
+const Tabs = ({
+  className,
+  l10n: { translations },
+  activeAddressId,
+  setActiveAddressId,
+  testId,
+}) => {
   return (
     <div className={className}>
       {tabs.map(({ id, value }) => (
@@ -19,6 +25,7 @@ const Tabs = ({ className, l10n: { translations }, activeAddressId, setActiveAdd
           key={id}
           type="button"
           onClick={() => setActiveAddressId(id)}
+          data-testid={`${id}-${testId}`}
         >
           {value(translations)}
         </button>
@@ -30,6 +37,7 @@ const Tabs = ({ className, l10n: { translations }, activeAddressId, setActiveAdd
 Tabs.propTypes = {
   className: string,
   l10n: object,
+  testId: string.isRequired,
 }
 
 export default L10nConsumer(

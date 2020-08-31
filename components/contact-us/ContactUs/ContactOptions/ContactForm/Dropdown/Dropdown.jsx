@@ -12,10 +12,10 @@ import items from '../../../../../../data/contact-us/typeInquiry'
 
 const Dropdown = ({
   className,
-  testid,
   inquiryTypeId,
   setInquiryTypeId,
   l10n: { translations },
+  testId,
 }) => {
   const [isOpen, toggleIsOpen] = useState(false)
 
@@ -33,8 +33,13 @@ const Dropdown = ({
   const { value } = items.filter((item) => item.id === inquiryTypeId)[0]
 
   return (
-    <div className={cn(className, { _active: isOpen })} data-testid={testid}>
-      <button type="button" onClick={handleClick} className={cn('button', { _active: isOpen })}>
+    <div className={cn(className, { _active: isOpen })} ata-testid="Contacts:dropdown">
+      <button
+        type="button"
+        onClick={handleClick}
+        className={cn('button', { _active: isOpen })}
+        data-testid={testId}
+      >
         {value(translations)}
       </button>
 
@@ -51,6 +56,7 @@ const Dropdown = ({
               key={id}
               disabled={id === inquiryTypeId}
               onClick={selectItem(id)}
+              data-testid={`Contacts:dropdownOption.${id}`}
             >
               {value(translations)}
             </button>
@@ -63,7 +69,7 @@ const Dropdown = ({
 
 Dropdown.propTypes = {
   className: string,
-  testid: string,
+  testId: string.isRequired,
 }
 
 export default L10nConsumer(

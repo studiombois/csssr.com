@@ -13,6 +13,7 @@ const generateSitemap = require('./generate-sitemap').generateSitemap
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 import { defaultLocaleByLanguage } from '../common/locales-settings'
 import l10nMiddleware from './l10n-middleware'
+import abMiddleware from './ab/middleware'
 import getPagesList from './get-pages-list'
 import { ONE_YEAR } from '../utils/timePeriods'
 import localeDetector from './locale-detector'
@@ -150,6 +151,12 @@ const startApp = async () => {
       res.send(xml)
     })
   })
+
+  server.use(
+    abMiddleware({
+      ignorePaths: [/^\/_next/, /^\/static/],
+    }),
+  )
 
   /* eslint-disable no-prototype-builtins */
   server.get('/:locale/jobs/:jobPathName', (req, res) => {

@@ -14,6 +14,7 @@ class FormStateMessage extends PureComponent {
     errorText: string,
     onTryAgain: func,
     feedbackEmail: string,
+    testId: string.isRequired,
   }
 
   getTextData = () => {
@@ -34,13 +35,22 @@ class FormStateMessage extends PureComponent {
           <span css={textDataStyles}>
             <span>{translations.common.form.message.fail.body.textStart}</span>
 
-            <button type="button" className="font_link-list_16" onClick={this.props.onTryAgain}>
+            <button
+              type="button"
+              className="font_link-list_16"
+              onClick={this.props.onTryAgain}
+              data-testid="contactUs:button:error.tryAgain"
+            >
               {translations.common.form.message.fail.body.textForButton}
             </button>
 
             <span>{translations.common.form.message.fail.body.textBetweenButtonAndLink}</span>
 
-            <a className="font_link-list_16" href={`mailto:${this.props.feedbackEmail}`}>
+            <a
+              className="font_link-list_16"
+              href={`mailto:${this.props.feedbackEmail}`}
+              data-testid="contactUs:link:feedbackEmail"
+            >
               {this.props.feedbackEmail}
             </a>
           </span>
@@ -52,7 +62,7 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { className, status, testid, shouldShowPicture = true, successPictureTestid } = this.props
+    const { className, status, testId, shouldShowPicture = true, successPictureTestid } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 
@@ -64,7 +74,7 @@ class FormStateMessage extends PureComponent {
           })}
         >
           {textData && (
-            <div className="text" data-testid={testid}>
+            <div className="text" data-testid={testId}>
               <span className="font_p16-regular">
                 {textData.intro}
                 <br />
@@ -78,7 +88,7 @@ class FormStateMessage extends PureComponent {
                 css={pictureStyles}
                 image={{ namespace: 'forms', key: `${status}`, alt: '' }}
                 customResolutions={['360']}
-                testid={successPictureTestid}
+                testId={successPictureTestid}
               />
             </div>
           )}

@@ -1,14 +1,15 @@
 import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './Hero.styles'
+
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import Grid from '../../ui-kit/core-design/Grid'
 
 const requireImages = require.context('../../../public/images/main/hero?csssr-images')

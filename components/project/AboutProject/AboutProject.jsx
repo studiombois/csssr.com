@@ -1,15 +1,16 @@
 import React from 'react'
-import { array, object, string } from 'prop-types'
-import styled from '@emotion/styled'
 import cn from 'classnames'
+import { array, string, func } from 'prop-types'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
 import styles from './AboutProject.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import Grid from '../../ui-kit/core-design/Grid'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const AboutProject = ({
   className,
@@ -84,10 +85,9 @@ const AboutProject = ({
         )),
     )}
 
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={images}
-      fallback={images['desktop.l'].png}
+      requireImages={images}
       alt={translations.project[projectId].imgAlt.aboutProject}
     />
   </Grid>
@@ -97,7 +97,7 @@ AboutProject.propTypes = {
   className: string,
   projectId: string,
   paragraphsScheme: array,
-  images: object,
+  images: func,
 }
 
 export default L10nConsumer(

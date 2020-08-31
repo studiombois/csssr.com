@@ -10,7 +10,7 @@ class FileField extends PureComponent {
     id: string,
     fileAccept: string,
     className: string,
-    testid: string,
+    testid: string.isRequired,
     buttunTestid: string,
     labelTestid: string,
     label: string,

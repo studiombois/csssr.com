@@ -13,6 +13,7 @@ const StatusMessage = ({
   feedbackEmail,
   hasFailOrSuccessStatus,
   onClick,
+  testId,
   l10n: { translations },
 }) => {
   const tabIndex = hasFailOrSuccessStatus ? '0' : '-1'
@@ -35,7 +36,7 @@ const StatusMessage = ({
 
       <p className="font_p16-regular status_text">{messageText}</p>
 
-      <Button tabIndex={tabIndex} onClick={onClick}>
+      <Button tabIndex={tabIndex} onClick={onClick} data-testid={testId}>
         {hasFailOrSuccessStatus && translations.common.form.message[status].action}
       </Button>
     </div>
@@ -48,6 +49,7 @@ StatusMessage.propTypes = {
   feedbackEmail: string,
   errorText: string,
   onClick: func,
+  testId: string.isRequired,
 }
 
 export default styled(L10nConsumer(StatusMessage))`

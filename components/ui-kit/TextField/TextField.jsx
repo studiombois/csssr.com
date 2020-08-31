@@ -16,6 +16,7 @@ class TextField extends PureComponent {
     autoFocus: bool,
     disabled: bool,
     required: bool,
+    testId: string.isRequired,
   }
 
   static defaultProps = {
@@ -37,7 +38,7 @@ class TextField extends PureComponent {
       kind,
       className,
       maxLength,
-      testid,
+      testId,
       tabIndex,
       errorTestid,
       input: { name, type, value, onBlur, onFocus },
@@ -70,7 +71,7 @@ class TextField extends PureComponent {
           type={type}
           disabled={disabled}
           maxLength={maxLength}
-          data-testid={testid}
+          data-testid={testId}
           required={required}
           aria-required={required}
         />

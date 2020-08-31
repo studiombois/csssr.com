@@ -8,7 +8,7 @@ const Textarea = ({
   className,
   id,
   label,
-  testid,
+  testId,
   tabIndex,
   autoFocus,
   disabled,
@@ -52,7 +52,7 @@ const Textarea = ({
         autoFocus={autoFocus}
         type={type}
         disabled={disabled}
-        data-testid={testid}
+        data-testid={testId}
         rows={rows}
         required={required}
         aria-required={required}
@@ -73,7 +73,7 @@ const Textarea = ({
 Textarea.propTypes = {
   className: string,
   label: string,
-  testid: string,
+  testId: string.isRequired,
   name: string,
   id: string,
   isError: bool,

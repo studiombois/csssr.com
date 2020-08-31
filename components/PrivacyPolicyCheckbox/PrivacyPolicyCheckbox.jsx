@@ -10,7 +10,7 @@ const PrivacyPolicyCheckbox = ({
   id = 'privacyPolicyCheckbox',
   name = 'privacyPolicy',
   className,
-  testid,
+  testId,
   linkTestId,
   l10n: { translations, language },
   tabIndex,
@@ -23,7 +23,7 @@ const PrivacyPolicyCheckbox = ({
     type="checkbox"
     showValidationAsWarning
     component={Checkbox}
-    testid={testid}
+    testId={testId}
     tabIndex={tabIndex}
     required={required}
   >
@@ -45,6 +45,7 @@ PrivacyPolicyCheckbox.propTypes = {
   id: string,
   name: string,
   required: bool,
+  testId: string.isRequired,
 }
 
 export default styled(L10nConsumer(PrivacyPolicyCheckbox))`

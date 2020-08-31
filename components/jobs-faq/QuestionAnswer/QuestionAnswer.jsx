@@ -11,7 +11,10 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const OriginQuestionAnswer = ({ answer, className, isContentVisible }) => {
   return (
-    <div className={cn(className, { visible: isContentVisible })}>
+    <div
+      className={cn(className, { visible: isContentVisible })}
+      data-testid="Faq:item:text.answer"
+    >
       {answer.map((answerObject, index) => {
         if (typeof answerObject === 'string') {
           return (

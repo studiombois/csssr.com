@@ -32,8 +32,10 @@ class FormStateMessage extends PureComponent {
       return {
         intro: errorText,
         message: (
-          <span css={textDataStyles}>
-            <span>{translations.common.form.message.fail.body.textStart}</span>
+          <span css={textDataStyles} data-testid="Jobs:text.error">
+            <span data-testid="Jobs:text.errorStart">
+              {translations.common.form.message.fail.body.textStart}
+            </span>
 
             <button
               type="button"
@@ -44,7 +46,9 @@ class FormStateMessage extends PureComponent {
               {translations.common.form.message.fail.body.textForButton}
             </button>
 
-            <span>{translations.common.form.message.fail.body.textBetweenButtonAndLink}</span>
+            <span data-testid="Jobs:text.errorBody">
+              {translations.common.form.message.fail.body.textBetweenButtonAndLink}
+            </span>
 
             <a
               className="font_link-list_16"

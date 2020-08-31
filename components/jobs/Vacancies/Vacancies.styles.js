@@ -18,7 +18,7 @@ const base = css`
     width: 100%;
   }
 
-  h1 span {
+  h1 + span {
     padding-top: 1rem;
     display: block;
   }
@@ -177,7 +177,7 @@ const base = css`
       line-height: 3.5rem;
     }
 
-    h1 span {
+    h1 + span {
       padding-top: 2rem;
     }
 
@@ -305,7 +305,7 @@ const base = css`
       }
     }
 
-    h1 span {
+    h1 + span {
       padding-top: 2.375rem;
       display: block;
     }

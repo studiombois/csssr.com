@@ -25,7 +25,7 @@ class JobsPage extends PureComponent {
       <Layout pageName={pageName}>
         <Head
           title={translations.jobs.meta.title}
-          templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
+          templateTitle={language === 'ru' ? ' | Вакансии CSSSR' : ''}
           description={translations.jobs.meta.description}
           ogImage={{
             url: require('../../static/images/jobs/1920/cover@2x.jpg'),

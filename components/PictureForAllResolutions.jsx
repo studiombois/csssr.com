@@ -12,7 +12,7 @@ const mediaRuleByResoluton = {
 }
 const PictureForAllResolutions = ({
   className,
-  testid,
+  testId,
   image: { namespace, key, alt, extension = 'png' },
   customResolutions = defaultResolutions,
 }) => (
@@ -41,7 +41,7 @@ const PictureForAllResolutions = ({
       srcSet={getSrcSet(namespace, 1920, key, extension, ['1x', '2x', '3x'])}
       src={getSrcSet(namespace, 1920, key, extension, ['1x'])}
       alt={alt}
-      data-testid={testid}
+      data-testid={testId}
       css={css`
         height: 100%;
         width: 100%;

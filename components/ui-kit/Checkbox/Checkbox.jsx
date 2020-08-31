@@ -17,6 +17,7 @@ class Checkbox extends PureComponent {
     onChange: func,
     showValidationAsWarning: bool,
     required: bool,
+    testId: string.isRequired,
   }
 
   static defaultProps = {
@@ -35,7 +36,7 @@ class Checkbox extends PureComponent {
       className,
       children,
       showValidationAsWarning,
-      testid,
+      testId,
       tabIndex,
       meta: { error, invalid, submitFailed },
       required,
@@ -52,7 +53,7 @@ class Checkbox extends PureComponent {
           disabled={disabled}
           type="checkbox"
           onChange={this.handleChange}
-          data-testid={testid}
+          data-testid={testId}
           tabIndex={tabIndex}
           required={required}
           aria-required={required}

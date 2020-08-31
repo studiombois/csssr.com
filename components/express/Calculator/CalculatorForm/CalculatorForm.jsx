@@ -145,9 +145,9 @@ const OriginCalculatorForm = (props) => {
                   maxLength="3"
                   className="input-control"
                   label={translations.express.calculator.form.fieldset1.fieldLabel}
-                  testidInput="calculator:field:basic.value"
-                  testidBtnIncrement="calculator:button:basic.increment"
-                  testidBtnDecrement="calculator:button:basic.decrement"
+                  testIdInput="calculator:field:basic.value"
+                  testIdBtnIncrement="calculator:button:basic.increment"
+                  testIdBtnDecrement="calculator:button:basic.decrement"
                 />
               )}
             />
@@ -193,9 +193,9 @@ const OriginCalculatorForm = (props) => {
                 className="input-control"
                 label={translations.express.calculator.form.fieldset2.fieldLabel}
                 maxLength="3"
-                testidInput="calculator:field:layout.value"
-                testidBtnIncrement="calculator:button:layout.increment"
-                testidBtnDecrement="calculator:button:layout.decrement"
+                testIdInput="calculator:field:layout.value"
+                testIdBtnIncrement="calculator:button:layout.increment"
+                testIdBtnDecrement="calculator:button:layout.decrement"
               />
             )}
           />
@@ -315,6 +315,7 @@ const OriginCalculatorForm = (props) => {
           <DropdownButton
             isExpanded={isDropdownVisible}
             onClick={() => toggleDropdown(!isDropdownVisible)}
+            testId="Calculator:button.collapseExpand"
           />
         )}
 

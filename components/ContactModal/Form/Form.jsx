@@ -36,6 +36,7 @@ const Form = (props) => {
       />
 
       <StatusMessage
+        testId="Form:button.status-message"
         status={submitStatus}
         hasFailOrSuccessStatus={hasFailOrSuccessStatus}
         feedbackEmail="launch@csssr.com"

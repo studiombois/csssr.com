@@ -128,6 +128,7 @@ class ContactModal extends PureComponent {
                 'normal-height': hasFailOrSuccessStatus,
               })}
               ref={this.modalWrapperRef}
+              data-testid="ContactModal:block"
             >
               <ReactFinalForm
                 component={Form}

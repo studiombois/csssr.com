@@ -269,7 +269,7 @@ class ContactForm extends PureComponent {
             type="submit"
             disabled={status === 'submitting' || status === 'fail'}
             status={status}
-            testid={`${formName}:button.callbackForm.submit`}
+            testId={`${formName}:button.callbackForm.submit`}
           >
             <Text type="perforator" size="m" className="button-content" as="span">
               {translations.contactForm.submitText}

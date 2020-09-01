@@ -35,10 +35,6 @@ const base = css`
         margin-top: 10px;
     }
 
-    .greeting-image-mobile {
-        display: none;
-    }
-
     .greeting-image img {
         max-width: 100%;
         height: auto;
@@ -670,16 +666,12 @@ const base = css`
         }
 
         .greeting-image {
-            display: none;
-        }
-
-        .greeting-image-mobile {
             margin-top: 40px;
             display: block;
             grid-column: 1 / span 6;
         }
 
-        .greeting-image-mobile img {
+        .greeting-image img {
             width: 100%;
             height: auto;
         }

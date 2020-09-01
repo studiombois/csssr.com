@@ -2,24 +2,24 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './Frontend.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
-import Picture from '../../ui-kit/Picture'
 import Grid from '../../ui-kit/core-design/Grid'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import { angularImages, reactImages, vueImages } from '../../../data/technologies/frontend'
 
 const Frontend = ({ className, l10n: { translations } }) => (
   <Grid as="section" className={className}>
-    <Picture
+    <PictureSmart
       className={cn('picture', 'picture_react')}
-      images={reactImages}
-      fallback={reactImages.png}
+      requireImages={reactImages}
       alt={translations.technologies.imgAlt.react}
     />
 
@@ -34,10 +34,9 @@ const Frontend = ({ className, l10n: { translations } }) => (
       dangerouslySetInnerHTML={{ __html: translations.technologies.frontend.react }}
     />
 
-    <Picture
+    <PictureSmart
       className={cn('picture', 'picture_vue')}
-      images={vueImages}
-      fallback={vueImages.png}
+      requireImages={vueImages}
       alt={translations.technologies.imgAlt.vue}
     />
 
@@ -53,10 +52,9 @@ const Frontend = ({ className, l10n: { translations } }) => (
       dangerouslySetInnerHTML={{ __html: translations.technologies.frontend.vue }}
     />
 
-    <Picture
+    <PictureSmart
       className={cn('picture', 'picture_angular')}
-      images={angularImages}
-      fallback={angularImages.png}
+      requireImages={angularImages}
       alt={translations.technologies.imgAlt.angular}
     />
 

@@ -10,7 +10,7 @@ import Grid from '../ui-kit/core-design/Grid'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import DevTools from '../DevTools'
 import Head from '../Head'
-import PictureForAllResolutions from '../PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
 import { ReactComponent as LineFromTopToBottomIcon } from '../../static/icons/lineFromTopToBottom.svg'
@@ -20,6 +20,8 @@ import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 import { L10nConsumer } from '../../utils/l10nProvider'
+
+const error404 = require.context('../../public/images/error/404?csssr-images')
 
 class Error404Page extends React.Component {
   renderNav = ({ title, id, links }) => {
@@ -112,10 +114,7 @@ class Error404Page extends React.Component {
             dangerouslySetInnerHTML={{ __html: translations.error.errors.notFound.title }}
           />
 
-          <PictureForAllResolutions
-            className="picture"
-            image={{ namespace: 'error', key: '404', alt: '404' }}
-          />
+          <PictureSmart className="picture" requireImages={error404} />
 
           <div className={'code-wrapper'}>
             <NotFound width="auto" height="100%" />

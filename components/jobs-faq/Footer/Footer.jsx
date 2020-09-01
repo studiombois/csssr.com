@@ -5,22 +5,16 @@ import cn from 'classnames'
 import { bool, string } from 'prop-types'
 import { Global } from '@emotion/core'
 import Grid from '../../ui-kit/core-design/Grid'
-import Picture from '../../ui-kit/Picture'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-import superman from '../../../static/images/jobs-faq/superman.png?responsive'
-import superman_webp from '../../../static/images/jobs-faq/superman.png?responsive_and_webp'
+const superman = require.context('../../../public/images/jobs-faq/superman?csssr-images')
 
 const OriginFooter = ({ className }) => (
   <div className={cn(className, 'image-wrapper')}>
     <Grid>
-      <Picture
-        className="image"
-        images={{ png: superman, webp: superman_webp }}
-        fallback={superman}
-        alt="Cупермен фронтендер"
-      />
+      <PictureSmart className="image" requireImages={superman} alt="Cупермен фронтендер" />
     </Grid>
 
     <Global styles={backgroundImagesStyles()} />

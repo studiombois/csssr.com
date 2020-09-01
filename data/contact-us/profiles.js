@@ -1,33 +1,35 @@
-import anastasia_ignatenko from '../../static/images/contact-us/book-a-call/anastasia_ignatenko.jpg?responsive'
-import anastasia_ignatenko_webp from '../../static/images/contact-us/book-a-call/anastasia_ignatenko.jpg?responsive_and_webp'
+const anastasiaIgnatenko = require.context(
+  '../../public/images/contact-us/book-a-call/anastasia_ignatenko?csssr-images',
+)
+const anastasiaVnuchenko = require.context(
+  '../../public/images/contact-us/book-a-call/anastasia_vnuchenko?csssr-images',
+)
 
-import anastasia_vnuchenko from '../../static/images/contact-us/book-a-call/anastasia_vnuchenko.jpg?responsive'
-import anastasia_vnuchenko_webp from '../../static/images/contact-us/book-a-call/anastasia_vnuchenko.jpg?responsive_and_webp'
+const olgaShevchenko = require.context(
+  '../../public/images/contact-us/book-a-call/olga_shevchenko?csssr-images',
+)
 
-import olga_shevchenko from '../../static/images/contact-us/book-a-call/olga_shevchenko.jpg?responsive'
-import olga_shevchenko_webp from '../../static/images/contact-us/book-a-call/olga_shevchenko.jpg?responsive_and_webp'
+const victoriaZubareva = require.context(
+  '../../public/images/contact-us/book-a-call/victoria_zubareva?csssr-images',
+)
 
-import victoria_zubareva from '../../static/images/contact-us/book-a-call/victoria_zubareva.jpg?responsive'
-import victoria_zubareva_webp from '../../static/images/contact-us/book-a-call/victoria_zubareva.jpg?responsive_and_webp'
-
-//TODO: обновить calendlyLink перед релизом
 export default {
   anastasia_ignatenko: {
-    images: { jpg: anastasia_ignatenko, webp: anastasia_ignatenko_webp },
+    images: anastasiaIgnatenko,
     email: 'launch@csssr.com',
     calendlyLink: 'https://calendly.com/anastasia-ign/csssr',
   },
   anastasia_vnuchenko: {
-    images: { jpg: anastasia_vnuchenko, webp: anastasia_vnuchenko_webp },
+    images: anastasiaVnuchenko,
     email: 'launch@csssr.com',
     calendlyLink: 'https://calendly.com/anastasia-vnuchenko/csssr',
   },
   olga_shevchenko: {
-    images: { jpg: olga_shevchenko, webp: olga_shevchenko_webp },
+    images: olgaShevchenko,
     email: 'launch@csssr.com',
   },
   victoria_zubareva: {
-    images: { jpg: victoria_zubareva, webp: victoria_zubareva_webp },
+    images: victoriaZubareva,
     email: 'join@csssr.com',
   },
 }

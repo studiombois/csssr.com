@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import getBackgroundImageSrcSet from '../../../utils/style/getBackgroundImageSrcSet'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
 export default {
   base: props => css`
@@ -20,5 +20,5 @@ export default {
 }
 
 export const backgroundImagesStyles = (images, selector) => () => css`
-  ${getBackgroundImageSrcSet(images, selector)}
+  ${backgroundCssSmart(selector,images)}
 `

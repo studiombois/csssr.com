@@ -20,8 +20,8 @@ const pageName = 'jobsFaq'
 const JobsFaqPage = () => (
   <Layout pageName={pageName}>
     <Head
-      title="Как устроиться сюда ➡️"
-      description="Часто задаваемые вопросы кандидатов в..."
+      title="F.A.Q. о работе в компании"
+      description="Актуальные вопросы кандидатов про вакансии, условия найма, график работы в группе компаний CSSSR. Для тех, кто предпочитает читать инструкции перед применением, а не после."
       ogImage={{
         url: require('../../static/images/jobs-faq/ogImage.jpg'),
         width: 2400,
@@ -34,15 +34,25 @@ const JobsFaqPage = () => (
     <ImageBlock blockName="roads" images={{ png: roads, webp: roads_webp }} />
 
     <QuestionHeader headingText="Про найм" />
-    {questions.hire.map((item) => (
-      <QuestionBlock question={item.question} answer={item.answer} key={item.question} />
+    {questions.hire.map((item, index) => (
+      <QuestionBlock
+        question={item.question}
+        answer={item.answer}
+        key={item.question}
+        testid={`Faq:item.aboutHiring-${index}`}
+      />
     ))}
 
     <ImageBlock blockName="puzzle" images={{ png: puzzle, webp: puzzle_webp }} />
 
     <QuestionHeader headingText="Про работу" />
-    {questions.apply.map((item) => (
-      <QuestionBlock question={item.question} answer={item.answer} key={item.question} />
+    {questions.apply.map((item, index) => (
+      <QuestionBlock
+        question={item.question}
+        answer={item.answer}
+        key={item.question}
+        testid={`Faq:item.aboutWorck-${index}`}
+      />
     ))}
 
     <Footer />

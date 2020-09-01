@@ -13,6 +13,7 @@ class SelectField extends PureComponent {
     className: string,
     disabled: bool,
     onChange: func,
+    testId: string.isRequired,
   }
 
   static defaultProps = {
@@ -24,7 +25,7 @@ class SelectField extends PureComponent {
   }
 
   render() {
-    const { id, input, disabled, className, placeholder, options } = this.props
+    const { id, input, disabled, className, placeholder, options, testId } = this.props
 
     return (
       <div
@@ -39,6 +40,7 @@ class SelectField extends PureComponent {
           value={input.value}
           disabled={disabled}
           onChange={this.handleChange}
+          data-testid={testId}
         >
           <option hidden>{placeholder}</option>
           {options.map((option) => (

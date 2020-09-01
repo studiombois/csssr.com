@@ -23,7 +23,7 @@ const ExpressPage = ({ l10n: { translations } }) => (
       }}
     />
 
-    <Greeting />
+    <Greeting testId="Express:link.greeting" />
     <Workflow />
     <Calculator />
     <Features />

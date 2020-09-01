@@ -15,13 +15,13 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const Map = ({ className, activeAddressId, isMobile }) => {
   return (
-    <aside className={className} id="map">
+    <aside className={cn(className, `_${activeAddressId}`)} id="map">
       <Global styles={backgroundImagesStyles} />
 
       <Tabs />
       {isMobile && <BookACall className="book-a-call" />}
       <Address />
-      <span className={cn('map', `map-${activeAddressId}`)} />
+      <span className={cn('map', `map-${activeAddressId}`)} data-testid="Contacts:block.map" />
     </aside>
   )
 }

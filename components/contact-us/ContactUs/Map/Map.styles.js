@@ -71,6 +71,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       height: ${calcRem(645)};
     }
 
+    &._ru {
+      height: ${calcRem(716)};
+    }
+
     .map {
       z-index: 1;
       width: 100%;

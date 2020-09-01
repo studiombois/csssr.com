@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { bool, string } from 'prop-types'
 import { withRouter } from 'next/router'
 import ReactDOM from 'react-dom'
@@ -29,9 +29,7 @@ const Header = ({
   isButtonVisible = true,
   l10n: { translations, language },
 }) => {
-  let lastScrollTopValue = useRef(0)
   const [isDropdownOpened, toggleDropdown] = useState(false)
-  const [isHeaderVisible, toggleHeaderVisibility] = useState(true)
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
   useEffect(() => {
@@ -42,48 +40,6 @@ const Header = ({
       } else {
         enablePageScroll(document.body)
       }
-    }
-
-    const handleScroll = (event) => {
-      // В коде ab теста добавили такую переменную в window
-      if (!window.__OPTIMIZE_AB_TEST_SHOULD_HIDE_HEADER_ON_SCROLL__) {
-        return
-      }
-
-      const headerHeight = 64
-      const {
-        target: { scrollingElement },
-      } = event
-      const isScrollingElementHtmlOrBodyNode =
-        scrollingElement === document.documentElement || scrollingElement === document.body
-      const scrollTopValue = isScrollingElementHtmlOrBodyNode && scrollingElement.scrollTop
-      const isScrollingDown =
-        scrollTopValue > lastScrollTopValue.current && scrollTopValue > headerHeight
-
-      if (isScrollingDown) {
-        if (isMobile && isDropdownOpened) {
-          toggleHeaderVisibility(true)
-        } else if (isHeaderVisible) {
-          toggleHeaderVisibility(false)
-        }
-      } else {
-        if (!isHeaderVisible) {
-          toggleHeaderVisibility(true)
-          toggleDropdown(false)
-        }
-      }
-
-      if (scrollTopValue === lastScrollTopValue.current) {
-        lastScrollTopValue.current = scrollTopValue - 1
-      } else {
-        lastScrollTopValue.current = scrollTopValue
-      }
-    }
-
-    if (!isIe11) {
-      document.addEventListener('scroll', handleScroll)
-
-      return () => document.removeEventListener('scroll', handleScroll)
     }
   })
 
@@ -128,13 +84,7 @@ const Header = ({
   )
 
   return (
-    <header
-      data-testid="Header:block"
-      className={cn(className, {
-        visible: isHeaderVisible,
-        invisible: !isHeaderVisible,
-      })}
-    >
+    <header data-testid="Header:block" className={className}>
       <NextLink href={`/${language}`}>
         <a className="logo-wrapper" data-testid="Header:link.logo">
           <Logo className="logo" />
@@ -143,7 +93,11 @@ const Header = ({
 
       {isMobile ? (
         <Fragment>
-          <button className="burger" onClick={() => toggleDropdown(!isDropdownOpened)}>
+          <button
+            className="burger"
+            onClick={() => toggleDropdown(!isDropdownOpened)}
+            data-testid="Header:button.burger"
+          >
             <Icon />
           </button>
 

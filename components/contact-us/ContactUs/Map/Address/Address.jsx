@@ -16,7 +16,7 @@ const Address = ({ className, l10n: { translations }, activeAddressId }) => {
   const { items, id } = addresses[activeAddressId]
 
   return (
-    <div className={cn(className, `_${id}`)}>
+    <div className={cn(className, `_${id}`)} data-testid="Contacts:block.addressInfo">
       {id === 'sg' && <PinLionIcon className="pin" />}
 
       <div className="addresses">
@@ -25,11 +25,14 @@ const Address = ({ className, l10n: { translations }, activeAddressId }) => {
             className="address"
             key={id}
             dangerouslySetInnerHTML={{ __html: value(translations) }}
+            data-testid={`Contacts:text:address.${id}`}
           />
         ))}
       </div>
 
-      <p className="text">{translations.contactUs.map.addresses.text}</p>
+      <p className="text" data-testid={`Contacts:text.meeting`}>
+        {translations.contactUs.map.addresses.text}
+      </p>
     </div>
   )
 }

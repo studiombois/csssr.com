@@ -1473,20 +1473,23 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@csssr/core-design/-/core-design-5.1.2.tgz#c819fde9d63a701b25b732c1f871a005aed5f794"
-  integrity sha512-BEBFRXu2ANEmO1syz4QBcX7ITUeKJuWYsoJNmcMn40aPTgCKvS2xaVFuaf+JDRt7Y6Wxnwhllwub8xs62Guc2Q==
+"@csssr/core-design@^5.9.0":
+  version "5.9.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/core-design/5.9.0/a8ef5be878ff20daaa7a27cf387ebc49042354c6d25a252490a60e52a8d2e162#f0a54ab78fd213683ecbdaf797de11853e7d3c3e"
+  integrity sha512-vDguCKE1ZujyyOcoEWDuXKJERJs8f54LnwrRV2iUHGPyGyfgNXkBnNffIEx4TpVOhi8NbQXxb40s8A64hgaIxg==
   dependencies:
-    "@emotion/styled-base" "^10.0.10"
+    "@emotion/styled-base" "^10.0.31"
+    classnames "^2.2.6"
     color "^3.1.1"
-    emotion-theming "^10.0.10"
+    emotion-theming "^10.0.27"
     ramda "^0.26.1"
+    react-reveal "^1.2.2"
+    scroll-lock "^2.1.4"
 
-"@csssr/csssr-amo@^3.2.0":
-  version "3.2.0"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/3.2.0/d59620371b8fb75f3489065a60a6b4618c00d574ea719862475cdd9d1776dda9#00885aa726029c0cbe754491a80553f3874d08c7"
-  integrity sha512-QOcX+sVXxRv2CExtDAm1onfX2AtBolCaiterI3KKod4OwNNqM7imAYff6VVBfxMXt+KU0edYtl/hdHNdjRDb1Q==
+"@csssr/csssr-amo@^3.5.1":
+  version "3.5.1"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/3.5.1/7728fbc2683e04c23cd766fcc8db41e92a8e6389026fac62af569174d7adfeea#9acf3275c20c7d24104927db383881e034bddbe7"
+  integrity sha512-1C++jM1x0+FxqGVgg9BgtMlm+6t1+umiSQP1/Kmb4537qssj9SWHuoYspf+0ZmlALFpriFelvAnSpysKGPJRYA==
   dependencies:
     isomorphic-unfetch "^3.0.0"
 
@@ -1579,7 +1582,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/sheet/-/sheet-0.9.4.tgz#894374bea39ec30f489bbfc3438192b9774d32e5"
   integrity sha512-zM9PFmgVSqBw4zL101Q0HrBVTGmpAxFZH/pYx/cjJT5advXguvcgjHFTCaIO3enL/xr89vK2bh0Mfyj9aa0ANA==
 
-"@emotion/styled-base@^10.0.10", "@emotion/styled-base@^10.0.27":
+"@emotion/styled-base@^10.0.27", "@emotion/styled-base@^10.0.31":
   version "10.0.31"
   resolved "https://registry.yarnpkg.com/@emotion/styled-base/-/styled-base-10.0.31.tgz#940957ee0aa15c6974adc7d494ff19765a2f742a"
   integrity sha512-wTOE1NcXmqMWlyrtwdkqg87Mu6Rj1MaukEoEmEkHirO5IoHDJ8LgCQL4MjJODgxWxXibGR3opGp1p7YvkNEdXQ==
@@ -4667,7 +4670,7 @@ emojis-list@^3.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
 
-emotion-theming@^10.0.10, emotion-theming@^10.0.27:
+emotion-theming@^10.0.27:
   version "10.0.27"
   resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.27.tgz#1887baaec15199862c89b1b984b79806f2b9ab10"
   integrity sha512-MlF1yu/gYh8u+sLUqA0YuA9JX0P4Hb69WlKc/9OLo+WCXuX6sy/KoIa+qJimgmr2dWqnypYKYPX37esjDBbhdw==

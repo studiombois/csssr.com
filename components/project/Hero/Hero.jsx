@@ -37,7 +37,7 @@ const Hero = ({
           dangerouslySetInnerHTML={{ __html: link(translations) }}
         />
 
-        <Heading.H3
+        <Heading.H2
           type="slab"
           size="m"
           dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
@@ -52,7 +52,7 @@ const Hero = ({
               size="m"
               as="p"
               dangerouslySetInnerHTML={{ __html: item(translations) }}
-              className="paragraph"
+              className={`paragraph paragraph_${index}`}
             />
           ))}
         </div>

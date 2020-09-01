@@ -4751,10 +4751,10 @@ expect@^26.4.2:
     jest-message-util "^26.3.0"
     jest-regex-util "^26.0.0"
 
-express-static-gzip@^2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/express-static-gzip/-/express-static-gzip-2.0.7.tgz#274d35c92c5f5cd222a6d3b504f343bd9931519e"
-  integrity sha512-cOYQsNfijszmuhbySBBnnBDAz6VEL7euBdnb6DtGaRdXlhA2NPmuuOsTlApYh3aKAv+E/P33L4JMnBoiz99/PA==
+express-static-gzip@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/express-static-gzip/-/express-static-gzip-2.0.8.tgz#7f67afe269d21333c2b2bde568992f7dc70f5668"
+  integrity sha512-m7Z4Njpa20aWtbhEzYNDpyUcAq/47LzB6GxYRYNsvcEoMETj3hDtavLBi6iRCDWUvwpspzhicJPTZ5ypGnLgCQ==
   dependencies:
     serve-static "^1.14.1"
 

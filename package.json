@@ -34,7 +34,7 @@
     "emotion-theming": "^10.0.27",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "express-static-gzip": "^2.0.7",
+    "express-static-gzip": "^2.0.8",
     "fast-glob": "^3.2.4",
     "file-loader": "^6.0.0",
     "final-form": "^4.20.1",

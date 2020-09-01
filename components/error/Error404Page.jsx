@@ -1,5 +1,7 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import Link from 'next/link'
+import { withRouter } from 'next/router'
+import { Header, getLocaleFromUrl, PageContent, getDevPathname } from '@csssr/csssr-shared-header'
 import * as Sentry from '@sentry/node'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -8,11 +10,12 @@ import cn from 'classnames'
 import styles from './ErrorPage.styles'
 import Grid from '../ui-kit/core-design/Grid'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
+import { DeviceContext } from '../../utils/deviceProvider'
+import spaceOrigin from '../../utils/csssrSpaceOrigin'
 import DevTools from '../DevTools'
 import Head from '../Head'
 import PictureForAllResolutions from '../PictureForAllResolutions'
 
-import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
 import { ReactComponent as LineFromTopToBottomIcon } from '../../static/icons/lineFromTopToBottom.svg'
 import { ReactComponent as NotFound } from '../../static/icons/notFound.svg'
 
@@ -21,12 +24,10 @@ import navItems from '../../data/error/navItems'
 import globalStyles from '../Layout/Layout.styles'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
-class Error404Page extends React.Component {
-  renderNav = ({ title, id, links }) => {
-    const {
-      l10n: { language, translations },
-    } = this.props
+const Error404Page = ({ className, l10n, router }) => {
+  const { language, translations } = l10n
 
+  const renderNav = ({ title, id, links }) => {
     const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
 
     if (id === 'solutions' && language === 'ru') return
@@ -69,43 +70,39 @@ class Error404Page extends React.Component {
     )
   }
 
-  render() {
-    const {
-      className,
-      l10n: { language, translations },
-    } = this.props
+  if (!language) {
+    Sentry.withScope((scope) => {
+      scope.setExtra('language', language)
+      Sentry.captureMessage(
+        'Опять что-то не так с определением языка, смотри url и дополнительные параметры',
+      )
+    })
+  }
 
-    const rootUrl = `/${language}`
+  const { isMobile } = useContext(DeviceContext)
+  const appRootElement = typeof window === 'object' ? document.getElementById('__next') : null
+  const lng = getLocaleFromUrl(router.asPath)
+  const pathname = getDevPathname(router.asPath)
 
-    if (!language) {
-      Sentry.withScope((scope) => {
-        scope.setExtra('language', language)
-        Sentry.captureMessage(
-          'Опять что-то не так с определением языка, смотри url и дополнительные параметры',
-        )
-      })
-    }
+  return (
+    <>
+      <Global styles={globalStyles} />
+      <DevTools />
 
-    return (
-      <Fragment>
-        <Global styles={globalStyles} />
-        <DevTools />
+      <Head title={translations.error.meta.title} description={translations.error.meta.description}>
+        <meta name="robots" content="noindex" />
+      </Head>
 
-        <Head
-          title={translations.error.meta.title}
-          description={translations.error.meta.description}
-        >
-          <meta name="robots" content="noindex" />
-        </Head>
+      <Header
+        isMobile={isMobile}
+        appRootElement={appRootElement}
+        pathname={pathname}
+        lng={lng}
+        NextLink={Link}
+        jobsDomain={spaceOrigin}
+      />
 
-        <Grid as="header" className={className}>
-          <Link href={rootUrl}>
-            <a className="logo">
-              <LogoIcon width="100%" height="100%" />
-            </a>
-          </Link>
-        </Grid>
-
+      <PageContent>
         <Grid as="main" className={cn(className, `error-code_404`)}>
           <h1
             className="font_h1-slab"
@@ -132,16 +129,18 @@ class Error404Page extends React.Component {
               <LineFromTopToBottomIcon width="100%" height="100%" />
             </div>
 
-            <div className="navList">{navItems.map(this.renderNav)}</div>
+            <div className="navList">{navItems.map(renderNav)}</div>
           </Fragment>
         </Grid>
-      </Fragment>
-    )
-  }
+      </PageContent>
+    </>
+  )
 }
 
-export default L10nConsumer(
-  MsBrowserConsumer(styled(Error404Page)`
-    ${styles}
-  `),
+export default withRouter(
+  L10nConsumer(
+    MsBrowserConsumer(styled(Error404Page)`
+      ${styles}
+    `),
+  ),
 )

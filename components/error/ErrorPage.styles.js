@@ -10,14 +10,6 @@ const base = css`
     grid-column: 9 / span 4;
   }
 
-  .logo {
-    grid-column: 2 / span 2;
-    margin-top: 5.25rem;
-    width: 11.5rem;
-    height: 2.875rem;
-    color: black;
-  }
-
   a.font_burger-menu {
     margin-top: 0;
     padding-bottom: 0;
@@ -146,14 +138,6 @@ const base = css`
       height: 8.9375rem;
     }
 
-   .logo {
-      grid-column: 1 / span 3;
-      margin-top: 3.625rem;
-      width: 10rem;
-      height: 2.5rem;
-      color: black;
-    }
-
     h1 {
       grid-column: 1 / span 6;
       grid-row: 1;
@@ -193,12 +177,6 @@ const base = css`
 `
 
 const ie11Styles = css`
-.logo {
-    display: block;
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(2)};
-  }
-
   h1 {
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(7)};

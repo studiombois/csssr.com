@@ -13,7 +13,7 @@ import CandidateInfoSection from '../CandidateInfoSection'
 import AnimatedButton from '../../ui-kit/core-design/AnimatedButton'
 import Text from '../../ui-kit/core-design/Text'
 import FormStateMessage from '../../ui-kit/FormStateMessage/FormStateMessage'
-import Picture from '../../Picture'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const picturesMap = {
@@ -55,6 +55,8 @@ const picturesMap = {
   'backend-qa-engineer': 'QA_2',
   'deputy-chief-accountant': 'Documents_2',
 }
+
+import { faqSmallImages } from '../../../data/jobs/images'
 
 const divideSections = (sections) => {
   const firstQuestIndex = sections.findIndex(
@@ -239,9 +241,9 @@ class CandidateForm extends PureComponent {
 
           {language === 'ru' && (
             <div className="faq-text-container">
-              <Picture
+              <PictureSmart
                 className="faq-picture visible_on_mobile"
-                image={{ namespace: 'jobs', key: 'faq', alt: translations.jobs.faq.alt }}
+                requireImages={faqSmallImages}
                 css={faqImageStyles}
                 testid="Jobs:img.faq"
               />

@@ -41,6 +41,7 @@ const Form = (props) => {
         feedbackEmail="launch@csssr.com"
         errorText={submitError}
         onClick={onStatusButtonClick}
+        testId="ContactModal:button.status"
       />
     </Fragment>
   )

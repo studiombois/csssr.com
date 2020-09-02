@@ -277,7 +277,7 @@ class CandidateForm extends PureComponent {
             <AnimatedButton
               type="submit"
               status={status}
-              testid="Jobs:form:button.submit"
+              testId="Jobs:form:button.submit"
               failImgTestId="Jobs:form:img.fail"
             >
               <Text type="perforator" size="m" className="button-content" as="span">
@@ -292,8 +292,8 @@ class CandidateForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail="join@csssr.com"
-              successPictureTestid="Jobs:form:img.result"
-              testid="Jobs:form.text.result"
+              successPictureTestId="Jobs:form:img.result"
+              testId="Jobs:form.text.result"
             />
           </div>
         </FormRow>

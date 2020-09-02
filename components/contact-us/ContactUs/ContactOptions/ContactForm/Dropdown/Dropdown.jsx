@@ -33,7 +33,7 @@ const Dropdown = ({
   const { value } = items.filter((item) => item.id === inquiryTypeId)[0]
 
   return (
-    <div className={cn(className, { _active: isOpen })} ata-testid="Contacts:dropdown">
+    <div className={cn(className, { _active: isOpen })} data-testid="Contacts:dropdown">
       <button
         type="button"
         onClick={handleClick}

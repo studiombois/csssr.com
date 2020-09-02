@@ -17,7 +17,7 @@ const ExpressPage = ({ l10n: { translations } }) => (
       title={translations.express.meta.title}
       description={translations.express.meta.description}
       ogImage={{
-        url: require('../../static/images/express/ogImage.jpg'),
+        url: require('../../public/images/service/express/ogImage.jpg'),
         width: 2400,
         height: 1260,
       }}

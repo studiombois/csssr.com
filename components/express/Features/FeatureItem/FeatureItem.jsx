@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { object, string } from 'prop-types'
+import { string, func } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './FeatureItem.styles'
 import Heading from '../../../ui-kit/core-design/Heading'
@@ -43,7 +43,7 @@ const OriginFeatureItem = ({
 )
 
 OriginFeatureItem.propTypes = {
-  images: object,
+  images: func,
   imageDescription: string,
   heading: string,
   textRegular: string,

@@ -196,7 +196,7 @@ class ContactForm extends PureComponent {
             component={TextareaField}
             placeholder={translations.contactForm.messagePlaceholder}
             label={translations.contactForm.messageLabel}
-            testid={`${formName}:field:callbackForm.message`}
+            testId={`${formName}:field:callbackForm.message`}
             tabIndex={getTabIndex}
           />
         </div>
@@ -208,7 +208,7 @@ class ContactForm extends PureComponent {
             name="newsletter"
             type="checkbox"
             component={Checkbox}
-            testid={`${formName}:field:callbackForm.newsletter.checkbox`}
+            testId={`${formName}:field:callbackForm.newsletter.checkbox`}
             tabIndex={getTabIndex}
           >
             {translations.common.checkBoxesText.newsletterText}
@@ -284,7 +284,7 @@ class ContactForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail={feedbackEmail}
-              testid={`${formName}:text.successMessage`}
+              testId={`${formName}:text.successMessage`}
               successPictureTestid={`${formName}:picture.successMessageImg`}
             />
           </div>

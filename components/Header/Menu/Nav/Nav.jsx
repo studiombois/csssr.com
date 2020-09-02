@@ -52,7 +52,11 @@ const Nav = ({
       data-testid="Header:nav.dropdown"
     >
       {isMobile && (
-        <button className="button_back" onClick={onBackButtonClick}>
+        <button
+          className="button_back"
+          onClick={onBackButtonClick}
+          data-testid="Header:nav:button.back"
+        >
           <Back className="icon_back" />
 
           {translations.common.header.backLink}

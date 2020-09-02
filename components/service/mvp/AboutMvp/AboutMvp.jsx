@@ -76,14 +76,14 @@ class AboutMvp extends PureComponent {
               className={cn('picture', { picture_visible: togglerIndex === 1 })}
               requireImages={mvpOnImages}
               alt={translations.mvp.imgAlt.mvpOn}
-              testid={togglerIndex === 1 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
+              testId={togglerIndex === 1 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
             />
 
             <PictureSmart
               className={cn('picture', { picture_visible: togglerIndex === 0 })}
               requireImages={mvpOffImages}
               alt={translations.mvp.imgAlt.mvpOff}
-              testid={togglerIndex === 0 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
+              testId={togglerIndex === 0 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
             />
           </div>
         </article>

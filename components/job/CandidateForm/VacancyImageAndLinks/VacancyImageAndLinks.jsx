@@ -29,8 +29,13 @@ const VacancyImageAndLinks = ({
       )}
 
       <ul>
-        {vacancies.map((vacancy) => (
-          <Vacancy key={vacancy.name} locale={locale} vacancy={vacancy} />
+        {vacancies.map((vacancy, index) => (
+          <Vacancy
+            key={vacancy.name}
+            locale={locale}
+            vacancy={vacancy}
+            testid={`Jobs:list.item-${index}`}
+          />
         ))}
       </ul>
 
@@ -39,7 +44,7 @@ const VacancyImageAndLinks = ({
           <p className="faq-text font_p16-regular">
             {translations.job.faq.title}
 
-            <a href="/ru/jobs-faq" className="font_link-list_16">
+            <a href="/ru/jobs-faq" className="font_link-list_16" data-testid="Jobs:link.faq">
               {translations.job.faq.link}
             </a>
           </p>
@@ -49,6 +54,7 @@ const VacancyImageAndLinks = ({
             requireImages={faqSmallImages}
             alt={translations.job.faq.alt}
             css={faqImageStyles}
+            testid="Jobs:img.faq"
           />
         </Fragment>
       )}

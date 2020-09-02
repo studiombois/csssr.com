@@ -1156,10 +1156,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@csssr/core-design@^5.5.1":
-  version "5.5.1"
-  resolved "https://npm.pkg.github.com/download/@csssr/core-design/5.5.1/512dfef10a38698e54f298c903eb14e7d7c5dfb5cda02ef7cd4f7a7ba40b8894#dda5f539b4fc6e43956e05f3afe8c689c5bac6b8"
-  integrity sha512-8PUMLKDprFpALaUGfL56hPTgZL72zYni8+1CW/e+/xGu6RDx/j9l1bhTRFH9TjXRasHdwA9xxN4tgduYnuZUvw==
+"@csssr/core-design@^5.9.0":
+  version "5.9.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/core-design/5.9.0/a8ef5be878ff20daaa7a27cf387ebc49042354c6d25a252490a60e52a8d2e162#f0a54ab78fd213683ecbdaf797de11853e7d3c3e"
+  integrity sha512-vDguCKE1ZujyyOcoEWDuXKJERJs8f54LnwrRV2iUHGPyGyfgNXkBnNffIEx4TpVOhi8NbQXxb40s8A64hgaIxg==
   dependencies:
     "@emotion/styled-base" "^10.0.31"
     classnames "^2.2.6"
@@ -1169,10 +1169,10 @@
     react-reveal "^1.2.2"
     scroll-lock "^2.1.4"
 
-"@csssr/csssr-amo@^3.3.2":
-  version "3.3.2"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/3.3.2/6aab3cc26748df49256e1bb417b9892cdb560c3aeb2a0098c0b70326514a65d7#4586ff6cbf1a5eaf35a160b20c2534e578f1a115"
-  integrity sha512-sONEKaRkvguKJalGQpVAWitBr9q1fu7vWUMi5+olkORWw3+Ii90UcFh+Sg6CWBs/xnfXhSyR3I4vin5avhHdmQ==
+"@csssr/csssr-amo@^3.5.1":
+  version "3.5.1"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr-amo/3.5.1/7728fbc2683e04c23cd766fcc8db41e92a8e6389026fac62af569174d7adfeea#9acf3275c20c7d24104927db383881e034bddbe7"
+  integrity sha512-1C++jM1x0+FxqGVgg9BgtMlm+6t1+umiSQP1/Kmb4537qssj9SWHuoYspf+0ZmlALFpriFelvAnSpysKGPJRYA==
   dependencies:
     isomorphic-unfetch "^3.0.0"
 

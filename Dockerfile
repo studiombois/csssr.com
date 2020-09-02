@@ -24,6 +24,7 @@ RUN npm config set //npm.pkg.github.com/:_authToken "${NPM_TOKEN}" && \
 COPY . .
 RUN yarn build
 
+RUN echo "XD ${COM_HOST}"
 
 FROM node:12.18.3-alpine AS release
 ARG isProduction

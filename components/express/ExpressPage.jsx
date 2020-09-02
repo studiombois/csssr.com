@@ -8,6 +8,9 @@ import Workflow from './Workflow'
 import Calculator from './Calculator'
 import Features from './Features'
 import Form from '../ContactFormWrapper'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
+
+import ogImages from '../../public/images/service/express/og/all.jpg?csssr-images'
 
 const pageName = 'express'
 
@@ -17,7 +20,7 @@ const ExpressPage = ({ l10n: { translations } }) => (
       title={translations.express.meta.title}
       description={translations.express.meta.description}
       ogImage={{
-        url: require('../../public/images/service/express/ogImage.jpg'),
+        url: getOriginal(ogImages),
         width: 2400,
         height: 1260,
       }}

@@ -79,9 +79,9 @@ export default class MyDocument extends Document {
                 <button className="modal-browser__close" type="button">
                   <img
                     className="modal-browser__close-image"
-                    src="/static/images/modals/browserModal/close.png"
+                    src="/static/modals/browserModal/close.png"
                     alt="Закрыть"
-                    srcSet="/static/images/modals/browserModal/close.png 1x, /static/images/modals/browserModal/close@2x.png 2x, /static/images/modals/browserModal/close@3x.png 3x"
+                    srcSet="/static/modals/browserModal/close.png 1x, /static/modals/browserModal/close@2x.png 2x, /static/modals/browserModal/close@3x.png 3x"
                   />
                 </button>
 
@@ -101,9 +101,9 @@ export default class MyDocument extends Document {
                     >
                       <img
                         className="modal-browser__browser-image"
-                        src="/static/images/modals/browserModal/chrome@1x.png"
+                        src="/static/modals/browserModal/chrome@1x.png"
                         alt="chrome"
-                        srcSet="/static/images/modals/browserModal/chrome@1x.png 1x, /static/images/modals/browserModal/chrome@2x.png 2x, /static/images/modals/browserModal/chrome@3x.png 3x"
+                        srcSet="/static/modals/browserModal/chrome@1x.png 1x, /static/modals/browserModal/chrome@2x.png 2x, /static/modals/browserModal/chrome@3x.png 3x"
                       />
                     </a>
                   </div>
@@ -117,9 +117,9 @@ export default class MyDocument extends Document {
                     >
                       <img
                         className="modal-browser__browser-image"
-                        src="/static/images/modals/browserModal/firefox@1x.png"
+                        src="/static/modals/browserModal/firefox@1x.png"
                         alt="firefox"
-                        srcSet="/static/images/modals/browserModal/firefox@1x.png 1x, /static/images/modals/browserModal/firefox@2x.png 2x, /static/images/modals/browserModal/firefox@3x.png 3x"
+                        srcSet="/static/modals/browserModal/firefox@1x.png 1x, /static/modals/browserModal/firefox@2x.png 2x, /static/modals/browserModal/firefox@3x.png 3x"
                       />
                     </a>
                   </div>
@@ -133,9 +133,9 @@ export default class MyDocument extends Document {
                     >
                       <img
                         className="modal-browser__browser-image"
-                        src="/static/images/modals/browserModal/safari@1x.png"
+                        src="/static/modals/browserModal/safari@1x.png"
                         alt="safari"
-                        srcSet="/static/images/modals/browserModal/safari@1x.png 1x, /static/images/modals/browserModal/safari@2x.png 2x, /static/images/modals/browserModal/safari@3x.png 3x"
+                        srcSet="/static/modals/browserModal/safari@1x.png 1x, /static/modals/browserModal/safari@2x.png 2x, /static/modals/browserModal/safari@3x.png 3x"
                       />
                     </a>
                   </div>
@@ -149,9 +149,9 @@ export default class MyDocument extends Document {
                     >
                       <img
                         className="modal-browser__browser-image"
-                        src="/static/images/modals/browserModal/edge@1x.png"
+                        src="/static/modals/browserModal/edge@1x.png"
                         alt="edge"
-                        srcSet="/static/images/modals/browserModal/edge@1x.png 1x, /static/images/modals/browserModal/edge@2x.png 2x, /static/images/modals/browserModal/edge@3x.png 3x"
+                        srcSet="/static/modals/browserModal/edge@1x.png 1x, /static/modals/browserModal/edge@2x.png 2x, /static/modals/browserModal/edge@3x.png 3x"
                       />
                     </a>
                   </div>
@@ -165,9 +165,9 @@ export default class MyDocument extends Document {
                     >
                       <img
                         className="modal-browser__browser-image"
-                        src="/static/images/modals/browserModal/opera@1x.png"
+                        src="/static/modals/browserModal/opera@1x.png"
                         alt="opera"
-                        srcSet="/static/images/modals/browserModal/opera@1x.png 1x, /static/images/modals/browserModal/opera@2x.png 2x, /static/images/modals/browserModal/opera@3x.png 3x"
+                        srcSet="/static/modals/browserModal/opera@1x.png 1x, /static/modals/browserModal/opera@2x.png 2x, /static/modals/browserModal/opera@3x.png 3x"
                       />
                     </a>
                   </div>

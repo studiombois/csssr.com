@@ -27,7 +27,7 @@ class JobsPage extends PureComponent {
           templateTitle={language === 'ru' ? ' | Вакансии CSSSR' : ''}
           description={translations.jobs.meta.description}
           ogImage={{
-            url: require('../../static/images/jobs/1920/cover@2x.jpg'),
+            url: require('../../public/images/jobs/cover/desktop.all.jpg'),
             width: 1266,
             height: 2000,
           }}

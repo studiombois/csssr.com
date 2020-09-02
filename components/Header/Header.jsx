@@ -93,7 +93,11 @@ const Header = ({
 
       {isMobile ? (
         <Fragment>
-          <button className="burger" onClick={() => toggleDropdown(!isDropdownOpened)}>
+          <button
+            className="burger"
+            onClick={() => toggleDropdown(!isDropdownOpened)}
+            data-testid="Header:button.burger"
+          >
             <Icon />
           </button>
 

@@ -15,6 +15,7 @@ class Radio extends PureComponent {
     crossed: bool,
     children: node,
     onChange: func,
+    testId: string.isRequired,
   }
 
   static defaultProps = {
@@ -26,7 +27,7 @@ class Radio extends PureComponent {
   }
 
   render() {
-    const { id, input, className, disabled, children } = this.props
+    const { id, input, className, disabled, children, testId } = this.props
 
     return (
       <span className={className}>
@@ -38,6 +39,7 @@ class Radio extends PureComponent {
           disabled={disabled}
           type="radio"
           onChange={this.handleChange}
+          data-testid={testId}
         />
         <label className="font_p16-regular" htmlFor={id}>
           {children}

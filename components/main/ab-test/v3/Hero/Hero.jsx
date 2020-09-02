@@ -20,7 +20,7 @@ const Hero = ({ className, isMobile }) => (
       </Heading>
 
       <SubHeading className="description" as="p" type="slab">
-        <span>We know how to help busnesses in&nbsp;digital transformation.</span>
+        <span>We know how to help businesses in&nbsp;digital transformation.</span>
         The better the foundation — the better the building. Choose the right partner!
       </SubHeading>
 

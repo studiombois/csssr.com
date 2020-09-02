@@ -9,7 +9,7 @@ const TextField = ({
   className,
   id,
   label,
-  testid,
+  testId,
   tabIndex,
   autoFocus,
   disabled,
@@ -37,7 +37,7 @@ const TextField = ({
         autoFocus={autoFocus}
         type={type}
         disabled={disabled}
-        data-testid={testid}
+        data-testid={testId}
         required={required}
         aria-required={required}
         {...rest}
@@ -57,7 +57,7 @@ const TextField = ({
 TextField.propTypes = {
   className: string,
   label: string,
-  testid: string,
+  testId: string.isRequired,
   name: string,
   id: string,
   isError: bool,

@@ -11,8 +11,8 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   .separator {
     position: relative;
-    bottom: 0;
-    margin-top: ${calcRem(143)};
+    bottom: ${calcRem(38)};
+    margin-top: ${calcRem(166)};
     display: flex;
     align-items: center;
     height: auto;
@@ -45,12 +45,13 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
 
   .book-a-call {
     margin-top: auto;
+    margin-bottom: -4px;
   }
 
 
   ${desktop.all} {
     .heading {
-      margin-top: 68px;
+      margin-top: 54px;
     }
 
     .subheading {
@@ -100,15 +101,15 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     }
 
     .heading {
-      margin-top: 63px;
+      margin-top: 58px;
     }
 
     .separator {
-      margin-left: 40px;
+      margin-left: 44px;
     }
 
     .book-a-call {
-      margin-left: 6px;
+      margin-left: 3px;
     }
   }
 
@@ -127,7 +128,13 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
     }
 
     .separator {
-      margin-left: ${calcRem(30)};
+      margin-top: ${calcRem(142)};
+      margin-left: ${calcRem(29)};
+    }
+
+    .separator-text {
+      padding-top: ${calcRem(4)};
+      padding-bottom: ${calcRem(4)};
     }
 
     .book-a-call {

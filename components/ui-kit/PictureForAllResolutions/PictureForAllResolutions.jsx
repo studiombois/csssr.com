@@ -9,7 +9,7 @@ import flattenObjDeep from '../../../utils/client/flattenObjDeep'
 const PictureForAllResolutions = ({
   className,
   children,
-  testid,
+  testId,
   images,
   fallback,
   type,
@@ -48,7 +48,7 @@ const PictureForAllResolutions = ({
           )
         })}
         {!children && (
-          <img srcSet={fallback.srcSet} src={fallback['1x']} data-testid={testid} alt={alt} />
+          <img srcSet={fallback.srcSet} src={fallback['1x']} data-testid={testId} alt={alt} />
         )}
         {children}
       </picture>

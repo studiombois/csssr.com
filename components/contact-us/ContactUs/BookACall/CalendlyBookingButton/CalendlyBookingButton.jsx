@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
+import { string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import styles, { modal as modalStyles } from './CalendlyBookingButton.styles'
 import { L10nConsumer } from '../../../../../utils/l10nProvider'
 
-const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }) => {
+const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations }, testId }) => {
   useEffect(() => {
     const isCalendlyEvent = (e) => e.data.event && e.data.event.indexOf('calendly') === 0
     const handleCalendlyMessage = (e) => {
@@ -27,7 +28,6 @@ const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }
     <>
       <button
         className={className}
-        data-testid="contactUs:button:bookACall.call"
         onClick={() => {
           /*eslint-disable-next-line no-undef */
           Calendly.initPopupWidget({ url: bookingUrl })
@@ -35,6 +35,7 @@ const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }
 
           return false
         }}
+        data-testid={testId}
       >
         {translations.contactUs.bookACall.buttonText}
       </button>
@@ -42,6 +43,11 @@ const CalendlyBookingButton = ({ className, bookingUrl, l10n: { translations } }
       <Global styles={modalStyles} />
     </>
   )
+}
+
+CalendlyBookingButton.propTypes = {
+  className: string,
+  testId: string.isRequired,
 }
 
 export default React.memo(

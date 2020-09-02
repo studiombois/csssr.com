@@ -139,7 +139,7 @@ const Component = ({
             name="newsletter"
             type="checkbox"
             component={Checkbox}
-            testid={`${formName}:field:contacts.agree`}
+            testId={`${formName}:field:contacts.agree`}
           >
             <span
               className="newsletter-text"
@@ -169,7 +169,7 @@ const Component = ({
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
             feedbackEmail={feedbackEmail}
-            testid={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
+            testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
             shouldShowPicture={false}
           />
         </div>

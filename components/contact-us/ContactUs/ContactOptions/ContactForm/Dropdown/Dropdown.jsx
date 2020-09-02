@@ -10,7 +10,13 @@ import { L10nConsumer } from '../../../../../../utils/l10nProvider'
 
 import items from '../../../../../../data/contact-us/typeInquiry'
 
-const Dropdown = ({ className, inquiryTypeId, setInquiryTypeId, l10n: { translations } }) => {
+const Dropdown = ({
+  className,
+  inquiryTypeId,
+  setInquiryTypeId,
+  l10n: { translations },
+  testId,
+}) => {
   const [isOpen, toggleIsOpen] = useState(false)
 
   const handleClick = (event) => {
@@ -27,8 +33,13 @@ const Dropdown = ({ className, inquiryTypeId, setInquiryTypeId, l10n: { translat
   const { value } = items.filter((item) => item.id === inquiryTypeId)[0]
 
   return (
-    <div className={cn(className, { _active: isOpen })} data-testid="Contacts:dropdown">
-      <button type="button" onClick={handleClick} className={cn('button', { _active: isOpen })}>
+    <div className={cn(className, { _active: isOpen })} ata-testid="Contacts:dropdown">
+      <button
+        type="button"
+        onClick={handleClick}
+        className={cn('button', { _active: isOpen })}
+        data-testid={testId}
+      >
         {value(translations)}
       </button>
 
@@ -58,7 +69,7 @@ const Dropdown = ({ className, inquiryTypeId, setInquiryTypeId, l10n: { translat
 
 Dropdown.propTypes = {
   className: string,
-  testid: string,
+  testId: string.isRequired,
 }
 
 export default L10nConsumer(

@@ -87,7 +87,6 @@ module.exports = withSourceMaps({
         comHost = `http://${ip.address()}:3000`
         imgproxyHost = 'http://localhost:8080'
       } else {
-        console.log('HAHA', process.env.COM_HOST)
         comHost = process.env.COM_HOST || 'https://csssr.com'
         imgproxyHost = 'https://images.csssr.com'
       }

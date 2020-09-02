@@ -31,10 +31,10 @@ const DoubleBottom = ({ className, l10n: { translations } }) => {
   const [hoveredAddress, setHoveredAddress] = useState(null)
 
   return (
-    <div className={className}>
+    <div className={className} data-testid="Footer:block.double-bottom">
       <Addresses setHoveredAddress={setHoveredAddress} />
       <div className={'map-wrapper'}>
-        <div className={'map'}>
+        <div className={'map'} data-testid="Footer:block.map">
           <Picture
             className="picture"
             images={{ png: continents, webp: continents_webp }}

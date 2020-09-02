@@ -378,6 +378,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/project/flant',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/flant',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/flant',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/flant',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/flant',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/flant',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,

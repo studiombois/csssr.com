@@ -209,6 +209,24 @@
           "title": "READ THE CASE STUDY",
           "href": "/en/project/qmarketing"
         }
+      },
+      "flant": {
+        "heading": "Flant - Landing pages",
+        "text": "Development and testing of seven landing pages for the Flant comapny.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/flant"
+        }
       }
     }
   }

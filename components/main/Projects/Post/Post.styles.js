@@ -25,6 +25,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   .post-link {
     display: inline-block;
     margin-top: 16px;
+
+    &::after {
+      display: none;
+    }
   }
 
   ${tablet.all} {

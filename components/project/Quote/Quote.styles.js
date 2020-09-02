@@ -51,6 +51,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .author-signature {
       margin-top: 4px;
     }
+
+    &.flant {
+      .text {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
   }
 
   ${desktop.l} {
@@ -61,6 +68,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: 269px;
+      max-height: 656px;
     }
 
     .quote {
@@ -68,6 +76,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
       &::before {
         right: calc(100% + 96px);
+      }
+    }
+
+    &.flant {
+      & {
+        background-position: 219px 268px, 1046px 35px, 535px 840px;
+      }
+
+      .picture {
+        margin-top: 354px;
+      }
+
+      .quote {
+        &::before {
+          top: 51px;
+        }
       }
     }
   }
@@ -80,6 +104,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: 389px;
+      max-height: 496px;
     }
 
     .quote {
@@ -87,6 +112,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
       &::before {
         right: calc(100% + 64px);
+      }
+    }
+
+    &.flant {
+      & {
+        background-position: 180px 442px, 1006px 30px, 398px 928px;
+      }
+
+      .picture {
+        margin-top: 554px;
+      }
+
+      .quote {
+        &::before {
+          top: 130px;
+        }
       }
     }
   }
@@ -99,6 +140,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: 429px;
+      max-height: 456px;
     }
 
     .quote {
@@ -106,6 +148,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
       &::before {
         right: calc(100% + 53px);
+      }
+    }
+
+    &.flant {
+      & {
+        background-position: 172px 522px, 999px 30px, 391px 969px;
+      }
+
+      .picture {
+        margin-top: 634px;
+      }
+
+      .quote {
+        &::before {
+          top: 170px;
+        }
       }
     }
   }
@@ -120,6 +178,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       margin-top: ${calcRem(239)};
       grid-column: 2 / span 3;
+      max-height: ${calcRem(344)};
     }
 
     .quote {
@@ -141,6 +200,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .author-signature {
       margin-top: ${calcRem(9)};
     }
+
+    &.flant {
+      & {
+        background-position: ${calcRem(136)} ${calcRem(302)}, ${calcRem(759)} 0, ${calcRem(271)} ${calcRem(627)};
+      }
+
+      .text {
+        font-size: ${calcRem(16)};
+        line-height: ${calcRem(24)};
+      }
+
+      .picture {
+        margin-top: ${calcRem(386)};
+      }
+
+      .quote {
+        &::before {
+          top: ${calcRem(106)};
+        }
+      }
+    }
   }
 
   ${mobile.all} {
@@ -153,6 +233,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .picture {
       margin-top: ${calcRem(55)};
       grid-column: 2 / span 4;
+      max-height: ${calcRem(336)};
     }
 
     .quote {
@@ -174,6 +255,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .author-signature {
       margin-top: ${calcRem(9)};
+    }
+
+    &.flant {
+      .text {
+        margin-top: ${calcRem(5)};
+        font-size: ${calcRem(16)};
+        line-height: ${calcRem(24)};
+      }
     }
   }
 `

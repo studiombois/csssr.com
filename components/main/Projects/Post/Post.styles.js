@@ -27,7 +27,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     margin-top: 16px;
 
     &::after {
-      display: none;
+      display: none !important;
     }
   }
 

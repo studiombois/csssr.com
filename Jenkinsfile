@@ -37,7 +37,7 @@ pipeline {
       steps {
         script {
           withCredentials([string(credentialsId: 'github-registry-read-only-token', variable: 'NPM_TOKEN')]) {
-            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} . -t ${image}"
+            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg comHost='https://csssr.com' --build-arg processImages=${params.processImages} . -t ${image}"
           }
         }
       }

@@ -284,8 +284,8 @@ class ContactForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail={feedbackEmail}
-              testId={`${formName}:text.successMessage`}
-              successPictureTestid={`${formName}:picture.successMessageImg`}
+              testId={`${formName}:text.status`}
+              successPictureTestId={`${formName}:picture.successMessageImg`}
             />
           </div>
         )}

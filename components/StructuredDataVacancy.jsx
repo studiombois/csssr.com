@@ -32,11 +32,13 @@ const StructuredDataVacancy = ({ vacancy }) => {
       dangerouslySetInnerHTML={{
         __html: `
       {
+        "@context": "https://schema.org/",
         "@type": "JobPosting",
         "datePosted": "${vacancy.createDate}",
         "title": "${vacancy.name}",
         "description": "${vacancy.description}${getDescriptionLayout()}",
         "hiringOrganization": {
+          "@context": "https://schema.org/",
           "@type": "Organization",
           "name": "CSSSR",
           "logo": "https://csssr.com/static/csssr_logo.png",
@@ -51,6 +53,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
           ]
         },
         "applicantLocationRequirements": {
+          "@context": "https://schema.org/",
           "@type": "Country",
           "name": "${getCountry()}"
         },

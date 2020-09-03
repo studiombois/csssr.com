@@ -21,7 +21,6 @@ pipeline {
 
         echo "Branch: ${GIT_BRANCH}"
         echo "CSSSR_SPACE_ORIGIN: ${params.csssrSpaceOrigin}"
-        echo "PROCESS_IMAGES: ${params.processImages}"
 
         script {
           branch = GIT_BRANCH

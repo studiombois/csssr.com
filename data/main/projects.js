@@ -33,6 +33,7 @@ import school_desktop_m_hovered from '../../static/images/main/desktop.m/school-
 import school_desktop_m_webp_hovered from '../../static/images/main/desktop.m/school-hovered.png?responsive_and_webp'
 import school_desktop_s_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive'
 import school_desktop_s_webp_hovered from '../../static/images/main/desktop.s/school-hovered.png?responsive_and_webp'
+
 import radio_desktop_all from '../../static/images/main/desktop.all/radio.png?responsive'
 import radio_desktop_all_webp from '../../static/images/main/desktop.all/radio.png?responsive_and_webp'
 import radio_tablet_all from '../../static/images/main/tablet.all/radio.png?responsive'
@@ -40,16 +41,23 @@ import radio_tablet_all_webp from '../../static/images/main/tablet.all/radio.png
 import radio_mobile_all from '../../static/images/main/mobile.all/radio.png?responsive'
 import radio_mobile_all_webp from '../../static/images/main/mobile.all/radio.png?responsive_and_webp'
 
-// import blog_desktop_l from '../../static/images/main/desktop.l/blog.png?responsive'
-// import blog_desktop_l_webp from '../../static/images/main/desktop.l/blog.png?responsive_and_webp'
-// import blog_desktop_m from '../../static/images/main/desktop.m/blog.png?responsive'
-// import blog_desktop_m_webp from '../../static/images/main/desktop.m/blog.png?responsive_and_webp'
-// import blog_desktop_s from '../../static/images/main/desktop.s/blog.png?responsive'
-// import blog_desktop_s_webp from '../../static/images/main/desktop.s/blog.png?responsive_and_webp'
-// import blog_tablet_all from '../../static/images/main/tablet.all/blog.png?responsive'
-// import blog_tablet_all_webp from '../../static/images/main/tablet.all/blog.png?responsive_and_webp'
-// import blog_mobile_all from '../../static/images/main/mobile.all/blog.png?responsive'
-// import blog_mobile_all_webp from '../../static/images/main/mobile.all/blog.png?responsive_and_webp'
+import blog_desktop_l from '../../static/images/main/desktop.l/blog.png?responsive'
+import blog_desktop_l_webp from '../../static/images/main/desktop.l/blog.png?responsive_and_webp'
+import blog_desktop_m from '../../static/images/main/desktop.m/blog.png?responsive'
+import blog_desktop_m_webp from '../../static/images/main/desktop.m/blog.png?responsive_and_webp'
+import blog_desktop_s from '../../static/images/main/desktop.s/blog.png?responsive'
+import blog_desktop_s_webp from '../../static/images/main/desktop.s/blog.png?responsive_and_webp'
+import blog_tablet_all from '../../static/images/main/tablet.all/blog.png?responsive'
+import blog_tablet_all_webp from '../../static/images/main/tablet.all/blog.png?responsive_and_webp'
+import blog_mobile_all from '../../static/images/main/mobile.all/blog.png?responsive'
+import blog_mobile_all_webp from '../../static/images/main/mobile.all/blog.png?responsive_and_webp'
+
+import blog_desktop_l_hovered from '../../static/images/main/desktop.l/blog-hovered.png?responsive'
+import blog_desktop_l_webp_hovered from '../../static/images/main/desktop.l/blog-hovered.png?responsive_and_webp'
+import blog_desktop_m_hovered from '../../static/images/main/desktop.m/blog-hovered.png?responsive'
+import blog_desktop_m_webp_hovered from '../../static/images/main/desktop.m/blog-hovered.png?responsive_and_webp'
+import blog_desktop_s_hovered from '../../static/images/main/desktop.s/blog-hovered.png?responsive'
+import blog_desktop_s_webp_hovered from '../../static/images/main/desktop.s/blog-hovered.png?responsive_and_webp'
 
 const trackerImages = {
   'mobile.all': { png: tracker_mobile_all, webp: tracker_mobile_all_webp },
@@ -79,13 +87,19 @@ const schoolImagesHovered = {
   'desktop.l': { png: school_desktop_l_hovered, webp: school_desktop_l_webp_hovered },
 }
 
-// const blogImages = {
-//   'mobile.all': { png: blog_mobile_all, webp: blog_mobile_all_webp },
-//   'tablet.all': { png: blog_tablet_all, webp: blog_tablet_all_webp },
-//   'desktop.s': { png: blog_desktop_s, webp: blog_desktop_s_webp },
-//   'desktop.m': { png: blog_desktop_m, webp: blog_desktop_m_webp },
-//   'desktop.l': { png: blog_desktop_l, webp: blog_desktop_l_webp },
-// }
+const blogImages = {
+  'mobile.all': { png: blog_mobile_all, webp: blog_mobile_all_webp },
+  'tablet.all': { png: blog_tablet_all, webp: blog_tablet_all_webp },
+  'desktop.s': { png: blog_desktop_s, webp: blog_desktop_s_webp },
+  'desktop.m': { png: blog_desktop_m, webp: blog_desktop_m_webp },
+  'desktop.l': { png: blog_desktop_l, webp: blog_desktop_l_webp },
+}
+
+const blogImagesHovered = {
+  'desktop.s': { png: blog_desktop_s_hovered, webp: blog_desktop_s_webp_hovered },
+  'desktop.m': { png: blog_desktop_m_hovered, webp: blog_desktop_m_webp_hovered },
+  'desktop.l': { png: blog_desktop_l_hovered, webp: blog_desktop_l_webp_hovered },
+}
 
 const radioImages = {
   'mobile.all': { png: radio_mobile_all, webp: radio_mobile_all_webp },
@@ -112,14 +126,15 @@ export default [
     imagesHovered: schoolImagesHovered,
     fallback: school_desktop_l,
   },
-  // {
-  //   id: 'blog',
-  //   title: t => t.main.projects.blog.title,
-  //   description: t => t.main.projects.blog.description,
-  //   href: 'https://blog.csssr.com',
-  //   images: blogImages,
-  //   fallback: blog_desktop_l,
-  // },
+  {
+    id: 'blog',
+    title: (t) => t.main.projects.blog.title,
+    description: (t) => t.main.projects.blog.description,
+    href: 'https://blog.csssr.com',
+    images: blogImages,
+    imagesHovered: blogImagesHovered,
+    fallback: blog_desktop_l,
+  },
   {
     id: 'radio',
     title: (t) => t.main.projects.radio.title,

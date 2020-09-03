@@ -31,6 +31,7 @@ const Hero = ({ className, l10n: { translations }, isMobile }) => (
       <div className="picture-hover-area" />
       <PictureForAllResolutions
         className="picture"
+        testId="Home:img.big-logo"
         images={{
           'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
           'desktop.all': { png: hero_desktop, webp: hero_desktop_webp },

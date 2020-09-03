@@ -14,7 +14,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Projects = ({ className, l10n: { translations, language } }) => {
   return (
-    <Grid as="article" className={cn('about-us', className)}>
+    <Grid as="article" className={cn('about-us', className)} data-testid="Home:block.projects">
       <Heading
         className="title"
         as="h2"
@@ -41,6 +41,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
 
         return (
           <Card
+            testId={`Projects:${id === 'radio' ? 'block' : 'link'}.${id}`}
             className={cn('card', `card_${id}`)}
             key={id}
             id={id}

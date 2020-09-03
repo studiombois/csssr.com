@@ -15,6 +15,7 @@ class FormStateMessage extends PureComponent {
     onTryAgain: func,
     feedbackEmail: string,
     testId: string.isRequired,
+    successPictureTestid: string,
   }
 
   getTextData = () => {

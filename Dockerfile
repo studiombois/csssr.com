@@ -13,7 +13,6 @@ ENV NODE_ENV=production
 ENV IS_PRODUCTION=$isProduction
 ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 ENV COM_HOST=$comHost
-ENV PROCESS_IMAGES=$processImages
 
 COPY package.json yarn.lock /app/
 
@@ -33,7 +32,6 @@ ENV NODE_ENV=production
 ENV IS_PRODUCTION=$isProduction
 ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin
 ENV COM_HOST=$comHost
-ENV PROCESS_IMAGES=$processImages
 WORKDIR /app
 COPY --from=build /app/node_modules /app/node_modules
 COPY --from=build /app/.next /app/.next

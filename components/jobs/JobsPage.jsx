@@ -4,6 +4,9 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 import Layout from '../../components/Layout'
 import Vacancies from '../../components/jobs/Vacancies'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
+
+import ogImages from '../../public/images/jobs/cover/desktop.all.jpg?csssr-images'
 
 const pageName = 'jobs'
 class JobsPage extends PureComponent {
@@ -27,7 +30,7 @@ class JobsPage extends PureComponent {
           templateTitle={language === 'ru' ? ' | Вакансии CSSSR' : ''}
           description={translations.jobs.meta.description}
           ogImage={{
-            url: require('../../static/images/jobs/1920/cover@2x.jpg'),
+            url: getOriginal(ogImages),
             width: 1266,
             height: 2000,
           }}

@@ -8,11 +8,13 @@ import ImageBlock from './ImageBlock'
 import QuestionHeader from './QuestionHeader'
 import QuestionBlock from './QuestionBlock'
 import Footer from './Footer'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
 import questions from '../../data/jobs-faq/questions'
 
 const roads = require.context('../../public/images/jobs-faq/roads?csssr-images')
 const puzzle = require.context('../../public/images/jobs-faq/puzzle?csssr-images')
+import ogImages from '../../public/images/jobs/cover/desktop.all.jpg?csssr-images'
 
 const pageName = 'jobsFaq'
 const JobsFaqPage = () => (
@@ -21,7 +23,7 @@ const JobsFaqPage = () => (
       title="F.A.Q. о работе в компании"
       description="Актуальные вопросы кандидатов про вакансии, условия найма, график работы в группе компаний CSSSR. Для тех, кто предпочитает читать инструкции перед применением, а не после."
       ogImage={{
-        url: require('../../static/images/jobs-faq/ogImage.jpg'),
+        url: getOriginal(ogImages),
         width: 2400,
         height: 1260,
       }}

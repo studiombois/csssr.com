@@ -13,6 +13,9 @@ import candidateFormValidationRules from '../../utils/validators/candidateFormVa
 import withError from '../../utils/withError'
 import getContactOptions from '../../data/job/getContactOptions'
 import StructuredDataVacancy from '../StructuredDataVacancy'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
+
+import ogImages from '../../public/images/jobs/cover/desktop.all.jpg?csssr-images'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -198,7 +201,7 @@ class JobPage extends PureComponent {
             description={translations.job.descriptions[vacancy.pathName] || vacancy.description}
             structuredData={<StructuredDataVacancy vacancy={vacancy} />}
             ogImage={{
-              url: require('../../static/images/jobs/1920/cover@2x.jpg'),
+              url: getOriginal(ogImages),
               width: 1266,
               height: 2000,
             }}

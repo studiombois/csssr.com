@@ -7,7 +7,7 @@ import styles from './DetailValue.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Heading from '../../ui-kit/core-design/Heading'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import Description from '../Description'
 
@@ -18,12 +18,7 @@ const DetailValue = ({
 }) => (
   <article id={id}>
     <Grid className={cn(className, id)}>
-      <PictureForAllResolutions
-        images={images}
-        fallback={images['desktop.m'].png}
-        alt={imgAlt(translations)}
-        className="image"
-      />
+      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
 
       <Heading.H2
         type="slab"

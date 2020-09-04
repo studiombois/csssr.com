@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const withSourceMaps = require('@zeit/next-source-maps')()
 const CompressionPlugin = require('compression-webpack-plugin')
 const { ANALYZE } = process.env
-const { PROCESS_IMAGES } = process.env
 const { defaultTheme } = require('@csssr/core-design')
 
 module.exports = withSourceMaps({
@@ -54,32 +53,6 @@ module.exports = withSourceMaps({
       })
     }
 
-    const responsiveLoaderConfig = {
-      loader: 'image-resolution-loader',
-      options: {
-        publicPath: '/_next',
-        name: dev ? '[path][name][resolution].[ext]' : '[path][name]-[hash:8][resolution].[ext]',
-        disable: PROCESS_IMAGES !== 'true',
-        webp: {
-          quality: 75,
-        },
-        jpg: {
-          quality: 75,
-        },
-        png: {
-          quality: [0.3, 0.5],
-          speed: 1,
-        },
-      },
-    }
-
-    const webpLoaderConfig = {
-      loader: 'webp-loader',
-      options: {
-        quality: 75,
-      },
-    }
-
     const withResponsiveImages = () => {
       let comHost, imgproxyHost
       if (dev) {
@@ -94,14 +67,14 @@ module.exports = withSourceMaps({
       config.module.rules.push({
         test: /\.(jpe?g|png|webp|gif|ico)$/,
         oneOf: [
-          {
-            resourceQuery: /responsive_and_webp/,
-            use: [responsiveLoaderConfig, webpLoaderConfig],
-          },
-          {
-            resourceQuery: /responsive/,
-            use: [responsiveLoaderConfig],
-          },
+          // {
+          //   resourceQuery: /responsive_and_webp/,
+          //   use: [responsiveLoaderConfig, webpLoaderConfig],
+          // },
+          // {
+          //   resourceQuery: /responsive/,
+          //   use: [responsiveLoaderConfig],
+          // },
           {
             resourceQuery: /csssr-images/,
             use: [

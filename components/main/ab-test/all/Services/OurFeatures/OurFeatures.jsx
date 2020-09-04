@@ -14,7 +14,11 @@ import { MsBrowserConsumer } from '../../../../../../utils/msBrowserProvider'
 
 const OurFeatures = ({ className, l10n: { translations, language } }) => {
   return (
-    <Grid as="section" className={cn('our-features', className)}>
+    <Grid
+      as="section"
+      className={cn('our-features', className)}
+      data-testid="Home:block.our-features"
+    >
       <SubHeading
         className={cn('feature', 'feature_1')}
         as="p"
@@ -27,6 +31,7 @@ const OurFeatures = ({ className, l10n: { translations, language } }) => {
         type="list"
         size="m"
         dangerouslySetInnerHTML={{ __html: translations.main.services.ourFeatures.feature1.link }}
+        data-testid="Home:link.feature1"
       />
 
       <PictureForAllResolutions
@@ -49,6 +54,7 @@ const OurFeatures = ({ className, l10n: { translations, language } }) => {
         type="list"
         size="m"
         dangerouslySetInnerHTML={{ __html: translations.main.services.ourFeatures.feature2.link }}
+        data-testid="Home:link.feature2"
       />
     </Grid>
   )

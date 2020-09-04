@@ -16,7 +16,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Industries = ({ className, l10n: { translations, language } }) => {
   return (
-    <Grid as="article" className={cn('industries', className)}>
+    <Grid as="article" className={cn('industries', className)} data-testid="Home:block.industries">
       <Heading
         className="title"
         as="h2"

@@ -32,7 +32,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
   }
 
   return (
-    <Grid as="article" className={cn('about-us', className)}>
+    <Grid as="article" className={cn('about-us', className)} data-testid="Home:block.about-us">
       <Heading
         className="about-us-title"
         as="h2"
@@ -70,6 +70,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
           images={images.elbrus}
           fallback={images.elbrus.jpg}
           alt={translations.main.imgAlt.elbrus}
+          testId="Home:img.elbrus"
         />
       </aside>
 
@@ -96,6 +97,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
                 className="italic"
                 onMouseOver={handleHover('elbrus')}
                 onMouseLeave={handleHover(null)}
+                data-testid="Home:text.elbrus"
               >
                 {translations.main.aboutUs[id].hero}
               </span>

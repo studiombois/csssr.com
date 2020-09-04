@@ -36,11 +36,13 @@ const Form = (props) => {
       />
 
       <StatusMessage
+        testId="Form:button.status-message"
         status={submitStatus}
         hasFailOrSuccessStatus={hasFailOrSuccessStatus}
         feedbackEmail="launch@csssr.com"
         errorText={submitError}
         onClick={onStatusButtonClick}
+        testId="ContactModal:button.status"
       />
     </Fragment>
   )

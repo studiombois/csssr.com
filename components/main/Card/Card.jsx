@@ -32,12 +32,16 @@ const Card = ({
 }) => {
   const CardBody = () => (
     <Fragment>
-      <div className={cn('picture-wrap', { 'picture-wrap_radio': id === 'radio' })}>
+      <div
+        className={cn('picture-wrap', { 'picture-wrap_radio': id === 'radio' })}
+        data-testid={testId}
+      >
         <PictureForAllResolutions
           className={cn('card-picture', `card-picture_${id}`)}
           images={images}
           fallback={fallback}
           alt={translations.main.imgAlt[id]}
+          testId={`Industries:img.${id}`}
         />
 
         {!isMobile && !isTablet && imagesHovered && (
@@ -46,6 +50,7 @@ const Card = ({
             images={imagesHovered}
             fallback={fallback}
             alt={translations.main.imgAlt[id]}
+            testId={`Industries:img.${id}-hovered`}
           />
         )}
       </div>
@@ -58,6 +63,7 @@ const Card = ({
             dangerouslySetInnerHTML={{ __html: title(translations) }}
             type="regular"
             size="m"
+            data-testid={`Industries:title.${id}`}
           />
         </a>
       ) : (
@@ -67,6 +73,7 @@ const Card = ({
           dangerouslySetInnerHTML={{ __html: title(translations) }}
           type="regular"
           size="m"
+          data-testid={`Industries:title.${id}`}
         />
       )}
 
@@ -76,6 +83,7 @@ const Card = ({
         dangerouslySetInnerHTML={{ __html: description(translations) }}
         type="regular"
         size="m"
+        data-testid={`Industries:text.${id}`}
       />
 
       <div className="break" />
@@ -86,7 +94,13 @@ const Card = ({
     const url = id === 'blog' ? `${href}/${language}` : href
 
     return (
-      <a className={cn('card', className)} href={url} target="_blank" rel="noopener nofollow">
+      <a
+        className={cn('card', className)}
+        href={url}
+        target="_blank"
+        rel="noopener nofollow"
+        data-testid={testId}
+      >
         <CardBody />
         {children}
       </a>

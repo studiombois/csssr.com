@@ -395,5 +395,69 @@
       "quote": "Feedback on the project.",
       "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
+  },
+  "flant": {
+    "meta": {
+      "title": "Flant  —  Project: Landing Pages",
+      "description": "CSSSR was in charge of developming and testing of seven landing pages for the Flant comapny."
+    },
+    "hero": {
+      "title": "Landing Pages",
+      "link": "https://flant.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Flant company is&nbsp;engaged in&nbsp;elaborating fault tolerant&nbsp;IT infrastructures on&nbsp;the basis of&nbsp;Kubernetes. It&nbsp;provides processes of&nbsp;continuous integration and delivery (CI/CD), 24/7/365 operation of&nbsp;applications. Flant is&nbsp;the first certified Kubernetes service provider in&nbsp;Russia."
+      },
+      "imgAlt": "Flant"
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior HTML/CSS Developer",
+        "secondItem": "Middle HTML/CSS Developers"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "Pug",
+        "secondItem": "SCSS",
+        "thirdItem": "JS"
+      },
+      "numericData": {
+        "duration": {
+          "number": "2",
+          "text": "months <span style='white-space:nowrap'>(July — August 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [],
+        [
+          "Our team was engaged in&nbsp;Flant landing pages elaborating. We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Three people are working hard on the project.",
+      "quote": "Feedback on the project."
+    },
+    "quote": {
+      "text": "We&nbsp;had no&nbsp;time to&nbsp;warm&nbsp;up. We&nbsp;worked in&nbsp;a&nbsp;way that from page concept until its implementation beginning was literally one night. At&nbsp;such a&nbsp;pace, there was simply no&nbsp;room for experiments or&nbsp;organization of&nbsp;our own front-end development process. We&nbsp;needed a&nbsp;timely result with guaranteed quality. That&rsquo;s why we&nbsp;didn&rsquo;t think for a&nbsp;long time: we&nbsp;came to&nbsp;CSSSR as&nbsp;we&nbsp;repeatedly crossed paths with the guys&rsquo; work for the projects of&nbsp;our clients and understood very well what output we&nbsp;will get. It&rsquo;s cool that all our expectations of&nbsp;the result were fully met. Moreover, the CSSSR framework allowed&nbsp;us to&nbsp;further develop the project on&nbsp;our own (though at&nbsp;a&nbsp;much slower pace). Investments in&nbsp;a&nbsp;stormy start with CSSSR still justify themselves up&nbsp;to&nbsp;now.",
+      "author": {
+        "name": "Aleksandr Batalov",
+        "signature": "General Director"
+      }
+    }
   }
 }

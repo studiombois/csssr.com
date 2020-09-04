@@ -101,13 +101,12 @@ const Component = ({
               input={input}
               meta={meta}
               label={translations.contactUs.form.email}
-              testid={`${formName}:field:contacts.email`}
+              testId={`${formName}:field:contacts.email`}
             />
           )}
         />
 
         <Field
-          testid="Contacts:field:phone"
           name="phone"
           render={({ input, meta }) => (
             <TextField
@@ -115,20 +114,19 @@ const Component = ({
               meta={meta}
               inputMode="tel"
               label={translations.contactUs.form.phone}
-              testid={`${formName}:field:contacts.phone`}
+              testId={`${formName}:field:contacts.phone`}
             />
           )}
         />
 
         <Field
-          testid="Contacts:field:message"
           name="message"
           render={({ input, meta }) => (
             <Textarea
               input={input}
               meta={meta}
               label={translations.contactUs.form.text}
-              testid={`${formName}:field:contacts.message`}
+              testId={`${formName}:field:contacts.message`}
             />
           )}
         />
@@ -158,7 +156,7 @@ const Component = ({
           type="submit"
           disabled={status === 'submitting' || status === 'fail'}
           status={status}
-          data-testid={`${formName}:button.formSubmit`}
+          testId={`${formName}:button.formSubmit`}
         >
           <span className="submit-text">{translations.contactUs.form.submitText}</span>
         </AnimatedButton>

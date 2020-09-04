@@ -7,7 +7,10 @@ const schoolImagesHovered = require.context(
   '../../public/images/main/projects/school-hovered?csssr-images',
 )
 const radioImages = require.context('../../public/images/main/projects/radio?csssr-images')
-// const blogImages = require.context('../../public/images/main/projects/blog?csssr-images')
+const blogImages = require.context('../../public/images/main/projects/blog?csssr-images')
+const blogImagesHovered = require.context(
+  '../../public/images/main/projects/blog-hovered?csssr-images',
+)
 
 export default [
   {
@@ -26,13 +29,14 @@ export default [
     images: schoolImages,
     imagesHovered: schoolImagesHovered,
   },
-  // {
-  //   id: 'blog',
-  //   title: t => t.main.projects.blog.title,
-  //   description: t => t.main.projects.blog.description,
-  //   href: 'https://blog.csssr.com',
-  //   images: blogImages,
-  // },
+  {
+    id: 'blog',
+    title: (t) => t.main.projects.blog.title,
+    description: (t) => t.main.projects.blog.description,
+    href: 'https://blog.csssr.com',
+    images: blogImages,
+    imagesHovered: blogImagesHovered,
+  },
   {
     id: 'radio',
     title: (t) => t.main.projects.radio.title,

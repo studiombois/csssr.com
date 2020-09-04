@@ -23,7 +23,11 @@ const PrivacyAndLanguageLinks = ({
   return (
     <ul className={className}>
       <li>
-        <Link className="link language-link" href={otherLanguagePathname}>
+        <Link
+          className="link language-link"
+          href={otherLanguagePathname}
+          data-testid="Footer:link.language-link"
+        >
           <Text
             className="link-text"
             dangerouslySetInnerHTML={{ __html: languageToRedirect }}
@@ -34,7 +38,12 @@ const PrivacyAndLanguageLinks = ({
       </li>
 
       <li>
-        <Link className="link" href={`/${language}/privacy-policy`} isNextLink>
+        <Link
+          className="link"
+          href={`/${language}/privacy-policy`}
+          isNextLink
+          data-testid="Footer:link.privacy-policy"
+        >
           <Text
             className="link-text"
             dangerouslySetInnerHTML={{ __html: translations.common.footer.privacy }}
@@ -44,7 +53,12 @@ const PrivacyAndLanguageLinks = ({
         </Link>
 
         {language === 'en' && (
-          <Link className="link policy-link" href={`/${language}/cookies-policy`} isNextLink>
+          <Link
+            className="link policy-link"
+            href={`/${language}/cookies-policy`}
+            isNextLink
+            data-testid="Footer:link.cookies-policy"
+          >
             <Text
               className="link-text"
               dangerouslySetInnerHTML={{ __html: translations.common.footer.cookies }}

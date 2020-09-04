@@ -268,19 +268,30 @@ const base = css`
     }
 
     .team-specialists {
-        margin-top: 80px;
+        margin-top: 68px;
         grid-column: 5 / span 2;
     }
 
     .team-projects {
-        margin-top: 80px;
+        margin-top: 68px;
         grid-column: 8 / span 2;
     }
 
-    .team-specialists img,
-    .team-projects img {
-        max-width: 100%;
-        height: auto;
+    .team-number {
+        font-family: 'Roboto Slab', serif;
+        font-weight: 400;
+        font-size: 66px;
+        line-height: 70px;
+        color: #000000;
+        letter-spacing: 0;
+    }
+
+    .team-label {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 46px;
+        color: #000000;
     }
 
     .advanced-features {
@@ -328,11 +339,20 @@ const base = css`
         transition: all 0.1s ease-out;
     }
 
-    .advanced-feature-buttons > div:hover {
+    .advanced-feature-buttons > div.active {
         transform: translateY(-20px);
     }
 
     @media screen and (max-width: 1492px) {
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 21px);
+        }
+
+        .team-number {
+            font-size: 62px;
+            line-height: 66px;
+        }
+
         .advanced-feature-image {
             grid-column: 1 / span 5;
         }
@@ -343,10 +363,6 @@ const base = css`
 
         .module-image-right {
             margin-top: 120px;
-        }
-
-        .team-image-wrapper {
-            background-position: 0 calc(100% - 21px);
         }
     }
 
@@ -446,18 +462,33 @@ const base = css`
             grid-column: 7 / span 5;
         }
 
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 17px);
+            background-size: 100% 3px;
+        }
+
         .team-description {
             grid-column: 4 / span 7;
         }
 
         .team-specialists {
-            margin-top: 60px;
+            margin-top: 48px;
             grid-column: 4 / span 2;
         }
 
         .team-projects {
-            margin-top: 60px;
+            margin-top: 48px;
             grid-column: 7 / span 2;
+        }
+
+        .team-number {
+            font-size: 48px;
+            line-height: 60px;
+        }
+
+        .team-label {
+            font-size: 17px;
+            line-height: 24px;
         }
 
         .advanced-features-title {
@@ -476,11 +507,6 @@ const base = css`
 
         .advanced-feature-buttons > div {
             margin-top: 100px;
-        }
-
-        .team-image-wrapper {
-            background-position: 0 calc(100% - 17px);
-            background-size: 100% 3px;
         }
     }
 
@@ -601,6 +627,30 @@ const base = css`
             margin-bottom: 100px;
         }
 
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 14px);
+            background-size: 100% 3px;
+        }
+
+        .team-specialists {
+            margin-top: 50px;
+        }
+
+        .team-projects {
+            margin-top: 50px;
+        }
+
+
+        .team-number {
+            font-size: 34px;
+            line-height: 44px;
+        }
+
+        .team-label {
+            font-size: 13px;
+            line-height: 20px;
+        }
+
         .advanced-features {
             margin-top: 80px;
             padding-top: 60px;
@@ -624,13 +674,8 @@ const base = css`
             padding-bottom: 60px;
         }
 
-        .advanced-feature-buttons > div:hover {
+        .advanced-feature-buttons > div.active {
             transform: translateY(0);
-        }
-
-        .team-image-wrapper {
-            background-position: 0 calc(100% - 14px);
-            background-size: 100% 3px;
         }
     }
 
@@ -809,8 +854,6 @@ const base = css`
             flex: 0 40%;
         }
 
-
-
         .design-image {
             grid-column: 1 / span 6;
             margin-top: 30px;
@@ -852,6 +895,11 @@ const base = css`
             text-align: left;
         }
 
+        .team-image-wrapper {
+            background-position: 0 calc(100% - 12px);
+            background-size: 100% 2px;
+        }
+
         .team-image {
             grid-column: 1 / span 6;
         }
@@ -862,13 +910,23 @@ const base = css`
         }
 
         .team-specialists {
-            margin-top: 50px;
+            margin-top: 42px;
             grid-column: 1 / span 2;
         }
 
         .team-projects {
-            margin-top: 50px;
+            margin-top: 42px;
             grid-column: 4 / span 2;
+        }
+
+        .team-number {
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        .team-label {
+            font-size: 12px;
+            line-height: 20px;
         }
 
         .advanced-features {
@@ -910,13 +968,8 @@ const base = css`
             padding-right: 32px;
         }
 
-        .advanced-feature-buttons > div:hover {
+        .advanced-feature-buttons > div.active {
             margin-top: 40px;
-        }
-
-        .team-image-wrapper {
-            background-position: 0 calc(100% - 12px);
-            background-size: 100% 2px;
         }
     }
 `

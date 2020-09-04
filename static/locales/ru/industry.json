@@ -206,6 +206,24 @@
           "title": "Узнать о проекте",
           "href": "/ru/project/qmarketing"
         }
+      },
+      "flant": {
+        "heading": "Флант - лендинги",
+        "text": "Проект по вёрстке и тестированию семи лендингов для компании Флант.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "специалиста"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "месяца"
+          }
+        },
+        "button": {
+          "title": "Узнать о проекте",
+          "href": "/ru/project/flant"
+        }
       }
     }
   }

@@ -94,6 +94,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     order: 4;
   }
 
+  ${desktop.all} {
+    .card_blog {
+      max-height: 471px;
+    }
+  }
+
   ${desktop.l} {
     .card_tracker {
       grid-column: 3 / span 5;
@@ -175,6 +181,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .card_blog {
       margin-top: ${calcRem(65)};
+      max-height: ${calcRem(431)};
     }
 
     .card_radio {

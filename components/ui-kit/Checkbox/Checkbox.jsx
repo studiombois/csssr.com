@@ -45,7 +45,7 @@ class Checkbox extends PureComponent {
     const showError = invalid && submitFailed
 
     return (
-      <span className={cn('checkbox', className)}>
+      <span className={cn('checkbox', className)} data-testid={testId}>
         <input
           id={id}
           name={input.name}
@@ -53,7 +53,6 @@ class Checkbox extends PureComponent {
           disabled={disabled}
           type="checkbox"
           onChange={this.handleChange}
-          data-testid={testId}
           tabIndex={tabIndex}
           required={required}
           aria-required={required}

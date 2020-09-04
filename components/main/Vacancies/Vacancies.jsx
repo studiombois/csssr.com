@@ -16,7 +16,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 const vacanciesImages = require.context('../../../public/images/main/vacancies?csssr-images')
 
 const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => (
-  <Grid as="article" className={cn('industries', className)}>
+  <Grid as="article" className={cn('industries', className)} data-testid="Home:block.vacancies">
     <SubHeading
       className="title"
       as="p"
@@ -37,7 +37,7 @@ const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => 
         }
 
         return (
-          <li key={vacancy.id} className="vacancy">
+          <li key={vacancy.id} className="vacancy" data-testid={`Home:vacancy.${vacancy.pathName}`}>
             <Link
               href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
               as={`/${locale}/jobs/${vacancy.pathName}`}
@@ -58,6 +58,7 @@ const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => 
       kind="third"
       size="s"
       dangerouslySetInnerHTML={{ __html: translations.main.vacancies.link }}
+      data-testid="Home:link.vacancies"
     />
   </Grid>
 )

@@ -31,13 +31,9 @@ const base = css`
         border: 1px solid #FFFFFF;
     }
 
-    &:hover .wrapper {
+    &.active .wrapper {
         box-shadow: 0px 25px 50px rgba(78, 81, 144, 0.07), 0px 4px 7px rgba(78, 81, 144, 0.4);
 
-    }
-
-    .wrapper-active {
-        border: 1px solid #3B95FF;
     }
 
     .font-p-2 {

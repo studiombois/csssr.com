@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { string } from 'prop-types'
+import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Hero from './Hero'
 import Services from './Services'
@@ -24,8 +25,18 @@ import abMeta from '../../data/ab-test/main/metaEn'
 class MainPage extends PureComponent {
   static async getInitialProps(ctx) {
     const l10n = ctx.res ? ctx.res.locals.l10n : window.__NEXT_DATA__.props.pageProps.l10n
-    const res = await fetch(`${csssrSpaceOrigin}/api/public/vacancies/active?locale=${l10n.locale}`)
-    const vacancies = await res.json()
+    let vacancies
+
+    try {
+      const res = await fetch(
+        `${csssrSpaceOrigin}/api/public/vacancies/active?locale=${l10n.locale}`,
+      )
+      vacancies = await res.json()
+    } catch (error) {
+      vacancies = []
+
+      Sentry.captureException(error)
+    }
 
     return { vacancies }
   }

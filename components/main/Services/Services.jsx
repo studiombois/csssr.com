@@ -23,7 +23,7 @@ const Services = ({ className, l10n: { translations, language }, isMobile }) => 
 
   return (
     <Fragment>
-      <Grid as="article" className={className}>
+      <Grid as="article" className={className} data-testid="Home:block.services">
         <Heading
           className="title_main"
           as="h2"
@@ -54,8 +54,15 @@ const Services = ({ className, l10n: { translations, language }, isMobile }) => 
                   className={cn('service', `service_${id}`)}
                   onMouseOver={handleHover(iconName)}
                   onMouseLeave={handleHover(null)}
+                  data-testid={`Home:list-item.${id}`}
                 >
-                  <Heading className="service-title" as="h3" type="slab" size="l">
+                  <Heading
+                    className="service-title"
+                    as="h3"
+                    type="slab"
+                    size="l"
+                    data-testid={`Home:list-item:title.${id}`}
+                  >
                     <NextLink href={`${language}/service/${href}`}>
                       <a
                         dangerouslySetInnerHTML={{
@@ -73,7 +80,10 @@ const Services = ({ className, l10n: { translations, language }, isMobile }) => 
                     dangerouslySetInnerHTML={{ __html: subtitle(translations) }}
                   />
 
-                  <Icon className={cn('service-icon', `service-icon_${iconName}`)} />
+                  <Icon
+                    className={cn('service-icon', `service-icon_${iconName}`)}
+                    data-testid={`Home:list-item:icon.${id}`}
+                  />
                 </li>
               )
             })}

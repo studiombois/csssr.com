@@ -29,6 +29,7 @@ const Hero = ({ className, l10n: { translations }, isMobile }) => (
       <PictureSmart
         className="picture"
         requireImages={requireImages}
+        testId="Home:img.big-logo"
         alt={translations.main.imgAlt.hero}
       />
     </div>

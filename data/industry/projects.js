@@ -60,6 +60,32 @@ export const informationTechnologyProjects = {
         href: (t) => t.industry.projects.informationTechnologyPage.secondItem.button.href,
       },
     },
+    {
+      id: 'Flant',
+      images: projects_1,
+      imgAlt: (t) => t.industry.imgAlt.projects_1,
+      heading: (t) => t.industry.projects.informationTechnologyPage.flant.heading,
+      text: (t) => t.industry.projects.informationTechnologyPage.flant.text,
+      className: 'first-item',
+      numericData: [
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.flant.numericData.firstItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.flant.numericData.firstItem.text,
+        },
+        {
+          numberData: (t) =>
+            t.industry.projects.informationTechnologyPage.flant.numericData.secondItem.number,
+          textData: (t) =>
+            t.industry.projects.informationTechnologyPage.flant.numericData.secondItem.text,
+        },
+      ],
+      button: {
+        title: (t) => t.industry.projects.informationTechnologyPage.flant.button.title,
+        href: (t) => t.industry.projects.informationTechnologyPage.flant.button.href,
+      },
+    },
   ],
 }
 

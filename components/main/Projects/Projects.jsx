@@ -5,7 +5,9 @@ import cn from 'classnames'
 import styles from './Projects.styles'
 import Heading from '../../ui-kit/core-design/Heading'
 import Grid from '../../ui-kit/core-design/Grid'
+import Post from './Post'
 import Card from '../Card'
+import posts from '../../../data/main/posts'
 
 import projects from '../../../data/main/projects'
 
@@ -14,7 +16,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Projects = ({ className, l10n: { translations, language } }) => {
   return (
-    <Grid as="article" className={cn('about-us', className)}>
+    <Grid as="article" className={cn('about-us', className)} data-testid="Home:block.projects">
       <Heading
         className="title"
         as="h2"
@@ -41,6 +43,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
 
         return (
           <Card
+            testId={`Projects:${id === 'radio' ? 'block' : 'link'}.${id}`}
             className={cn('card', `card_${id}`)}
             key={id}
             id={id}
@@ -56,11 +59,11 @@ const Projects = ({ className, l10n: { translations, language } }) => {
         )
       })}
 
-      {/* <ul className="posts">
+      <ul className="posts">
         {posts[language].map(({ id, href }) => (
           <Post key={id} id={id} href={href} />
         ))}
-      </ul> */}
+      </ul>
     </Grid>
   )
 }

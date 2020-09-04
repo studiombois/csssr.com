@@ -2,23 +2,30 @@ export default {
   ru: [
     {
       id: 'post1',
-      href: 'https://blog.csssr.com/ru/2019/09/04/estimate-like-god',
+      href: 'https://blog.csssr.com/ru/article/qa-codex/',
     },
     {
       id: 'post2',
-      href: 'https://blog.csssr.com/ru/2019/12/26/year-resume-2019',
+      href: 'https://blog.csssr.com/ru/article/year-resume-2019/',
+    },
+    {
+      id: 'post3',
+      href: 'https://blog.csssr.com/ru/article/estimate-like-god/',
     },
   ],
   en: [
     {
       id: 'post1',
       href:
-        'https://blog.csssr.com/en/2019/12/02/10-tips-and-best-practices-for-accurately-task-estimating',
+        'https://blog.csssr.com/en/article/how-close-your-outsourced-team-should-be-located-pros-and-cons/',
     },
     {
       id: 'post2',
-      href:
-        'https://blog.csssr.com/en/2019/11/22/split-stack-web-development-some-advantages-of-separating-front-end-from-back-end',
+      href: 'https://blog.csssr.com/en/article/augmented-and-virtual-reality/',
+    },
+    {
+      id: 'post3',
+      href: 'https://blog.csssr.com/en/article/html-or-cms-or-custom-development/',
     },
   ],
 }

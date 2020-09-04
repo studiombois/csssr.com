@@ -20,6 +20,7 @@ class FormStateMessage extends PureComponent {
     onTryAgain: func,
     feedbackEmail: string,
     testId: string.isRequired,
+    successPictureTestid: string,
   }
 
   getTextData = () => {
@@ -71,7 +72,7 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { className, status, testId, shouldShowPicture = true, successPictureTestid } = this.props
+    const { className, status, testId, shouldShowPicture = true, successPictureTestId } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 
@@ -97,7 +98,7 @@ class FormStateMessage extends PureComponent {
                 css={pictureStyles}
                 requireImages={statusImages[status]}
                 customResolutions={['360']}
-                testId={successPictureTestid}
+                testId={successPictureTestId}
               />
             </div>
           )}

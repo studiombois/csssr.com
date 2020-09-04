@@ -1356,10 +1356,10 @@
   dependencies:
     isomorphic-unfetch "^3.0.0"
 
-"@csssr/csssr.images@^2.0.0":
-  version "2.0.0"
-  resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/2.0.0/2b86df503d9db7540fc8ff87f1a01cc1883ae816a581b80858f05b870a22d7fb#985f34c6a27f614d823efe9ad415bbd377feb1e0"
-  integrity sha512-putEhT9bNBfC3bxBa0MqqptMldgFBzXMLeqA+MC/VXG33j/RybxNGr3uxGVRp9KBje4tKzFRjrPoEvUv2y6aUg==
+"@csssr/csssr.images@^3.0.0":
+  version "3.0.0"
+  resolved "https://npm.pkg.github.com/download/@csssr/csssr.images/3.0.0/72bc56233afa18fe009d4205d73e0a934500a27ee5f63240918953b4d3533578#6f011dc767bbfccf0407687fea833dd5d6b261ba"
+  integrity sha512-flLouxrF9IGF6693kgFa0PlmyQZOlREdLlb8zmHQvNmv+D+/XNFB2mWgg6E2KKnIf6fURWQG0PP7nTZ9XKcjWg==
   dependencies:
     "@types/ip" "^1.1.0"
     imgproxy "^0.1.2"

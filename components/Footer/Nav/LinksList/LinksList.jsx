@@ -16,7 +16,7 @@ const LinksList = ({
 }) => (
   <ul className={className}>
     {links.map(({ id, href, useLocale }) => {
-      if ((language === 'ru' && id === 'express') || (language === 'ru' && id === 'blog')) {
+      if (language === 'ru' && id === 'express') {
         return
       }
 

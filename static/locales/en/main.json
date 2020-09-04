@@ -92,13 +92,15 @@
       "title": "CSSSR.Blog",
       "description": "Our thoughts about web development, business processes and remote culture.",
       "post1": {
-        "title": "10&nbsp;Tips and Best Practices for Accurately Estimating Tasks",
-        "description": "How do&nbsp;you stop guessing and start progressing: through trial and error, we&nbsp;have created a&nbsp;set of&nbsp;rules to&nbsp;improve the accuracy of&nbsp;estimates.",
+        "title": "How Close Your Outsourced Team Should Be&nbsp;Located? Pros and Cons",
         "link": "Read more"
       },
       "post2": {
-        "title": "Some Advantages of&nbsp;Separating Front-end from Back-end",
-        "description": "The trend to&nbsp;divide the development process into two parts is&nbsp;rising. The key question is&nbsp;whether it&rsquo;s a&nbsp;good idea.",
+        "title": "Augmented &amp;&nbsp;Virtual Reality to&nbsp;Shape the Future of&nbsp;Web Development",
+        "link": "Read more"
+      },
+      "post3": {
+        "title": "HTML, CMS or&nbsp;Custom Development: Which is&nbsp;Better?",
         "link": "Read more"
       }
     }

@@ -14,7 +14,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Card = ({
-  l10n: { translations },
+  l10n: { translations, language },
   className,
   id,
   testId,
@@ -91,10 +91,12 @@ const Card = ({
   )
 
   if (isLink && id !== 'radio') {
+    const url = id === 'blog' ? `${href}/${language}` : href
+
     return (
       <a
         className={cn('card', className)}
-        href={href}
+        href={url}
         target="_blank"
         rel="noopener nofollow"
         data-testid={testId}

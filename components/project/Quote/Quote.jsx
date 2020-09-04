@@ -1,6 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
+import cn from 'classnames'
 import styles from './Quote.styles'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
@@ -12,7 +13,7 @@ import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import Grid from '../../ui-kit/core-design/Grid'
 
 const Quote = ({ className, projectId, images, l10n: { translations } }) => (
-  <Grid as="section" className={className}>
+  <Grid as="section" className={cn(className, projectId)}>
     <PictureForAllResolutions
       className="picture"
       images={images}

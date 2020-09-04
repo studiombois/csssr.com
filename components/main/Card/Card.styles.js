@@ -65,6 +65,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     background-color: #ffffff;
   }
 
+  .card-picture_radio {
+    background-color: transparent;
+  }
+
   .card-picture-hovered {
     position: absolute;
     top: 0;

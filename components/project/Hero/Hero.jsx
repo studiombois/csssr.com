@@ -35,6 +35,7 @@ const Hero = ({
           target="_blank"
           rel="noreferrer noopener"
           dangerouslySetInnerHTML={{ __html: link(translations) }}
+          data-testid="Project:link.project-site"
         />
 
         <Heading.H2

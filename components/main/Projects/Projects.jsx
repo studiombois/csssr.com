@@ -2,6 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import LazyLoad from 'react-lazyload'
 import styles from './Projects.styles'
 import Heading from '../../ui-kit/core-design/Heading'
 import Grid from '../../ui-kit/core-design/Grid'
@@ -27,14 +28,16 @@ const Projects = ({ className, l10n: { translations, language } }) => {
 
       {projects.map(({ id, title, description, href, images, imagesHovered, fallback }) => {
         const Player = () => (
-          <div className="player-wrapper">
-            <iframe
-              className="player"
-              scrolling="no"
-              frameBorder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/420446082&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&download=false&sharing=false&buying=false"
-            />
-          </div>
+          <LazyLoad>
+            <div className="player-wrapper">
+              <iframe
+                className="player"
+                scrolling="no"
+                frameBorder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/420446082&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&download=false&sharing=false&buying=false"
+              />
+            </div>
+          </LazyLoad>
         )
 
         if (language !== 'ru' && id === 'radio') {

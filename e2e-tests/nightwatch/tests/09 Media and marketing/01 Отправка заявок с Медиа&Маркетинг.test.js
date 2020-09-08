@@ -3,7 +3,7 @@ const { modalContInfo } = require('../actions/modalContInfo')
 
 // Отправка заявок с русской локали
 
-testcase('Отправка заявки из модалки в хеддере RU-локали', () => {
+testcase('Отправка заявки из модалки в хеддере RU-локали - Медиа и Маркетинг', () => {
   step('Перейти на страницу индустрии Медиа и Маркетинг', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -16,25 +16,12 @@ testcase('Отправка заявки из модалки в хеддере RU
 
   modalContInfo()
 
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
-    // происходит переход на другую страницу
-    browser.execute(
-      function (selector) {
-        document.querySelector(selector).click()
-      },
-      [
-        '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
-      ]
-    )
-  })
-
   step('Отметить чекбокс с подпиской на рассылку', () => {
     // TODO здесь нужно кликать на лейбл
     browser.click('[for="ConctactModalForm_newsletter"]')
   })
 
-  step('Нажать кнопку сабмита формы', () => {
+  step('Нажать кнопку отправки формы', () => {
     browser.click('[testid="contact-modal:button.callbackForm.submit"]')
   })
 
@@ -56,7 +43,7 @@ testcase('Отправка заявки из модалки в хеддере RU
 })
 
 testcase(
-  'Отправка заявки через кнопку в первом блоке на странице RU-локали',
+  'Отправка заявки через кнопку в первом блоке на странице RU-локали - Медиа и Маркетинг',
   () => {
     step('Перейти на страницу индустрий Медиа и Маркетинг', () => {
       browser
@@ -65,30 +52,17 @@ testcase(
     })
 
     step('Нажать на кнопку [Hire us] на странице', () => {
-      browser.click('#greeting > button')
+      browser.click('[data-testid="Industry:button.contactUs"]')
     })
 
     modalContInfo()
-
-    step('Отметить чекбокс с Политикой конфиденциальности', () => {
-      // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
-      // происходит переход на другую страницу
-      browser.execute(
-        function (selector) {
-          document.querySelector(selector).click()
-        },
-        [
-          '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
-        ]
-      )
-    })
 
     step('Отметить чекбокс с подпиской на рассылку', () => {
       // TODO здесь нужно кликать на лейбл
       browser.click('[for="ConctactModalForm_newsletter"]')
     })
 
-    step('Нажать кнопку сабмита формы', () => {
+    step('Нажать кнопку отправки формы', () => {
       browser.click('[testid="contact-modal:button.callbackForm.submit"]')
     })
 
@@ -110,31 +84,30 @@ testcase(
   }
 )
 
-testcase('Отправка заявки из формы в конце страницы RU-локали', () => {
+testcase('Отправка заявки из формы в конце страницы RU-локали - Медиа и Маркетинг', () => {
   step('Перейти к форме связи в конце страницы Медиа и Маркетинг', () => {
     browser.url(browser.launch_url + '/ru/industry/media-and-marketing')
   })
 
   contInfo()
 
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
+  step('Отметить чекбокс согласия на рассылку', () => {
     browser.execute(
       function (selector) {
         document.querySelector(selector).click()
       },
-      ['[data-testid="contact:field:callbackForm.privacyPolicy.checkbox"]']
+      ['[for="newsletter"]']
     )
   })
 
   step('Отправить форму', () => {
-    browser.submitForm('form')
+    browser.click('[testid="contact:button.callbackForm.submit"]')
   })
 
   expected('Появилось сообщение об успехе', () => {
     browser
       .waitForElementPresent('[data-testid="contact:text.successMessage"]')
-      .expect
-      .element('[data-testid="contact:text.successMessage"]')
+      .expect.element('[data-testid="contact:text.successMessage"]')
       .text.to.equal('Успех!' + '\n' + 'Совсем скоро мы с вами свяжемся.')
     browser.expect.element('[data-testid="contact:picture.successMessageImg"]')
       .to.be.present
@@ -143,38 +116,25 @@ testcase('Отправка заявки из формы в конце стран
 
 // Отправка заявок с английской страницы
 
-testcase('Отправка заявки из модалки в хеддере EN-локали', () => {
+testcase('Отправка заявки из модалки в хеддере EN-локали - Медиа и Маркетинг', () => {
   step('Перейти на страницу индустрии Media&Marketing', () => {
     browser
       .setWindowSize(1360, 1024)
       .url(browser.launch_url + '/en/industry/media-and-marketing')
   })
 
-  step('Нажать на кнопку в хеддере [Contuct us]', () => {
+  step('Нажать на кнопку в хеддере [Hire us]', () => {
     browser.click('[data-testid="Header:button.contactUs"]')
   })
 
   modalContInfo()
-
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
-    // происходит переход на другую страницу
-    browser.execute(
-      function (selector) {
-        document.querySelector(selector).click()
-      },
-      [
-        '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
-      ]
-    )
-  })
 
   step('Отметить чекбокс с подпиской на рассылку', () => {
     // TODO здесь нужно кликать на лейбл
     browser.click('[for="ConctactModalForm_newsletter"]')
   })
 
-  step('Нажать кнопку сабмита формы', () => {
+  step('Нажать кнопку отправки формы', () => {
     browser.click('[testid="contact-modal:button.callbackForm.submit"]')
   })
 
@@ -195,7 +155,7 @@ testcase('Отправка заявки из модалки в хеддере EN
 })
 
 testcase(
-  'Отправка заявки через кнопку в первом блоке на странице EN-локали',
+  'Отправка заявки через кнопку в первом блоке на странице EN-локали - Медиа и Маркетинг',
   () => {
     step('Перейти на страницу индустрий Media&Marketing', () => {
       browser
@@ -204,30 +164,17 @@ testcase(
     })
 
     step('Нажать на кнопку [Hire us] на странице', () => {
-      browser.click('#greeting > button')
+      browser.click('[data-testid="Industry:button.contactUs"]')
     })
 
     modalContInfo()
-
-    step('Отметить чекбокс с Политикой конфиденциальности', () => {
-      // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
-      // происходит переход на другую страницу
-      browser.execute(
-        function (selector) {
-          document.querySelector(selector).click()
-        },
-        [
-          '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
-        ]
-      )
-    })
 
     step('Отметить чекбокс с подпиской на рассылку', () => {
       // TODO здесь нужно кликать на лейбл
       browser.click('[for="ConctactModalForm_newsletter"]')
     })
 
-    step('Нажать кнопку сабмита формы', () => {
+    step('Нажать кнопку отправки формы', () => {
       browser.click('[testid="contact-modal:button.callbackForm.submit"]')
     })
 
@@ -249,31 +196,30 @@ testcase(
   }
 )
 
-testcase('Отправка заявки из формы в конце страницы EN-локали', () => {
+testcase('Отправка заявки из формы в конце страницы EN-локали - Медиа и Маркетинг', () => {
   step('Перейти к форме связи в конце страницы Media&Marketing', () => {
     browser.url(browser.launch_url + '/en/industry/media-and-marketing')
   })
 
   contInfo()
 
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
+  step('Отметить чекбокс согласия на рассылку', () => {
     browser.execute(
       function (selector) {
         document.querySelector(selector).click()
       },
-      ['[data-testid="contact:field:callbackForm.privacyPolicy.checkbox"]']
+      ['[for="newsletter"]']
     )
   })
 
   step('Отправить форму', () => {
-    browser.submitForm('form')
+    browser.click('[testid="contact:button.callbackForm.submit"]')
   })
 
   expected('Появилось сообщение об успехе', () => {
     browser
       .waitForElementPresent('[data-testid="contact:text.successMessage"]')
-      .expect
-      .element('[data-testid="contact:text.successMessage"]')
+      .expect.element('[data-testid="contact:text.successMessage"]')
       .text.to.equal('Success!' + '\n' + 'We will contact you soon')
     browser.expect.element('[data-testid="contact:picture.successMessageImg"]')
       .to.be.present

@@ -59,10 +59,10 @@ const Footer = ({
 
   return (
     <footer className={className} ref={footerRef}>
-      <div className="top-content">
+      <div className="top-content" data-testid="Footer:block.top-content">
         <div className="top-content-left-wrapper">
           <NextLink href={`/${language}`}>
-            <a className="logo">
+            <a className="logo" data-testid="Footer.link.logo">
               <Logo />
             </a>
           </NextLink>
@@ -83,7 +83,7 @@ const Footer = ({
             dangerouslySetInnerHTML={{ __html: translations.common.footer.actionPhrase }}
           />
 
-          <Link className="email" href={`mailto:${footerEmail}`}>
+          <Link className="email" href={`mailto:${footerEmail}`} data-testid="Footer.link.email">
             {footerEmail}
           </Link>
 
@@ -98,12 +98,12 @@ const Footer = ({
             </Link>
           )}
 
-          <SocialLinks />
+          <SocialLinks testId="Footer:link.social" />
         </div>
 
         <Nav />
       </div>
-      <div className="bottom-content">
+      <div className="bottom-content" data-testid="Footer:block.bottom-content">
         <PrivacyAndLanguageLinks />
       </div>
 

@@ -40,7 +40,7 @@ const Process = ({ className, l10n: { translations } }) => (
         'mobile.all': { png: solar_system_mobile_all, webp: solar_system_mobile_all_webp },
       }}
       fallback={solar_system_desktop_l}
-      alt={translations.mvp.imgAlt.solar_system}
+      alt={translations.mvp.imgAlt.process}
     />
 
     <Grid as="div" className="content">

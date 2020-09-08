@@ -50,13 +50,6 @@ const CandidateInfoSection = (props) => {
       `,
     },
     {
-      id: 'age',
-      label: translations.job.age,
-      css: css`
-        ${stylesForFullWidthField}
-      `,
-    },
-    {
       id: 'location',
       required: true,
       label: translations.job.city,
@@ -121,6 +114,8 @@ const CandidateInfoSection = (props) => {
             kind="regular"
             aria-required={required}
             required={required}
+            testId={`Jobs:form:input.${id}`}
+            errorTestid={`Jobs:form:text:error.${id}`}
           />
         ) : null,
       )}
@@ -138,6 +133,9 @@ const CandidateInfoSection = (props) => {
           component={FileField}
           onFileFieldChange={onFileFieldChange}
           aria-required={true}
+          testId="Jobs:form:input.file"
+          buttunTestId="Jobs:form:button.file"
+          labelTestId="Jobs:form:label.file"
           required
         />
       )}
@@ -156,11 +154,14 @@ const CandidateInfoSection = (props) => {
             `}
             component={TextareaField}
             kind="regular"
+            testId="Jobs:form:input.comment"
           />
         </Fragment>
       )}
 
       <PrivacyPolicyCheckbox
+        testId="Jobs:form:checkbox.policy"
+        linkTestId="Jobs:form:link.policy"
         className="input-checkbox"
         required
         css={css`

@@ -6,7 +6,7 @@ import { mediaAndMarketingImages, mediaAndMarketingImagesHovered } from './media
 export default [
   {
     id: 'fintech',
-    testId: 'Outsourcing:link:fintech',
+    testId: 'Industries:link:fintech',
     title: (t) => t.main.industries.fintech.title,
     description: (t) => t.main.industries.fintech.description,
     href: 'fintech',
@@ -16,7 +16,7 @@ export default [
   },
   {
     id: 'eCommerce',
-    testId: 'Outsourcing:link:eCommerce',
+    testId: 'Industries:link:eCommerce',
     title: (t) => t.main.industries.eCommerce.title,
     description: (t) => t.main.industries.eCommerce.description,
     href: 'ecommerce',
@@ -26,7 +26,7 @@ export default [
   },
   {
     id: 'information',
-    testId: 'Outsourcing:link:information',
+    testId: 'Industries:link:information',
     title: (t) => t.main.industries.information.title,
     description: (t) => t.main.industries.information.description,
     href: 'information-technology',
@@ -36,7 +36,7 @@ export default [
   },
   {
     id: 'mediaAndMarketing',
-    testId: 'Outsourcing:link:mediaAndMarketing',
+    testId: 'Industries:link:mediaAndMarketing',
     title: (t) => t.main.industries.mediaAndMarketing.title,
     description: (t) => t.main.industries.mediaAndMarketing.description,
     href: 'media-and-marketing',

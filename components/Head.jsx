@@ -1,11 +1,9 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { Fragment } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
 import { node, number, shape, string } from 'prop-types'
-import { L10nConsumer } from '../utils/l10nProvider'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
-import { Ie11BrowserContext } from '../utils/msBrowserProvider'
 import { PagesListConsumer } from '../utils/pagesListProvider'
 import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
 
@@ -14,43 +12,10 @@ const origin = 'https://csssr.com'
 
 const Head = (props) => {
   const pathname = getPathName(props.router.asPath)
-
   const localePageCounter = props.pagesList.filter((page) => page.pathname === pathname).length
-
-  const isIe11 = useContext(Ie11BrowserContext)
-
-  // При роутинге в ie11 picturefill не подгружает правильные размеры изображений.
-  // Явный вызов плагина при каждом рендере исправляет баг
-  useEffect(() => {
-    if (isIe11) {
-      // eslint-disable-next-line no-undef
-      picturefill()
-    }
-  })
 
   return (
     <NextHead>
-      <link
-        rel="preload"
-        href={require(`../static/fonts/Roboto_Slab_normal_300_${props.l10n.language}.woff2`)}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href={require(`../static/fonts/Roboto_normal_100_${props.l10n.language}.woff2`)}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href={require(`../static/fonts/Roboto_normal_900_${props.l10n.language}.woff2`)}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
       {(!pathname || (localePageCounter > 1 && !isJobPage(pathname))) && (
         <Fragment>
           <link
@@ -99,18 +64,6 @@ const Head = (props) => {
       `,
         }}
       />
-      {isIe11 && (
-        <Fragment>
-          <script
-            crossOrigin="anonymous"
-            src="https://polyfill.io/v3/polyfill.min.js?features=es6%2Ces7%2Cfetch%2CSymbol.asyncIterator"
-          />
-          <script
-            type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js"
-          />
-        </Fragment>
-      )}
 
       <meta charSet="utf-8" />
       <title>{`${props.title}${props.templateTitle}`}</title>
@@ -200,4 +153,4 @@ Head.defaultProps = {
   },
 }
 
-export default withRouter(PagesListConsumer(L10nConsumer(Head)))
+export default withRouter(PagesListConsumer(Head))

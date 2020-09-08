@@ -35,6 +35,7 @@ class Error404Page extends React.Component {
         <h3
           className="font_burger-menu"
           dangerouslySetInnerHTML={{ __html: title(translations) }}
+          data-testid={`ErrorPage:menu:title.${id}`}
         />
 
         {links && (
@@ -46,6 +47,7 @@ class Error404Page extends React.Component {
                 <li key={id}>
                   {linkRegExp.test(href) ? (
                     <a
+                      data-testid={`ErrorPage:menu:link.${id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="menu-item"
@@ -55,6 +57,7 @@ class Error404Page extends React.Component {
                   ) : (
                     <Link href={`/${language}/${href}`}>
                       <a
+                        data-testid={`ErrorPage:menu:link.${id}`}
                         className="menu-item"
                         dangerouslySetInnerHTML={{ __html: title(translations) }}
                       />
@@ -87,7 +90,7 @@ class Error404Page extends React.Component {
     }
 
     return (
-      <Fragment>
+      <div data-testid="ErrorPage">
         <Global styles={globalStyles} />
         <DevTools />
 
@@ -100,7 +103,7 @@ class Error404Page extends React.Component {
 
         <Grid as="header" className={className}>
           <Link href={rootUrl}>
-            <a className="logo">
+            <a className="logo" data-testid="ErrorPage:link.logo">
               <LogoIcon width="100%" height="100%" />
             </a>
           </Link>
@@ -135,7 +138,7 @@ class Error404Page extends React.Component {
             <div className="navList">{navItems.map(this.renderNav)}</div>
           </Fragment>
         </Grid>
-      </Fragment>
+      </div>
     )
   }
 }

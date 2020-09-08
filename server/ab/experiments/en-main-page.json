@@ -1,0 +1,33 @@
+{
+  "optimizeExperimentId": "dBFNnuUJTSuIIARvbildSQ",
+  "variants": [
+    {
+      "name": "base",
+      "weight": 1
+    },
+    {
+      "name": "v1",
+      "weight": 1
+    },
+    {
+      "name": "v2",
+      "weight": 1
+    },
+    {
+      "name": "v3",
+      "weight": 1
+    },
+    {
+      "name": "v4",
+      "weight": 1
+    },
+    {
+      "name": "v5",
+      "weight": 1
+    },
+    {
+      "name": "v6",
+      "weight": 1
+    }
+  ]
+}

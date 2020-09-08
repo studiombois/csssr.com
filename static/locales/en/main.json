@@ -4,8 +4,8 @@
     "description": "We’re an international group of IT companies that helps our clients build reliable web solutions."
   },
   "hero": {
-    "title": "We Code for Good",
-    "description": "We&rsquo;re an&nbsp;international&nbsp;IT company that specializes in&nbsp;<span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> web development services to&nbsp;help our clients build reliable web solutions."
+    "title": "CSSSR&nbsp;&mdash; Outsource Web Development",
+    "description": "CSSSR is&nbsp;a&nbsp;web-development group of&nbsp;companies. Though <span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> development services are our specialty, we&nbsp;provide superb back-end and devops services, along with design to&nbsp;help our clients build top to&nbsp;bottom solutions."
   },
   "services": {
     "title": "We&nbsp;Create Web Services for Millions",
@@ -92,13 +92,15 @@
       "title": "CSSSR.Blog",
       "description": "Our thoughts about web development, business processes and remote culture.",
       "post1": {
-        "title": "10&nbsp;Tips and Best Practices for Accurately Estimating Tasks",
-        "description": "How do&nbsp;you stop guessing and start progressing: through trial and error, we&nbsp;have created a&nbsp;set of&nbsp;rules to&nbsp;improve the accuracy of&nbsp;estimates.",
+        "title": "How Close Your Outsourced Team Should Be&nbsp;Located? Pros and Cons",
         "link": "Read more"
       },
       "post2": {
-        "title": "Some Advantages of&nbsp;Separating Front-end from Back-end",
-        "description": "The trend to&nbsp;divide the development process into two parts is&nbsp;rising. The key question is&nbsp;whether it&rsquo;s a&nbsp;good idea.",
+        "title": "Augmented &amp;&nbsp;Virtual Reality to&nbsp;Shape the Future of&nbsp;Web Development",
+        "link": "Read more"
+      },
+      "post3": {
+        "title": "HTML, CMS or&nbsp;Custom Development: Which is&nbsp;Better?",
         "link": "Read more"
       }
     }
@@ -108,23 +110,23 @@
     "link": "All our vacancies"
   },
   "imgAlt": {
-    "hero": "CSSSR specializes in front-end web development services",
+    "hero": "CSSSR is an international IT group.",
     "square": "Square figure",
     "triangle": "Triangle figure",
     "circle": "Circle figure",
     "arc": "Arc figure",
     "figures": "Square, Triangle and Circle figures in a pile",
     "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly",
-    "fintech": "Woman holding credit cards",
-    "eCommerce": "Two people helping each other carry the product",
-    "information": "Browser window",
-    "mediaAndMarketing": "Several people interacting with each other in front of computer",
+    "fintech": "CSSSR builds a strong digital presence for most banking and financial services.",
+    "eCommerce": "CSSSR makes our clients in the highly competitive e-commerce industry win customers.",
+    "information": "We push IT-companies on the cutting edge of technological progress.",
+    "mediaAndMarketing": "Taking advantage of its profound high-quality experience, CSSSR is capable of handling large-scale data and any scale of concurrent users.",
     "aboutUs": "A man hugging a heart with «Do» written on him",
     "volleyball": "CSSSR Teams after Volleyball Tournament",
     "elbrus": "CSSSR flag on Elbrus",
-    "tracker": "A man who does his job productively",
-    "school": "Robot in a bachelor's hat",
+    "tracker": "We’ve created an app that helps us track and manage the time we put into our projects.",
+    "school": "A front-end e-learning platform developed by CSSSR.",
     "blog": "The man who reads the news",
-    "vacancies": "Happy faces of people"
+    "vacancies": "Join the CSSSR team and benefit from the advantages of remote work on a full-time basis."
   }
 }

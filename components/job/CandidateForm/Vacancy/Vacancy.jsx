@@ -5,8 +5,8 @@ import styled from '@emotion/styled'
 import styles from './Vacancy.styles'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
-const Vacancy = ({ className, locale, vacancy }) => (
-  <li className={className}>
+const Vacancy = ({ className, locale, vacancy, testid }) => (
+  <li className={className} data-testid={testid}>
     <Link
       href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
       as={`/${locale}/jobs/${vacancy.pathName}`}

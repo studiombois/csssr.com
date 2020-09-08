@@ -50,7 +50,7 @@ class OriginQuestionBlock extends React.PureComponent {
   }
 
   render() {
-    const { className, question, answer } = this.props
+    const { className, question, answer, testid } = this.props
 
     return (
       <Grid className={className}>
@@ -61,9 +61,10 @@ class OriginQuestionBlock extends React.PureComponent {
           onKeyDown={this.toggleAnswer}
           onClick={this.toggleAnswer}
           tabIndex="1"
+          data-testid={testid}
         >
           <div className="icon-wrapper">
-            <div className="icon" ref={this.iconRef} />
+            <div className="icon" ref={this.iconRef} data-testid="Faq:item:icon" />
           </div>
 
           {question}

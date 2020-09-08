@@ -1,5 +1,5 @@
-import React, { useState, useContext, useRef, useEffect } from 'react'
-import { string, object } from 'prop-types'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { object, string } from 'prop-types'
 import { Field, Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
@@ -17,7 +17,7 @@ import { L10nConsumer } from '../../../../../utils/l10nProvider'
 import contactUsFormValidationRules from '../../../../../utils/validators/contactUsFormValidationRules'
 import getProfileId from '../../../../../utils/getProfileId'
 import getGaCid from '../../../../../utils/client/getGaCid'
-import testEmail from '../../../../../utils/testEmail'
+import testEmails from '../../../../../utils/testEmails'
 import profiles from '../../../../../data/contact-us/profiles'
 
 const Component = ({
@@ -97,7 +97,12 @@ const Component = ({
         <Field
           name="email"
           render={({ input, meta }) => (
-            <TextField input={input} meta={meta} label={translations.contactUs.form.email} />
+            <TextField
+              input={input}
+              meta={meta}
+              label={translations.contactUs.form.email}
+              testId={`${formName}:field:contacts.email`}
+            />
           )}
         />
 
@@ -109,6 +114,7 @@ const Component = ({
               meta={meta}
               inputMode="tel"
               label={translations.contactUs.form.phone}
+              testId={`${formName}:field:contacts.phone`}
             />
           )}
         />
@@ -116,17 +122,22 @@ const Component = ({
         <Field
           name="message"
           render={({ input, meta }) => (
-            <Textarea input={input} meta={meta} label={translations.contactUs.form.text} />
+            <Textarea
+              input={input}
+              meta={meta}
+              label={translations.contactUs.form.text}
+              testId={`${formName}:field:contacts.message`}
+            />
           )}
         />
 
-        <div className="newsletter">
+        <div className="newsletter" testid={`${formName}:block:contacts.checkbox`}>
           <Field
             id="newsletter"
             name="newsletter"
             type="checkbox"
             component={Checkbox}
-            testid={`${formName}:field:contacts.agree`}
+            testId={`${formName}:field:contacts.agree`}
           >
             <span
               className="newsletter-text"
@@ -145,7 +156,7 @@ const Component = ({
           type="submit"
           disabled={status === 'submitting' || status === 'fail'}
           status={status}
-          testid=""
+          testId={`${formName}:button.formSubmit`}
         >
           <span className="submit-text">{translations.contactUs.form.submitText}</span>
         </AnimatedButton>
@@ -156,7 +167,7 @@ const Component = ({
             errorText={submitError}
             onTryAgain={handleTryToFillFormAgain}
             feedbackEmail={feedbackEmail}
-            testid={`${formName}:text.successMessage`}
+            testId={`${formName}:text.${submittedToServer ? 'successMessage' : 'failMessage'}`}
             shouldShowPicture={false}
           />
         </div>
@@ -184,7 +195,7 @@ const Form = ({ className, l10n, l10n: { translations, language } }) => {
     values.gacid = getGaCid()
 
     let res
-    const isTestEmail = values.email === testEmail
+    const isTestEmail = testEmails.includes(values.email)
     const shouldSendDataLayerEvent = window.dataLayer && !isTestEmail
     const dataLayerEventNamePrefix = inquiryTypeId === 'new-project' ? 'form' : 'form_jbs'
     const submitUrl = inquiryTypeId === 'new-project' ? '/api/submit-form' : '/api/send-email'

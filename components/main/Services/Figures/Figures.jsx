@@ -35,6 +35,7 @@ const Figures = ({ className, hoveredService, l10n: { translations, language } }
         images={images}
         fallback={fallback}
         alt={translations.main.imgAlt[name]}
+        testId={`Home:img.${name}`}
       />
     ))}
   </aside>

@@ -35,9 +35,10 @@ const Hero = ({
           target="_blank"
           rel="noreferrer noopener"
           dangerouslySetInnerHTML={{ __html: link(translations) }}
+          data-testid="Project:link.project-site"
         />
 
-        <Heading.H3
+        <Heading.H2
           type="slab"
           size="m"
           dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
@@ -52,7 +53,7 @@ const Hero = ({
               size="m"
               as="p"
               dangerouslySetInnerHTML={{ __html: item(translations) }}
-              className="paragraph"
+              className={`paragraph paragraph_${index}`}
             />
           ))}
         </div>

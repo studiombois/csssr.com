@@ -16,6 +16,7 @@
       "imgAlt": ""
     },
     "team": {
+      "imgAlt": "Team composition.",
       "title": "Team Composition",
       "numberList": {
         "firstItem": "1",
@@ -63,7 +64,7 @@
         [
           "The main goal of&nbsp;the Professionals&nbsp;4.0 project is&nbsp;to&nbsp;connect major corporations with talented performers. Through the project, talented individuals can find new career opportunities, solve challenging tasks, develop new skills and prove themselves in&nbsp;an&nbsp;authentic work environment.",
           "The companies, meanwhile, get access to&nbsp;a&nbsp;huge database of&nbsp;business competition finalists and top performers, allowing them to&nbsp;quickly assemble teams for particular business tasks and reinforce internal resources, with external expertise.",
-          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Rostelecom</a> and the <a href=\"https://sk.ru/\" target=\"_blank\" rel=\"noopener nofollow\">Skolkovo Innovation Center</a>."
+          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.sibur'>Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.rostelecom'>Rostelecom</a> and the <a href=\"https://sk.ru/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.skolkovo'>Skolkovo Innovation Center</a>."
         ],
         [
           "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
@@ -73,8 +74,8 @@
       ]
     },
     "imgAlt": {
-      "quote": "Graphic representation of a woman",
-      "aboutProject": "Three people working diligently on the project"
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "s7airlines": {
@@ -95,6 +96,7 @@
 
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "4",
@@ -142,7 +144,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "mosoblgaz": {
@@ -161,6 +164,7 @@
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -199,7 +203,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "brusnika": {
@@ -218,6 +223,7 @@
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1"
       },
@@ -256,7 +262,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     },
     "quote": {
       "text": "The result of our joint work was not only a software product, but also a new work style that we've developed with our colleagues. Thank you for your individual approach, courage throughout experiments and professionalism in difficult situations!",
@@ -283,6 +290,7 @@
     },
     "team": {
       "title": "Team Composition:",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "2"
@@ -323,7 +331,8 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "qmarketing": {
@@ -342,6 +351,7 @@
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -382,7 +392,72 @@
       ]
     },
     "imgAlt": {
-      "aboutProject": "Three people are working hard on the project."
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+    }
+  },
+  "flant": {
+    "meta": {
+      "title": "Flant  —  Project: Landing Pages",
+      "description": "CSSSR was in charge of developming and testing of seven landing pages for the Flant comapny."
+    },
+    "hero": {
+      "title": "Landing Pages",
+      "link": "https://flant.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Flant company is&nbsp;engaged in&nbsp;elaborating fault tolerant&nbsp;IT infrastructures on&nbsp;the basis of&nbsp;Kubernetes. It&nbsp;provides processes of&nbsp;continuous integration and delivery (CI/CD), 24/7/365 operation of&nbsp;applications. Flant is&nbsp;the first certified Kubernetes service provider in&nbsp;Russia."
+      },
+      "imgAlt": "Flant"
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior HTML/CSS Developer",
+        "secondItem": "Middle HTML/CSS Developers"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "Pug",
+        "secondItem": "SCSS",
+        "thirdItem": "JS"
+      },
+      "numericData": {
+        "duration": {
+          "number": "2",
+          "text": "months <span style='white-space:nowrap'>(July — August 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [],
+        [
+          "Our team was engaged in&nbsp;Flant landing pages elaborating. We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Three people are working hard on the project.",
+      "quote": "Feedback on the project."
+    },
+    "quote": {
+      "text": "We&nbsp;had no&nbsp;time to&nbsp;warm&nbsp;up. We&nbsp;worked in&nbsp;a&nbsp;way that from page concept until its implementation beginning was literally one night. At&nbsp;such a&nbsp;pace, there was simply no&nbsp;room for experiments or&nbsp;organization of&nbsp;our own front-end development process. We&nbsp;needed a&nbsp;timely result with guaranteed quality. That&rsquo;s why we&nbsp;didn&rsquo;t think for a&nbsp;long time: we&nbsp;came to&nbsp;CSSSR as&nbsp;we&nbsp;repeatedly crossed paths with the guys&rsquo; work for the projects of&nbsp;our clients and understood very well what output we&nbsp;will get. It&rsquo;s cool that all our expectations of&nbsp;the result were fully met. Moreover, the CSSSR framework allowed&nbsp;us to&nbsp;further develop the project on&nbsp;our own (though at&nbsp;a&nbsp;much slower pace). Investments in&nbsp;a&nbsp;stormy start with CSSSR still justify themselves up&nbsp;to&nbsp;now.",
+      "author": {
+        "name": "Aleksandr Batalov",
+        "signature": "General Director"
+      }
     }
   }
 }

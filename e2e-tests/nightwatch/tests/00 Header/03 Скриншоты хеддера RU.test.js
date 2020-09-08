@@ -5,7 +5,7 @@ testcase('Хеддер 1920 RU', () => {
     browser
       .setWindowSize(1920, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   expected('Скрин хеддера на 1920', () => {
@@ -34,7 +34,7 @@ testcase('Дропдаун Услуги 1920 RU', () => {
     browser
       .setWindowSize(1920, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на УСЛУГИ в хеддере', () => {
@@ -56,7 +56,7 @@ testcase('Дропдаун ИНДУСТРИИ 1920 RU', () => {
     browser
       .setWindowSize(1920, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
@@ -78,7 +78,7 @@ testcase('Дропдаун КАК МЫ РАБОТАЕМ 1920 RU', () => {
     browser
       .setWindowSize(1920, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на КАК МЫ РАБОТАЕМ в хеддере', () => {
@@ -100,7 +100,7 @@ testcase('Хеддер 1360 RU', () => {
     browser
       .setWindowSize(1360, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   expected('Скрин хеддера на 1360', () => {
@@ -129,7 +129,7 @@ testcase('Дропдаун Услуги 1360 RU', () => {
     browser
       .setWindowSize(1360, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на УСЛУГИ в хеддере', () => {
@@ -151,7 +151,7 @@ testcase('Дропдаун ИНДУСТРИИ 1360 RU', () => {
     browser
       .setWindowSize(1360, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
@@ -173,7 +173,7 @@ testcase('Дропдаун КАК МЫ РАБОТАЕМ 1360 RU', () => {
     browser
       .setWindowSize(1360, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
@@ -195,7 +195,7 @@ testcase('Хеддер 1280 RU', () => {
     browser
       .setWindowSize(1280, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   expected('Скрин хеддера на 1280', () => {
@@ -224,7 +224,7 @@ testcase('Дропдаун Услуги 1280 RU', () => {
     browser
       .setWindowSize(1280, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на УСЛУГИ в хеддере', () => {
@@ -246,7 +246,7 @@ testcase('Дропдаун ИНДУСТРИИ 1280 RU', () => {
     browser
       .setWindowSize(1280, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
@@ -268,7 +268,7 @@ testcase('Дропдаун КАК МЫ РАБОТАЕМ 1280 RU', () => {
     browser
       .setWindowSize(1280, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
@@ -290,7 +290,7 @@ testcase('Хеддер 1024 RU', () => {
     browser
       .setWindowSize(1024, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   expected('Скрин хеддера на 1024', () => {
@@ -309,7 +309,7 @@ testcase('Хеддер на странице вакансий без кнопк�
   expected('Скрин хеддера на странице вакансий без кнопки связи 1024', () => {
     browser.assert.screenshotElement(
       '[data-testid="Header:block"]',
-      'Хеддер на странице вакансий без кнопки связи 1360 RU'
+      'Хеддер на странице вакансий без кнопки связи 1024 RU'
     )
   })
 })
@@ -319,7 +319,7 @@ testcase('Дропдаун Услуги 1024 RU', () => {
     browser
       .setWindowSize(1024, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на УСЛУГИ в хеддере', () => {
@@ -341,7 +341,7 @@ testcase('Дропдаун ИНДУСТРИИ 1024 RU', () => {
     browser
       .setWindowSize(1024, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
@@ -363,7 +363,7 @@ testcase('Дропдаун КАК МЫ РАБОТАЕМ 1024 RU', () => {
     browser
       .setWindowSize(1024, 1024)
       .url(browser.launch_url + '/ru')
-      .waitForElementVisible('article.ekphzss0.css-1w4ki1n-Grid.e1kw6gvb0 > div > div')
+      .waitForElementVisible('[data-testid="Header:block"]')
   })
 
   step('Навести курсор на ИНДУСТРИИ в хеддере', () => {

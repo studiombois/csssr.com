@@ -3,39 +3,39 @@
 testcase('Media&Marketing 1920 En', () => {
   step('Перейти на страницу Media&Marketing', () => {
     browser
-      .setWindowSize(1920, 7200)
+      .setWindowSize(1920, 8000)
       .url(browser.launch_url + '/en/industry/media-and-marketing')
       .waitForElementPresent('footer')
   })
 
   expected('Скрин целой страницы Media&Marketing на 1920 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Media&Marketing 1920 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Media&Marketing 1920 EN')
   })
 })
 
 testcase(' Media&Marketing 1360 En', () => {
   step('Перейти на страницу  Media&Marketing', () => {
     browser
-      .setWindowSize(1360, 7100)
+      .setWindowSize(1360, 8000)
       .url(browser.launch_url + '/en/industry/media-and-marketing')
       .waitForElementPresent('footer')
   })
 
   expected('Скрин целой страницы Media&Marketing на 1360 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Media&Marketing 1360 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Media&Marketing 1360 EN')
   })
 })
 
 testcase(' Media&Marketing 1280 En', () => {
   step('Перейти на страницу  Media&Marketing', () => {
     browser
-      .setWindowSize(1280, 6700)
+      .setWindowSize(1280, 7500)
       .url(browser.launch_url + '/en/industry/media-and-marketing')
       .waitForElementPresent('footer')
   })
 
   expected('Скрин целой страницы Media&Marketing на 1280 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Media&Marketing 1280 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Media&Marketing 1280 EN')
   })
 })
 
@@ -48,7 +48,7 @@ testcase(' Media&Marketing 1024 En', () => {
   })
 
   expected('Скрин целой страницы Media&Marketing на 1024 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Media&Marketing 1024 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Media&Marketing 1024 EN')
   })
 })
 
@@ -61,7 +61,7 @@ testcase(' Media&Marketing 360 En', () => {
   })
 
   expected('Скрин целой страницы Media&Marketing на 360 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Media&Marketing 360 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Media&Marketing 360 EN')
   })
 })
 
@@ -70,39 +70,39 @@ testcase(' Media&Marketing 360 En', () => {
 testcase('Индустрии Медиа и Маркетинг 1920 RU', () => {
   step('Перейти на страницу индустрии Медиа и Маркетинг', () => {
     browser
-      .setWindowSize(1920, 7200)
+      .setWindowSize(1920, 8000)
       .url(browser.launch_url + '/ru/industry/media-and-marketing')
       .waitForElementPresent('footer')
   })
 
   expected('Скрин целой страницы индустрии Медиа и Маркетинг на 1920 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Медиа и Маркетинг 1920 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Медиа и Маркетинг 1920 RU')
   })
 })
 
 testcase('Индустрии Медиа и Маркетинг 1360 RU', () => {
   step('Перейти на страницу индустрии Медиа и Маркетинг', () => {
     browser
-      .setWindowSize(1360, 7100)
+      .setWindowSize(1360, 8000)
       .url(browser.launch_url + '/ru/industry/media-and-marketing')
       .waitForElementPresent('footer')
   })
 
   expected('Скрин целой страницы индустрии Медиа и Маркетинг на 1360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Медиа и Маркетинг 1360 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Медиа и Маркетинг 1360 RU')
   })
 })
 
 testcase('Индустрии Медиа и Маркетинг 1280 RU', () => {
   step('Перейти на страницу индустрии Медиа и Маркетинг', () => {
     browser
-      .setWindowSize(1280, 6700)
+      .setWindowSize(1280, 7500)
       .url(browser.launch_url + '/ru/industry/media-and-marketing')
       .waitForElementPresent('footer')
   })
 
   expected('Скрин целой страницы индустрии Медиа и Маркетинг на 1280 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Медиа и Маркетинг 1280 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Медиа и Маркетинг 1280 RU')
   })
 })
 
@@ -115,7 +115,7 @@ testcase('Индустрии Медиа и Маркетинг 1024 RU', () => {
   })
 
   expected('Скрин целой страницы индустрии Медиа и Маркетинг на 1024 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Медиа и Маркетинг 1024 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Медиа и Маркетинг 1024 RU')
   })
 })
 
@@ -128,6 +128,6 @@ testcase('Индустрии Медиа и Маркетинг 360 RU', () => {
   })
 
   expected('Скрин целой страницы индустрии Медиа и Маркетинг на 360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Медиа и Маркетинг 360 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Медиа и Маркетинг 360 RU')
   })
 })

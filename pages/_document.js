@@ -4,6 +4,7 @@ import { GtmNoScript, GtmScript } from 'react-gtm-components'
 import getGtmId from '../utils/getGtmId'
 import cn from 'classnames'
 import detectMsBrowser, { detectIe11 } from '../utils/detectMsBrowserByUserAgent'
+import { Fonts } from '@csssr/core-design'
 
 // Текст для модального окна невалидного браузера
 const CONTENT = {
@@ -35,21 +36,38 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       language: ctx.res.locals.l10n.language,
+      ab: ctx.res.locals.ab,
       userAgent,
     }
   }
 
   render() {
     const language = this.props.language
+    const ab = this.props.ab
     const gtmId = getGtmId(language)
     const isIe11 = detectIe11(this.props.userAgent)
     const isMsBrowser = detectMsBrowser(this.props.userAgent)
+    const gtmExperimentsData = Object.keys(ab)
+      .map((experimentName) => {
+        const experiment = ab[experimentName]
+        return `${experiment.optimizeExperimentId}.${experiment.index}`
+      })
+      .join('!')
 
     const { title, text1, text2, text3 } = CONTENT[language]
     return (
       <html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
         <Head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              var dataLayer = dataLayer || []
+              dataLayer.push({ 'gaExperiment': '${gtmExperimentsData}' })
+          `,
+            }}
+          />
           <GtmScript gtmId={gtmId} />
+          <Fonts preset="com" />
         </Head>
         <body>
           <GtmNoScript gtmId={gtmId} />

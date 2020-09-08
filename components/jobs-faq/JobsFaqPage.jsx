@@ -14,7 +14,7 @@ import questions from '../../data/jobs-faq/questions'
 
 const roads = require.context('../../public/images/jobs-faq/roads?csssr-images')
 const puzzle = require.context('../../public/images/jobs-faq/puzzle?csssr-images')
-import ogImages from '../../public/images/jobs/cover/desktop.all.jpg?csssr-images'
+import ogImages from '../../public/images/jobs/cover/all.jpg?csssr-images'
 
 const pageName = 'jobsFaq'
 const JobsFaqPage = () => (

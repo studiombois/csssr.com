@@ -9,19 +9,19 @@ testcase.skip('Воспроизведение видео при наведени
 
   step('Скроллим к футеру', () => {
     browser
-      .moveToElement('footer > div.bottom-content > ul > li:nth-child(1) > a', 1, 1)
+      .moveToElement('[data-testid="Footer:link.language-link"]', 1, 1)
       .pause(ANIMATION_DURATION_IN_MS)
   })
 
   step('Наводим курсор на лого в футере', () => {
     browser
-      .moveToElement('#__next > footer > div.top-content > div > a.logo', 1, 1)
+      .moveToElement('[data-testid="Footer.link.logo"]', 1, 1)
       .pause(ANIMATION_DURATION_IN_MS)
   })
 
   expected('По всей ширине верхней части футера отображается видео', () => {
     browser
-      .assert.screenshotElement('#__next > footer', 'видео в футере')
+      .assert.screenshotElement('[data-testid="Footer:block.top-content"]')
   })
 })
 
@@ -34,20 +34,20 @@ testcase('Увеличение пинов на карте при наведен�
 
   step('Скроллим к футеру', () => {
     browser
-      .moveToElement('footer > div.bottom-content > ul > li:nth-child(1) > a > p', 1, 1)
+      .moveToElement('[data-testid="Footer:link.language-link"]', 1, 1)
       .pause(ANIMATION_DURATION_IN_MS)
       .setWindowSize(1920, 4000)
   })
 
   step('Наводим курсор на любой адрес в футере', () => {
     browser
-      .moveToElement('div.address-item.address_estonia', 1, 1)
+      .moveToElement('[data-testid="Footer.text.address-estonia"]', 1, 1)
       .pause(ANIMATION_DURATION_IN_MS)
   })
 
   expected('Увеличивается пин на карте справа', () => {
     browser
-      .assert.screenshotElement('footer div.map-wrapper picture > img', 'карта(увеличен пин Эстонии)')
+      .assert.screenshotElement('[data-testid="Footer:block.map"]', 'карта(увеличен пин Эстонии)')
   })
 })
 
@@ -60,7 +60,7 @@ testcase('Двойной футер (RU)', () => {
 
   step('Скроллим к футеру', () => {
     browser
-      .moveToElement('footer > div.bottom-content > ul > li:nth-child(1) > a > p', 1, 1)
+      .moveToElement('[data-testid="Footer:link.language-link"]', 1, 1)
       .pause(ANIMATION_DURATION_IN_MS)
       .setWindowSize(1920, 4000)
       .pause(ANIMATION_DURATION_IN_MS)
@@ -68,8 +68,8 @@ testcase('Двойной футер (RU)', () => {
 
   expected('Футер состоит из двух разъезжающихся частей', () => {
     browser
-      .assert.screenshotElement('footer', 'двойной футер(первая часть)')
-      .assert.screenshotElement('#__next > footer > div.css-rtd4ad.ellxpbm0', 'двойной футер(вторая часть)', {
+      .assert.screenshotElement('[data-testid="Footer:block.top-content"]', 'двойной футер(первая часть)')
+      .assert.screenshotElement('[data-testid="Footer:block.double-bottom"]', 'двойной футер(вторая часть)', {
         allowedMisMatchPercentage: 30,
       })
   })

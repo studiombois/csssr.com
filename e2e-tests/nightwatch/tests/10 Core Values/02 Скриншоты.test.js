@@ -9,7 +9,7 @@ testcase('Core Values 1920 En', () => {
   })
 
   expected('Скрин целой страницы Core Values на 1920 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Core Values 1920 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Core Values 1920 EN')
   })
 })
 
@@ -22,7 +22,7 @@ testcase('Core Values 1360 En', () => {
   })
 
   expected('Скрин целой страницы Core Values на 1360 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Core Values 1360 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Core Values 1360 EN')
   })
 })
 
@@ -35,7 +35,7 @@ testcase('Core Values 1280 En', () => {
   })
 
   expected('Скрин целой страницы Core Values на 1280 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Core Values 1280 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Core Values 1280 EN')
   })
 })
 
@@ -48,7 +48,7 @@ testcase('Core Values 1024 En', () => {
   })
 
   expected('Скрин целой страницы Core Values на 1024 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Core Values 1024 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Core Values 1024 EN')
   })
 })
 
@@ -61,7 +61,7 @@ testcase('Core Values 360 En', () => {
   })
 
   expected('Скрин целой страницы Core Values на 360 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Core Values 360 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Core Values 360 EN')
   })
 })
 
@@ -76,7 +76,7 @@ testcase('Наши ценности 1920 RU', () => {
   })
 
   expected('Скрин целой страницы Наши ценности на 1920 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Наши ценности 1920 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Наши ценности 1920 RU')
   })
 })
 
@@ -89,7 +89,7 @@ testcase('Наши ценности 1360 RU', () => {
   })
 
   expected('Скрин целой страницы Наши ценности на 1360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Наши ценности 1360 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Наши ценности 1360 RU')
   })
 })
 
@@ -102,7 +102,7 @@ testcase('Наши ценности 1280 RU', () => {
   })
 
   expected('Скрин целой страницы Наши ценности на 1280 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Наши ценности 1280 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Наши ценности 1280 RU')
   })
 })
 
@@ -115,7 +115,7 @@ testcase('Наши ценности 1024 RU', () => {
   })
 
   expected('Скрин целой страницы Наши ценности на 1024 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Наши ценности 1024 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Наши ценности 1024 RU')
   })
 })
 
@@ -126,8 +126,8 @@ testcase('Наши ценности 360 RU', () => {
       .url(browser.launch_url + '/ru/core-values')
       .waitForElementPresent('footer')
   })
-  
+
   expected('Скрин целой страницы Наши ценности на 360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Наши ценности 360 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Наши ценности 360 RU')
   })
 })

@@ -40,6 +40,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     &{
       margin-top: ${calcRem(199)};
       padding-bottom: ${calcRem(300)};
+      background-position: 50% bottom;
     }
 
     .heading {
@@ -51,21 +52,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${desktop.s} {
     & {
       background-image: url(${require('../../../static/icons/way-of-work/greeting/bg-desktop-s.svg').default});
-      background-position: 50% 64px;
     }
   }
 
   ${desktop.m} {
     & {
       background-image: url(${require('../../../static/icons/way-of-work/greeting/bg-desktop-m.svg').default});
-      background-position: 50% ${calcRem(67)};
     }
   }
 
   ${desktop.l} {
     & {
       background-image: url(${require('../../../static/icons/way-of-work/greeting/bg-desktop-l.svg').default});
-      background-position: 50% ${calcRem(2)};
     }
   }
 `

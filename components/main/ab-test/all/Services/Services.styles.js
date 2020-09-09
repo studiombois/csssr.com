@@ -277,6 +277,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       position: absolute;
       z-index: -1;
       display: block;
+      background-size: 100%;
+      background-repeat: no-repeat;
     }
 
     .service_outsourcing::before {

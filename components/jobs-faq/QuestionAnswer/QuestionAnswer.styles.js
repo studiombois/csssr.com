@@ -24,7 +24,7 @@ export default {
       opacity: 1;
 
       @supports not (contain: content) {
-        max-height: 500px;
+        max-height: 550px;
       }
     }
 

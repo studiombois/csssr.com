@@ -23,10 +23,17 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+<<<<<<< HEAD
 "@csssr/e2e-tools-nightwatch@~1.11.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.11.0.tgz#deaa904aed4c61826616167b7cebcb5a22307be0"
   integrity sha512-yYB8MPjcatkiYuMeGEmqCndO6PQwmYsjmydt+CVNpPdWVOdpdO9zX62th/QT0i1KEuQbeL2p2fFYqlbzMS0d8A==
+=======
+"@csssr/e2e-tools-nightwatch@~1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.12.0.tgz#c5004bd963ec765dc034075909e4d92043cf3cfb"
+  integrity sha512-7vXI2mp/fOkIb1ewTKOcKBqOfi35vlboN4HcaaZIa5ll6pTZnEFLn1bfCxH+PQ3DWTwuijJMN50LyJ/qYOcPFg==
+>>>>>>> 57be5a1038833d8a25ead8bcb6d32efc5ad695ae
   dependencies:
     "@csssr/e2e-tools" "^1.4.0"
     "@csssr/mocha-jenkins-reporter" "^0.6.0"
@@ -592,9 +599,9 @@ chownr@^2.0.0:
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
 chromedriver@*:
-  version "85.0.0"
-  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-85.0.0.tgz#5b9b6a184569f5e2b22b45a928bbc66d1c4bb36f"
-  integrity sha512-Noinnkl9gRsfC1EYA5trcOVf9r/P6JJnWf+mU6KZS3xLjV9x/o71VZ+gqRl3oSI4PnTGnqYRISZFQk/teYVTRg==
+  version "85.0.1"
+  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-85.0.1.tgz#2e1b571845253368fcd112108f23eb9c778f7982"
+  integrity sha512-z8je3U4tXFZnx7AloRabM4Ep1lpFJvHxLoGuRvLg33Qy0UKk/z6OXmHUO2z6DKE0Oe6CFpjj/bdhuQ8dfvq9ug==
   dependencies:
     "@testim/chrome-version" "^1.0.7"
     axios "^0.19.2"

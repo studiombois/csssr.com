@@ -23,10 +23,17 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+<<<<<<< HEAD
+"@csssr/e2e-tools-nightwatch@~1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.11.0.tgz#deaa904aed4c61826616167b7cebcb5a22307be0"
+  integrity sha512-yYB8MPjcatkiYuMeGEmqCndO6PQwmYsjmydt+CVNpPdWVOdpdO9zX62th/QT0i1KEuQbeL2p2fFYqlbzMS0d8A==
+=======
 "@csssr/e2e-tools-nightwatch@~1.12.0":
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.12.0.tgz#c5004bd963ec765dc034075909e4d92043cf3cfb"
   integrity sha512-7vXI2mp/fOkIb1ewTKOcKBqOfi35vlboN4HcaaZIa5ll6pTZnEFLn1bfCxH+PQ3DWTwuijJMN50LyJ/qYOcPFg==
+>>>>>>> 57be5a1038833d8a25ead8bcb6d32efc5ad695ae
   dependencies:
     "@csssr/e2e-tools" "^1.4.0"
     "@csssr/mocha-jenkins-reporter" "^0.6.0"

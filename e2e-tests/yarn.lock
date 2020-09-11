@@ -23,17 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-<<<<<<< HEAD
-"@csssr/e2e-tools-nightwatch@~1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.11.0.tgz#deaa904aed4c61826616167b7cebcb5a22307be0"
-  integrity sha512-yYB8MPjcatkiYuMeGEmqCndO6PQwmYsjmydt+CVNpPdWVOdpdO9zX62th/QT0i1KEuQbeL2p2fFYqlbzMS0d8A==
-=======
-"@csssr/e2e-tools-nightwatch@~1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.12.0.tgz#c5004bd963ec765dc034075909e4d92043cf3cfb"
-  integrity sha512-7vXI2mp/fOkIb1ewTKOcKBqOfi35vlboN4HcaaZIa5ll6pTZnEFLn1bfCxH+PQ3DWTwuijJMN50LyJ/qYOcPFg==
->>>>>>> 57be5a1038833d8a25ead8bcb6d32efc5ad695ae
+"@csssr/e2e-tools-nightwatch@~1.12.1":
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@csssr/e2e-tools-nightwatch/-/e2e-tools-nightwatch-1.12.1.tgz#b41e11074426e679e1804994754c6f03204d911a"
+  integrity sha512-9mRne/cek7e/bJSQxmyMCVZBO2xlNsetXcWVchycW/r49I8Jly9vmIb+YAeofbFAXv5NQwYcBPSx2qBXnPYpcQ==
   dependencies:
     "@csssr/e2e-tools" "^1.4.0"
     "@csssr/mocha-jenkins-reporter" "^0.6.0"
@@ -190,9 +183,9 @@
   integrity sha512-EmxQYBR+4aX3UwLc0Babwv+TSr7kl6ZkjNP4WOWyZ/Qg/AAhjzijjMCC1CTNmWqVemhwCZGIFOB712V+TceWDA==
 
 "@types/node@*", "@types/node@^14.6.4":
-  version "14.6.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.4.tgz#a145cc0bb14ef9c4777361b7bbafa5cf8e3acb5a"
-  integrity sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
+  version "14.10.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.10.0.tgz#15815dff82c8dc30827f6b1286f865902945095a"
+  integrity sha512-SOIyrdADB4cq6eY1F+9iU48iIomFAPltu11LCvA9PKcyEwHadjCFzNVPotAR+oEJA0bCP4Xvvgy+vwu1ZjVh8g==
 
 "@types/yauzl@^2.9.1":
   version "2.9.1"
@@ -334,9 +327,9 @@ archiver-utils@^2.1.0:
     readable-stream "^2.0.0"
 
 archiver@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/archiver/-/archiver-5.0.0.tgz#b1e7dc075a4e18e0aa59afdd7c3e5f3d3321cbeb"
-  integrity sha512-AEWhJz6Yi6hWtN1Sqy/H4sZo/lLMJ/NftXxGaDy/TnOMmmjsRaZc/Ts+U4BsPoBQkuunTN6t8hk7iU9A+HBxLw==
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/archiver/-/archiver-5.0.1.tgz#d7e6dfebd2200a0c96e3f405f07f1ae28fb2fbaa"
+  integrity sha512-DnYH6anESMM9w1gzi0dp2iNXNTsFUYGs0x90Qlm8OhmlxMESZXQLY3800HwKaFASgyqaw4Yri9I8K4DApgnfRg==
   dependencies:
     archiver-utils "^2.1.0"
     async "^3.2.0"
@@ -451,7 +444,7 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bl@^4.0.1:
+bl@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/bl/-/bl-4.0.3.tgz#12d6287adc29080e22a705e5764b2a9522cdc489"
   integrity sha512-fs4G6/Hu4/EE+F75J8DuN/0IpQqNjAdC7aEQv7Qt8MHGUH7Ckv2MwTEEeN9QehD0pfIDkMI1bkHYkKy7xHyKIg==
@@ -1800,9 +1793,9 @@ is-buffer@~2.0.3:
   integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
 
 is-callable@^1.1.4, is-callable@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.0.tgz#83336560b54a38e35e3a2df7afd0454d691468bb"
-  integrity sha512-pyVD9AaGLxtg6srb2Ng6ynWJqkHU9bEM087AKck0w8QwDarTfNcpIYoU8x8Hv2Icm8u6kFJM18Dag8lyqGkviw==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.1.tgz#4d1e21a4f437509d25ce55f8184350771421c96d"
+  integrity sha512-wliAfSzx6V+6WfMOmus1xy0XvSgf/dlStkvTfq7F0g4bOIW0PSUbnyse3NhDwdyYS1ozfUtAAySqTws3z9Eqgg==
 
 is-ci@^2.0.0:
   version "2.0.0"
@@ -3427,11 +3420,11 @@ table@^5.2.3:
     string-width "^3.0.0"
 
 tar-stream@^2.1.2:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-2.1.3.tgz#1e2022559221b7866161660f118255e20fa79e41"
-  integrity sha512-Z9yri56Dih8IaK8gncVPx4Wqt86NDmQTSh49XLZgjWpGZL9GK9HKParS2scqHCC4w6X9Gh2jwaU45V47XTKwVA==
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-2.1.4.tgz#c4fb1a11eb0da29b893a5b25476397ba2d053bfa"
+  integrity sha512-o3pS2zlG4gxr67GmFYBLlq+dM8gyRGUOvsrHclSkvtVtQbjV0s/+ZE8OpICbaj8clrX3tjeHngYGP7rweaBnuw==
   dependencies:
-    bl "^4.0.1"
+    bl "^4.0.3"
     end-of-stream "^1.4.1"
     fs-constants "^1.0.0"
     inherits "^2.0.3"

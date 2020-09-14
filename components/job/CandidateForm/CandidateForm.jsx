@@ -69,7 +69,7 @@ class CandidateForm extends PureComponent {
 
   state = {
     // такой же элемент стейта есть в ContactForm
-    submittedToServer: false,
+    submittedToServer: true,
     isMobile: false,
   }
 

@@ -153,13 +153,29 @@ const stylesForTextareaField = css`
 `
 
 const stylesForCheckboxField = css`
-  & {
+  && {
     display: block;
     margin-top: 3.4375rem;
     grid-column: 2 / span 6;
     -ms-grid-column: ${getGridValueForMs(2)};
     -ms-grid-column-span: ${getGridValueForMs(6)};
     -ms-grid-row: 2;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #18191b;
+
+    & > span {
+      white-space: nowrap;
+    }
+
+    > a {
+      color: #0076ff;
+      text-decoration: underline;
+    }
   }
 
   @media (max-width: 767px) {

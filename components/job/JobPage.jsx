@@ -98,6 +98,8 @@ const filterUncheckedContactOptions = (values, translations) => {
 const onSubmit = (translations) => async (values) => {
   const filteredValues = filterUncheckedContactOptions(values, translations)
 
+  filteredValues.privacyPolicy = true
+
   if (values.quests.length === 0) {
     delete filteredValues.quests
   }
@@ -208,7 +210,7 @@ class JobPage extends PureComponent {
             vacancy={vacancy}
             language={language}
             vacancies={vacancies}
-            initialValues={initialValues}
+            initialValues={{ ...initialValues, privacyPolicy: true }}
             validate={candidateFormValidationRules(vacancy, translations, language)}
             onSubmit={onSubmit(translations)}
             decorators={[focusOnErrors]}

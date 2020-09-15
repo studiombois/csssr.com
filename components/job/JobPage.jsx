@@ -210,7 +210,7 @@ class JobPage extends PureComponent {
             vacancy={vacancy}
             language={language}
             vacancies={vacancies}
-            initialValues={{ ...initialValues, privacyPolicy: true }}
+            initialValues={initialValues}
             validate={candidateFormValidationRules(vacancy, translations, language)}
             onSubmit={onSubmit(translations)}
             decorators={[focusOnErrors]}

@@ -31,11 +31,11 @@ testcase('Переключение табов с регионами', () => {
       .waitForElementPresent('[data-testid="contactUs:button:bookACall.call"]')
   })
 
-  expected('По умолчанию менеджер Анастасия Внученко', () => {
+  expected('По умолчанию менеджер Софья Киселева', () => {
     browser
       .assert.containsText(
         '[data-testid="contactUs:text:bookACall:name"]',
-        'Анастасия Внученко'
+        'Софья Киселева'
       )
       .assert.containsText(
         '[data-testid="contactUs:text:bookACall:position"]',
@@ -47,7 +47,7 @@ testcase('Переключение табов с регионами', () => {
       )
       .assert.screenshotElement(
         '[data-testid="contactUs:picture:bookACall.avatar"]',
-        'аватар(Анастасия Внученко)'
+        'аватар(Софья Киселева)'
       )
   })
 
@@ -123,11 +123,11 @@ testcase('Переключение табов с регионами', () => {
       .waitForElementNotPresent('[data-testid="contactUs:button:bookACall.call"]')
   })
 
-  expected('По умолчанию менеджер Анастасия Внученко', () => {
+  expected('По умолчанию менеджер Софья Киселева', () => {
     browser
       .assert.containsText(
         '[data-testid="contactUs:text:bookACall:name"]',
-        'Анастасия Внученко'
+        'Софья Киселева'
       )
       .assert.containsText(
         '[data-testid="contactUs:text:bookACall:position"]',
@@ -139,7 +139,7 @@ testcase('Переключение табов с регионами', () => {
       )
       .assert.screenshotElement(
         '[data-testid="contactUs:picture:bookACall.avatar"]',
-        'аватар(Анастасия Внученко)'
+        'аватар(Софья Киселева)'
       )
   })
 })

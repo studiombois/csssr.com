@@ -1,8 +1,8 @@
 import anastasia_ignatenko from '../../static/images/contact-us/book-a-call/anastasia_ignatenko.jpg?responsive'
 import anastasia_ignatenko_webp from '../../static/images/contact-us/book-a-call/anastasia_ignatenko.jpg?responsive_and_webp'
 
-import anastasia_vnuchenko from '../../static/images/contact-us/book-a-call/anastasia_vnuchenko.jpg?responsive'
-import anastasia_vnuchenko_webp from '../../static/images/contact-us/book-a-call/anastasia_vnuchenko.jpg?responsive_and_webp'
+import sonya_kiseleva from '../../static/images/contact-us/book-a-call/sonya_kiseleva.jpg?responsive'
+import sonya_kiseleva_webp from '../../static/images/contact-us/book-a-call/sonya_kiseleva.jpg?responsive_and_webp'
 
 import olga_shevchenko from '../../static/images/contact-us/book-a-call/olga_shevchenko.jpg?responsive'
 import olga_shevchenko_webp from '../../static/images/contact-us/book-a-call/olga_shevchenko.jpg?responsive_and_webp'
@@ -17,10 +17,10 @@ export default {
     email: 'launch@csssr.com',
     calendlyLink: 'https://calendly.com/anastasia-ign/csssr',
   },
-  anastasia_vnuchenko: {
-    images: { jpg: anastasia_vnuchenko, webp: anastasia_vnuchenko_webp },
+  sonya_kiseleva: {
+    images: { jpg: sonya_kiseleva, webp: sonya_kiseleva_webp },
     email: 'launch@csssr.com',
-    calendlyLink: 'https://calendly.com/anastasia-vnuchenko/csssr',
+    calendlyLink: 'https://calendly.com/sonya-kiseleva/csssr',
   },
   olga_shevchenko: {
     images: { jpg: olga_shevchenko, webp: olga_shevchenko_webp },

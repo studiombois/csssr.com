@@ -1,85 +1,67 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { array, object, string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './ProjectsItem.styles'
-
-import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import ButtonLink from '../../ui-kit/core-design/ButtonLink'
-
+import Link from '../../ui-kit/core-design/Link'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const ProjectsItem = ({
   className,
-  id,
   images,
   imgAlt,
+  link,
   heading,
-  text,
-  numericData,
-  button,
+  teamNumber,
+  projectDuration,
   itemClassName,
-  isMobile,
-  l10n: { translations },
+  l10n: { translations, language },
 }) => {
-  const headingNumberSize = isMobile ? 'l' : 'm'
-
   return (
-    <Grid as="div" className={cn(itemClassName, className)}>
-      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
-
-      <Heading
-        as="p"
+    <Link
+      className={cn(itemClassName, className, 'project-link')}
+      href={`/${language}/project/${link}`}
+    >
+      <div className={`picture-wrapper picture-wrapper_${imgAlt}`}>
+        <PictureSmart requireImages={images} alt={imgAlt} className={`image image_${imgAlt}`} />
+      </div>
+      <Heading.H2
         type="regular"
         size="m"
         dangerouslySetInnerHTML={{ __html: heading(translations) }}
         className="item-heading"
       />
-
-      <Text
-        type="strong"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: text(translations) }}
-        className="text"
-      />
-
-      {numericData.map(({ numberData, textData }, index) => (
-        <Fragment key={textData}>
-          <Heading
-            as="p"
-            size={headingNumberSize}
-            dangerouslySetInnerHTML={{ __html: numberData(translations) }}
-            className={cn(`column-${index + 1}`, 'number-data')}
-          />
-
-          <Text
-            type="strong"
-            dangerouslySetInnerHTML={{ __html: textData(translations) }}
-            className={cn(`column-${index + 1}`, 'text-data')}
-            size="m"
-          />
-        </Fragment>
-      ))}
-
-      <ButtonLink
-        href={button.href(translations)}
-        className="button"
-        kind="primary"
-        dangerouslySetInnerHTML={{ __html: button.title(translations) }}
-        data-testid={id && `Industry:link.${id}`}
-      />
-    </Grid>
+      <div className="numbers-wrapper">
+        <Text
+          type="strong"
+          dangerouslySetInnerHTML={{ __html: teamNumber(translations) }}
+          className="team"
+          size="m"
+        />
+        <Text
+          type="strong"
+          dangerouslySetInnerHTML={{ __html: '•' }}
+          className="separator"
+          size="m"
+        />
+        <Text
+          type="strong"
+          dangerouslySetInnerHTML={{ __html: projectDuration(translations) }}
+          className="duration"
+          size="m"
+        />
+      </div>
+    </Link>
   )
 }
 
 ProjectsItem.propTypes = {
   className: string,
-  id: string,
   content: object,
   factItems: array,
 }

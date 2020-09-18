@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
   & {
     margin-top: ${calcRem(76)};
     padding-bottom: ${calcRem(186)};
@@ -18,7 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${mobile.all} {
     & {
       background-image: url(${require('../../../static/icons/way-of-work/greeting/bg-mobile.svg').default});
-      background-position: 50% ${calcRem(140)};
+      background-position: ${language === 'ru' ? `50% ${calcRem(140)}` : `50% ${calcRem(92)}`};
     }
   }
 
@@ -78,9 +78,10 @@ const ie11Styles = () => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, language })}
     ${props.isIe11 && ie11Styles()}
   `
 }

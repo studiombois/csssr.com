@@ -77,6 +77,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/our-cases',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/our-cases',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/our-cases',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/our-cases',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/our-cases',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/our-cases',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/industry/ecommerce',
     changefreq: 'weekly',
     priority: 1,

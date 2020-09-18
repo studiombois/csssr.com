@@ -71,7 +71,7 @@
     "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "prettier": "^2.1.2",
-    "webpack": "^4.44.1"
+    "webpack": "^4.44.2"
   },
   "husky": {
     "hooks": {

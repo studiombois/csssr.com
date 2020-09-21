@@ -2,15 +2,16 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './Hero.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import Grid from '../../ui-kit/core-design/Grid'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import { javascriptImages, typescriptImages } from '../../../data/technologies/hero'
 
@@ -33,10 +34,9 @@ const Hero = ({ className, l10n: { translations } }) => (
         dangerouslySetInnerHTML={{ __html: translations.technologies.hero.description }}
       />
 
-      <PictureForAllResolutions
+      <PictureSmart
         className={cn('picture', 'picture_javascript')}
-        images={javascriptImages}
-        fallback={javascriptImages['desktop.l']}
+        requireImages={javascriptImages}
         alt={translations.technologies.imgAlt.javascript}
       />
 
@@ -48,10 +48,9 @@ const Hero = ({ className, l10n: { translations } }) => (
         dangerouslySetInnerHTML={{ __html: translations.technologies.hero.javascript }}
       />
 
-      <PictureForAllResolutions
+      <PictureSmart
         className={cn('picture', 'picture_typescript')}
-        images={typescriptImages}
-        fallback={typescriptImages['desktop.l']}
+        requireImages={typescriptImages}
         alt={translations.technologies.imgAlt.typescript}
       />
 

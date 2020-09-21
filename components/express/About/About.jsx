@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './About.styles'
 
+import Wrapper from '../Wrapper'
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
-import Wrapper from '../Wrapper'
 
 import aboutImagesData from '../../../data/express/about'
 
@@ -25,10 +25,9 @@ const About = ({ className, l10n: { translations } }) => (
           dangerouslySetInnerHTML={{ __html: translations.express.aboutUs.title }}
         />
 
-        <PictureForAllResolutions
+        <PictureSmart
           className="picture"
-          images={aboutImagesData.images}
-          fallback={aboutImagesData.images['desktop.l']}
+          requireImages={aboutImagesData.images}
           alt={translations.express.imgAlt.aboutUs}
         />
       </div>

@@ -1,14 +1,17 @@
 import React from 'react'
 import { object, string } from 'prop-types'
-import styled from '@emotion/styled'
-import styles from './Hero.styles'
 import cn from 'classnames'
-import { L10nConsumer } from '../../../utils/l10nProvider'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
+import { Global } from '@emotion/core'
+import styles, { backgroundImagesStyles } from './Hero.styles'
+
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import Link from '../../ui-kit/core-design/Link'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Hero = ({
@@ -59,14 +62,10 @@ const Hero = ({
         </div>
 
         <div className={cn('pic-wrapper', projectId === 'mindbox' && `pic-wrapper_${projectId}`)}>
-          <PictureForAllResolutions
-            images={images}
-            fallback={images['desktop.l'].png}
-            alt={imgAlt(translations)}
-            className="image"
-          />
+          <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
         </div>
       </Grid>
+      <Global styles={backgroundImagesStyles(className)} />
     </section>
   )
 }

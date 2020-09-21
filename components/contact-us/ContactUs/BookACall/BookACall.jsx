@@ -2,15 +2,17 @@ import React, { useContext } from 'react'
 import Fade from 'react-reveal/Fade'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import CalendlyBookingButton from './CalendlyBookingButton'
 import styles from './BookACall.styles'
-import Picture from '../../../ui-kit/Picture'
-import profiles from '../../../../data/contact-us/profiles'
+
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { TypeInquiryContext } from '../../../../utils/typeInquiryContext'
 import getProfileId from '../../../../utils/getProfileId'
 // import setBookingPossibility from '../../../../utils/setBookingPossibility'
 import { MapContext } from '../../../../utils/mapContext'
-import CalendlyBookingButton from './CalendlyBookingButton'
+
+import profiles from '../../../../data/contact-us/profiles'
 
 const BookACall = ({ className, l10n: { translations, language }, testId }) => {
   const { inquiryTypeId } = useContext(TypeInquiryContext)
@@ -22,10 +24,9 @@ const BookACall = ({ className, l10n: { translations, language }, testId }) => {
   return (
     <Fade right={true} duration={200} distance="40px" key={profileId + canBookACall}>
       <figure className={className}>
-        <Picture
+        <PictureSmart
           className="manager-avatar"
-          images={profiles[profileId].images}
-          fallback={profiles[profileId].images.jpg}
+          requireImages={profiles[profileId].images}
           alt={translations.contactUs.bookACall.profiles[profileId].alt}
           testid="contactUs:picture:bookACall.avatar"
         />

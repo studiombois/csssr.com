@@ -1,12 +1,12 @@
 import React from 'react'
 import { object, string } from 'prop-types'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import styles from './TechStack.styles'
 import Grid from '../../../ui-kit/core-design/Grid'
 import Text from '../../../ui-kit/core-design/Text'
 import Heading from '../../../ui-kit/core-design/Heading'
 import SubHeading from '../../../ui-kit/core-design/SubHeading'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
@@ -46,9 +46,8 @@ const TechStack = ({
         />
       </div>
       <div className="java-block">
-        <PictureForAllResolutions
-          images={javaImages}
-          fallback={javaImages['desktop.l'].png}
+        <PictureSmart
+          requireImages={javaImages}
           alt={javaImgAlt(translations)}
           className="java-image"
         />
@@ -72,9 +71,8 @@ const TechStack = ({
         className="link-text"
       />
       <div className="mongodb-block">
-        <PictureForAllResolutions
-          images={mongoDbImages}
-          fallback={mongoDbImages['desktop.l'].png}
+        <PictureSmart
+          requireImages={mongoDbImages}
           alt={mongoDbImgAlt(translations)}
           className="mongodb-image"
         />

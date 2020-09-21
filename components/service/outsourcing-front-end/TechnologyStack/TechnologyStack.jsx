@@ -1,6 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './TechnologyStack.styles'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
@@ -9,14 +10,11 @@ import Heading from '../../../ui-kit/core-design/Heading'
 import SubHeading from '../../../ui-kit/core-design/SubHeading'
 import Text from '../../../ui-kit/core-design/Text'
 import Link from '../../../ui-kit/core-design/Link'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import Grid from '../../../ui-kit/core-design/Grid'
 
-import technologyStack_desktop from '../../../../static/images/service/outsourcing-front-end/desktop.all/technologyStack.png?responsive'
-import technologyStack_desktop_webp from '../../../../static/images/service/outsourcing-front-end/desktop.all/technologyStack.png?responsive_and_webp'
-
-import technologyStack_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/technologyStack.png?responsive'
-import technologyStack_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/technologyStack.png?responsive_and_webp'
+const technologyStackImages = require.context(
+  '../../../../public/images/service/outsourcing-front-end/technologyStack?csssr-images',
+)
 
 const TechnologyStack = ({ className, l10n: { translations, language } }) => (
   <Grid as="article" className={className}>
@@ -67,13 +65,9 @@ const TechnologyStack = ({ className, l10n: { translations, language } }) => (
       data-testid="Outsourcing:link:techstack"
     />
 
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={{
-        'desktop.all': { png: technologyStack_desktop, webp: technologyStack_desktop_webp },
-        'mobile.all': { png: technologyStack_mobile, webp: technologyStack_mobile_webp },
-      }}
-      fallback={technologyStack_desktop}
+      requireImages={technologyStackImages}
       alt={translations.outsourcingFrontEnd.imgAlt.technologyStack}
     />
   </Grid>

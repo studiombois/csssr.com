@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const withSourceMaps = require('@zeit/next-source-maps')()
 const CompressionPlugin = require('compression-webpack-plugin')
 const { ANALYZE } = process.env
-const { PROCESS_IMAGES } = process.env
+const { defaultTheme } = require('@csssr/core-design')
 
 module.exports = withSourceMaps({
   poweredByHeader: false,
@@ -53,43 +53,53 @@ module.exports = withSourceMaps({
       })
     }
 
-    const responsiveLoaderConfig = {
-      loader: 'image-resolution-loader',
-      options: {
-        publicPath: '/_next',
-        name: dev ? '[path][name][resolution].[ext]' : '[path][name]-[hash:8][resolution].[ext]',
-        disable: PROCESS_IMAGES !== 'true',
-        webp: {
-          quality: 75,
-        },
-        jpg: {
-          quality: 75,
-        },
-        png: {
-          quality: [0.3, 0.5],
-          speed: 1,
-        },
-      },
-    }
-
-    const webpLoaderConfig = {
-      loader: 'webp-loader',
-      options: {
-        quality: 75,
-      },
-    }
-
     const withResponsiveImages = () => {
+      let comHost, imgproxyHost
+      if (dev) {
+        const ip = require('ip')
+        comHost = `http://${ip.address()}:3000`
+        imgproxyHost = 'http://localhost:8080'
+      } else {
+        comHost = process.env.COM_HOST || 'https://csssr.com'
+        imgproxyHost = 'https://images.csssr.com'
+      }
+
       config.module.rules.push({
         test: /\.(jpe?g|png|webp|gif|ico)$/,
         oneOf: [
+          // {
+          //   resourceQuery: /responsive_and_webp/,
+          //   use: [responsiveLoaderConfig, webpLoaderConfig],
+          // },
+          // {
+          //   resourceQuery: /responsive/,
+          //   use: [responsiveLoaderConfig],
+          // },
           {
-            resourceQuery: /responsive_and_webp/,
-            use: [responsiveLoaderConfig, webpLoaderConfig],
-          },
-          {
-            resourceQuery: /responsive/,
-            use: [responsiveLoaderConfig],
+            resourceQuery: /csssr-images/,
+            use: [
+              {
+                loader: '@csssr/csssr.images',
+                options: {
+                  breakpoints: defaultTheme.breakpointsOrdered,
+                  imgproxy: {
+                    disable: dev,
+                    imagesHost: comHost,
+                    host: imgproxyHost,
+                  },
+                  originalPixelRatio: '3x',
+                },
+              },
+              {
+                loader: 'file-loader',
+                options: {
+                  publicPath: '/_next/static/',
+                  outputPath: `${isServer ? '../' : ''}static/`,
+                  name: '[path][name]-[hash:8].[ext]',
+                  esModule: false,
+                },
+              },
+            ],
           },
           {
             use: [fileLoaderConfig],

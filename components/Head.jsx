@@ -6,6 +6,9 @@ import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
 import { PagesListConsumer } from '../utils/pagesListProvider'
 import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
+
+import ogImages from '../public/images/main/og/all.png?csssr-images'
 
 // Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
@@ -147,7 +150,7 @@ Head.defaultProps = {
   structuredData: <StructuredData />,
   templateTitle: ' | CSSSR',
   ogImage: {
-    url: require('../static/images/ogImage.png'),
+    url: getOriginal(ogImages),
     width: 3840,
     height: 1280,
   },

@@ -25,7 +25,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
         size="m"
       />
 
-      {projects.map(({ id, title, description, href, images, imagesHovered, fallback }) => {
+      {projects.map(({ id, title, description, href, images, imagesHovered }) => {
         const Player = () => (
           <div className="player-wrapper">
             <iframe
@@ -52,7 +52,6 @@ const Projects = ({ className, l10n: { translations, language } }) => {
             href={href}
             images={images}
             imagesHovered={imagesHovered}
-            fallback={fallback}
             isLink
           >
             {id === 'radio' ? <Player /> : null}

@@ -15,7 +15,7 @@ import getContactOptions from '../../data/job/getContactOptions'
 import StructuredDataVacancy from '../StructuredDataVacancy'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
-import ogImages from '../../public/images/jobs/cover/all.png?csssr-images'
+import ogImages from '../../public/images/jobs/cover/desktop.all.png?csssr-images'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе

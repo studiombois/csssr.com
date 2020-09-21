@@ -8,8 +8,8 @@ import styles from './BookACall.styles'
 
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { TypeInquiryContext } from '../../../../utils/typeInquiryContext'
-import setBookingPossibility from '../../../../utils/setBookingPossibility'
 import getProfileId from '../../../../utils/getProfileId'
+// import setBookingPossibility from '../../../../utils/setBookingPossibility'
 import { MapContext } from '../../../../utils/mapContext'
 
 import profiles from '../../../../data/contact-us/profiles'
@@ -18,7 +18,8 @@ const BookACall = ({ className, l10n: { translations, language }, testId }) => {
   const { inquiryTypeId } = useContext(TypeInquiryContext)
   const { activeAddressId } = useContext(MapContext)
   const profileId = getProfileId(inquiryTypeId, activeAddressId, language)
-  const canBookACall = setBookingPossibility(inquiryTypeId, activeAddressId, language, profileId)
+  // const canBookACall = setBookingPossibility(inquiryTypeId, activeAddressId, language, profileId)
+  const canBookACall = false
 
   return (
     <Fade right={true} duration={200} distance="40px" key={profileId + canBookACall}>
@@ -62,7 +63,7 @@ const BookACall = ({ className, l10n: { translations, language }, testId }) => {
 
 BookACall.propTypes = {
   className: string,
-  testId: string.isRequired,
+  testId: string,
 }
 
 export default L10nConsumer(styled(BookACall)`

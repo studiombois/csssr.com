@@ -3,5 +3,63 @@
     "altImg": "Logos",
     "heading": "Our cases",
     "text": "We&nbsp;constantly challenge ourselves to&nbsp;solve problems. Here is&nbsp;a&nbsp;few of&nbsp;our biggest projects."
+  },
+  "devCases": {
+    "gazprom": {
+      "imgAlt": "Gazprom",
+      "heading": "Gazprom. Management Platform",
+      "text": "The project includes an&nbsp;internet platform, mobile application, and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page.",
+      "tag": "IT",
+      "team": "9 specialists",
+      "duration": "13 months"
+    },
+    "s7": {
+      "imgAlt": "S7 Airlines",
+      "heading": "S7. Personal Customer Account",
+      "text": "We&nbsp;develop the entire front-end for the adaptive website of&nbsp;the project.",
+      "tag": "IT",
+      "team": "8 specialists",
+      "duration": "25 months"
+    },
+    "qacademy": {
+      "imgAlt": "QAcademy",
+      "heading": "QAcademy. Management Platform",
+      "text": "We&nbsp;were entrusted with front-end development of&nbsp;authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer&rsquo;s API.",
+      "tag": "Media & Marketing",
+      "team": "3 specialists",
+      "duration": "4 months"
+    },
+    "brusnika": {
+      "imgAlt": "Brusnika",
+      "heading": "Brusnika. Internal assessment and forecasting tools",
+      "text": "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding.",
+      "tag": "E-commerce",
+      "team": "1 specialist",
+      "duration": "13 months"
+    },
+    "mindbox": {
+      "imgAlt": "Mindbox",
+      "heading": "Mindbox. Personal Account",
+      "text": "We&nbsp;worked on&nbsp;two projects: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
+      "tag": "Media & Marketing",
+      "team": "3 specialists",
+      "duration": "13 months"
+    },
+    "flant": {
+      "imgAlt": "Flant",
+      "heading": "Flant. Global website",
+      "text": "We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form.",
+      "tag": "IT",
+      "team": "3 specialist",
+      "duration": "2 months"
+    },
+    "mosoblgaz": {
+      "imgAlt": "Mosoblgaz",
+      "heading": "Mosoblgaz. Personal Account",
+      "text": "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network.",
+      "tag": "E-commerce",
+      "team": "4 specialists",
+      "duration": "2 months"
+    }
   }
 }

@@ -1,12 +1,13 @@
 const anastasiaIgnatenko = require.context(
   '../../public/images/contact-us/book-a-call/anastasia_ignatenko?csssr-images',
 )
-const anastasiaVnuchenko = require.context(
-  '../../public/images/contact-us/book-a-call/anastasia_vnuchenko?csssr-images',
-)
 
 const olgaShevchenko = require.context(
   '../../public/images/contact-us/book-a-call/olga_shevchenko?csssr-images',
+)
+
+const sonyaKiseleva = require.context(
+  '../../public/images/contact-us/book-a-call/sonya_kiseleva?csssr-images',
 )
 
 const victoriaZubareva = require.context(
@@ -19,10 +20,10 @@ export default {
     email: 'launch@csssr.com',
     calendlyLink: 'https://calendly.com/anastasia-ign/csssr',
   },
-  anastasia_vnuchenko: {
-    images: anastasiaVnuchenko,
+  sonya_kiseleva: {
+    images: sonyaKiseleva,
     email: 'launch@csssr.com',
-    calendlyLink: 'https://calendly.com/anastasia-vnuchenko/csssr',
+    calendlyLink: 'https://calendly.com/sonya-kiseleva/csssr',
   },
   olga_shevchenko: {
     images: olgaShevchenko,

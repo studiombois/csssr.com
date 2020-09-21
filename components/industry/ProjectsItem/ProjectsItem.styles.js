@@ -282,6 +282,14 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     margin-top: ${calcRem(104)};
   }
 
+  ${desktop.all} {
+    &.first-item,
+    &.second-item,
+    &.third-item {
+      margin-top: 200px;
+    }
+  }
+
   ${desktop.l} {
     .button {
       max-width: ${calcRem(272)};

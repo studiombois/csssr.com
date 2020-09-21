@@ -342,6 +342,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       margin-top: ${calcRem(24)};
     }
   }
+
+  @media (min-device-width : 375px)
+  and (max-device-width : 812px)
+  and (-webkit-min-device-pixel-ratio : 2)
+  and (-webkit-max-device-pixel-ratio : 3) {
+    .service-title {
+      transform: translateX(${calcRem(-24)});
+    }
+  }
 `
 
 const ie11Styles = ({ breakpoints: { mobile }}) => css`

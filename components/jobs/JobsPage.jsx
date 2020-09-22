@@ -8,7 +8,7 @@ import Vacancies from '../../components/jobs/Vacancies'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
-import ogImages from '../../public/images/jobs/cover/all.png?csssr-images'
+import ogImages from '../../public/images/jobs/cover/desktop.all.png?csssr-images'
 
 const pageName = 'jobs'
 class JobsPage extends PureComponent {

@@ -1,109 +1,181 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
-    grid-column: 1 / span 6;
+    text-decoration: none;
+
+    &.large.left {
+      grid-column: 2 / span 6;
+    }
+
+    &.large.right {
+      grid-column: 6 / span 6;
+    }
+
+    &.small.left {
+      grid-column: 2 / span 4;
+    }
+
+    &.small.right {
+      grid-column: 8 / span 4;
+    }
+
+    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+      margin-top: ${calcRem(81)};
+    }
+
+    &:hover .heading {
+      color: ${colors.primary.origin};
+    }
+
+    &:hover .image-wrapper::before {
+      top: 0;
+    }
+  }
+
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: #0054D7;
+      transition: top .5s ease-in-out;
+      top: 100%;
+    }
+  }
+
+  .image {
+    mix-blend-mode: luminosity;
   }
 
   .heading {
-    grid-row: 1;
-    grid-column: 2 / span 4;
-    margin-top: ${calcRem(75)};
+    margin-top: ${calcRem(30)};
   }
 
   .text {
     grid-column: 2 / span 4;
-    margin-top: ${calcRem(40)};
+    margin-top: ${calcRem(15)};
   }
 
-  .logos {
-    grid-row: 1 / span 3;
-    grid-column: 7 / span 5;
+  .data-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: ${calcRem(15)};
   }
 
-  ${desktop.m} {
-    .heading {
-      margin-top: ${calcRem(22)};
-    }
-
-    .text {
-      grid-column: 2 / span 5;
-    }
-
-    .logos {
-      grid-column: 8 / span 4;
-      width: ${calcRem(433)};
-    }
+  .tag {
+    font-weight: 500;
+    color: ${colors.primary.origin};
+    text-decoration: none;
+  }
+  
+  .team,
+  .duration,
+  .separatopr {
+    font-weight: 500;
   }
 
-  ${desktop.s} {
-    & {
-      margin-top: ${calcRem(176)};
-    }
-
-    .heading {
-      margin-top: ${calcRem(12)};
-    }
-
-    .text {
-      grid-column: 2 / span 5;
-    }
-
-    .logos {
-      grid-column: 8 / span 4;
-      width: ${calcRem(400)};
-    }
+  .separator {
+    margin: 0 ${calcRem(16)};
+    color: ${colors.secondary.darken100};
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(136)};
+      &.large.left {
+        grid-column: 1 / span 7;
+      }
+
+      &.large.right {
+        grid-column: 6 / span 7;
+      }
+
+      &.small.left {
+        grid-column: 1 / span 5;
+      }
+
+      &.small.right {
+        grid-column: 8 / span 5;
+      }
+
+      &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+        margin-top: ${calcRem(70)};
+      }
     }
 
     .heading {
-      grid-column: 1 / span 5;
-      margin-top: ${calcRem(41)};
+      margin-top: ${calcRem(20)};
+
+      &.small {
+        max-width: ${calcRem(379)};
+      }
     }
 
     .text {
-      grid-column: 1 / span 5;
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(10)};
     }
 
-    .logos {
-      grid-column: 7 / span 6;
-      width: ${calcRem(464)};
+    .data-wrapper {
+      margin-top: ${calcRem(10)};
+    }
+
+    .text,
+    .tag,
+    .team,
+    .duration {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
   ${mobile.all} {
+    & {
+      grid-column: 1 / span 6 !important;
+
+      &:not(:nth-of-type(1)) {
+        margin-top: ${calcRem(60)};
+      }
+    }
+
     .heading {
-      grid-row: 1;
-      grid-column: 1 / span 6;
-      margin-top: 0;
+      margin-top: ${calcRem(20)};
+    }
+
+    .text,
+    .tag,
+    .team,
+    .duration,
+    .separator {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
 
     .text {
-      grid-row: 2;
-      grid-column: 1 / span 6;
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(10)};
     }
 
-    .logos {
-      grid-row: 3;
-      grid-column: 1 / span 6;
-      width: 100%;
-      margin-top: ${calcRem(32)};
-    }    
+    .data-wrapper {
+      flex-wrap: wrap;
+      margin-top: ${calcRem(10)};
+    }
+
+    .separator {
+      margin: 0 ${calcRem(14)};
+    }
   }
 `
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const { colors } = props.theme
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
   `
 }

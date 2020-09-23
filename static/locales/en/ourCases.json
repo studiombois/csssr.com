@@ -5,6 +5,7 @@
     "text": "We&nbsp;constantly challenge ourselves to&nbsp;solve problems. Here is&nbsp;a&nbsp;few of&nbsp;our biggest projects."
   },
   "devCases": {
+    "heading": "Development cases",
     "gazprom": {
       "imgAlt": "Gazprom",
       "heading": "Gazprom. Management Platform",
@@ -50,7 +51,7 @@
       "heading": "Flant. Global website",
       "text": "We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form.",
       "tag": "IT",
-      "team": "3 specialist",
+      "team": "3 specialists",
       "duration": "2 months"
     },
     "mosoblgaz": {

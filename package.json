@@ -13,7 +13,7 @@
     "test-ci": "NODE_ENV=development jest"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.9.0",
+    "@csssr/core-design": "^5.9.2",
     "@csssr/csssr-amo": "^3.5.2",
     "@csssr/csssr.images": "^3.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.27",

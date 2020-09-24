@@ -1,246 +1,283 @@
 //Mеню SERVICES
 
 testcase('Переход на страницу Outsourcing Front-end из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на SERVICES в хеддере', () => {
+  step('Навели курсор на SERVICES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
 
-  step('В дропдауне выбрать Outsourcing Front-end', () => {
+  step('В дропдауне выбрали Outsourcing Front-end', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.outsourcing"]')
       .click('[data-testid="Header:nav:link.outsourcing"]')
   })
 
-  expected('Переход на страницу Outsourcing Front-end', () => {
-    browser.assert.urlEquals(
-      browser.launch_url + '/en/service/outsourcing-front-end'
-    )
+  expected('Открылась страница Outsourcing Front-end', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(
+        browser.launch_url + '/en/service/outsourcing-front-end'
+      )
   })
 })
 
 testcase('Переход на страницу Express Front-end из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на SERVICES в хеддере', () => {
+  step('Навели курсор на SERVICES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
 
-  step('В дропдауне выбрать Express Front-end', () => {
+  step('В дропдауне выбрали Express Front-end', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.express"]')
       .click('[data-testid="Header:nav:link.express"]')
   })
 
-  expected('Переход на страницу Express Front-end', () => {
-    browser.assert.urlEquals(
-      browser.launch_url + '/en/service/express-front-end'
-    )
+  expected('Открылась страница Express Front-end', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(
+        browser.launch_url + '/en/service/express-front-end'
+      )
   })
 })
 
 testcase('Переход на страницу MVP Development из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на SERVICES в хеддере', () => {
+  step('Навели курсор на SERVICES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
 
-  step('В дропдауне выбрать MVP Development', () => {
+  step('В дропдауне выбрали MVP Development', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.mvp"]')
       .click('[data-testid="Header:nav:link.mvp"]')
   })
 
-  expected('Переход на страницу MVP Development', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en/service/mvp-development')
+  expected('Открылась страница MVP Development', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(browser.launch_url + '/en/service/mvp-development')
   })
 })
 
 testcase('Переход на страницу Express Back-end & DevOps из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на SERVICES в хеддере', () => {
+  step('Навели курсор на SERVICES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
   })
 
-  step('В дропдауне выбрать Back-end & DevOps', () => {
+  step('В дропдауне выбрали Back-end & DevOps', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.backend"]')
       .click('[data-testid="Header:nav:link.backend"]')
   })
 
-  expected('Переход на страницу Back-end & DevOps', () => {
-    browser.assert.urlEquals(
-      browser.launch_url + '/en/service/back-end-and-devops'
-    )
+  expected('Открылась страница Back-end & DevOps', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(
+        browser.launch_url + '/en/service/back-end-and-devops'
+      )
   })
 })
 
 //Меню INDUSTRIES
 
 testcase('Переход на страницу FINTECH из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на INDUSTRIES в хеддере', () => {
+  step('Навели курсор на INDUSTRIES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
 
-  step('В дропдауне выбрать Fintech', () => {
+  step('В дропдауне выбрали Fintech', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.fintech"]')
       .click('[data-testid="Header:nav:link.fintech"]')
   })
 
-  expected('Переход на страницу Fintecch', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en/industry/fintech')
+  expected('Открылась страница Fintecch', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(browser.launch_url + '/en/industry/fintech')
   })
 })
 
 testcase('Переход на страницу E-Commerce из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на INDUSTRIES в хеддере', () => {
+  step('Навели курсор на INDUSTRIES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
 
-  step('В дропдауне выбрать E-Commerce', () => {
+  step('В дропдауне выбрали E-Commerce', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.eCommerce"]')
       .click('[data-testid="Header:nav:link.eCommerce"]')
   })
 
-  expected('Переход на страницу E-Commerce', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en/industry/ecommerce')
+  expected('Открылась страница E-Commerce', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(browser.launch_url + '/en/industry/ecommerce')
   })
 })
 
 testcase('Переход на страницу Information Technology из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на INDUSTRIES в хеддере', () => {
+  step('Навели курсор на INDUSTRIES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
 
-  step('В дропдауне выбрать IT', () => {
+  step('В дропдауне выбрали IT', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.information"]')
       .click('[data-testid="Header:nav:link.information"]')
   })
 
-  expected('Переход на страницу Information Technology', () => {
-    browser.assert.urlEquals(
-      browser.launch_url + '/en/industry/information-technology'
-    )
+  expected('Открылась страница Information Technology', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(
+        browser.launch_url + '/en/industry/information-technology'
+      )
   })
 })
 
 testcase('Переход на страницу Media & Marketing из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на INDUSTRIES в хеддере', () => {
+  step('Навели курсор на INDUSTRIES в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
   })
 
-  step('В дропдауне выбрать Media & Marketing', () => {
+  step('В дропдауне выбрали Media & Marketing', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.mediaAndMarketing"]')
       .click('[data-testid="Header:nav:link.mediaAndMarketing"]')
   })
 
-  expected('Переход на страницу Media & Marketing', () => {
-    browser.assert.urlEquals(
-      browser.launch_url + '/en/industry/media-and-marketing'
-    )
+  expected('Открылась страница Media & Marketing', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(
+        browser.launch_url + '/en/industry/media-and-marketing'
+      )
   })
 })
 
 //Меню SOLUTIONS
 
 testcase('Переход на страницу LMS Platform из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на SOLUTIONS в хеддере', () => {
+  step('Навели курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.solutions"]', 0, 0)
   })
 
-  step('В дропдауне выбрать LMS Platform', () => {
+  step('В дропдауне выбрали LMS Platform', () => {
     browser
       .waitForElementVisible('[data-testid="Header:nav:link.lms"]')
       .click('[data-testid="Header:nav:link.lms"]')
   })
 
-  expected('Переход на страницу LMS Platform', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en/solutions/lms')
+  expected('Открылась страница LMS Platform', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(browser.launch_url + '/en/solutions/lms')
   })
 })
 
 testcase('Ссылка на страницу Time-tracking Software из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  step('Навести курсор на SOLUTIONS в хеддере', () => {
+  step('Навели курсор на SOLUTIONS в хеддере', () => {
     browser.moveToElement('[data-testid="Header:nav:button.solutions"]', 0, 0)
   })
 
-  step('В дропдауне выбрать Time-tracking Software', () => {
-    browser.moveToElement(
-      '[data-testid="Header:nav:link.tracker"]', 0, 0)
+  step('В дропдауне выбрали Time-tracking Software', () => {
+    browser.click(
+      '[data-testid="Header:nav:link.tracker"]')
   })
 
-  expected('У селекта Tracker есть атрибут ссылкой на страницу трекера', () => {
-    browser.assert.attributeEquals(
-      '[data-testid="Header:nav:link.tracker"]', 'href', 'https://tracker.csssr.com/'
-    )
-  })
+  expected('В новой вкладке открылась страница Трекера', () => {
+    browser.windowHandles(function (result) {
+      var handle = result.value[1]
+      browser.switchWindow(handle)
+    })
 
-  expected('У ссылки на Tracker есть свойство target="_blank"', () => {
-    browser.assert.attributeEquals(
-      '[data-testid="Header:nav:link.tracker"]',
-      'target',
-      '_blank'
-    )
+    browser
+      .waitForElementPresent('[id="__next"]')
+      .assert.urlEquals('https://tracker.csssr.com/')
   })
 })
 
 // Кнопки справа
 
-testcase('Ссылка на Блог из хеддера', () => {
-  step('Перейти на главную страницу', () => {
+testcase('Переход на страницу Contacts', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
-  expected('У кнопки Blog есть атрибут с сылкой на страницу трекера', () => {
-    browser.assert.attributeEquals('[data-testid="Header:link.Blog"]', 'href', 'https://blog.csssr.com/en')
+  step('Нажали на ссылку Контакты в хеддере', () => {
+    browser.click('[data-testid="Header:link.contacts"]')
   })
 
-  expected('У ссылки на Blog есть свойство target="_blank"', () => {
-    browser.assert.attributeEquals('[data-testid="Header:link.Blog"]', 'target', '_blank')
+  expected('Открылась страница Контактов', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(browser.launch_url + '/en/contacts')
   })
 })
 
+testcase('Ссылка на Блог из хеддера', () => {
+  step('Перешли на главную страницу', () => {
+    browser.url(browser.launch_url + '/en')
+  })
+
+  step('Нажали на ссылку Блог в хеддере', () => {
+    browser.click('[data-testid="Header:link.Blog"]')
+  })
+
+  expected('В новой вкладке открылась главная страница Блога', () => {
+    browser.windowHandles(function (result) {
+      var handle = result.value[1]
+      browser.switchWindow(handle)
+    })
+
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals('https://blog.csssr.com/en')
+  })
+})
 testcase('Переход на страницу Careers', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 
@@ -248,13 +285,15 @@ testcase('Переход на страницу Careers', () => {
     browser.click('[data-testid="Header:link.jobs"]')
   })
 
-  expected('Переход на страницу Careers', () => {
-    browser.assert.urlEquals(browser.launch_url + '/en-us/jobs')
+  expected('Открылась страница Careers', () => {
+    browser
+      .waitForElementPresent('[id="main"]')
+      .assert.urlEquals(browser.launch_url + '/en-us/jobs')
   })
 })
 
 testcase('Открытие модалки', () => {
-  step('Перейти на главную страницу', () => {
+  step('Перешли на главную страницу', () => {
     browser.url(browser.launch_url + '/en')
   })
 

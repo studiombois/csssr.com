@@ -4,6 +4,7 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 import Head from '../Head'
 import Hero from './Hero'
 import DevCases from './DevCases'
+import Solutions from './Solutions'
 
 import heroContent from '../../data/our-cases/hero'
 import casesContent from '../../data/our-cases/devCases'
@@ -19,6 +20,7 @@ const OurCasesPage = ({ l10n: { translations } }) => {
 
       <Hero content={heroContent} />
       <DevCases content={casesContent} />
+      <Solutions />
     </Layout>
   )
 }

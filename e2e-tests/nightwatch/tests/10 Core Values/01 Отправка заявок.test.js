@@ -16,37 +16,24 @@ testcase('Отправка заявки из модалки в хеддере RU
 
   modalContInfo()
 
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
-    // происходит переход на другую страницу
-    browser.execute(
-      function (selector) {
-        document.querySelector(selector).click()
-      },
-      [
-        '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
-      ]
-    )
-  })
-
   step('Отметить чекбокс с подпиской на рассылку', () => {
     // TODO здесь нужно кликать на лейбл
-    browser.click('[for="ConctactModalForm_newsletter"]')
+    browser.click('[data-testid="contact-modal:field:callbackForm.newsletter.checkbox"]')
   })
 
   step('Нажать кнопку сабмита формы', () => {
-    browser.click('[testid="contact-modal:button.callbackForm.submit"]')
+    browser.click('[data-testid="contact-modal:button.callbackForm.submit"]')
   })
 
   expected('Появилось сообщение об успехе', () => {
     // TODO здесь нужно добавить селектор
     browser
-      .waitForElementPresent('div > div > p')
+      .waitForElementPresent('[data-testid="ContactModal:text.success"]')
       .expect
-      .element('[class="font_p16-regular status_text"]')
+      .element('[data-testid="ContactModal:text.success"]')
       .text.to.equal('Успех!' + '\n' + 'Совсем скоро мы с вами свяжемся.')
     browser.expect.element(
-      '[src="/_next/static/icons/button_success-3019b6f7.svg"]'
+      '[data-testid="ContactModal:img.success"]'
     ).to.be.present
   })
 
@@ -62,25 +49,18 @@ testcase('Отправка заявки из формы в конце стран
 
   contInfo()
 
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    browser.execute(
-      function (selector) {
-        document.querySelector(selector).click()
-      },
-      ['[data-testid="contact:field:callbackForm.privacyPolicy.checkbox"]']
-    )
-  })
-
   step('Отправить форму', () => {
     browser.submitForm('form')
   })
 
   expected('Появилось сообщение об успехе', () => {
     browser
-      .waitForElementPresent('[data-testid="contact:text.successMessage"]')
+      .waitForElementPresent('[data-testid="contact:text.status"]')
       .expect
-      .element('[data-testid="contact:text.successMessage"]')
+      .element('[data-testid="contact:text.status"]')
       .text.to.equal('Успех!' + '\n' + 'Совсем скоро мы с вами свяжемся.')
+    browser.expect.element('[data-testid="contact:button.callbackForm.submit"]')
+      .to.be.present
     browser.expect.element('[data-testid="contact:picture.successMessageImg"]')
       .to.be.present
   })
@@ -101,37 +81,24 @@ testcase('Отправка заявки из модалки в хеддере EN
 
   modalContInfo()
 
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    // Здесь могли бы кликать на лейбл, но из-за того что в нём ссылка
-    // происходит переход на другую страницу
-    browser.execute(
-      function (selector) {
-        document.querySelector(selector).click()
-      },
-      [
-        '[data-testid="contact-modal:field:callbackForm.privacyPolicy.checkbox"]',
-      ]
-    )
-  })
-
   step('Отметить чекбокс с подпиской на рассылку', () => {
     // TODO здесь нужно кликать на лейбл
-    browser.click('[for="ConctactModalForm_newsletter"]')
+    browser.click('[data-testid="contact-modal:field:callbackForm.newsletter.checkbox"]')
   })
 
   step('Нажать кнопку сабмита формы', () => {
-    browser.click('[testid="contact-modal:button.callbackForm.submit"]')
+    browser.click('[data-testid="contact-modal:button.callbackForm.submit"]')
   })
 
   expected('Появилось сообщение об успехе', () => {
     // TODO здесь нужно добавить селектор
     browser
-      .waitForElementPresent('div > div > p')
+      .waitForElementPresent('[data-testid="ContactModal:text.success"]')
       .expect
-      .element('[class="font_p16-regular status_text"]')
+      .element('[data-testid="ContactModal:text.success"]')
       .text.to.equal('Success!' + '\n' + 'We will contact you soon')
     browser.expect.element(
-      '[src="/_next/static/icons/button_success-3019b6f7.svg"]'
+      '[data-testid="ContactModal:img.success"]'
     ).to.be.present
   })
 
@@ -147,25 +114,18 @@ testcase('Отправка заявки из формы в конце стран
 
   contInfo()
 
-  step('Отметить чекбокс с Политикой конфиденциальности', () => {
-    browser.execute(
-      function (selector) {
-        document.querySelector(selector).click()
-      },
-      ['[data-testid="contact:field:callbackForm.privacyPolicy.checkbox"]']
-    )
-  })
-
-  step('Отправить форму', () => {
+    step('Отправить форму', () => {
     browser.submitForm('form')
   })
 
   expected('Появилось сообщение об успехе', () => {
     browser
-      .waitForElementPresent('[data-testid="contact:text.successMessage"]')
+      .waitForElementPresent('[data-testid="contact:text.status"]')
       .expect
-      .element('[data-testid="contact:text.successMessage"]')
+      .element('[data-testid="contact:text.status"]')
       .text.to.equal('Success!' + '\n' + 'We will contact you soon')
+    browser.expect.element('[data-testid="contact:button.callbackForm.submit"]')
+      .to.be.present
     browser.expect.element('[data-testid="contact:picture.successMessageImg"]')
       .to.be.present
   })

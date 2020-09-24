@@ -11,6 +11,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     grid-row: 1;
     grid-column: 2 / span 4;
     margin-top: ${calcRem(75)};
+    font-weight: 300;
   }
 
   .text {

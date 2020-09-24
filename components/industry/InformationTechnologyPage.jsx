@@ -7,7 +7,7 @@ import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
 import Projects from './Projects'
-import Form from '../ContactFormWrapper'
+import Idea from '../Idea'
 import Head from '../Head'
 
 import greeting from '../../data/industry/informationTechnology/greeting'
@@ -36,7 +36,7 @@ const InformationTechnologyPage = ({ l10n: { translations } }) => {
 
       <Projects id="projects" content={informationTechnologyProjects} />
 
-      <Form pageName={pageName} />
+      <Idea pageName={pageName} />
     </Layout>
   )
 }

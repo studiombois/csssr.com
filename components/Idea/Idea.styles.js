@@ -80,7 +80,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .button-wrapper {
-      top: ${calcRem(14)};
       right: ${calcRem(-215)};
     }
 

@@ -6,7 +6,7 @@ import Greeting from './Greeting'
 import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
-import Form from '../ContactFormWrapper'
+import Idea from '../Idea'
 import Head from '../Head'
 
 import greeting from '../../data/industry/fintech/greeting'
@@ -32,7 +32,7 @@ const FintechPage = ({ l10n: { translations } }) => {
 
       <CoreValues id="core-values" content={coreValues} />
 
-      <Form pageName={pageName} />
+      <Idea pageName={pageName} />
     </Layout>
   )
 }

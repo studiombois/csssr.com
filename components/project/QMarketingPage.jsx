@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../ContactFormWrapper'
+import Idea from '../Idea'
 import AboutProject from './AboutProject'
 import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'
@@ -37,7 +37,7 @@ const QMarketingPage = ({ l10n: { translations } }) => {
         images={aboutProjectImages}
         paragraphsScheme={aboutProjectParagraphsScheme}
       />
-      <Form pageName={pageName} />
+      <Idea pageName={pageName} />
     </Layout>
   )
 }

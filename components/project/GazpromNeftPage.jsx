@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../ContactFormWrapper'
+import Idea from '../Idea'
 import Quote from './Quote'
 import AboutProject from './AboutProject'
 import Layout from '../Layout'
@@ -40,7 +40,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
         paragraphsScheme={aboutProjectParagraphsScheme}
       />
       <Quote projectId={projectId} images={quoteImages} />
-      <Form pageName={pageName} />
+      <Idea pageName={pageName} />
     </Layout>
   )
 }

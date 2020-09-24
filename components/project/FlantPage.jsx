@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../ContactFormWrapper'
+import Idea from '../Idea'
 import AboutProject from './AboutProject'
 import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'
@@ -37,7 +37,7 @@ const FlantPage = ({ l10n: { translations } }) => {
         paragraphsScheme={aboutProjectParagraphsScheme}
       />
       <Quote projectId={projectId} images={quoteImages} />
-      <Form pageName={pageName} />
+      <Idea pageName={pageName} />
     </Layout>
   )
 }

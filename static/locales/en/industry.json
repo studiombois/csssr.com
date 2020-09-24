@@ -100,133 +100,41 @@
     }
   },
   "projects": {
-    "heading": "Our projects",
-    "informationTechnologyPage": {
-      "firstItem": {
-        "heading": "Gazprom Neft — Professionals 4.0",
-        "text": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers.",
-        "numericData": {
-          "firstItem": {
-            "number": "9",
-            "text": "specialists"
-          },
-          "secondItem": {
-            "number": "13",
-            "text": "months"
-          }
-        },
-        "button": {
-          "title": "READ THE CASE STUDY",
-          "href": "/en/project/gazprom-neft-professionals-4-0"
-        }
-      },
-      "secondItem": {
-        "heading": "S7 Airlines — Personal Account",
-        "text": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services.",
-        "numericData": {
-          "firstItem": {
-            "number": "8",
-            "text": "specialists"
-          },
-          "secondItem": {
-            "number": "25",
-            "text": "months"
-          }
-        },
-        "button": {
-          "title": "READ THE CASE STUDY",
-          "href": "/en/project/s7-personal-account"
-        }
-      },
+    "heading": "Cases",
+    "ecommercePage": {
       "mosoblgaz": {
-        "heading": "Mosoblgaz — Personal Account",
-        "text": "Development of b2b client's account that allows quick access to the company's services.",
-        "numericData": {
-          "firstItem": {
-            "number": "4",
-            "text": "specialists"
-          },
-          "secondItem": {
-            "number": "2",
-            "text": "months"
-          }
-        },
-        "button": {
-          "title": "READ THE CASE STUDY",
-          "href": "/en/project/mosoblgaz"
-        }
+        "heading": "Personal Account",
+        "team": "4 specialists",
+        "duration": "2 months"
       },
       "brusnika": {
-        "heading": "Brusnika — Internal assessment and <span style='white-space: nowrap'>forecasting tools</span>",
-        "text": "Creation of internal sales planning tools for the company's managers.",
-        "numericData": {
-          "firstItem": {
-            "number": "1",
-            "text": "specialist"
-          },
-          "secondItem": {
-            "number": "13",
-            "text": "months"
-          }
-        },
-        "button": {
-          "title": "READ THE CASE STUDY",
-          "href": "/en/project/brusnika"
-        }
+        "heading": "Internal assessment and forecasting tools",
+        "team": "1 specialist",
+        "duration": "13 months"
+      }
+    },
+    "informationTechnologyPage": {
+      "gazprom": {
+        "heading": "Management Platform",
+        "team": "9 specialists",
+        "duration": "13 months"
+      },
+      "s7": {
+        "heading": "Customer Account",
+        "team": "8 specialists",
+        "duration": "25 months"
+      }
+    },
+    "mediaAndMarketingPage": {
+      "qmarketing": {
+        "heading": "Management Platform",
+        "team": "3 specialists",
+        "duration": "4 months"
       },
       "mindbox": {
-        "heading": "Mindbox&nbsp;— Personal Account Data Filtering&nbsp;/ Promotion Campaigns&nbsp;Arbitration",
-        "text": "Development of two projects for marketing automation.",
-        "numericData": {
-          "firstItem": {
-            "number": "3",
-            "text": "specialists"
-          },
-          "secondItem": {
-            "number": "13",
-            "text": "months"
-          }
-        },
-        "button": {
-          "title": "READ THE CASE STUDY",
-          "href": "/en/project/mindbox"
-        }
-      },
-      "qmarketing": {
-        "heading": "QMarketing &mdash; QAcademy",
-        "text": "Front-end development of internal pages for the <span style='white-space: nowrap'>e-learning</span> platform.",
-        "numericData": {
-          "firstItem": {
-            "number": "3",
-            "text": "specialists"
-          },
-          "secondItem": {
-            "number": "4",
-            "text": "months"
-          }
-        },
-        "button": {
-          "title": "READ THE CASE STUDY",
-          "href": "/en/project/qmarketing"
-        }
-      },
-      "flant": {
-        "heading": "Flant - Landing pages",
-        "text": "Development and testing of seven landing pages for the Flant comapny.",
-        "numericData": {
-          "firstItem": {
-            "number": "3",
-            "text": "specialists"
-          },
-          "secondItem": {
-            "number": "2",
-            "text": "months"
-          }
-        },
-        "button": {
-          "title": "READ THE CASE STUDY",
-          "href": "/en/project/flant"
-        }
+        "heading": "Customer Account",
+        "team": "3 specialists",
+        "duration": "13 months"
       }
     }
   }

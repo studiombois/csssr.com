@@ -41,6 +41,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     line-height: inherit;
     text-decoration: none;
     white-space: nowrap;
+
+    &_active {
+      color: #0254d8;
+      pointer-events: none;
+    }
   }
 
   .link {

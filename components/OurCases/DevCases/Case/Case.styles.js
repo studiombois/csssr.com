@@ -104,7 +104,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
         grid-column: 8 / span 5;
       }
 
-      &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+      &:nth-of-type(n + 3) {
         margin-top: ${calcRem(70)};
       }
     }

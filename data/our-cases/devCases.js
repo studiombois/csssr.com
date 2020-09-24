@@ -21,6 +21,7 @@ export default {
   cases: [
     {
       images: gazpromImages,
+      imgAlt: (t) => t.ourCases.devCases.gazprom.imgAlt,
       link: 'project/gazprom-neft-professionals-4-0',
       heading: (t) => t.ourCases.devCases.gazprom.heading,
       text: (t) => t.ourCases.devCases.gazprom.text,
@@ -31,8 +32,8 @@ export default {
     },
     {
       images: s7Images,
-      link: 'project/s7-personal-account',
       imgAlt: (t) => t.ourCases.devCases.s7.imgAlt,
+      link: 'project/s7-personal-account',
       heading: (t) => t.ourCases.devCases.s7.heading,
       text: (t) => t.ourCases.devCases.s7.text,
       tag: (t) => t.ourCases.devCases.s7.tag,
@@ -42,6 +43,7 @@ export default {
     },
     {
       images: qacademyImages,
+      imgAlt: (t) => t.ourCases.devCases.qacademy.imgAlt,
       link: 'project/qmarketing',
       heading: (t) => t.ourCases.devCases.qacademy.heading,
       text: (t) => t.ourCases.devCases.qacademy.text,
@@ -52,6 +54,7 @@ export default {
     },
     {
       images: brusnikaImages,
+      imgAlt: (t) => t.ourCases.devCases.brusnika.imgAlt,
       link: 'project/brusnika',
       heading: (t) => t.ourCases.devCases.brusnika.heading,
       text: (t) => t.ourCases.devCases.brusnika.text,
@@ -62,6 +65,7 @@ export default {
     },
     {
       images: mindboxImages,
+      imgAlt: (t) => t.ourCases.devCases.mindbox.imgAlt,
       link: 'project/mindbox',
       heading: (t) => t.ourCases.devCases.mindbox.heading,
       text: (t) => t.ourCases.devCases.mindbox.text,
@@ -72,6 +76,7 @@ export default {
     },
     {
       images: flantImages,
+      imgAlt: (t) => t.ourCases.devCases.flant.imgAlt,
       link: 'project/flant',
       heading: (t) => t.ourCases.devCases.flant.heading,
       text: (t) => t.ourCases.devCases.flant.text,
@@ -82,6 +87,7 @@ export default {
     },
     {
       images: mosoblgazImages,
+      imgAlt: (t) => t.ourCases.devCases.mosoblgaz.imgAlt,
       link: 'project/mosoblgaz',
       heading: (t) => t.ourCases.devCases.mosoblgaz.heading,
       text: (t) => t.ourCases.devCases.mosoblgaz.text,

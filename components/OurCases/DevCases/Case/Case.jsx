@@ -12,16 +12,12 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const Case = ({
   className,
-  content: { images, link, heading, text, tag, tagLink, team, duration },
+  content: { images, imgAlt, link, heading, text, tag, tagLink, team, duration },
   index,
   l10n: { translations },
 }) => {
   const size = index === 0 || index === 3 || index === 4 ? 'small' : 'large'
-  const side =
-    (size === 'small' && (index === 0 || index === 4)) ||
-    (size === 'large' && (index === 2 || index === 6))
-      ? 'left'
-      : 'right'
+  const side = (index + 1) % 2 ? 'left' : 'right'
 
   return (
     <Link className={`${className} ${size} ${side}`} href={link} isNextLink>
@@ -29,6 +25,7 @@ const Case = ({
         <PictureSmart
           className="image"
           requireImages={images}
+          alt={imgAlt(translations)}
           testid="contactUs:picture:bookACall.avatar"
         />
       </div>

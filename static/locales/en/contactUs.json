@@ -27,7 +27,7 @@
       }
     },
     "buttonText": "Schedule a call",
-    "communication": "Hangouts, Skype, Zoom, <span>Phone call</span>"
+    "communication": "Hangouts, Zoom, <span>Phone call</span>"
   },
   "form": {
     "title": "Сontact Us",

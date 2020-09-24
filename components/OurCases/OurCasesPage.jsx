@@ -6,7 +6,6 @@ import Hero from './Hero'
 import Solutions from './Solutions'
 
 import hero from '../../data/our-cases/hero'
-import solutions from '../../data/our-cases/solutions'
 
 const OurCasesPage = ({ l10n: { translations } }) => {
   const pageName = 'ourCases'
@@ -18,7 +17,7 @@ const OurCasesPage = ({ l10n: { translations } }) => {
       />
 
       <Hero content={hero} />
-      <Solutions content={solutions} />
+      <Solutions />
     </Layout>
   )
 }

@@ -46,7 +46,7 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
       opacity: 0;
     }
   }
-  
+
   .image {
     max-width: ${calcRem(301)};
     height: ${calcRem(160)};
@@ -54,6 +54,20 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     & img {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  ${desktop.all} {
+    &.first-item,
+    &.second-item,
+    &.third-item {
+      margin-top: 200px;
+    }
+  }
+
+  ${desktop.l} {
+    .button {
+      max-width: ${calcRem(272)};
     }
 
     &_MOSOBLGAZ {

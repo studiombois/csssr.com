@@ -3,5 +3,20 @@
     "altImg": "Logos",
     "heading": "Our cases",
     "text": "We&nbsp;constantly challenge ourselves to&nbsp;solve problems. Here is&nbsp;a&nbsp;few of&nbsp;our biggest projects."
+  },
+  "solutions": {
+    "heading": "Our solutions",
+    "lms": {
+      "imgAlt": "Modular Learning Management System",
+      "heading": "Modular Learning Management System",
+      "text": "Our LMS helps to&nbsp;start E-Learning business. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and personalization. The system is&nbsp;designed to&nbsp;support pedagogical models and help you to&nbsp;streamline your training.",
+      "link": "https://csssr.com/en/solutions/lms"
+    },
+    "timeTracker": {
+      "imgAlt": "Time-tracking Software",
+      "heading": "Time-tracking Software",
+      "text": "Powerful time tracking app for teams. Track working hours across projects and get detailed reports to&nbsp;improve budgeting efficiency by&nbsp;intelligent and flexible reports.",
+      "link": "https://tracker.csssr.com/"
+    }
   }
 }

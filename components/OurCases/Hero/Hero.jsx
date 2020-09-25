@@ -34,7 +34,7 @@ const Hero = ({
       <PictureSmart
         className="logos"
         requireImages={images}
-        alt={imgAlt}
+        alt={imgAlt(translations)}
         testid="contactUs:picture:bookACall.avatar"
       />
     </Grid>

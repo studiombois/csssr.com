@@ -37,7 +37,7 @@ const Solutions = ({ className, l10n: { translations } }) => {
               <PictureSmart
                 className="image"
                 requireImages={images}
-                alt={imgAlt}
+                alt={imgAlt(translations)}
                 testid="contactUs:picture:bookACall.avatar"
               />
             </div>

@@ -22,12 +22,7 @@ const Case = ({
   return (
     <Link className={`${className} ${size} ${side}`} href={link} isNextLink>
       <div className="image-wrapper">
-        <PictureSmart
-          className="image"
-          requireImages={images}
-          alt={imgAlt(translations)}
-          testid="contactUs:picture:bookACall.avatar"
-        />
+        <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
       </div>
 
       <Heading.H2
@@ -44,12 +39,14 @@ const Case = ({
         className="text"
       />
       <div className="data-wrapper">
-        <Link
-          dangerouslySetInnerHTML={{ __html: tag(translations) }}
-          className="tag"
-          href={tagLink}
-          isNextLink
-        />
+        <object>
+          <Link
+            dangerouslySetInnerHTML={{ __html: tag(translations) }}
+            className="tag"
+            href={tagLink}
+            isNextLink
+          />
+        </object>
 
         <span className="separator">•</span>
 

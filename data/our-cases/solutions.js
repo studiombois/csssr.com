@@ -7,6 +7,7 @@ export default {
   heading: (t) => t.ourCases.solutions.heading,
   solutionsContent: [
     {
+      externalLink: false,
       blockClass: 'lms',
       images: lmsImages,
       imgAlt: (t) => t.ourCases.solutions.lms.imgAlt,
@@ -15,6 +16,7 @@ export default {
       link: (t) => t.ourCases.solutions.lms.link,
     },
     {
+      externalLink: true,
       blockClass: 'time-tracker',
       images: timeTrackerImages,
       imgAlt: (t) => t.ourCases.solutions.timeTracker.imgAlt,

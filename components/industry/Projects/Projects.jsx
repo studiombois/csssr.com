@@ -113,7 +113,7 @@ const Projects = ({
 
               <ButtonLink
                 className="link"
-                href="#"
+                href="/en/our-cases"
                 kind="primary"
                 size="s"
                 dangerouslySetInnerHTML={{ __html: 'VIEW OUR CASES' }}

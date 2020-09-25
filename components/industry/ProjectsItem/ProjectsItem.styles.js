@@ -57,37 +57,31 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
-  ${desktop.all} {
-    &.first-item,
-    &.second-item,
-    &.third-item {
-      margin-top: 200px;
-    }
-  }
-
   ${desktop.l} {
     .button {
       max-width: ${calcRem(272)};
     }
 
-    &_MOSOBLGAZ {
-      width: ${calcRem(245)};
-    }
+    .image {
+      &_MOSOBLGAZ {
+        width: ${calcRem(245)};
+      }
 
-    &_QAcademy {
-      width: ${calcRem(257)};
-    }
+      &_QAcademy {
+        width: ${calcRem(257)};
+      }
 
-    &_Mindbox {
-      width: ${calcRem(224)};
-    }
+      &_Mindbox {
+        width: ${calcRem(224)};
+      }
 
-    &_Gazprom {
-      width: ${calcRem(286)};
-    }
+      &_Gazprom {
+        width: ${calcRem(286)};
+      }
 
-    &_S7Airlines {
-      width: ${calcRem(294)};
+      &_S7Airlines {
+        width: ${calcRem(294)};
+      }
     }
   }
 
@@ -151,6 +145,18 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
       &_S7Airlines {
         width: ${calcRem(270)};
       }
+
+      &_MOSOBLGAZ {
+        width: ${calcRem(245)};
+      }
+
+      &_Mindbox {
+        width: ${calcRem(224)};
+      }
+
+      &_QAcademy {
+        width: ${calcRem(257)};
+      }
     }
   }
 
@@ -187,12 +193,20 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
         width: ${calcRem(225)};
       }
 
+      &_MOSOBLGAZ {
+        width: ${calcRem(245)};
+      }
+
       &_Gazprom {
         width: ${calcRem(272)};
       }
 
       &_S7Airlines {
         width: ${calcRem(270)};
+      }
+
+      &_QAcademy {
+        width: ${calcRem(257)};
       }
     }
   }

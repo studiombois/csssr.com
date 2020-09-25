@@ -22,11 +22,15 @@ const Solutions = ({ className, l10n: { translations } }) => {
         className="heading"
       />
       {solutions.solutionsContent.map(
-        ({ blockClass, images, imgAlt, heading, text, link }, index) => (
+        ({ externalLink, blockClass, images, imgAlt, heading, text, link }, index) => (
           <Link
             className={`solution solution_${blockClass} solution-link`}
             href={link(translations)}
             key={index}
+            {...(externalLink && {
+              target: '_blank',
+              rel: 'nofollow noopener',
+            })}
             data-testid={`ourCases:block.solutionLink.${blockClass}`}
           >
             <div className={`image-wrapper image-wrapper_${blockClass}`}>

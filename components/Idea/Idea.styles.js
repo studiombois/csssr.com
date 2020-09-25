@@ -5,6 +5,7 @@ import calcRem from '../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
     margin-top: ${calcRem(184)};
+    margin-bottom: ${calcRem(150)};
     min-height: ${calcRem(93)};
   }
 
@@ -31,6 +32,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .button {
     width: ${calcRem(146)};
+    height: ${calcRem(48)};
     border-radius: ${calcRem(10)};
     font-size: ${calcRem(14)};
     line-height: ${calcRem(16)};
@@ -70,29 +72,32 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
+      align-content: flex-end;
       min-height: ${calcRem(68)};
       margin-top: ${calcRem(112)};
+      margin-bottom: ${calcRem(157)};
     }
 
     .heading {
       grid-column: 1 / span 5;
-      margin-top: ${calcRem(41)};
     }
 
     .button-wrapper {
-      right: ${calcRem(-215)};
+      right: ${calcRem(-205)};
     }
 
     .button::before {
-      top: ${calcRem(3)};
+      top: ${calcRem(6)};
+      left: ${calcRem(-48)};
+      width: ${calcRem(48)};
     }
 
     @keyframes buttonPosition {
       0% {
-        transform: translateY(0);
+        transform: translateY(-33px);
       }
       100% {
-        transform: translateY(10px);
+        transform: translateY(-26px);
       }
     }
   }
@@ -101,6 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     & {
       min-height: ${calcRem(83)};
       margin-top: ${calcRem(98)};
+      margin-bottom: ${calcRem(120)};
     }
 
     .heading-wrapper {
@@ -115,7 +121,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .button-wrapper {
       top: ${calcRem(-50)};
-      right: ${calcRem(-178)};
+      right: ${calcRem(-170)};
     }
 
     .button::before {
@@ -124,10 +130,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     @keyframes buttonPosition {
       0% {
-        transform: translateY(0);
+        transform: translateY(-6px);
       }
       100% {
-        transform: translateY(6px);
+        transform: translateY(0);
       }
     }
   }

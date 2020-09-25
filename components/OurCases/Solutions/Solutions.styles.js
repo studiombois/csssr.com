@@ -48,6 +48,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .solution-link {
     text-decoration: none;
+
+    &:hover {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   .solution-heading {

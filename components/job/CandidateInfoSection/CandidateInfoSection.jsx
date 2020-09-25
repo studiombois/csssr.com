@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles, {
-  stylesForCheckboxField,
   stylesForFileField,
   stylesForFirstHalfWidthField,
   stylesForFullWidthField,
@@ -159,10 +158,8 @@ const CandidateInfoSection = (props) => {
       )}
 
       <p
+        className="policy-text"
         dangerouslySetInnerHTML={{ __html: translations.contactUs.form.policy }}
-        css={css`
-          ${stylesForCheckboxField}
-        `}
       />
     </Grid>
   )

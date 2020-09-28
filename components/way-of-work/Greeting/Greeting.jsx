@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
-import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import styles from './Greeting.styles'
@@ -28,8 +27,6 @@ Greeting.propTypes = {
   id: string,
 }
 
-export default L10nConsumer(
-  MsBrowserConsumer(styled(Greeting)`
-    ${styles}
-  `),
-)
+export default MsBrowserConsumer(styled(Greeting)`
+  ${styles}
+`)

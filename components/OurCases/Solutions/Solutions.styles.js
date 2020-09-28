@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
 
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(152)};
   }
@@ -14,6 +14,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .solution {
     margin-top: ${calcRem(56)};
+
+    &:hover .solution-heading {
+      color: ${colors.primary.origin};
+    }
 
     &_lms {
       grid-column: 2 / span 5;
@@ -175,8 +179,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const { colors } = props.theme
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
   `
 }

@@ -45,7 +45,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       width: 100%;
       height: 100%;
       background-color: #0054D7;
-      transition: top .5s ease-in-out;
+      transition: top .25s ease-in-out;
       top: 100%;
     }
   }

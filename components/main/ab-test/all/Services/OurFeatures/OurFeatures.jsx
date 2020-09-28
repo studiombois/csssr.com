@@ -2,15 +2,20 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './OurFeatures.styles'
+
 import Grid from '../../../../../ui-kit/core-design/Grid'
 import SubHeading from '../../../../../ui-kit/core-design/SubHeading'
 import Link from '../../../../../ui-kit/core-design/Link'
 import Text from '../../../../../ui-kit/core-design/Text'
-import images from '../../../../../../data/main/ourFeatures'
-import PictureForAllResolutions from '../../../../../ui-kit/PictureForAllResolutions'
+
 import { L10nConsumer } from '../../../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../../../utils/msBrowserProvider'
+
+const ourFeaturesImages = require.context(
+  '../../../../../../public/images/main/perfect?csssr-images',
+)
 
 const OurFeatures = ({ className, l10n: { translations, language } }) => {
   return (
@@ -34,10 +39,9 @@ const OurFeatures = ({ className, l10n: { translations, language } }) => {
         data-testid="Home:link.feature1"
       />
 
-      <PictureForAllResolutions
+      <PictureSmart
         className="picture"
-        images={images}
-        fallback={images['desktop.l'].png}
+        requireImages={ourFeaturesImages}
         alt={translations.main.imgAlt.ourFeatures}
       />
 

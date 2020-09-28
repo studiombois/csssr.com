@@ -5,7 +5,7 @@ import Toggler from './Toggler'
 import Grid from '../../../ui-kit/core-design/Grid'
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import styles from './AboutMvp.styles'
 import cn from 'classnames'
@@ -72,18 +72,16 @@ class AboutMvp extends PureComponent {
               'picture-wrapper_with_bg': togglerIndex === 1,
             })}
           >
-            <PictureForAllResolutions
+            <PictureSmart
               className={cn('picture', { picture_visible: togglerIndex === 1 })}
-              images={mvpOnImages}
-              fallback={mvpOnImages['desktop.l']}
+              requireImages={mvpOnImages}
               alt={translations.mvp.imgAlt.mvpOn}
               testId={togglerIndex === 1 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
             />
 
-            <PictureForAllResolutions
+            <PictureSmart
               className={cn('picture', { picture_visible: togglerIndex === 0 })}
-              images={mvpOffImages}
-              fallback={mvpOffImages['desktop.l']}
+              requireImages={mvpOffImages}
               alt={translations.mvp.imgAlt.mvpOff}
               testId={togglerIndex === 0 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
             />

@@ -1,8 +1,8 @@
 import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
-import getBackgroundImageSrcSet from '../../../utils/style/getBackgroundImageSrcSet'
-import line from '../../../static/images/jobs-faq/line.png?responsive'
-import line_webp from '../../../static/images/jobs-faq/line.png?responsive_and_webp'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+
+const line = require.context('../../../public/images/jobs-faq/line?csssr-images')
 
 export default {
   base: props => {
@@ -67,5 +67,5 @@ export default {
 
 
 export const backgroundImagesStyles = () => css`
-  ${getBackgroundImageSrcSet({png: line, webp: line_webp}, `.image-wrapper`)}
+  ${backgroundCssSmart('.image-wrapper', line)}
 `

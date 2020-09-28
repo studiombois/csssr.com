@@ -8,8 +8,8 @@ import Facts from './Facts'
 import CoreValues from './CoreValues'
 import Projects from './Projects'
 import Form from '../ContactFormWrapper'
-
 import Head from '../Head'
+
 import greeting from '../../data/industry/informationTechnology/greeting'
 import ourClients from '../../data/industry/informationTechnology/logos'
 import coreValues from '../../data/industry/coreValues'

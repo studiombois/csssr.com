@@ -10,7 +10,7 @@ import Grid from '../ui-kit/core-design/Grid'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import DevTools from '../DevTools'
 import Head from '../Head'
-import PictureForAllResolutions from '../PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
 import { ReactComponent as ServerError } from '../../static/icons/serverError.svg'
@@ -24,6 +24,10 @@ const defaultStatusCode = 500
 
 const errorNameByStatusCode = {
   500: 'serverError',
+}
+
+const images = {
+  500: require.context('../../public/images/error/500?csssr-images'),
 }
 
 const codeIconByStatusCode = {
@@ -81,10 +85,7 @@ class ErrorPage extends React.Component {
             }}
           />
 
-          <PictureForAllResolutions
-            className="picture"
-            image={{ namespace: 'error', key: `${statusCode}`, alt: `${statusCode}` }}
-          />
+          <PictureSmart className="picture" requireImages={images[statusCode]} alt={statusCode} />
 
           <div className={'code-wrapper'}>{codeIconByStatusCode[statusCode]}</div>
 

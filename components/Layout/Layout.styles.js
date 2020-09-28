@@ -37,6 +37,13 @@ export const base = css`
 
   picture {
     font-size: 0;
+    display: block;
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
   }
 
   #__next {

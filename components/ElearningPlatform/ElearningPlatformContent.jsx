@@ -2,10 +2,32 @@ import React, { PureComponent } from 'react'
 import Fade from 'react-reveal/Fade'
 import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './ElearningPlatformContent.styles'
+
 import DesignButton from './DesignButton'
 import FeatureButton from './FeatureButton'
 import ContactButton from '../ContactButton'
+
+import {
+  designImages,
+  featureImages,
+  featureButtons,
+} from '../../data/solutions/elearning-platform'
+
+const greetingImages = require.context(
+  '../../public/images/solutions/elearning-platform/greeting?csssr-images',
+)
+const assistantImages = require.context(
+  '../../public/images/solutions/elearning-platform/assistant?csssr-images',
+)
+const gamificationImages = require.context(
+  '../../public/images/solutions/elearning-platform/gamification?csssr-images',
+)
+
+const teamImages = require.context(
+  '../../public/images/solutions/elearning-platform/team?csssr-images',
+)
 
 class ElearningPlatformContent extends PureComponent {
   state = {
@@ -16,59 +38,7 @@ class ElearningPlatformContent extends PureComponent {
   render() {
     const { className, pageName } = this.props
 
-    const designImages = {
-      base: {
-        srcSet: `${require(`../../static/elearning-platform/design-base.png`)} 1x, ${require(`../../static/elearning-platform/design-base@2x.png`)} 2x, ${require(`../../static/elearning-platform/design-base@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/design-base.png`),
-      },
-      color: {
-        srcSet: `${require(`../../static/elearning-platform/design-color.png`)} 1x, ${require(`../../static/elearning-platform/design-color@2x.png`)} 2x, ${require(`../../static/elearning-platform/design-color@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/design-color.png`),
-      },
-      theme: {
-        srcSet: `${require(`../../static/elearning-platform/design-theme.png`)} 1x, ${require(`../../static/elearning-platform/design-theme@2x.png`)} 2x, ${require(`../../static/elearning-platform/design-theme@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/design-theme.png`),
-      },
-      font: {
-        srcSet: `${require(`../../static/elearning-platform/design-font.png`)} 1x, ${require(`../../static/elearning-platform/design-font@2x.png`)} 2x, ${require(`../../static/elearning-platform/design-font@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/design-font.png`),
-      },
-      graphic: {
-        srcSet: `${require(`../../static/elearning-platform/design-graphic.png`)} 1x, ${require(`../../static/elearning-platform/design-graphic@2x.png`)} 2x, ${require(`../../static/elearning-platform/design-graphic@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/design-graphic.png`),
-      },
-    }
-
-    const featureImages = {
-      payment: {
-        srcSet: `${require(`../../static/elearning-platform/features-payment-image.png`)} 1x, ${require(`../../static/elearning-platform/features-payment-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/features-payment-image@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/features-payment-image.png`),
-        heading: 'Add any payment provider you like',
-        description:
-          'Though we have the most popular providers built-in our system, we’re aware that there is no perfect solution that fits all. We can make the module work with any payment provider or a bank, even a cryptocurrency. Whatever you need, as long as it is connected to the Internet.',
-      },
-      skill: {
-        srcSet: `${require(`../../static/elearning-platform/features-skill-image.png`)} 1x, ${require(`../../static/elearning-platform/features-skill-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/features-skill-image@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/features-skill-image.png`),
-        heading: 'Configure learning programs based on skills',
-        description:
-          'Our skill-based system could help users to choose or configure the learning program based on skills they want to get or improve. As they make progress the system constantly monitors the way they improve and, taking into account multiple parameters from passed assessments to time and attempts made, indicates how skills are improving.',
-      },
-      rating: {
-        srcSet: `${require(`../../static/elearning-platform/feature-rating-image.png`)} 1x, ${require(`../../static/elearning-platform/feature-rating-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/feature-rating-image@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/feature-rating-image.png`),
-        heading: 'Choose a learning program and see how your skills grow',
-        description:
-          'Most students want not just to complete tasks but to monitor their KPIs and find out how well they are doing as compared to the other ones. For that purpose we can develop a Rating System module. It could be a highly configurable system making your educational platform more competitive and more focused on individual advancement.',
-      },
-      ecosystem: {
-        srcSet: `${require(`../../static/elearning-platform/feature-ecosystem-image.png`)} 1x, ${require(`../../static/elearning-platform/feature-ecosystem-image@2x.png`)} 2x, ${require(`../../static/elearning-platform/feature-ecosystem-image@3x.png`)} 3x`,
-        src: require(`../../static/elearning-platform/feature-ecosystem-image.png`),
-        heading: 'Connect the LMS to your existing tools and systems',
-        description:
-          'Each business is unique so we’ve developed a platform that can be easily integrated with other products in your ecosystem. It could be anything from a communication hub, like Slack, to a learning platform to be integrated in your own product.',
-      },
-    }
+    const activeDesignImage = designImages[this.state.activeDesignImage]
 
     // const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
@@ -103,21 +73,11 @@ class ElearningPlatformContent extends PureComponent {
               Build your solution from the modules, add anything you need with our development team.
             </p>
 
-            <div className="greeting-image">
-              <img
-                srcSet={`${require('../../static/elearning-platform/greeting.png')} 1x, ${require('../../static/elearning-platform/greeting@2x.png')} 2x, ${require('../../static/elearning-platform/greeting@3x.png')} 3x`}
-                src={require('../../static/elearning-platform/greeting.png')}
-                alt="By using a modular learning management system you can build your solution from the modules."
-              />
-            </div>
-
-            <div className="greeting-image-mobile">
-              <img
-                srcSet={`${require('../../static/elearning-platform/greeting-mob.png')} 1x, ${require('../../static/elearning-platform/greeting-mob@2x.png')} 2x, ${require('../../static/elearning-platform/greeting-mob@3x.png')} 3x`}
-                src={require('../../static/elearning-platform/greeting-mob.png')}
-                alt="By using a modular learning management system you can build your solution from the modules."
-              />
-            </div>
+            <PictureSmart
+              requireImages={greetingImages}
+              className="greeting-image"
+              alt="By using a modular learning management system you can build your solution from the modules."
+            />
           </div>
         </div>
 
@@ -125,13 +85,11 @@ class ElearningPlatformContent extends PureComponent {
           <div className="grid">
             <h2 className="font-heading-2 modules-heading">Magnificent Modules</h2>
 
-            <div className="module-image module-image-left">
-              <img
-                srcSet={`${require('../../static/elearning-platform/assistant.png')} 1x, ${require('../../static/elearning-platform/assistant@2x.png')} 2x, ${require('../../static/elearning-platform/assistant@3x.png')} 3x`}
-                src={require('../../static/elearning-platform/assistant.png')}
-                alt="We’ve built an assistant based on Google Dialogflow."
-              />
-            </div>
+            <PictureSmart
+              requireImages={assistantImages}
+              className="module-image module-image-left"
+              alt="We’ve built an assistant based on Google Dialogflow."
+            />
 
             <div className="module-title module-title-right">
               <h3 className="font-heading-3">Intelligent assistant</h3>
@@ -157,13 +115,11 @@ class ElearningPlatformContent extends PureComponent {
               </p>
             </div>
 
-            <div className="module-image module-image-right">
-              <img
-                srcSet={`${require('../../static/elearning-platform/gamification.png')} 1x, ${require('../../static/elearning-platform/gamification@2x.png')} 2x, ${require('../../static/elearning-platform/gamification@3x.png')} 3x`}
-                src={require('../../static/elearning-platform/gamification.png')}
-                alt="Boost users motivation up with an achievements and rewards system."
-              />
-            </div>
+            <PictureSmart
+              requireImages={gamificationImages}
+              className="module-image module-image-right"
+              alt="Boost users motivation up with an achievements and rewards system."
+            />
 
             <p className="font-p-2 module-subdescription-left subdescription-first subdescription-first-tablet">
               Boost users motivation up&nbsp;with an&nbsp;achievements and rewards system.
@@ -303,55 +259,12 @@ class ElearningPlatformContent extends PureComponent {
             </div>
 
             <div className="design-image">
-              {this.state.activeDesignImage === 'base' && (
-                <Fade right={true} duration={200} distance="40px">
-                  <img
-                    srcSet={designImages.base.srcSet}
-                    src={designImages.base.src}
-                    alt="We have a design team that will customize the LMS to match your brand identity."
-                  />
-                </Fade>
-              )}
-
-              {this.state.activeDesignImage === 'font' && (
-                <Fade right={true} duration={200} distance="40px">
-                  <img
-                    srcSet={designImages.font.srcSet}
-                    src={designImages.font.src}
-                    alt="We have a design team that will customize the LMS to match your brand identity."
-                  />
-                </Fade>
-              )}
-
-              {this.state.activeDesignImage === 'graphic' && (
-                <Fade right={true} duration={200} distance="40px">
-                  <img
-                    srcSet={designImages.graphic.srcSet}
-                    src={designImages.graphic.src}
-                    alt="We have a design team that will customize the LMS to match your brand identity."
-                  />
-                </Fade>
-              )}
-
-              {this.state.activeDesignImage === 'theme' && (
-                <Fade right={true} duration={200} distance="40px">
-                  <img
-                    srcSet={designImages.theme.srcSet}
-                    src={designImages.theme.src}
-                    alt="We have a design team that will customize the LMS to match your brand identity."
-                  />
-                </Fade>
-              )}
-
-              {this.state.activeDesignImage === 'color' && (
-                <Fade right={true} duration={200} distance="40px">
-                  <img
-                    srcSet={designImages.color.srcSet}
-                    src={designImages.color.src}
-                    alt="We have a design team that will customize the LMS to match your brand identity."
-                  />
-                </Fade>
-              )}
+              <Fade right={true} duration={200} distance="40px" key={this.state.activeDesignImage}>
+                <PictureSmart
+                  requireImages={activeDesignImage}
+                  alt="We have a design team that will customize the LMS to match your brand identity."
+                />
+              </Fade>
             </div>
           </div>
         </div>
@@ -375,13 +288,11 @@ class ElearningPlatformContent extends PureComponent {
           </div>
           <div className="team-image-wrapper">
             <div className="grid">
-              <div className="team-image">
-                <img
-                  srcSet={`${require('../../static/elearning-platform/team.png')} 1x, ${require('../../static/elearning-platform/team@2x.png')} 2x, ${require('../../static/elearning-platform/team@3x.png')} 3x`}
-                  src={require('../../static/elearning-platform/team.png')}
-                  alt="We’ll provide you with a development team based on the project desired functionality and timeline."
-                />
-              </div>
+              <PictureSmart
+                className="team-image"
+                requireImages={teamImages}
+                alt="We’ll provide you with a development team based on the project desired functionality and timeline."
+              />
             </div>
           </div>
           <div className="grid">
@@ -425,13 +336,11 @@ class ElearningPlatformContent extends PureComponent {
           <div className="grid">
             <h3 className="font-heading-5 advanced-features-title">Advanced Feature Ideas</h3>
 
-            <div className="advanced-feature-image">
-              <img
-                srcSet={featureImages[this.state.activeFeatureImage].srcSet}
-                src={featureImages[this.state.activeFeatureImage].src}
-                alt="By using advanced features ideas you can add any payment provider you like."
-              />
-            </div>
+            <PictureSmart
+              requireImages={featureImages[this.state.activeFeatureImage].images}
+              className="advanced-feature-image"
+              alt="By using advanced features ideas you can add any payment provider you like."
+            />
 
             <div className="advanced-feature-description">
               <h4 className="font-heading-4">
@@ -441,53 +350,17 @@ class ElearningPlatformContent extends PureComponent {
             </div>
           </div>
           <div className="advanced-feature-buttons">
-            <FeatureButton
-              i={require('../../static/elearning-platform/feature-payment.png')}
-              im={require('../../static/elearning-platform/feature-payment-mobile.png')}
-              srcSet={`${require('../../static/elearning-platform/feature-payment.png')} 1x, ${require('../../static/elearning-platform/feature-payment@2x.png')} 2x, ${require('../../static/elearning-platform/feature-payment@3x.png')} 3x`}
-              mobileSrcSet={`${require('../../static/elearning-platform/feature-payment-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-payment-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-payment-mobile@3x.png')} 3x`}
-              text="Payment Providers Integration"
-              d="Add any payment provider you need"
-              onMouseOver={() => this.setState({ activeFeatureImage: 'payment' })}
-              isActive={this.state.activeFeatureImage === 'payment'}
-              imageAlt="Add any payment provider you need"
-            />
-
-            <FeatureButton
-              i={require('../../static/elearning-platform/feature-skill.png')}
-              im={require('../../static/elearning-platform/feature-skill-mobile.png')}
-              srcSet={`${require('../../static/elearning-platform/feature-skill.png')} 1x, ${require('../../static/elearning-platform/feature-skill@2x.png')} 2x, ${require('../../static/elearning-platform/feature-skill@3x.png')} 3x`}
-              mobileSrcSet={`${require('../../static/elearning-platform/feature-skill-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-skill-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-skill-mobile@3x.png')} 3x`}
-              text="Skill-Based Learning System"
-              d="Configure learning programms based on skills"
-              onMouseOver={() => this.setState({ activeFeatureImage: 'skill' })}
-              isActive={this.state.activeFeatureImage === 'skill'}
-              imageAlt="Configure learning programs based on skills"
-            />
-
-            <FeatureButton
-              i={require('../../static/elearning-platform/feature-rating.png')}
-              im={require('../../static/elearning-platform/feature-rating-mobile.png')}
-              srcSet={`${require('../../static/elearning-platform/feature-rating.png')} 1x, ${require('../../static/elearning-platform/feature-rating@2x.png')} 2x, ${require('../../static/elearning-platform/feature-rating@3x.png')} 3x`}
-              mobileSrcSet={`${require('../../static/elearning-platform/feature-rating-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-rating-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-rating-mobile@3x.png')} 3x`}
-              text="Rating System"
-              d="Choose the learning programm and see how skils grow"
-              onMouseOver={() => this.setState({ activeFeatureImage: 'rating' })}
-              isActive={this.state.activeFeatureImage === 'rating'}
-              imageAlt="Choose among the learning programs and see how skills grow"
-            />
-
-            <FeatureButton
-              i={require('../../static/elearning-platform/feature-ecosystem.png')}
-              im={require('../../static/elearning-platform/feature-ecosystem-mobile.png')}
-              srcSet={`${require('../../static/elearning-platform/feature-ecosystem.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem@3x.png')} 3x`}
-              mobileSrcSet={`${require('../../static/elearning-platform/feature-ecosystem-mobile.png')} 1x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@2x.png')} 2x, ${require('../../static/elearning-platform/feature-ecosystem-mobile@3x.png')} 3x`}
-              text="Ecosystem integration"
-              d="Connect the LMS to your own and unique existing tools and systems"
-              onMouseOver={() => this.setState({ activeFeatureImage: 'ecosystem' })}
-              isActive={this.state.activeFeatureImage === 'ecosystem'}
-              imageAlt="Connect the LMS to your own current unique tools and systems"
-            />
+            {featureButtons.map(({ id, images, text, description, imageAlt }) => (
+              <FeatureButton
+                key={id}
+                images={images}
+                text={text}
+                d={description}
+                onMouseOver={() => this.setState({ activeFeatureImage: id })}
+                isActive={this.state.activeFeatureImage === id}
+                imageAlt={imageAlt}
+              />
+            ))}
           </div>
         </div>
       </article>

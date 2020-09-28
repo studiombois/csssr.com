@@ -2,20 +2,18 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './AboutFrontend.styles'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 
 import Heading from '../../../ui-kit/core-design/Heading'
 import SubHeading from '../../../ui-kit/core-design/SubHeading'
 import Text from '../../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import Grid from '../../../ui-kit/core-design/Grid'
 
-import aboutFrontend_desktop from '../../../../static/images/service/outsourcing-front-end/desktop.all/aboutFrontend.png?responsive'
-import aboutFrontend_desktop_webp from '../../../../static/images/service/outsourcing-front-end/desktop.all/aboutFrontend.png?responsive_and_webp'
-
-import aboutFrontend_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/aboutFrontend.png?responsive'
-import aboutFrontend_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/aboutFrontend.png?responsive_and_webp'
+const aboutFrontendImage = require.context(
+  '../../../../public/images/service/outsourcing-front-end/aboutFrontend?csssr-images',
+)
 
 const AboutFrontend = ({ className, l10n: { translations } }) => (
   <Grid as="article" className={className}>
@@ -43,13 +41,9 @@ const AboutFrontend = ({ className, l10n: { translations } }) => (
       }}
     />
 
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={{
-        'desktop.all': { png: aboutFrontend_desktop, webp: aboutFrontend_desktop_webp },
-        'mobile.all': { png: aboutFrontend_mobile, webp: aboutFrontend_mobile_webp },
-      }}
-      fallback={aboutFrontend_desktop}
+      requireImages={aboutFrontendImage}
       alt={translations.outsourcingFrontEnd.imgAlt.aboutFrontend}
     />
   </Grid>

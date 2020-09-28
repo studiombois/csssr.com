@@ -1,8 +1,10 @@
-import cleanCode from './cleanCode'
-import reliability from './reliability'
-import accessibility from './accessibility'
-import ux from './ux'
-import webSecurity from './webSecurity'
+const cleanCode = require.context('../../../public/images/core-values/cleanCode?csssr-images')
+const reliability = require.context('../../../public/images/core-values/reliability?csssr-images')
+const accessibility = require.context(
+  '../../../public/images/core-values/accessibility?csssr-images',
+)
+const ux = require.context('../../../public/images/core-values/ux?csssr-images')
+const webSecurity = require.context('../../../public/images/core-values/webSecurity?csssr-images')
 
 import { ReactComponent as Accessibility_1 } from '../../../static/icons/core-values/accessibility_1.svg'
 import { ReactComponent as Accessibility_2 } from '../../../static/icons/core-values/accessibility_2.svg'

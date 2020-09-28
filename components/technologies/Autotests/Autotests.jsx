@@ -1,17 +1,20 @@
 import React from 'react'
 import { string } from 'prop-types'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import styles from './Autotests.styles'
+
+import Heading from '../../ui-kit/core-design/Heading'
+import SubHeading from '../../ui-kit/core-design/SubHeading'
+import Grid from '../../ui-kit/core-design/Grid'
+
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-import Heading from '../../ui-kit/core-design/Heading'
-import SubHeading from '../../ui-kit/core-design/SubHeading'
-import Picture from '../../ui-kit/Picture'
-import Grid from '../../ui-kit/core-design/Grid'
-
-import images from '../../../data/technologies/autotests'
+const autotestsImages = require.context(
+  '../../../public/images/technologies/autotests?csssr-images',
+)
 
 const Autotests = ({ className, l10n: { translations } }) => (
   <div className={className}>
@@ -24,10 +27,9 @@ const Autotests = ({ className, l10n: { translations } }) => (
         dangerouslySetInnerHTML={{ __html: translations.technologies.autotests.title }}
       />
 
-      <Picture
+      <PictureSmart
         className="picture"
-        images={images}
-        fallback={images.png}
+        requireImages={autotestsImages}
         alt={translations.technologies.imgAlt.autotests}
       />
 

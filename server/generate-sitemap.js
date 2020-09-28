@@ -1,6 +1,5 @@
 import { supportedLocales } from '../common/locales-settings'
 
-const fetch = require('isomorphic-unfetch')
 const sitemap = require('sitemap')
 const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
 

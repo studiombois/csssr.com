@@ -5,7 +5,12 @@ import styles, { pictureStyles, textDataStyles } from './FormStateMessage.styles
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { func, oneOf, string, bool } from 'prop-types'
-import PictureForAllResolutions from '../../PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+
+const statusImages = {
+  fail: require.context('../../../public/images/forms/fail?csssr-images'),
+  success: require.context('../../../public/images/forms/success?csssr-images'),
+}
 
 class FormStateMessage extends PureComponent {
   static propTypes = {
@@ -89,9 +94,9 @@ class FormStateMessage extends PureComponent {
           )}
           {messageShown && shouldShowPicture && (
             <div className="picture">
-              <PictureForAllResolutions
+              <PictureSmart
                 css={pictureStyles}
-                image={{ namespace: 'forms', key: `${status}`, alt: '' }}
+                requireImages={statusImages[status]}
                 customResolutions={['360']}
                 testId={successPictureTestId}
               />

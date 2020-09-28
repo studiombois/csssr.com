@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import styles from './Greeting.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import greeting from '../../../data/core-values/greeting'
@@ -22,12 +22,8 @@ const Greeting = ({ className, id, l10n: { translations } }) => (
         className="heading"
       />
     </Grid>
-    <PictureForAllResolutions
-      images={images}
-      fallback={images['desktop.l'].png}
-      alt={imgAlt(translations)}
-      className="image"
-    />
+
+    <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
   </section>
 )
 

@@ -34,6 +34,8 @@ const base = css`
 
     img {
         margin-right: 10px;
+        width: auto;
+        height: auto;
     }
 
     @media screen and (max-width: 944px) {
@@ -65,4 +67,3 @@ const base = css`
 export default css`
   ${base}
 `
-

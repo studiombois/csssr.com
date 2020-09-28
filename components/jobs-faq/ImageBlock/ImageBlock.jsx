@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { object, string } from 'prop-types'
+import { func, string } from 'prop-types'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
@@ -15,7 +15,7 @@ const OriginImageBlock = ({ className, blockName, images }) => (
 OriginImageBlock.propTypes = {
   className: string,
   blockName: string,
-  images: object,
+  images: func,
 }
 
 const ImageBlock = styled(OriginImageBlock)`

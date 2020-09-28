@@ -69,7 +69,7 @@ const Dropdown = ({
 
 Dropdown.propTypes = {
   className: string,
-  testId: string.isRequired,
+  testId: string,
 }
 
 export default L10nConsumer(

@@ -1,19 +1,21 @@
 import React from 'react'
-import { array, object, string } from 'prop-types'
-import { L10nConsumer } from '../../../utils/l10nProvider'
 import cn from 'classnames'
+import { array, object, string } from 'prop-types'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const CoreValuesItem = ({ images, imgAlt, title, text, itemClassName, l10n: { translations } }) => (
   <div className={cn('card', itemClassName)}>
-    <PictureForAllResolutions
-      images={images}
-      fallback={images['desktop.all'].png}
+    <PictureSmart
+      requireImages={images}
       alt={imgAlt(translations)}
       className={cn(itemClassName, 'image')}
     />
+
     <Heading className={cn(itemClassName, 'title')} as="h3" type="regular" size="m">
       {title(translations)}
     </Heading>

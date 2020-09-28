@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: docker://quay.csssr.cloud/csssr/kuberta-init-workflow:v1
       - uses: actions/checkout@v2
+      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
+        id: gh
       - uses: docker/build-push-action@v1
         with:
           username: csssr-team+github_csssr_com_repo
@@ -19,9 +21,10 @@ jobs:
           registry: quay.csssr.cloud
           repository: csssr-team/csssr-com
           tags: build-${{ github.run_id }}
-          build_args: NPM_TOKEN,isProduction,csssrSpaceOrigin,processImages
+          build_args: NPM_TOKEN,isProduction,csssrSpaceOrigin,processImages,comHost
         env:
           NPM_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
           isProduction: "false"
           csssrSpaceOrigin: "https://csssr.space"
           processImages: "false"
+          comHost: https://${{ steps.gh.outputs.releaseID }}.com.csssr.cloud

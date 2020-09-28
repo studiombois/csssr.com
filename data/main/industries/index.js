@@ -1,7 +1,25 @@
-import { fintechImages, fintechImagesHovered } from './fintech'
-import { eCommerceImages, eCommerceImagesHovered } from './eCommerce'
-import { informationImages, informationImagesHovered } from './information'
-import { mediaAndMarketingImages, mediaAndMarketingImagesHovered } from './mediaAndMarketing'
+const fintechImages = require.context('../../../public/images/main/industries/fintech?csssr-images')
+const fintechImagesHovered = require.context(
+  '../../../public/images/main/industries/fintech-hovered?csssr-images',
+)
+const eCommerceImages = require.context(
+  '../../../public/images/main/industries/eCommerce?csssr-images',
+)
+const eCommerceImagesHovered = require.context(
+  '../../../public/images/main/industries/eCommerce-hovered?csssr-images',
+)
+const informationImages = require.context(
+  '../../../public/images/main/industries/information?csssr-images',
+)
+const informationImagesHovered = require.context(
+  '../../../public/images/main/industries/information-hovered?csssr-images',
+)
+const mediaAndMarketingImages = require.context(
+  '../../../public/images/main/industries/mediaAndMarketing?csssr-images',
+)
+const mediaAndMarketingImagesHovered = require.context(
+  '../../../public/images/main/industries/mediaAndMarketing-hovered?csssr-images',
+)
 
 export default [
   {
@@ -12,7 +30,6 @@ export default [
     href: 'fintech',
     images: fintechImages,
     imagesHovered: fintechImagesHovered,
-    fallback: fintechImages['desktop.l'].png,
   },
   {
     id: 'eCommerce',
@@ -22,7 +39,6 @@ export default [
     href: 'ecommerce',
     images: eCommerceImages,
     imagesHovered: eCommerceImagesHovered,
-    fallback: eCommerceImages['desktop.l'].png,
   },
   {
     id: 'information',
@@ -32,7 +48,6 @@ export default [
     href: 'information-technology',
     images: informationImages,
     imagesHovered: informationImagesHovered,
-    fallback: informationImages['desktop.l'].png,
   },
   {
     id: 'mediaAndMarketing',
@@ -42,6 +57,5 @@ export default [
     href: 'media-and-marketing',
     images: mediaAndMarketingImages,
     imagesHovered: mediaAndMarketingImagesHovered,
-    fallback: mediaAndMarketingImages['desktop.l'].png,
   },
 ]

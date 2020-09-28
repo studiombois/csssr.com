@@ -63,6 +63,24 @@
       "duration": "2 months"
     }
   },
+  "designCases": {
+    "heading": "Design cases",
+    "button": {
+      "title": "ALL design cases",
+      "href": "#"
+    },
+    "plug": "Case is in development",
+    "ING": {
+      "imgAlt": "ING",
+      "heading": "ING. Portal for small &amp;&nbsp;medium businesses.",
+      "text": "Helping to&nbsp;invent a&nbsp;new business direction for the biggest Dutch bank."
+    },
+    "NASA": {
+      "imgAlt": "NASA",
+      "heading": "NASA: a&nbsp;new way to&nbsp;manage space in&nbsp;space",
+      "text": "A&nbsp;spaceship storage and cargo management tool designed to&nbsp;make the launch preparation more efficient"
+    }
+  },
   "solutions": {
     "heading": "Our solutions",
     "lms": {

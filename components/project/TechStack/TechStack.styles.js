@@ -1,6 +1,10 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+
+const line_dash = require.context('../../../public/images/projects/common-pics/lines/dash?csssr-images')
+const line_curly = require.context('../../../public/images/projects/common-pics/lines/curly?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
@@ -52,7 +56,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
       top: 50%;
       transform: translate(0, -50%);
       width: 100%;
-      background-repeat: repeat-x;
       background-size: contain;
     }
   }
@@ -60,16 +63,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
   .duration-number {
     &:before {
       height: 25px;
-      background-image: url(${require('../../../static/icons/project/techStack/duration/curvy-line.svg').default});
+      background-repeat: no-repeat;
     }
   }
 
   .team-number {
     &:before {
       margin-top: ${calcRem(5)};
+      width: calc(100% + ${calcRem(23)});
       height: ${calcRem(4)};
-      background-position: -8px 0;
-      background-image: url(${require('../../../static/icons/project/techStack/team/line.svg').default});
+      background-repeat: repeat-x;
     }
   }
 
@@ -167,13 +170,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
     .duration-number {
       &:before {
-        background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
         left: ${calcRem(49)};
         top: calc(50% - ${calcRem(4)});
         height: ${calcRem(17)};
         background-size: auto ${calcRem(17)};
         background-position: left;
-        background-repeat: no-repeat;
       }
     }
 
@@ -183,7 +184,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
     .team-number {
       &:before {
-        background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
         margin-top: 0;
         left: ${calcRem(36)};
       }
@@ -231,12 +231,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
     .duration-number {
       &:before {
-        background-image: url(${require('../../../static/icons/project/techStack/duration/mobile/curvy-line.svg').default});
         left: ${calcRem(49)};
         height: ${calcRem(17)};
         background-size: auto ${calcRem(17)};
         background-position: left;
-        background-repeat: no-repeat;
       }
     }
 
@@ -258,7 +256,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
         left: ${calcRem(36)};
         margin: 0;
         min-width: ${calcRem(385)};
-        background-image: url(${require('../../../static/icons/project/techStack/team/mobile/line.svg').default});
       }
     }
   }
@@ -336,6 +333,13 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
     }
   }
 `
+
+export const backgroundImagesStyles = () => {
+  return css`
+    ${backgroundCssSmart('.team-number::before', line_dash)}
+    ${backgroundCssSmart('.duration-number::before', line_curly)}
+  `
+}
 
 export default props => {
   const breakpoints = props.theme.breakpoints

@@ -18,7 +18,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   ${mobile.all} {
     & {
       background-image: url(${require('../../../static/icons/way-of-work/greeting/bg-mobile.svg').default});
-      background-position: 50% ${calcRem(140)};
+      background-position: 50% 80%;
     }
   }
 

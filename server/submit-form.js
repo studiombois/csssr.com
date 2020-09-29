@@ -9,6 +9,8 @@ const amoSales = sales.init(
   process.env.AMO_CRM_SALES_USER_HASH,
 )
 
+console.log(process.env.AMO_CRM_SALES_USER_LOGIN, process.env.AMO_CRM_SALES_USER_HASH)
+
 module.exports = async (req, res) => {
   const { name, phone, email, message, pageName, newsletter, gacid, language } = req.body
 

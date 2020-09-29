@@ -8,6 +8,8 @@ test('test', () => {
     'en/privacy-policy.js',
     'en/our-cases.js',
     // 'ru/our-cases.js',
+    'en/design-lab.js',
+    // 'ru/design-lab.js',
     'en/tech-stack.js',
     'en/way-of-work.js',
     'ru/core-values.js',

@@ -5,6 +5,7 @@ pipeline {
     imageTag = ""
     bash = "#!/bin/bash\nsource ~/.bashrc\nsource ~/.config/csssr/non-breaking-profile\n"
   }
+  agent any
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space (без слэша на конце)', name: 'csssrSpaceOrigin', trim: true)

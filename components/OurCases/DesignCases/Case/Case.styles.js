@@ -85,8 +85,8 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
   }
 
   ${mobile.all} {
-    & {
-      grid-column: 1 / span 6 !important;
+    && {
+      grid-column: 1 / span 6;
 
       &:not(:nth-of-type(1)) {
         margin-top: ${calcRem(60)};

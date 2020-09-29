@@ -15,7 +15,7 @@ const Case = ({
   l10n: { translations },
 }) => {
   return (
-    <div className={`${className}`}>
+    <div className={className}>
       <div className="image-wrapper">
         <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
         <Text

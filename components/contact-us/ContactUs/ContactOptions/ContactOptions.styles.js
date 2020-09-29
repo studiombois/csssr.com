@@ -2,10 +2,6 @@ import { css } from '@emotion/core'
 import { calcRem } from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
-  & {
-    overflow-x: hidden;
-  }
-
   .subheading {
     font-family: Roboto, sans-serif;
     font-weight: 300;

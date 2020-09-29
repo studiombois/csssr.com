@@ -1,7 +1,7 @@
 import React from 'react'
 import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
-import styles from './DevCases.styles'
+import styles from './DesignCases.styles'
 import Grid from '../../ui-kit/core-design/Grid'
 import Case from './Case'
 import Heading from '../../ui-kit/core-design/Heading'
@@ -9,7 +9,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const DevCases = ({ className, content: { heading, cases }, l10n: { translations } }) => {
+const DesignCases = ({ className, content: { heading, cases }, l10n: { translations } }) => {
   return (
     <Grid className={className} as="section">
       <Heading.H2
@@ -27,14 +27,14 @@ const DevCases = ({ className, content: { heading, cases }, l10n: { translations
   )
 }
 
-DevCases.propTypes = {
+DesignCases.propTypes = {
   className: string,
   content: object,
 }
 
 export default L10nConsumer(
   DeviceConsumer(
-    MsBrowserConsumer(styled(DevCases)`
+    MsBrowserConsumer(styled(DesignCases)`
       ${styles}
     `),
   ),

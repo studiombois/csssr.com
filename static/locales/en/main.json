@@ -8,8 +8,24 @@
     "description": "CSSSR is&nbsp;a&nbsp;web-development group of&nbsp;companies. Though <span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> development services are our specialty, we&nbsp;provide superb back-end and devops services, along with design to&nbsp;help our clients build top to&nbsp;bottom solutions."
   },
   "services": {
-    "title": "",
-    "description": ""
+    "title": "Our Services",
+    "description": "Though web development services are our specialty, we&nbsp;also do&nbsp;superb design to&nbsp;help our clients build top to&nbsp;bottom solutions.",
+    "outsourcing": {
+      "title": "<b>Web Development</b> Outsourcing",
+      "description": "Fast, reliable and professional web development services."
+    },
+    "backend": {
+      "title": "<b>Back-End</b> &amp;&nbsp;<b>DevOps</b>",
+      "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
+    },
+    "mvp": {
+      "title": "<b>MVP</b> Development",
+      "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;meant to&nbsp;guide its future development."
+    },
+    "design": {
+      "title": "<b>Design</b>Lab",
+      "description": "We&nbsp;have <b>Humble Team</b> who focuses on&nbsp;design that would fulfill the most complex expectations of&nbsp;users and investors, and help to&nbsp;accomplish your revenue goals."
+    }
   },
   "ourFeatures": {
     "feature1": {
@@ -96,11 +112,10 @@
   },
   "imgAlt": {
     "hero": "CSSSR is an international IT group.",
-    "square": "Square figure",
-    "triangle": "Triangle figure",
-    "circle": "Circle figure",
-    "arc": "Arc figure",
-    "figures": "Square, Triangle and Circle figures in a pile",
+    "outsourcing": "",
+    "backend": "",
+    "mvp": "",
+    "design": "",
     "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly",
     "fintech": "CSSSR builds a strong digital presence for most banking and financial services.",
     "eCommerce": "CSSSR makes our clients in the highly competitive e-commerce industry win customers.",

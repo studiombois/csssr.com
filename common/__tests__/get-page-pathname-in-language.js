@@ -9,6 +9,8 @@ test('test', () => {
     { language: 'en', pathname: 'tech-stack' },
     { language: 'en', pathname: 'our-cases' },
     // { language: 'ru', pathname: 'our-cases' },
+    { language: 'en', pathname: 'design-lab' },
+    // { language: 'ru', pathname: 'design-lab' },
     { language: 'en', pathname: 'way-of-work' },
     { language: 'ru', pathname: 'core-values' },
     { language: 'ru', pathname: 'index' },

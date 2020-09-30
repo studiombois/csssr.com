@@ -107,6 +107,37 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/en/design-lab',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/design-lab',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/design-lab',
+      },
+    ],
+  },
+  // {
+  //   url: 'https://csssr.com/ru/design-lab',
+  //   changefreq: 'weekly',
+  //   priority: 1,
+  //   links: [
+  //     {
+  //       lang: 'en',
+  //       url: 'https://csssr.com/en/design-lab',
+  //     },
+  //     {
+  //       lang: 'ru',
+  //       url: 'https://csssr.com/ru/design-lab',
+  //     },
+  //   ],
+  // },
+  
+  {
     url: 'https://csssr.com/ru/industry/ecommerce',
     changefreq: 'weekly',
     priority: 1,

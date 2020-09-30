@@ -58,7 +58,6 @@ const modal = () => css`
   .calendly-inline-widget iframe,
   .calendly-badge-widget iframe,
   .calendly-overlay iframe {
-    display: inline;
     width: 100%;
     height: 100%
   }
@@ -95,21 +94,14 @@ const modal = () => css`
   .calendly-overlay .calendly-popup {
     box-sizing: border-box;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
-    width: 80%;
-    min-width: 900px;
-    max-width: 1000px;
-    height: 90%;
-    max-height: 680px
+    top: 4rem;
+    width: 100%;
+    height: calc(100% - 4rem);
   }
 
   @media (max-width: 975px) {
     .calendly-overlay .calendly-popup {
       position: fixed;
-      top: 50px;
       left: 0;
       right: 0;
       bottom: 0;

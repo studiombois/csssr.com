@@ -1,12 +1,13 @@
 import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
@@ -18,21 +19,20 @@ const Development = ({ className, id, l10n: { translations } }) => {
   return (
     <section className={className} id={id}>
       <Grid>
-        <Heading.H1
+        <Heading.H2
           type="slab"
           size="m"
           dangerouslySetInnerHTML={{ __html: translations.wayOfWork.development.title }}
           className="heading"
         />
 
-        <PictureForAllResolutions
+        <PictureSmart
           className="scrumbanImg"
-          images={scrumban.img}
-          fallback={scrumban.img['desktop.l']}
+          requireImages={scrumban.img}
           alt={scrumban.imgAlt(translations)}
         />
 
-        <Heading.H2
+        <Heading.H3
           type="regular"
           size="l"
           dangerouslySetInnerHTML={{ __html: scrumban.title(translations) }}
@@ -63,14 +63,13 @@ const Development = ({ className, id, l10n: { translations } }) => {
           />
         </div>
 
-        <PictureForAllResolutions
+        <PictureSmart
           className="reviewImg"
-          images={review.img}
-          fallback={review.img['desktop.l']}
+          requireImages={review.img}
           alt={review.imgAlt(translations)}
         />
 
-        <Heading.H2
+        <Heading.H3
           type="regular"
           size="l"
           dangerouslySetInnerHTML={{ __html: review.title(translations) }}

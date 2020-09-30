@@ -5,12 +5,11 @@ import cn from 'classnames'
 import { Form as ReactFinalForm } from 'react-final-form'
 import createDecorator, { getFormInputs } from 'final-form-focus'
 import { FORM_ERROR } from 'final-form'
-import fetch from 'isomorphic-unfetch'
 import getGaCid from '../../utils/client/getGaCid'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import { DeviceConsumer } from '../../utils/deviceProvider'
-import testEmail from '../../utils/testEmail'
+import testEmails from '../../utils/testEmails'
 import Form from './Form'
 import OutsideClickHandler from 'react-outside-click-handler'
 import FocusLock from 'react-focus-lock'
@@ -23,7 +22,6 @@ const fieldsIds = {
   phone: 'ConctactModalForm_phone',
   email: 'ConctactModalForm_email',
   message: 'ConctactModalForm_message',
-  privacyPolicy: 'ConctactModalForm_privacyPolicy',
   newsletter: 'ConctactModalForm_newsletter',
 }
 
@@ -59,7 +57,7 @@ class ContactModal extends PureComponent {
       return { [FORM_ERROR]: translations.common.form.errors.general }
     }
 
-    const isTestEmail = values.email === testEmail
+    const isTestEmail = testEmails.includes(values.email)
     if (res.status === 201) {
       if (window.dataLayer && !isTestEmail) {
         window.dataLayer.push({ event: 'form_success' })
@@ -129,6 +127,7 @@ class ContactModal extends PureComponent {
                 'normal-height': hasFailOrSuccessStatus,
               })}
               ref={this.modalWrapperRef}
+              data-testid="ContactModal:block"
             >
               <ReactFinalForm
                 component={Form}

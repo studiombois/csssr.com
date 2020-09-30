@@ -8,10 +8,12 @@ const next = require('next')
 const { pick } = require('ramda')
 const submitForm = require('./submit-form')
 const submitCalculatorForm = require('./submit-calculator-form')
+const sendEmail = require('./send-email')
 const generateSitemap = require('./generate-sitemap').generateSitemap
 const { isDevelopment, isProduction } = require('../utils/app-environment')
 import { defaultLocaleByLanguage } from '../common/locales-settings'
 import l10nMiddleware from './l10n-middleware'
+import abMiddleware from './ab/middleware'
 import getPagesList from './get-pages-list'
 import { ONE_YEAR } from '../utils/timePeriods'
 import localeDetector from './locale-detector'
@@ -41,7 +43,7 @@ const startApp = async () => {
     const acceptLanguageHeader = req.headers['accept-language']
     const locale = localeDetector(localeFromPath, localeFromCookie, acceptLanguageHeader)
 
-    res.redirect(301, `/${locale}/jobs`)
+    res.redirect(302, `/${locale}/jobs`)
   })
 
   server.get('/:language(ru|en)/jobs/:jobName', (req, res) => {
@@ -88,13 +90,14 @@ const startApp = async () => {
   server.use(
     l10nMiddleware({
       loadPath: path.join(__dirname, '../static/locales'),
-      ignorePaths: [/^\/_next/, /^\/static/],
+      ignorePaths: [/^\/_next/, /^\/static/, /^\/public/],
       lookupCookieName,
     }),
   )
 
   server.post('/api/submit-form', submitForm)
   server.post('/api/submit-calculator-form', submitCalculatorForm)
+  server.post('/api/send-email', sendEmail)
 
   server.get('/', (req, res) => {
     res.redirect(`/${res.locals.l10n.language}`)
@@ -106,7 +109,7 @@ const startApp = async () => {
   })
 
   if (!isDevelopment) {
-    server.get(/^\/_next\/static\/(fonts|icons|images)\//, (req, res, nextHandler) => {
+    server.get(/^\/_next\/(static|public)\/(fonts|icons|images)\//, (req, res, nextHandler) => {
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
       nextHandler()
     })
@@ -126,9 +129,13 @@ const startApp = async () => {
   server.get('/robots.txt', (req, res) => {
     res.type('text/plain')
     if (isProduction) {
-      res.send('User-agent: *\nSitemap: https://csssr.com/sitemap.xml')
+      res.send(
+        'User-agent: *\nClean-param: utm&name&gclid&quests&amp&nm\nDisallow: /*privacy-policy\nDisallow: /*cookies-policy\nSitemap: https://csssr.com/sitemap.xml',
+      )
     } else {
-      res.send('User-agent: *\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml')
+      res.send(
+        'User-agent: *\nClean-param: utm&name&gclid&quests&amp&nm\nDisallow: /\nSitemap: https://csssr.com/sitemap.xml',
+      )
     }
   })
 
@@ -145,6 +152,12 @@ const startApp = async () => {
     })
   })
 
+  server.use(
+    abMiddleware({
+      ignorePaths: [/^\/_next/, /^\/static/],
+    }),
+  )
+
   /* eslint-disable no-prototype-builtins */
   server.get('/:locale/jobs/:jobPathName', (req, res) => {
     const params = {
@@ -155,6 +168,10 @@ const startApp = async () => {
     return app.render(req, res, `/${req.params.locale}/job`, params)
   })
   /* eslint-enable no-prototype-builtins */
+
+  server.get('/healthz', (req, res) => {
+    res.send('ok')
+  })
 
   server.get('*', (req, res) => {
     return handle(req, res)

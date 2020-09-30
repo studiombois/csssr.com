@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "Back-end and DevOps",
-    "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
+    "description": "CSSSR offers DevOps solutions: reinforce your web application with reliable back-end development and duly adjusted infrastructure."
   },
   "hero": {
     "title": "<span style='font-weight: bold;'>Back-end</span><br />and <span style='font-weight: bold;'>DevOps</span>",
     "description": "Reinforce your web application with reliable <span style='white-space:nowrap'>back-end</span> development and duly adjusted infrastructure.",
     "button": "Let&rsquo;s Talk",
-    "imgAlt": "Three people building reliable infrastructure"
+    "imgAlt": "Reinforce your web application with reliable back-end development"
   },
   "backEndDevelopment": {
     "title": "Back-end Development",
@@ -39,14 +39,14 @@
     "java": "We&nbsp;can write on&nbsp;well-proven <span style='font-weight:900'>Java</span>, but we&nbsp;prefer <span style='font-weight:900'>Kotlin</span>&nbsp;&mdash; a&nbsp;modern language working on&nbsp;<span style='font-weight:900'>JVM</span> (Java Virtual Machine).",
     "experts": "Our experts are ready to&nbsp;advise you on&nbsp;the technologies that would fit your project most.",
     "link": "Take a&nbsp;look at&nbsp;the other <a style='text-decoration: underline; color: #0076FF;' href='/en/tech-stack'>technologies we&nbsp;use</a>",
-    "javaImgAlt": "Styled logos of Kotlin and Java",
-    "mongoDbImgAlt": "An elephant symbolizing PostgreSQL"
+    "javaImgAlt": "We can write on well-proven Java, but we prefer Kotlin.",
+    "mongoDbImgAlt": "We work with a wide range of back-end technologies as well."
   },
   "devOpsServices": {
     "title": "DevOps Services",
     "subtitle": "We&nbsp;offer the DevOps service as&nbsp;a&nbsp;part of&nbsp;our software development process.",
     "description": "Our DevOps engineers always work side by side with our development teams creating, configuring, and supporting a reliable and secure environment for each project.",
-    "imgAlt": "Illustration with a man holding a laptop connected to a server",
+    "imgAlt": "We offer the DevOps service as a part of our software development process.",
     "solutions": {
       "title": "DevOps Solutions",
       "continuous": {

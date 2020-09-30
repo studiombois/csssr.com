@@ -3,14 +3,21 @@ import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import { css, Global } from '@emotion/core'
-import styles, { pictureHunterStyles } from './Vacancies.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import PictureOld from '../../Picture'
-import Grid from '../../ui-kit/core-design/Grid'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styles, { pictureHunterStyles, backgroundImagesStyles } from './Vacancies.styles'
 
-import { distanceImages, faqImages, howImages, whoImages } from '../../../data/jobs/images'
+import Grid from '../../ui-kit/core-design/Grid'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
+
+import {
+  distanceImages,
+  faqImages,
+  howImages,
+  whoImages,
+  jobsHunter,
+} from '../../../data/jobs/images'
 
 class Vacancies extends PureComponent {
   render() {
@@ -32,21 +39,22 @@ class Vacancies extends PureComponent {
             `
           }
         />
+        <Global styles={backgroundImagesStyles} />
         <Grid as="article" className={className}>
           <header>
             <h1 className="font_h1-regular">
               <div dangerouslySetInnerHTML={{ __html: translations.jobs.title }} />
-              <span
-                className="font_subhead-regular"
-                dangerouslySetInnerHTML={{ __html: translations.jobs.subTitle }}
-              />
             </h1>
+            <span
+              className="font_subhead-regular"
+              dangerouslySetInnerHTML={{ __html: translations.jobs.subTitle }}
+            />
           </header>
 
           {this.props.vacancies.length > 0 && (
             <ul>
-              {this.props.vacancies.map((vacancy) => (
-                <li key={vacancy.id}>
+              {this.props.vacancies.map((vacancy, index) => (
+                <li key={vacancy.id} data-testid={`Jobs:list.item-${index}`}>
                   <Link
                     href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
                     as={`/${locale}/jobs/${vacancy.pathName}`}
@@ -65,11 +73,10 @@ class Vacancies extends PureComponent {
             </ul>
           )}
 
-          <PictureForAllResolutions
+          <PictureSmart
             className="picture"
-            images={howImages}
-            fallback={howImages['desktop.l']}
-            alt={translations.jobs.faq.alt}
+            requireImages={howImages}
+            alt={translations.jobs.how.alt}
           />
 
           <h2 className="font_h2-regular">
@@ -81,11 +88,10 @@ class Vacancies extends PureComponent {
             dangerouslySetInnerHTML={{ __html: translations.jobs.how.description }}
           />
 
-          <PictureForAllResolutions
+          <PictureSmart
             className="picture"
-            images={whoImages}
-            fallback={whoImages['desktop.l']}
-            alt={translations.jobs.faq.alt}
+            requireImages={whoImages}
+            alt={translations.jobs.who.alt}
           />
 
           <h2 className="font_h2-regular">
@@ -97,11 +103,10 @@ class Vacancies extends PureComponent {
             dangerouslySetInnerHTML={{ __html: translations.jobs.who.description }}
           />
 
-          <PictureForAllResolutions
+          <PictureSmart
             className="picture"
-            images={distanceImages}
-            fallback={distanceImages['desktop.l']}
-            alt={translations.jobs.faq.alt}
+            requireImages={distanceImages}
+            alt={translations.jobs.about.alt}
           />
 
           <h2
@@ -119,25 +124,27 @@ class Vacancies extends PureComponent {
 
           {language === 'ru' && (
             <Fragment>
-              <PictureForAllResolutions
+              <PictureSmart
                 className="picture-faq"
-                images={faqImages}
-                fallback={faqImages['desktop.l']}
+                requireImages={faqImages}
                 alt={translations.jobs.faq.alt}
+                testid="Jobs:img.faq"
               />
+
               <p className="faq-text font_p16-regular">
                 {translations.jobs.faq.title}
 
-                <a href="/ru/jobs-faq" className="font_link-list_16">
+                <a href="/ru/jobs-faq" className="font_link-list_16" data-testid="Jobs:link.faq">
                   {translations.jobs.faq.link}
                 </a>
               </p>
             </Fragment>
           )}
 
-          <PictureOld
+          <PictureSmart
             css={pictureHunterStyles}
-            image={{ namespace: 'jobs', key: 'jobs-hunter', alt: translations.jobs.hunter.alt }}
+            requireImages={jobsHunter}
+            alt={translations.jobs.hunter.alt}
           />
           <p className="hunter-text font_p16-regular">
             {translations.jobs.hunter.description}&nbsp;

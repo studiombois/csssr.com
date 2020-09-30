@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "Core Values",
-    "description": "We follow the best practices in everything we do."
+    "description": "The core values of the CSSSR group: clean and clear code, quality of the final product, web accessibility standards, and security of all web applications."
   },
   "imgAlt": {
-    "greeting": "Illustration with wavy horizontal lines, geometric figures and a small rocket flying along the lines.",
-    "cleanCode": "Illustration: a programmer writes and writes code on a laptop",
-    "reliability": "Illustration: a man folds a wall of lego",
-    "accessibility": "Illustration of a girl from mosaic running with a laptop in her hand",
-    "ux": "Illustration: a man lies and reads a newspaper",
-    "webSecurity": "Illustration: a programmer writes code while sitting at a table"
+    "greeting": "When developing front-end, we strictly follow the core principles in our work.",
+    "cleanCode": "We create a clean and clear code that is easy to support.",
+    "reliability": "We care about final product quality and our clients' reputation.",
+    "accessibility": "We employ web accessibility standards.",
+    "ux": "We employ pixel-perfect development.",
+    "webSecurity": "We carefully consider code architecture and pay special attention to security issues."
   },
   "greeting": {
-    "title": "Core Values"
+    "title": "CSSSR Core Values"
   },
   "detailValue": {
     "cleanCode": {

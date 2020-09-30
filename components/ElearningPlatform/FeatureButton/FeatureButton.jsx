@@ -1,32 +1,30 @@
 import React from 'react'
-import styled from '@emotion/styled'
 import cn from 'classnames'
-
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styled from '@emotion/styled'
 import styles from './FeatureButton.styles'
 
 const FeatureButton = ({
   className,
   text,
   d,
-  i,
-  srcSet,
+  images,
   onClick,
-  clicked,
   onMouseOver,
-  onMouseOut,
-  mobileSrcSet,
-  im,
+  imageAlt,
+  isActive,
 }) => {
   return (
-    <div className={className} onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-      <img src={i} srcSet={srcSet} alt="image" className="image" />
-      <img src={im} srcSet={mobileSrcSet} alt="image" className="mobile-image" />
+    <div
+      className={cn(className, {
+        active: isActive,
+      })}
+      onClick={onClick}
+      onMouseOver={onMouseOver}
+    >
+      <PictureSmart className="image" requireImages={images} alt={imageAlt} />
 
-      <div
-        className={cn('wrapper', {
-          'wrapper-active': clicked === 1,
-        })}
-      >
+      <div className="wrapper">
         <p className="font-p-4 title">{text}</p>
         <p className="font-p-2">{d}</p>
       </div>

@@ -13,7 +13,7 @@ import CandidateInfoSection from '../CandidateInfoSection'
 import AnimatedButton from '../../ui-kit/core-design/AnimatedButton'
 import Text from '../../ui-kit/core-design/Text'
 import FormStateMessage from '../../ui-kit/FormStateMessage/FormStateMessage'
-import Picture from '../../Picture'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const picturesMap = {
@@ -55,6 +55,8 @@ const picturesMap = {
   'backend-qa-engineer': 'QA_2',
   'deputy-chief-accountant': 'Documents_2',
 }
+
+import { faqSmallImages } from '../../../data/jobs/images'
 
 const divideSections = (sections) => {
   const firstQuestIndex = sections.findIndex(
@@ -157,6 +159,19 @@ class CandidateForm extends PureComponent {
     this.handleMediaMatch(this.mobileMediaQuery)
   }
 
+  // Сбрасываем состояние полей формы, при переходе на новую вакансию
+  componentDidUpdate(prevProps) {
+    const {
+      form: { reset },
+      vacancy: { id },
+    } = this.props
+
+    prevProps.vacancy.id !== id &&
+      setTimeout(() => {
+        reset()
+      }, 0)
+  }
+
   componentWillUnmount() {
     this.mobileMediaQuery.removeListener(this.handleMediaMatch)
   }
@@ -169,11 +184,18 @@ class CandidateForm extends PureComponent {
   renderVacancyImageAndLinks = () => {
     const {
       vacancies,
-      vacancy: { name },
+      vacancy: { name, pathName },
     } = this.props
     const pictureName = picturesMap[this.props.vacancy.pathName]
 
-    return <VacancyImageAndLinks vacancies={vacancies} pictureName={pictureName} name={name} />
+    return (
+      <VacancyImageAndLinks
+        vacancies={vacancies}
+        pictureName={pictureName}
+        name={name}
+        pathName={pathName}
+      />
+    )
   }
 
   render() {
@@ -201,13 +223,13 @@ class CandidateForm extends PureComponent {
             })}
           >
             {vacancy.name}
-
-            {vacancy.employment === 'part-time' ? (
-              <span className="font_subhead-regular">{translations.job.remote}</span>
-            ) : (
-              <span className="font_subhead-regular">{translations.job.remoteAndFullTime}</span>
-            )}
           </h1>
+
+          {vacancy.employment === 'part-time' ? (
+            <span className="font_subhead-regular">{translations.job.remote}</span>
+          ) : (
+            <span className="font_subhead-regular">{translations.job.remoteAndFullTime}</span>
+          )}
 
           <p
             className="font_p24-strong"
@@ -219,15 +241,16 @@ class CandidateForm extends PureComponent {
 
           {language === 'ru' && (
             <div className="faq-text-container">
-              <Picture
+              <PictureSmart
                 className="faq-picture visible_on_mobile"
-                image={{ namespace: 'jobs', key: 'faq', alt: translations.jobs.faq.alt }}
+                requireImages={faqSmallImages}
                 css={faqImageStyles}
+                testid="Jobs:img.faq"
               />
               <p className="faq-text font_p16-regular">
                 {translations.job.faq.title}
 
-                <a href="/ru/jobs-faq" className="font_link-list_16">
+                <a href="/ru/jobs-faq" className="font_link-list_16" data-testid="Jobs:link.faq">
                   {translations.job.faq.link}
                 </a>
               </p>
@@ -253,7 +276,12 @@ class CandidateForm extends PureComponent {
             })}
             ref={this.messageRef}
           >
-            <AnimatedButton type="submit" status={status}>
+            <AnimatedButton
+              type="submit"
+              status={status}
+              testId="Jobs:form:button.submit"
+              failImgTestId="Jobs:form:img.fail"
+            >
               <Text type="perforator" size="m" className="button-content" as="span">
                 {translations.job.send}
               </Text>
@@ -266,6 +294,8 @@ class CandidateForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail="join@csssr.com"
+              successPictureTestId="Jobs:form:img.result"
+              testId="Jobs:form.text.result"
             />
           </div>
         </FormRow>

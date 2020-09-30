@@ -1,18 +1,23 @@
 import React from 'react'
 import { object, string } from 'prop-types'
+import cn from 'classnames'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
-import styles from './Hero.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
+import { Global } from '@emotion/core'
+import styles, { backgroundImagesStyles } from './Hero.styles'
+
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import Link from '../../ui-kit/core-design/Link'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Hero = ({
   className,
   id,
+  projectId,
   content: { heading, link, subHeading, text, images, imgAlt },
   l10n: { translations },
 }) => {
@@ -33,9 +38,10 @@ const Hero = ({
           target="_blank"
           rel="noreferrer noopener"
           dangerouslySetInnerHTML={{ __html: link(translations) }}
+          data-testid="Project:link.project-site"
         />
 
-        <Heading.H3
+        <Heading.H2
           type="slab"
           size="m"
           dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
@@ -50,20 +56,16 @@ const Hero = ({
               size="m"
               as="p"
               dangerouslySetInnerHTML={{ __html: item(translations) }}
-              className="paragraph"
+              className={`paragraph paragraph_${index}`}
             />
           ))}
         </div>
 
-        <div className="pic-wrapper">
-          <PictureForAllResolutions
-            images={images}
-            fallback={images['desktop.l'].png}
-            alt={imgAlt(translations)}
-            className="image"
-          />
+        <div className={cn('pic-wrapper', projectId === 'mindbox' && `pic-wrapper_${projectId}`)}>
+          <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
         </div>
       </Grid>
+      <Global styles={backgroundImagesStyles(className)} />
     </section>
   )
 }

@@ -1,12 +1,13 @@
 import React from 'react'
 import { string } from 'prop-types'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
@@ -19,7 +20,7 @@ const Organized = ({ className, id, l10n: { translations } }) => {
     <section className={className} id={id}>
       <Grid>
         <div className="header">
-          <Heading.H1
+          <Heading.H2
             type="slab"
             size="m"
             dangerouslySetInnerHTML={{ __html: translations.wayOfWork.organized.title }}
@@ -36,10 +37,9 @@ const Organized = ({ className, id, l10n: { translations } }) => {
         </div>
 
         <div className="skydiverWrap">
-          <PictureForAllResolutions
+          <PictureSmart
             className="skydiver"
-            images={skydiverImages}
-            fallback={skydiverImages['desktop.l']}
+            requireImages={skydiverImages}
             alt={translations.wayOfWork.organized.imgAlt.skydiver}
           />
         </div>
@@ -67,10 +67,9 @@ const Organized = ({ className, id, l10n: { translations } }) => {
         />
 
         <div className="skydiversWrap">
-          <PictureForAllResolutions
+          <PictureSmart
             className="skydivers"
-            images={skydiversImages}
-            fallback={skydiversImages['desktop.l']}
+            requireImages={skydiversImages}
             alt={translations.wayOfWork.organized.imgAlt.skydivers}
           />
         </div>

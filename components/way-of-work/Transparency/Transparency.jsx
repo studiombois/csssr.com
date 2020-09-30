@@ -26,7 +26,7 @@ const Transparency = ({ className, id, l10n: { translations } }) => {
   return (
     <section className={className} id={id}>
       <Grid>
-        <Heading.H1
+        <Heading.H2
           type="slab"
           size="m"
           dangerouslySetInnerHTML={{ __html: translations.wayOfWork.transparency.title }}

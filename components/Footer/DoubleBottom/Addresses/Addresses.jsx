@@ -80,6 +80,7 @@ const Addresses = ({
             />
 
             <Text
+              data-testid={`Footer.text.address-${id}`}
               className="address"
               dangerouslySetInnerHTML={{ __html: translations.common.footer.addresses[id].address }}
               size={textSize}
@@ -93,6 +94,7 @@ const Addresses = ({
                 href={`tel:${translations.common.footer.addresses[id].phone}`}
                 size={textSize}
                 type="list"
+                data-testid={`Footer.link.tel-${id}`}
               />
             )}
 

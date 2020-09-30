@@ -111,11 +111,11 @@ export const nav = [
     ],
   },
   {
-    id: 'products',
+    id: 'solutions',
     links: [
       {
         id: 'lms',
-        href: 'products/lms',
+        href: 'solutions/lms',
       },
       {
         id: 'tracker',
@@ -138,6 +138,11 @@ export const nav = [
       {
         id: 'blog',
         href: 'https://blog.csssr.com',
+      },
+      {
+        id: 'contacts',
+        href: 'contacts',
+        testId: 'Footer:link.contacts',
       },
     ],
   },

@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { L10nConsumer } from '../../utils/l10nProvider'
 import Head from '../Head'
 import Layout from '../Layout'
 import Greeting from './Greeting'
@@ -9,8 +8,11 @@ import Development from './Development'
 import Transparency from './Transparency'
 import Form from '../ContactFormWrapper'
 
+import { L10nConsumer } from '../../utils/l10nProvider'
+
 const WayOfWork = ({ l10n: { translations } }) => {
   const pageName = 'wayOfWork'
+
   return (
     <Layout pageName={pageName}>
       <Head

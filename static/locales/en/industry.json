@@ -2,27 +2,27 @@
   "meta": {
     "ecommerce": {
       "title": "Custom E-Commerce Development Services",
-      "description": "We help clients in the highly competitive e-commerce industry win each new customer."
+      "description": "CSSSR helps clients in the highly competitive e-commerce industry win new customers. We’re ready to transform your design layouts into well performing websites."
     },
     "fintech": {
       "title": "FinTech and Banking Web Development",
-      "description": "We built a strong digital presence for banking and financial services."
+      "description": "CSSSR group builds a strong digital presence for banks and financial service providers."
     },
     "informationTechnology": {
       "title": "Web Development Services for IT Companies",
-      "description": "We push IT-companies to the cutting edge of technological progress."
+      "description": "We push IT-companies on the cutting edge of technological progress and help them to become the market leaders."
     },
     "mediaAndMarketing": {
       "title": "Custom Development for Media-Related Companies",
-      "description": "We deliver high-quality experiences capable of handling large-scale data and any scale of concurrent users."
+      "description": "CSSSR has helped many media companies grow and evolve, we maintain the highest standards of web development and apply the best practices to each project."
     }
   },
   "imgAlt": {
-    "ourClients": "Сompany logos of our customers",
-    "facts": "Alt text for illustartion",
-    "coreValuesAccessibility": "Ea commodo magna elit quis culpa quis ut fugiat",
-    "coreValuesSecurity": "Anim eu ipsum esse dolore in culpa tempor ut amet aute",
-    "coreValuesUX": "Incididunt dolore laboris ex occaecat aute eu reprehenderit magna consequat.",
+    "ourClients": "CSSSR clients logo",
+    "facts": "Personal approach to every client",
+    "coreValuesAccessibility": "All pages accessibility for every client",
+    "coreValuesSecurity": "Web Security",
+    "coreValuesUX": "We pay serious attention to user experience",
     "projects_1": "Schematic illustration of a web portal",
     "projects_2": "Schematic illustration of a web portal",
     "projects_3": "Schematic illustration of a web portal"
@@ -30,25 +30,25 @@
   "greeting": {
     "ecommerce": {
       "title": "Custom E-Commerce <br/>Development Services",
-      "paragraph": "In&nbsp;the constantly growing and highly competitive <span style=\"white-space: nowrap\">e-commerce</span> industry every page, every metric, and every customer opinion plays a&nbsp;huge role. We&rsquo;re ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales.",
+      "paragraph": "CSSSR is&nbsp;ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales. In&nbsp;the constantly growing and highly competitive e-commerce industry every page, every metric, and every customer opinion matters.",
       "button": "Hire us",
       "imgAlt": "Illustration with two figures of people, a man conveys something to a girl"
     },
     "fintech": {
       "title": "Fintech and Banking<br /> Web Development",
-      "paragraph": "The financial industry is&nbsp;expanding its digital presence, moving more and more services online to&nbsp;meet rising consumer demand. With this transition comes a&nbsp;growing need for higher digital security standards. Find out how we&nbsp;can help.",
+      "paragraph": "CSSSR group builds strong digital presence for banks and financial service providers. The financial industry nowadays rapidly expands into the digital world, more and more services are now available online to&nbsp;satisfy rising consumer demand. This transition causes growing demand for higher digital security standards. Find out how we&nbsp;can support.",
       "button": "Hire us",
       "imgAlt": ""
     },
     "informationTechnology": {
       "title": "Web Development Services<br/> for IT Companies",
-      "paragraph": "The IT&nbsp;industry is&nbsp;always on&nbsp;the cutting edge of&nbsp;technological progress. The effort to&nbsp;adapt to&nbsp;new technologies as&nbsp;quickly as&nbsp;possible is&nbsp;not only a&nbsp;desire but also the key to&nbsp;success in&nbsp;this industry. We&nbsp;help these companies become market leaders.",
+      "paragraph": "CSSSR helps&nbsp;IT companies to&nbsp;become the market leaders. The IT&nbsp;industry is&nbsp;always on&nbsp;the cutting edge of&nbsp;technological progress. The efforts to&nbsp;adapt to&nbsp;new technologies as&nbsp;quickly as&nbsp;possible is&nbsp;not just a&nbsp;desire, but rather the key to&nbsp;success in&nbsp;this industry.",
       "button": "Hire us",
       "imgAlt": ""
     },
     "mediaAndMarketing": {
       "title": "Custom Development<br/> for Media-Related Companies",
-      "paragraph": "Throughout history, entertainment has been intertwined with culture, so&nbsp;it&rsquo;s unsurprising that it&nbsp;has a&nbsp;vast presence on&nbsp;the web. We&rsquo;ve helped many media companies grow and evolve. Reach out to&nbsp;us to&nbsp;find out how we&nbsp;can help you.",
+      "paragraph": "CSSSR assisted many media companies to grow and evolve, we maintain the highest standards of web development and apply the best practices to each project. Throughout history, entertainment was intertwined with culture, so it isn't surprising that the entertainment is massively presented on the web. Turn to us to find out how we can help you.",
       "button": "Hire us",
       "imgAlt": ""
     }
@@ -103,7 +103,7 @@
     "heading": "Our projects",
     "informationTechnologyPage": {
       "firstItem": {
-        "heading": "Gazprom Neft - Professionals 4.0",
+        "heading": "Gazprom Neft — Professionals 4.0",
         "text": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers.",
         "numericData": {
           "firstItem": {
@@ -121,7 +121,7 @@
         }
       },
       "secondItem": {
-        "heading": "S7 Airlines - Personal Account",
+        "heading": "S7 Airlines — Personal Account",
         "text": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services.",
         "numericData": {
           "firstItem": {
@@ -136,6 +136,96 @@
         "button": {
           "title": "READ THE CASE STUDY",
           "href": "/en/project/s7-personal-account"
+        }
+      },
+      "mosoblgaz": {
+        "heading": "Mosoblgaz — Personal Account",
+        "text": "Development of b2b client's account that allows quick access to the company's services.",
+        "numericData": {
+          "firstItem": {
+            "number": "4",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/mosoblgaz"
+        }
+      },
+      "brusnika": {
+        "heading": "Brusnika — Internal assessment and <span style='white-space: nowrap'>forecasting tools</span>",
+        "text": "Creation of internal sales planning tools for the company's managers.",
+        "numericData": {
+          "firstItem": {
+            "number": "1",
+            "text": "specialist"
+          },
+          "secondItem": {
+            "number": "11",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/brusnika"
+        }
+      },
+      "mindbox": {
+        "heading": "Mindbox&nbsp;— Personal Account Data Filtering&nbsp;/ Promotion Campaigns&nbsp;Arbitration",
+        "text": "Development of two projects for marketing automation.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "13",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/mindbox"
+        }
+      },
+      "qmarketing": {
+        "heading": "QMarketing &mdash; QAcademy",
+        "text": "Front-end development of internal pages for the <span style='white-space: nowrap'>e-learning</span> platform.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "4",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/qmarketing"
+        }
+      },
+      "flant": {
+        "heading": "Flant - Landing pages",
+        "text": "Development and testing of seven landing pages for the Flant comapny.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "specialists"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "months"
+          }
+        },
+        "button": {
+          "title": "READ THE CASE STUDY",
+          "href": "/en/project/flant"
         }
       }
     }

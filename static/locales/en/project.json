@@ -1,8 +1,8 @@
 {
   "gazpromNeft": {
    "meta": {
-      "title": "Project: Gazprom Neft - Professionals 4.0",
-      "description": "Professionals 4.0 project for Gazprom Neft connects major corporations with talented performers."
+      "title": "Gazprom Neft - Project: Professionals 4.0",
+      "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
       "title": "Professionals&nbsp;4.0",
@@ -16,6 +16,7 @@
       "imgAlt": ""
     },
     "team": {
+      "imgAlt": "Team composition.",
       "title": "Team Composition",
       "numberList": {
         "firstItem": "1",
@@ -29,7 +30,7 @@
         "secondItem": "Middle JS&nbsp;Developers",
         "thirdItem": "Junior JS&nbsp;Developers",
         "fourthItem": "Analyst",
-        "fifthItem": "Testers"
+        "fifthItem": "QA&nbsp;Engineers"
       }
     },
     "techStack": {
@@ -42,7 +43,7 @@
       "numericData": {
         "duration": {
           "number": "13",
-          "text": "months <span>(Jan 2019 - ongoing)</span>"
+          "text": "months <span>(Jan 2019 — ongoing)</span>"
         },
         "projectTeam": {
           "number": "9",
@@ -63,24 +64,24 @@
         [
           "The main goal of&nbsp;the Professionals&nbsp;4.0 project is&nbsp;to&nbsp;connect major corporations with talented performers. Through the project, talented individuals can find new career opportunities, solve challenging tasks, develop new skills and prove themselves in&nbsp;an&nbsp;authentic work environment.",
           "The companies, meanwhile, get access to&nbsp;a&nbsp;huge database of&nbsp;business competition finalists and top performers, allowing them to&nbsp;quickly assemble teams for particular business tasks and reinforce internal resources, with external expertise.",
-          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\">Rostelecom</a> and the <a href=\"https://sk.ru/foundation/about/\" target=\"_blank\" rel=\"noopener nofollow\">Skolkovo Innovation Center</a>."
+          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.sibur'>Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.rostelecom'>Rostelecom</a> and the <a href=\"https://sk.ru/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.skolkovo'>Skolkovo Innovation Center</a>."
         ],
         [
           "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
-          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two software testers.",
+          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two QA Engineers.",
           "The first public version was launched in&nbsp;spring of&nbsp;2019. Since then, our team has continued to&nbsp;develop new functionality and has released several major updates over the past year."
         ]
       ]
     },
     "imgAlt": {
-      "quote": "Graphic representation of a woman",
-      "aboutProject": "Three people working diligently on the project"
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "s7airlines": {
     "meta": {
-      "title": "Project: S7 Airlines - Personal Account",
-      "description": "Frontend development of S7 Airlines' personal account that provides quick access to the Airline's services."
+      "title": "S7 Airlines - Project: Personal Account",
+      "description": "S7 Airline Customer's personal account: we have developed the entire front-end, written on Next.js, for the adaptive website of the project."
     },
     "hero": {
       "title": "Personal Account of<br />an&nbsp;S7&nbsp;Airline Customer",
@@ -95,6 +96,7 @@
 
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
         "secondItem": "4",
@@ -105,7 +107,7 @@
         "firstItem": "Senior JS&nbsp;Developer",
         "secondItem": "Middle JS&nbsp;Developers",
         "thirdItem": "Middle HTML/CSS Developer",
-        "fourthItem": "Testers"
+        "fourthItem": "QA&nbsp;Engineers"
       }
     },
     "techStack": {
@@ -136,13 +138,326 @@
         ],
         [
           "We&nbsp;develop the entire front-end for the adaptive website of&nbsp;the project.",
-          "The core team consists of&nbsp;4&nbsp;developers and one tester, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
+          "The core team consists of&nbsp;4&nbsp;developers and one QA Engineer, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
           "Currently we&nbsp;are implementing flight statistics and login through social networks, and are planning to&nbsp;conduct significant refactoring and improve the performance of&nbsp;the web application. The entire front-end is&nbsp;written on&nbsp;Next.js&nbsp;&mdash; a&nbsp;modern React framework."
         ]
       ]
     },
     "imgAlt": {
-      "aboutProject": "Трое людей усердно работающих над проектом"
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+    }
+  },
+  "mosoblgaz": {
+    "meta": {
+      "title": "Mosoblgaz — Project: Personal Account",
+      "description": "Development of b2b client's account that allows quick access to the company's services."
+    },
+    "hero": {
+      "title": "Personal Account",
+      "link": "https://mosoblgaz.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Mosoblgaz is&nbsp;one of&nbsp;the largest gas distribution companies in&nbsp;Russia providing natural gas distribution throughout the Moscow Region. By&nbsp;using Mosoblgaz services one can apply for connection to&nbsp;gas networks, monitor the account balance and control gas consumption using his/her personal account on&nbsp;the website or&nbsp;in&nbsp;a&nbsp;mobile application."
+      },
+      "imgAlt": "Mosoblgaz"
+    },
+    "team": {
+      "title": "Team Composition",
+      "imgAlt": "Team composition.",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "1",
+        "thirdItem": "2"
+      },
+      "textList": {
+        "firstItem": "High Middle JS&nbsp;Developer",
+        "secondItem": "Middle QA&nbsp;Engineer",
+        "thirdItem": "Middle HTML/CSS Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "React"
+      },
+      "numericData": {
+        "duration": {
+          "number": "2",
+          "text": "months <span style='white-space:nowrap'>(June 2019 — July 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "4",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [],
+        [
+          "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network.",
+          "The personal account supports role models and restrictions for individual employees."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+    }
+  },
+  "brusnika": {
+    "meta": {
+      "title": "Brusnika — Project: Internal assessment and forecasting tools",
+      "description": "Creation of internal sales planning tools for the company's managers."
+    },
+    "hero": {
+      "title": "Internal assessment and<br/> forecasting tools",
+      "link": "https://brusnika.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, <span style='white-space:nowrap'>the Urals</span> and the Moscow Region."
+      },
+      "imgAlt": "Brusnika"
+    },
+    "team": {
+      "title": "Team Composition",
+      "imgAlt": "Team composition.",
+      "numberList": {
+        "firstItem": "1"
+      },
+      "textList": {
+        "firstItem": "High Middle JS&nbsp;Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "React",
+        "secondItem": "Redux",
+        "thirdItem": "Saga",
+        "fourthItem": "Admin-on-rest",
+        "fifthItem": "Node.js"
+      },
+      "numericData": {
+        "duration": {
+          "number": "11",
+          "text": "months <span style='white-space:nowrap'>(June 2019 — May 2020)</span>"
+        },
+        "projectTeam": {
+          "number": "1",
+          "text": "specialist"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [],
+        [
+          "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding.",
+          "We&nbsp;were engaged in&nbsp;the development of&nbsp;an&nbsp;internal sales planning tool for Brusnika managers. Our team used Node.js to&nbsp;integrate into the customer&rsquo;s database and output sorted data. Work with &laquo;Sales Planning&raquo; is&nbsp;done in&nbsp;an&nbsp;interface similar to&nbsp;a&nbsp;table editor. Thanks to&nbsp;this tool the company&rsquo;s employees can see the real estate price growth dynamics, verify information about past transactions and forecast the value of&nbsp;the real estate object for months ahead."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+    },
+    "quote": {
+      "text": "The result of our joint work was not only a software product, but also a new work style that we've developed with our colleagues. Thank you for your individual approach, courage throughout experiments and professionalism in difficult situations!",
+      "author": {
+        "name": "Kirill Makarkin",
+        "signature": "Head of Managerial Projects Digitalization Group"
+      }
+    }
+  },
+  "mindbox": {
+    "meta": {
+      "title": "Mindbox  — Projects: Personal Account Data Filtering & Promotion Campaigns Arbitration",
+      "description": "Development of two projects for marketing automation."
+    },
+    "hero": {
+      "title": "Personal Account Data Filtering&nbsp;/ Promotion Campaigns Arbitration",
+      "link": "https://mindbox.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Mindbox develops a&nbsp;customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing automation in&nbsp;FMCG, retail, e-commerce and other industries with large numbers of&nbsp;customers.",
+        "secondParagraph": "Thanks to&nbsp;the platform, a&nbsp;client can personalize its website with dynamic content and recommendations, set up&nbsp;messages circulation via emails, social networks, and messengers, and ensure loyalty growth by&nbsp;creating virtual loyalty cards and promotions."
+      },
+      "imgAlt": "Mindbox"
+    },
+    "team": {
+      "title": "Team Composition:",
+      "imgAlt": "Team composition.",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "2"
+      },
+      "textList": {
+        "firstItem": "Middle HTML/CSS Developer",
+        "secondItem": "Middle Front-end Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack:",
+      "techList": {
+        "firstItem": "React — Redux",
+        "secondItem": "TypeScript"
+      },
+      "numericData": {
+        "duration": {
+          "number": "13",
+          "text": "months <span style='white-space:nowrap'>(May 2019 — June 2020)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Projects:",
+      "text": [
+        [],
+        [
+          "We&nbsp;worked on&nbsp;<b>two projects</b>: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
+          "In&nbsp;the <b>first project</b>, we&nbsp;were faced with a&nbsp;<span style='white-space:nowrap'>non-trivial</span> problem: we&nbsp;had to&nbsp;implement data filtering with an&nbsp;option to&nbsp;add new filters and combine them into groups in&nbsp;a&nbsp;tree structure.",
+          "Our team has developed a&nbsp;filtering system that supports conditions and nesting levels. After basic data sorting, a&nbsp;user can configure fine filtering, which enables a&nbsp;user to&nbsp;apply up&nbsp;to&nbsp;several thousand filters.",
+          "<b>The second project</b> also required development of&nbsp;a&nbsp;complex logic cooperating with a&nbsp;tree structure. Thanks to&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; a&nbsp;Mindbox client can create new promotions, flexibly setting up&nbsp;rules of&nbsp;promotions interaction with each other by&nbsp;combining them into groups. Arbitrary nesting of&nbsp;groups is&nbsp;supported.",
+          "An&nbsp;unconventional drag-and-drop was developed by&nbsp;us for this application. For example, a&nbsp;user can create a&nbsp;&laquo;Promotions&raquo; group with subgroups &laquo;Discount&raquo;, &laquo;Accrual of&nbsp;Points&raquo;, &laquo;Gift with Purchase&raquo; and &laquo;Discount by&nbsp;Promotion Code&raquo;, and configure the parameters of&nbsp;each entity."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+    }
+  },
+  "qmarketing": {
+    "meta": {
+      "title": "QMarketing  —  Project: QAcademy",
+      "description": "Front-end development of internal pages for the e-learning platform."
+    },
+    "hero": {
+      "title": "QAcademy",
+      "link": "https://qacademy.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Qmarketing Agency develops progressive digital advertising for companies operating on&nbsp;the Russian and European markets, invests in&nbsp;technological projects, and creates its own training program for marketing specialists and entrepreneurs&nbsp;&mdash; QAcademy."
+      },
+      "imgAlt": "QMarketing"
+    },
+    "team": {
+      "title": "Team Composition",
+      "imgAlt": "Team composition.",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "1",
+        "thirdItem": "1"
+      },
+      "textList": {
+        "firstItem": "Middle HTML/CSS Developer",
+        "secondItem": "Middle QA Engineer",
+        "thirdItem": "High Middle JS Developer"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "Vue.js",
+        "secondItem": "Vuex"
+      },
+      "numericData": {
+        "duration": {
+          "number": "4",
+          "text": "months <span style='white-space:nowrap'>(July 2019 — October 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [
+          "Qmarketing Academy is&nbsp;an&nbsp;interactive system that trains to&nbsp;choose the most effective analytical and promotional tools. Beginner entrepreneurs, marketers, and CEOs are trained on&nbsp;the basis of&nbsp;<span style='white-space:nowrap'>real-life</span> cases, have their knowledge gaps filled, and awarded certificates of&nbsp;successful course completion."
+        ],
+        [
+          "We were entrusted with front-end development of authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer's API."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "quote": "Feedback on the project.",
+      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+    }
+  },
+  "flant": {
+    "meta": {
+      "title": "Flant  —  Project: Landing Pages",
+      "description": "CSSSR was in charge of developming and testing of seven landing pages for the Flant comapny."
+    },
+    "hero": {
+      "title": "Landing Pages",
+      "link": "https://flant.ru",
+      "subTitle": "Client",
+      "text": {
+        "firstParagraph": "Flant company is&nbsp;engaged in&nbsp;elaborating fault tolerant&nbsp;IT infrastructures on&nbsp;the basis of&nbsp;Kubernetes. It&nbsp;provides processes of&nbsp;continuous integration and delivery (CI/CD), 24/7/365 operation of&nbsp;applications. Flant is&nbsp;the first certified Kubernetes service provider in&nbsp;Russia."
+      },
+      "imgAlt": "Flant"
+    },
+    "team": {
+      "title": "Team Composition",
+      "numberList": {
+        "firstItem": "1",
+        "secondItem": "2"
+      },
+      "textList": {
+        "firstItem": "Senior HTML/CSS Developer",
+        "secondItem": "Middle HTML/CSS Developers"
+      }
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "techList": {
+        "firstItem": "Pug",
+        "secondItem": "SCSS",
+        "thirdItem": "JS"
+      },
+      "numericData": {
+        "duration": {
+          "number": "2",
+          "text": "months <span style='white-space:nowrap'>(July — August 2019)</span>"
+        },
+        "projectTeam": {
+          "number": "3",
+          "text": "specialists"
+        }
+      }
+    },
+    "aboutProject": {
+      "title": "About the Project:",
+      "text": [
+        [],
+        [
+          "Our team was engaged in&nbsp;Flant landing pages elaborating. We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form."
+        ]
+      ]
+    },
+    "imgAlt": {
+      "aboutProject": "Three people are working hard on the project.",
+      "quote": "Feedback on the project."
+    },
+    "quote": {
+      "text": "We&nbsp;had no&nbsp;time to&nbsp;warm&nbsp;up. We&nbsp;worked in&nbsp;a&nbsp;way that from page concept until its implementation beginning was literally one night. At&nbsp;such a&nbsp;pace, there was simply no&nbsp;room for experiments or&nbsp;organization of&nbsp;our own front-end development process. We&nbsp;needed a&nbsp;timely result with guaranteed quality. That&rsquo;s why we&nbsp;didn&rsquo;t think for a&nbsp;long time: we&nbsp;came to&nbsp;CSSSR as&nbsp;we&nbsp;repeatedly crossed paths with the guys&rsquo; work for the projects of&nbsp;our clients and understood very well what output we&nbsp;will get. It&rsquo;s cool that all our expectations of&nbsp;the result were fully met. Moreover, the CSSSR framework allowed&nbsp;us to&nbsp;further develop the project on&nbsp;our own (though at&nbsp;a&nbsp;much slower pace). Investments in&nbsp;a&nbsp;stormy start with CSSSR still justify themselves up&nbsp;to&nbsp;now.",
+      "author": {
+        "name": "Aleksandr Batalov",
+        "signature": "General Director"
+      }
     }
   }
 }

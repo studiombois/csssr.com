@@ -25,6 +25,7 @@ const base = css`
   .picture {
     position: relative;
     margin-top: 3.5rem;
+    width: 19rem;
     flex: none;
   }
 
@@ -39,6 +40,7 @@ const base = css`
 
     .picture {
       margin-top: 1.5rem;
+      width: 10.5rem;
     }
   }
 `
@@ -56,7 +58,6 @@ const pictureStyles = css`
     bottom: 10.75rem;
     left: 50%;
     z-index: -1;
-    width: 304px;
     height: 224px;
     transform: translateX(-50%);
   }
@@ -75,38 +76,6 @@ const pictureStyles = css`
     picture {
       top: 0;
       bottom: initial;
-      width: 13.5rem;
-      height: 10.5rem;
-    }
-  }
-`
-
-const hideMessagePictureStyles = css`
-  & {
-    position: absolute;
-    bottom: 10.75rem;
-    left: 50%;
-    z-index: -1;
-    width: 304px;
-    height: 224px;
-    transform: translateX(-50%);
-  }
-
-  img {
-    width: 100%;
-  }
-
-  @media (min-width: 768px) and (max-width: 1279px) {
-    & {
-      margin-top: -6.5rem;
-    }
-  }
-
-  @media (max-width: 767px) {
-    & {
-      bottom: 12rem;
-      width: 13.5rem;
-      height: 10.5rem;
     }
   }
 `
@@ -122,13 +91,6 @@ const textDataStyles = css`
   a {
     text-decoration: none;
   }
-
-  @media (max-width: 1279px) {
-    a {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
 `
 
 export default ({ isIe11 }) => css`
@@ -137,6 +99,5 @@ export default ({ isIe11 }) => css`
 `
 export {
   pictureStyles,
-  hideMessagePictureStyles,
   textDataStyles,
 }

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
-import cn from 'classnames'
 import ContactModal from '../ContactModal'
 import styles from './Covid19Content.styles'
 import FloatButton from './FloatButton'
@@ -38,7 +37,7 @@ const features = [
 
 const Covid19Content = ({ className }) => {
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
-  const [hoveredImage, setHoveredImage] = useState(null)
+  const [, setHoveredImage] = useState(null)
 
   const handleButtonClick = (event) => {
     event.preventDefault()

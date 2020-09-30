@@ -49,19 +49,21 @@ const Nav = ({
       className={cn(className, {
         visible: activeItem,
       })}
+      data-testid="Header:nav.dropdown"
     >
       {isMobile && (
-        <button className="button_back" onClick={onBackButtonClick}>
+        <button
+          className="button_back"
+          onClick={onBackButtonClick}
+          data-testid="Header:nav:button.back"
+        >
           <Back className="icon_back" />
 
           {translations.common.header.backLink}
         </button>
       )}
 
-      <nav
-        data-testid="Header:nav.dropdown"
-        className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${language}`)}
-      >
+      <nav className={cn('nav', `nav_${activeItem}`, `nav_${activeItem}_${language}`)}>
         <ul>
           {activeItem &&
             menu
@@ -84,7 +86,7 @@ const Nav = ({
                         href={linkRegExp.test(href) ? href : `/${language}/${href}`}
                         isNextLink={!linkRegExp.test(href)}
                         target={linkRegExp.test(href) ? '_blank' : '_self'}
-                        rel="noopener noreferrer"
+                        rel={linkRegExp.test(href) ? 'noopener noreferrer' : null}
                       >
                         <Icon className={cn('icon', `icon_${id}`)} />
 

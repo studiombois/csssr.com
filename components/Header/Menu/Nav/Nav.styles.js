@@ -58,7 +58,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .nav_howWeWork,
-  .nav_products,
+  .nav_solutions,
   .nav_industries {
     .nav-item {
       width: 50%;
@@ -141,7 +141,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .nav_services_ru,
   .nav_howWeWork,
-  .nav_products {
+  .nav_solutions {
     .icon {
       top: ${calcRem(68)};
     }
@@ -196,7 +196,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   @media (pointer: fine) {
     .nav_howWeWork,
-    .nav_products,
+    .nav_solutions,
     .nav_industries {
       .link:hover {
         color: #5695ED;
@@ -251,7 +251,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .nav_howWeWork,
-  .nav_products,
+  .nav_solutions,
   .nav_industries {
     .nav-item_active .link {
         color: #5695ED;
@@ -276,8 +276,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  .nav_products .link:hover,
-  .nav_products .nav-item_active .link {
+  .nav_solutions .link:hover,
+  .nav_solutions .nav-item_active .link {
     .icon_lms {
       fill: #5695ED;
 
@@ -366,7 +366,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .nav_howWeWork,
-    .nav_products {
+    .nav_solutions {
       .description {
         width: calc(100% - ${calcRem(92)});
       }
@@ -460,7 +460,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .nav_industries,
     .nav_howWeWork,
-    .nav_products,
+    .nav_solutions,
     .nav_services {
       .nav-item {
         width: 100%;
@@ -474,7 +474,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .nav_howWeWork,
-    .nav_products {
+    .nav_solutions {
       ul {
         margin-top: ${calcRem(27)};
       }

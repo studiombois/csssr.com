@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "We Create Web Services for Millions",
-    "description": "Our specialty is front-end web development outsourcing. We bring logic to the world with JavaScript."
+    "title": "Web Development Outsourcing",
+    "description": "CSSSR is a front-end web development group that major on outsource front-end development services for a wide range of industries. We bring logic to the world with JavaScript."
   },
   "hero": {
-    "title": "<span style=\"font-weight: bold;\">Outsourcing</span><br />Web Development",
-    "description": "We&nbsp;specialize in&nbsp;front-end web development for a&nbsp;wide range of&nbsp;industries.",
+    "title": "Web Development<br/> <span style=\"font-weight: bold;\">Outsourcing</span>",
+    "description": "CSSSR group specializes in&nbsp;outsource front-end web development for a&nbsp;wide range of&nbsp;industries. We&nbsp;have created more than 500 successful projects so&nbsp;our experience always helps&nbsp;us to&nbsp;choose the right way whatever task we&nbsp;are assigned with.",
     "button": "Let&rsquo;s Talk"
   },
   "aboutFrontend": {
@@ -84,7 +84,8 @@
       [{
         "title": "Well-Designed Processes",
         "description": "We&nbsp;work completely remotely and have built remote processes, which we&nbsp;are extremely proud&nbsp;of. We&nbsp;work with Agile methodologies and have taken the best from various approaches. Therefore, it&nbsp;is&nbsp;simple for&nbsp;us to&nbsp;adapt our team size and ways of&nbsp;working to&nbsp;your needs.",
-        "link": "Read About Our Process "
+        "link": "Read About Our Process ",
+        "testId": "Outsourcing:link:ourProcesses"
       }],
       [{
         "title": "Specialization",
@@ -95,23 +96,26 @@
           "We&nbsp;can complete ",
           " over just a&nbsp;few months, or&nbsp;we&nbsp;can stay on&nbsp;a&nbsp;project for years, developing and supporting it&nbsp;with a&nbsp;permanent team."
         ],
-        "link": "short-term tasks"
+        "link": {
+          "title": "short-term tasks",
+          "testId": "Outsourcing:link:shortTermTasks"
+        }
       }]
     ]
   },
   "imgAlt": {
-    "hero": "Picture of balloon",
-    "aboutFrontend": "A group of people building a robot",
+    "hero": "We develop complex solutions for websites and web applications using JavaScript",
+    "aboutFrontend": "Full services in front-end development",
     "benefits": [
-      "Picture of number 1",
-      "Picture of number 2",
-      "Picture of number 3",
-      "Picture of number 4"
+      "Outsourcing makes quick start.",
+      "Outsourcing saves your costs.",
+      "We can provide you with a broad range of specialists with various qualifications.",
+      "Outsourced teams are easy to adjust."
     ],
-    "technologyStack": "Logos of some technologies we use: MongoDB, Kotlin, React, Vue Angular, NodeJS, PostgreSQL",
+    "technologyStack": "We use React, Angular, and Vue for the most projects.",
     "ourAdvantages": [
-      ["A man in harmony in the middle of computer monitors"],
-      ["Printing code woman", "Two developers giving high five to each other"]
+      ["We work absolutely remotely so we have elaborated reliable remote processes."],
+      ["We are focused on a narrow niche of front-end development.", "We can deal with both short- and long-term tasks."]
     ]
   }
 }

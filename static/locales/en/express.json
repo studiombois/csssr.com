@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Express Web Development",
-    "description": "If you need to build a solid, reliable HTML-layout for a website or e-mail newsletter based on your design, you came to the right place."
+    "description": "If you need to build a solid, reliable HTML layout for a website or email newsletter based on your design, you are in the right place."
   },
   "greeting": {
-    "title": "<strong>Express</strong> <br /> Web Development",
-    "description": "If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable<br /> HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
+    "title": "<strong>Express</strong> Web<br class='heading-br br'/> Development",
+    "description": "If&nbsp;you need to&nbsp;build a&nbsp;solid, reliable<br class='subheading-br'/> HTML-layout for a&nbsp;website or&nbsp;e-mail newsletter based on&nbsp;your design, you came to&nbsp;the right place.",
     "button": "Get a quote"
   },
   "aboutUs": {
@@ -15,7 +15,7 @@
   },
   "workflow": {
     "title": "Two Days to&nbsp;Start",
-    "text1": "Estimate the cost of&nbsp;your project using <a className=\"button\" href=\"#calculator\">our Calculator</a> and fill out the application form.",
+    "text1": "Estimate the cost of&nbsp;your project using <a className=\"button\" href=\"#calculator\" data-testid='Express:link.ourCalculator'>our Calculator</a> and fill out the application form.",
     "text2": "Within one working day we&rsquo;ll give you an&nbsp;estimate, and send you contract and NDA templates as&nbsp;well as&nbsp;some additional questions.",
     "text3": "You provide&nbsp;us your company details, answer our questions and ask any of&nbsp;your own.",
     "text4": "Within a&nbsp;day we&rsquo;ll send you a&nbsp;finalized contract, a&nbsp;commercial offer and a&nbsp;prepayment invoice.",
@@ -108,17 +108,17 @@
     }
   },
   "imgAlt": {
-    "rocket": "A rocket pointed upward",
+    "bicycle": "Express web development",
     "aboutUs": "Illustrated figures of developers",
-    "workflow1": "illustration of the number one for the first stage",
-    "workflow2": "illustration of the number two, for the second stage",
-    "workflow3": "illustration of the number three, for the third stage",
-    "workflow4": "illustration of the number four, for the fourth stage",
-    "workflow5": "illustration of the number five, for the fifth stage",
-    "feature1": "Illustration that describes design friendly block",
-    "feature2": "Illustration that describes modern stack block",
-    "feature3": "Illustration that describes accessibility block",
-    "feature4": "Illustration that describes quality control block",
-    "feature5": "Illustration that describes quality guarantees block"
+    "workflow1": "Estimate the cost of your project by using our Calculator and fill out the application form.",
+    "workflow2": "You’ll be provided with an estimate, a draft contract, and an NDA within one working day.",
+    "workflow3": "You provide us with your company details, answer our questions and ask your own ones.",
+    "workflow4": "You'll receive a finalized contract within a day.",
+    "workflow5": "Once the documents are signed and advance payment is received, we’ll quickly assemble a team and begin to work.",
+    "feature1": "Your project will look exactly like it’s supposed to.",
+    "feature2": "We use only modern stack from open-source technologies",
+    "feature3": "We apply a11y principles to all our projects.",
+    "feature4": "We always control the quality of our work.",
+    "feature5": "Our in-house lawyer drafts tailor-made contracts and NDAs for each project."
   }
 }

@@ -7,8 +7,8 @@ import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
 import Form from '../ContactFormWrapper'
-
 import Head from '../Head'
+
 import greeting from '../../data/industry/fintech/greeting'
 import ourClients from '../../data/industry/fintech/logos'
 import coreValues from '../../data/industry/coreValues'

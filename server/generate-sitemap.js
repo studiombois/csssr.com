@@ -1,6 +1,5 @@
 import { supportedLocales } from '../common/locales-settings'
 
-const fetch = require('isomorphic-unfetch')
 const sitemap = require('sitemap')
 const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
 
@@ -258,6 +257,156 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/project/mosoblgaz',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mosoblgaz',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mosoblgaz',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/mosoblgaz',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mosoblgaz',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mosoblgaz',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/brusnika',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/brusnika',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/brusnika',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/brusnika',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/brusnika',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/brusnika',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/mindbox',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mindbox',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mindbox',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/mindbox',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/mindbox',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/mindbox',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/qmarketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/qmarketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/qmarketing',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/qmarketing',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/qmarketing',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/qmarketing',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/ru/project/flant',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/flant',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/flant',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/flant',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/flant',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/flant',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,
@@ -483,12 +632,42 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/contacts',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/contacts',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/contacts',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/contacts',
+    changefreq: 'yearly',
+    priority: 0.6,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/contacts',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/contacts',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/en/covid-19',
     changefreq: 'yearly',
     priority: 0.6,
   },
   {
-    url: 'https://csssr.com/en/products/lms',
+    url: 'https://csssr.com/en/solutions/lms',
     changefreq: 'yearly',
     priority: 0.6,
   },

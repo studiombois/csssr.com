@@ -4,10 +4,15 @@ import styled from '@emotion/styled'
 import styles from './Note.styles'
 import Text from '../../../../ui-kit/core-design/Text'
 
-const OriginNote = ({ className, children, dangerouslySetInnerHTML }) => {
+const OriginNote = ({ className, children, dangerouslySetInnerHTML, testId }) => {
   return (
     <div className={className}>
-      <Text className="note" type="regular" dangerouslySetInnerHTML={dangerouslySetInnerHTML}>
+      <Text
+        className="note"
+        type="regular"
+        dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+        data-testid={testId}
+      >
         {children}
       </Text>
     </div>

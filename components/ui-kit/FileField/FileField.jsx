@@ -10,6 +10,9 @@ class FileField extends PureComponent {
     id: string,
     fileAccept: string,
     className: string,
+    testId: string.isRequired,
+    buttunTestId: string,
+    labelTestId: string,
     label: string,
     onFileFieldChange: func,
     autoFocus: bool,
@@ -38,6 +41,9 @@ class FileField extends PureComponent {
       autoFocus,
       disabled,
       className,
+      testId,
+      buttunTestId,
+      labelTestId,
       input: { name, value, onBlur, onFocus },
       meta: { error, invalid, submitFailed },
       l10n: { translations },
@@ -48,6 +54,7 @@ class FileField extends PureComponent {
     return (
       <div className={className}>
         <input
+          data-testid={testId}
           id={id}
           accept={`.${fileAccept}`}
           name={name}
@@ -62,6 +69,7 @@ class FileField extends PureComponent {
           aria-label={label}
         />
         <div
+          data-testid={labelTestId}
           className={cn({
             'font_inputted-text-error': showError,
             'font_inputted-text-regular': !showError,
@@ -79,6 +87,7 @@ class FileField extends PureComponent {
         </div>
         <label
           htmlFor={id}
+          data-testid={buttunTestId}
           className={cn('font_button-label', 'button', {
             button_state_disabled: disabled,
           })}

@@ -2,22 +2,22 @@ import React, { Fragment } from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+
 import styles from './Item.styles'
 import { L10nConsumer } from '../../../../../utils/l10nProvider'
 
 import Heading from '../../../../ui-kit/core-design/Heading'
 import Text from '../../../../ui-kit/core-design/Text'
 import Link from '../../../../ui-kit/core-design/Link'
-import PictureForAllResolutions from '../../../../ui-kit/PictureForAllResolutions'
 
 import unescapeHtmlEntities from '../../../../../utils/unescapeHtmlEntities'
 
 const Item = ({ className, l10n: { translations, language }, groupId, itemId, link, images }) => (
   <div className={className}>
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={images}
-      fallback={images['desktop.all'].png}
+      requireImages={images}
       alt={translations.outsourcingFrontEnd.imgAlt.ourAdvantages[groupId][itemId]}
     />
 
@@ -46,8 +46,12 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
           `}
           isNextLink
           dangerouslySetInnerHTML={{
-            __html: translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
+            __html:
+              translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link.title,
           }}
+          data-testid={
+            translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link.testId
+          }
         />
         {unescapeHtmlEntities(
           translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].description[1],
@@ -78,6 +82,9 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
               __html:
                 translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].link,
             }}
+            data-testid={
+              translations.outsourcingFrontEnd.ourAdvantages.advantages[groupId][itemId].testId
+            }
           />
         )}
       </Fragment>

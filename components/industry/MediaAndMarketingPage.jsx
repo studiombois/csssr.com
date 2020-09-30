@@ -6,13 +6,15 @@ import Greeting from './Greeting'
 import OurClients from './OurClients'
 import Facts from './Facts'
 import CoreValues from './CoreValues'
+import Projects from './Projects'
 import Form from '../ContactFormWrapper'
-
 import Head from '../Head'
+
 import greeting from '../../data/industry/mediaAndMarketing/greeting'
 import ourClients from '../../data/industry/mediaAndMarketing/logos'
 import coreValues from '../../data/industry/coreValues'
 import facts from '../../data/industry/facts'
+import { mediaAndMarketingProjects } from '../../data/industry/projects'
 
 const MediaAndMarketingPage = ({ l10n: { translations } }) => {
   const pageName = 'industry'
@@ -32,11 +34,11 @@ const MediaAndMarketingPage = ({ l10n: { translations } }) => {
 
       <CoreValues id="core-values" content={coreValues} />
 
+      <Projects id="projects" content={mediaAndMarketingProjects} />
+
       <Form pageName={pageName} />
     </Layout>
   )
 }
-
-MediaAndMarketingPage.propTypes = {}
 
 export default L10nConsumer(MediaAndMarketingPage)

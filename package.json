@@ -8,13 +8,14 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "lint:js": "eslint --ext .js,.jsx --fix --max-warnings=0 .",
-    "eslint-fix": "eslint --fix .",
     "check-sitemap": "node -r esm ./server/check-sitemap.js",
-    "test": "NODE_ENV=development jest --watch"
+    "test": "NODE_ENV=development jest --watch",
+    "test-ci": "NODE_ENV=development jest"
   },
   "dependencies": {
-    "@csssr/core-design": "^5.5.1",
-    "@csssr/csssr-amo": "^3.2.0",
+    "@csssr/core-design": "^5.9.2",
+    "@csssr/csssr-amo": "^3.5.2",
+    "@csssr/csssr.images": "^3.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
@@ -30,6 +31,7 @@
     "compression-webpack-plugin": "^6.0.2",
     "cookie-parser": "^1.4.5",
     "cross-env": "^7.0.2",
+    "date-fns": "^2.15.0",
     "detect-browser": "^5.1.1",
     "emotion-theming": "^10.0.27",
     "esm": "^3.2.25",
@@ -40,11 +42,10 @@
     "final-form": "^4.20.1",
     "final-form-calculate": "^1.3.2",
     "final-form-focus": "^1.1.2",
-    "image-resolution-loader": "^1.1.3",
-    "isomorphic-unfetch": "^3.1.0",
     "lint-staged": "^10.4.0",
     "lottie-web": "^5.7.3",
     "next": "^9.5.3",
+    "nodemailer": "^6.4.10",
     "object-to-formdata": "^4.1.0",
     "prop-types": "^15.7.2",
     "ramda": "^0.27.1",
@@ -57,8 +58,7 @@
     "react-reveal": "^1.2.2",
     "react-transition-group": "^4.4.1",
     "scroll-lock": "^2.1.4",
-    "sitemap": "6.3.2",
-    "webp-loader": "^0.6.0"
+    "sitemap": "6.3.2"
   },
   "devDependencies": {
     "@csssr/eslint-config-core": "^1.1.0",
@@ -68,14 +68,16 @@
     "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-react-hooks": "^4.1.2",
     "husky": "^4.3.0",
+    "ip": "^1.1.5",
     "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "prettier": "^2.1.2",
-    "webpack": "^4.44.2"
+    "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^3.8.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run check-sitemap && lint-staged"
+      "pre-commit": "npm run test-ci && npm run check-sitemap && lint-staged"
     }
   }
 }

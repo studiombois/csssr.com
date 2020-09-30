@@ -8,42 +8,51 @@ import ImageBlock from './ImageBlock'
 import QuestionHeader from './QuestionHeader'
 import QuestionBlock from './QuestionBlock'
 import Footer from './Footer'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
 import questions from '../../data/jobs-faq/questions'
 
-import roads from '../../static/images/jobs-faq/roads.png?responsive'
-import roads_webp from '../../static/images/jobs-faq/roads.png?responsive_and_webp'
-import puzzle from '../../static/images/jobs-faq/puzzle.png?responsive'
-import puzzle_webp from '../../static/images/jobs-faq/puzzle.png?responsive_and_webp'
+const roads = require.context('../../public/images/jobs-faq/roads?csssr-images')
+const puzzle = require.context('../../public/images/jobs-faq/puzzle?csssr-images')
+import ogImages from '../../public/images/jobs/cover/desktop.all.png?csssr-images'
 
 const pageName = 'jobsFaq'
 const JobsFaqPage = () => (
   <Layout pageName={pageName}>
     <Head
-      title="Как устроиться сюда ➡️"
-      description="Часто задаваемые вопросы кандидатов в..."
+      title="F.A.Q. о работе в компании"
+      description="Актуальные вопросы кандидатов про вакансии, условия найма, график работы в группе компаний CSSSR. Для тех, кто предпочитает читать инструкции перед применением, а не после."
       ogImage={{
-        url: require('../../static/images/jobs-faq/ogImage.jpg'),
+        url: getOriginal(ogImages),
         width: 2400,
         height: 1260,
       }}
-      router={{ asPath: '/ru/jobs-faq' }}
     />
 
     <Greeting />
 
-    <ImageBlock blockName="roads" images={{ png: roads, webp: roads_webp }} />
+    <ImageBlock blockName="roads" images={roads} />
 
     <QuestionHeader headingText="Про найм" />
-    {questions.hire.map((item) => (
-      <QuestionBlock question={item.question} answer={item.answer} key={item.question} />
+    {questions.hire.map((item, index) => (
+      <QuestionBlock
+        question={item.question}
+        answer={item.answer}
+        key={item.question}
+        testid={`Faq:item.aboutHiring-${index}`}
+      />
     ))}
 
-    <ImageBlock blockName="puzzle" images={{ png: puzzle, webp: puzzle_webp }} />
+    <ImageBlock blockName="puzzle" images={puzzle} />
 
     <QuestionHeader headingText="Про работу" />
-    {questions.apply.map((item) => (
-      <QuestionBlock question={item.question} answer={item.answer} key={item.question} />
+    {questions.apply.map((item, index) => (
+      <QuestionBlock
+        question={item.question}
+        answer={item.answer}
+        key={item.question}
+        testid={`Faq:item.aboutWorck-${index}`}
+      />
     ))}
 
     <Footer />

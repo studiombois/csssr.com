@@ -11,7 +11,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, la
         }
 
         .item-heading {
-          grid-column: 3 / span 2;
+          grid-column: 3 / span 4;
         }
 
         .text {
@@ -36,7 +36,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, la
           }
 
           .item-heading {
-            grid-column: 2 / span 2;
+            grid-column: 2 / span 4;
           }
 
           .text {
@@ -62,7 +62,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, la
           }
 
           .item-heading {
-            grid-column: 2 / span 2;
+            grid-column: 2 / span 5;
           }
 
           .text {
@@ -88,7 +88,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, la
           }
 
           .item-heading {
-            grid-column: 2 / span 2;
+            grid-column: 2 / span 5;
           }
 
           .text {
@@ -134,7 +134,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, la
       }
 
       .item-heading {
-        grid-column: 7 / span 2;
+        grid-column: 7 / span 5;
       }
 
       .text {
@@ -169,7 +169,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, la
         }
 
         .item-heading {
-          grid-column: 7 / span 2;
+          grid-column: 7 / span 5;
         }
 
         .text {
@@ -191,7 +191,7 @@ const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, la
         }
 
         .item-heading {
-          grid-column: 7 / span 2;
+          grid-column: 7 / span 5;
         }
 
         .text {
@@ -257,7 +257,7 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
   .item-heading {
     grid-row: 1;
     color: ${colors.secondary.darken100};
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
 
   .text {
@@ -280,6 +280,14 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
   .button {
     grid-row: 4;
     margin-top: ${calcRem(104)};
+  }
+
+  ${desktop.all} {
+    &.first-item,
+    &.second-item,
+    &.third-item {
+      margin-top: 200px;
+    }
   }
 
   ${desktop.l} {
@@ -460,7 +468,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
           .item-heading {
             -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
+            -ms-grid-column-span: ${getGridValueForMs(5)};
           }
 
           .text {
@@ -487,7 +495,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
           .item-heading {
             -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
+            -ms-grid-column-span: ${getGridValueForMs(5)};
           }
 
           .text {
@@ -514,7 +522,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
           .item-heading {
             -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
+            -ms-grid-column-span: ${getGridValueForMs(5)};
           }
 
           .text {
@@ -545,7 +553,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
       .item-heading {
         -ms-grid-column: ${getGridValueForMs(7)};
-        -ms-grid-column-span: ${getGridValueForMs(2)};
+        -ms-grid-column-span: ${getGridValueForMs(5)};
       }
 
       .text {
@@ -578,7 +586,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
         .item-heading {
           -ms-grid-column: ${getGridValueForMs(8)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
+          -ms-grid-column-span: ${getGridValueForMs(5)};
         }
 
         .text {
@@ -605,7 +613,7 @@ const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
 
         .item-heading {
           -ms-grid-column: ${getGridValueForMs(7)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
+          -ms-grid-column-span: ${getGridValueForMs(5)};
         }
 
         .text {

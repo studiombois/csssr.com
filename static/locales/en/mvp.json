@@ -1,10 +1,11 @@
 {
   "meta": {
     "title": "Outsourced MVP Development",
-    "description": "We'll help you to test out your business ideas and demonstrate the product's potential to investors."
+    "description": "By developing MVP we'll help you to test out your business ideas and demonstrate your product potential to investors."
   },
   "hero": {
-    "title": "<span style=\"font-weight: bold;\">MVP</span><br />Development",
+    "title": "CSSSR <span style=\"font-weight: bold;\">MVP</span> Development",
+
     "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;intended to&nbsp;help guide its future development.",
     "button": "Start Your Project"
   },
@@ -58,7 +59,8 @@
       }, {
         "title": "Flexibility",
         "description": "We&nbsp;assemble teams based on&nbsp;the appropriate technologies, scope of&nbsp;work and budget for each project, while our commitment to&nbsp;efficiency and our core development principles remains constant.",
-        "link": "Read about our core values "
+        "link": "Read about our core values",
+        "testid": "MVP:link:advantages.flexibility"
       }],
       [{
         "title": "High-Level Expertise",
@@ -66,7 +68,8 @@
       }, {
         "title": "Transparency",
         "description": "We&nbsp;work with Agile methodologies, employing weekly sprints that help&nbsp;us better plan load, easily break down tasks and provide better transparency.",
-        "link": "Read about how we work"
+        "link": "Read about how we work",
+        "testid": "MVP:link:advantages.transparency"
       }]
     ]
   },
@@ -83,7 +86,10 @@
           "We&nbsp;help you choose the most suitable ",
           ", assemble a&nbsp;team and start bringing your ideas to&nbsp;life."
         ],
-        "link": "technology stack"
+        "link": {
+          "title": "technology stack",
+          "testid": "MVP:link:process.development"
+        }
       },
       "launch": {
         "title": "Launch",
@@ -92,12 +98,13 @@
     }
   },
   "imgAlt": {
-    "mvpOn": "Development process with MVP",
+    "hero": "We communicate with the client, select technologies, create an MVP in the shortest terms.",
+    "mvpOn": "Working on a project step-by-step we finally create a product that meets all the client's requirements.",
     "mvpOff": "Development process without MVP",
     "ourAdvantages": [
-      ["Two men running in a race", "People performing acrobatic etudes with frontend technologies"],
-      ["Recursion of a man looking for something in a magnifying glass", "The frontend atlas, who has everything under control"]
+      ["With us, you can start development in less than a week.", "We are flexible enough in our work, but at the same time we follow the firm principles."],
+      ["We continuously improve the quality of our work.", "We use methodologies that provide better transparency."]
     ],
-    "process": "Solar system"
+    "process": "CSSSR's process of work"
   }
 }

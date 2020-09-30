@@ -1,50 +1,54 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { Fragment } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
 import { node, number, shape, string } from 'prop-types'
-import { L10nConsumer } from '../utils/l10nProvider'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
 import StructuredData from './StructuredData'
-import { Ie11BrowserContext } from '../utils/msBrowserProvider'
+import { PagesListConsumer } from '../utils/pagesListProvider'
+import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
+
+import ogImages from '../public/images/main/og/all.png?csssr-images'
 
 // Можно здесь честно указать origin, а не захардкодить
 const origin = 'https://csssr.com'
 
 const Head = (props) => {
-  const isIe11 = useContext(Ie11BrowserContext)
-
-  // При роутинге в ie11 picturefill не подгружает правильные размеры изображений.
-  // Явный вызов плагина при каждом рендере исправляет баг
-  useEffect(() => {
-    if (isIe11) {
-      // eslint-disable-next-line no-undef
-      picturefill()
-    }
-  })
+  const pathname = getPathName(props.router.asPath)
+  const localePageCounter = props.pagesList.filter((page) => page.pathname === pathname).length
 
   return (
     <NextHead>
-      <link
-        rel="preload"
-        href={require(`../static/fonts/Roboto_Slab_normal_300_${props.l10n.language}.woff2`)}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href={require(`../static/fonts/Roboto_normal_100_${props.l10n.language}.woff2`)}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href={require(`../static/fonts/Roboto_normal_900_${props.l10n.language}.woff2`)}
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
+      {(!pathname || (localePageCounter > 1 && !isJobPage(pathname))) && (
+        <Fragment>
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href={!pathname ? 'https://csssr.com/en' : `https://csssr.com/en/${pathname}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="ru"
+            href={!pathname ? 'https://csssr.com/ru' : `https://csssr.com/ru/${pathname}`}
+          />
+          <link
+            rel="alternate"
+            hrefLang="en"
+            href={!pathname ? 'https://csssr.com/en' : `https://csssr.com/en/${pathname}`}
+          />
+        </Fragment>
+      )}
+      {pathname === 'jobs' && (
+        <Fragment>
+          <link rel="alternate" hrefLang="x-default" href={`https://csssr.com/en-us/${pathname}`} />
+          <link rel="alternate" hrefLang="ru-ru" href={`https://csssr.com/ru-ru/${pathname}`} />
+          <link rel="alternate" hrefLang="ru-ee" href={`https://csssr.com/ru-ee/${pathname}`} />
+          <link rel="alternate" hrefLang="en-ee" href={`https://csssr.com/en-ee/${pathname}`} />
+          <link rel="alternate" hrefLang="en-sg" href={`https://csssr.com/en-sg/${pathname}`} />
+          <link rel="alternate" hrefLang="en-us" href={`https://csssr.com/en-us/${pathname}`} />
+        </Fragment>
+      )}
+      <link rel="canonical" href={`https://csssr.com${props.router.asPath}`} />
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -63,18 +67,6 @@ const Head = (props) => {
       `,
         }}
       />
-      {isIe11 && (
-        <Fragment>
-          <script
-            crossOrigin="anonymous"
-            src="https://polyfill.io/v3/polyfill.min.js?features=es6%2Ces7%2Cfetch%2CSymbol.asyncIterator"
-          />
-          <script
-            type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js"
-          />
-        </Fragment>
-      )}
 
       <meta charSet="utf-8" />
       <title>{`${props.title}${props.templateTitle}`}</title>
@@ -158,10 +150,10 @@ Head.defaultProps = {
   structuredData: <StructuredData />,
   templateTitle: ' | CSSSR',
   ogImage: {
-    url: require('../static/images/ogImage.png'),
+    url: getOriginal(ogImages),
     width: 3840,
     height: 1280,
   },
 }
 
-export default withRouter(L10nConsumer(Head))
+export default withRouter(PagesListConsumer(Head))

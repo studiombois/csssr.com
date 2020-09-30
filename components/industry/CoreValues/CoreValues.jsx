@@ -47,6 +47,7 @@ const CoreValues = ({
       kind="secondary"
       className="button"
       dangerouslySetInnerHTML={{ __html: button.title(translations) }}
+      data-testid="Industry:link.coreValues"
     />
   </Grid>
 )

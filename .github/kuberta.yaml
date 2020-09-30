@@ -1,0 +1,13 @@
+version: 1-alpha.1
+
+releases:
+  csssr-com-testing:
+    name: Тестинг
+    autodeploy-on: default
+    chart: csssr/csssr-com@~1.0.0
+    static-params:
+      environment: testing
+    builds:
+      - workflow: build-docker-image.yml
+        values:
+          image.tag: "build-{{ .Build.RunID }}"

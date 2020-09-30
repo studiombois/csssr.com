@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "title": "Contacts",
+    "description": "CSSSR company contact details: phone number, location address, e-mail, location map."
+  },
+  "bookACall": {
+    "profiles": {
+      "anastasia_ignatenko": {
+        "name": "Anastasia Ignatenko",
+        "alt": "photo of Anastasia Ignatenko",
+        "position": "ASEAN Regional Manager"
+      },
+      "sonya_kiseleva": {
+        "name": "Sonya Kiseleva",
+        "alt": "photo of Sonya Kiseleva",
+        "position": "European Regional Manager"
+      },
+      "olga_shevchenko": {
+        "name": "Olga Shevchenko",
+        "alt": "photo of Olga Shevchenko",
+        "position": "Head of Business Development"
+      },
+      "victoria_zubareva": {
+        "name": "Victoria Zubareva",
+        "alt": "photo of Victoria Zubareva",
+        "position": "Head of HR"
+      }
+    },
+    "buttonText": "Schedule a call",
+    "communication": "Hangouts, Zoom, <span>Phone call</span>"
+  },
+  "form": {
+    "title": "Сontact Us",
+    "subtitle": "What would you like to talk about?",
+    "separator": "or",
+    "email": "E-mail",
+    "phone": "Phone <span>(optional)</span>",
+    "text": "Drop us a line",
+    "agree": "I agree to receive information and commercial offers",
+    "policy":"By submitting the form, you agree to your personal data being stored and used for the purposes stated in the <a href='/en/privacy-policy' target='_blank' data-testid='contactUs:link:privacyPolicy'>Privacy Policy</a>.",
+    "submitText":"Submit",
+    "typeInquiry": {
+      "label": "Type of inquiry",
+      "newPropject": "New project",
+      "job": "Join the team"
+    }
+  },
+  "map": {
+    "tabs": {
+      "sg": "Singapore",
+      "ee": "Estonia",
+      "ru": "Russia"
+    },
+    "addresses": {
+      "text": "If you'd like to meet us in person, please contact us to make an arrangement.",
+      "ru": [
+        "22 Bol'shoj Kozihinskij Lane, bld. 2, office 28, Moscow, 123001, Russia",
+        "30 Lesnaya St., bld. 1, office 303, Dzerzhinsky, 140090, Russia"
+      ],
+      "sg": "68 Circular Road,<br />#02-01,<br />Singapore, 049422",
+      "ee": "26 Majaka St.,<br /> bld.1, office 14,<br /> Tallinn, 11412, Estonia"
+    }
+  }
+}

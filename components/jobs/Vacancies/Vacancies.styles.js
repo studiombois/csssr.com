@@ -1,6 +1,9 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+
+const coverImages = require.context('../../../public/images/jobs/cover?csssr-images')
 
 const base = css`
   & {
@@ -18,7 +21,7 @@ const base = css`
     width: 100%;
   }
 
-  h1 span {
+  h1 + span {
     padding-top: 1rem;
     display: block;
   }
@@ -50,7 +53,6 @@ const base = css`
     left: 0;
     height: 100vh;
     width: calc(50vw - 1rem);
-    background-image: url('${require('../../../static/images/jobs/1920/cover@1x.jpg')}');
     background-position: 50%;
     background-size: auto 100%;
     overflow: hidden;
@@ -125,24 +127,6 @@ const base = css`
     }
   }
 
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    .half-page-picture {
-      background-image: url('${require('../../../static/images/jobs/1920/cover@2x.jpg')}');
-    }
-  }
-
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    .half-page-picture {
-      background-image: url('${require('../../../static/images/jobs/1920/cover@3x.jpg')}');
-    }
-  }
-
   @media (min-width: 1360px) and (max-width: 1919px) {
     .half-page-picture {
       width: calc(50vw - 0.5rem);
@@ -177,7 +161,7 @@ const base = css`
       line-height: 3.5rem;
     }
 
-    h1 span {
+    h1 + span {
       padding-top: 2rem;
     }
 
@@ -208,7 +192,7 @@ const base = css`
     .picture {
       grid-column: 8 / span 2;
       margin-top: ${calcRem(56)};
-  
+
       &:first-of-type {
         margin-top: ${calcRem(104)};
       }
@@ -260,27 +244,6 @@ const base = css`
   @media (min-width: 768px) and (max-width: 1023px) {
     .half-page-picture {
       width: calc(50vw - 0.5rem);
-      background-image: url('${require('../../../static/images/jobs/1024/cover@1x.jpg')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 768px) and (max-width: 1023px),
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    .half-page-picture {
-      background-image: url('${require('../../../static/images/jobs/1024/cover@2x.jpg')}');
-    }
-  }
-
-  @media
-  screen and (min-width: 768px) and (max-width: 1023px),
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    .half-page-picture {
-      background-image: url('${require('../../../static/images/jobs/1024/cover@3x.jpg')}');
     }
   }
 
@@ -305,7 +268,7 @@ const base = css`
       }
     }
 
-    h1 span {
+    h1 + span {
       padding-top: 2.375rem;
       display: block;
     }
@@ -345,7 +308,7 @@ const base = css`
       grid-column: 1 / span 3;
       margin-top: ${calcRem(57)};
       z-index: 0;
-  
+
       &:first-of-type {
         margin-top: ${calcRem(57)};
       }
@@ -390,30 +353,14 @@ const base = css`
     .half-page-picture {
       width: 100vw;
       height: 15.5rem;
-      background-image: url('${require('../../../static/images/jobs/360/cover@1x.jpg')}');
-    }
-  }
-
-  @media
-  screen and (max-width: 767px),
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    .half-page-picture {
-      background-image: url('${require('../../../static/images/jobs/360/cover@2x.jpg')}');
-    }
-  }
-
-  @media
-  screen and (max-width: 767px),
-  only screen and (-webkit-min-device-pixel-ratio: 3),
-  only screen and (min-resolution: 288dpi),
-  only screen and (min-resolution: 3dppx) {
-    .half-page-picture {
-      background-image: url('${require('../../../static/images/jobs/360/cover@3x.jpg')}');
     }
   }
 `
+
+export const backgroundImagesStyles = () => {
+  return css`
+  ${backgroundCssSmart('.half-page-picture', coverImages)}
+`}
 
 const ie11Styles = css`
   & {

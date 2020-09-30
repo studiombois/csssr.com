@@ -10,15 +10,9 @@ const Checkbox = (props) => {
   const hasError = meta.touched && !!meta.error
 
   return (
-    <div className={className}>
+    <div className={className} data-testid={testId}>
       <label>
-        <input
-          type="checkbox"
-          className="input-original"
-          data-testid={testId}
-          {...input}
-          {...rest}
-        />
+        <input type="checkbox" className="input-original" {...input} {...rest} />
         <div className="checkbox-label">
           <div className={cn('checkbox-custom', { 'checkbox-custom_error': hasError })}>
             <div className="checkbox-inner" />
@@ -34,7 +28,7 @@ Checkbox.propTypes = {
   meta: object,
   input: object,
   className: string,
-  testId: string,
+  testId: string.isRequired,
   children: any,
 }
 

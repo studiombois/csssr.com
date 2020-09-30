@@ -1,14 +1,16 @@
 import React from 'react'
 import { object, string } from 'prop-types'
-import { L10nConsumer } from '../../../utils/l10nProvider'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
+
 import styles from './Greeting.styles'
+import ContactButton from '../../ContactButton'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import ContactButton from '../../ContactButton'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Greeting = ({
@@ -30,23 +32,21 @@ const Greeting = ({
         dangerouslySetInnerHTML={{ __html: heading(translations) }}
         className="heading"
       />
+
       <Text
         type={textType}
         size="m"
         dangerouslySetInnerHTML={{ __html: text(translations) }}
         className="text"
       />
-      <PictureForAllResolutions
-        images={images}
-        fallback={images['desktop.l'].png}
-        alt={imgAlt(translations)}
-        className="image"
-      />
+
+      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
 
       <ContactButton
         className="button"
         pageName={pageName}
         dangerouslySetInnerHTML={{ __html: button(translations) }}
+        testId="Industry:button.contactUs"
       />
     </Grid>
   )

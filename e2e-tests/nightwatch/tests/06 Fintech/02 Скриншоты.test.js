@@ -7,8 +7,9 @@ testcase('Fintech 1920 En', () => {
       .url(browser.launch_url + '/en/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы Fintech на 1920 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Fintech 1920 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Fintech 1920 EN')
   })
 })
 
@@ -19,8 +20,9 @@ testcase('Fintech 1360 En', () => {
       .url(browser.launch_url + '/en/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы Fintech на 1360 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Fintech 1360 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Fintech 1360 EN')
   })
 })
 
@@ -31,8 +33,9 @@ testcase('Fintech 1280 En', () => {
       .url(browser.launch_url + '/en/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы Fintech на 1280 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Fintech 1280 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Fintech 1280 EN')
   })
 })
 
@@ -43,20 +46,22 @@ testcase('Fintech 1024 En', () => {
       .url(browser.launch_url + '/en/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы Fintech на 1024 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Fintech 1024 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Fintech 1024 EN')
   })
 })
 
 testcase('Fintech 360 En', () => {
-  step('Перейти на страницу Fintech', () => {
+  step('zz Fintech', () => {
     browser
       .setWindowSize(360, 7400)
       .url(browser.launch_url + '/en/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы Fintech на 360 EN', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Fintech 360 EN')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Fintech 360 EN')
   })
 })
 
@@ -69,8 +74,9 @@ testcase('Индустрии Финтех 1920 RU', () => {
       .url(browser.launch_url + '/ru/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии Финтех на 1920 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1920 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Финтех 1920 RU')
   })
 })
 
@@ -81,8 +87,9 @@ testcase('Индустрии Финтех 1360 RU', () => {
       .url(browser.launch_url + '/ru/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии Финтех на 1360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1360 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Финтех 1360 RU')
   })
 })
 
@@ -93,8 +100,9 @@ testcase('Индустрии Финтех 1280 RU', () => {
       .url(browser.launch_url + '/ru/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии Финтех на 1280 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1280 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Финтех 1280 RU')
   })
 })
 
@@ -105,8 +113,9 @@ testcase('Индустрии Финтех 1024 RU', () => {
       .url(browser.launch_url + '/ru/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии Финтех на 1024 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 1024 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Финтех 1024 RU')
   })
 })
 
@@ -117,7 +126,8 @@ testcase('Индустрии Финтех 360 RU', () => {
       .url(browser.launch_url + '/ru/industry/fintech')
       .waitForElementPresent('footer')
   })
+
   expected('Скрин целой страницы индустрии Финтех на 360 RU', () => {
-    browser.assert.screenshotElement('[id="main"]', 'Индустрии Финтех 360 RU')
+    browser.assert.screenshotElement('[data-testid="Main:block"]', 'Финтех 360 RU')
   })
 })

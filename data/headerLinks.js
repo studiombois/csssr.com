@@ -100,21 +100,21 @@ export default {
       ],
     },
     {
-      id: 'products',
-      title: (t) => t.common.header.menu.products.title,
+      id: 'solutions',
+      title: (t) => t.common.header.menu.solutions.title,
       links: [
         {
           id: 'lms',
           icon: LMS,
-          title: (t) => t.common.header.menu.products.lms.title,
-          description: (t) => t.common.header.menu.products.lms.description,
-          href: 'products/lms',
+          title: (t) => t.common.header.menu.solutions.lms.title,
+          description: (t) => t.common.header.menu.solutions.lms.description,
+          href: 'solutions/lms',
         },
         {
           id: 'tracker',
           icon: Tracker,
-          title: (t) => t.common.header.menu.products.tracker.title,
-          description: (t) => t.common.header.menu.products.tracker.description,
+          title: (t) => t.common.header.menu.solutions.tracker.title,
+          description: (t) => t.common.header.menu.solutions.tracker.description,
           href: 'https://tracker.csssr.com',
         },
       ],
@@ -132,6 +132,10 @@ export default {
     {
       title: (t) => t.common.header.links.careers.title,
       href: 'jobs',
+    },
+    {
+      title: (t) => t.common.header.links.contacts.title,
+      href: 'contacts',
     },
   ],
 }

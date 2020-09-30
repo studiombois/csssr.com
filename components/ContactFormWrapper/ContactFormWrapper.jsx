@@ -3,13 +3,12 @@ import styled from '@emotion/styled'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
-import fetch from 'isomorphic-unfetch'
 import styles from './ContactFormWrapper.styles'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import ContactForm from '../ContactForm'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
 import getGaCid from '../../utils/client/getGaCid'
-import testEmail from '../../utils/testEmail'
+import testEmails from '../../utils/testEmails'
 
 const Form = (props) => (
   <ContactForm
@@ -26,7 +25,7 @@ const onSubmit = (translations, language, pageName) => async (values) => {
   values.language = language
   let res
 
-  const isTestEmail = values.email === testEmail
+  const isTestEmail = testEmails.includes(values.email)
 
   try {
     res = await fetch('/api/submit-form', {

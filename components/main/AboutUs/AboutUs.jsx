@@ -9,8 +9,7 @@ import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
 import Grid from '../../ui-kit/core-design/Grid'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
-import Picture from '../../ui-kit/Picture'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import facts from '../../../data/main/aboutUs/facts'
 import images from '../../../data/main/aboutUs/images'
@@ -32,7 +31,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
   }
 
   return (
-    <Grid as="article" className={cn('about-us', className)}>
+    <Grid as="article" className={cn('about-us', className)} data-testid="Home:block.about-us">
       <Heading
         className="about-us-title"
         as="h2"
@@ -47,14 +46,9 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
           'picture-wrapper_elbrus': visibleImage === 'elbrus',
         })}
       >
-        <PictureForAllResolutions
+        <PictureSmart
           className={cn('picture', 'picture_love')}
-          images={language === 'ru' ? images.love_ru : images.love_en}
-          fallback={
-            language === 'ru'
-              ? images.love_ru['desktop.all'].png
-              : images.love_en['desktop.all'].png
-          }
+          requireImages={language === 'ru' ? images.love_ru : images.love_en}
           alt={translations.main.imgAlt.aboutUs}
         />
 
@@ -65,11 +59,11 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
           alt={translations.main.imgAlt.volleyball}
         /> */}
 
-        <Picture
+        <PictureSmart
           className={cn('picture', 'picture_elbrus')}
-          images={images.elbrus}
-          fallback={images.elbrus.jpg}
+          requireImages={images.elbrus}
           alt={translations.main.imgAlt.elbrus}
+          testId="Home:img.elbrus"
         />
       </aside>
 
@@ -96,6 +90,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
                 className="italic"
                 onMouseOver={handleHover('elbrus')}
                 onMouseLeave={handleHover(null)}
+                data-testid="Home:text.elbrus"
               >
                 {translations.main.aboutUs[id].hero}
               </span>

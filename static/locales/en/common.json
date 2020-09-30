@@ -18,12 +18,12 @@
       "services": {
         "title": "Services",
         "outsourcing": {
-          "title": "Outsourcing <span style=\"white-space: nowrap;\">Front-end</span>",
-          "description": "Web development to&nbsp;complement core competencies."
+          "title": "Web Development",
+          "description": "Fast, reliable and professional web development services."
         },
         "express": {
-          "title": "Express Web Development",
-          "description": "Fixed rates for straight-forward, time-sensitive services."
+          "title": "PSD to HTML Conversion",
+          "description": "Turn your design (PSD, Sketch, Figma) into <span style=\"white-space: nowrap;\">HTML-pages</span>."
         },
         "mvp": {
           "title": "MVP Development",
@@ -60,11 +60,11 @@
           "description": "Attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average."
         }
       },
-      "products": {
-        "title": "Products",
+      "solutions": {
+        "title": "Solutions",
         "lms": {
           "title": "Modular LMS Platform",
-          "description": "Start you E-Learning business with or&nbsp;LMS. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and customization"
+          "description": "Start your E-Learning business with our&nbsp;LMS. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and customization"
         },
         "tracker": {
           "title": "Time-tracking Software",
@@ -81,17 +81,20 @@
       },
       "careers": {
         "title": "Careers"
+      },
+      "contacts": {
+        "title": "Contacts"
       }
     },
-    "action": "Contact us",
+    "action": "Hire us",
     "backLink": "Our services"
   },
   "footer": {
     "actionPhrase": "Let’s work together!",
     "services": {
       "title": "Services",
-      "outsourcing": "Outsourcing",
-      "express": "Express",
+      "outsourcing": "Web Development",
+      "express": "PSD to HTML",
       "mvp": "MVP",
       "backend": "Back-end</br>and DevOps"
     },
@@ -112,10 +115,11 @@
       "title": "Company",
       "blog": "Blog",
       "aboutUs": "About us",
-      "careers": "Careers"
+      "careers": "Careers",
+      "contacts": "Contacts"
     },
-    "products": {
-      "title": "Products",
+    "solutions": {
+      "title": "Solutions",
       "lms": "Modular LMS system",
       "tracker": "Time-tracking software"
     },
@@ -149,7 +153,7 @@
   },
   "noPage": "This page is not available in English.",
   "checkBoxesText": {
-    "privacyPolicyText": "I agree to my personal data being stored and used for the purposes stated in the ",
+    "privacyPolicyText": "By submitting the form, you agree to your personal data being stored and used for the purposes stated in the ",
     "privacyPolicyLinkText": "Privacy Policy",
     "newsletterText": "I agree to receive information and commercial offers"
   },

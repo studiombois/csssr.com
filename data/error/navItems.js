@@ -9,11 +9,6 @@ export default [
         href: 'service/outsourcing-front-end',
       },
       {
-        id: 'express',
-        title: (t) => t.common.header.menu.services.express.title,
-        href: 'service/express-front-end',
-      },
-      {
         id: 'mvp',
         title: (t) => t.common.header.menu.services.mvp.title,
         href: 'service/mvp-development',

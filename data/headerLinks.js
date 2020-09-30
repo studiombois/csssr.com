@@ -1,7 +1,6 @@
 /* eslint-disable-next-line */
 import React from 'react'
 import { ReactComponent as Square } from '../static/icons/header/square.svg'
-import { ReactComponent as Triangle } from '../static/icons/header/triangle.svg'
 import { ReactComponent as Circle } from '../static/icons/header/circle.svg'
 import { ReactComponent as Arc } from '../static/icons/header/arc.svg'
 import { ReactComponent as PieChart } from '../static/icons/header/pieChart.svg'
@@ -25,13 +24,6 @@ export default {
           title: (t) => t.common.header.menu.services.outsourcing.title,
           description: (t) => t.common.header.menu.services.outsourcing.description,
           href: 'service/outsourcing-front-end',
-        },
-        {
-          id: 'express',
-          icon: Triangle,
-          title: (t) => t.common.header.menu.services.express.title,
-          description: (t) => t.common.header.menu.services.express.description,
-          href: 'service/express-front-end',
         },
         {
           id: 'mvp',

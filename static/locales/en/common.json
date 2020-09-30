@@ -21,10 +21,6 @@
           "title": "Web Development",
           "description": "Fast, reliable and professional web development services."
         },
-        "express": {
-          "title": "PSD to HTML Conversion",
-          "description": "Turn your design (PSD, Sketch, Figma) into <span style=\"white-space: nowrap;\">HTML-pages</span>."
-        },
         "mvp": {
           "title": "MVP Development",
           "description": "Development of&nbsp;core functionality for testing purposes."
@@ -94,7 +90,6 @@
     "services": {
       "title": "Services",
       "outsourcing": "Web Development",
-      "express": "PSD to HTML",
       "mvp": "MVP",
       "backend": "Back-end</br>and DevOps"
     },

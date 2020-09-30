@@ -1,100 +1,93 @@
-const gazpromImages = require.context(
-  '../../public/images/our-cases/dev-cases/gazprom?csssr-images',
+const INGImages = require.context('../../public/images/design-lab/design-cases/ing?csssr-images')
+const NASAImages = require.context('../../public/images/design-lab/design-cases/nasa?csssr-images')
+const qatarImages = require.context(
+  '../../public/images/design-lab/design-cases/qatar?csssr-images',
 )
-const s7Images = require.context('../../public/images/our-cases/dev-cases/s7?csssr-images')
-const qacademyImages = require.context(
-  '../../public/images/our-cases/dev-cases/qacademy?csssr-images',
+const ersteImages = require.context(
+  '../../public/images/design-lab/design-cases/erste?csssr-images',
 )
-const brusnikaImages = require.context(
-  '../../public/images/our-cases/dev-cases/brusnika?csssr-images',
+const serpbookImages = require.context(
+  '../../public/images/design-lab/design-cases/serpbook?csssr-images',
 )
-const mindboxImages = require.context(
-  '../../public/images/our-cases/dev-cases/mindbox?csssr-images',
+const cogniImages = require.context(
+  '../../public/images/design-lab/design-cases/cogni?csssr-images',
 )
-const flantImages = require.context('../../public/images/our-cases/dev-cases/flant?csssr-images')
-const mosoblgazImages = require.context(
-  '../../public/images/our-cases/dev-cases/mosoblgaz?csssr-images',
+const ottomaticImages = require.context(
+  '../../public/images/design-lab/design-cases/ottomatic?csssr-images',
+)
+
+const JTIImages = require.context('../../public/images/design-lab/design-cases/jti?csssr-images')
+
+const creddibleImages = require.context(
+  '../../public/images/design-lab/design-cases/creddible?csssr-images',
+)
+
+const truebillImages = require.context(
+  '../../public/images/design-lab/design-cases/truebill?csssr-images',
 )
 
 export default {
-  heading: (t) => t.ourCases.devCases.heading,
+  plug: (t) => t.designLab.designCases.plug,
   cases: [
     {
-      images: gazpromImages,
-      imgAlt: (t) => t.ourCases.devCases.gazprom.imgAlt,
-      link: 'project/gazprom-neft-professionals-4-0',
-      heading: (t) => t.ourCases.devCases.gazprom.heading,
-      text: (t) => t.ourCases.devCases.gazprom.text,
-      tag: (t) => t.ourCases.devCases.gazprom.tag,
-      tagLink: 'industry/information-technology',
-      team: (t) => t.ourCases.devCases.gazprom.team,
-      duration: (t) => t.ourCases.devCases.gazprom.duration,
+      images: INGImages,
+      imgAlt: (t) => t.designLab.designCases.ing.imgAlt,
+      heading: (t) => t.designLab.designCases.ing.heading,
+      text: (t) => t.designLab.designCases.ing.text,
     },
     {
-      images: s7Images,
-      imgAlt: (t) => t.ourCases.devCases.s7.imgAlt,
-      link: 'project/s7-personal-account',
-      heading: (t) => t.ourCases.devCases.s7.heading,
-      text: (t) => t.ourCases.devCases.s7.text,
-      tag: (t) => t.ourCases.devCases.s7.tag,
-      tagLink: 'industry/information-technology',
-      team: (t) => t.ourCases.devCases.s7.team,
-      duration: (t) => t.ourCases.devCases.s7.duration,
+      images: NASAImages,
+      imgAlt: (t) => t.designLab.designCases.nasa.imgAlt,
+      heading: (t) => t.designLab.designCases.nasa.heading,
+      text: (t) => t.designLab.designCases.nasa.text,
     },
     {
-      images: qacademyImages,
-      imgAlt: (t) => t.ourCases.devCases.qacademy.imgAlt,
-      link: 'project/qmarketing',
-      heading: (t) => t.ourCases.devCases.qacademy.heading,
-      text: (t) => t.ourCases.devCases.qacademy.text,
-      tag: (t) => t.ourCases.devCases.qacademy.tag,
-      tagLink: 'industry/media-and-marketing',
-      team: (t) => t.ourCases.devCases.qacademy.team,
-      duration: (t) => t.ourCases.devCases.qacademy.duration,
+      images: qatarImages,
+      imgAlt: (t) => t.designLab.designCases.qatar.imgAlt,
+      heading: (t) => t.designLab.designCases.qatar.heading,
+      text: (t) => t.designLab.designCases.qatar.text,
     },
     {
-      images: brusnikaImages,
-      imgAlt: (t) => t.ourCases.devCases.brusnika.imgAlt,
-      link: 'project/brusnika',
-      heading: (t) => t.ourCases.devCases.brusnika.heading,
-      text: (t) => t.ourCases.devCases.brusnika.text,
-      tag: (t) => t.ourCases.devCases.brusnika.tag,
-      tagLink: 'industry/ecommerce',
-      team: (t) => t.ourCases.devCases.brusnika.team,
-      duration: (t) => t.ourCases.devCases.brusnika.duration,
+      images: ersteImages,
+      imgAlt: (t) => t.designLab.designCases.erste.imgAlt,
+      heading: (t) => t.designLab.designCases.erste.heading,
+      text: (t) => t.designLab.designCases.erste.text,
     },
     {
-      images: mindboxImages,
-      imgAlt: (t) => t.ourCases.devCases.mindbox.imgAlt,
-      link: 'project/mindbox',
-      heading: (t) => t.ourCases.devCases.mindbox.heading,
-      text: (t) => t.ourCases.devCases.mindbox.text,
-      tag: (t) => t.ourCases.devCases.mindbox.tag,
-      tagLink: 'industry/media-and-marketing',
-      team: (t) => t.ourCases.devCases.mindbox.team,
-      duration: (t) => t.ourCases.devCases.mindbox.duration,
+      images: serpbookImages,
+      imgAlt: (t) => t.designLab.designCases.serpbook.imgAlt,
+      heading: (t) => t.designLab.designCases.serpbook.heading,
+      text: (t) => t.designLab.designCases.serpbook.text,
     },
     {
-      images: flantImages,
-      imgAlt: (t) => t.ourCases.devCases.flant.imgAlt,
-      link: 'project/flant',
-      heading: (t) => t.ourCases.devCases.flant.heading,
-      text: (t) => t.ourCases.devCases.flant.text,
-      tag: (t) => t.ourCases.devCases.flant.tag,
-      tagLink: 'industry/information-technology',
-      team: (t) => t.ourCases.devCases.flant.team,
-      duration: (t) => t.ourCases.devCases.flant.duration,
+      images: cogniImages,
+      imgAlt: (t) => t.designLab.designCases.cogni.imgAlt,
+      heading: (t) => t.designLab.designCases.cogni.heading,
+      text: (t) => t.designLab.designCases.cogni.text,
     },
     {
-      images: mosoblgazImages,
-      imgAlt: (t) => t.ourCases.devCases.mosoblgaz.imgAlt,
-      link: 'project/mosoblgaz',
-      heading: (t) => t.ourCases.devCases.mosoblgaz.heading,
-      text: (t) => t.ourCases.devCases.mosoblgaz.text,
-      tag: (t) => t.ourCases.devCases.mosoblgaz.tag,
-      tagLink: 'industry/ecommerce',
-      team: (t) => t.ourCases.devCases.mosoblgaz.team,
-      duration: (t) => t.ourCases.devCases.mosoblgaz.duration,
+      images: ottomaticImages,
+      imgAlt: (t) => t.designLab.designCases.ottomatic.imgAlt,
+      heading: (t) => t.designLab.designCases.ottomatic.heading,
+      text: (t) => t.designLab.designCases.ottomatic.text,
+    },
+    {
+      images: JTIImages,
+      imgAlt: (t) => t.designLab.designCases.jti.imgAlt,
+      heading: (t) => t.designLab.designCases.jti.heading,
+      text: (t) => t.designLab.designCases.jti.text,
+    },
+    {
+      images: creddibleImages,
+      imgAlt: (t) => t.designLab.designCases.creddible.imgAlt,
+      heading: (t) => t.designLab.designCases.creddible.heading,
+      text: (t) => t.designLab.designCases.creddible.text,
+    },
+    {
+      images: truebillImages,
+      imgAlt: (t) => t.designLab.designCases.truebill.imgAlt,
+      heading: (t) => t.designLab.designCases.truebill.heading,
+      text: (t) => t.designLab.designCases.truebill.text,
     },
   ],
 }

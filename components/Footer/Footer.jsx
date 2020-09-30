@@ -4,7 +4,7 @@ import NextLink from 'next/link'
 import { withRouter } from 'next/router'
 import styled from '@emotion/styled'
 import styles from './Footer.styles'
-
+import LazyLoad from 'react-lazyload'
 import SocialLinks from './SocialLinks'
 import PrivacyAndLanguageLinks from './PrivacyAndLanguageLinks'
 import Nav from './Nav'
@@ -68,11 +68,13 @@ const Footer = ({
           </NextLink>
 
           {!isMobile && (
-            <video className="video" autoPlay loop muted>
-              <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
+            <LazyLoad>
+              <video className="video" autoPlay loop muted>
+                <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
 
-              <p>{translations.common.footer.videoError}</p>
-            </video>
+                <p>{translations.common.footer.videoError}</p>
+              </video>
+            </LazyLoad>
           )}
 
           <Heading

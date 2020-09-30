@@ -3,14 +3,21 @@ import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import { css, Global } from '@emotion/core'
-import styles, { pictureHunterStyles } from './Vacancies.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import PictureOld from '../../Picture'
-import Grid from '../../ui-kit/core-design/Grid'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styles, { pictureHunterStyles, backgroundImagesStyles } from './Vacancies.styles'
 
-import { distanceImages, faqImages, howImages, whoImages } from '../../../data/jobs/images'
+import Grid from '../../ui-kit/core-design/Grid'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
+
+import {
+  distanceImages,
+  faqImages,
+  howImages,
+  whoImages,
+  jobsHunter,
+} from '../../../data/jobs/images'
 
 class Vacancies extends PureComponent {
   render() {
@@ -32,6 +39,7 @@ class Vacancies extends PureComponent {
             `
           }
         />
+        <Global styles={backgroundImagesStyles} />
         <Grid as="article" className={className}>
           <header>
             <h1 className="font_h1-regular">
@@ -65,10 +73,9 @@ class Vacancies extends PureComponent {
             </ul>
           )}
 
-          <PictureForAllResolutions
+          <PictureSmart
             className="picture"
-            images={howImages}
-            fallback={howImages['desktop.l']}
+            requireImages={howImages}
             alt={translations.jobs.how.alt}
           />
 
@@ -81,10 +88,9 @@ class Vacancies extends PureComponent {
             dangerouslySetInnerHTML={{ __html: translations.jobs.how.description }}
           />
 
-          <PictureForAllResolutions
+          <PictureSmart
             className="picture"
-            images={whoImages}
-            fallback={whoImages['desktop.l']}
+            requireImages={whoImages}
             alt={translations.jobs.who.alt}
           />
 
@@ -97,10 +103,9 @@ class Vacancies extends PureComponent {
             dangerouslySetInnerHTML={{ __html: translations.jobs.who.description }}
           />
 
-          <PictureForAllResolutions
+          <PictureSmart
             className="picture"
-            images={distanceImages}
-            fallback={distanceImages['desktop.l']}
+            requireImages={distanceImages}
             alt={translations.jobs.about.alt}
           />
 
@@ -119,13 +124,13 @@ class Vacancies extends PureComponent {
 
           {language === 'ru' && (
             <Fragment>
-              <PictureForAllResolutions
+              <PictureSmart
                 className="picture-faq"
-                images={faqImages}
-                fallback={faqImages['desktop.l']}
+                requireImages={faqImages}
                 alt={translations.jobs.faq.alt}
                 testid="Jobs:img.faq"
               />
+
               <p className="faq-text font_p16-regular">
                 {translations.jobs.faq.title}
 
@@ -136,9 +141,10 @@ class Vacancies extends PureComponent {
             </Fragment>
           )}
 
-          <PictureOld
+          <PictureSmart
             css={pictureHunterStyles}
-            image={{ namespace: 'jobs', key: 'jobs-hunter', alt: translations.jobs.hunter.alt }}
+            requireImages={jobsHunter}
+            alt={translations.jobs.hunter.alt}
           />
           <p className="hunter-text font_p16-regular">
             {translations.jobs.hunter.description}&nbsp;

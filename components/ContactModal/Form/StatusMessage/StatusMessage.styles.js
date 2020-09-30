@@ -15,6 +15,8 @@ const base = css`
 
   img {
     margin-top: 12.75rem;
+    width: auto;
+    height: auto;
   }
 
   p {

@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { object, string } from 'prop-types'
+import { string, func } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './FeatureItem.styles'
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 const OriginFeatureItem = ({
   images,
@@ -15,11 +15,7 @@ const OriginFeatureItem = ({
   className,
 }) => (
   <div className={className}>
-    <PictureForAllResolutions
-      images={images}
-      fallback={images['desktop.l']}
-      alt={imageDescription}
-    />
+    <PictureSmart requireImages={images} alt={imageDescription} />
 
     <Heading
       as="h2"
@@ -47,7 +43,7 @@ const OriginFeatureItem = ({
 )
 
 OriginFeatureItem.propTypes = {
-  images: object,
+  images: func,
   imageDescription: string,
   heading: string,
   textRegular: string,

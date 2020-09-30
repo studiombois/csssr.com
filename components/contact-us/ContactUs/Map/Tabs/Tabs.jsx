@@ -37,7 +37,7 @@ const Tabs = ({
 Tabs.propTypes = {
   className: string,
   l10n: object,
-  testId: string.isRequired,
+  testId: string,
 }
 
 export default L10nConsumer(

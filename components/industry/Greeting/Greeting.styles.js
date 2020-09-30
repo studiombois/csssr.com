@@ -38,6 +38,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(84)};
   }
 
+  ${desktop.l} {
+    .image {
+      max-height: 632px;
+    }
+  }
+
   ${desktop.m} {
     margin-top: ${calcRem(197)};
 
@@ -55,6 +61,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       grid-column: 6 / span 7;
       margin-top: ${calcRem(42)};
       margin-left: ${calcRem(40)};
+      max-height: 632px;
     }
 
     .button {
@@ -78,6 +85,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .image {
       grid-column: 6 / span 7;
       margin-top: ${calcRem(83)};
+      max-height: 592px;
     }
 
     .button {

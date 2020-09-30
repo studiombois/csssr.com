@@ -2,20 +2,18 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Hero.styles'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
-
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
 import ContactButton from '../../../ContactButton'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import Grid from '../../../ui-kit/core-design/Grid'
 
-import hero_desktop from '../../../../static/images/service/outsourcing-front-end/desktop.all/hero.png?responsive'
-import hero_desktop_webp from '../../../../static/images/service/outsourcing-front-end/desktop.all/hero.png?responsive_and_webp'
-
-import hero_mobile from '../../../../static/images/service/outsourcing-front-end/mobile.all/hero.png?responsive'
-import hero_mobile_webp from '../../../../static/images/service/outsourcing-front-end/mobile.all/hero.png?responsive_and_webp'
+const heroImages = require.context(
+  '../../../../public/images/service/outsourcing-front-end/hero?csssr-images',
+)
 
 const Hero = ({ className, pageName, l10n: { translations } }) => (
   <Grid as="article" className={className}>
@@ -42,13 +40,9 @@ const Hero = ({ className, pageName, l10n: { translations } }) => (
       testId="Outsourcing:button:contactUs.hero"
     />
 
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={{
-        'desktop.all': { png: hero_desktop, webp: hero_desktop_webp },
-        'mobile.all': { png: hero_mobile, webp: hero_mobile_webp },
-      }}
-      fallback={hero_desktop}
+      requireImages={heroImages}
       alt={translations.outsourcingFrontEnd.imgAlt.hero}
     />
   </Grid>

@@ -15,18 +15,9 @@ const base = css`
         display: block;
     }
 
-    .mobile-image {
-        display: none;
-    }
-
-    .image img,
-    .mobile-image img{
+    .image img{
         width: 100%;
         height: auto;
-    }
-
-    .mobile-image {
-        display: none;
     }
 
     .wrapper {
@@ -81,10 +72,6 @@ const base = css`
         }
 
         .image {
-            display: none;
-        }
-
-        .mobile-image {
             margin-bottom: -30px;
             display: block;
         }

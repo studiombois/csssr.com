@@ -1,22 +1,13 @@
 import { css } from '@emotion/core'
 import getGridValueForMs from '../../../../../utils/style/getGridValueForMs'
 import calcRem from '../../../../../utils/style/calcRem'
-import getBackgroundImageSrcSet from '../../../../../utils/style/getBackgroundImageSrcSet'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-import square from '../../../../../static/images/main/square.png?responsive'
-import square_webp from '../../../../../static/images/main/square.png?responsive_and_webp'
-
-import triangle from '../../../../../static/images/main/triangle.png?responsive'
-import triangle_webp from '../../../../../static/images/main/triangle.png?responsive_and_webp'
-
-import circle from '../../../../../static/images/main/circle.png?responsive'
-import circle_webp from '../../../../../static/images/main/circle.png?responsive_and_webp'
-
-import arc_ru from '../../../../../static/images/main/arc-ru.png?responsive'
-import arc_ru_webp from '../../../../../static/images/main/arc-ru.png?responsive_and_webp'
-
-import arc from '../../../../../static/images/main/arc.png?responsive'
-import arc_webp from '../../../../../static/images/main/arc.png?responsive_and_webp'
+const circle = require.context('../../../../../public/images/main/figures/circle?csssr-images')
+const square = require.context('../../../../../public/images/main/figures/square?csssr-images')
+const triangle = require.context('../../../../../public/images/main/figures/triangle?csssr-images')
+const arc = require.context('../../../../../public/images/main/figures/arc?csssr-images')
+const arc_ru = require.context('../../../../../public/images/main/figures/arc-ru?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
   align-items: start;
@@ -286,6 +277,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       position: absolute;
       z-index: -1;
       display: block;
+      background-size: 100%;
+      background-repeat: no-repeat;
     }
 
     .service_outsourcing::before {
@@ -349,6 +342,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       margin-top: ${calcRem(24)};
     }
   }
+
+  @media (min-device-width : 375px)
+  and (max-device-width : 812px)
+  and (-webkit-min-device-pixel-ratio : 2)
+  and (-webkit-max-device-pixel-ratio : 3) {
+    .service-title {
+      transform: translateX(${calcRem(-24)});
+    }
+  }
 `
 
 const ie11Styles = ({ breakpoints: { mobile }}) => css`
@@ -380,13 +382,10 @@ export const mobileBackgroundImagesStyles = language => theme => {
   const { mobile } = theme.breakpoints
   return css`
     ${mobile.all} {
-      ${getBackgroundImageSrcSet({ png: circle, webp: circle_webp}, '.service_outsourcing::before')}
-      ${getBackgroundImageSrcSet({ png: triangle, webp: triangle_webp}, '.service_express::before')}
-      ${getBackgroundImageSrcSet({ png: square, webp: square_webp}, '.service_mvp::before')}
-
-      ${language === 'ru'
-      ? getBackgroundImageSrcSet({ png: arc_ru, webp: arc_ru_webp}, '.service_backend::before')
-      : getBackgroundImageSrcSet({ png: arc, webp: arc_webp}, '.service_backend::before')}
+      ${backgroundCssSmart('.service_outsourcing::before', circle)}
+      ${backgroundCssSmart('.service_express::before', triangle)}
+      ${backgroundCssSmart('.service_mvp::before', square)}
+      ${backgroundCssSmart('.service_backend::before', language === 'ru' ? arc_ru : arc)}
     }
   `
 }

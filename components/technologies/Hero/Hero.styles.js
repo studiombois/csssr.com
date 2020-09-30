@@ -37,7 +37,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     grid-column: 6 / span 5;
     grid-row: 3 / span 2;
     object-fit: contain;
-    width:
   }
 
   .typescript {

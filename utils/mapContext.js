@@ -21,7 +21,7 @@ export const MapConsumer = (Component) => (props) => (
 
 const addressIdByCalendlyCallAssignee = {
   'Anastasia Ign': 'sg',
-  'Anastasia Vnuchenko': 'ee',
+  'Sonya Kiseleva': 'ee',
 }
 
 const adressByLanguage = {

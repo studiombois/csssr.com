@@ -1,10 +1,9 @@
 import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
-import getBackgroundImageSrcSet from '../../../utils/style/getBackgroundImageSrcSet'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-import image_do from '../../../static/images/main/do.png?responsive'
-import image_do_webp from '../../../static/images/main/do.png?responsive_and_webp'
+const imagesDo = require.context('../../../public/images/main/about-us/do?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   margin-top: 265px;
@@ -71,7 +70,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: 35px;
     grid-column: 1 / span 6;
     grid-row-end: span 4;
-    background-size: 99% !important;
+    background-size: 99%;
+    background-repeat: no-repeat;
     overflow: hidden;
   }
 
@@ -392,15 +392,11 @@ const ie11Styles = ({ breakpoints: { desktop, mobile }}) => css`
 `
 
 export const loveBackgroundImagesStyles = theme => {
-  const { desktop, tablet } = theme.breakpoints
+  const { above  } = theme.breakpoints
 
   return css`
-    ${desktop.all} {
-      ${getBackgroundImageSrcSet({ png: image_do, webp: image_do_webp}, '.about-us .picture-wrapper')}
-    }
-
-    ${tablet.all} {
-      ${getBackgroundImageSrcSet({ png: image_do, webp: image_do_webp}, '.about-us .picture-wrapper')}
+    ${above.mobile} {
+      ${backgroundCssSmart('.about-us .picture-wrapper', imagesDo)}
     }
   `
 }

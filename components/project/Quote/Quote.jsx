@@ -1,23 +1,23 @@
 import React from 'react'
 import { string } from 'prop-types'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './Quote.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 import Grid from '../../ui-kit/core-design/Grid'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Quote = ({ className, projectId, images, l10n: { translations } }) => (
   <Grid as="section" className={cn(className, projectId)}>
-    <PictureForAllResolutions
+    <PictureSmart
       className="picture"
-      images={images}
-      fallback={images['desktop.l'].png}
+      requireImages={images}
       alt={translations.project[projectId].imgAlt.quote}
     />
 

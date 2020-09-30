@@ -234,6 +234,7 @@ class ContactForm extends PureComponent {
     } = this.props
 
     const status = this.props.status || this.getStatus()
+    const messageShown = status === 'success' || status === 'fail'
 
     return (
       <Grid as="form" className={className} onSubmit={this.handleSubmit} name={formName} noValidate>
@@ -249,20 +250,22 @@ class ContactForm extends PureComponent {
 
         {fields.map(this.renderField)}
 
-        {this.renderField('newsletter')}
+        {!messageShown && this.renderField('newsletter')}
 
-        <span className="privacyPolicy font_p16-regular">
-          {translations.common.checkBoxesText.privacyPolicyText}
-          <a
-            href={`/${language}/privacy-policy`}
-            target="_blank"
-            rel="noopener"
-            className="font_link-list_16"
-            data-testid={`${formName}:link:callbackForm.privacyPolicy`}
-          >
-            {translations.common.checkBoxesText.privacyPolicyLinkText}
-          </a>
-        </span>
+        {!messageShown && (
+          <span className="privacyPolicy font_p16-regular">
+            {translations.common.checkBoxesText.privacyPolicyText}
+            <a
+              href={`/${language}/privacy-policy`}
+              target="_blank"
+              rel="noopener"
+              className="font_link-list_16"
+              data-testid={`${formName}:link:callbackForm.privacyPolicy`}
+            >
+              {translations.common.checkBoxesText.privacyPolicyLinkText}
+            </a>
+          </span>
+        )}
 
         <div className="button" ref={this.messageRef}>
           <AnimatedButton

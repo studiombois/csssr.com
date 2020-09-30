@@ -75,21 +75,21 @@ class Error404Page extends React.Component {
   }
 
   render() {
+    if (!this.props.l10n || !this.props.l10n.language) {
+      Sentry.withScope((scope) => {
+        scope.setExtra('l10n', this.props.l10n)
+        Sentry.captureMessage(
+          'Что-то не так с определением языка, смотри url и дополнительные параметры',
+        )
+      })
+    }
+
     const {
       className,
       l10n: { language, translations },
     } = this.props
 
     const rootUrl = `/${language}`
-
-    if (!language) {
-      Sentry.withScope((scope) => {
-        scope.setExtra('language', language)
-        Sentry.captureMessage(
-          'Опять что-то не так с определением языка, смотри url и дополнительные параметры',
-        )
-      })
-    }
 
     return (
       <div data-testid="ErrorPage">

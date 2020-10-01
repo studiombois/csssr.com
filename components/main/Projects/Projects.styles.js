@@ -2,11 +2,19 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   .title {
     margin-top: 188px;
     grid-column: 3 / span 8;
     text-align: center;
+  }
+
+  .solutions {
+    margin-top: 0;
+
+    .heading {
+      display: none;
+    }
   }
 
   .card .description {
@@ -98,6 +106,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .card_blog {
       max-height: 471px;
     }
+
+    .solutions {
+      padding-bottom: 26px;
+    }
   }
 
   ${desktop.l} {
@@ -170,6 +182,31 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: ${calcRem(160)};
     }
 
+    .solutions {
+      margin-top: ${calcRem(40)};
+      padding-bottom: ${calcRem(34)};
+
+      .solution {
+        margin-top: 0;
+
+        &_lms {
+          grid-column: 2 / span 5;
+        }
+
+        &_time-tracker {
+          grid-column: 8 / span 4;
+        }
+
+        .image {
+          height: ${calcRem(144)};
+
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
     .card .description {
       width: 75%;
     }
@@ -217,15 +254,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  ${above.mobile} {
+    .solutions {
+      grid-column: 1 / span 12;
+    }
+  }
+
   ${mobile.all} {
     .title,
     .card,
-    .posts {
+    .posts,
+    .solutions {
       grid-column: 1 / span 6;
     }
 
     .title {
       margin-top: ${calcRem(104)};
+      text-align: left;
+    }
+
+    .solutions {
+      padding-bottom: ${calcRem(36)};
     }
 
     .card {

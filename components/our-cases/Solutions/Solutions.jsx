@@ -1,5 +1,5 @@
 import React from 'react'
-import { object, string } from 'prop-types'
+import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Solutions.styles'
 import Link from '../../ui-kit/core-design/Link'
@@ -12,62 +12,57 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Solutions = ({ className, l10n: { translations } }) => {
-  return (
-    <Grid className={className} as="section">
-      <Heading.H2
-        type="slab"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: solutions.heading(translations) }}
-        className="heading"
-      />
-      {solutions.solutionsContent.map(
-        ({ externalLink, blockClass, images, imgAlt, heading, text, link }, index) => (
-          <Link
-            className={`solution solution_${blockClass} solution-link`}
-            href={link(translations)}
-            key={index}
-            {...(externalLink && {
-              target: '_blank',
-              rel: 'nofollow noopener',
-            })}
-            data-testid={`ourCases:block.solutionLink.${blockClass}`}
-          >
-            <div className={`image-wrapper image-wrapper_${blockClass}`}>
-              <PictureSmart
-                className="image"
-                requireImages={images}
-                alt={imgAlt(translations)}
-                testid="contactUs:picture:bookACall.avatar"
-              />
-            </div>
-
-            <Heading.H3
-              type="regular"
-              size="l"
-              dangerouslySetInnerHTML={{ __html: heading(translations) }}
-              className="solution-heading"
-              data-testid={`ourCases:text.heading.${blockClass}`}
+const Solutions = ({ className, l10n: { translations } }) => (
+  <Grid className={className} as="section">
+    <Heading.H2
+      type="slab"
+      size="m"
+      dangerouslySetInnerHTML={{ __html: solutions.heading(translations) }}
+      className="heading"
+    />
+    {solutions.solutionsContent.map(
+      ({ externalLink, blockClass, images, imgAlt, heading, text, link }, index) => (
+        <Link
+          className={`solution solution_${blockClass} solution-link`}
+          href={link(translations)}
+          key={index}
+          {...(externalLink && {
+            target: '_blank',
+            rel: 'nofollow noopener',
+          })}
+          data-testid={`ourCases:block.solutionLink.${blockClass}`}
+        >
+          <div className={`image-wrapper image-wrapper_${blockClass}`}>
+            <PictureSmart
+              className="image"
+              requireImages={images}
+              alt={imgAlt(translations)}
+              testid="contactUs:picture:bookACall.avatar"
             />
+          </div>
 
-            <Text
-              type="regular"
-              size="m"
-              dangerouslySetInnerHTML={{ __html: text(translations) }}
-              className="text"
-            />
-          </Link>
-        ),
-      )}
-    </Grid>
-  )
-}
+          <Heading.H3
+            type="regular"
+            size="l"
+            dangerouslySetInnerHTML={{ __html: heading(translations) }}
+            className="solution-heading"
+            data-testid={`ourCases:text.heading.${blockClass}`}
+          />
+
+          <Text
+            type="regular"
+            size="m"
+            dangerouslySetInnerHTML={{ __html: text(translations) }}
+            className="text"
+          />
+        </Link>
+      ),
+    )}
+  </Grid>
+)
 
 Solutions.propTypes = {
   className: string,
-  pageName: string,
-  id: string,
-  content: object,
 }
 
 export default L10nConsumer(

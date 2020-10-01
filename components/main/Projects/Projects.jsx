@@ -8,6 +8,7 @@ import Grid from '../../ui-kit/core-design/Grid'
 import Post from './Post'
 import Card from '../Card'
 import posts from '../../../data/main/posts'
+import Solutions from '../../our-cases/Solutions'
 
 import projects from '../../../data/main/projects'
 
@@ -25,6 +26,8 @@ const Projects = ({ className, l10n: { translations, language } }) => {
         size="m"
       />
 
+      {language === 'en' && <Solutions className="solutions" />}
+
       {projects.map(({ id, title, description, href, images, imagesHovered }) => {
         const Player = () => (
           <div className="player-wrapper">
@@ -37,7 +40,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
           </div>
         )
 
-        if (language !== 'ru' && id === 'radio') {
+        if (language === 'en' && (id === 'radio' || id === 'tracker' || id === 'school')) {
           return
         }
 

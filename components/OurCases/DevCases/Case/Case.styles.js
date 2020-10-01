@@ -3,8 +3,6 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
-    text-decoration: none;
-
     &.large.left {
       grid-column: 2 / span 6;
     }
@@ -32,6 +30,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     &:hover .image-wrapper::before {
       top: 0;
     }
+  }
+
+  .link {
+    text-decoration: none;
   }
 
   .image-wrapper {

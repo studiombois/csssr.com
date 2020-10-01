@@ -18,7 +18,6 @@ export default [
       images: require.context(
         '../../../public/images/service/outsourcing-front-end/advantage_3?csssr-images',
       ),
-      link: '/en/service/express-front-end',
     },
   ],
 ]

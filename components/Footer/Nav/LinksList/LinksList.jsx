@@ -15,38 +15,32 @@ const LinksList = ({
   l10n: { translations, language, locale },
 }) => (
   <ul className={className}>
-    {links.map(({ id, href, useLocale }) => {
-      if (language === 'ru' && id === 'express') {
-        return
-      }
-
-      return (
-        <li key={id}>
-          {linkRegExp.test(href) ? (
-            <Link
-              href={href}
-              className="link"
-              type="list"
-              size="s"
-              target="_blank"
-              rel="noopener nofollow"
-              dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
-              data-testid={`Footer:nav:link.${id}`}
-            />
-          ) : (
-            <Link
-              href={`/${useLocale ? locale : language}/${href}`}
-              className="link"
-              type="list"
-              size="s"
-              dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
-              data-testid={`Footer:nav:link.${id}`}
-              isNextLink
-            />
-          )}
-        </li>
-      )
-    })}
+    {links.map(({ id, href, useLocale }) => (
+      <li key={id}>
+        {linkRegExp.test(href) ? (
+          <Link
+            href={href}
+            className="link"
+            type="list"
+            size="s"
+            target="_blank"
+            rel="noopener nofollow"
+            dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
+            data-testid={`Footer:nav:link.${id}`}
+          />
+        ) : (
+          <Link
+            href={`/${useLocale ? locale : language}/${href}`}
+            className="link"
+            type="list"
+            size="s"
+            dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
+            data-testid={`Footer:nav:link.${id}`}
+            isNextLink
+          />
+        )}
+      </li>
+    ))}
   </ul>
 )
 

@@ -696,10 +696,6 @@ testcase('Отображение ссылок (EN)', () => {
         'Web Development'
       )
       .assert.containsText(
-        '[data-testid="Footer:nav:link.express"]',
-        'PSD to HTML'
-      )
-      .assert.containsText(
         '[data-testid="Footer:nav:link.mvp"]',
         'MVP'
       )
@@ -780,19 +776,6 @@ testcase('Переход по ссылкам (EN)', () => {
     browser
       .waitForElementPresent('[data-testid="Outsourcing:button:contactUs.hero"]')
       .assert.urlEquals(browser.launch_url + '/en/service/outsourcing-front-end')
-  })
-
-  step('Кликаем на текстовую ссылку «PSD to HTML»', () => {
-    browser
-      .moveToElement('[data-testid="Footer:link.language-link"]', 1, 1)
-      .pause(ANIMATION_DURATION_IN_MS)
-      .click('[data-testid="Footer:nav:link.express"]')
-  })
-
-  expected('Сработал переход на страницу «Express Web Development»', () => {
-    browser
-      .waitForElementPresent('[data-testid="Express:link.greeting"]')
-      .assert.urlEquals(browser.launch_url + '/en/service/express-front-end')
   })
 
   step('Кликаем на текстовую ссылку «MVP»', () => {

@@ -231,7 +231,6 @@ testcase('Отображение ссылок (EN)', () => {
 	expected('На странице отображаются ссылки на разделы с дев части хеддера', () => {
 		browser
 			.assert.containsText('[data-testid="ErrorPage:menu:link.outsourcing"]', 'WEB DEVELOPMENT')
-			.assert.containsText('[data-testid="ErrorPage:menu:link.express"]', 'PSD TO HTML CONVERSION')
 			.assert.containsText('[data-testid="ErrorPage:menu:link.mvp"]', 'MVP DEVELOPMENT')
 			.assert.containsText('[data-testid="ErrorPage:menu:link.backend"]', 'BACK-END AND DEVOPS')
 			.assert.containsText('[data-testid="ErrorPage:menu:link.fintech"]', 'FINTECH')
@@ -258,22 +257,6 @@ testcase('Переход на страницу «Web Development Outsourcing»',
 		browser
 			.waitForElementPresent('[data-testid="Outsourcing:button:contactUs.hero"]')
 			.assert.urlEquals(browser.launch_url + '/en/service/outsourcing-front-end')
-	})
-})
-
-testcase('Переход на страницу «PSD TO HTML CONVERSION»', () => {
-	step('Переходим на 404ю страницу', () => {
-		browser.url(browser.launch_url + '/ruqwe12')
-	})
-
-	step('Кликаем на текстовую ссылку «PSD TO HTML CONVERSION»', () => {
-		browser.click('[data-testid="ErrorPage:menu:link.express"]')
-	})
-
-	expected('Переход на страницу Express Web Development', () => {
-		browser
-			.waitForElementPresent('[data-testid="Express:link.greeting"]')
-			.assert.urlEquals(browser.launch_url + '/en/service/express-front-end')
 	})
 })
 

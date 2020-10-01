@@ -107,7 +107,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       &:nth-of-type(n + 3) {
         margin-top: ${calcRem(70)};
       }
-    }
+    } 
 
     .heading {
       margin-top: ${calcRem(20)};

@@ -1,3 +1,3 @@
-import DesignLabPage from '../../components/DesignLab/DesignLabPage'
+import DesignLabPage from '../../components/design-lab/DesignLabPage'
 
 export default DesignLabPage

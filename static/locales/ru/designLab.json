@@ -1,7 +1,7 @@
 {
   "hero": {
     "imgAlt": "Man with pencil",
-    "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to&nbsp;insanely great <span style='color:#F9545B;'>product</span>",
+    "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
     "text": "Our special <span style='color:#F9545B;'>Humble Team</span> that focuses on&nbsp;design expertise to&nbsp;help you create great products with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
   },
   "devCases": {
@@ -62,6 +62,10 @@
       "team": "4 specialists",
       "duration": "2 months"
     }
+  },
+  "devBlock": {
+    "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
+    "text": "Despite the design we&nbsp;are still frontend company and making a&nbsp;complex websites &amp;&nbsp;applications. You can read about development in&nbsp;<a href='service/outsourcing-front-end' class='devBlock__link'>relevant page</a>"
   },
   "idea": {
     "heading": "Have an idea?",

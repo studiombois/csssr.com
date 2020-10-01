@@ -3,6 +3,7 @@ import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import Head from '../Head'
 import Hero from './Hero'
+import DevBlock from './DevBlock'
 
 import heroContent from '../../data/design-lab/hero'
 
@@ -16,6 +17,7 @@ const DesignLabPage = ({ l10n: { translations } }) => {
       />
 
       <Hero content={heroContent} />
+      <DevBlock pageName={pageName} />
     </Layout>
   )
 }

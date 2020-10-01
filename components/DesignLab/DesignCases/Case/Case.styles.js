@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { tablet, mobile } }) => css`
   & {
     text-decoration: none;
 
@@ -21,16 +21,15 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       grid-column: 8 / span 4;
     }
 
-    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+    &:nth-of-type(n + 3) {
       margin-top: ${calcRem(81)};
     }
 
-    &:hover .heading {
-      color: ${colors.primary.origin};
-    }
-
     &:hover .image-wrapper::before {
-      top: 0;
+      opacity: .8;
+    }
+    &:hover .plug {
+      opacity: 1;
     }
   }
 
@@ -41,17 +40,14 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     &::before {
       content: '';
       position: absolute;
-      z-index: -1;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: #0054D7;
-      transition: top .25s ease-in-out;
-      top: 100%;
+      background-color: #fff;
+      transition: opacity .25s ease-in-out;
+      opacity: 0;
     }
-  }
-
-  .image {
-    mix-blend-mode: luminosity;
   }
 
   .heading {
@@ -63,27 +59,22 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(15)};
   }
 
-  .data-wrapper {
+  .plug {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
     display: flex;
     align-items: center;
-    margin-top: ${calcRem(15)};
-  }
-
-  .tag {
-    font-weight: 500;
-    color: ${colors.primary.origin};
-    text-decoration: none;
-  }
-  
-  .team,
-  .duration,
-  .separatopr {
-    font-weight: 500;
-  }
-
-  .separator {
-    margin: 0 ${calcRem(16)};
-    color: ${colors.secondary.darken100};
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: ${calcRem(32)};
+    line-height: ${calcRem(48)};
+    font-weight: 200;
+    color: #000;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
   }
 
   ${tablet.all} {

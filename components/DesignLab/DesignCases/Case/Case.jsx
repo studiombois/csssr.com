@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import styles from './Case.styles'
 import Text from '../../../ui-kit/core-design/Text'
 import Heading from '../../../ui-kit/core-design/Heading'
-import Link from '../../../ui-kit/core-design/Link'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
@@ -12,17 +11,25 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const Case = ({
   className,
-  content: { images, imgAlt, link, heading, text, tag, tagLink, team, duration },
+  plug,
+  content: { images, imgAlt, heading, text },
   index,
   l10n: { translations },
 }) => {
-  const size = index === 0 || index === 3 || index === 4 ? 'small' : 'large'
+  const size =
+    index === 0 || index === 3 || index === 4 || index === 7 || index === 8 ? 'small' : 'large'
   const side = (index + 1) % 2 ? 'left' : 'right'
 
   return (
-    <Link className={`${className} ${size} ${side}`} href={link} isNextLink>
+    <div className={`${className} ${size} ${side}`}>
       <div className="image-wrapper">
         <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
+        <Text
+          type="regular"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: plug(translations) }}
+          className="plug"
+        />
       </div>
 
       <Heading.H2
@@ -38,35 +45,7 @@ const Case = ({
         dangerouslySetInnerHTML={{ __html: text(translations) }}
         className="text"
       />
-      <div className="data-wrapper">
-        <object>
-          <Link
-            dangerouslySetInnerHTML={{ __html: tag(translations) }}
-            className="tag"
-            href={tagLink}
-            isNextLink
-          />
-        </object>
-
-        <span className="separator">•</span>
-
-        <Text
-          type="regular"
-          size="s"
-          dangerouslySetInnerHTML={{ __html: team(translations) }}
-          className="team"
-        />
-
-        <span className="separator">•</span>
-
-        <Text
-          type="regular"
-          size="s"
-          dangerouslySetInnerHTML={{ __html: duration(translations) }}
-          className="duration"
-        />
-      </div>
-    </Link>
+    </div>
   )
 }
 

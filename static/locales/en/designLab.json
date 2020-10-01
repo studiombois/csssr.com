@@ -4,63 +4,57 @@
     "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
     "text": "Our special <span style='color:#F9545B;'>Humble Team</span> that focuses on&nbsp;design expertise to&nbsp;help you create great products with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
   },
-  "devCases": {
-    "heading": "Development cases",
-    "gazprom": {
-      "imgAlt": "Gazprom",
-      "heading": "Gazprom. Management Platform",
-      "text": "The project includes an&nbsp;internet platform, mobile application, and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page.",
-      "tag": "IT",
-      "team": "9 specialists",
-      "duration": "13 months"
+  "designCases": {
+    "plug": "Case is in development",
+    "ing": {
+      "imgAlt": "ING",
+      "heading": "ING. Portal for small &amp;&nbsp;medium businesses.",
+      "text": "Helping to&nbsp;invent a&nbsp;new business direction for the biggest Dutch bank."
     },
-    "s7": {
-      "imgAlt": "S7 Airlines",
-      "heading": "S7. Personal Customer Account",
-      "text": "We&nbsp;develop the entire front-end for the adaptive website of&nbsp;the project.",
-      "tag": "IT",
-      "team": "8 specialists",
-      "duration": "25 months"
+    "nasa": {
+      "imgAlt": "NASA",
+      "heading": "NASA: a&nbsp;new way to&nbsp;manage space in&nbsp;space",
+      "text": "A&nbsp;spaceship storage and cargo management tool designed to&nbsp;make the launch preparation more efficient"
     },
-    "qacademy": {
-      "imgAlt": "QAcademy",
-      "heading": "QAcademy. Management Platform",
-      "text": "We&nbsp;were entrusted with front-end development of&nbsp;authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer&rsquo;s API.",
-      "tag": "Media & Marketing",
-      "team": "3 specialists",
-      "duration": "4 months"
+    "qatar": {
+      "imgAlt": "Qatar",
+      "heading": "Qatar ministry of&nbsp;foreign affairs",
+      "text": "The official app for Qatar citizens that are traveling abroad"
     },
-    "brusnika": {
-      "imgAlt": "Brusnika",
-      "heading": "Brusnika. Internal assessment and forecasting tools",
-      "text": "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding.",
-      "tag": "E-commerce",
-      "team": "1 specialist",
-      "duration": "13 months"
+    "erste": {
+      "imgAlt": "Erste group & Deloitte Digital",
+      "heading": "Erste group &amp;&nbsp;Deloitte Digital",
+      "text": "Concept and ideation for security tokenization mobile application"
     },
-    "mindbox": {
-      "imgAlt": "Mindbox",
-      "heading": "Mindbox. Personal Account",
-      "text": "We&nbsp;worked on&nbsp;two projects: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
-      "tag": "Media & Marketing",
-      "team": "3 specialists",
-      "duration": "13 months"
+    "serpbook": {
+      "imgAlt": "Serpbook",
+      "heading": "Serpbook",
+      "text": "Comperhensive product developmentfor the leading SEO rank tracker."
     },
-    "flant": {
-      "imgAlt": "Flant",
-      "heading": "Flant. Global website",
-      "text": "We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form.",
-      "tag": "IT",
-      "team": "3 specialists",
-      "duration": "2 months"
+    "cogni": {
+      "imgAlt": "Cogni",
+      "heading": "Cogni",
+      "text": "Re-thining modern banking both visually and conceptually with one of&nbsp;the most ambitious New-York fintech start-ups"
     },
-    "mosoblgaz": {
-      "imgAlt": "Mosoblgaz",
-      "heading": "Mosoblgaz. Personal Account",
-      "text": "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network.",
-      "tag": "E-commerce",
-      "team": "4 specialists",
-      "duration": "2 months"
+    "ottomatic": {
+      "imgAlt": "Ottomatic",
+      "heading": "Ottomatic",
+      "text": "A&nbsp;2b2 database back up&nbsp;tool with automatization features and smart analytics"
+    },
+    "jti": {
+      "imgAlt": "JTI",
+      "heading": "JTI employees portal",
+      "text": "Streamlined sales, seamless onboarding and a&nbsp;brand new knowledgebase: everything to&nbsp;keep this tobacco leader ahead in&nbsp;the race."
+    },
+    "creddible": {
+      "imgAlt": "Creddible",
+      "heading": "Creddible",
+      "text": "A&nbsp;service that helps decrypting the complexity of&nbsp;a&nbsp;credit score and takes the advice on&nbsp;its improvement to&nbsp;the next level with the bite-sized actions for the end consumer"
+    },
+    "truebill": {
+      "imgAlt": "Truebill",
+      "heading": "Truebill",
+      "text": "Subscription and bills management that also helps to&nbsp;optimize and save"
     }
   },
   "idea": {

@@ -51,6 +51,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       order: 1;
       width: 100%;
       height: ${calcRem(645)};
+      overflow-x: hidden;
     }
 
     &._ru {

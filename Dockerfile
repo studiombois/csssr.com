@@ -4,7 +4,6 @@ RUN yarn policies set-version v1 && yarn --version
 ARG isProduction
 ARG csssrSpaceOrigin
 ARG comHost
-ARG processImages
 ARG NPM_TOKEN
 
 WORKDIR /app
@@ -27,7 +26,6 @@ FROM node:12.18.3-alpine AS release
 ARG isProduction
 ARG csssrSpaceOrigin
 ARG comHost
-ARG processImages
 ENV NODE_ENV=production
 ENV IS_PRODUCTION=$isProduction
 ENV CSSSR_SPACE_ORIGIN=$csssrSpaceOrigin

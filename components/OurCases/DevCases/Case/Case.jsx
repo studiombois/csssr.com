@@ -12,7 +12,7 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const Case = ({
   className,
-  content: { images, imgAlt, link, heading, text, tag, tagLink, team, duration },
+  content: { linkClass, images, imgAlt, link, heading, text, tag, tagLink, team, duration },
   index,
   l10n: { translations },
 }) => {
@@ -20,7 +20,7 @@ const Case = ({
   const side = (index + 1) % 2 ? 'left' : 'right'
 
   return (
-    <Link className={`${className} ${size} ${side}`} href={link} isNextLink>
+    <Link className={`${className} ${size} ${side} ${linkClass}`} href={link} isNextLink>
       <div className="image-wrapper">
         <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
       </div>

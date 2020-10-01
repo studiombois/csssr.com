@@ -37,26 +37,6 @@
       "link": "Read about technologies"
     }
   },
-  "industries": {
-    "title": "Industries",
-    "subtitle": "We&nbsp;take a&nbsp;goal-oriented approach across a&nbsp;wide range of&nbsp;industries",
-    "fintech": {
-      "title": "Fintech",
-      "description": "We&rsquo;ve built a&nbsp;strong digital presence for many banking and financial services."
-    },
-    "eCommerce": {
-      "title": "E-Commerce",
-      "description": "We&nbsp;help our clients in&nbsp;the highly competitive <span style=\"white-space: nowrap;\">e-commerce</span> industry win each new customer."
-    },
-    "information": {
-      "title": "Information Technology",
-      "description": "We&nbsp;push IT-companies to&nbsp;the cutting edge of&nbsp;technological progress."
-    },
-    "mediaAndMarketing": {
-      "title": "Media &amp;&nbsp;Marketing",
-      "description": "We&nbsp;deliver high-quality experiences capable of&nbsp;handling large-scale data and any scale of&nbsp;concurrent users."
-    }
-  },
   "aboutUs": {
     "title": "We&nbsp;Really Love<br />What We",
     "description": "Headquartered in&nbsp;Singapore, CSSSR is&nbsp;a&nbsp;group of&nbsp;companies that brings together top talent based around the globe to&nbsp;produce the highest quality results.",
@@ -112,15 +92,7 @@
   },
   "imgAlt": {
     "hero": "CSSSR is an international IT group.",
-    "outsourcing": "",
-    "backend": "",
-    "mvp": "",
-    "design": "",
     "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly",
-    "fintech": "CSSSR builds a strong digital presence for most banking and financial services.",
-    "eCommerce": "CSSSR makes our clients in the highly competitive e-commerce industry win customers.",
-    "information": "We push IT-companies on the cutting edge of technological progress.",
-    "mediaAndMarketing": "Taking advantage of its profound high-quality experience, CSSSR is capable of handling large-scale data and any scale of concurrent users.",
     "aboutUs": "A man hugging a heart with «Do» written on him",
     "volleyball": "CSSSR Teams after Volleyball Tournament",
     "elbrus": "CSSSR flag on Elbrus",

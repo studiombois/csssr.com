@@ -2,9 +2,10 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
-  & {
+  .project-link {
     display: flex;
     flex-direction: column;
+    width: max-content;
     text-decoration: none;
 
     &:hover .image {

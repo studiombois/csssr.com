@@ -23,40 +23,39 @@ const ProjectsItem = ({
   l10n: { translations, language },
 }) => {
   return (
-    <Link
-      className={cn(itemClassName, className, 'project-link')}
-      href={`/${language}/project/${link}`}
-    >
-      <div className={`picture-wrapper picture-wrapper_${imgAlt}`}>
-        <PictureSmart requireImages={images} alt={imgAlt} className={`image image_${imgAlt}`} />
-      </div>
-      <Heading.H2
-        type="regular"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: heading(translations) }}
-        className="item-heading"
-      />
-      <div className="numbers-wrapper">
-        <Text
-          type="strong"
-          dangerouslySetInnerHTML={{ __html: teamNumber(translations) }}
-          className="team"
+    <div className={cn(itemClassName, className)}>
+      <Link className="project-link" href={`/${language}/project/${link}`}>
+        <div className={`picture-wrapper picture-wrapper_${imgAlt}`}>
+          <PictureSmart requireImages={images} alt={imgAlt} className={`image image_${imgAlt}`} />
+        </div>
+        <Heading.H2
+          type="regular"
           size="m"
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
+          className="item-heading"
         />
-        <Text
-          type="strong"
-          dangerouslySetInnerHTML={{ __html: '•' }}
-          className="separator"
-          size="m"
-        />
-        <Text
-          type="strong"
-          dangerouslySetInnerHTML={{ __html: projectDuration(translations) }}
-          className="duration"
-          size="m"
-        />
-      </div>
-    </Link>
+        <div className="numbers-wrapper">
+          <Text
+            type="strong"
+            dangerouslySetInnerHTML={{ __html: teamNumber(translations) }}
+            className="team"
+            size="m"
+          />
+          <Text
+            type="strong"
+            dangerouslySetInnerHTML={{ __html: '•' }}
+            className="separator"
+            size="m"
+          />
+          <Text
+            type="strong"
+            dangerouslySetInnerHTML={{ __html: projectDuration(translations) }}
+            className="duration"
+            size="m"
+          />
+        </div>
+      </Link>
+    </div>
   )
 }
 

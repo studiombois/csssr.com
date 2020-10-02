@@ -5,13 +5,13 @@ import cn from 'classnames'
 import styles from './Card.styles'
 
 import NextLink from 'next/link'
-import Heading from '../../ui-kit/core-design/Heading'
-import Text from '../../ui-kit/core-design/Text'
+import Heading from '../ui-kit/core-design/Heading'
+import Text from '../ui-kit/core-design/Text'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
-import { DeviceConsumer } from '../../../utils/deviceProvider'
+import { L10nConsumer } from '../../utils/l10nProvider'
+import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
+import { DeviceConsumer } from '../../utils/deviceProvider'
 
 const Card = ({
   l10n: { translations, language },
@@ -28,6 +28,7 @@ const Card = ({
   children,
   isMobile,
   isTablet,
+  alt,
 }) => {
   const CardBody = () => (
     <Fragment>
@@ -38,7 +39,7 @@ const Card = ({
         <PictureSmart
           className={cn('card-picture', `card-picture_${id}`)}
           requireImages={images}
-          alt={translations.main.imgAlt[id]}
+          alt={alt(translations)}
           testId={`Industries:img.${id}`}
         />
 
@@ -46,7 +47,7 @@ const Card = ({
           <PictureSmart
             className={'card-picture-hovered'}
             requireImages={imagesHovered}
-            alt={translations.main.imgAlt[id]}
+            alt={alt(translations)}
             testId={`Industries:img.${id}-hovered`}
           />
         )}
@@ -134,6 +135,7 @@ Card.propTypes = {
   next: bool,
   isMobile: bool,
   isTablet: bool,
+  alt: func,
 }
 
 export default L10nConsumer(

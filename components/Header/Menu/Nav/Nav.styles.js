@@ -290,7 +290,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${desktop.all} {
     .nav_services {
       .description {
-        outline: 1px solid red;
         width: 65%;
       }
     }

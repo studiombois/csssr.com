@@ -4,7 +4,7 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    margin-top: ${calcRem(184)};
+    margin-top: ${calcRem(215)};
     margin-bottom: ${calcRem(150)};
     min-height: ${calcRem(93)};
   }
@@ -12,15 +12,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   .heading-wrapper {
     position: relative;
     grid-column: span 12;
-    max-width: max-content;
+    width: ${calcRem(522)};
     margin: 0 auto;
+    text-align: center;
   }
 
   .button-wrapper {
     position: absolute;
     top: 0;
     z-index: 2;
-    right: ${calcRem(-206)};
+    right: ${calcRem(-100)};
     animation-name: buttonPosition;
     animation-duration: 1.8s;
     animation-delay: 0s;
@@ -74,8 +75,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     & {
       align-content: flex-end;
       min-height: ${calcRem(68)};
-      margin-top: ${calcRem(112)};
+      margin-top: ${calcRem(105)};
       margin-bottom: ${calcRem(157)};
+    }
+
+    .heading-wrapper {
+      width: ${calcRem(284)};
+      text-align: left;
     }
 
     .heading {
@@ -83,7 +89,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .button-wrapper {
-      right: ${calcRem(-205)};
+      right: ${calcRem(-78)};
     }
 
     .button::before {
@@ -104,13 +110,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      min-height: ${calcRem(83)};
-      margin-top: ${calcRem(98)};
-      margin-bottom: ${calcRem(120)};
+      min-height: auto;
+      margin-top: ${calcRem(153)};
+      margin-bottom: ${calcRem(102)};
     }
 
     .heading-wrapper {
       margin: 0;
+      grid-column: span 6;
+      width: 100%;
+      text-align: left;
     }
 
     .heading {
@@ -121,7 +130,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .button-wrapper {
       top: ${calcRem(-50)};
-      right: ${calcRem(-170)};
+      right: ${calcRem(1)};
     }
 
     .button::before {

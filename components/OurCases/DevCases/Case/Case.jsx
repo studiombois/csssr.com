@@ -12,7 +12,7 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const Case = ({
   className,
-  content: { images, imgAlt, link, heading, text, tag, tagLink, team, duration },
+  content: { linkClass, images, imgAlt, link, heading, text, tag, tagLink, team, duration },
   index,
   l10n: { translations },
 }) => {
@@ -20,24 +20,26 @@ const Case = ({
   const side = (index + 1) % 2 ? 'left' : 'right'
 
   return (
-    <Link className={`${className} ${size} ${side}`} href={link} isNextLink>
-      <div className="image-wrapper">
-        <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
-      </div>
+    <div className={`${className} ${size} ${side}`}>
+      <Link className={`${linkClass} link`} href={link} isNextLink>
+        <div className="image-wrapper">
+          <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
+        </div>
 
-      <Heading.H2
-        type="regular"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: heading(translations) }}
-        className={`heading ${size}`}
-      />
+        <Heading.H2
+          type="regular"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
+          className={`heading ${size}`}
+        />
 
-      <Text
-        type="regular"
-        size="s"
-        dangerouslySetInnerHTML={{ __html: text(translations) }}
-        className="text"
-      />
+        <Text
+          type="regular"
+          size="s"
+          dangerouslySetInnerHTML={{ __html: text(translations) }}
+          className="text"
+        />
+      </Link>
       <div className="data-wrapper">
         <object>
           <Link
@@ -66,7 +68,7 @@ const Case = ({
           className="duration"
         />
       </div>
-    </Link>
+    </div>
   )
 }
 

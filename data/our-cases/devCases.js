@@ -20,6 +20,7 @@ export default {
   heading: (t) => t.ourCases.devCases.heading,
   cases: [
     {
+      linkClass: 'gazprom',
       images: gazpromImages,
       imgAlt: (t) => t.ourCases.devCases.gazprom.imgAlt,
       link: 'project/gazprom-neft-professionals-4-0',
@@ -31,6 +32,7 @@ export default {
       duration: (t) => t.ourCases.devCases.gazprom.duration,
     },
     {
+      linkClass: 's7',
       images: s7Images,
       imgAlt: (t) => t.ourCases.devCases.s7.imgAlt,
       link: 'project/s7-personal-account',
@@ -42,6 +44,7 @@ export default {
       duration: (t) => t.ourCases.devCases.s7.duration,
     },
     {
+      linkClass: 'qacademy',
       images: qacademyImages,
       imgAlt: (t) => t.ourCases.devCases.qacademy.imgAlt,
       link: 'project/qmarketing',
@@ -53,6 +56,7 @@ export default {
       duration: (t) => t.ourCases.devCases.qacademy.duration,
     },
     {
+      linkClass: 'brusnika',
       images: brusnikaImages,
       imgAlt: (t) => t.ourCases.devCases.brusnika.imgAlt,
       link: 'project/brusnika',
@@ -64,6 +68,7 @@ export default {
       duration: (t) => t.ourCases.devCases.brusnika.duration,
     },
     {
+      linkClass: 'mindbox',
       images: mindboxImages,
       imgAlt: (t) => t.ourCases.devCases.mindbox.imgAlt,
       link: 'project/mindbox',
@@ -75,6 +80,7 @@ export default {
       duration: (t) => t.ourCases.devCases.mindbox.duration,
     },
     {
+      linkClass: 'flant',
       images: flantImages,
       imgAlt: (t) => t.ourCases.devCases.flant.imgAlt,
       link: 'project/flant',
@@ -86,6 +92,7 @@ export default {
       duration: (t) => t.ourCases.devCases.flant.duration,
     },
     {
+      linkClass: 'mosoblgaz',
       images: mosoblgazImages,
       imgAlt: (t) => t.ourCases.devCases.mosoblgaz.imgAlt,
       link: 'project/mosoblgaz',

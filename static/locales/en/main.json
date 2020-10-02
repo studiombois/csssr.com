@@ -80,14 +80,14 @@
     "link": "Read more"
   },
   "projects": {
-    "title": "Our Other Projects",
+    "title": "Our solutions",
     "tracker": {
       "title": "CSSSR.Tracker",
       "description": "We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give&nbsp;it&nbsp;a&nbsp;try."
     },
-    "school": {
-      "title": "CSSSR.School",
-      "description": "A&nbsp;front-end e-learning platform developed by&nbsp;CSSSR. Currently available only in&nbsp;Russian language."
+    "lms": {
+      "title": "Modular Learning Management System",
+      "description": "Our LMS helps to&nbsp;start E-Learning business. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and personalization. The system is&nbsp;designed to&nbsp;support pedagogical models and help you to&nbsp;streamline your training."
     },
     "blog": {
       "title": "CSSSR.Blog",

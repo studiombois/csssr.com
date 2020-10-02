@@ -217,7 +217,7 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${tablet.all} {
-    &:hover .image {
+    .project-link:hover .image {
       opacity: 1;
     }
 
@@ -273,7 +273,12 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     .picture-wrapper {
       background-image: none;
     }
-    &:hover .image {
+
+    .project-link {
+      width: auto;
+    }
+
+    .project-link:hover .image {
       opacity: 1;
     }
 

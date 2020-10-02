@@ -26,12 +26,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       background-color: #F9555A;
     }
 
-    & .button:hover {
-      background-color: #C74044;
-    }
-
     & .button::before {
       background-image: url(${require('../../../static/icons/design-lab/triangle.svg').default});
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      & .button:hover {
+        background-color: #C74044;
+      }
     }
   }
 

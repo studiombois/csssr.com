@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles, {
-  stylesForCheckboxField,
   stylesForFileField,
   stylesForFirstHalfWidthField,
   stylesForFullWidthField,
@@ -17,7 +16,6 @@ import ContactOptionsMobile from '../ContactOptionsMobile'
 import TextField from '../../ui-kit/TextField/TextField'
 import FileField from '../../ui-kit/FileField/FileField'
 import TextareaField from '../../ui-kit/TextareaField/TextareaField'
-import PrivacyPolicyCheckbox from '../../PrivacyPolicyCheckbox'
 import getFileFieldText from '../../../utils/getFileFieldText'
 import Grid from '../../ui-kit/core-design/Grid'
 
@@ -159,14 +157,9 @@ const CandidateInfoSection = (props) => {
         </Fragment>
       )}
 
-      <PrivacyPolicyCheckbox
-        testId="Jobs:form:checkbox.policy"
-        linkTestId="Jobs:form:link.policy"
-        className="input-checkbox"
-        required
-        css={css`
-          ${stylesForCheckboxField}
-        `}
+      <p
+        className="policy-text"
+        dangerouslySetInnerHTML={{ __html: translations.contactUs.form.policy }}
       />
     </Grid>
   )

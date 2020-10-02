@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 const base = ({ breakpoints: { above, mobile } }) => css`
   & {
     display: flex;
+    overflow: hidden;
   }
 
   ${above.mobile} {

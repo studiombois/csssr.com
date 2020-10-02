@@ -40,6 +40,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     margin-top: ${calcRem(60)};
   }
 
+  ${desktop.all} {
+    .image {
+      max-height: 512px;
+    }
+  }
+
   ${desktop.l} {
     & {
       padding-top: ${calcRem(198)};

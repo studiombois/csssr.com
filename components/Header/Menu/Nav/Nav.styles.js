@@ -507,19 +507,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 `
 
-const dynamic = ({pathname, colors }) => css`
+const dynamic = ({ colors }) => css`
   & {
-    background-color: ${pathname === '/en/covid-19' ? '#252525' : colors.secondary.darken100};
+    background-color: ${colors.secondary.darken100};
   }
 `
 
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const pathname = props.router.pathname
 
   return css`
     ${base({ breakpoints, colors })}
-    ${dynamic({ pathname, colors })}
+    ${dynamic({ colors })}
   `
 }

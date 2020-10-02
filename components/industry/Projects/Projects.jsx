@@ -21,96 +21,95 @@ const Projects = ({
   l10n: { translations, language },
 }) => (
   <>
-    {language !== 'ru' && (
-      <section className={className} id={id} data-testid="Industry:block:projects">
+    <section className={className} id={id} data-testid="Industry:block:projects">
+      <Grid>
+        <Heading.H2
+          type="slab"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
+          className="heading"
+        />
+      </Grid>
+      <div className="content-wrapper">
         <Grid>
-          <Heading.H2
-            type="slab"
-            size="m"
-            dangerouslySetInnerHTML={{ __html: heading(translations) }}
-            className="heading"
-          />
-        </Grid>
-        <div className="content-wrapper">
-          <Grid>
-            {projectsItems.map(
-              ({
-                images,
-                imgAlt,
-                link,
-                heading,
-                text,
-                teamNumber,
-                projectDuration,
-                className,
-                id,
-              }) => (
-                <ProjectsItem
-                  heading={heading}
-                  text={text}
-                  teamNumber={teamNumber}
-                  projectDuration={projectDuration}
-                  link={link}
-                  images={images}
-                  imgAlt={imgAlt}
-                  itemClassName={className}
-                  key={text}
-                  id={id}
-                />
-              ),
-            )}
-            <div className="common-block">
-              <SubHeading type="slab" className="common-text">
-                We&nbsp;work with a&nbsp;wide range of&nbsp;industries:{' '}
-                <Link
-                  className={cn('text-link', {
-                    'text-link_active':
-                      router.pathname === `/${language}/industry/information-technology`,
-                  })}
-                  href="information-technology"
-                  type="list"
-                  size="m"
-                  dangerouslySetInnerHTML={{ __html: 'information technology' }}
-                  data-testid="Industry:link.inforamationTechnology"
-                />
-                ,{' '}
-                <Link
-                  className={cn('text-link', {
-                    'text-link_active':
-                      router.pathname === `/${language}/industry/media-and-marketing`,
-                  })}
-                  href="media-and-marketing"
-                  type="list"
-                  size="m"
-                  dangerouslySetInnerHTML={{ __html: 'media and marketing' }}
-                  data-testid="Industry:link.mediaAndMarketing"
-                />
-                ,{' '}
-                <Link
-                  className={cn('text-link', {
-                    'text-link_active': router.pathname === `/${language}/industry/fintech`,
-                  })}
-                  href="fintech"
-                  type="list"
-                  size="m"
-                  dangerouslySetInnerHTML={{ __html: 'banking' }}
-                  data-testid="Industry:link.fintech"
-                />
-                ,{' '}
-                <Link
-                  className={cn('text-link', {
-                    'text-link_active': router.pathname === `/${language}/industry/ecommerce`,
-                  })}
-                  href="ecommerce"
-                  type="list"
-                  size="m"
-                  dangerouslySetInnerHTML={{ __html: 'e-commerce' }}
-                  data-testid="Industry:link.ecommerce"
-                />
-                . We&nbsp;are proud of&nbsp;our client list and glad to&nbsp;share some of&nbsp;our
-                cases.
-              </SubHeading>
-
+          {projectsItems.map(
+            ({
+              images,
+              imgAlt,
+              link,
+              heading,
+              text,
+              teamNumber,
+              projectDuration,
+              className,
+              id,
+            }) => (
+              <ProjectsItem
+                heading={heading}
+                text={text}
+                teamNumber={teamNumber}
+                projectDuration={projectDuration}
+                link={link}
+                images={images}
+                imgAlt={imgAlt}
+                itemClassName={className}
+                key={text}
+                id={id}
+              />
+            ),
+          )}
+          <div className="common-block">
+            <SubHeading type="slab" className="common-text">
+              We&nbsp;work with a&nbsp;wide range of&nbsp;industries:{' '}
+              <Link
+                className={cn('text-link', {
+                  'text-link_active':
+                    router.pathname === `/${language}/industry/information-technology`,
+                })}
+                href="information-technology"
+                type="list"
+                size="m"
+                dangerouslySetInnerHTML={{ __html: 'information technology' }}
+                data-testid="Industry:link.inforamationTechnology"
+              />
+              ,{' '}
+              <Link
+                className={cn('text-link', {
+                  'text-link_active':
+                    router.pathname === `/${language}/industry/media-and-marketing`,
+                })}
+                href="media-and-marketing"
+                type="list"
+                size="m"
+                dangerouslySetInnerHTML={{ __html: 'media and marketing' }}
+                data-testid="Industry:link.mediaAndMarketing"
+              />
+              ,{' '}
+              <Link
+                className={cn('text-link', {
+                  'text-link_active': router.pathname === `/${language}/industry/fintech`,
+                })}
+                href="fintech"
+                type="list"
+                size="m"
+                dangerouslySetInnerHTML={{ __html: 'banking' }}
+                data-testid="Industry:link.fintech"
+              />
+              ,{' '}
+              <Link
+                className={cn('text-link', {
+                  'text-link_active': router.pathname === `/${language}/industry/ecommerce`,
+                })}
+                href="ecommerce"
+                type="list"
+                size="m"
+                dangerouslySetInnerHTML={{ __html: 'e-commerce' }}
+                data-testid="Industry:link.ecommerce"
+              />
+              . We&nbsp;are proud of&nbsp;our client list and glad to&nbsp;share some of&nbsp;our
+              cases.
+            </SubHeading>
+            {language !== 'ru' && (
               <ButtonLink
                 className="link"
                 href="/en/our-cases"
@@ -119,11 +118,11 @@ const Projects = ({
                 dangerouslySetInnerHTML={{ __html: 'VIEW OUR CASES' }}
                 data-testid="Industry:link.ourCases"
               />
-            </div>
-          </Grid>
-        </div>
-      </section>
-    )}
+            )}
+          </div>
+        </Grid>
+      </div>
+    </section>
   </>
 )
 

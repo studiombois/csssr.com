@@ -8,12 +8,14 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     width: max-content;
     text-decoration: none;
 
-    &:hover .image {
-      opacity: 0;
-    }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .image {
+        opacity: 0;
+      }
 
-    &:hover .item-heading {
-      color: ${colors.primary.origin};
+      &:hover .item-heading {
+        color: ${colors.primary.origin};
+      }
     }
   }
 

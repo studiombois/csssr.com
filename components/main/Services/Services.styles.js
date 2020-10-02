@@ -1,6 +1,5 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
-import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
 const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors}) => css`
   .description {
@@ -9,7 +8,20 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
   }
 
   .service {
+    position: relative;
     background-repeat: no-repeat;
+  }
+
+  .service::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
   }
 
   .service-title {
@@ -153,6 +165,11 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     .service {
+      padding-top: ${calcRem(260)};
+    }
+
+    .service,
+    .service::after {
       background-size: ${calcRem(272)} ${calcRem(220)};
     }
   }
@@ -170,6 +187,10 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
 
     .service {
       padding-top: ${calcRem(168)};
+    }
+
+    .service,
+    .service::after {
       background-size: ${calcRem(328)} ${calcRem(144)};
     }
 
@@ -186,18 +207,16 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     .service:hover {
       cursor: pointer;
 
+      &::after {
+        opacity: 1;
+        transition: opacity 200ms;
+      }
+
       .service-title {
         color: ${colors.primary.darken15};
+        transition: color 200ms;
       }
     }
-  }
-`
-
-export const backgroundImagesStyles = (className, images) => () => css`
-  ${backgroundCssSmart(className, images.default)}
-
-  @media (hover: hover) and (pointer: fine) {
-    ${backgroundCssSmart(`${className}:hover`, images.hovered)}
   }
 `
 

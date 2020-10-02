@@ -53,9 +53,17 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     &._has_two-rows {
+      .services {
+        margin-top: 20px;
+      }
+
       .service:nth-of-type(n + 3) {
         margin-top: 92px;
       }
+    }
+
+    .service {
+      padding-top: ${calcRem(260)};
     }
 
     .service-title {
@@ -113,6 +121,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     .service {
+      padding-top: ${calcRem(244)};
       width: ${calcRem(224)};
     }
   }

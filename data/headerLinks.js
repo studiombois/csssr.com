@@ -1,6 +1,7 @@
 /* eslint-disable-next-line */
 import React from 'react'
 import { ReactComponent as Square } from '../static/icons/header/square.svg'
+import { ReactComponent as Triangle } from '../static/icons/header/triangle.svg'
 import { ReactComponent as Circle } from '../static/icons/header/circle.svg'
 import { ReactComponent as Arc } from '../static/icons/header/arc.svg'
 import { ReactComponent as PieChart } from '../static/icons/header/pieChart.svg'
@@ -26,6 +27,13 @@ export default {
           href: 'service/outsourcing-front-end',
         },
         {
+          id: 'backend',
+          icon: Arc,
+          title: (t) => t.common.header.menu.services.backend.title,
+          description: (t) => t.common.header.menu.services.backend.description,
+          href: 'service/back-end-and-devops',
+        },
+        {
           id: 'mvp',
           icon: Square,
           title: (t) => t.common.header.menu.services.mvp.title,
@@ -33,11 +41,11 @@ export default {
           href: 'service/mvp-development',
         },
         {
-          id: 'backend',
-          icon: Arc,
-          title: (t) => t.common.header.menu.services.backend.title,
-          description: (t) => t.common.header.menu.services.backend.description,
-          href: 'service/back-end-and-devops',
+          id: 'design',
+          icon: Triangle,
+          title: (t) => t.common.header.menu.services.design.title,
+          description: (t) => t.common.header.menu.services.design.description,
+          href: 'service/design-lab',
         },
       ],
     },

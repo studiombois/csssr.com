@@ -1,3 +1,3 @@
-import OurCasesPage from '../../components/OurCases/OurCasesPage'
+import OurCasesPage from '../../components/our-cases/OurCasesPage'
 
 export default OurCasesPage

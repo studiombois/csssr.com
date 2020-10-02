@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => css`
   & {
     position: absolute;
     top: ${calcRem(64)};
@@ -69,7 +69,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  .nav_services {
+  .nav_services_ru {
     .nav-item {
       width: 33%;
     }
@@ -139,7 +139,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  .nav_services,
+  .nav_services_ru,
   .nav_howWeWork,
   .nav_solutions {
     .icon {
@@ -148,6 +148,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .description {
       width: 55%;
+    }
+  }
+
+  .nav_services_en {
+    .nav-item {
+      width: 23.125%;
+      margin-left: ${calcRem(19)};
+    }
+
+    .title,
+    .description {
+      width: 80%;
+    }
+
+    .icon {
+      top: ${calcRem(60)};
     }
   }
 
@@ -287,11 +303,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  ${desktop.all} {
-    .nav_services {
-      .description {
-        outline: 1px solid red;
-        width: 65%;
+  ${desktop.l} {
+    .nav_services_en {
+      .nav-item {
+        margin-left: ${calcRem(24)};
       }
     }
   }
@@ -320,7 +335,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       }
     }
 
-    .nav_services {
+    .nav_services_en {
+      .nav-item {
+        width: 21.875%;
+        margin-left: ${calcRem(16)};
+      }
+
+      .icon {
+        left: ${calcRem(23)};
+      }
+
+      .title {
+        width: 100%;
+      }
+
+      .description {
+        width: calc(100% - ${calcRem(10)});
+      }
+    }
+
+    .nav_services_ru {
       .link {
         padding-top: ${calcRem(64)};
         padding-left: ${calcRem(89)};
@@ -341,6 +375,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .nav_services {
       .nav-item_active .icon path {
         stroke: #5695ED;
+      }
+    }
+  }
+
+  ${above.mobile} {
+    .nav-item_design {
+      .link {
+        padding-top: ${calcRem(56)};
+      }
+
+      .description {
+        width: ${calcRem(144)};
       }
     }
   }

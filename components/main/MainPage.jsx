@@ -5,13 +5,12 @@ import Layout from '../Layout'
 import Hero from './Hero'
 import Services from './Services'
 import OurFeatures from './OurFeatures'
-import Industries from './Industries'
 import AboutUs from './AboutUs'
 import Projects from './Projects'
 import Vacancies from './Vacancies'
 import Head from '../Head'
-import Form from '../ContactFormWrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
+import Cases from './Cases'
 // AB-test
 import AbContext from '../../utils/abContext'
 import { default as HeroV1 } from './ab-test/v1/Hero'
@@ -114,12 +113,11 @@ class MainPage extends PureComponent {
           </>
         )}
         <Services />
+        {language === 'en' && <Cases />}
         <OurFeatures />
-        <Industries />
         <AboutUs />
         <Projects />
         <Vacancies vacancies={vacancies} />
-        <Form pageName={pageName} />
       </Layout>
     )
   }

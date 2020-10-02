@@ -136,7 +136,7 @@ const sitemapUrlsSettings = [
   //     },
   //   ],
   // },
-  
+
   {
     url: 'https://csssr.com/ru/industry/ecommerce',
     changefreq: 'weekly',

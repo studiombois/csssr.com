@@ -47,7 +47,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       color: white;
     }
 
-    .logo:hover ~ .video {
+    .logo:hover ~ .lazyload-wrapper > .video {
       opacity: 1;
     }
   }

@@ -1,7 +1,8 @@
 import React from 'react'
 import { object, string } from 'prop-types'
+import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
-import styles from './TechStack.styles'
+import styles, { backgroundImagesStyles } from './TechStack.styles'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
@@ -20,6 +21,8 @@ const TechStack = ({
 }) => {
   return (
     <section className={className}>
+      <Global styles={backgroundImagesStyles} />
+
       <Grid as="div" id={id}>
         <Heading.H2
           type="slab"

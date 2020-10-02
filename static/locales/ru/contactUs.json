@@ -27,7 +27,7 @@
       }
     },
     "buttonText": "Запланировать звонок",
-    "communication": "Hangouts, Skype, Zoom, <span>телефонный звонок</span>"
+    "communication": "Hangouts, Zoom, <span>телефонный звонок</span>"
   },
   "form": {
     "title": "Cвязаться с нами",

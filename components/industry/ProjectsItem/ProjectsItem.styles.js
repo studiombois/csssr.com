@@ -10,6 +10,10 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     &:hover .image {
       opacity: 0;
     }
+
+    &:hover .item-heading {
+      color: ${colors.primary.origin};
+    }
   }
 
   .picture-wrapper {

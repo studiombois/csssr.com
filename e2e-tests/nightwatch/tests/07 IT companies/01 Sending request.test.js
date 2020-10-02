@@ -3,7 +3,7 @@ const { modalContInfo } = require('../actions/modalContInfo')
 
 // Отправка заявок с русской локали
 
-testcase('Send request from header modal form of RU-locales | IT', () => {
+testcase('Send request from header modal form of RU-locales - IT', () => {
   step('Go to the Fintech industry page', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -18,7 +18,7 @@ testcase('Send request from header modal form of RU-locales | IT', () => {
 })
 
 testcase(
-  'Send request via the button in the first block of RU-locales | IT',
+  'Send request via the button in the first block of RU-locales - IT',
   () => {
     step('Go to the Fintech industry page', () => {
       browser
@@ -33,7 +33,7 @@ testcase(
     modalContInfo('ru')
   })
 
-testcase('Sending request from the form at the end of the page of RU-locales | IT', () => {
+testcase('Sending request from the form at the end of the page of RU-locales - IT', () => {
   step('Go to the form at the end of the page', () => {
     browser.url(browser.launch_url + '/ru/industry/information-technology')
   })
@@ -43,7 +43,7 @@ testcase('Sending request from the form at the end of the page of RU-locales | I
 
 // Отправка заявок с английской страницы
 
-testcase('Send request from header modal form of EN-locales | IT', () => {
+testcase('Send request from header modal form of EN-locales - IT', () => {
   step('Go to the Fintech industry page', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -58,7 +58,7 @@ testcase('Send request from header modal form of EN-locales | IT', () => {
 })
 
 testcase(
-  'Send request via the button in the first block of EN-locales | IT',
+  'Send request via the button in the first block of EN-locales - IT',
   () => {
     step('Go to the Fintech industry page', () => {
       browser.setWindowSize(1360, 1024)
@@ -72,7 +72,7 @@ testcase(
     modalContInfo('en')
   })
 
-testcase('Sending request from the form at the end of the page of EN-locales | IT', () => {
+testcase('Sending request from the form at the end of the page of EN-locales - IT', () => {
   step('Go to the form at the end of the page', () => {
     browser.url(browser.launch_url + '/en/industry/information-technology')
   })

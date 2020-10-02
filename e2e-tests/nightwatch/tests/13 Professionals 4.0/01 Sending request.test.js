@@ -3,7 +3,7 @@ const { modalContInfo } = require('../actions/modalContInfo')
 
 // Отправка заявок с русской локали
 
-testcase('Send request from header modal form of RU-locales | Professionals', () => {
+testcase('Send request from header modal form of RU-locales - Professionals', () => {
   step('Go to Professionals 4.0 page', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -17,7 +17,7 @@ testcase('Send request from header modal form of RU-locales | Professionals', ()
   modalContInfo('ru')
 })
 
-testcase('Sending request from the form at the end of the page of RU-locales | Professionals', () => {
+testcase('Sending request from the form at the end of the page of RU-locales - Professionals', () => {
   step('Go to the form at the end of the page', () => {
     browser.url(browser.launch_url + '/ru/project/gazprom-neft-professionals-4-0')
   })
@@ -27,7 +27,7 @@ testcase('Sending request from the form at the end of the page of RU-locales | P
 
 // Отправка заявок с английской локали
 
-testcase('Send request from header modal form of EN-locales | Professionals', () => {
+testcase('Send request from header modal form of EN-locales - Professionals', () => {
   step('Go to Professionals 4.0 page', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -41,7 +41,7 @@ testcase('Send request from header modal form of EN-locales | Professionals', ()
   modalContInfo('en')
 })
 
-testcase('Sending request from the form at the end of the page of EN-locales | Professionals', () => {
+testcase('Sending request from the form at the end of the page of EN-locales - Professionals', () => {
   step('Go to the form at the end of the page', () => {
     browser.url(browser.launch_url + '/en/project/gazprom-neft-professionals-4-0')
   })

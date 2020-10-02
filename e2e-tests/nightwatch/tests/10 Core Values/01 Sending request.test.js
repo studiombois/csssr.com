@@ -3,7 +3,7 @@ const { modalContInfo } = require('../actions/modalContInfo')
 
 // Отправка заявок с русской локали
 
-testcase('Send request from header modal form of RU-locales | Core Values', () => {
+testcase('Send request from header modal form of RU-locales - Core Values', () => {
   step('Go to Technology page', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -17,7 +17,7 @@ testcase('Send request from header modal form of RU-locales | Core Values', () =
   modalContInfo('ru')
 })
 
-testcase('Sending request from the form at the end of the page of RU-locales | Core Values', () => {
+testcase('Sending request from the form at the end of the page of RU-locales - Core Values', () => {
   step('Go to the form at the end of the page', () => {
     browser.url(browser.launch_url + '/ru/core-values')
   })
@@ -27,7 +27,7 @@ testcase('Sending request from the form at the end of the page of RU-locales | C
 
 // Отправка заявок с английской локали
 
-testcase('Send request from header modal form of EN-locales | Core Values', () => {
+testcase('Send request from header modal form of EN-locales - Core Values', () => {
   step('Go to Technology page', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -41,7 +41,7 @@ testcase('Send request from header modal form of EN-locales | Core Values', () =
   modalContInfo('en')
 })
 
-testcase('Sending request from the form at the end of the page of EN-locales | Core Values', () => {
+testcase('Sending request from the form at the end of the page of EN-locales - Core Values', () => {
   step('Go to the form at the end of the page', () => {
     browser.url(browser.launch_url + '/en/core-values')
   })

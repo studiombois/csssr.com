@@ -2,9 +2,8 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
+const base = ({ breakpoints: { desktop, below, tablet, above, mobile }}) => css`
   .title {
-    margin-top: 188px;
     grid-column: 3 / span 8;
     text-align: center;
   }
@@ -103,6 +102,10 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
   }
 
   ${desktop.all} {
+    .title {
+      margin-top: 152px;
+    }
+
     .card_blog {
       max-height: 471px;
     }
@@ -177,24 +180,39 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     }
   }
 
-  ${tablet.all} {
+  ${below.desktop} {
     .title {
-      margin-top: ${calcRem(160)};
+      margin-top: ${calcRem(104)};
     }
+  }
 
+  ${tablet.all} {
     .solutions {
       margin-top: ${calcRem(40)};
       padding-bottom: ${calcRem(34)};
 
       .solution {
         margin-top: 0;
+        /* outline: 1px solid red; */
+
+        /* .image-wrapper {
+          margin-top: -10px;
+        } */
 
         &_lms {
           grid-column: 2 / span 5;
+
+          .image-wrapper {
+            margin-left: ${calcRem(-75)};
+          }
         }
 
         &_time-tracker {
           grid-column: 8 / span 4;
+
+          .image-wrapper {
+            margin-left: ${calcRem(-50)};
+          }
         }
 
         .image {

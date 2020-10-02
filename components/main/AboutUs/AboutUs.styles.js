@@ -27,6 +27,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   .picture {
     grid-column: 2 / span 4;
+    background-color: #ffffff;
   }
 
   .fact {

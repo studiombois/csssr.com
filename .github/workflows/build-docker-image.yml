@@ -21,10 +21,9 @@ jobs:
           registry: quay.csssr.cloud
           repository: csssr-team/csssr-com
           tags: build-${{ github.run_id }}
-          build_args: NPM_TOKEN,isProduction,csssrSpaceOrigin,processImages,comHost
+          build_args: NPM_TOKEN,isProduction,csssrSpaceOrigin,comHost
         env:
           NPM_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
           isProduction: "false"
           csssrSpaceOrigin: "https://csssr.space"
-          processImages: "false"
           comHost: https://${{ steps.gh.outputs.releaseID }}.com.csssr.cloud

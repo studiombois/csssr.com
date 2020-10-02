@@ -14,11 +14,12 @@ const base = ({ media }) => css`
     padding-right: 2.265rem;
     background-color: #171717;
     color: #ffffff;
-    transition: transform 200ms ease-out;
+    transition: transform 200ms ease-out, opacity 200ms ease-out;
   }
 
   &.hide {
     transform: translateY(100%);
+    opacity: 0;
   }
 
   .wrap {
@@ -68,8 +69,8 @@ const base = ({ media }) => css`
     }
   }
 
-  @media (min-device-width : 375px) 
-  and (max-device-width : 812px) 
+  @media (min-device-width : 375px)
+  and (max-device-width : 812px)
   and (-webkit-min-device-pixel-ratio : 2)
   and (-webkit-max-device-pixel-ratio : 3) {
     & {

@@ -8,8 +8,8 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
   }
 
   .manager-avatar {
-    width: ${calcRem(76)};
-    height: ${calcRem(76)};
+    width: ${calcRem(106)};
+    height: ${calcRem(88)};
   }
 
   .manager-name {
@@ -137,16 +137,15 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .manager {
-      width: ${calcRem(200)};
+      width: ${calcRem(212)};
     }
 
-    .manager-avatar,
     .success-icon_big {
       margin-right: ${calcRem(16)};
     }
 
     .manager-avatar {
-      margin-left: ${calcRem(24)};
+      margin-left: ${calcRem(9)};
       margin-bottom: ${calcRem(32)};
     }
 

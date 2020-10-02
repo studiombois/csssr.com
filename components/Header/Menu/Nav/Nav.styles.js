@@ -69,7 +69,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  .nav_services_ru {
+  .nav_services {
     .nav-item {
       width: 33%;
     }
@@ -139,7 +139,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  .nav_services_ru,
+  .nav_services,
   .nav_howWeWork,
   .nav_solutions {
     .icon {
@@ -148,22 +148,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
     .description {
       width: 55%;
-    }
-  }
-
-  .nav_services_en {
-    .nav-item {
-      width: 23.125%;
-      margin-left: ${calcRem(19)};
-    }
-
-    .title,
-    .description {
-      width: 80%;
-    }
-
-    .icon {
-      top: ${calcRem(60)};
     }
   }
 
@@ -303,10 +287,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 
-  ${desktop.l} {
-    .nav_services_en {
-      .nav-item {
-        margin-left: ${calcRem(24)};
+  ${desktop.all} {
+    .nav_services {
+      .description {
+        outline: 1px solid red;
+        width: 65%;
       }
     }
   }
@@ -335,26 +320,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       }
     }
 
-    .nav_services_en {
-      .nav-item {
-        width: 21.875%;
-        margin-left: ${calcRem(16)};
-      }
-
-      .icon {
-        left: ${calcRem(23)};
-      }
-
-      .title {
-        width: 100%;
-      }
-
-      .description {
-        width: calc(100% - ${calcRem(15)});
-      }
-    }
-
-    .nav_services_ru {
+    .nav_services {
       .link {
         padding-top: ${calcRem(64)};
         padding-left: ${calcRem(89)};
@@ -542,19 +508,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 `
 
-const dynamic = ({pathname, colors }) => css`
+const dynamic = ({ colors }) => css`
   & {
-    background-color: ${pathname === '/en/covid-19' ? '#252525' : colors.secondary.darken100};
+    background-color: ${colors.secondary.darken100};
   }
 `
 
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const pathname = props.router.pathname
 
   return css`
     ${base({ breakpoints, colors })}
-    ${dynamic({ pathname, colors })}
+    ${dynamic({ colors })}
   `
 }

@@ -28,7 +28,6 @@ test('test', () => {
     { language: 'en', pathname: 'jobs' },
     { language: 'en', pathname: 'job' },
     { language: 'en', pathname: 'jobs' },
-    { language: 'en', pathname: 'service/express-front-end' },
     { language: 'en', pathname: 'service/mvp-development' },
     { language: 'en', pathname: 'service/outsourcing-front-end' },
     { language: 'en', pathname: 'service/back-end-and-devops' },
@@ -57,7 +56,6 @@ test('test', () => {
   expect(getPagePathnameInLanguage('/ru', 'en', pagesList)).toEqual('/en')
   expect(getPagePathnameInLanguage('/ru/jobs-faq', 'en', pagesList)).toEqual('/en/jobs')
   expect(getPagePathnameInLanguage('/ru-ru/job', 'en', pagesList)).toEqual('/en/jobs')
-  expect(getPagePathnameInLanguage('/en/service/express-front-end', 'ru', pagesList)).toEqual('/ru')
   expect(getPagePathnameInLanguage('/en/cookies-policy', 'ru', pagesList)).toEqual('/ru')
   expect(getPagePathnameInLanguage('/en/privacy-policy', 'ru', pagesList)).toEqual(
     '/ru/privacy-policy',

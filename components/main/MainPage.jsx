@@ -4,6 +4,7 @@ import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Hero from './Hero'
 import Services from './Services'
+import OurFeatures from './OurFeatures'
 import Industries from './Industries'
 import AboutUs from './AboutUs'
 import Projects from './Projects'
@@ -13,7 +14,6 @@ import Form from '../ContactFormWrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 // AB-test
 import AbContext from '../../utils/abContext'
-import { default as ServicesAll } from './ab-test/all/Services'
 import { default as HeroV1 } from './ab-test/v1/Hero'
 import { default as HeroV2 } from './ab-test/v2/Hero'
 import { default as HeroV3 } from './ab-test/v3/Hero'
@@ -99,7 +99,6 @@ class MainPage extends PureComponent {
                   {variant === 'v4' && <HeroV4 />}
                   {variant === 'v5' && <HeroV5 />}
                   {variant === 'v6' && <HeroV6 />}
-                  {variant === 'base' ? <Services /> : <ServicesAll />}
                 </>
               )
             }}
@@ -112,9 +111,10 @@ class MainPage extends PureComponent {
               description={translations.main.meta.description}
             />
             <Hero />
-            <Services />
           </>
         )}
+        <Services />
+        <OurFeatures />
         <Industries />
         <AboutUs />
         <Projects />

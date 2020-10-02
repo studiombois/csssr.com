@@ -20,6 +20,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     grid-row: 2;
     max-width: ${calcRem(1792)};
     margin-top: ${calcRem(119)};
+    background-color: #ffffff;
   }
 
   ${desktop.m} {

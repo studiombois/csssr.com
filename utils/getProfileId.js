@@ -2,7 +2,7 @@ export default (inquiryTypeId, activeAddressId, language) => {
   if (inquiryTypeId === 'new-project') {
     if (language === 'en') {
       return {
-        sg: 'sonya_kiseleva',
+        sg: 'anastasia_ignatenko',
         ee: 'sonya_kiseleva',
         ru: 'olga_shevchenko',
       }[activeAddressId]

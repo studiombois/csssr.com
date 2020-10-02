@@ -92,14 +92,7 @@
         "description": "We&rsquo;ve focused on&nbsp;the narrow niche of&nbsp;front-end development, which has allowed&nbsp;us to&nbsp;achieve the highest level of&nbsp;expertise through over 500&nbsp;projects."
       }, {
         "title": "Long-Term Relationship",
-        "description": [
-          "We&nbsp;can complete ",
-          " over just a&nbsp;few months, or&nbsp;we&nbsp;can stay on&nbsp;a&nbsp;project for years, developing and supporting it&nbsp;with a&nbsp;permanent team."
-        ],
-        "link": {
-          "title": "short-term tasks",
-          "testId": "Outsourcing:link:shortTermTasks"
-        }
+        "description": "We&nbsp;can complete short-term tasks over just a&nbsp;few months, or&nbsp;we&nbsp;can stay on&nbsp;a&nbsp;project for years, developing and supporting it&nbsp;with a&nbsp;permanent team."
       }]
     ]
   },

@@ -59,10 +59,6 @@ export const nav = [
         href: 'service/outsourcing-front-end',
       },
       {
-        id: 'express',
-        href: 'service/express-front-end',
-      },
-      {
         id: 'mvp',
         href: 'service/mvp-development',
       },

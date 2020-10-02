@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { bool, string } from 'prop-types'
 import cn from 'classnames'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
-import { Global } from '@emotion/core'
-import styles, { backgroundImagesStyles } from './Services.styles'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+import { Global, css } from '@emotion/core'
+import styles from './Services.styles'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
@@ -44,22 +45,36 @@ const Services = ({ className, l10n: { translations, language } }) => {
 
       <ul className="services">
         {services.map(({ id, href, images }) => (
-          <li key={id} className={cn('service', `service_${id}`)}>
-            <Global styles={backgroundImagesStyles(`.service_${id}`, images)} />
-            <NextLink href={`/${language}/service/${href}`}>
-              <a>
-                <h3
-                  className="service-title"
-                  dangerouslySetInnerHTML={{ __html: translations.main.services[id].title }}
-                />
+          <Fragment key={id}>
+            <Global
+              styles={css`
+                ${backgroundCssSmart(`.service_${id}`, images.default)}
+              `}
+            />
+            <Global
+              styles={css`
+                ${backgroundCssSmart(`.service_${id}::after`, images.hovered)}
+              `}
+            />
 
-                <p
-                  className="service-description"
-                  dangerouslySetInnerHTML={{ __html: translations.main.services[id].description }}
-                />
-              </a>
-            </NextLink>
-          </li>
+            <li className={cn('service', `service_${id}`)}>
+              <NextLink href={`/${language}/service/${href}`}>
+                <a>
+                  <h3
+                    className="service-title"
+                    dangerouslySetInnerHTML={{ __html: translations.main.services[id].title }}
+                  />
+
+                  <p
+                    className="service-description"
+                    dangerouslySetInnerHTML={{
+                      __html: translations.main.services[id].description,
+                    }}
+                  />
+                </a>
+              </NextLink>
+            </li>
+          </Fragment>
         ))}
       </ul>
     </Grid>

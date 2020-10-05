@@ -22,18 +22,20 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     &:nth-of-type(n + 3) {
       margin-top: ${calcRem(81)};
     }
-
-    &:hover .heading {
-      color: ${colors.primary.origin};
-    }
-
-    &:hover .image-wrapper::before {
-      top: 0;
-    }
   }
 
   .link {
     text-decoration: none;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .heading {
+        color: ${colors.primary.origin};
+      }
+
+      &:hover .image-wrapper::before {
+        top: 0;
+      }
+    }
   }
 
   .image-wrapper {

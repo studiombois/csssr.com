@@ -22,6 +22,11 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     height: 100%;
     background-repeat: no-repeat;
     opacity: 0;
+    pointer-events: none;
+  }
+
+  .service-link {
+    display: block;
   }
 
   .service-title {
@@ -62,7 +67,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
       }
     }
 
-    .service {
+    .service-link {
       padding-top: ${calcRem(260)};
     }
 
@@ -121,8 +126,11 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     .service {
-      padding-top: ${calcRem(244)};
       width: ${calcRem(224)};
+    }
+
+    .service-link {
+      padding-top: ${calcRem(244)};
     }
   }
 
@@ -164,7 +172,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
       justify-content: space-between;
     }
 
-    .service {
+    .service-link {
       padding-top: ${calcRem(260)};
     }
 
@@ -185,7 +193,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
       grid-column: 1 / span 6;
     }
 
-    .service {
+    .service-link {
       padding-top: ${calcRem(168)};
     }
 

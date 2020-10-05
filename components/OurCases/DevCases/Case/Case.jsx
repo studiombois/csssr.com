@@ -12,7 +12,7 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const Case = ({
   className,
-  content: { linkClass, images, imgAlt, link, heading, text, tag, tagLink, team, duration },
+  content: { linkClass, images, imgAlt, link, heading, text, tag, tagId, tagLink, team, duration },
   index,
   l10n: { translations },
 }) => {
@@ -20,7 +20,10 @@ const Case = ({
   const side = (index + 1) % 2 ? 'left' : 'right'
 
   return (
-    <div className={`${className} ${size} ${side}`}>
+    <div
+      className={`${className} ${size} ${side}`}
+      data-testid={`ourCases:block.blockCase_${linkClass}`}
+    >
       <Link className={`${linkClass} link`} href={link} isNextLink>
         <div className="image-wrapper">
           <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
@@ -31,6 +34,7 @@ const Case = ({
           size="m"
           dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className={`heading ${size}`}
+          data-testid={`ourCases:text.heading_${linkClass}`}
         />
 
         <Text
@@ -47,6 +51,7 @@ const Case = ({
             className="tag"
             href={tagLink}
             isNextLink
+            data-testid={`ourCases:link.industryLink_${tagId}`}
           />
         </object>
 

@@ -146,9 +146,8 @@ const startApp = async () => {
 
   server.get('/sitemap.xml', (req, res) => {
     generateSitemap().then((sitemap) => {
-      const xml = sitemap.toXML()
       res.header('Content-Type', 'application/xml')
-      res.send(xml)
+      res.send(sitemap)
     })
   })
 

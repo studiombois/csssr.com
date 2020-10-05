@@ -4,23 +4,28 @@ import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    margin-top: ${calcRem(184)};
+    margin-top: ${calcRem(215)};
     margin-bottom: ${calcRem(150)};
     min-height: ${calcRem(93)};
   }
 
   .heading-wrapper {
-    position: relative;
-    grid-column: span 12;
-    max-width: max-content;
+    grid-column: 1 / span 12;
+    width: ${calcRem(522)};
     margin: 0 auto;
+    text-align: center;
+  }
+
+  .heading-text {
+    position: relative;
+    display: inline-block;
   }
 
   .button-wrapper {
     position: absolute;
     top: 0;
     z-index: 2;
-    right: ${calcRem(-206)};
+    right: ${calcRem(-60)};
     animation-name: buttonPosition;
     animation-duration: 1.8s;
     animation-delay: 0s;
@@ -31,12 +36,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .button {
-    width: ${calcRem(146)};
+    padding-left: ${calcRem(22)};
+    padding-right: ${calcRem(22)};
     height: ${calcRem(48)};
     border-radius: ${calcRem(10)};
     font-size: ${calcRem(14)};
     line-height: ${calcRem(16)};
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -52,10 +58,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   @keyframes buttonPosition {
     0% {
-      transform: translateY(-30px);
+      transform: translate(100%, -30px);
     }
     100% {
-      transform: translateY(-16px);
+      transform: translate(100%, -16px);
     }
   }
 
@@ -75,43 +81,48 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     & {
       align-content: flex-end;
       min-height: ${calcRem(68)};
-      margin-top: ${calcRem(112)};
+      margin-top: ${calcRem(105)};
       margin-bottom: ${calcRem(157)};
+    }
+
+    .heading-wrapper {
+      width: ${calcRem(284)};
+      text-align: left;
     }
 
     .heading {
       grid-column: 1 / span 5;
     }
 
-    .button-wrapper {
-      right: ${calcRem(-205)};
-    }
-
     .button::before {
-      top: ${calcRem(6)};
+      top: ${calcRem(12)};
       left: ${calcRem(-48)};
       width: ${calcRem(48)};
+      background-position: 0, 0;
     }
 
     @keyframes buttonPosition {
       0% {
-        transform: translateY(-33px);
+        transform: translate(100%, -33px);
       }
       100% {
-        transform: translateY(-26px);
+        transform: translate(100%, -26px);
       }
     }
   }
 
   ${mobile.all} {
     & {
-      min-height: ${calcRem(83)};
-      margin-top: ${calcRem(98)};
-      margin-bottom: ${calcRem(120)};
+      min-height: auto;
+      margin-top: ${calcRem(153)};
+      margin-bottom: ${calcRem(102)};
     }
 
     .heading-wrapper {
       margin: 0;
+      grid-column: 1 / span 6;
+      width: 100%;
+      text-align: left;
     }
 
     .heading {
@@ -122,7 +133,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .button-wrapper {
       top: ${calcRem(-50)};
-      right: ${calcRem(-170)};
+      right: ${calcRem(-23)};
+      max-width: ${calcRem(146)};
     }
 
     .button::before {
@@ -137,10 +149,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     @keyframes buttonPosition {
       0% {
-        transform: translateY(-6px);
+        transform: translate(100%, -6px);
       }
       100% {
-        transform: translateY(0);
+        transform: translate(100%, 0);
       }
     }
   }

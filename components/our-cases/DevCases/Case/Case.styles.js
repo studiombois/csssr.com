@@ -3,8 +3,6 @@ import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
-    text-decoration: none;
-
     &.large.left {
       grid-column: 2 / span 6;
     }
@@ -21,16 +19,22 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       grid-column: 8 / span 4;
     }
 
-    &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+    &:nth-of-type(n + 3) {
       margin-top: ${calcRem(81)};
     }
+  }
 
-    &:hover .heading {
-      color: ${colors.primary.origin};
-    }
+  .link {
+    text-decoration: none;
 
-    &:hover .image-wrapper::before {
-      top: 0;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .heading {
+        color: ${colors.primary.origin};
+      }
+
+      &:hover .image-wrapper::before {
+        top: 0;
+      }
     }
   }
 
@@ -107,7 +111,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       &:nth-of-type(n + 3) {
         margin-top: ${calcRem(70)};
       }
-    }
+    } 
 
     .heading {
       margin-top: ${calcRem(20)};
@@ -139,7 +143,15 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       grid-column: 1 / span 6 !important;
 
       &:not(:nth-of-type(1)) {
-        margin-top: ${calcRem(60)};
+        margin-top: ${calcRem(59)};
+      }
+
+      &.mindbox .separator:nth-of-type(2) {
+        display: none;
+      }
+
+      &.mindbox .duration {
+        width: ${calcRem(100)};
       }
     }
 
@@ -163,6 +175,10 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     .data-wrapper {
       flex-wrap: wrap;
       margin-top: ${calcRem(10)};
+    }
+
+    .mindbox .separator:nth-of-type(2) {
+      display: none;
     }
 
     .separator {

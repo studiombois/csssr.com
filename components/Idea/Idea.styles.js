@@ -50,6 +50,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       top: ${calcRem(7)};
       left: ${calcRem(-44)};
       background-image: url(${require('../../static/icons/our-cases/triangle.svg').default});
+      background-repeat: no-repeat;
       width: ${calcRem(44)};
       height: ${calcRem(44)};
     }
@@ -94,9 +95,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .button::before {
-      top: ${calcRem(6)};
+      top: ${calcRem(12)};
       left: ${calcRem(-48)};
       width: ${calcRem(48)};
+      background-position: 0, 0;
     }
 
     @keyframes buttonPosition {

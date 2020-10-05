@@ -60,7 +60,7 @@ const Projects = ({
           )}
           <div className="common-block">
             <SubHeading type="slab" className="common-text">
-              We&nbsp;work with a&nbsp;wide range of&nbsp;industries:{' '}
+              {translations.industry.projects.description[0]}
               <Link
                 className={cn('text-link', {
                   'text-link_active':
@@ -69,7 +69,7 @@ const Projects = ({
                 href="information-technology"
                 type="list"
                 size="m"
-                dangerouslySetInnerHTML={{ __html: 'information technology' }}
+                dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[1] }}
                 data-testid="Industry:link.inforamationTechnology"
               />
               ,{' '}
@@ -81,7 +81,7 @@ const Projects = ({
                 href="media-and-marketing"
                 type="list"
                 size="m"
-                dangerouslySetInnerHTML={{ __html: 'media and marketing' }}
+                dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[2] }}
                 data-testid="Industry:link.mediaAndMarketing"
               />
               ,{' '}
@@ -92,7 +92,7 @@ const Projects = ({
                 href="fintech"
                 type="list"
                 size="m"
-                dangerouslySetInnerHTML={{ __html: 'banking' }}
+                dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[3] }}
                 data-testid="Industry:link.fintech"
               />
               ,{' '}
@@ -103,11 +103,10 @@ const Projects = ({
                 href="ecommerce"
                 type="list"
                 size="m"
-                dangerouslySetInnerHTML={{ __html: 'e-commerce' }}
+                dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[4] }}
                 data-testid="Industry:link.ecommerce"
               />
-              . We&nbsp;are proud of&nbsp;our client list and glad to&nbsp;share some of&nbsp;our
-              cases.
+              {translations.industry.projects.description[5]}
             </SubHeading>
             {language !== 'ru' && (
               <ButtonLink

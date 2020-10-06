@@ -47,7 +47,7 @@ const services = [
   },
   {
     id: 'design',
-    href: 'design',
+    href: 'design-lab',
     images: {
       default: designImages,
       hovered: designImagesHovered,

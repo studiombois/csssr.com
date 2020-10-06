@@ -3,12 +3,6 @@ import calcRem from '../../utils/style/calcRem'
 
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
-  & {
-    margin-top: ${calcRem(215)};
-    margin-bottom: ${calcRem(150)};
-    min-height: ${calcRem(93)};
-  }
-
   .heading-wrapper {
     grid-column: 1 / span 12;
     width: ${calcRem(522)};
@@ -65,33 +59,37 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  ${desktop.m} {
+  ${desktop.all} {
     & {
-      margin-top: ${calcRem(152)};
+      margin-top: 179px;
+      margin-bottom: 150px;
+    }
+  }
+
+  ${desktop.l} {
+    .heading-text {
+      left: -72px;
     }
   }
 
   ${desktop.s} {
-    & {
-      margin-top: ${calcRem(152)};
+    .heading-text {
+      left: -25px;
     }
   }
 
   ${tablet.all} {
     & {
-      align-content: flex-end;
-      min-height: ${calcRem(68)};
-      margin-top: ${calcRem(105)};
-      margin-bottom: ${calcRem(157)};
-    }
-
-    .heading-wrapper {
-      width: ${calcRem(284)};
-      text-align: left;
+      margin-top: ${calcRem(141)};
+      margin-bottom: ${calcRem(120)};
     }
 
     .heading {
       grid-column: 1 / span 5;
+    }
+
+    .heading-text {
+      left: ${calcRem(-65)};
     }
 
     .button::before {

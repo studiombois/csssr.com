@@ -41,21 +41,18 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   .image-wrapper {
     position: relative;
     overflow: hidden;
-    
+
     &::before {
       content: '';
       position: absolute;
-      z-index: -1;
+      z-index: 1;
       width: 100%;
       height: 100%;
       background-color: #0054D7;
       transition: top .25s ease-in-out;
       top: 100%;
+      mix-blend-mode: color;
     }
-  }
-
-  .image {
-    mix-blend-mode: luminosity;
   }
 
   .heading {
@@ -78,7 +75,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     color: ${colors.primary.origin};
     text-decoration: none;
   }
-  
+
   .team,
   .duration,
   .separatopr {
@@ -111,7 +108,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       &:nth-of-type(n + 3) {
         margin-top: ${calcRem(70)};
       }
-    } 
+    }
 
     .heading {
       margin-top: ${calcRem(20)};

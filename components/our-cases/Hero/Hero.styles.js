@@ -24,6 +24,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     grid-column: 7 / span 5;
   }
 
+  ${desktop.l} {
+    .logos {
+      height: 414px;
+    }
+  }
+
   ${desktop.m} {
     .heading {
       margin-top: ${calcRem(22)};
@@ -36,6 +42,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .logos {
       grid-column: 8 / span 4;
       width: ${calcRem(433)};
+      height: 312px;
     }
   }
 
@@ -55,6 +62,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .logos {
       grid-column: 8 / span 4;
       width: ${calcRem(400)};
+      height: 288px;
     }
   }
 
@@ -76,6 +84,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .logos {
       grid-column: 7 / span 6;
       width: ${calcRem(464)};
+      height: ${calcRem(288)};
     }
   }
 
@@ -93,11 +102,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .logos {
+      margin-top: ${calcRem(32)};
       grid-row: 3;
       grid-column: 1 / span 6;
       width: 100%;
-      margin-top: ${calcRem(32)};
-    }    
+      height: ${calcRem(203)};
+    }
   }
 `
 

@@ -132,7 +132,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .button-wrapper {
       top: ${calcRem(-50)};
       right: ${calcRem(-23)};
-      max-width: ${calcRem(146)};
+      max-width: ${calcRem(148)};
     }
 
     .button::before {

@@ -1,80 +1,80 @@
 {
   "hero": {
-    "imgAlt": "Logos",
-    "heading": "Our cases",
-    "text": "We&nbsp;constantly challenge ourselves to&nbsp;solve problems. Here is&nbsp;a&nbsp;few of&nbsp;our biggest projects."
+    "imgAlt": "Логотипы наших клиентов",
+    "heading": "Наши проекты",
+    "text": "Мы&nbsp;постоянно находимся в&nbsp;поиске новых сложных задач. Вот лишь некоторые из&nbsp;наших самых крупных проектов."
   },
   "devCases": {
-    "heading": "Development cases",
+    "heading": "Коммерческая разработка",
     "gazprom": {
-      "imgAlt": "Gazprom",
-      "heading": "Gazprom. Management Platform",
-      "text": "The project includes an&nbsp;internet platform, mobile application, and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page.",
+      "imgAlt": "Газпром",
+      "heading": "Газпром. Платформа для реализации бизнес-проектов",
+      "text": "Главная цель проекта&nbsp;&mdash; соединять крупных заказчиков с&nbsp;талантливыми исполнителями. CSSSR разрабатывала весь фронтенд, включая личные кабинеты исполнителя и&nbsp;компании, а&nbsp;также страницу проектов.",
       "tag": "IT",
-      "team": "9 specialists",
-      "duration": "13 months"
+      "team": "9 специалистов",
+      "duration": "13 месяцев"
     },
     "s7": {
-      "imgAlt": "S7 Airlines",
-      "heading": "S7. Personal Customer Account",
-      "text": "We&nbsp;develop the entire front-end for the adaptive website of&nbsp;the project.",
+      "imgAlt": "Авиакомпания S7",
+      "heading": "Авиакомпания S7. Личный кабинет пользователя",
+      "text": "Проект представляет собой адаптивный веб-сайт, для которого мы&nbsp;разрабатывали весь фронтенд.",
       "tag": "IT",
-      "team": "8 specialists",
-      "duration": "25 months"
+      "team": "8 специалистов",
+      "duration": "25 месяцев"
     },
     "qacademy": {
       "imgAlt": "QAcademy",
-      "heading": "QAcademy. Management Platform",
-      "text": "We&nbsp;were entrusted with front-end development of&nbsp;authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer&rsquo;s API.",
-      "tag": "Media & Marketing",
-      "team": "3 specialists",
-      "duration": "4 months"
+      "heading": "QAcademy. Интерактивная система обучения",
+      "text": "Нам доверили фронтенд разработку страницы авторизации, профиля пользователя, интерактивного обучающего блока и&nbsp;страницы выдачи сертификата. После завершения разработки наша команда провела интеграцию с&nbsp;API заказчика.",
+      "tag": "Медиа и&nbsp;маркетинг",
+      "team": "3 специалиста",
+      "duration": "4 месяца"
     },
     "brusnika": {
-      "imgAlt": "Brusnika",
-      "heading": "Brusnika. Internal assessment and forecasting tools",
-      "text": "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding.",
+      "imgAlt": "Брусника",
+      "heading": "Брусника. Внутренние инструменты оценки и&nbsp;расчетов",
+      "text": "Мы&nbsp;занимались разработкой внутреннего инструмента планирования продаж для менеджеров девелоперской компании. Этот кейс запомнился нам почти полным отсутствием вёрстки и&nbsp;сложной логической частью.",
       "tag": "E-commerce",
-      "team": "1 specialist",
-      "duration": "11 months"
+      "team": "1 специалист",
+      "duration": "11 месяцев"
     },
     "mindbox": {
       "imgAlt": "Mindbox",
-      "heading": "Mindbox. Personal Account",
-      "text": "We&nbsp;worked on&nbsp;two projects: development of&nbsp;a&nbsp;personal account data filtering system and a&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; application development.",
-      "tag": "Media & Marketing",
-      "team": "3 specialists",
-      "duration": "13 months"
+      "heading": "Mindbox. Платформа автоматизации маркетинга",
+      "text": "Мы&nbsp;работали над двумя проектами&nbsp;&mdash; создание системы фильтрации данных в&nbsp;личном кабинете и&nbsp;разработка приложения &laquo;Арбитраж промоакций&raquo;. Оба проекта требовали разработки сложной логики работы с&nbsp;древовидной структурой.",
+      "tag": "Медиа и&nbsp;маркетинг",
+      "team": "3 специалиста",
+      "duration": "13 месяцев"
     },
     "flant": {
-      "imgAlt": "Flant",
-      "heading": "Flant. Global website",
-      "text": "We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form.",
+      "imgAlt": "Флант",
+      "heading": "Флант. Сайт для DevOps компании",
+      "text": "Наша команда занималась разработкой лендингов для компании. Мы&nbsp;сверстали и&nbsp;провели тестирование 7&nbsp;страниц, адаптировали для просмотра на&nbsp;любом устройстве, включая Retina, и&nbsp;настроили форму отправки заявки в&nbsp;CRM заказчика.",
       "tag": "IT",
-      "team": "3 specialists",
-      "duration": "2 months"
+      "team": "3 специалиста",
+      "duration": "2 месяца"
     },
     "mosoblgaz": {
-      "imgAlt": "Mosoblgaz",
-      "heading": "Mosoblgaz. Personal Account",
-      "text": "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network.",
+      "imgAlt": "Мособлгаз",
+      "heading": "Мособлгаз. Личный кабинет",
+      "text": "Мы&nbsp;разработали личный кабинет для юридических лиц, поддерживающий ролевые модели и&nbsp;ограничения для отдельных сотрудников.",
       "tag": "E-commerce",
-      "team": "4 specialists",
-      "duration": "2 months"
+      "team": "4 специалиста",
+      "duration": "2 месяца"
     }
   },
   "solutions": {
-    "heading": "Our solutions",
+    "heading": "Наши проекты",
     "lms": {
-      "imgAlt": "Modular Learning Management System",
-      "heading": "Modular Learning Management System",
-      "text": "Our LMS helps to&nbsp;start E-Learning business. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and personalization. The system is&nbsp;designed to&nbsp;support pedagogical models and help you to&nbsp;streamline your training.",
+      "imgAlt": "Модульная система управления обучением",
+      "heading": "Модульная система управления обучением",
+      "text": "Наша LMS помогает выстроить бизнес в&nbsp;сфере электронного обучения. Мы&nbsp;предоставляем команды дизайнеров и&nbsp;разработчиков для создания всех необходимых интеграций и&nbsp;персонализации.",
       "link": "https://csssr.com/en/solutions/lms"
     },
     "timeTracker": {
-      "imgAlt": "Time-tracking Software",
-      "heading": "Time-tracking Software",
-      "text": "Powerful time tracking app for teams. Track working hours across projects and get detailed reports to&nbsp;improve budgeting efficiency by&nbsp;intelligent and flexible reports.",
+      "imgAlt": "Инструмент для учета времени",
+      "heading": "Инструмент для учета времени",
+      "text": "Простой, но&nbsp;мощный инструмент для учета рабочего времени и&nbsp;создания отчетов. Позволяет повысить прозрачность работы и&nbsp;лучше планировать бюджет.",
       "link": "https://tracker.csssr.com/"
     }
   },

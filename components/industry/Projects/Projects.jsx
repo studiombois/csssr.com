@@ -108,16 +108,14 @@ const Projects = ({
               />
               {translations.industry.projects.description[5]}
             </SubHeading>
-            {language !== 'ru' && (
-              <ButtonLink
-                className="link"
-                href="/en/our-cases"
-                kind="primary"
-                size="s"
-                dangerouslySetInnerHTML={{ __html: 'VIEW OUR CASES' }}
-                data-testid="Industry:link.ourCases"
-              />
-            )}
+            <ButtonLink
+              className="link"
+              href="/en/our-cases"
+              kind="primary"
+              size="s"
+              dangerouslySetInnerHTML={{ __html: translations.industry.projects.link }}
+              data-testid="Industry:link.ourCases"
+            />
           </div>
         </Grid>
       </div>

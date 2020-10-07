@@ -23,7 +23,7 @@ const OurCasesPage = ({ l10n: { language, translations } }) => {
 
       <Hero content={heroContent} />
       <DevCases content={casesContent} />
-      <DesignCases content={designCasesContent} />
+      {language !== 'ru' && <DesignCases content={designCasesContent} />}
       {language !== 'ru' && <Solutions />}
       <Idea pageName={pageName} />
     </Layout>

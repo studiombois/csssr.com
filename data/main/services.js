@@ -1,41 +1,63 @@
-/* eslint-disable-next-line */
-import React from 'react'
-import { ReactComponent as Square } from '../../static/icons/main/square.svg'
-import { ReactComponent as Triangle } from '../../static/icons/main/triangle.svg'
-import { ReactComponent as Circle } from '../../static/icons/main/circle.svg'
-import { ReactComponent as Arc } from '../../static/icons/main/arc.svg'
+const outsourcingImages = require.context(
+  '../../public/images/main/services/outsourcing?csssr-images',
+)
+const outsourcingImagesHovered = require.context(
+  '../../public/images/main/services/outsourcing-hovered?csssr-images',
+)
 
-export default [
+const backendImages = require.context('../../public/images/main/services/backend?csssr-images')
+const backendImagesHovered = require.context(
+  '../../public/images/main/services/backend-hovered?csssr-images',
+)
+
+const mvpImages = require.context('../../public/images/main/services/mvp?csssr-images')
+const mvpImagesHovered = require.context(
+  '../../public/images/main/services/mvp-hovered?csssr-images',
+)
+
+const designImages = require.context('../../public/images/main/services/design?csssr-images')
+const designImagesHovered = require.context(
+  '../../public/images/main/services/design-hovered?csssr-images',
+)
+
+const services = [
   {
     id: 'outsourcing',
-    icon: Circle,
-    iconName: 'circle',
-    title: (t) => t.main.services.outsourcing.title,
-    subtitle: (t) => t.main.services.outsourcing.subtitle,
     href: 'outsourcing-front-end',
-  },
-  {
-    id: 'express',
-    icon: Triangle,
-    iconName: 'triangle',
-    title: (t) => t.main.services.express.title,
-    subtitle: (t) => t.main.services.express.subtitle,
-    href: 'express-front-end',
-  },
-  {
-    id: 'mvp',
-    icon: Square,
-    iconName: 'square',
-    title: (t) => t.main.services.mvp.title,
-    subtitle: (t) => t.main.services.mvp.subtitle,
-    href: 'mvp-development',
+    images: {
+      default: outsourcingImages,
+      hovered: outsourcingImagesHovered,
+    },
   },
   {
     id: 'backend',
-    icon: Arc,
-    iconName: 'arc',
-    title: (t) => t.main.services.backend.title,
-    subtitle: (t) => t.main.services.backend.subtitle,
     href: 'back-end-and-devops',
+    images: {
+      default: backendImages,
+      hovered: backendImagesHovered,
+    },
+  },
+  {
+    id: 'mvp',
+    href: 'mvp-development',
+    images: {
+      default: mvpImages,
+      hovered: mvpImagesHovered,
+    },
+  },
+  {
+    id: 'design',
+    href: 'design-lab',
+    images: {
+      default: designImages,
+      hovered: designImagesHovered,
+    },
   },
 ]
+
+export const servicesByLng = {
+  en: services,
+  ru: services.filter(({ id }) => id !== 'design'),
+}
+
+export default services

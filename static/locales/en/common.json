@@ -21,17 +21,17 @@
           "title": "Web Development",
           "description": "Fast, reliable and professional web development services."
         },
-        "express": {
-          "title": "PSD to HTML Conversion",
-          "description": "Turn your design (PSD, Sketch, Figma) into <span style=\"white-space: nowrap;\">HTML-pages</span>."
+        "backend": {
+          "title": "Back-end and&nbsp;DevOps",
+          "description": "Reliable back-end development and DevOps services."
         },
         "mvp": {
           "title": "MVP Development",
           "description": "Development of&nbsp;core functionality for testing purposes."
         },
-        "backend": {
-          "title": "Back-end and&nbsp;DevOps",
-          "description": "Reliable back-end development and DevOps services."
+        "design": {
+          "title": "DesignLab",
+          "description": "Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
         }
       },
       "industries": {
@@ -93,10 +93,10 @@
     "actionPhrase": "Let’s work together!",
     "services": {
       "title": "Services",
-      "outsourcing": "Web Development",
-      "express": "PSD to HTML",
+      "outsourcing": "Outsourcing",
+      "backend": "Back-end</br>and DevOps",
       "mvp": "MVP",
-      "backend": "Back-end</br>and DevOps"
+      "design": "DesignLab"
     },
     "industries": {
       "title": "Industries",

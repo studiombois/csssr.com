@@ -1,369 +1,241 @@
 import { css } from '@emotion/core'
-import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
-import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
-const circle = require.context('../../../public/images/main/figures/circle?csssr-images')
-const square = require.context('../../../public/images/main/figures/square?csssr-images')
-const triangle = require.context('../../../public/images/main/figures/triangle?csssr-images')
-const arc = require.context('../../../public/images/main/figures/arc?csssr-images')
-const arc_ru = require.context('../../../public/images/main/figures/arc-ru?csssr-images')
-
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
-  align-items: start;
-
-  .title_main {
-    grid-column: 3 / span 8;
-    text-align: center;
-  }
-
-  .navigation {
-    margin-top: 114px;
-    grid-column: 2 / span 5;
+const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors}) => css`
+  .description {
+    margin-top: ${calcRem(24)};
+    font-weight: 300;
   }
 
   .service {
     position: relative;
-
-    &:not(:first-of-type) {
-      margin-top: 119px;
-    }
+    background-repeat: no-repeat;
   }
 
-  .service-title a,
-  .service-subtitle {
-    color: ${colors.secondary.darken100};
-  }
-
-  .service-title a {
-    transition: color 200ms;
-  }
-
-  .service-title a {
-    &:hover {
-      color: ${colors.primary.origin};
-    }
-  }
-
-  .service-subtitle {
-    margin-top: 21px;
-  }
-
-  .service-icon {
+  .service::after {
+    content: '';
     position: absolute;
-    top: 30px;
-    fill: transparent;
-    transition: fill 100ms ease-out;
-
-    & path {
-      transition: stroke 100ms ease-out;
-    }
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .service-link {
     display: block;
-    margin-top: 28px;
-    cursor: pointer;
   }
 
-  @media (pointer: fine) {
-    .service:hover .service-icon_circle {
-      fill: #F5565F;
+  .service-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: underline;
+    color: ${colors.primary.origin};
 
-      & path {
-        stroke: #F5565F;
+    b {
+      font-weight: 900;
+    }
+  }
+
+  .service-description {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    color: ${colors.secondary.darken100};
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  ${desktop.all} {
+    & {
+      margin-top: 144px;
+    }
+
+    &._has_two-rows {
+      .services {
+        margin-top: 20px;
+      }
+
+      .service:nth-of-type(n + 3) {
+        margin-top: 92px;
       }
     }
 
-    .service:hover .service-icon_triangle {
-      fill: #FECF76;
-
-      & path {
-        stroke: #FECF76;
-      }
+    .service-link {
+      padding-top: ${calcRem(260)};
     }
 
-    .service:hover .service-icon_square {
-      fill: #8BD9B9;
-
-      & path {
-        stroke: #8BD9B9;
-      }
+    .service-title {
+      font-size: 30px;
+      line-height: 32px;
     }
 
-    .service:hover .service-icon_arc {
-      fill: #0054D7;
-
-      & path {
-        stroke: #0054D7;
-      }
+    .service-description {
+      margin-top: 22px;
+      font-size: 18px;
+      line-height: 28px;
     }
   }
 
   ${desktop.l} {
-    .title_main {
-      margin-top: 110px;
-    }
-
     .service {
-      padding-left: 152px;
-    }
-
-    .service-icon {
-      left: 76px;
-    }
-
-    .service_backend {
-      padding-right: ${calcRem(160)};
+      width: 424px;
     }
   }
 
   ${desktop.m} {
-    .title_main {
-      margin-top: 110px;
-    }
-
     .service {
-      padding-left: 112px;
-    }
-
-    .service-icon {
-      left: 36px;
-    }
-
-    .service_backend {
-      .service-title {
-        padding-right: ${calcRem(16)};
-      }
+      width: 320px;
     }
   }
 
   ${desktop.s} {
-    .title_main {
-      margin-top: 188px;
-    }
-
     .service {
-      padding-left: 104px;
+      width: 296px;
+    }
+  }
+
+  ${below.desktop} {
+    .service-title {
+      font-size: ${calcRem(18)};
+      line-height: ${calcRem(24)};
     }
 
-    .service-icon {
-      left: 28px;
+    .service-description {
+      margin-top: ${calcRem(16)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
   ${tablet.all} {
-    .title_main {
-      margin-top: ${calcRem(91)};
-    }
-
-    .service {
-      padding-left: ${calcRem(80)};
-    }
-
-    .service-icon {
-      top: ${calcRem(8)};
-      left: ${calcRem(34)};
-      width: ${calcRem(20)};
-    }
-
-    .navigation {
-      margin-top: ${calcRem(101)};
-    }
-
-    .service:not(:first-of-type) {
+    & {
       margin-top: ${calcRem(100)};
     }
 
-    .service-subtitle {
-      margin-top: ${calcRem(20)};
+    &._has_two-rows {
+      .service:nth-of-type(n + 3) {
+        margin-top: ${calcRem(108)};
+      }
+    }
+
+    .service {
+      width: ${calcRem(224)};
     }
 
     .service-link {
-      margin-top: ${calcRem(24)};
+      padding-top: ${calcRem(244)};
     }
+  }
 
-    .service-icon_circle {
-      fill: #F5565F;
+  ${above.mobile} {
+    &._has_one-row {
+      .title,
+      .description,
+      .services {
+        grid-column: 2 / span 10;
+      }
 
-      & path {
-        stroke: #F5565F;
+      .title,
+      .description {
+        text-align: center;
+      }
+
+      .services {
+        margin-top: ${calcRem(80)};
       }
     }
 
-    .service-icon_triangle {
-      fill: #FECF76;
+    &._has_two-rows {
+      grid-auto-rows: max-content auto;
 
-      & path {
-        stroke: #FECF76;
+      .title,
+      .description {
+        grid-column: 2 / span 2;
+      }
+
+      .services {
+        grid-column: 5 / span 7;
+        grid-row: 1 / span 2;
       }
     }
 
-    .service-icon_square {
-      fill: #8BD9B9;
-
-      & path {
-        stroke: #8BD9B9;
-      }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
-    .service-icon_arc {
-      fill: #0054D7;
+    .service-link {
+      padding-top: ${calcRem(260)};
+    }
 
-      & path {
-        stroke: #0054D7;
-      }
+    .service,
+    .service::after {
+      background-size: ${calcRem(272)} ${calcRem(220)};
     }
   }
 
   ${mobile.all} {
     & {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      width: 22.5rem;
-      overflow: hidden;
+      margin-top: ${calcRem(104)};
     }
 
-    .title_main {
+    .title,
+    .description,
+    .services {
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(102)};
-    }
-
-    .service {
-      position: relative;
-      padding-left: 0;
-    }
-
-    .service::before {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      display: block;
-      background-size: 100%;
-      background-repeat: no-repeat;
-    }
-
-    .service_outsourcing::before {
-      top: ${calcRem(-32)};
-      left: ${calcRem(-136)};
-      width: ${calcRem(217)};
-      height: ${calcRem(215)};
-      transform: rotateZ(-180deg);
-    }
-
-    .service_express::before {
-      top: ${calcRem(-32)};
-      right: ${calcRem(-112)};
-      width: ${calcRem(264)};
-      height: ${calcRem(209)};
-      transform: scaleX(-1)
-    }
-
-    .service_mvp::before {
-      top: ${calcRem(24)};
-      left: ${language === 'ru' ? `calc(100% + ${calcRem(-112)})` : calcRem(-75)};
-      width: ${calcRem(87)};
-      height: ${calcRem(87)};
-      transform: ${language === 'ru' ? `rotateZ(180deg)` : `rotateZ(90deg)`} scaleX(2.16) scaleY(2.3);
-    }
-
-    .service_backend::before {
-      width: ${calcRem(120)};
-
-      ${language === 'ru'
-        ? css`
-            top: ${calcRem(-17)};
-            left: ${calcRem(-72)};
-            height: ${calcRem(192)};
-          `
-        : css`
-            top: ${calcRem(-20)};
-            right: ${calcRem(-16)};
-            height: ${calcRem(176)};
-          `
-      }
-    }
-
-    .service_backend {
-      min-height: ${language === 'ru'? calcRem(192) : calcRem(176)};
-    }
-
-    .service-icon {
-      display: none;
-    }
-
-    .navigation {
-      margin-top: ${calcRem(77)};
-    }
-
-    .service:not(:first-of-type) {
-      margin-top: ${calcRem(108)};
-    }
-
-    .service-subtitle {
-      margin-top: ${calcRem(20)};
     }
 
     .service-link {
-      margin-top: ${calcRem(24)};
+      padding-top: ${calcRem(168)};
+    }
+
+    .service,
+    .service::after {
+      background-size: ${calcRem(328)} ${calcRem(144)};
+    }
+
+    .service:first-of-type {
+      margin-top: ${calcRem(54)};
+    }
+
+    .service:not(:first-of-type) {
+      margin-top: ${calcRem(48)};
     }
   }
 
-  @media (min-device-width : 375px)
-  and (max-device-width : 812px)
-  and (-webkit-min-device-pixel-ratio : 2)
-  and (-webkit-max-device-pixel-ratio : 3) {
-    .service-title {
-      transform: translateX(${calcRem(-24)});
-    }
-  }
-`
+  @media (hover: hover) and (pointer: fine) {
+    .service:hover {
+      cursor: pointer;
 
-const ie11Styles = ({ breakpoints: { mobile }}) => css`
-  & {
-    position: relative;
-  }
+      &::after {
+        opacity: 1;
+        transition: opacity 200ms;
+      }
 
-  .title_main {
-    -ms-grid-column: ${getGridValueForMs(3)};
-    -ms-grid-column-span: ${getGridValueForMs(8)};
-    -ms-grid-row: 1;
-  }
-
-  .navigation {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(5)};
-    -ms-grid-row: 2;
-  }
-
-  ${mobile.all} {
-    .title_main {
-      -ms-grid-column: ${getGridValueForMs(1)};
-      -ms-grid-column-span: ${getGridValueForMs(6)};
+      .service-title {
+        color: ${colors.primary.darken15};
+        transition: color 200ms;
+      }
     }
   }
 `
 
-export const mobileBackgroundImagesStyles = language => theme => {
-  const { mobile } = theme.breakpoints
-  return css`
-    ${mobile.all} {
-      ${backgroundCssSmart('.service_outsourcing::before', circle)}
-      ${backgroundCssSmart('.service_express::before', triangle)}
-      ${backgroundCssSmart('.service_mvp::before', square)}
-      ${backgroundCssSmart('.service_backend::before', language === 'ru' ? arc_ru : arc)}
-    }
-  `
-}
-
-
-export default props => {
+const styles = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors, language })}
-    ${props.isIe11 && ie11Styles({ breakpoints })}
+    ${base({ breakpoints, colors })}
   `
 }
+
+
+export default styles

@@ -8,52 +8,33 @@
     "description": "CSSSR is&nbsp;a&nbsp;web-development group of&nbsp;companies. Though <span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> development services are our specialty, we&nbsp;provide superb back-end and devops services, along with design to&nbsp;help our clients build top to&nbsp;bottom solutions."
   },
   "services": {
-    "title": "We&nbsp;Create Web Services for Millions",
+    "title": "Our Services",
+    "description": "Though web development services are our specialty, we&nbsp;also do&nbsp;superb design to&nbsp;help our clients build top to&nbsp;bottom solutions.",
     "outsourcing": {
-      "title": "<span style=\"font-weight: bold;\">Web&nbsp;Development</span><span style=\"white-space: nowrap; display: block;\">Outsourcing</span>",
-      "subtitle": "Fast, reliable and professional web development services."
-    },
-    "express": {
-      "title": "<span style=\"font-weight: bold;\">PSD&nbsp;to&nbsp;HTML</span> Conversion",
-      "subtitle": "Turn your design (PSD, Sketch, Figma) into <span style=\"white-space: nowrap;\">HTML-pages</span>."
-    },
-    "mvp": {
-      "title": "<span style=\"font-weight: bold;\">MVP</span> Development",
-      "subtitle": "Development of&nbsp;core functionality for testing purposes."
+      "title": "<b>Web Development</b> Outsourcing",
+      "description": "Fast, reliable and professional web development services."
     },
     "backend": {
-      "title": "<span style=\"font-weight: bold;\">Back-end</span> and <span style=\"font-weight: bold;\">DevOps</span>",
-      "subtitle": "Reliable back-end development and DevOps services."
+      "title": "<b>Back-End</b> &amp;&nbsp;<b>DevOps</b>",
+      "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
     },
-    "ourFeatures": {
-      "feature1": {
-        "text": "We&nbsp;believe attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average.",
-        "link": "Read about processes"
-      },
-      "feature2": {
-        "text": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tools. We&nbsp;keep a&nbsp;careful eye on&nbsp;emerging web development trends and never compromise best practice.",
-        "link": "Read about technologies"
-      }
+    "mvp": {
+      "title": "<b>MVP</b> Development",
+      "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;meant to&nbsp;guide its future development."
+    },
+    "design": {
+      "title": "<b>Design</b>Lab",
+      "description": "We&nbsp;have <b>Humble Team</b> who focuses on&nbsp;design that would fulfill the most complex expectations of&nbsp;users and investors, and help to&nbsp;accomplish your revenue goals."
     }
   },
-  "industries": {
-    "title": "Industries",
-    "subtitle": "We&nbsp;take a&nbsp;goal-oriented approach across a&nbsp;wide range of&nbsp;industries",
-    "fintech": {
-      "title": "Fintech",
-      "description": "We&rsquo;ve built a&nbsp;strong digital presence for many banking and financial services."
+  "ourFeatures": {
+    "feature1": {
+      "text": "We&nbsp;believe attention to&nbsp;detail and well established business processes differentiate successful projects and those that are just average.",
+      "link": "Read about processes"
     },
-    "eCommerce": {
-      "title": "E-Commerce",
-      "description": "We&nbsp;help our clients in&nbsp;the highly competitive <span style=\"white-space: nowrap;\">e-commerce</span> industry win each new customer."
-    },
-    "information": {
-      "title": "Information Technology",
-      "description": "We&nbsp;push IT-companies to&nbsp;the cutting edge of&nbsp;technological progress."
-    },
-    "mediaAndMarketing": {
-      "title": "Media &amp;&nbsp;Marketing",
-      "description": "We&nbsp;deliver high-quality experiences capable of&nbsp;handling large-scale data and any scale of&nbsp;concurrent users."
+    "feature2": {
+      "text": "There is&nbsp;no&nbsp;perfect framework or&nbsp;library. Depending on&nbsp;the type of&nbsp;task, we&nbsp;choose the most appropriate tools. We&nbsp;keep a&nbsp;careful eye on&nbsp;emerging web development trends and never compromise best practice.",
+      "link": "Read about technologies"
     }
   },
   "aboutUs": {
@@ -79,14 +60,14 @@
     "link": "Read more"
   },
   "projects": {
-    "title": "Our Other Projects",
+    "title": "Our solutions",
     "tracker": {
       "title": "CSSSR.Tracker",
       "description": "We&rsquo;ve created an&nbsp;app that helps&nbsp;us manage time on&nbsp;our projects. Give&nbsp;it&nbsp;a&nbsp;try."
     },
-    "school": {
-      "title": "CSSSR.School",
-      "description": "A&nbsp;front-end e-learning platform developed by&nbsp;CSSSR. Currently available only in&nbsp;Russian language."
+    "lms": {
+      "title": "Modular Learning Management System",
+      "description": "Our LMS helps to&nbsp;start E-Learning business. We&nbsp;offer design and development teams to&nbsp;do&nbsp;all the necessary integrations and personalization. The system is&nbsp;designed to&nbsp;support pedagogical models and help you to&nbsp;streamline your training."
     },
     "blog": {
       "title": "CSSSR.Blog",
@@ -111,16 +92,7 @@
   },
   "imgAlt": {
     "hero": "CSSSR is an international IT group.",
-    "square": "Square figure",
-    "triangle": "Triangle figure",
-    "circle": "Circle figure",
-    "arc": "Arc figure",
-    "figures": "Square, Triangle and Circle figures in a pile",
     "ourFeatures": "А man who neatly and meticulously cuts geometric bonsai, showing our desire to do everything perfectly",
-    "fintech": "CSSSR builds a strong digital presence for most banking and financial services.",
-    "eCommerce": "CSSSR makes our clients in the highly competitive e-commerce industry win customers.",
-    "information": "We push IT-companies on the cutting edge of technological progress.",
-    "mediaAndMarketing": "Taking advantage of its profound high-quality experience, CSSSR is capable of handling large-scale data and any scale of concurrent users.",
     "aboutUs": "A man hugging a heart with «Do» written on him",
     "volleyball": "CSSSR Teams after Volleyball Tournament",
     "elbrus": "CSSSR flag on Elbrus",

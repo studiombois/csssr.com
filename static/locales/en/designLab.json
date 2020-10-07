@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "imgAlt": "Man with pencil",
+    "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
+    "text": "Our special <span style='color:#F9545B;'>Humble Team</span> that focuses on&nbsp;design expertise to&nbsp;help you create great products with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
+  },
+  "designCases": {
+    "plug": "Case is in development",
+    "ing": {
+      "imgAlt": "ING",
+      "heading": "ING. Portal for small &amp;&nbsp;medium businesses.",
+      "text": "Helping to&nbsp;invent a&nbsp;new business direction for the biggest Dutch bank."
+    },
+    "nasa": {
+      "imgAlt": "NASA",
+      "heading": "NASA: a&nbsp;new way to&nbsp;manage space in&nbsp;space",
+      "text": "A&nbsp;spaceship storage and cargo management tool designed to&nbsp;make the launch preparation more efficient"
+    },
+    "qatar": {
+      "imgAlt": "Qatar",
+      "heading": "Qatar ministry of&nbsp;foreign affairs",
+      "text": "The official app for Qatar citizens that are traveling abroad"
+    },
+    "erste": {
+      "imgAlt": "Erste group & Deloitte Digital",
+      "heading": "Erste group &amp;&nbsp;Deloitte Digital",
+      "text": "Concept and ideation for security tokenization mobile application"
+    },
+    "serpbook": {
+      "imgAlt": "Serpbook",
+      "heading": "Serpbook",
+      "text": "Comperhensive product developmentfor the leading SEO rank tracker."
+    },
+    "cogni": {
+      "imgAlt": "Cogni",
+      "heading": "Cogni",
+      "text": "Re-thining modern banking both visually and conceptually with one of&nbsp;the most ambitious New-York fintech start-ups"
+    },
+    "ottomatic": {
+      "imgAlt": "Ottomatic",
+      "heading": "Ottomatic",
+      "text": "A&nbsp;2b2 database back up&nbsp;tool with automatization features and smart analytics"
+    },
+    "jti": {
+      "imgAlt": "JTI",
+      "heading": "JTI employees portal",
+      "text": "Streamlined sales, seamless onboarding and a&nbsp;brand new knowledgebase: everything to&nbsp;keep this tobacco leader ahead in&nbsp;the race."
+    },
+    "creddible": {
+      "imgAlt": "Creddible",
+      "heading": "Creddible",
+      "text": "A&nbsp;service that helps decrypting the complexity of&nbsp;a&nbsp;credit score and takes the advice on&nbsp;its improvement to&nbsp;the next level with the bite-sized actions for the end consumer"
+    },
+    "truebill": {
+      "imgAlt": "Truebill",
+      "heading": "Truebill",
+      "text": "Subscription and bills management that also helps to&nbsp;optimize and save"
+    }
+  },
+  "devBlock": {
+    "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
+    "text": "Despite the design we&nbsp;are still frontend company and making a&nbsp;complex websites &amp;&nbsp;applications. You can read about development in&nbsp;<a href='service/outsourcing-front-end' target='_blank' rel='noopener nofollow' class='devBlock__link'>relevant page</a>"
+  },
+  "idea": {
+    "heading": "Have an idea?",
+    "button": "CONTACT US"
+  }
+}

@@ -2,12 +2,14 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import LazyLoad from 'react-lazyload'
 import styles from './Projects.styles'
 import Heading from '../../ui-kit/core-design/Heading'
 import Grid from '../../ui-kit/core-design/Grid'
 import Post from './Post'
-import Card from '../Card'
+import Card from '../../Card'
 import posts from '../../../data/main/posts'
+import Solutions from '../../our-cases/Solutions'
 
 import projects from '../../../data/main/projects'
 
@@ -25,19 +27,23 @@ const Projects = ({ className, l10n: { translations, language } }) => {
         size="m"
       />
 
-      {projects.map(({ id, title, description, href, images, imagesHovered }) => {
+      {language === 'en' && <Solutions className="solutions" />}
+
+      {projects.map(({ id, title, description, href, images, alt, imagesHovered }) => {
         const Player = () => (
-          <div className="player-wrapper">
-            <iframe
-              className="player"
-              scrolling="no"
-              frameBorder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/420446082&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&download=false&sharing=false&buying=false"
-            />
-          </div>
+          <LazyLoad>
+            <div className="player-wrapper">
+              <iframe
+                className="player"
+                scrolling="no"
+                frameBorder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/420446082&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&download=false&sharing=false&buying=false"
+              />
+            </div>
+          </LazyLoad>
         )
 
-        if (language !== 'ru' && id === 'radio') {
+        if (language === 'en' && (id === 'radio' || id === 'tracker' || id === 'school')) {
           return
         }
 
@@ -45,6 +51,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
           <Card
             testId={`Projects:${id === 'radio' ? 'block' : 'link'}.${id}`}
             className={cn('card', `card_${id}`)}
+            alt={alt}
             key={id}
             id={id}
             title={title}

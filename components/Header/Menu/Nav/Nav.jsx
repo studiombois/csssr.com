@@ -69,14 +69,14 @@ const Nav = ({
             menu
               .find(({ id }) => id === activeItem)
               .links.map(({ id, icon: Icon, title, description, href }) => {
-                if (language === 'ru' && id === 'express') {
+                if (language === 'ru' && id === 'design') {
                   return
                 }
 
                 return (
                   <Wrapper key={id} {...animationProps}>
                     <li
-                      className={cn('nav-item', {
+                      className={cn('nav-item', `nav-item_${id}`, {
                         'nav-item_active': router.pathname === `/${language}/${href}`,
                       })}
                     >

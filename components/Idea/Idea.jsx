@@ -18,20 +18,22 @@ const Idea = ({ className, pageName, l10n: { translations } }) => {
   return (
     <Grid className={className} as="section" data-testid="OurCases:block.idea">
       <div className="heading-wrapper">
-        <Heading.H2
-          type="slab"
-          size="m"
-          dangerouslySetInnerHTML={{ __html: ideaContent.heading(translations) }}
-          className="heading"
-        />
-
-        <div className="button-wrapper" data-testid="OurCases:block.idea.modalButton">
-          <Button
-            data-testid={`Header:button.contactUs`}
-            onClick={() => toggleContactModalVisibility(true)}
-            className="button"
-            dangerouslySetInnerHTML={{ __html: ideaContent.button(translations) }}
+        <div className="heading-text">
+          <Heading.H2
+            type="slab"
+            size="m"
+            dangerouslySetInnerHTML={{ __html: ideaContent.heading(translations) }}
+            className="heading"
           />
+
+          <div className="button-wrapper" data-testid="OurCases:block.idea.modalButton">
+            <Button
+              data-testid={`Header:button.contactUs`}
+              onClick={() => toggleContactModalVisibility(true)}
+              className="button"
+              dangerouslySetInnerHTML={{ __html: ideaContent.button(translations) }}
+            />
+          </div>
         </div>
       </div>
 

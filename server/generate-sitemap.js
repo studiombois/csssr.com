@@ -107,6 +107,11 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/en/service/design-lab',
+    changefreq: 'weekly',
+    priority: 1,
+  },
+  {
     url: 'https://csssr.com/ru/industry/ecommerce',
     changefreq: 'weekly',
     priority: 1,
@@ -690,11 +695,6 @@ const sitemapUrlsSettings = [
         url: 'https://csssr.com/ru/contacts',
       },
     ],
-  },
-  {
-    url: 'https://csssr.com/en/covid-19',
-    changefreq: 'yearly',
-    priority: 0.6,
   },
   {
     url: 'https://csssr.com/en/solutions/lms',

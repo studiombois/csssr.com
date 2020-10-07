@@ -30,19 +30,19 @@
   "greeting": {
     "ecommerce": {
       "title": "Custom E-Commerce <br/>Development Services",
-      "paragraph": "CSSSR is&nbsp;ready to&nbsp;transform your design layouts into well performing websites to&nbsp;boost your sales. In&nbsp;the constantly growing and highly competitive e-commerce industry every page, every metric, and every customer opinion matters.",
+      "paragraph": "CSSSR is ready to transform your design layouts into well performing websites to boost your sales. In the constantly growing and highly competitive e-commerce industry every page, every metric, and every customer opinion matters.",
       "button": "Hire us",
       "imgAlt": "Illustration with two figures of people, a man conveys something to a girl"
     },
     "fintech": {
       "title": "Fintech and Banking<br /> Web Development",
-      "paragraph": "CSSSR group builds strong digital presence for banks and financial service providers. The financial industry nowadays rapidly expands into the digital world, more and more services are now available online to&nbsp;satisfy rising consumer demand. This transition causes growing demand for higher digital security standards. Find out how we&nbsp;can support.",
+      "paragraph": "CSSSR group builds strong digital presence for banks and financial service providers. The financial industry nowadays rapidly expands into the digital world, more and more services are now available online to satisfy rising consumer demand. This transition causes growing demand for higher digital security standards. Find out how we can support.",
       "button": "Hire us",
       "imgAlt": ""
     },
     "informationTechnology": {
       "title": "Web Development Services<br/> for IT Companies",
-      "paragraph": "CSSSR helps&nbsp;IT companies to&nbsp;become the market leaders. The IT&nbsp;industry is&nbsp;always on&nbsp;the cutting edge of&nbsp;technological progress. The efforts to&nbsp;adapt to&nbsp;new technologies as&nbsp;quickly as&nbsp;possible is&nbsp;not just a&nbsp;desire, but rather the key to&nbsp;success in&nbsp;this industry.",
+      "paragraph": "CSSSR helps IT companies to become the market leaders. The IT industry is always on the cutting edge of technological progress. The efforts to adapt to new technologies as quickly as possible is not just a desire, but rather the key to success in this industry.",
       "button": "Hire us",
       "imgAlt": ""
     },
@@ -57,8 +57,8 @@
     "title": "Our Clients"
   },
   "facts": {
-    "heading": "Development With a&nbsp;Personal Approach",
-    "subHeading": "Regardless of&nbsp;the size or&nbsp;duration of&nbsp;your project, we&nbsp;provide personalized services and flexible terms.",
+    "heading": "Development With a Personal Approach",
+    "subHeading": "Regardless of the size or duration of your project, we provide personalized services and flexible terms.",
     "firstItem": {
       "number": "3-7",
       "text": "specialists <br/>per team"
@@ -78,21 +78,21 @@
   },
   "coreValues": {
     "heading": "Core Values",
-    "subHeading": "We&nbsp;maintain the highest standards of&nbsp;web development and apply best practices to&nbsp;each project.",
+    "subHeading": "We maintain the highest standards of web development and apply best practices to each project.",
     "firstItem": {
       "href": "/en/core-values#accessibility",
       "title": "Accessibility",
-      "text": "Did you know that up&nbsp;to&nbsp;15% of&nbsp;all users have special needs when using the Internet? Each page and block should not only be&nbsp;well written, but should also be&nbsp;appropriately delivered, so&nbsp;that every user can enjoy&nbsp;it."
+      "text": "Did you know that up to 15% of all users have special needs when using the Internet? Each page and block should not only be well written, but should also be appropriately delivered, so that every user can enjoy it."
     },
     "secondItem": {
       "href": "/en/core-values#security",
       "title": "Web Security",
-      "text": "Even a&nbsp;small vulnerability can lead to&nbsp;significant financial and reputational risks. From the beginning, we&nbsp;think carefully about code architecture and pay special attention to&nbsp;security issues."
+      "text": "Even a small vulnerability can lead to significant financial and reputational risks. From the beginning, we think carefully about code architecture and pay special attention to security issues."
     },
     "thirdItem": {
       "href": "/en/core-values#ux",
       "title": "UX",
-      "text": "Perfectionism has to&nbsp;be&nbsp;smart. We&nbsp;always put ourselves in&nbsp;the place of&nbsp;the user and pay attention to&nbsp;the little things that can affect users&rsquo; opinions about the final product."
+      "text": "Perfectionism has to be smart. We always put ourselves in the place of the user and pay attention to the little things that can affect users&rsquo; opinions about the final product."
     },
     "button": {
       "title": "All Core Values",
@@ -101,6 +101,14 @@
   },
   "projects": {
     "heading": "Cases",
+    "description": [
+      "We work with a wide range of industries: ",
+      "information technology",
+      "media and marketing",
+      "fintech",
+      "e-commerce",
+      ". We are proud of our client list and glad to share some of our cases."
+    ],
     "ecommercePage": {
       "mosoblgaz": {
         "heading": "Personal Account",
@@ -110,7 +118,7 @@
       "brusnika": {
         "heading": "Internal assessment and forecasting tools",
         "team": "1 specialist",
-        "duration": "13 months"
+        "duration": "11 months"
       }
     },
     "informationTechnologyPage": {

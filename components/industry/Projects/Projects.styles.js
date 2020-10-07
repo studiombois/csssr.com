@@ -43,14 +43,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     white-space: nowrap;
 
     &_active {
-      color: #0254d8;
+      color: currentColor;
       pointer-events: none;
+      text-decoration: underline;
     }
   }
 
   .link {
-    max-width: ${calcRem(320)};
     margin-top: ${calcRem(36)};
+    max-width: ${calcRem(320)};
+    height: ${calcRem(40)};
     font-size: ${calcRem(12)};
     line-height: ${calcRem(24)};
   }

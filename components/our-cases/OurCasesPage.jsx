@@ -12,19 +12,19 @@ import casesContent from '../../data/our-cases/devCases'
 import designCasesContent from '../../data/our-cases/designCases'
 import DesignCases from './DesignCases/DesignCases'
 
-const OurCasesPage = ({ l10n: { translations } }) => {
+const OurCasesPage = ({ l10n: { language, translations } }) => {
   const pageName = 'ourCases'
   return (
     <Layout pageName={pageName}>
       <Head
-        title={translations.industry.meta.ecommerce.title}
-        description={translations.industry.meta.ecommerce.description}
+        title={translations.ourCases.hero.heading}
+        description={translations.ourCases.hero.text}
       />
 
       <Hero content={heroContent} />
       <DevCases content={casesContent} />
       <DesignCases content={designCasesContent} />
-      <Solutions />
+      {language !== 'ru' && <Solutions />}
       <Idea pageName={pageName} />
     </Layout>
   )

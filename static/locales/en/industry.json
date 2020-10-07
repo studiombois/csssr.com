@@ -101,6 +101,7 @@
   },
   "projects": {
     "heading": "Cases",
+    "link": "View our cases",
     "description": [
       "We work with a wide range of industries: ",
       "information technology",
@@ -123,24 +124,24 @@
     },
     "informationTechnologyPage": {
       "gazprom": {
-        "heading": "Management Platform",
+        "heading": "Platform for business projects implementation",
         "team": "9 specialists",
         "duration": "13 months"
       },
       "s7": {
-        "heading": "Customer Account",
+        "heading": "Personal customer account",
         "team": "8 specialists",
         "duration": "25 months"
       }
     },
     "mediaAndMarketingPage": {
       "qmarketing": {
-        "heading": "Management Platform",
+        "heading": "Interactive educational system",
         "team": "3 specialists",
         "duration": "4 months"
       },
       "mindbox": {
-        "heading": "Customer Account",
+        "heading": "Platform for marketing automation",
         "team": "3 specialists",
         "duration": "13 months"
       }

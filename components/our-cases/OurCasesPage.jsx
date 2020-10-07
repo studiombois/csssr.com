@@ -9,6 +9,8 @@ import Idea from '../../components/Idea'
 
 import heroContent from '../../data/our-cases/hero'
 import casesContent from '../../data/our-cases/devCases'
+import designCasesContent from '../../data/our-cases/designCases'
+import DesignCases from './DesignCases/DesignCases'
 
 const OurCasesPage = ({ l10n: { language, translations } }) => {
   const pageName = 'ourCases'
@@ -21,6 +23,7 @@ const OurCasesPage = ({ l10n: { language, translations } }) => {
 
       <Hero content={heroContent} />
       <DevCases content={casesContent} />
+      <DesignCases content={designCasesContent} />
       {language !== 'ru' && <Solutions />}
       <Idea pageName={pageName} />
     </Layout>

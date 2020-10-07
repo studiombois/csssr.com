@@ -2,6 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import util from 'util'
 import { ONE_YEAR } from '../../utils/timePeriods'
+import { isEmpty } from 'ramda'
 
 const readFile = util.promisify(fs.readFile)
 
@@ -98,6 +99,10 @@ export default ({ ignorePaths }) => {
     }
 
     const allAbExperiments = await allAbExperimentsPromise
+
+    if (isEmpty(allAbExperiments)) {
+      return next()
+    }
 
     // Кука может быть битой или отсутствовать
     let userAb

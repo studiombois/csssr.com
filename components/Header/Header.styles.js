@@ -44,7 +44,6 @@ const base = ({ breakpoints: { mobile }}) => css`
 
     .logo {
       width: ${calcRem(64)};
-      height: ${calcRem(16)};
       order: 1;
     }
 

@@ -8,19 +8,17 @@ export default {
   cases: [
     {
       images: INGImages,
-      imgAlt: (t) => t.ourCases.designCases.ING.imgAlt,
-      link: 'project/gazprom-neft-professionals-4-0',
-      heading: (t) => t.ourCases.designCases.ING.heading,
-      text: (t) => t.ourCases.designCases.ING.text,
-      plug: (t) => t.ourCases.designCases.ING.plug,
+      imgAlt: (t) => t.designLab.designCases.ing.imgAlt,
+      heading: (t) => t.designLab.designCases.ing.heading,
+      text: (t) => t.designLab.designCases.ing.text,
+      plug: (t) => t.designLab.designCases.plug,
     },
     {
       images: NASAImages,
-      imgAlt: (t) => t.ourCases.designCases.NASA.imgAlt,
-      link: 'project/s7-personal-account',
-      heading: (t) => t.ourCases.designCases.NASA.heading,
-      text: (t) => t.ourCases.designCases.NASA.text,
-      plug: (t) => t.ourCases.designCases.NASA.plug,
+      imgAlt: (t) => t.designLab.designCases.nasa.imgAlt,
+      heading: (t) => t.designLab.designCases.nasa.heading,
+      text: (t) => t.designLab.designCases.nasa.text,
+      plug: (t) => t.designLab.designCases.plug,
     },
   ],
 }

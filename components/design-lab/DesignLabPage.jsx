@@ -14,8 +14,8 @@ const DesignLabPage = ({ l10n: { translations } }) => {
   return (
     <Layout pageName={pageName}>
       <Head
-        title={translations.industry.meta.ecommerce.title}
-        description={translations.industry.meta.ecommerce.description}
+        title={translations.designLab.meta.title}
+        description={translations.designLab.meta.description}
       />
 
       <Hero content={heroContent} />

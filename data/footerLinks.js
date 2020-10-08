@@ -108,6 +108,10 @@ export const nav = [
         id: 'coreValues',
         href: 'core-values',
       },
+      {
+        id: 'ourCases',
+        href: 'our-cases',
+      },
     ],
   },
   {

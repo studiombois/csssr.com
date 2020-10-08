@@ -63,7 +63,7 @@
   },
   "devBlock": {
     "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
-    "text": "You can read about our core mission, i.e. making complex websites & web applications, on the <a href='service/outsourcing-front-end' target='_blank' rel='noopener nofollow' class='devBlock__link'>relevant page</a>"
+    "text": "You can read about our core mission, i.e. making complex websites & web applications, on the <a href='outsourcing-front-end' class='devBlock__link'>relevant page</a>"
   },
   "idea": {
     "heading": "Have an idea?",

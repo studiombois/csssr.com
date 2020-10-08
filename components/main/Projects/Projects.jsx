@@ -27,7 +27,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
         size="m"
       />
 
-      {language === 'en' && <Solutions className="solutions" />}
+      {language === 'en' && <Solutions className="solutions" pageName="Home" />}
 
       {projects.map(({ id, title, description, href, images, alt, imagesHovered }) => {
         const Player = () => (

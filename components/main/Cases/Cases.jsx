@@ -7,7 +7,7 @@ import Projects from '../../industry/Projects'
 import { informationTechnologyProjects } from '../../../data/industry/projects'
 
 const Cases = ({ className }) => (
-  <Projects className={className} content={informationTechnologyProjects} />
+  <Projects className={className} content={informationTechnologyProjects} pageName="Home" />
 )
 
 Cases.propTypes = {

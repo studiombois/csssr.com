@@ -12,8 +12,8 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Solutions = ({ className, l10n: { translations } }) => (
-  <Grid className={className} as="section">
+const Solutions = ({ className, l10n: { translations }, pageName = 'OurCases' }) => (
+  <Grid className={className} as="section" data-testid={`${pageName}:block.solutions`}>
     <Heading.H2
       type="slab"
       size="m"
@@ -30,7 +30,7 @@ const Solutions = ({ className, l10n: { translations } }) => (
             target: '_blank',
             rel: 'nofollow noopener',
           })}
-          data-testid={`ourCases:block.solutionLink.${blockClass}`}
+          data-testid={`${pageName}:block.solution.${blockClass}.link`}
         >
           <div className={`image-wrapper image-wrapper_${blockClass}`}>
             <PictureSmart
@@ -46,7 +46,7 @@ const Solutions = ({ className, l10n: { translations } }) => (
             size="l"
             dangerouslySetInnerHTML={{ __html: heading(translations) }}
             className="solution-heading"
-            data-testid={`ourCases:text.heading.${blockClass}`}
+            data-testid={`${pageName}:block.solution.${blockClass}.heading`}
           />
 
           <Text

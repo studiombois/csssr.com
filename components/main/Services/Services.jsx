@@ -57,11 +57,12 @@ const Services = ({ className, l10n: { translations, language } }) => {
               `}
             />
 
-            <li className={cn('service', `service_${id}`)}>
+            <li className={cn('service', `service_${id}`)} data-testid={`Services:service.${id}`}>
               <NextLink href={`/${language}/service/${href}`}>
                 <a className="service-link">
                   <h3
                     className="service-title"
+                    data-testid={`Services:service.${id}.title`}
                     dangerouslySetInnerHTML={{ __html: translations.main.services[id].title }}
                   />
 

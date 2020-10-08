@@ -19,9 +19,10 @@ const Projects = ({
   router,
   content: { heading, projectsItems },
   l10n: { translations, language },
+  pageName = 'Industry',
 }) => (
   <>
-    <section className={className} id={id} data-testid="Industry:block:projects">
+    <section className={className} id={id} data-testid={`${pageName}:block.cases`}>
       <Grid>
         <Heading.H2
           type="slab"
@@ -70,7 +71,7 @@ const Projects = ({
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[1] }}
-                data-testid="Industry:link.inforamationTechnology"
+                data-testid={`${pageName}:block.cases.link.inforamationTechnology`}
               />
               ,{' '}
               <Link
@@ -82,7 +83,7 @@ const Projects = ({
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[2] }}
-                data-testid="Industry:link.mediaAndMarketing"
+                data-testid={`${pageName}:block.cases.link.mediaAndMarketing`}
               />
               ,{' '}
               <Link
@@ -93,7 +94,7 @@ const Projects = ({
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[3] }}
-                data-testid="Industry:link.fintech"
+                data-testid={`${pageName}:block.cases.link.fintech`}
               />
               ,{' '}
               <Link
@@ -104,7 +105,7 @@ const Projects = ({
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[4] }}
-                data-testid="Industry:link.ecommerce"
+                data-testid="Industry:block.cases.link.ecommerce"
               />
               {translations.industry.projects.description[5]}
             </SubHeading>
@@ -114,7 +115,7 @@ const Projects = ({
               kind="primary"
               size="s"
               dangerouslySetInnerHTML={{ __html: translations.industry.projects.link }}
-              data-testid="Industry:link.ourCases"
+              data-testid={`${pageName}:block.cases.link.ourCases`}
             />
           </div>
         </Grid>

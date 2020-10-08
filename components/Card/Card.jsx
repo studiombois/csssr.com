@@ -40,7 +40,7 @@ const Card = ({
           className={cn('card-picture', `card-picture_${id}`)}
           requireImages={images}
           alt={alt(translations)}
-          testId={`Industries:img.${id}`}
+          testId={`Project:${id}.img`}
         />
 
         {!isMobile && !isTablet && imagesHovered && (
@@ -48,7 +48,7 @@ const Card = ({
             className={'card-picture-hovered'}
             requireImages={imagesHovered}
             alt={alt(translations)}
-            testId={`Industries:img.${id}-hovered`}
+            testId={`Project:${id}.img-hovered`}
           />
         )}
       </div>
@@ -61,7 +61,7 @@ const Card = ({
             dangerouslySetInnerHTML={{ __html: title(translations) }}
             type="regular"
             size="m"
-            data-testid={`Industries:title.${id}`}
+            data-testid={`Project:${id}.title`}
           />
         </a>
       ) : (
@@ -71,7 +71,7 @@ const Card = ({
           dangerouslySetInnerHTML={{ __html: title(translations) }}
           type="regular"
           size="m"
-          data-testid={`Industries:title.${id}`}
+          data-testid={`Project:${id}.title`}
         />
       )}
 
@@ -81,7 +81,7 @@ const Card = ({
         dangerouslySetInnerHTML={{ __html: description(translations) }}
         type="regular"
         size="m"
-        data-testid={`Industries:text.${id}`}
+        data-testid={`Project:${id}.text`}
       />
 
       <div className="break" />

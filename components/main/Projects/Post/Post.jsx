@@ -36,6 +36,7 @@ const Post = ({ className, id, href, l10n: { translations } }) => {
         target="_blank"
         size="s"
         dangerouslySetInnerHTML={{ __html: translations.main.projects.blog[id].link }}
+        testId={`Post:${id}.link`}
       />
     </li>
   )

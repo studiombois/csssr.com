@@ -113,7 +113,7 @@ class MainPage extends PureComponent {
           </>
         )}
         <Services />
-        {language === 'en' && <Cases />}
+        <Cases />
         <OurFeatures />
         <AboutUs />
         <Projects />

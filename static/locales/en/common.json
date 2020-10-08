@@ -19,7 +19,7 @@
         "title": "Services",
         "outsourcing": {
           "title": "Web Development",
-          "description": "Fast, reliable and professional web development services."
+          "description": "Web development to&nbsp;complement core competencies"
         },
         "backend": {
           "title": "Back-end and&nbsp;DevOps",
@@ -30,7 +30,7 @@
           "description": "Development of&nbsp;core functionality for testing purposes."
         },
         "design": {
-          "title": "DesignLab",
+          "title": "Design Lab",
           "description": "Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
         }
       },

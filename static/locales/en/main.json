@@ -12,18 +12,18 @@
     "description": "Though web development services are our specialty, we&nbsp;also do&nbsp;superb design to&nbsp;help our clients build top to&nbsp;bottom solutions.",
     "outsourcing": {
       "title": "<b>Web Development</b> Outsourcing",
-      "description": "Fast, reliable and professional web development services."
+      "description": "Web development to&nbsp;complement core competencies."
     },
     "backend": {
       "title": "<b>Back-End</b> &amp;&nbsp;<b>DevOps</b>",
-      "description": "Reinforce your web application with reliable back-end development and duly adjusted infrastructure."
+      "description": "Reliable back-end development and DevOps services."
     },
     "mvp": {
       "title": "<b>MVP</b> Development",
-      "description": "A&nbsp;Minimum Viable Product is&nbsp;the most basic functioning version of&nbsp;a&nbsp;product, which is&nbsp;meant to&nbsp;guide its future development."
+      "description": "Development of&nbsp;core functionality for testing purposes."
     },
     "design": {
-      "title": "<b>Design</b>Lab",
+      "title": "<b>Design</b> Lab",
       "description": "We&nbsp;have <b>Humble Team</b> who focuses on&nbsp;design that would fulfill the most complex expectations of&nbsp;users and investors, and help to&nbsp;accomplish your revenue goals."
     }
   },

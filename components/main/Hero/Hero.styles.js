@@ -2,7 +2,9 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-const heroBg = require.context('../../../public/images/main/hero?csssr-images')
+const heroBgBase = require.context('../../../public/images/main/hero?csssr-images')
+const heroBgV1 = require.context('../../../public/images/main/ab-test/hero/v1?csssr-images')
+const heroBgV2 = require.context('../../../public/images/main/ab-test/hero/v2?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   .title {
@@ -137,9 +139,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
   }
 `
-export const backgroundImagesStyles = () => css`
-  ${backgroundCssSmart('.hero-wrap', heroBg)}
-`
+export const backgroundImagesStyles = (ab) => () => {
+  const heroBgByAbTestVariant = {
+    base: heroBgBase,
+    v1: heroBgV1,
+    v2: heroBgV2,
+  }
+  const abTestVariant = ab['en-main-hero-image'].name
+  const heroBg = heroBgByAbTestVariant[abTestVariant]
+
+  return css`
+    ${backgroundCssSmart('.hero-wrap', heroBg)}
+  `
+}
 
 export default props => {
   const breakpoints = props.theme.breakpoints

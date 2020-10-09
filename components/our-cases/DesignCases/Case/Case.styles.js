@@ -24,7 +24,7 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
 
   .image-wrapper {
     position: relative;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -81,6 +81,8 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
 
     .text {
       margin-top: ${calcRem(10)};
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 

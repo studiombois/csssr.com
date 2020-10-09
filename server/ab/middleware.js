@@ -9,7 +9,10 @@ const readFile = util.promisify(fs.readFile)
 const loadAllAbExperiments = async () => {
   const experimentsDirPath = path.resolve(__dirname, 'experiments')
   if (fs.existsSync(experimentsDirPath)) {
-    const experimentsFileNames = fs.readdirSync(experimentsDirPath)
+    const experimentsFileNames = fs
+      .readdirSync(experimentsDirPath)
+      .filter((fileName) => path.extname(fileName) === 'json')
+
     const experiments = await Promise.all(
       experimentsFileNames.map(async (fileName) => {
         const fileContent = await readFile(path.join(experimentsDirPath, fileName))

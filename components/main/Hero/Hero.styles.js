@@ -11,7 +11,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     font-weight: normal;
     color: ${colors.secondary.darken100};
 
-    & > span {
+    & > b {
       display: block;
       font-family: Roboto, sans-serif;
       font-weight: 900;

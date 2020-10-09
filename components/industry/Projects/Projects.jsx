@@ -111,7 +111,7 @@ const Projects = ({
             </SubHeading>
             <ButtonLink
               className="link"
-              href="/en/our-cases"
+              href={`/${language}/our-cases`}
               kind="primary"
               size="s"
               dangerouslySetInnerHTML={{ __html: translations.industry.projects.link }}

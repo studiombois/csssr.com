@@ -3,10 +3,6 @@ import calcRem from '../../../utils/style/calcRem'
 
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
-  & {
-    margin-top: ${calcRem(128)};
-  }
-
   .cases-wrapper {
     grid-column: 1 / span 12;
     margin-top: ${calcRem(56)};
@@ -21,21 +17,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(56)};
   }
 
-  ${desktop.m} {
+  ${desktop.all} {
     & {
-      margin-top: ${calcRem(80)};
-    }
-  }
-
-  ${desktop.s} {
-    & {
-      margin-top: ${calcRem(112)};
+      margin-top: 152px;
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(72)};
+      margin-top: ${calcRem(110)};
     }
 
     .heading {

@@ -29,6 +29,7 @@ const OurClients = ({
       requireImages={images[language]}
       className={`image image_${page}`}
       alt={altImg(translations)}
+      loading="lazy"
     />
   </Grid>
 )

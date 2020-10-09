@@ -89,6 +89,7 @@ class ElearningPlatformContent extends PureComponent {
               requireImages={assistantImages}
               className="module-image module-image-left"
               alt="We’ve built an assistant based on Google Dialogflow."
+              loading="lazy"
             />
 
             <div className="module-title module-title-right">
@@ -119,6 +120,7 @@ class ElearningPlatformContent extends PureComponent {
               requireImages={gamificationImages}
               className="module-image module-image-right"
               alt="Boost users motivation up with an achievements and rewards system."
+              loading="lazy"
             />
 
             <p className="font-p-2 module-subdescription-left subdescription-first subdescription-first-tablet">
@@ -138,6 +140,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 src={require('../../static/elearning-platform/icons/management.svg').default}
                 alt="line"
+                loading="lazy"
               />
             </div>
 
@@ -162,6 +165,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 src={require('../../static/elearning-platform/icons/administration.svg').default}
                 alt="line"
+                loading="lazy"
               />
             </div>
 
@@ -189,6 +193,7 @@ class ElearningPlatformContent extends PureComponent {
               <img
                 src={require('../../static/elearning-platform/icons/learning.svg').default}
                 alt="line"
+                loading="lazy"
               />
             </div>
 
@@ -263,6 +268,7 @@ class ElearningPlatformContent extends PureComponent {
                 <PictureSmart
                   requireImages={activeDesignImage}
                   alt="We have a design team that will customize the LMS to match your brand identity."
+                  loading="lazy"
                 />
               </Fade>
             </div>
@@ -292,6 +298,7 @@ class ElearningPlatformContent extends PureComponent {
                 className="team-image"
                 requireImages={teamImages}
                 alt="We’ll provide you with a development team based on the project desired functionality and timeline."
+                loading="lazy"
               />
             </div>
           </div>
@@ -340,6 +347,7 @@ class ElearningPlatformContent extends PureComponent {
               requireImages={featureImages[this.state.activeFeatureImage].images}
               className="advanced-feature-image"
               alt="By using advanced features ideas you can add any payment provider you like."
+              loading="lazy"
             />
 
             <div className="advanced-feature-description">

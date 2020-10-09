@@ -40,6 +40,7 @@ const OurFeatures = ({ className, l10n: { translations, language } }) => {
         className="picture"
         requireImages={ourFeaturesImages}
         alt={translations.main.imgAlt.ourFeatures}
+        loading="lazy"
       />
 
       <Text

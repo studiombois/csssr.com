@@ -69,6 +69,7 @@ const TechnologyStack = ({ className, l10n: { translations, language } }) => (
       className="picture"
       requireImages={technologyStackImages}
       alt={translations.outsourcingFrontEnd.imgAlt.technologyStack}
+      loading="lazy"
     />
   </Grid>
 )

@@ -50,6 +50,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
           className={cn('picture', 'picture_love')}
           requireImages={language === 'ru' ? images.love_ru : images.love_en}
           alt={translations.main.imgAlt.aboutUs}
+          loading="lazy"
         />
 
         {/* <Picture
@@ -57,6 +58,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
           images={images.volleyball}
           fallback={images.volleyball.jpg}
           alt={translations.main.imgAlt.volleyball}
+          loading="lazy"
         /> */}
 
         <PictureSmart
@@ -64,6 +66,7 @@ const AboutUs = ({ className, isMobile, l10n: { translations, language } }) => {
           requireImages={images.elbrus}
           alt={translations.main.imgAlt.elbrus}
           testId="Home:img.elbrus"
+          loading="lazy"
         />
       </aside>
 

@@ -41,6 +41,7 @@ const Organized = ({ className, id, l10n: { translations } }) => {
             className="skydiver"
             requireImages={skydiverImages}
             alt={translations.wayOfWork.organized.imgAlt.skydiver}
+            loading="lazy"
           />
         </div>
 
@@ -71,6 +72,7 @@ const Organized = ({ className, id, l10n: { translations } }) => {
             className="skydivers"
             requireImages={skydiversImages}
             alt={translations.wayOfWork.organized.imgAlt.skydivers}
+            loading="lazy"
           />
         </div>
       </Grid>

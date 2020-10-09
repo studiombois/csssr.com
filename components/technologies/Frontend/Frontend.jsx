@@ -21,6 +21,7 @@ const Frontend = ({ className, l10n: { translations } }) => (
       className={cn('picture', 'picture_react')}
       requireImages={reactImages}
       alt={translations.technologies.imgAlt.react}
+      loading="lazy"
     />
 
     <Heading className={cn('title', 'title_react')} as="h2" type="slab" size="m">
@@ -38,6 +39,7 @@ const Frontend = ({ className, l10n: { translations } }) => (
       className={cn('picture', 'picture_vue')}
       requireImages={vueImages}
       alt={translations.technologies.imgAlt.vue}
+      loading="lazy"
     />
 
     <Heading className={cn('title', 'title_vue')} as="h2" type="regular" size="m">
@@ -56,6 +58,7 @@ const Frontend = ({ className, l10n: { translations } }) => (
       className={cn('picture', 'picture_angular')}
       requireImages={angularImages}
       alt={translations.technologies.imgAlt.angular}
+      loading="lazy"
     />
 
     <Heading className={cn('title', 'title_angular')} as="h2" type="regular" size="m">

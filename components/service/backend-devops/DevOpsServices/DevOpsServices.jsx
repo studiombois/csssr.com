@@ -45,7 +45,12 @@ const DevOpsServices = ({
           className="description"
         />
 
-        <PictureSmart requireImages={images} alt={imgAlt(translations)} className="img" />
+        <PictureSmart
+          requireImages={images}
+          alt={imgAlt(translations)}
+          className="img"
+          loading="lazy"
+        />
       </Grid>
 
       <Solution content={solutions} />

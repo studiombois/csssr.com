@@ -14,7 +14,12 @@ const superman = require.context('../../../public/images/jobs-faq/superman?csssr
 const OriginFooter = ({ className }) => (
   <div className={cn(className, 'image-wrapper')}>
     <Grid>
-      <PictureSmart className="image" requireImages={superman} alt="Cупермен фронтендер" />
+      <PictureSmart
+        className="image"
+        requireImages={superman}
+        alt="Cупермен фронтендер"
+        loading="lazy"
+      />
     </Grid>
 
     <Global styles={backgroundImagesStyles()} />

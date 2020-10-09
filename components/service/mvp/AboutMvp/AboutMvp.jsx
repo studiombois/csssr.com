@@ -77,6 +77,7 @@ class AboutMvp extends PureComponent {
               requireImages={mvpOnImages}
               alt={translations.mvp.imgAlt.mvpOn}
               testId={togglerIndex === 1 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
+              loading="lazy"
             />
 
             <PictureSmart
@@ -84,6 +85,7 @@ class AboutMvp extends PureComponent {
               requireImages={mvpOffImages}
               alt={translations.mvp.imgAlt.mvpOff}
               testId={togglerIndex === 0 ? 'MVP:picture:aboutMvp.on' : 'MVP:picture:aboutMvp.off'}
+              loading="lazy"
             />
           </div>
         </article>

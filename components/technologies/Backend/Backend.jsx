@@ -21,6 +21,7 @@ const Backend = ({ className, l10n: { translations, language } }) => (
       className={cn('picture', 'picture_dbs')}
       requireImages={dbsImages}
       alt={translations.technologies.imgAlt.dbs}
+      loading="lazy"
     />
 
     <Heading className={cn('title', 'title_dbs')} as="h2" type="slab" size="m">
@@ -38,6 +39,7 @@ const Backend = ({ className, l10n: { translations, language } }) => (
       className={cn('picture', 'picture_node')}
       requireImages={nodeImages}
       alt={translations.technologies.imgAlt.node}
+      loading="lazy"
     />
 
     <Heading className={cn('title', 'title_node')} as="h2" type="regular" size="m">
@@ -56,6 +58,7 @@ const Backend = ({ className, l10n: { translations, language } }) => (
       className={cn('picture', 'picture_kotlin')}
       requireImages={kotlinImages}
       alt={translations.technologies.imgAlt.kotlin}
+      loading="lazy"
     />
 
     <Heading className={cn('title', 'title_kotlin')} as="h2" type="regular" size="m">

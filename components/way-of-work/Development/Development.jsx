@@ -30,6 +30,7 @@ const Development = ({ className, id, l10n: { translations } }) => {
           className="scrumbanImg"
           requireImages={scrumban.img}
           alt={scrumban.imgAlt(translations)}
+          loading="lazy"
         />
 
         <Heading.H3
@@ -67,6 +68,7 @@ const Development = ({ className, id, l10n: { translations } }) => {
           className="reviewImg"
           requireImages={review.img}
           alt={review.imgAlt(translations)}
+          loading="lazy"
         />
 
         <Heading.H3

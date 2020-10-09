@@ -41,6 +41,7 @@ const Card = ({
           requireImages={images}
           alt={alt(translations)}
           testId={`Project:${id}.img`}
+          loading="lazy"
         />
 
         {!isMobile && !isTablet && imagesHovered && (
@@ -49,6 +50,7 @@ const Card = ({
             requireImages={imagesHovered}
             alt={alt(translations)}
             testId={`Project:${id}.img-hovered`}
+            loading="lazy"
           />
         )}
       </div>

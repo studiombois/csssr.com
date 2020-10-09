@@ -26,7 +26,12 @@ const Case = ({
     >
       <Link className={`${linkClass} link`} href={link} isNextLink>
         <div className="image-wrapper">
-          <PictureSmart className="image" requireImages={images} alt={imgAlt(translations)} />
+          <PictureSmart
+            className="image"
+            requireImages={images}
+            alt={imgAlt(translations)}
+            loading="lazy"
+          />
         </div>
 
         <Heading.H2

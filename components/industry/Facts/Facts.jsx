@@ -32,7 +32,12 @@ const Facts = ({
       className="sub-heading"
     />
 
-    <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+    <PictureSmart
+      requireImages={images}
+      alt={imgAlt(translations)}
+      className="image"
+      loading="lazy"
+    />
 
     {factItems.map(({ number, text, className }) => (
       <FactItem number={number} text={text} itemClassName={className} key={text} />

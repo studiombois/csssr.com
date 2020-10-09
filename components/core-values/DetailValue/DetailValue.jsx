@@ -18,7 +18,12 @@ const DetailValue = ({
 }) => (
   <article id={id}>
     <Grid className={cn(className, id)}>
-      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+      <PictureSmart
+        requireImages={images}
+        alt={imgAlt(translations)}
+        className="image"
+        loading="lazy"
+      />
 
       <Heading.H2
         type="slab"

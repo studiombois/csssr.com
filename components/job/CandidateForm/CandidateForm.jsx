@@ -246,6 +246,7 @@ class CandidateForm extends PureComponent {
                 requireImages={faqSmallImages}
                 css={faqImageStyles}
                 testid="Jobs:img.faq"
+                loading="lazy"
               />
               <p className="faq-text font_p16-regular">
                 {translations.job.faq.title}

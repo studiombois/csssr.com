@@ -38,6 +38,7 @@ const DoubleBottom = ({ className, l10n: { translations } }) => {
             className="picture"
             requireImages={continents}
             alt={translations.common.footer.imgAlt.continents}
+            loading="lazy"
           />
 
           {pins.map(({ id }, index) => (

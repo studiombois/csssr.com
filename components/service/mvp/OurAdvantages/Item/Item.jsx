@@ -15,6 +15,7 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
       className="picture"
       requireImages={images}
       alt={translations.mvp.imgAlt.ourAdvantages[groupId][itemId]}
+      loading="lazy"
     />
 
     <Heading

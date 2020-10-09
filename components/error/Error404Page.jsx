@@ -32,6 +32,7 @@ class Error404Page extends React.Component {
     const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
 
     if (id === 'solutions' && language === 'ru') return
+
     return (
       <span key={id}>
         <h3
@@ -42,28 +43,32 @@ class Error404Page extends React.Component {
 
         {links && (
           <ul className="menu">
-            {links.map(({ id, title, href }) => (
-              <li key={id}>
-                {linkRegExp.test(href) ? (
-                  <a
-                    data-testid={`ErrorPage:menu:link.${id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="menu-item"
-                    href={href}
-                    dangerouslySetInnerHTML={{ __html: title(translations) }}
-                  />
-                ) : (
-                  <Link href={`/${language}/${href}`}>
+            {links.map(({ id, title, href }) => {
+              if (id === 'design' && language === 'ru') return
+
+              return (
+                <li key={id}>
+                  {linkRegExp.test(href) ? (
                     <a
                       data-testid={`ErrorPage:menu:link.${id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="menu-item"
+                      href={href}
                       dangerouslySetInnerHTML={{ __html: title(translations) }}
                     />
-                  </Link>
-                )}
-              </li>
-            ))}
+                  ) : (
+                    <Link href={`/${language}/${href}`}>
+                      <a
+                        data-testid={`ErrorPage:menu:link.${id}`}
+                        className="menu-item"
+                        dangerouslySetInnerHTML={{ __html: title(translations) }}
+                      />
+                    </Link>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         )}
       </span>

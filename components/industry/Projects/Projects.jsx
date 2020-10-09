@@ -67,7 +67,7 @@ const Projects = ({
                   'text-link_active':
                     router.pathname === `/${language}/industry/information-technology`,
                 })}
-                href="information-technology"
+                href={`/${language}/industry/information-technology`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[1] }}
@@ -79,7 +79,7 @@ const Projects = ({
                   'text-link_active':
                     router.pathname === `/${language}/industry/media-and-marketing`,
                 })}
-                href="media-and-marketing"
+                href={`/${language}/industry/media-and-marketing`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[2] }}
@@ -90,7 +90,7 @@ const Projects = ({
                 className={cn('text-link', {
                   'text-link_active': router.pathname === `/${language}/industry/fintech`,
                 })}
-                href="fintech"
+                href={`/${language}/industry/fintech`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[3] }}
@@ -101,7 +101,7 @@ const Projects = ({
                 className={cn('text-link', {
                   'text-link_active': router.pathname === `/${language}/industry/ecommerce`,
                 })}
-                href="ecommerce"
+                href={`/${language}/industry/ecommerce`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[4] }}

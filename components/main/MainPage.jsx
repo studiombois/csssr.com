@@ -31,6 +31,28 @@ class MainPage extends PureComponent {
     return { vacancies }
   }
 
+  /* A/B test en-main-page code start */
+  windowInnerHeight = undefined
+
+  scrollEventListener = () => {
+    if (window.scrollY > this.windowInnerHeight / 2) {
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'scrolled_to_services' })
+      }
+      window.removeEventListener('scroll', this.scrollEventListener)
+    }
+  }
+
+  componentDidMount() {
+    this.windowInnerHeight = window.innerHeight
+    window.addEventListener('scroll', this.scrollEventListener, { passive: true })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scrollEventListener)
+  }
+  /* A/B test en-main-page code end */
+
   render() {
     const {
       vacancies,

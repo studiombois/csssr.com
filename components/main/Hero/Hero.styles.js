@@ -139,13 +139,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
   }
 `
-export const backgroundImagesStyles = (ab) => () => {
+export const backgroundImagesStyles = (ab, language) => () => {
   const heroBgByAbTestVariant = {
     base: heroBgBase,
     v1: heroBgV1,
     v2: heroBgV2,
   }
-  const abTestVariant = ab['en-main-hero-image'].name
+
+  const abTest = language === 'en' ? 'en-main-hero-image' : 'ru-main-hero-image'
+  const abTestVariant = ab[abTest].name
   const heroBg = heroBgByAbTestVariant[abTestVariant]
 
   return css`

@@ -13,13 +13,30 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .button {
-    grid-column: 2 / span 2;
     margin-top: ${calcRem(56)};
   }
 
   ${desktop.all} {
     & {
       margin-top: 152px;
+    }
+  }
+
+  ${desktop.l} {
+    .button {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  ${desktop.m} {
+    .button {
+      grid-column: 2 / span 3;
+    }
+  }
+
+  ${desktop.s} {
+    .button {
+      grid-column: 2 / span 3;
     }
   }
 

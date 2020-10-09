@@ -11,7 +11,7 @@ const loadAllAbExperiments = async () => {
   if (fs.existsSync(experimentsDirPath)) {
     const experimentsFileNames = fs
       .readdirSync(experimentsDirPath)
-      .filter((fileName) => path.extname(fileName) === 'json')
+      .filter((fileName) => path.extname(fileName) === '.json')
 
     const experiments = await Promise.all(
       experimentsFileNames.map(async (fileName) => {

@@ -8,7 +8,7 @@ testcase('Technologies 1920 En', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1920 EN', () => {
+  expected('Screen of the whole page of  Technologies - 1920 EN', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1920 EN')
   })
 })
@@ -21,7 +21,7 @@ testcase('Technologies 1360 En', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1360 EN', () => {
+  expected('Screen of the whole page of  Technologies - 1360 EN', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1360 EN')
   })
 })
@@ -34,7 +34,7 @@ testcase('Technologies 1280 En', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1280 EN', () => {
+  expected('Screen of the whole page of  Technologies - 1280 EN', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1280 EN')
   })
 })
@@ -47,7 +47,7 @@ testcase('Technologies 1024 En', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1024 EN', () => {
+  expected('Screen of the whole page of  Technologies - 1024 EN', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1024 EN')
   })
 })
@@ -60,7 +60,7 @@ testcase('Technologies 360 En', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 360 EN', () => {
+  expected('Screen of the whole page of  Technologies - 360 EN', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 360 EN')
   })
 })
@@ -75,7 +75,7 @@ testcase('Technologies 1920 RU', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1920 RU', () => {
+  expected('Screen of the whole page of  Technologies - 1920 RU', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1920 RU')
   })
 })
@@ -88,7 +88,7 @@ testcase('Technologies 1360 RU', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1360 RU', () => {
+  expected('Screen of the whole page of  Technologies - 1360 RU', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1360 RU')
   })
 })
@@ -101,7 +101,7 @@ testcase('Technologies 1280 RU', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1280 RU', () => {
+  expected('Screen of the whole page of  Technologies - 1280 RU', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1280 RU')
   })
 })
@@ -114,7 +114,7 @@ testcase('Technologies 1024 RU', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 1024 RU', () => {
+  expected('Screen of the whole page of  Technologies - 1024 RU', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 1024 RU')
   })
 })
@@ -127,7 +127,7 @@ testcase('Technologies 360 RU', () => {
       .waitForElementPresent('footer')
   })
 
-  expected('Screen of the whole page of  Technologies | 360 RU', () => {
+  expected('Screen of the whole page of  Technologies - 360 RU', () => {
     browser.assert.screenshotElement('[data-testid="Main:block"]', 'Technologies 360 RU')
   })
 })

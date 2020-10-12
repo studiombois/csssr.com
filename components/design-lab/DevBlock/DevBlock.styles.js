@@ -77,6 +77,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 1 / span 6;
     }
 
+    .heading-text {
+      left: ${calcRem(-5)};
+    }
+
     .text {
       grid-column: 1 / span 6;
       margin-top: ${calcRem(24)};
@@ -93,6 +97,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
       & .heading-wrapper {
         grid-column: span 6;
+        width: 100%;
       }
     }
   }
@@ -122,7 +127,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       min-height: auto;
       margin-top: ${calcRem(163)};
     }
-   
+
   }
 `
 

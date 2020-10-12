@@ -157,7 +157,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     &._has_two-rows {
-      grid-auto-rows: max-content auto;
+      grid-auto-rows: minmax(min-content, ${calcRem(64)}) auto;
 
       .title,
       .description {

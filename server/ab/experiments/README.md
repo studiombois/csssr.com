@@ -15,7 +15,7 @@ weight должен быть целым числом.
 ```json
 {
   "variants": [
-    "optimizeExperimentId": "ASdkvSRW42uaWI_A12eASd"
+    "optimizeExperimentId": "ASdkvSRW42uaWI_A12eASd",
     {
       "name": "base",
       "weight": 97

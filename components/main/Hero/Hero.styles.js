@@ -25,10 +25,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.all} {
     .title {
       font-weight: normal;
-      font-size: 48px;
+      font-size: 40px;
       line-height: 64px;
 
-      & > span {
+      & > b {
         font-size: 40px;
         line-height: 56px;
       }
@@ -37,7 +37,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.l} {
     & {
-      padding-bottom: 169px;
+      min-height: 592px;
     }
 
     &.hero-wrap {
@@ -49,7 +49,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 2 / span 5;
       margin-top: 207px;
 
-      & > span {
+      & > b {
         margin-bottom: 9px;
       }
     }
@@ -57,7 +57,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.m} {
     & {
-      padding-bottom: 170px;
+      min-height: 592px;
     }
 
     &.hero-wrap {
@@ -69,7 +69,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 2 / span 6;
       margin-top: 207px;
 
-      & > span {
+      & > b {
         margin-bottom: 8px;
       }
     }
@@ -77,7 +77,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.s} {
     & {
-      padding-bottom: 188px;
+      min-height: 512px;
     }
 
     &.hero-wrap {
@@ -86,10 +86,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .title {
-      grid-column: 2 / span 7;
+      grid-column: 2 / span 6;
       margin-top: 207px;
 
-      & > span {
+      & > b {
         margin-bottom: 7px;
       }
     }
@@ -97,8 +97,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      padding-bottom: ${calcRem(90)};
-      margin-bottom: ${calcRem(-57)};
+      min-height: ${calcRem(440)};
     }
 
     &.hero-wrap {
@@ -107,12 +106,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .title {
-      grid-column: 2 / span 7;
+      grid-column: 2 / span 6;
       margin-top: ${calcRem(164)};
       padding-right: ${calcRem(64)};
       padding-left: ${calcRem(8)};
 
-      & > span {
+      & > b {
         font-size: ${calcRem(32)};
         line-height: ${calcRem(40)};
         margin-bottom: ${calcRem(4)};
@@ -130,9 +129,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 1 / span 6;
       font-size: ${calcRem(32)};
       line-height: ${calcRem(48)};
-      margin-top: ${calcRem(305)};
+      margin-top: ${calcRem(304)};
 
-      & > span {
+      & > b {
         line-height: ${calcRem(40)};
         margin-bottom: ${calcRem(4)};
       }

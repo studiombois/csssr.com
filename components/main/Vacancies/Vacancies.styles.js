@@ -10,7 +10,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .title {
-    margin-top: 188px;
     color: ${colors.secondary.darken100};
     z-index: 1;
   }
@@ -40,6 +39,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${desktop.all} {
     & {
       margin-bottom: 152px;
+    }
+
+    .title {
+      margin-top: 152px;
     }
   }
 
@@ -79,7 +82,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title {
-      margin-top: ${calcRem(162)};
+      margin-top: ${calcRem(90)};
     }
 
     .list {
@@ -110,7 +113,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title{
-      margin-top: ${calcRem(129)};
+      margin-top: ${calcRem(100)};
       order: 1;
     }
 

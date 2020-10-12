@@ -103,19 +103,19 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }}) => css`
 
   ${desktop.all} {
     .title {
-      margin-top: 152px;
+      margin-top: 154px;
     }
 
     .card_blog {
       max-height: 471px;
     }
-
-    .solutions {
-      padding-bottom: 26px;
-    }
   }
 
   ${desktop.l} {
+    .solutions {
+      padding-bottom: 28px;
+    }
+
     .card_tracker {
       grid-column: 3 / span 5;
     }
@@ -158,6 +158,10 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }}) => css`
       top: 44px;
       height: calc( 100% - 44px);
     }
+
+    .solutions {
+      padding-bottom: 31px;
+    }
   }
 
   ${desktop.s} {
@@ -178,18 +182,22 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }}) => css`
       top: 40px;
       height: calc( 100% - 40px);
     }
+
+    .solutions {
+      padding-bottom: 30px;
+    }
   }
 
   ${below.desktop} {
     .title {
-      margin-top: ${calcRem(104)};
+      margin-top: ${calcRem(100)};
     }
   }
 
   ${tablet.all} {
     .solutions {
       margin-top: ${calcRem(40)};
-      padding-bottom: ${calcRem(34)};
+      padding-bottom: ${calcRem(38)};
 
       .solution {
         margin-top: 0;

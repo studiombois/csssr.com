@@ -52,9 +52,13 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
   }
 
+  .service_design .service-title {
+    color: #F9555A;
+  }
+
   ${desktop.all} {
     & {
-      margin-top: 144px;
+      margin-top: 128px;
     }
 
     &._has_two-rows {
@@ -116,7 +120,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(100)};
+      margin-top: ${calcRem(104)};
     }
 
     &._has_two-rows {
@@ -173,7 +177,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     .service-link {
-      padding-top: ${calcRem(260)};
+      padding-top: ${calcRem(244)};
     }
 
     .service,
@@ -184,13 +188,18 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(104)};
+      margin-top: ${calcRem(80)};
     }
 
     .title,
     .description,
     .services {
       grid-column: 1 / span 6;
+    }
+
+    .title br,
+    .service-title br {
+      display: none;
     }
 
     .service-link {
@@ -203,11 +212,11 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     .service:first-of-type {
-      margin-top: ${calcRem(54)};
+      margin-top: ${calcRem(56)};
     }
 
     .service:not(:first-of-type) {
-      margin-top: ${calcRem(48)};
+      margin-top: ${calcRem(64)};
     }
   }
 

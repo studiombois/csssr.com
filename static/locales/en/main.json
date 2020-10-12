@@ -8,10 +8,10 @@
     "description": "CSSSR is&nbsp;a&nbsp;web-development group of&nbsp;companies. Though <span style=\"font-family: 'Roboto', 'Arial', sans-serif; font-weight: 400; font-style: italic;\">front-end</span> development services are our specialty, we&nbsp;provide superb back-end and devops services, along with design to&nbsp;help our clients build top to&nbsp;bottom solutions."
   },
   "services": {
-    "title": "Our Services",
+    "title": "Our</br> Services",
     "description": "Though web development services are our specialty, we&nbsp;also do&nbsp;superb design to&nbsp;help our clients build top to&nbsp;bottom solutions.",
     "outsourcing": {
-      "title": "<b>Web Development</b> Outsourcing",
+      "title": "<b>Web Development</b><br />Outsourcing",
       "description": "Web development to&nbsp;complement core competencies."
     },
     "backend": {

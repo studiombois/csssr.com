@@ -3,10 +3,6 @@ import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
-  & {
-    margin-top: ${calcRem(212)};
-  }
-
   .feature {
     color: ${colors.secondary.darken100};
   }
@@ -34,6 +30,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     z-index: -1;
   }
 
+  ${desktop.all} {
+    & {
+      margin-top: 152px;
+    }
+  }
+
   ${desktop.l} {
     .picture {
       margin-top: -120px;
@@ -44,10 +46,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.m} {
-    & {
-      margin-top: ${calcRem(212)};
-    }
-
     .picture {
       margin-top: -167px;
       grid-column: 4 / span 7;
@@ -55,10 +53,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   }
 
   ${desktop.s} {
-    & {
-      margin-top: ${calcRem(188)};
-    }
-
     .picture {
       margin-top: -216px;
       grid-column: 4 / span 8;
@@ -67,7 +61,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(162)};
+      margin-top: ${calcRem(126)};
     }
 
     .feature_2 {
@@ -90,7 +84,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(106)};
+      margin-top: ${calcRem(103)};
     }
 
     .feature_1,

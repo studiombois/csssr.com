@@ -28,6 +28,14 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }}) => css`
     && {
       margin-top: ${calcRem(104)};
     }
+
+    .common-block {
+      padding-top: ${calcRem(38)};
+    }
+
+    .common-text {
+      font-weight: 400;
+    }
   }
 `
 

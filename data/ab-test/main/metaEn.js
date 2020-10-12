@@ -11,7 +11,7 @@ export default {
   v3: {
     title: 'CSSSR is a leading web development company in ASEAN and EU countries',
     description:
-      'We know how to help busnesses in digital transformation.The better the foundation — the better the building. Choose the right partner!',
+      'We know how to help businesses in digital transformation.The better the foundation — the better the building. Choose the right partner!',
   },
   v4: {
     title: 'CSSSR is a web development company that provides high quality services globally',

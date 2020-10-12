@@ -5,13 +5,10 @@ pipeline {
     imageTag = ""
     bash = "#!/bin/bash\nsource ~/.bashrc\nsource ~/.config/csssr/non-breaking-profile\n"
   }
-  agent {
-    label params.processImages ? 'master' : ''
-  }
+  agent any
 
   parameters {
     string(defaultValue: "https://csssr.space", description: 'Хост csssr.space (без слэша на конце)', name: 'csssrSpaceOrigin', trim: true)
-    booleanParam(defaultValue: false, description: 'Включить обработку изображений', name: 'processImages')
   }
 
   stages {
@@ -21,7 +18,6 @@ pipeline {
 
         echo "Branch: ${GIT_BRANCH}"
         echo "CSSSR_SPACE_ORIGIN: ${params.csssrSpaceOrigin}"
-        echo "PROCESS_IMAGES: ${params.processImages}"
 
         script {
           branch = GIT_BRANCH
@@ -38,7 +34,7 @@ pipeline {
       steps {
         script {
           withCredentials([string(credentialsId: 'github-registry-read-only-token', variable: 'NPM_TOKEN')]) {
-            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg processImages=${params.processImages} . -t ${image}"
+            sh "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --build-arg isProduction=${branch == 'master' ? 'TRUE' : ''} --build-arg csssrSpaceOrigin=${params.csssrSpaceOrigin} --build-arg comHost='https://csssr.com' . -t ${image}"
           }
         }
       }

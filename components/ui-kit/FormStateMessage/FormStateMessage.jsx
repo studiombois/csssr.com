@@ -5,7 +5,12 @@ import styles, { pictureStyles, textDataStyles } from './FormStateMessage.styles
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { func, oneOf, string, bool } from 'prop-types'
-import PictureForAllResolutions from '../../PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+
+const statusImages = {
+  fail: require.context('../../../public/images/forms/fail?csssr-images'),
+  success: require.context('../../../public/images/forms/success?csssr-images'),
+}
 
 class FormStateMessage extends PureComponent {
   static propTypes = {
@@ -14,6 +19,8 @@ class FormStateMessage extends PureComponent {
     errorText: string,
     onTryAgain: func,
     feedbackEmail: string,
+    testId: string.isRequired,
+    successPictureTestid: string,
   }
 
   getTextData = () => {
@@ -31,8 +38,10 @@ class FormStateMessage extends PureComponent {
       return {
         intro: errorText,
         message: (
-          <span css={textDataStyles}>
-            <span>{translations.common.form.message.fail.body.textStart}</span>
+          <span css={textDataStyles} data-testid="Jobs:text.error">
+            <span data-testid="Jobs:text.errorStart">
+              {translations.common.form.message.fail.body.textStart}
+            </span>
 
             <button
               type="button"
@@ -43,7 +52,9 @@ class FormStateMessage extends PureComponent {
               {translations.common.form.message.fail.body.textForButton}
             </button>
 
-            <span>{translations.common.form.message.fail.body.textBetweenButtonAndLink}</span>
+            <span data-testid="Jobs:text.errorBody">
+              {translations.common.form.message.fail.body.textBetweenButtonAndLink}
+            </span>
 
             <a
               className="font_link-list_16"
@@ -61,7 +72,7 @@ class FormStateMessage extends PureComponent {
   }
 
   render() {
-    const { className, status, testid, shouldShowPicture = true, successPictureTestid } = this.props
+    const { className, status, testId, shouldShowPicture = true, successPictureTestId } = this.props
     const textData = this.getTextData()
     const messageShown = status === 'success' || status === 'fail'
 
@@ -73,7 +84,7 @@ class FormStateMessage extends PureComponent {
           })}
         >
           {textData && (
-            <div className="text" data-testid={testid}>
+            <div className="text" data-testid={testId}>
               <span className="font_p16-regular">
                 {textData.intro}
                 <br />
@@ -83,11 +94,11 @@ class FormStateMessage extends PureComponent {
           )}
           {messageShown && shouldShowPicture && (
             <div className="picture">
-              <PictureForAllResolutions
+              <PictureSmart
                 css={pictureStyles}
-                image={{ namespace: 'forms', key: `${status}`, alt: '' }}
+                requireImages={statusImages[status]}
                 customResolutions={['360']}
-                testid={successPictureTestid}
+                testId={successPictureTestId}
               />
             </div>
           )}

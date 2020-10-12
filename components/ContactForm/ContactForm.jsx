@@ -152,7 +152,7 @@ class ContactForm extends PureComponent {
             type="text"
             placeholder={translations.contactForm.namePlaceholder}
             label={translations.contactForm.nameLabel}
-            testid={`${formName}:field:callbackForm.name`}
+            testId={`${formName}:field:callbackForm.name`}
             autoFocus={formName === 'contact-modal'}
             tabIndex={getTabIndex}
             required
@@ -168,7 +168,7 @@ class ContactForm extends PureComponent {
             type="tel"
             placeholder={translations.contactForm.phonePlaceholder}
             label={translations.contactForm.phoneLabel}
-            testid={`${formName}:field:callbackForm.phone`}
+            testId={`${formName}:field:callbackForm.phone`}
             tabIndex={getTabIndex}
           />
         </div>
@@ -182,7 +182,7 @@ class ContactForm extends PureComponent {
             type="email"
             placeholder={translations.contactForm.emailPlaceholder}
             label={translations.contactForm.emailLabel}
-            testid={`${formName}:field:callbackForm.email`}
+            testId={`${formName}:field:callbackForm.email`}
             tabIndex={getTabIndex}
             required
           />
@@ -196,7 +196,7 @@ class ContactForm extends PureComponent {
             component={TextareaField}
             placeholder={translations.contactForm.messagePlaceholder}
             label={translations.contactForm.messageLabel}
-            testid={`${formName}:field:callbackForm.message`}
+            testId={`${formName}:field:callbackForm.message`}
             tabIndex={getTabIndex}
           />
         </div>
@@ -208,7 +208,7 @@ class ContactForm extends PureComponent {
             name="newsletter"
             type="checkbox"
             component={Checkbox}
-            testid={`${formName}:field:callbackForm.newsletter.checkbox`}
+            testId={`${formName}:field:callbackForm.newsletter.checkbox`}
             tabIndex={getTabIndex}
           >
             {translations.common.checkBoxesText.newsletterText}
@@ -234,6 +234,7 @@ class ContactForm extends PureComponent {
     } = this.props
 
     const status = this.props.status || this.getStatus()
+    const messageShown = status === 'success' || status === 'fail'
 
     return (
       <Grid as="form" className={className} onSubmit={this.handleSubmit} name={formName} noValidate>
@@ -249,27 +250,29 @@ class ContactForm extends PureComponent {
 
         {fields.map(this.renderField)}
 
-        {this.renderField('newsletter')}
+        {!messageShown && this.renderField('newsletter')}
 
-        <span className="privacyPolicy font_p16-regular">
-          {translations.common.checkBoxesText.privacyPolicyText}
-          <a
-            href={`/${language}/privacy-policy`}
-            target="_blank"
-            rel="noopener"
-            className="font_link-list_16"
-            data-testid={`${formName}:link:callbackForm.privacyPolicy`}
-          >
-            {translations.common.checkBoxesText.privacyPolicyLinkText}
-          </a>
-        </span>
+        {!messageShown && (
+          <span className="privacyPolicy font_p16-regular">
+            {translations.common.checkBoxesText.privacyPolicyText}
+            <a
+              href={`/${language}/privacy-policy`}
+              target="_blank"
+              rel="noopener"
+              className="font_link-list_16"
+              data-testid={`${formName}:link:callbackForm.privacyPolicy`}
+            >
+              {translations.common.checkBoxesText.privacyPolicyLinkText}
+            </a>
+          </span>
+        )}
 
         <div className="button" ref={this.messageRef}>
           <AnimatedButton
             type="submit"
             disabled={status === 'submitting' || status === 'fail'}
             status={status}
-            testid={`${formName}:button.callbackForm.submit`}
+            testId={`${formName}:button.callbackForm.submit`}
           >
             <Text type="perforator" size="m" className="button-content" as="span">
               {translations.contactForm.submitText}
@@ -284,8 +287,8 @@ class ContactForm extends PureComponent {
               errorText={submitError}
               onTryAgain={this.handleTryToFillFormAgain}
               feedbackEmail={feedbackEmail}
-              testid={`${formName}:text.successMessage`}
-              successPictureTestid={`${formName}:picture.successMessageImg`}
+              testId={`${formName}:text.status`}
+              successPictureTestId={`${formName}:picture.successMessageImg`}
             />
           </div>
         )}

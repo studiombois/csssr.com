@@ -61,6 +61,14 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     position: relative;
   }
 
+  .card-picture {
+    background-color: #ffffff;
+  }
+
+  .card-picture_radio {
+    background-color: transparent;
+  }
+
   .card-picture-hovered {
     position: absolute;
     top: 0;

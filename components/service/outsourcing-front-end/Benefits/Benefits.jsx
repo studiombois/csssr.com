@@ -34,7 +34,7 @@ const Benefits = ({ className, l10n: { translations } }) => (
       </div>
     </aside>
 
-    <List testid="Outsourcing:block:animation" />
+    <List testId="Outsourcing:block:animation" />
   </Grid>
 )
 

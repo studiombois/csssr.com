@@ -2,8 +2,9 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './Figures.styles'
-import Picture from '../../../ui-kit/Picture'
+
 import figures from '../../../../data/main/figures'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
@@ -26,15 +27,15 @@ const Figures = ({ className, hoveredService, l10n: { translations, language } }
       alt={translations.main.imgAlt.figures}
     />
 
-    {figureByLanguage[language].map(({ name, images, fallback, language }) => (
-      <Picture
+    {figureByLanguage[language].map(({ name, images, language }) => (
+      <PictureSmart
         key={name}
         className={cn('picture', `picture_${name}`, `picture_${name}_${language}`, {
           picture_is_visible: name === hoveredService,
         })}
-        images={images}
-        fallback={fallback}
+        requireImages={images}
         alt={translations.main.imgAlt[name]}
+        testId={`Home:img.${name}`}
       />
     ))}
   </aside>

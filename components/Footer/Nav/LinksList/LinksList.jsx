@@ -15,8 +15,8 @@ const LinksList = ({
   l10n: { translations, language, locale },
 }) => (
   <ul className={className}>
-    {links.map(({ id, testId, href, useLocale }) => {
-      if ((language === 'ru' && id === 'express') || (language === 'ru' && id === 'blog')) {
+    {links.map(({ id, href, useLocale }) => {
+      if (language === 'ru' && id === 'express') {
         return
       }
 
@@ -31,7 +31,7 @@ const LinksList = ({
               target="_blank"
               rel="noopener nofollow"
               dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
-              data-testid={testId}
+              data-testid={`Footer:nav:link.${id}`}
             />
           ) : (
             <Link
@@ -40,7 +40,7 @@ const LinksList = ({
               type="list"
               size="s"
               dangerouslySetInnerHTML={{ __html: translations.common.footer[linksGroupName][id] }}
-              data-testid={testId}
+              data-testid={`Footer:nav:link.${id}`}
               isNextLink
             />
           )}

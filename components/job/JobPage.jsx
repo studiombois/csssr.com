@@ -2,8 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import { Form as ReactFinalForm } from 'react-final-form'
 import { FORM_ERROR } from 'final-form'
 import createDecorator from 'final-form-focus'
-import fetch from 'isomorphic-unfetch'
-import { objectToFormData } from 'object-to-formdata'
+import { serialize } from 'object-to-formdata'
 import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Head from '../Head'
@@ -14,6 +13,9 @@ import candidateFormValidationRules from '../../utils/validators/candidateFormVa
 import withError from '../../utils/withError'
 import getContactOptions from '../../data/job/getContactOptions'
 import StructuredDataVacancy from '../StructuredDataVacancy'
+import { getOriginal } from '@csssr/csssr.images/dist/utils'
+
+import ogImages from '../../public/images/jobs/cover/desktop.all.png?csssr-images'
 
 // Итерируемся по всем секциям:
 // 1. Добавляем индексы заданиям "вопрос-ответ" для отображения на интерфейсе
@@ -104,7 +106,7 @@ const onSubmit = (translations) => async (values) => {
   delete filteredValues.file
   delete filteredValues.files
 
-  const formData = objectToFormData(filteredValues, {
+  const formData = serialize(filteredValues, {
     indices: true,
   })
 
@@ -199,7 +201,7 @@ class JobPage extends PureComponent {
             description={translations.job.descriptions[vacancy.pathName] || vacancy.description}
             structuredData={<StructuredDataVacancy vacancy={vacancy} />}
             ogImage={{
-              url: require('../../static/images/jobs/1920/cover@2x.jpg'),
+              url: getOriginal(ogImages),
               width: 1266,
               height: 2000,
             }}
@@ -208,7 +210,7 @@ class JobPage extends PureComponent {
             vacancy={vacancy}
             language={language}
             vacancies={vacancies}
-            initialValues={initialValues}
+            initialValues={{ ...initialValues, privacyPolicy: true }}
             validate={candidateFormValidationRules(vacancy, translations, language)}
             onSubmit={onSubmit(translations)}
             decorators={[focusOnErrors]}

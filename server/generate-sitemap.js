@@ -1,7 +1,7 @@
 import { supportedLocales } from '../common/locales-settings'
 
-const fetch = require('isomorphic-unfetch')
-const sitemap = require('sitemap')
+const { SitemapStream, streamToPromise } = require('sitemap')
+const { Readable } = require('stream')
 const csssrSpaceOrigin = require('../utils/csssrSpaceOrigin')
 
 const thirtyMinutes = 30 * 60 * 1000
@@ -378,6 +378,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/project/flant',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/flant',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/flant',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/project/flant',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/project/flant',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/project/flant',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/core-values',
     changefreq: 'weekly',
     priority: 1,
@@ -633,11 +663,6 @@ const sitemapUrlsSettings = [
     ],
   },
   {
-    url: 'https://csssr.com/en/covid-19',
-    changefreq: 'yearly',
-    priority: 0.6,
-  },
-  {
     url: 'https://csssr.com/en/solutions/lms',
     changefreq: 'yearly',
     priority: 0.6,
@@ -645,11 +670,13 @@ const sitemapUrlsSettings = [
 ].concat(getJobsSitemapUrlsSettings())
 
 const generateSitemap = () =>
-  getVacancies().then((vacanciesUrls) =>
-    sitemap.createSitemap({
-      urls: [...sitemapUrlsSettings, ...vacanciesUrls],
-    }),
-  )
+  getVacancies().then((vacanciesUrls) => {
+    const links = [...sitemapUrlsSettings, ...vacanciesUrls]
+
+    const stream = new SitemapStream({ hostname: 'https://blog.csssr.com/' })
+
+    return streamToPromise(Readable.from(links).pipe(stream)).then((data) => data.toString())
+  })
 
 const sitemapUrls = sitemapUrlsSettings.map((sitemapUrlSettings) => sitemapUrlSettings.url)
 

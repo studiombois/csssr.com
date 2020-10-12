@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { bool, string } from 'prop-types'
-import { withRouter } from 'next/router'
 import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
@@ -93,7 +92,11 @@ const Header = ({
 
       {isMobile ? (
         <Fragment>
-          <button className="burger" onClick={() => toggleDropdown(!isDropdownOpened)}>
+          <button
+            className="burger"
+            onClick={() => toggleDropdown(!isDropdownOpened)}
+            data-testid="Header:button.burger"
+          >
             <Icon />
           </button>
 
@@ -127,12 +130,10 @@ Header.propTypes = {
   isButtonVisible: bool,
 }
 
-export default withRouter(
-  L10nConsumer(
-    DeviceConsumer(
-      MsBrowserConsumer(styled(Header)`
-        ${styles}
-      `),
-    ),
+export default L10nConsumer(
+  DeviceConsumer(
+    MsBrowserConsumer(styled(Header)`
+      ${styles}
+    `),
   ),
 )

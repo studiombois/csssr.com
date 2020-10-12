@@ -22,6 +22,7 @@ const ContactOptions = ({ className, connection = [], l10n: { translations } }) 
             display: block;
           `}
           id={`${option.id}OptionalContactCheckbox`}
+          testId={`Jobs:contacts:checkbox.${option.id}`}
           name="connection"
           value={option.id}
           type="checkbox"
@@ -36,6 +37,7 @@ const ContactOptions = ({ className, connection = [], l10n: { translations } }) 
               margin-top: 2rem;
               margin-bottom: 2.9375rem;
             `}
+            testId={`Jobs:contacts:input.${option.id}`}
             id={`${option.id}OptionalContactField`}
             name={option.id}
             component={TextField}

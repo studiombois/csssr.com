@@ -1,16 +1,18 @@
 import React, { Fragment } from 'react'
 import { array, object, string } from 'prop-types'
-import { L10nConsumer } from '../../../utils/l10nProvider'
 import styled from '@emotion/styled'
-import styles from './ProjectsItem.styles'
 import cn from 'classnames'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import styles from './ProjectsItem.styles'
+
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
 import ButtonLink from '../../ui-kit/core-design/ButtonLink'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
+import { L10nConsumer } from '../../../utils/l10nProvider'
 
 const ProjectsItem = ({
   className,
@@ -29,12 +31,7 @@ const ProjectsItem = ({
 
   return (
     <Grid as="div" className={cn(itemClassName, className)}>
-      <PictureForAllResolutions
-        images={images}
-        fallback={images['desktop.all'].png}
-        alt={imgAlt(translations)}
-        className="image"
-      />
+      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
 
       <Heading
         as="p"

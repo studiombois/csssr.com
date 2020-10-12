@@ -10,9 +10,9 @@
         "alt": "photo of Anastasia Ignatenko",
         "position": "ASEAN Regional Manager"
       },
-      "anastasia_vnuchenko": {
-        "name": "Anastasia Vnuchenko",
-        "alt": "photo of Anastasia Vnuchenko",
+      "sonya_kiseleva": {
+        "name": "Sonya Kiseleva",
+        "alt": "photo of Sonya Kiseleva",
         "position": "European Regional Manager"
       },
       "olga_shevchenko": {
@@ -27,14 +27,14 @@
       }
     },
     "buttonText": "Schedule a call",
-    "communication": "Hangouts, Skype, Zoom, <span>Phone call</span>"
+    "communication": "Hangouts, Zoom, <span>Phone call</span>"
   },
   "form": {
     "title": "Сontact Us",
     "subtitle": "What would you like to talk about?",
     "separator": "or",
     "email": "E-mail",
-    "phone": "Phone",
+    "phone": "Phone <span>(optional)</span>",
     "text": "Drop us a line",
     "agree": "I agree to receive information and commercial offers",
     "policy":"By submitting the form, you agree to your personal data being stored and used for the purposes stated in the <a href='/en/privacy-policy' target='_blank' data-testid='contactUs:link:privacyPolicy'>Privacy Policy</a>.",

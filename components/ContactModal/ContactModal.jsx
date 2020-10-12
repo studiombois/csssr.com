@@ -5,7 +5,6 @@ import cn from 'classnames'
 import { Form as ReactFinalForm } from 'react-final-form'
 import createDecorator, { getFormInputs } from 'final-form-focus'
 import { FORM_ERROR } from 'final-form'
-import fetch from 'isomorphic-unfetch'
 import getGaCid from '../../utils/client/getGaCid'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import contactFormValidationRules from '../../utils/validators/contactFormValidationRules'
@@ -128,6 +127,7 @@ class ContactModal extends PureComponent {
                 'normal-height': hasFailOrSuccessStatus,
               })}
               ref={this.modalWrapperRef}
+              data-testid="ContactModal:block"
             >
               <ReactFinalForm
                 component={Form}

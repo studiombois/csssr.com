@@ -118,6 +118,10 @@ const base = colors => css`
       top: 1rem;
       right: 1rem;
     }
+
+    .modal-wrapper .privacyPolicy {
+      grid-column: 1 / span 6;
+    }
   }
 `
 

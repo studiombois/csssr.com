@@ -16,7 +16,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Industries = ({ className, l10n: { translations, language } }) => {
   return (
-    <Grid as="article" className={cn('industries', className)}>
+    <Grid as="article" className={cn('industries', className)} data-testid="Home:block.industries">
       <Heading
         className="title"
         as="h2"
@@ -32,23 +32,20 @@ const Industries = ({ className, l10n: { translations, language } }) => {
         dangerouslySetInnerHTML={{ __html: translations.main.industries.subtitle }}
       />
 
-      {industries.map(
-        ({ id, testId, title, description, href, images, imagesHovered, fallback }) => (
-          <Card
-            className="card"
-            key={id}
-            id={id}
-            testId={testId}
-            title={title}
-            description={description}
-            href={`/${language}/industry/${href}`}
-            images={images}
-            imagesHovered={imagesHovered}
-            fallback={fallback}
-            isNextLink
-          />
-        ),
-      )}
+      {industries.map(({ id, testId, title, description, href, images, imagesHovered }) => (
+        <Card
+          className="card"
+          key={id}
+          id={id}
+          testId={testId}
+          title={title}
+          description={description}
+          href={`/${language}/industry/${href}`}
+          images={images}
+          imagesHovered={imagesHovered}
+          isNextLink
+        />
+      ))}
     </Grid>
   )
 }

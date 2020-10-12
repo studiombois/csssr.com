@@ -1,12 +1,12 @@
 import React from 'react'
 import { object, string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './BackEndDevelopment.styles'
 import Grid from '../../../ui-kit/core-design/Grid'
 import SubHeading from '../../../ui-kit/core-design/SubHeading'
 import Heading from '../../../ui-kit/core-design/Heading'
 import Text from '../../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import List from '../../../ui-kit/core-design/List'
 import ListItem from '../../../ui-kit/core-design/ListItem'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
@@ -40,12 +40,7 @@ const BackEndDevelopment = ({
         dangerouslySetInnerHTML={{ __html: description(translations) }}
         className="text"
       />
-      <PictureForAllResolutions
-        images={images}
-        fallback={images['desktop.l'].png}
-        alt={imgAlt(translations)}
-        className="image"
-      />
+      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
       <div className="left-block">
         <Heading
           as="h2"

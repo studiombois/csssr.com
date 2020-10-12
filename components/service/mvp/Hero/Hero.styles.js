@@ -123,6 +123,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .title {
       margin-top: ${calcRem(196)};
+      z-index: 2;
     }
 
     .description {
@@ -143,6 +144,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       top: ${calcRem(26)};
       right: ${calcRem(-6)};
       width: ${calcRem(126)};
+      z-index: 1;
     }
   }
 `

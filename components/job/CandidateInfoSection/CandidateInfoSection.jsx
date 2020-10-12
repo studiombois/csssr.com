@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
 import styles, {
-  stylesForCheckboxField,
   stylesForFileField,
   stylesForFirstHalfWidthField,
   stylesForFullWidthField,
@@ -17,7 +16,6 @@ import ContactOptionsMobile from '../ContactOptionsMobile'
 import TextField from '../../ui-kit/TextField/TextField'
 import FileField from '../../ui-kit/FileField/FileField'
 import TextareaField from '../../ui-kit/TextareaField/TextareaField'
-import PrivacyPolicyCheckbox from '../../PrivacyPolicyCheckbox'
 import getFileFieldText from '../../../utils/getFileFieldText'
 import Grid from '../../ui-kit/core-design/Grid'
 
@@ -47,13 +45,6 @@ const CandidateInfoSection = (props) => {
       css: css`
         ${stylesForFullWidthField}
         ${stylesForSecondHalfWidthField}
-      `,
-    },
-    {
-      id: 'age',
-      label: translations.job.age,
-      css: css`
-        ${stylesForFullWidthField}
       `,
     },
     {
@@ -121,6 +112,8 @@ const CandidateInfoSection = (props) => {
             kind="regular"
             aria-required={required}
             required={required}
+            testId={`Jobs:form:input.${id}`}
+            errorTestid={`Jobs:form:text:error.${id}`}
           />
         ) : null,
       )}
@@ -138,6 +131,9 @@ const CandidateInfoSection = (props) => {
           component={FileField}
           onFileFieldChange={onFileFieldChange}
           aria-required={true}
+          testId="Jobs:form:input.file"
+          buttunTestId="Jobs:form:button.file"
+          labelTestId="Jobs:form:label.file"
           required
         />
       )}
@@ -156,16 +152,14 @@ const CandidateInfoSection = (props) => {
             `}
             component={TextareaField}
             kind="regular"
+            testId="Jobs:form:input.comment"
           />
         </Fragment>
       )}
 
-      <PrivacyPolicyCheckbox
-        className="input-checkbox"
-        required
-        css={css`
-          ${stylesForCheckboxField}
-        `}
+      <p
+        className="policy-text"
+        dangerouslySetInnerHTML={{ __html: translations.contactUs.form.policy }}
       />
     </Grid>
   )

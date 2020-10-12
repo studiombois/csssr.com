@@ -8,8 +8,8 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
   }
 
   .manager-avatar {
-    width: ${calcRem(76)};
-    height: ${calcRem(76)};
+    width: ${calcRem(106)};
+    height: ${calcRem(88)};
   }
 
   .manager-name {
@@ -86,10 +86,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
 
     .manager {
       text-align: center;
-    }
-
-    .manager {
-      margin-bottom: ${calcRem(42)};
+      margin-bottom: ${calcRem(40)};
     }
 
     .manager-name {
@@ -97,6 +94,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .email {
+      display: inline-block;
       margin-top: ${calcRem(10)};
     }
 
@@ -129,9 +127,9 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
   ${mobile.all} {
     & {
       padding-top: ${calcRem(32)};
-      padding-right: ${calcRem(12)};
-      padding-bottom: ${calcRem(72)};
-      padding-left: ${calcRem(24)};
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-left: 0;
       flex-direction: row;
       flex-wrap: wrap;
       width: ${calcRem(328)};
@@ -139,12 +137,16 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .manager {
-      width: ${calcRem(200)};
+      width: ${calcRem(212)};
     }
 
-    .manager-avatar,
     .success-icon_big {
       margin-right: ${calcRem(16)};
+    }
+
+    .manager-avatar {
+      margin-left: ${calcRem(9)};
+      margin-bottom: ${calcRem(32)};
     }
 
     .manager-name {
@@ -169,9 +171,8 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     }
 
     .button-wrap {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      margin-top: ${calcRem(-30)};
+      width: 100%;
     }
 
     .button {

@@ -4,7 +4,7 @@ import NextLink from 'next/link'
 import { withRouter } from 'next/router'
 import styled from '@emotion/styled'
 import styles from './Footer.styles'
-
+import LazyLoad from 'react-lazyload'
 import SocialLinks from './SocialLinks'
 import PrivacyAndLanguageLinks from './PrivacyAndLanguageLinks'
 import Nav from './Nav'
@@ -59,20 +59,22 @@ const Footer = ({
 
   return (
     <footer className={className} ref={footerRef}>
-      <div className="top-content">
+      <div className="top-content" data-testid="Footer:block.top-content">
         <div className="top-content-left-wrapper">
           <NextLink href={`/${language}`}>
-            <a className="logo">
+            <a className="logo" data-testid="Footer.link.logo">
               <Logo />
             </a>
           </NextLink>
 
           {!isMobile && (
-            <video className="video" autoPlay loop muted>
-              <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
+            <LazyLoad>
+              <video className="video" autoPlay loop muted>
+                <source src={require(`../../static/video/camp.mp4`)} type="video/mp4" />
 
-              <p>{translations.common.footer.videoError}</p>
-            </video>
+                <p>{translations.common.footer.videoError}</p>
+              </video>
+            </LazyLoad>
           )}
 
           <Heading
@@ -83,7 +85,7 @@ const Footer = ({
             dangerouslySetInnerHTML={{ __html: translations.common.footer.actionPhrase }}
           />
 
-          <Link className="email" href={`mailto:${footerEmail}`}>
+          <Link className="email" href={`mailto:${footerEmail}`} data-testid="Footer.link.email">
             {footerEmail}
           </Link>
 
@@ -98,12 +100,12 @@ const Footer = ({
             </Link>
           )}
 
-          <SocialLinks />
+          <SocialLinks testId="Footer:link.social" />
         </div>
 
         <Nav />
       </div>
-      <div className="bottom-content">
+      <div className="bottom-content" data-testid="Footer:block.bottom-content">
         <PrivacyAndLanguageLinks />
       </div>
 

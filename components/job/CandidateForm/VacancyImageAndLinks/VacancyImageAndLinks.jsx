@@ -3,9 +3,11 @@ import styled from '@emotion/styled'
 import styles, { faqImageStyles, vacancyImageStyles } from './VacancyImageAndLinks.styles'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
-import PictureForAllResolutions from '../../../PictureForAllResolutions'
-import Picture from '../../../Picture'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import Vacancy from '../Vacancy'
+
+import { faqSmallImages } from '../../../../data/jobs/images'
+import images from '../../../../data/job/images'
 
 const VacancyImageAndLinks = ({
   l10n: { translations, language, locale },
@@ -14,45 +16,51 @@ const VacancyImageAndLinks = ({
   pictureName,
   pathName,
   name,
-}) => (
-  <div className={className}>
-    {pictureName && (
-      <PictureForAllResolutions
-        customResolutions={['360']}
-        image={{
-          namespace: 'job',
-          key: `${pictureName}`,
-          alt: translations.job.imgsAlt[pathName] || name,
-        }}
-        css={vacancyImageStyles}
-      />
-    )}
-
-    <ul>
-      {vacancies.map((vacancy) => (
-        <Vacancy key={vacancy.name} locale={locale} vacancy={vacancy} />
-      ))}
-    </ul>
-
-    {language === 'ru' && (
-      <Fragment>
-        <p className="faq-text font_p16-regular">
-          {translations.job.faq.title}
-
-          <a href="/ru/jobs-faq" className="font_link-list_16">
-            {translations.job.faq.link}
-          </a>
-        </p>
-
-        <Picture
-          className="hidden_on_mobile"
-          image={{ namespace: 'jobs', key: 'faq', alt: translations.job.faq.alt }}
-          css={faqImageStyles}
+}) => {
+  return (
+    <div className={className}>
+      {pictureName && (
+        <PictureSmart
+          // customResolutions={['360']}
+          requireImages={images[pictureName]}
+          alt={translations.job.imgsAlt[pathName] || name}
+          css={vacancyImageStyles}
         />
-      </Fragment>
-    )}
-  </div>
-)
+      )}
+
+      <ul>
+        {vacancies.map((vacancy, index) => (
+          <Vacancy
+            key={vacancy.name}
+            locale={locale}
+            vacancy={vacancy}
+            testid={`Jobs:list.item-${index}`}
+          />
+        ))}
+      </ul>
+
+      {language === 'ru' && (
+        <Fragment>
+          <p className="faq-text font_p16-regular">
+            {translations.job.faq.title}
+
+            <a href="/ru/jobs-faq" className="font_link-list_16" data-testid="Jobs:link.faq">
+              {translations.job.faq.link}
+            </a>
+          </p>
+
+          <PictureSmart
+            className="hidden_on_mobile"
+            requireImages={faqSmallImages}
+            alt={translations.job.faq.alt}
+            css={faqImageStyles}
+            testid="Jobs:img.faq"
+          />
+        </Fragment>
+      )}
+    </div>
+  )
+}
 
 export default L10nConsumer(
   MsBrowserConsumer(styled(VacancyImageAndLinks)`

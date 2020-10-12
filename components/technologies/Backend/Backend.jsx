@@ -2,24 +2,24 @@ import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import cn from 'classnames'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './Backend.styles'
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Text from '../../ui-kit/core-design/Text'
-import Picture from '../../ui-kit/Picture'
 import Grid from '../../ui-kit/core-design/Grid'
+
+import { L10nConsumer } from '../../../utils/l10nProvider'
+import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import { dbsImages, kotlinImages, nodeImages } from '../../../data/technologies/backend'
 
 const Backend = ({ className, l10n: { translations, language } }) => (
   <Grid as="section" className={className}>
-    <Picture
+    <PictureSmart
       className={cn('picture', 'picture_dbs')}
-      images={dbsImages}
-      fallback={dbsImages.png}
+      requireImages={dbsImages}
       alt={translations.technologies.imgAlt.dbs}
     />
 
@@ -34,10 +34,9 @@ const Backend = ({ className, l10n: { translations, language } }) => (
       dangerouslySetInnerHTML={{ __html: translations.technologies.backend.dbs }}
     />
 
-    <Picture
+    <PictureSmart
       className={cn('picture', 'picture_node')}
-      images={nodeImages}
-      fallback={nodeImages.png}
+      requireImages={nodeImages}
       alt={translations.technologies.imgAlt.node}
     />
 
@@ -53,10 +52,9 @@ const Backend = ({ className, l10n: { translations, language } }) => (
       dangerouslySetInnerHTML={{ __html: translations.technologies.backend.node }}
     />
 
-    <Picture
+    <PictureSmart
       className={cn('picture', 'picture_kotlin')}
-      images={kotlinImages}
-      fallback={kotlinImages.png}
+      requireImages={kotlinImages}
       alt={translations.technologies.imgAlt.kotlin}
     />
 

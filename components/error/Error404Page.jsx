@@ -10,7 +10,7 @@ import Grid from '../ui-kit/core-design/Grid'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import DevTools from '../DevTools'
 import Head from '../Head'
-import PictureForAllResolutions from '../PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
 import { ReactComponent as LineFromTopToBottomIcon } from '../../static/icons/lineFromTopToBottom.svg'
@@ -20,6 +20,8 @@ import navItems from '../../data/error/navItems'
 
 import globalStyles from '../Layout/Layout.styles'
 import { L10nConsumer } from '../../utils/l10nProvider'
+
+const error404 = require.context('../../public/images/error/404?csssr-images')
 
 class Error404Page extends React.Component {
   renderNav = ({ title, id, links }) => {
@@ -35,6 +37,7 @@ class Error404Page extends React.Component {
         <h3
           className="font_burger-menu"
           dangerouslySetInnerHTML={{ __html: title(translations) }}
+          data-testid={`ErrorPage:menu:title.${id}`}
         />
 
         {links && (
@@ -46,6 +49,7 @@ class Error404Page extends React.Component {
                 <li key={id}>
                   {linkRegExp.test(href) ? (
                     <a
+                      data-testid={`ErrorPage:menu:link.${id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="menu-item"
@@ -55,6 +59,7 @@ class Error404Page extends React.Component {
                   ) : (
                     <Link href={`/${language}/${href}`}>
                       <a
+                        data-testid={`ErrorPage:menu:link.${id}`}
                         className="menu-item"
                         dangerouslySetInnerHTML={{ __html: title(translations) }}
                       />
@@ -70,6 +75,15 @@ class Error404Page extends React.Component {
   }
 
   render() {
+    if (!this.props.l10n || !this.props.l10n.language) {
+      Sentry.withScope((scope) => {
+        scope.setExtra('l10n', this.props.l10n)
+        Sentry.captureMessage(
+          'Что-то не так с определением языка, смотри url и дополнительные параметры',
+        )
+      })
+    }
+
     const {
       className,
       l10n: { language, translations },
@@ -77,17 +91,8 @@ class Error404Page extends React.Component {
 
     const rootUrl = `/${language}`
 
-    if (!language) {
-      Sentry.withScope((scope) => {
-        scope.setExtra('language', language)
-        Sentry.captureMessage(
-          'Опять что-то не так с определением языка, смотри url и дополнительные параметры',
-        )
-      })
-    }
-
     return (
-      <Fragment>
+      <div data-testid="ErrorPage">
         <Global styles={globalStyles} />
         <DevTools />
 
@@ -100,7 +105,7 @@ class Error404Page extends React.Component {
 
         <Grid as="header" className={className}>
           <Link href={rootUrl}>
-            <a className="logo">
+            <a className="logo" data-testid="ErrorPage:link.logo">
               <LogoIcon width="100%" height="100%" />
             </a>
           </Link>
@@ -112,10 +117,7 @@ class Error404Page extends React.Component {
             dangerouslySetInnerHTML={{ __html: translations.error.errors.notFound.title }}
           />
 
-          <PictureForAllResolutions
-            className="picture"
-            image={{ namespace: 'error', key: '404', alt: '404' }}
-          />
+          <PictureSmart className="picture" requireImages={error404} />
 
           <div className={'code-wrapper'}>
             <NotFound width="auto" height="100%" />
@@ -135,7 +137,7 @@ class Error404Page extends React.Component {
             <div className="navList">{navItems.map(this.renderNav)}</div>
           </Fragment>
         </Grid>
-      </Fragment>
+      </div>
     )
   }
 }

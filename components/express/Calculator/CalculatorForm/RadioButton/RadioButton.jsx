@@ -51,8 +51,8 @@ OriginRadioButton.propTypes = {
   labelPrice: string,
   onChange: func,
   className: string,
-  testIdRadioButton: string,
-  testIdLabel: string,
+  testIdRadioButton: string.isRequired,
+  testIdLabel: string.isRequired,
 }
 
 const RadioButton = styled(OriginRadioButton)`

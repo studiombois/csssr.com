@@ -7,14 +7,14 @@ import styles from './Card.styles'
 import NextLink from 'next/link'
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Card = ({
-  l10n: { translations },
+  l10n: { translations, language },
   className,
   id,
   testId,
@@ -23,7 +23,6 @@ const Card = ({
   href,
   images,
   imagesHovered,
-  fallback,
   isNextLink,
   isLink,
   children,
@@ -32,20 +31,23 @@ const Card = ({
 }) => {
   const CardBody = () => (
     <Fragment>
-      <div className={cn('picture-wrap', { 'picture-wrap_radio': id === 'radio' })}>
-        <PictureForAllResolutions
+      <div
+        className={cn('picture-wrap', { 'picture-wrap_radio': id === 'radio' })}
+        data-testid={testId}
+      >
+        <PictureSmart
           className={cn('card-picture', `card-picture_${id}`)}
-          images={images}
-          fallback={fallback}
+          requireImages={images}
           alt={translations.main.imgAlt[id]}
+          testId={`Industries:img.${id}`}
         />
 
         {!isMobile && !isTablet && imagesHovered && (
-          <PictureForAllResolutions
+          <PictureSmart
             className={'card-picture-hovered'}
-            images={imagesHovered}
-            fallback={fallback}
+            requireImages={imagesHovered}
             alt={translations.main.imgAlt[id]}
+            testId={`Industries:img.${id}-hovered`}
           />
         )}
       </div>
@@ -58,6 +60,7 @@ const Card = ({
             dangerouslySetInnerHTML={{ __html: title(translations) }}
             type="regular"
             size="m"
+            data-testid={`Industries:title.${id}`}
           />
         </a>
       ) : (
@@ -67,6 +70,7 @@ const Card = ({
           dangerouslySetInnerHTML={{ __html: title(translations) }}
           type="regular"
           size="m"
+          data-testid={`Industries:title.${id}`}
         />
       )}
 
@@ -76,6 +80,7 @@ const Card = ({
         dangerouslySetInnerHTML={{ __html: description(translations) }}
         type="regular"
         size="m"
+        data-testid={`Industries:text.${id}`}
       />
 
       <div className="break" />
@@ -83,8 +88,16 @@ const Card = ({
   )
 
   if (isLink && id !== 'radio') {
+    const url = id === 'blog' ? `${href}/${language}` : href
+
     return (
-      <a className={cn('card', className)} href={href} target="_blank" rel="noopener nofollow">
+      <a
+        className={cn('card', className)}
+        href={url}
+        target="_blank"
+        rel="noopener nofollow"
+        data-testid={testId}
+      >
         <CardBody />
         {children}
       </a>

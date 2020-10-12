@@ -54,7 +54,7 @@
     }
   },
   "ourClients": {
-    "title": "Логотипы наших клиентов."
+    "title": "Наши клиенты"
   },
   "facts": {
     "heading": "Всё обсуждаемо,<br/> кроме качества кода",
@@ -162,7 +162,7 @@
             "text": "специалист"
           },
           "secondItem": {
-            "number": "13",
+            "number": "11",
             "text": "месяцев"
           }
         },
@@ -205,6 +205,24 @@
         "button": {
           "title": "Узнать о проекте",
           "href": "/ru/project/qmarketing"
+        }
+      },
+      "flant": {
+        "heading": "Флант - лендинги",
+        "text": "Проект по вёрстке и тестированию семи лендингов для компании Флант.",
+        "numericData": {
+          "firstItem": {
+            "number": "3",
+            "text": "специалиста"
+          },
+          "secondItem": {
+            "number": "2",
+            "text": "месяца"
+          }
+        },
+        "button": {
+          "title": "Узнать о проекте",
+          "href": "/ru/project/flant"
         }
       }
     }

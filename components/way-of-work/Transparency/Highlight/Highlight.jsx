@@ -2,8 +2,8 @@ import React from 'react'
 import { bool, oneOf, string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import PictureForAllResolutions from '../../../ui-kit/PictureForAllResolutions'
 import { L10nConsumer } from '../../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../../utils/msBrowserProvider'
@@ -53,18 +53,16 @@ const Highlight = ({ className, id, isMobile, active, l10n: { translations } }) 
         </>
       ) : (
         <>
-          <PictureForAllResolutions
-            images={highlightImages}
-            fallback={highlightImages['desktop.all'].png}
+          <PictureSmart
+            requireImages={highlightImages}
             alt={translations.wayOfWork.transparency.imagesAlt.highlight}
             className="image"
           />
 
           {figures.map((figure) => (
-            <PictureForAllResolutions
+            <PictureSmart
               key={figure.name}
-              images={figure.images}
-              fallback={figure.images['desktop.all'].png}
+              requireImages={figure.images}
               alt={translations.wayOfWork.transparency.imagesAlt.square}
               className={cn('figure', figure.name, {
                 active: figure.name === active,

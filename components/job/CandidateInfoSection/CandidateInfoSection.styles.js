@@ -15,6 +15,23 @@ const base = css`
     margin-top: 2.9375rem;
   }
 
+  .policy-text {
+    display: block;
+    margin-top: 3.4375rem;
+    grid-column: 2 / span 6;
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5rem;
+    color: #18191b;
+
+    > a {
+      color: #0076ff;
+      text-decoration: underline;
+    }
+  }
+
   @media (max-width: 767px) {
     & {
       margin-top: 3.5625rem;
@@ -29,6 +46,13 @@ const base = css`
       padding-bottom: 0;
       font-size: 0.875rem;
       line-height: 1.5rem;
+    }
+
+    .policy-text {
+      margin-top: 4.125rem;
+      grid-column: 1 / span 6;
+      font-size: 0.75rem;
+      line-height: 1rem;
     }
   }
 `
@@ -70,10 +94,6 @@ const ie11Styles = css`
 
   .line-nine {
     -ms-grid-row: 9;
-  }
-
-  .input-checkbox {
-    -ms-grid-row: 10;
   }
 `
 
@@ -152,24 +172,6 @@ const stylesForTextareaField = css`
   }
 `
 
-const stylesForCheckboxField = css`
-  & {
-    display: block;
-    margin-top: 3.4375rem;
-    grid-column: 2 / span 6;
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(6)};
-    -ms-grid-row: 2;
-  }
-
-  @media (max-width: 767px) {
-    & {
-      margin-top: 4.125rem;
-      grid-column: 1 / span 6;
-    }
-  }
-`
-
 const stylesForFileField = css`
   & {
     margin-top: 3rem;
@@ -195,7 +197,6 @@ export {
   stylesForFirstHalfWidthField,
   stylesForSecondHalfWidthField,
   stylesForTextareaField,
-  stylesForCheckboxField,
   stylesForFileField,
 }
 

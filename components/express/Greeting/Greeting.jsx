@@ -1,25 +1,24 @@
 import * as React from 'react'
 import { bool, string } from 'prop-types'
 import styled from '@emotion/styled'
+import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './Greeting.styles'
 
 import Grid from '../../ui-kit/core-design/Grid'
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
 import ButtonLink from '../../ui-kit/core-design/ButtonLink'
-import PictureForAllResolutions from '../../ui-kit/PictureForAllResolutions'
 
 import greetingImagesData from '../../../data/express/greeting'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 
-const Greeting = ({ className, l10n: { translations } }) => {
+const Greeting = ({ className, l10n: { translations }, testId }) => {
   return (
     <Grid as="article" className={className}>
-      <PictureForAllResolutions
+      <PictureSmart
         className="bicycle"
-        images={greetingImagesData.images}
-        fallback={greetingImagesData.images['desktop.l']}
+        requireImages={greetingImagesData.images}
         alt={translations.express.imgAlt.bicycle}
       />
 
@@ -43,7 +42,7 @@ const Greeting = ({ className, l10n: { translations } }) => {
         kind="primary"
         href="#calculator"
         dangerouslySetInnerHTML={{ __html: translations.express.greeting.button }}
-        data-testid="Express:link.greeting"
+        data-testid={testId}
       />
     </Grid>
   )
@@ -53,6 +52,7 @@ Greeting.propTypes = {
   className: string,
   isMsBrowser: bool,
   isMobile: bool,
+  testId: string.isRequired,
 }
 
 export default L10nConsumer(

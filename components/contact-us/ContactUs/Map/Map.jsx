@@ -15,7 +15,7 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const Map = ({ className, activeAddressId, isMobile }) => {
   return (
-    <aside className={className} id="map">
+    <aside className={cn(className, `_${activeAddressId}`)} id="map">
       <Global styles={backgroundImagesStyles} />
 
       <Tabs />

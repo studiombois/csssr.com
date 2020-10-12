@@ -26,7 +26,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       font-size: 48px;
       line-height: 64px;
 
-      & > span {
+      & > b {
         font-size: 40px;
         line-height: 56px;
       }
@@ -47,7 +47,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 2 / span 5;
       margin-top: 207px;
 
-      & > span {
+      & > b {
         margin-bottom: 9px;
       }
     }
@@ -67,7 +67,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 2 / span 6;
       margin-top: 207px;
 
-      & > span {
+      & > b {
         margin-bottom: 8px;
       }
     }
@@ -87,7 +87,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 2 / span 7;
       margin-top: 207px;
 
-      & > span {
+      & > b {
         margin-bottom: 7px;
       }
     }
@@ -110,7 +110,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       padding-right: ${calcRem(64)};
       padding-left: ${calcRem(8)};
 
-      & > span {
+      & > b {
         font-size: ${calcRem(32)};
         line-height: ${calcRem(40)};
         margin-bottom: ${calcRem(4)};
@@ -130,7 +130,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       line-height: ${calcRem(48)};
       margin-top: ${calcRem(305)};
 
-      & > span {
+      & > b {
         line-height: ${calcRem(40)};
         margin-bottom: ${calcRem(4)};
       }

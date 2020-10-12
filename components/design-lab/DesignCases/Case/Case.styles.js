@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile } }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
     text-decoration: none;
 
@@ -21,10 +21,6 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
       grid-column: 8 / span 4;
     }
 
-    &:nth-of-type(n + 3) {
-      margin-top: ${calcRem(81)};
-    }
-
     &:hover .image-wrapper::before {
       opacity: .8;
     }
@@ -36,7 +32,7 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
   .image-wrapper {
     position: relative;
     overflow: hidden;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -77,6 +73,24 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
     transition: opacity .25s ease-in-out;
   }
 
+  ${desktop.all} {
+    &:nth-of-type(n + 3) {
+      margin-top: 96px;
+    }
+  }
+
+  ${desktop.m} {
+    &:nth-of-type(n + 3) {
+      margin-top: 120px;
+    }
+  }
+
+  ${desktop.s} {
+    &:nth-of-type(n + 3) {
+      margin-top: 120px;
+    }
+  }
+
   ${tablet.all} {
     & {
       &.large.left {
@@ -96,12 +110,12 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
       }
 
       &:nth-of-type(n + 3) {
-        margin-top: ${calcRem(70)};
+        margin-top: ${calcRem(72)};
       }
     }
 
     .heading {
-      margin-top: ${calcRem(20)};
+      margin-top: ${calcRem(30)};
 
       &.small {
         max-width: ${calcRem(379)};

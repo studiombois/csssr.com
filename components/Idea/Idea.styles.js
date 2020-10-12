@@ -66,18 +66,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  ${desktop.l} {
-    .heading-text {
-      left: -72px;
-    }
-  }
-
-  ${desktop.s} {
-    .heading-text {
-      left: -25px;
-    }
-  }
-
   ${tablet.all} {
     & {
       margin-top: ${calcRem(141)};
@@ -86,10 +74,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .heading {
       grid-column: 1 / span 5;
-    }
-
-    .heading-text {
-      left: ${calcRem(-65)};
     }
 
     .button::before {
@@ -140,7 +124,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
       @media (orientation: landscape) {
         &::before {
-          background-position: 0 7px; 
+          background-position: 0 7px;
         }
       }
     }

@@ -102,9 +102,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-row: 1;
       grid-column: 1 / span 6;
       width: 100%;
-      margin-top: ${calcRem(32)};
       transform: none;
-    }    
+    }
   }
 `
 

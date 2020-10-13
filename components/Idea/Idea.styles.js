@@ -19,7 +19,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     position: absolute;
     top: 0;
     z-index: 2;
-    right: ${calcRem(-60)};
+    margin-right: -14rem;
+    left: calc(100% + ${calcRem(60)});
     animation-name: buttonPosition;
     animation-duration: 1.8s;
     animation-delay: 0s;
@@ -53,10 +54,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   @keyframes buttonPosition {
     0% {
-      transform: translate(100%, -30px);
+      transform: translateY(${calcRem(-30)});
     }
     100% {
-      transform: translate(100%, -16px);
+      transform: translateY(${calcRem(-16)});
     }
   }
 
@@ -86,10 +87,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     @keyframes buttonPosition {
       0% {
-        transform: translate(100%, -33px);
+        transform: translateY(${calcRem(-33)});
       }
       100% {
-        transform: translate(100%, -26px);
+        transform: translateY(${calcRem(-26)});
       }
     }
   }
@@ -116,7 +117,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .button-wrapper {
       top: ${calcRem(-50)};
-      right: ${calcRem(-23)};
+      margin-right: -10.5rem;
+      left: calc(100% + ${calcRem(23)});
       max-width: ${calcRem(148)};
     }
 
@@ -132,10 +134,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     @keyframes buttonPosition {
       0% {
-        transform: translate(100%, -6px);
+        transform: translateY(${calcRem(-6)});
       }
       100% {
-        transform: translate(100%, 0);
+        transform: translateY(0);
       }
     }
   }

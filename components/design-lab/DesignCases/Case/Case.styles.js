@@ -79,18 +79,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  ${desktop.m} {
-    &:nth-of-type(n + 3) {
-      margin-top: 120px;
-    }
-  }
-
-  ${desktop.s} {
-    &:nth-of-type(n + 3) {
-      margin-top: 120px;
-    }
-  }
-
   ${tablet.all} {
     & {
       &.large.left {

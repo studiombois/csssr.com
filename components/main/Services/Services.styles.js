@@ -176,10 +176,6 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
       justify-content: space-between;
     }
 
-    .service-link {
-      padding-top: ${calcRem(244)};
-    }
-
     .service,
     .service::after {
       background-size: ${calcRem(272)} ${calcRem(220)};

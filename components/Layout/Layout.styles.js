@@ -65,12 +65,12 @@ export const base = css`
   ul.have-square-bullets li:before {
     content: '';
     position: absolute;
-    top: 0.5625rem;
+    top: 0.6rem;
     left: 0;
     box-sizing: border-box;
-    width: 0.5rem;
-    height: 0.5rem;
-    border: 0.125rem solid black;
+    width: 0.25rem;
+    height: 0.25rem;
+    background-color: #162929;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {

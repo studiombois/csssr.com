@@ -2,7 +2,9 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-const heroBg = require.context('../../../public/images/main/hero?csssr-images')
+const heroBgBase = require.context('../../../public/images/main/hero?csssr-images')
+const heroBgV1 = require.context('../../../public/images/main/ab-test/hero/v1?csssr-images')
+const heroBgV2 = require.context('../../../public/images/main/ab-test/hero/v2?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   .title {
@@ -23,7 +25,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   ${desktop.all} {
     .title {
       font-weight: normal;
-      font-size: 48px;
+      font-size: 40px;
       line-height: 64px;
 
       & > b {
@@ -35,7 +37,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.l} {
     & {
-      padding-bottom: 169px;
+      min-height: 592px;
     }
 
     &.hero-wrap {
@@ -55,7 +57,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.m} {
     & {
-      padding-bottom: 170px;
+      min-height: 592px;
     }
 
     &.hero-wrap {
@@ -75,7 +77,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.s} {
     & {
-      padding-bottom: 188px;
+      min-height: 512px;
     }
 
     &.hero-wrap {
@@ -84,7 +86,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .title {
-      grid-column: 2 / span 7;
+      grid-column: 2 / span 6;
       margin-top: 207px;
 
       & > b {
@@ -95,8 +97,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      padding-bottom: ${calcRem(90)};
-      margin-bottom: ${calcRem(-57)};
+      min-height: ${calcRem(440)};
     }
 
     &.hero-wrap {
@@ -105,7 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
 
     .title {
-      grid-column: 2 / span 7;
+      grid-column: 2 / span 6;
       margin-top: ${calcRem(164)};
       padding-right: ${calcRem(64)};
       padding-left: ${calcRem(8)};
@@ -128,7 +129,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 1 / span 6;
       font-size: ${calcRem(32)};
       line-height: ${calcRem(48)};
-      margin-top: ${calcRem(305)};
+      margin-top: ${calcRem(304)};
 
       & > b {
         line-height: ${calcRem(40)};
@@ -137,9 +138,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     }
   }
 `
-export const backgroundImagesStyles = () => css`
-  ${backgroundCssSmart('.hero-wrap', heroBg)}
-`
+export const backgroundImagesStyles = (ab, language) => () => {
+  const heroBgByAbTestVariant = {
+    base: heroBgBase,
+    v1: heroBgV1,
+    v2: heroBgV2,
+  }
+
+  const abTest = language === 'en' ? 'en-main-hero-image' : 'ru-main-hero-image'
+  const abTestVariant = ab[abTest].name
+  const heroBg = heroBgByAbTestVariant[abTestVariant]
+
+  return css`
+    ${backgroundCssSmart('.hero-wrap', heroBg)}
+  `
+}
 
 export default props => {
   const breakpoints = props.theme.breakpoints

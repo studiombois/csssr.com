@@ -102,7 +102,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.l} {
     .title_main {
-      margin-top: 110px;
+      margin-top: 128px;
     }
 
     .service {
@@ -120,7 +120,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.m} {
     .title_main {
-      margin-top: 110px;
+      margin-top: 128px;
     }
 
     .service {
@@ -140,7 +140,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.s} {
     .title_main {
-      margin-top: 188px;
+      margin-top: 128px;
     }
 
     .service {
@@ -154,7 +154,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${tablet.all} {
     .title_main {
-      margin-top: ${calcRem(91)};
+      margin-top: ${calcRem(104)};
     }
 
     .service {
@@ -226,7 +226,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .title_main {
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(102)};
+      margin-top: ${calcRem(80)};
     }
 
     .service {

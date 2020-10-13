@@ -1,45 +1,33 @@
 import React from 'react'
 import { string } from 'prop-types'
-import styled from '@emotion/styled'
-import { PictureSmart } from '@csssr/csssr.images/dist/react'
-import styles from './Hero.styles'
 
+import { Global } from '@emotion/core'
+import styled from '@emotion/styled'
+import styles, { backgroundImagesStyles } from './Hero.styles'
+
+import AbContext from '../../../utils/abContext'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 import Heading from '../../ui-kit/core-design/Heading'
-import SubHeading from '../../ui-kit/core-design/SubHeading'
 import Grid from '../../ui-kit/core-design/Grid'
 
-const requireImages = require.context('../../../public/images/main/hero?csssr-images')
-
-const Hero = ({ className, l10n: { translations }, isMobile }) => (
-  <Grid as="article" className={className}>
-    <Heading
-      className="title"
-      as="h1"
-      dangerouslySetInnerHTML={{ __html: translations.main.hero.title }}
-      type="slab"
-      size={isMobile ? 'm' : 'l'}
-    />
-
-    <div className="picture-wrapper">
-      <div className="picture-hover-area" />
-      <PictureSmart
-        className="picture"
-        requireImages={requireImages}
-        testId="Home:img.big-logo"
-        alt={translations.main.imgAlt.hero}
+const Hero = ({ className, isMobile, l10n: { translations, language } }) => (
+  <section className={`${className} hero-wrap`}>
+    <Grid>
+      <Heading
+        className="title"
+        as="h1"
+        type="slab"
+        size={isMobile ? 'm' : 'l'}
+        dangerouslySetInnerHTML={{ __html: translations.main.hero.title }}
       />
-    </div>
-    <SubHeading
-      className="description"
-      as="p"
-      type="slab"
-      dangerouslySetInnerHTML={{ __html: translations.main.hero.description }}
-    />
-  </Grid>
+      <AbContext.Consumer>
+        {(ab) => <Global styles={backgroundImagesStyles(ab, language)} />}
+      </AbContext.Consumer>
+    </Grid>
+  </section>
 )
 
 Hero.propTypes = {

@@ -1,182 +1,164 @@
 import { css } from '@emotion/core'
-import getGridValueForMs from '../../../utils/style/getGridValueForMs'
+import calcRem from '../../../utils/style/calcRem'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+
+const heroBgBase = require.context('../../../public/images/main/hero?csssr-images')
+const heroBgV1 = require.context('../../../public/images/main/ab-test/hero/v1?csssr-images')
+const heroBgV2 = require.context('../../../public/images/main/ab-test/hero/v2?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
   .title {
-    position: relative;
-    z-index: 2;
-    margin-top: 192px;
-    grid-column: 2 / span 6;
-  }
+    font-weight: normal;
+    color: ${colors.secondary.darken100};
 
-  .picture-wrapper  {
-    position: relative;
-    margin-top: -48px;
-    margin-left: -24px;
-    grid-column: 1 / span 12;
-    width: calc(100% + 48px);
-  }
-
-  .picture-hover-area {
-      position: absolute;
-      z-index: 1;
-      top: 116px;
-      left: calc(128px / 2);
+    & > b {
       display: block;
-      width: calc(100% - 128px);
-      height: 278px;
+      font-family: Roboto, sans-serif;
+      font-weight: 900;
+    }
+  }
 
-      :hover + .picture {
-        background-color: black;
+  &.hero-wrap {
+    background-repeat: no-repeat;
+  }
+
+  ${desktop.all} {
+    .title {
+      font-weight: normal;
+      font-size: 40px;
+      line-height: 64px;
+
+      & > b {
+        font-size: 40px;
+        line-height: 56px;
       }
     }
-
-  .picture {
-    width: 100%;
-    transition: background-color 100ms ease-out;
-  }
-
-  .description {
-    position: relative;
-    margin-top: -292px;
-    grid-column: 2 / span 6;
-    color: ${colors.secondary.darken100};
   }
 
   ${desktop.l} {
+    & {
+      min-height: 592px;
+    }
+
+    &.hero-wrap {
+      background-size: 880px 528px;
+      background-position: right 216px top 64px;
+    }
+
     .title {
-      grid-column: 3 / span 6;
-    }
+      grid-column: 2 / span 5;
+      margin-top: 207px;
 
-    .picture-wrapper  {
-      grid-column: 3 / span 8;
-    }
-
-    .description {
-      grid-column: 3 / span 5;
+      & > b {
+        margin-bottom: 9px;
+      }
     }
   }
 
   ${desktop.m} {
-    .picture-wrapper  {
-      margin-left: 48px;
-      grid-column: 1 / span 12;
-      width:  calc(100% - 96px);
+    & {
+      min-height: 592px;
+    }
+
+    &.hero-wrap {
+      background-size: 768px 528px;
+      background-position: right 16px top 64px;
+    }
+
+    .title {
+      grid-column: 2 / span 6;
+      margin-top: 207px;
+
+      & > b {
+        margin-bottom: 8px;
+      }
     }
   }
 
   ${desktop.s} {
-    .picture-wrapper  {
-      margin-left: 0;
-      grid-column: 1 / span 12;
-      width: 100%;
+    & {
+      min-height: 512px;
+    }
+
+    &.hero-wrap {
+      background-size: 816px 448px;
+      background-position: right 24px top 64px;
+    }
+
+    .title {
+      grid-column: 2 / span 6;
+      margin-top: 207px;
+
+      & > b {
+        margin-bottom: 7px;
+      }
     }
   }
 
   ${tablet.all} {
+    & {
+      min-height: ${calcRem(440)};
+    }
+
+    &.hero-wrap {
+      background-size: ${calcRem(624)} ${calcRem(376)};
+      background-position: right ${calcRem(40)} top ${calcRem(64)};
+    }
+
     .title {
-      margin-top: 12.25rem;
-    }
+      grid-column: 2 / span 6;
+      margin-top: ${calcRem(164)};
+      padding-right: ${calcRem(64)};
+      padding-left: ${calcRem(8)};
 
-    .picture-wrapper  {
-      margin-top: -2.75rem;
-      margin-left: -1rem;
-      width: calc(100% + 2rem);
-    }
-
-    .picture-hover-area {
-      top: 7.25rem;
-      left: calc(8rem / 2);
-      width: calc(100% - 8rem);
-      height: 17.375rem;
-    }
-
-    .description {
-      margin-top: -14.25rem;
-    }
-  }
-
-  ${tablet.s} {
-    @media (pointer: coarse) {
-      .picture {
-        background-color: black;
-      }
-
-      .picture-hover-area {
-        display: none;
+      & > b {
+        font-size: ${calcRem(32)};
+        line-height: ${calcRem(40)};
+        margin-bottom: ${calcRem(4)};
       }
     }
   }
 
   ${mobile.all} {
-    .title,
-    .picture-wrapper,
-    .description {
+    &.hero-wrap {
+      background-size: ${calcRem(328)} ${calcRem(272)};
+      background-position: center top;
+    }
+
+    .title {
       grid-column: 1 / span 6;
-    }
+      font-size: ${calcRem(32)};
+      line-height: ${calcRem(48)};
+      margin-top: ${calcRem(304)};
 
-    .title {
-      margin-top: 6.5rem;
-    }
-
-    .picture-wrapper {
-      margin-top: -0.5rem;
-      margin-left: -1rem;
-      width: calc(100% + 2rem);
-    }
-
-    .picture-hover-area {
-      display: none;
-    }
-
-    .description {
-      margin-top: 1.5rem;
+      & > b {
+        line-height: ${calcRem(40)};
+        margin-bottom: ${calcRem(4)};
+      }
     }
   }
 `
-
-const ie11Styles = ({ breakpoints: { desktop }}) => css`
-  .title {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(6)};
-    -ms-grid-row: 1;
+export const backgroundImagesStyles = (ab, language) => () => {
+  const heroBgByAbTestVariant = {
+    base: heroBgBase,
+    v1: heroBgV1,
+    v2: heroBgV2,
   }
 
-  .picture-wrapper  {
-    -ms-grid-column: ${getGridValueForMs(1)};
-    -ms-grid-column-span: ${getGridValueForMs(12)};
-    -ms-grid-row: 2;
-  }
+  const abTest = language === 'en' ? 'en-main-hero-image' : 'ru-main-hero-image'
+  const abTestVariant = ab[abTest].name
+  const heroBg = heroBgByAbTestVariant[abTestVariant]
 
-  .description {
-    -ms-grid-column: ${getGridValueForMs(2)};
-    -ms-grid-column-span: ${getGridValueForMs(6)};
-    -ms-grid-row: 3;
-  }
+  return css`
+    ${backgroundCssSmart('.hero-wrap', heroBg)}
+  `
+}
 
-  ${desktop.l} {
-    .title {
-      -ms-grid-column: ${getGridValueForMs(3)};
-      -ms-grid-column-span: ${getGridValueForMs(6)};
-    }
-
-    .picture-wrapper  {
-      -ms-grid-column: ${getGridValueForMs(3)};
-      -ms-grid-column-span: ${getGridValueForMs(8)};
-    }
-
-    .description {
-      -ms-grid-column: ${getGridValueForMs(3)};
-      -ms-grid-column-span: ${getGridValueForMs(5)};
-    }
-  }
-`
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
   return css`
     ${base({ breakpoints, colors })}
-    ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

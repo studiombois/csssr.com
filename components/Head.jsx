@@ -121,8 +121,8 @@ const Head = (props) => {
       <meta name="twitter:card" content="summary_large_image" />
       {props.ogImage && (
         <Fragment>
-          <meta name="twitter:image" content={`${origin}${props.ogImage.url}`} />
-          <meta property="og:image" content={`${origin}${props.ogImage.url}`} />
+          <meta name="twitter:image" content={props.ogImage.url} />
+          <meta property="og:image" content={props.ogImage.url} />
           <meta property="og:image:width" content={props.ogImage.width} />
           <meta property="og:image:height" content={props.ogImage.height} />
         </Fragment>

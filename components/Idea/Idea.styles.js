@@ -19,7 +19,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     position: absolute;
     top: 0;
     z-index: 2;
-    right: ${calcRem(-60)};
+    margin-right: -17rem;
+    left: calc(100% + ${calcRem(60)});
     animation-name: buttonPosition;
     animation-duration: 1.8s;
     animation-delay: 0s;
@@ -40,10 +41,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     &::before {
       content: '';
       position: absolute;
-      z-index: 1;
+      z-index: -1;
       top: ${calcRem(7)};
-      left: ${calcRem(-44)};
-      background-image: url(${require('../../static/icons/our-projects/triangle.svg').default});
+      right: calc(100% - ${calcRem(8)});
+      background-image: url(${require('../../static/icons/our-cases/triangle.svg').default});
+      background-size: contain;
       background-repeat: no-repeat;
       width: ${calcRem(44)};
       height: ${calcRem(44)};
@@ -52,10 +54,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   @keyframes buttonPosition {
     0% {
-      transform: translate(100%, -30px);
+      transform: translateY(${calcRem(-30)});
     }
     100% {
-      transform: translate(100%, -16px);
+      transform: translateY(${calcRem(-16)});
     }
   }
 
@@ -63,18 +65,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     & {
       margin-top: 179px;
       margin-bottom: 150px;
-    }
-  }
-
-  ${desktop.l} {
-    .heading-text {
-      left: -72px;
-    }
-  }
-
-  ${desktop.s} {
-    .heading-text {
-      left: -25px;
     }
   }
 
@@ -88,23 +78,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 1 / span 5;
     }
 
-    .heading-text {
-      left: ${calcRem(-65)};
-    }
-
     .button::before {
       top: ${calcRem(12)};
-      left: ${calcRem(-48)};
+      right: calc(100% - ${calcRem(12)});
       width: ${calcRem(48)};
       background-position: 0, 0;
     }
 
     @keyframes buttonPosition {
       0% {
-        transform: translate(100%, -33px);
+        transform: translateY(${calcRem(-33)});
       }
       100% {
-        transform: translate(100%, -26px);
+        transform: translateY(${calcRem(-26)});
       }
     }
   }
@@ -120,7 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin: 0;
       grid-column: 1 / span 6;
       width: 100%;
-      text-align: left;
+      text-align: center;
     }
 
     .heading {
@@ -130,21 +116,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .button-wrapper {
-      top: ${calcRem(-50)};
-      right: ${calcRem(-23)};
-      max-width: ${calcRem(148)};
+      margin-top: 1.5rem;
+      margin-right: auto;
+      position: static;
     }
 
     .button::before {
-      top: ${calcRem(6)};
+      display: none;
     }
 
     @keyframes buttonPosition {
       0% {
-        transform: translate(100%, -6px);
+        transform: translateY(${calcRem(-6)});
       }
       100% {
-        transform: translate(100%, 0);
+        transform: translateY(0);
       }
     }
   }

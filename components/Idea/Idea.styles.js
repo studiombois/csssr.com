@@ -19,7 +19,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     position: absolute;
     top: 0;
     z-index: 2;
-    margin-right: -14rem;
+    margin-right: -17rem;
     left: calc(100% + ${calcRem(60)});
     animation-name: buttonPosition;
     animation-duration: 1.8s;
@@ -106,7 +106,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin: 0;
       grid-column: 1 / span 6;
       width: 100%;
-      text-align: left;
+      text-align: center;
     }
 
     .heading {
@@ -116,20 +116,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .button-wrapper {
-      top: ${calcRem(-50)};
-      margin-right: -10.5rem;
-      left: calc(100% + ${calcRem(23)});
-      max-width: ${calcRem(148)};
+      margin-top: 1.5rem;
+      margin-right: auto;
+      position: static;
     }
 
     .button::before {
-      top: ${calcRem(6)};
-
-      @media (orientation: landscape) {
-        &::before {
-          background-position: 0 7px;
-        }
-      }
+      display: none;
     }
 
     @keyframes buttonPosition {

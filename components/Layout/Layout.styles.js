@@ -65,7 +65,7 @@ export const base = css`
   ul.have-square-bullets li:before {
     content: '';
     position: absolute;
-    top: 0.6rem;
+    top: 0.625rem;
     left: 0;
     box-sizing: border-box;
     width: 0.25rem;

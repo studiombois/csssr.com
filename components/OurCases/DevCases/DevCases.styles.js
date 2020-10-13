@@ -13,7 +13,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .heading {
-    grid-column: 2 / span 5;
+    grid-column: 2 / span 6;
   }
 
   ${desktop.m} {

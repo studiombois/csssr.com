@@ -41,6 +41,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     color: #F9545B;
     text-decoration: underline;
     text-emphasis-color: #F9545B;
+    white-space: nowrap;
 
     &:visited {
       color: #F9545B;

@@ -1,7 +1,5 @@
-import React from 'react'
-
 // https://developers.google.com/search/docs/guides/intro-structured-data
-const StructuredDataVacancy = ({ vacancy }) => {
+const structuredDataVacancy = (vacancy) => {
   const getDescriptionLayout = () => {
     return vacancy.sections
       .map((item) => {
@@ -26,11 +24,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
     if (loc === 'ru-ee' || loc === 'en-ee') return 'Eesti Vabariik'
   }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: `
+  return `
       {
         "@context": "https://schema.org/",
         "@type": "JobPosting",
@@ -60,10 +54,7 @@ const StructuredDataVacancy = ({ vacancy }) => {
         "jobLocationType": "TELECOMMUTE",
         "employmentType": "${employment}"
       }
-    `,
-      }}
-    />
-  )
+    `
 }
 
-export default StructuredDataVacancy
+export default structuredDataVacancy

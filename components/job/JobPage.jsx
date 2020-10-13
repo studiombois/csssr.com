@@ -12,7 +12,7 @@ import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../utils/validators/candidateFormValidationRules'
 import withError from '../../utils/withError'
 import getContactOptions from '../../data/job/getContactOptions'
-import StructuredDataVacancy from '../StructuredDataVacancy'
+import getVacancyStructuredData from '../../utils/getVacancyStructuredData'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
 
 import ogImages from '../../public/images/jobs/cover/desktop.all.png?csssr-images'
@@ -199,7 +199,7 @@ class JobPage extends PureComponent {
             title={vacancy.name}
             templateTitle={`${language === 'ru' ? ' | Вакансии CSSSR' : ' | CSSSR'}`}
             description={translations.job.descriptions[vacancy.pathName] || vacancy.description}
-            structuredData={<StructuredDataVacancy vacancy={vacancy} />}
+            structuredData={getVacancyStructuredData(vacancy)}
             ogImage={{
               url: getOriginal(ogImages),
               width: 1266,

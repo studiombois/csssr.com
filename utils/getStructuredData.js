@@ -1,11 +1,5 @@
-import React from 'react'
-
 // https://developers.google.com/search/docs/guides/intro-structured-data
-const StructuredData = () => (
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: `
+const structuredData = () => `
   {
     "@context" : "http://schema.org",
     "@type" : "Organization",
@@ -22,9 +16,6 @@ const StructuredData = () => (
       "https://soundcloud.com/csssr"
     ]
   }
-`,
-    }}
-  />
-)
+`
 
-export default StructuredData
+export default structuredData

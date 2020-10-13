@@ -43,7 +43,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       z-index: 1;
       top: ${calcRem(7)};
       left: ${calcRem(-44)};
-      background-image: url(${require('../../static/icons/our-cases/triangle.svg').default});
+      background-image: url(${require('../../static/icons/our-projects/triangle.svg').default});
       background-repeat: no-repeat;
       width: ${calcRem(44)};
       height: ${calcRem(44)};

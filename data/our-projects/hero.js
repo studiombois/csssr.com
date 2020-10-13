@@ -1,4 +1,4 @@
-const logos = require.context('../../public/images/our-cases/hero?csssr-images')
+const logos = require.context('../../public/images/our-projects/hero?csssr-images')
 
 export default {
   images: logos,

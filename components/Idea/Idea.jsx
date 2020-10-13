@@ -10,7 +10,7 @@ import ContactModal from '../ContactModal'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
-import ideaContent from '../../data/our-cases/idea'
+import ideaContent from '../../data/our-projects/idea'
 
 const Idea = ({ className, pageName, l10n: { translations } }) => {
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)

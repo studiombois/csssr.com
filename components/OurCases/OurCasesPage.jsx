@@ -7,8 +7,8 @@ import DevCases from './DevCases'
 import Solutions from './Solutions'
 import Idea from '../../components/Idea'
 
-import heroContent from '../../data/our-cases/hero'
-import casesContent from '../../data/our-cases/devCases'
+import heroContent from '../../data/our-projects/hero'
+import casesContent from '../../data/our-projects/devCases'
 
 const OurCasesPage = ({ l10n: { language, translations } }) => {
   const pageName = 'ourCases'

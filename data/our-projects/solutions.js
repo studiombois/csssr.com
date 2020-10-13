@@ -1,6 +1,6 @@
-const lmsImages = require.context('../../public/images/our-cases/solutions/lms?csssr-images')
+const lmsImages = require.context('../../public/images/our-projects/solutions/lms?csssr-images')
 const timeTrackerImages = require.context(
-  '../../public/images/our-cases/solutions/time-tracker?csssr-images',
+  '../../public/images/our-projects/solutions/time-tracker?csssr-images',
 )
 
 export default {

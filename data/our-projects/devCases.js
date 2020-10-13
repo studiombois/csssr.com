@@ -1,19 +1,19 @@
 const gazpromImages = require.context(
-  '../../public/images/our-cases/dev-cases/gazprom?csssr-images',
+  '../../public/images/our-projects/dev-cases/gazprom?csssr-images',
 )
-const s7Images = require.context('../../public/images/our-cases/dev-cases/s7?csssr-images')
+const s7Images = require.context('../../public/images/our-projects/dev-cases/s7?csssr-images')
 const qacademyImages = require.context(
-  '../../public/images/our-cases/dev-cases/qacademy?csssr-images',
+  '../../public/images/our-projects/dev-cases/qacademy?csssr-images',
 )
 const brusnikaImages = require.context(
-  '../../public/images/our-cases/dev-cases/brusnika?csssr-images',
+  '../../public/images/our-projects/dev-cases/brusnika?csssr-images',
 )
 const mindboxImages = require.context(
-  '../../public/images/our-cases/dev-cases/mindbox?csssr-images',
+  '../../public/images/our-projects/dev-cases/mindbox?csssr-images',
 )
-const flantImages = require.context('../../public/images/our-cases/dev-cases/flant?csssr-images')
+const flantImages = require.context('../../public/images/our-projects/dev-cases/flant?csssr-images')
 const mosoblgazImages = require.context(
-  '../../public/images/our-cases/dev-cases/mosoblgaz?csssr-images',
+  '../../public/images/our-projects/dev-cases/mosoblgaz?csssr-images',
 )
 
 export default {

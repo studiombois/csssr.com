@@ -40,12 +40,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     background-repeat: no-repeat;
 
     &_lms {
-      background-image: url('/images/our-cases/solutions/lms_hover/desktop.l.png');
+      background-image: url('/images/our-projects/solutions/lms_hover/desktop.l.png');
       background-size: 728px 226px;
     }
 
     &_time-tracker {
-      background-image: url('/images/our-cases/solutions/time-tracker_hover/desktop.l.png');
+      background-image: url('/images/our-projects/solutions/time-tracker_hover/desktop.l.png');
       background-size: 576px 226px;
     }
   }
@@ -78,12 +78,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     
     .image-wrapper {
       &_lms {
-        background-image: url('/images/our-cases/solutions/lms_hover/desktop.m.png');
+        background-image: url('/images/our-projects/solutions/lms_hover/desktop.m.png');
         background-size: 544px 226px;
       }
 
       &_time-tracker {
-        background-image: url('/images/our-cases/solutions/time-tracker_hover/desktop.m.png');
+        background-image: url('/images/our-projects/solutions/time-tracker_hover/desktop.m.png');
         background-size: 432px 226px;
       }
     }
@@ -92,12 +92,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   ${desktop.s} {
     .image-wrapper {
       &_lms {
-        background-image: url('/images/our-cases/solutions/lms_hover/desktop.s.png');
+        background-image: url('/images/our-projects/solutions/lms_hover/desktop.s.png');
         background-size: 504px 226px;
       }
 
       &_time-tracker {
-        background-image: url('/images/our-cases/solutions/time-tracker_hover/desktop.s.png');
+        background-image: url('/images/our-projects/solutions/time-tracker_hover/desktop.s.png');
         background-size: 400px 226px;
       }
     }

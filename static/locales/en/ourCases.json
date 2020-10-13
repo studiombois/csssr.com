@@ -1,7 +1,7 @@
 {
   "hero": {
     "imgAlt": "Our clients logos",
-    "heading": "Our cases",
+    "heading": "Our projects",
     "text": "We&nbsp;constantly challenge ourselves to&nbsp;solve problems. Here are some of&nbsp;our biggest projects."
   },
   "devCases": {
@@ -64,7 +64,7 @@
     }
   },
   "solutions": {
-    "heading": "Our projects",
+    "heading": "Our solutions",
     "lms": {
       "imgAlt": "Modular Learning Management System",
       "heading": "Modular Learning Management System",

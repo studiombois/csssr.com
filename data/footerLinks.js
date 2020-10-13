@@ -110,7 +110,7 @@ export const nav = [
       },
       {
         id: 'ourCases',
-        href: 'our-cases',
+        href: 'projects',
       },
     ],
   },

@@ -24,7 +24,7 @@ const LinksList = ({
         <li key={id}>
           {linkRegExp.test(href) ? (
             <Link
-              href={href}
+              href={`${href}/${useLocale ? language : ''}`}
               className="link"
               type="list"
               size="s"

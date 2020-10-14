@@ -1,292 +1,66 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
-import getGridValueForMs from '../../../utils/style/getGridValueForMs'
-
-const dynamicStyles = (direction, { breakpoints: { desktop, tablet, mobile }, language }) => {
-  if (direction === 'reverse') {
-    return (
-      css`
-        .image {
-          grid-column: 8 / span 4;
-        }
-
-        .item-heading {
-          grid-column: 3 / span 4;
-        }
-
-        .text {
-          grid-column: 3 / span 3;
-        }
-
-        .column-1 {
-          grid-column: 3 / span 2;
-        }
-
-        .column-2 {
-          grid-column: 5 / span 2;
-        }
-
-        .button {
-          grid-column: 3 / span 3;
-        }
-
-        ${desktop.m} {
-          .image {
-            grid-column: 8 / span 4;
-          }
-
-          .item-heading {
-            grid-column: 2 / span 4;
-          }
-
-          .text {
-            grid-column: 2 / span 4;
-          }
-
-          .column-1 {
-            grid-column: 2 / span 2;
-          }
-
-          .column-2 {
-            grid-column: 4 / span 2;
-          }
-
-          .button {
-            grid-column: 2 / span 3;
-          }
-        }
-
-        ${desktop.s} {
-          .image {
-            grid-column: 8 / span 5;
-          }
-
-          .item-heading {
-            grid-column: 2 / span 5;
-          }
-
-          .text {
-            grid-column: 2 / span 5;
-          }
-
-          .column-1 {
-            grid-column: 2 / span 2;
-          }
-
-          .column-2 {
-            grid-column: 4 / span 2;
-          }
-
-          .button {
-            grid-column: 2 / span 3;
-          }
-        }
-
-        ${tablet.all} {
-          .image {
-            grid-column: 8 / span 5;
-          }
-
-          .item-heading {
-            grid-column: 2 / span 5;
-          }
-
-          .text {
-            grid-column: 2 / span 4;
-          }
-
-          .column-1 {
-            grid-column: 2 / span 2;
-          }
-
-          .column-2 {
-            grid-column: 4 / span 2;
-          }
-
-          .button {
-            grid-column: 2 / span 3;
-          }
-        }
-
-        ${mobile.all} {
-          .image,
-          .item-heading,
-          .text {
-            grid-column: 1 / span 6;
-          }
-
-          .column-1 {
-            grid-column: 1 / span 2;
-          }
-
-          .column-2 {
-            grid-column: ${language === 'ru' ? '4' : '3'} / span 2;
-          }
-        }
-      `
-    )
-  }
-
-  return (
-    css`
-      .image {
-        grid-column: 3 / span 5;
-      }
-
-      .item-heading {
-        grid-column: 7 / span 5;
-      }
-
-      .text {
-        grid-column: 7 / span 4;
-      }
-
-      .column-1 {
-        grid-column: 7 / span 2;
-      }
-
-      .column-2 {
-        grid-column: 9 / span 2;
-      }
-
-      .button {
-        grid-column: 7 / span 3;
-      }
-
-      ${desktop.m} {
-        .text {
-          grid-column: 7 / span 5;
-        }
-
-        .image {
-          grid-column: 2 / span 5;
-        }
-      }
-
-      ${desktop.s} {
-        .image {
-          grid-column: 2 / span 5;
-        }
-
-        .item-heading {
-          grid-column: 7 / span 5;
-        }
-
-        .text {
-          grid-column: 7 / span 5;
-        }
-
-        .column-1 {
-          grid-column: 7 / span 2;
-        }
-
-        .column-2 {
-          grid-column: 9 / span 2;
-        }
-      }
-
-      ${tablet.all} {
-        .image {
-          grid-column: 2 / span 5;
-        }
-
-        .item-heading {
-          grid-column: 7 / span 5;
-        }
-
-        .text {
-          grid-column: 7 / span 5;
-        }
-
-        .column-1 {
-          grid-column: 7 / span 2;
-        }
-
-        .column-2 {
-          grid-column: 9 / span 2;
-        }
-      }
-
-      ${mobile.all} {
-        .image,
-        .item-heading,
-        .text {
-          grid-column: 1 / span 6;
-        }
-
-        .column-1 {
-          grid-column: 1 / span 2;
-        }
-
-        .column-2 {
-          grid-column: ${language === 'ru' ? '4' : '3'} / span 2;
-        }
-      }
-    `
-  )
-}
 
 const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
-  grid-template-rows: auto auto auto 1fr;
+  .project-link {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    text-decoration: none;
 
-  .image {
-    img {
-      height: auto;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .image {
+        opacity: 0;
+      }
+
+      &:hover .item-heading {
+        color: ${colors.primary.origin};
+      }
+    }
+  }
+
+  .picture-wrapper {
+    background-position: left;
+    background-repeat: no-repeat;
+
+    &_MOSOBLGAZ {
+      background-image: url('/images/industry/ecommerce/cases/mosoblgaz_hover/desktop.l.png');
+      background-size: 245px 160px;
+    }
+
+    &_Brusnika {
+      background-image: url('/images/industry/ecommerce/cases/brusnika_hover/desktop.l.png');
+      background-size: 301px 160px;
+    }
+
+    &_QAcademy {
+      background-image: url('/images/industry/media-and-marketing/cases/qmarketing_hover/desktop.l.png');
+      background-size: 257px 160px;
+    }
+
+    &_Mindbox {
+      background-image: url('/images/industry/media-and-marketing/cases/mindbox_hover/desktop.l.png');
+      background-size: 224px 160px;
+    }
+
+    &_Gazprom {
+      background-image: url('/images/industry/information-technology/cases/gazprom_hover/desktop.l.png');
+      background-size: 285px 160px;
+    }
+
+    &_S7Airlines {
+      background-image: url('/images/industry/information-technology/cases/s7airlines_hover/desktop.l.png');
+      background-size: 293.5px 160px;
     }
   }
 
   .image {
-    grid-row: 1 / span 4;
-  }
+    max-width: ${calcRem(301)};
+    height: ${calcRem(160)};
 
-  &.first-item .image {
-    max-width: ${calcRem(467)};
-    margin-left: ${calcRem(-45)};
-  }
-
-  &.second-item .image {
-    max-width: ${calcRem(456)};
-  }
-
-  &.third-item .image {
-    max-width: ${calcRem(491)};
-    margin-top: ${calcRem(-17)};
-    margin-left: ${calcRem(-33)};
-  }
-
-  .item-heading {
-    grid-row: 1;
-    color: ${colors.secondary.darken100};
-    /* white-space: nowrap; */
-  }
-
-  .text {
-    grid-row: 2;
-    margin-top: ${calcRem(21)};
-    color: ${colors.secondary.darken100};
-  }
-
-  .number-data {
-    grid-row: 3;
-    margin-top: ${calcRem(30)};
-    font-weight: normal;
-  }
-
-  .text-data {
-    grid-row: 4;
-    color: ${colors.secondary.darken100};
-  }
-
-  .button {
-    grid-row: 4;
-    margin-top: ${calcRem(104)};
-  }
-
-  ${desktop.all} {
-    &.first-item,
-    &.second-item,
-    &.third-item {
-      margin-top: 200px;
+    & img {
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -294,381 +68,261 @@ const base = ({ colors,  breakpoints: { desktop, tablet, mobile }}) => css`
     .button {
       max-width: ${calcRem(272)};
     }
+
+    .image {
+      &_MOSOBLGAZ {
+        width: ${calcRem(245)};
+      }
+
+      &_QAcademy {
+        width: ${calcRem(257)};
+      }
+
+      &_Mindbox {
+        width: ${calcRem(224)};
+      }
+
+      &_Gazprom {
+        width: ${calcRem(286)};
+      }
+
+      &_S7Airlines {
+        width: ${calcRem(294)};
+      }
+    }
+  }
+
+  .item-heading {
+    max-width: ${calcRem(400)};
+    margin-top: ${calcRem(24)};
+    color: ${colors.secondary.darken100};
+  }
+
+  .numbers-wrapper {
+    display: flex;
+    margin-top: ${calcRem(15)};
+  }
+
+  .team,
+  .duration,
+  .separator {
+    font-size: ${calcRem(16)};
+    line-height: ${calcRem(24)};
+    font-weight: 500;
+    color: #000000;
+  }
+
+  .separator {
+    margin: 0 ${calcRem(18)};
   }
 
   ${desktop.m} {
-    &.first-item .image {
-      max-width: ${calcRem(445)};
-      margin-left: ${calcRem(-12)};
+    .picture-wrapper {
+      &_Brusnika {
+        background-image: url('/images/industry/ecommerce/cases/brusnika_hover/desktop.m.png');
+        background-size: 280px 160px;
+      }
+
+      &_Gazprom {
+        background-image: url('/images/industry/information-technology/cases/gazprom_hover/desktop.m.png');
+        background-size: 272px 160px;
+      }
+
+      &_S7Airlines {
+        background-image: url('/images/industry/information-technology/cases/s7airlines_hover/desktop.m.png');
+        background-size: 269.5px 160px;
+      }
     }
 
-    &.second-item .image {
-      max-width: none;
+    .item-heading {
+      max-width: ${calcRem(280)};
     }
 
-    &.third-item .image {
-      max-width: ${calcRem(470)};
-      margin-top: ${calcRem(-17)};
-      margin-left: 0;
-    }
+    .image {
+      max-width: ${calcRem(280)};
 
-    &.third-item .text {
-      grid-column: 7 / span 4;
-    }
+      &_Brusnika {
+        width: ${calcRem(280)};
+      }
 
-    .button {
-      max-width: ${calcRem(272)};
+      &_Gazprom {
+        width: ${calcRem(272)};
+      }
+
+      &_S7Airlines {
+        width: ${calcRem(270)};
+      }
+
+      &_MOSOBLGAZ {
+        width: ${calcRem(245)};
+      }
+
+      &_Mindbox {
+        width: ${calcRem(224)};
+      }
+
+      &_QAcademy {
+        width: ${calcRem(257)};
+      }
     }
   }
 
   ${desktop.s} {
-    &.first-item .image {
-      max-width: ${calcRem(446)};
+    .picture-wrapper {
+      &_Brusnika {
+        background-image: url('/images/industry/ecommerce/cases/brusnika_hover/desktop.s.png');
+        background-size: 280px 160px;
+      }
+
+      &_Gazprom {
+        background-image: url('/images/industry/information-technology/cases/gazprom_hover/desktop.s.png');
+        background-size: 272px 160px;
+      }
+
+      &_S7Airlines {
+        background-image: url('/images/industry/information-technology/cases/s7airlines_hover/desktop.s.png');
+        background-size: 269.5px 160px;
+      }
     }
 
-    &.second-item .image {
-      max-width: ${calcRem(435)};
+    .item-heading {
+      max-width: ${calcRem(280)};
     }
 
-    &.third-item .image {
-      max-width: ${calcRem(470)};
-    }
+    .image {
+      max-width: ${calcRem(280)};
 
-    .button {
-      max-width: ${calcRem(296)};
+      &_Brusnika {
+        width: ${calcRem(280)};
+      }
+
+      &_Mindbox {
+        width: ${calcRem(225)};
+      }
+
+      &_MOSOBLGAZ {
+        width: ${calcRem(245)};
+      }
+
+      &_Gazprom {
+        width: ${calcRem(272)};
+      }
+
+      &_S7Airlines {
+        width: ${calcRem(270)};
+      }
+
+      &_QAcademy {
+        width: ${calcRem(257)};
+      }
     }
   }
 
   ${tablet.all} {
-    &.first-item .image {
-      max-width: ${calcRem(338)};
-      margin-left: ${calcRem(-33)};
+    .project-link:hover .image {
+      opacity: 1;
     }
 
-    &.second-item .image {
-      max-width: ${calcRem(332)};
-      margin-top: ${calcRem(2)};
-      margin-right: ${calcRem(-35)};
+    .picture-wrapper {
+      background-image: none;
     }
 
-    &.third-item .image {
-      max-width: ${calcRem(352)};
-      margin-top: ${calcRem(-10)};
-      margin-left: ${calcRem(-23)};
+    .item-heading {
+      max-width: ${calcRem(210)};
     }
 
-    .text {
-      margin-top: ${calcRem(17)};
+    .image {
+      max-width: ${calcRem(210)};
+
+      &_MOSOBLGAZ {
+        width: ${calcRem(181)};
+      }
+
+      &_Brusnika {
+        width: ${calcRem(204)};
+      }
+
+      &_QAcademy {
+        width: ${calcRem(190)};
+      }
+
+      &_Mindbox {
+        width: ${calcRem(172)};
+      }
+
+      &_Gazprom {
+        width: ${calcRem(202)};
+      }
+
+      &_S7Airlines {
+        width: ${calcRem(200)};
+      }
     }
 
-    .number-data {
-      margin-top: ${calcRem(40)};
+    .numbers-wrapper {
+      margin-top: ${calcRem(10)};
     }
 
-    .text-data{
-      margin-top: ${calcRem(9)};
-    }
-
-    .button {
-      margin-top: ${calcRem(72)};
+    .team,
+    .duration,
+    .separator {
+      font-size: ${calcRem(12)};
+      line-height: ${calcRem(16)};
     }
   }
 
   ${mobile.all} {
-    & {
-      grid-template-rows: auto;
+    .picture-wrapper {
+      background-image: none;
     }
 
-    .image {
-      grid-row: 1;
-      width: ${calcRem(360)};
-      margin-bottom: ${calcRem(14)};
-    }
-
-    .image {
+    .project-link {
       width: auto;
     }
 
-    &.first-item .image {
-      margin-left: 0;
+    .project-link:hover .image {
+      opacity: 1;
     }
 
-    &.second-item .image {
-      margin-top: ${calcRem(2)};
-      margin-right: 0;
+    .picture-wrapper {
+      width: 100vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
 
-    &.third-item .image {
-      margin-top: ${calcRem(-10)};
-      margin-left: 0;
+    .image {
+      max-width: none;
+      width: 100% !important;
+      height: auto;
     }
 
     .item-heading {
-      grid-row: 2;
-      margin-top: ${calcRem(38)};
+      margin-top: ${calcRem(24)};
     }
 
-    .text {
-      grid-row: 3;
-      margin-top: ${calcRem(16)};
+    .numbers-wrapper {
+      margin-top: ${calcRem(10)};
     }
 
-    .number-data {
-      grid-row: 4;
-      margin-top: ${calcRem(14)};
+    .separator {
+      margin: 0 ${calcRem(13)};
     }
 
-    .text-data {
-      grid-row: 5;
-      margin-top: ${calcRem(-5)};
+    .team,
+    .duration,
+    .separator {
+      font-size: ${calcRem(12)};
+      line-height: ${calcRem(16)};
+      font-weight: bold;
     }
-
-    .button {
-      grid-row: 6;
-      grid-column: 1 / span 6;
-      margin-top: ${calcRem(32)};
-    }
-  }
-`
-
-const ie11DynamicStyles = (direction, { breakpoints: { desktop, tablet }}) => {
-  if (direction === 'reverse') {
-    return (
-      css`
-        .image {
-          -ms-grid-column: ${getGridValueForMs(8)};
-          -ms-grid-column-span: ${getGridValueForMs(5)};
-        }
-
-        .item-heading {
-          -ms-grid-column: ${getGridValueForMs(3)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
-        }
-
-        .text {
-          -ms-grid-column: ${getGridValueForMs(3)};
-          -ms-grid-column-span: ${getGridValueForMs(4)};
-        }
-
-        .column-1 {
-          -ms-grid-column: ${getGridValueForMs(3)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
-        }
-
-        .column-2 {
-          -ms-grid-column: ${getGridValueForMs(5)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
-        }
-
-        ${desktop.m} {
-          .image {
-            -ms-grid-column: ${getGridValueForMs(8)};
-            -ms-grid-column-span: ${getGridValueForMs(4)};
-          }
-
-          .item-heading {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(5)};
-          }
-
-          .text {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(4)};
-          }
-
-          .column-1 {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-
-          .column-2 {
-            -ms-grid-column: ${getGridValueForMs(4)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-        }
-
-        ${desktop.s} {
-          .image {
-            -ms-grid-column: ${getGridValueForMs(8)};
-            -ms-grid-column-span: ${getGridValueForMs(5)};
-          }
-
-          .item-heading {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(5)};
-          }
-
-          .text {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(4)};
-          }
-
-          .column-1 {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-
-          .column-2 {
-            -ms-grid-column: ${getGridValueForMs(4)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-        }
-
-        ${tablet.all} {
-          .image {
-            -ms-grid-column: ${getGridValueForMs(7)};
-            -ms-grid-column-span: ${getGridValueForMs(5)};
-          }
-
-          .item-heading {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(5)};
-          }
-
-          .text {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(4)};
-          }
-
-          .column-1 {
-            -ms-grid-column: ${getGridValueForMs(2)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-
-          .column-2 {
-            -ms-grid-column: ${getGridValueForMs(4)};
-            -ms-grid-column-span: ${getGridValueForMs(2)};
-          }
-        }
-      `
-    )
-  }
-
-  return (
-    css`
-      .image {
-        -ms-grid-column: ${getGridValueForMs(3)};
-        -ms-grid-column-span: ${getGridValueForMs(5)};
-      }
-
-      .item-heading {
-        -ms-grid-column: ${getGridValueForMs(7)};
-        -ms-grid-column-span: ${getGridValueForMs(5)};
-      }
-
-      .text {
-        -ms-grid-column: ${getGridValueForMs(7)};
-        -ms-grid-column-span: ${getGridValueForMs(5)};
-      }
-
-      .column-1 {
-        -ms-grid-column: ${getGridValueForMs(7)};
-        -ms-grid-column-span: ${getGridValueForMs(2)};
-      }
-
-      .column-2 {
-        -ms-grid-column: ${getGridValueForMs(9)};
-        -ms-grid-column-span: ${getGridValueForMs(2)};
-      }
-
-      ${desktop.m} {
-        .image {
-          -ms-grid-column: ${getGridValueForMs(2)};
-          -ms-grid-column-span: ${getGridValueForMs(5)};
-        }
-      }
-
-      ${desktop.s} {
-        .image {
-          -ms-grid-column: ${getGridValueForMs(2)};
-          -ms-grid-column-span: ${getGridValueForMs(5)};
-        }
-
-        .item-heading {
-          -ms-grid-column: ${getGridValueForMs(8)};
-          -ms-grid-column-span: ${getGridValueForMs(5)};
-        }
-
-        .text {
-          -ms-grid-column: ${getGridValueForMs(8)};
-          -ms-grid-column-span: ${getGridValueForMs(4)};
-        }
-
-        .column-1 {
-          -ms-grid-column: ${getGridValueForMs(8)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
-        }
-
-        .column-2 {
-          -ms-grid-column: ${getGridValueForMs(10)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
-        }
-      }
-
-      ${tablet.all} {
-        .image {
-          -ms-grid-column: ${getGridValueForMs(2)};
-          -ms-grid-column-span: ${getGridValueForMs(5)};
-        }
-
-        .item-heading {
-          -ms-grid-column: ${getGridValueForMs(7)};
-          -ms-grid-column-span: ${getGridValueForMs(5)};
-        }
-
-        .text {
-          -ms-grid-column: ${getGridValueForMs(7)};
-          -ms-grid-column-span: ${getGridValueForMs(4)};
-        }
-
-        .column-1 {
-          -ms-grid-column: ${getGridValueForMs(7)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
-        }
-
-        .column-2 {
-          -ms-grid-column: ${getGridValueForMs(9)};
-          -ms-grid-column-span: ${getGridValueForMs(2)};
-        }
-      }
-    `
-  )
-}
-
-const ie11BaseStyles = () => css`
-  -ms-grid-rows: auto auto auto 1fr;
-
-  .image {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-  }
-
-  .item-heading {
-    -ms-grid-row: 1;
-  }
-
-  .text {
-    -ms-grid-row: 2;
-  }
-
-  .number-data {
-    -ms-grid-row: 3;
-  }
-
-  .text-data {
-    -ms-grid-row: 4;
   }
 `
 
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
-  const { l10n: {language} } = props
 
   return css`
-    ${dynamicStyles(props.direction, { breakpoints, language })}
     ${base({ colors, breakpoints })}
-    ${props.isIe11 && ie11DynamicStyles(props.direction, { breakpoints })}
-    ${props.isIe11 && ie11BaseStyles()}
   `
 }

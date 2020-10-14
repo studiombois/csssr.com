@@ -78,6 +78,36 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/ru/projects',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/projects',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/projects',
+      },
+    ],
+  },
+  {
+    url: 'https://csssr.com/en/projects',
+    changefreq: 'weekly',
+    priority: 1,
+    links: [
+      {
+        lang: 'en',
+        url: 'https://csssr.com/en/projects',
+      },
+      {
+        lang: 'ru',
+        url: 'https://csssr.com/ru/projects',
+      },
+    ],
+  },
+  {
     url: 'https://csssr.com/ru/industry/ecommerce',
     changefreq: 'weekly',
     priority: 1,

@@ -1,4 +1,4 @@
-const heroImages = require.context('../../../public/images/projects/qmarketing/hero?csssr-images')
+const heroImages = require.context('../../../public/images/project/qmarketing/hero?csssr-images')
 
 export default {
   images: heroImages,

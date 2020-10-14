@@ -97,133 +97,50 @@
     }
   },
   "projects": {
-    "heading": "Наши Проекты",
-    "informationTechnologyPage": {
-      "firstItem": {
-        "heading": "Газпром Нефть — Профессионалы 4.0",
-        "text": "Проект Профессионалы 4.0 для Газпром нефть — соединяет крупных заказчиков с талантливыми исполнителями.",
-        "numericData": {
-          "firstItem": {
-            "number": "9",
-            "text": "специалистов"
-          },
-          "secondItem": {
-            "number": "13",
-            "text": "месяцев"
-          }
-        },
-        "button": {
-          "title": "Узнать о проекте",
-          "href": "/ru/project/gazprom-neft-professionals-4-0"
-        }
-      },
-      "secondItem": {
-        "heading": "Авиакомпания S7 — личный кабинет",
-        "text": "Фронтенд личного кабинета для S7 Airlines, который предоставляет быстрый доступ к услугам авиакомпании.",
-        "numericData": {
-          "firstItem": {
-            "number": "8",
-            "text": "специалистов"
-          },
-          "secondItem": {
-            "number": "25",
-            "text": "месяцев"
-          }
-        },
-        "button": {
-          "title": "Узнать о проекте",
-          "href": "/ru/project/s7-personal-account"
-        }
-      },
+    "heading": "Наши проекты",
+    "link": "Просмотреть наши проекты",
+    "description": [
+      "Мы работаем с широким кругом отраслей: ",
+      "информационные технологии",
+      "медиа и маркетинг",
+      "финтех",
+      "электронная коммерция",
+      ". Мы гордимся нашим списком клиентов и рады поделиться некоторыми проектами."
+    ],
+    "ecommercePage": {
       "mosoblgaz": {
-        "heading": "Мособлгаз — личный кабинет",
-        "text": "Разработка личного кабинета для юридических лиц, позволяющий получить быстрый доступ к услугам компании.",
-        "numericData": {
-          "firstItem": {
-            "number": "4",
-            "text": "специалиста"
-          },
-          "secondItem": {
-            "number": "2",
-            "text": "месяца"
-          }
-        },
-        "button": {
-          "title": "Узнать о проекте",
-          "href": "/ru/project/mosoblgaz"
-        }
+        "heading": "Личный кабинет",
+        "team": "4 специалиста",
+        "duration": "2 месяца"
       },
       "brusnika": {
-        "heading": "Брусника — Внутренние инструменты оценки и&nbsp;расчетов",
-        "text": "Создание внутреннего инструмента планирования продаж для менеджеров компании.",
-        "numericData": {
-          "firstItem": {
-            "number": "1",
-            "text": "специалист"
-          },
-          "secondItem": {
-            "number": "11",
-            "text": "месяцев"
-          }
-        },
-        "button": {
-          "title": "Узнать о проекте",
-          "href": "/ru/project/brusnika"
-        }
+        "heading": "Внутренние инструменты оценки и&nbsp;расчетов",
+        "team": "1 специалист",
+        "duration": "13 месяцев"
+      }
+    },
+    "informationTechnologyPage": {
+      "gazprom": {
+        "heading": "Платформа для реализации бизнес-проектов",
+        "team": "9 специалистов",
+        "duration": "13 месяцев"
+      },
+      "s7": {
+        "heading": "Личный кабинет пользователя",
+        "team": "8 специалистов",
+        "duration": "25 месяцев"
+      }
+    },
+    "mediaAndMarketingPage": {
+      "qmarketing": {
+        "heading": "Интерактивная система обучения",
+        "team": "3 специалиста",
+        "duration": "4 месяца"
       },
       "mindbox": {
-        "heading": "Mindbox&nbsp;— Фильтрация в&nbsp;ЛК и&nbsp;арбитраж&nbsp;промоакций",
-        "text": "Разработка двух проектов в области автоматизации маркетинга. ",
-        "numericData": {
-          "firstItem": {
-            "number": "3",
-            "text": "специалиста"
-          },
-          "secondItem": {
-            "number": "13",
-            "text": "месяцев"
-          }
-        },
-        "button": {
-          "title": "Узнать о проекте",
-          "href": "/ru/project/mindbox"
-        }
-      },
-      "qmarketing": {
-        "heading": "QMarketing — QAcademy",
-        "text": "Создание фронтенда внутренних страниц образовательной площадки.",
-        "numericData": {
-          "firstItem": {
-            "number": "3",
-            "text": "специалиста"
-          },
-          "secondItem": {
-            "number": "4",
-            "text": "месяца"
-          }
-        },
-        "button": {
-          "title": "Узнать о проекте",
-          "href": "/ru/project/qmarketing"
-        }
-      },
-      "flant": {
-        "heading": "Флант - лендинги",
-        "text": "Проект по вёрстке и тестированию семи лендингов для компании Флант.",
-        "numericData": {
-          "firstItem": {
-            "number": "3",
-            "text": "специалиста"
-          },
-          "secondItem": {
-            "number": "2",
-            "text": "месяца"
-          }
-        },
-        "button": {
-          "title": "Узнать о проекте",
-          "href": "/ru/project/flant"
-        }
+        "heading": "Платформа автоматизации маркетинга",
+        "team": "3 специалиста",
+        "duration": "13 месяцев"
       }
     }
   }

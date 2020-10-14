@@ -3,8 +3,8 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-const line_dash = require.context('../../../public/images/projects/common-pics/lines/dash?csssr-images')
-const line_curly = require.context('../../../public/images/projects/common-pics/lines/curly?csssr-images')
+const line_dash = require.context('../../../public/images/project/common-pics/lines/dash?csssr-images')
+const line_curly = require.context('../../../public/images/project/common-pics/lines/curly?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 

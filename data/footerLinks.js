@@ -108,6 +108,10 @@ export const nav = [
         id: 'coreValues',
         href: 'core-values',
       },
+      {
+        id: 'projects',
+        href: 'projects',
+      },
     ],
   },
   {
@@ -119,7 +123,7 @@ export const nav = [
       },
       {
         id: 'tracker',
-        href: 'https://tracker.csssr.com/',
+        href: 'https://tracker.csssr.com',
       },
     ],
   },
@@ -138,6 +142,7 @@ export const nav = [
       {
         id: 'blog',
         href: 'https://blog.csssr.com',
+        useLocale: true,
       },
       {
         id: 'contacts',

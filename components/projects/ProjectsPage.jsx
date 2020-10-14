@@ -5,20 +5,20 @@ import Head from '../Head'
 import Hero from './Hero'
 import DevCases from './DevCases'
 import Solutions from './Solutions'
-import Idea from '../../components/Idea'
+import Idea from '../Idea'
 
-import heroContent from '../../data/our-cases/hero'
-import casesContent from '../../data/our-cases/devCases'
-import designCasesContent from '../../data/our-cases/designCases'
-import DesignCases from './DesignCases/DesignCases'
+import heroContent from '../../data/projects/hero'
+import casesContent from '../../data/projects/devCases'
+import designCasesContent from '../../data/projects/designCases'
+import DesignCases from './DesignCases'
 
-const OurCasesPage = ({ l10n: { language, translations } }) => {
-  const pageName = 'ourCases'
+const ProjectsPage = ({ l10n: { language, translations } }) => {
+  const pageName = 'projects'
   return (
     <Layout pageName={pageName}>
       <Head
-        title={translations.ourCases.hero.heading}
-        description={translations.ourCases.hero.text}
+        title={translations.projects.meta.title}
+        description={translations.projects.meta.description}
       />
 
       <Hero content={heroContent} />
@@ -30,4 +30,4 @@ const OurCasesPage = ({ l10n: { language, translations } }) => {
   )
 }
 
-export default L10nConsumer(OurCasesPage)
+export default L10nConsumer(ProjectsPage)

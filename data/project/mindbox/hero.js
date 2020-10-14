@@ -1,4 +1,4 @@
-const heroImages = require.context('../../../public/images/projects/mindbox/hero?csssr-images')
+const heroImages = require.context('../../../public/images/project/mindbox/hero?csssr-images')
 
 export default {
   images: heroImages,

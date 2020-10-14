@@ -22,7 +22,7 @@ const Case = ({
   return (
     <div
       className={`${className} ${size} ${side}`}
-      data-testid={`ourCases:block.blockCase_${linkClass}`}
+      data-testid={`projects:block.blockCase_${linkClass}`}
     >
       <Link className={`${linkClass} link`} href={link} isNextLink>
         <div className="image-wrapper">
@@ -34,7 +34,7 @@ const Case = ({
           size="m"
           dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className={`heading ${size}`}
-          data-testid={`ourCases:text.heading_${linkClass}`}
+          data-testid={`projects:text.heading_${linkClass}`}
         />
 
         <Text
@@ -51,7 +51,7 @@ const Case = ({
             className="tag"
             href={tagLink}
             isNextLink
-            data-testid={`ourCases:link.industryLink_${tagId}`}
+            data-testid={`projects:link.industryLink_${tagId}`}
           />
         </object>
 

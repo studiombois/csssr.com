@@ -6,7 +6,7 @@ import Link from '../../ui-kit/core-design/Link'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import solutions from '../../../data/our-cases/solutions'
+import solutions from '../../../data/projects/solutions'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../../utils/l10nProvider'
@@ -31,7 +31,7 @@ const Solutions = ({ className, l10n: { translations } }) => {
               target: '_blank',
               rel: 'nofollow noopener',
             })}
-            data-testid={`ourCases:block.solutionLink.${blockClass}`}
+            data-testid={`projects:block.solutionLink.${blockClass}`}
           >
             <div className={`image-wrapper image-wrapper_${blockClass}`}>
               <PictureSmart
@@ -47,7 +47,7 @@ const Solutions = ({ className, l10n: { translations } }) => {
               size="l"
               dangerouslySetInnerHTML={{ __html: heading(translations) }}
               className="solution-heading"
-              data-testid={`ourCases:text.heading.${blockClass}`}
+              data-testid={`projects:text.heading.${blockClass}`}
             />
 
             <Text

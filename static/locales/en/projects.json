@@ -1,8 +1,12 @@
 {
+  "meta": {
+    "title": "Our Projects",
+    "description": "Over the years CSSSR has completed more than 500 projects. We've picked the most interesting of them to showcase."
+  },
   "hero": {
     "imgAlt": "Our clients logos",
-    "heading": "Our cases",
-    "text": "We&nbsp;constantly challenge ourselves to&nbsp;solve problems. Here are some of&nbsp;our biggest projects."
+    "heading": "Our projects",
+    "text": "We constantly challenge ourselves to solve problems. Here are some of our biggest projects."
   },
   "devCases": {
     "heading": "Commercial development",
@@ -71,7 +75,7 @@
     }
   },
   "solutions": {
-    "heading": "Our projects",
+    "heading": "Our solutions",
     "lms": {
       "imgAlt": "Modular Learning Management System",
       "heading": "Modular Learning Management System",

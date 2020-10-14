@@ -6,13 +6,13 @@ import Link from '../../ui-kit/core-design/Link'
 import Grid from '../../ui-kit/core-design/Grid'
 import Text from '../../ui-kit/core-design/Text'
 import Heading from '../../ui-kit/core-design/Heading'
-import solutions from '../../../data/our-cases/solutions'
+import solutions from '../../../data/projects/solutions'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
 
-const Solutions = ({ className, l10n: { translations }, pageName = 'OurCases' }) => (
+const Solutions = ({ className, l10n: { translations }, pageName = 'projects' }) => (
   <Grid className={className} as="section" data-testid={`${pageName}:block.solutions`}>
     <Heading.H2
       type="slab"

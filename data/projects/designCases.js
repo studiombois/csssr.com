@@ -1,10 +1,10 @@
-const INGImages = require.context('../../public/images/our-cases/design-cases/ing?csssr-images')
-const NASAImages = require.context('../../public/images/our-cases/design-cases/nasa?csssr-images')
+const INGImages = require.context('../../public/images/projects/design-cases/ing?csssr-images')
+const NASAImages = require.context('../../public/images/projects/design-cases/nasa?csssr-images')
 
 export default {
-  heading: (t) => t.ourCases.designCases.heading,
-  buttonTitle: (t) => t.ourCases.designCases.button.title,
-  buttonHref: (t) => t.ourCases.designCases.button.href,
+  heading: (t) => t.projects.designCases.heading,
+  buttonTitle: (t) => t.projects.designCases.button.title,
+  buttonHref: (t) => t.projects.designCases.button.href,
   cases: [
     {
       images: INGImages,

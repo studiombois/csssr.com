@@ -9,7 +9,7 @@ import Grid from '../../ui-kit/core-design/Grid'
 import Post from './Post'
 import Card from '../../Card'
 import posts from '../../../data/main/posts'
-import Solutions from '../../our-cases/Solutions'
+import Solutions from '../../projects/Solutions'
 
 import projects from '../../../data/main/projects'
 

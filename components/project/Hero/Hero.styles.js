@@ -3,7 +3,7 @@ import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-const heroBgImages = require.context('../../../public/images/projects/common-pics/hero-bg?csssr-images')
+const heroBgImages = require.context('../../../public/images/project/common-pics/hero-bg?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
   & {

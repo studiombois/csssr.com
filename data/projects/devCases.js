@@ -1,0 +1,110 @@
+const gazpromImages = require.context('../../public/images/projects/dev-cases/gazprom?csssr-images')
+const s7Images = require.context('../../public/images/projects/dev-cases/s7?csssr-images')
+const qacademyImages = require.context(
+  '../../public/images/projects/dev-cases/qacademy?csssr-images',
+)
+const brusnikaImages = require.context(
+  '../../public/images/projects/dev-cases/brusnika?csssr-images',
+)
+const mindboxImages = require.context('../../public/images/projects/dev-cases/mindbox?csssr-images')
+const flantImages = require.context('../../public/images/projects/dev-cases/flant?csssr-images')
+const mosoblgazImages = require.context(
+  '../../public/images/projects/dev-cases/mosoblgaz?csssr-images',
+)
+
+export default {
+  heading: (t) => t.projects.devCases.heading,
+  cases: [
+    {
+      linkClass: 'gazprom',
+      images: gazpromImages,
+      imgAlt: (t) => t.projects.devCases.gazprom.imgAlt,
+      link: 'project/gazprom-neft-professionals-4-0',
+      heading: (t) => t.projects.devCases.gazprom.heading,
+      text: (t) => t.projects.devCases.gazprom.text,
+      tag: (t) => t.projects.devCases.gazprom.tag,
+      tagId: 'IT',
+      tagLink: 'industry/information-technology',
+      team: (t) => t.projects.devCases.gazprom.team,
+      duration: (t) => t.projects.devCases.gazprom.duration,
+    },
+    {
+      linkClass: 's7',
+      images: s7Images,
+      imgAlt: (t) => t.projects.devCases.s7.imgAlt,
+      link: 'project/s7-personal-account',
+      heading: (t) => t.projects.devCases.s7.heading,
+      text: (t) => t.projects.devCases.s7.text,
+      tag: (t) => t.projects.devCases.s7.tag,
+      tagId: 'IT',
+      tagLink: 'industry/information-technology',
+      team: (t) => t.projects.devCases.s7.team,
+      duration: (t) => t.projects.devCases.s7.duration,
+    },
+    {
+      linkClass: 'qacademy',
+      images: qacademyImages,
+      imgAlt: (t) => t.projects.devCases.qacademy.imgAlt,
+      link: 'project/qmarketing',
+      heading: (t) => t.projects.devCases.qacademy.heading,
+      text: (t) => t.projects.devCases.qacademy.text,
+      tag: (t) => t.projects.devCases.qacademy.tag,
+      tagId: 'mediaAndMarketing',
+      tagLink: 'industry/media-and-marketing',
+      team: (t) => t.projects.devCases.qacademy.team,
+      duration: (t) => t.projects.devCases.qacademy.duration,
+    },
+    {
+      linkClass: 'brusnika',
+      images: brusnikaImages,
+      imgAlt: (t) => t.projects.devCases.brusnika.imgAlt,
+      link: 'project/brusnika',
+      heading: (t) => t.projects.devCases.brusnika.heading,
+      text: (t) => t.projects.devCases.brusnika.text,
+      tag: (t) => t.projects.devCases.brusnika.tag,
+      tagId: 'ecommerce',
+      tagLink: 'industry/ecommerce',
+      team: (t) => t.projects.devCases.brusnika.team,
+      duration: (t) => t.projects.devCases.brusnika.duration,
+    },
+    {
+      linkClass: 'mindbox',
+      images: mindboxImages,
+      imgAlt: (t) => t.projects.devCases.mindbox.imgAlt,
+      link: 'project/mindbox',
+      heading: (t) => t.projects.devCases.mindbox.heading,
+      text: (t) => t.projects.devCases.mindbox.text,
+      tag: (t) => t.projects.devCases.mindbox.tag,
+      tagId: 'mediaAndMarketing',
+      tagLink: 'industry/media-and-marketing',
+      team: (t) => t.projects.devCases.mindbox.team,
+      duration: (t) => t.projects.devCases.mindbox.duration,
+    },
+    {
+      linkClass: 'flant',
+      images: flantImages,
+      imgAlt: (t) => t.projects.devCases.flant.imgAlt,
+      link: 'project/flant',
+      heading: (t) => t.projects.devCases.flant.heading,
+      text: (t) => t.projects.devCases.flant.text,
+      tag: (t) => t.projects.devCases.flant.tag,
+      tagId: 'IT',
+      tagLink: 'industry/information-technology',
+      team: (t) => t.projects.devCases.flant.team,
+      duration: (t) => t.projects.devCases.flant.duration,
+    },
+    {
+      linkClass: 'mosoblgaz',
+      images: mosoblgazImages,
+      imgAlt: (t) => t.projects.devCases.mosoblgaz.imgAlt,
+      link: 'project/mosoblgaz',
+      heading: (t) => t.projects.devCases.mosoblgaz.heading,
+      text: (t) => t.projects.devCases.mosoblgaz.text,
+      tag: (t) => t.projects.devCases.mosoblgaz.tag,
+      tagId: 'ecommerce',
+      tagLink: 'industry/ecommerce',
+      team: (t) => t.projects.devCases.mosoblgaz.team,
+      duration: (t) => t.projects.devCases.mosoblgaz.duration,
+    },
+  ],
+}

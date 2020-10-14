@@ -114,7 +114,7 @@ const Projects = ({
               kind="primary"
               size="s"
               dangerouslySetInnerHTML={{ __html: translations.industry.projects.link }}
-              data-testid="Industry:link.ourCases"
+              data-testid="Industry:link.projects"
             />
           </div>
         </Grid>

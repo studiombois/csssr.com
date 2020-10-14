@@ -1,4 +1,4 @@
-const teamImages = require.context('../../../public/images/projects/common-pics/team?csssr-images')
+const teamImages = require.context('../../../public/images/project/common-pics/team?csssr-images')
 
 export default {
   images: teamImages,

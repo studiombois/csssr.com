@@ -15,8 +15,8 @@ const ProjectsPage = ({ l10n: { language, translations } }) => {
   return (
     <Layout pageName={pageName}>
       <Head
-        title={translations.projects.hero.heading}
-        description={translations.projects.hero.text}
+        title={translations.projects.meta.title}
+        description={translations.projects.meta.description}
       />
 
       <Hero content={heroContent} />

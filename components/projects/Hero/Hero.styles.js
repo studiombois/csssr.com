@@ -9,7 +9,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .heading {
     grid-row: 1;
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 5;
     margin-top: ${calcRem(75)};
     font-weight: 300;
   }

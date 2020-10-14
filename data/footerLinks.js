@@ -109,7 +109,7 @@ export const nav = [
         href: 'core-values',
       },
       {
-        id: 'ourCases',
+        id: 'projects',
         href: 'projects',
       },
     ],

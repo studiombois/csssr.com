@@ -1,3 +1,3 @@
-import OurProjectsPage from '../../components/OurCases/OurProjectsPage'
+import ProjectsPage from '../../components/projects/ProjectsPage'
 
-export default OurProjectsPage
+export default ProjectsPage

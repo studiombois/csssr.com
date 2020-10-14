@@ -1,4 +1,4 @@
-const heroImages = require.context('../../../public/images/projects/flant/hero?csssr-images')
+const heroImages = require.context('../../../public/images/project/flant/hero?csssr-images')
 export default {
   images: heroImages,
   heading: (t) => t.project.flant.hero.title,

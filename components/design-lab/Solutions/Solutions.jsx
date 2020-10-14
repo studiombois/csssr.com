@@ -31,7 +31,7 @@ const Solutions = ({ className, l10n: { translations } }) => {
               target: '_blank',
               rel: 'nofollow noopener',
             })}
-            data-testid={`ourCases:block.solutionLink.${blockClass}`}
+            data-testid={`designLab:block.solutionLink.${blockClass}`}
           >
             <div className={`image-wrapper image-wrapper_${blockClass}`}>
               <PictureSmart
@@ -47,7 +47,7 @@ const Solutions = ({ className, l10n: { translations } }) => {
               size="l"
               dangerouslySetInnerHTML={{ __html: heading(translations) }}
               className="solution-heading"
-              data-testid={`ourCases:text.heading.${blockClass}`}
+              data-testid={`designLab:text.heading.${blockClass}`}
             />
 
             <Text

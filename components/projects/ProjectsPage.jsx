@@ -5,10 +5,12 @@ import Head from '../Head'
 import Hero from './Hero'
 import DevCases from './DevCases'
 import Solutions from './Solutions'
+import DesignCases from './DesignCases/DesignCases'
 import Idea from '../Idea'
 
 import heroContent from '../../data/projects/hero'
 import casesContent from '../../data/projects/devCases'
+import designCasesContent from '../../data/our-cases/designCases'
 
 const ProjectsPage = ({ l10n: { language, translations } }) => {
   const pageName = 'projects'
@@ -21,6 +23,7 @@ const ProjectsPage = ({ l10n: { language, translations } }) => {
 
       <Hero content={heroContent} />
       <DevCases content={casesContent} />
+      {language !== 'ru' && <DesignCases content={designCasesContent} />}
       {language !== 'ru' && <Solutions />}
       <Idea pageName={pageName} />
     </Layout>

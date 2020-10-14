@@ -35,7 +35,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.l} {
     & {
-      padding-bottom: 169px;
+      min-height: 592px;
     }
 
     &.hero-wrap {
@@ -55,7 +55,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.m} {
     & {
-      padding-bottom: 170px;
+      min-height: 592px;
     }
 
     &.hero-wrap {
@@ -75,7 +75,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${desktop.s} {
     & {
-      padding-bottom: 188px;
+      min-height: 512px;
     }
 
     &.hero-wrap {
@@ -95,8 +95,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
 
   ${tablet.all} {
     & {
-      padding-bottom: ${calcRem(90)};
-      margin-bottom: ${calcRem(-57)};
+      min-height: ${calcRem(440)}
     }
 
     &.hero-wrap {
@@ -128,7 +127,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-column: 1 / span 6;
       font-size: ${calcRem(32)};
       line-height: ${calcRem(48)};
-      margin-top: ${calcRem(305)};
+      margin-top: ${calcRem(304)};
 
       & > span {
         line-height: ${calcRem(40)};

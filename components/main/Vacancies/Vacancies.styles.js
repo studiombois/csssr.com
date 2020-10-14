@@ -10,7 +10,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .title {
-    margin-top: 188px;
     color: ${colors.secondary.darken100};
     z-index: 1;
   }
@@ -29,11 +28,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .picture {
-    margin-top: 249px;
+    margin-top: 222px;
     grid-row-end: span 4;
 
     img {
       height: auto;
+    }
+  }
+
+  ${desktop.all} {
+    & {
+      margin-bottom: 152px;
+    }
+
+    .title {
+      margin-top: 152px;
     }
   }
 
@@ -68,8 +77,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
+    & {
+      margin-bottom: ${calcRem(190)};
+    }
+
     .title {
-      margin-top: ${calcRem(162)};
+      margin-top: ${calcRem(90)};
     }
 
     .list {
@@ -89,6 +102,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${mobile.all} {
+    & {
+      margin-bottom: ${calcRem(104)};
+    }
+
     .title,
     .list,
     .link {
@@ -96,7 +113,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .title{
-      margin-top: ${calcRem(129)};
+      margin-top: ${calcRem(100)};
       order: 1;
     }
 
@@ -112,7 +129,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .picture {
-      margin-top: ${calcRem(57)};
+      margin-top: ${calcRem(41)};
       grid-column: 2 / span 4;
       grid-row-end: auto;
       order: 4;

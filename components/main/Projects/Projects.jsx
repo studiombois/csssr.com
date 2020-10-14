@@ -7,8 +7,9 @@ import styles from './Projects.styles'
 import Heading from '../../ui-kit/core-design/Heading'
 import Grid from '../../ui-kit/core-design/Grid'
 import Post from './Post'
-import Card from '../Card'
+import Card from '../../Card'
 import posts from '../../../data/main/posts'
+import Solutions from '../../projects/Solutions'
 
 import projects from '../../../data/main/projects'
 
@@ -26,7 +27,9 @@ const Projects = ({ className, l10n: { translations, language } }) => {
         size="m"
       />
 
-      {projects.map(({ id, title, description, href, images, imagesHovered }) => {
+      {language === 'en' && <Solutions className="solutions" pageName="Home" />}
+
+      {projects.map(({ id, title, description, href, images, alt, imagesHovered }) => {
         const Player = () => (
           <LazyLoad>
             <div className="player-wrapper">
@@ -40,7 +43,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
           </LazyLoad>
         )
 
-        if (language !== 'ru' && id === 'radio') {
+        if (language === 'en' && (id === 'radio' || id === 'tracker' || id === 'school')) {
           return
         }
 
@@ -48,6 +51,7 @@ const Projects = ({ className, l10n: { translations, language } }) => {
           <Card
             testId={`Projects:${id === 'radio' ? 'block' : 'link'}.${id}`}
             className={cn('card', `card_${id}`)}
+            alt={alt}
             key={id}
             id={id}
             title={title}

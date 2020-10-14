@@ -1,102 +1,84 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import { bool, string } from 'prop-types'
-import { Global } from '@emotion/core'
-import styled from '@emotion/styled'
 import cn from 'classnames'
-import styles, { mobileBackgroundImagesStyles } from './Services.styles'
-
 import NextLink from 'next/link'
-import Figures from './Figures'
-import OurFeatures from './OurFeatures'
+import styled from '@emotion/styled'
+import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
+import { Global, css } from '@emotion/core'
+import styles from './Services.styles'
+
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
 import Grid from '../../ui-kit/core-design/Grid'
 
-import services from '../../../data/main/services'
-
 import { L10nConsumer } from '../../../utils/l10nProvider'
-import { DeviceConsumer } from '../../../utils/deviceProvider'
-import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Services = ({ className, l10n: { translations, language }, isMobile }) => {
-  const [hoveredService, setHoveredService] = useState(null)
+import { servicesByLng } from '../../../data/main/services'
+
+const Services = ({ className, l10n: { translations, language } }) => {
+  const services = servicesByLng[language]
 
   return (
-    <Fragment>
-      <Grid as="article" className={className} data-testid="Home:block.services">
-        <Heading
-          className="title_main"
-          as="h2"
-          dangerouslySetInnerHTML={{ __html: translations.main.services.title }}
-          type="slab"
-          size="m"
-        />
+    <Grid
+      as="article"
+      className={cn(className, {
+        '_has_one-row': services.length <= 3,
+        '_has_two-rows': services.length > 3,
+      })}
+      data-testid="Home:block.services"
+    >
+      <Heading
+        className="title"
+        as="h2"
+        dangerouslySetInnerHTML={{ __html: translations.main.services.title }}
+        type="slab"
+        size="m"
+      />
 
-        <nav className="navigation">
-          <ul>
-            {services.map(({ id, title, subtitle, icon: Icon, iconName, href }) => {
-              const handleHover = (hoveredService) => (event) => {
-                if (isMobile) {
-                  event.preventDefault()
-                  return
-                }
+      <Text
+        className="description"
+        as="p"
+        type="strong"
+        size="m"
+        dangerouslySetInnerHTML={{ __html: translations.main.services.description }}
+      />
 
-                setHoveredService(hoveredService)
-              }
+      <ul className="services">
+        {services.map(({ id, href, images }) => (
+          <Fragment key={id}>
+            <Global
+              styles={css`
+                ${backgroundCssSmart(`.service_${id}`, images.default)}
+              `}
+            />
+            <Global
+              styles={css`
+                ${backgroundCssSmart(`.service_${id}::after`, images.hovered)}
+              `}
+            />
 
-              if (language === 'ru' && id === 'express') {
-                return
-              }
-
-              return (
-                <li
-                  key={id}
-                  className={cn('service', `service_${id}`)}
-                  onMouseOver={handleHover(iconName)}
-                  onMouseLeave={handleHover(null)}
-                  data-testid={`Home:list-item.${id}`}
-                >
-                  <Heading
+            <li className={cn('service', `service_${id}`)} data-testid={`Services:service.${id}`}>
+              <NextLink href={`/${language}/service/${href}`}>
+                <a className="service-link">
+                  <h3
                     className="service-title"
-                    as="h3"
-                    type="slab"
-                    size="l"
-                    data-testid={`Home:list-item:title.${id}`}
-                  >
-                    <NextLink href={`${language}/service/${href}`}>
-                      <a
-                        dangerouslySetInnerHTML={{
-                          __html: title(translations),
-                        }}
-                      />
-                    </NextLink>
-                  </Heading>
-
-                  <Text
-                    className="service-subtitle"
-                    as="p"
-                    type="strong"
-                    size="m"
-                    dangerouslySetInnerHTML={{ __html: subtitle(translations) }}
+                    data-testid={`Services:service.${id}.title`}
+                    dangerouslySetInnerHTML={{ __html: translations.main.services[id].title }}
                   />
 
-                  <Icon
-                    className={cn('service-icon', `service-icon_${iconName}`)}
-                    data-testid={`Home:list-item:icon.${id}`}
+                  <p
+                    className="service-description"
+                    dangerouslySetInnerHTML={{
+                      __html: translations.main.services[id].description,
+                    }}
                   />
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-
-        {!isMobile && <Figures hoveredService={hoveredService} />}
-
-        <Global styles={mobileBackgroundImagesStyles(language)} />
-      </Grid>
-
-      <OurFeatures />
-    </Fragment>
+                </a>
+              </NextLink>
+            </li>
+          </Fragment>
+        ))}
+      </ul>
+    </Grid>
   )
 }
 
@@ -105,10 +87,6 @@ Services.propTypes = {
   isMobile: bool,
 }
 
-export default L10nConsumer(
-  DeviceConsumer(
-    MsBrowserConsumer(styled(Services)`
-      ${styles}
-    `),
-  ),
-)
+export default L10nConsumer(styled(Services)`
+  ${styles}
+`)

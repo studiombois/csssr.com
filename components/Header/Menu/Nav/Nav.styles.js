@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => css`
   & {
     position: absolute;
     top: ${calcRem(64)};
@@ -350,7 +350,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       }
 
       .description {
-        width: calc(100% - ${calcRem(15)});
+        width: calc(100% - ${calcRem(10)});
       }
     }
 
@@ -375,6 +375,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .nav_services {
       .nav-item_active .icon path {
         stroke: #5695ED;
+      }
+    }
+  }
+
+  ${above.mobile} {
+    .nav-item_design {
+      .link {
+        padding-top: ${calcRem(56)};
+      }
+
+      .description {
+        width: ${calcRem(144)};
       }
     }
   }

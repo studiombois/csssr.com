@@ -32,6 +32,7 @@ class Error404Page extends React.Component {
     const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
 
     if (id === 'solutions' && language === 'ru') return
+
     return (
       <span key={id}>
         <h3
@@ -43,7 +44,7 @@ class Error404Page extends React.Component {
         {links && (
           <ul className="menu">
             {links.map(({ id, title, href }) => {
-              if (id === 'express' && language === 'ru') return
+              if (id === 'design' && language === 'ru') return
 
               return (
                 <li key={id}>

@@ -68,7 +68,7 @@ export const nav = [
       },
       {
         id: 'design',
-        href: 'service/design-lab',
+        href: 'service/design',
       },
     ],
   },

@@ -6,16 +6,16 @@ import Hero from './Hero'
 import DesignCases from './DesignCases'
 import DevBlock from './DevBlock'
 
-import heroContent from '../../data/design-lab/hero'
-import designCasesContent from '../../data/design-lab/designCases'
+import heroContent from '../../data/design/hero'
+import designCasesContent from '../../data/design/designCases'
 
-const DesignLabPage = ({ l10n: { translations } }) => {
-  const pageName = 'designLab'
+const DesignPage = ({ l10n: { translations } }) => {
+  const pageName = 'design'
   return (
     <Layout pageName={pageName}>
       <Head
-        title={translations.designLab.meta.title}
-        description={translations.designLab.meta.description}
+        title={translations.design.meta.title}
+        description={translations.design.meta.description}
       />
 
       <Hero content={heroContent} />
@@ -25,4 +25,4 @@ const DesignLabPage = ({ l10n: { translations } }) => {
   )
 }
 
-export default L10nConsumer(DesignLabPage)
+export default L10nConsumer(DesignPage)

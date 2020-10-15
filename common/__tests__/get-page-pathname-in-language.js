@@ -29,7 +29,7 @@ test('test', () => {
     { language: 'en', pathname: 'service/mvp-development' },
     { language: 'en', pathname: 'service/outsourcing-front-end' },
     { language: 'en', pathname: 'service/back-end-and-devops' },
-    { language: 'en', pathname: 'service/design-lab' },
+    { language: 'en', pathname: 'service/design' },
     { language: 'en', pathname: 'industry/ecommerce' },
     { language: 'en', pathname: 'industry/fintech' },
     { language: 'en', pathname: 'industry/information-technology' },

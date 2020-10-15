@@ -21,7 +21,7 @@ export default [
       {
         id: 'design',
         title: (t) => t.common.header.menu.services.design.title,
-        href: 'service/design-lab',
+        href: 'service/design',
       },
     ],
   },

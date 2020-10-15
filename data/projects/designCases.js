@@ -8,17 +8,17 @@ export default {
   cases: [
     {
       images: INGImages,
-      imgAlt: (t) => t.designLab.designCases.ing.imgAlt,
-      heading: (t) => t.designLab.designCases.ing.heading,
-      text: (t) => t.designLab.designCases.ing.text,
-      plug: (t) => t.designLab.designCases.plug,
+      imgAlt: (t) => t.design.designCases.ing.imgAlt,
+      heading: (t) => t.design.designCases.ing.heading,
+      text: (t) => t.design.designCases.ing.text,
+      plug: (t) => t.design.designCases.plug,
     },
     {
       images: NASAImages,
-      imgAlt: (t) => t.designLab.designCases.nasa.imgAlt,
-      heading: (t) => t.designLab.designCases.nasa.heading,
-      text: (t) => t.designLab.designCases.nasa.text,
-      plug: (t) => t.designLab.designCases.plug,
+      imgAlt: (t) => t.design.designCases.nasa.imgAlt,
+      heading: (t) => t.design.designCases.nasa.heading,
+      text: (t) => t.design.designCases.nasa.text,
+      plug: (t) => t.design.designCases.plug,
     },
   ],
 }

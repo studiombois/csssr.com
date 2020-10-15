@@ -45,7 +45,7 @@ export default {
           icon: Triangle,
           title: (t) => t.common.header.menu.services.design.title,
           description: (t) => t.common.header.menu.services.design.description,
-          href: 'service/design-lab',
+          href: 'service/design',
         },
       ],
     },

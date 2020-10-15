@@ -9,7 +9,7 @@ import Heading from '../../ui-kit/core-design/Heading'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
-import DevBlockContent from '../../../data/design-lab/devBlock'
+import DevBlockContent from '../../../data/design/devBlock'
 
 const DevBlock = ({ className, pageName, l10n: { translations } }) => {
   return (

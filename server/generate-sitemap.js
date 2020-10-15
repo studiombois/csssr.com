@@ -107,7 +107,7 @@ const sitemapUrlsSettings = [
     ],
   },
   {
-    url: 'https://csssr.com/en/service/design-lab',
+    url: 'https://csssr.com/en/service/design',
     changefreq: 'weekly',
     priority: 1,
   },

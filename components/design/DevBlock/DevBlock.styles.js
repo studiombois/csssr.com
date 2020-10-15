@@ -27,7 +27,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     & .button::before {
-      background-image: url(${require('../../../static/icons/design-lab/triangle.svg').default});
+      background-image: url(${require('../../../static/icons/design/triangle.svg').default});
     }
 
     @media (hover: hover) and (pointer: fine) {

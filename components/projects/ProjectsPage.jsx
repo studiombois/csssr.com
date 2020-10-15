@@ -5,12 +5,12 @@ import Head from '../Head'
 import Hero from './Hero'
 import DevCases from './DevCases'
 import Solutions from './Solutions'
+import DesignCases from './DesignCases'
 import Idea from '../Idea'
 
 import heroContent from '../../data/projects/hero'
 import casesContent from '../../data/projects/devCases'
 import designCasesContent from '../../data/projects/designCases'
-import DesignCases from './DesignCases'
 
 const ProjectsPage = ({ l10n: { language, translations } }) => {
   const pageName = 'projects'

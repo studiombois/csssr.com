@@ -1,5 +1,5 @@
-const INGImages = require.context('../../public/images/design-projects/ing?csssr-images')
-const NASAImages = require.context('../../public/images/design-projects/nasa?csssr-images')
+const INGImages = require.context('../../public/images/projects/design-cases/ing?csssr-images')
+const NASAImages = require.context('../../public/images/projects/design-cases/nasa?csssr-images')
 
 export default {
   heading: (t) => t.projects.designCases.heading,

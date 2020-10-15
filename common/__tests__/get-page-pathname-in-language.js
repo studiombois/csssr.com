@@ -8,7 +8,7 @@ test('test', () => {
     { language: 'en', pathname: 'privacy-policy' },
     { language: 'en', pathname: 'tech-stack' },
     { language: 'en', pathname: 'projects' },
-    // { language: 'ru', pathname: 'projects' },
+    { language: 'ru', pathname: 'projects' },
     { language: 'en', pathname: 'way-of-work' },
     { language: 'ru', pathname: 'core-values' },
     { language: 'ru', pathname: 'index' },

@@ -118,7 +118,9 @@ class Error404Page extends React.Component {
             dangerouslySetInnerHTML={{ __html: translations.error.errors.notFound.title }}
           />
 
-          <PictureSmart className="picture" requireImages={error404} />
+          <div className="picture-container">
+            <PictureSmart className="picture" requireImages={error404} />
+          </div>
 
           <div className={'code-wrapper'}>
             <NotFound width="auto" height="100%" />

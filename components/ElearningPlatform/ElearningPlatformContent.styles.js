@@ -29,10 +29,22 @@ const base = css`
         grid-column: 8 / span 4;
     }
 
-    .greeting-image {
+
+    .picture-container {
+        position: relative;
+        height: 0;
         grid-column: 3 / span 9;
-        display: block;
         margin-top: 10px;
+        overflow: hidden;
+        padding-top: calc(1266 / 3084 * 100%);
+    }
+
+    .greeting-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     .greeting-image img {
@@ -351,6 +363,10 @@ const base = css`
     }
 
     @media screen and (max-width: 1492px) {
+        .picture-container {
+            padding-top: calc(1266 / 3084 * 100%);
+        }
+
         .team-image-wrapper {
             background-position: 0 calc(100% - 21px);
         }
@@ -389,8 +405,9 @@ const base = css`
             grid-column: 9 / span 4;
         }
 
-        .greeting-image {
+        .picture-container {
             grid-column: 2 / span 9;
+            padding-top: calc(1266 / 3084 * 100%);
         }
 
         .greeting-description {
@@ -537,8 +554,9 @@ const base = css`
             grid-column: 9 / span 4;
         }
 
-        .greeting-image {
+        .picture-container {
             grid-column: 2 / span 9;
+            padding-top: calc(1266 / 3084 * 100%);
         }
 
         .greeting-description {
@@ -691,6 +709,10 @@ const base = css`
            margin-top: ${calcRem(80)};
         }
 
+        .picture-container {
+            padding-top: calc(419 / 1020 * 100%);
+        }
+
         .team-image-wrapper {
             background-position: 0 calc(100% - 19px);
             background-size: 100% 2px;
@@ -717,15 +739,15 @@ const base = css`
             grid-column: 1 / span 6;
         }
 
-        .greeting-image {
+        .picture-container {
             margin-top: 40px;
-            display: block;
             grid-column: 1 / span 6;
+            padding-top: calc(419 / 1020 * 100%);
         }
 
         .greeting-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
         }
 
         .greeting-description {

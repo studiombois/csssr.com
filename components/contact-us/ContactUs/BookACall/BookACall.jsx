@@ -23,12 +23,14 @@ const BookACall = ({ className, l10n: { translations, language }, testId }) => {
   return (
     <Fade right={true} duration={200} distance="40px" key={profileId + canBookACall}>
       <figure className={className}>
-        <PictureSmart
-          className="manager-avatar"
-          requireImages={profiles[profileId].images}
-          alt={translations.contactUs.bookACall.profiles[profileId].alt}
-          testid="contactUs:picture:bookACall.avatar"
-        />
+        <div className="picture-container">
+          <PictureSmart
+            className="manager-avatar"
+            requireImages={profiles[profileId].images}
+            alt={translations.contactUs.bookACall.profiles[profileId].alt}
+            testid="contactUs:picture:bookACall.avatar"
+          />
+        </div>
 
         <figcaption className="manager">
           <div className="manager-name" data-testid="contactUs:text:bookACall:name">

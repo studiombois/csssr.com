@@ -85,7 +85,9 @@ class ErrorPage extends React.Component {
             }}
           />
 
-          <PictureSmart className="picture" requireImages={images[statusCode]} alt={statusCode} />
+          <div className="picture-container">
+            <PictureSmart className="picture" requireImages={images[statusCode]} alt={statusCode} />
+          </div>
 
           <div className={'code-wrapper'}>{codeIconByStatusCode[statusCode]}</div>
 

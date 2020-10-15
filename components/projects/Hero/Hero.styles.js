@@ -19,14 +19,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(40)};
   }
 
-  .logos {
+  .picture-wrapper {
+    position: relative;
+    height: 0;
     grid-row: 1 / span 3;
     grid-column: 7 / span 5;
+    overflow: hidden;
+  }
+
+  .logos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   ${desktop.l} {
-    .logos {
-      height: 414px;
+    .picture-wrapper {
+      padding-top: calc(1242 / 2184 * 100%);
     }
   }
 
@@ -39,10 +50,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 2 / span 5;
     }
 
-    .logos {
+    .picture-wrapper {
       grid-column: 8 / span 4;
       width: ${calcRem(433)};
-      height: 312px;
+      padding-top: calc(936 / 1299 * ${calcRem(433)});
     }
   }
 
@@ -59,10 +70,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 2 / span 5;
     }
 
-    .logos {
+    .picture-wrapper {
       grid-column: 8 / span 4;
       width: ${calcRem(400)};
-      height: 288px;
+      padding-top: calc(864 / 1200 * ${calcRem(400)});
     }
   }
 
@@ -81,10 +92,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: ${calcRem(32)};
     }
 
-    .logos {
+    .picture-wrapper {
       grid-column: 7 / span 6;
       width: ${calcRem(464)};
-      height: ${calcRem(288)};
+      padding-top: calc(864 / 1392 * ${calcRem(464)});
     }
   }
 
@@ -101,12 +112,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: ${calcRem(32)};
     }
 
-    .logos {
+    .picture-wrapper {
       margin-top: ${calcRem(32)};
       grid-row: 3;
       grid-column: 1 / span 6;
       width: 100%;
-      height: ${calcRem(203)};
+      padding-top: calc(609 / 984 * 100%);
     }
   }
 `

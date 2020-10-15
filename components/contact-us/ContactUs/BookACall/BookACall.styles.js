@@ -7,9 +7,19 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     display: flex;
   }
 
-  .manager-avatar {
+  .picture-container {
+    position: relative;
     width: ${calcRem(106)};
-    height: ${calcRem(88)};
+    overflow: hidden;
+    padding-top: calc(264 / 318 * ${calcRem(106)});
+  }
+
+  .manager-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .manager-name {
@@ -144,7 +154,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       margin-right: ${calcRem(16)};
     }
 
-    .manager-avatar {
+    .picture-container {
       margin-left: ${calcRem(9)};
       margin-bottom: ${calcRem(32)};
     }

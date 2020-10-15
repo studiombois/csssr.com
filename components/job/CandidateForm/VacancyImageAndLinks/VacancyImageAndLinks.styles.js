@@ -46,6 +46,16 @@ const base = css`
     letter-spacing: normal;
   }
 
+  .picture-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 25rem;
+    padding-top: 100%;
+  }
+
   @media (min-width: 1360px) and (max-width: 1919px) {
     ul {
       width: 13rem;
@@ -88,6 +98,14 @@ const base = css`
     .faq-text {
       display: none;
     }
+
+    .picture-container {
+      z-index: 2;
+      margin-left: -1rem;
+      width: calc(100% + 2rem);
+      text-align: center;
+      padding-top: 15.5rem;
+    }
   }
 `
 
@@ -100,30 +118,11 @@ const ie11Styles = css`
 
 const vacancyImageStyles = css`
   & {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    max-width: 25rem;
-  }
-
-  img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-  }
-
-  @media (max-width: 767px) {
-    & {
-      position: relative;
-      z-index: 2;
-      margin-left: -1rem;
-      width: calc(100% + 2rem);
-      height: 15.5rem;
-      text-align: center;
-    }
-
-    img {
-      height: 100%;
-      width: auto;
-    }
+    height: 100%;
   }
 `
 
@@ -204,7 +203,7 @@ const faqImageStyles = css`
     }
   }
 `
-//todo эти стили используются в нескольких компонентах, 
+//todo эти стили используются в нескольких компонентах,
 //думаю стоит вынести такие компоненты в отдельные директории
 export {
   vacancyImageStyles,

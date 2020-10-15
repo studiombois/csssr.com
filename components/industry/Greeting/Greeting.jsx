@@ -40,7 +40,9 @@ const Greeting = ({
         className="text"
       />
 
-      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+      <div className="picture-container">
+        <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+      </div>
 
       <ContactButton
         className="button"

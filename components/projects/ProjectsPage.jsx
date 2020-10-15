@@ -5,7 +5,7 @@ import Head from '../Head'
 import Hero from './Hero'
 import DevCases from './DevCases'
 import Solutions from './Solutions'
-import DesignCases from './DesignCases/DesignCases'
+import DesignCases from './DesignCases'
 import Idea from '../Idea'
 
 import heroContent from '../../data/projects/hero'

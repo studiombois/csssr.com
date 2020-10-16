@@ -7,6 +7,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(162)};
   }
 
+  .visually-hidden {
+    visibility: hidden
+  }
+
   .heading {
     grid-row: 1;
     grid-column: 2 / span 4;

@@ -17,6 +17,10 @@ const Hero = ({
 }) => {
   return (
     <Grid className={className} as="section">
+      <h1
+        className="visually-hidden"
+        dangerouslySetInnerHTML={{ __html: translations.design.meta.title }}
+      />
       <Heading.H2
         type="slab"
         size="m"

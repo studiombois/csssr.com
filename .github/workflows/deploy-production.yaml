@@ -30,7 +30,7 @@ jobs:
           path: csssr-com
         env:
           NPM_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
-          isProduction: "true"
+          isProduction: "TRUE"
           csssrSpaceOrigin: "https://csssr.space"
           comHost: https://csssr.com
 

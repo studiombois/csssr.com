@@ -27,24 +27,29 @@ export default class MyDocument extends Document {
     const gtmId = getGtmId(language)
     const isIe11 = detectIe11(this.props.userAgent)
     const isMsBrowser = detectMsBrowser(this.props.userAgent)
-    const gtmExperimentsData = Object.keys(ab)
-      .map((experimentName) => {
-        const experiment = ab[experimentName]
-        return `${experiment.optimizeExperimentId}.${experiment.index}`
-      })
-      .join('!')
+    const gtmExperimentsData =
+      ab &&
+      Object.keys(ab)
+        .map((experimentName) => {
+          const experiment = ab[experimentName]
+          return `${experiment.optimizeExperimentId}.${experiment.index}`
+        })
+        .join('!')
 
     return (
       <html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
         <Head>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+          {ab && (
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
               var dataLayer = dataLayer || []
               dataLayer.push({ 'gaExperiment': '${gtmExperimentsData}' })
           `,
-            }}
-          />
+              }}
+            />
+          )}
+
           <GtmScript gtmId={gtmId} />
           <Fonts preset="com" />
         </Head>

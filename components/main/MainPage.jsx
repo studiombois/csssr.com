@@ -8,18 +8,9 @@ import OurFeatures from './OurFeatures'
 import AboutUs from './AboutUs'
 import Projects from './Projects'
 import Vacancies from './Vacancies'
+import Cases from './Cases'
 import Head from '../Head'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
-import Cases from './Cases'
-// AB-test
-import AbContext from '../../utils/abContext'
-import { default as HeroV1 } from './ab-test/v1/Hero'
-import { default as HeroV2 } from './ab-test/v2/Hero'
-import { default as HeroV3 } from './ab-test/v3/Hero'
-import { default as HeroV4 } from './ab-test/v4/Hero'
-import { default as HeroV5 } from './ab-test/v5/Hero'
-import { default as HeroV6 } from './ab-test/v6/Hero'
-import abMeta from '../../data/ab-test/main/metaEn'
 
 class MainPage extends PureComponent {
   static async getInitialProps(ctx) {
@@ -53,10 +44,8 @@ class MainPage extends PureComponent {
   }
 
   componentDidMount() {
-    if (this.props.l10n.language === 'en') {
-      this.windowInnerHeight = window.innerHeight
-      window.addEventListener('scroll', this.scrollEventListener, { passive: true })
-    }
+    this.windowInnerHeight = window.innerHeight
+    window.addEventListener('scroll', this.scrollEventListener, { passive: true })
   }
 
   componentWillUnmount() {
@@ -67,51 +56,18 @@ class MainPage extends PureComponent {
   render() {
     const {
       vacancies,
-      l10n: { translations, language },
+      l10n: { translations },
     } = this.props
 
     const pageName = 'main'
     return (
       <Layout pageName={pageName}>
-        {language === 'en' ? (
-          <AbContext.Consumer>
-            {(ab) => {
-              const variant = ab['en-main-page'].name
-              return (
-                <>
-                  <Head
-                    title={
-                      variant === 'base' ? translations.main.meta.title : abMeta[variant].title
-                    }
-                    templateTitle=""
-                    description={
-                      variant === 'base'
-                        ? translations.main.meta.description
-                        : abMeta[variant].description
-                    }
-                  />
-
-                  {variant === 'base' && <Hero />}
-                  {variant === 'v1' && <HeroV1 />}
-                  {variant === 'v2' && <HeroV2 />}
-                  {variant === 'v3' && <HeroV3 />}
-                  {variant === 'v4' && <HeroV4 />}
-                  {variant === 'v5' && <HeroV5 />}
-                  {variant === 'v6' && <HeroV6 />}
-                </>
-              )
-            }}
-          </AbContext.Consumer>
-        ) : (
-          <>
-            <Head
-              title={translations.main.meta.title}
-              templateTitle=""
-              description={translations.main.meta.description}
-            />
-            <Hero />
-          </>
-        )}
+        <Head
+          title={translations.main.meta.title}
+          templateTitle=""
+          description={translations.main.meta.description}
+        />
+        <Hero />
         <Services />
         <Cases />
         <OurFeatures />

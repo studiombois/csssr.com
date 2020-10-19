@@ -2,30 +2,36 @@ import path from 'path'
 import fs from 'fs'
 import util from 'util'
 import { ONE_YEAR } from '../../utils/timePeriods'
+import { isEmpty, isNil } from 'ramda'
 
 const readFile = util.promisify(fs.readFile)
 
 const loadAllAbExperiments = async () => {
   const experimentsDirPath = path.resolve(__dirname, 'experiments')
-  const experimentsFileNames = fs.readdirSync(experimentsDirPath)
-  const experiments = await Promise.all(
-    experimentsFileNames.map(async (fileName) => {
-      const fileContent = await readFile(path.join(experimentsDirPath, fileName))
-      return JSON.parse(fileContent)
-    }),
-  )
-  return experimentsFileNames.reduce((memo, fileName, i) => {
-    const experimentName = path.parse(fileName).name
-    const weightsSum = experiments[i].variants.reduce((memo2, { weight }) => memo2 + weight, 0)
+  if (fs.existsSync(experimentsDirPath)) {
+    const experimentsFileNames = fs
+      .readdirSync(experimentsDirPath)
+      .filter((fileName) => path.extname(fileName) === '.json')
 
-    return {
-      ...memo,
-      [experimentName]: {
-        ...experiments[i],
-        weightsSum,
-      },
-    }
-  }, {})
+    const experiments = await Promise.all(
+      experimentsFileNames.map(async (fileName) => {
+        const fileContent = await readFile(path.join(experimentsDirPath, fileName))
+        return JSON.parse(fileContent)
+      }),
+    )
+    return experimentsFileNames.reduce((memo, fileName, i) => {
+      const experimentName = path.parse(fileName).name
+      const weightsSum = experiments[i].variants.reduce((memo2, { weight }) => memo2 + weight, 0)
+
+      return {
+        ...memo,
+        [experimentName]: {
+          ...experiments[i],
+          weightsSum,
+        },
+      }
+    }, {})
+  }
 }
 
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min
@@ -98,6 +104,10 @@ export default ({ ignorePaths }) => {
     }
 
     const allAbExperiments = await allAbExperimentsPromise
+
+    if (isEmpty(allAbExperiments) || isNil(allAbExperiments)) {
+      return next()
+    }
 
     // Кука может быть битой или отсутствовать
     let userAb

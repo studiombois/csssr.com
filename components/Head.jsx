@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import NextHead from 'next/head'
 import { withRouter } from 'next/router'
-import { node, number, shape, string } from 'prop-types'
+import { number, shape, string } from 'prop-types'
 import unescapeHtmlEntities from '../utils/unescapeHtmlEntities'
-import StructuredData from './StructuredData'
+import getStructuredData from '../utils/getStructuredData'
 import { PagesListConsumer } from '../utils/pagesListProvider'
 import { getPathName, isJobPage } from '../common/get-page-pathname-in-language'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
@@ -121,14 +121,17 @@ const Head = (props) => {
       <meta name="twitter:card" content="summary_large_image" />
       {props.ogImage && (
         <Fragment>
-          <meta name="twitter:image" content={`${origin}${props.ogImage.url}`} />
-          <meta property="og:image" content={`${origin}${props.ogImage.url}`} />
+          <meta name="twitter:image" content={props.ogImage.url} />
+          <meta property="og:image" content={props.ogImage.url} />
           <meta property="og:image:width" content={props.ogImage.width} />
           <meta property="og:image:height" content={props.ogImage.height} />
         </Fragment>
       )}
       <meta property="fb:app_id" content="416195255787519" />
-      {props.structuredData}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: props.structuredData }}
+      />
       {props.children}
     </NextHead>
   )
@@ -143,11 +146,11 @@ Head.propTypes = {
     width: number,
     height: number,
   }),
-  structuredData: node,
+  structuredData: string,
 }
 
 Head.defaultProps = {
-  structuredData: <StructuredData />,
+  structuredData: getStructuredData(),
   templateTitle: ' | CSSSR',
   ogImage: {
     url: getOriginal(ogImages),

@@ -1,0 +1,47 @@
+name: Deploy production
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download CSSSR actions
+        uses: actions/checkout@v2
+        with:
+          repository: CSSSR/actions
+          ssh-key: ${{ secrets.DOWNLOAD_ACTIONS_SSH_KEY }}
+          path: actions
+
+      - uses: actions/checkout@v2
+        with:
+          path: csssr-com
+
+      - uses: docker/build-push-action@v1
+        with:
+          username: csssr-team+github_csssr_com_repo
+          password: ${{ secrets.QUAY_PASSWORD }}
+          registry: quay.csssr.cloud
+          repository: csssr-team/csssr-com
+          tags: build-${{ github.run_id }}
+          build_args: NPM_TOKEN,isProduction,csssrSpaceOrigin,comHost
+          path: csssr-com
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_GITHUB_REGISTRY_TOKEN }}
+          isProduction: "true"
+          csssrSpaceOrigin: "https://csssr.space"
+          comHost: https://csssr.com
+
+      - name: Deploy
+        uses: ./actions/deploy-chart/v1beta1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          project-id: csssr-com
+          namespace: csssr-com-production
+          environment: production
+          chart: csssr/csssr-com@~1.1.0
+          values: |
+            image:
+              tag: build-${{ github.run_id }}

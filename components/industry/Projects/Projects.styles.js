@@ -40,7 +40,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     font-size: inherit;
     line-height: inherit;
     text-decoration: none;
-    white-space: nowrap;
 
     &_active {
       color: currentColor;

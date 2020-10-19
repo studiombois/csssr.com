@@ -12,14 +12,6 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
     &:last-of-type {
       grid-column: 6 / span 6;
     }
-
-    &:hover .image-wrapper::before {
-      opacity: .8;
-    }
-
-    &:hover .plug {
-      opacity: 1;
-    }
   }
 
   .image-wrapper {
@@ -95,6 +87,16 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
       }
     }
 
+    &.is_touched {
+      .image-wrapper::before {
+      opacity: .8;
+    }
+
+      .plug {
+        opacity: 1;
+      }
+    }
+
     .heading {
       margin-top: ${calcRem(20)};
     }
@@ -106,6 +108,16 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
 
     .text {
       margin-top: ${calcRem(10)};
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .image-wrapper::before {
+      opacity: .8;
+    }
+
+    &:hover .plug {
+      opacity: 1;
     }
   }
 `

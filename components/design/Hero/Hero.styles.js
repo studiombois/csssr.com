@@ -8,7 +8,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .visually-hidden {
-    visibility: hidden
+    position: absolute;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    overflow: hidden;
   }
 
   .heading {

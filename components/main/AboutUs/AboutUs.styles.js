@@ -6,8 +6,6 @@ import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss
 const imagesDo = require.context('../../../public/images/main/about-us/do?csssr-images')
 
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
-  margin-top: 265px;
-
   .about-us-title {
     grid-column: 3 / span 4;
     grid-row: 1;
@@ -123,6 +121,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.l} {
+    & {
+      margin-top: 152px;
+    }
+
+
     .picture-wrapper {
       margin-top: 35px;
       margin-left: -55px;
@@ -139,6 +142,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.m} {
+    & {
+      margin-top: 152px;
+    }
+
     .fact-title,
     .fact-description {
       width: 80%;
@@ -146,9 +153,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.s} {
-    margin-top: 188px;
+    margin-top: 154px;
+
+    .about-us-description {
+      margin-top: 14px;
+    }
 
     .picture-wrapper {
+      margin-left: -24px;
       height: 460px;
       background-position: 15px 0;
     }
@@ -168,7 +180,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${tablet.all} {
-    margin-top: ${calcRem(224)};
+    margin-top: ${calcRem(101)};
 
     .about-us-description {
       margin-top: ${calcRem(2)};

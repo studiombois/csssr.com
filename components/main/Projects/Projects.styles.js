@@ -2,11 +2,18 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ breakpoints: { desktop, below, tablet, above, mobile }}) => css`
   .title {
-    margin-top: 188px;
     grid-column: 3 / span 8;
     text-align: center;
+  }
+
+  .solutions {
+    margin-top: 0;
+
+    .heading {
+      display: none;
+    }
   }
 
   .card .description {
@@ -95,12 +102,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   ${desktop.all} {
+    .title {
+      margin-top: 154px;
+    }
+
     .card_blog {
       max-height: 471px;
     }
   }
 
   ${desktop.l} {
+    .solutions {
+      padding-bottom: 28px;
+    }
+
     .card_tracker {
       grid-column: 3 / span 5;
     }
@@ -143,6 +158,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       top: 44px;
       height: calc( 100% - 44px);
     }
+
+    .solutions {
+      padding-bottom: 31px;
+    }
   }
 
   ${desktop.s} {
@@ -163,11 +182,55 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       top: 40px;
       height: calc( 100% - 40px);
     }
+
+    .solutions {
+      padding-bottom: 30px;
+    }
+  }
+
+  ${below.desktop} {
+    .title {
+      margin-top: ${calcRem(100)};
+    }
   }
 
   ${tablet.all} {
-    .title {
-      margin-top: ${calcRem(160)};
+    .solutions {
+      margin-top: ${calcRem(40)};
+      padding-bottom: ${calcRem(38)};
+
+      .solution {
+        margin-top: 0;
+        /* outline: 1px solid red; */
+
+        /* .image-wrapper {
+          margin-top: -10px;
+        } */
+
+        &_lms {
+          grid-column: 2 / span 5;
+
+          .image-wrapper {
+            margin-left: ${calcRem(-75)};
+          }
+        }
+
+        &_time-tracker {
+          grid-column: 8 / span 4;
+
+          .image-wrapper {
+            margin-left: ${calcRem(-50)};
+          }
+        }
+
+        .image {
+          height: ${calcRem(144)};
+
+          img {
+            object-fit: contain;
+          }
+        }
+      }
     }
 
     .card .description {
@@ -217,15 +280,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 
+  ${above.mobile} {
+    .solutions {
+      grid-column: 1 / span 12;
+    }
+  }
+
   ${mobile.all} {
     .title,
     .card,
-    .posts {
+    .posts,
+    .solutions {
       grid-column: 1 / span 6;
     }
 
     .title {
       margin-top: ${calcRem(104)};
+      text-align: left;
+    }
+
+    .solutions {
+      padding-bottom: ${calcRem(36)};
     }
 
     .card {

@@ -67,6 +67,13 @@
       "duration": "2 months"
     }
   },
+  "designCases": {
+    "heading": "Design cases",
+    "button": {
+      "title": "ALL design cases",
+      "href": "/en/service/design"
+    }
+  },
   "solutions": {
     "heading": "Our solutions",
     "lms": {

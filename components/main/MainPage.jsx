@@ -4,12 +4,12 @@ import * as Sentry from '@sentry/node'
 import Layout from '../Layout'
 import Hero from './Hero'
 import Services from './Services'
-import Industries from './Industries'
+import OurFeatures from './OurFeatures'
 import AboutUs from './AboutUs'
 import Projects from './Projects'
 import Vacancies from './Vacancies'
+import Cases from './Cases'
 import Head from '../Head'
-import Form from '../ContactFormWrapper'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 
 class MainPage extends PureComponent {
@@ -69,11 +69,11 @@ class MainPage extends PureComponent {
         />
         <Hero />
         <Services />
-        <Industries />
+        <Cases />
+        <OurFeatures />
         <AboutUs />
         <Projects />
         <Vacancies vacancies={vacancies} />
-        <Form pageName={pageName} />
       </Layout>
     )
   }

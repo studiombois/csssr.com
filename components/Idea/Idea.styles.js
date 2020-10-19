@@ -17,7 +17,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .button-wrapper {
     position: absolute;
-    top: 0;
+    bottom: 50%;
     z-index: 2;
     margin-right: -17rem;
     left: calc(100% + ${calcRem(60)});
@@ -52,15 +52,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
   }
 
-  @keyframes buttonPosition {
-    0% {
-      transform: translateY(${calcRem(-30)});
-    }
-    100% {
-      transform: translateY(${calcRem(-16)});
-    }
-  }
-
   ${desktop.all} {
     & {
       margin-top: 179px;
@@ -83,15 +74,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       right: calc(100% - ${calcRem(12)});
       width: ${calcRem(48)};
       background-position: 0, 0;
-    }
-
-    @keyframes buttonPosition {
-      0% {
-        transform: translateY(${calcRem(-33)});
-      }
-      100% {
-        transform: translateY(${calcRem(-26)});
-      }
     }
   }
 
@@ -124,17 +106,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .button::before {
       display: none;
     }
+  }
 
-    @keyframes buttonPosition {
-      0% {
-        transform: translateY(${calcRem(-6)});
-      }
-      100% {
-        transform: translateY(0);
-      }
+  @keyframes buttonPosition {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20%);
     }
   }
 `
+
 
 export default props => {
   const breakpoints = props.theme.breakpoints

@@ -19,9 +19,10 @@ const Projects = ({
   router,
   content: { heading, projectsItems },
   l10n: { translations, language },
+  pageName = 'Industry',
 }) => (
   <>
-    <section className={className} id={id} data-testid="Industry:block:projects">
+    <section className={className} id={id} data-testid={`${pageName}:block.cases`}>
       <Grid>
         <Heading.H2
           type="slab"
@@ -66,11 +67,11 @@ const Projects = ({
                   'text-link_active':
                     router.pathname === `/${language}/industry/information-technology`,
                 })}
-                href="information-technology"
+                href={`/${language}/industry/information-technology`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[1] }}
-                data-testid="Industry:link.inforamationTechnology"
+                data-testid={`${pageName}:block.cases.link.inforamationTechnology`}
               />
               ,{' '}
               <Link
@@ -78,33 +79,33 @@ const Projects = ({
                   'text-link_active':
                     router.pathname === `/${language}/industry/media-and-marketing`,
                 })}
-                href="media-and-marketing"
+                href={`/${language}/industry/media-and-marketing`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[2] }}
-                data-testid="Industry:link.mediaAndMarketing"
+                data-testid={`${pageName}:block.cases.link.mediaAndMarketing`}
               />
               ,{' '}
               <Link
                 className={cn('text-link', {
                   'text-link_active': router.pathname === `/${language}/industry/fintech`,
                 })}
-                href="fintech"
+                href={`/${language}/industry/fintech`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[3] }}
-                data-testid="Industry:link.fintech"
+                data-testid={`${pageName}:block.cases.link.fintech`}
               />
               ,{' '}
               <Link
                 className={cn('text-link', {
                   'text-link_active': router.pathname === `/${language}/industry/ecommerce`,
                 })}
-                href="ecommerce"
+                href={`/${language}/industry/ecommerce`}
                 type="list"
                 size="m"
                 dangerouslySetInnerHTML={{ __html: translations.industry.projects.description[4] }}
-                data-testid="Industry:link.ecommerce"
+                data-testid="Industry:block.cases.link.ecommerce"
               />
               {translations.industry.projects.description[5]}
             </SubHeading>
@@ -114,7 +115,8 @@ const Projects = ({
               kind="primary"
               size="s"
               dangerouslySetInnerHTML={{ __html: translations.industry.projects.link }}
-              data-testid="Industry:link.projects"
+              data-testid={`${pageName}:block.link.projects`}
+
             />
           </div>
         </Grid>

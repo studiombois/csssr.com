@@ -121,7 +121,7 @@
     },
     "informationTechnologyPage": {
       "gazprom": {
-        "heading": "Платформа для реализации бизнес-проектов",
+        "heading": "Платформа для реализации <span style=\"white-space:nowrap\">бизнес-проектов</span>",
         "team": "9 специалистов",
         "duration": "13 месяцев"
       },

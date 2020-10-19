@@ -8,7 +8,7 @@ test('test', () => {
     { language: 'en', pathname: 'privacy-policy' },
     { language: 'en', pathname: 'tech-stack' },
     { language: 'en', pathname: 'projects' },
-    // { language: 'ru', pathname: 'projects' },
+    { language: 'ru', pathname: 'projects' },
     { language: 'en', pathname: 'way-of-work' },
     { language: 'ru', pathname: 'core-values' },
     { language: 'ru', pathname: 'index' },
@@ -26,10 +26,10 @@ test('test', () => {
     { language: 'en', pathname: 'jobs' },
     { language: 'en', pathname: 'job' },
     { language: 'en', pathname: 'jobs' },
-    { language: 'en', pathname: 'service/express-front-end' },
     { language: 'en', pathname: 'service/mvp-development' },
     { language: 'en', pathname: 'service/outsourcing-front-end' },
     { language: 'en', pathname: 'service/back-end-and-devops' },
+    { language: 'en', pathname: 'service/design' },
     { language: 'en', pathname: 'industry/ecommerce' },
     { language: 'en', pathname: 'industry/fintech' },
     { language: 'en', pathname: 'industry/information-technology' },
@@ -55,7 +55,6 @@ test('test', () => {
   expect(getPagePathnameInLanguage('/ru', 'en', pagesList)).toEqual('/en')
   expect(getPagePathnameInLanguage('/ru/jobs-faq', 'en', pagesList)).toEqual('/en/jobs')
   expect(getPagePathnameInLanguage('/ru-ru/job', 'en', pagesList)).toEqual('/en/jobs')
-  expect(getPagePathnameInLanguage('/en/service/express-front-end', 'ru', pagesList)).toEqual('/ru')
   expect(getPagePathnameInLanguage('/en/cookies-policy', 'ru', pagesList)).toEqual('/ru')
   expect(getPagePathnameInLanguage('/en/privacy-policy', 'ru', pagesList)).toEqual(
     '/ru/privacy-policy',

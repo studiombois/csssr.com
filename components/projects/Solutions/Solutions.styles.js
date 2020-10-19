@@ -15,49 +15,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   .solution {
     margin-top: ${calcRem(56)};
 
-    &:hover .solution-heading {
-      color: ${colors.primary.origin};
-    }
-
     &_lms {
       grid-column: 2 / span 5;
-
-      &:hover .image {
-        opacity: 0;
-      }
     }
 
     &_time-tracker {
       grid-column: 8 / span 4;
-
-      &:hover .image {
-        opacity: 0;
-      }
-    }
-  }
-
-  .image-wrapper {
-    background-repeat: no-repeat;
-
-    &_lms {
-      background-image: url('/images/projects/solutions/lms_hover/desktop.l.png');
-      background-size: 728px 226px;
-    }
-
-    &_time-tracker {
-      background-image: url('/images/projects/solutions/time-tracker_hover/desktop.l.png');
-      background-size: 576px 226px;
     }
   }
 
   .solution-link {
     text-decoration: none;
-
-    &:hover {
-      &::after {
-        display: none;
-      }
-    }
   }
 
   .solution-heading {
@@ -71,11 +39,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     line-height: ${calcRem(30)};
   }
 
+  ${desktop.l} {
+    .image-wrapper {
+      background-repeat: no-repeat;
+
+      &_lms {
+        background-image: url('/images/projects/solutions/lms_hover/desktop.l.png');
+        background-size: 728px 226px;
+      }
+
+      &_time-tracker {
+        background-image: url('/images/projects/solutions/time-tracker_hover/desktop.l.png');
+        background-size: 576px 226px;
+      }
+    }
+  }
+
   ${desktop.m} {
     .solution-heading {
       max-width: 430px;
     }
-    
+
     .image-wrapper {
       &_lms {
         background-image: url('/images/projects/solutions/lms_hover/desktop.m.png');
@@ -115,10 +99,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .solution {
       margin-top: ${calcRem(32)};
 
-      &:hover .image {
-        opacity: 1;
-      }
-
       &_lms {
         grid-column: 1 / span 6;
       }
@@ -151,10 +131,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     .solution {
       margin-top: ${calcRem(32)};
 
-      &:hover .image {
-        opacity: 1;
-      }
-
       &_lms {
         grid-column: 1 / span 6;
       }
@@ -173,7 +149,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(16)};
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
-    }  
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .solution:hover .solution-heading {
+      color: ${colors.primary.origin};
+    }
+    .solution-link:hover::after {
+      display: none;
+    }
+
+    ${desktop.all} {
+      .solution_lms:hover .image,
+      .solution_time-tracker:hover .image {
+        opacity: 0;
+      }
+    }
   }
 `
 

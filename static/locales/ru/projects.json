@@ -12,7 +12,7 @@
     "heading": "Коммерческая разработка",
     "gazprom": {
       "imgAlt": "Газпром",
-      "heading": "Газпром. Платформа для реализации бизнес-проектов",
+      "heading": "Газпром. Платформа для реализации <span style=\"white-space:nowrap\">бизнес-проектов</span>",
       "text": "Главная цель проекта&nbsp;&mdash; соединять крупных заказчиков с&nbsp;талантливыми исполнителями. CSSSR разрабатывала весь фронтенд, включая личные кабинеты исполнителя и&nbsp;компании, а&nbsp;также страницу проектов.",
       "tag": "IT",
       "team": "9 специалистов",
@@ -65,6 +65,24 @@
       "tag": "E-commerce",
       "team": "4 специалиста",
       "duration": "2 месяца"
+    }
+  },
+  "designCases": {
+    "heading": "Design cases",
+    "button": {
+      "title": "ALL design cases",
+      "href": "#"
+    },
+    "plug": "Case is in development",
+    "ING": {
+      "imgAlt": "ING",
+      "heading": "ING. Portal for small &amp;&nbsp;medium businesses.",
+      "text": "Helping to&nbsp;invent a&nbsp;new business direction for the biggest Dutch bank."
+    },
+    "NASA": {
+      "imgAlt": "NASA",
+      "heading": "NASA: a&nbsp;new way to&nbsp;manage space in&nbsp;space",
+      "text": "A&nbsp;spaceship storage and cargo management tool designed to&nbsp;make the launch preparation more efficient"
     }
   },
   "solutions": {

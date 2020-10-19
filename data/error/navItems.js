@@ -9,9 +9,9 @@ export default [
         href: 'service/outsourcing-front-end',
       },
       {
-        id: 'express',
-        title: (t) => t.common.header.menu.services.express.title,
-        href: 'service/express-front-end',
+        id: 'backend',
+        title: (t) => t.common.header.menu.services.backend.title,
+        href: 'service/back-end-and-devops',
       },
       {
         id: 'mvp',
@@ -19,9 +19,9 @@ export default [
         href: 'service/mvp-development',
       },
       {
-        id: 'backend',
-        title: (t) => t.common.header.menu.services.backend.title,
-        href: 'service/back-end-and-devops',
+        id: 'design',
+        title: (t) => t.common.header.menu.services.design.title,
+        href: 'service/design',
       },
     ],
   },

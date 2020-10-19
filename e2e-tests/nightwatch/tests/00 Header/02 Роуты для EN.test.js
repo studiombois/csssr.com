@@ -24,29 +24,6 @@ testcase('Переход на страницу Outsourcing Front-end из хед
   })
 })
 
-testcase('Переход на страницу Express Front-end из хеддера', () => {
-  step('Перешли на главную страницу', () => {
-    browser.url(browser.launch_url + '/en')
-  })
-
-  step('Навели курсор на SERVICES в хеддере', () => {
-    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
-  })
-
-  step('В дропдауне выбрали Express Front-end', () => {
-    browser
-      .waitForElementVisible('[data-testid="Header:nav:link.express"]')
-      .click('[data-testid="Header:nav:link.express"]')
-  })
-
-  expected('Открылась страница Express Front-end', () => {
-    browser
-      .waitForElementPresent('[id="main"]')
-      .assert.urlEquals(
-        browser.launch_url + '/en/service/express-front-end'
-      )
-  })
-})
 
 testcase('Переход на страницу MVP Development из хеддера', () => {
   step('Перешли на главную страницу', () => {
@@ -67,30 +44,6 @@ testcase('Переход на страницу MVP Development из хеддер
     browser
       .waitForElementPresent('[id="main"]')
       .assert.urlEquals(browser.launch_url + '/en/service/mvp-development')
-  })
-})
-
-testcase('Переход на страницу Express Back-end & DevOps из хеддера', () => {
-  step('Перешли на главную страницу', () => {
-    browser.url(browser.launch_url + '/en')
-  })
-
-  step('Навели курсор на SERVICES в хеддере', () => {
-    browser.moveToElement('[data-testid="Header:nav:button.services"]', 0, 0)
-  })
-
-  step('В дропдауне выбрали Back-end & DevOps', () => {
-    browser
-      .waitForElementVisible('[data-testid="Header:nav:link.backend"]')
-      .click('[data-testid="Header:nav:link.backend"]')
-  })
-
-  expected('Открылась страница Back-end & DevOps', () => {
-    browser
-      .waitForElementPresent('[id="main"]')
-      .assert.urlEquals(
-        browser.launch_url + '/en/service/back-end-and-devops'
-      )
   })
 })
 

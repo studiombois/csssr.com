@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser')
 const next = require('next')
 const { pick } = require('ramda')
 const submitForm = require('./submit-form')
-const submitCalculatorForm = require('./submit-calculator-form')
 const sendEmail = require('./send-email')
 const generateSitemap = require('./generate-sitemap').generateSitemap
 const { isDevelopment, isProduction } = require('../utils/app-environment')
@@ -96,16 +95,10 @@ const startApp = async () => {
   )
 
   server.post('/api/submit-form', submitForm)
-  server.post('/api/submit-calculator-form', submitCalculatorForm)
   server.post('/api/send-email', sendEmail)
 
   server.get('/', (req, res) => {
     res.redirect(`/${res.locals.l10n.language}`)
-  })
-
-  server.get('/en/service/express-front-end', (req, res, nextHandler) => {
-    res.setHeader('Content-Language', 'en-SG')
-    nextHandler()
   })
 
   if (!isDevelopment) {

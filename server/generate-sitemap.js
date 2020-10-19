@@ -108,6 +108,11 @@ const sitemapUrlsSettings = [
     ],
   },
   {
+    url: 'https://csssr.com/en/service/design',
+    changefreq: 'weekly',
+    priority: 1,
+  },
+  {
     url: 'https://csssr.com/ru/industry/ecommerce',
     changefreq: 'weekly',
     priority: 1,

@@ -59,7 +59,8 @@
     "react-reveal": "^1.2.2",
     "react-transition-group": "^4.4.1",
     "scroll-lock": "^2.1.4",
-    "sitemap": "6.3.2"
+    "sitemap": "6.3.2",
+    "stream": "^0.0.2"
   },
   "devDependencies": {
     "@csssr/eslint-config-core": "^1.1.0",

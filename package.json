@@ -5,10 +5,13 @@
   },
   "scripts": {
     "dev": "nodemon --exec node -r esm ./server/index.js",
-    "build": "next build",
+    "build": "yarn compress-modal-static-files && next build",
     "start": "cross-env NODE_ENV=production node -r esm ./server/index.js",
     "lint:js": "eslint --ext .js,.jsx --fix --max-warnings=0 .",
     "check-sitemap": "node -r esm ./server/check-sitemap.js",
+    "compress-modal-static-files": "yarn compress-modal-css && yarn compress-modal-js",
+    "compress-modal-css": "cleancss -o public/modal/modal.min.css public/modal/modal.css",
+    "compress-modal-js": "terser public/modal/modal.js -c -o public/modal/modal.min.js",
     "test": "cross-env NODE_ENV=development jest --watch",
     "test-ci": "cross-env NODE_ENV=development jest"
   },
@@ -27,6 +30,7 @@
     "babel-plugin-ramda": "^2.0.0",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
+    "clean-css-cli": "^4.3.0",
     "color": "^3.1.2",
     "compression-webpack-plugin": "^6.0.2",
     "cookie-parser": "^1.4.5",
@@ -60,7 +64,8 @@
     "react-transition-group": "^4.4.1",
     "scroll-lock": "^2.1.4",
     "sitemap": "6.3.2",
-    "stream": "^0.0.2"
+    "stream": "^0.0.2",
+    "terser": "^5.3.7"
   },
   "devDependencies": {
     "@csssr/eslint-config-core": "^1.1.0",

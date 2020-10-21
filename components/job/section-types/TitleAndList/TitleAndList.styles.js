@@ -17,6 +17,7 @@ const base = css`
   @media (min-width: 768px) and (max-width: 1279px) {
     & + ul.have-square-bullets li:before {
       top: 0.25rem;
+      left: 0.125rem;
     }
   }
 
@@ -39,6 +40,10 @@ const base = css`
 
     & + ul li:not(:first-of-type) {
       margin-top: 0.5rem;
+    }
+
+    & + ul.have-square-bullets li:before {
+      left: 0.125rem;
     }
   }
 `

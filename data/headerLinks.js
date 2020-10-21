@@ -12,6 +12,7 @@ import { ReactComponent as CPU } from '../static/icons/header/cpu.svg'
 import { ReactComponent as Repeat } from '../static/icons/header/repeat.svg'
 import { ReactComponent as LMS } from '../static/icons/header/lms.svg'
 import { ReactComponent as Tracker } from '../static/icons/header/tracker.svg'
+import { ReactComponent as OurProjects } from '../static/icons/header/our-projects.svg'
 
 export default {
   menu: [
@@ -54,10 +55,10 @@ export default {
       title: (t) => t.common.header.menu.industries.title,
       links: [
         {
-          id: 'fintech',
-          icon: PieChart,
-          title: (t) => t.common.header.menu.industries.fintech.title,
-          href: 'industry/fintech',
+          id: 'mediaAndMarketing',
+          icon: Message,
+          title: (t) => t.common.header.menu.industries.mediaAndMarketing.title,
+          href: 'industry/media-and-marketing',
         },
         {
           id: 'eCommerce',
@@ -72,10 +73,17 @@ export default {
           href: 'industry/information-technology',
         },
         {
-          id: 'mediaAndMarketing',
-          icon: Message,
-          title: (t) => t.common.header.menu.industries.mediaAndMarketing.title,
-          href: 'industry/media-and-marketing',
+          id: 'fintech',
+          icon: PieChart,
+          title: (t) => t.common.header.menu.industries.fintech.title,
+          href: 'industry/fintech',
+        },
+        {
+          id: 'ourProjects',
+          icon: OurProjects,
+          title: (t) => t.common.header.menu.industries.ourProjects.title,
+          description: (t) => t.common.header.menu.industries.ourProjects.description,
+          href: 'projects',
         },
       ],
     },

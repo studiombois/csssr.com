@@ -66,10 +66,10 @@ export const nav = [
         id: 'mvp',
         href: 'service/mvp-development',
       },
-      {
-        id: 'design',
-        href: 'service/design',
-      },
+      // {
+      //   id: 'design',
+      //   href: 'service/design',
+      // },
     ],
   },
   {

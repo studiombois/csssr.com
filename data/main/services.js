@@ -15,10 +15,10 @@ const mvpImagesHovered = require.context(
   '../../public/images/main/services/mvp-hovered?csssr-images',
 )
 
-const designImages = require.context('../../public/images/main/services/design?csssr-images')
-const designImagesHovered = require.context(
-  '../../public/images/main/services/design-hovered?csssr-images',
-)
+// const designImages = require.context('../../public/images/main/services/design?csssr-images')
+// const designImagesHovered = require.context(
+//   '../../public/images/main/services/design-hovered?csssr-images',
+// )
 
 const services = [
   {
@@ -45,14 +45,14 @@ const services = [
       hovered: mvpImagesHovered,
     },
   },
-  {
-    id: 'design',
-    href: 'design',
-    images: {
-      default: designImages,
-      hovered: designImagesHovered,
-    },
-  },
+  // {
+  //   id: 'design',
+  //   href: 'design',
+  //   images: {
+  //     default: designImages,
+  //     hovered: designImagesHovered,
+  //   },
+  // },
 ]
 
 export const servicesByLng = {

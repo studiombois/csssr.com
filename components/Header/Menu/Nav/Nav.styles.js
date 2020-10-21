@@ -69,7 +69,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     }
   }
 
-  .nav_services_ru {
+  .nav_services {
     .nav-item {
       width: 33%;
     }
@@ -139,7 +139,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     }
   }
 
-  .nav_services_ru,
+  .nav_services,
   .nav_howWeWork,
   .nav_solutions {
     .icon {
@@ -151,7 +151,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     }
   }
 
-  .nav_services_en {
+  /* .nav_services_en {
     .nav-item {
       width: 23.125%;
       margin-left: ${calcRem(19)};
@@ -165,7 +165,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     .icon {
       top: ${calcRem(60)};
     }
-  }
+  } */
 
   .link {
     position: relative;
@@ -304,11 +304,11 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
   }
 
   ${desktop.l} {
-    .nav_services_en {
+    /* .nav_services_en {
       .nav-item {
         margin-left: ${calcRem(24)};
       }
-    }
+    } */
   }
 
   ${tablet.all} {
@@ -335,7 +335,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       }
     }
 
-    .nav_services_en {
+    /* .nav_services_en {
       .nav-item {
         width: 21.875%;
         margin-left: ${calcRem(16)};
@@ -352,9 +352,9 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       .description {
         width: calc(100% - ${calcRem(10)});
       }
-    }
+    } */
 
-    .nav_services_ru {
+    .nav_services {
       .link {
         padding-top: ${calcRem(64)};
         padding-left: ${calcRem(89)};

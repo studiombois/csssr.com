@@ -30,7 +30,7 @@
   "greeting": {
     "ecommerce": {
       "title": "Custom E-Commerce <br/>Development Services",
-      "paragraph": "CSSSR is ready to transform your design layouts into well performing websites to boost your sales. In the constantly growing and highly competitive e-commerce industry every page, every metric, and every customer opinion matters.",
+      "paragraph": "CSSSR is ready to transform your design layouts into well performing websites to boost your sales. In the constantly growing and highly competitive <span style='white-space:nowrap'>e-commerce</span> industry every page, every metric, and every customer opinion matters.",
       "button": "Hire us",
       "imgAlt": "Illustration with two figures of people, a man conveys something to a girl"
     },

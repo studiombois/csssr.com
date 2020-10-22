@@ -16,7 +16,7 @@
   },
   "autotests": {
     "title": "Automated Testing",
-    "text": "To&nbsp;make our code work consistently throughout the whole development process, to&nbsp;deploy new features faster and to&nbsp;simplify refactoring, we&nbsp;write various auto-tests: unit, integration, end-to-end."
+    "text": "To&nbsp;make our code work consistently throughout the whole development process, to&nbsp;deploy new features faster and to&nbsp;simplify refactoring, we&nbsp;write various auto-tests: unit, integration, <span style='white-space:nowrap'>end-to-end</span>."
   },
   "backend": {
     "node": "Server-side JavaScript runtime environment. We&nbsp;use it&nbsp;to&nbsp;write proxying back-end, or&nbsp;to&nbsp;implement simple services. ",

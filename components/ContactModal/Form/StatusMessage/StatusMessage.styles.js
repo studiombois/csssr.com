@@ -65,6 +65,17 @@ const base = css`
     }
   }
 
+  @media (min-width: 1280px) {
+    img {
+      margin-top: 176px;
+    }
+
+    .status_text {
+      margin-top: 40px;
+      margin-bottom: 48px;
+    }
+  }
+
   @media (max-width: 767px) {
     img {
       margin-top: 10.5rem;

@@ -106,7 +106,9 @@ const Nav = ({
                             as="p"
                             type="regular"
                             size="m"
-                            dangerouslySetInnerHTML={{ __html: description(translations) }}
+                            dangerouslySetInnerHTML={{
+                              __html: description(translations),
+                            }}
                           />
                         )}
                       </Link>

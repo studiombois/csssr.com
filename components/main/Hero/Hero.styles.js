@@ -273,7 +273,7 @@ export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
   const language = props.l10n.language
-  console.log('xxx', language)
+
   return css`
     ${base[language]({ breakpoints, colors })}
   `

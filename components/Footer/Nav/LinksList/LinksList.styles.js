@@ -13,4 +13,11 @@ export default () => css`
   .link {
     line-height: ${calcRem(16)} !important;
   }
+
+  @media (hover: hover) and (pointer: fine) {
+    & .link:hover::after,
+    & .link:focus::after {
+      display: none;
+    }
+  }
 `

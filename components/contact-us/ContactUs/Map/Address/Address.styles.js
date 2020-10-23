@@ -1,22 +1,23 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
+const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   & {
-    background-color: #ffffff;
+    position: fixed;
     z-index: 2;
-    color: #18191B;
     width: ${calcRem(328)};
-    height: ${calcRem(194)};
-    transition: width 100ms ease-in-out;
     padding-top: ${calcRem(46)};
-    padding-right: ${calcRem(26)};
+    padding-right: ${calcRem(10)};
     padding-bottom: ${calcRem(48)};
     padding-left: ${calcRem(28)};
+    transition: width 100ms ease-in-out;
+    background-color: #ffffff;
+    color: ${colors.secondary.darkeen100};
   }
 
   .addresses {
     display: flex;
+    justify-content: space-between;
   }
 
   .address {
@@ -27,6 +28,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
     letter-spacing: ${calcRem(0.75)};
     text-transform: uppercase;
     width: ${calcRem(167)};
+  }
+
+  .address + .address {
+    width: ${calcRem(172)};
   }
 
   .text {
@@ -44,6 +49,18 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
     left: ${calcRem(14)};
     width: ${calcRem(49)};
     height: ${calcRem(62)};
+  }
+
+  &._ru {
+    width: ${calcRem(392)};
+
+    .address {
+      width: ${calcRem(156)};
+    }
+
+    .address + .address {
+      width: ${calcRem(182)};
+    }
   }
 
   ${desktop.all} {
@@ -77,21 +94,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
     }
   }
 
-  ${above.mobile} {
-    & {
-      position: fixed;
-    }
-
-    &._ru {
-      width: ${calcRem(392)};
-    }
-
-    .address + .address {
-      width: ${calcRem(172)};
-      margin-left: ${calcRem(15)};
-    }
-  }
-
   ${mobile.all} {
     & {
       position: absolute;
@@ -99,11 +101,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
       bottom: auto;
       left: ${calcRem(16)};
       right: ${calcRem(16)};
-      padding-top: ${calcRem(46)};
-    }
-
-    &._ru {
-      height: ${calcRem(262)};
     }
 
     .addresses {
@@ -115,8 +112,13 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }}) => css`
     }
 
     .address + .address {
-      margin-left: 0;
       margin-top: ${calcRem(20)};
+    }
+
+    &._ru {
+      .address {
+        width: ${calcRem(186)};
+      }
     }
   }
 `

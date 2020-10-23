@@ -66,7 +66,7 @@
     },
     "blog": {
       "title": "Блог CSSSR",
-      "description": "Делимся мыслями о&nbsp;веб-разработке, бизнес-процессах и&nbsp;культуре удалённой работы.",
+      "description": "Делимся мыслями о&nbsp;<span style='white-space:nowrap'>веб-разработке</span>, <span style='white-space:nowrap'>бизнес-процессах</span> и&nbsp;культуре удалённой работы.",
       "post1": {
         "title": "Кодекс тестировщика",
         "link": "Подробнее"

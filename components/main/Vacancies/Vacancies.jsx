@@ -31,13 +31,13 @@ const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => 
     />
 
     <ul className="list">
-      {vacancies.map((vacancy) => {
+      {vacancies.map((vacancy, index) => {
         if (!vacancy.isHot) {
           return
         }
 
         return (
-          <li key={vacancy.id} className="vacancy" data-testid={`Home:vacancy.${vacancy.pathName}`}>
+          <li key={vacancy.id} className="vacancy" data-testid={`Home:vacancy.item${index + 1}`}>
             <Link
               href={{ pathname: `/${locale}/job`, query: { jobPathName: vacancy.pathName } }}
               as={`/${locale}/jobs/${vacancy.pathName}`}

@@ -1,5 +1,5 @@
-const { contInfo } = require('../actions/contInfo')
 const { modalContInfo } = require('../actions/modalContInfo')
+const { bubbleContInfo } = require('../actions/bubbleContInfo')
 
 // Отправка заявок с русской локали
 
@@ -23,7 +23,7 @@ testcase('Sending request from the form at the end of the page of RU-locales - S
     browser.url(browser.launch_url + '/ru/project/s7-personal-account')
   })
 
-  contInfo('ru')
+ bubbleContInfo('ru')
 })
 
 // Отправка заявок с английской страницы
@@ -48,5 +48,5 @@ testcase('Sending request from the form at the end of the page of EN-locales - S
     browser.url(browser.launch_url + '/en/project/s7-personal-account')
   })
 
-  contInfo('en')
+  bubbleContInfo('en')
 })

@@ -26,7 +26,7 @@ testcase('Sending request from the form at the end of the page of RU-locales - S
  bubbleContInfo('ru')
 })
 
-// Отправка заявок с английской страницы
+// Отправка заявок с английской  страницы
 
 testcase('Send request from header modal form of EN-locales - S7 Airline', () => {
   step('Go to the Fintech industry page', () => {

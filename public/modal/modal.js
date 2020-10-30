@@ -50,7 +50,7 @@
 
   const styles = document.createElement('link')
   styles.rel = 'stylesheet'
-  styles.href = '/modal/modal.css'
+  styles.href = '/modal/modal.min.css'
 
   const close = document.createElement('button')
   close.type = 'button'

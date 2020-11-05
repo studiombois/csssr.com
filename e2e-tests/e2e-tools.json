@@ -7,9 +7,15 @@
           "type": "webdriver",
           "desiredCapabilities": {
             "browserName": "chrome",
-            "goog:chromeOptions": { "args": ["--window-size=1200,800"] }
+            "goog:chromeOptions": {
+              "args": [
+                "--window-size=1200,800"
+              ]
+            }
           },
-          "globals": { "skipScreenshotAssertions": true }
+          "globals": {
+            "skipScreenshotAssertions": true
+          }
         },
         "remote_chrome": {
           "remote": true,
@@ -32,12 +38,14 @@
               ]
             }
           },
-          "globals": { "skipScreenshotAssertions": false }
+          "globals": {
+            "skipScreenshotAssertions": false
+          }
         }
       }
     }
   },
   "projectName": "csssr.com",
   "repositorySshAddress": "git@github.com:csssr-dreamteam/csssr.com.git",
-  "defaultLaunchUrl": "http://test.csssr.com/"
+  "defaultLaunchUrl": "https://csssr.com/"
 }

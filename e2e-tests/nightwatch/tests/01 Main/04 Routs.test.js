@@ -30,6 +30,7 @@ testcase('Rout to the «Фронтенд аутсорс» page', () => {
 
 
 testcase('Rout to the «Бэкенд и DevOps» page', () => {
+
   step('Go to the Main page', () => {
     browser
       .setWindowSize(1920, 1080)

@@ -5,9 +5,10 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
   & {
     position: fixed;
     z-index: 2;
-    width: ${calcRem(328)};
+    min-width: ${calcRem(328)};
+    max-width: ${calcRem(392)};
     padding-top: ${calcRem(46)};
-    padding-right: ${calcRem(10)};
+    padding-right: ${calcRem(5)};
     padding-bottom: ${calcRem(48)};
     padding-left: ${calcRem(28)};
     transition: width 100ms ease-in-out;
@@ -22,25 +23,25 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
 
   .address {
     flex-shrink: 0;
+    width: ${calcRem(172)};
     font-family: Roboto, sans-serif;
     font-size: ${calcRem(10)};
     line-height: ${calcRem(16)};
     letter-spacing: ${calcRem(0.75)};
     text-transform: uppercase;
-    width: ${calcRem(167)};
   }
 
   .address + .address {
-    width: ${calcRem(172)};
+    margin-left: ${calcRem(15)};
   }
 
   .text {
+    width: ${calcRem(236)};
+    margin-top: ${calcRem(20)};
     font-family: Roboto, sans-serif;
     font-weight: 300;
     font-size: ${calcRem(12)};
     line-height: ${calcRem(16)};
-    margin-top: ${calcRem(20)};
-    width: ${calcRem(208)};
   }
 
   .pin {
@@ -49,18 +50,6 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
     left: ${calcRem(14)};
     width: ${calcRem(49)};
     height: ${calcRem(62)};
-  }
-
-  &._ru {
-    width: ${calcRem(392)};
-
-    .address {
-      width: ${calcRem(156)};
-    }
-
-    .address + .address {
-      width: ${calcRem(182)};
-    }
   }
 
   ${desktop.all} {
@@ -107,18 +96,9 @@ const base = ({ breakpoints: { tablet, mobile, desktop }, colors }) => css`
       flex-direction: column;
     }
 
-    .address {
-      width: ${calcRem(167)};
-    }
-
     .address + .address {
       margin-top: ${calcRem(20)};
-    }
-
-    &._ru {
-      .address {
-        width: ${calcRem(186)};
-      }
+      margin-left: 0;
     }
   }
 `

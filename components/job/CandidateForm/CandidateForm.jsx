@@ -217,7 +217,7 @@ class CandidateForm extends PureComponent {
 
         <FormRow rightSideContent={this.renderVacancyImageAndLinks()}>
           <h1
-            className={cn({
+            className={cn('title', {
               'font_h1-regular': true,
               'extra-margin': !pictureName,
             })}

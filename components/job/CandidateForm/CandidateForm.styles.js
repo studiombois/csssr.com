@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import AnimatedButton from '../../ui-kit/core-design/AnimatedButton'
 import Text from '../../ui-kit/core-design/Text'
+import calcRem from '../../../utils/style/calcRem'
 
 const base = css`
   & {
@@ -20,6 +21,11 @@ const base = css`
   h1 + span {
     margin-top: 0.875rem;
     display: block;
+  }
+
+  .title {
+    font-size: ${calcRem(40)};
+    line-height: ${calcRem(56)};
   }
 
   span.font_subhead-regular + p {
@@ -45,13 +51,25 @@ const base = css`
     color: white;
   }
 
+  @media (max-width: 1279px) {
+    .font_p16-regular {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+      padding-bottom: 0;
+    }
+
+    .font_link-list_16_desktop_14_mobile {
+      font-size: ${calcRem(14)};
+    }
+  }
+
   @media (max-width: 767px) {
     & {
       margin-top: 3.5rem;
     }
 
     h1 {
-      margin-top: 2.125rem;
+      margin-top: ${calcRem(22)};
     }
 
     h1 + span {

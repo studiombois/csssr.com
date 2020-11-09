@@ -23,7 +23,6 @@ const base = css`
   @media (max-width: 767px) {
     & {
       margin-top: 2.4375rem;
-      font-size: 1rem;
     }
 
     & + ul {

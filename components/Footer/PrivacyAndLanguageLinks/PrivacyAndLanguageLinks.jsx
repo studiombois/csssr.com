@@ -41,7 +41,7 @@ const PrivacyAndLanguageLinks = ({
         <Link
           className="link"
           href={`/${language}/privacy-policy`}
-          isNextLink
+          external
           data-testid="Footer:link.privacy-policy"
         >
           <Text
@@ -56,7 +56,7 @@ const PrivacyAndLanguageLinks = ({
           <Link
             className="link policy-link"
             href={`/${language}/cookies-policy`}
-            isNextLink
+            external
             data-testid="Footer:link.cookies-policy"
           >
             <Text

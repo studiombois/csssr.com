@@ -64,16 +64,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   .pic-wrapper {
     position: relative;
+    z-index: 1;
+    height: 0;
     grid-column: 8 / span 5;
     grid-row: 1 / 5;
     max-width: ${calcRem(728)};
-  }
-
-  .image {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
 
     &:before {
       content: '';
@@ -84,6 +79,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       background-position: center;
       background-size: contain;
     }
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   ${desktop.all} {
@@ -105,15 +108,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       grid-row: 4;
       max-width: ${calcRem(728)};
       margin-top: ${calcRem(-221)};
-    }
-
-    .pic-wrapper_mindbox {
-      margin-top: ${calcRem(-77)};
-    }
-
-    .image {
-      width: auto;
-      height: auto;
+      padding-top: calc(1752 / 2184 * 100%);
 
       &:before {
         top: ${calcRem(-78)};
@@ -121,6 +116,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
         width: ${calcRem(298)};
         height: ${calcRem(799)};
       }
+    }
+
+    .pic-wrapper_mindbox {
+      margin-top: ${calcRem(-77)};
     }
   }
 
@@ -142,18 +141,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .pic-wrapper {
-      grid-column: 8 / span 5;
-      grid-row: 2 / span 3;
       z-index: -1;
-      width: ${calcRem(560)};
-      margin-top: ${calcRem(72)};
-    }
-
-    .image {
-      position: absolute;
-      height: auto;
       top: 0;
       left: calc((100vw - 83rem) / 2 - 16px);
+      grid-column: 8 / span 5;
+      grid-row: 2 / span 3;
+      width: ${calcRem(560)};
+      margin-top: ${calcRem(72)};
+      padding-top: ${calcRem(560)};
 
       &:before {
         top: ${calcRem(-68)};
@@ -178,17 +173,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .pic-wrapper {
-      grid-row: 2 / span 3;
       z-index: -1;
-      width: ${calcRem(528)};
-      margin-top: ${calcRem(89)};
-    }
-
-    .image {
-      position: absolute;
-      height: auto;
       top: 0;
       left: calc((100vw - 77rem) / 2 - 24px);
+      grid-row: 2 / span 3;
+      width: ${calcRem(528)};
+      margin-top: ${calcRem(89)};
+      padding-top: calc(1680 / 1584 * ${calcRem(528)});
 
       &:before {
         top: ${calcRem(-68)};
@@ -233,18 +224,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .pic-wrapper {
-      grid-row: 2 / span 3;
-      display: flex;
       z-index: -1;
-      margin-top: ${calcRem(-4)};
-      width: ${calcRem(424)};
-    }
-
-    .image {
-      position: absolute;
-      height: auto;
       top: 0;
       left: calc((100vw - 59rem) / 2 - 2.5rem);
+      grid-row: 2 / span 3;
+      display: flex;
+      width: ${calcRem(424)};
+      margin-top: ${calcRem(-4)};
+      padding-top: calc(1224 / 1272 * ${calcRem(424)});
 
       &:before {
         top: ${calcRem(-36)};
@@ -299,9 +286,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       grid-row: 5;
       grid-column: 1 / span 6;
       margin-top: ${calcRem(89)};
-    }
+      padding-top: calc(792 / 984 * 100%);
 
-    .image {
       &:before {
         top: ${calcRem(-43)};
         left: ${calcRem(16)};
@@ -317,7 +303,7 @@ export const backgroundImagesStyles = className =>
 //  без replace (.css-57ijkk e52q0fl0) не отработает
 //  с replace (.css-57ijkk.e52q0fl0)
    css`
-    ${backgroundCssSmart(`.${className.replace(' ', '.')} .image::before`, heroBgImages)}
+    ${backgroundCssSmart(`.${className.replace(' ', '.')} .pic-wrapper::before`, heroBgImages)}
   `
 
 

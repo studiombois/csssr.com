@@ -4,16 +4,18 @@ import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss
 export default {
   base: props => css`
     display: block;
-    height: 7.5rem;
+    height: 0;
     width: 100%;
     margin-top: 4rem;
+    padding-top: 7.5rem;
     background-repeat: repeat !important;
     background-size: 60rem !important;
+    overflow: hidden;
 
     ${props.theme.breakpoints.mobile.all} {
-      height: 6.25rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
+      padding-top: 6.25rem;
       background-size: 50rem !important;
     }
   `,

@@ -7,8 +7,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     position: relative;
   }
 
+  .picture-container {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+  }
+
   .picture {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   ${desktop.all} {
@@ -39,10 +49,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 2;
     }
 
-    .picture {
+    .picture-container {
       top: 224px;
       right: 152px;
       width: 728px;
+      padding-top: calc(1776 / 2184 * 728px);
     }
   }
 
@@ -59,10 +70,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 3;
     }
 
-    .picture {
+    .picture-container {
       top: 232px;
       right: 0;
       width: 788px;
+      padding-top: calc(1776 / 2184 * 788px);
     }
   }
 
@@ -79,10 +91,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 3;
     }
 
-    .picture {
+    .picture-container {
       top: 278px;
       right: -6px;
       width: 724px;
+      padding-top: calc(1776 / 2184 * 724px);
     }
   }
 
@@ -109,10 +122,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 4;
     }
 
-    .picture {
+    .picture-container {
       top: ${calcRem(184)};
       right: 0;
       width: ${calcRem(544)};
+      padding-top: calc(1776 / 2184 * ${calcRem(544)});
     }
   }
 
@@ -140,11 +154,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 1 / span 6;
     }
 
-    .picture {
+    .picture-container {
       top: ${calcRem(26)};
       right: ${calcRem(-6)};
       width: ${calcRem(126)};
       z-index: 1;
+      padding-top: calc(591 / 360 * ${calcRem(126)});
     }
   }
 `

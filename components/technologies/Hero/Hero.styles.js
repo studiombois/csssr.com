@@ -23,9 +23,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
     text-align: center;
   }
 
-  .picture_javascript {
+  .picture-container {
+    position: relative;
+    height: 0;
     grid-column: 2 / span 2;
     grid-row: 3;
+    overflow: hidden;
+}
+
+  .picture_javascript {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .javascript {
@@ -80,9 +91,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-template-rows: max-content max-content 466px max-content max-content;
     }
 
-    .picture_javascript {
+    .picture-container {
       margin-top: 146px;
-      height: 320px;
+      padding-top: 320px;
     }
 
     .picture_typescript {
@@ -103,9 +114,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-template-rows: max-content max-content 402px max-content max-content;
     }
 
-    .picture_javascript {
+    .picture-container {
       margin-top: 156px;
-      height: 248px;
+      padding-top: 248px;
     }
 
     .picture_typescript {
@@ -125,9 +136,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       grid-template-rows: max-content max-content 402px max-content max-content;
     }
 
-    .picture_javascript {
+    .picture-container {
       margin-top: 178px;
-      height: 224px;
+      padding-top: 224px;
     }
 
     .picture_typescript {
@@ -155,9 +166,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       margin-top: ${calcRem(35)};
     }
 
-    .picture_javascript {
+    .picture-container {
       margin-top: ${calcRem(110)};
-      height: ${calcRem(168)};
+      padding-top: ${calcRem(168)};
     }
 
     .javascript {
@@ -209,11 +220,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
       text-align: left;
     }
 
-    .picture_javascript {
+    .picture-container {
       margin-top: ${calcRem(105)};
       grid-column: 1 / span 3;
       width: ${calcRem(144)};
       grid-row: 3;
+      padding-top: calc(504 / 432 * ${calcRem(144)});
     }
 
     .javascript {

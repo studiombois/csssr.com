@@ -31,12 +31,14 @@ const Hero = ({
         className="text"
       />
 
-      <PictureSmart
-        className="logos"
-        requireImages={images}
-        alt={imgAlt(translations)}
-        testid="contactUs:picture:bookACall.avatar"
-      />
+      <div className="picture-wrapper">
+        <PictureSmart
+          className="logos"
+          requireImages={images}
+          alt={imgAlt(translations)}
+          testid="contactUs:picture:bookACall.avatar"
+        />
+      </div>
     </Grid>
   )
 }

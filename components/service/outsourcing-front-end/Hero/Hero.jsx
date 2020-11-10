@@ -40,11 +40,13 @@ const Hero = ({ className, pageName, l10n: { translations } }) => (
       testId="Outsourcing:button:contactUs.hero"
     />
 
-    <PictureSmart
-      className="picture"
-      requireImages={heroImages}
-      alt={translations.outsourcingFrontEnd.imgAlt.hero}
-    />
+    <div className="picture-container">
+      <PictureSmart
+        className="picture"
+        requireImages={heroImages}
+        alt={translations.outsourcingFrontEnd.imgAlt.hero}
+      />
+    </div>
   </Grid>
 )
 

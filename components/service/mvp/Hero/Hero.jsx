@@ -39,11 +39,13 @@ const Hero = ({ className, pageName, l10n: { translations } }) => (
         testId="MVP:button:contactUs"
       />
 
-      <PictureSmart
-        className="picture"
-        requireImages={heroIsmages}
-        alt={translations.mvp.imgAlt.hero}
-      />
+      <div className="picture-container">
+        <PictureSmart
+          className="picture"
+          requireImages={heroIsmages}
+          alt={translations.mvp.imgAlt.hero}
+        />
+      </div>
     </Grid>
   </article>
 )

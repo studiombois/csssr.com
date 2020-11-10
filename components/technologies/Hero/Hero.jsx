@@ -34,11 +34,13 @@ const Hero = ({ className, l10n: { translations } }) => (
         dangerouslySetInnerHTML={{ __html: translations.technologies.hero.description }}
       />
 
-      <PictureSmart
-        className={cn('picture', 'picture_javascript')}
-        requireImages={javascriptImages}
-        alt={translations.technologies.imgAlt.javascript}
-      />
+      <div className="picture-container">
+        <PictureSmart
+          className={cn('picture', 'picture_javascript')}
+          requireImages={javascriptImages}
+          alt={translations.technologies.imgAlt.javascript}
+        />
+      </div>
 
       <Text
         className="javascript"

@@ -71,7 +71,7 @@ export default class MyDocument extends Document {
 
                 if (!isValidBrowser) {
                   var modalScript = document.createElement('script')
-                  modalScript.src = '/modal/modal.js'
+                  modalScript.src = '/modal/modal.min.js'
                   document.body.appendChild(modalScript)
                 }
               })`,

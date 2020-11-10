@@ -20,12 +20,14 @@ const VacancyImageAndLinks = ({
   return (
     <div className={className}>
       {pictureName && (
-        <PictureSmart
-          // customResolutions={['360']}
-          requireImages={images[pictureName]}
-          alt={translations.job.imgsAlt[pathName] || name}
-          css={vacancyImageStyles}
-        />
+        <div className="picture-container">
+          <PictureSmart
+            // customResolutions={['360']}
+            requireImages={images[pictureName]}
+            alt={translations.job.imgsAlt[pathName] || name}
+            css={vacancyImageStyles}
+          />
+        </div>
       )}
 
       <ul>

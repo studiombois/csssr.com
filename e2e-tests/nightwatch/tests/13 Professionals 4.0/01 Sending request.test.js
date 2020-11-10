@@ -1,5 +1,5 @@
-const { contInfo } = require('../actions/contInfo')
 const { modalContInfo } = require('../actions/modalContInfo')
+const { bubbleContInfo } = require('../actions/bubbleContInfo')
 
 // Отправка заявок с русской локали
 
@@ -22,7 +22,7 @@ testcase('Sending request from the form at the end of the page of RU-locales - P
     browser.url(browser.launch_url + '/ru/project/gazprom-neft-professionals-4-0')
   })
 
-  contInfo('ru')
+  bubbleContInfo('ru')
 })
 
 // Отправка заявок с английской локали
@@ -46,5 +46,5 @@ testcase('Sending request from the form at the end of the page of EN-locales - P
     browser.url(browser.launch_url + '/en/project/gazprom-neft-professionals-4-0')
   })
 
-  contInfo('en')
+  bubbleContInfo('en')
 })

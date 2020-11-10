@@ -208,6 +208,10 @@ const base = () => css`
     grid-column: 4 / span 6;
     color: #18191b;
 
+    & > a:hover::after {
+        display: none;
+      }
+
     @media (min-width: 768px) and (max-width: 1279px) {
       grid-column: 4 / span 6;
       font-size: inherit;

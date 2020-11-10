@@ -44,7 +44,7 @@ const base = ({ breakpoints: { mobile, above }, colors}) => css`
   }
 `
 
-const modal = () => css`
+const modal = ({ breakpoints: { mobile }, colors}) => css`
   .calendly-inline-widget,
   .calendly-inline-widget *,
   .calendly-badge-widget,
@@ -99,21 +99,6 @@ const modal = () => css`
     height: calc(100% - 4rem);
   }
 
-  @media (max-width: 975px) {
-    .calendly-overlay .calendly-popup {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      -webkit-transform: none;
-      transform: none;
-      width: 100%;
-      height: auto;
-      min-width: 0;
-      max-height: none
-    }
-  }
-
   .calendly-overlay .calendly-popup .calendly-popup-content {
     height: 100%
   }
@@ -121,23 +106,13 @@ const modal = () => css`
   .calendly-overlay .calendly-popup-close {
     position: absolute;
     top: ${calcRem(80)};
-    right: 25px;
-    color: #fff;
-    width: 19px;
+    right: ${calcRem(34)};
     height: 19px;
-    cursor: pointer;
+    width: 19px;
     background-image: url(${require('../../../../../static/icons/cross.svg').default});
     background-repeat: no-repeat;
-    color: white;
-    background-size: contain
-  }
-
-  @media (max-width: 1024px) {
-    .calendly-overlay .calendly-popup-close {
-      top: ${calcRem(80)};
-      right: ${calcRem(34)};
-      background-image: url(${require('../../../../../static/icons/close.svg').default});
-    }
+    background-size: contain;
+    cursor: pointer;
   }
 
   .calendly-badge-widget {
@@ -206,10 +181,20 @@ const modal = () => css`
     animation-delay: -0.16s
   }
 
-  @media (max-width:768px)  {
+  ${mobile.all}  {
     .calendly-overlay .calendly-popup {
+      position: fixed;
       top: ${calcRem(56)};
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      min-width: 0;
+      max-height: none;
       background-color: white;
+      -webkit-transform: none;
+      transform: none;
     }
 
     .calendly-spinner {
@@ -219,10 +204,10 @@ const modal = () => css`
     .calendly-overlay .calendly-popup-close {
       top: ${calcRem(16)};
       right: ${calcRem(32)};
-      height: ${calcRem(24)};
       width: ${calcRem(24)};
+      height: ${calcRem(24)};
       background-image: url(${require('../../../../../static/icons/header/close.svg').default});
-      background-color: #18191B;
+      background-color: ${colors.secondary.darken100};
     }
   }
 

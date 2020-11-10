@@ -1,5 +1,5 @@
-const { contInfo } = require('../actions/contInfo')
 const { modalContInfo } = require('../actions/modalContInfo')
+const { bubbleContInfo } = require('../actions/bubbleContInfo')
 
 // Отправка заявок с русской локали
 
@@ -23,10 +23,10 @@ testcase('Sending request from the form at the end of the page of RU-locales - S
     browser.url(browser.launch_url + '/ru/project/s7-personal-account')
   })
 
-  contInfo('ru')
+ bubbleContInfo('ru')
 })
 
-// Отправка заявок с английской страницы
+// Отправка заявок с английской  страницы
 
 testcase('Send request from header modal form of EN-locales - S7 Airline', () => {
   step('Go to the Fintech industry page', () => {
@@ -48,5 +48,5 @@ testcase('Sending request from the form at the end of the page of EN-locales - S
     browser.url(browser.launch_url + '/en/project/s7-personal-account')
   })
 
-  contInfo('en')
+  bubbleContInfo('en')
 })

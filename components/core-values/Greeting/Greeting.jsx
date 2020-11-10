@@ -23,7 +23,9 @@ const Greeting = ({ className, id, l10n: { translations } }) => (
       />
     </Grid>
 
-    <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+    <div className="picture-container">
+      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+    </div>
   </section>
 )
 

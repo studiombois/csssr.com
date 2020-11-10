@@ -2,14 +2,21 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
-const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
-  .image {
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+  .picture-container {
+    position: relative;
+    height: 0;
     grid-column: 2 / span 4;
     grid-row: 1 / span 3;
+    overflow: hidden;
   }
 
-  .image img {
-    height: auto;
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .heading {
@@ -26,7 +33,29 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     color: ${colors.secondary.darken100};
   }
 
+  ${desktop.l} {
+    .picture-container {
+      padding-top: calc(1320 / 1728 * 100%);
+    }
+  }
+
+  ${desktop.m} {
+    .picture-container {
+      padding-top: calc(1008 / 1296 * 100%);
+    }
+  }
+
+  ${desktop.s} {
+    .picture-container {
+      padding-top: calc(912 / 1200 * 100%);
+    }
+  }
+
   ${tablet.all} {
+    .picture-container {
+      padding-top: calc(696 / 912 * 100%);
+    }
+
     .sub-heading {
       margin-top: ${calcRem(18)};
     }
@@ -37,30 +66,15 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   ${mobile.all} {
-    .image,
+    .picture-container {
+      grid-row: 1;
+      grid-column: 1 / span 6;
+      padding-top: calc(744 / 984 * 100%);
+    }
+
     .heading,
     .sub-heading {
       grid-column: 1 / span 6;
-    }
-
-    .image {
-      grid-row: 1;
-    }
-
-    &.reliability .image {
-      height: ${calcRem(244)};
-    }
-
-    &.accessibility .image {
-      height: ${calcRem(246)};
-    }
-
-    &.ux .image {
-      height: ${calcRem(248)};
-    }
-
-    &.security .image {
-      height: ${calcRem(248)};
     }
 
     .heading {

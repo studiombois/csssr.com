@@ -270,37 +270,48 @@ const ie11Styles = css`
 `
 
 const pictureStyles = css`
-  .picture {
+  .picture-container {
+    position: relative;
+    z-index: -1;
+    height: 0;
     grid-column: 2 / span 7;
     grid-row: 2 / span 10;
     margin-top: 1.5rem;
-    z-index: -1;
-    height: 51.5rem;
+    overflow: hidden;
+    padding-top: 51.5rem;
+  }
+
+  .picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
-    .picture {
-      height: 38.5rem;
+    .picture-container {
+      padding-top: 38.5rem;
     }
   }
 
   @media (min-width: 1280px) and (max-width: 1359px) {
-    .picture {
-      height: 35.5rem;
+    .picture-container {
+      padding-top: 35.5rem;
     }
   }
 
   @media (min-width: 768px) and (max-width: 1279px) {
-    .picture {
-      height: 27rem;
+    .picture-container {
+      padding-top: 27rem;
     }
   }
 
   @media (max-width: 767px) {
-    .picture {
+    .picture-container {
       grid-column: 1 / span 6;
       grid-row: 2;
-      height: 16.5rem;
+      padding-top: 16.5rem;
     }
   }
 `

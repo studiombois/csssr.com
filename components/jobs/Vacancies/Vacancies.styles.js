@@ -51,8 +51,9 @@ const base = css`
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 0;
     width: calc(50vw - 1rem);
+    padding-top: 100vh;
     background-position: 50%;
     background-size: auto 100%;
     overflow: hidden;
@@ -352,7 +353,7 @@ const base = css`
 
     .half-page-picture {
       width: 100vw;
-      height: 15.5rem;
+      padding-top: 15.5rem;
     }
   }
 `

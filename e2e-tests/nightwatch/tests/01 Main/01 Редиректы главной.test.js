@@ -119,8 +119,22 @@ testcase('Редирект на Главную страницу c csssr.dev + ht
   step('Перейти на страницу csssr.dev', () => {
     browser.url('https://www.csssr.dev')
   })
-  
+
   expected('Редирект на Главную страницу', () => {
     browser.assert.urlEquals('https://csssr.com/en')
+  })
+})
+
+// Редирект со страницы express
+
+testcase('Redirect from ru/express', () => {
+  step('Go to  ru/express', () => {
+    browser.url(browser.launch_url + '/ru/express')
+  })
+
+  expected('The redirect to the Main Page RU', () => {
+    browser
+      .waitForElementPresent('[data-testid="Header:block"]')
+      .assert.urlEquals(browser.launch_url + '/ru')
   })
 })

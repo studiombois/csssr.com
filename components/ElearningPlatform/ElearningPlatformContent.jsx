@@ -73,11 +73,13 @@ class ElearningPlatformContent extends PureComponent {
               Build your solution from the modules, add anything you need with our development team.
             </p>
 
-            <PictureSmart
-              requireImages={greetingImages}
-              className="greeting-image"
-              alt="By using a modular learning management system you can build your solution from the modules."
-            />
+            <div className="picture-container">
+              <PictureSmart
+                requireImages={greetingImages}
+                className="greeting-image"
+                alt="By using a modular learning management system you can build your solution from the modules."
+              />
+            </div>
           </div>
         </div>
 

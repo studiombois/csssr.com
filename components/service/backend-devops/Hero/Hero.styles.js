@@ -26,11 +26,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     z-index: 1;
   }
 
-  .image {
+  .picture-container {
     position: relative;
+    height: 0;
     grid-column: 7 / span 4;
     grid-row: 1 / 4;
     margin-top: ${calcRem(7)};
+    overflow: hidden;
+  }
+
+  .picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .button {
@@ -41,7 +51,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   ${desktop.all} {
-    .image {
+    .picture-container {
       max-height: 512px;
     }
   }
@@ -56,8 +66,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       max-width: ${calcRem(320)};
     }
 
-    .image {
+    .picture-container {
       margin-top: ${calcRem(-8)};
+      padding-top: calc(1537 / 1728 * 100%);
     }
   }
 
@@ -72,9 +83,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(78)};
     }
 
-    .image {
+    .picture-container {
       grid-column: 7 / span 5;
       margin-top: ${calcRem(-6)};
+      padding-top: calc(1537 / 1632 * 100%);
     }
 
     .button {
@@ -95,9 +107,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(78)};
     }
 
-    .image {
+    .picture-container {
       grid-column: 7 / span 5;
       margin-top: ${calcRem(-6)};
+      padding-top: calc(1537 / 1512 * 100%);
     }
 
     .button {
@@ -128,10 +141,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(27)};
     }
 
-    .image {
+    .picture-container {
       grid-column: 7 / span 6;
       margin-top: 0;
-
+      padding-top: calc(1248 / 1392 * 100%);
     }
 
     .button {
@@ -158,11 +171,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(27)};
     }
 
-    .image {
+    .picture-container {
       width: ${calcRem(232)};
       position: absolute;
       right: 0;
       margin-top: 0;
+      padding-top: calc(552 / 696 * ${calcRem(232)});
     }
 
     .button {
@@ -192,7 +206,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
     -ms-grid-row: 2;
   }
 
-  .image {
+  .picture-container {
     -ms-grid-column: ${getGridValueForMs(7)};
     -ms-grid-column-span: ${getGridValueForMs(5)};
     -ms-grid-row: 1;
@@ -211,7 +225,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
       -ms-grid-column-span: ${getGridValueForMs(4)};
     }
 
-    .image {
+    .picture-container {
       -ms-grid-column: ${getGridValueForMs(6)};
       -ms-grid-column-span: ${getGridValueForMs(4)};
     }
@@ -233,7 +247,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
       -ms-grid-column-span: ${getGridValueForMs(4)};
     }
 
-    .image {
+    .picture-container {
       -ms-grid-column: ${getGridValueForMs(6)};
       -ms-grid-column-span: ${getGridValueForMs(7)};
     }
@@ -255,7 +269,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
       -ms-grid-column-span: ${getGridValueForMs(5)};
     }
 
-    .image {
+    .picture-container {
       -ms-grid-column: ${getGridValueForMs(6)};
       -ms-grid-column-span: ${getGridValueForMs(7)};
     }

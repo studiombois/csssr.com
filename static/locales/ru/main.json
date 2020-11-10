@@ -4,7 +4,8 @@
     "description": "Группа компаний CSSSR создаёт надёжные веб-сервисы для клиентов по всему миру. Отлаженные процессы, опыт и внимание к деталям помогают нам создавать успешные проекты."
   },
   "hero": {
-    "title": "<b>CSSSR</b>Качественная <span style='white-space: nowrap'>веб-разработка</span> для клиентов по&nbsp;всему миру"
+    "title": "We&nbsp;Code for Good",
+    "description": "Мы&nbsp;международная <span style='white-space: nowrap;'>IT-компания</span>, специализирующаяся на&nbsp;<span style='white-space: nowrap;'><span style='font-style: italic; font-weight: 400;'>фронтенд</span>-разработке</span>. Создаём надёжные <span style='white-space: nowrap;'>веб-сервисы</span> для наших клиентов по&nbsp;всему миру."
   },
   "services": {
     "title": "Наши сервисы",
@@ -66,7 +67,7 @@
     },
     "blog": {
       "title": "Блог CSSSR",
-      "description": "Делимся мыслями о&nbsp;веб-разработке, бизнес-процессах и&nbsp;культуре удалённой работы.",
+      "description": "Делимся мыслями о&nbsp;<span style='white-space:nowrap'>веб-разработке</span>, <span style='white-space:nowrap'>бизнес-процессах</span> и&nbsp;культуре удалённой работы.",
       "post1": {
         "title": "Кодекс тестировщика",
         "link": "Подробнее"

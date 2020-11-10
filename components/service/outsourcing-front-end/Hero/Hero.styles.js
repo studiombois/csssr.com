@@ -7,8 +7,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     position: relative;
   }
 
+  .picture-container {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+  }
+
   .picture {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   ${desktop.all} {
@@ -25,7 +35,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 60px;
     }
 
-    .picture {
+    .picture-container {
       top: -68px;
     }
   }
@@ -39,9 +49,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 2;
     }
 
-    .picture {
+    .picture-container {
       right: 152px;
       width: 728px;
+      padding-top: calc(2064 / 2184 * 728px);
     }
   }
 
@@ -54,9 +65,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 3;
     }
 
-    .picture {
+    .picture-container {
       right: 0;
       width: 728px;
+      padding-top: calc(2064 / 2184 * 728px);
     }
   }
 
@@ -69,10 +81,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 3;
     }
 
-    .picture {
+    .picture-container {
       top: -56px;
       right: 0;
       width: 672px;
+      padding-top: calc(2064 / 2184 * 672px);
     }
   }
 
@@ -95,10 +108,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 2 / span 4;
     }
 
-    .picture {
+    .picture-container {
       top: ${calcRem(-42)};
       right: 0;
       width: ${calcRem(580)};
+      padding-top: calc(2064 / 2184 * ${calcRem(580)});
     }
   }
 
@@ -121,10 +135,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       grid-column: 1 / span 6;
     }
 
-    .picture {
+    .picture-container {
       top: ${calcRem(40)};
       right: ${calcRem(-16)};
       width: ${calcRem(176)};
+      padding-top: ${calcRem(176)};
     }
   }
 `

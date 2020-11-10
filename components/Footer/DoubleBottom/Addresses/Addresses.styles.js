@@ -11,8 +11,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   .address-item {
-    cursor: pointer;
-
     &:hover .pin {
       transform: scale(1.5);
     }

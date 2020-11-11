@@ -1,18 +1,15 @@
-## Задача
-- ссылка на jira: COM-__HERE_JIRA_ID__
-- стенд: http://__HERE_BRANCH_NAME__.com.csssr.cloud/
+## Release (if there is a release branch, otherwise this header and the paragraph below can be removed).
+* jira release board: https://jira.csssr.io/projects/COM/versions/__HERE_JIRA_VERSION_ID__
+* testing: http://release-__HERE_JIRA_RELEASE_ID__.csssr.cloud
 
-### Релиз
-* https://jira.csssr.io/projects/COM/versions/__HERE_JIRA_VERSION_ID__
-* стенд: http://release-__HERE_JIRA_RELEASE_ID__.csssr.cloud
+## Checklist
+- [ ] PR directed in the release branch (if there is a release branch, otherwise this item can be removed)
+- [ ] Code meets requirements not only from the description of the task, but also from its comments
+- [ ] Code works right on all resolutions
+- [ ] Task completed with comments for testing (if necessary, otherwise this item can be removed)
+- [ ] Dev-console of my browser has no errors
 
-## Чек-лист
-- [ ] PR в ветку релиза
-- [ ] Указаны ревьюеры
-- [ ] Стенды собрались и работают
-- [ ] Код работает полностью согласно описанию задачи
-- [ ] eslint и dev-консоль браузера без ошибок
-
-## Дополнительно
-* документация по добавленным библиотекам
-* скриншоты
+## Optional (if you have something to add, otherwise this heading and the paragraph below can be removed)
+* comments to the problem solving
+* documentation on added libraries
+* screenshots

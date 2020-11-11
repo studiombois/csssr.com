@@ -38,6 +38,7 @@ const Solutions = ({ className, l10n: { translations }, pageName = 'projects' })
               requireImages={images}
               alt={imgAlt(translations)}
               testid="contactUs:picture:bookACall.avatar"
+              loading="lazy"
             />
           </div>
 

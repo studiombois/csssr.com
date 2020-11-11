@@ -39,9 +39,10 @@ const PrivacyAndLanguageLinks = ({
 
       <li>
         <Link
-          className="link"
+          className="link internal-link"
           href={`/${language}/privacy-policy`}
-          external
+          target="_blank"
+          rel="noopener noreferrer"
           data-testid="Footer:link.privacy-policy"
         >
           <Text
@@ -54,9 +55,10 @@ const PrivacyAndLanguageLinks = ({
 
         {language === 'en' && (
           <Link
-            className="link policy-link"
+            className="link policy-link internal-link"
             href={`/${language}/cookies-policy`}
-            external
+            target="_blank"
+            rel="noopener noreferrer"
             data-testid="Footer:link.cookies-policy"
           >
             <Text

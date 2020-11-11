@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Solutions.styles'
@@ -23,7 +24,9 @@ const Solutions = ({ className, l10n: { translations }, pageName = 'projects' })
     {solutions.solutionsContent.map(
       ({ externalLink, blockClass, images, imgAlt, heading, text, link }, index) => (
         <Link
-          className={`solution solution_${blockClass} solution-link`}
+          className={cn('solution', `solution_${blockClass} solution-link`, {
+            external: externalLink,
+          })}
           href={link(translations)}
           key={index}
           {...(externalLink && {

@@ -28,6 +28,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     text-decoration: none;
   }
 
+  .external::after {
+    display: none;
+  }
+
   .solution-heading {
     margin-top: ${calcRem(40)};
   }

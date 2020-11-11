@@ -136,10 +136,6 @@ export const base = css`
       grid-template-columns: repeat(6, 3rem);
       grid-gap: 0 0.5rem;
     }
-
-    ul.have-square-bullets li:before {
-      top: ${calcRem(6)};
-    }
   }
 
   @media (max-width: 319px) {

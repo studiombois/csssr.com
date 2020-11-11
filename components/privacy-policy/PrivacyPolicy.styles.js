@@ -287,6 +287,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       font-weight: normal;
     }
 
+    .have-square-bullets li:before {
+      top: ${calcRem(6)};
+    }
+
     .list-item.list-item_level_1 {
       padding-left: ${calcRem(19)};
     }

@@ -1,5 +1,4 @@
 import { css } from '@emotion/core'
-import calcRem from '../../../../utils/style/calcRem'
 
 const base = css`
   & {
@@ -13,12 +12,6 @@ const base = css`
 
   & + ul li:not(:first-of-type) {
     margin-top: 1rem;
-  }
-
-  @media (min-width: 768px) and (max-width: 1279px) {
-    & + ul.have-square-bullets li:before {
-      top: ${calcRem(6)};
-    }
   }
 
   @media (max-width: 767px) {
@@ -39,10 +32,6 @@ const base = css`
 
     & + ul li:not(:first-of-type) {
       margin-top: 0.5rem;
-    }
-
-    & + ul.have-square-bullets li:before {
-      top: ${calcRem(9)};
     }
   }
 `

@@ -1,5 +1,3 @@
-// Редиректы с csssr.io
-
 testcase('Редирект на Главную страницу c csssr.io + http', () => {
   step('Перейти на страницу csssr.io', () => {
     browser.url('http://csssr.io')
@@ -41,8 +39,6 @@ testcase('Редирект на Главную страницу c csssr.io + htt
   })
 })
 
-//Редыиректы с csssr.ru
-
 testcase('Редирект на Главную страницу c csssr.ru + http', () => {
   step('Перейти на страницу csssr.ru', () => {
     browser.url('http://csssr.ru')
@@ -82,8 +78,6 @@ testcase('Редирект на Главную страницу c csssr.ru + htt
     browser.assert.urlEquals('https://csssr.com/en')
   })
 })
-
-// Редиректы с csssr.dev
 
 testcase('Редирект на Главную страницу c csssr.dev + http', () => {
   step('Перейти на страницу csssr.dev', () => {

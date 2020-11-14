@@ -1,6 +1,5 @@
 const { modalContInfo } = require('../actions/modalContInfo')
 
-// Отправка заявок с русской локали
 
 testcase('Send request from header modal form of RU-locales - Main', () => {
   step('Go to Main page', () => {

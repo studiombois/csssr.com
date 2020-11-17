@@ -1,23 +1,25 @@
 const outsourcingImages = require.context(
-  '../../public/images/main/services/outsourcing?csssr-images',
+  '../../public/images/main/services/normal/outsourcing?csssr-images',
 )
 const outsourcingImagesHovered = require.context(
-  '../../public/images/main/services/outsourcing-hovered?csssr-images',
+  '../../public/images/main/services/normal/outsourcing-hovered?csssr-images',
 )
 
-const backendImages = require.context('../../public/images/main/services/backend?csssr-images')
+const backendImages = require.context(
+  '../../public/images/main/services/normal/backend?csssr-images',
+)
 const backendImagesHovered = require.context(
-  '../../public/images/main/services/backend-hovered?csssr-images',
+  '../../public/images/main/services/normal/backend-hovered?csssr-images',
 )
 
-const mvpImages = require.context('../../public/images/main/services/mvp?csssr-images')
+const mvpImages = require.context('../../public/images/main/services/normal/mvp?csssr-images')
 const mvpImagesHovered = require.context(
-  '../../public/images/main/services/mvp-hovered?csssr-images',
+  '../../public/images/main/services/normal/mvp-hovered?csssr-images',
 )
 
-// const designImages = require.context('../../public/images/main/services/design?csssr-images')
+// const designImages = require.context('../../public/images/main/services/disabled/design?csssr-images')
 // const designImagesHovered = require.context(
-//   '../../public/images/main/services/design-hovered?csssr-images',
+//   '../../public/images/main/services/disabled/design-hovered?csssr-images',
 // )
 
 const services = [

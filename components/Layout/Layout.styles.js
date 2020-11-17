@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import calcRem from '../../utils/style/calcRem'
 
 export const base = css`
   * {
@@ -59,18 +60,18 @@ export const base = css`
 
   ul.have-square-bullets li {
     position: relative;
-    padding-left: 1rem;
+    padding-left: ${calcRem(18)};
   }
 
   ul.have-square-bullets li:before {
     content: '';
     position: absolute;
-    top: 0.5625rem;
-    left: 0;
+    top: ${calcRem(9)};
+    left: ${calcRem(2)};
     box-sizing: border-box;
-    width: 0.5rem;
-    height: 0.5rem;
-    border: 0.125rem solid black;
+    width: ${calcRem(4)};
+    height: ${calcRem(4)};
+    background-color: #18191B;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {

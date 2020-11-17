@@ -25,6 +25,10 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     margin-left: 16px;
   }
 
+  .internal-link::after {
+    display: none;
+  }
+
   .link-text {
     color: ${colors.primary.origin};
   }

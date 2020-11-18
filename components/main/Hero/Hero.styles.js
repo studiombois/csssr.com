@@ -1,10 +1,15 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = {
-  en: ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+    & {
+      width: 1792px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .title {
-      font-weight: normal;
+      font-weight: 300;
       color: ${colors.secondary.darken100};
 
       & > b {
@@ -20,9 +25,7 @@ const base = {
 
     ${desktop.all} {
       .title {
-        font-weight: normal;
-        font-size: 40px;
-        line-height: 64px;
+        line-height: 80px;
 
         & > b {
           font-size: 40px;
@@ -31,19 +34,76 @@ const base = {
       }
     }
 
-    ${desktop.l} {
+    ${desktop.m} {
       & {
-        min-height: 592px;
+        width: 1328px;
+      }
+    }
+
+    ${desktop.s} {
+      & {
+        width: 1232px;
+      }
+    }
+
+    ${tablet.all} {
+      & {
+        width: ${calcRem(944)};
+      }
+
+      .title {
+        & > b {
+          font-size: ${calcRem(32)};
+          line-height: ${calcRem(40)};
+          margin-bottom: ${calcRem(7)};
+        }
+      }
+    }
+
+    ${mobile.all} {
+      & {
+        width: ${calcRem(328)};
       }
 
       &.hero-wrap {
-        background-size: 880px 528px;
-        background-position: right 216px top 64px;
+        background-size: ${calcRem(328)} ${calcRem(208)};
+        background-position: center top ${calcRem(56)};
+      }
+
+      .title {
+        font-size: ${calcRem(32)};
+        line-height: ${calcRem(48)};
+        margin-top: ${calcRem(296)};
+
+        & > b {
+          line-height: ${calcRem(40)};
+          margin-bottom: ${calcRem(7)};
+        }
+      }
+    }
+  `
+
+const locale = {
+  en: ({ breakpoints: { desktop, tablet, mobile } }) => css`
+    ${desktop.all} {
+      .title {
+        font-size: 64px;
+      }
+    }
+
+    ${desktop.l} {
+      & {
+        min-height: 490px;
+      }
+
+      &.hero-wrap {
+        background-size: 815px 421px;
+        background-position: right 212px top 69px;
       }
 
       .title {
         grid-column: 2 / span 5;
-        margin-top: 207px;
+        margin-top: 202px;
 
         & > b {
           margin-bottom: 9px;
@@ -53,37 +113,37 @@ const base = {
 
     ${desktop.m} {
       & {
-        min-height: 592px;
+        min-height: 489px;
       }
 
       &.hero-wrap {
-        background-size: 768px 528px;
-        background-position: right 16px top 64px;
+        background-size: 707px 425px;
+        background-position: right 98px top 64px;
       }
 
       .title {
         grid-column: 2 / span 6;
-        margin-top: 207px;
+        margin-top: 202px;
 
         & > b {
-          margin-bottom: 8px;
+          margin-bottom: 9px;
         }
       }
     }
 
     ${desktop.s} {
       & {
-        min-height: 512px;
+        min-height: 477px;
       }
 
       &.hero-wrap {
-        background-size: 816px 448px;
-        background-position: right 24px top 64px;
+        background-size: 653px 399px;
+        background-position: right 36px top 78px;
       }
 
       .title {
-        grid-column: 2 / span 6;
-        margin-top: 207px;
+        grid-column: 2 / span 7;
+        margin-top: 202px;
 
         & > b {
           margin-bottom: 7px;
@@ -93,179 +153,119 @@ const base = {
 
     ${tablet.all} {
       & {
-        min-height: ${calcRem(440)};
+        min-height: ${calcRem(340)};
       }
 
       &.hero-wrap {
-        background-size: ${calcRem(624)} ${calcRem(376)};
-        background-position: right ${calcRem(40)} top ${calcRem(64)};
+        background-size: ${calcRem(503)} ${calcRem(263)};
+        background-position: right ${calcRem(73)} top ${calcRem(77)};
       }
 
       .title {
-        grid-column: 2 / span 6;
-        margin-top: ${calcRem(164)};
-        padding-right: ${calcRem(64)};
-        padding-left: ${calcRem(8)};
-
-        & > b {
-          font-size: ${calcRem(32)};
-          line-height: ${calcRem(40)};
-          margin-bottom: ${calcRem(4)};
-        }
+        grid-column: 2 / span 5;
+        margin-top: ${calcRem(169)};
       }
     }
 
     ${mobile.all} {
-      &.hero-wrap {
-        background-size: ${calcRem(328)} ${calcRem(272)};
-        background-position: center top;
-      }
-
       .title {
         grid-column: 1 / span 6;
-        font-size: ${calcRem(32)};
-        line-height: ${calcRem(48)};
-        margin-top: ${calcRem(304)};
-
-        & > b {
-          line-height: ${calcRem(40)};
-          margin-bottom: ${calcRem(4)};
-        }
       }
     }
   `,
-  ru: ({ breakpoints: { desktop, tablet, mobile }, colors}) => css`
+  ru: ({ breakpoints: { desktop, tablet, mobile } }) => css`
+  ${desktop.all} {
     .title {
-      position: relative;
-      z-index: 2;
-      margin-top: 192px;
-      grid-column: 2 / span 6;
+      font-size: 60px;
+    }
+  }
+
+  ${desktop.l} {
+    & {
+      min-height: 535px;
     }
 
-    .picture-wrapper  {
-      position: relative;
-      margin-top: -48px;
-      margin-left: -24px;
-      grid-column: 1 / span 12;
-      width: calc(100% + 48px);
+    &.hero-wrap {
+      background-size: 940px 425px;
+      background-position: right 212px top 110px;
     }
 
-    .picture-hover-area {
-        position: absolute;
-        z-index: 1;
-        top: 116px;
-        left: calc(128px / 2);
-        display: block;
-        width: calc(100% - 128px);
-        height: 278px;
+    .title {
+      grid-column: 2 / span 4;
+      margin-top: 172px;
+      padding-right: 90px;
 
-        :hover + .picture {
-          background-color: black;
-        }
-      }
-
-    .picture {
-      width: 100%;
-      transition: background-color 100ms ease-out;
-    }
-
-    .description {
-      position: relative;
-      margin-top: -292px;
-      grid-column: 2 / span 6;
-      color: ${colors.secondary.darken100};
-    }
-
-    ${desktop.l} {
-      .title {
-        grid-column: 3 / span 6;
-      }
-
-      .picture-wrapper  {
-        grid-column: 3 / span 8;
-      }
-
-      .description {
-        grid-column: 3 / span 5;
+      & > b {
+        margin-bottom: 3px;
       }
     }
+  }
 
-    ${desktop.m} {
-      .picture-wrapper  {
-        margin-left: 48px;
-        grid-column: 1 / span 12;
-        width:  calc(100% - 96px);
-      }
+  ${desktop.m} {
+    & {
+      min-height: 533px;
     }
 
-    ${desktop.s} {
-      .picture-wrapper  {
-        margin-left: 0;
-        grid-column: 1 / span 12;
-        width: 100%;
-      }
+    &.hero-wrap {
+      background-size: 749px 450px;
+      background-position: right 113px top 83px;
     }
 
-    ${tablet.all} {
-      .title {
-        margin-top: 12.25rem;
-      }
+    .title {
+      grid-column: 2 / span 5;
+      margin-top: 172px;
+      padding-right: 50px;
 
-      .picture-wrapper  {
-        margin-top: -2.75rem;
-        margin-left: -1rem;
-        width: calc(100% + 2rem);
-      }
-
-      .picture-hover-area {
-        top: 7.25rem;
-        left: calc(8rem / 2);
-        width: calc(100% - 8rem);
-        height: 17.375rem;
-      }
-
-      .description {
-        margin-top: -14.25rem;
+      & > b {
+        margin-bottom: 3px;
       }
     }
+  }
 
-    ${tablet.s} {
-      @media (pointer: coarse) {
-        .picture {
-          background-color: black;
-        }
-
-        .picture-hover-area {
-          display: none;
-        }
-      }
+  ${desktop.s} {
+    & {
+      min-height: 516px;
     }
 
-    ${mobile.all} {
-      .title,
-      .picture-wrapper,
-      .description {
-        grid-column: 1 / span 6;
-      }
+    &.hero-wrap {
+      background-size: 657px 427px;
+      background-position: right 108px top 89px;
+    }
 
-      .title {
-        margin-top: 6.5rem;
-      }
+    .title {
+      grid-column: 2 / span 5;
+      margin-top: 172px;
+      padding-right: 10px;
 
-      .picture-wrapper {
-        margin-top: -0.5rem;
-        margin-left: -1rem;
-        width: calc(100% + 2rem);
-      }
-
-      .picture-hover-area {
-        display: none;
-      }
-
-      .description {
-        margin-top: 1.5rem;
+      & > b {
+        margin-bottom: 3px;
       }
     }
+  }
+
+  ${tablet.all} {
+    & {
+      min-height: ${calcRem(388)};
+    }
+
+    &.hero-wrap {
+      background-size: ${calcRem(557)} ${calcRem(316)};
+      background-position: right ${calcRem(70)} top ${calcRem(72)};
+    }
+
+    .title {
+      grid-column: 2 / span 4;
+      margin-top: ${calcRem(145)};
+      padding-right: ${calcRem(50)};
+    }
+  }
+
+  ${mobile.all} {
+    .title {
+      grid-column: 1 / span 5;
+      padding-right: ${calcRem(10)};
+    }
+  }
   `,
 }
 
@@ -275,6 +275,7 @@ export default props => {
   const language = props.l10n.language
 
   return css`
-    ${base[language]({ breakpoints, colors })}
+    ${base({ breakpoints, colors })}
+    ${locale[language]({ breakpoints, colors })}
   `
 }

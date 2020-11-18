@@ -161,11 +161,6 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
         grid-column: 2 / span 10;
       }
 
-      .title,
-      .description {
-        text-align: center;
-      }
-
       .services {
         margin-top: ${calcRem(80)};
       }

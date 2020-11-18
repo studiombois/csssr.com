@@ -44,22 +44,36 @@ const Services = ({ className, l10n: { translations, language } }) => {
       />
 
       <ul className="services">
-        {services.map(({ id, href, images }) => (
-          <Fragment key={id}>
-            <Global
-              styles={css`
-                ${backgroundCssSmart(`.service_${id}`, images.default)}
-              `}
-            />
-            <Global
-              styles={css`
-                ${backgroundCssSmart(`.service_${id}::after`, images.hovered)}
-              `}
-            />
+        {services.map(({ id, href, images }) => {
+          const ServiceWrapper = ({ children }) =>
+            id === 'design' ? (
+              <div className="service-wrapper">{children}</div>
+            ) : (
+              <NextLink className="service-link" href={`/${language}/service/${href}`}>
+                <a className="service-link">{children}</a>
+              </NextLink>
+            )
 
-            <li className={cn('service', `service_${id}`)} data-testid={`Services:service.${id}`}>
-              <NextLink href={`/${language}/service/${href}`}>
-                <a className="service-link">
+          return (
+            <Fragment key={id}>
+              <Global
+                styles={css`
+                  ${backgroundCssSmart(`.service_${id}`, images.default)}
+                `}
+              />
+              <Global
+                styles={css`
+                  ${backgroundCssSmart(`.service_${id}::after`, images.hovered)}
+                `}
+              />
+
+              <li
+                className={cn('service', `service_${id}`, {
+                  disabled: id === 'design',
+                })}
+                data-testid={`Services:service.${id}`}
+              >
+                <ServiceWrapper>
                   <h3
                     className="service-title"
                     data-testid={`Services:service.${id}.title`}
@@ -72,11 +86,11 @@ const Services = ({ className, l10n: { translations, language } }) => {
                       __html: translations.main.services[id].description,
                     }}
                   />
-                </a>
-              </NextLink>
-            </li>
-          </Fragment>
-        ))}
+                </ServiceWrapper>
+              </li>
+            </Fragment>
+          )
+        })}
       </ul>
     </Grid>
   )

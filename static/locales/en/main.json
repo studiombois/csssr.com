@@ -10,7 +10,7 @@
     "title": "Our Services",
     "description": "Though web development services are our specialty, we&nbsp;also do&nbsp;superb design to&nbsp;help our clients build top to&nbsp;bottom solutions.",
     "outsourcing": {
-      "title": "Web Development<br /> <b>Outsourcing</b>",
+      "title": "<b>Web Development</b><br /> Outsourcing",
       "description": "Web development to&nbsp;complement core competencies."
     },
     "backend": {
@@ -23,7 +23,7 @@
     },
     "design": {
       "title": "<b>Design</b> Lab",
-      "description": "We&nbsp;have <b>Humble Team</b> who focuses on&nbsp;design that would fulfill the most complex expectations of&nbsp;users and investors, and help to&nbsp;accomplish your revenue goals."
+      "description": "This part of our website is currently under construction yet the service is fully available. Feel free to <a href='/en/contacts' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; color:#0076FF;' data-testid='Home:link.contacts'>contact&nbsp;us</a> for further information."
     }
   },
   "ourFeatures": {

@@ -52,8 +52,15 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
   }
 
-  .service_design .service-title {
-    color: #F9555A;
+  .service.disabled {
+    .service-title {
+      text-decoration: none;
+      color: ${colors.secondary.gray};
+    }
+
+    &::after {
+      display: none;
+    }
   }
 
   ${desktop.all} {
@@ -72,6 +79,10 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     .service-link {
+      padding-top: ${calcRem(260)};
+    }
+
+    .service-wrapper {
       padding-top: ${calcRem(260)};
     }
 
@@ -134,6 +145,10 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     }
 
     .service-link {
+      padding-top: ${calcRem(244)};
+    }
+
+    .service-wrapper {
       padding-top: ${calcRem(244)};
     }
   }
@@ -202,6 +217,10 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
       padding-top: ${calcRem(168)};
     }
 
+    .service-wrapper {
+      padding-top: ${calcRem(168)};
+    }
+
     .service,
     .service::after {
       background-size: ${calcRem(328)} ${calcRem(144)};
@@ -217,7 +236,7 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .service:hover {
+    .service:not(.disabled):hover {
       cursor: pointer;
 
       &::after {

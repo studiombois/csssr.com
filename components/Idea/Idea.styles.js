@@ -28,6 +28,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     animation-direction: alternate;
     animation-fill-mode: none;
     animation-play-state: running;
+    will-change: transform;
   }
 
   .button {

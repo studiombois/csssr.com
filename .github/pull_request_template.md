@@ -3,7 +3,7 @@
 * testing: http://release-__HERE_JIRA_RELEASE_ID__.csssr.cloud
 
 ## Checklist
-- [ ] PR directed in the release branch (if there is a release branch, otherwise this item can be removed)
+- [ ] PR is directed to the release branch (if there is a release branch, otherwise this item can be removed)
 - [ ] Code meets requirements not only from the description of the task, but also from its comments
 - [ ] Code works correctly on all resolutions
 - [ ] Task completed with comments for testing (if necessary, otherwise this item can be removed)

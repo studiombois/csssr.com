@@ -2,6 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 
 import { Global, css } from '@emotion/core'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 import styles from './Hero.styles'
@@ -17,7 +18,11 @@ const heroImagesEn = require.context('../../../public/images/main/hero-en?csssr-
 const heroImagesRu = require.context('../../../public/images/main/hero-ru?csssr-images')
 
 const Hero = ({ className, isMobile, l10n: { translations, language } }) => (
-  <section className={`${className} hero-wrap`}>
+  <section
+    className={cn(`${className} hero-wrap`, {
+      'hero-wrap_en': language === 'en',
+    })}
+  >
     <Grid>
       <Heading
         className="title"

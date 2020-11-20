@@ -236,6 +236,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       text-decoration: underline;
     }
 
+    .heading.title-link {
+      white-space: nowrap;
+    }
+
     .description {
       max-width: ${calcRem(249)};
       margin-top: ${calcRem(8)};

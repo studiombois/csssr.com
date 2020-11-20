@@ -57,7 +57,7 @@ const DiscountBanner = ({ className, isMobile, l10n: { translations }, pageName 
           {isMobile ? (
             <span
               dangerouslySetInnerHTML={{ __html: bannerData.titleLink(translations) }}
-              className="heading"
+              className="heading title-link"
               onClick={() => toggleContactModalVisibility(true)}
             />
           ) : (

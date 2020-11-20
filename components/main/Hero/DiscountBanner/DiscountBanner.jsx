@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import { bool, string } from 'prop-types'
 import styled from '@emotion/styled'
-import { Global } from '@emotion/core'
 import cn from 'classnames'
-import styles, { dynamic } from './DiscountBanner.styles'
+import styles from './DiscountBanner.styles'
 
 import Grid from '../../../ui-kit/core-design/Grid'
 import ContactModal from '../../../ContactModal'
@@ -71,8 +70,6 @@ const DiscountBanner = ({ className, isMobile, l10n: { translations }, pageName 
             />,
             document.getElementById('main'),
           )}
-
-        <Global styles={dynamic} />
       </Grid>
     </div>
   )

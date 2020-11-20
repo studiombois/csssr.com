@@ -5,7 +5,7 @@ import { Global, css } from '@emotion/core'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
-import styles from './Hero.styles'
+import styles, { dynamic } from './Hero.styles'
 import DiscountBanner from './DiscountBanner'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
@@ -19,28 +19,31 @@ const heroImagesEn = require.context('../../../public/images/main/hero-en?csssr-
 const heroImagesRu = require.context('../../../public/images/main/hero-ru?csssr-images')
 
 const Hero = ({ className, pageName, isMobile, l10n: { translations, language } }) => (
-  <section
-    className={cn(`${className} hero-wrap`, {
-      'hero-wrap_en': language === 'en',
-    })}
-  >
-    <Grid>
-      {language === 'en' && <DiscountBanner pageName={pageName} />}
-      <Heading
-        className="title"
-        as="h1"
-        type="slab"
-        size={isMobile ? 'm' : 'l'}
-        dangerouslySetInnerHTML={{ __html: translations.main.hero.title }}
-      />
+  <>
+    {language === 'en' && <DiscountBanner className="discount-banner" pageName={pageName} />}
+    <section
+      className={cn(`${className} hero-wrap`, {
+        'hero-wrap_en': language === 'en',
+      })}
+    >
+      <Grid>
+        <Heading
+          className="title"
+          as="h1"
+          type="slab"
+          size={isMobile ? 'm' : 'l'}
+          dangerouslySetInnerHTML={{ __html: translations.main.hero.title }}
+        />
 
-      <Global
-        styles={() => css`
-          ${backgroundCssSmart('.hero-wrap', language === 'ru' ? heroImagesRu : heroImagesEn)}
-        `}
-      />
-    </Grid>
-  </section>
+        <Global
+          styles={() => css`
+            ${backgroundCssSmart('.hero-wrap', language === 'ru' ? heroImagesRu : heroImagesEn)}
+          `}
+        />
+        <Global styles={dynamic} />
+      </Grid>
+    </section>
+  </>
 )
 
 Hero.propTypes = {

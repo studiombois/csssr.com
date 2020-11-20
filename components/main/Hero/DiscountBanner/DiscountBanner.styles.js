@@ -254,30 +254,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 `
 
-export const dynamic = (theme, isHidden) => {
-  const { desktop, tablet, mobile } = theme.breakpoints
-
-  return css`
-    ${desktop.all} {
-      .hero-wrap.hero-wrap_en {
-        margin-top: ${isHidden ? '0' : '104px'};
-      }
-    }
-
-    ${tablet.all} {
-      .hero-wrap.hero-wrap_en {
-        margin-top: ${isHidden ? '0' : '5.25rem'};
-      }
-    }
-
-    ${mobile.all} {
-      .hero-wrap.hero-wrap_en {
-        margin-top: ${isHidden ? '0' : '5rem'};
-      }
-    }
-  `
-}
-
 export default props => {
   const breakpoints = props.theme.breakpoints
 

@@ -3,6 +3,12 @@
     "title": "CSSSR web development company that provides high quality services globally",
     "description": "We’re an international group of IT companies that helps our clients build reliable web solutions."
   },
+  "discountBanner": {
+    "title": "Become our client and get 20% off the first month of the project",
+    "titleLink": "New clients get 20% off the first month",
+    "description": "This statement is an advertisement and is not an offer to enter into a binding contract",
+    "arrowText": "Drop us a line for more details"
+  },
   "hero": {
     "title": "<b>CSSSR</b>Developing objectives into results"
   },

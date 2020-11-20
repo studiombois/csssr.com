@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { string } from 'prop-types'
 import * as Sentry from '@sentry/node'
+
 import Layout from '../Layout'
 import Hero from './Hero'
 import Services from './Services'
@@ -45,7 +46,7 @@ class MainPage extends PureComponent {
           templateTitle=""
           description={translations.main.meta.description}
         />
-        <Hero />
+        <Hero pageName={pageName} />
         <Services />
         <Cases />
         <OurFeatures />

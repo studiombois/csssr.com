@@ -269,6 +269,34 @@ const locale = {
   `,
 }
 
+export const dynamic = (theme) => {
+  const { desktop, tablet, mobile } = theme.breakpoints
+
+  return css`
+    .discount-banner._hidden + .hero-wrap.hero-wrap_en {
+      margin-top: 0;
+    }
+
+    ${desktop.all} {
+      .discount-banner + .hero-wrap.hero-wrap_en {
+        margin-top: 104px;
+      }
+    }
+
+    ${tablet.all} {
+      .discount-banner + .hero-wrap.hero-wrap_en {
+        margin-top: 5.25rem;
+      }
+    }
+
+    ${mobile.all} {
+      .discount-banner + .hero-wrap.hero-wrap_en {
+        margin-top: 5rem;
+      }
+    }
+  `
+}
+
 export default props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors

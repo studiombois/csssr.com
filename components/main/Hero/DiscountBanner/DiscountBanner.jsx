@@ -2,22 +2,22 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import { bool, string } from 'prop-types'
 import styled from '@emotion/styled'
-import { Global, css } from '@emotion/core'
+import { Global } from '@emotion/core'
 import cn from 'classnames'
-import styles from './DiscountBanner.styles'
+import styles, { dynamic } from './DiscountBanner.styles'
 
-import Grid from '../../ui-kit/core-design/Grid'
-import ContactModal from '../../ContactModal'
+import Grid from '../../../ui-kit/core-design/Grid'
+import ContactModal from '../../../ContactModal'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import bannerData from '../../../data/main/discountBanner'
+import bannerData from '../../../../data/main/discountBanner'
 
-import { ReactComponent as CloseButton } from '../../../static/icons/main/cross.svg'
+import { ReactComponent as CloseButton } from '../../../../static/icons/main/cross.svg'
 
-import { L10nConsumer } from '../../../utils/l10nProvider'
-import { DeviceConsumer } from '../../../utils/deviceProvider'
+import { L10nConsumer } from '../../../../utils/l10nProvider'
+import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
-const DiscountBanner = ({ className, isMobile, isTablet, l10n: { translations }, pageName }) => {
+const DiscountBanner = ({ className, isMobile, l10n: { translations }, pageName }) => {
   const [isHidden, setHidden] = useState(false)
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
@@ -72,27 +72,7 @@ const DiscountBanner = ({ className, isMobile, isTablet, l10n: { translations },
             document.getElementById('main'),
           )}
 
-        <Global
-          styles={() => css`
-            .hero-wrap.hero-wrap_en {
-              margin-top: ${isHidden ? '0' : '104px'};
-            }
-
-            ${isTablet &&
-            css`
-              .hero-wrap.hero-wrap_en {
-                margin-top: ${isHidden ? '0' : '5.25rem'};
-              }
-            `}
-
-            ${isMobile &&
-            css`
-              .hero-wrap.hero-wrap_en {
-                margin-top: ${isHidden ? '0' : '5rem'};
-              }
-            `}
-          `}
-        />
+        <Global styles={dynamic} />
       </Grid>
     </div>
   )

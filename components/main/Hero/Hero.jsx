@@ -6,6 +6,7 @@ import cn from 'classnames'
 import styled from '@emotion/styled'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 import styles from './Hero.styles'
+import DiscountBanner from './DiscountBanner'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
@@ -17,13 +18,14 @@ import Grid from '../../ui-kit/core-design/Grid'
 const heroImagesEn = require.context('../../../public/images/main/hero-en?csssr-images')
 const heroImagesRu = require.context('../../../public/images/main/hero-ru?csssr-images')
 
-const Hero = ({ className, isMobile, l10n: { translations, language } }) => (
+const Hero = ({ className, pageName, isMobile, l10n: { translations, language } }) => (
   <section
     className={cn(`${className} hero-wrap`, {
       'hero-wrap_en': language === 'en',
     })}
   >
     <Grid>
+      {language === 'en' && <DiscountBanner pageName={pageName} />}
       <Heading
         className="title"
         as="h1"

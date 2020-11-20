@@ -1,11 +1,12 @@
 import { css } from '@emotion/core'
-import calcRem from '../../../utils/style/calcRem'
+import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     background-color: #FFD576;
     z-index: 100;
 
@@ -32,7 +33,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .arrow-text {
-    position: relative;
+    position: absolute;
+    top: 0;
     font-family: 'Roboto', sans-serif;
     color: #0076FF;
     font-weight: bold;
@@ -63,6 +65,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .image {
       margin-top: 14px;
+      margin-left: 19px;
       grid-row: 1 / span 3;
       grid-column: 2 / span 2;
       width: 217px;
@@ -71,7 +74,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .banner-info {
       grid-column: 4 / span 6;
       margin-top: 21px;
-      margin-left: -23px;
+      margin-left: 15px;
     }
 
     .heading {
@@ -87,10 +90,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .arrow-text {
+      right: ${calcRem(118)};
       grid-column: 11 / span 2;
       max-width: 131px;
       margin-top: 34px;
-      margin-left: 59px;
+      margin-left: 79px;
       font-size: 18px;
       line-height: 22px;
 
@@ -167,13 +171,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       width: ${calcRem(166)};
       height: ${calcRem(68)};
       margin-top: ${calcRem(16)};
-      margin-left: ${calcRem(-20)};
     }
 
     .banner-info {
       grid-column: 3 / span 8;
       margin-top: ${calcRem(17)};
-      margin-left: ${calcRem(-40)};
     }
 
     .heading {
@@ -189,10 +191,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .arrow-text {
+      right: ${calcRem(65)};
       grid-column: 11 / span 2;
       max-width: ${calcRem(105)};
       margin-top: ${calcRem(27)};
-      margin-left: ${calcRem(-13)};
       font-size: ${calcRem(14.4)};
       line-height: ${calcRem(18)};
 
@@ -247,10 +249,34 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .close-button {
       top: ${calcRem(52)};
-      right: ${calcRem(4)};
+      right: ${calcRem(14)};
     }
   }
 `
+
+export const dynamic = (theme, isHidden) => {
+  const { desktop, tablet, mobile } = theme.breakpoints
+
+  return css`
+    ${desktop.all} {
+      .hero-wrap.hero-wrap_en {
+        margin-top: ${isHidden ? '0' : '104px'};
+      }
+    }
+
+    ${tablet.all} {
+      .hero-wrap.hero-wrap_en {
+        margin-top: ${isHidden ? '0' : '5.25rem'};
+      }
+    }
+
+    ${mobile.all} {
+      .hero-wrap.hero-wrap_en {
+        margin-top: ${isHidden ? '0' : '5rem'};
+      }
+    }
+  `
+}
 
 export default props => {
   const breakpoints = props.theme.breakpoints

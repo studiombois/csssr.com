@@ -3,7 +3,6 @@ import { string } from 'prop-types'
 import * as Sentry from '@sentry/node'
 
 import Layout from '../Layout'
-import DiscountBanner from './DiscountBanner'
 import Hero from './Hero'
 import Services from './Services'
 import OurFeatures from './OurFeatures'
@@ -36,7 +35,7 @@ class MainPage extends PureComponent {
   render() {
     const {
       vacancies,
-      l10n: { translations, language },
+      l10n: { translations },
     } = this.props
 
     const pageName = 'main'
@@ -47,8 +46,7 @@ class MainPage extends PureComponent {
           templateTitle=""
           description={translations.main.meta.description}
         />
-        {language === 'en' && <DiscountBanner pageName={pageName} />}
-        <Hero />
+        <Hero pageName={pageName} />
         <Services />
         <Cases />
         <OurFeatures />

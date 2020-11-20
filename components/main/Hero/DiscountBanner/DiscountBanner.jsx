@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { bool, string } from 'prop-types'
 import styled from '@emotion/styled'
@@ -14,11 +14,30 @@ import bannerData from '../../../../data/main/discountBanner'
 import { ReactComponent as CloseButton } from '../../../../static/icons/main/cross.svg'
 
 import { L10nConsumer } from '../../../../utils/l10nProvider'
+import localStorageAvailable from '../../../../utils/client/localStorageAvailable'
 import { DeviceConsumer } from '../../../../utils/deviceProvider'
 
 const DiscountBanner = ({ className, isMobile, l10n: { translations }, pageName }) => {
-  const [isHidden, setHidden] = useState(false)
+  const DISCOUNT_ALERT_HIDDEN = 'hidden'
+
+  const [isHidden, setHidden] = useState(true)
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
+
+  const handleClick = () => {
+    if (localStorageAvailable()) {
+      localStorage.setItem('discount_banner', DISCOUNT_ALERT_HIDDEN)
+    }
+    setHidden(true)
+  }
+
+  useEffect(() => {
+    if (localStorageAvailable()) {
+      const isHidden = localStorage.getItem('discount_banner') === DISCOUNT_ALERT_HIDDEN
+      setHidden(isHidden)
+    } else {
+      setHidden(false)
+    }
+  }, [])
 
   return (
     <div
@@ -59,7 +78,7 @@ const DiscountBanner = ({ className, isMobile, l10n: { translations }, pageName 
           className="arrow-text"
         />
 
-        <CloseButton className="close-button" onClick={() => setHidden(true)} />
+        <CloseButton className="close-button" onClick={handleClick} />
 
         {typeof window !== 'undefined' &&
           isContactModalVisible &&

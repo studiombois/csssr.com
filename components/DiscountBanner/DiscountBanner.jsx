@@ -5,22 +5,28 @@ import styled from '@emotion/styled'
 import cn from 'classnames'
 import styles from './DiscountBanner.styles'
 
-import Grid from '../../../ui-kit/core-design/Grid'
-import ContactModal from '../../../ContactModal'
+import Grid from '../ui-kit/core-design/Grid'
+import ContactModal from '../ContactModal'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
-import bannerData from '../../../../data/main/discountBanner'
+import bannerData from '../../data/main/discountBanner'
 
-import { ReactComponent as CloseButton } from '../../../../static/icons/main/cross.svg'
+import { ReactComponent as CloseButton } from '../../static/icons/main/cross.svg'
 
-import { L10nConsumer } from '../../../../utils/l10nProvider'
-import localStorageAvailable from '../../../../utils/client/localStorageAvailable'
-import { DeviceConsumer } from '../../../../utils/deviceProvider'
+import { L10nConsumer } from '../../utils/l10nProvider'
+import localStorageAvailable from '../../utils/client/localStorageAvailable'
+import { DeviceConsumer } from '../../utils/deviceProvider'
 
-const DiscountBanner = ({ className, isMobile, l10n: { translations }, pageName }) => {
+const DiscountBanner = ({
+  className,
+  isMobile,
+  l10n: { translations },
+  pageName,
+  isHidden,
+  setHidden,
+}) => {
   const DISCOUNT_ALERT_HIDDEN = 'hidden'
 
-  const [isHidden, setHidden] = useState(true)
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
   const handleClick = () => {
@@ -37,7 +43,7 @@ const DiscountBanner = ({ className, isMobile, l10n: { translations }, pageName 
     } else {
       setHidden(false)
     }
-  }, [])
+  }, [setHidden])
 
   return (
     <div

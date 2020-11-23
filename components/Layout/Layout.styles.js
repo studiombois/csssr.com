@@ -715,6 +715,35 @@ export const fonts =  css`
     }
   }
 `
+
+export const dynamic = (theme) => {
+  const { desktop, tablet, mobile } = theme.breakpoints
+
+  return css`
+    .main_en {
+      margin-top: 0;
+    }
+
+    ${desktop.all} {
+      .main_en.withMargin {
+        margin-top: 104px;
+      }
+    }
+
+    ${tablet.all} {
+      .main_en.withMargin {
+        margin-top: 5.25rem;
+      }
+    }
+
+    ${mobile.all} {
+      .main_en.withMargin {
+        margin-top: 5rem;
+      }
+    }
+  `
+}
+
 export default css`
   ${base}
   ${fonts}

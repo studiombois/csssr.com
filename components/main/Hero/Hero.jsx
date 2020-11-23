@@ -5,8 +5,7 @@ import { Global, css } from '@emotion/core'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
-import styles, { dynamic } from './Hero.styles'
-import DiscountBanner from './DiscountBanner'
+import styles from './Hero.styles'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
@@ -18,32 +17,24 @@ import Grid from '../../ui-kit/core-design/Grid'
 const heroImagesEn = require.context('../../../public/images/main/hero-en?csssr-images')
 const heroImagesRu = require.context('../../../public/images/main/hero-ru?csssr-images')
 
-const Hero = ({ className, pageName, isMobile, l10n: { translations, language } }) => (
-  <>
-    {language === 'en' && <DiscountBanner className="discount-banner" pageName={pageName} />}
-    <section
-      className={cn(`${className} hero-wrap`, {
-        'hero-wrap_en': language === 'en',
-      })}
-    >
-      <Grid>
-        <Heading
-          className="title"
-          as="h1"
-          type="slab"
-          size={isMobile ? 'm' : 'l'}
-          dangerouslySetInnerHTML={{ __html: translations.main.hero.title }}
-        />
+const Hero = ({ className, isMobile, l10n: { translations, language } }) => (
+  <section className={cn(`${className} hero-wrap`)}>
+    <Grid>
+      <Heading
+        className="title"
+        as="h1"
+        type="slab"
+        size={isMobile ? 'm' : 'l'}
+        dangerouslySetInnerHTML={{ __html: translations.main.hero.title }}
+      />
 
-        <Global
-          styles={() => css`
-            ${backgroundCssSmart('.hero-wrap', language === 'ru' ? heroImagesRu : heroImagesEn)}
-          `}
-        />
-        <Global styles={dynamic} />
-      </Grid>
-    </section>
-  </>
+      <Global
+        styles={() => css`
+          ${backgroundCssSmart('.hero-wrap', language === 'ru' ? heroImagesRu : heroImagesEn)}
+        `}
+      />
+    </Grid>
+  </section>
 )
 
 Hero.propTypes = {

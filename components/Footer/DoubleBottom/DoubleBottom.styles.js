@@ -8,9 +8,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     bottom: 0;
     left: 0;
     padding: ${calcRem(32)};
-    display: flex;
+    display: none;
     width: 100%;
     background-color: white;
+  }
+
+  &.is_visible {
+    display: flex;
   }
 
   .map-wrapper {
@@ -157,6 +161,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${mobile.all} {
     & {
+      display: flex;
       position: static;
       z-index: 1;
       margin-top: ${calcRem(42)};

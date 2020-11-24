@@ -1,5 +1,5 @@
-const INGImages = require.context('../../public/images/projects/design-cases/ing?csssr-images')
-const NASAImages = require.context('../../public/images/projects/design-cases/nasa?csssr-images')
+const NexarImages = require.context('../../public/images/projects/design-cases/nexar?csssr-images')
+const ERSTEImages = require.context('../../public/images/projects/design-cases/erste?csssr-images')
 
 export default {
   heading: (t) => t.projects.designCases.heading,
@@ -7,17 +7,21 @@ export default {
   buttonHref: (t) => t.projects.designCases.button.href,
   cases: [
     {
-      images: INGImages,
-      imgAlt: (t) => t.design.designCases.ing.imgAlt,
-      heading: (t) => t.design.designCases.ing.heading,
-      text: (t) => t.design.designCases.ing.text,
+      images: NexarImages,
+      imgAlt: (t) => t.design.designCases.nexar.imgAlt,
+      heading: (t) => t.design.designCases.nexar.heading,
+      text: (t) => t.design.designCases.nexar.text,
+      tag: (t) => t.design.designCases.nexar.tag,
+      country: (t) => t.design.designCases.nexar.country,
       plug: (t) => t.design.designCases.plug,
     },
     {
-      images: NASAImages,
-      imgAlt: (t) => t.design.designCases.nasa.imgAlt,
-      heading: (t) => t.design.designCases.nasa.heading,
-      text: (t) => t.design.designCases.nasa.text,
+      images: ERSTEImages,
+      imgAlt: (t) => t.design.designCases.erste.imgAlt,
+      heading: (t) => t.design.designCases.erste.heading,
+      text: (t) => t.design.designCases.erste.text,
+      tag: (t) => t.design.designCases.erste.tag,
+      country: (t) => t.design.designCases.erste.country,
       plug: (t) => t.design.designCases.plug,
     },
   ],

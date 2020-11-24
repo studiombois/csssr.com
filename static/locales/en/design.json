@@ -25,10 +25,19 @@
       "heading": "Qatar ministry of&nbsp;foreign affairs",
       "text": "The official app for Qatar citizens traveling abroad."
     },
+    "nexar": {
+      "imgAlt": "Nexar. New apps for the automotive industry leader",
+      "heading": "Nexar. New apps for the automotive industry leader",
+      "text": "Nexar uses AI to help drivers avoid accidents and make insurance claims. Received investments from Samsung, Alibaba, and others.",
+      "tag": "IT",
+      "country": "US"
+    },
     "erste": {
-      "imgAlt": "Erste group & Deloitte Digital",
-      "heading": "Erste group &amp;&nbsp;Deloitte Digital",
-      "text": "Concept and ideation for security tokenization mobile application."
+      "imgAlt": "ERSTE bank security. New way to sign off payments",
+      "heading": "ERSTE bank security. New way to sign off payments",
+      "text": "The ERSTE token app allows you to control your bank-direct payments and financial permissions from one single place.",
+      "tag": "Fintech",
+      "country": "Czech Republic"
     },
     "serpbook": {
       "imgAlt": "Serpbook",

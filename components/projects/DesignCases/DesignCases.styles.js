@@ -13,7 +13,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .button {
-    margin-top: ${calcRem(56)};
+    margin-top: ${calcRem(40)};
   }
 
   ${desktop.all} {
@@ -42,7 +42,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(110)};
+      margin-top: ${calcRem(112)};
     }
 
     .heading {
@@ -55,13 +55,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .button {
       grid-column: 1 / span 4;
-      margin-top: ${calcRem(40)};
+      margin-top: ${calcRem(32)};
     }
   }
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(102)};
+      margin-top: ${calcRem(88)};
     }
 
     .cases-wrapper {
@@ -75,7 +75,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .button {
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(60)};
+      margin-top: ${calcRem(32)};
     }
   }
 `

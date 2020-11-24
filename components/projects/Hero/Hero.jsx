@@ -12,8 +12,8 @@ import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const Hero = ({
   className,
-  content: { heading, text, images, imgAlt },
-  l10n: { translations },
+  content: { heading, text, imagesEn, imagesRu, imgAlt },
+  l10n: { translations, language },
 }) => {
   return (
     <Grid className={className} as="section">
@@ -34,7 +34,7 @@ const Hero = ({
       <div className="picture-wrapper">
         <PictureSmart
           className="logos"
-          requireImages={images}
+          requireImages={language === 'ru' ? imagesRu : imagesEn}
           alt={imgAlt(translations)}
           testid="contactUs:picture:bookACall.avatar"
         />

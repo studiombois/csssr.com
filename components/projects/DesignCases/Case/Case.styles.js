@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { tablet, mobile } }) => css`
+const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   & {
     text-decoration: none;
 
@@ -31,11 +31,27 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
   }
 
   .heading {
-    margin-top: ${calcRem(30)};
+    margin-top: ${calcRem(32)};
   }
 
   .text {
-    margin-top: ${calcRem(15)};
+    margin-top: ${calcRem(16)};
+  }
+
+  .data-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: ${calcRem(12)};
+  }
+
+  .tag,
+  .country {
+    font-weight: 500;
+  }
+
+  .separator {
+    margin: 0 ${calcRem(16)};
+    color: ${colors.secondary.darken100};
   }
 
   .plug {
@@ -68,13 +84,28 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
     }
 
     .heading {
-      margin-top: ${calcRem(30)};
+      margin-top: ${calcRem(16)};
     }
 
     .text {
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(8)};
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
+    }
+
+    .data-wrapper {
+      margin-top: ${calcRem(8)};
+    }
+
+    .tag,
+    .сountry,
+    .separator {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
+    }
+
+    .separator {
+      margin: 0 ${calcRem(8)};
     }
   }
 
@@ -98,16 +129,27 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
     }
 
     .heading {
-      margin-top: ${calcRem(20)};
+      margin-top: ${calcRem(16)};
     }
 
     .text {
+      margin-top: ${calcRem(12)};
+    }
+
+    .data-wrapper {
+      margin-top: ${calcRem(8)};
+    }
+
+    .tag,
+    .text,
+    .сountry,
+    .separator {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
     }
 
-    .text {
-      margin-top: ${calcRem(10)};
+    .separator {
+      margin: 0 ${calcRem(8)};
     }
   }
 
@@ -124,8 +166,9 @@ const base = ({ breakpoints: { tablet, mobile } }) => css`
 
 export default props => {
   const breakpoints = props.theme.breakpoints
+  const { colors } = props.theme
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ breakpoints, colors })}
   `
 }

@@ -4,7 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    margin-top: ${calcRem(128)};
+    margin-top: ${calcRem(152)};
   }
 
   .cases-wrapper {
@@ -30,7 +30,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(72)};
+      margin-top: ${calcRem(112)};
     }
 
     .heading {
@@ -45,7 +45,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(102)};
+      margin-top: ${calcRem(88)};
     }
 
     .cases-wrapper {

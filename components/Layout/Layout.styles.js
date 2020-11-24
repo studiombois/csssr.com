@@ -725,19 +725,19 @@ export const dynamic = (theme) => {
     }
 
     ${desktop.all} {
-      .main_en.withMargin {
+      .main_en.with_margin {
         margin-top: 104px;
       }
     }
 
     ${tablet.all} {
-      .main_en.withMargin {
+      .main_en.with_margin {
         margin-top: 5.25rem;
       }
     }
 
     ${mobile.all} {
-      .main_en.withMargin {
+      .main_en.with_margin {
         margin-top: 5rem;
       }
     }

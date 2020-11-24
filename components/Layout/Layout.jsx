@@ -43,7 +43,7 @@ const Layout = ({
           id: 'main',
           className: cn('main', {
             main_en: language === 'en',
-            withMargin: !isHidden,
+            with_margin: !isHidden,
           }),
           'data-testid': 'Main:block',
         },

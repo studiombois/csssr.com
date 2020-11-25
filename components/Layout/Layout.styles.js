@@ -721,24 +721,24 @@ export const dynamic = (theme) => {
 
   return css`
     .main_en {
-      margin-top: 0;
+      padding-top: 0;
     }
 
     ${desktop.all} {
-      .main_en.with_margin {
-        margin-top: 104px;
+      .main_en.with_padding {
+        padding-top: 104px;
       }
     }
 
     ${tablet.all} {
-      .main_en.with_margin {
-        margin-top: 5.25rem;
+      .main_en.with_padding {
+        padding-top: 5.25rem;
       }
     }
 
     ${mobile.all} {
-      .main_en.with_margin {
-        margin-top: 5rem;
+      .main_en.with_padding {
+        padding-top: 5rem;
       }
     }
   `

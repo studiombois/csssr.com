@@ -717,7 +717,7 @@ export const fonts =  css`
 `
 
 export const dynamic = (theme) => {
-  const { desktop, tablet, mobile } = theme.breakpoints
+  const { desktop, tablet, above, mobile } = theme.breakpoints
 
   return css`
     .main_en {
@@ -733,6 +733,12 @@ export const dynamic = (theme) => {
     ${tablet.all} {
       .main_en.with_padding {
         padding-top: 5.25rem;
+      }
+    }
+
+    ${above.mobile} {
+      .main_en.with_padding .map-tabs {
+        top: ${calcRem(190)};
       }
     }
 

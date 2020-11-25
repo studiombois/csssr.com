@@ -45,7 +45,8 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   .tag,
-  .country {
+  .country,
+  .separator {
     font-weight: 500;
   }
 
@@ -97,15 +98,15 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       margin-top: ${calcRem(8)};
     }
 
-    .tag,
-    .сountry,
-    .separator {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
-    }
-
     .separator {
       margin: 0 ${calcRem(8)};
+    }
+
+    .separator,
+    .tag,
+    .country {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
   }
 
@@ -114,7 +115,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       grid-column: 1 / span 6;
 
       &:not(:nth-of-type(1)) {
-        margin-top: ${calcRem(60)};
+        margin-top: ${calcRem(64)};
       }
     }
 
@@ -142,7 +143,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
 
     .tag,
     .text,
-    .сountry,
+    .country,
     .separator {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};

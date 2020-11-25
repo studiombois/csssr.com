@@ -39,7 +39,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .cases-wrapper {
       grid-column: 1 / span 12;
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(40)};
     }
   }
 

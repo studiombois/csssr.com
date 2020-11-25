@@ -715,6 +715,41 @@ export const fonts =  css`
     }
   }
 `
+
+export const dynamic = (theme) => {
+  const { desktop, tablet, above, mobile } = theme.breakpoints
+
+  return css`
+    .main_en {
+      padding-top: 0;
+    }
+
+    ${desktop.all} {
+      .main_en.with_padding {
+        padding-top: 104px;
+      }
+    }
+
+    ${tablet.all} {
+      .main_en.with_padding {
+        padding-top: 5.25rem;
+      }
+    }
+
+    ${above.mobile} {
+      .main_en.with_padding .map-tabs {
+        top: ${calcRem(190)};
+      }
+    }
+
+    ${mobile.all} {
+      .main_en.with_padding {
+        padding-top: 5rem;
+      }
+    }
+  `
+}
+
 export default css`
   ${base}
   ${fonts}

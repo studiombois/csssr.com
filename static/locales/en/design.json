@@ -10,55 +10,61 @@
   },
   "designCases": {
     "plug": "Coming Soon",
-    "ing": {
-      "imgAlt": "ING",
-      "heading": "ING. Portal for small &amp;&nbsp;medium businesses",
-      "text": "Helping to&nbsp;invent a&nbsp;new business direction for the biggest Dutch bank."
-    },
-    "nasa": {
-      "imgAlt": "NASA",
-      "heading": "NASA. A&nbsp;new way to&nbsp;manage space in&nbsp;space",
-      "text": "A&nbsp;spaceship storage and cargo management tool designed to&nbsp;make the launch preparation more efficient."
-    },
-    "qatar": {
-      "imgAlt": "Qatar",
-      "heading": "Qatar ministry of&nbsp;foreign affairs",
-      "text": "The official app for Qatar citizens traveling abroad."
+    "nexar": {
+      "id": "nexar",
+      "imgAlt": "Nexar",
+      "heading": "Nexar. New apps for the automotive industry leader",
+      "text": "Nexar uses AI to help drivers avoid accidents and make insurance claims. Received investments from Samsung, Alibaba, and others.",
+      "tag": "IT",
+      "country": "US"
     },
     "erste": {
-      "imgAlt": "Erste group & Deloitte Digital",
-      "heading": "Erste group &amp;&nbsp;Deloitte Digital",
-      "text": "Concept and ideation for security tokenization mobile application."
+      "id": "erste",
+      "imgAlt": "ERSTE",
+      "heading": "ERSTE bank security. New way to&nbsp;sign off payments",
+      "text": "The ERSTE token app allows you to&nbsp;control your bank-direct payments and financial permissions from one single place.",
+      "tag": "Fintech",
+      "country": "Czech Republic"
     },
-    "serpbook": {
-      "imgAlt": "Serpbook",
-      "heading": "Serpbook",
-      "text": "Comprehensive product development for the leading SEO rank tracker."
+    "stoovo": {
+      "id": "stoovo",
+      "imgAlt": "Stoovo",
+      "heading": "Stoovo. Fintech MVP in 2 months",
+      "text": "Stoovo is a service that monitors one’s financial health and suggests gig jobs when there’s a need to pay off loans, taxes, or bills.",
+      "tag": "Fintech",
+      "country": "US"
     },
-    "cogni": {
-      "imgAlt": "Cogni",
-      "heading": "Cogni",
-      "text": "Re-thinking modern banking both visually and conceptually with one of&nbsp;the most ambitious <span style='white-space:nowrap'>New-York</span> fintech <span style='white-space:nowrap'>start-ups.</span>"
+    "nauto": {
+      "id": "nauto",
+      "imgAlt": "Nauto",
+      "heading": "Nauto. Web apps for vehicle fleets",
+      "text": "Nauto is&nbsp;the only real-time, AI-enabled driver and fleet safety platform to&nbsp;predict, prevent, and reduce the number of&nbsp;car accidents",
+      "tag": "IT",
+      "country": "US"
     },
-    "ottomatic": {
-      "imgAlt": "Ottomatic",
-      "heading": "Ottomatic",
-      "text": "A&nbsp;b2b database backup tool with automatization features and smart analytics."
+    "marcel": {
+      "id": "marcel",
+      "imgAlt": "Marcel",
+      "heading": "Marcel. From MVP to&nbsp;25K users",
+      "text": "Marcel is&nbsp;a&nbsp;platform that helps young artists connect with their audience, manage their portfolios, market and sell their art.",
+      "tag": "IT",
+      "country": "UK"
     },
-    "jti": {
-      "imgAlt": "JTI employees portal",
-      "heading": "JTI employees portal",
-      "text": "Streamlined sales, seamless onboarding and a&nbsp;brand new knowledge base: everything to&nbsp;keep this tobacco leader ahead in&nbsp;the race."
+    "halff": {
+      "id": "halff",
+      "imgAlt": "Halff",
+      "heading": "Halff. Fintech app concept for the pre‑seed startup",
+      "text": "Halff is&nbsp;next-generation mobile banking for automating budgets and creating new habits to&nbsp;reach financial goals.",
+      "tag": "Fintech",
+      "country": "Belgium"
     },
-    "creddible": {
-      "imgAlt": "Creddible",
-      "heading": "Creddible",
-      "text": "A&nbsp;service that helps decrypting the complexity of&nbsp;a&nbsp;credit score and takes the advice on&nbsp;its improvement to&nbsp;the next level with the bite-sized actions for the end consumer."
-    },
-    "truebill": {
-      "imgAlt": "Truebill",
-      "heading": "Truebill",
-      "text": "Subscription and bills management that also helps to&nbsp;optimize and save."
+    "aleno": {
+      "id": "aleno",
+      "imgAlt": "Aleno",
+      "heading": "Aleno. Swiss startup scaling&nbsp;up",
+      "text": "Aleno is&nbsp;a&nbsp;cutting-edge reservation management system built to&nbsp;boost restaurant businesses.",
+      "tag": "IT",
+      "country": "Switzerland"
     }
   },
   "devBlock": {

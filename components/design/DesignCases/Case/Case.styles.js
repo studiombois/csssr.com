@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     text-decoration: none;
 
@@ -40,13 +40,30 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .heading {
-    margin-top: ${calcRem(30)};
+    margin-top: ${calcRem(32)};
   }
 
   .text {
     grid-column: 2 / span 4;
-    margin-top: ${calcRem(15)};
+    margin-top: ${calcRem(16)};
   }
+
+  .data-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: ${calcRem(12)};
+  }
+
+  .tag,
+  .country,
+  .separator {
+    font-weight: 500;
+  }
+
+  .separator {
+    margin: 0 ${calcRem(16)};
+    color: ${colors.secondary.darken100};
+  }	
 
   .plug {
     position: absolute;
@@ -68,7 +85,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.all} {
     &:nth-of-type(n + 3) {
-      margin-top: 96px;
+      margin-top: 104px;
+    }
+  }
+
+  ${desktop.l} {
+    &.stoovo .text {
+      max-width: 656px;
     }
   }
 
@@ -96,7 +119,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .heading {
-      margin-top: ${calcRem(30)};
+      margin-top: ${calcRem(16)};
 
       &.small {
         max-width: ${calcRem(379)};
@@ -104,20 +127,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .text {
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(8)};
     }
 
-    .data-wrapper {
-      margin-top: ${calcRem(10)};
+     .data-wrapper {
+      margin-top: ${calcRem(8)};
+    }
+    .separator {
+      margin: 0 ${calcRem(8)};
     }
 
     .text,
+    .separator,
     .tag,
-    .team,
-    .duration {
+    .country {
       font-size: ${calcRem(14)};
       line-height: ${calcRem(24)};
-    }
+    }	    
   }
 
   ${mobile.all} {
@@ -125,7 +151,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 1 / span 6 !important;
 
       &:not(:nth-of-type(1)) {
-        margin-top: ${calcRem(60)};
+        margin-top: ${calcRem(64)};
       }
     }
 
@@ -140,29 +166,28 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .heading {
-      margin-top: ${calcRem(20)};
-    }
-
-    .text,
-    .tag,
-    .team,
-    .duration,
-    .separator {
-      font-size: ${calcRem(14)};
-      line-height: ${calcRem(24)};
+      margin-top: ${calcRem(16)};
     }
 
     .text {
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(12)};
     }
 
     .data-wrapper {
       flex-wrap: wrap;
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(8)};
+    }
+
+    .text,
+    .tag,
+    .separator,
+    .country {
+      font-size: ${calcRem(14)};
+      line-height: ${calcRem(24)};
     }
 
     .separator {
-      margin: 0 ${calcRem(14)};
+      margin: 0 ${calcRem(8)};
     }
   }
 

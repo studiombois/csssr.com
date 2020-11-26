@@ -9,19 +9,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.s} {
     & {
-      margin-top: ${calcRem(139)};
+      margin-top: ${calcRem(152)};
     }
   }
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(72)};
+      margin-top: ${calcRem(112)};
     }
   }
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(102)};
+      margin-top: ${calcRem(88)};
     }
   }
 `

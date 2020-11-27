@@ -40,13 +40,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .devBlock__link {
-    color: #F9545B;
+    color: #F9555A;
     text-decoration: underline;
-    text-emphasis-color: #F9545B;
+    text-emphasis-color: #F9555A;
     white-space: nowrap;
 
     &:visited {
-      color: #F9545B;
+      color: #F9555A;
     }
   }
 

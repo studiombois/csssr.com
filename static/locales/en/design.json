@@ -5,8 +5,8 @@
   },
   "hero": {
     "imgAlt": "Man with pencil",
-    "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
-    "text": "Our <span style='color:#F9545B;'>Humble Team</span> is&nbsp;ready to&nbsp;help you create great products with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
+    "heading": "Go&nbsp;from cool <span style='color:#F9555A;'>idea</span> to insanely great <span style='color:#F9555A;'>product</span>",
+    "text": "Our <span style='color:#F9555A;'>Humble Team</span> is&nbsp;ready to&nbsp;help you create great products with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
   },
   "designCases": {
     "plug": "Coming Soon",
@@ -68,7 +68,7 @@
     }
   },
   "devBlock": {
-    "heading": "Go&nbsp;from cool <span style='color:#F9545B;'>idea</span> to insanely great <span style='color:#F9545B;'>product</span>",
+    "heading": "Go&nbsp;from cool <span style='color:#F9555A;'>idea</span> to insanely great <span style='color:#F9555A;'>product</span>",
     "text": "You can read about our core mission, i.e. making complex websites & web applications, on the <a href='outsourcing-front-end' class='devBlock__link'>relevant page</a>"
   },
   "idea": {

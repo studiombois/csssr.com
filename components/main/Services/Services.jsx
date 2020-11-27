@@ -45,14 +45,11 @@ const Services = ({ className, l10n: { translations, language } }) => {
 
       <ul className="services">
         {services.map(({ id, href, images }) => {
-          const ServiceWrapper = ({ children }) =>
-            id === 'design' ? (
-              <div className="service-wrapper">{children}</div>
-            ) : (
-              <NextLink className="service-link" href={`/${language}/service/${href}`}>
-                <a className="service-link">{children}</a>
-              </NextLink>
-            )
+          const ServiceWrapper = ({ children }) => (
+            <NextLink className="service-link" href={`/${language}/service/${href}`}>
+              <a className="service-link">{children}</a>
+            </NextLink>
+          )
 
           return (
             <Fragment key={id}>
@@ -67,12 +64,7 @@ const Services = ({ className, l10n: { translations, language } }) => {
                 `}
               />
 
-              <li
-                className={cn('service', `service_${id}`, {
-                  disabled: id === 'design',
-                })}
-                data-testid={`Services:service.${id}`}
-              >
+              <li className={cn('service', `service_${id}`)} data-testid={`Services:service.${id}`}>
                 <ServiceWrapper>
                   <h3
                     className="service-title"

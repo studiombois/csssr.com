@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
 
-const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+const base = ({ breakpoints: { tablet, mobile } }) => css`
   & {
     margin-top: ${calcRem(152)};
   }
@@ -14,18 +14,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .heading {
     grid-column: 2 / span 6;
-  }
-
-  ${desktop.m} {
-    & {
-      margin-top: ${calcRem(80)};
-    }
-  }
-
-  ${desktop.s} {
-    & {
-      margin-top: ${calcRem(112)};
-    }
   }
 
   ${tablet.all} {

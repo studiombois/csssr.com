@@ -25,8 +25,6 @@ const Menu = ({ className, isMobile, l10n: { translations, language } }) => {
       return
     }
 
-    console.log(item)
-
     const prevActiveItemIndex = menu.findIndex(({ id }) => id === activeItem)
     const activeItemIndex = menu.find(({ id }) => id === item)
 

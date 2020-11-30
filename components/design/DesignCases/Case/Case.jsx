@@ -12,7 +12,7 @@ import { DeviceConsumer } from '../../../../utils/deviceProvider'
 const Case = ({
   className,
   plug,
-  content: { images, imgAlt, heading, text },
+  content: { images, id, imgAlt, heading, text, tag, country },
   index,
   isMobile,
   l10n: { translations },
@@ -39,7 +39,7 @@ const Case = ({
   const side = (index + 1) % 2 ? 'left' : 'right'
 
   return (
-    <div className={cn(className, size, side, { is_touched: isTouched })}>
+    <div className={cn(className, id(translations), size, side, { is_touched: isTouched })}>
       <div
         className="image-wrapper"
         onTouchStart={handleTouchStart}
@@ -68,6 +68,24 @@ const Case = ({
         dangerouslySetInnerHTML={{ __html: text(translations) }}
         className="text"
       />
+
+      <div className="data-wrapper">
+        <Text
+          dangerouslySetInnerHTML={{ __html: tag(translations) }}
+          className="tag"
+          data-testid={`projects:disignesCases.tag.${tag(translations)}`}
+        />
+
+        <span className="separator">•</span>
+
+        <Text
+          type="regular"
+          size="s"
+          dangerouslySetInnerHTML={{ __html: country(translations) }}
+          className="country"
+          data-testid={`projects:disignesCases.country.${country(translations)}`}
+        />
+      </div>
     </div>
   )
 }

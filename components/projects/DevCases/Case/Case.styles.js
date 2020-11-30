@@ -20,7 +20,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     &:nth-of-type(n + 3) {
-      margin-top: ${calcRem(81)};
+      margin-top: ${calcRem(104)};
     }
   }
 
@@ -56,18 +56,18 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
   }
 
   .heading {
-    margin-top: ${calcRem(30)};
+    margin-top: ${calcRem(32)};
   }
 
   .text {
     grid-column: 2 / span 4;
-    margin-top: ${calcRem(15)};
+    margin-top: ${calcRem(16)};
   }
 
   .data-wrapper {
     display: flex;
     align-items: center;
-    margin-top: ${calcRem(15)};
+    margin-top: ${calcRem(12)};
   }
 
   .tag {
@@ -106,12 +106,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       }
 
       &:nth-of-type(n + 3) {
-        margin-top: ${calcRem(70)};
+        margin-top: ${calcRem(72)};
       }
     }
 
     .heading {
-      margin-top: ${calcRem(20)};
+      margin-top: ${calcRem(16)};
 
       &.small {
         max-width: ${calcRem(379)};
@@ -119,11 +119,11 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .text {
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(8)};
     }
 
     .data-wrapper {
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(8)};
     }
 
     .text,
@@ -140,7 +140,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
       grid-column: 1 / span 6 !important;
 
       &:not(:nth-of-type(1)) {
-        margin-top: ${calcRem(59)};
+        margin-top: ${calcRem(64)};
       }
 
       &.mindbox .separator:nth-of-type(2) {
@@ -153,7 +153,7 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .heading {
-      margin-top: ${calcRem(20)};
+      margin-top: ${calcRem(16)};
     }
 
     .text,
@@ -166,12 +166,12 @@ const base = ({ breakpoints: { tablet, mobile }, colors }) => css`
     }
 
     .text {
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(12)};
     }
 
     .data-wrapper {
       flex-wrap: wrap;
-      margin-top: ${calcRem(10)};
+      margin-top: ${calcRem(8)};
     }
 
     .mindbox .separator:nth-of-type(2) {

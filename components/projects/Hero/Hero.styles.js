@@ -4,7 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    margin-top: ${calcRem(144)};
+    margin-top: ${calcRem(216)};
   }
 
   .heading {
@@ -16,7 +16,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .text {
     grid-column: 2 / span 4;
-    margin-top: ${calcRem(40)};
+    margin-top: ${calcRem(32)};
   }
 
   .picture-wrapper {
@@ -79,7 +79,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(136)};
+      margin-top: ${calcRem(176)};
     }
 
     .heading {
@@ -100,6 +100,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${mobile.all} {
+    & {
+      margin-top: ${calcRem(152)};
+    }
+
     .heading {
       grid-row: 1;
       grid-column: 1 / span 6;
@@ -109,11 +113,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .text {
       grid-row: 2;
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(24)};
     }
 
     .picture-wrapper {
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(24)};
       grid-row: 3;
       grid-column: 1 / span 6;
       width: 100%;

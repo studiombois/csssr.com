@@ -9,6 +9,7 @@ import Text from '../../ui-kit/core-design/Text'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { PagesListConsumer } from '../../../utils/pagesListProvider'
 import getPagePathnameInLanguage from '../../../common/get-page-pathname-in-language'
+import { ReactComponent as AllianceIcon } from '../../../static/icons/footer/alliance.svg'
 
 const PrivacyAndLanguageLinks = ({
   className,
@@ -29,7 +30,7 @@ const PrivacyAndLanguageLinks = ({
           data-testid="Footer:link.language-link"
         >
           <Text
-            className="link-text"
+            className="link-text language"
             dangerouslySetInnerHTML={{ __html: languageToRedirect }}
             type="perforator"
             size="s"
@@ -46,12 +47,36 @@ const PrivacyAndLanguageLinks = ({
           data-testid="Footer:link.privacy-policy"
         >
           <Text
-            className="link-text"
+            className="link-text privacy-policy"
             dangerouslySetInnerHTML={{ __html: translations.common.footer.privacy }}
             type="perforator"
             size="s"
           />
         </Link>
+
+        {language === 'ru' && (
+          <a
+            className="link alliance"
+            href="https://frontend.digital"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="Footer:link.aliance-digital"
+          >
+            <Text
+              className="link-text alliance-text"
+              dangerouslySetInnerHTML={{ __html: translations.common.footer.alliance.text }}
+              type="perforator"
+              size="s"
+            />
+            <AllianceIcon className="alliance-icon" />
+            <Text
+              className="link-text alliance-link"
+              dangerouslySetInnerHTML={{ __html: translations.common.footer.alliance.link }}
+              type="perforator"
+              size="s"
+            />
+          </a>
+        )}
 
         {language === 'en' && (
           <Link

@@ -108,6 +108,10 @@
       "contacts": "Контакты"
     },
     "privacy": "Политика конфиденциальности",
+    "alliance": {
+      "text": "часть альянса",
+      "link": "frontend.digital"
+    },
     "addresses": {
       "singapore": {
         "title": "Сингапур",

@@ -18,7 +18,7 @@ const Tabs = ({
   testId,
 }) => {
   return (
-    <div className={className}>
+    <div className={cn(className, 'map-tabs')}>
       {tabs.map(({ id, value }) => (
         <button
           className={cn('item', { _active: activeAddressId === id })}

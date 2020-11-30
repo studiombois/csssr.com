@@ -46,7 +46,7 @@ class MainPage extends PureComponent {
           templateTitle=""
           description={translations.main.meta.description}
         />
-        <Hero pageName={pageName} />
+        <Hero />
         <Services />
         <Cases />
         <OurFeatures />

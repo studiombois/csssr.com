@@ -29,6 +29,11 @@ const base = ({ breakpoints: { desktop, below, tablet, above, mobile }, colors})
     display: block;
   }
 
+  .service_design .service-title {
+    color: #F9555A;
+    text-decoration: none;
+  }
+
   .service-title {
     font-family: Roboto;
     font-style: normal;

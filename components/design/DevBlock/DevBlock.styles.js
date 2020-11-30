@@ -4,7 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    margin-top: ${calcRem(112)};
+    margin-top: ${calcRem(152)};
   }
 
   .heading {
@@ -16,7 +16,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   .text {
     grid-row: 2;
     grid-column: 2 / span 4;
-    margin-top: ${calcRem(48)};
+    margin-top: ${calcRem(32)};
+    line-height: ${calcRem(32)};
+    font-weight: 300;
   }
 
   .idea {
@@ -38,13 +40,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   .devBlock__link {
-    color: #F9545B;
+    color: #F9555A;
     text-decoration: underline;
-    text-emphasis-color: #F9545B;
+    text-emphasis-color: #F9555A;
     white-space: nowrap;
 
     &:visited {
-      color: #F9545B;
+      color: #F9555A;
     }
   }
 
@@ -70,8 +72,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(112)};
-      margin-bottom: ${calcRem(112)};
+      margin-top: ${calcRem(104)};
+      margin-bottom: ${calcRem(128)};
     }
 
     .heading {
@@ -85,6 +87,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     .text {
       grid-column: 1 / span 6;
       margin-top: ${calcRem(24)};
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+      font-weight: normal;
     }
 
     .idea {
@@ -105,7 +110,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(102)};
+      margin-top: ${calcRem(88)};
     }
 
     .heading {
@@ -117,6 +122,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-row: 2;
       grid-column: 1 / span 6;
       margin-top: ${calcRem(24)};
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+      font-weight: normal;
     }
 
     .idea {
@@ -126,7 +134,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-gap: 0 0.5rem;
       width: 20.5rem;
       min-height: auto;
-      margin-top: ${calcRem(163)};
+      margin-top: ${calcRem(155)};
     }
 
   }

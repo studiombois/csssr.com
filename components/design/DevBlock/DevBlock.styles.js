@@ -66,7 +66,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .text {
-      grid-column: 2 / span 6;
+      grid-column: 2 / span 5;
+      width: 544px;
     }
   }
 

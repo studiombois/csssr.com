@@ -160,7 +160,8 @@
   "checkBoxesText": {
     "privacyPolicyText": "By submitting the form, you agree to your personal data being stored and used for the purposes stated in the ",
     "privacyPolicyLinkText": "Privacy Policy",
-    "newsletterText": "I agree to receive information and commercial offers"
+    "newsletterText": "I agree to receive information and commercial offers",
+    "candidateNewsletterText": "I agree to receive promotional and information content via email" 
   },
   "form": {
     "errors": {

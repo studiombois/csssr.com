@@ -33,6 +33,8 @@ jobs:
           isProduction: "TRUE"
           csssrSpaceOrigin: "https://csssr.space"
           comHost: https://csssr.com
+          BENCHMARK_EMAIL_TOKEN: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}
+          BENCHMARK_EMAIL_UNPAID_ORDER_LIST_ID: ${{ secrets.BENCHMARK_EMAIL_UNPAID_ORDER_LIST_ID_PROD }}
 
       - name: Deploy
         uses: ./actions/deploy-chart/v1beta1

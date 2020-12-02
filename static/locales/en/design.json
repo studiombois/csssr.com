@@ -38,7 +38,7 @@
       "id": "nauto",
       "imgAlt": "Nauto",
       "heading": "Nauto. Web apps for vehicle fleets",
-      "text": "Nauto is&nbsp;the only real-time, AI-enabled driver and fleet safety platform to&nbsp;predict, prevent, and reduce the number of&nbsp;car accidents",
+      "text": "Nauto is&nbsp;the only real-time, AI-enabled driver and fleet safety platform to&nbsp;predict, prevent, and reduce the number of&nbsp;car accidents.",
       "tag": "IT",
       "country": "US"
     },
@@ -69,7 +69,7 @@
   },
   "devBlock": {
     "heading": "Go&nbsp;from cool <span style='color:#F9555A;'>idea</span> to insanely great <span style='color:#F9555A;'>product</span>",
-    "text": "You can read about our core mission, i.e. making complex websites & web applications, on the <a href='outsourcing-front-end' class='devBlock__link'>relevant page</a>"
+    "text": "You can read about our core mission, i.e. making complex websites & web applications, on the <a href='outsourcing-front-end' class='devBlock__link'>relevant page</a>."
   },
   "idea": {
     "heading": "Have an idea?",

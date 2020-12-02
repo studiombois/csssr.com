@@ -5,48 +5,48 @@ export default [
     links: [
       {
         id: 'outsourcing',
-        title: (t) => t.common.header.menu.services.outsourcing.title,
+        title: (t) => t.common.footer.services.outsourcing,
         href: 'service/outsourcing-front-end',
       },
       {
         id: 'backend',
-        title: (t) => t.common.header.menu.services.backend.title,
+        title: (t) => t.common.footer.services.backend,
         href: 'service/back-end-and-devops',
       },
       {
         id: 'mvp',
-        title: (t) => t.common.header.menu.services.mvp.title,
+        title: (t) => t.common.footer.services.mvp,
         href: 'service/mvp-development',
       },
-      // {
-      //   id: 'design',
-      //   title: (t) => t.common.header.menu.services.design.title,
-      //   href: 'service/design',
-      // },
+      {
+        id: 'design',
+        title: (t) => t.common.footer.services.design,
+        href: 'service/design',
+      },
     ],
   },
   {
     id: 'industries',
-    title: (t) => t.common.header.menu.industries.title,
+    title: (t) => t.common.footer.industries.title,
     links: [
       {
         id: 'fintech',
-        title: (t) => t.common.header.menu.industries.fintech.title,
+        title: (t) => t.common.footer.industries.fintech,
         href: 'industry/fintech',
       },
       {
-        id: 'eCommerce',
-        title: (t) => t.common.header.menu.industries.eCommerce.title,
-        href: 'industry/ecommerce',
-      },
-      {
         id: 'information',
-        title: (t) => t.common.header.menu.industries.information.title,
+        title: (t) => t.common.footer.industries.information,
         href: 'industry/information-technology',
       },
       {
+        id: 'eCommerce',
+        title: (t) => t.common.footer.industries.eCommerce,
+        href: 'industry/ecommerce',
+      },
+      {
         id: 'mediaAndMarketing',
-        title: (t) => t.common.header.menu.industries.mediaAndMarketing.title,
+        title: (t) => t.common.footer.industries.mediaAndMarketing,
         href: 'industry/media-and-marketing',
       },
     ],
@@ -57,29 +57,67 @@ export default [
     links: [
       {
         id: 'technologies',
-        title: (t) => t.common.header.menu.howWeWork.technologies.title,
+        title: (t) => t.common.footer.howWeWork.technologies,
         href: 'tech-stack',
       },
       {
         id: 'processes',
-        title: (t) => t.common.header.menu.howWeWork.processes.title,
+        title: (t) => t.common.footer.howWeWork.wayOfWork,
         href: 'way-of-work',
+      },
+      {
+        id: 'coreValues',
+        title: (t) => t.common.footer.howWeWork.coreValues,
+        href: 'core-values',
+      },
+      {
+        id: 'projects',
+        title: (t) => t.common.footer.howWeWork.projects,
+        href: 'projects',
       },
     ],
   },
   {
-    id: 'solutions',
-    title: (t) => t.common.header.menu.solutions.title,
+    id: 'products',
+    title: (t) => t.common.footer.products.title,
     links: [
       {
         id: 'lms',
-        title: (t) => t.common.header.menu.solutions.lms.title,
+        title: (t) => t.common.footer.products.lms,
         href: 'solutions/lms',
       },
       {
         id: 'tracker',
-        title: (t) => t.common.header.menu.solutions.tracker.title,
+        title: (t) => t.common.footer.products.tracker,
         href: 'https://tracker.csssr.com',
+      },
+    ],
+  },
+  {
+    id: 'company',
+    title: (t) => t.common.footer.company.title,
+    links: [
+      // {
+      //   id: 'about-us',
+      //   title: (t) => t.common.footer.company.aboutUs,
+      //   href: 'solutions/lms',
+      // },
+      {
+        id: 'careers',
+        title: (t) => t.common.footer.company.careers,
+        href: 'jobs',
+        useLocale: true,
+      },
+      {
+        id: 'blog',
+        title: (t) => t.common.footer.company.blog,
+        href: 'https://blog.csssr.com',
+        useLocale: true,
+      },
+      {
+        id: 'contacts',
+        title: (t) => t.common.footer.company.contacts,
+        href: 'contacts',
       },
     ],
   },

@@ -26,15 +26,15 @@ const error404 = require.context('../../public/images/error/404?csssr-images')
 class Error404Page extends React.Component {
   renderNav = ({ title, id, links }) => {
     const {
-      l10n: { language, translations },
+      l10n: { language, translations, locale },
     } = this.props
 
     const linkRegExp = /^(ftp|http|https):\/\/[^ "]+$/
 
-    if (id === 'solutions' && language === 'ru') return
+    if (id === 'products' && language === 'ru') return
 
     return (
-      <span key={id}>
+      <Fragment key={id}>
         <h3
           className="font_burger-menu"
           dangerouslySetInnerHTML={{ __html: title(translations) }}
@@ -43,7 +43,7 @@ class Error404Page extends React.Component {
 
         {links && (
           <ul className="menu">
-            {links.map(({ id, title, href }) => {
+            {links.map(({ id, title, href, useLocale }) => {
               if (id === 'design' && language === 'ru') return
 
               return (
@@ -54,11 +54,11 @@ class Error404Page extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="menu-item"
-                      href={href}
+                      href={`${href}/${useLocale ? language : ''}`}
                       dangerouslySetInnerHTML={{ __html: title(translations) }}
                     />
                   ) : (
-                    <Link href={`/${language}/${href}`}>
+                    <Link href={`/${useLocale ? locale : language}/${href}`}>
                       <a
                         data-testid={`ErrorPage:menu:link.${id}`}
                         className="menu-item"
@@ -71,7 +71,7 @@ class Error404Page extends React.Component {
             })}
           </ul>
         )}
-      </span>
+      </Fragment>
     )
   }
 

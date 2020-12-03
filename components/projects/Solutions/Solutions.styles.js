@@ -33,12 +33,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .solution-heading {
-    margin-top: ${calcRem(40)};
+    margin-top: ${calcRem(32)};
   }
 
   .text {
     grid-column: 2 / span 4;
-    margin-top: ${calcRem(32)};
+    margin-top: ${calcRem(24)};
     font-size: ${calcRem(18)};
     line-height: ${calcRem(30)};
   }
@@ -101,19 +101,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
 
     .solution {
-      margin-top: ${calcRem(32)};
+      margin-top: ${calcRem(40)};
 
       &_lms {
-        grid-column: 1 / span 6;
+        grid-column: 1 / span 5;
       }
 
       &_time-tracker {
-        grid-column: 8 / span 5;
+        grid-column: 7 / span 4;
       }
     }
 
     .solution-heading {
-      margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(32)};
     }
 
     .text {
@@ -125,7 +125,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(102)};
+      margin-top: ${calcRem(88)};
     }
 
     .heading {
@@ -140,7 +140,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       }
 
       &_time-tracker {
-        margin-top: ${calcRem(40)};
+        margin-top: ${calcRem(56)};
         grid-column: 1 / span 6;
       }
     }

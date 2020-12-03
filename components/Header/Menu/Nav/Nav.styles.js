@@ -137,7 +137,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     }
 
     .link {
-      padding-top: ${calcRem(42)};
+      padding-top: ${calcRem(39)};
       padding-left: ${calcRem(88)};
     }
   }
@@ -154,7 +154,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     }
   }
 
-  /* .nav_services_en {
+  .nav_services_en {
     .nav-item {
       width: 23.125%;
       margin-left: ${calcRem(19)};
@@ -168,7 +168,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     .icon {
       top: ${calcRem(60)};
     }
-  } */
+  }
 
   .link {
     position: relative;
@@ -306,12 +306,23 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     }
   }
 
+  ${desktop.all} {
+    .nav-item_outsourcing a {
+      padding-left: ${calcRem(94)};
+    }
+
+    .icon_outsourcing {
+      left: ${calcRem(44)};
+      top: ${calcRem(57)};
+    }
+  }
+
   ${desktop.l} {
-    /* .nav_services_en {
+    .nav_services_en {
       .nav-item {
         margin-left: ${calcRem(24)};
       }
-    } */
+    }
   }
 
   ${tablet.all} {
@@ -338,14 +349,31 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       }
     }
 
-    /* .nav_services_en {
+    .nav_services {
+      .link {
+        padding-top: ${calcRem(43)};
+        padding-left: ${calcRem(73)};
+      }
+
+      .icon {
+        top: ${calcRem(81)};
+      }
+    }
+
+    .nav_services_en {
       .nav-item {
         width: 21.875%;
         margin-left: ${calcRem(16)};
       }
 
+      .nav-item_design .link {
+        padding-top: ${calcRem(58)};
+        padding-left: ${calcRem(72)};
+      }
+
       .icon {
         left: ${calcRem(23)};
+        top: ${calcRem(60)};
       }
 
       .title {
@@ -354,17 +382,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
 
       .description {
         width: calc(100% - ${calcRem(10)});
-      }
-    } */
-
-    .nav_services {
-      .link {
-        padding-top: ${calcRem(64)};
-        padding-left: ${calcRem(89)};
-      }
-
-      .icon {
-        top: ${calcRem(81)};
       }
     }
 
@@ -385,7 +402,8 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
   ${above.mobile} {
     .nav-item_design {
       .link {
-        padding-top: ${calcRem(56)};
+        padding-top: ${calcRem(53)};
+        padding-left: ${calcRem(86)};
       }
 
       .description {

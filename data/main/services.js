@@ -17,11 +17,9 @@ const mvpImagesHovered = require.context(
   '../../public/images/main/services/normal/mvp-hovered?csssr-images',
 )
 
-const designImages = require.context(
-  '../../public/images/main/services/disabled/design?csssr-images',
-)
+const designImages = require.context('../../public/images/main/services/normal/design?csssr-images')
 const designImagesHovered = require.context(
-  '../../public/images/main/services/disabled/design-hovered?csssr-images',
+  '../../public/images/main/services/normal/design-hovered?csssr-images',
 )
 
 const services = [

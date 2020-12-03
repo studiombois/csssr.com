@@ -11,6 +11,7 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../utils/validators/candidateFormValidationRules'
 import withError from '../../utils/withError'
+import getBenchmarkEmailListId from '../../utils/getBenchmarkEmailListId'
 import getContactOptions from '../../data/job/getContactOptions'
 import getVacancyStructuredData from '../../utils/getVacancyStructuredData'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
@@ -118,7 +119,7 @@ const onSubmit = (translations) => async (values) => {
     let res
     try {
       res = await fetch(
-        `https://clientapi.benchmarkemail.com/Contact/${process.env.BENCHMARK_EMAIL_UNPAID_ORDER_LIST_ID}/ContactDetails`,
+        `https://clientapi.benchmarkemail.com/Contact/${getBenchmarkEmailListId()}/ContactDetails`,
         {
           method: 'POST',
           headers: {

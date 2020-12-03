@@ -27,4 +27,4 @@ jobs:
           isProduction: "false"
           csssrSpaceOrigin: "https://csssr.space"
           comHost: https://${{ steps.gh.outputs.releaseID }}.com.csssr.cloud
-          BENCHMARK_EMAIL_TOKEN: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}
+          benchmarkEmailToken: ${{ secrets.BENCHMARK_EMAIL_TOKEN }}

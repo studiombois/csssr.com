@@ -28,8 +28,8 @@
       "description": "Development of&nbsp;core functionality for testing purposes."
     },
     "design": {
-      "title": "<b>Design</b> Lab",
-      "description": "This part of our website is currently under construction yet the service is fully available. Feel free to <a href='/en/contacts' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; color:#0076FF;' data-testid='Home:link.contacts'>contact&nbsp;us</a> for further information."
+      "title": "<b>Design</b>Lab",
+      "description": "Web design services that complete the development cycle"
     }
   },
   "ourFeatures": {

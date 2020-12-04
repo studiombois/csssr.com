@@ -4,7 +4,7 @@ import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   & {
-    margin-top: ${calcRem(162)};
+    margin-top: ${calcRem(216)};
   }
 
   .visually-hidden {
@@ -24,7 +24,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .text {
     grid-column: 2 / span 5;
-    margin-top: ${calcRem(48)};
+    margin-top: ${calcRem(32)};
   }
 
   .image {
@@ -46,10 +46,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.s} {
-    & {
-      margin-top: ${calcRem(148)};
-    }
-
     .heading {
       margin-top: 0;
     }
@@ -69,7 +65,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(136)};
+      margin-top: ${calcRem(176)};
     }
 
     .heading {
@@ -91,7 +87,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${mobile.all} {
     & {
-      margin-top: ${calcRem(116)};
+      margin-top: ${calcRem(152)};
     }
 
     .heading {

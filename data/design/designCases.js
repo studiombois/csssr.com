@@ -1,87 +1,76 @@
-const INGImages = require.context('../../public/images/design/design-cases/ing?csssr-images')
-const NASAImages = require.context('../../public/images/design/design-cases/nasa?csssr-images')
-const qatarImages = require.context('../../public/images/design/design-cases/qatar?csssr-images')
+const nexarImages = require.context('../../public/images/design/design-cases/nexar?csssr-images')
 const ersteImages = require.context('../../public/images/design/design-cases/erste?csssr-images')
-const serpbookImages = require.context(
-  '../../public/images/design/design-cases/serpbook?csssr-images',
-)
-const cogniImages = require.context('../../public/images/design/design-cases/cogni?csssr-images')
-const ottomaticImages = require.context(
-  '../../public/images/design/design-cases/ottomatic?csssr-images',
-)
-
-const JTIImages = require.context('../../public/images/design/design-cases/jti?csssr-images')
-
-const creddibleImages = require.context(
-  '../../public/images/design/design-cases/creddible?csssr-images',
-)
-
-const truebillImages = require.context(
-  '../../public/images/design/design-cases/truebill?csssr-images',
-)
+const stoovoImages = require.context('../../public/images/design/design-cases/stoovo?csssr-images')
+const nautoImages = require.context('../../public/images/design/design-cases/nauto?csssr-images')
+const marcelImages = require.context('../../public/images/design/design-cases/marcel?csssr-images')
+const halffImages = require.context('../../public/images/design/design-cases/halff?csssr-images')
+const alenoImages = require.context('../../public/images/design/design-cases/aleno?csssr-images')
 
 export default {
   plug: (t) => t.design.designCases.plug,
   cases: [
     {
-      images: INGImages,
-      imgAlt: (t) => t.design.designCases.ing.imgAlt,
-      heading: (t) => t.design.designCases.ing.heading,
-      text: (t) => t.design.designCases.ing.text,
-    },
-    {
-      images: NASAImages,
-      imgAlt: (t) => t.design.designCases.nasa.imgAlt,
-      heading: (t) => t.design.designCases.nasa.heading,
-      text: (t) => t.design.designCases.nasa.text,
-    },
-    {
-      images: qatarImages,
-      imgAlt: (t) => t.design.designCases.qatar.imgAlt,
-      heading: (t) => t.design.designCases.qatar.heading,
-      text: (t) => t.design.designCases.qatar.text,
+      images: nexarImages,
+      id: (t) => t.design.designCases.nexar.id,
+      imgAlt: (t) => t.design.designCases.nexar.imgAlt,
+      heading: (t) => t.design.designCases.nexar.heading,
+      text: (t) => t.design.designCases.nexar.text,
+      tag: (t) => t.design.designCases.nexar.tag,
+      country: (t) => t.design.designCases.nexar.country,
     },
     {
       images: ersteImages,
+      id: (t) => t.design.designCases.erste.id,
       imgAlt: (t) => t.design.designCases.erste.imgAlt,
       heading: (t) => t.design.designCases.erste.heading,
       text: (t) => t.design.designCases.erste.text,
+      tag: (t) => t.design.designCases.erste.tag,
+      country: (t) => t.design.designCases.erste.country,
     },
     {
-      images: serpbookImages,
-      imgAlt: (t) => t.design.designCases.serpbook.imgAlt,
-      heading: (t) => t.design.designCases.serpbook.heading,
-      text: (t) => t.design.designCases.serpbook.text,
+      images: stoovoImages,
+      id: (t) => t.design.designCases.stoovo.id,
+      imgAlt: (t) => t.design.designCases.stoovo.imgAlt,
+      heading: (t) => t.design.designCases.stoovo.heading,
+      text: (t) => t.design.designCases.stoovo.text,
+      tag: (t) => t.design.designCases.stoovo.tag,
+      country: (t) => t.design.designCases.stoovo.country,
     },
     {
-      images: cogniImages,
-      imgAlt: (t) => t.design.designCases.cogni.imgAlt,
-      heading: (t) => t.design.designCases.cogni.heading,
-      text: (t) => t.design.designCases.cogni.text,
+      images: nautoImages,
+      id: (t) => t.design.designCases.nauto.id,
+      imgAlt: (t) => t.design.designCases.nauto.imgAlt,
+      heading: (t) => t.design.designCases.nauto.heading,
+      text: (t) => t.design.designCases.nauto.text,
+      tag: (t) => t.design.designCases.nauto.tag,
+      country: (t) => t.design.designCases.nauto.country,
     },
     {
-      images: ottomaticImages,
-      imgAlt: (t) => t.design.designCases.ottomatic.imgAlt,
-      heading: (t) => t.design.designCases.ottomatic.heading,
-      text: (t) => t.design.designCases.ottomatic.text,
+      images: marcelImages,
+      id: (t) => t.design.designCases.marcel.id,
+      imgAlt: (t) => t.design.designCases.marcel.imgAlt,
+      heading: (t) => t.design.designCases.marcel.heading,
+      text: (t) => t.design.designCases.marcel.text,
+      tag: (t) => t.design.designCases.marcel.tag,
+      country: (t) => t.design.designCases.marcel.country,
     },
     {
-      images: JTIImages,
-      imgAlt: (t) => t.design.designCases.jti.imgAlt,
-      heading: (t) => t.design.designCases.jti.heading,
-      text: (t) => t.design.designCases.jti.text,
+      images: halffImages,
+      id: (t) => t.design.designCases.halff.id,
+      imgAlt: (t) => t.design.designCases.halff.imgAlt,
+      heading: (t) => t.design.designCases.halff.heading,
+      text: (t) => t.design.designCases.halff.text,
+      tag: (t) => t.design.designCases.halff.tag,
+      country: (t) => t.design.designCases.halff.country,
     },
     {
-      images: creddibleImages,
-      imgAlt: (t) => t.design.designCases.creddible.imgAlt,
-      heading: (t) => t.design.designCases.creddible.heading,
-      text: (t) => t.design.designCases.creddible.text,
-    },
-    {
-      images: truebillImages,
-      imgAlt: (t) => t.design.designCases.truebill.imgAlt,
-      heading: (t) => t.design.designCases.truebill.heading,
-      text: (t) => t.design.designCases.truebill.text,
+      images: alenoImages,
+      id: (t) => t.design.designCases.aleno.id,
+      imgAlt: (t) => t.design.designCases.aleno.imgAlt,
+      heading: (t) => t.design.designCases.aleno.heading,
+      text: (t) => t.design.designCases.aleno.text,
+      tag: (t) => t.design.designCases.aleno.tag,
+      country: (t) => t.design.designCases.aleno.country,
     },
   ],
 }

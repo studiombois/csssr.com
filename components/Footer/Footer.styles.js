@@ -126,7 +126,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
 
     .link-text {
       color: ${colors.primary.origin};
-      font-weight: 300;
+      font-weight: 400;
     }
   }
 `

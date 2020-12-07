@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
   & {
     margin-top: ${calcRem(11)};
     display: flex;
@@ -11,10 +11,24 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     & > li {
       display: flex;
     }
+
+    & li {
+      align-items: flex-end;
+    }
   }
 
   .link {
     text-decoration: none;
+  }
+
+  .alliance {
+    display: flex;
+    align-items: flex-end;
+    margin-left: ${calcRem(40)};
+  }
+
+  .alliance-icon {
+    margin: 0 ${calcRem(4)};
   }
 
   .language-link {
@@ -33,11 +47,39 @@ const base = ({ breakpoints: { mobile }, colors }) => css`
     color: ${colors.primary.origin};
   }
 
-  ${mobile.all} {
-    margin-top: ${calcRem(45)};
+  ${tablet.all} {
+    .privacy-policy,
+    .alliance-text,
+    .alliance-link,
+    .language {
+      font-weight: 400;
+    }
+  }
 
+  ${mobile.all} {
+    & {
+      margin-top: ${calcRem(45)};
+    }
+
+    & li {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .alliance {
+      margin-top: ${calcRem(37)};
+      margin-left: 0;
+    }
+    
     .language-link {
       display: none;
+    }
+
+    .privacy-policy,
+    .alliance-text,
+    .alliance-link,
+    .language {
+      font-weight: 400;
     }
   }
 `

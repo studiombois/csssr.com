@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { string } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
@@ -8,6 +8,7 @@ import Addresses from './Addresses'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
+import { DeviceConsumer } from '../../../utils/deviceProvider'
 
 const continents = require.context('../../../public/images/footer/continents?csssr-images')
 
@@ -26,11 +27,33 @@ const pins = [
   },
 ]
 
-const DoubleBottom = ({ className, l10n: { translations } }) => {
+const DoubleBottom = ({ className, l10n: { translations }, footerRef }) => {
   const [hoveredAddress, setHoveredAddress] = useState(null)
+  const [isVisible, setVisibility] = useState(false)
+
+  useEffect(() => {
+    const listener = () => {
+      const { top, bottom, height } = footerRef.current.getBoundingClientRect()
+
+      if (top + height < window.innerHeight && bottom >= 0) {
+        if (!isVisible) setVisibility(true)
+      } else {
+        if (isVisible) setVisibility(false)
+      }
+    }
+    window.addEventListener('scroll', listener)
+    window.addEventListener('resize', listener)
+    return () => {
+      window.removeEventListener('scroll', listener)
+      window.removeEventListener('resize', listener)
+    }
+  }, [footerRef, isVisible, setVisibility])
 
   return (
-    <div className={className} data-testid="Footer:block.double-bottom">
+    <div
+      className={cn(className, { is_visible: isVisible })}
+      data-testid="Footer:block.double-bottom"
+    >
       <Addresses setHoveredAddress={setHoveredAddress} />
       <div className={'map-wrapper'}>
         <div className={'map'} data-testid="Footer:block.map">
@@ -58,6 +81,8 @@ DoubleBottom.propTypes = {
   className: string,
 }
 
-export default L10nConsumer(styled(DoubleBottom)`
-  ${styles}
-`)
+export default DeviceConsumer(
+  L10nConsumer(styled(DoubleBottom)`
+    ${styles}
+  `),
+)

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { string } from 'prop-types'
 import NextLink from 'next/link'
 import { withRouter } from 'next/router'
@@ -26,36 +26,11 @@ const Footer = ({
   pagesList,
   router: { pathname },
 }) => {
-  const [IsDoubleBottomVisible, setDoubleBottomVisibility] = useState(false)
   const footerRef = useRef()
   const lngToRedirect = language === 'ru' ? 'en' : 'ru'
   const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
   const jobsRegExp = /job/
   const footerEmail = jobsRegExp.test(pathname) ? 'join@csssr.com' : 'launch@csssr.com'
-
-  useEffect(() => {
-    if (isMobile) {
-      setDoubleBottomVisibility(true)
-
-      return
-    }
-
-    const listener = () => {
-      const { top, bottom, height } = footerRef.current.getBoundingClientRect()
-
-      if (top + height < window.innerHeight && bottom >= 0) {
-        if (!IsDoubleBottomVisible) setDoubleBottomVisibility(true)
-      } else {
-        if (IsDoubleBottomVisible) setDoubleBottomVisibility(false)
-      }
-    }
-    window.addEventListener('scroll', listener)
-    window.addEventListener('resize', listener)
-    return () => {
-      window.removeEventListener('scroll', listener)
-      window.removeEventListener('resize', listener)
-    }
-  }, [isMobile, IsDoubleBottomVisible])
 
   return (
     <footer className={className} ref={footerRef}>
@@ -109,7 +84,7 @@ const Footer = ({
         <PrivacyAndLanguageLinks />
       </div>
 
-      {IsDoubleBottomVisible && <DoubleBottom />}
+      <DoubleBottom footerRef={footerRef} />
     </footer>
   )
 }

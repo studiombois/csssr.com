@@ -9,6 +9,7 @@ module.exports = withSourceMaps({
   env: {
     CSSSR_SPACE_ORIGIN: process.env.CSSSR_SPACE_ORIGIN,
     IS_PRODUCTION: process.env.IS_PRODUCTION,
+    BENCHMARK_EMAIL_TOKEN: process.env.BENCHMARK_EMAIL_TOKEN,
   },
   webpack: (config, { dev, isServer, buildId }) => {
     // Фиксит npm пакеты, которые зависят от `fs` модуля

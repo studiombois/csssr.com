@@ -11,6 +11,7 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../utils/validators/candidateFormValidationRules'
 import withError from '../../utils/withError'
+import getBenchmarkEmailListId from '../../utils/getBenchmarkEmailListId'
 import getContactOptions from '../../data/job/getContactOptions'
 import getVacancyStructuredData from '../../utils/getVacancyStructuredData'
 import { getOriginal } from '@csssr/csssr.images/dist/utils'
@@ -112,6 +113,49 @@ const onSubmit = (translations) => async (values) => {
 
   if (values.files) {
     formData.set('file', values.files[0])
+  }
+
+  if (values.newsletter) {
+    let res
+    try {
+      res = await fetch(
+        `https://clientapi.benchmarkemail.com/Contact/${getBenchmarkEmailListId()}/ContactDetails`,
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            AuthToken: process.env.BENCHMARK_EMAIL_TOKEN,
+          },
+          body: JSON.stringify({
+            Data: {
+              Email: values.email,
+              EmailPerm: 1,
+            },
+          }),
+        },
+      )
+    } catch {
+      let error
+      try {
+        const response = await res.json()
+        error = response.error
+      } catch {
+        error = translations.common.form.errors.general
+      }
+
+      Sentry.withScope((scope) => {
+        scope.setExtra('values', values)
+        scope.setExtra('reqBody', formData)
+        Sentry.captureException(error)
+      })
+
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'job_form_fail' })
+      }
+
+      return { [FORM_ERROR]: error }
+    }
   }
 
   let res

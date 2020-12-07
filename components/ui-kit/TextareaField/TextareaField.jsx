@@ -15,7 +15,7 @@ class TextareaField extends PureComponent {
     autoFocus: bool,
     type: string,
     disabled: bool,
-    testId: string.isRequired,
+    testId: string,
   }
 
   static defaultProps = {

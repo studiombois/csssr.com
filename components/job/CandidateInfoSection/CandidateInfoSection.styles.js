@@ -15,16 +15,25 @@ const base = css`
     margin-top: 2.9375rem;
   }
 
+  .news-field,
   .policy-text {
     display: block;
-    margin-top: 3.4375rem;
     grid-column: 2 / span 6;
     font-family: Roboto, sans-serif;
-    font-size: 1rem;
+    font-size: 0.875rem;
+    line-height: 1rem;
     font-style: normal;
     font-weight: 300;
-    line-height: 1.5rem;
     color: #18191b;
+  }
+
+  .news-field {
+    margin-top: 3.5rem; 
+  }
+
+  .policy-text {
+    margin-top: 1.5rem;
+    color: #9B9B9B;
 
     > a {
       color: #0076ff;
@@ -32,13 +41,27 @@ const base = css`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1279px) and (min-width: 768px) {
+    .news-field {
+      margin-top: 2rem;
+    }
+
+    .news-field label,
+    .policy-text {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
     & {
       margin-top: 3.5625rem;
     }
 
     h2,
-    p {
+    p,
+    .news-field,
+    .policy-text
+     {
       grid-column: 1 / span 6;
     }
 
@@ -48,11 +71,17 @@ const base = css`
       line-height: 1.5rem;
     }
 
+    .news-field {
+      margin-top: 2rem;
+    }
+
     .policy-text {
-      margin-top: 4.125rem;
-      grid-column: 1 / span 6;
+      margin-top: 1rem;
+    }
+
+    .news-field label,
+    .policy-text {
       font-size: 0.75rem;
-      line-height: 1rem;
     }
   }
 `

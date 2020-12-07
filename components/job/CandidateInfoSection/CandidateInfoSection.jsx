@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Field } from 'react-final-form'
 import styled from '@emotion/styled'
+import cn from 'classnames'
 import styles, {
   stylesForFileField,
   stylesForFirstHalfWidthField,
@@ -13,6 +14,7 @@ import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import ContactOptions from '../ContactOptions'
 import ContactOptionsMobile from '../ContactOptionsMobile'
+import Checkbox from '../../ui-kit/Checkbox'
 import TextField from '../../ui-kit/TextField/TextField'
 import FileField from '../../ui-kit/FileField/FileField'
 import TextareaField from '../../ui-kit/TextareaField/TextareaField'
@@ -156,6 +158,19 @@ const CandidateInfoSection = (props) => {
           />
         </Fragment>
       )}
+
+      <div className={cn('field', 'field_type_checkbox', 'news-field')}>
+        <Field
+          id="newsletter"
+          name="newsletter"
+          type="checkbox"
+          component={Checkbox}
+          testId={'CandidateForm:field:callbackForm.newsletter.checkbox'}
+          tabIndex="0"
+        >
+          {translations.common.checkBoxesText.candidateNewsletterText}
+        </Field>
+      </div>
 
       <p
         className="policy-text"

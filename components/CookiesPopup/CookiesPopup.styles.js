@@ -64,7 +64,13 @@ const base = ({ media }) => css`
     margin-left: 0.25rem;
   }
 
-  ${media.from('1024px')} {
+  @media (max-width: 1070px) and (min-width: 1025px) {
+    p.cookies-text {
+      max-width: ${calcRem(692)};
+    }
+  }
+
+  ${media.from('1025px')} {
     & {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
@@ -82,7 +88,7 @@ const base = ({ media }) => css`
     }
   }
 
-  ${media.to('1023px')} {
+  ${media.to('1024px')} {
     .cookies-text {
       max-width: ${calcRem(692)};
     }

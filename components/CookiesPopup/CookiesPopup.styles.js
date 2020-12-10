@@ -8,8 +8,8 @@ const base = ({ media }) => css`
     bottom: 0;
     left: 0;
     width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: ${calcRem(8)};
+    padding-bottom: ${calcRem(8)};
     padding-left: 2rem;
     padding-right: 2.265rem;
     background-color: #171717;
@@ -23,7 +23,8 @@ const base = ({ media }) => css`
   }
 
   .wrap {
-    max-width: 43.25rem;
+    position: relative;
+    display: flex;
   }
 
   .close {
@@ -32,16 +33,28 @@ const base = ({ media }) => css`
     border: none;
     position: absolute;
     top: 1rem;
-    right: 1rem;
-    width: 1rem;
     height: 1rem;
     color: #ffffff;
     cursor: pointer;
   }
 
   .cookies-text {
+    position: relative;
     color: #ffffff;
     -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+  }
+
+  .cookies-text::after {
+    content: '';
+    position: absolute;
+    right: -172px;
+    top: 2px;
+    width: ${calcRem(62)};
+    height: ${calcRem(53)};
+    background-image: url('../../static/icons/cookies-banner/cookie_ready.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   .cookies-link {
@@ -51,21 +64,65 @@ const base = ({ media }) => css`
     margin-left: 0.25rem;
   }
 
-  ${media.from('1024px')} {
+  @media (max-width: 1070px) and (min-width: 1025px) {
+    p.cookies-text {
+      max-width: ${calcRem(692)};
+    }
+  }
+
+  ${media.from('1025px')} {
     & {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }
 
     .close {
-      top: 1.25rem;
-      right: 2rem;
+      top: ${calcRem(21)};
+      right: ${calcRem(16)};
       width: 1.5rem;
       height: 1.5rem;
     }
 
-    .wrap {
-      max-width: 49rem;
+    .cookies-text {
+      max-width: ${calcRem(780)};
+    }
+  }
+
+  ${media.to('1024px')} {
+    .cookies-text {
+      max-width: ${calcRem(692)};
+    }
+
+    .cookies-text::after {
+      right: ${calcRem(-133)};
+    }
+
+    .close {
+      top: ${calcRem(19)};
+      right: ${calcRem(15)};
+    }
+  }
+
+  ${media.from('768px')} {
+    .close {
+      width: ${calcRem(24)};
+      height: ${calcRem(24)};
+    }
+  }
+
+  ${media.to('767px')} {
+    & {
+      padding-top: ${calcRem(16)};
+      padding-bottom: ${calcRem(16)};
+    }
+
+    .cookies-text::after {
+      display: none;
+    }
+
+    .close {
+      width: ${calcRem(16)};
+      height: ${calcRem(16)};
     }
   }
 

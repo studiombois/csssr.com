@@ -30,6 +30,11 @@ const teamImages = require.context(
 )
 
 class ElearningPlatformContent extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.sectionRef = React.createRef()
+  }
+
   state = {
     activeDesignImage: 'base',
     activeFeatureImage: 'payment',
@@ -334,7 +339,7 @@ class ElearningPlatformContent extends PureComponent {
           </div>
         </div>
 
-        <div className="advanced-features">
+        <div className="advanced-features" ref={this.sectionRef}>
           <div className="grid">
             <h3 className="font-heading-5 advanced-features-title">Advanced Feature Ideas</h3>
 
@@ -358,6 +363,7 @@ class ElearningPlatformContent extends PureComponent {
                 images={images}
                 text={text}
                 d={description}
+                onClick={() => this.sectionRef.current.scrollIntoView()}
                 onMouseOver={() => this.setState({ activeFeatureImage: id })}
                 isActive={this.state.activeFeatureImage === id}
                 imageAlt={imageAlt}

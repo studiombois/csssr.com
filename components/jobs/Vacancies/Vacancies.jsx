@@ -77,6 +77,7 @@ class Vacancies extends PureComponent {
             className="picture"
             requireImages={howImages}
             alt={translations.jobs.how.alt}
+            loading="lazy"
           />
 
           <h2 className="font_h2-regular">
@@ -92,6 +93,7 @@ class Vacancies extends PureComponent {
             className="picture"
             requireImages={whoImages}
             alt={translations.jobs.who.alt}
+            loading="lazy"
           />
 
           <h2 className="font_h2-regular">
@@ -107,6 +109,7 @@ class Vacancies extends PureComponent {
             className="picture"
             requireImages={distanceImages}
             alt={translations.jobs.about.alt}
+            loading="lazy"
           />
 
           <h2
@@ -129,6 +132,7 @@ class Vacancies extends PureComponent {
                 requireImages={faqImages}
                 alt={translations.jobs.faq.alt}
                 testid="Jobs:img.faq"
+                loading="lazy"
               />
 
               <p className="faq-text font_p16-regular">
@@ -145,6 +149,7 @@ class Vacancies extends PureComponent {
             css={pictureHunterStyles}
             requireImages={jobsHunter}
             alt={translations.jobs.hunter.alt}
+            loading="lazy"
           />
           <p className="hunter-text font_p16-regular">
             {translations.jobs.hunter.description}&nbsp;

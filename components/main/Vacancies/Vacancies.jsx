@@ -28,6 +28,7 @@ const Vacancies = ({ className, vacancies, l10n: { translations, locale } }) => 
       className="picture"
       requireImages={vacanciesImages}
       alt={translations.main.imgAlt.vacancies}
+      loading="lazy"
     />
 
     <ul className="list">

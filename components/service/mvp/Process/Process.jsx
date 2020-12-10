@@ -23,6 +23,7 @@ const Process = ({ className, l10n: { translations } }) => (
       className="picture"
       requireImages={solarSystem}
       alt={translations.mvp.imgAlt.solar_system}
+      loading="lazy"
     />
 
     <Grid as="div" className="content">

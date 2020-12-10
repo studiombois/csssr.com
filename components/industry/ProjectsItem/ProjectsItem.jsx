@@ -26,7 +26,12 @@ const ProjectsItem = ({
     <div className={cn(itemClassName, className)} data-testid={`Cases:case.${link}`}>
       <Link className="project-link" href={`/${language}/project/${link}`}>
         <div className={`picture-wrapper picture-wrapper_${imgAlt}`}>
-          <PictureSmart requireImages={images} alt={imgAlt} className={`image image_${imgAlt}`} />
+          <PictureSmart
+            requireImages={images}
+            alt={imgAlt}
+            className={`image image_${imgAlt}`}
+            loading="lazy"
+          />
         </div>
         <Heading.H2
           type="regular"

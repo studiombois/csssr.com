@@ -57,6 +57,7 @@ const VacancyImageAndLinks = ({
             alt={translations.job.faq.alt}
             css={faqImageStyles}
             testid="Jobs:img.faq"
+            loading="lazy"
           />
         </Fragment>
       )}

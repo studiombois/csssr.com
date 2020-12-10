@@ -31,6 +31,7 @@ const Autotests = ({ className, l10n: { translations } }) => (
         className="picture"
         requireImages={autotestsImages}
         alt={translations.technologies.imgAlt.autotests}
+        loading="lazy"
       />
 
       <SubHeading

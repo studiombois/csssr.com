@@ -16,6 +16,7 @@ const Item = ({ className, l10n: { translations, language }, groupId, itemId, li
       className="picture"
       requireImages={images}
       alt={translations.outsourcingFrontEnd.imgAlt.ourAdvantages[groupId][itemId]}
+      loading="lazy"
     />
 
     <Heading

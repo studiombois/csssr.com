@@ -14,6 +14,7 @@ const CoreValuesItem = ({ images, imgAlt, title, text, itemClassName, l10n: { tr
       requireImages={images}
       alt={imgAlt(translations)}
       className={cn(itemClassName, 'image')}
+      loading="lazy"
     />
 
     <Heading className={cn(itemClassName, 'title')} as="h3" type="regular" size="m">

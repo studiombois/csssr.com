@@ -40,7 +40,12 @@ const BackEndDevelopment = ({
         dangerouslySetInnerHTML={{ __html: description(translations) }}
         className="text"
       />
-      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+      <PictureSmart
+        requireImages={images}
+        alt={imgAlt(translations)}
+        className="image"
+        loading="lazy"
+      />
       <div className="left-block">
         <Heading
           as="h2"

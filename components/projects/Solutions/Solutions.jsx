@@ -40,7 +40,8 @@ const Solutions = ({ className, l10n: { translations }, pageName = 'projects' })
               className="image"
               requireImages={images}
               alt={imgAlt(translations)}
-              testid="contactUs:picture:bookACall.avatar"
+              testid={`solutions:solution.${blockClass}.picture`}
+              loading="lazy"
             />
           </div>
 

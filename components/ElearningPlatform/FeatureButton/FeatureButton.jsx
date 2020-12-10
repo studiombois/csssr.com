@@ -22,7 +22,7 @@ const FeatureButton = ({
       onClick={onClick}
       onMouseOver={onMouseOver}
     >
-      <PictureSmart className="image" requireImages={images} alt={imageAlt} />
+      <PictureSmart className="image" requireImages={images} alt={imageAlt} loading="lazy" />
 
       <div className="wrapper">
         <p className="font-p-4 title">{text}</p>

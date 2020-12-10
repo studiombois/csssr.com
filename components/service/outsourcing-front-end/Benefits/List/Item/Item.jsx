@@ -33,6 +33,7 @@ const Item = ({ className, index, images, l10n: { translations } }) => (
       className="picture"
       requireImages={images}
       alt={translations.outsourcingFrontEnd.imgAlt.benefits[index]}
+      loading="lazy"
     />
   </li>
 )

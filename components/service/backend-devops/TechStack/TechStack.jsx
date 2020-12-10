@@ -50,6 +50,7 @@ const TechStack = ({
           requireImages={javaImages}
           alt={javaImgAlt(translations)}
           className="java-image"
+          loading="lazy"
         />
         <Text
           type="strong"
@@ -75,6 +76,7 @@ const TechStack = ({
           requireImages={mongoDbImages}
           alt={mongoDbImgAlt(translations)}
           className="mongodb-image"
+          loading="lazy"
         />
         <Text
           type="strong"

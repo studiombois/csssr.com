@@ -45,6 +45,7 @@ const AboutFrontend = ({ className, l10n: { translations } }) => (
       className="picture"
       requireImages={aboutFrontendImage}
       alt={translations.outsourcingFrontEnd.imgAlt.aboutFrontend}
+      loading="lazy"
     />
   </Grid>
 )

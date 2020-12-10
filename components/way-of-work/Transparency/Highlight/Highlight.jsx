@@ -57,6 +57,7 @@ const Highlight = ({ className, id, isMobile, active, l10n: { translations } }) 
             requireImages={highlightImages}
             alt={translations.wayOfWork.transparency.imagesAlt.highlight}
             className="image"
+            loading="lazy"
           />
 
           {figures.map((figure) => (
@@ -67,6 +68,7 @@ const Highlight = ({ className, id, isMobile, active, l10n: { translations } }) 
               className={cn('figure', figure.name, {
                 active: figure.name === active,
               })}
+              loading="lazy"
             />
           ))}
         </>

@@ -13,7 +13,6 @@ import Head from '../Head'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 
 import { ReactComponent as LogoIcon } from '../../static/icons/csssr_logo.svg'
-import { ReactComponent as LineFromTopToBottomIcon } from '../../static/icons/lineFromTopToBottom.svg'
 import { ReactComponent as NotFound } from '../../static/icons/notFound.svg'
 
 import navItems from '../../data/error/navItems'
@@ -104,39 +103,37 @@ class Error404Page extends React.Component {
           <meta name="robots" content="noindex" />
         </Head>
 
-        <Grid as="header" className={className}>
-          <Link href={rootUrl}>
-            <a className="logo" data-testid="ErrorPage:link.logo">
-              <LogoIcon width="100%" height="100%" />
-            </a>
-          </Link>
-        </Grid>
+        <Grid as="header" className={cn(className, `header_404`)}></Grid>
 
         <Grid as="main" className={cn(className, `error-code_404`)}>
-          <h1
-            className="font_h1-slab"
-            dangerouslySetInnerHTML={{ __html: translations.error.errors.notFound.title }}
-          />
+          <Grid as="div" className="fixed">
+            <Link href={rootUrl}>
+              <a className="logo" data-testid="ErrorPage:link.logo">
+                <LogoIcon width="100%" height="100%" />
+              </a>
+            </Link>
+            <h1
+              className="page-title font_h1-slab"
+              dangerouslySetInnerHTML={{ __html: translations.error.errors.notFound.title }}
+            />
 
-          <div className="picture-container">
-            <PictureSmart className="picture" requireImages={error404} />
-          </div>
+            <div className="picture-container">
+              <PictureSmart className="picture" requireImages={error404} />
 
-          <div className={'code-wrapper'}>
-            <NotFound width="auto" height="100%" />
-          </div>
+              <div className={'code-wrapper'}>
+                <NotFound width="auto" height="100%" />
+              </div>
+            </div>
+          </Grid>
 
           <h2
-            className="font_subhead-slab"
+            className="list-title font_subhead-slab"
             dangerouslySetInnerHTML={{
               __html: translations.error.errors.notFound.subtitle,
             }}
           />
           <Fragment>
-            <div className="arrow-wrapper">
-              <LineFromTopToBottomIcon width="100%" height="100%" />
-            </div>
-
+            <div className="arrow-wrapper" />
             <div className="navList">{navItems.map(this.renderNav)}</div>
           </Fragment>
         </Grid>

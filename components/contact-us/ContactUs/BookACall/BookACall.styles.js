@@ -34,12 +34,59 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     line-height: ${calcRem(16)};
   }
 
+  .email-container {
+    display: flex;
+    align-items: baseline;
+    margin-top: ${calcRem(10)};
+  }
+
+  .email-wrapper {
+    position: relative;
+  }
+
   .email {
     font-weight: 500;
     font-size: ${calcRem(16)};
     line-height: ${calcRem(32)};
     text-decoration-line: underline;
     color: ${colors.primary.origin};
+  }
+
+  .copy-message {
+    position: absolute;
+    bottom: ${calcRem(-18)};
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: ${calcRem(10)};
+    line-height: ${calcRem(10)};
+    font-weight: normal;
+    letter-spacing: ${calcRem(1.3)};
+    color: ${colors.primary.origin};
+    text-transform: uppercase;
+  }
+
+  .copy-icon-button {
+    position: relative;
+    bottom: ${calcRem(5)};
+    width: ${calcRem(16)};
+    height: ${calcRem(16)};
+    margin-left: ${calcRem(10)};
+    border: none;
+    background: none;
+    color: ${colors.primary.origin};
+    cursor: pointer;
+
+    &[disabled] {
+      cursor: default;
+    }
+  }
+
+  .copy-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .manager-name,
@@ -87,6 +134,12 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
     width: auto;
   }
 
+  @media (pointer: fine) {
+    .copy-icon-button:hover {
+      color: ${colors.primary.darken15};
+    }
+  }
+
   ${above.mobile} {
     & {
       flex-direction: column;
@@ -101,11 +154,6 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
 
     .manager-name {
       margin-top: ${calcRem(12)};
-    }
-
-    .email {
-      display: inline-block;
-      margin-top: ${calcRem(10)};
     }
 
     .manager-name,
@@ -171,7 +219,7 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
       margin-top: ${calcRem(4)};
     }
 
-    .email {
+    .email-container {
       margin-top: ${calcRem(4)};
     }
 

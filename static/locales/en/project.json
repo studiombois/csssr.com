@@ -15,6 +15,34 @@
       },
       "imgAlt": ""
     },
+    "challenge": {
+      "laptopImgAlt": "Laptop image",
+      "profileImgAlt": "Specialist profile",
+      "challenge": {
+        "heading": "The challenge",
+        "text": "Gazprom Neft decided to build a platform to connect talented individuals to corporate projects that would require their unique skills. Its implementation saw several independent teams working in close collaboration under quick release cycles."
+      },
+      "task": {
+        "heading": "The Task",
+        "text": "Build the front-end of the platform that would enable a whole set of communications, technologies, processes, and services to facilitate the interaction between individuals and companies that may need their involvement."
+      },
+      "result": {
+        "heading": "The Result",
+        "months": {
+          "number": "2",
+          "description": "Months from MVP<br /> to public release"
+        },
+        "releases": {
+          "number": "2",
+          "description": "major releases<br /> per month"
+        }
+      },
+      "quote": {
+        "text": "I would like to emphasize the professionalism and effectiveness of the CSSSR team in their solving complex problems and the commitment to meet all project plans and goals.",
+        "author": "Darya Skatova",
+        "role": "Project Manager, Gazprom Neft"
+      }
+    },
     "team": {
       "imgAlt": "Team composition.",
       "title": "Team Composition",

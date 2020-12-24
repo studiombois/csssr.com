@@ -7,7 +7,7 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Head from '../Head'
 import Hero from './Hero'
-import Team from './Team'
+import P4Team from './P4Team'
 import TechStack from './TechStack'
 
 import hero from '../../data/project/gazprom-neft/hero'
@@ -32,7 +32,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       />
 
       <Hero id="hero" content={hero} />
-      <Team id="team" content={team} />
+      <P4Team id="team" content={team} />
       <TechStack id="teckStack" content={techStack} />
       <AboutProject
         projectId={projectId}

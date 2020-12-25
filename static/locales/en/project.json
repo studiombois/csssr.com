@@ -33,23 +33,23 @@
         "fifthItem": "QA&nbsp;Engineers"
       }
     },
-    "techStack": {
-      "title": "Tech stack",
-      "techList": {
-        "firstItem": "React.js",
-        "secondItem": "Next.js + Webpack",
-        "thirdItem": "Kubernetes, Docker"
-      },
-      "numericData": {
-        "duration": {
-          "number": "13",
-          "text": "months <span>(Jan 2019 — ongoing)</span>"
-        },
-        "projectTeam": {
-          "number": "9",
-          "text": "specialists"
-        }
-      }
+    "businessAnalysis": {
+      "title": "Business Analysis",
+      "description": "Our business analyst worked out the platform functionality requirements.",
+      "text": [
+        "During the development process, she was working hand-by-hand with the client&rsquo;s product manager helping to&nbsp;transform users&rsquo; stories into <span style='white-space:nowrap'>well-documented</span> feature requests and technical specifications both for front-end and <span style='white-space:nowrap'>back-end</span> parts of&nbsp;the project.",
+        "Understanding the needs of&nbsp;customers and candidates alike improved the initial concept for user experience and interface."
+      ],
+      "imagesText": [
+        "Skills radar chart for easier evaluation of&nbsp;candidates by&nbsp;the customer",
+        "All the passed tests are represented as&nbsp;badges in&nbsp;the user&rsquo;s profile",
+        "An&nbsp;option to&nbsp;set up&nbsp;automatic testing for candidates"
+      ],
+      "imagesAlt": [
+        "Girl with radar picture",
+        "Winners podium",
+        "Greeting two men"
+      ]
     },
     "quote": {
       "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project, which is&nbsp;very important to&nbsp;the company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the team in&nbsp;proactivity solving complex problems, and its commitment to&nbsp;fulfilling plans and targets. I&rsquo;d also like to&nbsp;commend the team for the friendly atmosphere and rapport they helped to&nbsp;create.",

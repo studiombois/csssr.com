@@ -7,11 +7,11 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Head from '../Head'
 import Hero from './Hero'
-import Team from './Team'
+import Timeline from './Timeline'
 import TechStack from './TechStack'
 
 import hero from '../../data/project/gazprom-neft/hero'
-import team from '../../data/project/gazprom-neft/team'
+import timeline from '../../data/project/gazprom-neft/timeline'
 import techStack from '../../data/project/gazprom-neft/techStack'
 import quoteImages from '../../data/project/gazprom-neft/quote'
 import aboutProjectImages from '../../data/project/aboutProject'
@@ -32,7 +32,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       />
 
       <Hero id="hero" content={hero} />
-      <Team id="team" content={team} />
+      <Timeline content={timeline} />
       <TechStack id="teckStack" content={techStack} />
       <AboutProject
         projectId={projectId}

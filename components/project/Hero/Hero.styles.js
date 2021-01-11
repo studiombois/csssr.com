@@ -439,7 +439,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .p4-word {
-      width: ${calcRem(274)};
+      width: ${language === 'ru' ? calcRem(332) : calcRem(274)};
       height: ${calcRem(50)};
       margin-left: ${calcRem(-11)};
       margin-right: ${calcRem(5)};
@@ -504,7 +504,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .p4-word {
-      width: ${calcRem(274)};
+      width: ${language === 'ru' ? calcRem(332) : calcRem(274)};
       height: ${calcRem(50)};
       margin-left: ${calcRem(-8)};
       margin-right: ${calcRem(5)};

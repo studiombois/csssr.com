@@ -18,6 +18,28 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   .feature-item {
     display: flex;
     align-items: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+  }
+
+  .feature-item_graph {
+    transition-delay: 1s;
+  }
+
+  .feature-item_seo {
+    transition-delay: 1.3s;
+  }
+
+  .feature-item_deployment {
+    transition-delay: 1.6s;
+  }
+
+  .feature-item_chat {
+    transition-delay: 1.9s;
+  }
+
+  .features-wrapper.active .feature-item {
+    opacity: 1;
   }
 
   .feature-text {

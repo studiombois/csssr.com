@@ -1,5 +1,6 @@
-import React from 'react'
-import { array, string, func } from 'prop-types'
+import React, { useRef, useState, useEffect } from 'react'
+import { string, func } from 'prop-types'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Development.styles'
 
@@ -15,59 +16,93 @@ const Development = ({
   className,
   content: { heading, features, description },
   l10n: { translations },
-}) => (
-  <Grid as="section" className={className}>
-    <Heading
-      className="heading"
-      as="span"
-      type="slab"
-      size="m"
-      dangerouslySetInnerHTML={{ __html: heading(translations) }}
-    />
+}) => {
+  const wrapperRef = useRef()
 
-    <div className="text-wrapper">
-      {translations.project.gazpromNeft.development.text.map((item, index) => (
-        <Text
-          key={index}
-          className="paragraph"
-          as="p"
-          type="regular"
-          size="m"
-          dangerouslySetInnerHTML={{ __html: item }}
-        />
-      ))}
-    </div>
+  const [activeItems, setActiveItems] = useState(false)
 
-    <Text
-      className="description"
-      as="p"
-      type="regular"
-      size="m"
-      dangerouslySetInnerHTML={{ __html: description(translations) }}
-    />
+  const handleActive = () => {
+    setActiveItems(true)
+  }
 
-    <div className="features-wrapper">
-      {features.map(({ image, alt, id, text }) => (
-        <div className={`feature-item feature-item_${id}`} key={id}>
-          <PictureSmart requireImages={image} alt={alt(translations)} className="feature-icon" />
+  useEffect(() => {
+    const callback = function ([entry]) {
+      if (entry.isIntersecting) handleActive()
+    }
 
+    const options = {
+      root: null,
+      threshold: [0],
+    }
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(callback, options)
+      observer.observe(wrapperRef.current)
+
+      return () => {
+        observer.disconnect()
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return (
+    <Grid as="section" className={className}>
+      <Heading
+        className="heading"
+        as="span"
+        type="slab"
+        size="m"
+        dangerouslySetInnerHTML={{ __html: heading(translations) }}
+      />
+
+      <div className="text-wrapper">
+        {translations.project.gazpromNeft.development.text.map((item, index) => (
           <Text
-            className={`feature-text feature-text_${id}`}
+            key={index}
+            className="paragraph"
             as="p"
-            type="strong"
+            type="regular"
             size="m"
-            dangerouslySetInnerHTML={{ __html: text(translations) }}
+            dangerouslySetInnerHTML={{ __html: item }}
           />
-        </div>
-      ))}
-    </div>
-  </Grid>
-)
+        ))}
+      </div>
+
+      <Text
+        className="description"
+        as="p"
+        type="regular"
+        size="m"
+        dangerouslySetInnerHTML={{ __html: description(translations) }}
+      />
+
+      <div
+        className={cn('features-wrapper', {
+          active: activeItems,
+        })}
+        ref={wrapperRef}
+      >
+        {features.map(({ image, alt, id, text }) => (
+          <div className={`feature-item feature-item_${id}`} key={id}>
+            <PictureSmart requireImages={image} alt={alt(translations)} className="feature-icon" />
+
+            <Text
+              className={`feature-text feature-text_${id}`}
+              as="p"
+              type="strong"
+              size="m"
+              dangerouslySetInnerHTML={{ __html: text(translations) }}
+            />
+          </div>
+        ))}
+      </div>
+    </Grid>
+  )
+}
 
 Development.propTypes = {
   className: string,
   projectId: string,
-  paragraphsScheme: array,
   images: func,
 }
 

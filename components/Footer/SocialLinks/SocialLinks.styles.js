@@ -51,11 +51,10 @@ const base = ({ colors, breakpoints: { mobile, tablet, desktop } }) => css`
     flex-wrap: wrap;
 
     li {
+      display: flex;
+      flex-basis: 25%;
+      justify-content: center;
       font-size: 0;
-    }
-
-    li:not(:first-of-type):not(:nth-of-type(5)) {
-      margin-left: ${calcRem(24)};
     }
 
     li:nth-of-type(n + 5) {

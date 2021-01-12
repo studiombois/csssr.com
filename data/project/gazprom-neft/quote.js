@@ -1,1 +1,1 @@
-export default require.context('../../../public/images/project/common-pics/quote/girl?csssr-images')
+export default require.context('../../../public/images/project/gazprom-neft/quote?csssr-images')

@@ -1,11 +1,14 @@
 import React from 'react'
+
 import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Head from '../Head'
 import Hero from './Hero'
+import Quote from './Quote'
 
 import hero from '../../data/project/gazprom-neft/hero'
+import quoteImages from '../../data/project/gazprom-neft/quote'
 
 const GazpromNeftPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
@@ -19,6 +22,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       />
 
       <Hero id="hero" content={hero} projectId={projectId} />
+      <Quote projectId={projectId} images={quoteImages} />
     </Layout>
   )
 }

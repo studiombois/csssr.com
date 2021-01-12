@@ -11,6 +11,24 @@
       },
       "imgAlt": ""
     },
+    "timeline": {
+      "heading": "Project timeline",
+      "periodList": [
+        { "id": 1,
+          "date": "2018",
+          "title": "Pre-existing MVP"
+        },
+        { "id": 2,
+          "firstDate": "January 2010",
+          "secondDate": "April 2020",
+          "title": "Development"
+        },
+        { "id": 3,
+          "date": "Present day",
+          "title": "Support"
+        }
+      ]
+    },
     "team": {
       "imgAlt": "Modal window with team composition",
       "title": "Team Composition",

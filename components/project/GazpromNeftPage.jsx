@@ -1,9 +1,23 @@
 import React from 'react'
-import Idea from '../Idea'
+
 import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Head from '../Head'
+import Hero from './Hero'
+import Timeline from './Timeline'
+import P4Team from './P4Team'
+import BusinessAnalysis from './BusinessAnalysis'
+import Development from './Development'
+import Quote from './Quote'
+import Idea from '../Idea'
+
+import hero from '../../data/project/gazprom-neft/hero'
+import timeline from '../../data/project/gazprom-neft/timeline'
+import team from '../../data/project/gazprom-neft/team'
+import businessAnalysis from '../../data/project/gazprom-neft/businessAnalysis'
+import development from '../../data/project/gazprom-neft/development'
+import quoteImages from '../../data/project/gazprom-neft/quote'
 
 const GazpromNeftPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
@@ -16,6 +30,12 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
         description={translations.project.gazpromNeft.meta.description}
       />
 
+      <Hero id="hero" content={hero} projectId={projectId} />
+      <Timeline content={timeline} />
+      <P4Team id="team" content={team} />
+      <BusinessAnalysis content={businessAnalysis} />
+      <Development content={development} />
+      <Quote projectId={projectId} images={quoteImages} />
       <Idea pageName={pageName} projectId={projectId} />
     </Layout>
   )

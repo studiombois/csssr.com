@@ -5,13 +5,9 @@
       "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
-      "title": "Professionals&nbsp;4.0",
-      "link": "https://professionals4-0.ru",
-      "subTitle": "Client",
+      "title": "<span class='p4-word'><span class='p4-outline'></span>Professionals&nbsp;4.0</span><span class='after-p4'>connects</span> major corporations with talented contractors",
       "text": {
-        "firstParagraph": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.",
-        "secondParagraph": "The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.",
-        "thirdParagraph": "Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business."
+        "firstParagraph": "<span class='gneft-icon'></span> is&nbsp;a&nbsp;subsidiary of&nbsp;Gazprom operating in&nbsp;the&nbsp;oil and gas industry. As&nbsp;of&nbsp;2020, its market capitalization comprises around $20&nbsp;billion, making it&nbsp;one of&nbsp;the most influential and capitalized companies in&nbsp;Europe."
       },
       "imgAlt": ""
     },
@@ -43,62 +39,98 @@
         "role": "Project Manager, Gazprom Neft"
       }
     },
-    "team": {
-      "imgAlt": "Team composition.",
-      "title": "Team Composition",
-      "numberList": {
-        "firstItem": "1",
-        "secondItem": "4",
-        "thirdItem": "1",
-        "fourthItem": "1",
-        "fifthItem": "2"
-      },
-      "textList": {
-        "firstItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
-        "secondItem": "Middle JS&nbsp;Developers",
-        "thirdItem": "Junior JS&nbsp;Developers",
-        "fourthItem": "Analyst",
-        "fifthItem": "QA&nbsp;Engineers"
-      }
-    },
-    "techStack": {
-      "title": "Tech stack",
-      "techList": {
-        "firstItem": "React.js",
-        "secondItem": "Next.js + Webpack",
-        "thirdItem": "Kubernetes, Docker"
-      },
-      "numericData": {
-        "duration": {
-          "number": "13",
-          "text": "months <span>(Jan 2019 — ongoing)</span>"
+    "timeline": {
+      "heading": "Project timeline",
+      "periodList": [
+        { "id": 1,
+          "date": "2018",
+          "title": "Pre-existing MVP"
         },
-        "projectTeam": {
-          "number": "9",
-          "text": "specialists"
+        { "id": 2,
+          "firstDate": "January 2010",
+          "secondDate": "April 2020",
+          "title": "Development"
+        },
+        { "id": 3,
+          "date": "Present day",
+          "title": "Support"
         }
+      ]
+    },
+    "team": {
+      "imgAlt": "Modal window with team composition",
+      "title": "Team Composition",
+      "description": "We&nbsp;assembled a&nbsp;team of&nbsp;an&nbsp;Account Manager, a&nbsp;Project Manager, a&nbsp;Business Analyst, Developers, and Quality Assurance.",
+      "acountManagment": {
+        "title": "Account Management",
+        "text": [
+          "Customer&rsquo;s security checks, including financial soundness and employee reliability, successfully passed.",
+          "Over 400 pages of&nbsp;duly executed paperwork submitted in&nbsp;the tender proposal. This included the grading of&nbsp;developers, hourly fees, managerial staff details, and annual plans, among other things.",
+          "The account manager established proprietary channels of&nbsp;communication acting as&nbsp;an&nbsp;executive hub between the customer and the company.",
+          "The account manager delivered recurring reporting and schedules for shorter periods based on&nbsp;Project Management data."
+        ]
+      },
+      "projectManagment": {
+        "title": "Project Management",
+        "text": [
+          "Our project manager interacted with the customer team in&nbsp;their preferred environment: <span class='tech-text text-slack'><span class='tech-icon slack-icon'></span>Slack</span>, <span class='tech-text text-jira'><span class='tech-icon jira-icon'></span>Jira</span> &amp;&nbsp;<span class='tech-text text-confl'><span class='tech-icon confl-icon'></span>Confluence</span>",
+          "She ensured that all tasks within development phases are carried out timely or&nbsp;reasonably flexed.",
+          "The project manager suggested and supervised the transfer of&nbsp;some of&nbsp;the project&rsquo;s logic from back-end to&nbsp;front-end to&nbsp;ensure the timely release of&nbsp;the features.",
+          "Our project manager used CSSSR&rsquo;s in-house combination of&nbsp;Scrum and Kanban methodologies to&nbsp;ensure the timely delivery of&nbsp;quality products and worked in&nbsp;a&nbsp;shared space with the customer and other project teams."
+        ]
       }
+
+    },
+    "businessAnalysis": {
+      "title": "Business Analysis",
+      "description": "Our business analyst worked out the platform functionality requirements.",
+      "text": [
+        "During the development process, she was working hand-by-hand with the client&rsquo;s product manager helping to&nbsp;transform users&rsquo; stories into <span style='white-space:nowrap'>well-documented</span> feature requests and technical specifications both for front-end and <span style='white-space:nowrap'>back-end</span> parts of&nbsp;the project.",
+        "Understanding the needs of&nbsp;customers and candidates alike improved the initial concept for user experience and interface."
+      ],
+      "imagesText": [
+        "Skills radar chart for easier evaluation of&nbsp;candidates by&nbsp;the customer",
+        "All the passed tests are represented as&nbsp;badges in&nbsp;the user&rsquo;s profile",
+        "An&nbsp;option to&nbsp;set up&nbsp;automatic testing for candidates"
+      ],
+      "imagesAlt": [
+        "Girl with radar picture",
+        "Winners podium",
+        "Greeting two men"
+      ]
     },
     "quote": {
-      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project, which is&nbsp;very important to&nbsp;the company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the team in&nbsp;proactivity solving complex problems, and its commitment to&nbsp;fulfilling plans and targets. I&rsquo;d also like to&nbsp;commend the team for the friendly atmosphere and rapport they helped to&nbsp;create.",
+      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project which is&nbsp;very important to&nbsp;our company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the CSSSR team in&nbsp;solving complex problems and the commitment to&nbsp;meet all product plans and goals. The friendly atmosphere and rapport the CSSSR team helped to&nbsp;create also deserve my&nbsp;sincere commendation.",
       "author": {
-        "name": "Daria Skatova",
+        "name": "Darya Skatova",
         "signature": "Project Manager, Gazprom Neft"
       }
     },
-    "aboutProject": {
-      "title": "About the Project:",
+    "development": {
+      "title": "Development",
       "text": [
-        [
-          "The main goal of&nbsp;the Professionals&nbsp;4.0 project is&nbsp;to&nbsp;connect major corporations with talented performers. Through the project, talented individuals can find new career opportunities, solve challenging tasks, develop new skills and prove themselves in&nbsp;an&nbsp;authentic work environment.",
-          "The companies, meanwhile, get access to&nbsp;a&nbsp;huge database of&nbsp;business competition finalists and top performers, allowing them to&nbsp;quickly assemble teams for particular business tasks and reinforce internal resources, with external expertise.",
-          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.sibur'>Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.rostelecom'>Rostelecom</a> and the <a href=\"https://sk.ru/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.skolkovo'>Skolkovo Innovation Center</a>."
-        ],
-        [
-          "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
-          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two QA Engineers.",
-          "The first public version was launched in&nbsp;spring of&nbsp;2019. Since then, our team has continued to&nbsp;develop new functionality and has released several major updates over the past year."
-        ]
+        "Our developers used <span class='tech-icon tech-icon_react'></span>React&nbsp;/ <span class='tech-icon tech-icon_nextjs'></span>Next.js staсk to&nbsp;boost up&nbsp;the development progress rate. They also accelerated the website operation through server-side rendering (SSR).",
+        "The final product boasted low resource requirements and high speed of&nbsp;operation with SEO optimization implemented.",
+        "The development team created a&nbsp;single space for all project-related reference data to&nbsp;accelerate their operations. All agreements, guidelines, schedules, and code and components structure were placed in&nbsp;a&nbsp;single wiki-like database. That made the implementation of&nbsp;complex features faster and more efficient."
+      ],
+      "description": "Our developers created and implemented some notable solutions to&nbsp;augment and accelerate the development cycle, including:",
+      "features": [
+        {
+          "text": "Implementation of&nbsp;a&nbsp;complex user journey graph",
+          "alt": "Graph arrows"
+        },
+        {
+          "text": "Meta tags, open graph, <span style='white-space:nowrap'>human-readable</span> URLs for efficient SEO",
+          "alt": "Social icons"
+        },
+        {
+          "text": "Usage of&nbsp;Jenkins + Kubernetes to&nbsp;facilitate <span style='white-space:nowrap'>front-end</span> deployment",
+          "alt": "Cube icon"
+        },
+        {
+          "text": "Proprietary fork of&nbsp;an&nbsp;<span style='white-space:nowrap'>open-source</span> chat service for faster inter-team interaction",
+          "alt": "Chat icon"
+        }
       ]
     },
     "imgAlt": {

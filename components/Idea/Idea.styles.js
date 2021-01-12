@@ -51,6 +51,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       width: ${calcRem(44)};
       height: ${calcRem(44)};
     }
+
+    &_gazpromNeft {
+      background-color: #6490DF;
+
+      &::before {
+        background-image: url(${require('../../static/icons/projects/p4Triangle.svg').default});
+      }
+    }
   }
 
   ${desktop.all} {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import cn from 'classnames'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import styles from './Idea.styles'
@@ -12,7 +13,7 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
 import ideaContent from '../../data/projects/idea'
 
-const Idea = ({ className, pageName, l10n: { translations } }) => {
+const Idea = ({ className, pageName, projectId, l10n: { translations } }) => {
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
   return (
@@ -30,7 +31,9 @@ const Idea = ({ className, pageName, l10n: { translations } }) => {
             <Button
               data-testid={`projects:button.contactUs`}
               onClick={() => toggleContactModalVisibility(true)}
-              className="button"
+              className={cn('button', {
+                button_gazpromNeft: projectId === 'gazpromNeft',
+              })}
               dangerouslySetInnerHTML={{ __html: ideaContent.button(translations) }}
             />
           </div>

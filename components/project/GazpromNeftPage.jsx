@@ -5,9 +5,11 @@ import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Head from '../Head'
 import Hero from './Hero'
+import Development from './Development'
 import Quote from './Quote'
 
 import hero from '../../data/project/gazprom-neft/hero'
+import development from '../../data/project/gazprom-neft/development'
 import quoteImages from '../../data/project/gazprom-neft/quote'
 
 const GazpromNeftPage = ({ l10n: { translations } }) => {
@@ -22,6 +24,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       />
 
       <Hero id="hero" content={hero} projectId={projectId} />
+      <Development content={development} />
       <Quote projectId={projectId} images={quoteImages} />
     </Layout>
   )

@@ -54,19 +54,31 @@
         "signature": "Project Manager, Gazprom Neft"
       }
     },
-    "aboutProject": {
-      "title": "About the Project:",
+    "development": {
+      "title": "Development",
       "text": [
-        [
-          "The main goal of&nbsp;the Professionals&nbsp;4.0 project is&nbsp;to&nbsp;connect major corporations with talented performers. Through the project, talented individuals can find new career opportunities, solve challenging tasks, develop new skills and prove themselves in&nbsp;an&nbsp;authentic work environment.",
-          "The companies, meanwhile, get access to&nbsp;a&nbsp;huge database of&nbsp;business competition finalists and top performers, allowing them to&nbsp;quickly assemble teams for particular business tasks and reinforce internal resources, with external expertise.",
-          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.sibur'>Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.rostelecom'>Rostelecom</a> and the <a href=\"https://sk.ru/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.skolkovo'>Skolkovo Innovation Center</a>."
-        ],
-        [
-          "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
-          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two QA Engineers.",
-          "The first public version was launched in&nbsp;spring of&nbsp;2019. Since then, our team has continued to&nbsp;develop new functionality and has released several major updates over the past year."
-        ]
+        "Our developers used <span class='tech-icon tech-icon_react'></span>React&nbsp;/ <span class='tech-icon tech-icon_nextjs'></span>Next.js staсk to&nbsp;boost up&nbsp;the development progress rate. They also accelerated the website operation through server-side rendering (SSR).",
+        "The final product boasted low resource requirements and high speed of&nbsp;operation with SEO optimization implemented.",
+        "The development team created a&nbsp;single space for all project-related reference data to&nbsp;accelerate their operations. All agreements, guidelines, schedules, and code and components structure were placed in&nbsp;a&nbsp;single wiki-like database. That made the implementation of&nbsp;complex features faster and more efficient."
+      ],
+      "description": "Our developers created and implemented some notable solutions to&nbsp;augment and accelerate the development cycle, including:",
+      "features": [
+        {
+          "text": "Implementation of&nbsp;a&nbsp;complex user journey graph",
+          "alt": "Graph arrows"
+        },
+        {
+          "text": "Meta tags, open graph, <span style='white-space:nowrap'>human-readable</span> URLs for efficient SEO",
+          "alt": "Social icons"
+        },
+        {
+          "text": "Usage of&nbsp;Jenkins + Kubernetes to&nbsp;facilitate <span style='white-space:nowrap'>front-end</span> deployment",
+          "alt": "Cube icon"
+        },
+        {
+          "text": "Proprietary fork of&nbsp;an&nbsp;<span style='white-space:nowrap'>open-source</span> chat service for faster inter-team interaction",
+          "alt": "Chat icon"
+        }
       ]
     },
     "imgAlt": {

@@ -12,22 +12,28 @@
       "imgAlt": ""
     },
     "team": {
-      "imgAlt": "Team composition.",
+      "imgAlt": "Modal window with team composition",
       "title": "Team Composition",
-      "numberList": {
-        "firstItem": "1",
-        "secondItem": "4",
-        "thirdItem": "1",
-        "fourthItem": "1",
-        "fifthItem": "2"
+      "description": "We&nbsp;assembled a&nbsp;team of&nbsp;an&nbsp;Account Manager, a&nbsp;Project Manager, a&nbsp;Business Analyst, Developers, and Quality Assurance.",
+      "acountManagment": {
+        "title": "Account Management",
+        "text": [
+          "Customer&rsquo;s security checks, including financial soundness and employee reliability, successfully passed.",
+          "Over 400 pages of&nbsp;duly executed paperwork submitted in&nbsp;the tender proposal. This included the grading of&nbsp;developers, hourly fees, managerial staff details, and annual plans, among other things.",
+          "The account manager established proprietary channels of&nbsp;communication acting as&nbsp;an&nbsp;executive hub between the customer and the company.",
+          "The account manager delivered recurring reporting and schedules for shorter periods based on&nbsp;Project Management data."
+        ]
       },
-      "textList": {
-        "firstItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
-        "secondItem": "Middle JS&nbsp;Developers",
-        "thirdItem": "Junior JS&nbsp;Developers",
-        "fourthItem": "Analyst",
-        "fifthItem": "QA&nbsp;Engineers"
+      "projectManagment": {
+        "title": "Project Management",
+        "text": [
+          "Our project manager interacted with the customer team in&nbsp;their preferred environment: <span class='tech-text text-slack'><span class='tech-icon slack-icon'></span>Slack</span>, <span class='tech-text text-jira'><span class='tech-icon jira-icon'></span>Jira</span> &amp;&nbsp;<span class='tech-text text-confl'><span class='tech-icon confl-icon'></span>Confluence</span>",
+          "She ensured that all tasks within development phases are carried out timely or&nbsp;reasonably flexed.",
+          "The project manager suggested and supervised the transfer of&nbsp;some of&nbsp;the project&rsquo;s logic from back-end to&nbsp;front-end to&nbsp;ensure the timely release of&nbsp;the features.",
+          "Our project manager used CSSSR&rsquo;s in-house combination of&nbsp;Scrum and Kanban methodologies to&nbsp;ensure the timely delivery of&nbsp;quality products and worked in&nbsp;a&nbsp;shared space with the customer and other project teams."
+        ]
       }
+
     },
     "techStack": {
       "title": "Tech stack",

@@ -5,13 +5,9 @@
       "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
-      "title": "Professionals&nbsp;4.0",
-      "link": "https://professionals4-0.ru",
-      "subTitle": "Client",
+      "title": "<span class='p4-word'><span class='p4-outline'></span>Professionals&nbsp;4.0</span><span class='after-p4'>connects</span> major corporations with talented contractors",
       "text": {
-        "firstParagraph": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.",
-        "secondParagraph": "The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.",
-        "thirdParagraph": "Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business."
+        "firstParagraph": "<span class='gneft-icon'></span> is&nbsp;a&nbsp;subsidiary of&nbsp;Gazprom operating in&nbsp;the&nbsp;oil and gas industry. As&nbsp;of&nbsp;2020, its market capitalization comprises around $20&nbsp;billion, making it&nbsp;one of&nbsp;the most influential and capitalized companies in&nbsp;Europe."
       },
       "imgAlt": ""
     },
@@ -52,9 +48,9 @@
       }
     },
     "quote": {
-      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project, which is&nbsp;very important to&nbsp;the company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the team in&nbsp;proactivity solving complex problems, and its commitment to&nbsp;fulfilling plans and targets. I&rsquo;d also like to&nbsp;commend the team for the friendly atmosphere and rapport they helped to&nbsp;create.",
+      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project which is&nbsp;very important to&nbsp;our company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the CSSSR team in&nbsp;solving complex problems and the commitment to&nbsp;meet all product plans and goals. The friendly atmosphere and rapport the CSSSR team helped to&nbsp;create also deserve my&nbsp;sincere commendation.",
       "author": {
-        "name": "Daria Skatova",
+        "name": "Darya Skatova",
         "signature": "Project Manager, Gazprom Neft"
       }
     },

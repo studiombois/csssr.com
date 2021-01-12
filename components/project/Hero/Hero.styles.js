@@ -16,10 +16,125 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     padding-top: ${calcRem(135)};
   }
 
+  .grid.grid_gazpromNeft {
+    padding-top: ${calcRem(206)};
+  }
+
   .heading {
     grid-column: 2 / span 5;
     grid-row: 1;
     z-index: 1;
+  }
+
+  .p4-word {
+    position: relative;
+    display: inline-block;
+    padding: ${calcRem(5)} ${calcRem(14)};
+    margin-left: ${calcRem(-14)};
+    animation-duration: 0.9s;
+    animation-name: p4-color;
+    animation-iteration-count: 1;
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+    will-change: color;
+  }
+
+  @keyframes p4-color {
+    to {
+      color: #6490DF;
+    }
+  }
+
+  .p4-outline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(100, 144, 223, 0.1);
+    border: 2px solid transparent;
+    animation-duration: 0.5s;
+    animation-name: p4-outline;
+    animation-iteration-count: 1;
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+    will-change: width, height;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: ${calcRem(-4.5)};
+      right: ${calcRem(-4.5)};
+      width: ${calcRem(8)};
+      height: ${calcRem(8)};
+      background-color: #6490DF;
+      opacity: 0;
+      animation-duration: 300ms;
+      animation-name: p4-dot;
+      animation-iteration-count: 2;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+      will-change: opacity;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      
+      width: ${calcRem(12)};
+      height: ${calcRem(18)};
+      background-image: url('../../../static/icons/project/cursor.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation-duration: 300ms;
+      animation-name: p4-cursor;
+      animation-iteration-count: 1;
+      animation-delay: 1.2s;
+      animation-fill-mode: forwards;
+      will-change: opacity, top, right;
+    }
+  }
+
+  @keyframes p4-cursor {
+    from {
+      top: ${calcRem(30)};
+      right: ${calcRem(12)};
+      opacity: 0;
+    }
+
+    to {
+      top: ${calcRem(-1)};
+      right: ${calcRem(-12)};
+      opacity: 1;
+    }
+  }
+
+  @keyframes p4-dot {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes p4-outline {
+    from {
+      width: 0;
+      height: 0;
+      border-color: #6490DF;
+    }
+
+    to {
+      width: 100%;
+      height: 100%;
+      border-color: #6490DF;
+    }
+  }
+
+  .after-p4 {
+    display: inline-block;
   }
 
   .link {
@@ -57,6 +172,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     z-index: 1;
   }
 
+  .text.text_gazpromNeft {
+    grid-row: 2;
+  }
+
+  .gneft-icon {
+    display: inline-block;
+    width: ${calcRem(79)};
+    height: ${calcRem(40)};
+    background-image: url(${language === 'ru' ? '../../../static/icons/project/gneft_ru.svg' : '../../../static/icons/project/gneft_en.svg'});
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    vertical-align: sub;
+  }
+
   .paragraph_1,
   .paragraph_2 {
     display: ${language === 'ru' ? 'none' : 'block'};
@@ -81,6 +211,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
   }
 
+  .pic-wrapper.pic-wrapper_gazpromNeft {
+    grid-row: 1 / span 2;
+    grid-column: 8 / span 4;
+    max-width: ${calcRem(576)};
+    max-height: ${calcRem(406)};
+    margin-top: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
   .image {
     position: absolute;
     top: 0;
@@ -91,7 +233,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.all} {
     .paragraph + .paragraph{
-        margin-top: ${calcRem(24)};
+      margin-top: ${calcRem(24)};
+    }
+
+    .heading_gazprom {
+      max-width: 728px;
+      font-size: 48px;
+      line-height: 62px;
+      font-weight: normal;
+    }
+
+    .p4-word {
+      margin-right: 9px;
+    }
+
+    .gneft-icon {
+      margin-right: 5px;
     }
   }
 
@@ -102,6 +259,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .heading {
       grid-column: 2 / span 7;
+    }
+
+    .heading_gazprom {
+      grid-column: 2 / span 6;
     }
 
     .pic-wrapper {
@@ -118,6 +279,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       }
     }
 
+    .text.text_gazpromNeft {
+      margin-top: 28px;
+    }
+
+    .pic-wrapper.pic-wrapper_gazpromNeft {
+      padding-top: 406px;
+    }
+
     .pic-wrapper_mindbox {
       margin-top: ${calcRem(-77)};
     }
@@ -126,6 +295,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   ${desktop.m} {
     & {
       padding-bottom: ${calcRem(281)};
+    }
+
+    .grid.grid_gazpromNeft {
+      padding-top: ${calcRem(188)};
     }
 
     .heading {
@@ -157,6 +330,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
         height: ${calcRem(809)};
       }
     }
+
+    .pic-wrapper.pic-wrapper_gazpromNeft {
+      top: 60px;
+      grid-column: 8 / span 5;
+      max-width: ${calcRem(544)};
+      max-height: ${calcRem(350)};
+      padding-top: ${calcRem(350)};
+    }
   }
 
   ${desktop.s} {
@@ -164,12 +345,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       padding-bottom: ${calcRem(285)};
     }
 
+    .grid.grid_gazpromNeft {
+      padding-top: ${calcRem(195)};
+    }
+
     .heading {
       grid-column: 2 / span 10;
     }
 
+    .p4-word {
+      padding-right: 11px;
+    }
+
     .text {
       margin-top: ${calcRem(39)};
+    }
+
+    .text.text_gazpromNeft {
+      margin-top: 36px;
     }
 
     .pic-wrapper {
@@ -188,6 +381,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
         height: ${calcRem(810)};
       }
     }
+
+    .pic-wrapper.pic-wrapper_gazpromNeft {
+      top: 83px;
+      max-width: ${calcRem(504)};
+      max-height: ${calcRem(315)};
+      padding-top: ${calcRem(315)};
+    }
   }
 
   ${tablet.all} {
@@ -199,9 +399,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       padding-top: ${calcRem(84)};
     }
 
+    .grid.grid_gazpromNeft {
+      padding-top: ${calcRem(148)};
+    }
+
     .heading {
       grid-column: 2 / span 8;
       margin-top: 1rem;
+    }
+
+    .heading.heading_gazprom {
+      grid-column: 2 / span 6;
+      line-height: ${calcRem(45)};
     }
 
     .link {
@@ -217,6 +426,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     .text {
       grid-column: 2 / span 5;
       margin-top: ${calcRem(24)};
+    }
+
+    .text.text_gazpromNeft {
+      grid-column: 2 / span 5;
+      margin-top: ${calcRem(30)};
+    }
+
+    .gneft-icon {
+      width: ${calcRem(54)};
+      height: ${calcRem(25)};
+    }
+
+    .p4-word {
+      width: ${language === 'ru' ? calcRem(332) : calcRem(274)};
+      height: ${calcRem(50)};
+      margin-left: ${calcRem(-11)};
+      margin-right: ${calcRem(5)};
+      padding: 0;
+      text-align: center;
     }
 
     .paragraph + .paragraph{
@@ -240,6 +468,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
         height: ${calcRem(543)};
       }
     }
+
+    .pic-wrapper.pic-wrapper_gazpromNeft {
+      top: ${calcRem(55)};
+      max-width: ${calcRem(384)};
+      max-height: ${calcRem(247)};
+      padding-top: ${calcRem(247)};
+    }
   }
 
   ${mobile.all} {
@@ -249,6 +484,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .grid {
       padding-top: ${calcRem(80)};
+    }
+
+    .grid.grid_gazpromNeft {
+      padding-top: ${calcRem(132)};
     }
 
     .heading,
@@ -264,6 +503,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       }
     }
 
+    .p4-word {
+      width: ${language === 'ru' ? calcRem(332) : calcRem(274)};
+      height: ${calcRem(50)};
+      margin-left: ${calcRem(-8)};
+      margin-right: ${calcRem(5)};
+      padding: 0;
+      text-align: center;
+    }
+
     .link {
       margin-top: ${calcRem(11)};
       font-size: ${calcRem(16)};
@@ -276,6 +524,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .text {
       margin-top: ${calcRem(24)};
+    }
+
+    .gneft-icon {
+      width: ${calcRem(54)};
+      height: ${calcRem(25)};
     }
 
     .paragraph + .paragraph {
@@ -304,7 +557,7 @@ export const backgroundImagesStyles = className =>
 //  с replace (.css-57ijkk.e52q0fl0)
    css`
     ${backgroundCssSmart(`.${className.replace(' ', '.')} .pic-wrapper::before`, heroBgImages)}
-  `
+  ` 
 
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`

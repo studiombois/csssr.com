@@ -98,7 +98,7 @@
     "services": {
       "title": "Services",
       "outsourcing": "Outsourcing",
-      "backend": "Back-end</br>and DevOps",
+      "backend": "Back-end </br>and DevOps",
       "mvp": "MVP",
       "design": "DesignLab"
     },
@@ -112,19 +112,19 @@
     "howWeWork": {
       "title": "How we work",
       "technologies": "Technologies",
-      "wayOfWork": "Process",
+      "wayOfWork": "Processes",
       "coreValues": "Core values",
-      "projects": "Our projects"
+      "projects": "Our cases"
     },
     "company": {
       "title": "Company",
       "blog": "Blog",
       "aboutUs": "About us",
       "careers": "Careers",
-      "contacts": "Contacts"
+      "contacts": "Contact us"
     },
-    "solutions": {
-      "title": "Solutions",
+    "products": {
+      "title": "Products",
       "lms": "Modular LMS system",
       "tracker": "Time-tracking software"
     },

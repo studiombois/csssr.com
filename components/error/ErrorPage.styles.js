@@ -3,7 +3,7 @@ import getGridValueForMs from '../../utils/style/getGridValueForMs'
 
 const base = css`
   & {
-    padding-bottom: 4rem;
+    padding-bottom: 3.875rem;
   }
 
   &.error-code_500 h2 {
@@ -24,45 +24,57 @@ const base = css`
     height: 3rem;
   }
 
+  h3.font_burger-menu {
+    margin-top: 0;
+    padding-bottom: 0;
+    line-height: 1.5rem;
+    letter-spacing: 0.01875rem;
+  }
+
+  h3.font_burger-menu:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+
   h1 {
-    margin-top: 3.875rem;
     grid-column: 2 / span 7;
     grid-row: 1;
   }
 
-  h2{
+  h2.list-title {
     grid-column: 10 / span 2;
-  }
-
-  h2 {
     margin-top: -3.1875rem;
     grid-row: 2;
+    color: #18191B;
   }
 
   .navList {
     grid-column: 10 / span 2;
     grid-row: 4;
+    margin-top: 1.25rem;
+  }
+
+  .menu li {
     margin-top: 1rem;
   }
 
-  .menu {
-    margin-bottom: 1rem;
-  }
-
-  .menu-item{
+  .menu-item {
     font-family: 'Roboto', 'Arial', sans-serif;
     font-weight: 900;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.5rem;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.0625rem;
     text-transform: uppercase;
     color: #a9a9A9;
+    
+    & br {
+      display: none;
+    }
   }
 
   .code-wrapper {
     grid-column: 2 / span 6;
     grid-row: 2 / span 10;
-    margin-top: 2.5rem;
+    margin-top: 2.9375rem;
     width: calc(100% + 1rem);
     height: 25rem;
   }
@@ -70,9 +82,74 @@ const base = css`
   .arrow-wrapper {
     grid-column: 10 / span 1;
     grid-row: 3;
-    margin-top: 1.5rem;
-    width: 0.625rem;
-    height: 3.875rem;
+    margin-top: 1.875rem;
+    width: 0.813rem;
+    height: 3.8125rem;
+    background-image: url('../../static/icons/lineFromTopToBottom.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &.header_404 {
+    padding-bottom: 0;
+  }
+
+  &.error-code_404 {
+    padding-top: 5.188rem;
+
+    .fixed {
+      position: fixed;
+      display: grid;
+      grid-column: 2 / span 7;
+    }
+
+    .logo {
+      margin-top: 0;
+    }
+
+    .logo svg {
+      grid-row: 1;
+      width: 11.5rem;
+    }
+
+    h1 {
+      grid-row: 2;
+      margin-top: 3.875rem;
+    }
+
+    .picture-container {
+      grid-row: 3 / span 10;
+    }
+
+    .code-wrapper {
+      position: absolute;
+      top: -1.688rem;
+      left: -4.813rem;
+      grid-column: auto;
+      grid-row: 3 / span 10;
+    }
+
+    h2 {
+      margin-top: 8.563rem;
+    }
+  }
+
+
+  @media (hover: hover) and (pointer: fine) {
+    .menu-item:hover {
+      color: #0254D8;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .fixed {
+      width: 1220px;
+    }
+
+    h2 {
+      grid-column: 10 / span 3;
+    }
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
@@ -80,10 +157,25 @@ const base = css`
       grid-column: 10 / span 3;
     }
 
+    h2.list-title {
+      grid-column: 10 / span 3;
+    }
+
     .code-wrapper {
       margin-top: 3.5rem;
       width: 41.75rem;
       height: 18.625rem;
+    }
+
+    &.error-code_404 {
+      .fixed {
+        width: 890px;
+      }
+
+      .code-wrapper {
+        top: -1.313rem;
+        left: 0;
+      }
     }
   }
 
@@ -101,10 +193,27 @@ const base = css`
     .arrow-wrapper {
       grid-column: 10 / span 1;
       grid-row: 3;
-      margin-top: 0;
-      padding-top: 1.5rem;
-      width: 0.625rem;
-      height: 5.375rem;
+    }
+
+    &.error-code_404 {
+      .fixed {
+        width: 835px;
+      }
+
+      .picture {
+        top: 0;
+        left: 0;  
+      }
+      
+      .code-wrapper {
+        top: -1.313rem;
+        left: 0;
+      }
+
+      .list-title {
+        grid-column: 10 / span 3;
+        max-width: 250px;
+      }
     }
   }
 
@@ -113,18 +222,55 @@ const base = css`
       grid-column: 10 / span 3;
     }
 
-    h1 {
-      margin-top: 5.6875rem;
+    h1.page-title {
+      margin-top: 5.75rem;
     }
 
     h2 {
       margin-top: -2.375rem;
+      grid-column: 10 / span 3;
+    }
+
+    h3.font_burger-menu:not(:first-of-type) {
+      margin-top: 1.5rem;
     }
 
     .code-wrapper {
-      margin-top: 2.5rem;
+      margin-top: 2.375rem;
       width: 30.5rem;
       height: 13.625rem;
+    }
+
+    .arrow-wrapper {
+      margin-top: 1.5625rem; 
+    }
+
+    .navList {
+      margin-top: 1rem;
+    }
+
+    .menu li {
+      margin-top: 0.75rem;
+    }
+
+    .menu-item {
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+
+    &.error-code_404 {
+      .fixed {
+        width: 40rem;
+      }
+
+      .code-wrapper {
+        left: -0.25rem;
+      }
+
+      .list-title {
+        margin-top: 9.375rem;
+        grid-column: 10 / span 3;
+      }
     }
   }
 
@@ -157,37 +303,81 @@ const base = css`
     h1 {
       grid-column: 1 / span 6;
       grid-row: 1;
-      margin-top: 3.6875rem;
+      margin-top: 0.5625rem;
     }
 
     h2 {
-      margin-top: 2.625rem;
-      grid-column: 1 / span 2;
-      grid-row: 3;
-    }
-
-    .navList {
+      margin-top: 2.3125rem;
       grid-column: 1 / span 4;
-      grid-row: 5;
-      margin-top: 0.1875rem;
-    }
-
-    .arrow-wrapper {
-      grid-column: 1;
-      grid-row: 4;
-      margin-top: 0;
-      padding-top: 0rem;
-      width: 0.625rem;
-      height: 3.0625rem;
+      grid-row: 3;
     }
 
     .code-wrapper {
       grid-column: 1 / span 5;
       grid-row: 2;
-      margin-top: 3.5625rem;
+      margin-top: 3.875rem;
       margin-left: 0.1875rem;
       width: 16.125rem;
       height: 7.25rem;
+    }
+
+    .arrow-wrapper {
+      grid-column: 1;
+      grid-row: 4;
+      margin-top: 1.75rem;
+      padding-top: 0rem;
+      width: 0.625rem;
+      height: 3.0625rem;
+    }
+
+    .navList {
+      grid-column: 1 / span 4;
+      grid-row: 5;
+      margin-top: 1rem;
+    }
+
+    h3.font_burger-menu:not(:first-of-type) {
+      margin-top: 1.5rem;
+    }
+
+    .menu li {
+      margin-top: 0.75rem;
+    }
+
+    .menu-item {
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+
+    &.error-code_404 {
+      padding-top: 3.5rem;
+
+      .logo {
+        margin-left: -0.813rem;
+      }
+
+      .page-title {
+        margin-top: 3.5rem;
+      }
+
+      .fixed {
+        position: static;
+        grid-column: 1 / span 6;
+      }
+
+      .code-wrapper {
+        top: -2rem;
+        left: 0;
+      }
+
+      .list-title {
+        margin-top: 2.375rem;
+        grid-column: 1 / span 6;
+      }
+
+      .arrow-wrapper {
+        margin-top: 1.5rem;
+      }
     }
   }
 `
@@ -311,6 +501,7 @@ const pictureStyles = css`
     .picture-container {
       grid-column: 1 / span 6;
       grid-row: 2;
+      margin-top: 2rem;
       padding-top: 16.5rem;
     }
   }

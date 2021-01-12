@@ -84,7 +84,8 @@
       "title": "Сервисы",
       "outsourcing": "Aутсорсинг",
       "mvp": "MVP",
-      "backend": "Бэкенд</br>и DevOps"
+      "backend": "Бэкенд </br>и DevOps",
+      "design": "DesignLab"
     },
     "industries": {
       "title": "Индустрии",
@@ -106,6 +107,11 @@
       "aboutUs": "О нас",
       "careers": "Вакансии",
       "contacts": "Контакты"
+    },
+    "products": {
+      "title": "Products",
+      "lms": "Modular LMS system",
+      "tracker": "Time-tracking software"
     },
     "privacy": "Политика конфиденциальности",
     "alliance": {

@@ -5,13 +5,9 @@
       "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
-      "title": "Professionals&nbsp;4.0",
-      "link": "https://professionals4-0.ru",
-      "subTitle": "Client",
+      "title": "<span class='p4-word'><span class='p4-outline'></span>Professionals&nbsp;4.0</span><span class='after-p4'>connects</span> major corporations with talented contractors",
       "text": {
-        "firstParagraph": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.",
-        "secondParagraph": "The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.",
-        "thirdParagraph": "Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business."
+        "firstParagraph": "<span class='gneft-icon'></span> is&nbsp;a&nbsp;subsidiary of&nbsp;Gazprom operating in&nbsp;the&nbsp;oil and gas industry. As&nbsp;of&nbsp;2020, its market capitalization comprises around $20&nbsp;billion, making it&nbsp;one of&nbsp;the most influential and capitalized companies in&nbsp;Europe."
       },
       "imgAlt": ""
     },

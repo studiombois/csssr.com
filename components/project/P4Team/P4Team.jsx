@@ -20,8 +20,8 @@ const P4Team = ({
     imagesEn,
     imagesRu,
     imgAlt,
-    acountManagmentTitle,
-    projectManagmentTitle,
+    accountManagementTitle,
+    projectManagementTitle,
   },
   l10n: { translations, language },
 }) => {
@@ -51,12 +51,12 @@ const P4Team = ({
       <Heading.H3
         type="slab"
         size="m"
-        dangerouslySetInnerHTML={{ __html: acountManagmentTitle(translations) }}
+        dangerouslySetInnerHTML={{ __html: accountManagementTitle(translations) }}
         className="team-title team-title_account"
       />
 
       <div className="text-block text-block_account">
-        {translations.project['gazpromNeft'].team.acountManagment.text.map((item, index) => (
+        {translations.project['gazpromNeft'].team.accountManagement.text.map((item, index) => (
           <Text
             key={index}
             className="team-text"
@@ -70,12 +70,12 @@ const P4Team = ({
       <Heading.H3
         type="slab"
         size="m"
-        dangerouslySetInnerHTML={{ __html: projectManagmentTitle(translations) }}
+        dangerouslySetInnerHTML={{ __html: projectManagementTitle(translations) }}
         className="team-title team-title_project"
       />
 
       <div className="text-block text-block_project">
-        {translations.project['gazpromNeft'].team.projectManagment.text.map((item, index) => (
+        {translations.project['gazpromNeft'].team.projectManagement.text.map((item, index) => (
           <Text
             key={index}
             className="team-text"

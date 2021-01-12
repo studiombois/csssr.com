@@ -1,18 +1,19 @@
 import React from 'react'
 
-import Layout from '../Layout'
-import { L10nConsumer } from '../../utils/l10nProvider'
-
-import Head from '../Head'
 import Hero from './Hero'
+import Challenge from './Challenge'
 import Timeline from './Timeline'
 import P4Team from './P4Team'
 import BusinessAnalysis from './BusinessAnalysis'
 import Development from './Development'
 import Quote from './Quote'
 import Idea from '../Idea'
+import Head from '../Head'
+import Layout from '../Layout'
+import { L10nConsumer } from '../../utils/l10nProvider'
 
 import hero from '../../data/project/gazprom-neft/hero'
+import challenge from '../../data/project/gazprom-neft/challenge'
 import timeline from '../../data/project/gazprom-neft/timeline'
 import team from '../../data/project/gazprom-neft/team'
 import businessAnalysis from '../../data/project/gazprom-neft/businessAnalysis'
@@ -31,6 +32,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       />
 
       <Hero id="hero" content={hero} projectId={projectId} />
+      <Challenge content={challenge} />
       <Timeline content={timeline} />
       <P4Team id="team" content={team} />
       <BusinessAnalysis content={businessAnalysis} />

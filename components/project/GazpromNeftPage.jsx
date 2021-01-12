@@ -10,6 +10,7 @@ import P4Team from './P4Team'
 import BusinessAnalysis from './BusinessAnalysis'
 import Development from './Development'
 import Quote from './Quote'
+import Idea from '../Idea'
 
 import hero from '../../data/project/gazprom-neft/hero'
 import timeline from '../../data/project/gazprom-neft/timeline'
@@ -35,6 +36,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       <BusinessAnalysis content={businessAnalysis} />
       <Development content={development} />
       <Quote projectId={projectId} images={quoteImages} />
+      <Idea pageName={pageName} projectId={projectId} />
     </Layout>
   )
 }

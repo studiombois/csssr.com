@@ -18,34 +18,45 @@ const Challenge = ({
   content: { images, text },
 }) => {
   const [offset, setOffset] = useState(0)
+  const [offsetMin, setOffsetMin] = useState(0)
+  const [offsetMax, setOffsetMax] = useState(0)
   const isWindowContext = typeof window !== 'undefined'
-  let offsetMin = 0
-  let offsetMax = 0
-
-  if (isWindowContext && window.innerWidth >= 1920) {
-    offsetMin = 1000
-    offsetMax = 2100
-  } else if (isWindowContext && window.innerWidth >= 1360 && window.innerWidth < 1920) {
-    offsetMin = 1150
-    offsetMax = 2000
-  } else if (isWindowContext && window.innerWidth >= 1260 && window.innerWidth < 1360) {
-    offsetMin = 1250
-    offsetMax = 2050
-  } else if (isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1260) {
-    offsetMin = 700
-    offsetMax = 1290
-  }
 
   useEffect(() => {
-    window.onscroll = () => {
+    const handleResize = () => {
+      if (isWindowContext && window.innerWidth >= 1920) {
+        setOffsetMin(1000)
+        setOffsetMax(2100)
+      } else if (isWindowContext && window.innerWidth >= 1360 && window.innerWidth < 1920) {
+        setOffsetMin(1150)
+        setOffsetMax(2000)
+      } else if (isWindowContext && window.innerWidth >= 1260 && window.innerWidth < 1360) {
+        setOffsetMin(1250)
+        setOffsetMax(2050)
+      } else if (isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1260) {
+        setOffsetMin(700)
+        setOffsetMax(1290)
+      }
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [isWindowContext])
+
+  useEffect(() => {
+    const handleScroll = () => {
       const offset = window.pageYOffset
 
       if (offset >= offsetMin && offset <= offsetMax) {
         setOffset(offset)
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [offsetMin, offsetMax])
 
   return (
     <Grid className={className} as="section">

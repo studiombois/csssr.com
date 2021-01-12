@@ -35,7 +35,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
 
   ${desktop.l} {
     .picture-container {
-      padding-top: calc(1320 / 1728 * 100%);
+      padding-top: 440px;
     }
   }
 

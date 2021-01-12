@@ -1,28 +1,26 @@
 import React from 'react'
-import Idea from '../Idea'
-import Quote from './Quote'
-import AboutProject from './AboutProject'
+
 import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
 import Head from '../Head'
 import Hero from './Hero'
 import Timeline from './Timeline'
-import TechStack from './TechStack'
+import P4Team from './P4Team'
+import BusinessAnalysis from './BusinessAnalysis'
+import Development from './Development'
+import Quote from './Quote'
 
 import hero from '../../data/project/gazprom-neft/hero'
 import timeline from '../../data/project/gazprom-neft/timeline'
-import techStack from '../../data/project/gazprom-neft/techStack'
+import team from '../../data/project/gazprom-neft/team'
+import businessAnalysis from '../../data/project/gazprom-neft/businessAnalysis'
+import development from '../../data/project/gazprom-neft/development'
 import quoteImages from '../../data/project/gazprom-neft/quote'
-import aboutProjectImages from '../../data/project/aboutProject'
 
 const GazpromNeftPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
   const projectId = 'gazpromNeft'
-  const aboutProjectParagraphsScheme = [
-    [0, 1, 2],
-    [0, 1, 2],
-  ]
 
   return (
     <Layout pageName={pageName}>
@@ -31,16 +29,12 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
         description={translations.project.gazpromNeft.meta.description}
       />
 
-      <Hero id="hero" content={hero} />
+      <Hero id="hero" content={hero} projectId={projectId} />
       <Timeline content={timeline} />
-      <TechStack id="teckStack" content={techStack} />
-      <AboutProject
-        projectId={projectId}
-        images={aboutProjectImages}
-        paragraphsScheme={aboutProjectParagraphsScheme}
-      />
+      <P4Team id="team" content={team} />
+      <BusinessAnalysis content={businessAnalysis} />
+      <Development content={development} />
       <Quote projectId={projectId} images={quoteImages} />
-      <Idea pageName={pageName} />
     </Layout>
   )
 }

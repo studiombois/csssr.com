@@ -1,9 +1,10 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import styles from './Quote.styles'
+import styles, { backgroundImagesStyles } from './Quote.styles'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
@@ -14,7 +15,8 @@ import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
 const Quote = ({ className, projectId, images, l10n: { translations } }) => (
-  <Grid as="section" className={cn(className, projectId)}>
+  <Grid as="section" className={cn(className, projectId, `quoteBlock_${projectId}`)}>
+    <Global styles={backgroundImagesStyles} />
     <PictureSmart
       className="picture"
       requireImages={images}

@@ -11,6 +11,6 @@ export default {
   heading: (t) => t.project.gazpromNeft.team.title,
   description: (t) => t.project.gazpromNeft.team.description,
   imgAlt: (t) => t.project.gazpromNeft.team.imgAlt,
-  acountManagmentTitle: (t) => t.project.gazpromNeft.team.acountManagment.title,
-  projectManagmentTitle: (t) => t.project.gazpromNeft.team.projectManagment.title,
+  accountManagementTitle: (t) => t.project.gazpromNeft.team.accountManagement.title,
+  projectManagementTitle: (t) => t.project.gazpromNeft.team.projectManagement.title,
 }

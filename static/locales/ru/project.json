@@ -61,7 +61,7 @@
       "imgAlt": "Модальное окно с фотографиями нашей команды",
       "title": "Наша команда",
       "description": "Мы&nbsp;собрали команду из&nbsp;разработчиков, тестировщиков, аккаунт-менеджера, менеджера проекта и&nbsp;бизнес-аналитика.",
-      "acountManagment": {
+      "accountManagement": {
         "title": "Аккаунт-менеджмент",
         "text": [
           "CSSSR успешно прошла проверки службы безопасности и&nbsp;финансовый аудит Газпром Нефти.",
@@ -70,7 +70,7 @@
           "Аккаунт-менеджер регулярно предоставлял заказчику отчеты о&nbsp;проделанной работе на&nbsp;основе данных от&nbsp;менеджера проекта."
         ]
       },
-      "projectManagment": {
+      "projectManagement": {
         "title": "Менеджмент проекта",
         "text": [
           "Наш менеджер проекта взаимодействовал с&nbsp;командой заказчика в&nbsp;привычной для нее цифровой среде:<span class='tech-text text-slack'><span class='tech-icon slack-icon'></span>Slack</span>, <span class='tech-text text-jira'><span class='tech-icon jira-icon'></span>Jira</span> и&nbsp;<span class='tech-text text-confl'><span class='tech-icon confl-icon'></span>Confluence</span>",

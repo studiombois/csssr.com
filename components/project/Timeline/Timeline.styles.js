@@ -567,6 +567,12 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
+export const mainStyles = css`
+  .main {
+    overflow: hidden;
+  }
+`
+
 export default props => {
   const { breakpoints, colors } = props.theme
   const { l10n: {language} } = props

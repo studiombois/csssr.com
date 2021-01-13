@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { string, object } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
-import styles from './Timeline.styles'
+import { Global } from '@emotion/core'
+import styles, { mainStyles } from './Timeline.styles'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
@@ -45,57 +46,60 @@ const Timeline = ({
   }, [])
 
   return (
-    <Grid as="section" className={className}>
-      <Heading.H2
-        type="slab"
-        size="m"
-        dangerouslySetInnerHTML={{ __html: heading(translations) }}
-        className="heading"
-      />
+    <>
+      <Grid as="section" className={className}>
+        <Heading.H2
+          type="slab"
+          size="m"
+          dangerouslySetInnerHTML={{ __html: heading(translations) }}
+          className="heading"
+        />
 
-      <div className={cn(`container`, { animated: !isMobile && isVisible })} ref={itemRef}>
-        <ul className="period-list">
-          {periodList(translations).map((period) => (
-            <li key={period.id} className="period-item">
-              {period.date ? (
-                <Text as="span" className="period">
-                  {period.date}
-                </Text>
-              ) : (
-                <>
-                  <Text as="span" className="period">
-                    {period.firstDate}
-                  </Text>
-                  <Text as="span" className="period">
-                    {period.secondDate}
-                  </Text>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        <div className="process">
-          <ul className="scale-list">
+        <div className={cn(`container`, { animated: !isMobile && isVisible })} ref={itemRef}>
+          <ul className="period-list">
             {periodList(translations).map((period) => (
-              <li key={period.id} className="scale-item">
-                <div className="scale" />
+              <li key={period.id} className="period-item">
+                {period.date ? (
+                  <Text as="span" className="period">
+                    {period.date}
+                  </Text>
+                ) : (
+                  <>
+                    <Text as="span" className="period">
+                      {period.firstDate}
+                    </Text>
+                    <Text as="span" className="period">
+                      {period.secondDate}
+                    </Text>
+                  </>
+                )}
               </li>
             ))}
           </ul>
 
-          <ul className="title-list">
-            {periodList(translations).map((period) => (
-              <li key={period.id} className="title-item">
-                <Text as="span" className="title">
-                  {period.title}
-                </Text>
-              </li>
-            ))}
-          </ul>
+          <div className="process">
+            <ul className="scale-list">
+              {periodList(translations).map((period) => (
+                <li key={period.id} className="scale-item">
+                  <div className="scale" />
+                </li>
+              ))}
+            </ul>
+
+            <ul className="title-list">
+              {periodList(translations).map((period) => (
+                <li key={period.id} className="title-item">
+                  <Text as="span" className="title">
+                    {period.title}
+                  </Text>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-    </Grid>
+      </Grid>
+      <Global styles={mainStyles} />
+    </>
   )
 }
 

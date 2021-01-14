@@ -198,6 +198,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       &:not(:first-of-type) {
         margin-top: ${calcRem(16)};
       }
+
+      &:first-of-type {
+        max-width: ${calcRem(380)};
+      }
     }
 
     .tech-icon {

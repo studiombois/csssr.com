@@ -9,7 +9,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .heading {
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 10;
   }
 
   .container {

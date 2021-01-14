@@ -45,8 +45,8 @@ const Timeline = ({
   }, [])
 
   return (
-    <>
-      <Grid as="section" className={className}>
+    <section className={className}>
+      <Grid>
         <Heading.H2
           type="slab"
           size="m"
@@ -97,7 +97,7 @@ const Timeline = ({
           </div>
         </div>
       </Grid>
-    </>
+    </section>
   )
 }
 

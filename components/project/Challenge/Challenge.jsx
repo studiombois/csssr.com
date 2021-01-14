@@ -23,8 +23,8 @@ const Challenge = ({
   const isWindowContext = typeof window !== 'undefined'
   const desktopL = isWindowContext && window.innerWidth >= 1920
   const desktopM = isWindowContext && window.innerWidth >= 1360 && window.innerWidth < 1920
-  const desktopS = isWindowContext && window.innerWidth >= 1260 && window.innerWidth < 1360
-  const tablet = isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1260
+  const desktopS = isWindowContext && window.innerWidth >= 1280 && window.innerWidth < 1360
+  const tablet = isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1280
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,7 +72,8 @@ const Challenge = ({
                 style={{
                   transform: isMobile
                     ? 'translateY(0)'
-                    : `translateY(-${
+                    : /*Для каждого разрешения (кроме мобильного) устанавливается свой коэффициент регулировки скорости скролла внутри блока с ноутбуком, чтобы обе стороны (ноутбук слева и текст справа) скроллились симметрично*/
+                      `translateY(-${
                         (offset - offsetMin) *
                         (tablet ? 1 : desktopS ? 0.65 : desktopM ? 0.75 : 1.9)
                       }px)`,

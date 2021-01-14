@@ -5,6 +5,7 @@ import calcRem from '../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(192)};
+    overflow: hidden;
   }
 
   .heading {

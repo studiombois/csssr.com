@@ -15,7 +15,7 @@
       "laptopImgAlt": "Laptop image",
       "profileImgAlt": "Specialist profile",
       "challenge": {
-        "heading": "The challenge",
+        "heading": "The Challenge",
         "text": "Gazprom Neft decided to build a platform to connect talented individuals to corporate projects that would require their unique skills. Its implementation saw several independent teams working in close collaboration under quick release cycles."
       },
       "task": {
@@ -40,7 +40,7 @@
       }
     },
     "timeline": {
-      "heading": "Project timeline",
+      "heading": "Project Timeline",
       "periodList": [
         { "id": 1,
           "date": "2018",

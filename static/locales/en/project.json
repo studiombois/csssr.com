@@ -137,7 +137,7 @@
       "heading": "Quality Assurance",
       "subheading": "QA engineers ensured due quality testing under tight deadlines and frequent release schedules.",
       "message": "Our QA team worked along with the back-end QA team to create a seamless environment for <span style='white-space: nowrap'>cross-referencing</span> of the tasks.",
-      "procent": "104%",
+      "percent": "104%",
       "label": "roi",
       "description": "profit margin from using test automation based on ROI calculations as compared to manual testing.",
       "screenAlt": "Two screens with a profile info",

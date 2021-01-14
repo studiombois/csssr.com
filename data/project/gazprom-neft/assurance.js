@@ -24,7 +24,7 @@ export default {
     message: (t) => t.project.gazpromNeft.assurance.message,
   },
   roi: {
-    procent: (t) => t.project.gazpromNeft.assurance.procent,
+    percent: (t) => t.project.gazpromNeft.assurance.percent,
     label: (t) => t.project.gazpromNeft.assurance.label,
     description: (t) => t.project.gazpromNeft.assurance.description,
   },

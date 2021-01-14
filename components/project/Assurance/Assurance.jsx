@@ -72,7 +72,7 @@ const Assurance = ({
           <div className="roi">
             <Text
               as="span"
-              dangerouslySetInnerHTML={{ __html: roi.procent(translations) }}
+              dangerouslySetInnerHTML={{ __html: roi.percent(translations) }}
               className="percent"
             />
             <Text

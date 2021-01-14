@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { string, object } from 'prop-types'
 import cn from 'classnames'
 import styled from '@emotion/styled'
-import { Global } from '@emotion/core'
-import styles, { mainStyles } from './Timeline.styles'
+import styles from './Timeline.styles'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import Text from '../../ui-kit/core-design/Text'
@@ -98,7 +97,6 @@ const Timeline = ({
           </div>
         </div>
       </Grid>
-      <Global styles={mainStyles} />
     </>
   )
 }

@@ -21,21 +21,25 @@ const Challenge = ({
   const [offsetMin, setOffsetMin] = useState(0)
   const [offsetMax, setOffsetMax] = useState(0)
   const isWindowContext = typeof window !== 'undefined'
+  const desktopL = isWindowContext && window.innerWidth >= 1920
+  const desktopM = isWindowContext && window.innerWidth >= 1360 && window.innerWidth < 1920
+  const desktopS = isWindowContext && window.innerWidth >= 1260 && window.innerWidth < 1360
+  const tablet = isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1260
 
   useEffect(() => {
     const handleResize = () => {
-      if (isWindowContext && window.innerWidth >= 1920) {
-        setOffsetMin(1000)
-        setOffsetMax(2100)
-      } else if (isWindowContext && window.innerWidth >= 1360 && window.innerWidth < 1920) {
-        setOffsetMin(1150)
+      if (desktopL) {
+        setOffsetMin(800)
+        setOffsetMax(1400)
+      } else if (desktopM) {
+        setOffsetMin(800)
+        setOffsetMax(1900)
+      } else if (desktopS) {
+        setOffsetMin(800)
         setOffsetMax(2000)
-      } else if (isWindowContext && window.innerWidth >= 1260 && window.innerWidth < 1360) {
-        setOffsetMin(1250)
-        setOffsetMax(2050)
-      } else if (isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1260) {
-        setOffsetMin(700)
-        setOffsetMax(1290)
+      } else if (tablet) {
+        setOffsetMin(600)
+        setOffsetMax(1200)
       }
     }
 
@@ -43,7 +47,7 @@ const Challenge = ({
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [isWindowContext])
+  }, [desktopL, desktopM, desktopS, tablet])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +70,12 @@ const Challenge = ({
             <div className="picture-container">
               <div
                 style={{
-                  transform: isMobile ? 'translateY(0)' : `translateY(-${offset - offsetMin}px)`,
+                  transform: isMobile
+                    ? 'translateY(0)'
+                    : `translateY(-${
+                        (offset - offsetMin) *
+                        (tablet ? 1 : desktopS ? 0.65 : desktopM ? 0.75 : 1.9)
+                      }px)`,
                 }}
               >
                 <PictureSmart

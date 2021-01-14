@@ -42,6 +42,57 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     pointer-events: none;
   }
 
+  .action-phrase {
+    margin-top: ${calcRem(30)};
+    color: ${colors.secondary.darken100};
+  }
+
+  .email-container {
+    display: flex;
+    align-items: baseline;
+    margin-top: ${calcRem(16)};
+  }
+
+  .email-wrapper {
+    position: relative;
+  }
+
+  .copy-message {
+    position: absolute;
+    bottom: ${calcRem(5)};
+    left: calc(100% + ${calcRem(36)});
+    font-size: ${calcRem(10)};
+    line-height: ${calcRem(10)};
+    font-weight: normal;
+    letter-spacing: ${calcRem(1.3)};
+    color: ${colors.primary.origin};
+    text-transform: uppercase;
+  }
+
+  .copy-icon-button {
+    position: relative;
+    bottom: ${calcRem(5)};
+    width: ${calcRem(16)};
+    height: ${calcRem(16)};
+    margin-left: ${calcRem(10)};
+    border: none;
+    background: none;
+    color: ${colors.primary.origin};
+    cursor: pointer;
+
+    &[disabled] {
+      cursor: default;
+    }
+  }
+
+  .copy-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   @media (pointer: fine) {
     .logo:hover {
       color: white;
@@ -50,16 +101,10 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     .logo:hover ~ .lazyload-wrapper > .video {
       opacity: 1;
     }
-  }
 
-  .action-phrase {
-    margin-top: ${calcRem(30)};
-    color: ${colors.secondary.darken100};
-  }
-
-  .email {
-    margin-top: ${calcRem(16)};
-    display: block;
+    .copy-icon-button:hover {
+      color: ${colors.primary.darken15};
+    }
   }
 
   ${desktop.s} {
@@ -100,28 +145,28 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
       width: 100%;
     }
 
-    .action-phrase,
-    .email {
-      margin-left: ${calcRem(31)};
-      align-self: flex-start;
-    }
-
     .action-phrase {
+      align-self: flex-start;
+      margin-left: ${calcRem(32)};
       margin-top: 0;
     }
 
-    .link-language,
-    .email {
+    .email-container {
       margin-top: ${calcRem(8)};
-      display: inline-block;
+      margin-left: ${calcRem(32)};
+      margin-right: ${calcRem(32)};
+    }
+
+    .copy-message {
+      bottom: ${calcRem(-18)};
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .link-language {
-      position: relative;
-      top: ${calcRem(-3)};
-      margin-left: ${calcRem(127)};
+      display: inline-block;
+      margin-left: auto;
       text-decoration: none;
-
     }
 
     .link-text {

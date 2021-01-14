@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import Fade from 'react-reveal/Fade'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import Text from '../../../ui-kit/core-design/Text'
 import CalendlyBookingButton from './CalendlyBookingButton'
 import styles from './BookACall.styles'
 
@@ -14,11 +15,24 @@ import { MapContext } from '../../../../utils/mapContext'
 
 import profiles from '../../../../data/contact-us/profiles'
 
+import { ReactComponent as CopyIcon } from '../../../../static/icons/footer/copy.svg'
+
 const BookACall = ({ className, l10n: { translations, language }, testId }) => {
+  const [isMessageShown, setIsMessageShown] = useState(false)
   const { inquiryTypeId } = useContext(TypeInquiryContext)
   const { activeAddressId } = useContext(MapContext)
   const profileId = getProfileId(inquiryTypeId, activeAddressId, language)
   const canBookACall = setBookingPossibility(inquiryTypeId, activeAddressId, language, profileId)
+
+  const copyButtonClickHandler = () => {
+    navigator.clipboard.writeText(profiles[profileId].email)
+    setIsMessageShown(true)
+
+    const timer = setTimeout(() => {
+      setIsMessageShown(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }
 
   return (
     <Fade right={true} duration={200} distance="40px" key={profileId + canBookACall}>
@@ -41,9 +55,32 @@ const BookACall = ({ className, l10n: { translations, language }, testId }) => {
             {translations.contactUs.bookACall.profiles[profileId].position}
           </div>
 
-          <a href={`mailto:${profiles[profileId].email}`} className="email" data-testid={testId}>
-            {profiles[profileId].email}
-          </a>
+          <div className="email-container">
+            <div className="email-wrapper">
+              <a
+                href={`mailto:${profiles[profileId].email}`}
+                className="email"
+                data-testid={testId}
+              >
+                {profiles[profileId].email}
+              </a>
+
+              {isMessageShown && (
+                <Text as="span" className="copy-message">
+                  {translations.common.footer.copyMessage}
+                </Text>
+              )}
+            </div>
+
+            <button
+              className="copy-icon-button"
+              type="button"
+              disabled={isMessageShown}
+              onClick={copyButtonClickHandler}
+            >
+              <CopyIcon className="copy-icon" />
+            </button>
+          </div>
         </figcaption>
 
         {canBookACall && (

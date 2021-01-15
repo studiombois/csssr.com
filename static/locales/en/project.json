@@ -99,15 +99,19 @@
       "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "4",
+        "secondItem": "1",
         "thirdItem": "1",
-        "fourthItem": "2"
+        "fourthItem": "4",
+        "fifthItem": "1",
+        "sixthItem": "2"
       },
       "textList": {
-        "firstItem": "Senior JS&nbsp;Developer",
-        "secondItem": "Middle JS&nbsp;Developers",
-        "thirdItem": "Middle HTML/CSS Developer",
-        "fourthItem": "QA&nbsp;Engineers"
+        "firstItem": "Account Manager",
+        "secondItem": "Project Manager",
+        "thirdItem": "Senior JS&nbsp;Developer",
+        "fourthItem": "Middle JS&nbsp;Developers",
+        "fifthItem": "Middle HTML/CSS Developer",
+        "sixthItem": "QA&nbsp;Engineers"
       }
     },
     "techStack": {
@@ -168,12 +172,16 @@
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
-        "thirdItem": "2"
+        "thirdItem": "1",
+        "fourthItem": "2",
+        "fifthItem": "1"
       },
       "textList": {
-        "firstItem": "High Middle JS&nbsp;Developer",
-        "secondItem": "Middle QA&nbsp;Engineer",
-        "thirdItem": "Middle HTML/CSS Developer"
+        "firstItem": "Account Manager",
+        "secondItem": "Project Manager",
+        "thirdItem": "High Middle JS&nbsp;Developer",
+        "fourthItem": "Middle HTML/CSS Developer",
+        "fifthItem": "Middle QA&nbsp;Engineer"
       }
     },
     "techStack": {
@@ -225,10 +233,14 @@
       "title": "Team Composition",
       "imgAlt": "Team composition.",
       "numberList": {
-        "firstItem": "1"
+        "firstItem": "1",
+        "secondItem": "1",
+        "thirdItem": "2"
       },
       "textList": {
-        "firstItem": "High Middle JS&nbsp;Developer"
+        "firstItem": "Account Manager",
+        "secondItem": "Project Manager",
+        "thirdItem": "High Middle JS&nbsp;Developers"
       }
     },
     "techStack": {
@@ -293,11 +305,15 @@
       "imgAlt": "Team composition.",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "2"
+        "secondItem": "1",
+        "thirdItem": "1",
+        "fourthItem": "2"
       },
       "textList": {
-        "firstItem": "Middle HTML/CSS Developer",
-        "secondItem": "Middle Front-end Developer"
+        "firstItem": "Account Manager",
+        "secondItem": "Project Manager",
+        "thirdItem": "Middle HTML/CSS Developer",
+        "fourthItem": "Middle Front-end Developer"
       }
     },
     "techStack": {
@@ -355,12 +371,16 @@
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
-        "thirdItem": "1"
+        "thirdItem": "1",
+        "fourthItem": "1",
+        "fifthItem": "1"
       },
       "textList": {
-        "firstItem": "Middle HTML/CSS Developer",
-        "secondItem": "Middle QA Engineer",
-        "thirdItem": "High Middle JS Developer"
+        "firstItem": "Account Manager",
+        "secondItem": "Project Manager",
+        "thirdItem": "High Middle JS&nbsp;Developer",
+        "fourthItem": "Middle HTML/CSS Developer",
+        "fifthItem": "Middle QA&nbsp;Engineer"
       }
     },
     "techStack": {
@@ -414,11 +434,15 @@
       "title": "Team Composition",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "2"
+        "secondItem": "1",
+        "thirdItem": "1",
+        "fourthItem": "2"
       },
       "textList": {
-        "firstItem": "Senior HTML/CSS Developer",
-        "secondItem": "Middle HTML/CSS Developers"
+        "firstItem": "Account Manager",
+        "secondItem": "Project Manager",
+        "thirdItem": "Senior HTML/CSS Developer",
+        "fourthItem": "Middle HTML/CSS Developers"
       }
     },
     "techStack": {

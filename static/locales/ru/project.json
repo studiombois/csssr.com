@@ -96,15 +96,19 @@
       "imgAlt": "Команда разработчиков CSSSR в деталях.",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "4",
+        "secondItem": "1",
         "thirdItem": "1",
-        "fourthItem": "2"
+        "fourthItem": "4",
+        "fifthItem": "1",
+        "sixthItem": "2"
       },
       "textList": {
-        "firstItem": "Senior JS&nbsp;Разработчик",
-        "secondItem": "Middle JS&nbsp;Разработчика",
-        "thirdItem": "Middle HTML/CSS Разработчик",
-        "fourthItem": "QA&nbsp;Инженера"
+        "firstItem": "Аккаунт-менеджер",
+        "secondItem": "Менеджер проекта",
+        "thirdItem": "Senior JS&nbsp;Разработчик",
+        "fourthItem": "Middle JS&nbsp;Разработчика",
+        "fifthItem": "Middle HTML/CSS Разработчик",
+        "sixthItem": "QA&nbsp;Инженера"
       }
     },
     "techStack": {
@@ -165,12 +169,16 @@
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
-        "thirdItem": "2"
+        "thirdItem": "1",
+        "fourthItem": "2",
+        "fifthItem": "1"
       },
       "textList": {
-        "firstItem": "High Middle JS&nbsp;Разработчик",
-        "secondItem": "Middle QA&nbsp;Инженер",
-        "thirdItem": "Middle HTML/CSS Разработчик"
+        "firstItem": "Аккаунт-менеджер",
+        "secondItem": "Менеджер проекта",
+        "thirdItem": "High Middle JS&nbsp;Разработчик",
+        "fourthItem": "Middle HTML/CSS Разработчик",
+        "fifthItem": "Middle QA&nbsp;Инженер"
       }
     },
     "techStack": {
@@ -222,10 +230,14 @@
       "title": "Команда в деталях",
       "imgAlt": "Команда разработчиков CSSSR в деталях.",
       "numberList": {
-        "firstItem": "1"
+        "firstItem": "1",
+        "secondItem": "1",
+        "thirdItem": "2"
       },
       "textList": {
-        "firstItem": "High Middle JS&nbsp;Разработчик"
+        "firstItem": "Аккаунт-менеджер",
+        "secondItem": "Менеджер проекта",
+        "thirdItem": "High Middle JS&nbsp;Разработчик"
       }
     },
     "techStack": {
@@ -290,11 +302,15 @@
       "imgAlt": "Команда разработчиков CSSSR в деталях.",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "2"
+        "secondItem": "1",
+        "thirdItem": "1",
+        "fourthItem": "2"
       },
       "textList": {
-        "firstItem": "Middle HTML/CSS Разработчик",
-        "secondItem": "Middle Front-end Разработчика"
+        "firstItem": "Аккаунт-менеджер",
+        "secondItem": "Менеджер проекта",
+        "thirdItem": "Middle HTML/CSS Разработчик",
+        "fourthItem": "Middle Front-end Разработчика"
       }
     },
     "techStack": {
@@ -352,12 +368,17 @@
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
-        "thirdItem": "1"
+        "thirdItem": "1",
+        "fourthItem": "1",
+        "fifthItem": "1"
       },
       "textList": {
-        "firstItem": "Middle HTML/CSS Разработчик",
-        "secondItem": "Middle QA Инженер",
-        "thirdItem": "High Middle JS Разработчик"
+        "firstItem": "Аккаунт-менеджер",
+        "secondItem": "Менеджер проекта",
+        "thirdItem": "High Middle JS Разработчик",
+        "fourthItem": "Middle HTML/CSS Разработчик",
+        "fifthItem": "Middle QA Инженер"
+        
       }
     },
     "techStack": {
@@ -411,11 +432,15 @@
       "title": "Команда в деталях",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "2"
+        "secondItem": "1",
+        "thirdItem": "1",
+        "fourthItem": "2"
       },
       "textList": {
-        "firstItem": "Senior HTML/CSS Разработчик",
-        "secondItem": "Middle HTML/CSS Разработчика"
+        "firstItem": "Аккаунт-менеджер",
+        "secondItem": "Менеджер проекта",
+        "thirdItem": "Senior HTML/CSS Разработчик",
+        "fourthItem": "Middle HTML/CSS Разработчика"
       }
     },
     "techStack": {

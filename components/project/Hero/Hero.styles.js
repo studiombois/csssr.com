@@ -45,14 +45,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     grid-column: 2 / span 5;
     grid-row: 3;
     z-index: 1;
-    margin-top: ${calcRem(90)};
+    margin-top: ${calcRem(72)};
     font-weight: normal;
   }
 
   .text {
     grid-column: 2 / span 5;
     grid-row: 4;
-    margin-top: ${calcRem(38)};
+    margin-top: ${calcRem(32)};
     color: ${colors.secondary.darken100};
     z-index: 1;
   }
@@ -125,7 +125,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.m} {
     & {
-      padding-bottom: ${calcRem(281)};
+      padding-bottom: ${calcRem(172)};
     }
 
     .heading {
@@ -134,10 +134,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .link {
       margin-top: ${calcRem(23)};
-    }
-
-    .text {
-      margin-top: ${calcRem(39)};
     }
 
     .pic-wrapper {

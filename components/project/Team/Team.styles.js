@@ -27,24 +27,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   .number-item {
     justify-self: end;
 
-    &:nth-of-type(1) span {
-      color: #41CE7F;
+    &_manager span {
+      color: #F9555A;
     }
 
-    &:nth-of-type(3) span {
-      color: #FFC045;
+    &_dev span {
+      color: #87DCB7;
     }
 
-    &:nth-of-type(5) span {
-      color: #F45B53;
-    }
-
-    &:nth-of-type(7) span {
-      color: #0254D8;
-    }
-
-    &:nth-of-type(9) span {
-      color: #41CE7F;
+    &_qa span {
+      color: #0054D7;
     }
 
     & span {

@@ -37,7 +37,9 @@ const Hero = ({
           type="list"
           target="_blank"
           rel="noreferrer noopener"
-          dangerouslySetInnerHTML={{ __html: link(translations) }}
+          dangerouslySetInnerHTML={{
+            __html: projectId === 'mosoblgaz' ? linkTitle(translations) : link(translations),
+          }}
           data-testid="Project:link.project-site"
         />
 

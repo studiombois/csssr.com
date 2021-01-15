@@ -160,6 +160,7 @@
     },
     "hero": {
       "title": "Личный кабинет",
+      "linkTitle": "https://mosoblgaz.ru",
       "link": "https://mosoblgaz.ru",
       "subTitle": "О клиенте",
       "text": {

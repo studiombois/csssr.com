@@ -163,7 +163,8 @@
     },
     "hero": {
       "title": "Personal Account",
-      "link": "https://mosoblgaz.ru",
+      "linkTitle": "https://mosoblgaz.ru",
+      "link": "https://mosoblgaz.ru/en",
       "subTitle": "Client",
       "text": {
         "firstParagraph": "Mosoblgaz is&nbsp;one of&nbsp;the largest gas distribution companies in&nbsp;Russia providing natural gas distribution throughout the Moscow Region. By&nbsp;using Mosoblgaz services one can apply for connection to&nbsp;gas networks, monitor the account balance and control gas consumption using his/her personal account on&nbsp;the website or&nbsp;in&nbsp;a&nbsp;mobile application."

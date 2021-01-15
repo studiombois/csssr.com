@@ -5,10 +5,11 @@ import calcRem from '../../../utils/style/calcRem'
 const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   & {
     margin-top: ${calcRem(192)};
+    overflow: hidden;
   }
 
   .heading {
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 10;
   }
 
   .container {
@@ -564,12 +565,6 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       -ms-grid-column: ${getGridValueForMs(3)};
       -ms-grid-column-span: ${getGridValueForMs(4)};
     }
-  }
-`
-
-export const mainStyles = css`
-  .main {
-    overflow: hidden;
   }
 `
 

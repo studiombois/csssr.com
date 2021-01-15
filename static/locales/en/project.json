@@ -15,7 +15,7 @@
       "laptopImgAlt": "Laptop image",
       "profileImgAlt": "Specialist profile",
       "challenge": {
-        "heading": "The challenge",
+        "heading": "The Challenge",
         "text": "Gazprom Neft decided to build a platform to connect talented individuals to corporate projects that would require their unique skills. Its implementation saw several independent teams working in close collaboration under quick release cycles."
       },
       "task": {
@@ -40,7 +40,7 @@
       }
     },
     "timeline": {
-      "heading": "Project timeline",
+      "heading": "Project Timeline",
       "periodList": [
         { "id": 1,
           "date": "2018",
@@ -73,7 +73,7 @@
       "projectManagement": {
         "title": "Project Management",
         "text": [
-          "Our project manager interacted with the customer team in&nbsp;their preferred environment: <span class='tech-text text-slack'><span class='tech-icon slack-icon'></span>Slack</span>, <span class='tech-text text-jira'><span class='tech-icon jira-icon'></span>Jira</span> and&nbsp;<span class='tech-text text-confl'><span class='tech-icon confl-icon'></span>Confluence</span>",
+          "Our project manager interacted with the customer team in&nbsp;their preferred environment: <span class='tech-text text-slack'><span class='tech-icon slack-icon'></span>Slack</span>, <span class='tech-text text-jira'><span class='tech-icon jira-icon'></span>JIRA</span> and&nbsp;<span class='tech-text text-confl'><span class='tech-icon confl-icon'></span>Confluence</span>",
           "She ensured that all tasks within development phases are carried out timely or&nbsp;reasonably flexed.",
           "The project manager suggested and supervised the transfer of&nbsp;some of&nbsp;the project&rsquo;s logic from back-end to&nbsp;front-end to&nbsp;ensure the timely release of&nbsp;the features.",
           "Our project manager used CSSSR&rsquo;s in-house combination of&nbsp;Scrum and Kanban methodologies to&nbsp;ensure the timely delivery of&nbsp;quality products and worked in&nbsp;a&nbsp;shared space with the customer and other project teams."

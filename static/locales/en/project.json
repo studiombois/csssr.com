@@ -73,7 +73,7 @@
       "projectManagement": {
         "title": "Project Management",
         "text": [
-          "Our project manager interacted with the customer team in&nbsp;their preferred environment: <span class='tech-text text-slack'><span class='tech-icon slack-icon'></span>Slack</span>, <span class='tech-text text-jira'><span class='tech-icon jira-icon'></span>JIRA</span> &amp;&nbsp;<span class='tech-text text-confl'><span class='tech-icon confl-icon'></span>Confluence</span>",
+          "Our project manager interacted with the customer team in&nbsp;their preferred environment: <span class='tech-text text-slack'><span class='tech-icon slack-icon'></span>Slack</span>, <span class='tech-text text-jira'><span class='tech-icon jira-icon'></span>JIRA</span> and&nbsp;<span class='tech-text text-confl'><span class='tech-icon confl-icon'></span>Confluence</span>",
           "She ensured that all tasks within development phases are carried out timely or&nbsp;reasonably flexed.",
           "The project manager suggested and supervised the transfer of&nbsp;some of&nbsp;the project&rsquo;s logic from back-end to&nbsp;front-end to&nbsp;ensure the timely release of&nbsp;the features.",
           "Our project manager used CSSSR&rsquo;s in-house combination of&nbsp;Scrum and Kanban methodologies to&nbsp;ensure the timely delivery of&nbsp;quality products and worked in&nbsp;a&nbsp;shared space with the customer and other project teams."

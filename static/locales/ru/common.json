@@ -30,8 +30,8 @@
           "description": "Разработка полного цикла и&nbsp;настройка окружения."
         }
       },
-      "industries": {
-        "title": "Индустрии",
+      "portfolio": {
+        "title": "Портфолио",
         "fintech": {
           "title": "Финтех"
         },
@@ -42,7 +42,8 @@
           "title": "Информационные технологии"
         },
         "mediaAndMarketing": {
-          "title": "Медиа и&nbsp;маркетинг"
+          "title": "Медиа и&nbsp;маркетинг",
+          "heading": "Клиенты по отраслям"
         },
         "ourProjects": {
           "title": "Наши проекты",

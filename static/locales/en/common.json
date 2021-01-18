@@ -34,8 +34,8 @@
           "description": "Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
         }
       },
-      "industries": {
-        "title": "Industries",
+      "portfolio": {
+        "title": "Portfolio",
         "fintech": {
           "title": "Fintech"
         },
@@ -46,7 +46,8 @@
           "title": "Information Technology"
         },
         "mediaAndMarketing": {
-          "title": "Media & Marketing"
+          "title": "Media & Marketing",
+          "heading": "Clients by industry"
         },
         "ourProjects": {
           "title": "Our Projects",

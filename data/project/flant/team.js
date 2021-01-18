@@ -18,6 +18,7 @@ export default {
       number: (t) => t.project.flant.team.numberList.thirdItem,
       text: (t) => t.project.flant.team.textList.thirdItem,
       id: 'dev',
+      withMargin: true,
     },
     {
       number: (t) => t.project.flant.team.numberList.fourthItem,

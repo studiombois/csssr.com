@@ -18,17 +18,21 @@
       "title": "Команда в деталях",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "4",
+        "secondItem": "1",
         "thirdItem": "1",
         "fourthItem": "1",
-        "fifthItem": "2"
+        "fifthItem": "4",
+        "sixthItem": "1",
+        "seventhItem": "2"
       },
       "textList": {
-        "firstItem": "Senior JS&nbsp;Разработчик и&nbsp;Team Lead",
-        "secondItem": "Middle JS&nbsp;Разработчика",
-        "thirdItem": "Junior JS&nbsp;Разработчик",
-        "fourthItem": "Аналитик",
-        "fifthItem": "QA&nbsp;Инженера"
+        "firstItem": "Менеджер проекта",
+        "secondItem": "Менеджер проекта",
+        "thirdItem": "Аналитик",
+        "fourthItem": "Senior JS&nbsp;Разработчик и&nbsp;Team Lead",
+        "fifthItem": "Middle JS&nbsp;Разработчика",
+        "sixthItem": "Junior JS&nbsp;Разработчик",
+        "seventhItem": "QA&nbsp;Инженера"
       }
     },
     "techStack": {

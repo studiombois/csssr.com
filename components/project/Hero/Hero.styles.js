@@ -90,16 +90,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   ${desktop.all} {
+    & {
+      padding-bottom: ${calcRem(315)};
+    }
+
     .paragraph + .paragraph{
         margin-top: ${calcRem(24)};
+    }
+
+    .image {
+       margin-top: 54px;
     }
   }
 
   ${desktop.l} {
-    & {
-      padding-bottom: ${calcRem(260)};
-    }
-
     .heading {
       grid-column: 2 / span 7;
     }
@@ -124,10 +128,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   ${desktop.m} {
-    & {
-      padding-bottom: ${calcRem(172)};
-    }
-
     .heading {
       grid-column: 2 / span 10;
     }
@@ -143,7 +143,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       grid-column: 8 / span 5;
       grid-row: 2 / span 3;
       width: ${calcRem(560)};
-      margin-top: ${calcRem(72)};
+      margin-top: ${calcRem(20)};
       padding-top: ${calcRem(560)};
 
       &:before {
@@ -188,7 +188,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${tablet.all} {
     & {
-      padding-bottom: ${calcRem(202)};
+      padding-bottom: ${calcRem(186)};
     }
 
     .grid {
@@ -197,7 +197,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .heading {
       grid-column: 2 / span 8;
-      margin-top: 1rem;
+      margin-top: ${calcRem(92)};
     }
 
     .link {
@@ -240,11 +240,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${mobile.all} {
     & {
-      padding-bottom: ${calcRem(153)};
+      padding-bottom: ${calcRem(167)};
     }
 
     .grid {
-      padding-top: ${calcRem(80)};
+      padding-top: ${calcRem(120)};
     }
 
     .heading,
@@ -281,12 +281,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     .pic-wrapper {
       grid-row: 5;
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(89)};
+      margin-top: ${calcRem(106)};
       padding-top: calc(792 / 984 * 100%);
 
       &:before {
-        top: ${calcRem(-43)};
-        left: ${calcRem(16)};
+        top: ${calcRem(-46)};
+        left: ${calcRem(28)};
         width: ${calcRem(252)};
         height: ${calcRem(386)};
       }

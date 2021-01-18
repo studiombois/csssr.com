@@ -18,6 +18,7 @@ export default {
       number: (t) => t.project.mindbox.team.numberList.thirdItem,
       text: (t) => t.project.mindbox.team.textList.thirdItem,
       id: 'dev',
+      withMargin: true,
     },
     {
       number: (t) => t.project.mindbox.team.numberList.fourthItem,

@@ -29,13 +29,14 @@ const Team = ({
         />
 
         <ul className="list">
-          {teamItems.map(({ number, text, id }, index) => (
+          {teamItems.map(({ number, text, id, withMargin }, index) => (
             <React.Fragment key={index}>
               <li
                 className={cn('list-item number-item', {
                   'number-item_manager': id === 'manager',
                   'number-item_dev': id === 'dev',
                   'number-item_qa': id === 'qa',
+                  'number-item_withMargin': withMargin,
                 })}
                 key={number}
               >

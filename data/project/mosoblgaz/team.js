@@ -18,6 +18,7 @@ export default {
       number: (t) => t.project.mosoblgaz.team.numberList.thirdItem,
       text: (t) => t.project.mosoblgaz.team.textList.thirdItem,
       id: 'dev',
+      withMargin: true,
     },
     {
       number: (t) => t.project.mosoblgaz.team.numberList.fourthItem,
@@ -28,6 +29,7 @@ export default {
       number: (t) => t.project.mosoblgaz.team.numberList.fifthItem,
       text: (t) => t.project.mosoblgaz.team.textList.fifthItem,
       id: 'qa',
+      withMargin: true,
     },
   ],
   imgAlt: (t) => t.project.mosoblgaz.team.imgAlt,

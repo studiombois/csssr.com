@@ -20,17 +20,21 @@
       "title": "Team Composition",
       "numberList": {
         "firstItem": "1",
-        "secondItem": "4",
+        "secondItem": "1",
         "thirdItem": "1",
         "fourthItem": "1",
-        "fifthItem": "2"
+        "fifthItem": "4",
+        "sixthItem": "1",
+        "seventhItem": "2"
       },
       "textList": {
-        "firstItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
-        "secondItem": "Middle JS&nbsp;Developers",
-        "thirdItem": "Junior JS&nbsp;Developers",
-        "fourthItem": "Analyst",
-        "fifthItem": "QA&nbsp;Engineers"
+        "firstItem": "Account Manager",
+        "secondItem": "Project Manager",
+        "thirdItem": "Analyst",
+        "fourthItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
+        "fifthItem": "Middle JS&nbsp;Developers",
+        "sixthItem": "Junior JS&nbsp;Developers",
+        "seventhItem": "QA&nbsp;Engineers"
       }
     },
     "techStack": {

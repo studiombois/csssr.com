@@ -18,6 +18,7 @@ export default {
       number: (t) => t.project.brusnika.team.numberList.thirdItem,
       text: (t) => t.project.brusnika.team.textList.thirdItem,
       id: 'dev',
+      withMargin: true,
     },
   ],
   imgAlt: (t) => t.project.mosoblgaz.team.imgAlt,

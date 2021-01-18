@@ -18,6 +18,7 @@ export default {
       number: (t) => t.project.qmarketing.team.numberList.thirdItem,
       text: (t) => t.project.qmarketing.team.textList.thirdItem,
       id: 'dev',
+      withMargin: true,
     },
     {
       number: (t) => t.project.qmarketing.team.numberList.fourthItem,
@@ -28,6 +29,7 @@ export default {
       number: (t) => t.project.qmarketing.team.numberList.fifthItem,
       text: (t) => t.project.qmarketing.team.textList.fifthItem,
       id: 'qa',
+      withMargin: true,
     },
   ],
   imgAlt: (t) => t.project.qmarketing.team.imgAlt,

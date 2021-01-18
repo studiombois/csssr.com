@@ -18,6 +18,7 @@ export default {
       number: (t) => t.project.s7airlines.team.numberList.thirdItem,
       text: (t) => t.project.s7airlines.team.textList.thirdItem,
       id: 'dev',
+      withMargin: true,
     },
     {
       number: (t) => t.project.s7airlines.team.numberList.fourthItem,
@@ -33,6 +34,7 @@ export default {
       number: (t) => t.project.s7airlines.team.numberList.sixthItem,
       text: (t) => t.project.s7airlines.team.textList.sixthItem,
       id: 'qa',
+      withMargin: true,
     },
   ],
   imgAlt: (t) => t.project.s7airlines.team.imgAlt,

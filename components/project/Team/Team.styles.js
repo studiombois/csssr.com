@@ -52,19 +52,27 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.all} {
+    .list {
+      margin-left: -7px;
+    }
+
+    .image {
+      margin-top: 127px;
+    }
+
     .number-item {
       & > span {
         font-size: ${calcRem(48)};
         line-height: ${calcRem(64)};
       }
+
+      &_withMargin {
+        margin-top: 22px;
+      }
     }
   }
 
   ${desktop.l} {
-    .heading {
-      margin-top: ${calcRem(22)};
-    }
-
     .image {
       max-height: 536px;
     }
@@ -72,7 +80,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.m} {
     .image {
-      margin-top: ${calcRem(51)};
       max-height: 400px;
     }
   }
@@ -85,10 +92,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${tablet.all} {
-    .heading {
-      margin-top: ${calcRem(15)};
-    }
-
     .list {
       grid-template-columns: 14px 1fr;
       grid-gap: 8px 17px;
@@ -107,10 +110,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         font-size: ${calcRem(24)};
         line-height: ${calcRem(32)};
       }
+
+      &_withMargin {
+        margin-top: ${calcRem(12)};
+      }
     }
 
     .image {
       max-height: ${calcRem(280)};
+      margin-top: ${calcRem(20)};
     }
   }
 
@@ -129,6 +137,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       & > span {
         font-size: ${calcRem(24)};
         line-height: ${calcRem(32)};
+      }
+
+      &_withMargin {
+        margin-top: ${calcRem(12)};
       }
     }
 

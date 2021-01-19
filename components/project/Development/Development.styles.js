@@ -2,6 +2,10 @@ import { css } from '@emotion/core'
 import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
+  .heading {
+    font-weight: bold;
+  }
+
   .description {
     font-family: 'Roboto Slab', serif;
   }
@@ -211,6 +215,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       grid-column: 2 / span 4;
       font-size: ${calcRem(24)};
       line-height: ${calcRem(32)};
+      font-weight: normal;
     }
 
     .text-wrapper {

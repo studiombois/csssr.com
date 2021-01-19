@@ -54,7 +54,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     animation-duration: 0.5s;
     animation-name: p4-outline;
     animation-iteration-count: 1;
-    animation-delay: 1.9s;
+    animation-delay: .9s;
     animation-fill-mode: forwards;
     will-change: width, height;
 
@@ -70,7 +70,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       animation-duration: 300ms;
       animation-name: p4-dot;
       animation-iteration-count: 2;
-      animation-delay: 0.5s;
+      animation-delay: 0.3s;
       animation-fill-mode: forwards;
       will-change: opacity;
     }
@@ -89,7 +89,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       animation-duration: 300ms;
       animation-name: p4-cursor;
       animation-iteration-count: 1;
-      animation-delay: 1.2s;
+      animation-delay: .5s;
       animation-fill-mode: forwards;
       will-change: opacity, top, right;
     }

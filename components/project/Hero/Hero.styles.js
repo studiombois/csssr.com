@@ -232,6 +232,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   ${desktop.all} {
+    &._gazpromNeft {
+      padding-bottom: ${calcRem(152)};
+    }
+
     .paragraph + .paragraph{
       margin-top: ${calcRem(24)};
     }
@@ -395,6 +399,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       padding-bottom: ${calcRem(202)};
     }
 
+    &._gazpromNeft {
+      padding-bottom: ${calcRem(112)};
+    }
+
     .grid {
       padding-top: ${calcRem(84)};
     }
@@ -480,6 +488,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   ${mobile.all} {
     & {
       padding-bottom: ${calcRem(153)};
+    }
+
+    &._gazpromNeft {
+      padding-bottom: ${calcRem(64)};
     }
 
     .grid {

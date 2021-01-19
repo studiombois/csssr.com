@@ -22,7 +22,12 @@ const Hero = ({
   l10n: { translations },
 }) => {
   return (
-    <section className={className} id={id}>
+    <section
+      className={cn(className, {
+        _gazpromNeft: projectId === 'gazpromNeft',
+      })}
+      id={id}
+    >
       <Grid
         className={cn('grid', {
           grid_gazpromNeft: projectId === 'gazpromNeft',

@@ -10,7 +10,7 @@
       "text": {
         "firstParagraph": "<span class='gneft-icon'></span> is&nbsp;a&nbsp;subsidiary of&nbsp;Gazprom operating in&nbsp;the&nbsp;oil and gas industry. As&nbsp;of&nbsp;2020, its market capitalization comprises around $20&nbsp;billion, making it&nbsp;one of&nbsp;the most influential and capitalized companies in&nbsp;Europe."
       },
-      "imgAlt": ""
+      "imgAlt": "Abstract picture of the best employees and large companies"
     },
     "challenge": {
       "laptopImgAlt": "Laptop image",
@@ -59,7 +59,7 @@
       ]
     },
     "team": {
-      "imgAlt": "Modal window with team composition",
+      "imgAlt": "Site page with project team members avatars",
       "title": "Team Composition",
       "description": "We&nbsp;assembled a&nbsp;team of&nbsp;an&nbsp;Account Manager, a&nbsp;Project Manager, a&nbsp;Business Analyst, Developers, and Quality Assurance.",
       "accountManagement": {
@@ -80,7 +80,6 @@
           "Our project manager used CSSSR&rsquo;s in-house combination of&nbsp;Scrum and Kanban methodologies to&nbsp;ensure the timely delivery of&nbsp;quality products and worked in&nbsp;a&nbsp;shared space with the customer and other project teams."
         ]
       }
-
     },
     "businessAnalysis": {
       "title": "Business Analysis",
@@ -105,7 +104,8 @@
       "author": {
         "name": "Darya Skatova",
         "signature": "Project Manager, Gazprom Neft"
-      }
+      },
+      "imageAlt": "Image of a woman interviewer"
     },
     "development": {
       "title": "Development",
@@ -144,10 +144,6 @@
       "screenAlt": "Two screens with a profile info",
       "designerAlt": "Project screen with two designers chatting",
       "projectsAlt": "Screen with a list of company projects"
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "s7airlines": {
@@ -163,12 +159,11 @@
         "firstParagraph": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline primarily based at&nbsp;Moscow Domodedovo International Airport and Novosibirsk Tolmachevo Airport. S7&nbsp;has the youngest fleet on&nbsp;the Russian air transportation market. It&nbsp;boasts an&nbsp;extensive network of&nbsp;routes allowing passengers to&nbsp;travel to&nbsp;181 destinations in&nbsp;26&nbsp;countries all over the globe. S7&nbsp;is a&nbsp;full member of&nbsp;Oneworld airline alliance.",
         "secondParagraph": "S7&nbsp;Airlines is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;major Russian holding consisting of&nbsp;15&nbsp;companies, doing business in&nbsp;passengers and cargo air transportation (both regular and charter), tourism, air flights ticket distribution, flight personnel training, aircraft repair, and other aviation and space services."
       },
-      "imgAlt": ""
+      "imgAlt": "User profile in a computer display"
     },
-
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "4",
@@ -213,11 +208,8 @@
           "The core team consists of&nbsp;4&nbsp;developers and one QA Engineer, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
           "Currently we&nbsp;are implementing flight statistics and login through social networks, and are planning to&nbsp;conduct significant refactoring and improve the performance of&nbsp;the web application. The entire front-end is&nbsp;written on&nbsp;Next.js&nbsp;&mdash; a&nbsp;modern React framework."
         ]
-      ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+      ],
+      "imageAlt": "Abstract image of people working together"
     }
   },
   "mosoblgaz": {
@@ -232,11 +224,11 @@
       "text": {
         "firstParagraph": "Mosoblgaz is&nbsp;one of&nbsp;the largest gas distribution companies in&nbsp;Russia providing natural gas distribution throughout the Moscow Region. By&nbsp;using Mosoblgaz services one can apply for connection to&nbsp;gas networks, monitor the account balance and control gas consumption using his/her personal account on&nbsp;the website or&nbsp;in&nbsp;a&nbsp;mobile application."
       },
-      "imgAlt": "Mosoblgaz"
+      "imgAlt": "Mosoblgaz site page in a computer display"
     },
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -272,11 +264,8 @@
           "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network.",
           "The personal account supports role models and restrictions for individual employees."
         ]
-      ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+      ],
+      "imageAlt": "Abstract image of people working together"
     }
   },
   "brusnika": {
@@ -291,11 +280,11 @@
       "text": {
         "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, <span style='white-space:nowrap'>the Urals</span> and the Moscow Region."
       },
-      "imgAlt": "Brusnika"
+      "imgAlt": "Personal cabinet of Brusnika project in a computer display"
     },
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1"
       },
@@ -331,18 +320,16 @@
           "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding.",
           "We&nbsp;were engaged in&nbsp;the development of&nbsp;an&nbsp;internal sales planning tool for Brusnika managers. Our team used Node.js to&nbsp;integrate into the customer&rsquo;s database and output sorted data. Work with &laquo;Sales Planning&raquo; is&nbsp;done in&nbsp;an&nbsp;interface similar to&nbsp;a&nbsp;table editor. Thanks to&nbsp;this tool the company&rsquo;s employees can see the real estate price growth dynamics, verify information about past transactions and forecast the value of&nbsp;the real estate object for months ahead."
         ]
-      ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+      ],
+      "imageAlt": "Abstract image of people working together"
     },
     "quote": {
       "text": "The result of our joint work was not only a software product, but also a new work style that we've developed with our colleagues. Thank you for your individual approach, courage throughout experiments and professionalism in difficult situations!",
       "author": {
         "name": "Kirill Makarkin",
         "signature": "Head of Managerial Projects Digitalization Group"
-      }
+      },
+      "imageAlt": "Image of a man on a scooter"
     }
   },
   "mindbox": {
@@ -358,11 +345,11 @@
         "firstParagraph": "Mindbox develops a&nbsp;customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing automation in&nbsp;FMCG, retail, e-commerce and other industries with large numbers of&nbsp;customers.",
         "secondParagraph": "Thanks to&nbsp;the platform, a&nbsp;client can personalize its website with dynamic content and recommendations, set up&nbsp;messages circulation via emails, social networks, and messengers, and ensure loyalty growth by&nbsp;creating virtual loyalty cards and promotions."
       },
-      "imgAlt": "Mindbox"
+      "imgAlt": "Project Mindbox image in a computer display"
     },
     "team": {
       "title": "Team Composition:",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "2"
@@ -400,11 +387,8 @@
           "<b>The second project</b> also required development of&nbsp;a&nbsp;complex logic cooperating with a&nbsp;tree structure. Thanks to&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; a&nbsp;Mindbox client can create new promotions, flexibly setting up&nbsp;rules of&nbsp;promotions interaction with each other by&nbsp;combining them into groups. Arbitrary nesting of&nbsp;groups is&nbsp;supported.",
           "An&nbsp;unconventional drag-and-drop was developed by&nbsp;us for this application. For example, a&nbsp;user can create a&nbsp;&laquo;Promotions&raquo; group with subgroups &laquo;Discount&raquo;, &laquo;Accrual of&nbsp;Points&raquo;, &laquo;Gift with Purchase&raquo; and &laquo;Discount by&nbsp;Promotion Code&raquo;, and configure the parameters of&nbsp;each entity."
         ]
-      ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+      ],
+      "imageAlt": "Abstract image of people working together"
     }
   },
   "qmarketing": {
@@ -419,11 +403,11 @@
       "text": {
         "firstParagraph": "Qmarketing Agency develops progressive digital advertising for companies operating on&nbsp;the Russian and European markets, invests in&nbsp;technological projects, and creates its own training program for marketing specialists and entrepreneurs&nbsp;&mdash; QAcademy."
       },
-      "imgAlt": "QMarketing"
+      "imgAlt": "QMarketing site page in a computer display"
     },
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -461,11 +445,8 @@
         [
           "We were entrusted with front-end development of authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer's API."
         ]
-      ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+      ],
+      "imageAlt": "Abstract image of people working together"
     }
   },
   "flant": {
@@ -480,10 +461,11 @@
       "text": {
         "firstParagraph": "Flant company is&nbsp;engaged in&nbsp;elaborating fault tolerant&nbsp;IT infrastructures on&nbsp;the basis of&nbsp;Kubernetes. It&nbsp;provides processes of&nbsp;continuous integration and delivery (CI/CD), 24/7/365 operation of&nbsp;applications. Flant is&nbsp;the first certified Kubernetes service provider in&nbsp;Russia."
       },
-      "imgAlt": "Flant"
+      "imgAlt": "Flant project site page in a computer display"
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "2"
@@ -518,18 +500,16 @@
         [
           "Our team was engaged in&nbsp;Flant landing pages elaborating. We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form."
         ]
-      ]
-    },
-    "imgAlt": {
-      "aboutProject": "Three people are working hard on the project.",
-      "quote": "Feedback on the project."
+      ],
+      "imageAlt": "Abstract image of people working together"
     },
     "quote": {
       "text": "We&nbsp;had no&nbsp;time to&nbsp;warm&nbsp;up. We&nbsp;worked in&nbsp;a&nbsp;way that from page concept until its implementation beginning was literally one night. At&nbsp;such a&nbsp;pace, there was simply no&nbsp;room for experiments or&nbsp;organization of&nbsp;our own front-end development process. We&nbsp;needed a&nbsp;timely result with guaranteed quality. That&rsquo;s why we&nbsp;didn&rsquo;t think for a&nbsp;long time: we&nbsp;came to&nbsp;CSSSR as&nbsp;we&nbsp;repeatedly crossed paths with the guys&rsquo; work for the projects of&nbsp;our clients and understood very well what output we&nbsp;will get. It&rsquo;s cool that all our expectations of&nbsp;the result were fully met. Moreover, the CSSSR framework allowed&nbsp;us to&nbsp;further develop the project on&nbsp;our own (though at&nbsp;a&nbsp;much slower pace). Investments in&nbsp;a&nbsp;stormy start with CSSSR still justify themselves up&nbsp;to&nbsp;now.",
       "author": {
         "name": "Aleksandr Batalov",
         "signature": "General Director"
-      }
+      },
+      "imageAlt": "Image of a man on a scooter"
     }
   }
 }

@@ -20,7 +20,7 @@ const Quote = ({ className, projectId, images, l10n: { translations } }) => (
     <PictureSmart
       className="picture"
       requireImages={images}
-      alt={translations.project[projectId].imgAlt.quote}
+      alt={translations.project[projectId].quote.imageAlt}
     />
 
     <blockquote className="quote">

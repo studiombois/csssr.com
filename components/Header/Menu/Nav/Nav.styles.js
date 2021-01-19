@@ -450,6 +450,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
         grid-template-columns: 1fr 0.5fr 0.5fr;
         grid-row-gap: ${calcRem(32)};
         align-content: center;
+        padding-left: 4%;
       }
 
       .title {
@@ -524,9 +525,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
   ${desktop.s} {
     .nav_portfolio {
       ul {
-        grid-template-columns: 1fr 0.5fr 0.5fr;
         grid-column-gap: 12px;
-        padding-left: 4%;
       }
 
       .link {
@@ -548,9 +547,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
   ${desktop.m} {
     .nav_portfolio {
       ul {
-        grid-template-columns: 1fr 0.5fr 0.5fr;
         grid-column-gap: 12px;
-        padding-left: 4%;
       }
 
       .link {
@@ -572,9 +569,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
   ${desktop.l} {
     .nav_portfolio {
       ul {
-        grid-template-columns: 1fr 0.5fr 0.5fr;
         grid-column-gap: 32px;
-        padding-left: 4%;
       }
 
       .link {

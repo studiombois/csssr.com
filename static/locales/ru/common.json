@@ -32,6 +32,7 @@
       },
       "portfolio": {
         "title": "Портфолио",
+        "listTitle": "Клиенты по отраслям",
         "fintech": {
           "title": "Финтех"
         },
@@ -42,8 +43,7 @@
           "title": "Информационные технологии"
         },
         "mediaAndMarketing": {
-          "title": "Медиа и&nbsp;маркетинг",
-          "heading": "Клиенты по отраслям"
+          "title": "Медиа и&nbsp;маркетинг"
         },
         "ourProjects": {
           "title": "Наши проекты",

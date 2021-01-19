@@ -36,6 +36,7 @@
       },
       "portfolio": {
         "title": "Portfolio",
+        "listTitle": "Clients by industry",
         "fintech": {
           "title": "Fintech"
         },
@@ -46,8 +47,7 @@
           "title": "Information Technology"
         },
         "mediaAndMarketing": {
-          "title": "Media & Marketing",
-          "heading": "Clients by industry"
+          "title": "Media & Marketing"
         },
         "ourProjects": {
           "title": "Our Projects",

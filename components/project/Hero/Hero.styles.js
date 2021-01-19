@@ -31,10 +31,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     display: inline-block;
     padding: ${calcRem(5)} ${calcRem(14)};
     margin-left: ${calcRem(-14)};
-    animation-duration: 0.9s;
+    animation-duration: 0.7s;
     animation-name: p4-color;
     animation-iteration-count: 1;
-    animation-delay: 1.9s;
+    animation-delay: 0.9s;
     animation-fill-mode: forwards;
     will-change: color;
   }

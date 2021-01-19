@@ -7,10 +7,23 @@ export default {
     {
       number: (t) => t.project.flant.team.numberList.firstItem,
       text: (t) => t.project.flant.team.textList.firstItem,
+      id: 'manager',
     },
     {
       number: (t) => t.project.flant.team.numberList.secondItem,
       text: (t) => t.project.flant.team.textList.secondItem,
+      id: 'manager',
+    },
+    {
+      number: (t) => t.project.flant.team.numberList.thirdItem,
+      text: (t) => t.project.flant.team.textList.thirdItem,
+      id: 'dev',
+      withMargin: true,
+    },
+    {
+      number: (t) => t.project.flant.team.numberList.fourthItem,
+      text: (t) => t.project.flant.team.textList.fourthItem,
+      id: 'dev',
     },
   ],
   imgAlt: (t) => t.project.flant.team.imgAlt,

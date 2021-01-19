@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
+const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) => css`
   & {
     margin-top: ${calcRem(192)};
     overflow: hidden;
@@ -379,7 +379,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
         .period {
           top: 50%;
           left: auto;
-          transform: translateY(-50%);
+          transform: ${language === 'ru' ? 'translateY(-75%)' : 'translateY(-50%)' };
         }
       }
     }

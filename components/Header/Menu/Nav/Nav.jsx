@@ -68,7 +68,7 @@ const Nav = ({
           {activeItem &&
             menu
               .find(({ id }) => id === activeItem)
-              .links.map(({ id, icon: Icon, title, listTitle, description, href }) => {
+              .links.map(({ id, icon: Icon, title, description, href }) => {
                 if (language === 'ru' && id === 'design') {
                   return
                 }
@@ -85,7 +85,7 @@ const Nav = ({
                           <Heading.H3
                             type="regular"
                             dangerouslySetInnerHTML={{
-                              __html: listTitle(translations),
+                              __html: translations.common.header.menu.portfolio.listTitle,
                             }}
                             className="industry-title"
                           />

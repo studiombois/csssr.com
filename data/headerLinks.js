@@ -64,7 +64,6 @@ export default {
           id: 'mediaAndMarketing',
           icon: Message,
           title: (t) => t.common.header.menu.portfolio.mediaAndMarketing.title,
-          listTitle: (t) => t.common.header.menu.portfolio.listTitle,
           href: 'industry/media-and-marketing',
         },
         {

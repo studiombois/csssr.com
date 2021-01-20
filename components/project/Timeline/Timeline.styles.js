@@ -53,7 +53,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       .period {
         left: 50%;
         transform: translateX(-50%);
-        transition: opacity 0.5s 0.5s linear;
+        transition: opacity 0.2s 0.2s linear;
       }
     }
 
@@ -61,12 +61,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       .period {
         &:nth-of-type(1) {
           margin-left: ${calcRem(-75)};
-          transition: opacity 0.5s 2s linear;
+          transition: opacity 0.2s 0.8s linear;
         }
 
         &:nth-of-type(2) {
           margin-right: ${calcRem(-55)};
-          transition: opacity 1s 3s linear;
+          transition: opacity 0.2s 1.4s linear;
         }
       }
     }
@@ -75,7 +75,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       .period {
         left: 50%;
         transform: translateX(-50%);
-        transition: opacity 1s 3.5s linear;
+        transition: opacity 0.2s 1.8s linear;
       }
     }
   }
@@ -119,19 +119,19 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       &::before {
         left: 50%;
         transform: translateX(-50%);
-        transition: height 0.5s 0.7s linear;
+        transition: height 0.2s 0.28s linear;
       }
 
       .scale {
         top: ${calcRem(32)};
-        transition: width 0.5s 1s linear;
+        transition: width 0.2s 0.4s linear;
       }
     }
 
     &:nth-of-type(2) {
       &::before {
         z-index: 1;
-        transition: height 0.5s 2.3s linear;
+        transition: height 0.2s 0.88s linear;
       }
 
       &::after {
@@ -143,13 +143,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
         width: ${calcRem(2)};
         height: 0;
         background-color: ${colors.secondary.darken100};
-        transition: height 0.5s 3s linear;
+        transition: height 0.2s 1.3s linear;
       }
 
       .scale {
         top: ${calcRem(72)};
         background-color: #6490DF;
-        transition: width 0.7s 2.5s linear;
+        transition: width 0.2s 1s linear;
       }
     }
 
@@ -157,7 +157,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       &::before {
         left: 50%;
         transform: translateX(-50%);
-        transition: height 1s 3.5s linear;
+        transition: height 0.2s 1.88s linear;
       }
 
       .scale {
@@ -165,7 +165,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
         border-top: 2px solid #6490DF;
         border-bottom: 2px solid #6490DF;
         box-sizing: border-box;
-        transition: width 0.5s 3.5s linear;
+        transition: width 0.2s 1.48s linear;
       }
     }
   }
@@ -197,12 +197,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     &:nth-of-type(1) {
       top: ${calcRem(32)};
-      transition: opacity 0.5s 1.5s linear;
+      transition: opacity 0.2s 0.6s linear;
     }
 
     &:nth-of-type(2) {
       top: ${calcRem(72)};
-      transition: opacity 1s 2.5s linear;
+      transition: opacity 0.4s 1s linear;
 
       .title {
         color: #ffffff;
@@ -212,7 +212,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     &:nth-of-type(3) {
       top: ${calcRem(112)};
-      transition: opacity 1s 3.5s linear;
+      transition: opacity 0.4s 1.4s linear;
 
       .title {
         color: #1957C6;

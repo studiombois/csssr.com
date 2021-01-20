@@ -23,23 +23,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     display: flex;
     align-items: center;
     opacity: 0;
-    transition: opacity 1.5s ease;
+    transition: opacity 1s ease;
   }
 
   .feature-item_graph {
-    transition-delay: 1s;
+    transition-delay: 0.7s;
   }
 
   .feature-item_seo {
-    transition-delay: 1.3s;
+    transition-delay: 0.9s;
   }
 
   .feature-item_deployment {
-    transition-delay: 1.6s;
+    transition-delay: 1.07s;
   }
 
   .feature-item_chat {
-    transition-delay: 1.9s;
+    transition-delay: 1.27s;
   }
 
   .features-wrapper.active .feature-item {

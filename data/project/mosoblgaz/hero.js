@@ -3,7 +3,6 @@ const heroImages = require.context('../../../public/images/project/mosoblgaz/her
 export default {
   images: heroImages,
   heading: (t) => t.project.mosoblgaz.hero.title,
-  linkTitle: (t) => t.project.mosoblgaz.hero.linkTitle,
   link: (t) => t.project.mosoblgaz.hero.link,
   subHeading: (t) => t.project.mosoblgaz.hero.subTitle,
   text: [(t) => t.project.mosoblgaz.hero.text.firstParagraph],

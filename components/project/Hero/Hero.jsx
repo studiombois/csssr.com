@@ -38,7 +38,7 @@ const Hero = ({
           target="_blank"
           rel="noreferrer noopener"
           dangerouslySetInnerHTML={{
-            __html: projectId === 'mosoblgaz' ? linkTitle(translations) : link(translations),
+            __html: link(translations),
           }}
           data-testid="Project:link.project-site"
         />

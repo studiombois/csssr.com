@@ -60,7 +60,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     }
 
     .description {
-      margin-top: 40px;
+      margin-top: 32px;
       font-size: 32px;
       line-height: 48px;
     }

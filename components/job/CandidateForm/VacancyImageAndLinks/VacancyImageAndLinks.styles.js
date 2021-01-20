@@ -85,8 +85,8 @@ const base = css`
     }
 
     .picture-container {
-      max-width: 19rem !important;
-      padding-top: 19rem !important;
+      max-width: 19rem;
+      padding-top: 19rem;
     }
   }
 
@@ -109,6 +109,8 @@ const base = css`
       width: 100%;
       text-align: center;
       padding-top: 15.5rem;
+      width: calc(100% + 2rem);
+      margin-left: -1rem;
     }
   }
 `

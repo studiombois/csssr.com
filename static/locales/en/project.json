@@ -1,5 +1,6 @@
 {
   "tag": "Project case",
+  "aboutProjectImageAlt": "Abstract image of people working together",
   "gazpromNeft": {
     "meta": {
       "title": "Gazprom Neft - Project: Professionals 4.0",
@@ -208,8 +209,7 @@
           "The core team consists of&nbsp;4&nbsp;developers and one QA Engineer, additional specialists were assigned at&nbsp;certain stages of&nbsp;the project development. The first public version was released at&nbsp;the end of&nbsp;2018, since then, we&nbsp;keep working on&nbsp;its new functionality.",
           "Currently we&nbsp;are implementing flight statistics and login through social networks, and are planning to&nbsp;conduct significant refactoring and improve the performance of&nbsp;the web application. The entire front-end is&nbsp;written on&nbsp;Next.js&nbsp;&mdash; a&nbsp;modern React framework."
         ]
-      ],
-      "imageAlt": "Abstract image of people working together"
+      ]
     }
   },
   "mosoblgaz": {
@@ -264,8 +264,7 @@
           "We&nbsp;have developed a&nbsp;personal account for legal entities, which allows to&nbsp;get quick access to&nbsp;Mosoblgaz services, forward documents for approval, get a&nbsp;detailed report on&nbsp;expenses or&nbsp;make a&nbsp;request to&nbsp;connect an&nbsp;object to&nbsp;the network.",
           "The personal account supports role models and restrictions for individual employees."
         ]
-      ],
-      "imageAlt": "Abstract image of people working together"
+      ]
     }
   },
   "brusnika": {
@@ -320,8 +319,7 @@
           "This case will be&nbsp;remembered for complex logic and almost complete lack of&nbsp;HTML&nbsp;coding.",
           "We&nbsp;were engaged in&nbsp;the development of&nbsp;an&nbsp;internal sales planning tool for Brusnika managers. Our team used Node.js to&nbsp;integrate into the customer&rsquo;s database and output sorted data. Work with &laquo;Sales Planning&raquo; is&nbsp;done in&nbsp;an&nbsp;interface similar to&nbsp;a&nbsp;table editor. Thanks to&nbsp;this tool the company&rsquo;s employees can see the real estate price growth dynamics, verify information about past transactions and forecast the value of&nbsp;the real estate object for months ahead."
         ]
-      ],
-      "imageAlt": "Abstract image of people working together"
+      ]
     },
     "quote": {
       "text": "The result of our joint work was not only a software product, but also a new work style that we've developed with our colleagues. Thank you for your individual approach, courage throughout experiments and professionalism in difficult situations!",
@@ -387,8 +385,7 @@
           "<b>The second project</b> also required development of&nbsp;a&nbsp;complex logic cooperating with a&nbsp;tree structure. Thanks to&nbsp;&laquo;Promotion Campaigns Arbitration&raquo; a&nbsp;Mindbox client can create new promotions, flexibly setting up&nbsp;rules of&nbsp;promotions interaction with each other by&nbsp;combining them into groups. Arbitrary nesting of&nbsp;groups is&nbsp;supported.",
           "An&nbsp;unconventional drag-and-drop was developed by&nbsp;us for this application. For example, a&nbsp;user can create a&nbsp;&laquo;Promotions&raquo; group with subgroups &laquo;Discount&raquo;, &laquo;Accrual of&nbsp;Points&raquo;, &laquo;Gift with Purchase&raquo; and &laquo;Discount by&nbsp;Promotion Code&raquo;, and configure the parameters of&nbsp;each entity."
         ]
-      ],
-      "imageAlt": "Abstract image of people working together"
+      ]
     }
   },
   "qmarketing": {
@@ -445,8 +442,7 @@
         [
           "We were entrusted with front-end development of authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer's API."
         ]
-      ],
-      "imageAlt": "Abstract image of people working together"
+      ]
     }
   },
   "flant": {
@@ -500,8 +496,7 @@
         [
           "Our team was engaged in&nbsp;Flant landing pages elaborating. We&nbsp;developed and tested 7&nbsp;pages, adapted them for viewing on&nbsp;any device, including Retina, and adjusted customer&rsquo;s CRM application form."
         ]
-      ],
-      "imageAlt": "Abstract image of people working together"
+      ]
     },
     "quote": {
       "text": "We&nbsp;had no&nbsp;time to&nbsp;warm&nbsp;up. We&nbsp;worked in&nbsp;a&nbsp;way that from page concept until its implementation beginning was literally one night. At&nbsp;such a&nbsp;pace, there was simply no&nbsp;room for experiments or&nbsp;organization of&nbsp;our own front-end development process. We&nbsp;needed a&nbsp;timely result with guaranteed quality. That&rsquo;s why we&nbsp;didn&rsquo;t think for a&nbsp;long time: we&nbsp;came to&nbsp;CSSSR as&nbsp;we&nbsp;repeatedly crossed paths with the guys&rsquo; work for the projects of&nbsp;our clients and understood very well what output we&nbsp;will get. It&rsquo;s cool that all our expectations of&nbsp;the result were fully met. Moreover, the CSSSR framework allowed&nbsp;us to&nbsp;further develop the project on&nbsp;our own (though at&nbsp;a&nbsp;much slower pace). Investments in&nbsp;a&nbsp;stormy start with CSSSR still justify themselves up&nbsp;to&nbsp;now.",

@@ -88,7 +88,7 @@ const AboutProject = ({
     <PictureSmart
       className="picture"
       requireImages={images}
-      alt={translations.project[projectId].aboutProject.imageAlt}
+      alt={translations.project.aboutProjectImageAlt}
     />
   </Grid>
 )

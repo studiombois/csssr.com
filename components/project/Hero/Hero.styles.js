@@ -17,12 +17,22 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   .grid.grid_gazpromNeft {
-    padding-top: ${calcRem(206)};
+    padding-top: ${calcRem(136)};
+  }
+
+  .project-case {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    letter-spacing: ${calcRem(1)};
+    text-transform: uppercase;
+    color: #6490DF;
   }
 
   .heading {
     grid-column: 2 / span 5;
-    grid-row: 1;
+    grid-row: 2;
     z-index: 1;
   }
 
@@ -173,7 +183,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   .text.text_gazpromNeft {
-    grid-row: 2;
+    grid-row: 3;
   }
 
   .gneft-icon {
@@ -212,7 +222,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   .pic-wrapper.pic-wrapper_gazpromNeft {
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 3;
     grid-column: 8 / span 4;
     max-width: ${calcRem(576)};
     max-height: ${calcRem(406)};
@@ -236,15 +246,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       padding-bottom: ${calcRem(152)};
     }
 
-    .paragraph + .paragraph{
+    .project-case {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .paragraph + .paragraph {
       margin-top: ${calcRem(24)};
     }
 
     .heading_gazprom {
       max-width: 728px;
+      margin-top: 24px;
       font-size: 48px;
       line-height: 62px;
       font-weight: normal;
+    }
+
+    .text.text_gazpromNeft {
+      margin-top: 40px;
     }
 
     .p4-word {
@@ -253,6 +273,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .gneft-icon {
       margin-right: 5px;
+    }
+
+    .pic-wrapper.pic-wrapper_gazpromNeft {
+      transform: translateY(68px);
     }
   }
 
@@ -281,10 +305,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
         width: ${calcRem(298)};
         height: ${calcRem(799)};
       }
-    }
-
-    .text.text_gazpromNeft {
-      margin-top: 28px;
     }
 
     .pic-wrapper.pic-wrapper_gazpromNeft {
@@ -365,10 +385,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       margin-top: ${calcRem(39)};
     }
 
-    .text.text_gazpromNeft {
-      margin-top: 36px;
-    }
-
     .pic-wrapper {
       z-index: -1;
       top: 0;
@@ -408,7 +424,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .grid.grid_gazpromNeft {
-      padding-top: ${calcRem(148)};
+      padding-top: ${calcRem(104)};
+    }
+
+    .project-case {
+      font-size: ${calcRem(14)};
+      margin-top: ${calcRem(5)};
     }
 
     .heading {
@@ -418,6 +439,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .heading.heading_gazprom {
       grid-column: 2 / span 6;
+      margin-top: ${calcRem(22)};
       line-height: ${calcRem(45)};
     }
 
@@ -438,7 +460,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .text.text_gazpromNeft {
       grid-column: 2 / span 5;
-      margin-top: ${calcRem(30)};
+      margin-top: ${calcRem(29)};
     }
 
     .gneft-icon {
@@ -482,6 +504,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       max-width: ${calcRem(384)};
       max-height: ${calcRem(247)};
       padding-top: ${calcRem(247)};
+      transform: translateY(${calcRem(28)});
     }
   }
 
@@ -499,7 +522,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .grid.grid_gazpromNeft {
-      padding-top: ${calcRem(132)};
+      padding-top: ${calcRem(96)};
+    }
+
+    .project-case {
+      grid-column: 1 / span 6;
+      font-size: ${calcRem(14)};
     }
 
     .heading,
@@ -513,6 +541,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       & br {
         display: none;
       }
+    }
+
+    .heading.heading_gazprom {
+      margin-top: ${calcRem(8)};
     }
 
     .p4-word {

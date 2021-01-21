@@ -14,7 +14,7 @@ import Grid from '../../ui-kit/core-design/Grid'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Quote = ({ className, projectId, images, l10n: { translations } }) => (
+const Quote = ({ className, projectId, images, l10n: { translations, language } }) => (
   <Grid as="section" className={cn(className, projectId, `quoteBlock_${projectId}`)}>
     <Global styles={backgroundImagesStyles} />
     <PictureSmart
@@ -23,7 +23,7 @@ const Quote = ({ className, projectId, images, l10n: { translations } }) => (
       alt={translations.project[projectId].quote.imageAlt}
     />
 
-    <blockquote className="quote">
+    <blockquote className={cn('quote', { longLine: language === 'ru' })}>
       <SubHeading
         className="text"
         as="p"

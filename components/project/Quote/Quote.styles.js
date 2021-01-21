@@ -84,7 +84,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         font-size: 24px;
         line-height: 40px;
       }
-    } 
+    }
 
     &.gazpromNeft {
       margin-top: 0;
@@ -430,17 +430,25 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
         padding-top: ${calcRem(91)};
         margin-top: 0;
       }
-      
+
       .picture {
         margin-top: 0;
       }
 
       .quote {
         margin-top: ${calcRem(40)};
+
         &::before {
           top: ${calcRem(-239)};
           right: calc(100% + ${calcRem(21)});
           height: ${calcRem(581)};
+        }
+
+        &.longLine {
+          &::before {
+            height: ${calcRem(655)};
+            background-size: 100% 100%;
+          }
         }
       }
 

@@ -52,12 +52,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.all} {
-    .list {
-      margin-left: -7px;
-    }
-
     .image {
-      margin-top: 127px;
+      margin-top: 58px;
     }
 
     .number-item {
@@ -67,7 +63,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       }
 
       &_withMargin {
-        margin-top: 22px;
+        margin-top: 18px;
       }
     }
   }
@@ -81,13 +77,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   ${desktop.m} {
     .image {
       max-height: 400px;
+      margin-top: 126px;
     }
   }
 
   ${desktop.s} {
     .image {
-      margin-top: ${calcRem(-13)};
       max-height: 368px;
+      margin-top: 140px;
     }
   }
 

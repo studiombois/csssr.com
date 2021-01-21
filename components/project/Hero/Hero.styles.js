@@ -13,7 +13,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   .grid {
     grid-template-rows: max-content max-content max-content;
-    padding-top: ${calcRem(135)};
   }
 
   .heading {
@@ -45,7 +44,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     grid-column: 2 / span 5;
     grid-row: 3;
     z-index: 1;
-    margin-top: ${calcRem(72)};
     font-weight: normal;
   }
 
@@ -91,15 +89,23 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.all} {
     & {
-      padding-bottom: ${calcRem(315)};
+      padding-bottom: ${calcRem(105)};
+    }
+    
+    .grid {
+      padding-top: 216px;
     }
 
     .paragraph + .paragraph{
         margin-top: ${calcRem(24)};
     }
 
-    .image {
-       margin-top: 54px;
+    .pic-wrapper {
+      transform: translateY(-184px);
+    }
+
+    .sub-heading {
+      margin-top: 78px;
     }
   }
 
@@ -111,7 +117,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     .pic-wrapper {
       grid-row: 4;
       max-width: ${calcRem(728)};
-      margin-top: ${calcRem(-221)};
       padding-top: calc(1752 / 2184 * 100%);
 
       &:before {
@@ -143,11 +148,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       grid-column: 8 / span 5;
       grid-row: 2 / span 3;
       width: ${calcRem(560)};
-      margin-top: ${calcRem(20)};
       padding-top: ${calcRem(560)};
+      transform: translateY(74px);
 
       &:before {
-        top: ${calcRem(-68)};
+        top: ${calcRem(-60)};
         left: ${calcRem(-192)};
         width: ${calcRem(298)};
         height: ${calcRem(809)};
@@ -157,7 +162,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.s} {
     & {
-      padding-bottom: ${calcRem(285)};
+      padding-bottom: ${calcRem(206)};
     }
 
     .heading {
@@ -165,7 +170,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .text {
-      margin-top: ${calcRem(39)};
+      margin-top: ${calcRem(32)};
     }
 
     .pic-wrapper {
@@ -174,12 +179,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       left: calc((100vw - 77rem) / 2 - 24px);
       grid-row: 2 / span 3;
       width: ${calcRem(528)};
-      margin-top: ${calcRem(89)};
       padding-top: calc(1680 / 1584 * ${calcRem(528)});
+      transform: translateY(90px);
 
       &:before {
-        top: ${calcRem(-68)};
-        left: ${calcRem(-192)};
+        top: ${calcRem(-61)};
+        left: ${calcRem(-1)};
         width: ${calcRem(278)};
         height: ${calcRem(810)};
       }

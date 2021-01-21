@@ -14,7 +14,11 @@ export default {
       text: (t) => t.project.gazpromNeft.team.textList.secondItem,
       id: 'manager',
     },
-
+    {
+      number: (t) => t.project.gazpromNeft.team.numberList.thirdItem,
+      text: (t) => t.project.gazpromNeft.team.textList.thirdItem,
+      id: 'manager',
+    },
     {
       number: (t) => t.project.gazpromNeft.team.numberList.fourthItem,
       text: (t) => t.project.gazpromNeft.team.textList.fourthItem,
@@ -32,15 +36,10 @@ export default {
       id: 'dev',
     },
     {
-      number: (t) => t.project.gazpromNeft.team.numberList.thirdItem,
-      text: (t) => t.project.gazpromNeft.team.textList.thirdItem,
-      id: 'qa',
-      withMargin: true,
-    },
-    {
       number: (t) => t.project.gazpromNeft.team.numberList.seventhItem,
       text: (t) => t.project.gazpromNeft.team.textList.seventhItem,
       id: 'qa',
+      withMargin: true,
     },
   ],
   imgAlt: (t) => t.project.gazpromNeft.team.imgAlt,

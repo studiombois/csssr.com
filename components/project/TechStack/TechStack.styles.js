@@ -82,7 +82,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: ${calcRem(135)};
+      margin-top: ${calcRem(85)};
     }
 
     .tech-list {
@@ -114,17 +114,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
     }
   }
 
-  ${desktop.l} {
-    & {
-      margin-top: ${calcRem(125)};
-    }
-  }
-
   ${desktop.m} {
-    & {
-      margin-top: ${calcRem(160)};
-    }
-
     .duration {
       margin-top: ${calcRem(22)};
     }
@@ -132,9 +122,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
   ${desktop.s} {
     & {
-      margin-top: ${calcRem(168)};
+      margin-top: 75px;
     }
-
+    
     .duration {
       margin-top: ${calcRem(27)};
     }
@@ -142,7 +132,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
   ${tablet.all} {
     & {
-      margin-top: ${calcRem(103)};
+      margin-top: ${calcRem(40)};
     }
 
     .duration {
@@ -150,13 +140,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
     }
 
     .tech-list {
-      display: flex;
-      flex-direction: column;
+      grid-template-rows: max-content max-content;
+      grid-gap: ${calcRem(8)} 0;
       margin-top: ${calcRem(-9)};
-    }
-
-    .tech-item {
-      margin-bottom: ${calcRem(8)};
     }
 
     .number {
@@ -202,7 +188,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
     .heading {
       grid-row: 3;
-      margin-top: ${calcRem(70)};
+      margin-top: ${calcRem(56)};
     }
 
     .tech-list {

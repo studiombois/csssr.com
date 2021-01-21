@@ -19,6 +19,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     width: ${calcRem(800)};
   }
 
+  .heading {
+    font-weight: bold;
+  }
+
   .subheading,
   .message {
     margin-top: ${calcRem(40)};

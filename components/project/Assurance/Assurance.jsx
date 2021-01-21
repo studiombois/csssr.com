@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { string, object } from 'prop-types'
-import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Assurance.styles'
 
@@ -20,31 +19,45 @@ const Assurance = ({
   isMobile,
   content: { quality, roi, images },
 }) => {
-  const [isVisible, setIsVisible] = useState(false)
-  const itemRef = useRef()
+  const [offset, setOffset] = useState(0)
+  const [offsetMin, setOffsetMin] = useState(0)
+  const isWindowContext = typeof window !== 'undefined'
+  const desktopL = isWindowContext && window.innerWidth >= 1920
+  const desktopM = isWindowContext && window.innerWidth >= 1360 && window.innerWidth < 1920
+  const desktopS = isWindowContext && window.innerWidth >= 1280 && window.innerWidth < 1360
+  const tablet = isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1280
 
   useEffect(() => {
-    const callback = function ([entry]) {
-      if (entry.intersectionRatio > 0 && !isVisible) {
-        setIsVisible(true)
+    const handleResize = () => {
+      if (desktopL) {
+        setOffsetMin(7000)
+      } else if (desktopM) {
+        setOffsetMin(8100)
+      } else if (desktopS) {
+        setOffsetMin(8200)
+      } else if (tablet) {
+        setOffsetMin(4800)
       }
     }
 
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: [0],
-    }
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(callback, options)
-      observer.observe(itemRef.current)
+    handleResize()
 
-      return () => {
-        observer.disconnect()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [desktopL, desktopM, desktopS, tablet])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.pageYOffset
+
+      if (offset >= offsetMin) {
+        setOffset(offset)
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [offsetMin])
 
   return (
     <Grid as="section" className={className}>
@@ -87,10 +100,7 @@ const Assurance = ({
           </div>
         </div>
 
-        <div
-          className={cn(`picture-container`, { animated: !isMobile && isVisible })}
-          ref={itemRef}
-        >
+        <div className="picture-container">
           <PictureSmart
             requireImages={isMobile ? images.screenMobile : images.screenDesktop}
             alt={images.screenAlt(translations)}
@@ -103,12 +113,19 @@ const Assurance = ({
               />
             </div>
           )}
-
           <div className="screen-container screen-container_right">
-            <PictureSmart
-              requireImages={language === 'ru' ? images.projectsRu : images.projectsEn}
-              alt={images.projectsAlt(translations)}
-            />
+            <div
+              style={{
+                transform: isMobile
+                  ? 'translateY(0)'
+                  : `translateY(-${(offset - offsetMin) * 0.1}px)`,
+              }}
+            >
+              <PictureSmart
+                requireImages={language === 'ru' ? images.projectsRu : images.projectsEn}
+                alt={images.projectsAlt(translations)}
+              />
+            </div>
           </div>
         </div>
       </div>

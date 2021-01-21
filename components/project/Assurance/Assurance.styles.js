@@ -1,4 +1,4 @@
-import { css, keyframes } from '@emotion/core'
+import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
@@ -67,14 +67,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   .picture-container {
     position: relative;
     margin-top: ${calcRem(223)};
-
-    &.animated {
-      .screen-container_right {
-        & picture {
-          animation: ${bounce} 3s 2s ease;
-        }
-      }
-    }
   }
 
   .screen-container {
@@ -109,10 +101,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         width: 100%;
         height: ${calcRem(50)};
         background-color: white;
-      }
-
-      & picture {
-        transform: translateY(-${calcRem(50)});
       }
     }
   }
@@ -157,7 +145,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         right: ${calcRem(40)};
         width: ${calcRem(732)};
         height: ${calcRem(490)};
-        padding-top: ${calcRem(60)};
+        padding-top: ${calcRem(50)};
         padding-left: ${calcRem(20)};
 
         &::before {
@@ -201,7 +189,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         right: ${calcRem(30)};
         width: ${calcRem(685)};
         height: ${calcRem(452)};
-        padding-top: ${calcRem(60)};
+        padding-top: ${calcRem(50)};
         padding-left: ${calcRem(20)};
 
         &::before {
@@ -275,7 +263,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         right: ${calcRem(15)};
         width: ${calcRem(535)};
         height: ${calcRem(350)};
-        padding-top: ${calcRem(60)};
+        padding-top: ${calcRem(30)};
         padding-left: ${calcRem(20)};
 
         &::before {
@@ -360,24 +348,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         }
       }
     }
-  }
-`
-
-const bounce = keyframes`
-  0 {
-    transform: translate3d(0,-50px,0);
-  }
-
-  30% {
-    transform: translate3d(0, -100px, 0);
-  }
-
-  70% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, -50px, 0);
   }
 `
 

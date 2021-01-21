@@ -18,7 +18,7 @@ const Hero = ({
   className,
   id,
   projectId,
-  content: { projectCase, heading, link, subHeading, text, images, imgAlt },
+  content: { tag, heading, link, subHeading, text, images, imgAlt },
   l10n: { translations },
 }) => {
   return (
@@ -34,9 +34,7 @@ const Hero = ({
         })}
         as="div"
       >
-        {projectId === 'gazpromNeft' && (
-          <span className="project-case">{projectCase(translations)}</span>
-        )}
+        {projectId === 'gazpromNeft' && <span className="project-case">{tag(translations)}</span>}
         <Heading.H1
           type="slab"
           size="l"

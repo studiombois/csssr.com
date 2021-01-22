@@ -12,11 +12,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 
   .paragraph {
-    font-weight: normal;   
+    font-weight: normal;
   }
 
   .image-description {
-    font-weight: 900;    
+    font-weight: 900;
   }
 
   ${desktop.all} {
@@ -32,7 +32,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       margin-top: 12px;
       font-size: 48px;
       line-height: 64px;
-      font-weight: bold;
     }
 
     .description {

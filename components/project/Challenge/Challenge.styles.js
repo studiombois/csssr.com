@@ -50,6 +50,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
   }
 
   .result-wrapper {
+    flex-shrink: 0;
     width: ${calcRem(208)};
 
     &:first-of-type {
@@ -113,6 +114,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       width: ${calcRem(768)};
       height: ${calcRem(464)};
     }
+
+    .result-wrapper {
+      &:first-of-type {
+        margin-right: ${calcRem(16)};
+      }
+    }
   }
 
   ${desktop.s} {
@@ -136,6 +143,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
       left: ${calcRem(-104)};
       width: ${calcRem(712)};
       height: ${calcRem(430)};
+    }
+
+    .result-wrapper {
+      &:first-of-type {
+        margin-right: ${calcRem(16)};
+      }
     }
   }
 

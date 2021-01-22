@@ -127,8 +127,9 @@ const Challenge = ({
         />
         <div className="result-container">
           <div className="result-wrapper">
-            <Text
+            <Heading.H3
               as="span"
+              type="slab"
               dangerouslySetInnerHTML={{ __html: text.result.months.number(translations) }}
               className="result-number"
             />
@@ -139,8 +140,9 @@ const Challenge = ({
             />
           </div>
           <div>
-            <Text
+            <Heading.H3
               as="span"
+              type="slab"
               dangerouslySetInnerHTML={{ __html: text.result.releases.number(translations) }}
               className="result-number"
             />

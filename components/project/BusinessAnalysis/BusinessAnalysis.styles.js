@@ -145,13 +145,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     .image-block {
       &_radar {
         grid-column: 9 / span 3;
-        margin-top: ${calcRem(37)};
-
       }
 
       &_steps {
         grid-column: 8 / span 3;
-        margin-top: ${calcRem(-3)};
+        margin-top: ${calcRem(-40)};
       }
 
       &_candidates {

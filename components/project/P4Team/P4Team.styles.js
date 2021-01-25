@@ -31,25 +31,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     white-space: nowrap;
   }
 
-  .tech-icon {
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .tech-icon.slack-icon {
-    background-image: url('../../../static/icons/project/team-breakdown/slack.svg');
-  }
-
-  .tech-icon.jira-icon {
-    background-image: url('../../../static/icons/project/team-breakdown/jira.svg');
-  }
-
-  .tech-icon.confl-icon {
-    background-image: url('../../../static/icons/project/team-breakdown/conf.svg');
-  }
-
   ${desktop.all} {
     & {
       padding-top: 192px;
@@ -82,13 +63,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       &_project {
         margin-top: 104px;
       }
-    }
-
-    .tech-icon {
-      width: 20px;
-      height: 20px;
-      margin-right: 5px;
-      margin-left: 5px;
     }
 
     .text-block {
@@ -203,13 +177,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         max-width: ${calcRem(380)};
       }
     }
-
-    .tech-icon {
-      width: ${calcRem(15)};
-      height: ${calcRem(15)};
-      margin-right: ${calcRem(5)};
-      margin-left: ${calcRem(5)};
-    }
   }
 
   ${mobile.all} {
@@ -275,13 +242,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       &:not(:first-of-type) {
         margin-top: ${calcRem(16)};
       }
-    }
-
-    .tech-icon {
-      width: ${calcRem(10)};
-      height: ${calcRem(10)};
-      margin-right: ${calcRem(2)};
-      margin-left: ${calcRem(2)};
     }
   }
 `

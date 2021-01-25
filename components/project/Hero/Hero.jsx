@@ -19,7 +19,7 @@ const Hero = ({
   id,
   projectId,
   content: { tag, heading, link, subHeading, text, images, imgAlt },
-  l10n: { translations },
+  l10n: { translations, language },
 }) => {
   return (
     <section
@@ -41,6 +41,7 @@ const Hero = ({
           dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className={cn('heading', {
             heading_gazprom: projectId === 'gazpromNeft',
+            with_new_padding: language === 'ru',
           })}
         />
 

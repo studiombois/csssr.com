@@ -58,7 +58,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   .p4-outline {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: ${calcRem(4)};
     background-color: rgba(100, 144, 223, 0.1);
     border: 2px solid transparent;
     animation-duration: 0.5s;
@@ -88,7 +88,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     &::after {
       content: '';
       position: absolute;
-      
+
       width: ${calcRem(12)};
       height: ${calcRem(18)};
       background-image: url('../../../static/icons/project/cursor.svg');
@@ -256,7 +256,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .heading_gazprom {
-      max-width: 728px;
       margin-top: 24px;
       font-size: 48px;
       line-height: 62px;
@@ -291,6 +290,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .heading_gazprom {
       grid-column: 2 / span 6;
+      padding-right: ${calcRem(130)};
+
+      &.with_new_padding {
+        padding-right: ${calcRem(70)};
+      }
     }
 
     .pic-wrapper {
@@ -327,6 +331,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .heading {
       grid-column: 2 / span 10;
+    }
+
+    .heading_gazprom {
+      grid-column: 2 / span 7;
+      padding-right: ${calcRem(50)};
+
+      &.with_new_padding {
+        grid-column: 2 / span 8;
+        padding-right: ${calcRem(70)};
+      }
     }
 
     .link {
@@ -375,6 +389,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .heading {
       grid-column: 2 / span 10;
+    }
+
+    .heading_gazprom {
+      grid-column: 2 / span 7;
+
+      &.with_new_padding {
+        grid-column: 2 / span 8;
+      }
     }
 
     .p4-word {
@@ -438,9 +460,18 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .heading.heading_gazprom {
-      grid-column: 2 / span 6;
+      grid-column: 2 / span 7;
       margin-top: ${calcRem(22)};
+      padding-right: ${calcRem(50)};
       line-height: ${calcRem(45)};
+
+      &.with_new_padding {
+        padding-right: ${calcRem(20)};
+      }
+    }
+
+    .after-p4 {
+
     }
 
     .link {
@@ -556,6 +587,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       text-align: center;
     }
 
+    .p4-outline {
+      left: 0;
+    }
+
     .link {
       margin-top: ${calcRem(11)};
       font-size: ${calcRem(16)};
@@ -601,7 +636,7 @@ export const backgroundImagesStyles = className =>
 //  с replace (.css-57ijkk.e52q0fl0)
    css`
     ${backgroundCssSmart(`.${className.replace(' ', '.')} .pic-wrapper::before`, heroBgImages)}
-  ` 
+  `
 
 
 const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`

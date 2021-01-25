@@ -7,7 +7,7 @@
       "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
-      "title": "<span class='p4-word'><span class='p4-outline'></span>Professionals&nbsp;4.0</span><span class='after-p4'>connects</span> major corporations with talented contractors",
+      "title": "The platform <span class='p4-word'><span class='p4-outline'></span>Professionals&nbsp;4.0</span><span class='after-p4'>connects</span> major corporations with talented contractors",
       "text": {
         "firstParagraph": "<span class='gneft-icon'></span> is&nbsp;a&nbsp;subsidiary of&nbsp;Gazprom operating in&nbsp;the&nbsp;oil and gas industry. As&nbsp;of&nbsp;2020, its market capitalization comprises around $20&nbsp;billion, making it&nbsp;one of&nbsp;the most influential and capitalized companies in&nbsp;Europe."
       },
@@ -18,11 +18,11 @@
       "profileImgAlt": "Specialist profile",
       "challenge": {
         "heading": "The Challenge",
-        "text": "Gazprom Neft decided to build a platform to connect talented individuals to corporate projects that would require their unique skills. Its implementation saw several independent teams working in close collaboration under quick release cycles."
+        "text": "Gazprom Neft decided to build a platform to connect talented individuals to corporate projects that would require their unique skills. Its implementation saw several independent teams, including CSSSR, working in close collaboration under quick release cycles."
       },
       "task": {
         "heading": "The Task",
-        "text": "Build the front-end of the platform that would enable a whole set of communications, technologies, processes, and services to facilitate the interaction between individuals and companies that may need their involvement."
+        "text": "We had to build the front-end of the platform that would enable a whole set of communications, technologies, processes, and services to facilitate the interaction between individuals and companies that may need their involvement."
       },
       "result": {
         "heading": "The Result",
@@ -86,13 +86,13 @@
       "title": "Systems Analysis",
       "description": "Our systems analyst worked out the platform functionality requirements.",
       "text": [
-        "During the development process, she was working hand-by-hand with the client&rsquo;s product manager helping to&nbsp;transform users&rsquo; stories into <span style='white-space:nowrap'>well-documented</span> feature requests and technical specifications both for front-end and <span style='white-space:nowrap'>back-end</span> parts of&nbsp;the project.",
+        "During the development process, they were working hand-by-hand with the client&rsquo;s product manager helping to&nbsp;transform users&rsquo; stories into <span style='white-space:nowrap'>well-documented</span> feature requests and technical specifications both for front-end and <span style='white-space:nowrap'>back-end</span> parts of&nbsp;the project.",
         "Understanding the needs of&nbsp;customers and candidates alike improved the initial concept for user experience and interface."
       ],
       "imagesText": [
-        "Skills radar chart for easier evaluation of&nbsp;candidates by&nbsp;the customer",
-        "All the passed tests are represented as&nbsp;badges in&nbsp;the user&rsquo;s profile",
-        "An&nbsp;option to&nbsp;set&nbsp;up&nbsp;automatic testing for candidates"
+        "Section aimed to select a&nbsp;performer by required skills",
+        "Identifying spots of the chat integration into the project contractor selection process",
+        "Updating the customer's flow assessment of the performer upon the&nbsp;project completion, as well as the performer's assessment of the project"
       ],
       "imagesAlt": [
         "Girl with radar picture",

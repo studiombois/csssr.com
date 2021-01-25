@@ -53,7 +53,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.all} {
     .image {
-      margin-top: 58px;
+      &_s7airlines {
+        margin-top: 87px;
+      }
+      &_qmarketing {
+        margin-top: 52px;
+      }
+      &_brusnika {
+        margin-top: -3px;
+      }
+      &_flant {
+        margin-top: 15px;
+      }
+      &_mindbox {
+        margin-top: 15px;
+      }
+      &_mosoblgaz {
+        margin-top: 52px;
+      }
     }
 
     .number-item {
@@ -77,14 +94,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   ${desktop.m} {
     .image {
       max-height: 400px;
-      margin-top: 126px;
     }
   }
 
   ${desktop.s} {
     .image {
       max-height: 368px;
-      margin-top: 140px;
     }
   }
 

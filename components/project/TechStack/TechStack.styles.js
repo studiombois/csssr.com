@@ -82,7 +82,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, language }) => css`
 
   ${desktop.all} {
     & {
-      margin-top: ${calcRem(85)};
+      margin-top: ${calcRem(103)};
     }
 
     .tech-list {

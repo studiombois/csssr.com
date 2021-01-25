@@ -32,7 +32,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       />
 
       <Hero id="hero" content={hero} />
-      <Team id="team" content={team} />
+      <Team id="team" content={team} projectId={projectId} />
       <TechStack id="teckStack" content={techStack} />
       <AboutProject
         projectId={projectId}

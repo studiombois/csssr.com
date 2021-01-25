@@ -15,6 +15,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 const Team = ({
   className,
   id,
+  projectId,
   content: { heading, images, imgAlt, teamItems },
   l10n: { translations },
 }) => {
@@ -59,7 +60,11 @@ const Team = ({
         </ul>
       </div>
 
-      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+      <PictureSmart
+        requireImages={images}
+        alt={imgAlt(translations)}
+        className={cn('image', `image_${projectId}`)}
+      />
     </Grid>
   )
 }
@@ -67,6 +72,7 @@ const Team = ({
 Team.propTypes = {
   className: string,
   id: string,
+  projectId: string,
   content: object,
 }
 

@@ -88,8 +88,35 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   ${desktop.all} {
-    & {
-      padding-bottom: ${calcRem(105)};
+    &._s7airlines._en {
+      padding-bottom: 152px;
+    }
+    &._s7airlines._ru {
+      padding-bottom: 267px;
+    }
+    &._qmarketing {
+      padding-bottom: 376px;
+    }
+    &._brusnika {
+      padding-bottom: 370px;
+    }
+    &._flant._en {
+      padding-bottom: 420px;
+    }
+    &._flant._ru {
+      padding-bottom: 370px;
+    }
+    &._mindbox._en {
+      padding-bottom: 290px;
+    }
+    &._mindbox._ru {
+      padding-bottom: 367px;
+    }
+    &._mosoblgaz._ru {
+      padding-bottom: 347px;
+    }
+    &._mosoblgaz._en {
+      padding-bottom: 418px;
     }
     
     .grid {
@@ -133,6 +160,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   ${desktop.m} {
+    & {
+      padding-bottom: 265px;
+    }
+
     .heading {
       grid-column: 2 / span 10;
     }

@@ -41,7 +41,7 @@ const Hero = ({
           dangerouslySetInnerHTML={{ __html: heading(translations) }}
           className={cn('heading', {
             heading_gazprom: projectId === 'gazpromNeft',
-            with_new_padding: language === 'ru',
+            heading_is_wider: projectId === 'gazpromNeft' && language === 'ru',
           })}
         />
 

@@ -292,7 +292,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       grid-column: 2 / span 6;
       padding-right: ${calcRem(130)};
 
-      &.with_new_padding {
+      &.heading_is_wider {
         padding-right: ${calcRem(70)};
       }
     }
@@ -337,7 +337,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       grid-column: 2 / span 7;
       padding-right: ${calcRem(50)};
 
-      &.with_new_padding {
+      &.heading_is_wider {
         grid-column: 2 / span 8;
         padding-right: ${calcRem(70)};
       }
@@ -394,7 +394,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     .heading_gazprom {
       grid-column: 2 / span 7;
 
-      &.with_new_padding {
+      &.heading_is_wider {
         grid-column: 2 / span 8;
       }
     }
@@ -465,13 +465,9 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       padding-right: ${calcRem(50)};
       line-height: ${calcRem(45)};
 
-      &.with_new_padding {
+      &.heading_is_wider {
         padding-right: ${calcRem(20)};
       }
-    }
-
-    .after-p4 {
-
     }
 
     .link {

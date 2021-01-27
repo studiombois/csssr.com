@@ -1,10 +1,9 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
-import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import cn from 'classnames'
-import styles, { backgroundImagesStyles } from './Quote.styles'
+import styles from './Quote.styles'
 
 import Heading from '../../ui-kit/core-design/Heading'
 import SubHeading from '../../ui-kit/core-design/SubHeading'
@@ -14,16 +13,15 @@ import Grid from '../../ui-kit/core-design/Grid'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Quote = ({ className, projectId, images, l10n: { translations, language } }) => (
-  <Grid as="section" className={cn(className, projectId, `quoteBlock_${projectId}`)}>
-    <Global styles={backgroundImagesStyles} />
+const Quote = ({ className, projectId, images, l10n: { translations } }) => (
+  <Grid as="section" className={cn(className, projectId)}>
     <PictureSmart
       className="picture"
       requireImages={images}
       alt={translations.project[projectId].quote.imageAlt}
     />
 
-    <blockquote className={cn('quote', { longLine: language === 'ru' })}>
+    <blockquote className={cn('quote')}>
       <SubHeading
         className="text"
         as="p"

@@ -1,11 +1,8 @@
 import { css } from '@emotion/core'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
-import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
-const quoteLine = require.context('../../../public/images/project/gazprom-neft/quote/line?csssr-images')
-
-const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
+const base = ({ colors, breakpoints: { desktop, tablet, mobile }}) => css`
   & {
     background-image:
       url(${require('../../../static/icons/project/quote/circle.svg').default}),
@@ -14,13 +11,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     background-repeat: no-repeat, no-repeat, no-repeat;
   }
 
+  .picture {
+    grid-column: 2 / span 3;
+  }
+
   .quote {
     position: relative;
+    margin-top: ${calcRem(121)};
 
     &::before {
-      content: '';
       position: absolute;
-      display: block;
+      content: '';
+      top: ${calcRem(-36)};
+      width: ${calcRem(31)};
+      height: ${calcRem(579)};
       background-image: url(${require('../../../static/icons/project/quote/quote-line.svg').default});
       background-repeat: no-repeat;
       background-size: contain;
@@ -32,195 +36,166 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     display: block;
   }
 
-  &.gazpromNeft {
-    background-image: none;
-
+  &.flant {
     .text {
-      font-family: 'Roboto', serif;
-      font-weight: normal;
-    }
-
-    .quote {
-      &::before {
-        background-position: right;
-      }
-    }
-
-    .author-name {
-      font-weight: normal;
-    }
-
-    .author-signature {
-      color: #9B9B9B;
-      font-weight: 300;
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(40)};
     }
   }
 
-  ${desktop.all} {
+  &.gazpromNeft {
+    align-items: flex-start;
+    margin-top: ${calcRem(152)};
+    background-image: none;
+
     .picture {
       grid-column: 2 / span 3;
+      width: ${calcRem(304)};
+      height: ${calcRem(422)};
     }
 
     .quote {
-      margin-top: 121px;
+      grid-column: 6 / span 6;
+      margin-top: 0;
 
       &::before {
-        top: -36px;
-        width: 31px;
-        height: 579px;
+        z-index: 1;
+        top: ${calcRem(80)};
+        left: ${calcRem(-80)};
+        width: ${calcRem(31)};
+        height: ${calcRem(30)};
+        background-image: url(${require('../../../static/icons/project/quote/triangle.svg').default});
       }
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: ${calcRem(-54)};
+        width: ${calcRem(4)};
+        height: calc(100% - ${calcRem(41)});
+        background-color: #6490DF;
+      }
+    }
+
+    .text {
+      font-family: 'Roboto', serif;
+      font-size: ${calcRem(24)};
+      line-height: ${calcRem(40)};
+      font-weight: normal;
     }
 
     .author {
-      margin-top: 84px;
+      margin-top: ${calcRem(64)};
+    }
+
+    .author-name {
+      line-height: ${calcRem(40)};
+      font-weight: normal;
     }
 
     .author-signature {
-      margin-top: 4px;
-    }
-
-    &.flant {
-      .text {
-        font-size: 24px;
-        line-height: 40px;
-      }
-    }
-
-    &.gazpromNeft {
       margin-top: 0;
-      padding-top: 154px;
-
-      .picture {
-        grid-column: 2 / span 3;
-        width: 304px;
-        margin-top: 0;
-      }
-
-      .quote {
-        grid-column: 5 / span 7;
-
-        &::before {
-          width: 33px;
-          height: 328px;
-        }
-      }
-
-      .text {
-        font-size: 24px;
-        line-height: 40px;
-      }
-
-      .author {
-        margin-top: 28px;
-      }
-
-      .author-signature {
-        margin-top: 1px;
-        font-size: 16px;
-        line-height: 24px;
-      }
+      font-size: ${calcRem(16)};
+      line-height: ${calcRem(24)};
+      font-weight: 300;
+      color: ${colors.secondary.gray};
     }
   }
 
   ${desktop.l} {
     & {
-      margin-top: 183px;
-      background-position: 219px 183px, 1046px 0, 535px 757px;
+      margin-top: ${calcRem(183)};
+      background-position: ${calcRem(219)} ${calcRem(183)}, ${calcRem(1046)} 0, ${calcRem(535)} ${calcRem(757)};
     }
 
     .picture {
-      margin-top: 269px;
-      max-height: 656px;
+      margin-top: ${calcRem(269)};
+      max-height: ${calcRem(656)};
     }
 
     .quote {
       grid-column: 7 / span 5;
 
       &::before {
-        right: calc(100% + 96px);
+        right: calc(100% + ${calcRem(96)});
       }
     }
 
     &.flant {
       & {
-        background-position: 219px 268px, 1046px 35px, 535px 840px;
+        background-position: ${calcRem(219)} ${calcRem(268)}, ${calcRem(1046)} ${calcRem(35)}, ${calcRem(535)} ${calcRem(840)};
       }
 
       .picture {
-        margin-top: 354px;
+        margin-top: ${calcRem(354)};
       }
 
       .quote {
         &::before {
-          top: 51px;
+          top: ${calcRem(51)};
         }
       }
     }
 
     &.gazpromNeft {
       .picture {
-        width: 304px;
+        grid-column: 3 / span 3;
+        margin-top: 0;
       }
 
       .quote {
-        margin-top: 70px;
-
-        &::before {
-          top: -30px;
-          right: calc(100% + 51px);
-        }
+        margin-top: ${calcRem(22)};
+        margin-left: ${calcRem(-40)};
       }
     }
   }
 
   ${desktop.m} {
     & {
-      margin-top: 143px;
-      background-position: 180px 277px, 1006px 0px, 398px 763px;
+      margin-top: ${calcRem(143)};
+      background-position: ${calcRem(180)} ${calcRem(277)}, ${calcRem(1006)} 0, ${calcRem(398)} ${calcRem(763)};
     }
 
     .picture {
-      margin-top: 389px;
-      max-height: 496px;
+      margin-top: ${calcRem(389)};
+      max-height: ${calcRem(496)};
     }
 
     .quote {
       grid-column: 6 / span 6;
 
       &::before {
-        right: calc(100% + 64px);
+        right: calc(100% + ${calcRem(64)});
       }
     }
 
     &.flant {
       & {
-        background-position: 180px 442px, 1006px 30px, 398px 928px;
+        background-position: ${calcRem(180)} ${calcRem(442)}, ${calcRem(1006)} ${calcRem(30)}, ${calcRem(398)} ${calcRem(928)};
       }
 
       .picture {
-        margin-top: 554px;
+        margin-top: ${calcRem(554)};
       }
 
       .quote {
         &::before {
-          top: 130px;
+          top: ${calcRem(130)};
         }
       }
     }
 
     &.gazpromNeft {
       .picture {
-        width: 318px;
-        height: 422px;
+        margin-top: ${calcRem(58)};
       }
 
       .quote {
-        grid-column: 6 / span 6;
-        margin-top: 33px;
+        margin-left: ${calcRem(-50)};
 
         &::before {
-          top: 0;
-          right: calc(100% + 51px);
+          top: ${calcRem(161)};
         }
       }
     }
@@ -228,54 +203,49 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
   ${desktop.s} {
     & {
-      margin-top: 144px;
-      background-position: 172px 277px, 999px 0px, 391px 763px;
+      margin-top: ${calcRem(144)};
+      background-position: ${calcRem(172)} ${calcRem(277)}, ${calcRem(999)} 0, ${calcRem(391)} ${calcRem(763)};
     }
 
     .picture {
-      margin-top: 429px;
-      max-height: 456px;
+      margin-top: ${calcRem(429)};
+      max-height: ${calcRem(456)};
     }
 
     .quote {
       grid-column: 6 / span 6;
 
       &::before {
-        right: calc(100% + 53px);
+        right: calc(100% + ${calcRem(53)});
       }
     }
 
     &.flant {
       & {
-        background-position: 172px 522px, 999px 30px, 391px 969px;
+        background-position: ${calcRem(172)} ${calcRem(522)}, ${calcRem(999)} ${calcRem(30)}, ${calcRem(391)} ${calcRem(969)};
       }
 
       .picture {
-        margin-top: 634px;
+        margin-top: ${calcRem(634)};
       }
 
       .quote {
         &::before {
-          top: 170px;
+          top: ${calcRem(170)};
         }
       }
     }
 
     &.gazpromNeft {
       .picture {
-        width: 296px;
-        height: 422px;
+        margin-top: ${calcRem(98)};
       }
 
       .quote {
-        grid-column: 6 / span 6;
-        margin-top: 2px;
-        margin-left: 30px;
+        margin-left: ${calcRem(-10)};
 
         &::before {
-          top: 0;
-          right: calc(100% + 51px);
-          height: 368px;
+          top: ${calcRem(201)};
         }
       }
     }
@@ -290,7 +260,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     .picture {
       margin-top: ${calcRem(239)};
-      grid-column: 2 / span 3;
       max-height: ${calcRem(344)};
     }
 
@@ -337,28 +306,26 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     &.gazpromNeft {
       & {
-        padding-top: ${calcRem(112)};
-        margin-top: 0;
+        margin-top: ${calcRem(119)};
       }
 
       .picture {
-        grid-column: 2 / span 4;
-        width: ${calcRem(304)};
-        height: ${calcRem(326)};
-        margin-top: 0;
+        width: ${calcRem(194)};
+        height: ${calcRem(269)};
+        margin-top: ${calcRem(3)};
       }
 
       .quote {
-        grid-column: 6 / span 6;
-        margin-top: ${calcRem(32)};
-        margin-left: ${calcRem(80)};
+        margin-left: ${calcRem(-40)};
 
         &::before {
-          top: 0;
-          width: ${calcRem(33)};
-          right: calc(100% + ${calcRem(46)});
-          height: ${calcRem(230)};
-          background-size: cover;
+          top: ${calcRem(94)};
+          left: ${calcRem(-64)};
+        }
+
+        &::after {
+          left: ${calcRem(-38)};
+          height: calc(100% - ${calcRem(34)});
         }
       }
 
@@ -368,7 +335,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
 
       .author {
-        margin-top: ${calcRem(16)};
+        margin-top: ${calcRem(48)};
       }
 
       .author-name {
@@ -377,8 +344,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
 
       .author-signature {
-        font-size: ${calcRem(12)};
-        line-height: ${calcRem(16)};
+        font-size: ${calcRem(14)};
       }
     }
   }
@@ -427,28 +393,34 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
 
     &.gazpromNeft {
       & {
-        padding-top: ${calcRem(91)};
-        margin-top: 0;
+        margin-top: ${calcRem(88)};
       }
 
       .picture {
+        width: ${calcRem(216)};
+        height: ${calcRem(302)};
+        max-height: auto;
         margin-top: 0;
+        margin-left: ${calcRem(-20)};
       }
 
       .quote {
-        margin-top: ${calcRem(40)};
+        grid-column: 2 / span 5;
+        margin-top: ${calcRem(73)};
+        margin-left: ${calcRem(-20)};
 
         &::before {
-          top: ${calcRem(-239)};
-          right: calc(100% + ${calcRem(21)});
-          height: ${calcRem(581)};
+          top: ${calcRem(-170)};
+          left: ${calcRem(-39)};
+          width: ${calcRem(27)};
+          height: ${calcRem(26)};
+          transform: scale(-1, -1);
         }
 
-        &.longLine {
-          &::before {
-            height: ${calcRem(655)};
-            background-size: 100% 100%;
-          }
+        &::after {
+          top: ${calcRem(-242)};
+          left: ${calcRem(-38)};
+          height: calc(100% + ${calcRem(242)});
         }
       }
 
@@ -458,7 +430,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
 
       .author {
-        margin-top: ${calcRem(16)};
+        margin-top: ${calcRem(24)};
+        padding-bottom: ${calcRem(39)};
       }
 
       .author-name {
@@ -467,7 +440,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
       }
 
       .author-signature {
-        margin-top: 0;
         font-size: ${calcRem(12)};
         line-height: ${calcRem(16)};
       }
@@ -529,17 +501,11 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-export const backgroundImagesStyles = () => {
-  return css`
-    ${backgroundCssSmart('.quoteBlock_gazpromNeft.gazpromNeft .quote::before', quoteLine)}
-  `
-}
-
 export default props => {
-  const breakpoints = props.theme.breakpoints
+  const { colors, breakpoints } = props.theme
 
   return css`
-    ${base({ breakpoints })}
+    ${base({ colors, breakpoints })}
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }

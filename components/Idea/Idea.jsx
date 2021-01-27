@@ -17,7 +17,7 @@ const Idea = ({ className, pageName, projectId, l10n: { translations } }) => {
   const [isContactModalVisible, toggleContactModalVisibility] = useState(false)
 
   return (
-    <Grid className={className} as="section" data-testid="projects:block.idea">
+    <Grid className={cn(className, projectId)} as="section" data-testid="projects:block.idea">
       <div className="heading-wrapper">
         <div className="heading-text">
           <Heading.H2

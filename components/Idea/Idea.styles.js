@@ -91,6 +91,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       min-height: auto;
       margin-top: ${calcRem(153)};
       margin-bottom: ${calcRem(102)};
+
+      &.gazpromNeft {
+        margin-top: ${calcRem(72)};
+      }
     }
 
     .heading-wrapper {

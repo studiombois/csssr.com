@@ -107,7 +107,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       padding-bottom: 370px;
     }
     &._mindbox._en {
-      padding-bottom: 290px;
+      padding-bottom: 280px;
     }
     &._mindbox._ru {
       padding-bottom: 367px;
@@ -137,6 +137,20 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
   }
 
   ${desktop.l} {
+    &._mindbox,
+    &._flant,
+    &._qmarketing,
+    &._brusnika,
+    &._mosoblgaz {
+      padding-bottom: 280px !important; // после удаления картинки с фигурами это удалится 
+    }
+
+    &._mindbox._en {
+      .pic-wrapper_mindbox {
+        margin-top: 80px;
+      }
+    }
+
     .heading {
       grid-column: 2 / span 7;
     }
@@ -184,7 +198,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
       &:before {
         top: ${calcRem(-60)};
-        left: ${calcRem(-192)};
+        left: ${calcRem(-140)};
         width: ${calcRem(298)};
         height: ${calcRem(809)};
       }
@@ -215,7 +229,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
       &:before {
         top: ${calcRem(-61)};
-        left: ${calcRem(-1)};
+        left: ${calcRem(-112)};
         width: ${calcRem(278)};
         height: ${calcRem(810)};
       }
@@ -267,7 +281,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
       &:before {
         top: ${calcRem(-36)};
-        left: ${calcRem(-144)};
+        left: ${calcRem(-88)};
         width: ${calcRem(200)};
         height: ${calcRem(543)};
       }

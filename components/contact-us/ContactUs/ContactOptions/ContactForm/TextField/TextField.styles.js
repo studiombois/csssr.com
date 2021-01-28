@@ -68,11 +68,11 @@ const base = ({ colors }) => css`
     text-transform: lowercase;
   }
 `
-
-export default (props) => {
+const StyledTextField = props => {
   const { colors } = props.theme
 
   return css`
     ${base({colors})}
   `
 }
+export default StyledTextField

@@ -215,8 +215,8 @@ export {
   vacancyImageStyles,
   faqImageStyles,
 }
-
-export default ({ isIe11 }) => css`
+const StyledVacancyImageAndLinks = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledVacancyImageAndLinks

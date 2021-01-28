@@ -29,8 +29,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
     }
   }
 `
-
-export default props => {
+const StyledFactItem = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -38,3 +37,4 @@ export default props => {
     ${base({breakpoints, colors })}
   `
 }
+export default StyledFactItem

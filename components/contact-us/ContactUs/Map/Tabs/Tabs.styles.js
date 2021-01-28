@@ -106,7 +106,7 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above }, colors }) => cs
   }
 `
 
-export default props => {
+const StyledTabs = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -114,3 +114,5 @@ export default props => {
     ${base({ breakpoints, colors })}
   `
 }
+
+export default StyledTabs

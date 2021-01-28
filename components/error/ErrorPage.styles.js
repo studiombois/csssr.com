@@ -506,9 +506,9 @@ const pictureStyles = css`
     }
   }
 `
-
-export default ({ isIe11 }) => css`
+const StyledErrorPage = ({ isIe11 }) => css`
   ${base}
   ${pictureStyles}
   ${isIe11 && ie11Styles}
 `
+export default StyledErrorPage

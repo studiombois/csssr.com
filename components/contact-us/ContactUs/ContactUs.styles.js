@@ -20,10 +20,12 @@ const base = ({ breakpoints: { above, mobile } }) => css`
   }
 `
 
-export default props => {
+const StyledContactUs = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledContactUs

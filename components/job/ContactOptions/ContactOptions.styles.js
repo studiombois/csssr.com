@@ -23,8 +23,8 @@ const ie11Styles = css`
     -ms-grid-row-span: 10;
   }
 `
-
-export default ({ isIe11 }) => css`
+const StyledContactOptions = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledContactOptions

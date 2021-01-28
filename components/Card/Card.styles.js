@@ -123,7 +123,7 @@ const dynamic = (canHoverAllCard, isIe11, colors) => {
     `
 }
 
-export default props => {
+const StyledCard = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
   const { isLink, isNextLink, isIe11 } = props
@@ -134,3 +134,6 @@ export default props => {
     ${dynamic(canHoverAllCard, isIe11, colors )}
   `
 }
+
+
+export default StyledCard

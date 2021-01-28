@@ -83,10 +83,12 @@ export const backgroundImagesStyles = () => {
   `
 }
 
-export default props => {
+const StyledMap = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledMap

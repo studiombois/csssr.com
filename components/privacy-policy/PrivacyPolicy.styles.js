@@ -348,8 +348,7 @@ const ie11Styles = css`
     }
   }
 `
-
-export default props => {
+const StyledPrivacyPolicy =  props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -358,3 +357,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledPrivacyPolicy

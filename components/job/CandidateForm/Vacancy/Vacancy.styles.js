@@ -40,8 +40,8 @@ const ie11Styles =  css`
     top: 0.3rem;
   }
 `
-
-export default ({ isIe11 }) => css`
+const StyledVacancy = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledVacancy

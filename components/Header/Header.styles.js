@@ -95,8 +95,7 @@ const dynamic = ({colors }) => css`
     background-color: ${colors.secondary.darken100};
   }
 `
-
-export default props => {
+const StyledHeader = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -105,3 +104,4 @@ export default props => {
     ${dynamic({ colors })}
   `
 }
+export default StyledHeader

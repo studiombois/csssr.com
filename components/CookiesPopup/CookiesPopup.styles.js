@@ -155,10 +155,12 @@ const base = ({ media }) => css`
   }
 `
 
-export default props => {
+const StyledCookiesPopup = props => {
   const media = props.theme.media
 
   return css`
     ${base({media})}
   `
 }
+
+export default StyledCookiesPopup

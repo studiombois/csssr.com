@@ -183,10 +183,12 @@ const base = ({ breakpoints: { tablet, mobile, desktop, above } }) => css`
   }
 `
 
-export default props => {
+const StyledContactOptions = props => {
   const { breakpoints } = props.theme
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledContactOptions

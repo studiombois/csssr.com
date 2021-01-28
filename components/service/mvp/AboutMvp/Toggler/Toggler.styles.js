@@ -47,8 +47,7 @@ const base = ({ breakpoints: { tablet }, activeIndex}) => css`
     }
   }
 `
-
-export default props =>  {
+const StyledToggler = props =>  {
   const breakpoints = props.theme.breakpoints
   const activeIndex = props.activeIndex
 
@@ -56,3 +55,4 @@ export default props =>  {
     ${base({ breakpoints, activeIndex })}
   `
 }
+export default StyledToggler

@@ -212,8 +212,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 `
-
-export default props => {
+const StyledTransparency = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
@@ -221,3 +220,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledTransparency

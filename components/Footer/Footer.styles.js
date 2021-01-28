@@ -175,8 +175,7 @@ const base = ({ breakpoints: { mobile, tablet, desktop }, colors }) => css`
     }
   }
 `
-
-export default props => {
+const StyledFooter = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -184,3 +183,4 @@ export default props => {
     ${base({ breakpoints, colors })}
   `
 }
+export default StyledFooter

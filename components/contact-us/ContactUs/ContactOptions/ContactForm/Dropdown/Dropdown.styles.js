@@ -134,11 +134,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 `
-
-export default (props) => {
+const StyledDropdown = props => {
   const { breakpoints, colors } = props.theme
 
   return css`
     ${base({ breakpoints, colors })}
   `
 }
+export default StyledDropdown

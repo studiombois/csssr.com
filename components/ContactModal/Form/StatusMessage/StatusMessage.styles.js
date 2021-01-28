@@ -102,7 +102,8 @@ const dynamic = props =>
     pointer-events: ${props.hasFailOrSuccessStatus ? 'auto' : 'none'};
   `
 
-export default props => css`
+const StyledStatusMessage = props => css`
   ${base}
   ${dynamic(props)}
 `
+export default StyledStatusMessage

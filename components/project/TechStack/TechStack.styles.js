@@ -340,8 +340,7 @@ export const backgroundImagesStyles = () => {
     ${backgroundCssSmart('.duration-number::before', line_curly)}
   `
 }
-
-export default props => {
+const StyledTechStack = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
   const { l10n: {language} } = props
@@ -351,3 +350,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledTechStack

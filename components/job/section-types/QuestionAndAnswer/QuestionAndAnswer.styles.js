@@ -107,7 +107,7 @@ const base = props => css`
     }
   }
 `
-
-export default props => css`
-  ${base(props)}
+const StyledQuestionAndAnswer = props => css`
+${base(props)}
 `
+export default StyledQuestionAndAnswer

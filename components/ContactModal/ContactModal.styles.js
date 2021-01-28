@@ -133,10 +133,12 @@ const dynamic = ({ hasFailOrSuccessStatus }) => css`
   }
 `
 
-export default props => {
+const StyledContactModal = props => {
   const { colors } = props.theme
 
   return css`
   ${base(colors)}
   ${dynamic(props)}
 `}
+
+export default StyledContactModal

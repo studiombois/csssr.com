@@ -255,7 +255,7 @@ const ie11Styles = () => css`
     -ms-grid-row: 3;
   }
 `
-export default props => {
+const StyledGreeting = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
@@ -263,3 +263,4 @@ export default props => {
     ${props.isIe11 && ie11Styles()}
   `
 }
+export default StyledGreeting

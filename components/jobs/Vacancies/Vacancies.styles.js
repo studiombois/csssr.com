@@ -537,8 +537,8 @@ const pictureHunterStyles = css`
 export {
   pictureHunterStyles,
 }
-
-export default ({ isIe11 }) => css`
+const StyledVacancies = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledVacancies

@@ -216,7 +216,7 @@ const ie11Styles = ({ description }) => css`
   }
 `
 
-export default props => {
+const StyledDescription = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
   const description = props.description
@@ -227,3 +227,5 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints, description })}
   `
 }
+
+export default StyledDescription

@@ -3,7 +3,7 @@ import { number } from 'prop-types'
 import ErrorPage from '../pages/_error'
 import Error404Page from '../pages/404'
 
-export default (Component) => {
+const WithError = (Component) => {
   class Extended extends React.Component {
     static async getInitialProps(ctx) {
       const props = await Component.getInitialProps(ctx)
@@ -29,3 +29,5 @@ export default (Component) => {
 
   return Extended
 }
+
+export default WithError

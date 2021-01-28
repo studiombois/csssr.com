@@ -228,8 +228,8 @@ const base = () => css`
     }
   }
 `
-
-export default () => css`
+const StyledContactForm = () => css`
   ${base()}
   ${ie11Styles()}
 `
+export default StyledContactForm

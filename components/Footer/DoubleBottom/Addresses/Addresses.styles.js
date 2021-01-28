@@ -185,8 +185,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
   }
 `
-
-export default props => {
+const StyledAddresses = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
   const { l10n: {language} } = props
@@ -195,3 +194,4 @@ export default props => {
     ${base({ breakpoints, colors, language })}
   `
 }
+export default StyledAddresses

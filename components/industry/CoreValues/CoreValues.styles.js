@@ -324,8 +324,7 @@ const ie11Styles = ({ breakpoints: { desktop }}) => css`
     }
   }
 `
-
-export default props => {
+const StyledCoreValues = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -334,3 +333,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledCoreValues

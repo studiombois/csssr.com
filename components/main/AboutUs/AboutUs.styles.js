@@ -413,8 +413,7 @@ export const loveBackgroundImagesStyles = theme => {
     }
   `
 }
-
-export default props => {
+const StyledAboutUs = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -423,3 +422,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledAboutUs

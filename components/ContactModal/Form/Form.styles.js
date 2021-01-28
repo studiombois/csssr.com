@@ -302,9 +302,9 @@ const dynamic = hasFailOrSuccessStatus => css`
     height: ${hasFailOrSuccessStatus ? '100vh' : 'auto'};
   }
 `
-
-export default ({ hasFailOrSuccessStatus, isIe11 }) => () => css`
+const StyledForm = ({ hasFailOrSuccessStatus, isIe11 }) => () => css`
   ${base}
   ${isIe11 && ie11Styles}
   ${dynamic(hasFailOrSuccessStatus)}
 `
+export default StyledForm

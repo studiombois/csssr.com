@@ -263,10 +263,12 @@ const base = ({ breakpoints: { mobile, above }, colors }) => css`
   }
 `
 
-export default (props) => {
+const StyledBookACall = (props) => {
   const { breakpoints, colors } = props.theme
 
   return css`
     ${base({ breakpoints, colors })}
   `
 }
+
+export default StyledBookACall

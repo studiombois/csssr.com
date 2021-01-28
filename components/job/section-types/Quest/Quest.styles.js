@@ -72,8 +72,8 @@ const ie11Styles = css`
     -ms-grid-column-span: ${getGridValueForMs(1)};
   }
 `
-
-export default ({ isIe11 }) => css`
+const StyledQuest = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledQuest

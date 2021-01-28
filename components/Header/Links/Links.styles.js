@@ -62,11 +62,11 @@ const base = ({ breakpoints: { mobile }}) => css`
     }
   }
  `
-
-export default props => {
+const StyledLinks = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
     ${base({ breakpoints })}
   `
 }
+export default StyledLinks

@@ -61,11 +61,11 @@ const base = ({ colors }) => css`
     display: none;
   }
 `
-
-export default (props) => {
+const StyledTextarea = props => {
   const { colors } = props.theme
 
   return css`
     ${base({ colors })}
   `
 }
+export default StyledTextarea

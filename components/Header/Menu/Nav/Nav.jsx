@@ -59,7 +59,13 @@ const Nav = ({
         >
           <Back className="icon_back" />
 
-          {translations.common.header.backLink}
+          {activeItem !== null && (
+            <span
+              dangerouslySetInnerHTML={{
+                __html: translations.common.header.menu[activeItem].title,
+              }}
+            />
+          )}
         </button>
       )}
 

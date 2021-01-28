@@ -1,14 +1,15 @@
-const screenMobile = require.context(
-  '../../../public/images/project/common-pics/assurance/screenMobile?csssr-images',
-)
-const screenDesktop = require.context(
-  '../../../public/images/project/common-pics/assurance/screenDesktop?csssr-images',
+const designerLaptop = require.context(
+  '../../../public/images/project/common-pics/assurance/designerLaptop?csssr-images',
 )
 const designerEn = require.context(
   '../../../public/images/project/common-pics/assurance/designerEn?csssr-images',
 )
 const designerRu = require.context(
   '../../../public/images/project/common-pics/assurance/designerRu?csssr-images',
+)
+
+const projectLaptop = require.context(
+  '../../../public/images/project/common-pics/assurance/projectLaptop?csssr-images',
 )
 const projectsEn = require.context(
   '../../../public/images/project/common-pics/assurance/projectsEn?csssr-images',
@@ -29,12 +30,12 @@ export default {
     description: (t) => t.project.gazpromNeft.assurance.description,
   },
   images: {
-    screenMobile: screenMobile,
-    screenDesktop: screenDesktop,
-    screenAlt: (t) => t.project.gazpromNeft.assurance.screenAlt,
+    laptopAlt: (t) => t.project.gazpromNeft.assurance.laptopAlt,
+    designerLaptop: designerLaptop,
     designerEn: designerEn,
     designerRu: designerRu,
     designerAlt: (t) => t.project.gazpromNeft.assurance.designerAlt,
+    projectLaptop: projectLaptop,
     projectsEn: projectsEn,
     projectsRu: projectsRu,
     projectsAlt: (t) => t.project.gazpromNeft.assurance.projectsAlt,

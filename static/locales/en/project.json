@@ -142,7 +142,7 @@
       "percent": "104%",
       "label": "roi",
       "description": "profit margin from using test automation based on ROI calculations as compared to manual testing.",
-      "screenAlt": "Two screens with a profile info",
+      "laptopAlt": "Laptop screen",
       "designerAlt": "Project screen with two designers chatting",
       "projectsAlt": "Screen with a list of company projects"
     }

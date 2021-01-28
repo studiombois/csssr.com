@@ -66,43 +66,78 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   .picture-container {
     position: relative;
+    width: ${calcRem(1491)};
+    height: ${calcRem(881)};
     margin-top: ${calcRem(223)};
+
+    &.animated {
+      .screen-container_left {
+        transform: translateY(0);
+      }
+
+      .screen-container_right {
+        transform: translateY(0);
+      }
+    }
   }
 
   .screen-container {
     position: absolute;
-    overflow: hidden;
     background-color: white;
 
     &_left {
       z-index: -2;
-      top: ${calcRem(15)};
+      top: 0;
       left: 0;
-      width: ${calcRem(987)};
-      height: ${calcRem(690)};
-      padding-top: ${calcRem(50)};
-      padding-left: ${calcRem(20)};
+      width: ${calcRem(1124)};
+      height: ${calcRem(699)};
+      transform: translateY(104px);
+      transition: transform 0.7s 0.5s ease-out;
     }
 
     &_right {
       z-index: -1;
-      top: ${calcRem(190)};
-      right: ${calcRem(50)};
-      width: ${calcRem(985)};
-      height: ${calcRem(660)};
-      padding-top: ${calcRem(60)};
-      padding-left: ${calcRem(20)};
-
-      &::before {
-        position: absolute;
-        content: '';
-        z-index: 1;
-        top: 0;
-        width: 100%;
-        height: ${calcRem(50)};
-        background-color: white;
-      }
+      top: ${calcRem(177)};
+      right: 0;
+      width: ${calcRem(1044)};
+      height: ${calcRem(704)};
+      transform: translateY(-104px);
+      transition: transform 0.7s 0.5s ease-out;
     }
+  }
+
+  .designer-laptop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .designer-screenshot {
+    position: absolute;
+    z-index: -1;
+    top: ${calcRem(59)};
+    left: ${calcRem(24)};
+    width: ${calcRem(987)};
+    height: ${calcRem(616)};
+  }
+
+  .project-laptop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-container {
+    position: absolute;
+    top: ${calcRem(57)};
+    left: ${calcRem(20)};
+    width: ${calcRem(991)};
+    height: ${calcRem(613)};
+    overflow: hidden;
   }
 
   ${desktop.l} {
@@ -128,30 +163,37 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .picture-container {
       margin-top: ${calcRem(292)};
+      width: ${calcRem(1104)};
+      height: ${calcRem(657)};
     }
 
     .screen-container {
       &_left {
-        top: 0;
-        left: ${calcRem(9)};
-        width: ${calcRem(740)};
-        height: ${calcRem(500)};
-        padding-top: ${calcRem(50)};
-        padding-left: ${calcRem(20)};
+        width: ${calcRem(835)};
+        height: ${calcRem(519)};
+        transform: translateY(80px);
       }
 
       &_right {
-        top: ${calcRem(140)};
-        right: ${calcRem(40)};
-        width: ${calcRem(732)};
-        height: ${calcRem(490)};
-        padding-top: ${calcRem(50)};
-        padding-left: ${calcRem(20)};
-
-        &::before {
-          top: ${calcRem(-10)};
-        }
+        top: ${calcRem(137)};
+        width: ${calcRem(771)};
+        height: ${calcRem(520)};
+        transform: translateY(-80px);
       }
+    }
+
+    .designer-screenshot {
+      top: ${calcRem(44)};
+      left: ${calcRem(18)};
+      width: ${calcRem(733)};
+      height: ${calcRem(457)};
+    }
+
+    .project-container {
+      top: ${calcRem(42)};
+      left: ${calcRem(15)};
+      width: ${calcRem(732)};
+      height: ${calcRem(453)};
     }
   }
 
@@ -172,30 +214,37 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .picture-container {
       margin-top: ${calcRem(261)};
+      width: ${calcRem(1022)};
+      height: ${calcRem(608)};
     }
 
     .screen-container {
       &_left {
-        top: 0;
-        left: 0;
-        width: ${calcRem(695)};
-        height: ${calcRem(465)};
-        padding-top: ${calcRem(45)};
-        padding-left: ${calcRem(20)};
+        width: ${calcRem(773)};
+        height: ${calcRem(481)};
+        transform: translateY(75px);
       }
 
       &_right {
-        top: ${calcRem(130)};
-        right: ${calcRem(30)};
-        width: ${calcRem(685)};
-        height: ${calcRem(452)};
-        padding-top: ${calcRem(50)};
-        padding-left: ${calcRem(20)};
-
-        &::before {
-          top: ${calcRem(-12)};
-        }
+        top: ${calcRem(128)};
+        width: ${calcRem(711)};
+        height: ${calcRem(480)};
+        transform: translateY(-75px);
       }
+    }
+
+    .designer-screenshot {
+      top: ${calcRem(41)};
+      left: ${calcRem(17)};
+      width: ${calcRem(679)};
+      height: ${calcRem(423)};
+    }
+
+    .project-container {
+      top: ${calcRem(39)};
+      left: ${calcRem(14)};
+      width: ${calcRem(675)};
+      height: ${calcRem(418)};
     }
   }
 
@@ -243,6 +292,8 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .picture-container {
       margin-top: ${calcRem(208)};
+      width: ${calcRem(783)};
+      height: ${calcRem(466)};
 
       &.animated {
       }
@@ -250,26 +301,31 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .screen-container {
       &_left {
-        top: 0;
-        left: 0;
-        width: ${calcRem(532)};
-        height: ${calcRem(360)};
-        padding-top: ${calcRem(32)};
-        padding-left: ${calcRem(15)};
+        width: ${calcRem(594)};
+        height: ${calcRem(369)};
+        transform: translateY(57px);
       }
 
       &_right {
-        top: ${calcRem(100)};
-        right: ${calcRem(15)};
-        width: ${calcRem(535)};
-        height: ${calcRem(350)};
-        padding-top: ${calcRem(30)};
-        padding-left: ${calcRem(20)};
-
-        &::before {
-          top: ${calcRem(-20)};
-        }
+        top: ${calcRem(97)};
+        width: ${calcRem(547)};
+        height: ${calcRem(369)};
+        transform: translateY(-57px);
       }
+    }
+
+    .designer-screenshot {
+      top: ${calcRem(31)};
+      left: ${calcRem(13)};
+      width: ${calcRem(521)};
+      height: ${calcRem(325)};
+    }
+
+    .project-container {
+      top: ${calcRem(30)};
+      left: ${calcRem(11)};
+      width: ${calcRem(519)};
+      height: ${calcRem(321)};
     }
   }
 
@@ -324,29 +380,24 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
     .picture-container {
       margin-top: ${calcRem(88)};
-
-      &.animated {
-      }
+      width: ${calcRem(330)};
+      height: ${calcRem(222)};
     }
 
     .screen-container {
       &_right {
-        top: ${calcRem(20)};
-        right: auto;
-        left: ${calcRem(7)};
-        width: ${calcRem(306)};
-        height: ${calcRem(190)};
-        padding-top: 0;
-        padding-left: 0;
-
-        &::before {
-          content: none;
-        }
-
-        & picture {
-          transform: translateY(0);
-        }
+        top: 0;
+        width: ${calcRem(330)};
+        height: ${calcRem(222)};
+        transform: translateY(0);
       }
+    }
+
+    .project-container {
+      top: ${calcRem(18)};
+      left: ${calcRem(6)};
+      width: ${calcRem(313)};
+      height: ${calcRem(193)};
     }
   }
 `

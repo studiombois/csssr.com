@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 /* eslint-disable react/display-name */
 export default ({ status, feedbackEmail, errorText, translations, tabIndex }) => {

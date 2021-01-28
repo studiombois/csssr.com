@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import Fade from 'react-reveal/Fade'
-import { css, Global } from '@emotion/core'
+import { css, Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles from './ElearningPlatformContent.styles'

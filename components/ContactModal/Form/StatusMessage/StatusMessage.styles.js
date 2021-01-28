@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import Button from '../../../ui-kit/core-design/Button'
 
 const base = css`

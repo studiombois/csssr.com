@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import AnimatedButton from '../../ui-kit/core-design/AnimatedButton'
 import Text from '../../ui-kit/core-design/Text'

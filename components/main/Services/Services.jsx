@@ -4,7 +4,7 @@ import cn from 'classnames'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 import styles from './Services.styles'
 
 import Heading from '../../ui-kit/core-design/Heading'

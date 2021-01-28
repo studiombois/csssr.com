@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import cn from 'classnames'
 import styles, { loveBackgroundImagesStyles } from './AboutUs.styles'
 

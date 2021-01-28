@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 

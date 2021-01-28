@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import TextareaFieldLightStyles from '../styles/TextareaFieldLight.styles'
 import TextareaFieldRegularStyles from '../styles/TextareaFieldRegular.styles'
 

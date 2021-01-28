@@ -5,7 +5,7 @@ module.exports = {
     es6: true,
   },
   extends: '@csssr/eslint-config-core',
-  plugins: ['react-hooks'],
+  plugins: ['react-hooks', '@emotion'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -24,6 +24,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/display-name': 'off',
+    '@emotion/pkg-renaming': 'error',
   },
   settings: {
     react: {

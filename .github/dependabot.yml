@@ -15,3 +15,6 @@ updates:
   - dependency-name: i18next
     versions:
     - ">= 19.a, < 20"
+  - dependency-name: "webpack"
+  - dependency-name: "webpack-bundle-analyzer"
+  - dependency-name: "compression-webpack-plugin"

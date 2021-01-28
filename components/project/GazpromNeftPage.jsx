@@ -20,7 +20,7 @@ import team from '../../data/project/gazprom-neft/team'
 import businessAnalysis from '../../data/project/gazprom-neft/businessAnalysis'
 import development from '../../data/project/gazprom-neft/development'
 import assurance from '../../data/project/gazprom-neft/assurance'
-import quoteImages from '../../data/project/gazprom-neft/quote'
+import quote from '../../data/project/gazprom-neft/quote'
 
 const GazpromNeftPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
@@ -40,7 +40,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       <BusinessAnalysis content={businessAnalysis} />
       <Development content={development} />
       <Assurance content={assurance} />
-      <Quote projectId={projectId} images={quoteImages} />
+      <Quote projectId={projectId} content={quote} />
       <Idea pageName={pageName} projectId={projectId} />
     </Layout>
   )

@@ -13,11 +13,11 @@ import Grid from '../../ui-kit/core-design/Grid'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 
-const Quote = ({ className, projectId, images, l10n: { translations } }) => (
+const Quote = ({ className, projectId, l10n: { translations }, content: { images } }) => (
   <Grid as="section" className={cn(className, projectId)}>
     <PictureSmart
       className="picture"
-      requireImages={images}
+      requireImages={images.girl}
       alt={translations.project[projectId].quote.imageAlt}
     />
 

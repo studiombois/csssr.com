@@ -28,8 +28,8 @@ const FlantPage = ({ l10n: { translations } }) => {
         description={translations.project.flant.meta.description}
       />
 
-      <Hero id="hero" content={hero} />
-      <Team id="team" content={team} />
+      <Hero id="hero" content={hero} projectId={projectId} />
+      <Team id="team" content={team} projectId={projectId} />
       <TechStack id="teckStack" content={techStack} />
       <AboutProject
         projectId={projectId}

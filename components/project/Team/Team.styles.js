@@ -27,24 +27,16 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   .number-item {
     justify-self: end;
 
-    &:nth-of-type(1) span {
-      color: #41CE7F;
+    &_manager span {
+      color: #F9555A;
     }
 
-    &:nth-of-type(3) span {
-      color: #FFC045;
+    &_dev span {
+      color: #87DCB7;
     }
 
-    &:nth-of-type(5) span {
-      color: #F45B53;
-    }
-
-    &:nth-of-type(7) span {
-      color: #0254D8;
-    }
-
-    &:nth-of-type(9) span {
-      color: #41CE7F;
+    &_qa span {
+      color: #0054D7;
     }
 
     & span {
@@ -60,19 +52,40 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
   }
 
   ${desktop.all} {
+    .image {
+      &_s7airlines {
+        margin-top: 87px;
+      }
+      &_qmarketing {
+        margin-top: 52px;
+      }
+      &_brusnika {
+        margin-top: -3px;
+      }
+      &_flant {
+        margin-top: 15px;
+      }
+      &_mindbox {
+        margin-top: 15px;
+      }
+      &_mosoblgaz {
+        margin-top: 52px;
+      }
+    }
+
     .number-item {
       & > span {
         font-size: ${calcRem(48)};
         line-height: ${calcRem(64)};
       }
+
+      &_withMargin {
+        margin-top: 18px;
+      }
     }
   }
 
   ${desktop.l} {
-    .heading {
-      margin-top: ${calcRem(22)};
-    }
-
     .image {
       max-height: 536px;
     }
@@ -80,23 +93,17 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
 
   ${desktop.m} {
     .image {
-      margin-top: ${calcRem(51)};
       max-height: 400px;
     }
   }
 
   ${desktop.s} {
     .image {
-      margin-top: ${calcRem(-13)};
       max-height: 368px;
     }
   }
 
   ${tablet.all} {
-    .heading {
-      margin-top: ${calcRem(15)};
-    }
-
     .list {
       grid-template-columns: 14px 1fr;
       grid-gap: 8px 17px;
@@ -115,10 +122,15 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
         font-size: ${calcRem(24)};
         line-height: ${calcRem(32)};
       }
+
+      &_withMargin {
+        margin-top: ${calcRem(12)};
+      }
     }
 
     .image {
       max-height: ${calcRem(280)};
+      margin-top: ${calcRem(20)};
     }
   }
 
@@ -137,6 +149,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       & > span {
         font-size: ${calcRem(24)};
         line-height: ${calcRem(32)};
+      }
+
+      &_withMargin {
+        margin-top: ${calcRem(12)};
       }
     }
 

@@ -34,8 +34,9 @@
           "description": "Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
         }
       },
-      "industries": {
-        "title": "Industries",
+      "portfolio": {
+        "title": "Portfolio",
+        "listTitle": "Clients by industry",
         "fintech": {
           "title": "Fintech"
         },
@@ -43,14 +44,14 @@
           "title": "E-Commerce"
         },
         "information": {
-          "title": "Information Technology"
+          "title": "IT industry"
         },
         "mediaAndMarketing": {
-          "title": "Media & Marketing"
+          "title": "Media and marketing"
         },
         "ourProjects": {
-          "title": "Our Projects",
-          "description": "We&nbsp;are proud of&nbsp;our clients list and<br/> glad to&nbsp;share some of&nbsp;our cases."
+          "title": "Our projects",
+          "description": "Take a look at solutions we have developed for some of our clients"
         }
       },
       "howWeWork": {
@@ -90,8 +91,7 @@
         "title": "Contacts"
       }
     },
-    "action": "Hire us",
-    "backLink": "services"
+    "action": "Hire us"
   },
   "footer": {
     "actionPhrase": "Let’s work together!",

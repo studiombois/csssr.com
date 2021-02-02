@@ -27,7 +27,7 @@ const MindboxPage = ({ l10n: { translations } }) => {
       />
 
       <Hero id="hero" content={hero} projectId={projectId} />
-      <Team id="team" content={team} />
+      <Team id="team" content={team} projectId={projectId} />
       <TechStack id="teckStack" content={techStack} />
       <AboutProject
         projectId={projectId}

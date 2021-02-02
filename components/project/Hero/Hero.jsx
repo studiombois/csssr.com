@@ -19,10 +19,10 @@ const Hero = ({
   id,
   projectId,
   content: { heading, link, subHeading, text, images, imgAlt },
-  l10n: { translations },
+  l10n: { translations, language },
 }) => {
   return (
-    <section className={className} id={id}>
+    <section className={cn(className, `_${projectId}`, `_${language}`)} id={id}>
       <Grid className="grid" as="div">
         <Heading.H1
           type="slab"
@@ -37,7 +37,9 @@ const Hero = ({
           type="list"
           target="_blank"
           rel="noreferrer noopener"
-          dangerouslySetInnerHTML={{ __html: link(translations) }}
+          dangerouslySetInnerHTML={{
+            __html: link(translations),
+          }}
           data-testid="Project:link.project-site"
         />
 

@@ -59,7 +59,13 @@ const Nav = ({
         >
           <Back className="icon_back" />
 
-          {translations.common.header.backLink}
+          {activeItem !== null && (
+            <span
+              dangerouslySetInnerHTML={{
+                __html: translations.common.header.menu[activeItem].title,
+              }}
+            />
+          )}
         </button>
       )}
 
@@ -80,38 +86,49 @@ const Nav = ({
                         'nav-item_active': router.pathname === `/${language}/${href}`,
                       })}
                     >
-                      <Link
-                        data-testid={`Header:nav:link.${id}`}
-                        className="link"
-                        href={linkRegExp.test(href) ? href : `/${language}/${href}`}
-                        isNextLink={!linkRegExp.test(href)}
-                        target={linkRegExp.test(href) ? '_blank' : '_self'}
-                        rel={linkRegExp.test(href) ? 'noopener noreferrer' : null}
-                      >
-                        <Icon className={cn('icon', `icon_${id}`)} />
+                      <div style={{ position: 'relative' }}>
+                        {id === 'mediaAndMarketing' && (
+                          <Heading.H3
+                            type="regular"
+                            dangerouslySetInnerHTML={{
+                              __html: translations.common.header.menu.portfolio.listTitle,
+                            }}
+                            className="industry-title"
+                          />
+                        )}
+                        <Link
+                          data-testid={`Header:nav:link.${id}`}
+                          className="link"
+                          href={linkRegExp.test(href) ? href : `/${language}/${href}`}
+                          isNextLink={!linkRegExp.test(href)}
+                          target={linkRegExp.test(href) ? '_blank' : '_self'}
+                          rel={linkRegExp.test(href) ? 'noopener noreferrer' : null}
+                        >
+                          <Icon className={cn('icon', `icon_${id}`)} />
 
-                        <Heading
-                          className="title"
-                          as="div"
-                          type="regular"
-                          size="m"
-                          dangerouslySetInnerHTML={{
-                            __html: title(translations),
-                          }}
-                        />
-
-                        {description && (
-                          <Text
-                            className="description"
-                            as="p"
+                          <Heading
+                            className="title"
+                            as="div"
                             type="regular"
                             size="m"
                             dangerouslySetInnerHTML={{
-                              __html: description(translations),
+                              __html: title(translations),
                             }}
                           />
-                        )}
-                      </Link>
+
+                          {description && (
+                            <Text
+                              className="description"
+                              as="p"
+                              type="regular"
+                              size="m"
+                              dangerouslySetInnerHTML={{
+                                __html: description(translations),
+                              }}
+                            />
+                          )}
+                        </Link>
+                      </div>
                     </li>
                   </Wrapper>
                 )

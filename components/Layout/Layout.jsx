@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import DevTools from '../DevTools'
 import { withRouter } from 'next/router'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import { dynamic } from './Layout.styles'
 import cn from 'classnames'
 import Header from '../Header'

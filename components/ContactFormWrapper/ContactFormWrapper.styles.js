@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile }}) => css`
@@ -223,7 +223,7 @@ const styles = {
   backEndAndDevops,
 }
 
-export default props => {
+const StyledContactFormWrapper = props => {
   const breakpoints = props.theme.breakpoints
 
   const style = styles[props.pageName] || styles.base
@@ -232,3 +232,4 @@ export default props => {
     ${style({ breakpoints })}
   `
 }
+export default StyledContactFormWrapper

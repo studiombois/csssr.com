@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
@@ -173,8 +173,7 @@ const ie11Styles = () => css`
     display: none;
   }
 `
-
-export default props => {
+const StyledHighlight = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
@@ -182,3 +181,4 @@ export default props => {
     ${props.isIe11 && ie11Styles()}
   `
 }
+export default StyledHighlight

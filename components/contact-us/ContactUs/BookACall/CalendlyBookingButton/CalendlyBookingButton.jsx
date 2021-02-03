@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { string } from 'prop-types'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import styles, { modal as modalStyles } from './CalendlyBookingButton.styles'
 import { L10nConsumer } from '../../../../../utils/l10nProvider'

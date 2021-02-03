@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const base = props => css`
   h3 {
@@ -107,7 +107,7 @@ const base = props => css`
     }
   }
 `
-
-export default props => css`
-  ${base(props)}
+const StyledQuestionAndAnswer = props => css`
+${base(props)}
 `
+export default StyledQuestionAndAnswer

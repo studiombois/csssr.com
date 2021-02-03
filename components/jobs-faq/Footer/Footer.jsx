@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import styles, { backgroundImagesStyles } from './Footer.styles'
 import cn from 'classnames'
 import { bool, string } from 'prop-types'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import Grid from '../../ui-kit/core-design/Grid'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 

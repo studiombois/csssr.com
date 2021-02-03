@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const base = colors => css`
   position: fixed;
@@ -133,10 +133,12 @@ const dynamic = ({ hasFailOrSuccessStatus }) => css`
   }
 `
 
-export default props => {
+const StyledContactModal = props => {
   const { colors } = props.theme
 
   return css`
   ${base(colors)}
   ${dynamic(props)}
 `}
+
+export default StyledContactModal

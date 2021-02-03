@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const base = css`
   margin-top: 0.125rem;
@@ -302,9 +302,9 @@ const dynamic = hasFailOrSuccessStatus => css`
     height: ${hasFailOrSuccessStatus ? '100vh' : 'auto'};
   }
 `
-
-export default ({ hasFailOrSuccessStatus, isIe11 }) => () => css`
+const StyledForm = ({ hasFailOrSuccessStatus, isIe11 }) => () => css`
   ${base}
   ${isIe11 && ie11Styles}
   ${dynamic(hasFailOrSuccessStatus)}
 `
+export default StyledForm

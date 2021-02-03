@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
-/* eslint-disable react/display-name */
-export default ({ status, feedbackEmail, errorText, translations, tabIndex }) => {
+const getMessageTextOfStatus = ({ status, feedbackEmail, errorText, translations, tabIndex }) => {
   if (status === 'success') {
     return (
       <Fragment>
@@ -42,4 +41,5 @@ export default ({ status, feedbackEmail, errorText, translations, tabIndex }) =>
     </Fragment>
   )
 }
-/* eslint-enable react/display-name */
+
+export default getMessageTextOfStatus

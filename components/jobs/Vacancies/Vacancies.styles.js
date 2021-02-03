@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
@@ -537,8 +537,8 @@ const pictureHunterStyles = css`
 export {
   pictureHunterStyles,
 }
-
-export default ({ isIe11 }) => css`
+const StyledVacancies = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledVacancies

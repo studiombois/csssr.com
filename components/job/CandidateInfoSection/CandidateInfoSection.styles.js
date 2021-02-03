@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = css`
@@ -229,7 +229,8 @@ export {
   stylesForFileField,
 }
 
-export default ({ isIe11 }) => css`
+const StyledCandidateInfoSection = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledCandidateInfoSection

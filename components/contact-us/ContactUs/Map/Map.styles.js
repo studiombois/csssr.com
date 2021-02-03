@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
 
@@ -83,10 +83,12 @@ export const backgroundImagesStyles = () => {
   `
 }
 
-export default props => {
+const StyledMap = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledMap

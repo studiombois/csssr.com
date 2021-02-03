@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = css`
@@ -20,8 +20,8 @@ const ie11Styles = css`
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 `
-
-export default ({ isIe11 }) => css`
+const StyledFormRow = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledFormRow

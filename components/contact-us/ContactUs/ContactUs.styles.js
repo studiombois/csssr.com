@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const base = ({ breakpoints: { above, mobile } }) => css`
   & {
@@ -20,10 +20,12 @@ const base = ({ breakpoints: { above, mobile } }) => css`
   }
 `
 
-export default props => {
+const StyledContactUs = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledContactUs

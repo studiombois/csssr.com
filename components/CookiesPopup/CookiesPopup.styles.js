@@ -48,7 +48,7 @@ const base = ({ media }) => css`
     content: '';
     position: absolute;
     right: -172px;
-    top: 2px;
+    bottom: ${calcRem(-8)};
     width: ${calcRem(62)};
     height: ${calcRem(53)};
     background-image: url('../../static/icons/cookies-banner/cookie_ready.svg');
@@ -85,6 +85,10 @@ const base = ({ media }) => css`
 
     .cookies-text {
       max-width: ${calcRem(780)};
+    }
+
+    .cookies-text::after {
+      bottom: -0.5rem;
     }
   }
 

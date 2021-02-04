@@ -17,6 +17,10 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     height: ${calcRem(560)};
   }
 
+  .picture {
+    image-rendering: -webkit-optimize-contrast;
+  }
+
   .picture-container {
     width: ${calcRem(664)};
     height: ${calcRem(428)};

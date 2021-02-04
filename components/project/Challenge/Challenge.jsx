@@ -80,6 +80,7 @@ const Challenge = ({
                 }}
               >
                 <PictureSmart
+                  className="picture"
                   requireImages={language === 'ru' ? images.profileRu : images.profileEn}
                   alt={images.profileAlt(translations)}
                 />

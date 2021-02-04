@@ -92,32 +92,20 @@ const Assurance = ({
           ref={itemRef}
         >
           {!isMobile && (
-            <div className="screen-container screen-container_left">
-              <PictureSmart
-                className="designer-laptop"
-                requireImages={images.designerLaptop}
-                alt={images.laptopAlt(translations)}
-              />
-              <PictureSmart
-                className="designer-screenshot"
-                requireImages={language === 'ru' ? images.designerRu : images.designerEn}
-                alt={images.designerAlt(translations)}
-              />
-            </div>
-          )}
-          <div className="screen-container screen-container_right">
             <PictureSmart
-              className="project-laptop"
-              requireImages={images.projectLaptop}
-              alt={images.laptopAlt(translations)}
+              className="screen screen_left"
+              requireImages={images[language].leftScreen}
+              loading="lazy"
+              alt={images.designerAlt(translations)}
             />
-            <div className="project-container">
-              <PictureSmart
-                requireImages={language === 'ru' ? images.projectsRu : images.projectsEn}
-                alt={images.projectsAlt(translations)}
-              />
-            </div>
-          </div>
+          )}
+
+          <PictureSmart
+            className="screen screen_right"
+            requireImages={images[language].rightScreen}
+            loading="lazy"
+            alt={images.projectsAlt(translations)}
+          />
         </div>
       </div>
     </Grid>

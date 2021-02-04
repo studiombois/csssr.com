@@ -142,9 +142,8 @@
       "percent": "104%",
       "label": "roi",
       "description": "profit margin from using test automation based on ROI calculations as compared to manual testing.",
-      "laptopAlt": "Laptop screen",
-      "designerAlt": "Project screen with two designers chatting",
-      "projectsAlt": "Screen with a list of company projects"
+      "leftScreenAlt": "Specialist profile",
+      "rightScreenAlt": "Screen with a list of company projects"
     }
   },
   "s7airlines": {

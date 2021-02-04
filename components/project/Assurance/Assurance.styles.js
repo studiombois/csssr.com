@@ -71,180 +71,121 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
     margin-top: ${calcRem(223)};
 
     &.animated {
-      .screen-container_left {
-        transform: translateY(0);
-      }
-
-      .screen-container_right {
+      .screen {
         transform: translateY(0);
       }
     }
   }
 
-  .screen-container {
+  .screen {
     position: absolute;
-    background-color: white;
+    transition: transform 0.7s 0.5s ease-out;
+    image-rendering: -webkit-optimize-contrast;
 
     &_left {
       z-index: -2;
       top: 0;
       left: 0;
-      width: ${calcRem(1124)};
-      height: ${calcRem(699)};
-      transform: translateY(104px);
-      transition: transform 0.7s 0.5s ease-out;
     }
 
     &_right {
       z-index: -1;
-      top: ${calcRem(177)};
       right: 0;
-      width: ${calcRem(1044)};
-      height: ${calcRem(704)};
-      transform: translateY(-104px);
-      transition: transform 0.7s 0.5s ease-out;
     }
-  }
-
-  .designer-laptop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .designer-screenshot {
-    position: absolute;
-    z-index: -1;
-    top: ${calcRem(59)};
-    left: ${calcRem(24)};
-    width: ${calcRem(987)};
-    height: ${calcRem(616)};
-  }
-
-  .project-laptop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .project-container {
-    position: absolute;
-    top: ${calcRem(57)};
-    left: ${calcRem(20)};
-    width: ${calcRem(991)};
-    height: ${calcRem(613)};
-    overflow: hidden;
   }
 
   ${desktop.l} {
     & {
-      margin-top: ${calcRem(164)};
+      margin-top: 164px;
+    }
+
+    .screen {  
+      &_left {
+        width: 1124px;
+        height: 699px;
+        transform: translateY(104px);
+      }
+  
+      &_right {
+        top: 177px;
+        width: 1044px;
+        height: 704px;
+        transform: translateY(-104px);
+      }
     }
   }
 
   ${desktop.m} {
     .quality {
-      width: ${calcRem(740)};
+      width: 740px;
     }
 
     .message {
-      width: ${calcRem(520)};
+      width: 520px;
     }
 
     .roi {
-      top: ${calcRem(292)};
-      left: ${calcRem(660)};
-      width: ${calcRem(432)};
+      top: 292px;
+      left: 660px;
+      width: 432px;
     }
 
     .picture-container {
-      margin-top: ${calcRem(292)};
-      width: ${calcRem(1104)};
-      height: ${calcRem(657)};
+      margin-top: 292px;
+      width: 1104px;
+      height: 657px;
     }
 
-    .screen-container {
+    .screen {
       &_left {
-        width: ${calcRem(835)};
-        height: ${calcRem(519)};
+        width: 835px;
+        height: 519px;
         transform: translateY(80px);
       }
 
       &_right {
-        top: ${calcRem(137)};
-        width: ${calcRem(771)};
-        height: ${calcRem(520)};
+        top: 137px;
+        width: 771px;
+        height: 520px;
         transform: translateY(-80px);
       }
-    }
-
-    .designer-screenshot {
-      top: ${calcRem(44)};
-      left: ${calcRem(18)};
-      width: ${calcRem(733)};
-      height: ${calcRem(457)};
-    }
-
-    .project-container {
-      top: ${calcRem(42)};
-      left: ${calcRem(15)};
-      width: ${calcRem(732)};
-      height: ${calcRem(453)};
     }
   }
 
   ${desktop.s} {
     .quality {
-      width: ${calcRem(650)};
+      width: 650px;
     }
 
     .message {
-      width: ${calcRem(520)};
+      width: 520px;
     }
 
     .roi {
-      top: ${calcRem(312)};
-      left: ${calcRem(610)};
-      width: ${calcRem(400)};
+      top: 312px;
+      left: 610px;
+      width: 400px;
     }
 
     .picture-container {
-      margin-top: ${calcRem(261)};
-      width: ${calcRem(1022)};
-      height: ${calcRem(608)};
+      margin-top: 261px;
+      width: 1022px;
+      height: 608px;
     }
 
-    .screen-container {
+    .screen {
       &_left {
-        width: ${calcRem(773)};
-        height: ${calcRem(481)};
+        width: 773px;
+        height: 479px;
         transform: translateY(75px);
       }
 
       &_right {
-        top: ${calcRem(128)};
-        width: ${calcRem(711)};
-        height: ${calcRem(480)};
+        top: 128px;
+        width: 711px;
+        height: 478px;
         transform: translateY(-75px);
       }
-    }
-
-    .designer-screenshot {
-      top: ${calcRem(41)};
-      left: ${calcRem(17)};
-      width: ${calcRem(679)};
-      height: ${calcRem(423)};
-    }
-
-    .project-container {
-      top: ${calcRem(39)};
-      left: ${calcRem(14)};
-      width: ${calcRem(675)};
-      height: ${calcRem(418)};
     }
   }
 
@@ -294,38 +235,21 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       margin-top: ${calcRem(208)};
       width: ${calcRem(783)};
       height: ${calcRem(466)};
-
-      &.animated {
-      }
     }
 
-    .screen-container {
+    .screen {
       &_left {
         width: ${calcRem(594)};
-        height: ${calcRem(369)};
-        transform: translateY(57px);
+        height: ${calcRem(367)};
+        transform: translateY(${calcRem(57)});
       }
 
       &_right {
         top: ${calcRem(97)};
         width: ${calcRem(547)};
-        height: ${calcRem(369)};
-        transform: translateY(-57px);
+        height: ${calcRem(367)};
+        transform: translateY(${calcRem(-57)});
       }
-    }
-
-    .designer-screenshot {
-      top: ${calcRem(31)};
-      left: ${calcRem(13)};
-      width: ${calcRem(521)};
-      height: ${calcRem(325)};
-    }
-
-    .project-container {
-      top: ${calcRem(30)};
-      left: ${calcRem(11)};
-      width: ${calcRem(519)};
-      height: ${calcRem(321)};
     }
   }
 
@@ -384,20 +308,11 @@ const base = ({ breakpoints: { desktop, tablet, mobile } }) => css`
       height: ${calcRem(222)};
     }
 
-    .screen-container {
+    .screen {
       &_right {
-        top: 0;
         width: ${calcRem(330)};
         height: ${calcRem(222)};
-        transform: translateY(0);
       }
-    }
-
-    .project-container {
-      top: ${calcRem(18)};
-      left: ${calcRem(6)};
-      width: ${calcRem(313)};
-      height: ${calcRem(193)};
     }
   }
 `
@@ -482,7 +397,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   }
 `
 
-export default props => {
+const StyledAssurance = props => {
   const { breakpoints } = props.theme
   const { l10n: {language} } = props
 
@@ -491,3 +406,6 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+
+
+export default StyledAssurance

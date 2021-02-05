@@ -40,7 +40,7 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
       <BusinessAnalysis content={businessAnalysis} />
       <Development content={development} />
       <Assurance content={assurance} />
-      <Quote projectId={projectId} content={quote} />
+      <Quote projectId={projectId} images={quote} />
       <Idea pageName={pageName} projectId={projectId} />
     </Layout>
   )

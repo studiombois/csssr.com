@@ -48,7 +48,7 @@ const BusinessAnalysis = ({
 
     {imagesBlocks.map(({ id, image, imgAlt, text }) => (
       <div className={`image-block image-block_${id}`} key={id}>
-        <PictureSmart className="image" requireImages={image} alt={imgAlt} />
+        <PictureSmart className="image" requireImages={image} alt={imgAlt(translations)} />
 
         <Text
           className="image-description"

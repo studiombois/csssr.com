@@ -31,9 +31,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   .heading {
     grid-column: 2 / span 5;
-    grid-row: 2;
+    grid-row: 1;
     z-index: 1;
   }
+
+  &._gazpromNeft .heading {
+    grid-row: 2;
+  }
+
 
   .p4-word {
     position: relative;

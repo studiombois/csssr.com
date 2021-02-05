@@ -1,1 +1,7 @@
-export default require.context('../../../public/images/project/common-pics/quote/girl?csssr-images')
+const girl = require.context('../../../public/images/project/gazprom-neft/quote/girl?csssr-images')
+
+export default {
+  images: {
+    girl: girl,
+  },
+}

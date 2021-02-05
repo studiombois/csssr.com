@@ -1,85 +1,150 @@
 {
+  "tag": "Project case",
+  "aboutProjectImageAlt": "Abstract image of people working together",
   "gazpromNeft": {
     "meta": {
       "title": "Gazprom Neft - Project: Professionals 4.0",
       "description": "Project Professionals 4.0: CSSSR is in charge of developing the front-end, including the main page, performer and company dashboards, as well as the projects page."
     },
     "hero": {
-      "title": "Professionals&nbsp;4.0",
-      "link": "https://professionals4-0.ru",
-      "subTitle": "Client",
+      "title": "The platform <span class='p4-word'><span class='p4-outline'></span>Professionals&nbsp;4.0</span><span class='after-p4'>connects</span> major corporations with talented contractors",
       "text": {
-        "firstParagraph": "Gazprom Neft is&nbsp;a&nbsp;vertically integrated oil company engaged primarily in&nbsp;oil and gas exploration, production, and refining, as&nbsp;well as&nbsp;the production and sale of&nbsp;petroleum products.",
-        "secondParagraph": "The company is&nbsp;one of&nbsp;the key drivers of&nbsp;the Russian economy and the fastest growing in&nbsp;its sector.",
-        "thirdParagraph": "Gazprom Neft invests in&nbsp;the development of&nbsp;new technology, and social and educational projects. In&nbsp;2018, the company announced the beginning of&nbsp;the digital overhaul of&nbsp;its business."
+        "firstParagraph": "<span class='gneft-icon'></span> is&nbsp;a&nbsp;subsidiary of&nbsp;Gazprom operating in&nbsp;the&nbsp;oil and gas industry. As&nbsp;of&nbsp;2020, its market capitalization comprises around $20&nbsp;billion, making it&nbsp;one of&nbsp;the most influential and capitalized companies in&nbsp;Europe."
       },
-      "imgAlt": ""
+      "imgAlt": "Abstract picture of the best employees and large companies"
     },
-    "team": {
-      "imgAlt": "Team composition.",
-      "title": "Team Composition",
-      "numberList": {
-        "firstItem": "1",
-        "secondItem": "1",
-        "thirdItem": "1",
-        "fourthItem": "1",
-        "fifthItem": "4",
-        "sixthItem": "1",
-        "seventhItem": "2"
+    "challenge": {
+      "laptopImgAlt": "Laptop image",
+      "profileImgAlt": "Specialist profile",
+      "challenge": {
+        "heading": "The Challenge",
+        "text": "Gazprom Neft decided to build a platform to connect talented individuals to corporate projects that would require their unique skills. Its implementation saw several independent teams, including CSSSR, working in close collaboration under quick release cycles."
       },
-      "textList": {
-        "firstItem": "Account Manager",
-        "secondItem": "Project Manager",
-        "thirdItem": "Analyst",
-        "fourthItem": "Senior JS&nbsp;Developer &amp;&nbsp;Team Lead",
-        "fifthItem": "Middle JS&nbsp;Developers",
-        "sixthItem": "Junior JS&nbsp;Developers",
-        "seventhItem": "QA&nbsp;Engineers"
-      }
-    },
-    "techStack": {
-      "title": "Tech stack",
-      "techList": {
-        "firstItem": "React.js",
-        "secondItem": "Next.js + Webpack",
-        "thirdItem": "Kubernetes, Docker"
+      "task": {
+        "heading": "The Task",
+        "text": "We had to build the front-end of the platform that would enable a whole set of communications, technologies, processes, and services to facilitate the interaction between individuals and companies that may need their involvement."
       },
-      "numericData": {
-        "duration": {
-          "number": "13",
-          "text": "months <span>(Jan 2019 — ongoing)</span>"
+      "result": {
+        "heading": "The Result",
+        "months": {
+          "number": "2",
+          "description": "Months from MVP<br /> to public release"
         },
-        "projectTeam": {
-          "number": "9",
-          "text": "specialists"
+        "releases": {
+          "number": "2",
+          "description": "major releases<br /> per month"
         }
+      },
+      "quote": {
+        "text": "I would like to emphasize the professionalism and effectiveness of the CSSSR team in their solving complex problems and the commitment to meet all project plans and goals.",
+        "author": "Darya Skatova",
+        "role": "Project Manager, Gazprom Neft"
       }
     },
-    "quote": {
-      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project, which is&nbsp;very important to&nbsp;the company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the team in&nbsp;proactivity solving complex problems, and its commitment to&nbsp;fulfilling plans and targets. I&rsquo;d also like to&nbsp;commend the team for the friendly atmosphere and rapport they helped to&nbsp;create.",
-      "author": {
-        "name": "Daria Skatova",
-        "signature": "Project Manager, Gazprom Neft"
-      }
-    },
-    "aboutProject": {
-      "title": "About the Project:",
-      "text": [
-        [
-          "The main goal of&nbsp;the Professionals&nbsp;4.0 project is&nbsp;to&nbsp;connect major corporations with talented performers. Through the project, talented individuals can find new career opportunities, solve challenging tasks, develop new skills and prove themselves in&nbsp;an&nbsp;authentic work environment.",
-          "The companies, meanwhile, get access to&nbsp;a&nbsp;huge database of&nbsp;business competition finalists and top performers, allowing them to&nbsp;quickly assemble teams for particular business tasks and reinforce internal resources, with external expertise.",
-          "Strategic partner of&nbsp;the project is&nbsp;ANO &laquo;Russia&nbsp;&mdash; country of&nbsp;opportunities&raquo;, an&nbsp;organization that assists human resources, social and educational initiatives across Russia, was a&nbsp;key collaborator for the project, while several other major Russian institutions have joined the platform since it&nbsp;was released, including <a href=\"https://www.sibur.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.sibur'>Sibur</a>, <a href=\"https://www.company.rt.ru/en/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.rostelecom'>Rostelecom</a> and the <a href=\"https://sk.ru/\" target=\"_blank\" rel=\"noopener nofollow\" data-testid='Project:link.skolkovo'>Skolkovo Innovation Center</a>."
-        ],
-        [
-          "The project includes an&nbsp;internet platform, mobile application and offline events. CSSSR is&nbsp;in&nbsp;charge of&nbsp;developing the front-end, including the main page, performer and company dashboards, as&nbsp;well as&nbsp;the projects page. ",
-          "We&nbsp;assembled a&nbsp;team of&nbsp;four developers, which later grew to&nbsp;six. The team also includes an&nbsp;analyst and two QA Engineers.",
-          "The first public version was launched in&nbsp;spring of&nbsp;2019. Since then, our team has continued to&nbsp;develop new functionality and has released several major updates over the past year."
-        ]
+    "timeline": {
+      "heading": "Project Timeline",
+      "periodList": [
+        { "id": 1,
+          "date": "2018",
+          "title": "Pre-existing MVP"
+        },
+        { "id": 2,
+          "firstDate": "January 2019",
+          "secondDate": "April 2020",
+          "title": "Development"
+        },
+        { "id": 3,
+          "date": "Present day",
+          "title": "Support"
+        }
       ]
     },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
+    "team": {
+      "imgAlt": "Site page with project team members avatars",
+      "title": "Team Composition",
+      "description": "We&nbsp;assembled a&nbsp;team of&nbsp;an&nbsp;Account Manager, a&nbsp;Project Manager, a&nbsp;Systems Analyst, Developers, and Quality Assurance еngineers.",
+      "accountManagement": {
+        "title": "Account Management",
+        "text": [
+          "Customer&rsquo;s security checks, including financial soundness and employee reliability, successfully passed.",
+          "Over 400 pages of&nbsp;duly executed paperwork submitted in&nbsp;the tender proposal. This included the grading of&nbsp;developers, hourly fees, managerial staff details, and annual plans, among other things.",
+          "The account manager established proprietary channels of&nbsp;communication acting as&nbsp;an&nbsp;executive hub between the customer and the company.",
+          "The account manager delivered recurring reporting and schedules for shorter periods based on&nbsp;Project Management data."
+        ]
+      },
+      "projectManagement": {
+        "title": "Project Management",
+        "text": [
+          "Our project manager interacted with the customer team in&nbsp;their preferred environment: Slack, JIRA and&nbsp;Confluence",
+          "She ensured that all tasks within development phases are carried out timely or&nbsp;reasonably flexed.",
+          "The project manager suggested and supervised the transfer of&nbsp;some of&nbsp;the project&rsquo;s logic from back-end to&nbsp;front-end to&nbsp;ensure the timely release of&nbsp;the features.",
+          "Our project manager used CSSSR&rsquo;s in-house combination of&nbsp;Scrum and Kanban methodologies to&nbsp;ensure the timely delivery of&nbsp;quality products and worked in&nbsp;a&nbsp;shared space with the customer and other project teams."
+        ]
+      }
+    },
+    "businessAnalysis": {
+      "title": "Systems Analysis",
+      "description": "Our systems analyst worked out the platform functionality requirements.",
+      "text": [
+        "During the development process, they were working hand-by-hand with the client&rsquo;s product manager helping to&nbsp;transform users&rsquo; stories into <span style='white-space:nowrap'>well-documented</span> feature requests and technical specifications both for front-end and <span style='white-space:nowrap'>back-end</span> parts of&nbsp;the project.",
+        "Understanding the needs of&nbsp;customers and candidates alike improved the initial concept for user experience and interface."
+      ],
+      "imagesText": [
+        "Section aimed to select a&nbsp;performer by required skills",
+        "Identifying spots of the chat integration into the project contractor selection process",
+        "Updating the customer's flow assessment of the performer upon the&nbsp;project completion and vise versa."
+      ],
+      "imagesAlt": [
+        "Girl with radar picture",
+        "Winners podium",
+        "Greeting two men"
+      ]
+    },
+    "quote": {
+      "text": "For over a&nbsp;year, we&rsquo;ve been working with CSSSR on&nbsp;this project which is&nbsp;very important to&nbsp;our company and to&nbsp;me&nbsp;personally. I&nbsp;would like to&nbsp;emphasize the professionalism and effectiveness of&nbsp;the CSSSR team in&nbsp;solving complex problems and the commitment to&nbsp;meet all product plans and goals. The friendly atmosphere and rapport the CSSSR team helped to&nbsp;create also deserve my&nbsp;sincere commendation.",
+      "author": {
+        "name": "Darya Skatova",
+        "signature": "Project Manager, Gazprom Neft"
+      },
+      "imageAlt": "Image of a woman interviewer"
+    },
+    "development": {
+      "title": "Development",
+      "text": [
+        "Our developers used <span class='tech-icon tech-icon_react'></span>React&nbsp;/ <span class='tech-icon tech-icon_nextjs'></span>Next.js staсk to&nbsp;boost up&nbsp;the development progress rate. They also accelerated the website operation through server-side rendering (SSR).",
+        "The final product boasted low resource requirements and high speed of&nbsp;operation with SEO optimization implemented.",
+        "The development team created a&nbsp;single space for all project-related reference data to&nbsp;accelerate their operations. All agreements, guidelines, schedules, and code and components structure were placed in&nbsp;a&nbsp;single wiki-like database. That made the implementation of&nbsp;complex features faster and more efficient."
+      ],
+      "description": "Our developers created and implemented some notable solutions to&nbsp;augment and accelerate the development cycle, including:",
+      "features": [
+        {
+          "text": "Implementation of&nbsp;a&nbsp;complex user journey graph",
+          "alt": "Graph arrows"
+        },
+        {
+          "text": "Meta tags, open graph, <span style='white-space:nowrap'>human-readable</span> URLs for efficient SEO",
+          "alt": "Social icons"
+        },
+        {
+          "text": "Usage of&nbsp;Jenkins + Kubernetes to&nbsp;facilitate <span style='white-space:nowrap'>front-end</span> deployment",
+          "alt": "Cube icon"
+        },
+        {
+          "text": "Proprietary fork of&nbsp;an&nbsp;<span style='white-space:nowrap'>open-source</span> chat service for faster inter-team interaction",
+          "alt": "Chat icon"
+        }
+      ]
+    },
+    "assurance": {
+      "heading": "Quality Assurance",
+      "subheading": "QA engineers ensured due quality testing under tight deadlines and frequent release schedules.",
+      "message": "Our QA team worked along with the back-end QA team to create a seamless environment for <span style='white-space: nowrap'>cross-referencing</span> of the tasks.",
+      "percent": "104%",
+      "label": "roi",
+      "description": "profit margin from using test automation based on ROI calculations as compared to manual testing.",
+      "laptopAlt": "Laptop screen",
+      "designerAlt": "Project screen with two designers chatting",
+      "projectsAlt": "Screen with a list of company projects"
     }
   },
   "s7airlines": {
@@ -95,12 +160,11 @@
         "firstParagraph": "S7&nbsp;Airlines is&nbsp;the largest Russian domestic private airline primarily based at&nbsp;Moscow Domodedovo International Airport and Novosibirsk Tolmachevo Airport. S7&nbsp;has the youngest fleet on&nbsp;the Russian air transportation market. It&nbsp;boasts an&nbsp;extensive network of&nbsp;routes allowing passengers to&nbsp;travel to&nbsp;181 destinations in&nbsp;26&nbsp;countries all over the globe. S7&nbsp;is a&nbsp;full member of&nbsp;Oneworld airline alliance.",
         "secondParagraph": "S7&nbsp;Airlines is&nbsp;a&nbsp;part of&nbsp;S7&nbsp;AirSpace Corporation, a&nbsp;major Russian holding consisting of&nbsp;15&nbsp;companies, doing business in&nbsp;passengers and cargo air transportation (both regular and charter), tourism, air flights ticket distribution, flight personnel training, aircraft repair, and other aviation and space services."
       },
-      "imgAlt": ""
+      "imgAlt": "User profile in a computer display"
     },
-
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -150,10 +214,6 @@
           "Currently we&nbsp;are implementing flight statistics and login through social networks, and are planning to&nbsp;conduct significant refactoring and improve the performance of&nbsp;the web application. The entire front-end is&nbsp;written on&nbsp;Next.js&nbsp;&mdash; a&nbsp;modern React framework."
         ]
       ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "mosoblgaz": {
@@ -168,11 +228,11 @@
       "text": {
         "firstParagraph": "Mosoblgaz is&nbsp;one of&nbsp;the largest gas distribution companies in&nbsp;Russia providing natural gas distribution throughout the Moscow Region. By&nbsp;using Mosoblgaz services one can apply for connection to&nbsp;gas networks, monitor the account balance and control gas consumption using his/her personal account on&nbsp;the website or&nbsp;in&nbsp;a&nbsp;mobile application."
       },
-      "imgAlt": "Mosoblgaz"
+      "imgAlt": "Mosoblgaz site page in a computer display"
     },
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -213,10 +273,6 @@
           "The personal account supports role models and restrictions for individual employees."
         ]
       ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "brusnika": {
@@ -231,11 +287,11 @@
       "text": {
         "firstParagraph": "Brusnika&nbsp;&mdash; is&nbsp;a&nbsp;Russian development company specializing in&nbsp;the construction of&nbsp;multi-storey residential buildings in&nbsp;major cities of&nbsp;Siberia, <span style='white-space:nowrap'>the Urals</span> and the Moscow Region."
       },
-      "imgAlt": "Brusnika"
+      "imgAlt": "Personal cabinet of Brusnika project in a computer display"
     },
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -277,16 +333,13 @@
         ]
       ]
     },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
-    },
     "quote": {
       "text": "The result of our joint work was not only a software product, but also a new work style that we've developed with our colleagues. Thank you for your individual approach, courage throughout experiments and professionalism in difficult situations!",
       "author": {
         "name": "Kirill Makarkin",
         "signature": "Head of Managerial Projects Digitalization Group"
-      }
+      },
+      "imageAlt": "Image of a man on a scooter"
     }
   },
   "mindbox": {
@@ -302,11 +355,11 @@
         "firstParagraph": "Mindbox develops a&nbsp;customer data platform for marketing automation, implements, and helps use cloud solutions for retail marketing automation in&nbsp;FMCG, retail, e-commerce and other industries with large numbers of&nbsp;customers.",
         "secondParagraph": "Thanks to&nbsp;the platform, a&nbsp;client can personalize its website with dynamic content and recommendations, set up&nbsp;messages circulation via emails, social networks, and messengers, and ensure loyalty growth by&nbsp;creating virtual loyalty cards and promotions."
       },
-      "imgAlt": "Mindbox"
+      "imgAlt": "Project Mindbox image in a computer display"
     },
     "team": {
       "title": "Team Composition:",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -349,10 +402,6 @@
           "An&nbsp;unconventional drag-and-drop was developed by&nbsp;us for this application. For example, a&nbsp;user can create a&nbsp;&laquo;Promotions&raquo; group with subgroups &laquo;Discount&raquo;, &laquo;Accrual of&nbsp;Points&raquo;, &laquo;Gift with Purchase&raquo; and &laquo;Discount by&nbsp;Promotion Code&raquo;, and configure the parameters of&nbsp;each entity."
         ]
       ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "qmarketing": {
@@ -367,11 +416,11 @@
       "text": {
         "firstParagraph": "Qmarketing Agency develops progressive digital advertising for companies operating on&nbsp;the Russian and European markets, invests in&nbsp;technological projects, and creates its own training program for marketing specialists and entrepreneurs&nbsp;&mdash; QAcademy."
       },
-      "imgAlt": "QMarketing"
+      "imgAlt": "QMarketing site page in a computer display"
     },
     "team": {
       "title": "Team Composition",
-      "imgAlt": "Team composition.",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -414,10 +463,6 @@
           "We were entrusted with front-end development of authorization page, user profile, interactive training block and certificate issuance page. Upon the development completion, our team integrated the developed pages with the customer's API."
         ]
       ]
-    },
-    "imgAlt": {
-      "quote": "Feedback on the project.",
-      "aboutProject": "We assembled a team of four developers, which later enlarged to six."
     }
   },
   "flant": {
@@ -432,10 +477,11 @@
       "text": {
         "firstParagraph": "Flant company is&nbsp;engaged in&nbsp;elaborating fault tolerant&nbsp;IT infrastructures on&nbsp;the basis of&nbsp;Kubernetes. It&nbsp;provides processes of&nbsp;continuous integration and delivery (CI/CD), 24/7/365 operation of&nbsp;applications. Flant is&nbsp;the first certified Kubernetes service provider in&nbsp;Russia."
       },
-      "imgAlt": "Flant"
+      "imgAlt": "Flant project site page in a computer display"
     },
     "team": {
       "title": "Team Composition",
+      "imgAlt": "Image of people jumping rope",
       "numberList": {
         "firstItem": "1",
         "secondItem": "1",
@@ -476,16 +522,13 @@
         ]
       ]
     },
-    "imgAlt": {
-      "aboutProject": "Three people are working hard on the project.",
-      "quote": "Feedback on the project."
-    },
     "quote": {
       "text": "We&nbsp;had no&nbsp;time to&nbsp;warm&nbsp;up. We&nbsp;worked in&nbsp;a&nbsp;way that from page concept until its implementation beginning was literally one night. At&nbsp;such a&nbsp;pace, there was simply no&nbsp;room for experiments or&nbsp;organization of&nbsp;our own front-end development process. We&nbsp;needed a&nbsp;timely result with guaranteed quality. That&rsquo;s why we&nbsp;didn&rsquo;t think for a&nbsp;long time: we&nbsp;came to&nbsp;CSSSR as&nbsp;we&nbsp;repeatedly crossed paths with the guys&rsquo; work for the projects of&nbsp;our clients and understood very well what output we&nbsp;will get. It&rsquo;s cool that all our expectations of&nbsp;the result were fully met. Moreover, the CSSSR framework allowed&nbsp;us to&nbsp;further develop the project on&nbsp;our own (though at&nbsp;a&nbsp;much slower pace). Investments in&nbsp;a&nbsp;stormy start with CSSSR still justify themselves up&nbsp;to&nbsp;now.",
       "author": {
         "name": "Aleksandr Batalov",
         "signature": "General Director"
-      }
+      },
+      "imageAlt": "Image of a man on a scooter"
     }
   }
 }

@@ -18,39 +18,59 @@ const Hero = ({
   className,
   id,
   projectId,
-  content: { heading, link, subHeading, text, images, imgAlt },
+  content: { tag, heading, link, subHeading, text, images, imgAlt },
   l10n: { translations, language },
 }) => {
   return (
-    <section className={cn(className, `_${projectId}`, `_${language}`)} id={id}>
-      <Grid className="grid" as="div">
+    <section
+      className={cn(className, `_${projectId}`, `_${language}`, {
+        _gazpromNeft: projectId === 'gazpromNeft',
+      })}
+      id={id}
+    >
+      <Grid
+        className={cn('grid', {
+          grid_gazpromNeft: projectId === 'gazpromNeft',
+        })}
+        as="div"
+      >
+        {projectId === 'gazpromNeft' && <span className="project-case">{tag(translations)}</span>}
         <Heading.H1
           type="slab"
           size="l"
           dangerouslySetInnerHTML={{ __html: heading(translations) }}
-          className="heading"
+          className={cn('heading', {
+            heading_gazprom: projectId === 'gazpromNeft',
+            heading_is_wider: projectId === 'gazpromNeft' && language === 'ru',
+          })}
         />
 
-        <Link
-          className="link"
-          href={link(translations)}
-          type="list"
-          target="_blank"
-          rel="noreferrer noopener"
-          dangerouslySetInnerHTML={{
-            __html: link(translations),
-          }}
-          data-testid="Project:link.project-site"
-        />
+        {link && (
+          <Link
+            className="link"
+            href={link(translations)}
+            type="list"
+            target="_blank"
+            rel="noreferrer noopener"
+            dangerouslySetInnerHTML={{ __html: link(translations) }}
+            data-testid="Project:link.project-site"
+          />
+        )}
 
-        <Heading.H2
-          type="slab"
-          size="m"
-          dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
-          className="sub-heading"
-        />
+        {subHeading && (
+          <Heading.H2
+            type="slab"
+            size="m"
+            dangerouslySetInnerHTML={{ __html: subHeading(translations) }}
+            className="sub-heading"
+          />
+        )}
 
-        <div className="text">
+        <div
+          className={cn('text', {
+            text_gazpromNeft: projectId === 'gazpromNeft',
+          })}
+        >
           {text.map((item, index) => (
             <Text
               key={`paragraph-${index}`}
@@ -63,7 +83,7 @@ const Hero = ({
           ))}
         </div>
 
-        <div className={cn('pic-wrapper', projectId === 'mindbox' && `pic-wrapper_${projectId}`)}>
+        <div className={cn('pic-wrapper', `pic-wrapper_${projectId}`)}>
           <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
         </div>
       </Grid>

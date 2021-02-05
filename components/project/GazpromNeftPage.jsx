@@ -1,28 +1,30 @@
 import React from 'react'
-import Idea from '../Idea'
+
+import Hero from './Hero'
+import Challenge from './Challenge'
+import Timeline from './Timeline'
+import P4Team from './P4Team'
+import BusinessAnalysis from './BusinessAnalysis'
+import Development from './Development'
+import Assurance from './Assurance'
 import Quote from './Quote'
-import AboutProject from './AboutProject'
+import Idea from '../Idea'
+import Head from '../Head'
 import Layout from '../Layout'
 import { L10nConsumer } from '../../utils/l10nProvider'
 
-import Head from '../Head'
-import Hero from './Hero'
-import Team from './Team'
-import TechStack from './TechStack'
-
 import hero from '../../data/project/gazprom-neft/hero'
+import challenge from '../../data/project/gazprom-neft/challenge'
+import timeline from '../../data/project/gazprom-neft/timeline'
 import team from '../../data/project/gazprom-neft/team'
-import techStack from '../../data/project/gazprom-neft/techStack'
-import quoteImages from '../../data/project/gazprom-neft/quote'
-import aboutProjectImages from '../../data/project/aboutProject'
+import businessAnalysis from '../../data/project/gazprom-neft/businessAnalysis'
+import development from '../../data/project/gazprom-neft/development'
+import assurance from '../../data/project/gazprom-neft/assurance'
+import quote from '../../data/project/gazprom-neft/quote'
 
 const GazpromNeftPage = ({ l10n: { translations } }) => {
   const pageName = 'project'
   const projectId = 'gazpromNeft'
-  const aboutProjectParagraphsScheme = [
-    [0, 1, 2],
-    [0, 1, 2],
-  ]
 
   return (
     <Layout pageName={pageName}>
@@ -31,16 +33,15 @@ const GazpromNeftPage = ({ l10n: { translations } }) => {
         description={translations.project.gazpromNeft.meta.description}
       />
 
-      <Hero id="hero" content={hero} />
-      <Team id="team" content={team} projectId={projectId} />
-      <TechStack id="teckStack" content={techStack} />
-      <AboutProject
-        projectId={projectId}
-        images={aboutProjectImages}
-        paragraphsScheme={aboutProjectParagraphsScheme}
-      />
-      <Quote projectId={projectId} images={quoteImages} />
-      <Idea pageName={pageName} />
+      <Hero id="hero" content={hero} projectId={projectId} />
+      <Challenge content={challenge} />
+      <Timeline content={timeline} />
+      <P4Team id="team" content={team} />
+      <BusinessAnalysis content={businessAnalysis} />
+      <Development content={development} />
+      <Assurance content={assurance} />
+      <Quote projectId={projectId} content={quote} />
+      <Idea pageName={pageName} projectId={projectId} />
     </Layout>
   )
 }

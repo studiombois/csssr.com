@@ -1,7 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import styles from './Item.styles'
 import { L10nConsumer } from '../../../../../utils/l10nProvider'
 

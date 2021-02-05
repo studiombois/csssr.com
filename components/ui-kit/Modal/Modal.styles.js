@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
   & {
@@ -94,11 +94,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 `
-
-export default props => {
+const StyledModal = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
     ${base({ breakpoints })}
   `
 }
+
+export default StyledModal

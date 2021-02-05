@@ -1,12 +1,12 @@
 export default {
   ru: [
     {
-      id: 'post1',
-      href: 'https://blog.csssr.com/ru/article/qa-codex/',
+      id: 'post2',
+      href: 'https://blog.csssr.com/ru/article/year-resume-2020/',
     },
     {
-      id: 'post2',
-      href: 'https://blog.csssr.com/ru/article/year-resume-2019/',
+      id: 'post1',
+      href: 'https://blog.csssr.com/ru/article/qa-codex/',
     },
     {
       id: 'post3',

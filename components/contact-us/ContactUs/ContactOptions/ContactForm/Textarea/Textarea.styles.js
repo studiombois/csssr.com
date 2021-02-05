@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { calcRem } from '../../../../../../utils/style/calcRem'
 
 const base = ({ colors }) => css`
@@ -61,11 +61,11 @@ const base = ({ colors }) => css`
     display: none;
   }
 `
-
-export default (props) => {
+const StyledTextarea = props => {
   const { colors } = props.theme
 
   return css`
     ${base({ colors })}
   `
 }
+export default StyledTextarea

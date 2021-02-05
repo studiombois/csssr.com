@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import AnimatedButton from '../../ui-kit/core-design/AnimatedButton'
 import Text from '../../ui-kit/core-design/Text'
@@ -135,8 +135,8 @@ const ie11Styles = css`
     -ms-grid-column-span: ${getGridValueForMs(6)};
   }
 `
-
-export default ({ isIe11 }) => css`
+const StyledCandidateForm = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledCandidateForm

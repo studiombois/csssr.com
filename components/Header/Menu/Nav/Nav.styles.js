@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => css`
@@ -78,7 +78,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
     }
   }
 
-  .nav_industries {
+  .nav_portfolio {
     padding-top: ${calcRem(36)};
     padding-bottom: ${calcRem(28)};
 
@@ -94,6 +94,20 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
 
     .icon {
       top: ${calcRem(4)};
+    }
+
+    .industry-title {
+      position: absolute;
+      top: ${calcRem(-48)};
+      left: ${calcRem(34)};
+      grid-column: 2;
+      grid-row: 1;
+      font-size: ${calcRem(10)};
+      line-height: ${calcRem(16)};
+      font-weight: normal;
+      letter-spacing: ${calcRem(1.3)};
+      color: white;
+      text-transform: uppercase;
     }
 
     .nav-item_active .icon_fintech path:last-of-type {
@@ -200,7 +214,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
   @media (pointer: fine) {
     .nav_howWeWork,
     .nav_solutions,
-    .nav_industries {
+    .nav_portfolio {
       .link:hover {
         color: #5695ED;
       }
@@ -210,7 +224,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       }
     }
 
-    .nav_industries {
+    .nav_portfolio {
       .link:hover .icon_fintech path:last-of-type {
         fill: #5695ED;
       }
@@ -255,7 +269,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
 
   .nav_howWeWork,
   .nav_solutions,
-  .nav_industries {
+  .nav_portfolio {
     .nav-item_active .link {
         color: #5695ED;
       }
@@ -397,6 +411,22 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
         stroke: #5695ED;
       }
     }
+
+    .nav_portfolio {
+      ul {
+        padding-left: 4%;
+      }
+
+      .nav-item_mediaAndMarketing {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
+      }
+
+      .nav-item_eCommerce {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
+      }
+    }
   }
 
   ${above.mobile} {
@@ -411,15 +441,16 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       }
     }
 
-    .nav_industries {
+    .nav_portfolio {
       ul {
         width: 100%;
         max-width: 1360px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 0.5fr 0.5fr 1fr;
+        grid-template-columns: 1fr 0.5fr 0.5fr;
         grid-row-gap: ${calcRem(32)};
         align-content: center;
+        padding-left: 4%;
       }
 
       .title {
@@ -436,26 +467,24 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       }
 
       .nav-item_mediaAndMarketing {
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 1;
       }
 
       .nav-item_eCommerce {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 1;
       }
 
       .nav-item_information {
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 2;
+        padding: 0;
       }
 
       .nav-item_fintech {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 2;
-      }
-
-      .nav-item {
         padding: 0;
       }
 
@@ -464,8 +493,9 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       }
 
       .nav-item_ourProjects {
-        grid-column: 3;
+        grid-column: 1;
         grid-row: 1 / span 2;
+        padding: 0;
 
         .link {
           padding-left: ${calcRem(111)};
@@ -473,7 +503,6 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
         }
 
         .icon {
-          top: ${calcRem(19)};
           left: ${calcRem(64)};
           width: ${calcRem(24)};
           height: ${calcRem(24)};
@@ -494,55 +523,67 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
   }
 
   ${desktop.s} {
-    .nav_industries {
+    .nav_portfolio {
       ul {
-        grid-template-columns: min-content min-content 1fr;
         grid-column-gap: 12px;
-        padding-left: 53px;
       }
 
       .link {
         white-space: nowrap;
       }
 
-      .nav-item_ourProjects {
-        margin-left: 22%;
+      .nav-item_mediaAndMarketing {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
+      }
+
+      .nav-item_eCommerce {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
       }
     }
   }
 
   ${desktop.m} {
-    .nav_industries {
+    .nav_portfolio {
       ul {
-        grid-template-columns: min-content min-content 1fr;
         grid-column-gap: 12px;
-        padding-left: 5.5%;
       }
 
       .link {
         white-space: nowrap;
       }
 
-      .nav-item_ourProjects {
-        margin-left: 25%;
+      .nav-item_mediaAndMarketing {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
+      }
+
+      .nav-item_eCommerce {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
       }
     }
   }
 
   ${desktop.l} {
-    .nav_industries {
+    .nav_portfolio {
       ul {
-        grid-template-columns: min-content min-content 1fr;
         grid-column-gap: 32px;
-        padding-left: 5.5%;
       }
 
       .link {
         white-space: nowrap;
       }
 
-      .nav-item_ourProjects {
-        margin-left: 21.5%;
+      .nav-item_mediaAndMarketing {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
+      }
+
+      .nav-item_eCommerce {
+        padding-top: ${calcRem(48)};
+        padding-bottom: 0;
       }
     }
   }
@@ -626,7 +667,7 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       height: ${calcRem(24)};
     }
 
-    .nav_industries,
+    .nav_portfolio,
     .nav_howWeWork,
     .nav_solutions,
     .nav_services {
@@ -676,12 +717,12 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
       }
     }
 
-    .nav_industries {
+    .nav_portfolio {
       padding-top: ${calcRem(8)};
       padding-bottom: ${calcRem(32)};
 
-      ul {
-        flex-direction: column-reverse;
+      .industry-title {
+        left: 0;
       }
 
       .nav-item {
@@ -724,8 +765,8 @@ const base = ({ breakpoints: { desktop, tablet, above, mobile }, colors }) => cs
         height: ${calcRem(24)};
       }
 
-      .nav-item_ourProjects {
-        order: -1;
+      .nav-item_mediaAndMarketing {
+        padding-top: ${calcRem(79)};
       }
     }
   }
@@ -736,8 +777,7 @@ const dynamic = ({ colors }) => css`
     background-color: ${colors.secondary.darken100};
   }
 `
-
-export default props => {
+const StyledNav = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -746,3 +786,4 @@ export default props => {
     ${dynamic({ colors })}
   `
 }
+export default StyledNav

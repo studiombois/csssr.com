@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../../utils/style/getGridValueForMs'
 
 const base = css`
@@ -53,7 +53,7 @@ const base = css`
     margin-left: auto;
     margin-right: auto;
     max-width: 25rem;
-    padding-top: 100%;
+    padding-top: 25rem;
   }
 
   @media (min-width: 1360px) and (max-width: 1919px) {
@@ -83,6 +83,11 @@ const base = css`
       margin-top: 4.75rem;
       width: 9rem;
     }
+
+    .picture-container {
+      max-width: 19rem;
+      padding-top: 19rem;
+    }
   }
 
   @media (max-width: 767px) {
@@ -101,10 +106,11 @@ const base = css`
 
     .picture-container {
       z-index: 2;
-      margin-left: -1rem;
-      width: calc(100% + 2rem);
+      width: 100%;
       text-align: center;
       padding-top: 15.5rem;
+      width: calc(100% + 2rem);
+      margin-left: -1rem;
     }
   }
 `
@@ -209,8 +215,8 @@ export {
   vacancyImageStyles,
   faqImageStyles,
 }
-
-export default ({ isIe11 }) => css`
+const StyledVacancyImageAndLinks = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+export default StyledVacancyImageAndLinks

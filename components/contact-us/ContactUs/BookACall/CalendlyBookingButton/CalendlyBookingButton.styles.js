@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../../../utils/style/calcRem'
 
 const base = ({ breakpoints: { mobile, above }, colors}) => css`
@@ -238,10 +238,13 @@ const modal = ({ breakpoints: { mobile }, colors}) => css`
   }
 `
 export { modal }
-export default (props) => {
+
+const StyledCalendlyBookingButton = (props) => {
   const { breakpoints, colors } = props.theme
 
   return css`
     ${base({ breakpoints, colors })}
   `
 }
+
+export default StyledCalendlyBookingButton

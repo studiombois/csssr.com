@@ -1,6 +1,6 @@
 import React from 'react'
 import { object, string } from 'prop-types'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import styles, { backgroundImagesStyles } from './TechStack.styles'
 import { L10nConsumer } from '../../../utils/l10nProvider'

@@ -1,8 +1,9 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import TextFieldLightStyles from '../styles/TextFieldLight.styles'
 import TextFieldRegularStyles from '../styles/TextFieldRegular.styles'
 
-export default props => css`
-  ${props.kind === 'light' ? TextFieldLightStyles : TextFieldRegularStyles}
+const StyledTextField = props => css`
+${props.kind === 'light' ? TextFieldLightStyles : TextFieldRegularStyles}
 `
+export default StyledTextField
 

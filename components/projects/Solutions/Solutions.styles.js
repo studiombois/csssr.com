@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
 
@@ -172,8 +172,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors }) => css`
     }
   }
 `
-
-export default props => {
+const StyledSolutions = props => {
   const breakpoints = props.theme.breakpoints
   const { colors } = props.theme
 
@@ -181,3 +180,4 @@ export default props => {
     ${base({ breakpoints, colors })}
   `
 }
+export default StyledSolutions

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import Button from '../../../ui-kit/core-design/Button'
 
 const base = css`
@@ -102,7 +102,8 @@ const dynamic = props =>
     pointer-events: ${props.hasFailOrSuccessStatus ? 'auto' : 'none'};
   `
 
-export default props => css`
+const StyledStatusMessage = props => css`
   ${base}
   ${dynamic(props)}
 `
+export default StyledStatusMessage

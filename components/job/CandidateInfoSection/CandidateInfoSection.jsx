@@ -9,7 +9,7 @@ import styles, {
   stylesForSecondHalfWidthField,
   stylesForTextareaField,
 } from './CandidateInfoSection.styles'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 import ContactOptions from '../ContactOptions'

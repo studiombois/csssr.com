@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { string } from 'prop-types'
 import NextLink from 'next/link'
 import { withRouter } from 'next/router'
@@ -9,10 +9,11 @@ import SocialLinks from './SocialLinks'
 import PrivacyAndLanguageLinks from './PrivacyAndLanguageLinks'
 import Nav from './Nav'
 import DoubleBottom from './DoubleBottom'
+import Heading from '../ui-kit/core-design/Heading'
 import Link from '../ui-kit/core-design/Link'
 import Text from '../ui-kit/core-design/Text'
-import Heading from '../ui-kit/core-design/Heading'
 import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
+import { ReactComponent as CopyIcon } from '../../static/icons/footer/copy.svg'
 
 import { L10nConsumer } from '../../utils/l10nProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
@@ -26,11 +27,22 @@ const Footer = ({
   pagesList,
   router: { pathname },
 }) => {
+  const [isMessageShown, setIsMessageShown] = useState(false)
   const footerRef = useRef()
   const lngToRedirect = language === 'ru' ? 'en' : 'ru'
   const otherLanguagePathname = getPagePathnameInLanguage(pathname, lngToRedirect, pagesList)
   const jobsRegExp = /job/
   const footerEmail = jobsRegExp.test(pathname) ? 'join@csssr.com' : 'launch@csssr.com'
+
+  const copyButtonClickHandler = () => {
+    navigator.clipboard.writeText(footerEmail)
+    setIsMessageShown(true)
+
+    const timer = setTimeout(() => {
+      setIsMessageShown(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }
 
   return (
     <footer className={className} ref={footerRef}>
@@ -60,20 +72,43 @@ const Footer = ({
             dangerouslySetInnerHTML={{ __html: translations.common.footer.actionPhrase }}
           />
 
-          <Link className="email" href={`mailto:${footerEmail}`} data-testid="Footer.link.email">
-            {footerEmail}
-          </Link>
+          <div className="email-container">
+            <div className="email-wrapper">
+              <Link
+                className="email"
+                href={`mailto:${footerEmail}`}
+                data-testid="Footer.link.email"
+              >
+                {footerEmail}
+              </Link>
 
-          {isMobile && (
-            <Link className="link-language" href={otherLanguagePathname}>
-              <Text
-                className="link-text"
-                dangerouslySetInnerHTML={{ __html: lngToRedirect }}
-                type="perforator"
-                size="s"
-              />
-            </Link>
-          )}
+              {isMessageShown && (
+                <Text as="span" className="copy-message">
+                  {translations.common.footer.copyMessage}
+                </Text>
+              )}
+            </div>
+
+            <button
+              className="copy-icon-button"
+              type="button"
+              disabled={isMessageShown}
+              onClick={copyButtonClickHandler}
+            >
+              <CopyIcon className="copy-icon" />
+            </button>
+
+            {isMobile && (
+              <Link className="link-language" href={otherLanguagePathname}>
+                <Text
+                  className="link-text"
+                  dangerouslySetInnerHTML={{ __html: lngToRedirect }}
+                  type="perforator"
+                  size="s"
+                />
+              </Link>
+            )}
+          </div>
 
           <SocialLinks testId="Footer:link.social" />
         </div>

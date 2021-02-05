@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
@@ -484,8 +484,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet, mobile }}) => css`
     }
   }
 `
-
-export default props => {
+const StyledDevelopment = props => {
   const breakpoints = props.theme.breakpoints
 
   return css`
@@ -493,3 +492,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledDevelopment

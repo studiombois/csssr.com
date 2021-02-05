@@ -1,7 +1,7 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
-const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
+const base = ({ breakpoints: { mobile, tablet }, colors, language }) => css`
   & {
     margin-top: ${calcRem(11)};
     display: flex;
@@ -49,6 +49,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
 
   ${tablet.all} {
     .privacy-policy,
+    .cookies-policy,
     .alliance-text,
     .alliance-link,
     .language {
@@ -62,7 +63,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
     }
 
     & li {
-      flex-direction: column;
+      flex-direction: ${language === 'ru' ? 'column' : 'row'};
       align-items: center;
     }
 
@@ -70,7 +71,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
       margin-top: ${calcRem(37)};
       margin-left: 0;
     }
-    
+
     .language-link {
       display: none;
     }
@@ -83,12 +84,13 @@ const base = ({ breakpoints: { mobile, tablet }, colors }) => css`
     }
   }
 `
-
-export default props => {
+const StyledPrivacyAndLanguageLinks = props => {
   const colors = props.theme.colors
   const breakpoints = props.theme.breakpoints
+  const { l10n: {language} } = props
 
   return css`
-    ${base({ breakpoints, colors })}
+    ${base({ breakpoints, colors, language })}
   `
 }
+export default StyledPrivacyAndLanguageLinks

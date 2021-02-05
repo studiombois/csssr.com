@@ -3,7 +3,7 @@ import { object, string } from 'prop-types'
 import cn from 'classnames'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styled from '@emotion/styled'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 import styles, { backgroundImagesStyles } from './Hero.styles'
 
 import Grid from '../../ui-kit/core-design/Grid'
@@ -23,7 +23,7 @@ const Hero = ({
 }) => {
   return (
     <section
-      className={cn(className, {
+      className={cn(className, `_${projectId}`, `_${language}`, {
         _gazpromNeft: projectId === 'gazpromNeft',
       })}
       id={id}

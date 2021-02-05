@@ -34,8 +34,9 @@
           "description": "Design expertise with a&nbsp;focus on&nbsp;what really matters: users, investors, and revenue."
         }
       },
-      "industries": {
-        "title": "Industries",
+      "portfolio": {
+        "title": "Portfolio",
+        "listTitle": "Clients by industry",
         "fintech": {
           "title": "Fintech"
         },
@@ -43,14 +44,14 @@
           "title": "E-Commerce"
         },
         "information": {
-          "title": "Information Technology"
+          "title": "IT industry"
         },
         "mediaAndMarketing": {
-          "title": "Media & Marketing"
+          "title": "Media and marketing"
         },
         "ourProjects": {
-          "title": "Our Projects",
-          "description": "We&nbsp;are proud of&nbsp;our clients list and<br/> glad to&nbsp;share some of&nbsp;our cases."
+          "title": "Our projects",
+          "description": "Take a look at solutions we have developed for some of our clients"
         }
       },
       "howWeWork": {
@@ -90,15 +91,15 @@
         "title": "Contacts"
       }
     },
-    "action": "Hire us",
-    "backLink": "services"
+    "action": "Hire us"
   },
   "footer": {
     "actionPhrase": "Let’s work together!",
+    "copyMessage": "Copied!",
     "services": {
       "title": "Services",
       "outsourcing": "Outsourcing",
-      "backend": "Back-end</br>and DevOps",
+      "backend": "Back-end </br>and DevOps",
       "mvp": "MVP",
       "design": "DesignLab"
     },
@@ -112,19 +113,19 @@
     "howWeWork": {
       "title": "How we work",
       "technologies": "Technologies",
-      "wayOfWork": "Process",
+      "wayOfWork": "Processes",
       "coreValues": "Core values",
-      "projects": "Our projects"
+      "projects": "Our cases"
     },
     "company": {
       "title": "Company",
       "blog": "Blog",
       "aboutUs": "About us",
       "careers": "Careers",
-      "contacts": "Contacts"
+      "contacts": "Contact us"
     },
-    "solutions": {
-      "title": "Solutions",
+    "products": {
+      "title": "Products",
       "lms": "Modular LMS system",
       "tracker": "Time-tracking software"
     },
@@ -161,7 +162,7 @@
     "privacyPolicyText": "By submitting the form, you agree to your personal data being stored and used for the purposes stated in the ",
     "privacyPolicyLinkText": "Privacy Policy",
     "newsletterText": "I agree to receive information and commercial offers",
-    "candidateNewsletterText": "I agree to receive promotional and information content via email" 
+    "candidateNewsletterText": "I agree to receive promotional and information content via email"
   },
   "form": {
     "errors": {

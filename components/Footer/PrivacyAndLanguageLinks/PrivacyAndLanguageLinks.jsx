@@ -87,7 +87,7 @@ const PrivacyAndLanguageLinks = ({
             data-testid="Footer:link.cookies-policy"
           >
             <Text
-              className="link-text"
+              className="link-text cookies-policy"
               dangerouslySetInnerHTML={{ __html: translations.common.footer.cookies }}
               type="perforator"
               size="s"

@@ -49,6 +49,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors, language }) => css`
 
   ${tablet.all} {
     .privacy-policy,
+    .cookies-policy,
     .alliance-text,
     .alliance-link,
     .language {
@@ -70,7 +71,7 @@ const base = ({ breakpoints: { mobile, tablet }, colors, language }) => css`
       margin-top: ${calcRem(37)};
       margin-left: 0;
     }
-    
+
     .language-link {
       display: none;
     }

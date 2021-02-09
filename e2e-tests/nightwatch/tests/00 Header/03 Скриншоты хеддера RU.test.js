@@ -51,7 +51,7 @@ testcase('Дропдаун Услуги 1920 RU', () => {
   })
 })
 
-testcase('Дропдаун ИНДУСТРИИ 1920 RU', () => {
+testcase('Дропдаун ПОРТФОЛИО 1920 RU', () => {
   step('Перейти на главную страницу', () => {
     browser
       .setWindowSize(1920, 1024)
@@ -59,16 +59,16 @@ testcase('Дропдаун ИНДУСТРИИ 1920 RU', () => {
       .waitForElementVisible('[data-testid="Header:block"]')
   })
 
-  step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
+  step('Навести курсор на ПОРТФОЛИО в хеддере', () => {
     browser
-      .moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
+      .moveToElement('[data-testid="Header:nav:button.portfolio"]', 0, 0)
       .pause(ANIMATION_DURATION_IN_MS)
   })
 
-  expected('Скрин дропдауна ИНДУСТРИИ на 1920', () => {
+  expected('Скрин дропдауна ПОРТФОЛИО на 1920', () => {
     browser.assert.screenshotElement(
       '[data-testid="Header:nav.dropdown"]',
-      'Дропдаун ИНДУСТРИИ 1920 RU'
+      'Дропдаун ПОРТФОЛИО 1920 RU'
     )
   })
 })
@@ -146,7 +146,7 @@ testcase('Дропдаун Услуги 1360 RU', () => {
   })
 })
 
-testcase('Дропдаун ИНДУСТРИИ 1360 RU', () => {
+testcase('Дропдаун ПОРТФОЛИО 1360 RU', () => {
   step('Перейти на главную страницу', () => {
     browser
       .setWindowSize(1360, 1024)
@@ -154,16 +154,16 @@ testcase('Дропдаун ИНДУСТРИИ 1360 RU', () => {
       .waitForElementVisible('[data-testid="Header:block"]')
   })
 
-  step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
+  step('Навести курсор на ПОРТФОЛИО в хеддере', () => {
     browser
-      .moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
+      .moveToElement('[data-testid="Header:nav:button.portfolio"]', 0, 0)
       .pause(ANIMATION_DURATION_IN_MS)
   })
 
-  expected('Скрин дропдауна ИНДУСТРИИ на 1360', () => {
+  expected('Скрин дропдауна ПОРТФОЛИО на 1360', () => {
     browser.assert.screenshotElement(
       '[data-testid="Header:nav.dropdown"]',
-      'Дропдаун ИНДУСТРИИ 1360 RU'
+      'Дропдаун ПОРТФОЛИО 1360 RU'
     )
   })
 })
@@ -176,7 +176,7 @@ testcase('Дропдаун КАК МЫ РАБОТАЕМ 1360 RU', () => {
       .waitForElementVisible('[data-testid="Header:block"]')
   })
 
-  step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
+  step('Навести курсор на КАК МЫ РАБОТАЕМ в хеддере', () => {
     browser
       .moveToElement('[data-testid="Header:nav:button.howWeWork"]', 0, 0)
       .pause(ANIMATION_DURATION_IN_MS)
@@ -241,7 +241,7 @@ testcase('Дропдаун Услуги 1280 RU', () => {
   })
 })
 
-testcase('Дропдаун ИНДУСТРИИ 1280 RU', () => {
+testcase('Дропдаун ПОРТФОЛИО 1280 RU', () => {
   step('Перейти на главную страницу', () => {
     browser
       .setWindowSize(1280, 1024)
@@ -249,16 +249,16 @@ testcase('Дропдаун ИНДУСТРИИ 1280 RU', () => {
       .waitForElementVisible('[data-testid="Header:block"]')
   })
 
-  step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
+  step('Навести курсор на ПОРТФОЛИО в хеддере', () => {
     browser
-      .moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
+      .moveToElement('[data-testid="Header:nav:button.portfolio"]', 0, 0)
       .pause(ANIMATION_DURATION_IN_MS)
   })
 
-  expected('Скрин дропдауна ИНДУСТРИИ на 1280', () => {
+  expected('Скрин дропдауна ПОРТФОЛИО на 1280', () => {
     browser.assert.screenshotElement(
       '[data-testid="Header:nav.dropdown"]',
-      'Дропдаун ИНДУСТРИИ 1280 RU'
+      'Дропдаун ПОРТФОЛИО 1280 RU'
     )
   })
 })
@@ -271,7 +271,7 @@ testcase('Дропдаун КАК МЫ РАБОТАЕМ 1280 RU', () => {
       .waitForElementVisible('[data-testid="Header:block"]')
   })
 
-  step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
+  step('Навести курсор на КАК МЫ РАБОТАЕМ в хеддере', () => {
     browser
       .moveToElement('[data-testid="Header:nav:button.howWeWork"]', 0, 0)
       .pause(ANIMATION_DURATION_IN_MS)
@@ -336,7 +336,7 @@ testcase('Дропдаун Услуги 1024 RU', () => {
   })
 })
 
-testcase('Дропдаун ИНДУСТРИИ 1024 RU', () => {
+testcase('Дропдаун ПОРТФОЛИО 1024 RU', () => {
   step('Перейти на главную страницу', () => {
     browser
       .setWindowSize(1024, 1024)
@@ -344,16 +344,16 @@ testcase('Дропдаун ИНДУСТРИИ 1024 RU', () => {
       .waitForElementVisible('[data-testid="Header:block"]')
   })
 
-  step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
+  step('Навести курсор на ПОРТФОЛИО в хеддере', () => {
     browser
-      .moveToElement('[data-testid="Header:nav:button.industries"]', 0, 0)
+      .moveToElement('[data-testid="Header:nav:button.portfolio"]', 0, 0)
       .pause(ANIMATION_DURATION_IN_MS)
   })
 
-  expected('Скрин дропдауна ИНДУСТРИИ на 1024', () => {
+  expected('Скрин дропдауна ПОРТФОЛИО на 1024', () => {
     browser.assert.screenshotElement(
       '[data-testid="Header:nav.dropdown"]',
-      'Дропдаун ИНДУСТРИИ 1024 RU'
+      'Дропдаун ПОРТФОЛИО 1024 RU'
     )
   })
 })
@@ -366,7 +366,7 @@ testcase('Дропдаун КАК МЫ РАБОТАЕМ 1024 RU', () => {
       .waitForElementVisible('[data-testid="Header:block"]')
   })
 
-  step('Навести курсор на ИНДУСТРИИ в хеддере', () => {
+  step('Навести курсор на КАК МЫ РАБОТАЕМ в хеддере', () => {
     browser
       .moveToElement('[data-testid="Header:nav:button.howWeWork"]', 0, 0)
       .pause(ANIMATION_DURATION_IN_MS)

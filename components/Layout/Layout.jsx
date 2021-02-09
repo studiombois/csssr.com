@@ -20,12 +20,9 @@ const Layout = ({
   l10n: { language },
   isMobile,
   isTablet,
-  router: { asPath },
   withFooter = true,
 }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
-  const pathsNoButton = ['jobs']
-  const isButtonVisible = !pathsNoButton.some((string) => asPath.indexOf(string) + 1)
   const [isHidden, setHidden] = useState(true)
   const [isFooterVisible, setIsFooterVisible] = useState(false)
   const itemRef = useRef()
@@ -64,7 +61,7 @@ const Layout = ({
 
   return (
     <Fragment>
-      <Header isButtonVisible={isButtonVisible} pageName={pageName} />
+      <Header pageName={pageName} />
       {language === 'en' && (
         <DiscountBanner
           className="discount-banner"

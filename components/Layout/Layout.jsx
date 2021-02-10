@@ -24,6 +24,7 @@ const Layout = ({
 }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
   const [isHidden, setHidden] = useState(true)
+  const [isCookiesPopupVisible, setIsCookiesPopupVisible] = useState(false)
   const [isFooterVisible, setIsFooterVisible] = useState(false)
 
   const getIdea = () => {
@@ -80,6 +81,7 @@ const Layout = ({
           className: cn('main', {
             main_en: language === 'en',
             with_padding: !isHidden,
+            bubble_biggerBottomPosition: isCookiesPopupVisible,
             bubble_static: isFooterVisible,
             bubble_initial: !isFooterVisible,
             bubble_animation: getIdea(),
@@ -89,7 +91,7 @@ const Layout = ({
         children,
       )}
       {withFooter && <Footer />}
-      <CookiesPopup />
+      <CookiesPopup setIsCookiesPopupVisible={setIsCookiesPopupVisible} />
       <DevTools />
 
       <Global styles={dynamic} />

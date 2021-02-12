@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import AnimatedButton from '../ui-kit/core-design/AnimatedButton'
 import Text from '../ui-kit/core-design/Text'
 
@@ -228,8 +228,8 @@ const base = () => css`
     }
   }
 `
-
-export default () => css`
+const StyledContactForm = () => css`
   ${base()}
   ${ie11Styles()}
 `
+export default StyledContactForm

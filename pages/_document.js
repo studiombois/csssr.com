@@ -1,5 +1,5 @@
 import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GtmNoScript, GtmScript } from 'react-gtm-components'
 import getGtmId from '../utils/getGtmId'
 import cn from 'classnames'
@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
         .join('!')
 
     return (
-      <html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
+      <Html lang={language} className={cn({ ie11: isIe11, msBrowser: isMsBrowser })}>
         <Head>
           {ab && (
             <script
@@ -78,7 +78,7 @@ export default class MyDocument extends Document {
             }}
           />
         </body>
-      </html>
+      </Html>
     )
   }
 }

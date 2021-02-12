@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 
 const base = css`
@@ -92,11 +92,13 @@ const textDataStyles = css`
     text-decoration: none;
   }
 `
-
-export default ({ isIe11 }) => css`
+const StyledFormStateMessage = ({ isIe11 }) => css`
   ${base}
   ${isIe11 && ie11Styles}
 `
+
+export default StyledFormStateMessage
+
 export {
   pictureStyles,
   textDataStyles,

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
@@ -13,7 +13,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   .grid {
     grid-template-rows: max-content max-content max-content;
-    padding-top: ${calcRem(135)};
   }
 
   .grid.grid_gazpromNeft {
@@ -32,9 +31,14 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   .heading {
     grid-column: 2 / span 5;
-    grid-row: 2;
+    grid-row: 1;
     z-index: 1;
   }
+
+  &._gazpromNeft .heading {
+    grid-row: 2;
+  }
+
 
   .p4-word {
     position: relative;
@@ -170,14 +174,13 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     grid-column: 2 / span 5;
     grid-row: 3;
     z-index: 1;
-    margin-top: ${calcRem(90)};
     font-weight: normal;
   }
 
   .text {
     grid-column: 2 / span 5;
     grid-row: 4;
-    margin-top: ${calcRem(38)};
+    margin-top: ${calcRem(32)};
     color: ${colors.secondary.darken100};
     z-index: 1;
   }
@@ -251,10 +254,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       line-height: 24px;
     }
 
-    .paragraph + .paragraph {
-      margin-top: ${calcRem(24)};
-    }
-
     .heading_gazprom {
       margin-top: 24px;
       font-size: 48px;
@@ -277,11 +276,77 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     .pic-wrapper.pic-wrapper_gazpromNeft {
       transform: translateY(68px);
     }
+
+    &._s7airlines._en {
+      padding-bottom: 152px;
+    }
+
+    &._s7airlines._ru {
+      padding-bottom: 267px;
+    }
+
+    &._qmarketing {
+      padding-bottom: 376px;
+    }
+
+    &._brusnika {
+      padding-bottom: 370px;
+    }
+
+    &._flant._en {
+      padding-bottom: 420px;
+    }
+
+    &._flant._ru {
+      padding-bottom: 370px;
+    }
+
+    &._mindbox._en {
+      padding-bottom: 280px;
+    }
+
+    &._mindbox._ru {
+      padding-bottom: 367px;
+    }
+
+    &._mosoblgaz._ru {
+      padding-bottom: 347px;
+    }
+    
+    &._mosoblgaz._en {
+      padding-bottom: 418px;
+    }
+    
+    .grid {
+      padding-top: 216px;
+    }
+
+    .paragraph + .paragraph{
+        margin-top: ${calcRem(24)};
+    }
+
+    .pic-wrapper {
+      transform: translateY(-184px);
+    }
+
+    .sub-heading {
+      margin-top: 78px;
+    }
   }
 
   ${desktop.l} {
-    & {
-      padding-bottom: ${calcRem(260)};
+    &._mindbox,
+    &._flant,
+    &._qmarketing,
+    &._brusnika,
+    &._mosoblgaz {
+      padding-bottom: 280px !important; // после удаления картинки с фигурами это удалится 
+    }
+
+    &._mindbox._en {
+      .pic-wrapper_mindbox {
+        margin-top: 80px;
+      }
     }
 
     .heading {
@@ -300,7 +365,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     .pic-wrapper {
       grid-row: 4;
       max-width: ${calcRem(728)};
-      margin-top: ${calcRem(-221)};
       padding-top: calc(1752 / 2184 * 100%);
 
       &:before {
@@ -322,7 +386,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.m} {
     & {
-      padding-bottom: ${calcRem(281)};
+      padding-bottom: 265px;
     }
 
     .grid.grid_gazpromNeft {
@@ -347,10 +411,6 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       margin-top: ${calcRem(23)};
     }
 
-    .text {
-      margin-top: ${calcRem(39)};
-    }
-
     .pic-wrapper {
       z-index: -1;
       top: 0;
@@ -358,12 +418,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       grid-column: 8 / span 5;
       grid-row: 2 / span 3;
       width: ${calcRem(560)};
-      margin-top: ${calcRem(72)};
       padding-top: ${calcRem(560)};
+      transform: translateY(74px);
 
       &:before {
-        top: ${calcRem(-68)};
-        left: ${calcRem(-192)};
+        top: ${calcRem(-60)};
+        left: ${calcRem(-140)};
         width: ${calcRem(298)};
         height: ${calcRem(809)};
       }
@@ -380,7 +440,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${desktop.s} {
     & {
-      padding-bottom: ${calcRem(285)};
+      padding-bottom: ${calcRem(206)};
     }
 
     .grid.grid_gazpromNeft {
@@ -404,7 +464,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .text {
-      margin-top: ${calcRem(39)};
+      margin-top: ${calcRem(32)};
     }
 
     .pic-wrapper {
@@ -413,12 +473,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
       left: calc((100vw - 77rem) / 2 - 24px);
       grid-row: 2 / span 3;
       width: ${calcRem(528)};
-      margin-top: ${calcRem(89)};
       padding-top: calc(1680 / 1584 * ${calcRem(528)});
+      transform: translateY(90px);
 
       &:before {
-        top: ${calcRem(-68)};
-        left: ${calcRem(-192)};
+        top: ${calcRem(-61)};
+        left: ${calcRem(-112)};
         width: ${calcRem(278)};
         height: ${calcRem(810)};
       }
@@ -434,7 +494,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${tablet.all} {
     & {
-      padding-bottom: ${calcRem(202)};
+      padding-bottom: ${calcRem(186)};
     }
 
     &._gazpromNeft {
@@ -456,7 +516,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
     .heading {
       grid-column: 2 / span 8;
-      margin-top: 1rem;
+      margin-top: ${calcRem(92)};
     }
 
     .heading.heading_gazprom {
@@ -520,7 +580,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
       &:before {
         top: ${calcRem(-36)};
-        left: ${calcRem(-144)};
+        left: ${calcRem(-88)};
         width: ${calcRem(200)};
         height: ${calcRem(543)};
       }
@@ -537,7 +597,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
 
   ${mobile.all} {
     & {
-      padding-bottom: ${calcRem(153)};
+      padding-bottom: ${calcRem(167)};
     }
 
     &._gazpromNeft {
@@ -545,7 +605,7 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     }
 
     .grid {
-      padding-top: ${calcRem(80)};
+      padding-top: ${calcRem(120)};
     }
 
     .grid.grid_gazpromNeft {
@@ -613,12 +673,12 @@ const base = ({ breakpoints: { desktop, tablet, mobile }, colors, language }) =>
     .pic-wrapper {
       grid-row: 5;
       grid-column: 1 / span 6;
-      margin-top: ${calcRem(89)};
+      margin-top: ${calcRem(106)};
       padding-top: calc(792 / 984 * 100%);
 
       &:before {
-        top: ${calcRem(-43)};
-        left: ${calcRem(16)};
+        top: ${calcRem(-46)};
+        left: ${calcRem(28)};
         width: ${calcRem(252)};
         height: ${calcRem(386)};
       }
@@ -707,8 +767,7 @@ const ie11Styles = ({ breakpoints: { desktop, tablet }}) => css`
     }
   }
 `
-
-export default props => {
+const StyledHero =  props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
   const { l10n: {language} } = props
@@ -718,3 +777,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledHero

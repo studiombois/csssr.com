@@ -117,10 +117,19 @@ class ContactModal extends PureComponent {
       this.modalWrapperRef.current.scrollTo({ top: 0 })
     }
 
+    const outsideClickHandler = (e) => {
+      if (e.target.classList.contains('contact-modal-container')) {
+        onClose()
+      }
+    }
+
     return (
-      <div className={className} onKeyDown={(e) => this.handleKeyDown(e)}>
+      <div
+        className={cn(`${className} contact-modal-container`)}
+        onKeyDown={(e) => this.handleKeyDown(e)}
+      >
         <FocusLock>
-          <OutsideClickHandler onOutsideClick={onClose}>
+          <OutsideClickHandler onOutsideClick={outsideClickHandler}>
             <div
               data-scroll-lock-scrollable
               className={cn('modal-wrapper', {

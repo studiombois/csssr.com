@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 
@@ -406,6 +406,5 @@ const StyledAssurance = props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
-
 
 export default StyledAssurance

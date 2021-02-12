@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import { css, Global } from '@emotion/core'
+import { css, Global } from '@emotion/react'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
 import styles, { pictureHunterStyles, backgroundImagesStyles } from './Vacancies.styles'
 

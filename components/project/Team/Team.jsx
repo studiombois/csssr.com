@@ -1,6 +1,7 @@
 import React from 'react'
 import { object, string } from 'prop-types'
 import { PictureSmart } from '@csssr/csssr.images/dist/react'
+import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Team.styles'
 
@@ -14,6 +15,7 @@ import { MsBrowserConsumer } from '../../../utils/msBrowserProvider'
 const Team = ({
   className,
   id,
+  projectId,
   content: { heading, images, imgAlt, teamItems },
   l10n: { translations },
 }) => {
@@ -28,9 +30,17 @@ const Team = ({
         />
 
         <ul className="list">
-          {teamItems.map(({ number, text }, index) => (
+          {teamItems.map(({ number, text, id, withMargin }, index) => (
             <React.Fragment key={index}>
-              <li className="list-item number-item" key={number}>
+              <li
+                className={cn('list-item number-item', {
+                  'number-item_manager': id === 'manager',
+                  'number-item_dev': id === 'dev',
+                  'number-item_qa': id === 'qa',
+                  'number-item_withMargin': withMargin,
+                })}
+                key={number}
+              >
                 <Text
                   type="strong"
                   as="span"
@@ -50,7 +60,11 @@ const Team = ({
         </ul>
       </div>
 
-      <PictureSmart requireImages={images} alt={imgAlt(translations)} className="image" />
+      <PictureSmart
+        requireImages={images}
+        alt={imgAlt(translations)}
+        className={cn('image', `image_${projectId}`)}
+      />
     </Grid>
   )
 }
@@ -58,6 +72,7 @@ const Team = ({
 Team.propTypes = {
   className: string,
   id: string,
+  projectId: string,
   content: object,
 }
 

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import calcRem from '../../../utils/style/calcRem'
 
 const base = ({ colors, breakpoints: { mobile, tablet, desktop } }) => css`
@@ -51,11 +51,10 @@ const base = ({ colors, breakpoints: { mobile, tablet, desktop } }) => css`
     flex-wrap: wrap;
 
     li {
+      display: flex;
+      flex-basis: 25%;
+      justify-content: center;
       font-size: 0;
-    }
-
-    li:not(:first-of-type):not(:nth-of-type(5)) {
-      margin-left: ${calcRem(24)};
     }
 
     li:nth-of-type(n + 5) {
@@ -63,8 +62,7 @@ const base = ({ colors, breakpoints: { mobile, tablet, desktop } }) => css`
     }
   }
 `
-
-export default props => {
+const StyledSocialLinks = props => {
   const colors = props.theme.colors
   const breakpoints = props.theme.breakpoints
 
@@ -72,3 +70,4 @@ export default props => {
     ${base({ colors, breakpoints })}
   `
 }
+export default StyledSocialLinks

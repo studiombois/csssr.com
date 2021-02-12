@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { string } from 'prop-types'
-import { Global } from '@emotion/core'
+import { Global } from '@emotion/react'
 
 import Tabs from './Tabs'
 import Address from './Address'

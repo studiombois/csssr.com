@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import getGridValueForMs from '../../../utils/style/getGridValueForMs'
 import calcRem from '../../../utils/style/calcRem'
 import { backgroundCssSmart } from '@csssr/csssr.images/dist/utils/backgroundCss'
@@ -413,8 +413,7 @@ export const loveBackgroundImagesStyles = theme => {
     }
   `
 }
-
-export default props => {
+const StyledAboutUs = props => {
   const breakpoints = props.theme.breakpoints
   const colors = props.theme.colors
 
@@ -423,3 +422,4 @@ export default props => {
     ${props.isIe11 && ie11Styles({ breakpoints })}
   `
 }
+export default StyledAboutUs

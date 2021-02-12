@@ -8,9 +8,9 @@ import Layout from '../Layout'
 import Head from '../Head'
 import CandidateForm from './CandidateForm'
 import { L10nConsumer } from '../../utils/l10nProvider'
+import WithError from '../../utils/withError'
 import csssrSpaceOrigin from '../../utils/csssrSpaceOrigin'
 import candidateFormValidationRules from '../../utils/validators/candidateFormValidationRules'
-import withError from '../../utils/withError'
 import getBenchmarkEmailListId from '../../utils/getBenchmarkEmailListId'
 import getContactOptions from '../../data/job/getContactOptions'
 import getVacancyStructuredData from '../../utils/getVacancyStructuredData'
@@ -266,4 +266,4 @@ class JobPage extends PureComponent {
   }
 }
 
-export default withError(L10nConsumer(JobPage))
+export default WithError(L10nConsumer(JobPage))

@@ -9,32 +9,40 @@ import Footer from '../Footer'
 import DiscountBanner from '../DiscountBanner'
 
 import { L10nConsumer } from '../../utils/l10nProvider'
-import { DeviceConsumer } from '../../utils/deviceProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import CookiesPopup from '../CookiesPopup'
 
-const Layout = ({
-  children,
-  isIe11,
-  pageName,
-  l10n: { language },
-  isMobile,
-  isTablet,
-  withFooter = true,
-}) => {
+const Layout = ({ children, isIe11, pageName, l10n: { language }, withFooter = true }) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
   const [isHidden, setHidden] = useState(true)
   const [isCookiesPopupVisible, setIsCookiesPopupVisible] = useState(false)
   const [isFooterVisible, setIsFooterVisible] = useState(false)
   const itemRef = useRef()
+  const isWindowContext = typeof window !== 'undefined'
 
   const getIdea = () => {
-    if (typeof window !== 'undefined') {
-      return document.getElementById('haveAnIdea')
+    if (isWindowContext) {
+      if (document.getElementById('haveAnIdea')) {
+        return true
+      }
+      return
+    }
+  }
+
+  const getCookiesPopup = () => {
+    if (isWindowContext) {
+      if (isCookiesPopupVisible) {
+        return true
+      }
+      return
     }
   }
 
   useEffect(() => {
+    const isMobile = isWindowContext && window.innerWidth < 768
+    const isTablet = isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1280
+    const isDesktop = isWindowContext && window.innerWidth >= 1280
+
     const callback = function ([entry]) {
       if (entry.intersectionRatio > 0 && !isFooterVisible) {
         setIsFooterVisible(true)
@@ -44,20 +52,17 @@ const Layout = ({
     //Вследствие того, что на разных разрешениях и страницах положение футера в IntersectionObserver отличается, приходится вручную прописывать высоту отступа блока с кнопкой. После проведения рисёрча в задаче COM-3202, данная реализация будет заменена.
     let footerTopMargin = '0px'
     switch (true) {
-      case isCookiesPopupVisible && getIdea() && isMobile:
+      case isMobile && getCookiesPopup():
         footerTopMargin = '-100px'
         break
-      case isCookiesPopupVisible && getIdea() && !isMobile && !isTablet:
-        footerTopMargin = '0px'
+      case isTablet && getIdea():
+        footerTopMargin = '200px'
         break
-      case getIdea() && isMobile:
-        footerTopMargin = '0px'
-        break
-      case getIdea() && !isMobile && !isTablet:
+      case isDesktop && getIdea():
         footerTopMargin = '300px'
         break
       default:
-        footerTopMargin = '200px'
+        footerTopMargin = '0px'
     }
 
     const options = {
@@ -118,4 +123,4 @@ const Layout = ({
   )
 }
 
-export default L10nConsumer(DeviceConsumer(withRouter(MsBrowserConsumer(Layout))))
+export default L10nConsumer(withRouter(MsBrowserConsumer(Layout)))

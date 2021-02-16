@@ -3,33 +3,6 @@ const ANIMATION_DURATION_IN_MS = 800
 
 // Роуты с английской локали
 
-testcase('Rout to Process Page-EN', () => {
-  step('Go to the MVP page', () => {
-    browser.url(browser.launch_url + '/en/service/mvp-development')
-      .waitForElementVisible('[data-testid="Main:block"]')
-  })
-
-  step('Hide the cookie plate', () => {
-    browser
-      .click('div.css-tq6n8v.e1foxtb90 > button')
-  })
-
-  step('Scroll to Transparency Block', () => {
-    browser.moveToElement('[data-testid="MVP:link:advantages.transparency"]', 1, 1)
-      .pause(ANIMATION_DURATION_IN_MS)
-  })
-
-  step('Click on the link «Read about how we work»', () => {
-    browser.click('[data-testid="MVP:link:advantages.transparency"]')
-  })
-
-  expected('Processes page opened', () => {
-    browser
-      .waitForElementPresent('[data-testid="Main:block"]')
-      .assert.urlEquals(browser.launch_url + '/en/way-of-work')
-  })
-})
-
 testcase('Rout to Core Values Page-EN', () => {
   step('Go to the MVP page', () => {
     browser.url(browser.launch_url + '/en/service/mvp-development')

@@ -40,7 +40,7 @@ testcase('Rout to the «Бэкенд и DevOps» page', () => {
   step('Scroll to Services block', () => {
     browser
       .moveToElement('[data-testid="Services:service.backend.title"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
 

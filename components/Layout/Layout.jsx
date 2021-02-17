@@ -10,9 +10,18 @@ import DiscountBanner from '../DiscountBanner'
 
 import { L10nConsumer } from '../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
+import { DeviceConsumer } from '../../utils/deviceProvider'
 import CookiesPopup from '../CookiesPopup'
 
-const Layout = ({ children, isIe11, pageName, l10n: { language }, withFooter = true }) => {
+const Layout = ({
+  children,
+  isMobile,
+  isTablet,
+  isIe11,
+  pageName,
+  l10n: { language },
+  withFooter = true,
+}) => {
   const dynamicTag = isIe11 ? 'div' : 'main'
   const [isHidden, setHidden] = useState(true)
   const [isCookiesPopupVisible, setIsCookiesPopupVisible] = useState(false)
@@ -39,17 +48,12 @@ const Layout = ({ children, isIe11, pageName, l10n: { language }, withFooter = t
   }
 
   useEffect(() => {
-    const isMobile = isWindowContext && window.innerWidth < 768
-    const isTablet = isWindowContext && window.innerWidth >= 768 && window.innerWidth < 1280
-    const isDesktop = isWindowContext && window.innerWidth >= 1280
-
     const callback = function ([entry]) {
       if (entry.intersectionRatio > 0 && !isFooterVisible) {
         setIsFooterVisible(true)
       } else setIsFooterVisible(false)
     }
 
-    //Вследствие того, что на разных разрешениях и страницах положение футера в IntersectionObserver отличается, приходится вручную прописывать высоту отступа блока с кнопкой. После проведения рисёрча в задаче COM-3202, данная реализация будет заменена.
     let footerTopMargin = '0px'
     switch (true) {
       case isMobile && getCookiesPopup():
@@ -58,7 +62,7 @@ const Layout = ({ children, isIe11, pageName, l10n: { language }, withFooter = t
       case isTablet && getIdea():
         footerTopMargin = '200px'
         break
-      case isDesktop && getIdea():
+      case !isMobile && !isTablet && getIdea():
         footerTopMargin = '300px'
         break
       default:
@@ -80,7 +84,7 @@ const Layout = ({ children, isIe11, pageName, l10n: { language }, withFooter = t
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [isMobile, isTablet])
 
   return (
     <Fragment>
@@ -123,4 +127,4 @@ const Layout = ({ children, isIe11, pageName, l10n: { language }, withFooter = t
   )
 }
 
-export default L10nConsumer(withRouter(MsBrowserConsumer(Layout)))
+export default L10nConsumer(DeviceConsumer(withRouter(MsBrowserConsumer(Layout))))

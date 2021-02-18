@@ -4,7 +4,7 @@ function switchLanguage() {
 
   step('Hide the cookie plate', () => {
     browser
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Scrolling to the footer', () => {

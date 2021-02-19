@@ -40,7 +40,7 @@ testcase('Rout to the «Бэкенд и DevOps» page', () => {
   step('Scroll to Services block', () => {
     browser
       .moveToElement('[data-testid="Services:service.backend.title"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
 
@@ -67,7 +67,7 @@ testcase('Rout to the «Разработка MVP» page', () => {
   step('Scroll to Services block', () => {
     browser
       .moveToElement('[data-testid="Services:service.mvp.title"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Click on the link «Разработка MVP»', () => {
@@ -249,7 +249,7 @@ testcase('Route to page of all projects', () => {
   step('Scroll to the Projects block', () => {
     browser
       .moveToElement('[data-testid="Home:block.link.projects"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Click on the button «Просмотреть наши проекты»', () => {
@@ -302,7 +302,7 @@ testcase('Rout to the «Стек технологий» page', () => {
   step('Scroll to process description block', () => {
     browser
       .moveToElement('[data-testid="Home:block.our-features"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Click on the text link «Читать о технологиях»', () => {
@@ -415,17 +415,18 @@ testcase('Route to page of CSSSR.Radio', () => {
     browser
       .setWindowSize(1920, 1080)
       .url(browser.launch_url + '/ru')
-      .waitForElementPresent('[data-testid="Home:block.services"]')
+      .waitForElementPresent('[data-testid="Home:block.projects"]')
   })
 
   step('Scroll to the Projects block', () => {
     browser
-      .moveToElement('[data-testid="Project:radio.text"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .moveToElement('[data-testid="Project:radio.title"]', 1, 1)
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Click on the link «CSSSR.Radio»', () => {
     browser
+      .waitForElementPresent('[data-testid="Project:radio.title"]')
       .click('[data-testid="Project:radio.title"]')
   })
 
@@ -522,7 +523,7 @@ testcase('Rout to the «Back-end&DevOps» page', () => {
   step('Scroll to Services block', () => {
     browser
       .moveToElement('[data-testid="Services:service.backend.title"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
 
@@ -549,7 +550,7 @@ testcase('Rout to the «MVP Development» page', () => {
   step('Scroll to Services block', () => {
     browser
       .moveToElement('[data-testid="Services:service.mvp.title"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Click on the link «MVP Development»', () => {
@@ -784,7 +785,7 @@ testcase('Rout to the «CSSSR Technologies» page', () => {
   step('Scroll to process description block', () => {
     browser
       .moveToElement('[data-testid="Home:block.our-features"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Click on the text link «Read about technologies»', () => {
@@ -899,7 +900,7 @@ testcase('Route to the page with a list of all active vacancies', () => {
   step('Scroll to the Vacancies block', () => {
     browser
       .moveToElement('[data-testid="Home:link.vacancies"]', 1, 1)
-      .click('div.css-tq6n8v.e1foxtb90 > button')
+      .click('div.css-1bql4sp.e1foxtb90 > button')
   })
 
   step('Click on the button «Все наши вакансии»', () => {

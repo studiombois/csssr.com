@@ -1,7 +1,7 @@
 const { makeRequest } = require('../actions/vacancies')
 const ANIMATION_DURATION_IN_MS = 800
 
-testcase('CSSSR logo animation', () => {
+testcase('Hero block', () => {
   step('Go to the Main page', () => {
     browser
       .setWindowSize(1920, 1080)
@@ -9,17 +9,12 @@ testcase('CSSSR logo animation', () => {
       .waitForElementPresent('[data-testid="Main:block"]')
   })
 
-  step('Hover the cursor over the contour of logo CSSSR', () => {
-    browser
-      .moveToElement('article.ekphzss0.css-1t1fbwb-Grid.e1kw6gvb0 > div > div', 10, 10)
-      .pause(ANIMATION_DURATION_IN_MS)
-  })
-
-  expected('CSSSR logo became totally black', () => {
+  expected('The hero block is displayed', () => {
     browser
       .assert.screenshotElement(
-        'article.ekphzss0.css-1t1fbwb-Grid.e1kw6gvb0 > div',
-        'Logo CSSSR'
+        '#main > section.css-1kx1afs.ekphzss0.hero-wrap',
+        'Logo CSSSR',
+        { hideSelectors: ['[data-testid="Header:block"]'] }
       )
   })
 })

@@ -43,6 +43,10 @@ const base = css`
     }
   }
 
+  .input-resume {
+    margin-top: 1.5rem;
+  }
+
   .text {
     margin-top: 2.5rem;
     font-size: 1rem;
@@ -79,8 +83,10 @@ const base = css`
     h2,
     p,
     .news-field,
-    .policy-text
-     {
+    .policy-text,
+    .text,
+    .conjunction
+    {
       grid-column: 1 / span 6;
     }
 

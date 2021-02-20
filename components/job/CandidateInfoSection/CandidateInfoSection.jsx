@@ -111,7 +111,7 @@ const CandidateInfoSection = (props) => {
         ) : null,
       )}
 
-      <p className="text">Добавьте резюме удобным для вас способом</p>
+      <p className="text">{translations.common.checkBoxesText.resumeText}</p>
 
       {hasResume && (
         <Field
@@ -132,7 +132,7 @@ const CandidateInfoSection = (props) => {
         />
       )}
 
-      <p className="conjunction">ИЛИ</p>
+      <p className="conjunction">{translations.common.checkBoxesText.conjunction}</p>
 
       {hasFile && (
         <Field

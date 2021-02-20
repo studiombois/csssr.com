@@ -67,15 +67,6 @@ const CandidateInfoSection = (props) => {
       `,
     },
     {
-      id: 'resume',
-      required: true,
-      label: translations.job.resumeLink,
-      shouldShow: hasResume,
-      css: css`
-        ${stylesForFullWidthField}
-      `,
-    },
-    {
       id: 'portfolio',
       required: true,
       label: translations.job.resumePortfolio,
@@ -120,11 +111,34 @@ const CandidateInfoSection = (props) => {
         ) : null,
       )}
 
+      <p className="text">Добавьте резюме удобным для вас способом</p>
+
+      {hasResume && (
+        <Field
+          id="resume"
+          name="resume"
+          className="input-resume"
+          component={TextField}
+          type="text"
+          css={css`
+            ${stylesForFullWidthField}
+          `}
+          label={translations.job.resumeLink}
+          kind="regular"
+          aria-required="required"
+          required="required"
+          testId="Jobs:form:input.resue"
+          errorTestid="Jobs:form:text:error.resume"
+        />
+      )}
+
+      <p className="conjunction">ИЛИ</p>
+
       {hasFile && (
         <Field
           id="file"
           name="file"
-          className="seventh-line"
+          className="file seventh-line"
           css={css`
             ${stylesForFileField}
           `}
@@ -148,7 +162,7 @@ const CandidateInfoSection = (props) => {
             id="comment"
             name="comment"
             label={translations.job.tellUsMoreAboutYourself}
-            className="line-nine"
+            className="textarea line-nine"
             css={css`
               ${stylesForTextareaField}
             `}

@@ -16,7 +16,9 @@ const base = css`
   }
 
   .news-field,
-  .policy-text {
+  .policy-text,
+  .text,
+  .conjunction {
     display: block;
     grid-column: 2 / span 6;
     font-family: Roboto, sans-serif;
@@ -39,6 +41,23 @@ const base = css`
       color: #0076ff;
       text-decoration: underline;
     }
+  }
+
+  .text {
+    margin-top: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem; 
+  }
+
+  .conjunction {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem; 
+    color: #9B9B9B;
+  }
+
+  .file {
+    margin-top: 0.5rem;
   }
 
   @media (max-width: 1279px) and (min-width: 768px) {

@@ -12,6 +12,7 @@
 /.next
 
 # misc
+/secrets
 .DS_Store
 .env
 .env.development.local

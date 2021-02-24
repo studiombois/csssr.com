@@ -1,16 +1,21 @@
 import React, { Fragment, useState } from 'react'
-import DevTools from '../DevTools'
+import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
 import { Global } from '@emotion/react'
-import { dynamic } from './Layout.styles'
+import { dynamic as dynamicStyles } from './Layout.styles'
 import cn from 'classnames'
 import Header from '../Header'
-import Footer from '../Footer'
-import DiscountBanner from '../DiscountBanner'
+// import DevTools from '../DevTools'
+// import Footer from '../Footer'
+// import DiscountBanner from '../DiscountBanner'
+// import CookiesPopup from '../CookiesPopup'
+const DynamicDiscountBanner = dynamic(() => import('../DiscountBanner'))
+const DynamicFooter = dynamic(() => import('../Footer'))
+const DynamicDevTools = dynamic(() => import('../DevTools'))
+const DynamicCookiesPopup = dynamic(() => import('../CookiesPopup'))
 
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { L10nConsumer } from '../../utils/l10nProvider'
-import CookiesPopup from '../CookiesPopup'
 
 const Layout = ({
   children,
@@ -29,7 +34,7 @@ const Layout = ({
     <Fragment>
       <Header isButtonVisible={isButtonVisible} pageName={pageName} />
       {language === 'en' && (
-        <DiscountBanner
+        <DynamicDiscountBanner
           className="discount-banner"
           pageName={pageName}
           isHidden={isHidden}
@@ -50,11 +55,11 @@ const Layout = ({
         children,
       )}
 
-      {withFooter && <Footer />}
-      <CookiesPopup />
-      <DevTools />
+      {withFooter && <DynamicFooter />}
+      <DynamicCookiesPopup />
+      <DynamicDevTools />
 
-      <Global styles={dynamic} />
+      <Global styles={dynamicStyles} />
     </Fragment>
   )
 }

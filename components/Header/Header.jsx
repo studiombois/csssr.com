@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { bool, string } from 'prop-types'
 import ReactDOM from 'react-dom'
 import NextLink from 'next/link'
+import dynamic from 'next/dynamic'
 import styled from '@emotion/styled'
 import cn from 'classnames'
 import { clearQueueScrollLocks, disablePageScroll, enablePageScroll } from 'scroll-lock'
@@ -11,7 +12,7 @@ import Menu from './Menu'
 import Links from './Links'
 import Button from '../ui-kit/core-design/Button'
 import ButtonLink from '../ui-kit/core-design/ButtonLink'
-import ContactModal from '../ContactModal'
+// import ContactModal from '../ContactModal'
 import { ReactComponent as Logo } from '../../static/icons/csssr_logo.svg'
 import { ReactComponent as Burger } from '../../static/icons/header/burger.svg'
 import { ReactComponent as Cross } from '../../static/icons/header/close.svg'
@@ -19,6 +20,8 @@ import { ReactComponent as Cross } from '../../static/icons/header/close.svg'
 import { L10nConsumer } from '../../utils/l10nProvider'
 import { MsBrowserConsumer } from '../../utils/msBrowserProvider'
 import { DeviceConsumer } from '../../utils/deviceProvider'
+
+const DynamicContactModal = dynamic(() => import('../ContactModal'))
 
 const Header = ({
   className,
@@ -116,7 +119,7 @@ const Header = ({
       {typeof window !== 'undefined' &&
         isContactModalVisible &&
         ReactDOM.createPortal(
-          <ContactModal onClose={handleHideContactModal} pageName={pageName} />,
+          <DynamicContactModal onClose={handleHideContactModal} pageName={pageName} />,
           document.getElementById('main'),
         )}
     </header>

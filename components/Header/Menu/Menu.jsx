@@ -1,17 +1,20 @@
 import React, { useRef, useState } from 'react'
 import { bool, string } from 'prop-types'
+import dynamic from 'next/dynamic'
 import cn from 'classnames'
 import styled from '@emotion/styled'
 import styles from './Menu.styles'
 
 import Link from '../../ui-kit/core-design/Link'
-import Nav from './Nav'
+// import Nav from './Nav'
 import ClickOutside from '../../ClickOutside'
 
 import headerLinks from '../../../data/headerLinks'
 
 import { L10nConsumer } from '../../../utils/l10nProvider'
 import { DeviceConsumer } from '../../../utils/deviceProvider'
+
+const DynamicNav = dynamic(() => import('./Nav'))
 
 const { menu } = headerLinks
 const Menu = ({ className, isMobile, l10n: { translations, language } }) => {
@@ -89,7 +92,7 @@ const Menu = ({ className, isMobile, l10n: { translations, language } }) => {
           })}
         </MenuWrapperTag>
 
-        <Nav
+        <DynamicNav
           activeItem={activeItem}
           animationDirection={animationDirection}
           onBackButtonClick={handleResetActiveItem}

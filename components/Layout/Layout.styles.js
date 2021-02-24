@@ -24,6 +24,11 @@ export const base = css`
     margin-right: auto;
   }
 
+  html,
+  body {
+    background-color: white;
+  }
+
   body:not(.outline) * {
     outline: none;
   }

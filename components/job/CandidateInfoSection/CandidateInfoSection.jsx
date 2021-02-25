@@ -111,7 +111,7 @@ const CandidateInfoSection = (props) => {
         ) : null,
       )}
 
-      <p className="text">{translations.common.checkBoxesText.resumeText}</p>
+      {hasFile && <p className="text">{translations.common.form.resumeText}</p>}
 
       {hasResume && (
         <Field
@@ -132,7 +132,7 @@ const CandidateInfoSection = (props) => {
         />
       )}
 
-      <p className="conjunction">{translations.common.checkBoxesText.conjunction}</p>
+      {hasFile && <p className="conjunction">{translations.common.form.conjunction}</p>}
 
       {hasFile && (
         <Field

@@ -43,7 +43,7 @@ const base = css`
     }
   }
 
-  .input-resume {
+  .input-resume.withLessMargin {
     margin-top: 1.5rem;
   }
 

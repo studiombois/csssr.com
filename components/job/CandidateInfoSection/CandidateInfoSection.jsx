@@ -117,7 +117,9 @@ const CandidateInfoSection = (props) => {
         <Field
           id="resume"
           name="resume"
-          className="input-resume"
+          className={cn('input-resume', {
+            withLessMargin: !hasFile,
+          })}
           component={TextField}
           type="text"
           css={css`
